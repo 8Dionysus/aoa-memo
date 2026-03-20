@@ -16,6 +16,22 @@ If you are new to this repository, use this path:
 3. Read [docs/BOUNDARIES](docs/BOUNDARIES.md) for ownership rules.
 4. Read [ROADMAP](ROADMAP.md) for the current direction.
 
+For the shortest next route by intent:
+- if you need the ecosystem center and layer map, go to [`Agents-of-Abyss`](https://github.com/8Dionysus/Agents-of-Abyss)
+- if you need navigation and dispatch rather than memory-layer meaning, go to [`aoa-routing`](https://github.com/8Dionysus/aoa-routing)
+- if you need authored practice, execution, or proof meaning, go to [`aoa-techniques`](https://github.com/8Dionysus/aoa-techniques), [`aoa-skills`](https://github.com/8Dionysus/aoa-skills), or [`aoa-evals`](https://github.com/8Dionysus/aoa-evals)
+- if you need explicit role contracts and handoff posture, go to [`aoa-agents`](https://github.com/8Dionysus/aoa-agents)
+
+## Quick route table
+
+| repository | owns | go here when |
+|---|---|---|
+| `aoa-memo` | memory objects, recall surfaces, provenance threads, temporal relevance, salience, retrieval contracts | you need explicit memory-layer meaning rather than proof or execution meaning |
+| `Agents-of-Abyss` | ecosystem identity, layer map, federation rules, program-level direction | you need the center and the constitutional view of AoA |
+| `aoa-routing` | navigation and dispatch surfaces | you need the smallest next object rather than memory-layer semantics |
+| `aoa-techniques` / `aoa-skills` / `aoa-evals` | authored practice, execution, and proof meaning | you need source-owned meaning rather than memory-layer objects |
+| `aoa-agents` | role contracts, persona boundaries, handoff posture | you need actor-level contracts rather than memory surfaces |
+
 ## What this repository is for
 
 `aoa-memo` should own memory-layer meaning about:
