@@ -1,0 +1,68 @@
+{
+  "id": "memo.ep.2026-03-20.bootstrap-foundation",
+  "kind": "episode",
+  "title": "Bootstrap foundation draft prepared for aoa-memo",
+  "summary": "A first doctrine-and-schema baseline was prepared for the aoa-memo repository bootstrap phase.",
+  "scope": [
+    "repo:aoa-memo",
+    "project:AoA"
+  ],
+  "owner_refs": [
+    "repo:aoa-memo"
+  ],
+  "payload_ref": "docs/bootstrap/2026-03-20-foundation-draft.md",
+  "tags": [
+    "bootstrap",
+    "memory-layer",
+    "foundation"
+  ],
+  "time": {
+    "created_at": "2026-03-20T18:30:00Z",
+    "observed_at": "2026-03-20T18:25:00Z",
+    "valid_from": "2026-03-20T18:30:00Z",
+    "valid_to": null
+  },
+  "provenance": {
+    "source_refs": [
+      "repo:aoa-memo/README.md",
+      "repo:aoa-routing/README.md",
+      "repo:aoa-kag/README.md",
+      "repo:Tree-of-Sophia/README.md"
+    ],
+    "episode_refs": [],
+    "provenance_thread_id": "prov.bootstrap.aoa-memo.2026-03-20"
+  },
+  "trust": {
+    "temperature": "warm",
+    "confidence": 0.86,
+    "authority": "draft/human-curated",
+    "freshness": 0.98,
+    "salience": 0.91
+  },
+  "lifecycle": {
+    "review_state": "proposed",
+    "supersedes": [],
+    "superseded_by": null,
+    "retention_class": "project-core"
+  },
+  "access": {
+    "access_class": "public",
+    "read_scopes": [
+      "public"
+    ],
+    "write_scopes": [
+      "maintainer"
+    ],
+    "promotion_scopes": [
+      "maintainer",
+      "human-review"
+    ]
+  },
+  "bridges": {
+    "tos_refs": [],
+    "skill_refs": [],
+    "eval_refs": [],
+    "kag_lift_status": "none",
+    "route_capsule_ref": "generated/memo_registry.min.json"
+  }
+}
