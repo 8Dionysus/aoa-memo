@@ -1,0 +1,45 @@
+{
+  "id": "prov.memo.router-entrypoint.2026-03-21",
+  "title": "Router-facing memo entrypoint lifecycle thread",
+  "summary": "Tracks the shift from registry-only memo inspect assumptions toward dedicated memo catalog surfaces, including supersession and retraction events.",
+  "status": "active",
+  "source_refs": [
+    "repo:aoa-memo/generated/memo_registry.min.json",
+    "repo:aoa-memo/generated/memory_catalog.min.json",
+    "repo:aoa-memo/generated/memory_capsules.json",
+    "repo:aoa-memo/generated/memory_sections.full.json",
+    "repo:aoa-routing/README.md"
+  ],
+  "memory_object_ids": [
+    "memo.claim.2026-03-21.memo-entrypoint-old",
+    "memo.claim.2026-03-21.memo-entrypoint-bad-claim",
+    "memo.audit.2026-03-21.router-entrypoint-supersession",
+    "memo.audit.2026-03-21.router-entrypoint-retraction"
+  ],
+  "timeline": [
+    {
+      "at": "2026-03-21T14:30:00Z",
+      "action": "captured older inspect-entry claim",
+      "actor_ref": "human+ai",
+      "object_id": "memo.claim.2026-03-21.memo-entrypoint-old"
+    },
+    {
+      "at": "2026-03-21T14:40:00Z",
+      "action": "captured over-strong claim about registry sufficiency",
+      "actor_ref": "human+ai",
+      "object_id": "memo.claim.2026-03-21.memo-entrypoint-bad-claim"
+    },
+    {
+      "at": "2026-03-21T15:10:00Z",
+      "action": "recorded supersession to dedicated memo catalog surfaces",
+      "actor_ref": "human+ai",
+      "object_id": "memo.audit.2026-03-21.router-entrypoint-supersession"
+    },
+    {
+      "at": "2026-03-21T15:15:00Z",
+      "action": "retracted over-strong registry sufficiency claim",
+      "actor_ref": "human+ai",
+      "object_id": "memo.audit.2026-03-21.router-entrypoint-retraction"
+    }
+  ]
+}
