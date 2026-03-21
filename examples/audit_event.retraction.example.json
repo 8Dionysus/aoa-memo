@@ -1,0 +1,69 @@
+{
+  "id": "memo.audit.2026-03-21.router-entrypoint-retraction",
+  "kind": "audit_event",
+  "title": "Retracted over-strong claim about registry-only memo inspect sufficiency",
+  "summary": "A too-strong claim about the registry as a sufficient long-term inspect surface was retracted after doctrine surfaces and dedicated memo catalogs were added.",
+  "scope": [
+    "repo:aoa-memo",
+    "project:AoA"
+  ],
+  "owner_refs": [
+    "repo:aoa-memo"
+  ],
+  "payload_ref": "docs/LIFECYCLE.md#retraction",
+  "tags": [
+    "audit",
+    "retraction",
+    "router"
+  ],
+  "time": {
+    "created_at": "2026-03-21T15:15:00Z",
+    "observed_at": "2026-03-21T15:12:00Z",
+    "valid_from": "2026-03-21T15:15:00Z",
+    "valid_to": null
+  },
+  "provenance": {
+    "source_refs": [
+      "repo:aoa-memo/generated/memo_registry.min.json",
+      "repo:aoa-memo/generated/memory_catalog.min.json",
+      "repo:aoa-routing/README.md"
+    ],
+    "episode_refs": [
+      "memo.claim.2026-03-21.memo-entrypoint-bad-claim"
+    ],
+    "provenance_thread_id": "prov.memo.router-entrypoint.2026-03-21"
+  },
+  "trust": {
+    "temperature": "cool",
+    "confidence": 0.92,
+    "authority": "repo-lifecycle-audit",
+    "freshness": 0.94,
+    "salience": 0.68
+  },
+  "lifecycle": {
+    "review_state": "confirmed",
+    "supersedes": [],
+    "superseded_by": null,
+    "retention_class": "audit-trace"
+  },
+  "access": {
+    "access_class": "public",
+    "read_scopes": [
+      "public"
+    ],
+    "write_scopes": [
+      "maintainer"
+    ],
+    "promotion_scopes": [
+      "maintainer",
+      "human-review"
+    ]
+  },
+  "bridges": {
+    "tos_refs": [],
+    "skill_refs": [],
+    "eval_refs": [],
+    "kag_lift_status": "none",
+    "route_capsule_ref": "generated/memory_catalog.min.json"
+  }
+}
