@@ -1,0 +1,12 @@
+{
+  "id": "recall.semantic.default",
+  "name": "Default semantic recall",
+  "mode": "semantic",
+  "allowed_scopes": ["repo", "project", "ecosystem"],
+  "preferred_kinds": ["claim", "decision", "pattern", "anchor"],
+  "temperature_order": ["warm", "cool", "frozen", "cold", "hot"],
+  "inspect_surface": "generated/memo_registry.min.json",
+  "expand_surface": "docs/MEMORY_MODEL.md",
+  "source_route_required": true,
+  "notes": "Use for doctrine-level memory and consolidated repository meaning before checking stronger source repositories."
+}
