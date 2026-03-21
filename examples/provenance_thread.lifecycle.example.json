@@ -12,6 +12,7 @@
   ],
   "memory_object_ids": [
     "memo.claim.2026-03-21.memo-entrypoint-old",
+    "memo.claim.2026-03-21.memo-entrypoint-new",
     "memo.claim.2026-03-21.memo-entrypoint-bad-claim",
     "memo.audit.2026-03-21.router-entrypoint-supersession",
     "memo.audit.2026-03-21.router-entrypoint-retraction"
@@ -28,6 +29,12 @@
       "action": "captured over-strong claim about registry sufficiency",
       "actor_ref": "human+ai",
       "object_id": "memo.claim.2026-03-21.memo-entrypoint-bad-claim"
+    },
+    {
+      "at": "2026-03-21T15:05:00Z",
+      "action": "captured dedicated memo catalog entrypoint claim",
+      "actor_ref": "human+ai",
+      "object_id": "memo.claim.2026-03-21.memo-entrypoint-new"
     },
     {
       "at": "2026-03-21T15:10:00Z",
