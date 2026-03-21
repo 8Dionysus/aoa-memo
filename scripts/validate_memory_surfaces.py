@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate router-facing aoa-memo doctrine surfaces."""
+"""Validate router-facing aoa-memo doctrine surfaces and recall entrypoints."""
 
 from __future__ import annotations
 
@@ -7,8 +7,11 @@ import json
 from pathlib import Path
 import sys
 
+from validate_memo import local_ref_error, validator_for
+
 ROOT = Path(__file__).resolve().parents[1]
 GENERATED = ROOT / "generated"
+EXAMPLES = ROOT / "examples"
 
 
 def load_json(path: Path) -> dict:
@@ -85,11 +88,27 @@ def validate_sections(path: Path) -> None:
             seen.add(section["section_id"])
 
 
+def validate_router_recall_contract(path: Path) -> None:
+    validator = validator_for("recall_contract.schema.json")
+    data = load_json(path)
+    errors = [
+        f"{'.'.join(str(part) for part in err.absolute_path) or '<root>'}: {err.message}"
+        for err in sorted(validator.iter_errors(data), key=lambda err: list(err.absolute_path))
+    ]
+    for label in ("inspect_surface", "expand_surface"):
+        error = local_ref_error(data.get(label), label)
+        if error:
+            errors.append(error)
+    if errors:
+        raise SystemExit(f"{path}: " + "; ".join(errors))
+
+
 def main() -> int:
     validate_catalog(GENERATED / "memory_catalog.json", require_relations=True)
     validate_catalog(GENERATED / "memory_catalog.min.json", require_relations=False)
     validate_capsules(GENERATED / "memory_capsules.json")
     validate_sections(GENERATED / "memory_sections.full.json")
+    validate_router_recall_contract(EXAMPLES / "recall_contract.router.semantic.json")
     print("Router-facing memo doctrine surfaces validated successfully.")
     return 0
 
