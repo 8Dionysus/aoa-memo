@@ -1,0 +1,67 @@
+{
+  "id": "memo.claim.2026-03-20.temperature-not-truth",
+  "kind": "claim",
+  "title": "Temperature is not truth",
+  "summary": "Memory temperature tracks activation and consolidation posture, not universal correctness or proof status.",
+  "scope": [
+    "repo:aoa-memo",
+    "ecosystem:AoA"
+  ],
+  "owner_refs": [
+    "repo:aoa-memo"
+  ],
+  "payload_ref": "docs/MEMORY_MODEL.md#temperature",
+  "tags": [
+    "temperature",
+    "trust",
+    "doctrine"
+  ],
+  "time": {
+    "created_at": "2026-03-20T18:35:00Z",
+    "valid_from": "2026-03-20T18:35:00Z",
+    "valid_to": null
+  },
+  "provenance": {
+    "source_refs": [
+      "repo:aoa-memo/CHARTER.md",
+      "repo:aoa-memo/docs/MEMORY_MODEL.md"
+    ],
+    "episode_refs": [
+      "memo.ep.2026-03-20.bootstrap-foundation"
+    ],
+    "provenance_thread_id": "prov.bootstrap.aoa-memo.2026-03-20"
+  },
+  "trust": {
+    "temperature": "cool",
+    "confidence": 0.93,
+    "authority": "repo-doctrine",
+    "freshness": 0.97,
+    "salience": 0.95
+  },
+  "lifecycle": {
+    "review_state": "confirmed",
+    "supersedes": [],
+    "superseded_by": null,
+    "retention_class": "doctrine"
+  },
+  "access": {
+    "access_class": "public",
+    "read_scopes": [
+      "public"
+    ],
+    "write_scopes": [
+      "maintainer"
+    ],
+    "promotion_scopes": [
+      "maintainer",
+      "human-review"
+    ]
+  },
+  "bridges": {
+    "tos_refs": [],
+    "skill_refs": [],
+    "eval_refs": [],
+    "kag_lift_status": "candidate",
+    "route_capsule_ref": "generated/memo_registry.min.json"
+  }
+}
