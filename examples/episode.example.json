@@ -10,7 +10,7 @@
   "owner_refs": [
     "repo:aoa-memo"
   ],
-  "payload_ref": "docs/bootstrap/2026-03-20-foundation-draft.md",
+  "payload_ref": "ROADMAP.md#current-stage",
   "tags": [
     "bootstrap",
     "memory-layer",

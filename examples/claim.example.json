@@ -10,7 +10,7 @@
   "owner_refs": [
     "repo:aoa-memo"
   ],
-  "payload_ref": "docs/MEMORY_MODEL.md#temperature",
+  "payload_ref": "docs/MEMORY_MODEL.md#axis-2-temperature",
   "tags": [
     "temperature",
     "trust",
