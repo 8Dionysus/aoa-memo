@@ -75,14 +75,21 @@ Within AoA:
 
 ## Local validation
 
-This repository includes a compact machine-readable memory-layer registry at:
+This repository includes compact machine-readable memory-layer surfaces at:
 - `generated/memo_registry.min.json`
+- `generated/memory_catalog.min.json`
+- `generated/memory_capsules.json`
+- `generated/memory_sections.full.json`
 
 To validate the current memory-layer surface locally, run:
 
 ```bash
 python scripts/validate_memo.py
+python scripts/validate_memory_surfaces.py
 ```
+
+`validate_memo.py` checks the core memory objects, schemas, examples, and registry.
+`validate_memory_surfaces.py` checks the router-facing generated doctrine surfaces and the router semantic recall contract.
 
 ## Current status
 

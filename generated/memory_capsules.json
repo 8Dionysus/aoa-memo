@@ -1,0 +1,62 @@
+{
+  "capsule_version": 1,
+  "source_of_truth": "aoa-memo-doctrine-route-surfaces-v1",
+  "memo_surfaces": [
+    {
+      "id": "AOA-M-0001",
+      "name": "charter",
+      "summary": "Role, mission, and hard rules of aoa-memo as the explicit memory and recall layer.",
+      "one_line_intent": "Orient a reader to what aoa-memo is for, what it owns, and what it refuses to become.",
+      "use_when_short": "Use when deciding whether a proposed addition belongs in aoa-memo or in a neighboring AoA or ToS repository.",
+      "do_not_use_short": "Avoid when the need is execution logic, proof verdicts, routing logic, or runtime storage implementation.",
+      "inputs_short": "Needs a question about role, ownership, mission, or non-goals.",
+      "outputs_short": "Produces mission-level orientation, rule-level constraints, and success criteria for the memory layer.",
+      "core_contract_short": "Core contract: memory stays explicit, bounded, and distinct from proof, routing, role policy, and source-authored knowledge.",
+      "main_risk_short": "Main risk: charter language gets stretched into permission for aoa-memo to swallow neighboring layers.",
+      "validation_short": "Validate by checking the proposed work still keeps memory distinct from proof, routing, role policy, and infra.",
+      "source_path": "CHARTER.md"
+    },
+    {
+      "id": "AOA-M-0002",
+      "name": "memory-model",
+      "summary": "Conceptual model for functions, temperatures, scopes, trust posture, and KAG orientation.",
+      "one_line_intent": "Give aoa-memo a multi-axis model of memory so the layer can age, relate, and route without collapsing into vague long-context fog.",
+      "use_when_short": "Use when the task touches memory classes, temperatures, scopes, trust posture, or KAG readiness.",
+      "do_not_use_short": "Avoid when the task is purely repo ownership, routing implementation, or runtime storage plumbing.",
+      "inputs_short": "Needs a conceptual question about memory behavior or memory object interpretation.",
+      "outputs_short": "Produces stable vocabulary for memory functions, temperatures, scopes, trust posture, and recall modes.",
+      "core_contract_short": "Core contract: memory is temporal and provenance-aware, and temperature never stands in for truth or proof.",
+      "main_risk_short": "Main risk: collapsing confidence, authority, freshness, and salience into a single pseudo-score.",
+      "validation_short": "Validate by checking the proposed change preserves the four-axis model and keeps graph lifts downstream.",
+      "source_path": "docs/MEMORY_MODEL.md"
+    },
+    {
+      "id": "AOA-M-0003",
+      "name": "boundaries",
+      "summary": "Ownership map for what belongs in aoa-memo and what should stay in neighboring AoA or ToS layers.",
+      "one_line_intent": "Keep aoa-memo sharp by naming what it owns and what it must not quietly absorb.",
+      "use_when_short": "Use when classifying proposed content, deciding ownership, or spotting layer drift.",
+      "do_not_use_short": "Avoid when the problem is conceptual memory modeling rather than repository ownership.",
+      "inputs_short": "Needs a proposed object, surface, or question that may cross repositories.",
+      "outputs_short": "Produces ownership guidance, anti-pattern checks, and safe outward-link posture.",
+      "core_contract_short": "Core contract: aoa-memo owns explicit memory-layer meaning and points outward instead of replacing source repos.",
+      "main_risk_short": "Main risk: turning a memory registry into a hidden graph platform or policy engine.",
+      "validation_short": "Validate by checking the addition preserves source-of-truth boundaries and safe outward links.",
+      "source_path": "docs/BOUNDARIES.md"
+    },
+    {
+      "id": "AOA-M-0004",
+      "name": "roadmap",
+      "summary": "Milestones for turning aoa-memo from bootstrap doctrine into a routeable, provenance-aware memory layer.",
+      "one_line_intent": "Translate the memory doctrine into a staged build path that stays small, explicit, and integrable.",
+      "use_when_short": "Use when selecting the next PR slice or sequencing work across aoa-memo, aoa-routing, aoa-kag, and aoa-agents.",
+      "do_not_use_short": "Avoid when the need is a present-tense object definition rather than milestone planning.",
+      "inputs_short": "Needs a question about implementation order, missing surfaces, or integration stages.",
+      "outputs_short": "Produces milestone order, exit criteria, and cross-repo dependency hints.",
+      "core_contract_short": "Core contract: aoa-memo grows by doctrine, schemas, generated surfaces, and contracts before heavier runtime or graph work.",
+      "main_risk_short": "Main risk: skipping compact public surfaces and jumping too early into infra or graph theatrics.",
+      "validation_short": "Validate by checking the proposed work advances one named milestone without blurring the non-goals.",
+      "source_path": "ROADMAP.md"
+    }
+  ]
+}

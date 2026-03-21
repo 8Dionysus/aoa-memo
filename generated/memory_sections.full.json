@@ -1,0 +1,118 @@
+{
+  "sections_version": 1,
+  "source_of_truth": "aoa-memo-doctrine-route-surfaces-v1",
+  "memo_surfaces": [
+    {
+      "id": "AOA-M-0001",
+      "name": "charter",
+      "source_path": "CHARTER.md",
+      "sections": [
+        {
+          "section_id": "AOA-M-0001#mission",
+          "heading": "Mission",
+          "ordinal": 1,
+          "summary": "Defines aoa-memo as the explicit memory and recall layer.",
+          "body": "`aoa-memo` is the explicit memory and recall layer of the AoA ecosystem. Its job is to make memory objects, provenance threads, temporal posture, and recall surfaces explicit, reviewable, and bounded."
+        },
+        {
+          "section_id": "AOA-M-0001#core-rules",
+          "heading": "Core rules",
+          "ordinal": 2,
+          "summary": "Names the layer's rules about memory, truth, provenance, and downstream graph work.",
+          "body": "Memory is not proof. Events come before claims. Provenance should stay visible. Temperature is not truth. Trust is multi-axial. Graph lifts are downstream. Live runtime state, role rights, and routing stay outside the repo."
+        },
+        {
+          "section_id": "AOA-M-0001#owns-and-does-not-own",
+          "heading": "Owns and does not own",
+          "ordinal": 3,
+          "summary": "Draws a hard line between memory-layer meaning and neighboring responsibilities.",
+          "body": "`aoa-memo` owns memory classes, provenance threads, recall contracts, salience and temperature posture, and public reviewable memory surfaces. It must not absorb reusable techniques, execution workflows, proof doctrine, routing logic, role policy, or runtime infrastructure."
+        }
+      ]
+    },
+    {
+      "id": "AOA-M-0002",
+      "name": "memory-model",
+      "source_path": "docs/MEMORY_MODEL.md",
+      "sections": [
+        {
+          "section_id": "AOA-M-0002#four-axes",
+          "heading": "Four axes",
+          "ordinal": 1,
+          "summary": "States the model's four axes: function, temperature, scope, and trust posture.",
+          "body": "`aoa-memo` uses four axes: function for what kind of remembering is happening, temperature for activation and recallability, scope for where a memory may matter, and trust posture for how it should be interpreted."
+        },
+        {
+          "section_id": "AOA-M-0002#memory-functions",
+          "heading": "Memory functions",
+          "ordinal": 2,
+          "summary": "Distinguishes working, episodic, semantic, procedural-experience, associative, and audit memory.",
+          "body": "Working memory holds current state. Episodic memory records events. Semantic memory stores consolidated reusable statements. Procedural-experience memory remembers what worked or failed. Associative memory connects surfaces. Audit memory records lifecycle changes."
+        },
+        {
+          "section_id": "AOA-M-0002#temperature-and-kag",
+          "heading": "Temperature and KAG orientation",
+          "ordinal": 3,
+          "summary": "Defines temperature as recall posture and keeps KAG lifts downstream.",
+          "body": "Temperature describes recall posture rather than truth. Hot, warm, cool, cold, and frozen describe activation and stability. KAG orientation remains downstream: memory may expose chunk and graph faces, but `aoa-kag` owns normalization and substrate formation."
+        }
+      ]
+    },
+    {
+      "id": "AOA-M-0003",
+      "name": "boundaries",
+      "source_path": "docs/BOUNDARIES.md",
+      "sections": [
+        {
+          "section_id": "AOA-M-0003#source-of-truth-rule",
+          "heading": "Source-of-truth rule",
+          "ordinal": 1,
+          "summary": "States that aoa-memo is the source of truth only for explicit memory-layer meaning.",
+          "body": "`aoa-memo` is the source of truth for explicit memory-layer meaning. It is not the source of truth for authored knowledge, execution, proof, routing, agent roles, scenario composition, or runtime infrastructure."
+        },
+        {
+          "section_id": "AOA-M-0003#what-belongs-here",
+          "heading": "What belongs here",
+          "ordinal": 2,
+          "summary": "Lists in-bounds memory surfaces and objects.",
+          "body": "The repo should hold public reviewable memory objects and docs that clarify memory-layer meaning, including provenance-thread structure, validity windows, recall contracts, salience and temperature doctrine, generated registries and capsules, and validation surfaces."
+        },
+        {
+          "section_id": "AOA-M-0003#what-stays-outside",
+          "heading": "What stays outside",
+          "ordinal": 3,
+          "summary": "Maps neighboring repos to their rightful ownership zones.",
+          "body": "ToS owns source-authored texts and lineage structure. Techniques, skills, evals, routing, agents, playbooks, KAG substrate work, and abyss-stack runtime concerns all stay outside aoa-memo and remain the responsibility of their own source repositories."
+        }
+      ]
+    },
+    {
+      "id": "AOA-M-0004",
+      "name": "roadmap",
+      "source_path": "ROADMAP.md",
+      "sections": [
+        {
+          "section_id": "AOA-M-0004#direction-and-north-star",
+          "heading": "Direction and north star",
+          "ordinal": 1,
+          "summary": "Frames aoa-memo as a small, reviewable, provenance-aware, routeable memory layer.",
+          "body": "The direction is to keep `aoa-memo` explicit, provenance-aware, routeable, and KAG-ready without turning it into a runtime database, routing monolith, or graph platform. By v1.0 the layer should be clear, bounded, and integrable."
+        },
+        {
+          "section_id": "AOA-M-0004#milestones",
+          "heading": "Milestones",
+          "ordinal": 2,
+          "summary": "Names the doctrine, schema, generated-surface, provenance, temperature, integration, KAG, eval, and v1.0 phases.",
+          "body": "The milestone sequence starts with doctrine and schemas, then generated public surfaces, provenance and lifecycle, temperature and consolidation, agent and playbook integration, KAG and ToS bridges, evaluation guardrails, and finally the stable doctrine-and-surface boundary at v1.0."
+        },
+        {
+          "section_id": "AOA-M-0004#cross-repo-dependencies",
+          "heading": "Cross-repo dependencies",
+          "ordinal": 3,
+          "summary": "Shows what aoa-routing, aoa-agents, aoa-kag, aoa-evals, abyss-stack, and ToS need from memo.",
+          "body": "`aoa-routing` needs a future memo kind. `aoa-agents` needs explicit memory posture fields. `aoa-kag` needs graph-ready exports. `aoa-evals` needs bounded checks. `abyss-stack` needs to own live stores and jobs. ToS needs bridge contracts rather than duplication."
+        }
+      ]
+    }
+  ]
+}
