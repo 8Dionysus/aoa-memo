@@ -86,10 +86,12 @@ To validate the current memory-layer surface locally, run:
 ```bash
 python scripts/validate_memo.py
 python scripts/validate_memory_surfaces.py
+python scripts/validate_lifecycle_audit_examples.py
 ```
 
 `validate_memo.py` checks the core memory objects, schemas, examples, and registry.
 `validate_memory_surfaces.py` checks the router-facing generated doctrine surfaces and the router semantic recall contract.
+`validate_lifecycle_audit_examples.py` checks lifecycle, provenance-thread, and audit-event example integrity.
 
 ## Current status
 
