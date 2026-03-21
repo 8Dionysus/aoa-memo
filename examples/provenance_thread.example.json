@@ -1,0 +1,31 @@
+{
+  "id": "prov.bootstrap.aoa-memo.2026-03-20",
+  "title": "aoa-memo bootstrap foundation provenance thread",
+  "summary": "Traces the doctrine and schema bootstrap for the first explicit memory-layer baseline in aoa-memo.",
+  "status": "active",
+  "source_refs": [
+    "repo:aoa-memo/README.md",
+    "repo:Agents-of-Abyss/README.md",
+    "repo:aoa-routing/README.md",
+    "repo:aoa-kag/README.md",
+    "repo:Tree-of-Sophia/README.md"
+  ],
+  "memory_object_ids": [
+    "memo.ep.2026-03-20.bootstrap-foundation",
+    "memo.claim.2026-03-20.temperature-not-truth"
+  ],
+  "timeline": [
+    {
+      "at": "2026-03-20T18:20:00Z",
+      "action": "gathered current repository and federation boundaries",
+      "actor_ref": "human+ai",
+      "note": "Bootstrap analysis phase"
+    },
+    {
+      "at": "2026-03-20T18:35:00Z",
+      "action": "wrote first doctrine and schema baseline",
+      "actor_ref": "human+ai",
+      "object_id": "memo.ep.2026-03-20.bootstrap-foundation"
+    }
+  ]
+}

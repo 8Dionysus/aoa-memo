@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/schemas/recall_contract.schema.json",
+  "title": "aoa-memo recall contract",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "id",
+    "name",
+    "mode",
+    "allowed_scopes",
+    "inspect_surface",
+    "expand_surface"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "working",
+        "episodic",
+        "semantic",
+        "procedural",
+        "lineage",
+        "source_route"
+      ]
+    },
+    "allowed_scopes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "preferred_kinds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "anchor",
+          "state_capsule",
+          "episode",
+          "claim",
+          "decision",
+          "pattern",
+          "bridge",
+          "audit_event"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "temperature_order": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "hot",
+          "warm",
+          "cool",
+          "cold",
+          "frozen"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "inspect_surface": {
+      "type": "string",
+      "minLength": 1
+    },
+    "expand_surface": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_route_required": {
+      "type": "boolean"
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}
