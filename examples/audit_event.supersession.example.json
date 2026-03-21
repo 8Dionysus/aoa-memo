@@ -1,0 +1,70 @@
+{
+  "id": "memo.audit.2026-03-21.router-entrypoint-supersession",
+  "kind": "audit_event",
+  "title": "Superseded registry-only inspect entrypoint with dedicated memo catalog surface",
+  "summary": "The older inspect-entry claim was superseded once source-owned memo catalog surfaces became available.",
+  "scope": [
+    "repo:aoa-memo",
+    "project:AoA"
+  ],
+  "owner_refs": [
+    "repo:aoa-memo"
+  ],
+  "payload_ref": "docs/LIFECYCLE.md#supersession",
+  "tags": [
+    "audit",
+    "supersession",
+    "router"
+  ],
+  "time": {
+    "created_at": "2026-03-21T15:10:00Z",
+    "observed_at": "2026-03-21T15:08:00Z",
+    "valid_from": "2026-03-21T15:10:00Z",
+    "valid_to": null
+  },
+  "provenance": {
+    "source_refs": [
+      "repo:aoa-memo/generated/memory_catalog.min.json",
+      "repo:aoa-memo/generated/memory_capsules.json",
+      "repo:aoa-memo/generated/memory_sections.full.json"
+    ],
+    "episode_refs": [
+      "memo.claim.2026-03-21.memo-entrypoint-old",
+      "memo.claim.2026-03-21.memo-entrypoint-new"
+    ],
+    "provenance_thread_id": "prov.memo.router-entrypoint.2026-03-21"
+  },
+  "trust": {
+    "temperature": "cool",
+    "confidence": 0.94,
+    "authority": "repo-lifecycle-audit",
+    "freshness": 0.95,
+    "salience": 0.73
+  },
+  "lifecycle": {
+    "review_state": "confirmed",
+    "supersedes": [],
+    "superseded_by": null,
+    "retention_class": "audit-trace"
+  },
+  "access": {
+    "access_class": "public",
+    "read_scopes": [
+      "public"
+    ],
+    "write_scopes": [
+      "maintainer"
+    ],
+    "promotion_scopes": [
+      "maintainer",
+      "human-review"
+    ]
+  },
+  "bridges": {
+    "tos_refs": [],
+    "skill_refs": [],
+    "eval_refs": [],
+    "kag_lift_status": "none",
+    "route_capsule_ref": "generated/memory_catalog.min.json"
+  }
+}
