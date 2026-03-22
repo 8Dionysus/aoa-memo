@@ -18,6 +18,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install validator dependency
+        run: python -m pip install jsonschema
+
       - name: Run memo validators
         run: |
           python scripts/validate_memo.py
