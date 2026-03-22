@@ -19,6 +19,17 @@ It should make it possible to answer:
 - what can be recalled cheaply, and what requires deeper inspection?
 - how can downstream graph lifts happen without making the memory layer itself a graph engine?
 
+## Core vs derived memory
+
+The first-wave rule is:
+
+**authored/core memory stays in `aoa-memo`; derived memory stays downstream**
+
+`aoa-memo` should own the explicit and reviewable memory object.
+Chunk-facing views, graph-facing views, embedding indexes, and other retrieval-oriented derivatives may exist, but they remain downstream of the core object rather than replacing it.
+
+See [NARRATIVE_CORE_CONTRACT](NARRATIVE_CORE_CONTRACT.md) for the compact ownership split and required handoff fields.
+
 ## Why this model is layered
 
 The old split between short-term and long-term memory is too coarse for AoA.
@@ -343,6 +354,21 @@ Slower path for durable memory quality:
 
 This split lets the system stay responsive without letting the long-term layer become sludge.
 
+## Checkpoint route writeback
+
+The self-agent checkpoint route should write back into the current memory taxonomy without inventing a new mythic object family.
+
+Use the current object canon like this:
+
+- `approval_record` -> `decision`
+- `rollback_marker` -> explicit referenced artifact or bounded state marker
+- `health_check` -> `episode` or `audit_event`
+- `improvement_log` -> `provenance_thread`
+
+This keeps checkpoint history reviewable while preserving the current rule:
+
+**write the event once, derive downstream surfaces later**
+
 ## Recall modes
 
 The memory layer should support bounded recall modes rather than one giant generic retrieval call.
@@ -455,5 +481,11 @@ A useful way to think about the system is:
 - a repeated interpretation becomes a `claim` or `pattern`
 - a cross-link to concept and lineage becomes a `bridge`
 - a normalized associative lift becomes downstream `aoa-kag` substrate
+
+The same pattern can hold for self-agent checkpoint work:
+
+- an approval gate becomes a `decision`
+- a post-change health result becomes an `episode`
+- the full improvement log becomes a `provenance_thread`
 
 That keeps source, memory, and derived knowledge distinct while still allowing them to connect.

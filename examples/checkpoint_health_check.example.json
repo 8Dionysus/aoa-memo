@@ -1,0 +1,71 @@
+{
+  "id": "memo.ep.2026-03-21.self-agent-health-check",
+  "kind": "episode",
+  "title": "Post-change health check recorded for self-agent checkpoint rollout",
+  "summary": "Captures the post-change health result after a bounded self-agent checkpoint change completed and before the improvement log was frozen.",
+  "scope": [
+    "repo:aoa-playbooks",
+    "ecosystem:AoA"
+  ],
+  "owner_refs": [
+    "repo:aoa-memo"
+  ],
+  "payload_ref": "docs/MEMORY_MODEL.md#checkpoint-route-writeback",
+  "tags": [
+    "self-agent",
+    "health-check",
+    "checkpoint"
+  ],
+  "time": {
+    "created_at": "2026-03-21T17:35:00Z",
+    "observed_at": "2026-03-21T17:32:00Z",
+    "valid_from": "2026-03-21T17:35:00Z",
+    "valid_to": null
+  },
+  "provenance": {
+    "source_refs": [
+      "repo:aoa-playbooks/playbooks/self-agent-checkpoint-rollout/PLAYBOOK.md",
+      "repo:aoa-evals/bundles/aoa-bounded-change-quality/EVAL.md"
+    ],
+    "episode_refs": [],
+    "provenance_thread_id": "prov.self-agent-checkpoint.2026-03-21"
+  },
+  "trust": {
+    "temperature": "warm",
+    "confidence": 0.88,
+    "authority": "post-change review",
+    "freshness": 0.97,
+    "salience": 0.9
+  },
+  "lifecycle": {
+    "review_state": "proposed",
+    "supersedes": [],
+    "superseded_by": null,
+    "retention_class": "checkpoint"
+  },
+  "access": {
+    "access_class": "public",
+    "read_scopes": [
+      "public"
+    ],
+    "write_scopes": [
+      "maintainer"
+    ],
+    "promotion_scopes": [
+      "maintainer",
+      "human-review"
+    ]
+  },
+  "bridges": {
+    "tos_refs": [],
+    "skill_refs": [
+      "skill:aoa-change-protocol",
+      "skill:aoa-dry-run-first"
+    ],
+    "eval_refs": [
+      "eval:aoa-bounded-change-quality"
+    ],
+    "kag_lift_status": "none",
+    "route_capsule_ref": "generated/memo_registry.min.json"
+  }
+}

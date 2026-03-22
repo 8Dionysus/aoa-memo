@@ -1,0 +1,34 @@
+{
+  "contract_id": "aoa-memo.narrative-core.v1",
+  "core_owner": "aoa-memo",
+  "core_memory_surfaces": [
+    "anchor",
+    "state_capsule",
+    "episode",
+    "claim",
+    "decision",
+    "pattern",
+    "bridge",
+    "audit_event"
+  ],
+  "supporting_objects": [
+    "provenance_thread",
+    "recall_contract"
+  ],
+  "derived_memory_surfaces": [
+    "chunk_face",
+    "graph_face",
+    "kag_lift_candidate"
+  ],
+  "derived_owners": [
+    "aoa-kag",
+    "abyss-stack"
+  ],
+  "required_handoff_fields": [
+    "source_refs",
+    "provenance_thread_id",
+    "created_at",
+    "review_state",
+    "derivation_note"
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "id": "memo.decision.2026-03-21.self-agent-approval-record",
+  "kind": "decision",
+  "title": "Approval record for self-agent checkpoint rollout",
+  "summary": "Records explicit approval to proceed with a bounded self-agent checkpoint change after the source-of-truth and policy check were named.",
+  "scope": [
+    "repo:aoa-playbooks",
+    "ecosystem:AoA"
+  ],
+  "owner_refs": [
+    "repo:aoa-memo"
+  ],
+  "payload_ref": "docs/MEMORY_MODEL.md#checkpoint-route-writeback",
+  "tags": [
+    "self-agent",
+    "approval",
+    "checkpoint"
+  ],
+  "time": {
+    "created_at": "2026-03-21T17:10:00Z",
+    "observed_at": "2026-03-21T17:05:00Z",
+    "valid_from": "2026-03-21T17:10:00Z",
+    "valid_to": null
+  },
+  "provenance": {
+    "source_refs": [
+      "repo:aoa-agents/docs/SELF_AGENT_CHECKPOINT_STACK.md",
+      "repo:aoa-playbooks/playbooks/self-agent-checkpoint-rollout/PLAYBOOK.md"
+    ],
+    "episode_refs": [],
+    "provenance_thread_id": "prov.self-agent-checkpoint.2026-03-21"
+  },
+  "trust": {
+    "temperature": "warm",
+    "confidence": 0.92,
+    "authority": "human-reviewed checkpoint gate",
+    "freshness": 0.98,
+    "salience": 0.95
+  },
+  "lifecycle": {
+    "review_state": "confirmed",
+    "supersedes": [],
+    "superseded_by": null,
+    "retention_class": "checkpoint"
+  },
+  "access": {
+    "access_class": "public",
+    "read_scopes": [
+      "public"
+    ],
+    "write_scopes": [
+      "maintainer"
+    ],
+    "promotion_scopes": [
+      "maintainer",
+      "human-review"
+    ]
+  },
+  "bridges": {
+    "tos_refs": [],
+    "skill_refs": [
+      "skill:aoa-source-of-truth-check",
+      "skill:aoa-approval-gate-check"
+    ],
+    "eval_refs": [
+      "eval:aoa-approval-boundary-adherence"
+    ],
+    "kag_lift_status": "candidate",
+    "route_capsule_ref": "generated/memo_registry.min.json"
+  }
+}
