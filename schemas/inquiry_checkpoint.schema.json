@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/schemas/inquiry_checkpoint.schema.json",
+  "title": "aoa-memo inquiry checkpoint",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "checkpoint_id",
+    "created_at",
+    "objective",
+    "mode",
+    "core_question",
+    "evidence_pack_refs",
+    "contradiction_pack_refs",
+    "resolved_decisions",
+    "open_questions",
+    "next_tests",
+    "witness_refs",
+    "memory_delta_refs",
+    "canon_delta_refs",
+    "restart_count",
+    "owner_roles",
+    "requires_human_review"
+  ],
+  "properties": {
+    "checkpoint_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "objective": {
+      "type": "string",
+      "minLength": 1
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "philosophy",
+        "architecture",
+        "design",
+        "research",
+        "custom"
+      ]
+    },
+    "core_question": {
+      "type": "string",
+      "minLength": 1
+    },
+    "current_thesis": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "axis_summary": {
+      "type": "string"
+    },
+    "evidence_pack_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "contradiction_pack_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "resolved_decisions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "open_questions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "next_tests": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "witness_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "memory_delta_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "canon_delta_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "restart_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "owner_roles": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "confidence": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "requires_human_review": {
+      "type": "boolean"
+    }
+  }
+}

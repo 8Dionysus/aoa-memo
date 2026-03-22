@@ -13,10 +13,12 @@ If you are new to this repository, use this path:
 
 1. Read [CHARTER](CHARTER.md) for the role and boundaries of the memory layer.
 2. Read [docs/MEMORY_MODEL](docs/MEMORY_MODEL.md) for the conceptual model.
-3. Read [docs/NARRATIVE_CORE_CONTRACT](docs/NARRATIVE_CORE_CONTRACT.md) for the authored/core-memory versus derived-memory split.
-4. Read [docs/WITNESS_TRACE_CONTRACT](docs/WITNESS_TRACE_CONTRACT.md) for the current witness trace export contract.
-5. Read [docs/BOUNDARIES](docs/BOUNDARIES.md) for ownership rules.
-6. Read [ROADMAP](ROADMAP.md) for the current direction.
+3. Read [docs/MEMORY_TEMPERATURES](docs/MEMORY_TEMPERATURES.md) for the operational temperature and decay posture.
+4. Read [docs/NARRATIVE_CORE_CONTRACT](docs/NARRATIVE_CORE_CONTRACT.md) for the authored/core-memory versus derived-memory split.
+5. Read [docs/WITNESS_TRACE_CONTRACT](docs/WITNESS_TRACE_CONTRACT.md) for the current witness trace export contract.
+6. Read [docs/WRITEBACK_TEMPERATURE_POLICY](docs/WRITEBACK_TEMPERATURE_POLICY.md) for memo-surviving versus bridge-ready writeback posture.
+7. Read [docs/BOUNDARIES](docs/BOUNDARIES.md) for ownership rules.
+8. Read [ROADMAP](ROADMAP.md) for the current direction.
 
 For the shortest next route by intent:
 - if you need the ecosystem center and layer map, go to [`Agents-of-Abyss`](https://github.com/8Dionysus/Agents-of-Abyss)
@@ -96,6 +98,7 @@ python scripts/validate_lifecycle_audit_examples.py
 `validate_lifecycle_audit_examples.py` checks lifecycle, provenance-thread, and audit-event example integrity.
 
 The witness trace contract is validated there as a trace export surface, not as a new memory-object kind.
+The inquiry checkpoint contract is validated there as a portable long-horizon checkpoint pack, not as a new memory-object kind.
 
 ## Current status
 

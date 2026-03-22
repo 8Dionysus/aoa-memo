@@ -184,6 +184,32 @@
               "minLength": 1
             }
           ]
+        },
+        "salience_components": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "novelty": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "impact": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "recurrence": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "risk": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          }
         }
       }
     },
@@ -219,7 +245,28 @@
             "null"
           ]
         },
+        "review_after": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
         "retention_class": {
+          "type": "string"
+        },
+        "promotion_state": {
+          "type": "string",
+          "enum": [
+            "none",
+            "candidate",
+            "promoted",
+            "demoted",
+            "retired",
+            "rescued"
+          ]
+        },
+        "decay_policy_ref": {
           "type": "string"
         }
       }
@@ -290,6 +337,81 @@
         },
         "route_capsule_ref": {
           "type": "string"
+        }
+      }
+    },
+    "decay": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ttl_days": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "half_life_days": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "demotion_target": {
+          "type": "string",
+          "enum": [
+            "hot",
+            "warm",
+            "cool",
+            "cold",
+            "retired"
+          ]
+        },
+        "retire_after": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "manual_veto": {
+          "type": "boolean"
+        }
+      }
+    },
+    "promotion": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "trigger": {
+          "type": "string"
+        },
+        "promoted_from": {
+          "type": "string",
+          "enum": [
+            "hot",
+            "warm",
+            "cool",
+            "cold"
+          ]
+        },
+        "promoted_to": {
+          "type": "string",
+          "enum": [
+            "warm",
+            "cool",
+            "cold",
+            "frozen"
+          ]
+        },
+        "promoted_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "review_after": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
         }
       }
     }

@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/schemas/decay_policy.schema.json",
+  "title": "aoa-memo decay policy",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "policy_id",
+    "status",
+    "applies_to_temperatures",
+    "default_review_after_days",
+    "manual_veto_allowed"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "active",
+        "deprecated"
+      ]
+    },
+    "applies_to_temperatures": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "hot",
+          "warm",
+          "cool",
+          "cold",
+          "frozen"
+        ]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "core_overlay": {
+      "type": "boolean"
+    },
+    "default_review_after_days": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "ttl_days": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "half_life_days": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "demotion_target": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "hot",
+        "warm",
+        "cool",
+        "cold",
+        "retired",
+        null
+      ]
+    },
+    "retire_after_days": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "manual_veto_allowed": {
+      "type": "boolean"
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

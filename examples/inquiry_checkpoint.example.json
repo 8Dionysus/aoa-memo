@@ -1,0 +1,46 @@
+{
+  "checkpoint_id": "inquiry-checkpoint-0001",
+  "created_at": "2026-03-22T12:30:00Z",
+  "objective": "Preserve a long-horizon architecture inquiry across pauses without losing the current axis.",
+  "mode": "architecture",
+  "core_question": "How should model-tier orchestration, memory writeback, and restartable inquiry remain bounded across AoA layers?",
+  "current_thesis": "Keep orchestration role-based, keep memory temperature explicit, and relaunch from checkpoint packs instead of raw chat continuity.",
+  "axis_summary": "Role-based orchestration, bounded memo writeback, and restartable checkpoint packs remain the active spine.",
+  "evidence_pack_refs": [
+    "docs/MEMORY_MODEL.md",
+    "docs/MEMORY_TEMPERATURES.md"
+  ],
+  "contradiction_pack_refs": [
+    "question:how far should routing participate in model-tier selection",
+    "question:when should a checkpoint become durable memo writeback"
+  ],
+  "resolved_decisions": [
+    "Keep core as a constitutional overlay rather than a new public temperature enum.",
+    "Keep model-tier roles separate from human role archetypes."
+  ],
+  "open_questions": [
+    "Which tier hints belong in aoa-routing without turning it into a second source of doctrine?",
+    "What minimum fields are required before a checkpoint pack can survive as durable writeback?"
+  ],
+  "next_tests": [
+    "Validate that the next relaunch can recover the active axis from the checkpoint alone.",
+    "Validate that canon delta and memory delta remain distinct in the next pass."
+  ],
+  "witness_refs": [
+    "docs/WITNESS_TRACE_CONTRACT.md"
+  ],
+  "memory_delta_refs": [
+    "memory:decision.temperature-policy",
+    "memory:pattern.model-tier-handoff"
+  ],
+  "canon_delta_refs": [
+    "contract:restartable-inquiry-loop"
+  ],
+  "restart_count": 2,
+  "owner_roles": [
+    "architect",
+    "memory-keeper"
+  ],
+  "confidence": 0.72,
+  "requires_human_review": true
+}

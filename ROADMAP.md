@@ -137,6 +137,9 @@ This roadmap does **not** aim to turn `aoa-memo` into:
 **Deliverables:**
 
 - doctrine for `hot`, `warm`, `cool`, `cold`, `frozen`
+- `docs/MEMORY_TEMPERATURES.md`
+- `docs/WRITEBACK_TEMPERATURE_POLICY.md`
+- `schemas/decay_policy.schema.json`
 - distinction docs for `confidence`, `authority`, `freshness`, `salience`
 - online capture vs offline consolidation model
 - examples of promotion and demotion flows
@@ -154,6 +157,8 @@ This roadmap does **not** aim to turn `aoa-memo` into:
 **Deliverables:**
 
 - cross-repo contract notes for `aoa-agents` memory posture
+- `schemas/inquiry_checkpoint.schema.json`
+- `examples/inquiry_checkpoint.example.json`
 - suggested fields for read, write, promotion, and freeze rights
 - playbook-facing guidance for required memory scopes and recall modes
 

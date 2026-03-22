@@ -120,6 +120,11 @@ def validate_example(validator: Draft202012Validator, example_name: str) -> None
     print(f"[OK]   {example_name}")
 
 
+def validate_support_schema(schema_name: str) -> None:
+    validator_for(schema_name)
+    print(f"[OK]   {schema_name}")
+
+
 def validate_registry() -> None:
     data = load_json(GENERATED / "memo_registry.min.json")
     required = [
@@ -210,10 +215,13 @@ def validate_witness_trace_contract() -> None:
 
 
 def main() -> int:
+    validate_support_schema("decay_policy.schema.json")
+    validate_support_schema("inquiry_checkpoint.schema.json")
     validate_example(validator_for("memory_object.schema.json"), "episode.example.json")
     validate_example(validator_for("memory_object.schema.json"), "claim.example.json")
     validate_example(validator_for("memory_object.schema.json"), "checkpoint_approval_record.example.json")
     validate_example(validator_for("memory_object.schema.json"), "checkpoint_health_check.example.json")
+    validate_example(validator_for("inquiry_checkpoint.schema.json"), "inquiry_checkpoint.example.json")
     validate_example(validator_for("provenance_thread.schema.json"), "provenance_thread.example.json")
     validate_example(validator_for("provenance_thread.schema.json"), "checkpoint_improvement_thread.example.json")
     validate_example(validator_for("recall_contract.schema.json"), "recall_contract.semantic.json")
