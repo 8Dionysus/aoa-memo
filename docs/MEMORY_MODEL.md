@@ -369,6 +369,22 @@ This keeps checkpoint history reviewable while preserving the current rule:
 
 **write the event once, derive downstream surfaces later**
 
+## Witness trace export
+
+The witness/compost pilot adds a public witness trace contract.
+
+That contract is not a new memory-object kind.
+It is the bounded route artifact that may later write selected pieces into the current object canon.
+
+Use the current canon like this:
+
+- whole witnessed run -> `episode`
+- explicit gate or approval outcome -> `decision` when present
+- route history across the run -> `provenance_thread`
+- failure or lifecycle transition -> `audit_event`
+
+See [WITNESS_TRACE_CONTRACT](WITNESS_TRACE_CONTRACT.md) for the compact trace-export contract and required summary posture.
+
 ## Recall modes
 
 The memory layer should support bounded recall modes rather than one giant generic retrieval call.

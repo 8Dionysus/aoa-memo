@@ -1,0 +1,59 @@
+{
+  "trace_id": "WIT-2026-03-22-0001",
+  "run_ref": "pilot-run-witness-to-compost-001",
+  "goal": "Capture a reviewable witness for a nontrivial run and distill it into a compost note without severing provenance.",
+  "status": "succeeded",
+  "started_at": "2026-03-22T10:00:00Z",
+  "finished_at": "2026-03-22T10:12:00Z",
+  "policy_flags": [
+    "redaction_required",
+    "public_safe_trace"
+  ],
+  "steps": [
+    {
+      "index": 0,
+      "kind": "observe",
+      "intent": "Bound the run and confirm that a witness artifact is required.",
+      "observation": "The run crosses memory and review boundaries, so a witness trace is in scope."
+    },
+    {
+      "index": 1,
+      "kind": "tool",
+      "intent": "Inspect the source surfaces needed for the bounded run.",
+      "tool_name": "shell_command",
+      "tool_input_redacted": true,
+      "observation": "The required docs and registry surfaces were inspected without exposing sensitive content."
+    },
+    {
+      "index": 2,
+      "kind": "write",
+      "intent": "Record the externally visible effect of the bounded route.",
+      "state_delta": "Produced witness_trace_json and witness_summary_md for later memo writeback and compost distillation.",
+      "review_flag": false
+    },
+    {
+      "index": 3,
+      "kind": "decide",
+      "intent": "Stop promotion at note level unless provenance and limits remain explicit.",
+      "observation": "The route is ready for a compost note and a principle candidate only under explicit review."
+    }
+  ],
+  "summary_output": {
+    "format": "markdown",
+    "summary": "The run bounded a witness-producing route, preserved tool visibility and one explicit state delta, and ended with a public-safe summary suitable for memo writeback and compost note creation.",
+    "human_checks": [
+      "Inspect whether any external effect lacked a state_delta note.",
+      "Confirm the compost promotion stops at note level if provenance becomes unclear."
+    ]
+  },
+  "source_refs": [
+    {
+      "kind": "playbook",
+      "ref": "repo:aoa-playbooks/playbooks/witness-to-compost-pilot/PLAYBOOK.md"
+    },
+    {
+      "kind": "tos",
+      "ref": "repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md"
+    }
+  ]
+}

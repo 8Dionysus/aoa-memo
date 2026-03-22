@@ -14,8 +14,9 @@ If you are new to this repository, use this path:
 1. Read [CHARTER](CHARTER.md) for the role and boundaries of the memory layer.
 2. Read [docs/MEMORY_MODEL](docs/MEMORY_MODEL.md) for the conceptual model.
 3. Read [docs/NARRATIVE_CORE_CONTRACT](docs/NARRATIVE_CORE_CONTRACT.md) for the authored/core-memory versus derived-memory split.
-4. Read [docs/BOUNDARIES](docs/BOUNDARIES.md) for ownership rules.
-5. Read [ROADMAP](ROADMAP.md) for the current direction.
+4. Read [docs/WITNESS_TRACE_CONTRACT](docs/WITNESS_TRACE_CONTRACT.md) for the current witness trace export contract.
+5. Read [docs/BOUNDARIES](docs/BOUNDARIES.md) for ownership rules.
+6. Read [ROADMAP](ROADMAP.md) for the current direction.
 
 For the shortest next route by intent:
 - if you need the ecosystem center and layer map, go to [`Agents-of-Abyss`](https://github.com/8Dionysus/Agents-of-Abyss)
@@ -94,6 +95,8 @@ python scripts/validate_lifecycle_audit_examples.py
 `validate_memory_surfaces.py` checks the router-facing generated doctrine surfaces and the router semantic recall contract.
 `validate_lifecycle_audit_examples.py` checks lifecycle, provenance-thread, and audit-event example integrity.
 
+The witness trace contract is validated there as a trace export surface, not as a new memory-object kind.
+
 ## Current status
 
 `aoa-memo` is in bootstrap.
@@ -103,6 +106,7 @@ The goal of this first public baseline is to define the role, boundaries, and fi
 
 - memory should stay explicit and reviewable
 - authored/core memory should stay distinct from derived retrieval substrate
+- trace exports should stay distinct from memory-object taxonomy
 - recall should preserve provenance where possible
 - temporal and salience surfaces should stay bounded
 - memory must not silently replace proof
