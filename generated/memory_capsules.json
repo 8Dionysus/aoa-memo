@@ -57,6 +57,20 @@
       "main_risk_short": "Main risk: skipping compact public surfaces and jumping too early into infra or graph theatrics.",
       "validation_short": "Validate by checking the proposed work advances one named milestone without blurring the non-goals.",
       "source_path": "ROADMAP.md"
+    },
+    {
+      "id": "AOA-M-0005",
+      "name": "narrative-core-contract",
+      "summary": "Contract for keeping authored/core memory distinct from derived memory surfaces and downstream substrate work.",
+      "one_line_intent": "Keep authored/core memory explicit while allowing derived recall, lift, and substrate work to stay downstream.",
+      "use_when_short": "Use when deciding whether a memory-facing surface belongs in authored/core memo or in derived recall, KAG, or runtime layers.",
+      "do_not_use_short": "Avoid when the task is purely about roadmap sequencing or repo ownership without touching authored-versus-derived memory boundaries.",
+      "inputs_short": "Needs a question about core memory scope, derived recall work, or handoff boundaries into downstream systems.",
+      "outputs_short": "Produces a clear authored/core versus derived split, supporting-structure posture, and handoff rules for downstream consumers.",
+      "core_contract_short": "Core contract: write the memory event once, keep authored/core surfaces inspectable, and derive downstream memory artifacts later.",
+      "main_risk_short": "Main risk: letting derived memory or graph-ready substrate quietly replace reviewable authored/core memory.",
+      "validation_short": "Validate by checking the change preserves source refs, provenance posture, temporal posture, and bounded derivation language.",
+      "source_path": "docs/NARRATIVE_CORE_CONTRACT.md"
     }
   ]
 }

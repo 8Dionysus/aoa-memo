@@ -133,6 +133,39 @@
         "integration",
         "open-questions"
       ]
+    },
+    {
+      "id": "AOA-M-0005",
+      "name": "narrative-core-contract",
+      "surface_kind": "doctrine",
+      "summary": "Contract for keeping authored/core memory distinct from derived memory surfaces and downstream substrate work.",
+      "primary_focus": "core-vs-derived",
+      "recall_modes": [
+        "source_route",
+        "semantic",
+        "lineage"
+      ],
+      "status": "confirmed",
+      "temperature": "cool",
+      "source_path": "docs/NARRATIVE_CORE_CONTRACT.md",
+      "inspect_surface": "generated/memory_capsules.json",
+      "expand_surface": "generated/memory_sections.full.json",
+      "related_surface_ids": [
+        "AOA-M-0001",
+        "AOA-M-0002",
+        "AOA-M-0003"
+      ],
+      "strongest_next_sources": [
+        "repo:aoa-kag",
+        "repo:abyss-stack",
+        "repo:Tree-of-Sophia"
+      ],
+      "focus_tags": [
+        "authored-core",
+        "derived-memory",
+        "handoff-rules",
+        "anti-goals"
+      ]
     }
   ]
 }
