@@ -13,8 +13,9 @@ If you are new to this repository, use this path:
 
 1. Read [CHARTER](CHARTER.md) for the role and boundaries of the memory layer.
 2. Read [docs/MEMORY_MODEL](docs/MEMORY_MODEL.md) for the conceptual model.
-3. Read [docs/BOUNDARIES](docs/BOUNDARIES.md) for ownership rules.
-4. Read [ROADMAP](ROADMAP.md) for the current direction.
+3. Read [docs/NARRATIVE_CORE_CONTRACT](docs/NARRATIVE_CORE_CONTRACT.md) for the authored/core-memory versus derived-memory split.
+4. Read [docs/BOUNDARIES](docs/BOUNDARIES.md) for ownership rules.
+5. Read [ROADMAP](ROADMAP.md) for the current direction.
 
 For the shortest next route by intent:
 - if you need the ecosystem center and layer map, go to [`Agents-of-Abyss`](https://github.com/8Dionysus/Agents-of-Abyss)
@@ -101,6 +102,7 @@ The goal of this first public baseline is to define the role, boundaries, and fi
 ## Principles
 
 - memory should stay explicit and reviewable
+- authored/core memory should stay distinct from derived retrieval substrate
 - recall should preserve provenance where possible
 - temporal and salience surfaces should stay bounded
 - memory must not silently replace proof

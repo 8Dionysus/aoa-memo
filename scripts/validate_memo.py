@@ -148,12 +148,42 @@ def validate_registry() -> None:
     print("[OK]   generated/memo_registry.min.json")
 
 
+def validate_core_memory_contract() -> None:
+    validator = validator_for("core-memory-contract.schema.json")
+    data = load_json(EXAMPLES / "core_memory_contract.example.json")
+    registry = load_json(GENERATED / "memo_registry.min.json")
+
+    errors = [
+        f"{'.'.join(str(part) for part in err.absolute_path) or '<root>'}: {err.message}"
+        for err in sorted(validator.iter_errors(data), key=lambda err: list(err.absolute_path))
+    ]
+
+    expected_core = registry.get("memory_object_kinds", [])
+    expected_supporting = registry.get("supporting_objects", [])
+
+    if sorted(data.get("core_memory_surfaces", [])) != sorted(expected_core):
+        errors.append("core_memory_surfaces does not match generated/memo_registry.min.json memory_object_kinds")
+    if sorted(data.get("supporting_objects", [])) != sorted(expected_supporting):
+        errors.append("supporting_objects does not match generated/memo_registry.min.json supporting_objects")
+
+    if errors:
+        print("[FAIL] core_memory_contract.example.json")
+        for err in errors:
+            print(f"  - {err}")
+        raise SystemExit(1)
+    print("[OK]   core_memory_contract.example.json")
+
+
 def main() -> int:
     validate_example(validator_for("memory_object.schema.json"), "episode.example.json")
     validate_example(validator_for("memory_object.schema.json"), "claim.example.json")
+    validate_example(validator_for("memory_object.schema.json"), "checkpoint_approval_record.example.json")
+    validate_example(validator_for("memory_object.schema.json"), "checkpoint_health_check.example.json")
     validate_example(validator_for("provenance_thread.schema.json"), "provenance_thread.example.json")
+    validate_example(validator_for("provenance_thread.schema.json"), "checkpoint_improvement_thread.example.json")
     validate_example(validator_for("recall_contract.schema.json"), "recall_contract.semantic.json")
     validate_registry()
+    validate_core_memory_contract()
     print("\nValidation completed successfully.")
     return 0
 

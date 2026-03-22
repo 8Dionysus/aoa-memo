@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/schemas/core-memory-contract.schema.json",
+  "title": "aoa-memo core memory contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_id",
+    "core_owner",
+    "core_memory_surfaces",
+    "supporting_objects",
+    "derived_memory_surfaces",
+    "derived_owners",
+    "required_handoff_fields"
+  ],
+  "properties": {
+    "contract_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "core_owner": {
+      "type": "string",
+      "const": "aoa-memo"
+    },
+    "core_memory_surfaces": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "anchor",
+          "state_capsule",
+          "episode",
+          "claim",
+          "decision",
+          "pattern",
+          "bridge",
+          "audit_event"
+        ]
+      }
+    },
+    "supporting_objects": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "provenance_thread",
+          "recall_contract"
+        ]
+      }
+    },
+    "derived_memory_surfaces": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "chunk_face",
+          "graph_face",
+          "embedding_index",
+          "retrieval_cache",
+          "kag_lift_candidate",
+          "framework_adapter"
+        ]
+      }
+    },
+    "derived_owners": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "aoa-kag",
+          "abyss-stack"
+        ]
+      }
+    },
+    "required_handoff_fields": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "source_refs",
+          "provenance_thread_id",
+          "created_at",
+          "review_state",
+          "derivation_note"
+        ]
+      }
+    }
+  }
+}

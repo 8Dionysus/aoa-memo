@@ -104,6 +104,19 @@ It should not become the normalized graph substrate.
 
 That downstream work still belongs in `aoa-kag` and related systems.
 
+## Improvement logs and checkpoint routes
+
+A provenance thread is also the right current home for a bounded self-agent improvement log.
+
+In that route, the thread can tie together:
+
+- the approval record as a `decision`
+- the rollback marker as a referenced artifact
+- the post-change health result as an `episode` or `audit_event`
+- the time-ordered improvement notes that tell the next reviewer what changed and why
+
+That keeps the improvement log as a backward-walk chain instead of turning it into a new hidden memory subsystem.
+
 ## Thread status
 
 Recommended statuses are:
