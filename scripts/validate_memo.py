@@ -174,6 +174,41 @@ def validate_core_memory_contract() -> None:
     print("[OK]   core_memory_contract.example.json")
 
 
+def validate_witness_trace_contract() -> None:
+    validator = validator_for("witness-trace.schema.json")
+    data = load_json(EXAMPLES / "witness_trace.example.json")
+    registry = load_json(GENERATED / "memo_registry.min.json")
+
+    errors = [
+        f"{'.'.join(str(part) for part in err.absolute_path) or '<root>'}: {err.message}"
+        for err in sorted(validator.iter_errors(data), key=lambda err: list(err.absolute_path))
+    ]
+
+    if "witness_trace" in registry.get("memory_object_kinds", []):
+        errors.append("witness_trace must not appear in generated/memo_registry.min.json memory_object_kinds")
+    if "witness_trace" in registry.get("supporting_objects", []):
+        errors.append("witness_trace must not appear in generated/memo_registry.min.json supporting_objects")
+    if "schemas/witness-trace.schema.json" not in registry.get("schemas", []):
+        errors.append("generated/memo_registry.min.json must list schemas/witness-trace.schema.json")
+    if "docs/WITNESS_TRACE_CONTRACT.md" not in registry.get("core_docs", []):
+        errors.append("generated/memo_registry.min.json must list docs/WITNESS_TRACE_CONTRACT.md")
+
+    if not any(step.get("kind") == "tool" for step in data.get("steps", [])):
+        errors.append("witness_trace.example.json must include at least one tool-visible step")
+    if not any("state_delta" in step for step in data.get("steps", [])):
+        errors.append("witness_trace.example.json must include at least one state_delta example")
+    summary_output = data.get("summary_output", {})
+    if summary_output.get("format") != "markdown":
+        errors.append("witness_trace.example.json summary_output.format must stay 'markdown'")
+
+    if errors:
+        print("[FAIL] witness_trace.example.json")
+        for err in errors:
+            print(f"  - {err}")
+        raise SystemExit(1)
+    print("[OK]   witness_trace.example.json")
+
+
 def main() -> int:
     validate_example(validator_for("memory_object.schema.json"), "episode.example.json")
     validate_example(validator_for("memory_object.schema.json"), "claim.example.json")
@@ -184,6 +219,7 @@ def main() -> int:
     validate_example(validator_for("recall_contract.schema.json"), "recall_contract.semantic.json")
     validate_registry()
     validate_core_memory_contract()
+    validate_witness_trace_contract()
     print("\nValidation completed successfully.")
     return 0
 
