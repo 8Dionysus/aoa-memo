@@ -113,6 +113,48 @@
           "body": "`aoa-routing` needs a future memo kind. `aoa-agents` needs explicit memory posture fields. `aoa-kag` needs graph-ready exports. `aoa-evals` needs bounded checks. `abyss-stack` needs to own live stores and jobs. ToS needs bridge contracts rather than duplication."
         }
       ]
+    },
+    {
+      "id": "AOA-M-0005",
+      "name": "narrative-core-contract",
+      "source_path": "docs/NARRATIVE_CORE_CONTRACT.md",
+      "sections": [
+        {
+          "section_id": "AOA-M-0005#core-rule",
+          "heading": "Core rule",
+          "ordinal": 1,
+          "summary": "States that core memory is written once and downstream surfaces are derived later.",
+          "body": "Write the memory event once. Derive downstream surfaces later. `aoa-memo` owns explicit, reviewable memory surfaces and should not become a hidden graph platform, embedding empire, or substitute for Tree of Sophia."
+        },
+        {
+          "section_id": "AOA-M-0005#core-memory-surfaces",
+          "heading": "Core memory surfaces",
+          "ordinal": 2,
+          "summary": "Keeps authored/core memory small, readable, and aligned with the shipped memory object taxonomy.",
+          "body": "The authored/core layer should stay small and reviewable. At the current baseline it follows the shipped `memory_object.schema.json` taxonomy and includes anchor, state_capsule, episode, claim, decision, pattern, bridge, and audit_event as direct inspectable surfaces."
+        },
+        {
+          "section_id": "AOA-M-0005#derived-memory-surfaces",
+          "heading": "Derived memory surfaces",
+          "ordinal": 3,
+          "summary": "Allows retrieval-oriented and graph-facing derivatives while keeping them downstream of authored/core memory.",
+          "body": "Derived memory may exist for retrieval, lift preparation, and downstream consumers, including chunk-oriented views, graph-facing relation candidates, embedding indexes, retrieval caches, KAG lift candidates, and framework adapters. These surfaces may accelerate recall, but they do not become the source of truth for memory meaning."
+        },
+        {
+          "section_id": "AOA-M-0005#ownership-split",
+          "heading": "Ownership split",
+          "ordinal": 4,
+          "summary": "Assigns explicit responsibility across aoa-memo, aoa-kag, abyss-stack, and Tree of Sophia.",
+          "body": "`aoa-memo` owns explicit memory objects and provenance posture. `aoa-kag` owns normalized derived substrate and graph-ready projections. `abyss-stack` owns runtime stores, jobs, and storage topology. `Tree-of-Sophia` owns source-authored texts, concepts, and lineage architecture."
+        },
+        {
+          "section_id": "AOA-M-0005#required-handoff-rules",
+          "heading": "Required handoff rules",
+          "ordinal": 5,
+          "summary": "Requires source refs, provenance linkage, temporal posture, review state, and bounded derivation language in downstream handoffs.",
+          "body": "Any handoff from core memory into derived memory should preserve source refs, provenance thread linkage where available, temporal posture, review state, and a bounded statement of what was derived. Return paths from derived memory back into AoA should point toward stronger authored surfaces instead of presenting the derived surface as final truth."
+        }
+      ]
     }
   ]
 }

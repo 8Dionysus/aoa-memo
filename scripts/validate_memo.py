@@ -30,6 +30,8 @@ RFC3339_DATETIME = re.compile(
     r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$"
 )
 MARKDOWN_HEADING = re.compile(r"^(#{1,6})\s+(.*\S)\s*$")
+SYMBOLIC_REF = re.compile(r"^[A-Za-z][A-Za-z0-9_-]*:")
+WINDOWS_ABSOLUTE_PATH = re.compile(r"^[A-Za-z]:[\\\\/]")
 
 
 def load_json(path: Path) -> dict:
@@ -80,6 +82,8 @@ def local_ref_error(ref_value: object, label: str) -> str | None:
         return None
     if ref_value.startswith(("http://", "https://", "repo:")):
         return None
+    if SYMBOLIC_REF.match(ref_value) and not WINDOWS_ABSOLUTE_PATH.match(ref_value):
+        return None
 
     path_text, _, anchor = ref_value.partition("#")
     target = ROOT / path_text
@@ -110,6 +114,18 @@ def validate_example(validator: Draft202012Validator, example_name: str) -> None
         ("inspect_surface", data.get("inspect_surface")),
         ("expand_surface", data.get("expand_surface")),
     ]
+    for list_name in (
+        "evidence_pack_refs",
+        "contradiction_pack_refs",
+        "witness_refs",
+        "memory_delta_refs",
+        "canon_delta_refs",
+    ):
+        values = data.get(list_name)
+        if not isinstance(values, list):
+            continue
+        for index, value in enumerate(values):
+            ref_checks.append((f"{list_name}[{index}]", value))
     errors.extend(filter(None, (local_ref_error(value, label) for label, value in ref_checks)))
 
     if errors:
