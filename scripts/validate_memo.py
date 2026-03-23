@@ -230,9 +230,95 @@ def validate_witness_trace_contract() -> None:
     print("[OK]   witness_trace.example.json")
 
 
+def validate_checkpoint_to_memory_contract() -> None:
+    validator = validator_for("checkpoint-to-memory-contract.schema.json")
+    data = load_json(EXAMPLES / "checkpoint_to_memory_contract.example.json")
+    registry = load_json(GENERATED / "memo_registry.min.json")
+
+    errors = [
+        f"{'.'.join(str(part) for part in err.absolute_path) or '<root>'}: {err.message}"
+        for err in sorted(validator.iter_errors(data), key=lambda err: list(err.absolute_path))
+    ]
+
+    ref_checks = [("source_seed_ref", data.get("source_seed_ref"))]
+    checkpoint_artifact = data.get("checkpoint_artifact", {})
+    if isinstance(checkpoint_artifact, dict):
+        ref_checks.append(("checkpoint_artifact.schema_ref", checkpoint_artifact.get("schema_ref")))
+    runtime_boundary = data.get("runtime_boundary", {})
+    if isinstance(runtime_boundary, dict):
+        for index, value in enumerate(runtime_boundary.get("review_boundary_refs", [])):
+            ref_checks.append((f"runtime_boundary.review_boundary_refs[{index}]", value))
+    for index, rule in enumerate(data.get("mapping_rules", [])):
+        if not isinstance(rule, dict):
+            continue
+        for ref_index, value in enumerate(rule.get("runtime_refs", [])):
+            ref_checks.append((f"mapping_rules[{index}].runtime_refs[{ref_index}]", value))
+    errors.extend(filter(None, (local_ref_error(value, label) for label, value in ref_checks)))
+
+    if data.get("contract_type") != "checkpoint_to_memory_contract":
+        errors.append("checkpoint_to_memory_contract.example.json contract_type must stay 'checkpoint_to_memory_contract'")
+    if checkpoint_artifact.get("artifact_name") != "inquiry_checkpoint":
+        errors.append("checkpoint_to_memory_contract.example.json must keep inquiry_checkpoint as the checkpoint artifact")
+    if runtime_boundary.get("scratchpad_posture") != "runtime_local_only":
+        errors.append("runtime scratchpad posture must stay runtime_local_only")
+    if runtime_boundary.get("checkpoint_export_kind") != "state_capsule":
+        errors.append("checkpoint export kind must stay state_capsule")
+    if runtime_boundary.get("distillation_review_posture") != "review_required":
+        errors.append("distillation review posture must stay review_required")
+
+    expected_pairs = {
+        ("checkpoint_export", "state_capsule"),
+        ("approval_record", "decision"),
+        ("transition_record", "decision"),
+        ("execution_trace", "episode"),
+        ("review_trace", "audit_event"),
+        ("distillation_claim_candidate", "claim"),
+        ("distillation_pattern_candidate", "pattern"),
+        ("distillation_bridge_candidate", "bridge"),
+    }
+    seen_pairs = {
+        (rule.get("runtime_surface"), rule.get("target_kind"))
+        for rule in data.get("mapping_rules", [])
+        if isinstance(rule, dict)
+    }
+    missing_pairs = sorted(expected_pairs - seen_pairs)
+    if missing_pairs:
+        errors.append(
+            "checkpoint_to_memory_contract.example.json is missing required runtime-to-memo mappings: "
+            + ", ".join(f"{surface}->{kind}" for surface, kind in missing_pairs)
+        )
+
+    for target_kind in ("claim", "pattern", "bridge"):
+        matching_rules = [
+            rule
+            for rule in data.get("mapping_rules", [])
+            if isinstance(rule, dict) and rule.get("target_kind") == target_kind
+        ]
+        if not matching_rules:
+            continue
+        for rule in matching_rules:
+            if rule.get("writeback_class") != "reviewed_candidate":
+                errors.append(f"{target_kind} mappings must stay reviewed_candidate writeback")
+            if rule.get("requires_human_review") is not True:
+                errors.append(f"{target_kind} mappings must require human review")
+
+    if "schemas/checkpoint-to-memory-contract.schema.json" not in registry.get("schemas", []):
+        errors.append("generated/memo_registry.min.json must list schemas/checkpoint-to-memory-contract.schema.json")
+    if "docs/RUNTIME_WRITEBACK_SEAM.md" not in registry.get("core_docs", []):
+        errors.append("generated/memo_registry.min.json must list docs/RUNTIME_WRITEBACK_SEAM.md")
+
+    if errors:
+        print("[FAIL] checkpoint_to_memory_contract.example.json")
+        for err in errors:
+            print(f"  - {err}")
+        raise SystemExit(1)
+    print("[OK]   checkpoint_to_memory_contract.example.json")
+
+
 def main() -> int:
     validate_support_schema("decay_policy.schema.json")
     validate_support_schema("inquiry_checkpoint.schema.json")
+    validate_support_schema("checkpoint-to-memory-contract.schema.json")
     validate_example(validator_for("memory_object.schema.json"), "episode.example.json")
     validate_example(validator_for("memory_object.schema.json"), "claim.example.json")
     validate_example(validator_for("memory_object.schema.json"), "checkpoint_approval_record.example.json")
@@ -243,6 +329,7 @@ def main() -> int:
     validate_example(validator_for("recall_contract.schema.json"), "recall_contract.semantic.json")
     validate_registry()
     validate_core_memory_contract()
+    validate_checkpoint_to_memory_contract()
     validate_witness_trace_contract()
     print("\nValidation completed successfully.")
     return 0

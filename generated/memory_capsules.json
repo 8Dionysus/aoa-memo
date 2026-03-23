@@ -71,6 +71,20 @@
       "main_risk_short": "Main risk: letting derived memory or graph-ready substrate quietly replace reviewable authored/core memory.",
       "validation_short": "Validate by checking the change preserves source refs, provenance posture, temporal posture, and bounded derivation language.",
       "source_path": "docs/NARRATIVE_CORE_CONTRACT.md"
+    },
+    {
+      "id": "AOA-M-0006",
+      "name": "runtime-writeback-seam",
+      "summary": "Bounded contract for mapping runtime-local state, checkpoint exports, and reviewed distillation candidates into the current memo canon.",
+      "one_line_intent": "Keep runtime-local scratchpad out of durable memo while making checkpoint export and reviewed writeback rules explicit.",
+      "use_when_short": "Use when deciding whether a runtime artifact should stay operational-only, export as a state capsule, or become a reviewed memo candidate.",
+      "do_not_use_short": "Avoid when the task is role-rights policy, scenario choreography, or runtime storage implementation.",
+      "inputs_short": "Needs a question about runtime-to-memo mapping, checkpoint export, or durable writeback boundaries.",
+      "outputs_short": "Produces explicit mapping rules from runtime surfaces into memo kinds plus the review boundary for distillation candidates.",
+      "core_contract_short": "Core contract: scratchpad stays runtime-local; checkpoint export becomes state_capsule; durable claims, patterns, and bridges remain review-gated candidates.",
+      "main_risk_short": "Main risk: turning aoa-memo into a live runtime store or silently promoting runtime artifacts into canon.",
+      "validation_short": "Validate by checking the checkpoint-to-memory contract preserves the mapping and keeps review required for distillation candidates.",
+      "source_path": "docs/RUNTIME_WRITEBACK_SEAM.md"
     }
   ]
 }
