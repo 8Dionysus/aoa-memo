@@ -199,6 +199,172 @@
         "writeback",
         "review"
       ]
+    },
+    {
+      "id": "AOA-M-0007",
+      "name": "agent-memory-posture-seam",
+      "surface_kind": "doctrine",
+      "summary": "Memo-side contract note for the posture fields that aoa-agents may consume without moving role policy into aoa-memo.",
+      "primary_focus": "agent-seam",
+      "recall_modes": [
+        "working",
+        "semantic",
+        "source_route"
+      ],
+      "status": "confirmed",
+      "temperature": "warm",
+      "source_path": "docs/AGENT_MEMORY_POSTURE_SEAM.md",
+      "inspect_surface": "generated/memory_capsules.json",
+      "expand_surface": "generated/memory_sections.full.json",
+      "related_surface_ids": [
+        "AOA-M-0003",
+        "AOA-M-0006",
+        "AOA-M-0011"
+      ],
+      "strongest_next_sources": [
+        "repo:aoa-agents",
+        "repo:aoa-playbooks",
+        "repo:abyss-stack"
+      ],
+      "focus_tags": [
+        "agent-posture",
+        "rights-boundary",
+        "handoff-fields",
+        "access"
+      ]
+    },
+    {
+      "id": "AOA-M-0008",
+      "name": "playbook-memory-scopes",
+      "surface_kind": "doctrine",
+      "summary": "Playbook-facing guidance for bounded memory scopes, recall modes, and checkpoint-oriented memo use.",
+      "primary_focus": "playbook-seam",
+      "recall_modes": [
+        "working",
+        "episodic",
+        "semantic",
+        "source_route"
+      ],
+      "status": "confirmed",
+      "temperature": "warm",
+      "source_path": "docs/PLAYBOOK_MEMORY_SCOPES.md",
+      "inspect_surface": "generated/memory_capsules.json",
+      "expand_surface": "generated/memory_sections.full.json",
+      "related_surface_ids": [
+        "AOA-M-0006",
+        "AOA-M-0007",
+        "AOA-M-0011"
+      ],
+      "strongest_next_sources": [
+        "repo:aoa-playbooks",
+        "repo:aoa-agents",
+        "repo:abyss-stack"
+      ],
+      "focus_tags": [
+        "playbooks",
+        "scopes",
+        "recall-modes",
+        "checkpoints"
+      ]
+    },
+    {
+      "id": "AOA-M-0009",
+      "name": "kag-tos-bridge-contract",
+      "surface_kind": "doctrine",
+      "summary": "Contract for chunk-face and graph-face bridge exports that preserve ToS references and keep KAG lifts downstream.",
+      "primary_focus": "bridge-exports",
+      "recall_modes": [
+        "lineage",
+        "semantic",
+        "source_route"
+      ],
+      "status": "confirmed",
+      "temperature": "cool",
+      "source_path": "docs/KAG_TOS_BRIDGE_CONTRACT.md",
+      "inspect_surface": "generated/memory_capsules.json",
+      "expand_surface": "generated/memory_sections.full.json",
+      "related_surface_ids": [
+        "AOA-M-0002",
+        "AOA-M-0005",
+        "AOA-M-0011"
+      ],
+      "strongest_next_sources": [
+        "repo:aoa-kag",
+        "repo:Tree-of-Sophia",
+        "repo:aoa-routing"
+      ],
+      "focus_tags": [
+        "chunk-face",
+        "graph-face",
+        "tos-refs",
+        "kag-lift"
+      ]
+    },
+    {
+      "id": "AOA-M-0010",
+      "name": "memory-eval-guardrails",
+      "surface_kind": "doctrine",
+      "summary": "Memo-side guardrail handoff surface that keeps recall, provenance, staleness, leakage, and merge risks explicit for aoa-evals.",
+      "primary_focus": "guardrails",
+      "recall_modes": [
+        "semantic",
+        "source_route"
+      ],
+      "status": "confirmed",
+      "temperature": "cool",
+      "source_path": "docs/MEMORY_EVAL_GUARDRAILS.md",
+      "inspect_surface": "generated/memory_capsules.json",
+      "expand_surface": "generated/memory_sections.full.json",
+      "related_surface_ids": [
+        "AOA-M-0003",
+        "AOA-M-0004",
+        "AOA-M-0011"
+      ],
+      "strongest_next_sources": [
+        "repo:aoa-evals",
+        "repo:aoa-agents",
+        "repo:aoa-routing"
+      ],
+      "focus_tags": [
+        "eval-handoff",
+        "precision",
+        "provenance",
+        "leakage"
+      ]
+    },
+    {
+      "id": "AOA-M-0011",
+      "name": "operational-boundary",
+      "surface_kind": "doctrine",
+      "summary": "V1-facing boundary note that fixes aoa-memo as doctrine plus compact public surfaces rather than runtime memory infrastructure.",
+      "primary_focus": "operational-boundary",
+      "recall_modes": [
+        "source_route",
+        "semantic",
+        "working"
+      ],
+      "status": "confirmed",
+      "temperature": "frozen",
+      "source_path": "docs/OPERATIONAL_BOUNDARY.md",
+      "inspect_surface": "generated/memory_capsules.json",
+      "expand_surface": "generated/memory_sections.full.json",
+      "related_surface_ids": [
+        "AOA-M-0003",
+        "AOA-M-0006",
+        "AOA-M-0009"
+      ],
+      "strongest_next_sources": [
+        "repo:aoa-routing",
+        "repo:aoa-agents",
+        "repo:aoa-kag",
+        "repo:abyss-stack"
+      ],
+      "focus_tags": [
+        "v1-boundary",
+        "consumer-contracts",
+        "runtime-split",
+        "stable-surfaces"
+      ]
     }
   ]
 }

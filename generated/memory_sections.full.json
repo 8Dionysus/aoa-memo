@@ -183,6 +183,146 @@
           "body": "`aoa-memo` owns object canon, lifecycle, writeback classes, and review rules. `aoa-agents` keeps memory rights and writeback boundaries. `aoa-playbooks` keeps scenario meaning. `abyss-stack` keeps runtime stores, checkpoint workers, and writeback plumbing."
         }
       ]
+    },
+    {
+      "id": "AOA-M-0007",
+      "name": "agent-memory-posture-seam",
+      "source_path": "docs/AGENT_MEMORY_POSTURE_SEAM.md",
+      "sections": [
+        {
+          "section_id": "AOA-M-0007#memo-side-posture-fields",
+          "heading": "Memo-side posture fields",
+          "ordinal": 1,
+          "summary": "Names the memo fields that aoa-agents may consume without moving role policy into aoa-memo.",
+          "body": "The memo-side posture seam publishes object kind, scope, access descriptors, lifecycle posture, trust temperature, provenance linkage, and route refs. These fields describe what kind of memory surface is being touched, not who is allowed to touch it."
+        },
+        {
+          "section_id": "AOA-M-0007#boundary-split",
+          "heading": "Boundary split",
+          "ordinal": 2,
+          "summary": "Keeps rights and approvals in aoa-agents while letting aoa-memo expose the posture those rights apply to.",
+          "body": "`aoa-memo` names memory object posture. `aoa-agents` still owns who has read, write, promotion, freeze, and handoff rights, when those rights are granted, and which approvals are required."
+        },
+        {
+          "section_id": "AOA-M-0007#minimal-handoff-fields",
+          "heading": "Minimal handoff fields",
+          "ordinal": 3,
+          "summary": "Lists the smallest useful memo-side surface for agent consumers.",
+          "body": "The smallest useful handoff surface includes source memory id, object kind, scope, access class, read and write scopes, promotion scopes when present, lifecycle review state, trust temperature, provenance thread id when present, and stronger source routes for deeper inspection."
+        }
+      ]
+    },
+    {
+      "id": "AOA-M-0008",
+      "name": "playbook-memory-scopes",
+      "source_path": "docs/PLAYBOOK_MEMORY_SCOPES.md",
+      "sections": [
+        {
+          "section_id": "AOA-M-0008#bounded-recall-requests",
+          "heading": "Bounded recall requests",
+          "ordinal": 1,
+          "summary": "Requires playbooks to ask for explicit scopes and recall modes rather than broad ambient memory access.",
+          "body": "Playbooks should name the active scope, the recall mode they need, whether checkpoint continuity is required, whether inspect surfaces are enough, and which stronger source should win when memo is ambiguous."
+        },
+        {
+          "section_id": "AOA-M-0008#recall-mode-selection",
+          "heading": "Recall mode selection",
+          "ordinal": 2,
+          "summary": "Maps working, episodic, semantic, procedural, lineage, and source_route modes to scenario needs.",
+          "body": "Use `working` for relaunch and state capsules, `episodic` for event traces, `semantic` for doctrine and stable claims, `procedural` for repeated patterns, `lineage` for ToS-heavy memory walks, and `source_route` when the playbook needs the strongest next source instead of memory alone."
+        },
+        {
+          "section_id": "AOA-M-0008#checkpoint-and-writeback-use",
+          "heading": "Checkpoint and writeback use",
+          "ordinal": 3,
+          "summary": "Shows how playbooks should use inquiry checkpoints, state capsules, episodes, decisions, audits, and provenance threads.",
+          "body": "Checkpoint continuity should use `inquiry_checkpoint` and `state_capsule` for bounded restart posture. Durable scenario traces should land as `episode`, `decision`, `audit_event`, and `provenance_thread` surfaces rather than as hidden scenario-local memory systems."
+        }
+      ]
+    },
+    {
+      "id": "AOA-M-0009",
+      "name": "kag-tos-bridge-contract",
+      "source_path": "docs/KAG_TOS_BRIDGE_CONTRACT.md",
+      "sections": [
+        {
+          "section_id": "AOA-M-0009#core-rule",
+          "heading": "Core rule",
+          "ordinal": 1,
+          "summary": "Keeps authored/core memory primary and exports bridge faces later.",
+          "body": "The bridge contract keeps the memory object as the reviewable authored/core surface. Chunk and graph faces are exported later as bridge-oriented handoff surfaces rather than replacements for the source memory object."
+        },
+        {
+          "section_id": "AOA-M-0009#chunk-and-graph-faces",
+          "heading": "Chunk and graph faces",
+          "ordinal": 2,
+          "summary": "Separates bounded inspection surfaces from downstream associative lift surfaces.",
+          "body": "Chunk faces preserve capsule text, section refs, source refs, provenance linkage, review state, and strongest next sources for inspection. Graph faces preserve relation candidates, provenance thread ids, ToS refs, time windows, and candidate-only KAG lift posture for downstream consumers."
+        },
+        {
+          "section_id": "AOA-M-0009#end-to-end-flow",
+          "heading": "End-to-end flow",
+          "ordinal": 3,
+          "summary": "Shows the current episode-to-claim-to-bridge-to-export pattern.",
+          "body": "The current flow is: a ToS inspection becomes an `episode`, bounded meaning becomes a `claim`, the outward connection becomes a `bridge`, the bridge exports a chunk face for inspection and a graph face for downstream lift candidates, and `aoa-kag` decides whether to normalize the lift later."
+        }
+      ]
+    },
+    {
+      "id": "AOA-M-0010",
+      "name": "memory-eval-guardrails",
+      "source_path": "docs/MEMORY_EVAL_GUARDRAILS.md",
+      "sections": [
+        {
+          "section_id": "AOA-M-0010#boundary-rule",
+          "heading": "Boundary rule",
+          "ordinal": 1,
+          "summary": "Keeps aoa-memo responsible for the risk cases and aoa-evals responsible for scoring and verdict logic.",
+          "body": "`aoa-memo` names the guardrail risks and machine-readable handoff cases. `aoa-evals` still owns scoring, evidence weighting, thresholds, and verdict language."
+        },
+        {
+          "section_id": "AOA-M-0010#guardrail-cases",
+          "heading": "Guardrail cases",
+          "ordinal": 2,
+          "summary": "Keeps precision, provenance, staleness, contradiction, leakage, over-promotion, and merge risks explicit.",
+          "body": "The current guardrail set names recall precision, provenance fidelity, staleness handling, contradiction handling, permission leakage, over-promotion, and hallucinated memory merges as the bounded failure modes that should stay visible."
+        },
+        {
+          "section_id": "AOA-M-0010#machine-readable-handoff",
+          "heading": "Machine-readable handoff",
+          "ordinal": 3,
+          "summary": "Packages the current guardrail cases into a schema-backed surface for aoa-evals.",
+          "body": "The machine-readable guardrail pack preserves focus areas, input refs, expected behavior, and failure signals so downstream eval work can be grounded in explicit memo-side cases instead of taste alone."
+        }
+      ]
+    },
+    {
+      "id": "AOA-M-0011",
+      "name": "operational-boundary",
+      "source_path": "docs/OPERATIONAL_BOUNDARY.md",
+      "sections": [
+        {
+          "section_id": "AOA-M-0011#stable-public-boundary",
+          "heading": "Stable public boundary",
+          "ordinal": 1,
+          "summary": "Defines the stable v1-facing boundary as doctrine, schemas, generated surfaces, and reviewed examples.",
+          "body": "The stable public boundary of `aoa-memo` consists of doctrine docs, schema-backed contract surfaces, compact generated registries and recall surfaces, and reviewed examples. These are the public artifacts that neighboring repos should depend on."
+        },
+        {
+          "section_id": "AOA-M-0011#consumer-contracts",
+          "heading": "Consumer contracts",
+          "ordinal": 2,
+          "summary": "Names how routing, agents, KAG, and runtime consumers should touch aoa-memo.",
+          "body": "`aoa-routing` consumes compact recall surfaces, `aoa-agents` consumes posture descriptors, `aoa-kag` consumes bridge and export faces, and `abyss-stack` consumes writeback seams and export contracts. Each consumer keeps its own policy or runtime implementation outside `aoa-memo`."
+        },
+        {
+          "section_id": "AOA-M-0011#runtime-split",
+          "heading": "Runtime split",
+          "ordinal": 3,
+          "summary": "Keeps live stores, jobs, retention, secrets, and deployment posture out of aoa-memo.",
+          "body": "The operational boundary keeps live state stores, checkpoint workers, consolidation jobs, retention machinery, secret handling, deployment posture, and backups outside the repository. `aoa-memo` remains the inspectable doctrine-and-surface layer rather than the runtime body."
+        }
+      ]
     }
   ]
 }

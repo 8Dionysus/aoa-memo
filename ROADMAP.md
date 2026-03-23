@@ -6,9 +6,10 @@ Build `aoa-memo` as the explicit memory and recall layer of AoA: small, reviewab
 
 ## Current stage
 
-`aoa-memo` is in bootstrap.
+`aoa-memo` is in contract hardening.
 
-The repository has already named its role at the ecosystem level, but it still needs the doctrine, object canon, schemas, generated surfaces, and cross-repo contracts that will make the memory layer real and usable.
+The repository has already named its role, object canon, schemas, generated surfaces, lifecycle posture, temperature posture, runtime writeback seam, and first bridge/export and guardrail handoff surfaces.
+The next task is to keep those public contracts small, explicit, and easy for neighboring repos to consume without guessing.
 
 ## North star
 
@@ -156,6 +157,8 @@ This roadmap does **not** aim to turn `aoa-memo` into:
 
 **Deliverables:**
 
+- `docs/AGENT_MEMORY_POSTURE_SEAM.md`
+- `docs/PLAYBOOK_MEMORY_SCOPES.md`
 - cross-repo contract notes for `aoa-agents` memory posture
 - `schemas/inquiry_checkpoint.schema.json`
 - `examples/inquiry_checkpoint.example.json`
@@ -174,10 +177,14 @@ This roadmap does **not** aim to turn `aoa-memo` into:
 
 **Deliverables:**
 
+- `docs/KAG_TOS_BRIDGE_CONTRACT.md`
+- `schemas/memory_chunk_face.schema.json`
+- `schemas/memory_graph_face.schema.json`
 - chunk-face contract for memory inspection
 - graph-face contract for downstream associative lifts
 - ToS node and fragment bridge guidance
 - `kag_lift_status` and related bridge fields
+- examples of chunk-face and graph-face export
 - examples of episode -> claim -> bridge -> KAG lift flow
 
 **Exit criteria:**
@@ -192,6 +199,9 @@ This roadmap does **not** aim to turn `aoa-memo` into:
 
 **Deliverables:**
 
+- `docs/MEMORY_EVAL_GUARDRAILS.md`
+- `schemas/memory_eval_guardrail_pack.schema.json`
+- `examples/memory_eval_guardrail_pack.example.json`
 - memory-focused eval ideas for `aoa-evals`
 - tests for recall precision and provenance fidelity
 - tests for staleness handling and contradiction handling
@@ -209,6 +219,7 @@ This roadmap does **not** aim to turn `aoa-memo` into:
 
 **Deliverables:**
 
+- `docs/OPERATIONAL_BOUNDARY.md`
 - stable doctrine and schemas
 - stable compact public surfaces
 - clear cross-repo contracts
@@ -228,8 +239,10 @@ The cleanest first pull request sequence is:
 1. doctrine files
 2. schemas and examples
 3. generated surfaces and validation
-4. provenance and lifecycle hardening
+4. provenance, lifecycle, and temperature hardening
 5. cross-repo integration notes
+6. bridge/export and guardrail surfaces
+7. operational boundary freeze
 
 ## Cross-repo dependencies
 
@@ -274,5 +287,6 @@ The current pass is done when a contributor can open the repository and understa
 - what memory means here
 - which object kinds exist
 - how temperature and trust posture work
+- how agent, playbook, KAG, and eval consumers should touch memo without taking ownership from their source repos
 - where memory stops and other layers begin
 - what the next implementation milestones are

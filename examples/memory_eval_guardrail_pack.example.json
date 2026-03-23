@@ -1,0 +1,149 @@
+{
+  "contract_type": "memory_eval_guardrail_pack",
+  "pack_id": "memo-guardrails.v0.1",
+  "name": "aoa-memo guardrail handoff pack",
+  "purpose": "Translate memo quality risks into bounded handoff cases for aoa-evals without moving verdict logic into aoa-memo.",
+  "boundary_rule": "aoa-memo publishes the cases and expectations; aoa-evals owns scoring and pass/fail logic.",
+  "handoff_target": "aoa-evals",
+  "source_refs": [
+    "docs/MEMORY_EVAL_GUARDRAILS.md",
+    "ROADMAP.md#v08-evaluation-and-guardrails",
+    "docs/OPERATIONAL_BOUNDARY.md#stable-public-boundary"
+  ],
+  "cases": [
+    {
+      "case_id": "memo-guardrail-001",
+      "focus": "recall_precision",
+      "risk": "Router-facing memo recall returns broad but weakly relevant doctrine instead of the smallest relevant surface.",
+      "input_refs": [
+        "generated/memory_catalog.min.json",
+        "examples/recall_contract.router.semantic.json",
+        "docs/PLAYBOOK_MEMORY_SCOPES.md"
+      ],
+      "expected_behavior": [
+        "Return the smallest relevant memo surface before deeper expansion.",
+        "Prefer bridge- or seam-specific surfaces when the question is narrower than the whole doctrine set."
+      ],
+      "failure_signals": [
+        "Irrelevant doctrine surfaces dominate the top recall set.",
+        "Inspect surfaces are skipped in favor of broad full-doc expansion."
+      ],
+      "severity": "high"
+    },
+    {
+      "case_id": "memo-guardrail-002",
+      "focus": "provenance_fidelity",
+      "risk": "Recall drops source refs or provenance-thread linkage when moving from a memory object to its compact export surfaces.",
+      "input_refs": [
+        "examples/claim.tos-bridge-ready.example.json",
+        "examples/bridge.kag-lift.example.json",
+        "examples/provenance_thread.kag-lift.example.json"
+      ],
+      "expected_behavior": [
+        "Preserve the backward walk from claim or bridge to provenance thread and source refs.",
+        "Keep stronger source routes visible when a compact surface is returned."
+      ],
+      "failure_signals": [
+        "Returned memo surface has no visible source refs.",
+        "Bridge or claim can no longer be walked back to its provenance thread."
+      ],
+      "severity": "high"
+    },
+    {
+      "case_id": "memo-guardrail-003",
+      "focus": "staleness",
+      "risk": "Stale or cooled memory is returned as if it were still current and equally active.",
+      "input_refs": [
+        "docs/LIFECYCLE.md",
+        "docs/MEMORY_TEMPERATURES.md",
+        "examples/claim.current-entrypoint.example.json"
+      ],
+      "expected_behavior": [
+        "Temperature and lifecycle posture remain visible during recall.",
+        "Current usefulness is separated from historical truth."
+      ],
+      "failure_signals": [
+        "Recall omits temperature or review posture.",
+        "Stale memory is presented as if it were equally current and preferred."
+      ],
+      "severity": "medium"
+    },
+    {
+      "case_id": "memo-guardrail-004",
+      "focus": "contradiction_handling",
+      "risk": "Superseded or retracted memory is silently merged with active memory instead of being surfaced honestly.",
+      "input_refs": [
+        "examples/claim.superseded.example.json",
+        "examples/claim.retracted.example.json",
+        "docs/LIFECYCLE.md"
+      ],
+      "expected_behavior": [
+        "Superseded and retracted states remain explicit.",
+        "Contradicting memory traces are surfaced with their lifecycle posture rather than flattened."
+      ],
+      "failure_signals": [
+        "Superseded memory appears active with no status marker.",
+        "Retracted memory is used as if it were still normal semantic recall."
+      ],
+      "severity": "high"
+    },
+    {
+      "case_id": "memo-guardrail-005",
+      "focus": "permission_leakage",
+      "risk": "Consumers infer role rights directly from memo access fields instead of using aoa-agents policy.",
+      "input_refs": [
+        "docs/AGENT_MEMORY_POSTURE_SEAM.md#minimal-handoff-fields",
+        "docs/BOUNDARIES.md#aoa-agents",
+        "docs/OPERATIONAL_BOUNDARY.md#consumer-contracts"
+      ],
+      "expected_behavior": [
+        "Access and scope fields are treated as descriptors of the object posture, not as grants.",
+        "Rights policy remains visibly external to aoa-memo."
+      ],
+      "failure_signals": [
+        "A consumer acts as though read_scopes or promotion_scopes alone authorize a role.",
+        "Role policy is reconstructed from memo fields without an outward policy source."
+      ],
+      "severity": "high"
+    },
+    {
+      "case_id": "memo-guardrail-006",
+      "focus": "over_promotion",
+      "risk": "Bridge or claim candidates are promoted into durable canon posture without the intended review boundary.",
+      "input_refs": [
+        "docs/WRITEBACK_TEMPERATURE_POLICY.md",
+        "docs/AGENT_MEMORY_POSTURE_SEAM.md#boundary-rule",
+        "examples/bridge.kag-lift.example.json"
+      ],
+      "expected_behavior": [
+        "Promotion posture remains visible and review-gated.",
+        "Candidate objects do not silently become frozen or authoritative."
+      ],
+      "failure_signals": [
+        "Candidate objects are returned as if they were frozen or fully lifted.",
+        "Review-required transitions are skipped or hidden."
+      ],
+      "severity": "medium"
+    },
+    {
+      "case_id": "memo-guardrail-007",
+      "focus": "hallucinated_merge",
+      "risk": "Separate episode, claim, and bridge traces are collapsed into one invented memory without explicit provenance.",
+      "input_refs": [
+        "examples/episode.tos-interpretation.example.json",
+        "examples/claim.tos-bridge-ready.example.json",
+        "examples/bridge.kag-lift.example.json",
+        "examples/provenance_thread.kag-lift.example.json"
+      ],
+      "expected_behavior": [
+        "Distinct memory objects remain distinguishable by kind and provenance.",
+        "Any consolidation step points back to the explicit provenance thread and sources."
+      ],
+      "failure_signals": [
+        "A returned memory object includes details that belong to multiple traces with no linkage.",
+        "Consolidated output invents relations that are not present in the provenance chain."
+      ],
+      "severity": "high"
+    }
+  ]
+}

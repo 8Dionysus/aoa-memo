@@ -1,0 +1,72 @@
+{
+  "id": "memo.bridge.2026-03-23.tos-lineage-kag-candidate",
+  "kind": "bridge",
+  "title": "Bridge candidate linking memo claim to ToS lineage and KAG lift posture",
+  "summary": "Connects a reviewed memo claim to Tree of Sophia lineage references while preserving provenance and candidate-only KAG lift posture.",
+  "scope": [
+    "repo:aoa-memo",
+    "project:AoA",
+    "repo:Tree-of-Sophia"
+  ],
+  "owner_refs": [
+    "repo:aoa-memo"
+  ],
+  "payload_ref": "docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow",
+  "tags": [
+    "bridge",
+    "tos",
+    "kag",
+    "lineage"
+  ],
+  "time": {
+    "created_at": "2026-03-23T16:25:00Z",
+    "valid_from": "2026-03-23T16:25:00Z",
+    "valid_to": null
+  },
+  "provenance": {
+    "source_refs": [
+      "docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow",
+      "repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md"
+    ],
+    "episode_refs": [
+      "memo.ep.2026-03-23.tos-interpretation-bridge-seed"
+    ],
+    "provenance_thread_id": "prov.tos-bridge-kag-lift.2026-03-23"
+  },
+  "trust": {
+    "temperature": "cool",
+    "confidence": 0.86,
+    "authority": "reviewed-bridge-candidate",
+    "freshness": 0.89,
+    "salience": 0.9
+  },
+  "lifecycle": {
+    "review_state": "proposed",
+    "supersedes": [],
+    "superseded_by": null,
+    "retention_class": "bridge-candidate",
+    "promotion_state": "candidate"
+  },
+  "access": {
+    "access_class": "public",
+    "read_scopes": [
+      "public"
+    ],
+    "write_scopes": [
+      "maintainer"
+    ],
+    "promotion_scopes": [
+      "maintainer",
+      "human-review"
+    ]
+  },
+  "bridges": {
+    "tos_refs": [
+      "repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md#memory-bridge-fragment"
+    ],
+    "skill_refs": [],
+    "eval_refs": [],
+    "kag_lift_status": "candidate",
+    "route_capsule_ref": "generated/memory_catalog.min.json"
+  }
+}

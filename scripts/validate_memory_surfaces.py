@@ -103,12 +103,50 @@ def validate_router_recall_contract(path: Path) -> None:
         raise SystemExit(f"{path}: " + "; ".join(errors))
 
 
+def validate_surface_alignment() -> None:
+    catalog = load_json(GENERATED / "memory_catalog.json")
+    catalog_min = load_json(GENERATED / "memory_catalog.min.json")
+    capsules = load_json(GENERATED / "memory_capsules.json")
+    sections = load_json(GENERATED / "memory_sections.full.json")
+
+    surfaces = {
+        "memory_catalog.json": catalog["memo_surfaces"],
+        "memory_catalog.min.json": catalog_min["memo_surfaces"],
+        "memory_capsules.json": capsules["memo_surfaces"],
+        "memory_sections.full.json": sections["memo_surfaces"],
+    }
+
+    expected_ids = {item["id"] for item in catalog["memo_surfaces"]}
+    expected_paths = {item["id"]: item["source_path"] for item in catalog["memo_surfaces"]}
+
+    for label, items in surfaces.items():
+        ids = {item["id"] for item in items}
+        if ids != expected_ids:
+            missing = sorted(expected_ids - ids)
+            extra = sorted(ids - expected_ids)
+            details = []
+            if missing:
+                details.append("missing ids: " + ", ".join(missing))
+            if extra:
+                details.append("extra ids: " + ", ".join(extra))
+            raise SystemExit(f"{label}: surface ids out of alignment ({'; '.join(details)})")
+
+        for item in items:
+            expected_path = expected_paths[item["id"]]
+            if item["source_path"] != expected_path:
+                raise SystemExit(
+                    f"{label}: {item['id']} source_path mismatch: "
+                    f"expected {expected_path}, got {item['source_path']}"
+                )
+
+
 def main() -> int:
     validate_catalog(GENERATED / "memory_catalog.json", require_relations=True)
     validate_catalog(GENERATED / "memory_catalog.min.json", require_relations=False)
     validate_capsules(GENERATED / "memory_capsules.json")
     validate_sections(GENERATED / "memory_sections.full.json")
     validate_router_recall_contract(EXAMPLES / "recall_contract.router.semantic.json")
+    validate_surface_alignment()
     print("Router-facing memo doctrine surfaces validated successfully.")
     return 0
 

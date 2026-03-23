@@ -1,0 +1,71 @@
+{
+  "id": "memo.claim.2026-03-23.tos-bridge-by-reference",
+  "kind": "claim",
+  "title": "ToS-linked memory should bridge by reference",
+  "summary": "A memo bridge candidate should preserve Tree of Sophia meaning by reference and provenance rather than by rewriting source-authored material inside aoa-memo.",
+  "scope": [
+    "repo:aoa-memo",
+    "project:AoA",
+    "ecosystem:AoA"
+  ],
+  "owner_refs": [
+    "repo:aoa-memo"
+  ],
+  "payload_ref": "docs/KAG_TOS_BRIDGE_CONTRACT.md#tos-bridge-guidance",
+  "tags": [
+    "tos",
+    "bridge",
+    "claim",
+    "provenance"
+  ],
+  "time": {
+    "created_at": "2026-03-23T16:18:00Z",
+    "valid_from": "2026-03-23T16:18:00Z",
+    "valid_to": null
+  },
+  "provenance": {
+    "source_refs": [
+      "docs/KAG_TOS_BRIDGE_CONTRACT.md#tos-bridge-guidance",
+      "repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md"
+    ],
+    "episode_refs": [
+      "memo.ep.2026-03-23.tos-interpretation-bridge-seed"
+    ],
+    "provenance_thread_id": "prov.tos-bridge-kag-lift.2026-03-23"
+  },
+  "trust": {
+    "temperature": "cool",
+    "confidence": 0.9,
+    "authority": "memo-doctrine+source-inspection",
+    "freshness": 0.9,
+    "salience": 0.87
+  },
+  "lifecycle": {
+    "review_state": "confirmed",
+    "supersedes": [],
+    "superseded_by": null,
+    "retention_class": "doctrine"
+  },
+  "access": {
+    "access_class": "public",
+    "read_scopes": [
+      "public"
+    ],
+    "write_scopes": [
+      "maintainer"
+    ],
+    "promotion_scopes": [
+      "maintainer",
+      "human-review"
+    ]
+  },
+  "bridges": {
+    "tos_refs": [
+      "repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md#memory-bridge-fragment"
+    ],
+    "skill_refs": [],
+    "eval_refs": [],
+    "kag_lift_status": "candidate",
+    "route_capsule_ref": "generated/memory_sections.full.json"
+  }
+}
