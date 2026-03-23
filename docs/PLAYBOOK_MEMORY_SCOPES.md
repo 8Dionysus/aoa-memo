@@ -33,6 +33,8 @@ Use the current recall modes like this:
 - `lineage` for ToS or bridge-heavy memory walks
 - `source_route` when the playbook needs the strongest next source rather than memory-only answers
 
+The default memo-side entrypoint for relaunch and checkpoint use is `examples/recall_contract.working.json`.
+
 ## Recommended Memory Scopes
 
 Playbooks should request the smallest useful scope first:
@@ -58,6 +60,8 @@ Use the current memo canon like this:
 
 This guidance helps playbooks ask for memory.
 It does not move playbook choreography into `aoa-memo`.
+
+For the current working-memory recall entrypoint, see `examples/recall_contract.working.json`.
 
 ## What This Guidance Does Not Do
 

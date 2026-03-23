@@ -88,7 +88,7 @@ def validate_sections(path: Path) -> None:
             seen.add(section["section_id"])
 
 
-def validate_router_recall_contract(path: Path) -> None:
+def validate_router_recall_contract(path: Path, expected_mode: str) -> None:
     validator = validator_for("recall_contract.schema.json")
     data = load_json(path)
     errors = [
@@ -99,6 +99,14 @@ def validate_router_recall_contract(path: Path) -> None:
         error = local_ref_error(data.get(label), label)
         if error:
             errors.append(error)
+    if data.get("mode") != expected_mode:
+        errors.append(f"mode must stay '{expected_mode}'")
+    if data.get("inspect_surface") != "generated/memory_catalog.min.json":
+        errors.append("inspect_surface must stay generated/memory_catalog.min.json")
+    if data.get("expand_surface") != "generated/memory_sections.full.json":
+        errors.append("expand_surface must stay generated/memory_sections.full.json")
+    if data.get("source_route_required") is not True:
+        errors.append("source_route_required must stay true for router-facing recall contracts")
     if errors:
         raise SystemExit(f"{path}: " + "; ".join(errors))
 
@@ -145,7 +153,8 @@ def main() -> int:
     validate_catalog(GENERATED / "memory_catalog.min.json", require_relations=False)
     validate_capsules(GENERATED / "memory_capsules.json")
     validate_sections(GENERATED / "memory_sections.full.json")
-    validate_router_recall_contract(EXAMPLES / "recall_contract.router.semantic.json")
+    validate_router_recall_contract(EXAMPLES / "recall_contract.router.semantic.json", "semantic")
+    validate_router_recall_contract(EXAMPLES / "recall_contract.router.lineage.json", "lineage")
     validate_surface_alignment()
     print("Router-facing memo doctrine surfaces validated successfully.")
     return 0

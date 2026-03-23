@@ -145,6 +145,55 @@ def validate_support_schema(schema_name: str) -> None:
     print(f"[OK]   {schema_name}")
 
 
+def validate_recall_contract_example(
+    example_name: str,
+    *,
+    expected_mode: str,
+    expected_allowed_scopes: list[str],
+    expected_preferred_kinds: list[str],
+    expected_temperature_order: list[str],
+    expected_inspect_surface: str,
+    expected_expand_surface: str,
+    expected_source_route_required: bool,
+) -> None:
+    validator = validator_for("recall_contract.schema.json")
+    data = load_json(EXAMPLES / example_name)
+
+    errors = [
+        f"{'.'.join(str(part) for part in err.absolute_path) or '<root>'}: {err.message}"
+        for err in sorted(validator.iter_errors(data), key=lambda err: list(err.absolute_path))
+    ]
+    append_ref_errors(
+        errors,
+        [
+            ("inspect_surface", data.get("inspect_surface")),
+            ("expand_surface", data.get("expand_surface")),
+        ],
+    )
+
+    if data.get("mode") != expected_mode:
+        errors.append(f"{example_name} mode must stay '{expected_mode}'")
+    if data.get("allowed_scopes") != expected_allowed_scopes:
+        errors.append(f"{example_name} allowed_scopes must stay {expected_allowed_scopes}")
+    if data.get("preferred_kinds") != expected_preferred_kinds:
+        errors.append(f"{example_name} preferred_kinds must stay {expected_preferred_kinds}")
+    if data.get("temperature_order") != expected_temperature_order:
+        errors.append(f"{example_name} temperature_order must stay {expected_temperature_order}")
+    if data.get("inspect_surface") != expected_inspect_surface:
+        errors.append(f"{example_name} inspect_surface must stay {expected_inspect_surface}")
+    if data.get("expand_surface") != expected_expand_surface:
+        errors.append(f"{example_name} expand_surface must stay {expected_expand_surface}")
+    if data.get("source_route_required") is not expected_source_route_required:
+        errors.append(f"{example_name} source_route_required must stay {expected_source_route_required}")
+
+    if errors:
+        print(f"[FAIL] {example_name}")
+        for err in errors:
+            print(f"  - {err}")
+        raise SystemExit(1)
+    print(f"[OK]   {example_name}")
+
+
 def validate_registry() -> None:
     data = load_json(GENERATED / "memo_registry.min.json")
     required = [
@@ -489,7 +538,56 @@ def main() -> int:
     validate_example(validator_for("provenance_thread.schema.json"), "provenance_thread.example.json")
     validate_example(validator_for("provenance_thread.schema.json"), "checkpoint_improvement_thread.example.json")
     validate_example(validator_for("provenance_thread.schema.json"), "provenance_thread.kag-lift.example.json")
-    validate_example(validator_for("recall_contract.schema.json"), "recall_contract.semantic.json")
+    validate_recall_contract_example(
+        "recall_contract.semantic.json",
+        expected_mode="semantic",
+        expected_allowed_scopes=["repo", "project", "ecosystem"],
+        expected_preferred_kinds=["claim", "decision", "pattern", "anchor"],
+        expected_temperature_order=["warm", "cool", "frozen", "cold", "hot"],
+        expected_inspect_surface="generated/memo_registry.min.json",
+        expected_expand_surface="docs/MEMORY_MODEL.md",
+        expected_source_route_required=True,
+    )
+    validate_recall_contract_example(
+        "recall_contract.router.semantic.json",
+        expected_mode="semantic",
+        expected_allowed_scopes=["repo", "project", "ecosystem"],
+        expected_preferred_kinds=["claim", "decision", "pattern", "anchor"],
+        expected_temperature_order=["warm", "cool", "frozen", "cold", "hot"],
+        expected_inspect_surface="generated/memory_catalog.min.json",
+        expected_expand_surface="generated/memory_sections.full.json",
+        expected_source_route_required=True,
+    )
+    validate_recall_contract_example(
+        "recall_contract.working.json",
+        expected_mode="working",
+        expected_allowed_scopes=["thread", "session", "project"],
+        expected_preferred_kinds=["state_capsule", "decision", "episode", "audit_event"],
+        expected_temperature_order=["hot", "warm", "cool", "frozen", "cold"],
+        expected_inspect_surface="generated/memory_catalog.min.json",
+        expected_expand_surface="docs/RUNTIME_WRITEBACK_SEAM.md",
+        expected_source_route_required=False,
+    )
+    validate_recall_contract_example(
+        "recall_contract.lineage.json",
+        expected_mode="lineage",
+        expected_allowed_scopes=["project", "workspace", "ecosystem"],
+        expected_preferred_kinds=["bridge", "claim", "episode", "anchor"],
+        expected_temperature_order=["warm", "cool", "frozen", "cold", "hot"],
+        expected_inspect_surface="generated/memory_catalog.min.json",
+        expected_expand_surface="docs/KAG_TOS_BRIDGE_CONTRACT.md",
+        expected_source_route_required=True,
+    )
+    validate_recall_contract_example(
+        "recall_contract.router.lineage.json",
+        expected_mode="lineage",
+        expected_allowed_scopes=["project", "workspace", "ecosystem"],
+        expected_preferred_kinds=["bridge", "claim", "episode", "anchor"],
+        expected_temperature_order=["warm", "cool", "frozen", "cold", "hot"],
+        expected_inspect_surface="generated/memory_catalog.min.json",
+        expected_expand_surface="generated/memory_sections.full.json",
+        expected_source_route_required=True,
+    )
     validate_registry()
     validate_core_memory_contract()
     validate_checkpoint_to_memory_contract()

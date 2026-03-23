@@ -6,6 +6,8 @@ This document defines the memo-side bridge contract for KAG-oriented and ToS-lin
 
 It exists so `aoa-memo` can expose bounded bridge faces without becoming a graph engine or rewriting source-authored ToS meaning.
 
+The current recall entrypoints for this surface are `examples/recall_contract.lineage.json` and `examples/recall_contract.router.lineage.json`.
+
 ## Core Rule
 
 Write the memory event once.
@@ -87,6 +89,8 @@ The current example bundle for this flow is:
 - `examples/provenance_thread.kag-lift.example.json`
 - `examples/memory_chunk_face.bridge.example.json`
 - `examples/memory_graph_face.bridge.example.json`
+- `examples/recall_contract.lineage.json`
+- `examples/recall_contract.router.lineage.json`
 
 ## What This Contract Does Not Do
 

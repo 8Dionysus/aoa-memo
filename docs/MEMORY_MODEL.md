@@ -393,6 +393,8 @@ The memory layer should support bounded recall modes rather than one giant gener
 
 Return current or recent state capsules.
 
+Concrete entrypoint: `examples/recall_contract.working.json`
+
 ### `episodic`
 
 Return event memory with provenance emphasis.
@@ -408,6 +410,11 @@ Return patterns about what worked, failed, or repeated.
 ### `lineage`
 
 Return bridges tied to ToS nodes, concepts, fragments, or longer chains of relation.
+
+Concrete entrypoints:
+
+- `examples/recall_contract.lineage.json`
+- `examples/recall_contract.router.lineage.json`
 
 ### `source_route`
 
