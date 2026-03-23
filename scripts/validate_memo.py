@@ -17,6 +17,7 @@ import sys
 
 try:
     from jsonschema import Draft202012Validator, FormatChecker
+    from referencing import Registry, Resource
 except ImportError as exc:  # pragma: no cover
     print("Missing dependency: jsonschema. Install it with: pip install jsonschema")
     raise SystemExit(2) from exc
@@ -32,6 +33,26 @@ RFC3339_DATETIME = re.compile(
 MARKDOWN_HEADING = re.compile(r"^(#{1,6})\s+(.*\S)\s*$")
 SYMBOLIC_REF = re.compile(r"^[A-Za-z][A-Za-z0-9_-]*:")
 WINDOWS_ABSOLUTE_PATH = re.compile(r"^[A-Za-z]:[\\\\/]")
+CORE_KIND_SCHEMA_MAP = {
+    "anchor": "schemas/anchor.schema.json",
+    "state_capsule": "schemas/state_capsule.schema.json",
+    "episode": "schemas/episode.schema.json",
+    "claim": "schemas/claim.schema.json",
+    "decision": "schemas/decision.schema.json",
+    "pattern": "schemas/pattern.schema.json",
+    "bridge": "schemas/bridge.schema.json",
+    "audit_event": "schemas/audit_event.schema.json",
+}
+CORE_KIND_EXAMPLE_MAP = {
+    "anchor": "anchor.example.json",
+    "state_capsule": "state_capsule.example.json",
+    "episode": "episode.example.json",
+    "claim": "claim.example.json",
+    "decision": "checkpoint_approval_record.example.json",
+    "pattern": "pattern.example.json",
+    "bridge": "bridge.kag-lift.example.json",
+    "audit_event": "audit_event.supersession.example.json",
+}
 
 
 def load_json(path: Path) -> dict:
@@ -99,10 +120,21 @@ def append_ref_errors(errors: list[str], ref_checks: list[tuple[str, object]]) -
     errors.extend(filter(None, (local_ref_error(value, label) for label, value in ref_checks)))
 
 
+@lru_cache(maxsize=None)
+def schema_registry() -> Registry:
+    resources: list[tuple[str, Resource]] = []
+    for path in SCHEMAS.glob("*.json"):
+        schema = load_json(path)
+        schema_id = schema.get("$id")
+        if isinstance(schema_id, str):
+            resources.append((schema_id, Resource.from_contents(schema)))
+    return Registry().with_resources(resources)
+
+
 def validator_for(schema_name: str) -> Draft202012Validator:
     schema = load_json(SCHEMAS / schema_name)
     Draft202012Validator.check_schema(schema)
-    return Draft202012Validator(schema, format_checker=FORMAT_CHECKER)
+    return Draft202012Validator(schema, format_checker=FORMAT_CHECKER, registry=schema_registry())
 
 
 def validate_example(validator: Draft202012Validator, example_name: str) -> None:
@@ -143,6 +175,118 @@ def validate_example(validator: Draft202012Validator, example_name: str) -> None
 def validate_support_schema(schema_name: str) -> None:
     validator_for(schema_name)
     print(f"[OK]   {schema_name}")
+
+
+def validate_memory_object_profiles() -> None:
+    profile_validator = validator_for("memory_object_profile.schema.json")
+
+    for kind, schema_path in CORE_KIND_SCHEMA_MAP.items():
+        schema_name = Path(schema_path).name
+        example_name = CORE_KIND_EXAMPLE_MAP[kind]
+        validate_example(validator_for(schema_name), example_name)
+        validate_example(profile_validator, example_name)
+
+    extra_kind_examples = {
+        "episode": [
+            "checkpoint_health_check.example.json",
+            "episode.tos-interpretation.example.json",
+        ],
+        "claim": [
+            "claim.tos-bridge-ready.example.json",
+            "claim.current-entrypoint.example.json",
+            "claim.superseded.example.json",
+            "claim.retracted.example.json",
+        ],
+        "audit_event": [
+            "audit_event.retraction.example.json",
+        ],
+    }
+
+    for kind, example_names in extra_kind_examples.items():
+        schema_name = Path(CORE_KIND_SCHEMA_MAP[kind]).name
+        for example_name in example_names:
+            validate_example(validator_for(schema_name), example_name)
+            validate_example(profile_validator, example_name)
+
+
+def validate_trust_lifecycle_contracts() -> None:
+    registry = load_json(GENERATED / "memo_registry.min.json")
+    errors: list[str] = []
+
+    for ref in (
+        "docs/MEMORY_TRUST_POSTURE.md",
+        "docs/LIFECYCLE.md",
+        "schemas/trust_posture.schema.json",
+        "schemas/lifecycle_posture.schema.json",
+    ):
+        if ref.endswith(".md") and ref not in registry.get("core_docs", []):
+            errors.append(f"generated/memo_registry.min.json must list {ref}")
+        if ref.endswith(".json") and ref not in registry.get("schemas", []):
+            errors.append(f"generated/memo_registry.min.json must list {ref}")
+
+    memory_examples = [
+        "anchor.example.json",
+        "state_capsule.example.json",
+        "episode.example.json",
+        "episode.tos-interpretation.example.json",
+        "claim.example.json",
+        "claim.current-entrypoint.example.json",
+        "claim.superseded.example.json",
+        "claim.retracted.example.json",
+        "claim.tos-bridge-ready.example.json",
+        "checkpoint_approval_record.example.json",
+        "checkpoint_health_check.example.json",
+        "pattern.example.json",
+        "bridge.kag-lift.example.json",
+        "audit_event.supersession.example.json",
+        "audit_event.retraction.example.json",
+    ]
+
+    for example_name in memory_examples:
+        data = load_json(EXAMPLES / example_name)
+        trust = data.get("trust", {})
+        lifecycle = data.get("lifecycle", {})
+        current_recall = lifecycle.get("current_recall", {})
+
+        if trust.get("temperature") == "frozen" and lifecycle.get("review_state") != "frozen":
+            errors.append(f"{example_name} must keep lifecycle.review_state == 'frozen' when trust.temperature == 'frozen'")
+        if current_recall.get("status") == "withdrawn" and lifecycle.get("review_state") != "retracted":
+            errors.append(f"{example_name} withdrawn current_recall posture must stay tied to review_state 'retracted'")
+
+    if errors:
+        print("[FAIL] trust/lifecycle contract surfaces")
+        for err in errors:
+            print(f"  - {err}")
+        raise SystemExit(1)
+    print("[OK]   trust/lifecycle contract surfaces")
+
+
+def validate_memory_object_surface_manifest() -> None:
+    validator = validator_for("memory_object_surface_manifest.schema.json")
+    data = load_json(EXAMPLES / "memory_object_surface_manifest.json")
+
+    errors = [
+        f"{'.'.join(str(part) for part in err.absolute_path) or '<root>'}: {err.message}"
+        for err in sorted(validator.iter_errors(data), key=lambda err: list(err.absolute_path))
+    ]
+
+    seen_paths: set[str] = set()
+    for index, entry in enumerate(data.get("entries", [])):
+        path = entry.get("example_path")
+        if path in seen_paths:
+            errors.append(f"entries[{index}].example_path duplicates {path}")
+        if isinstance(path, str):
+            seen_paths.add(path)
+        error = local_ref_error(path, f"entries[{index}].example_path")
+        if error:
+            errors.append(error)
+
+    if errors:
+        print("[FAIL] memory_object_surface_manifest.json")
+        for err in errors:
+            print(f"  - {err}")
+        raise SystemExit(1)
+    print("[OK]   memory_object_surface_manifest.json")
 
 
 def validate_recall_contract_example(
@@ -206,6 +350,8 @@ def validate_registry() -> None:
         "temperature_scale",
         "core_docs",
         "schemas",
+        "generated_surface_families",
+        "validation_commands",
     ]
     missing = [key for key in required if key not in data]
     errors = [f"missing key: {key}" for key in missing]
@@ -214,6 +360,80 @@ def validate_registry() -> None:
             error = local_ref_error(ref, f"{key}[{index}]")
             if error:
                 errors.append(error)
+
+    expected_schemas = {
+        "schemas/memory_object_surface_manifest.schema.json",
+        "schemas/memory_object_catalog.schema.json",
+        "schemas/memory_object_capsules.schema.json",
+        "schemas/memory_object_sections.schema.json",
+    }
+    for schema_ref in sorted(expected_schemas):
+        if schema_ref not in data.get("schemas", []):
+            errors.append(f"generated/memo_registry.min.json must list {schema_ref}")
+
+    families = {
+        item.get("family"): item
+        for item in data.get("generated_surface_families", [])
+        if isinstance(item, dict) and isinstance(item.get("family"), str)
+    }
+    if "doctrine" not in families:
+        errors.append("generated/memo_registry.min.json must publish doctrine generated_surface_families entry")
+    if "memory_objects" not in families:
+        errors.append("generated/memo_registry.min.json must publish memory_objects generated_surface_families entry")
+
+    doctrine = families.get("doctrine", {})
+    doctrine_outputs = [
+        "generated/memory_catalog.json",
+        "generated/memory_catalog.min.json",
+        "generated/memory_capsules.json",
+        "generated/memory_sections.full.json",
+    ]
+    if doctrine.get("source_of_truth") != "aoa-memo-doctrine-route-surfaces-v1":
+        errors.append("doctrine generated_surface_families entry must keep source_of_truth aoa-memo-doctrine-route-surfaces-v1")
+    if doctrine.get("outputs") != doctrine_outputs:
+        errors.append("doctrine generated_surface_families entry must list the doctrine output family")
+    if doctrine.get("validator_command") != "python scripts/validate_memory_surfaces.py":
+        errors.append("doctrine generated_surface_families entry must keep validator_command python scripts/validate_memory_surfaces.py")
+
+    memory_objects = families.get("memory_objects", {})
+    object_outputs = [
+        "generated/memory_object_catalog.json",
+        "generated/memory_object_catalog.min.json",
+        "generated/memory_object_capsules.json",
+        "generated/memory_object_sections.full.json",
+    ]
+    if memory_objects.get("source_of_truth") != "aoa-memo-object-example-surfaces-v1":
+        errors.append("memory_objects generated_surface_families entry must keep source_of_truth aoa-memo-object-example-surfaces-v1")
+    if memory_objects.get("manifest") != "examples/memory_object_surface_manifest.json":
+        errors.append("memory_objects generated_surface_families entry must list examples/memory_object_surface_manifest.json as the manifest")
+    if memory_objects.get("outputs") != object_outputs:
+        errors.append("memory_objects generated_surface_families entry must list the object output family")
+    if memory_objects.get("generator_command") != "python scripts/generate_memory_object_surfaces.py":
+        errors.append("memory_objects generated_surface_families entry must keep generator_command python scripts/generate_memory_object_surfaces.py")
+    if memory_objects.get("validator_command") != "python scripts/validate_memory_object_surfaces.py":
+        errors.append("memory_objects generated_surface_families entry must keep validator_command python scripts/validate_memory_object_surfaces.py")
+
+    for family_name, family in families.items():
+        manifest = family.get("manifest")
+        if manifest is not None:
+            error = local_ref_error(manifest, f"generated_surface_families.{family_name}.manifest")
+            if error:
+                errors.append(error)
+        for index, ref in enumerate(family.get("outputs", [])):
+            error = local_ref_error(ref, f"generated_surface_families.{family_name}.outputs[{index}]")
+            if error:
+                errors.append(error)
+
+    required_validation_commands = {
+        "python scripts/validate_memo.py",
+        "python scripts/validate_memory_surfaces.py",
+        "python scripts/validate_memory_object_surfaces.py",
+        "python scripts/validate_lifecycle_audit_examples.py",
+    }
+    missing_commands = sorted(required_validation_commands - set(data.get("validation_commands", [])))
+    if missing_commands:
+        errors.append("generated/memo_registry.min.json missing validation commands: " + ", ".join(missing_commands))
+
     if errors:
         print("[FAIL] generated/memo_registry.min.json")
         for err in errors:
@@ -234,11 +454,32 @@ def validate_core_memory_contract() -> None:
 
     expected_core = registry.get("memory_object_kinds", [])
     expected_supporting = registry.get("supporting_objects", [])
+    expected_profile_schema = "schemas/memory_object_profile.schema.json"
+    expected_kind_schemas = CORE_KIND_SCHEMA_MAP
+
+    append_ref_errors(
+        errors,
+        [("profile_schema", data.get("profile_schema"))]
+        + [
+            (f"kind_profile_schemas.{kind}", ref)
+            for kind, ref in data.get("kind_profile_schemas", {}).items()
+        ],
+    )
 
     if sorted(data.get("core_memory_surfaces", [])) != sorted(expected_core):
         errors.append("core_memory_surfaces does not match generated/memo_registry.min.json memory_object_kinds")
     if sorted(data.get("supporting_objects", [])) != sorted(expected_supporting):
         errors.append("supporting_objects does not match generated/memo_registry.min.json supporting_objects")
+    if data.get("profile_schema") != expected_profile_schema:
+        errors.append("profile_schema must stay schemas/memory_object_profile.schema.json")
+    if data.get("kind_profile_schemas") != expected_kind_schemas:
+        errors.append("kind_profile_schemas does not match the shipped per-kind profile schema map")
+
+    for ref in [expected_profile_schema, *expected_kind_schemas.values()]:
+        if ref not in registry.get("schemas", []):
+            errors.append(f"generated/memo_registry.min.json must list {ref}")
+    if "docs/MEMORY_OBJECT_PROFILES.md" not in registry.get("core_docs", []):
+        errors.append("generated/memo_registry.min.json must list docs/MEMORY_OBJECT_PROFILES.md")
 
     if errors:
         print("[FAIL] core_memory_contract.example.json")
@@ -521,12 +762,28 @@ def validate_memory_eval_guardrail_pack() -> None:
 
 
 def main() -> int:
+    validate_support_schema("memory_object_profile.schema.json")
+    validate_support_schema("trust_posture.schema.json")
+    validate_support_schema("lifecycle_posture.schema.json")
+    validate_support_schema("anchor.schema.json")
+    validate_support_schema("state_capsule.schema.json")
+    validate_support_schema("episode.schema.json")
+    validate_support_schema("claim.schema.json")
+    validate_support_schema("decision.schema.json")
+    validate_support_schema("pattern.schema.json")
+    validate_support_schema("bridge.schema.json")
+    validate_support_schema("audit_event.schema.json")
+    validate_support_schema("memory_object_surface_manifest.schema.json")
+    validate_support_schema("memory_object_catalog.schema.json")
+    validate_support_schema("memory_object_capsules.schema.json")
+    validate_support_schema("memory_object_sections.schema.json")
     validate_support_schema("decay_policy.schema.json")
     validate_support_schema("inquiry_checkpoint.schema.json")
     validate_support_schema("checkpoint-to-memory-contract.schema.json")
     validate_support_schema("memory_chunk_face.schema.json")
     validate_support_schema("memory_graph_face.schema.json")
     validate_support_schema("memory_eval_guardrail_pack.schema.json")
+    validate_memory_object_surface_manifest()
     validate_example(validator_for("memory_object.schema.json"), "episode.example.json")
     validate_example(validator_for("memory_object.schema.json"), "claim.example.json")
     validate_example(validator_for("memory_object.schema.json"), "checkpoint_approval_record.example.json")
@@ -588,6 +845,38 @@ def main() -> int:
         expected_expand_surface="generated/memory_sections.full.json",
         expected_source_route_required=True,
     )
+    validate_recall_contract_example(
+        "recall_contract.object.working.json",
+        expected_mode="working",
+        expected_allowed_scopes=["thread", "session", "project"],
+        expected_preferred_kinds=["state_capsule", "decision", "episode", "audit_event"],
+        expected_temperature_order=["hot", "warm", "cool", "frozen", "cold"],
+        expected_inspect_surface="generated/memory_object_catalog.min.json",
+        expected_expand_surface="generated/memory_object_sections.full.json",
+        expected_source_route_required=False,
+    )
+    validate_recall_contract_example(
+        "recall_contract.object.semantic.json",
+        expected_mode="semantic",
+        expected_allowed_scopes=["repo", "project", "ecosystem"],
+        expected_preferred_kinds=["claim", "decision", "pattern", "anchor"],
+        expected_temperature_order=["warm", "cool", "frozen", "cold", "hot"],
+        expected_inspect_surface="generated/memory_object_catalog.min.json",
+        expected_expand_surface="generated/memory_object_sections.full.json",
+        expected_source_route_required=True,
+    )
+    validate_recall_contract_example(
+        "recall_contract.object.lineage.json",
+        expected_mode="lineage",
+        expected_allowed_scopes=["project", "workspace", "ecosystem"],
+        expected_preferred_kinds=["bridge", "claim", "episode", "anchor"],
+        expected_temperature_order=["warm", "cool", "frozen", "cold", "hot"],
+        expected_inspect_surface="generated/memory_object_catalog.min.json",
+        expected_expand_surface="generated/memory_object_sections.full.json",
+        expected_source_route_required=True,
+    )
+    validate_memory_object_profiles()
+    validate_trust_lifecycle_contracts()
     validate_registry()
     validate_core_memory_contract()
     validate_checkpoint_to_memory_contract()

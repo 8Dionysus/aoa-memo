@@ -28,8 +28,10 @@ The memo layer may publish the following posture fields for agent-side consumpti
 - `access.write_scopes`
 - `access.promotion_scopes`
 - `lifecycle.review_state`
+- `lifecycle.current_recall.status`
 - `lifecycle.promotion_state`
 - `trust.temperature`
+- `trust.authority_kind`
 - `trust.authority`
 - `provenance.provenance_thread_id`
 - `bridges.route_capsule_ref`
@@ -76,11 +78,20 @@ The smallest useful memo-side handoff surface for agent consumers should include
 - write scopes
 - promotion scopes when present
 - lifecycle review state
+- current recall status
 - trust temperature
+- authority kind
 - provenance thread id when present
 - route capsule ref or stronger source refs for deeper inspection
 
 These are memo-side descriptors, not grants.
+
+For compact object-first inspection, the current memo-side public surface is:
+
+- `generated/memory_object_catalog.min.json` for inspect
+- `generated/memory_object_sections.full.json` for expansion
+
+The doctrine family remains separate and continues to answer layer-meaning questions rather than object-level posture lookup.
 
 ## What This Seam Does Not Do
 

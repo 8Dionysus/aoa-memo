@@ -33,6 +33,7 @@
   "trust": {
     "temperature": "cold",
     "confidence": 0.27,
+    "authority_kind": "candidate_under_review",
     "authority": "claim-under-review",
     "freshness": 0.33,
     "salience": 0.18
@@ -41,7 +42,14 @@
     "review_state": "retracted",
     "supersedes": [],
     "superseded_by": null,
-    "retention_class": "historical-retracted"
+    "retention_class": "historical-retracted",
+    "current_recall": {
+      "status": "withdrawn",
+      "status_reason": "This over-strong claim should not surface as normal current memo meaning.",
+      "contradiction_refs": [
+        "memo.claim.2026-03-21.memo-entrypoint-new"
+      ]
+    }
   },
   "access": {
     "access_class": "public",

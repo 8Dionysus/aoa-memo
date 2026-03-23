@@ -37,6 +37,7 @@
   "trust": {
     "temperature": "cool",
     "confidence": 0.94,
+    "authority_kind": "repo_maintained",
     "authority": "repo-lifecycle-audit",
     "freshness": 0.95,
     "salience": 0.73
@@ -45,7 +46,11 @@
     "review_state": "confirmed",
     "supersedes": [],
     "superseded_by": null,
-    "retention_class": "audit-trace"
+    "retention_class": "audit-trace",
+    "current_recall": {
+      "status": "historical",
+      "status_reason": "This audit event should be surfaced mainly when tracing why the current entrypoint replaced an older one."
+    }
   },
   "access": {
     "access_class": "public",

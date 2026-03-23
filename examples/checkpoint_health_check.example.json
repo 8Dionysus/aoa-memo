@@ -33,6 +33,7 @@
   "trust": {
     "temperature": "warm",
     "confidence": 0.88,
+    "authority_kind": "operational_observation",
     "authority": "post-change review",
     "freshness": 0.97,
     "salience": 0.9
@@ -41,7 +42,11 @@
     "review_state": "proposed",
     "supersedes": [],
     "superseded_by": null,
-    "retention_class": "checkpoint"
+    "retention_class": "checkpoint",
+    "current_recall": {
+      "status": "allowed",
+      "status_reason": "This health-check episode remains available for bounded review and improvement-thread trace-back."
+    }
   },
   "access": {
     "access_class": "public",

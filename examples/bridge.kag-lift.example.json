@@ -36,6 +36,7 @@
   "trust": {
     "temperature": "cool",
     "confidence": 0.86,
+    "authority_kind": "candidate_under_review",
     "authority": "reviewed-bridge-candidate",
     "freshness": 0.89,
     "salience": 0.9
@@ -45,7 +46,11 @@
     "supersedes": [],
     "superseded_by": null,
     "retention_class": "bridge-candidate",
-    "promotion_state": "candidate"
+    "promotion_state": "candidate",
+    "current_recall": {
+      "status": "allowed",
+      "status_reason": "This bridge candidate should remain visible for lineage and KAG-oriented inspection without being treated as a finalized lift."
+    }
   },
   "access": {
     "access_class": "public",

@@ -36,6 +36,7 @@
   "trust": {
     "temperature": "cool",
     "confidence": 0.9,
+    "authority_kind": "source_inspection",
     "authority": "memo-doctrine+source-inspection",
     "freshness": 0.9,
     "salience": 0.87
@@ -44,7 +45,11 @@
     "review_state": "confirmed",
     "supersedes": [],
     "superseded_by": null,
-    "retention_class": "doctrine"
+    "retention_class": "doctrine",
+    "current_recall": {
+      "status": "allowed",
+      "status_reason": "This reviewed claim is suitable for semantic and lineage expansion, but it is not the sole entrypoint for recall."
+    }
   },
   "access": {
     "access_class": "public",

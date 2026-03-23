@@ -1,0 +1,546 @@
+{
+  "sections_version": 1,
+  "source_of_truth": "aoa-memo-object-example-surfaces-v1",
+  "memory_objects": [
+    {
+      "id": "memo.anchor.2026-03-23.charter-operating-axis",
+      "kind": "anchor",
+      "title": "aoa-memo charter remains a stable operating anchor",
+      "source_path": "examples/anchor.example.json",
+      "sections": [
+        {
+          "section_id": "memo.anchor.2026-03-23.charter-operating-axis#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the anchor surface, its active recall modes, and its preferred current-recall posture.",
+          "body": "aoa-memo charter remains a stable operating anchor. Stabilizes the charter as a frozen operating axis for interpreting what aoa-memo owns and what must stay in neighboring layers. Scope: repo:aoa-memo, ecosystem:AoA. Primary recall modes: semantic, source_route, lineage. Current recall status: preferred because This anchor should remain the default reference when deciding what aoa-memo may or may not absorb. Payload ref: CHARTER.md#core-rules."
+        },
+        {
+          "section_id": "memo.anchor.2026-03-23.charter-operating-axis#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.bootstrap.aoa-memo.2026-03-20. Source refs: CHARTER.md#core-rules, docs/OPERATIONAL_BOUNDARY.md#stable-public-boundary. Episode refs: none. Related curated object ids: none. Strongest next sources: CHARTER.md#core-rules, docs/OPERATIONAL_BOUNDARY.md#stable-public-boundary."
+        },
+        {
+          "section_id": "memo.anchor.2026-03-23.charter-operating-axis#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: human_reviewed (human-reviewed doctrine boundary). Temperature: frozen; confidence 0.99; freshness 0.94; salience 0.98. Review state: frozen. Retention class: constitutional-core. Promotion state: promoted. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none. Freeze basis: human_review, constitutional_seam; Charter boundary was stabilized as a durable operating axis for memo interpretation."
+        },
+        {
+          "section_id": "memo.anchor.2026-03-23.charter-operating-axis#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memory_catalog.min.json. ToS refs: none. Skill refs: none. Eval refs: none. KAG lift status: none."
+        }
+      ]
+    },
+    {
+      "id": "memo.state.2026-03-23.contract-hardening-current-axis",
+      "kind": "state_capsule",
+      "title": "Current contract-hardening axis exported as a bounded state capsule",
+      "source_path": "examples/state_capsule.example.json",
+      "sections": [
+        {
+          "section_id": "memo.state.2026-03-23.contract-hardening-current-axis#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the state_capsule surface, its active recall modes, and its preferred current-recall posture.",
+          "body": "Current contract-hardening axis exported as a bounded state capsule. Exports the current aoa-memo hardening slice: sharpen per-kind object contracts first, then trust/lifecycle semantics, then object-facing generated surfaces. Scope: thread:contract-hardening, repo:aoa-memo, project:AoA. Primary recall modes: working, episodic. Current recall status: preferred because This capsule is the current bounded working-state export for the active hardening route. Payload ref: ROADMAP.md#current-stage."
+        },
+        {
+          "section_id": "memo.state.2026-03-23.contract-hardening-current-axis#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.aoa-memo.contract-hardening.2026-03-23. Source refs: ROADMAP.md#current-stage, docs/RUNTIME_WRITEBACK_SEAM.md#mapping-to-preserve. Episode refs: memo.ep.2026-03-20.bootstrap-foundation. Related curated object ids: memo.ep.2026-03-20.bootstrap-foundation. Strongest next sources: ROADMAP.md#current-stage, docs/RUNTIME_WRITEBACK_SEAM.md#mapping-to-preserve."
+        },
+        {
+          "section_id": "memo.state.2026-03-23.contract-hardening-current-axis#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: operational_observation (repo-maintainer working export). Temperature: hot; confidence 0.84; freshness 0.99; salience 0.93. Review state: captured. Retention class: working-export. Promotion state: candidate. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.state.2026-03-23.contract-hardening-current-axis#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: docs/RUNTIME_WRITEBACK_SEAM.md#mapping-to-preserve. ToS refs: none. Skill refs: none. Eval refs: none. KAG lift status: none."
+        }
+      ]
+    },
+    {
+      "id": "memo.ep.2026-03-20.bootstrap-foundation",
+      "kind": "episode",
+      "title": "Bootstrap foundation draft prepared for aoa-memo",
+      "source_path": "examples/episode.example.json",
+      "sections": [
+        {
+          "section_id": "memo.ep.2026-03-20.bootstrap-foundation#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the episode surface, its active recall modes, and its allowed current-recall posture.",
+          "body": "Bootstrap foundation draft prepared for aoa-memo. A first doctrine-and-schema baseline was prepared for the aoa-memo repository bootstrap phase. Scope: repo:aoa-memo, project:AoA. Primary recall modes: episodic, working. Current recall status: allowed because This episode remains usable for trace-back and bootstrap interpretation, but it is not the main recall entrypoint. Payload ref: ROADMAP.md#current-stage."
+        },
+        {
+          "section_id": "memo.ep.2026-03-20.bootstrap-foundation#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.bootstrap.aoa-memo.2026-03-20. Source refs: repo:aoa-memo/README.md, repo:aoa-routing/README.md, repo:aoa-kag/README.md, repo:Tree-of-Sophia/README.md. Episode refs: none. Related curated object ids: none. Strongest next sources: repo:aoa-memo/README.md, repo:aoa-routing/README.md, repo:aoa-kag/README.md."
+        },
+        {
+          "section_id": "memo.ep.2026-03-20.bootstrap-foundation#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: operational_observation (draft/human-curated). Temperature: warm; confidence 0.86; freshness 0.98; salience 0.91. Review state: proposed. Retention class: project-core. Promotion state: none. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.ep.2026-03-20.bootstrap-foundation#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memo_registry.min.json. ToS refs: none. Skill refs: none. Eval refs: none. KAG lift status: none."
+        }
+      ]
+    },
+    {
+      "id": "memo.ep.2026-03-23.tos-interpretation-bridge-seed",
+      "kind": "episode",
+      "title": "ToS fragment inspection recorded for memo bridge export",
+      "source_path": "examples/episode.tos-interpretation.example.json",
+      "sections": [
+        {
+          "section_id": "memo.ep.2026-03-23.tos-interpretation-bridge-seed#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the episode surface, its active recall modes, and its allowed current-recall posture.",
+          "body": "ToS fragment inspection recorded for memo bridge export. Records that a Tree of Sophia fragment was inspected as the seed event for a bounded memo bridge and downstream KAG-ready handoff. Scope: repo:aoa-memo, project:AoA. Primary recall modes: lineage, episodic, semantic. Current recall status: allowed because This source episode should stay visible as evidence for bridge-oriented recall without becoming the main semantic entrypoint. Payload ref: docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow."
+        },
+        {
+          "section_id": "memo.ep.2026-03-23.tos-interpretation-bridge-seed#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.tos-bridge-kag-lift.2026-03-23. Source refs: docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow, repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md. Episode refs: none. Related curated object ids: none. Strongest next sources: docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow, repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md."
+        },
+        {
+          "section_id": "memo.ep.2026-03-23.tos-interpretation-bridge-seed#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: source_inspection (source-inspection). Temperature: warm; confidence 0.84; freshness 0.92; salience 0.88. Review state: captured. Retention class: bridge-trace. Promotion state: none. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.ep.2026-03-23.tos-interpretation-bridge-seed#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memory_catalog.min.json. ToS refs: repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md#memory-bridge-fragment. Skill refs: none. Eval refs: none. KAG lift status: none."
+        }
+      ]
+    },
+    {
+      "id": "memo.claim.2026-03-20.temperature-not-truth",
+      "kind": "claim",
+      "title": "Temperature is not truth",
+      "source_path": "examples/claim.example.json",
+      "sections": [
+        {
+          "section_id": "memo.claim.2026-03-20.temperature-not-truth#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the claim surface, its active recall modes, and its preferred current-recall posture.",
+          "body": "Temperature is not truth. Memory temperature tracks activation and consolidation posture, not universal correctness or proof status. Scope: repo:aoa-memo, ecosystem:AoA. Primary recall modes: semantic, source_route. Current recall status: preferred because This remains a current doctrine-level claim for interpreting memo temperature. Payload ref: docs/MEMORY_MODEL.md#axis-2-temperature."
+        },
+        {
+          "section_id": "memo.claim.2026-03-20.temperature-not-truth#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.bootstrap.aoa-memo.2026-03-20. Source refs: repo:aoa-memo/CHARTER.md, repo:aoa-memo/docs/MEMORY_MODEL.md. Episode refs: memo.ep.2026-03-20.bootstrap-foundation. Related curated object ids: memo.ep.2026-03-20.bootstrap-foundation. Strongest next sources: repo:aoa-memo/CHARTER.md, repo:aoa-memo/docs/MEMORY_MODEL.md."
+        },
+        {
+          "section_id": "memo.claim.2026-03-20.temperature-not-truth#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: repo_maintained (repo-doctrine). Temperature: cool; confidence 0.93; freshness 0.97; salience 0.95. Review state: confirmed. Retention class: doctrine. Promotion state: none. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.claim.2026-03-20.temperature-not-truth#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memo_registry.min.json. ToS refs: none. Skill refs: none. Eval refs: none. KAG lift status: candidate."
+        }
+      ]
+    },
+    {
+      "id": "memo.claim.2026-03-21.memo-entrypoint-new",
+      "kind": "claim",
+      "title": "Dedicated memo catalog surfaces are the preferred inspect entrypoint",
+      "source_path": "examples/claim.current-entrypoint.example.json",
+      "sections": [
+        {
+          "section_id": "memo.claim.2026-03-21.memo-entrypoint-new#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the claim surface, its active recall modes, and its preferred current-recall posture.",
+          "body": "Dedicated memo catalog surfaces are the preferred inspect entrypoint. Router-facing semantic recall should inspect the dedicated memo catalog surfaces rather than relying on the compact registry alone. Scope: repo:aoa-memo, project:AoA. Primary recall modes: semantic, source_route. Current recall status: preferred because This claim is the current inspect entrypoint for router-facing semantic recall. Payload ref: generated/memory_catalog.min.json."
+        },
+        {
+          "section_id": "memo.claim.2026-03-21.memo-entrypoint-new#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.memo.router-entrypoint.2026-03-21. Source refs: repo:aoa-memo/generated/memory_catalog.min.json, repo:aoa-memo/generated/memory_capsules.json, repo:aoa-memo/generated/memory_sections.full.json, repo:aoa-memo/examples/recall_contract.router.semantic.json. Episode refs: none. Related curated object ids: memo.claim.2026-03-21.memo-entrypoint-old, memo.claim.2026-03-21.memo-entrypoint-bad-claim. Strongest next sources: repo:aoa-memo/generated/memory_catalog.min.json, repo:aoa-memo/generated/memory_capsules.json, repo:aoa-memo/generated/memory_sections.full.json."
+        },
+        {
+          "section_id": "memo.claim.2026-03-21.memo-entrypoint-new#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: repo_maintained (repo-generated-surface). Temperature: warm; confidence 0.95; freshness 0.97; salience 0.78. Review state: confirmed. Retention class: active-generated-surface. Promotion state: none. Supersedes: memo.claim.2026-03-21.memo-entrypoint-old. Superseded by: none. Replacement ref: none. Contradiction refs: memo.claim.2026-03-21.memo-entrypoint-bad-claim."
+        },
+        {
+          "section_id": "memo.claim.2026-03-21.memo-entrypoint-new#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memory_catalog.min.json. ToS refs: none. Skill refs: none. Eval refs: none. KAG lift status: none."
+        }
+      ]
+    },
+    {
+      "id": "memo.claim.2026-03-21.memo-entrypoint-old",
+      "kind": "claim",
+      "title": "Old memo inspect entrypoint points to registry only",
+      "source_path": "examples/claim.superseded.example.json",
+      "sections": [
+        {
+          "section_id": "memo.claim.2026-03-21.memo-entrypoint-old#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the claim surface, its active recall modes, and its historical current-recall posture.",
+          "body": "Old memo inspect entrypoint points to registry only. Early router-facing recall pointed semantic inspect toward the compact memo registry instead of the dedicated memo catalog surfaces. Scope: repo:aoa-memo, project:AoA. Primary recall modes: semantic, lineage. Current recall status: historical because This claim remains visible for trace-back only because a newer current entrypoint replaced it. Payload ref: generated/memo_registry.min.json."
+        },
+        {
+          "section_id": "memo.claim.2026-03-21.memo-entrypoint-old#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.memo.router-entrypoint.2026-03-21. Source refs: repo:aoa-memo/generated/memo_registry.min.json, repo:aoa-memo/examples/recall_contract.semantic.json. Episode refs: none. Related curated object ids: memo.claim.2026-03-21.memo-entrypoint-new. Strongest next sources: repo:aoa-memo/generated/memo_registry.min.json, repo:aoa-memo/examples/recall_contract.semantic.json."
+        },
+        {
+          "section_id": "memo.claim.2026-03-21.memo-entrypoint-old#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: repo_maintained (repo-generated-surface). Temperature: cool; confidence 0.88; freshness 0.54; salience 0.41. Review state: superseded. Retention class: historical-generated-surface. Promotion state: none. Supersedes: none. Superseded by: memo.claim.2026-03-21.memo-entrypoint-new. Replacement ref: memo.claim.2026-03-21.memo-entrypoint-new. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.claim.2026-03-21.memo-entrypoint-old#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memory_catalog.min.json. ToS refs: none. Skill refs: none. Eval refs: none. KAG lift status: none."
+        }
+      ]
+    },
+    {
+      "id": "memo.claim.2026-03-21.memo-entrypoint-bad-claim",
+      "kind": "claim",
+      "title": "Memo registry alone is sufficient as the long-term inspect surface",
+      "source_path": "examples/claim.retracted.example.json",
+      "sections": [
+        {
+          "section_id": "memo.claim.2026-03-21.memo-entrypoint-bad-claim#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the claim surface, its active recall modes, and its withdrawn current-recall posture.",
+          "body": "Memo registry alone is sufficient as the long-term inspect surface. An over-strong claim that the compact registry by itself was enough as the stable inspect surface for router-facing memo recall. Scope: repo:aoa-memo, project:AoA. Primary recall modes: semantic, lineage. Current recall status: withdrawn because This over-strong claim should not surface as normal current memo meaning. Payload ref: generated/memo_registry.min.json."
+        },
+        {
+          "section_id": "memo.claim.2026-03-21.memo-entrypoint-bad-claim#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.memo.router-entrypoint.2026-03-21. Source refs: repo:aoa-memo/generated/memo_registry.min.json, repo:aoa-memo/docs/LIFECYCLE.md, repo:aoa-routing/README.md. Episode refs: none. Related curated object ids: memo.claim.2026-03-21.memo-entrypoint-new. Strongest next sources: repo:aoa-memo/generated/memo_registry.min.json, repo:aoa-memo/docs/LIFECYCLE.md, repo:aoa-routing/README.md."
+        },
+        {
+          "section_id": "memo.claim.2026-03-21.memo-entrypoint-bad-claim#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: candidate_under_review (claim-under-review). Temperature: cold; confidence 0.27; freshness 0.33; salience 0.18. Review state: retracted. Retention class: historical-retracted. Promotion state: none. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: memo.claim.2026-03-21.memo-entrypoint-new."
+        },
+        {
+          "section_id": "memo.claim.2026-03-21.memo-entrypoint-bad-claim#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memory_catalog.min.json. ToS refs: none. Skill refs: none. Eval refs: none. KAG lift status: none."
+        }
+      ]
+    },
+    {
+      "id": "memo.claim.2026-03-23.tos-bridge-by-reference",
+      "kind": "claim",
+      "title": "ToS-linked memory should bridge by reference",
+      "source_path": "examples/claim.tos-bridge-ready.example.json",
+      "sections": [
+        {
+          "section_id": "memo.claim.2026-03-23.tos-bridge-by-reference#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the claim surface, its active recall modes, and its allowed current-recall posture.",
+          "body": "ToS-linked memory should bridge by reference. A memo bridge candidate should preserve Tree of Sophia meaning by reference and provenance rather than by rewriting source-authored material inside aoa-memo. Scope: repo:aoa-memo, project:AoA, ecosystem:AoA. Primary recall modes: semantic, lineage, source_route. Current recall status: allowed because This reviewed claim is suitable for semantic and lineage expansion, but it is not the sole entrypoint for recall. Payload ref: docs/KAG_TOS_BRIDGE_CONTRACT.md#tos-bridge-guidance."
+        },
+        {
+          "section_id": "memo.claim.2026-03-23.tos-bridge-by-reference#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.tos-bridge-kag-lift.2026-03-23. Source refs: docs/KAG_TOS_BRIDGE_CONTRACT.md#tos-bridge-guidance, repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md. Episode refs: memo.ep.2026-03-23.tos-interpretation-bridge-seed. Related curated object ids: memo.ep.2026-03-23.tos-interpretation-bridge-seed. Strongest next sources: docs/KAG_TOS_BRIDGE_CONTRACT.md#tos-bridge-guidance, repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md."
+        },
+        {
+          "section_id": "memo.claim.2026-03-23.tos-bridge-by-reference#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: source_inspection (memo-doctrine+source-inspection). Temperature: cool; confidence 0.90; freshness 0.90; salience 0.87. Review state: confirmed. Retention class: doctrine. Promotion state: none. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.claim.2026-03-23.tos-bridge-by-reference#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memory_sections.full.json. ToS refs: repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md#memory-bridge-fragment. Skill refs: none. Eval refs: none. KAG lift status: candidate."
+        }
+      ]
+    },
+    {
+      "id": "memo.decision.2026-03-21.self-agent-approval-record",
+      "kind": "decision",
+      "title": "Approval record for self-agent checkpoint rollout",
+      "source_path": "examples/checkpoint_approval_record.example.json",
+      "sections": [
+        {
+          "section_id": "memo.decision.2026-03-21.self-agent-approval-record#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the decision surface, its active recall modes, and its allowed current-recall posture.",
+          "body": "Approval record for self-agent checkpoint rollout. Records explicit approval to proceed with a bounded self-agent checkpoint change after the source-of-truth and policy check were named. Scope: repo:aoa-playbooks, ecosystem:AoA. Primary recall modes: working, semantic, source_route. Current recall status: allowed because This decision should remain available during checkpoint-oriented recall as a reviewed gate outcome. Payload ref: docs/MEMORY_MODEL.md#checkpoint-route-writeback."
+        },
+        {
+          "section_id": "memo.decision.2026-03-21.self-agent-approval-record#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.self-agent-checkpoint.2026-03-21. Source refs: repo:aoa-agents/docs/SELF_AGENT_CHECKPOINT_STACK.md, repo:aoa-playbooks/playbooks/self-agent-checkpoint-rollout/PLAYBOOK.md. Episode refs: none. Related curated object ids: none. Strongest next sources: repo:aoa-agents/docs/SELF_AGENT_CHECKPOINT_STACK.md, repo:aoa-playbooks/playbooks/self-agent-checkpoint-rollout/PLAYBOOK.md."
+        },
+        {
+          "section_id": "memo.decision.2026-03-21.self-agent-approval-record#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: human_reviewed (human-reviewed checkpoint gate). Temperature: warm; confidence 0.92; freshness 0.98; salience 0.95. Review state: confirmed. Retention class: checkpoint. Promotion state: none. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.decision.2026-03-21.self-agent-approval-record#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memo_registry.min.json. ToS refs: none. Skill refs: skill:aoa-source-of-truth-check, skill:aoa-approval-gate-check. Eval refs: eval:aoa-approval-boundary-adherence. KAG lift status: candidate."
+        }
+      ]
+    },
+    {
+      "id": "memo.ep.2026-03-21.self-agent-health-check",
+      "kind": "episode",
+      "title": "Post-change health check recorded for self-agent checkpoint rollout",
+      "source_path": "examples/checkpoint_health_check.example.json",
+      "sections": [
+        {
+          "section_id": "memo.ep.2026-03-21.self-agent-health-check#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the episode surface, its active recall modes, and its allowed current-recall posture.",
+          "body": "Post-change health check recorded for self-agent checkpoint rollout. Captures the post-change health result after a bounded self-agent checkpoint change completed and before the improvement log was frozen. Scope: repo:aoa-playbooks, ecosystem:AoA. Primary recall modes: working, episodic, source_route. Current recall status: allowed because This health-check episode remains available for bounded review and improvement-thread trace-back. Payload ref: docs/MEMORY_MODEL.md#checkpoint-route-writeback."
+        },
+        {
+          "section_id": "memo.ep.2026-03-21.self-agent-health-check#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.self-agent-checkpoint.2026-03-21. Source refs: repo:aoa-playbooks/playbooks/self-agent-checkpoint-rollout/PLAYBOOK.md, repo:aoa-evals/bundles/aoa-bounded-change-quality/EVAL.md. Episode refs: none. Related curated object ids: none. Strongest next sources: repo:aoa-playbooks/playbooks/self-agent-checkpoint-rollout/PLAYBOOK.md, repo:aoa-evals/bundles/aoa-bounded-change-quality/EVAL.md."
+        },
+        {
+          "section_id": "memo.ep.2026-03-21.self-agent-health-check#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: operational_observation (post-change review). Temperature: warm; confidence 0.88; freshness 0.97; salience 0.90. Review state: proposed. Retention class: checkpoint. Promotion state: none. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.ep.2026-03-21.self-agent-health-check#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memo_registry.min.json. ToS refs: none. Skill refs: skill:aoa-change-protocol, skill:aoa-dry-run-first. Eval refs: eval:aoa-bounded-change-quality. KAG lift status: none."
+        }
+      ]
+    },
+    {
+      "id": "memo.pattern.2026-03-23.reviewed-candidates-before-promotion",
+      "kind": "pattern",
+      "title": "Reviewed candidates stay candidates before durable promotion",
+      "source_path": "examples/pattern.example.json",
+      "sections": [
+        {
+          "section_id": "memo.pattern.2026-03-23.reviewed-candidates-before-promotion#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the pattern surface, its active recall modes, and its preferred current-recall posture.",
+          "body": "Reviewed candidates stay candidates before durable promotion. Observed across writeback and bridge flows: durable memo growth lands best when candidate claims, patterns, and bridges stay review-gated before wider promotion. Scope: repo:aoa-memo, project:AoA. Primary recall modes: procedural, semantic. Current recall status: preferred because This pattern should surface as current procedural-experience memory because it keeps recurring across bounded writeback flows. Payload ref: docs/WRITEBACK_TEMPERATURE_POLICY.md#what-may-bridge-outward."
+        },
+        {
+          "section_id": "memo.pattern.2026-03-23.reviewed-candidates-before-promotion#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.aoa-memo.contract-hardening.2026-03-23. Source refs: docs/RUNTIME_WRITEBACK_SEAM.md#distillation-posture, docs/WRITEBACK_TEMPERATURE_POLICY.md#what-may-bridge-outward, docs/MEMORY_MODEL.md#procedural-experience-memory. Episode refs: memo.ep.2026-03-21.self-agent-health-check, memo.ep.2026-03-23.tos-interpretation-bridge-seed. Related curated object ids: memo.ep.2026-03-21.self-agent-health-check, memo.ep.2026-03-23.tos-interpretation-bridge-seed. Strongest next sources: docs/RUNTIME_WRITEBACK_SEAM.md#distillation-posture, docs/WRITEBACK_TEMPERATURE_POLICY.md#what-may-bridge-outward, docs/MEMORY_MODEL.md#procedural-experience-memory."
+        },
+        {
+          "section_id": "memo.pattern.2026-03-23.reviewed-candidates-before-promotion#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: operational_observation (cross-example procedural observation). Temperature: cool; confidence 0.83; freshness 0.88; salience 0.86. Review state: confirmed. Retention class: operational-pattern. Promotion state: rescued. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.pattern.2026-03-23.reviewed-candidates-before-promotion#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memory_catalog.min.json. ToS refs: none. Skill refs: skill:aoa-dry-run-first. Eval refs: eval:aoa-bounded-change-quality. KAG lift status: none."
+        }
+      ]
+    },
+    {
+      "id": "memo.bridge.2026-03-23.tos-lineage-kag-candidate",
+      "kind": "bridge",
+      "title": "Bridge candidate linking memo claim to ToS lineage and KAG lift posture",
+      "source_path": "examples/bridge.kag-lift.example.json",
+      "sections": [
+        {
+          "section_id": "memo.bridge.2026-03-23.tos-lineage-kag-candidate#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the bridge surface, its active recall modes, and its allowed current-recall posture.",
+          "body": "Bridge candidate linking memo claim to ToS lineage and KAG lift posture. Connects a reviewed memo claim to Tree of Sophia lineage references while preserving provenance and candidate-only KAG lift posture. Scope: repo:aoa-memo, project:AoA, repo:Tree-of-Sophia. Primary recall modes: lineage, source_route, semantic. Current recall status: allowed because This bridge candidate should remain visible for lineage and KAG-oriented inspection without being treated as a finalized lift. Payload ref: docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow."
+        },
+        {
+          "section_id": "memo.bridge.2026-03-23.tos-lineage-kag-candidate#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.tos-bridge-kag-lift.2026-03-23. Source refs: docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow, repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md. Episode refs: memo.ep.2026-03-23.tos-interpretation-bridge-seed. Related curated object ids: memo.ep.2026-03-23.tos-interpretation-bridge-seed. Strongest next sources: docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow, repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md."
+        },
+        {
+          "section_id": "memo.bridge.2026-03-23.tos-lineage-kag-candidate#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: candidate_under_review (reviewed-bridge-candidate). Temperature: cool; confidence 0.86; freshness 0.89; salience 0.90. Review state: proposed. Retention class: bridge-candidate. Promotion state: candidate. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.bridge.2026-03-23.tos-lineage-kag-candidate#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memory_catalog.min.json. ToS refs: repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md#memory-bridge-fragment. Skill refs: none. Eval refs: none. KAG lift status: candidate."
+        }
+      ]
+    },
+    {
+      "id": "memo.audit.2026-03-21.router-entrypoint-supersession",
+      "kind": "audit_event",
+      "title": "Superseded registry-only inspect entrypoint with dedicated memo catalog surface",
+      "source_path": "examples/audit_event.supersession.example.json",
+      "sections": [
+        {
+          "section_id": "memo.audit.2026-03-21.router-entrypoint-supersession#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the audit_event surface, its active recall modes, and its historical current-recall posture.",
+          "body": "Superseded registry-only inspect entrypoint with dedicated memo catalog surface. The older inspect-entry claim was superseded once source-owned memo catalog surfaces became available. Scope: repo:aoa-memo, project:AoA. Primary recall modes: episodic, source_route. Current recall status: historical because This audit event should be surfaced mainly when tracing why the current entrypoint replaced an older one. Payload ref: docs/LIFECYCLE.md#supersession."
+        },
+        {
+          "section_id": "memo.audit.2026-03-21.router-entrypoint-supersession#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.memo.router-entrypoint.2026-03-21. Source refs: repo:aoa-memo/generated/memory_catalog.min.json, repo:aoa-memo/generated/memory_capsules.json, repo:aoa-memo/generated/memory_sections.full.json. Episode refs: memo.claim.2026-03-21.memo-entrypoint-old, memo.claim.2026-03-21.memo-entrypoint-new. Related curated object ids: memo.claim.2026-03-21.memo-entrypoint-old, memo.claim.2026-03-21.memo-entrypoint-new. Strongest next sources: repo:aoa-memo/generated/memory_catalog.min.json, repo:aoa-memo/generated/memory_capsules.json, repo:aoa-memo/generated/memory_sections.full.json."
+        },
+        {
+          "section_id": "memo.audit.2026-03-21.router-entrypoint-supersession#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: repo_maintained (repo-lifecycle-audit). Temperature: cool; confidence 0.94; freshness 0.95; salience 0.73. Review state: confirmed. Retention class: audit-trace. Promotion state: none. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.audit.2026-03-21.router-entrypoint-supersession#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memory_catalog.min.json. ToS refs: none. Skill refs: none. Eval refs: none. KAG lift status: none."
+        }
+      ]
+    },
+    {
+      "id": "memo.audit.2026-03-21.router-entrypoint-retraction",
+      "kind": "audit_event",
+      "title": "Retracted over-strong claim about registry-only memo inspect sufficiency",
+      "source_path": "examples/audit_event.retraction.example.json",
+      "sections": [
+        {
+          "section_id": "memo.audit.2026-03-21.router-entrypoint-retraction#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the audit_event surface, its active recall modes, and its historical current-recall posture.",
+          "body": "Retracted over-strong claim about registry-only memo inspect sufficiency. A too-strong claim about the registry as a sufficient long-term inspect surface was retracted after doctrine surfaces and dedicated memo catalogs were added. Scope: repo:aoa-memo, project:AoA. Primary recall modes: episodic, source_route. Current recall status: historical because This audit event remains visible for contradiction and retraction trace-back rather than ordinary semantic recall. Payload ref: docs/LIFECYCLE.md#retraction."
+        },
+        {
+          "section_id": "memo.audit.2026-03-21.router-entrypoint-retraction#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.memo.router-entrypoint.2026-03-21. Source refs: repo:aoa-memo/generated/memo_registry.min.json, repo:aoa-memo/generated/memory_catalog.min.json, repo:aoa-routing/README.md. Episode refs: memo.claim.2026-03-21.memo-entrypoint-bad-claim. Related curated object ids: memo.claim.2026-03-21.memo-entrypoint-bad-claim. Strongest next sources: repo:aoa-memo/generated/memo_registry.min.json, repo:aoa-memo/generated/memory_catalog.min.json, repo:aoa-routing/README.md."
+        },
+        {
+          "section_id": "memo.audit.2026-03-21.router-entrypoint-retraction#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: repo_maintained (repo-lifecycle-audit). Temperature: cool; confidence 0.92; freshness 0.94; salience 0.68. Review state: confirmed. Retention class: audit-trace. Promotion state: none. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.audit.2026-03-21.router-entrypoint-retraction#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memory_catalog.min.json. ToS refs: none. Skill refs: none. Eval refs: none. KAG lift status: none."
+        }
+      ]
+    }
+  ]
+}

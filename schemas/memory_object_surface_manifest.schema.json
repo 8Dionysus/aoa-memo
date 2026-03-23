@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/schemas/memory_object_surface_manifest.schema.json",
+  "title": "aoa-memo memory object surface manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "manifest_version",
+    "source_of_truth",
+    "entries"
+  ],
+  "properties": {
+    "manifest_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "source_of_truth": {
+      "type": "string",
+      "const": "aoa-memo-object-example-surfaces-v1"
+    },
+    "entries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "example_path",
+          "recall_modes"
+        ],
+        "properties": {
+          "example_path": {
+            "type": "string",
+            "pattern": "^examples/.+\\.json$"
+          },
+          "recall_modes": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "enum": [
+                "working",
+                "episodic",
+                "semantic",
+                "procedural",
+                "lineage",
+                "source_route"
+              ]
+            }
+          },
+          "notes": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}

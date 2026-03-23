@@ -34,6 +34,7 @@
   "trust": {
     "temperature": "warm",
     "confidence": 0.84,
+    "authority_kind": "source_inspection",
     "authority": "source-inspection",
     "freshness": 0.92,
     "salience": 0.88
@@ -42,7 +43,11 @@
     "review_state": "captured",
     "supersedes": [],
     "superseded_by": null,
-    "retention_class": "bridge-trace"
+    "retention_class": "bridge-trace",
+    "current_recall": {
+      "status": "allowed",
+      "status_reason": "This source episode should stay visible as evidence for bridge-oriented recall without becoming the main semantic entrypoint."
+    }
   },
   "access": {
     "access_class": "public",

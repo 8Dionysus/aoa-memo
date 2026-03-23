@@ -1,0 +1,180 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/schemas/memory_object_catalog.schema.json",
+  "title": "aoa-memo memory object catalog",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "catalog_version",
+    "catalog_kind",
+    "source_of_truth",
+    "memory_objects"
+  ],
+  "properties": {
+    "catalog_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "catalog_kind": {
+      "type": "string",
+      "enum": [
+        "full",
+        "min"
+      ]
+    },
+    "source_of_truth": {
+      "type": "string",
+      "const": "aoa-memo-object-example-surfaces-v1"
+    },
+    "memory_objects": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "kind",
+          "title",
+          "summary",
+          "temperature",
+          "review_state",
+          "current_recall_status",
+          "authority_kind",
+          "primary_recall_modes",
+          "source_path",
+          "inspect_key",
+          "expand_key"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "anchor",
+              "state_capsule",
+              "episode",
+              "claim",
+              "decision",
+              "pattern",
+              "bridge",
+              "audit_event"
+            ]
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "summary": {
+            "type": "string",
+            "minLength": 1
+          },
+          "scope": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "temperature": {
+            "type": "string",
+            "enum": [
+              "hot",
+              "warm",
+              "cool",
+              "cold",
+              "frozen"
+            ]
+          },
+          "review_state": {
+            "type": "string",
+            "enum": [
+              "captured",
+              "proposed",
+              "confirmed",
+              "frozen",
+              "superseded",
+              "retracted",
+              "archived"
+            ]
+          },
+          "current_recall_status": {
+            "type": "string",
+            "enum": [
+              "preferred",
+              "allowed",
+              "historical",
+              "withdrawn"
+            ]
+          },
+          "authority_kind": {
+            "type": "string",
+            "enum": [
+              "human_reviewed",
+              "repo_maintained",
+              "source_inspection",
+              "operational_observation",
+              "candidate_under_review"
+            ]
+          },
+          "source_path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "primary_recall_modes": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "enum": [
+                "working",
+                "episodic",
+                "semantic",
+                "procedural",
+                "lineage",
+                "source_route"
+              ]
+            }
+          },
+          "provenance_thread_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "related_object_ids": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "strongest_next_sources": {
+            "type": "array",
+            "maxItems": 3,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "inspect_key": {
+            "type": "string",
+            "minLength": 1
+          },
+          "expand_key": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}

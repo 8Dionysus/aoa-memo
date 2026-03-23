@@ -154,6 +154,35 @@ A useful freeze rule is that at least one of these should hold:
 - the object was reviewed by a human curator
 - the object is anchored to a source-owned boundary that should not drift casually
 
+The current public contract records this in `freeze_basis.qualifies_by`.
+
+## Current recall posture
+
+Lifecycle state alone is not always enough for downstream recall.
+
+The current public contract therefore keeps `lifecycle.current_recall` explicit.
+
+Use these statuses:
+
+- `preferred` for the current best surface in ordinary recall for the scoped question
+- `allowed` for a surface that may be returned normally but is not the main entrypoint
+- `historical` for a surface kept visible mainly for trace-back and comparison
+- `withdrawn` for a surface that should not be returned as normal current memory-layer meaning
+
+This keeps "what happened to the object" separate from "how recall should treat it now".
+
+## Contradiction visibility
+
+Contradiction is not identical to supersession.
+
+Use `lifecycle.current_recall.contradiction_refs` when a memory object should remain visibly in tension with another object instead of being flattened silently.
+
+This helps consumers distinguish:
+
+- a better replacement
+- a withdrawn contradiction
+- a still-open tension that should remain inspectable
+
 ## Audit events and lifecycle
 
 Lifecycle should not rely on silent field edits alone.
@@ -171,6 +200,7 @@ Treat these as warnings:
 - changing `review_state` with no visible audit trail for important objects
 - replacing a claim without `superseded_by`
 - retracting an object without saying why or from which thread
+- leaving current recall posture implicit when replacement or withdrawal already happened
 - freezing objects too casually until frozen means almost nothing
 
 ## One-line doctrine

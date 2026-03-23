@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/schemas/episode.schema.json",
+  "title": "aoa-memo episode memory object",
+  "allOf": [
+    {
+      "$ref": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/schemas/memory_object.schema.json"
+    },
+    {
+      "type": "object",
+      "required": [
+        "payload_ref",
+        "access",
+        "bridges"
+      ],
+      "properties": {
+        "kind": {
+          "const": "episode"
+        },
+        "time": {
+          "type": "object",
+          "required": [
+            "created_at",
+            "observed_at"
+          ]
+        },
+        "access": {
+          "type": "object",
+          "required": [
+            "access_class",
+            "read_scopes"
+          ]
+        },
+        "bridges": {
+          "type": "object",
+          "required": [
+            "route_capsule_ref"
+          ],
+          "properties": {
+            "route_capsule_ref": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    }
+  ]
+}

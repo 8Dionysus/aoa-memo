@@ -9,6 +9,8 @@
     "core_owner",
     "core_memory_surfaces",
     "supporting_objects",
+    "profile_schema",
+    "kind_profile_schemas",
     "derived_memory_surfaces",
     "derived_owners",
     "required_handoff_fields"
@@ -52,6 +54,58 @@
         ]
       }
     },
+    "profile_schema": {
+      "type": "string",
+      "const": "schemas/memory_object_profile.schema.json"
+    },
+    "kind_profile_schemas": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "anchor",
+        "state_capsule",
+        "episode",
+        "claim",
+        "decision",
+        "pattern",
+        "bridge",
+        "audit_event"
+      ],
+      "properties": {
+        "anchor": {
+          "type": "string",
+          "const": "schemas/anchor.schema.json"
+        },
+        "state_capsule": {
+          "type": "string",
+          "const": "schemas/state_capsule.schema.json"
+        },
+        "episode": {
+          "type": "string",
+          "const": "schemas/episode.schema.json"
+        },
+        "claim": {
+          "type": "string",
+          "const": "schemas/claim.schema.json"
+        },
+        "decision": {
+          "type": "string",
+          "const": "schemas/decision.schema.json"
+        },
+        "pattern": {
+          "type": "string",
+          "const": "schemas/pattern.schema.json"
+        },
+        "bridge": {
+          "type": "string",
+          "const": "schemas/bridge.schema.json"
+        },
+        "audit_event": {
+          "type": "string",
+          "const": "schemas/audit_event.schema.json"
+        }
+      }
+    },
     "derived_memory_surfaces": {
       "type": "array",
       "minItems": 1,
@@ -90,7 +144,9 @@
           "source_refs",
           "provenance_thread_id",
           "created_at",
+          "authority_kind",
           "review_state",
+          "current_recall.status",
           "derivation_note"
         ]
       }

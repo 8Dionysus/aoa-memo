@@ -35,6 +35,7 @@
   "trust": {
     "temperature": "warm",
     "confidence": 0.86,
+    "authority_kind": "operational_observation",
     "authority": "draft/human-curated",
     "freshness": 0.98,
     "salience": 0.91
@@ -43,7 +44,11 @@
     "review_state": "proposed",
     "supersedes": [],
     "superseded_by": null,
-    "retention_class": "project-core"
+    "retention_class": "project-core",
+    "current_recall": {
+      "status": "allowed",
+      "status_reason": "This episode remains usable for trace-back and bootstrap interpretation, but it is not the main recall entrypoint."
+    }
   },
   "access": {
     "access_class": "public",

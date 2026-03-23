@@ -1,0 +1,117 @@
+{
+  "manifest_version": 1,
+  "source_of_truth": "aoa-memo-object-example-surfaces-v1",
+  "entries": [
+    {
+      "example_path": "examples/anchor.example.json",
+      "recall_modes": [
+        "semantic",
+        "source_route",
+        "lineage"
+      ]
+    },
+    {
+      "example_path": "examples/state_capsule.example.json",
+      "recall_modes": [
+        "working",
+        "episodic"
+      ]
+    },
+    {
+      "example_path": "examples/episode.example.json",
+      "recall_modes": [
+        "episodic",
+        "working"
+      ]
+    },
+    {
+      "example_path": "examples/episode.tos-interpretation.example.json",
+      "recall_modes": [
+        "lineage",
+        "episodic",
+        "semantic"
+      ]
+    },
+    {
+      "example_path": "examples/claim.example.json",
+      "recall_modes": [
+        "semantic",
+        "source_route"
+      ]
+    },
+    {
+      "example_path": "examples/claim.current-entrypoint.example.json",
+      "recall_modes": [
+        "semantic",
+        "source_route"
+      ]
+    },
+    {
+      "example_path": "examples/claim.superseded.example.json",
+      "recall_modes": [
+        "semantic",
+        "lineage"
+      ]
+    },
+    {
+      "example_path": "examples/claim.retracted.example.json",
+      "recall_modes": [
+        "semantic",
+        "lineage"
+      ]
+    },
+    {
+      "example_path": "examples/claim.tos-bridge-ready.example.json",
+      "recall_modes": [
+        "semantic",
+        "lineage",
+        "source_route"
+      ]
+    },
+    {
+      "example_path": "examples/checkpoint_approval_record.example.json",
+      "recall_modes": [
+        "working",
+        "semantic",
+        "source_route"
+      ]
+    },
+    {
+      "example_path": "examples/checkpoint_health_check.example.json",
+      "recall_modes": [
+        "working",
+        "episodic",
+        "source_route"
+      ]
+    },
+    {
+      "example_path": "examples/pattern.example.json",
+      "recall_modes": [
+        "procedural",
+        "semantic"
+      ]
+    },
+    {
+      "example_path": "examples/bridge.kag-lift.example.json",
+      "recall_modes": [
+        "lineage",
+        "source_route",
+        "semantic"
+      ]
+    },
+    {
+      "example_path": "examples/audit_event.supersession.example.json",
+      "recall_modes": [
+        "episodic",
+        "source_route"
+      ]
+    },
+    {
+      "example_path": "examples/audit_event.retraction.example.json",
+      "recall_modes": [
+        "episodic",
+        "source_route"
+      ]
+    }
+  ]
+}

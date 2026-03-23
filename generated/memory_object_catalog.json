@@ -1,0 +1,450 @@
+{
+  "catalog_version": 1,
+  "catalog_kind": "full",
+  "source_of_truth": "aoa-memo-object-example-surfaces-v1",
+  "memory_objects": [
+    {
+      "id": "memo.anchor.2026-03-23.charter-operating-axis",
+      "kind": "anchor",
+      "title": "aoa-memo charter remains a stable operating anchor",
+      "summary": "Stabilizes the charter as a frozen operating axis for interpreting what aoa-memo owns and what must stay in neighboring layers.",
+      "temperature": "frozen",
+      "review_state": "frozen",
+      "current_recall_status": "preferred",
+      "authority_kind": "human_reviewed",
+      "primary_recall_modes": [
+        "semantic",
+        "source_route",
+        "lineage"
+      ],
+      "source_path": "examples/anchor.example.json",
+      "inspect_key": "memo.anchor.2026-03-23.charter-operating-axis",
+      "expand_key": "memo.anchor.2026-03-23.charter-operating-axis",
+      "scope": [
+        "repo:aoa-memo",
+        "ecosystem:AoA"
+      ],
+      "provenance_thread_id": "prov.bootstrap.aoa-memo.2026-03-20",
+      "related_object_ids": [],
+      "strongest_next_sources": [
+        "CHARTER.md#core-rules",
+        "docs/OPERATIONAL_BOUNDARY.md#stable-public-boundary"
+      ]
+    },
+    {
+      "id": "memo.state.2026-03-23.contract-hardening-current-axis",
+      "kind": "state_capsule",
+      "title": "Current contract-hardening axis exported as a bounded state capsule",
+      "summary": "Exports the current aoa-memo hardening slice: sharpen per-kind object contracts first, then trust/lifecycle semantics, then object-facing generated surfaces.",
+      "temperature": "hot",
+      "review_state": "captured",
+      "current_recall_status": "preferred",
+      "authority_kind": "operational_observation",
+      "primary_recall_modes": [
+        "working",
+        "episodic"
+      ],
+      "source_path": "examples/state_capsule.example.json",
+      "inspect_key": "memo.state.2026-03-23.contract-hardening-current-axis",
+      "expand_key": "memo.state.2026-03-23.contract-hardening-current-axis",
+      "scope": [
+        "thread:contract-hardening",
+        "repo:aoa-memo",
+        "project:AoA"
+      ],
+      "provenance_thread_id": "prov.aoa-memo.contract-hardening.2026-03-23",
+      "related_object_ids": [
+        "memo.ep.2026-03-20.bootstrap-foundation"
+      ],
+      "strongest_next_sources": [
+        "ROADMAP.md#current-stage",
+        "docs/RUNTIME_WRITEBACK_SEAM.md#mapping-to-preserve"
+      ]
+    },
+    {
+      "id": "memo.ep.2026-03-20.bootstrap-foundation",
+      "kind": "episode",
+      "title": "Bootstrap foundation draft prepared for aoa-memo",
+      "summary": "A first doctrine-and-schema baseline was prepared for the aoa-memo repository bootstrap phase.",
+      "temperature": "warm",
+      "review_state": "proposed",
+      "current_recall_status": "allowed",
+      "authority_kind": "operational_observation",
+      "primary_recall_modes": [
+        "episodic",
+        "working"
+      ],
+      "source_path": "examples/episode.example.json",
+      "inspect_key": "memo.ep.2026-03-20.bootstrap-foundation",
+      "expand_key": "memo.ep.2026-03-20.bootstrap-foundation",
+      "scope": [
+        "repo:aoa-memo",
+        "project:AoA"
+      ],
+      "provenance_thread_id": "prov.bootstrap.aoa-memo.2026-03-20",
+      "related_object_ids": [],
+      "strongest_next_sources": [
+        "repo:aoa-memo/README.md",
+        "repo:aoa-routing/README.md",
+        "repo:aoa-kag/README.md"
+      ]
+    },
+    {
+      "id": "memo.ep.2026-03-23.tos-interpretation-bridge-seed",
+      "kind": "episode",
+      "title": "ToS fragment inspection recorded for memo bridge export",
+      "summary": "Records that a Tree of Sophia fragment was inspected as the seed event for a bounded memo bridge and downstream KAG-ready handoff.",
+      "temperature": "warm",
+      "review_state": "captured",
+      "current_recall_status": "allowed",
+      "authority_kind": "source_inspection",
+      "primary_recall_modes": [
+        "lineage",
+        "episodic",
+        "semantic"
+      ],
+      "source_path": "examples/episode.tos-interpretation.example.json",
+      "inspect_key": "memo.ep.2026-03-23.tos-interpretation-bridge-seed",
+      "expand_key": "memo.ep.2026-03-23.tos-interpretation-bridge-seed",
+      "scope": [
+        "repo:aoa-memo",
+        "project:AoA"
+      ],
+      "provenance_thread_id": "prov.tos-bridge-kag-lift.2026-03-23",
+      "related_object_ids": [],
+      "strongest_next_sources": [
+        "docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow",
+        "repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md"
+      ]
+    },
+    {
+      "id": "memo.claim.2026-03-20.temperature-not-truth",
+      "kind": "claim",
+      "title": "Temperature is not truth",
+      "summary": "Memory temperature tracks activation and consolidation posture, not universal correctness or proof status.",
+      "temperature": "cool",
+      "review_state": "confirmed",
+      "current_recall_status": "preferred",
+      "authority_kind": "repo_maintained",
+      "primary_recall_modes": [
+        "semantic",
+        "source_route"
+      ],
+      "source_path": "examples/claim.example.json",
+      "inspect_key": "memo.claim.2026-03-20.temperature-not-truth",
+      "expand_key": "memo.claim.2026-03-20.temperature-not-truth",
+      "scope": [
+        "repo:aoa-memo",
+        "ecosystem:AoA"
+      ],
+      "provenance_thread_id": "prov.bootstrap.aoa-memo.2026-03-20",
+      "related_object_ids": [
+        "memo.ep.2026-03-20.bootstrap-foundation"
+      ],
+      "strongest_next_sources": [
+        "repo:aoa-memo/CHARTER.md",
+        "repo:aoa-memo/docs/MEMORY_MODEL.md"
+      ]
+    },
+    {
+      "id": "memo.claim.2026-03-21.memo-entrypoint-new",
+      "kind": "claim",
+      "title": "Dedicated memo catalog surfaces are the preferred inspect entrypoint",
+      "summary": "Router-facing semantic recall should inspect the dedicated memo catalog surfaces rather than relying on the compact registry alone.",
+      "temperature": "warm",
+      "review_state": "confirmed",
+      "current_recall_status": "preferred",
+      "authority_kind": "repo_maintained",
+      "primary_recall_modes": [
+        "semantic",
+        "source_route"
+      ],
+      "source_path": "examples/claim.current-entrypoint.example.json",
+      "inspect_key": "memo.claim.2026-03-21.memo-entrypoint-new",
+      "expand_key": "memo.claim.2026-03-21.memo-entrypoint-new",
+      "scope": [
+        "repo:aoa-memo",
+        "project:AoA"
+      ],
+      "provenance_thread_id": "prov.memo.router-entrypoint.2026-03-21",
+      "related_object_ids": [
+        "memo.claim.2026-03-21.memo-entrypoint-old",
+        "memo.claim.2026-03-21.memo-entrypoint-bad-claim"
+      ],
+      "strongest_next_sources": [
+        "repo:aoa-memo/generated/memory_catalog.min.json",
+        "repo:aoa-memo/generated/memory_capsules.json",
+        "repo:aoa-memo/generated/memory_sections.full.json"
+      ]
+    },
+    {
+      "id": "memo.claim.2026-03-21.memo-entrypoint-old",
+      "kind": "claim",
+      "title": "Old memo inspect entrypoint points to registry only",
+      "summary": "Early router-facing recall pointed semantic inspect toward the compact memo registry instead of the dedicated memo catalog surfaces.",
+      "temperature": "cool",
+      "review_state": "superseded",
+      "current_recall_status": "historical",
+      "authority_kind": "repo_maintained",
+      "primary_recall_modes": [
+        "semantic",
+        "lineage"
+      ],
+      "source_path": "examples/claim.superseded.example.json",
+      "inspect_key": "memo.claim.2026-03-21.memo-entrypoint-old",
+      "expand_key": "memo.claim.2026-03-21.memo-entrypoint-old",
+      "scope": [
+        "repo:aoa-memo",
+        "project:AoA"
+      ],
+      "provenance_thread_id": "prov.memo.router-entrypoint.2026-03-21",
+      "related_object_ids": [
+        "memo.claim.2026-03-21.memo-entrypoint-new"
+      ],
+      "strongest_next_sources": [
+        "repo:aoa-memo/generated/memo_registry.min.json",
+        "repo:aoa-memo/examples/recall_contract.semantic.json"
+      ]
+    },
+    {
+      "id": "memo.claim.2026-03-21.memo-entrypoint-bad-claim",
+      "kind": "claim",
+      "title": "Memo registry alone is sufficient as the long-term inspect surface",
+      "summary": "An over-strong claim that the compact registry by itself was enough as the stable inspect surface for router-facing memo recall.",
+      "temperature": "cold",
+      "review_state": "retracted",
+      "current_recall_status": "withdrawn",
+      "authority_kind": "candidate_under_review",
+      "primary_recall_modes": [
+        "semantic",
+        "lineage"
+      ],
+      "source_path": "examples/claim.retracted.example.json",
+      "inspect_key": "memo.claim.2026-03-21.memo-entrypoint-bad-claim",
+      "expand_key": "memo.claim.2026-03-21.memo-entrypoint-bad-claim",
+      "scope": [
+        "repo:aoa-memo",
+        "project:AoA"
+      ],
+      "provenance_thread_id": "prov.memo.router-entrypoint.2026-03-21",
+      "related_object_ids": [
+        "memo.claim.2026-03-21.memo-entrypoint-new"
+      ],
+      "strongest_next_sources": [
+        "repo:aoa-memo/generated/memo_registry.min.json",
+        "repo:aoa-memo/docs/LIFECYCLE.md",
+        "repo:aoa-routing/README.md"
+      ]
+    },
+    {
+      "id": "memo.claim.2026-03-23.tos-bridge-by-reference",
+      "kind": "claim",
+      "title": "ToS-linked memory should bridge by reference",
+      "summary": "A memo bridge candidate should preserve Tree of Sophia meaning by reference and provenance rather than by rewriting source-authored material inside aoa-memo.",
+      "temperature": "cool",
+      "review_state": "confirmed",
+      "current_recall_status": "allowed",
+      "authority_kind": "source_inspection",
+      "primary_recall_modes": [
+        "semantic",
+        "lineage",
+        "source_route"
+      ],
+      "source_path": "examples/claim.tos-bridge-ready.example.json",
+      "inspect_key": "memo.claim.2026-03-23.tos-bridge-by-reference",
+      "expand_key": "memo.claim.2026-03-23.tos-bridge-by-reference",
+      "scope": [
+        "repo:aoa-memo",
+        "project:AoA",
+        "ecosystem:AoA"
+      ],
+      "provenance_thread_id": "prov.tos-bridge-kag-lift.2026-03-23",
+      "related_object_ids": [
+        "memo.ep.2026-03-23.tos-interpretation-bridge-seed"
+      ],
+      "strongest_next_sources": [
+        "docs/KAG_TOS_BRIDGE_CONTRACT.md#tos-bridge-guidance",
+        "repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md"
+      ]
+    },
+    {
+      "id": "memo.decision.2026-03-21.self-agent-approval-record",
+      "kind": "decision",
+      "title": "Approval record for self-agent checkpoint rollout",
+      "summary": "Records explicit approval to proceed with a bounded self-agent checkpoint change after the source-of-truth and policy check were named.",
+      "temperature": "warm",
+      "review_state": "confirmed",
+      "current_recall_status": "allowed",
+      "authority_kind": "human_reviewed",
+      "primary_recall_modes": [
+        "working",
+        "semantic",
+        "source_route"
+      ],
+      "source_path": "examples/checkpoint_approval_record.example.json",
+      "inspect_key": "memo.decision.2026-03-21.self-agent-approval-record",
+      "expand_key": "memo.decision.2026-03-21.self-agent-approval-record",
+      "scope": [
+        "repo:aoa-playbooks",
+        "ecosystem:AoA"
+      ],
+      "provenance_thread_id": "prov.self-agent-checkpoint.2026-03-21",
+      "related_object_ids": [],
+      "strongest_next_sources": [
+        "repo:aoa-agents/docs/SELF_AGENT_CHECKPOINT_STACK.md",
+        "repo:aoa-playbooks/playbooks/self-agent-checkpoint-rollout/PLAYBOOK.md"
+      ]
+    },
+    {
+      "id": "memo.ep.2026-03-21.self-agent-health-check",
+      "kind": "episode",
+      "title": "Post-change health check recorded for self-agent checkpoint rollout",
+      "summary": "Captures the post-change health result after a bounded self-agent checkpoint change completed and before the improvement log was frozen.",
+      "temperature": "warm",
+      "review_state": "proposed",
+      "current_recall_status": "allowed",
+      "authority_kind": "operational_observation",
+      "primary_recall_modes": [
+        "working",
+        "episodic",
+        "source_route"
+      ],
+      "source_path": "examples/checkpoint_health_check.example.json",
+      "inspect_key": "memo.ep.2026-03-21.self-agent-health-check",
+      "expand_key": "memo.ep.2026-03-21.self-agent-health-check",
+      "scope": [
+        "repo:aoa-playbooks",
+        "ecosystem:AoA"
+      ],
+      "provenance_thread_id": "prov.self-agent-checkpoint.2026-03-21",
+      "related_object_ids": [],
+      "strongest_next_sources": [
+        "repo:aoa-playbooks/playbooks/self-agent-checkpoint-rollout/PLAYBOOK.md",
+        "repo:aoa-evals/bundles/aoa-bounded-change-quality/EVAL.md"
+      ]
+    },
+    {
+      "id": "memo.pattern.2026-03-23.reviewed-candidates-before-promotion",
+      "kind": "pattern",
+      "title": "Reviewed candidates stay candidates before durable promotion",
+      "summary": "Observed across writeback and bridge flows: durable memo growth lands best when candidate claims, patterns, and bridges stay review-gated before wider promotion.",
+      "temperature": "cool",
+      "review_state": "confirmed",
+      "current_recall_status": "preferred",
+      "authority_kind": "operational_observation",
+      "primary_recall_modes": [
+        "procedural",
+        "semantic"
+      ],
+      "source_path": "examples/pattern.example.json",
+      "inspect_key": "memo.pattern.2026-03-23.reviewed-candidates-before-promotion",
+      "expand_key": "memo.pattern.2026-03-23.reviewed-candidates-before-promotion",
+      "scope": [
+        "repo:aoa-memo",
+        "project:AoA"
+      ],
+      "provenance_thread_id": "prov.aoa-memo.contract-hardening.2026-03-23",
+      "related_object_ids": [
+        "memo.ep.2026-03-21.self-agent-health-check",
+        "memo.ep.2026-03-23.tos-interpretation-bridge-seed"
+      ],
+      "strongest_next_sources": [
+        "docs/RUNTIME_WRITEBACK_SEAM.md#distillation-posture",
+        "docs/WRITEBACK_TEMPERATURE_POLICY.md#what-may-bridge-outward",
+        "docs/MEMORY_MODEL.md#procedural-experience-memory"
+      ]
+    },
+    {
+      "id": "memo.bridge.2026-03-23.tos-lineage-kag-candidate",
+      "kind": "bridge",
+      "title": "Bridge candidate linking memo claim to ToS lineage and KAG lift posture",
+      "summary": "Connects a reviewed memo claim to Tree of Sophia lineage references while preserving provenance and candidate-only KAG lift posture.",
+      "temperature": "cool",
+      "review_state": "proposed",
+      "current_recall_status": "allowed",
+      "authority_kind": "candidate_under_review",
+      "primary_recall_modes": [
+        "lineage",
+        "source_route",
+        "semantic"
+      ],
+      "source_path": "examples/bridge.kag-lift.example.json",
+      "inspect_key": "memo.bridge.2026-03-23.tos-lineage-kag-candidate",
+      "expand_key": "memo.bridge.2026-03-23.tos-lineage-kag-candidate",
+      "scope": [
+        "repo:aoa-memo",
+        "project:AoA",
+        "repo:Tree-of-Sophia"
+      ],
+      "provenance_thread_id": "prov.tos-bridge-kag-lift.2026-03-23",
+      "related_object_ids": [
+        "memo.ep.2026-03-23.tos-interpretation-bridge-seed"
+      ],
+      "strongest_next_sources": [
+        "docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow",
+        "repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md"
+      ]
+    },
+    {
+      "id": "memo.audit.2026-03-21.router-entrypoint-supersession",
+      "kind": "audit_event",
+      "title": "Superseded registry-only inspect entrypoint with dedicated memo catalog surface",
+      "summary": "The older inspect-entry claim was superseded once source-owned memo catalog surfaces became available.",
+      "temperature": "cool",
+      "review_state": "confirmed",
+      "current_recall_status": "historical",
+      "authority_kind": "repo_maintained",
+      "primary_recall_modes": [
+        "episodic",
+        "source_route"
+      ],
+      "source_path": "examples/audit_event.supersession.example.json",
+      "inspect_key": "memo.audit.2026-03-21.router-entrypoint-supersession",
+      "expand_key": "memo.audit.2026-03-21.router-entrypoint-supersession",
+      "scope": [
+        "repo:aoa-memo",
+        "project:AoA"
+      ],
+      "provenance_thread_id": "prov.memo.router-entrypoint.2026-03-21",
+      "related_object_ids": [
+        "memo.claim.2026-03-21.memo-entrypoint-old",
+        "memo.claim.2026-03-21.memo-entrypoint-new"
+      ],
+      "strongest_next_sources": [
+        "repo:aoa-memo/generated/memory_catalog.min.json",
+        "repo:aoa-memo/generated/memory_capsules.json",
+        "repo:aoa-memo/generated/memory_sections.full.json"
+      ]
+    },
+    {
+      "id": "memo.audit.2026-03-21.router-entrypoint-retraction",
+      "kind": "audit_event",
+      "title": "Retracted over-strong claim about registry-only memo inspect sufficiency",
+      "summary": "A too-strong claim about the registry as a sufficient long-term inspect surface was retracted after doctrine surfaces and dedicated memo catalogs were added.",
+      "temperature": "cool",
+      "review_state": "confirmed",
+      "current_recall_status": "historical",
+      "authority_kind": "repo_maintained",
+      "primary_recall_modes": [
+        "episodic",
+        "source_route"
+      ],
+      "source_path": "examples/audit_event.retraction.example.json",
+      "inspect_key": "memo.audit.2026-03-21.router-entrypoint-retraction",
+      "expand_key": "memo.audit.2026-03-21.router-entrypoint-retraction",
+      "scope": [
+        "repo:aoa-memo",
+        "project:AoA"
+      ],
+      "provenance_thread_id": "prov.memo.router-entrypoint.2026-03-21",
+      "related_object_ids": [
+        "memo.claim.2026-03-21.memo-entrypoint-bad-claim"
+      ],
+      "strongest_next_sources": [
+        "repo:aoa-memo/generated/memo_registry.min.json",
+        "repo:aoa-memo/generated/memory_catalog.min.json",
+        "repo:aoa-routing/README.md"
+      ]
+    }
+  ]
+}

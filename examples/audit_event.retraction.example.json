@@ -36,6 +36,7 @@
   "trust": {
     "temperature": "cool",
     "confidence": 0.92,
+    "authority_kind": "repo_maintained",
     "authority": "repo-lifecycle-audit",
     "freshness": 0.94,
     "salience": 0.68
@@ -44,7 +45,11 @@
     "review_state": "confirmed",
     "supersedes": [],
     "superseded_by": null,
-    "retention_class": "audit-trace"
+    "retention_class": "audit-trace",
+    "current_recall": {
+      "status": "historical",
+      "status_reason": "This audit event remains visible for contradiction and retraction trace-back rather than ordinary semantic recall."
+    }
   },
   "access": {
     "access_class": "public",

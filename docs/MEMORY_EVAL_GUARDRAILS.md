@@ -52,6 +52,7 @@ A good downstream eval pack should make it possible to tell:
 - whether memo returns the smallest relevant surface first
 - whether provenance survives recall and expansion
 - whether stale or superseded memory is handled honestly
+- whether current recall posture stays visible
 - whether contradictions stay visible
 - whether role rights are inferred incorrectly from memo fields
 - whether promotion posture drifts beyond reviewable evidence

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/schemas/memory_object_profile.schema.json",
+  "title": "aoa-memo memory object profile",
+  "oneOf": [
+    {
+      "$ref": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/schemas/anchor.schema.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/schemas/state_capsule.schema.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/schemas/episode.schema.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/schemas/claim.schema.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/schemas/decision.schema.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/schemas/pattern.schema.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/schemas/bridge.schema.json"
+    },
+    {
+      "$ref": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/schemas/audit_event.schema.json"
+    }
+  ]
+}

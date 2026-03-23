@@ -15,6 +15,17 @@
     "provenance_thread",
     "recall_contract"
   ],
+  "profile_schema": "schemas/memory_object_profile.schema.json",
+  "kind_profile_schemas": {
+    "anchor": "schemas/anchor.schema.json",
+    "state_capsule": "schemas/state_capsule.schema.json",
+    "episode": "schemas/episode.schema.json",
+    "claim": "schemas/claim.schema.json",
+    "decision": "schemas/decision.schema.json",
+    "pattern": "schemas/pattern.schema.json",
+    "bridge": "schemas/bridge.schema.json",
+    "audit_event": "schemas/audit_event.schema.json"
+  },
   "derived_memory_surfaces": [
     "chunk_face",
     "graph_face",
@@ -28,7 +39,9 @@
     "source_refs",
     "provenance_thread_id",
     "created_at",
+    "authority_kind",
     "review_state",
+    "current_recall.status",
     "derivation_note"
   ]
 }

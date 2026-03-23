@@ -30,6 +30,7 @@ The thread gives a reader a way to answer:
 - which other memory objects were part of the same trace?
 - what changed over time?
 - when did a claim become confirmed, frozen, superseded, or retracted?
+- which object still carries the preferred current recall posture when a contradiction or replacement exists?
 - which stronger source should be opened next?
 
 ## Core rules
@@ -38,7 +39,8 @@ The thread gives a reader a way to answer:
 2. **Source refs come first.** The thread should point back to source-owned surfaces whenever possible.
 3. **Lifecycle events belong in the thread.** Confirmation, supersession, freeze, and retraction should be visible in time order.
 4. **The thread should survive claim changes.** When a claim is superseded or retracted, the thread remains as history.
-5. **The thread should not pretend to prove correctness.** Provenance helps readers inspect the trace. It does not turn memory into proof.
+5. **Current recall posture should stay walkable.** If one object remains preferred and another becomes historical or withdrawn, the thread should make that shift inspectable.
+6. **The thread should not pretend to prove correctness.** Provenance helps readers inspect the trace. It does not turn memory into proof.
 
 ## What a thread should link
 
@@ -75,6 +77,8 @@ Each event should say:
 - which actor or surface was involved when known
 - which memory object changed when relevant
 
+If the thread includes a contradiction set or a current-entrypoint shift, the timeline should make that change inspectable.
+
 ## Relationship to memory objects
 
 ### Episodes
@@ -103,6 +107,9 @@ But the provenance thread itself remains a memory-layer trace.
 It should not become the normalized graph substrate.
 
 That downstream work still belongs in `aoa-kag` and related systems.
+
+At the current public baseline, `provenance_thread` remains a schema-backed support surface.
+It does not become its own generated family in the doctrine-versus-object surface split.
 
 ## Improvement logs and checkpoint routes
 

@@ -8,8 +8,22 @@ Build `aoa-memo` as the explicit memory and recall layer of AoA: small, reviewab
 
 `aoa-memo` is in contract hardening.
 
-The repository has already named its role, object canon, schemas, generated surfaces, lifecycle posture, temperature posture, runtime writeback seam, and first bridge/export and guardrail handoff surfaces.
-The next task is to keep those public contracts small, explicit, and easy for neighboring repos to consume without guessing.
+The repository has already named its role, object canon, schemas, doctrine-facing generated surfaces, object-facing generated surfaces, lifecycle posture, temperature posture, runtime writeback seam, and first bridge/export and guardrail handoff surfaces.
+Object canon, trust/lifecycle posture, and the separate object-facing generated family are now in place.
+The active next slice is neighbor adoption so adjacent repos can consume the sharpened memo contracts without moving routing, role policy, graph normalization, or verdict logic into this repository.
+
+## Current contract-hardening waves
+
+Within the current contract-hardening stage, the cleanest wave order is:
+
+1. **Object canon hardening**
+   Add per-kind memory-object profiles, first-class example coverage for every shipped kind, and validator coverage for the full canon.
+2. **Trust and lifecycle hardening**
+   Tighten ordinal-versus-descriptive trust posture, freeze criteria, contradiction posture, and current-entrypoint semantics without collapsing memory into proof.
+3. **Object-facing generated surfaces**
+   Publish a separate generated family for actual memory objects and profile-backed example bundles without breaking doctrine-first catalogs.
+4. **Neighbor adoption**
+   Let `aoa-routing`, `aoa-agents`, `aoa-kag`, and `aoa-evals` consume the sharpened memo contracts without moving their logic into this repository.
 
 ## North star
 
@@ -107,12 +121,16 @@ This roadmap does **not** aim to turn `aoa-memo` into:
 - `generated/memory_catalog.min.json`
 - `generated/memory_capsules.json`
 - `generated/memory_sections.full.json`
+- `generated/memory_object_catalog.json`
+- `generated/memory_object_catalog.min.json`
+- `generated/memory_object_capsules.json`
+- `generated/memory_object_sections.full.json`
 
 **Exit criteria:**
 
-- memory objects are discoverable without loading the whole repository
+- doctrine and curated memory objects are discoverable without loading the whole repository
 - inspect and expand flows are feasible
-- routeable surfaces exist without copying neighboring meaning into `aoa-memo`
+- routeable doctrine and object surfaces exist without copying neighboring meaning into `aoa-memo`
 
 ### `v0.4` Provenance and lifecycle
 
