@@ -1,0 +1,182 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/schemas/memory_graph_face.schema.json",
+  "title": "aoa-memo memory graph face",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_type",
+    "source_memory_id",
+    "source_kind",
+    "graph_focus",
+    "provenance_thread_ids",
+    "relation_candidates",
+    "kag_lift_status",
+    "strongest_authored_refs",
+    "time_window"
+  ],
+  "properties": {
+    "contract_type": {
+      "const": "memory_graph_face"
+    },
+    "source_memory_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_kind": {
+      "type": "string",
+      "enum": [
+        "anchor",
+        "state_capsule",
+        "episode",
+        "claim",
+        "decision",
+        "pattern",
+        "bridge",
+        "audit_event",
+        "provenance_thread"
+      ]
+    },
+    "graph_focus": {
+      "type": "string",
+      "enum": [
+        "lineage",
+        "claim-bridge",
+        "episode-bridge",
+        "kag-lift"
+      ]
+    },
+    "provenance_thread_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "entity_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "concept_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "relation_candidates": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "relation_type",
+          "target_ref",
+          "evidence_refs",
+          "status"
+        ],
+        "properties": {
+          "relation_type": {
+            "type": "string",
+            "minLength": 1
+          },
+          "target_ref": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "confidence": {
+            "oneOf": [
+              {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              {
+                "type": "string",
+                "minLength": 1
+              }
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "candidate",
+              "lifted",
+              "blocked"
+            ]
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "tos_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "kag_lift_status": {
+      "type": "string",
+      "enum": [
+        "none",
+        "candidate",
+        "lifted",
+        "blocked"
+      ]
+    },
+    "strongest_authored_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "time_window": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "valid_from",
+        "valid_to"
+      ],
+      "properties": {
+        "valid_from": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "valid_to": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        }
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

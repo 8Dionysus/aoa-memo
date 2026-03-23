@@ -1,0 +1,69 @@
+{
+  "id": "memo.ep.2026-03-23.tos-interpretation-bridge-seed",
+  "kind": "episode",
+  "title": "ToS fragment inspection recorded for memo bridge export",
+  "summary": "Records that a Tree of Sophia fragment was inspected as the seed event for a bounded memo bridge and downstream KAG-ready handoff.",
+  "scope": [
+    "repo:aoa-memo",
+    "project:AoA"
+  ],
+  "owner_refs": [
+    "repo:aoa-memo"
+  ],
+  "payload_ref": "docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow",
+  "tags": [
+    "tos",
+    "bridge",
+    "kag",
+    "episode"
+  ],
+  "time": {
+    "created_at": "2026-03-23T16:10:00Z",
+    "observed_at": "2026-03-23T16:05:00Z",
+    "valid_from": "2026-03-23T16:10:00Z",
+    "valid_to": null
+  },
+  "provenance": {
+    "source_refs": [
+      "docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow",
+      "repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md"
+    ],
+    "episode_refs": [],
+    "provenance_thread_id": "prov.tos-bridge-kag-lift.2026-03-23"
+  },
+  "trust": {
+    "temperature": "warm",
+    "confidence": 0.84,
+    "authority": "source-inspection",
+    "freshness": 0.92,
+    "salience": 0.88
+  },
+  "lifecycle": {
+    "review_state": "captured",
+    "supersedes": [],
+    "superseded_by": null,
+    "retention_class": "bridge-trace"
+  },
+  "access": {
+    "access_class": "public",
+    "read_scopes": [
+      "public"
+    ],
+    "write_scopes": [
+      "maintainer"
+    ],
+    "promotion_scopes": [
+      "maintainer",
+      "human-review"
+    ]
+  },
+  "bridges": {
+    "tos_refs": [
+      "repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md#memory-bridge-fragment"
+    ],
+    "skill_refs": [],
+    "eval_refs": [],
+    "kag_lift_status": "none",
+    "route_capsule_ref": "generated/memory_catalog.min.json"
+  }
+}

@@ -1,0 +1,79 @@
+# Operational Boundary
+
+## Purpose
+
+This document fixes the v1-facing boundary of `aoa-memo` as doctrine plus compact public surfaces.
+
+It makes the repository stable enough for neighboring repos to consume without turning `aoa-memo` into runtime memory infrastructure.
+
+## Stable Public Boundary
+
+The stable public boundary of this repository consists of:
+
+- doctrine docs that define memory meaning, provenance, lifecycle, temperature, writeback, bridges, guardrails, and boundaries
+- schema-backed memory and contract surfaces
+- generated registries, catalogs, capsules, and sections
+- reviewed examples that show how the layer is meant to be used
+
+These are the public review surfaces a consumer should rely on.
+
+## Consumer Contracts
+
+### `aoa-routing`
+
+Consume compact generated surfaces and recall contracts.
+Keep dispatch logic and route compression policy outside this repository.
+
+### `aoa-agents`
+
+Consume object kind, scope, lifecycle, access posture, provenance linkage, and route refs.
+Keep rights policy, handoff posture, and actor doctrine outside this repository.
+
+### `aoa-kag`
+
+Consume bridge objects, chunk faces, graph faces, and provenance-aware exports.
+Keep normalized substrate formation and framework adapters outside this repository.
+
+### `abyss-stack`
+
+Consume writeback seams and schema-backed export contracts.
+Keep live stores, background jobs, retention, backups, and restore posture outside this repository.
+
+## What Runtime Owns
+
+Runtime and operations remain outside `aoa-memo`, including:
+
+- live state stores
+- checkpoint workers
+- consolidation jobs
+- background lift jobs
+- retention machinery
+- secret handling
+- deployment posture
+
+## What This Boundary Freezes
+
+This boundary freezes these layer rules:
+
+- memory is not proof
+- events come before claims
+- authored/core memory remains inspectable
+- graph lifts stay downstream
+- role rights stay outside the memory layer
+- runtime storage and jobs stay outside the repository
+- cross-repo consumers rely on explicit public surfaces rather than hidden prompt residue
+
+## What It Does Not Freeze
+
+This boundary does not freeze:
+
+- specific runtime implementation choices
+- downstream graph normalization details
+- role policy in `aoa-agents`
+- scenario choreography in `aoa-playbooks`
+- verdict logic in `aoa-evals`
+- authored knowledge structure in Tree of Sophia
+
+## One-line Rule
+
+`aoa-memo` is the stable memory-layer boundary that neighboring repos may build on without guessing, but it is still not the runtime body.

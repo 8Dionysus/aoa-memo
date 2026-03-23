@@ -1,0 +1,36 @@
+{
+  "id": "prov.tos-bridge-kag-lift.2026-03-23",
+  "title": "ToS bridge to KAG lift provenance thread",
+  "summary": "Ties the ToS inspection episode, bridge-ready claim, and bridge candidate into one bounded provenance chain for downstream KAG-oriented export.",
+  "status": "active",
+  "source_refs": [
+    "docs/KAG_TOS_BRIDGE_CONTRACT.md",
+    "docs/PROVENANCE_THREADS.md",
+    "repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md"
+  ],
+  "memory_object_ids": [
+    "memo.ep.2026-03-23.tos-interpretation-bridge-seed",
+    "memo.claim.2026-03-23.tos-bridge-by-reference",
+    "memo.bridge.2026-03-23.tos-lineage-kag-candidate"
+  ],
+  "timeline": [
+    {
+      "at": "2026-03-23T16:05:00Z",
+      "action": "inspected ToS fragment for memo bridge seed",
+      "actor_ref": "human+ai",
+      "object_id": "memo.ep.2026-03-23.tos-interpretation-bridge-seed"
+    },
+    {
+      "at": "2026-03-23T16:18:00Z",
+      "action": "consolidated bounded claim from the inspected fragment",
+      "actor_ref": "human+ai",
+      "object_id": "memo.claim.2026-03-23.tos-bridge-by-reference"
+    },
+    {
+      "at": "2026-03-23T16:25:00Z",
+      "action": "prepared bridge candidate and KAG-oriented export posture",
+      "actor_ref": "human+ai",
+      "object_id": "memo.bridge.2026-03-23.tos-lineage-kag-candidate"
+    }
+  ]
+}

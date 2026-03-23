@@ -1,0 +1,35 @@
+{
+  "contract_type": "memory_chunk_face",
+  "source_memory_id": "memo.bridge.2026-03-23.tos-lineage-kag-candidate",
+  "source_kind": "bridge",
+  "recall_mode": "lineage",
+  "capsule_text": "Bridge candidate linking a reviewed memo claim to a Tree of Sophia fragment and exposing the strongest next sources for KAG-oriented downstream inspection.",
+  "section_refs": [
+    "docs/KAG_TOS_BRIDGE_CONTRACT.md#chunk-face-contract",
+    "docs/MEMORY_MODEL.md#kag-orientation"
+  ],
+  "source_refs": [
+    "examples/bridge.kag-lift.example.json",
+    "repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md"
+  ],
+  "source_fragment_refs": [
+    "docs/KAG_TOS_BRIDGE_CONTRACT.md#tos-bridge-guidance",
+    "repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md#memory-bridge-fragment"
+  ],
+  "provenance_thread_id": "prov.tos-bridge-kag-lift.2026-03-23",
+  "time_window": {
+    "valid_from": "2026-03-23T16:25:00Z",
+    "valid_to": null
+  },
+  "review_state": "proposed",
+  "temperature": "cool",
+  "bridge_refs": [
+    "memo.bridge.2026-03-23.tos-lineage-kag-candidate"
+  ],
+  "strongest_next_sources": [
+    "examples/bridge.kag-lift.example.json",
+    "repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md",
+    "repo:aoa-kag/README.md"
+  ],
+  "notes": "Chunk face stays inspection-oriented and does not pretend to be the normalized graph lift."
+}

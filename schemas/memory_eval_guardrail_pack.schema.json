@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/schemas/memory_eval_guardrail_pack.schema.json",
+  "title": "aoa-memo memory eval guardrail pack",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_type",
+    "pack_id",
+    "name",
+    "purpose",
+    "handoff_target",
+    "source_refs",
+    "cases"
+  ],
+  "properties": {
+    "contract_type": {
+      "const": "memory_eval_guardrail_pack"
+    },
+    "pack_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 1
+    },
+    "boundary_rule": {
+      "type": "string"
+    },
+    "handoff_target": {
+      "type": "string",
+      "enum": [
+        "aoa-evals"
+      ]
+    },
+    "source_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "cases": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "case_id",
+          "focus",
+          "risk",
+          "input_refs",
+          "expected_behavior",
+          "failure_signals",
+          "severity"
+        ],
+        "properties": {
+          "case_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "focus": {
+            "type": "string",
+            "enum": [
+              "recall_precision",
+              "provenance_fidelity",
+              "staleness",
+              "contradiction_handling",
+              "permission_leakage",
+              "over_promotion",
+              "hallucinated_merge"
+            ]
+          },
+          "risk": {
+            "type": "string",
+            "minLength": 1
+          },
+          "input_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "expected_behavior": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          },
+          "failure_signals": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1
+          },
+          "severity": {
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

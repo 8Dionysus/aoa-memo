@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/schemas/memory_chunk_face.schema.json",
+  "title": "aoa-memo memory chunk face",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_type",
+    "source_memory_id",
+    "source_kind",
+    "recall_mode",
+    "capsule_text",
+    "section_refs",
+    "source_refs",
+    "time_window",
+    "review_state",
+    "temperature",
+    "strongest_next_sources"
+  ],
+  "properties": {
+    "contract_type": {
+      "const": "memory_chunk_face"
+    },
+    "source_memory_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_kind": {
+      "type": "string",
+      "enum": [
+        "anchor",
+        "state_capsule",
+        "episode",
+        "claim",
+        "decision",
+        "pattern",
+        "bridge",
+        "audit_event",
+        "provenance_thread"
+      ]
+    },
+    "recall_mode": {
+      "type": "string",
+      "enum": [
+        "working",
+        "episodic",
+        "semantic",
+        "procedural",
+        "lineage",
+        "source_route"
+      ]
+    },
+    "capsule_text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "section_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "source_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "source_fragment_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "provenance_thread_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "time_window": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "valid_from",
+        "valid_to"
+      ],
+      "properties": {
+        "valid_from": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "valid_to": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        }
+      }
+    },
+    "review_state": {
+      "type": "string",
+      "enum": [
+        "captured",
+        "proposed",
+        "confirmed",
+        "frozen",
+        "superseded",
+        "retracted",
+        "archived"
+      ]
+    },
+    "temperature": {
+      "type": "string",
+      "enum": [
+        "hot",
+        "warm",
+        "cool",
+        "cold",
+        "frozen"
+      ]
+    },
+    "bridge_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "strongest_next_sources": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

@@ -85,6 +85,76 @@
       "main_risk_short": "Main risk: turning aoa-memo into a live runtime store or silently promoting runtime artifacts into canon.",
       "validation_short": "Validate by checking the checkpoint-to-memory contract preserves the mapping and keeps review required for distillation candidates.",
       "source_path": "docs/RUNTIME_WRITEBACK_SEAM.md"
+    },
+    {
+      "id": "AOA-M-0007",
+      "name": "agent-memory-posture-seam",
+      "summary": "Memo-side contract note for the posture fields that aoa-agents may consume without moving role policy into aoa-memo.",
+      "one_line_intent": "Let agent contracts talk about memory posture using explicit memo fields while keeping rights policy outside the memory layer.",
+      "use_when_short": "Use when deciding which memo fields an agent contract may read or write back against without inferring role policy from them.",
+      "do_not_use_short": "Avoid when the need is to define who gets a right, which approvals are required, or how delegation policy works.",
+      "inputs_short": "Needs a question about memo-side posture fields, access descriptors, lifecycle posture, or agent-facing handoff fields.",
+      "outputs_short": "Produces the memo-side fields and boundary notes that aoa-agents may consume while keeping rights policy external.",
+      "core_contract_short": "Core contract: aoa-memo names the object posture a right would apply to; aoa-agents still owns who has the right and when.",
+      "main_risk_short": "Main risk: treating access or promotion fields as grants instead of descriptors.",
+      "validation_short": "Validate by checking agent-facing surfaces preserve scope, access, lifecycle, provenance, and stronger source routes without assigning role policy.",
+      "source_path": "docs/AGENT_MEMORY_POSTURE_SEAM.md"
+    },
+    {
+      "id": "AOA-M-0008",
+      "name": "playbook-memory-scopes",
+      "summary": "Playbook-facing guidance for bounded memory scopes, recall modes, and checkpoint-oriented memo use.",
+      "one_line_intent": "Help playbooks ask for the smallest useful memo scope and recall mode without turning aoa-memo into scenario choreography.",
+      "use_when_short": "Use when a playbook or scenario needs to specify which memory scopes and recall modes are required for relaunch, review, or lineage work.",
+      "do_not_use_short": "Avoid when the task is to define the playbook itself or to implement runtime checkpoint workers.",
+      "inputs_short": "Needs a scenario-level question about required scope, recall mode, checkpoint continuity, or inspect-versus-expand posture.",
+      "outputs_short": "Produces bounded guidance for scope selection, recall modes, and how playbooks should use checkpoints and writeback surfaces.",
+      "core_contract_short": "Core contract: playbooks request bounded recall modes and explicit scopes rather than a blank check to the whole memory layer.",
+      "main_risk_short": "Main risk: scenario bundles quietly assume whole-repo or whole-ecosystem memory access by default.",
+      "validation_short": "Validate by checking the requested scope is explicit, the recall mode matches the scenario, and checkpoint use stays bounded.",
+      "source_path": "docs/PLAYBOOK_MEMORY_SCOPES.md"
+    },
+    {
+      "id": "AOA-M-0009",
+      "name": "kag-tos-bridge-contract",
+      "summary": "Contract for chunk-face and graph-face bridge exports that preserve ToS references and keep KAG lifts downstream.",
+      "one_line_intent": "Expose bridge-oriented inspection and downstream lift faces without replacing authored/core memory or Tree of Sophia sources.",
+      "use_when_short": "Use when defining chunk-face or graph-face exports, ToS-linked bridges, or KAG-oriented handoff posture from memo.",
+      "do_not_use_short": "Avoid when the task is normalized graph design, framework adapters, or rewriting ToS meaning inside memo.",
+      "inputs_short": "Needs a question about bridge exports, ToS refs, lineage recall, or KAG lift candidates.",
+      "outputs_short": "Produces bounded chunk-face and graph-face handoff surfaces plus the end-to-end episode-to-claim-to-bridge flow.",
+      "core_contract_short": "Core contract: write the memory event once, preserve provenance and ToS refs, and export candidate bridge faces later.",
+      "main_risk_short": "Main risk: graph-facing exports quietly replace reviewable authored/core memory or source-authored ToS material.",
+      "validation_short": "Validate by checking the bridge example bundle preserves the episode, claim, provenance thread, ToS refs, and candidate-only lift posture.",
+      "source_path": "docs/KAG_TOS_BRIDGE_CONTRACT.md"
+    },
+    {
+      "id": "AOA-M-0010",
+      "name": "memory-eval-guardrails",
+      "summary": "Memo-side guardrail handoff surface that keeps recall, provenance, staleness, leakage, and merge risks explicit for aoa-evals.",
+      "one_line_intent": "Make memory quality discussable through bounded guardrail cases without moving verdict logic into aoa-memo.",
+      "use_when_short": "Use when turning memory failure modes into bounded eval handoff cases for recall, provenance, lifecycle, and access posture.",
+      "do_not_use_short": "Avoid when the task is to define scoring, thresholds, or pass/fail verdict logic.",
+      "inputs_short": "Needs a question about memory regressions, failure modes, or which cases aoa-evals should cover next.",
+      "outputs_short": "Produces the current machine-readable guardrail pack and the risk categories it is meant to keep visible.",
+      "core_contract_short": "Core contract: aoa-memo publishes the risks and expected behavior; aoa-evals owns scoring and verdicts.",
+      "main_risk_short": "Main risk: memory quality becomes a taste debate with no bounded cases for regressions.",
+      "validation_short": "Validate by checking the guardrail pack preserves all required focus areas and points to concrete input surfaces.",
+      "source_path": "docs/MEMORY_EVAL_GUARDRAILS.md"
+    },
+    {
+      "id": "AOA-M-0011",
+      "name": "operational-boundary",
+      "summary": "V1-facing boundary note that fixes aoa-memo as doctrine plus compact public surfaces rather than runtime memory infrastructure.",
+      "one_line_intent": "Give neighboring repos a stable public boundary to build on without guessing or treating aoa-memo as the runtime body.",
+      "use_when_short": "Use when clarifying what consumer repos may rely on from aoa-memo and what must stay in runtime, routing, agent, or graph layers.",
+      "do_not_use_short": "Avoid when the need is to design a concrete runtime store, background job, or downstream graph adapter.",
+      "inputs_short": "Needs a question about stable public surfaces, consumer contracts, or the v1-facing split between doctrine and runtime.",
+      "outputs_short": "Produces the stable public boundary, consumer-specific contracts, and the runtime split that aoa-memo refuses to absorb.",
+      "core_contract_short": "Core contract: aoa-memo is a stable doctrine-and-surface boundary, not the live operational memory body.",
+      "main_risk_short": "Main risk: consumers start depending on hidden runtime assumptions instead of explicit public contracts.",
+      "validation_short": "Validate by checking stable docs, schemas, generated surfaces, and examples stay public and source-disciplined while runtime machinery stays out.",
+      "source_path": "docs/OPERATIONAL_BOUNDARY.md"
     }
   ]
 }

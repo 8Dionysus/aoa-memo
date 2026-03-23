@@ -1,0 +1,68 @@
+{
+  "contract_type": "memory_graph_face",
+  "source_memory_id": "memo.bridge.2026-03-23.tos-lineage-kag-candidate",
+  "source_kind": "bridge",
+  "graph_focus": "kag-lift",
+  "provenance_thread_ids": [
+    "prov.tos-bridge-kag-lift.2026-03-23"
+  ],
+  "entity_refs": [
+    "memo.bridge.2026-03-23.tos-lineage-kag-candidate",
+    "repo:Tree-of-Sophia",
+    "repo:aoa-kag"
+  ],
+  "concept_refs": [
+    "concept:memory-bridge",
+    "concept:lineage",
+    "concept:provenance"
+  ],
+  "relation_candidates": [
+    {
+      "relation_type": "derived_from_episode",
+      "target_ref": "memo.ep.2026-03-23.tos-interpretation-bridge-seed",
+      "evidence_refs": [
+        "examples/episode.tos-interpretation.example.json",
+        "examples/provenance_thread.kag-lift.example.json"
+      ],
+      "confidence": 0.83,
+      "status": "candidate",
+      "note": "Preserves the raw event that seeded the bridge."
+    },
+    {
+      "relation_type": "consolidates_claim",
+      "target_ref": "memo.claim.2026-03-23.tos-bridge-by-reference",
+      "evidence_refs": [
+        "examples/claim.tos-bridge-ready.example.json",
+        "docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow"
+      ],
+      "confidence": 0.9,
+      "status": "candidate",
+      "note": "Keeps the reviewed claim visible rather than collapsing it into graph-only meaning."
+    },
+    {
+      "relation_type": "points_to_tos_fragment",
+      "target_ref": "repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md#memory-bridge-fragment",
+      "evidence_refs": [
+        "examples/bridge.kag-lift.example.json",
+        "docs/KAG_TOS_BRIDGE_CONTRACT.md#tos-bridge-guidance"
+      ],
+      "confidence": "source-linked",
+      "status": "candidate",
+      "note": "Tree of Sophia meaning remains external and source-authored."
+    }
+  ],
+  "tos_refs": [
+    "repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md#memory-bridge-fragment"
+  ],
+  "kag_lift_status": "candidate",
+  "strongest_authored_refs": [
+    "examples/bridge.kag-lift.example.json",
+    "examples/claim.tos-bridge-ready.example.json",
+    "repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md"
+  ],
+  "time_window": {
+    "valid_from": "2026-03-23T16:25:00Z",
+    "valid_to": null
+  },
+  "notes": "Graph face is still a candidate handoff surface and not a normalized graph substrate."
+}
