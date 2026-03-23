@@ -155,6 +155,34 @@
           "body": "Any handoff from core memory into derived memory should preserve source refs, provenance thread linkage where available, temporal posture, review state, and a bounded statement of what was derived. Return paths from derived memory back into AoA should point toward stronger authored surfaces instead of presenting the derived surface as final truth."
         }
       ]
+    },
+    {
+      "id": "AOA-M-0006",
+      "name": "runtime-writeback-seam",
+      "source_path": "docs/RUNTIME_WRITEBACK_SEAM.md",
+      "sections": [
+        {
+          "section_id": "AOA-M-0006#core-rule",
+          "heading": "Core rule",
+          "ordinal": 1,
+          "summary": "Keeps live scratchpad in runtime and restricts aoa-memo to bounded exports or reviewed writeback candidates.",
+          "body": "The runtime writeback seam keeps live scratchpad out of `aoa-memo`. The memo layer receives bounded exports or reviewed candidates, not the whole running state of a route."
+        },
+        {
+          "section_id": "AOA-M-0006#mapping-to-preserve",
+          "heading": "Mapping to preserve",
+          "ordinal": 2,
+          "summary": "Maps checkpoint export, approval and transition records, traces, and distillation output into the existing memo canon.",
+          "body": "The preserved mapping is: checkpoint export becomes `state_capsule`; approval and transition records become `decision`; execution and review traces become `episode` and `audit_event`; `distillation_pack` yields reviewed candidates for `claim`, `pattern`, and `bridge`."
+        },
+        {
+          "section_id": "AOA-M-0006#boundary-split",
+          "heading": "Boundary split",
+          "ordinal": 3,
+          "summary": "Keeps role rights in aoa-agents, scenario shape in aoa-playbooks, and runtime plumbing in abyss-stack.",
+          "body": "`aoa-memo` owns object canon, lifecycle, writeback classes, and review rules. `aoa-agents` keeps memory rights and writeback boundaries. `aoa-playbooks` keeps scenario meaning. `abyss-stack` keeps runtime stores, checkpoint workers, and writeback plumbing."
+        }
+      ]
     }
   ]
 }

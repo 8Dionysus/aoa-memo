@@ -1,0 +1,177 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/schemas/checkpoint-to-memory-contract.schema.json",
+  "title": "aoa-memo checkpoint to memory contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_type",
+    "contract_id",
+    "source_seed_ref",
+    "checkpoint_artifact",
+    "runtime_boundary",
+    "mapping_rules"
+  ],
+  "properties": {
+    "contract_type": {
+      "type": "string",
+      "const": "checkpoint_to_memory_contract"
+    },
+    "contract_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_seed_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "checkpoint_artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "artifact_name",
+        "schema_ref",
+        "posture"
+      ],
+      "properties": {
+        "artifact_name": {
+          "type": "string",
+          "const": "inquiry_checkpoint"
+        },
+        "schema_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "posture": {
+          "type": "string",
+          "const": "route_artifact_not_memory_object"
+        }
+      }
+    },
+    "runtime_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scratchpad_posture",
+        "checkpoint_export_kind",
+        "distillation_review_posture",
+        "review_boundary_refs"
+      ],
+      "properties": {
+        "scratchpad_posture": {
+          "type": "string",
+          "const": "runtime_local_only"
+        },
+        "checkpoint_export_kind": {
+          "type": "string",
+          "const": "state_capsule"
+        },
+        "distillation_review_posture": {
+          "type": "string",
+          "const": "review_required"
+        },
+        "review_boundary_refs": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "mapping_rules": {
+      "type": "array",
+      "minItems": 7,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "runtime_surface",
+          "runtime_refs",
+          "target_kind",
+          "writeback_class",
+          "temperature_hint",
+          "review_state_default",
+          "requires_human_review",
+          "notes"
+        ],
+        "properties": {
+          "runtime_surface": {
+            "type": "string",
+            "enum": [
+              "checkpoint_export",
+              "approval_record",
+              "transition_record",
+              "execution_trace",
+              "review_trace",
+              "distillation_claim_candidate",
+              "distillation_pattern_candidate",
+              "distillation_bridge_candidate"
+            ]
+          },
+          "runtime_refs": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "target_kind": {
+            "type": "string",
+            "enum": [
+              "anchor",
+              "state_capsule",
+              "episode",
+              "claim",
+              "decision",
+              "pattern",
+              "bridge",
+              "audit_event"
+            ]
+          },
+          "writeback_class": {
+            "type": "string",
+            "enum": [
+              "checkpoint_export",
+              "memo_surviving_event",
+              "reviewed_candidate"
+            ]
+          },
+          "temperature_hint": {
+            "type": "string",
+            "enum": [
+              "hot",
+              "warm",
+              "cool",
+              "cold",
+              "frozen"
+            ]
+          },
+          "review_state_default": {
+            "type": "string",
+            "enum": [
+              "captured",
+              "proposed",
+              "confirmed",
+              "frozen",
+              "superseded",
+              "retracted",
+              "archived"
+            ]
+          },
+          "requires_human_review": {
+            "type": "boolean"
+          },
+          "notes": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}

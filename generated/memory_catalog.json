@@ -166,6 +166,39 @@
         "handoff-rules",
         "anti-goals"
       ]
+    },
+    {
+      "id": "AOA-M-0006",
+      "name": "runtime-writeback-seam",
+      "surface_kind": "doctrine",
+      "summary": "Bounded contract for mapping runtime-local state, checkpoint exports, and reviewed distillation candidates into the current memo canon.",
+      "primary_focus": "writeback-seam",
+      "recall_modes": [
+        "working",
+        "episodic",
+        "source_route"
+      ],
+      "status": "confirmed",
+      "temperature": "warm",
+      "source_path": "docs/RUNTIME_WRITEBACK_SEAM.md",
+      "inspect_surface": "generated/memory_capsules.json",
+      "expand_surface": "generated/memory_sections.full.json",
+      "related_surface_ids": [
+        "AOA-M-0002",
+        "AOA-M-0003",
+        "AOA-M-0005"
+      ],
+      "strongest_next_sources": [
+        "repo:aoa-agents",
+        "repo:aoa-playbooks",
+        "repo:abyss-stack"
+      ],
+      "focus_tags": [
+        "runtime-boundary",
+        "checkpoint-export",
+        "writeback",
+        "review"
+      ]
     }
   ]
 }

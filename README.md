@@ -17,8 +17,9 @@ If you are new to this repository, use this path:
 4. Read [docs/NARRATIVE_CORE_CONTRACT](docs/NARRATIVE_CORE_CONTRACT.md) for the authored/core-memory versus derived-memory split.
 5. Read [docs/WITNESS_TRACE_CONTRACT](docs/WITNESS_TRACE_CONTRACT.md) for the current witness trace export contract.
 6. Read [docs/WRITEBACK_TEMPERATURE_POLICY](docs/WRITEBACK_TEMPERATURE_POLICY.md) for memo-surviving versus bridge-ready writeback posture.
-7. Read [docs/BOUNDARIES](docs/BOUNDARIES.md) for ownership rules.
-8. Read [ROADMAP](ROADMAP.md) for the current direction.
+7. Read [docs/RUNTIME_WRITEBACK_SEAM](docs/RUNTIME_WRITEBACK_SEAM.md) for the bounded runtime-to-memo writeback mapping.
+8. Read [docs/BOUNDARIES](docs/BOUNDARIES.md) for ownership rules.
+9. Read [ROADMAP](ROADMAP.md) for the current direction.
 
 For the shortest next route by intent:
 - if you need the ecosystem center and layer map, go to [`Agents-of-Abyss`](https://github.com/8Dionysus/Agents-of-Abyss)
@@ -93,7 +94,7 @@ python scripts/validate_memory_surfaces.py
 python scripts/validate_lifecycle_audit_examples.py
 ```
 
-`validate_memo.py` checks the core memory objects, schemas, examples, and registry.
+`validate_memo.py` checks the core memory objects, schemas, examples, registry, and checkpoint-to-memory contract surface.
 `validate_memory_surfaces.py` checks the router-facing generated doctrine surfaces and the router semantic recall contract.
 `validate_lifecycle_audit_examples.py` checks lifecycle, provenance-thread, and audit-event example integrity.
 
