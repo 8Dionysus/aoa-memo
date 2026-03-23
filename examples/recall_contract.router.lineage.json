@@ -1,0 +1,27 @@
+{
+  "id": "recall.lineage.router-ready",
+  "name": "Router-ready lineage recall",
+  "mode": "lineage",
+  "allowed_scopes": [
+    "project",
+    "workspace",
+    "ecosystem"
+  ],
+  "preferred_kinds": [
+    "bridge",
+    "claim",
+    "episode",
+    "anchor"
+  ],
+  "temperature_order": [
+    "warm",
+    "cool",
+    "frozen",
+    "cold",
+    "hot"
+  ],
+  "inspect_surface": "generated/memory_catalog.min.json",
+  "expand_surface": "generated/memory_sections.full.json",
+  "source_route_required": true,
+  "notes": "Use for compact inspect-first router lineage flow before opening doctrine sections or stronger external sources."
+}

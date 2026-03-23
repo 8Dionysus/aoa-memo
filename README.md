@@ -26,11 +26,19 @@ If you are new to this repository, use this path:
 13. Read [docs/BOUNDARIES](docs/BOUNDARIES.md) for ownership rules.
 14. Read [ROADMAP](ROADMAP.md) for the current direction.
 
+For concrete recall entrypoints, inspect:
+- `examples/recall_contract.working.json`
+- `examples/recall_contract.semantic.json`
+- `examples/recall_contract.lineage.json`
+- `examples/recall_contract.router.semantic.json`
+- `examples/recall_contract.router.lineage.json`
+
 For the shortest next route by intent:
 - if you need the ecosystem center and layer map, go to [`Agents-of-Abyss`](https://github.com/8Dionysus/Agents-of-Abyss)
 - if you need navigation and dispatch rather than memory-layer meaning, go to [`aoa-routing`](https://github.com/8Dionysus/aoa-routing)
 - if you need authored practice, execution, or proof meaning, go to [`aoa-techniques`](https://github.com/8Dionysus/aoa-techniques), [`aoa-skills`](https://github.com/8Dionysus/aoa-skills), or [`aoa-evals`](https://github.com/8Dionysus/aoa-evals)
 - if you need explicit role contracts and handoff posture, go to [`aoa-agents`](https://github.com/8Dionysus/aoa-agents)
+- if you need the current public recall entrypoints for working, semantic, or lineage recall, inspect `examples/recall_contract*.json`
 
 ## Quick route table
 
@@ -100,8 +108,8 @@ python scripts/validate_lifecycle_audit_examples.py
 ```
 
 `validate_memo.py` checks the core memory objects, schemas, examples, registry, and checkpoint-to-memory contract surface.
-It also checks the chunk-face and graph-face bridge export surfaces plus the memory eval guardrail handoff pack.
-`validate_memory_surfaces.py` checks the router-facing generated doctrine surfaces, cross-surface alignment, and the router semantic recall contract.
+It also checks the chunk-face and graph-face bridge export surfaces, all public recall contract examples, and the memory eval guardrail handoff pack.
+`validate_memory_surfaces.py` checks the router-facing generated doctrine surfaces, cross-surface alignment, and the router semantic and lineage recall contracts.
 `validate_lifecycle_audit_examples.py` checks lifecycle, provenance-thread, and audit-event example integrity.
 
 The witness trace contract is validated there as a trace export surface, not as a new memory-object kind.

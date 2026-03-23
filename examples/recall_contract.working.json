@@ -1,0 +1,27 @@
+{
+  "id": "recall.working.default",
+  "name": "Default working recall",
+  "mode": "working",
+  "allowed_scopes": [
+    "thread",
+    "session",
+    "project"
+  ],
+  "preferred_kinds": [
+    "state_capsule",
+    "decision",
+    "episode",
+    "audit_event"
+  ],
+  "temperature_order": [
+    "hot",
+    "warm",
+    "cool",
+    "frozen",
+    "cold"
+  ],
+  "inspect_surface": "generated/memory_catalog.min.json",
+  "expand_surface": "docs/RUNTIME_WRITEBACK_SEAM.md",
+  "source_route_required": false,
+  "notes": "Use for relaunch, checkpoint recovery, and bounded exported working state before leaving the memo layer."
+}

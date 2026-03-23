@@ -1,0 +1,27 @@
+{
+  "id": "recall.lineage.default",
+  "name": "Default lineage recall",
+  "mode": "lineage",
+  "allowed_scopes": [
+    "project",
+    "workspace",
+    "ecosystem"
+  ],
+  "preferred_kinds": [
+    "bridge",
+    "claim",
+    "episode",
+    "anchor"
+  ],
+  "temperature_order": [
+    "warm",
+    "cool",
+    "frozen",
+    "cold",
+    "hot"
+  ],
+  "inspect_surface": "generated/memory_catalog.min.json",
+  "expand_surface": "docs/KAG_TOS_BRIDGE_CONTRACT.md",
+  "source_route_required": true,
+  "notes": "Use for ToS-linked and bridge-heavy recall when provenance-first expansion should stay inside memo before stronger source routes."
+}
