@@ -42,6 +42,16 @@ At the current public baseline, supporting structures include:
 This keeps the machine-readable taxonomy aligned with the repo's current public surfaces.
 `provenance_thread` may still be promoted later, but this round does not reopen that baseline.
 
+## Generated public families
+
+The current public baseline now exposes two separate generated families inside `aoa-memo`:
+
+- a doctrine family for layer meaning and boundary-oriented routing surfaces
+- an object family for compact inspect/expand over curated memory-object examples
+
+This split keeps layer meaning and object recall parallel rather than collapsed.
+`provenance_thread`, `witness_trace`, `inquiry_checkpoint`, and checkpoint contracts remain schema-backed support surfaces in this wave, not a third generated family.
+
 ## Derived memory surfaces
 
 Derived memory may exist for retrieval, lift preparation, and downstream consumers, but it stays downstream of the authored/core layer.
@@ -73,6 +83,8 @@ Any handoff from core memory into derived memory should preserve:
 - provenance thread linkage where available
 - temporal posture
 - review state
+- authority kind
+- current recall status
 - bounded statement of what was derived
 
 Any return path from derived memory back into AoA should point back toward stronger authored surfaces rather than pretending the derived surface is final truth.

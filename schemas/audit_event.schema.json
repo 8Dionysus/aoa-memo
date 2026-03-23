@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/schemas/audit_event.schema.json",
+  "title": "aoa-memo audit event memory object",
+  "allOf": [
+    {
+      "$ref": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/schemas/memory_object.schema.json"
+    },
+    {
+      "type": "object",
+      "required": [
+        "payload_ref",
+        "access",
+        "bridges"
+      ],
+      "properties": {
+        "kind": {
+          "const": "audit_event"
+        },
+        "time": {
+          "type": "object",
+          "required": [
+            "created_at",
+            "observed_at"
+          ]
+        },
+        "provenance": {
+          "type": "object",
+          "required": [
+            "source_refs",
+            "provenance_thread_id"
+          ],
+          "properties": {
+            "provenance_thread_id": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "lifecycle": {
+          "type": "object",
+          "required": [
+            "review_state",
+            "retention_class"
+          ],
+          "properties": {
+            "review_state": {
+              "enum": [
+                "confirmed",
+                "frozen",
+                "archived"
+              ]
+            },
+            "retention_class": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "access": {
+          "type": "object",
+          "required": [
+            "access_class",
+            "read_scopes"
+          ]
+        },
+        "bridges": {
+          "type": "object",
+          "required": [
+            "route_capsule_ref"
+          ],
+          "properties": {
+            "route_capsule_ref": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    }
+  ]
+}

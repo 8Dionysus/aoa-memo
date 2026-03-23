@@ -34,6 +34,7 @@
   "trust": {
     "temperature": "cool",
     "confidence": 0.93,
+    "authority_kind": "repo_maintained",
     "authority": "repo-doctrine",
     "freshness": 0.97,
     "salience": 0.95
@@ -42,7 +43,11 @@
     "review_state": "confirmed",
     "supersedes": [],
     "superseded_by": null,
-    "retention_class": "doctrine"
+    "retention_class": "doctrine",
+    "current_recall": {
+      "status": "preferred",
+      "status_reason": "This remains a current doctrine-level claim for interpreting memo temperature."
+    }
   },
   "access": {
     "access_class": "public",

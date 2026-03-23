@@ -32,6 +32,7 @@
   "trust": {
     "temperature": "cool",
     "confidence": 0.88,
+    "authority_kind": "repo_maintained",
     "authority": "repo-generated-surface",
     "freshness": 0.54,
     "salience": 0.41
@@ -40,7 +41,12 @@
     "review_state": "superseded",
     "supersedes": [],
     "superseded_by": "memo.claim.2026-03-21.memo-entrypoint-new",
-    "retention_class": "historical-generated-surface"
+    "retention_class": "historical-generated-surface",
+    "current_recall": {
+      "status": "historical",
+      "status_reason": "This claim remains visible for trace-back only because a newer current entrypoint replaced it.",
+      "replacement_ref": "memo.claim.2026-03-21.memo-entrypoint-new"
+    }
   },
   "access": {
     "access_class": "public",

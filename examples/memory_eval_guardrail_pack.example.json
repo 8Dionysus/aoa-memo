@@ -56,14 +56,17 @@
       "input_refs": [
         "docs/LIFECYCLE.md",
         "docs/MEMORY_TEMPERATURES.md",
+        "docs/MEMORY_TRUST_POSTURE.md",
         "examples/claim.current-entrypoint.example.json"
       ],
       "expected_behavior": [
         "Temperature and lifecycle posture remain visible during recall.",
+        "Current recall posture remains visible so historical or withdrawn objects are not mistaken for active entrypoints.",
         "Current usefulness is separated from historical truth."
       ],
       "failure_signals": [
         "Recall omits temperature or review posture.",
+        "Recall omits current_recall posture, so historical or withdrawn memory looks equally current.",
         "Stale memory is presented as if it were equally current and preferred."
       ],
       "severity": "medium"
@@ -79,10 +82,12 @@
       ],
       "expected_behavior": [
         "Superseded and retracted states remain explicit.",
+        "Current recall posture and contradiction refs remain explicit when memory objects stay in tension.",
         "Contradicting memory traces are surfaced with their lifecycle posture rather than flattened."
       ],
       "failure_signals": [
         "Superseded memory appears active with no status marker.",
+        "Contradicting memory objects lose explicit contradiction linkage.",
         "Retracted memory is used as if it were still normal semantic recall."
       ],
       "severity": "high"

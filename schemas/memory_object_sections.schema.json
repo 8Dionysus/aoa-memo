@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/schemas/memory_object_sections.schema.json",
+  "title": "aoa-memo memory object sections",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "sections_version",
+    "source_of_truth",
+    "memory_objects"
+  ],
+  "properties": {
+    "sections_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "source_of_truth": {
+      "type": "string",
+      "const": "aoa-memo-object-example-surfaces-v1"
+    },
+    "memory_objects": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "kind",
+          "title",
+          "source_path",
+          "sections"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "anchor",
+              "state_capsule",
+              "episode",
+              "claim",
+              "decision",
+              "pattern",
+              "bridge",
+              "audit_event"
+            ]
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sections": {
+            "type": "array",
+            "minItems": 4,
+            "maxItems": 4,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "section_id",
+                "heading",
+                "ordinal",
+                "summary",
+                "body"
+              ],
+              "properties": {
+                "section_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "heading": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "ordinal": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 4
+                },
+                "summary": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "body": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

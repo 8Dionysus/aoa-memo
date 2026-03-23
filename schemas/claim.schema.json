@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/schemas/claim.schema.json",
+  "title": "aoa-memo claim memory object",
+  "allOf": [
+    {
+      "$ref": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/schemas/memory_object.schema.json"
+    },
+    {
+      "type": "object",
+      "required": [
+        "payload_ref",
+        "access",
+        "bridges"
+      ],
+      "properties": {
+        "kind": {
+          "const": "claim"
+        },
+        "trust": {
+          "type": "object",
+          "required": [
+            "temperature"
+          ],
+          "properties": {
+            "temperature": {
+              "enum": [
+                "warm",
+                "cool",
+                "cold",
+                "frozen"
+              ]
+            }
+          }
+        },
+        "lifecycle": {
+          "type": "object",
+          "required": [
+            "review_state",
+            "retention_class"
+          ],
+          "properties": {
+            "review_state": {
+              "enum": [
+                "proposed",
+                "confirmed",
+                "frozen",
+                "superseded",
+                "retracted",
+                "archived"
+              ]
+            },
+            "retention_class": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "access": {
+          "type": "object",
+          "required": [
+            "access_class",
+            "read_scopes"
+          ]
+        },
+        "bridges": {
+          "type": "object",
+          "required": [
+            "route_capsule_ref"
+          ],
+          "properties": {
+            "route_capsule_ref": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    }
+  ]
+}

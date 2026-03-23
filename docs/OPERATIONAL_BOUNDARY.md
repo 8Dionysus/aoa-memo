@@ -12,21 +12,25 @@ The stable public boundary of this repository consists of:
 
 - doctrine docs that define memory meaning, provenance, lifecycle, temperature, writeback, bridges, guardrails, and boundaries
 - schema-backed memory and contract surfaces
-- generated registries, catalogs, capsules, and sections
+- a doctrine generated family for layer-meaning inspect and expand surfaces
+- an object generated family for curated memory-object inspect and expand surfaces
 - reviewed examples that show how the layer is meant to be used
 
 These are the public review surfaces a consumer should rely on.
+`provenance_thread`, `witness_trace`, `inquiry_checkpoint`, and checkpoint contracts remain explicit support surfaces in this boundary, not a separate generated family.
 
 ## Consumer Contracts
 
 ### `aoa-routing`
 
 Consume compact generated surfaces and recall contracts.
+Use the doctrine family for layer meaning and the object family for object-first inspect/expand.
 Keep dispatch logic and route compression policy outside this repository.
 
 ### `aoa-agents`
 
 Consume object kind, scope, lifecycle, access posture, provenance linkage, and route refs.
+Use the object family when the task is posture lookup over curated memory objects, and the doctrine family when the task is layer interpretation.
 Keep rights policy, handoff posture, and actor doctrine outside this repository.
 
 ### `aoa-kag`

@@ -34,6 +34,7 @@
   "trust": {
     "temperature": "warm",
     "confidence": 0.95,
+    "authority_kind": "repo_maintained",
     "authority": "repo-generated-surface",
     "freshness": 0.97,
     "salience": 0.78
@@ -44,7 +45,14 @@
       "memo.claim.2026-03-21.memo-entrypoint-old"
     ],
     "superseded_by": null,
-    "retention_class": "active-generated-surface"
+    "retention_class": "active-generated-surface",
+    "current_recall": {
+      "status": "preferred",
+      "status_reason": "This claim is the current inspect entrypoint for router-facing semantic recall.",
+      "contradiction_refs": [
+        "memo.claim.2026-03-21.memo-entrypoint-bad-claim"
+      ]
+    }
   },
   "access": {
     "access_class": "public",

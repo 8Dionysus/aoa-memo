@@ -33,6 +33,7 @@
   "trust": {
     "temperature": "warm",
     "confidence": 0.92,
+    "authority_kind": "human_reviewed",
     "authority": "human-reviewed checkpoint gate",
     "freshness": 0.98,
     "salience": 0.95
@@ -41,7 +42,11 @@
     "review_state": "confirmed",
     "supersedes": [],
     "superseded_by": null,
-    "retention_class": "checkpoint"
+    "retention_class": "checkpoint",
+    "current_recall": {
+      "status": "allowed",
+      "status_reason": "This decision should remain available during checkpoint-oriented recall as a reviewed gate outcome."
+    }
   },
   "access": {
     "access_class": "public",

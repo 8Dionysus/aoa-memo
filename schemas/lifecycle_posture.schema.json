@@ -1,0 +1,268 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/schemas/lifecycle_posture.schema.json",
+  "title": "aoa-memo lifecycle posture",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "review_state",
+    "retention_class",
+    "current_recall"
+  ],
+  "properties": {
+    "review_state": {
+      "type": "string",
+      "enum": [
+        "captured",
+        "proposed",
+        "confirmed",
+        "frozen",
+        "superseded",
+        "retracted",
+        "archived"
+      ]
+    },
+    "current_recall": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "status_reason"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "preferred",
+            "allowed",
+            "historical",
+            "withdrawn"
+          ]
+        },
+        "status_reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "replacement_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "contradiction_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
+    },
+    "supersedes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "superseded_by": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "review_after": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "retention_class": {
+      "type": "string",
+      "minLength": 1
+    },
+    "promotion_state": {
+      "type": "string",
+      "enum": [
+        "none",
+        "candidate",
+        "promoted",
+        "demoted",
+        "retired",
+        "rescued"
+      ]
+    },
+    "decay_policy_ref": {
+      "type": "string"
+    },
+    "freeze_basis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "qualifies_by"
+      ],
+      "properties": {
+        "qualifies_by": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "human_review",
+              "constitutional_seam",
+              "source_boundary"
+            ]
+          }
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "review_state": {
+            "const": "frozen"
+          }
+        },
+        "required": [
+          "review_state"
+        ]
+      },
+      "then": {
+        "required": [
+          "freeze_basis",
+          "current_recall"
+        ],
+        "properties": {
+          "current_recall": {
+            "type": "object",
+            "required": [
+              "status",
+              "status_reason"
+            ],
+            "properties": {
+              "status": {
+                "enum": [
+                  "preferred",
+                  "allowed"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "review_state": {
+            "const": "superseded"
+          }
+        },
+        "required": [
+          "review_state"
+        ]
+      },
+      "then": {
+        "required": [
+          "superseded_by",
+          "current_recall"
+        ],
+        "properties": {
+          "superseded_by": {
+            "type": "string",
+            "minLength": 1
+          },
+          "current_recall": {
+            "type": "object",
+            "required": [
+              "status",
+              "status_reason",
+              "replacement_ref"
+            ],
+            "properties": {
+              "status": {
+                "const": "historical"
+              },
+              "replacement_ref": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "review_state": {
+            "const": "retracted"
+          }
+        },
+        "required": [
+          "review_state"
+        ]
+      },
+      "then": {
+        "required": [
+          "current_recall"
+        ],
+        "properties": {
+          "current_recall": {
+            "type": "object",
+            "required": [
+              "status",
+              "status_reason"
+            ],
+            "properties": {
+              "status": {
+                "const": "withdrawn"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "review_state": {
+            "const": "archived"
+          }
+        },
+        "required": [
+          "review_state"
+        ]
+      },
+      "then": {
+        "required": [
+          "current_recall"
+        ],
+        "properties": {
+          "current_recall": {
+            "type": "object",
+            "required": [
+              "status",
+              "status_reason"
+            ],
+            "properties": {
+              "status": {
+                "const": "historical"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

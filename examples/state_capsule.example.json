@@ -1,0 +1,75 @@
+{
+  "id": "memo.state.2026-03-23.contract-hardening-current-axis",
+  "kind": "state_capsule",
+  "title": "Current contract-hardening axis exported as a bounded state capsule",
+  "summary": "Exports the current aoa-memo hardening slice: sharpen per-kind object contracts first, then trust/lifecycle semantics, then object-facing generated surfaces.",
+  "scope": [
+    "thread:contract-hardening",
+    "repo:aoa-memo",
+    "project:AoA"
+  ],
+  "owner_refs": [
+    "repo:aoa-memo"
+  ],
+  "payload_ref": "ROADMAP.md#current-stage",
+  "tags": [
+    "state-capsule",
+    "contract-hardening",
+    "working-memory"
+  ],
+  "time": {
+    "created_at": "2026-03-23T18:10:00Z",
+    "observed_at": "2026-03-23T18:00:00Z",
+    "valid_from": "2026-03-23T18:10:00Z",
+    "valid_to": null
+  },
+  "provenance": {
+    "source_refs": [
+      "ROADMAP.md#current-stage",
+      "docs/RUNTIME_WRITEBACK_SEAM.md#mapping-to-preserve"
+    ],
+    "episode_refs": [
+      "memo.ep.2026-03-20.bootstrap-foundation"
+    ],
+    "provenance_thread_id": "prov.aoa-memo.contract-hardening.2026-03-23"
+  },
+  "trust": {
+    "temperature": "hot",
+    "confidence": 0.84,
+    "authority_kind": "operational_observation",
+    "authority": "repo-maintainer working export",
+    "freshness": 0.99,
+    "salience": 0.93
+  },
+  "lifecycle": {
+    "review_state": "captured",
+    "supersedes": [],
+    "superseded_by": null,
+    "retention_class": "working-export",
+    "promotion_state": "candidate",
+    "current_recall": {
+      "status": "preferred",
+      "status_reason": "This capsule is the current bounded working-state export for the active hardening route."
+    }
+  },
+  "access": {
+    "access_class": "public",
+    "read_scopes": [
+      "public"
+    ],
+    "write_scopes": [
+      "maintainer"
+    ],
+    "promotion_scopes": [
+      "maintainer",
+      "human-review"
+    ]
+  },
+  "bridges": {
+    "tos_refs": [],
+    "skill_refs": [],
+    "eval_refs": [],
+    "kag_lift_status": "none",
+    "route_capsule_ref": "docs/RUNTIME_WRITEBACK_SEAM.md#mapping-to-preserve"
+  }
+}

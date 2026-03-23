@@ -13,18 +13,21 @@ If you are new to this repository, use this path:
 
 1. Read [CHARTER](CHARTER.md) for the role and boundaries of the memory layer.
 2. Read [docs/MEMORY_MODEL](docs/MEMORY_MODEL.md) for the conceptual model.
-3. Read [docs/MEMORY_TEMPERATURES](docs/MEMORY_TEMPERATURES.md) for the operational temperature and decay posture.
-4. Read [docs/NARRATIVE_CORE_CONTRACT](docs/NARRATIVE_CORE_CONTRACT.md) for the authored/core-memory versus derived-memory split.
-5. Read [docs/WITNESS_TRACE_CONTRACT](docs/WITNESS_TRACE_CONTRACT.md) for the current witness trace export contract.
-6. Read [docs/WRITEBACK_TEMPERATURE_POLICY](docs/WRITEBACK_TEMPERATURE_POLICY.md) for memo-surviving versus bridge-ready writeback posture.
-7. Read [docs/RUNTIME_WRITEBACK_SEAM](docs/RUNTIME_WRITEBACK_SEAM.md) for the bounded runtime-to-memo writeback mapping.
-8. Read [docs/AGENT_MEMORY_POSTURE_SEAM](docs/AGENT_MEMORY_POSTURE_SEAM.md) for the memo-side posture fields that `aoa-agents` may consume without moving role policy here.
-9. Read [docs/PLAYBOOK_MEMORY_SCOPES](docs/PLAYBOOK_MEMORY_SCOPES.md) for playbook-facing memory scope and recall-mode guidance.
-10. Read [docs/KAG_TOS_BRIDGE_CONTRACT](docs/KAG_TOS_BRIDGE_CONTRACT.md) for the current chunk-face, graph-face, and ToS-bridge contract.
-11. Read [docs/MEMORY_EVAL_GUARDRAILS](docs/MEMORY_EVAL_GUARDRAILS.md) for the memo-side guardrail handoff surface to `aoa-evals`.
-12. Read [docs/OPERATIONAL_BOUNDARY](docs/OPERATIONAL_BOUNDARY.md) for the stable v1-facing consumer and runtime split.
-13. Read [docs/BOUNDARIES](docs/BOUNDARIES.md) for ownership rules.
-14. Read [ROADMAP](ROADMAP.md) for the current direction.
+3. Read [docs/MEMORY_OBJECT_PROFILES](docs/MEMORY_OBJECT_PROFILES.md) for the per-kind object canon hardening layer.
+4. Read [docs/MEMORY_TRUST_POSTURE](docs/MEMORY_TRUST_POSTURE.md) for the ordinal-versus-descriptive trust contract.
+5. Read [docs/MEMORY_TEMPERATURES](docs/MEMORY_TEMPERATURES.md) for the operational temperature and decay posture.
+6. Read [docs/LIFECYCLE](docs/LIFECYCLE.md) for current-recall, supersession, retraction, and freeze posture.
+7. Read [docs/NARRATIVE_CORE_CONTRACT](docs/NARRATIVE_CORE_CONTRACT.md) for the authored/core-memory versus derived-memory split.
+8. Read [docs/WITNESS_TRACE_CONTRACT](docs/WITNESS_TRACE_CONTRACT.md) for the current witness trace export contract.
+9. Read [docs/WRITEBACK_TEMPERATURE_POLICY](docs/WRITEBACK_TEMPERATURE_POLICY.md) for memo-surviving versus bridge-ready writeback posture.
+10. Read [docs/RUNTIME_WRITEBACK_SEAM](docs/RUNTIME_WRITEBACK_SEAM.md) for the bounded runtime-to-memo writeback mapping.
+11. Read [docs/AGENT_MEMORY_POSTURE_SEAM](docs/AGENT_MEMORY_POSTURE_SEAM.md) for the memo-side posture fields that `aoa-agents` may consume without moving role policy here.
+12. Read [docs/PLAYBOOK_MEMORY_SCOPES](docs/PLAYBOOK_MEMORY_SCOPES.md) for playbook-facing memory scope and recall-mode guidance.
+13. Read [docs/KAG_TOS_BRIDGE_CONTRACT](docs/KAG_TOS_BRIDGE_CONTRACT.md) for the current chunk-face, graph-face, and ToS-bridge contract.
+14. Read [docs/MEMORY_EVAL_GUARDRAILS](docs/MEMORY_EVAL_GUARDRAILS.md) for the memo-side guardrail handoff surface to `aoa-evals`.
+15. Read [docs/OPERATIONAL_BOUNDARY](docs/OPERATIONAL_BOUNDARY.md) for the stable v1-facing consumer and runtime split.
+16. Read [docs/BOUNDARIES](docs/BOUNDARIES.md) for ownership rules.
+17. Read [ROADMAP](ROADMAP.md) for the current direction.
 
 For concrete recall entrypoints, inspect:
 - `examples/recall_contract.working.json`
@@ -32,6 +35,12 @@ For concrete recall entrypoints, inspect:
 - `examples/recall_contract.lineage.json`
 - `examples/recall_contract.router.semantic.json`
 - `examples/recall_contract.router.lineage.json`
+- `examples/recall_contract.object.working.json`
+- `examples/recall_contract.object.semantic.json`
+- `examples/recall_contract.object.lineage.json`
+
+The doctrine-first and router-facing recall contracts stay stable.
+The `recall_contract.object.*.json` family is the parallel object-facing inspect/expand entrypoint over curated memory objects.
 
 For the shortest next route by intent:
 - if you need the ecosystem center and layer map, go to [`Agents-of-Abyss`](https://github.com/8Dionysus/Agents-of-Abyss)
@@ -95,21 +104,33 @@ Within AoA:
 
 This repository includes compact machine-readable memory-layer surfaces at:
 - `generated/memo_registry.min.json`
-- `generated/memory_catalog.min.json`
-- `generated/memory_capsules.json`
-- `generated/memory_sections.full.json`
+- doctrine family:
+  - `generated/memory_catalog.json`
+  - `generated/memory_catalog.min.json`
+  - `generated/memory_capsules.json`
+  - `generated/memory_sections.full.json`
+- object family:
+  - `generated/memory_object_catalog.json`
+  - `generated/memory_object_catalog.min.json`
+  - `generated/memory_object_capsules.json`
+  - `generated/memory_object_sections.full.json`
+
+`provenance_thread`, `witness_trace`, `inquiry_checkpoint`, and checkpoint-to-memory contract surfaces remain support surfaces in this split, not a third generated family.
 
 To validate the current memory-layer surface locally, run:
 
 ```bash
+python scripts/generate_memory_object_surfaces.py
 python scripts/validate_memo.py
 python scripts/validate_memory_surfaces.py
+python scripts/validate_memory_object_surfaces.py
 python scripts/validate_lifecycle_audit_examples.py
 ```
 
-`validate_memo.py` checks the core memory objects, schemas, examples, registry, and checkpoint-to-memory contract surface.
+`validate_memo.py` checks the core memory objects, schemas, examples, registry, manifest-backed object surface family contract, and checkpoint-to-memory contract surface.
 It also checks the chunk-face and graph-face bridge export surfaces, all public recall contract examples, and the memory eval guardrail handoff pack.
 `validate_memory_surfaces.py` checks the router-facing generated doctrine surfaces, cross-surface alignment, and the router semantic and lineage recall contracts.
+`validate_memory_object_surfaces.py` checks the generator-backed object-facing surfaces, curated manifest coverage, lifecycle link integrity, and the parallel object recall contracts.
 `validate_lifecycle_audit_examples.py` checks lifecycle, provenance-thread, and audit-event example integrity.
 
 The witness trace contract is validated there as a trace export surface, not as a new memory-object kind.
@@ -118,7 +139,7 @@ The inquiry checkpoint contract is validated there as a portable long-horizon ch
 ## Current status
 
 `aoa-memo` is in contract hardening.
-The current public baseline now includes doctrine, schemas, generated surfaces, writeback seams, bridge/export contracts, and memo-side guardrail handoff surfaces without turning the repository into runtime infrastructure or a graph platform.
+The current public baseline now includes doctrine, schemas, separate doctrine and object-facing generated surface families, writeback seams, bridge/export contracts, and memo-side guardrail handoff surfaces without turning the repository into runtime infrastructure or a graph platform.
 
 ## Principles
 

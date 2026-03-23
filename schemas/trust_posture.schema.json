@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/schemas/trust_posture.schema.json",
+  "title": "aoa-memo trust posture",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "temperature",
+    "confidence",
+    "authority_kind",
+    "authority",
+    "freshness",
+    "salience"
+  ],
+  "properties": {
+    "temperature": {
+      "type": "string",
+      "enum": [
+        "hot",
+        "warm",
+        "cool",
+        "cold",
+        "frozen"
+      ]
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "confidence_note": {
+      "type": "string",
+      "minLength": 1
+    },
+    "authority_kind": {
+      "type": "string",
+      "enum": [
+        "human_reviewed",
+        "repo_maintained",
+        "source_inspection",
+        "operational_observation",
+        "candidate_under_review"
+      ]
+    },
+    "authority": {
+      "type": "string",
+      "minLength": 1
+    },
+    "freshness": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "freshness_note": {
+      "type": "string",
+      "minLength": 1
+    },
+    "salience": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "salience_note": {
+      "type": "string",
+      "minLength": 1
+    },
+    "salience_components": {
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "novelty": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "impact": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "recurrence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "risk": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    }
+  }
+}

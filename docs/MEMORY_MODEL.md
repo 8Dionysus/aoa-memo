@@ -186,6 +186,7 @@ The model distinguishes at least these dimensions:
 ### Confidence
 
 How plausible or well-supported the memory object appears from the current evidence.
+The current public contract treats this as an ordinal `0..1` memo-side posture signal.
 
 ### Authority
 
@@ -198,17 +199,27 @@ Examples:
 - agent-derived summary
 - inferred pattern
 
+The current public contract splits authority into:
+
+- `authority_kind` for the stable machine-readable category
+- `authority` for bounded human-readable explanation
+
 ### Freshness
 
 How current the memory is for the question being asked.
 
 Freshness can decay even when the original episode remains historically true.
+The current public contract treats this as an ordinal `0..1` posture signal.
 
 ### Salience
 
 How worth recalling the memory is right now.
 
 Salience is about relevance pressure, not truth.
+The current public contract treats this as an ordinal `0..1` posture signal.
+When more detail is needed, `salience_components` may break that pressure into `novelty`, `impact`, `recurrence`, and `risk`.
+
+See [MEMORY_TRUST_POSTURE](MEMORY_TRUST_POSTURE.md) for the contract that fixes ordinal versus categorical versus descriptive trust fields.
 
 ## Object canon
 
@@ -295,6 +306,7 @@ The exact schema can evolve, but a durable memory object should usually be able 
 ### Trust posture
 
 - `confidence`
+- `authority_kind`
 - `authority`
 - `freshness`
 - `salience`
@@ -303,6 +315,8 @@ The exact schema can evolve, but a durable memory object should usually be able 
 ### Lifecycle
 
 - `review_state`
+- `current_recall`
+- `freeze_basis`
 - `supersedes`
 - `superseded_by`
 - `retention_class`
@@ -327,6 +341,13 @@ A useful default sequence is:
 `captured -> proposed -> confirmed -> frozen -> superseded -> retracted -> archived`
 
 Not every object will use every state, but the state machine should make it obvious whether a memory object is raw, stabilized, outdated, or withdrawn.
+
+Current recall posture should remain explicit as well:
+
+- `preferred`
+- `allowed`
+- `historical`
+- `withdrawn`
 
 ## Two-speed memory pipeline
 

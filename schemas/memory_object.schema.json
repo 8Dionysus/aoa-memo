@@ -126,150 +126,10 @@
       }
     },
     "trust": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "temperature"
-      ],
-      "properties": {
-        "temperature": {
-          "type": "string",
-          "enum": [
-            "hot",
-            "warm",
-            "cool",
-            "cold",
-            "frozen"
-          ]
-        },
-        "confidence": {
-          "oneOf": [
-            {
-              "type": "number",
-              "minimum": 0,
-              "maximum": 1
-            },
-            {
-              "type": "string",
-              "minLength": 1
-            }
-          ]
-        },
-        "authority": {
-          "type": "string",
-          "minLength": 1
-        },
-        "freshness": {
-          "oneOf": [
-            {
-              "type": "number",
-              "minimum": 0,
-              "maximum": 1
-            },
-            {
-              "type": "string",
-              "minLength": 1
-            }
-          ]
-        },
-        "salience": {
-          "oneOf": [
-            {
-              "type": "number",
-              "minimum": 0,
-              "maximum": 1
-            },
-            {
-              "type": "string",
-              "minLength": 1
-            }
-          ]
-        },
-        "salience_components": {
-          "type": "object",
-          "additionalProperties": false,
-          "properties": {
-            "novelty": {
-              "type": "number",
-              "minimum": 0,
-              "maximum": 1
-            },
-            "impact": {
-              "type": "number",
-              "minimum": 0,
-              "maximum": 1
-            },
-            "recurrence": {
-              "type": "number",
-              "minimum": 0,
-              "maximum": 1
-            },
-            "risk": {
-              "type": "number",
-              "minimum": 0,
-              "maximum": 1
-            }
-          }
-        }
-      }
+      "$ref": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/schemas/trust_posture.schema.json"
     },
     "lifecycle": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "review_state"
-      ],
-      "properties": {
-        "review_state": {
-          "type": "string",
-          "enum": [
-            "captured",
-            "proposed",
-            "confirmed",
-            "frozen",
-            "superseded",
-            "retracted",
-            "archived"
-          ]
-        },
-        "supersedes": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "uniqueItems": true
-        },
-        "superseded_by": {
-          "type": [
-            "string",
-            "null"
-          ]
-        },
-        "review_after": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "date-time"
-        },
-        "retention_class": {
-          "type": "string"
-        },
-        "promotion_state": {
-          "type": "string",
-          "enum": [
-            "none",
-            "candidate",
-            "promoted",
-            "demoted",
-            "retired",
-            "rescued"
-          ]
-        },
-        "decay_policy_ref": {
-          "type": "string"
-        }
-      }
+      "$ref": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/schemas/lifecycle_posture.schema.json"
     },
     "access": {
       "type": "object",
@@ -415,5 +275,34 @@
         }
       }
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "trust": {
+            "type": "object",
+            "properties": {
+              "temperature": {
+                "const": "frozen"
+              }
+            },
+            "required": [
+              "temperature"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "lifecycle": {
+            "type": "object",
+            "required": [
+              "freeze_basis"
+            ]
+          }
+        }
+      }
+    }
+  ]
 }

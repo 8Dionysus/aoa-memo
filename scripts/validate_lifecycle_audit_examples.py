@@ -62,6 +62,11 @@ def main() -> int:
         memory_validator,
         memory_object_ref_errors,
     )
+    anchor = validate(
+        EXAMPLES / "anchor.example.json",
+        memory_validator,
+        memory_object_ref_errors,
+    )
     replacement_claim = validate(
         EXAMPLES / "claim.current-entrypoint.example.json",
         memory_validator,
@@ -87,6 +92,7 @@ def main() -> int:
     objects = {
         item["id"]: item
         for item in (
+            anchor,
             superseded_claim,
             replacement_claim,
             retracted_claim,
@@ -95,6 +101,10 @@ def main() -> int:
         )
     }
 
+    ensure(
+        anchor["kind"] == "anchor" and anchor["lifecycle"]["review_state"] == "frozen",
+        "anchor.example.json must be a frozen anchor",
+    )
     ensure(
         superseded_claim["kind"] == "claim" and superseded_claim["lifecycle"]["review_state"] == "superseded",
         "claim.superseded.example.json must be a superseded claim",
@@ -115,9 +125,23 @@ def main() -> int:
         retraction_event["kind"] == "audit_event",
         "audit_event.retraction.example.json must be an audit_event",
     )
+    ensure(
+        anchor["trust"]["temperature"] == "frozen",
+        "anchor.example.json must keep trust.temperature at frozen",
+    )
+    ensure(
+        "freeze_basis" in anchor["lifecycle"] and anchor["lifecycle"]["freeze_basis"]["qualifies_by"],
+        "anchor.example.json must expose non-empty freeze_basis qualifiers",
+    )
+    ensure(
+        anchor["lifecycle"]["current_recall"]["status"] == "preferred",
+        "anchor.example.json must stay a preferred current recall surface",
+    )
 
     thread_ids = set(lifecycle_thread["memory_object_ids"])
     for required_id in objects:
+        if required_id == anchor["id"]:
+            continue
         ensure(required_id in thread_ids, f"provenance_thread.lifecycle.example.json missing {required_id}")
     for referenced_id in thread_ids:
         ensure(
@@ -127,6 +151,8 @@ def main() -> int:
 
     timeline_object_ids = {entry["object_id"] for entry in lifecycle_thread["timeline"] if "object_id" in entry}
     for required_id in objects:
+        if required_id == anchor["id"]:
+            continue
         ensure(required_id in timeline_object_ids, f"provenance_thread.lifecycle.example.json missing timeline entry for {required_id}")
     for referenced_id in timeline_object_ids:
         ensure(
@@ -135,6 +161,8 @@ def main() -> int:
         )
 
     for item in objects.values():
+        if item["id"] == anchor["id"]:
+            continue
         ensure(
             item["provenance"]["provenance_thread_id"] == lifecycle_thread["id"],
             f"{item['id']} must point to lifecycle provenance thread",
@@ -155,8 +183,32 @@ def main() -> int:
         "superseded claim must point to the replacement claim",
     )
     ensure(
+        superseded_claim["lifecycle"]["current_recall"]["status"] == "historical",
+        "superseded claim must keep historical current_recall posture",
+    )
+    ensure(
+        superseded_claim["lifecycle"]["current_recall"]["replacement_ref"] == replacement_claim["id"],
+        "superseded claim current_recall.replacement_ref must point to the replacement claim",
+    )
+    ensure(
         superseded_claim["id"] in replacement_claim["lifecycle"]["supersedes"],
         "replacement claim must record which claim it supersedes",
+    )
+    ensure(
+        replacement_claim["lifecycle"]["current_recall"]["status"] == "preferred",
+        "replacement claim must stay the preferred current recall surface",
+    )
+    ensure(
+        retracted_claim["lifecycle"]["current_recall"]["status"] == "withdrawn",
+        "retracted claim must keep withdrawn current_recall posture",
+    )
+    ensure(
+        retracted_claim["id"] in replacement_claim["lifecycle"]["current_recall"].get("contradiction_refs", []),
+        "replacement claim must keep a contradiction ref to the retracted claim",
+    )
+    ensure(
+        replacement_claim["id"] in retracted_claim["lifecycle"]["current_recall"].get("contradiction_refs", []),
+        "retracted claim must keep a contradiction ref back to the replacement claim",
     )
 
     print("Lifecycle and audit examples validated successfully.")

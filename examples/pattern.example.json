@@ -1,0 +1,94 @@
+{
+  "id": "memo.pattern.2026-03-23.reviewed-candidates-before-promotion",
+  "kind": "pattern",
+  "title": "Reviewed candidates stay candidates before durable promotion",
+  "summary": "Observed across writeback and bridge flows: durable memo growth lands best when candidate claims, patterns, and bridges stay review-gated before wider promotion.",
+  "scope": [
+    "repo:aoa-memo",
+    "project:AoA"
+  ],
+  "owner_refs": [
+    "repo:aoa-memo"
+  ],
+  "payload_ref": "docs/WRITEBACK_TEMPERATURE_POLICY.md#what-may-bridge-outward",
+  "tags": [
+    "pattern",
+    "review",
+    "promotion",
+    "writeback"
+  ],
+  "time": {
+    "created_at": "2026-03-23T18:15:00Z",
+    "observed_at": "2026-03-23T18:05:00Z",
+    "valid_from": "2026-03-23T18:15:00Z",
+    "valid_to": null
+  },
+  "provenance": {
+    "source_refs": [
+      "docs/RUNTIME_WRITEBACK_SEAM.md#distillation-posture",
+      "docs/WRITEBACK_TEMPERATURE_POLICY.md#what-may-bridge-outward",
+      "docs/MEMORY_MODEL.md#procedural-experience-memory"
+    ],
+    "episode_refs": [
+      "memo.ep.2026-03-21.self-agent-health-check",
+      "memo.ep.2026-03-23.tos-interpretation-bridge-seed"
+    ],
+    "provenance_thread_id": "prov.aoa-memo.contract-hardening.2026-03-23"
+  },
+  "trust": {
+    "temperature": "cool",
+    "confidence": 0.83,
+    "authority_kind": "operational_observation",
+    "authority": "cross-example procedural observation",
+    "freshness": 0.88,
+    "salience": 0.86,
+    "salience_components": {
+      "novelty": 0.63,
+      "impact": 0.88,
+      "recurrence": 0.79,
+      "risk": 0.71
+    }
+  },
+  "lifecycle": {
+    "review_state": "confirmed",
+    "supersedes": [],
+    "superseded_by": null,
+    "retention_class": "operational-pattern",
+    "promotion_state": "rescued",
+    "current_recall": {
+      "status": "preferred",
+      "status_reason": "This pattern should surface as current procedural-experience memory because it keeps recurring across bounded writeback flows."
+    }
+  },
+  "access": {
+    "access_class": "public",
+    "read_scopes": [
+      "public"
+    ],
+    "write_scopes": [
+      "maintainer"
+    ],
+    "promotion_scopes": [
+      "maintainer",
+      "human-review"
+    ]
+  },
+  "bridges": {
+    "tos_refs": [],
+    "skill_refs": [
+      "skill:aoa-dry-run-first"
+    ],
+    "eval_refs": [
+      "eval:aoa-bounded-change-quality"
+    ],
+    "kag_lift_status": "none",
+    "route_capsule_ref": "generated/memory_catalog.min.json"
+  },
+  "promotion": {
+    "trigger": "The pattern resurfaced as a repeated writeback discipline across current memo bridge and checkpoint examples.",
+    "promoted_from": "cold",
+    "promoted_to": "cool",
+    "promoted_at": "2026-03-23T18:15:00Z",
+    "review_after": "2026-04-06T18:15:00Z"
+  }
+}
