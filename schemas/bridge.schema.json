@@ -71,6 +71,10 @@
             "route_capsule_ref": {
               "type": "string",
               "minLength": 1
+            },
+            "shared_envelope_ref": {
+              "type": "string",
+              "minLength": 1
             }
           },
           "anyOf": [

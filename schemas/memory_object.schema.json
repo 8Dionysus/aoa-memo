@@ -186,6 +186,9 @@
           },
           "uniqueItems": true
         },
+        "shared_envelope_ref": {
+          "type": "string"
+        },
         "kag_lift_status": {
           "type": "string",
           "enum": [

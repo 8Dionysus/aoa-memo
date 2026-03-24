@@ -677,6 +677,13 @@ def validate_bridge_export_contracts() -> None:
         errors.append("memory_graph_face.bridge.example.json must expose a relation candidate back to the reviewed claim")
 
     bridge_bridges = bridge.get("bridges", {})
+    shared_envelope_ref = bridge_bridges.get("shared_envelope_ref")
+    if shared_envelope_ref != "repo:aoa-kag/examples/aoa_tos_bridge_envelope.example.json":
+        errors.append("bridge.kag-lift.example.json must keep shared_envelope_ref pointed at the canonical aoa-kag envelope example")
+    append_ref_errors(
+        errors,
+        [("bridge.kag-lift.shared_envelope_ref", shared_envelope_ref)],
+    )
     if bridge_bridges.get("kag_lift_status") != "candidate":
         errors.append("bridge.kag-lift.example.json must keep kag_lift_status as candidate")
     if not bridge_bridges.get("tos_refs"):

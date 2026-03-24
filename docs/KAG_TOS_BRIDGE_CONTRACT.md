@@ -8,6 +8,15 @@ It exists so `aoa-memo` can expose bounded bridge faces without becoming a graph
 
 The current recall entrypoints for this surface are `examples/recall_contract.lineage.json` and `examples/recall_contract.router.lineage.json`.
 
+## Companion surfaces
+
+This memo-side contract works beside:
+
+- `aoa-kag/docs/BRIDGE_CONTRACTS.md` for derived bridge coordination
+- `aoa-kag/schemas/bridge-envelope.schema.json` and `aoa-kag/examples/aoa_tos_bridge_envelope.example.json` for the shared cross-repo linkage object
+- `schemas/bridge.schema.json` for the memo-side bridge object
+- `schemas/memory_chunk_face.schema.json` and `schemas/memory_graph_face.schema.json` for downstream export faces
+
 ## Core Rule
 
 Write the memory event once.
@@ -70,6 +79,20 @@ Use the current bridge posture like this:
 A bridge may connect memo to ToS or KAG-facing work.
 It should not become a silent substitute for either one.
 
+## Shared bridge envelope
+
+Strict first-wave closure now also points to one shared envelope at the KAG layer.
+
+That envelope keeps only shared linkage:
+
+- which stronger source class leads
+- which supporting source joins the bridge
+- which ToS refs and memo refs the bridge depends on
+- which retrieval, chunk-face, and graph-face surfaces are the current bounded faces
+
+The envelope is not a second memo object and not a second graph payload.
+It exists so memo-side and KAG-side bridge faces can be inspected together without duplicating their bodies.
+
 ## End-to-End Flow
 
 The current end-to-end flow is:
@@ -91,6 +114,8 @@ The current example bundle for this flow is:
 - `examples/memory_graph_face.bridge.example.json`
 - `examples/recall_contract.lineage.json`
 - `examples/recall_contract.router.lineage.json`
+
+The bridge example keeps an explicit `shared_envelope_ref` back to the KAG-owned linkage surface.
 
 ## What This Contract Does Not Do
 
