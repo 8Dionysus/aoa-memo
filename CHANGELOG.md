@@ -14,3 +14,7 @@ Tracking starts with the community-docs baseline for this repository.
 - memo-side contract docs for `aoa-agents`, `aoa-playbooks`, KAG/ToS bridge exports, eval guardrails, and the operational boundary
 - schema-backed chunk-face, graph-face, and eval-guardrail handoff surfaces with bounded examples
 - bridge-lift provenance examples and validation coverage for new bridge/export and guardrail surfaces
+
+### Changed
+
+- roadmap and doctrine-facing generated surfaces now record that `aoa-routing` already consumes the live `memo` kind and router-ready recall contracts
