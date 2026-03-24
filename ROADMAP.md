@@ -266,7 +266,9 @@ The cleanest first pull request sequence is:
 
 ### `aoa-routing`
 
-Needs a future `memo` kind that can ingest compact memo catalogs and route to source-owned memo capsules and sections.
+Already consumes the live `memo` kind, compact memo catalogs, router-ready doctrine recall contracts, and the current parallel object-facing recall family.
+
+Future routing work should keep those memo-facing hints additive, source-owned, and bounded rather than turning `aoa-routing` into memo authority.
 
 ### `aoa-agents`
 

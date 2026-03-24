@@ -110,7 +110,7 @@
           "heading": "Cross-repo dependencies",
           "ordinal": 3,
           "summary": "Shows what aoa-routing, aoa-agents, aoa-kag, aoa-evals, abyss-stack, and ToS need from memo.",
-          "body": "`aoa-routing` needs a future memo kind. `aoa-agents` needs explicit memory posture fields. `aoa-kag` needs graph-ready exports. `aoa-evals` needs bounded checks. `abyss-stack` needs to own live stores and jobs. ToS needs bridge contracts rather than duplication."
+          "body": "`aoa-routing` now consumes the live memo kind, compact memo catalogs, router-ready doctrine recall contracts, and the current parallel object-facing recall family. `aoa-agents` needs explicit memory posture fields. `aoa-kag` needs graph-ready exports. `aoa-evals` needs bounded checks. `abyss-stack` needs to own live stores and jobs. ToS needs bridge contracts rather than duplication."
         }
       ]
     },
