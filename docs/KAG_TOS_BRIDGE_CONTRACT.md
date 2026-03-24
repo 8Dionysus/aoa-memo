@@ -3,10 +3,21 @@
 ## Purpose
 
 This document defines the memo-side bridge contract for KAG-oriented and ToS-linked memory exports.
+It is the memo-side companion for the Dionysus first-wave seed
+`archive/seed_rootline/seed.8dionysus.aoa-shared.bridges.md`.
 
 It exists so `aoa-memo` can expose bounded bridge faces without becoming a graph engine or rewriting source-authored ToS meaning.
+The primary coordination note for that seed lives in `aoa-kag/docs/BRIDGE_CONTRACTS.md`.
 
 The current recall entrypoints for this surface are `examples/recall_contract.lineage.json` and `examples/recall_contract.router.lineage.json`.
+
+## Companion surfaces
+
+This memo-side contract works beside:
+
+- `aoa-kag/docs/BRIDGE_CONTRACTS.md` for derived bridge coordination
+- `schemas/bridge.schema.json` for the memo-side bridge object
+- `schemas/memory_chunk_face.schema.json` and `schemas/memory_graph_face.schema.json` for downstream export faces
 
 ## Core Rule
 
