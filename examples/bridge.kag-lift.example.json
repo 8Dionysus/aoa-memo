@@ -72,6 +72,7 @@
     "skill_refs": [],
     "eval_refs": [],
     "kag_lift_status": "candidate",
-    "route_capsule_ref": "generated/memory_catalog.min.json"
+    "route_capsule_ref": "generated/memory_catalog.min.json",
+    "shared_envelope_ref": "repo:aoa-kag/examples/aoa_tos_bridge_envelope.example.json"
   }
 }
