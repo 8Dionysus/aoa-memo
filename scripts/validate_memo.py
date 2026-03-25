@@ -55,6 +55,24 @@ CORE_KIND_EXAMPLE_MAP = {
 }
 
 
+def validate_nested_agents_surface() -> None:
+    try:
+        from validate_nested_agents import validate_nested_agents_docs
+    except Exception as exc:  # pragma: no cover - defensive wiring guard
+        print("[FAIL] nested AGENTS docs")
+        print(f"  - unable to load nested AGENTS validator: {exc}")
+        raise SystemExit(1) from exc
+
+    try:
+        validate_nested_agents_docs()
+    except RuntimeError as exc:
+        print("[FAIL] nested AGENTS docs")
+        print(f"  - {exc}")
+        raise SystemExit(1) from exc
+
+    print("[OK]   nested AGENTS docs")
+
+
 def load_json(path: Path) -> dict:
     with path.open("r", encoding="utf-8") as handle:
         return json.load(handle)
@@ -769,6 +787,7 @@ def validate_memory_eval_guardrail_pack() -> None:
 
 
 def main() -> int:
+    validate_nested_agents_surface()
     validate_support_schema("memory_object_profile.schema.json")
     validate_support_schema("trust_posture.schema.json")
     validate_support_schema("lifecycle_posture.schema.json")
