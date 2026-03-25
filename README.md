@@ -42,6 +42,8 @@ For concrete recall entrypoints, inspect:
 The doctrine-first and router-facing recall contracts stay stable.
 The `recall_contract.object.*.json` family is the parallel object-facing inspect/expand entrypoint over curated memory objects.
 
+If you are editing inside `schemas/`, `examples/`, `generated/`, or `scripts/`, also follow the nested `AGENTS.md` in that directory.
+
 For the shortest next route by intent:
 - if you need the ecosystem center and layer map, go to [`Agents-of-Abyss`](https://github.com/8Dionysus/Agents-of-Abyss)
 - if you need navigation and dispatch rather than memory-layer meaning, go to [`aoa-routing`](https://github.com/8Dionysus/aoa-routing)
@@ -116,6 +118,14 @@ This repository includes compact machine-readable memory-layer surfaces at:
   - `generated/memory_object_sections.full.json`
 
 `provenance_thread`, `witness_trace`, `inquiry_checkpoint`, and checkpoint-to-memory contract surfaces remain support surfaces in this split, not a third generated family.
+
+It now also requires nested local guidance surfaces at:
+- `schemas/AGENTS.md`
+- `examples/AGENTS.md`
+- `generated/AGENTS.md`
+- `scripts/AGENTS.md`
+
+The canonical validator `python scripts/validate_memo.py` checks those local guidance surfaces before the rest of the memory-layer validation sequence.
 
 To validate the current memory-layer surface locally, run:
 
