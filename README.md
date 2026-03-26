@@ -21,13 +21,14 @@ If you are new to this repository, use this path:
 8. Read [docs/WITNESS_TRACE_CONTRACT](docs/WITNESS_TRACE_CONTRACT.md) for the current witness trace export contract.
 9. Read [docs/WRITEBACK_TEMPERATURE_POLICY](docs/WRITEBACK_TEMPERATURE_POLICY.md) for memo-surviving versus bridge-ready writeback posture.
 10. Read [docs/RUNTIME_WRITEBACK_SEAM](docs/RUNTIME_WRITEBACK_SEAM.md) for the bounded runtime-to-memo writeback mapping.
-11. Read [docs/AGENT_MEMORY_POSTURE_SEAM](docs/AGENT_MEMORY_POSTURE_SEAM.md) for the memo-side posture fields that `aoa-agents` may consume without moving role policy here.
-12. Read [docs/PLAYBOOK_MEMORY_SCOPES](docs/PLAYBOOK_MEMORY_SCOPES.md) for playbook-facing memory scope and recall-mode guidance.
-13. Read [docs/KAG_TOS_BRIDGE_CONTRACT](docs/KAG_TOS_BRIDGE_CONTRACT.md) for the current chunk-face, graph-face, and ToS-bridge contract.
-14. Read [docs/MEMORY_EVAL_GUARDRAILS](docs/MEMORY_EVAL_GUARDRAILS.md) for the memo-side guardrail handoff surface to `aoa-evals`.
-15. Read [docs/OPERATIONAL_BOUNDARY](docs/OPERATIONAL_BOUNDARY.md) for the stable v1-facing consumer and runtime split.
-16. Read [docs/BOUNDARIES](docs/BOUNDARIES.md) for ownership rules.
-17. Read [ROADMAP](ROADMAP.md) for the current direction.
+11. Read [docs/RECURRENCE_MEMORY_SUPPORT_SURFACES](docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md) for the memo-side checkpoint, anchor, and recall surfaces that support recurrence without moving routing or runtime policy here.
+12. Read [docs/AGENT_MEMORY_POSTURE_SEAM](docs/AGENT_MEMORY_POSTURE_SEAM.md) for the memo-side posture fields that `aoa-agents` may consume without moving role policy here.
+13. Read [docs/PLAYBOOK_MEMORY_SCOPES](docs/PLAYBOOK_MEMORY_SCOPES.md) for playbook-facing memory scope and recall-mode guidance.
+14. Read [docs/KAG_TOS_BRIDGE_CONTRACT](docs/KAG_TOS_BRIDGE_CONTRACT.md) for the current chunk-face, graph-face, and ToS-bridge contract.
+15. Read [docs/MEMORY_EVAL_GUARDRAILS](docs/MEMORY_EVAL_GUARDRAILS.md) for the memo-side guardrail handoff surface to `aoa-evals`.
+16. Read [docs/OPERATIONAL_BOUNDARY](docs/OPERATIONAL_BOUNDARY.md) for the stable v1-facing consumer and runtime split.
+17. Read [docs/BOUNDARIES](docs/BOUNDARIES.md) for ownership rules.
+18. Read [ROADMAP](ROADMAP.md) for the current direction.
 
 For concrete recall entrypoints, inspect:
 - `examples/recall_contract.working.json`
@@ -41,6 +42,7 @@ For concrete recall entrypoints, inspect:
 
 The doctrine-first and router-facing recall contracts stay stable.
 The `recall_contract.object.*.json` family is the parallel object-facing inspect/expand entrypoint over curated memory objects.
+For return-oriented relaunch over compact object surfaces, inspect `examples/recall_contract.object.working.return.json`.
 
 If you are editing inside `schemas/`, `examples/`, `generated/`, or `scripts/`, also follow the nested `AGENTS.md` in that directory.
 

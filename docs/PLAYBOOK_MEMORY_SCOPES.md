@@ -34,6 +34,7 @@ Use the current recall modes like this:
 - `source_route` when the playbook needs the strongest next source rather than memory-only answers
 
 The default memo-side entrypoint for relaunch and checkpoint use is `examples/recall_contract.working.json`.
+Return-oriented relaunch should prefer working recall plus explicit checkpoint continuity over widening the whole memo scope.
 
 ## Recommended Memory Scopes
 
@@ -57,6 +58,8 @@ Use the current memo canon like this:
 - `decision` for explicit gates or approvals
 - `audit_event` for lifecycle transitions
 - `provenance_thread` for the bounded backward-walk chain
+
+When a playbook requests return, it should ask for checkpoint anchors and exported state surfaces, not a new memory family.
 
 This guidance helps playbooks ask for memory.
 It does not move playbook choreography into `aoa-memo`.

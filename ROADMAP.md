@@ -11,6 +11,7 @@ Build `aoa-memo` as the explicit memory and recall layer of AoA: small, reviewab
 The repository has already named its role, object canon, schemas, doctrine-facing generated surfaces, object-facing generated surfaces, lifecycle posture, temperature posture, runtime writeback seam, and first bridge/export and guardrail handoff surfaces.
 Object canon, trust/lifecycle posture, and the separate object-facing generated family are now in place.
 The active next slice is neighbor adoption so adjacent repos can consume the sharpened memo contracts without moving routing, role policy, graph normalization, or verdict logic into this repository.
+The first recurrence-support landing makes checkpoint relaunch anchors and return-ready working recall explicit without changing memo ownership.
 
 ## Current contract-hardening waves
 

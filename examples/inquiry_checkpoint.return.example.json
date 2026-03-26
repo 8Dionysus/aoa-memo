@@ -1,0 +1,55 @@
+{
+  "checkpoint_id": "inquiry-checkpoint-return-0001",
+  "created_at": "2026-03-26T12:00:00Z",
+  "objective": "Preserve a bounded recurrence relaunch pack without turning memo into runtime policy.",
+  "mode": "architecture",
+  "core_question": "Which memo-side surfaces should support recurrence relaunch across the current AoA layers?",
+  "current_thesis": "Checkpoint continuity plus explicit anchors is enough for honest relaunch at the memo layer.",
+  "axis_summary": "Use inquiry checkpoint, working recall, and bounded exported state instead of raw continuity.",
+  "evidence_pack_refs": [
+    "docs/RUNTIME_WRITEBACK_SEAM.md",
+    "docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md"
+  ],
+  "contradiction_pack_refs": [
+    "docs/BOUNDARIES.md",
+    "docs/OPERATIONAL_BOUNDARY.md"
+  ],
+  "resolved_decisions": [
+    "Keep recurrence support inside existing memo surfaces.",
+    "Do not add a new memory-object family for return."
+  ],
+  "open_questions": [
+    "Which neighboring layer should consume memo-side return anchors first?"
+  ],
+  "next_tests": [
+    "Validate checkpoint relaunch from bounded anchor refs only.",
+    "Verify object-facing working recall remains enough for compact re-entry."
+  ],
+  "witness_refs": [
+    "docs/WITNESS_TRACE_CONTRACT.md"
+  ],
+  "memory_delta_refs": [
+    "examples/checkpoint_to_memory_contract.example.json"
+  ],
+  "canon_delta_refs": [
+    "docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md"
+  ],
+  "restart_count": 1,
+  "owner_roles": [
+    "architect",
+    "memory-keeper"
+  ],
+  "confidence": 0.78,
+  "requires_human_review": false,
+  "return_pack": {
+    "anchor_refs": [
+      "examples/checkpoint_to_memory_contract.example.json",
+      "docs/RUNTIME_WRITEBACK_SEAM.md#checkpoint-to-memory-contract"
+    ],
+    "reentry_refs": [
+      "examples/recall_contract.object.working.return.json",
+      "docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md"
+    ],
+    "reentry_note": "Resume from the last valid checkpoint, inspect compact object-facing anchors, then continue with bounded working recall."
+  }
+}

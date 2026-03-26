@@ -21,6 +21,47 @@ def load_json(path: Path) -> object:
 
 
 class MemoValidatorTestCase(unittest.TestCase):
+    def test_inquiry_checkpoint_return_example_validates(self) -> None:
+        validator = validate_memo.validator_for("inquiry_checkpoint.schema.json")
+        payload = load_json(REPO_ROOT / "examples" / "inquiry_checkpoint.return.example.json")
+
+        errors = [error.message for error in validator.iter_errors(payload)]
+
+        self.assertEqual(errors, [])
+
+    def test_inquiry_checkpoint_return_pack_requires_anchor_refs(self) -> None:
+        validator = validate_memo.validator_for("inquiry_checkpoint.schema.json")
+        payload = load_json(REPO_ROOT / "examples" / "inquiry_checkpoint.return.example.json")
+        assert isinstance(payload, dict)
+        payload = copy.deepcopy(payload)
+        payload["return_pack"].pop("anchor_refs", None)
+
+        errors = [error.message for error in validator.iter_errors(payload)]
+
+        self.assertTrue(any("anchor_refs" in message for message in errors))
+
+    def test_inquiry_checkpoint_return_pack_requires_reentry_refs(self) -> None:
+        validator = validate_memo.validator_for("inquiry_checkpoint.schema.json")
+        payload = load_json(REPO_ROOT / "examples" / "inquiry_checkpoint.return.example.json")
+        assert isinstance(payload, dict)
+        payload = copy.deepcopy(payload)
+        payload["return_pack"].pop("reentry_refs", None)
+
+        errors = [error.message for error in validator.iter_errors(payload)]
+
+        self.assertTrue(any("reentry_refs" in message for message in errors))
+
+    def test_inquiry_checkpoint_return_pack_requires_reentry_note(self) -> None:
+        validator = validate_memo.validator_for("inquiry_checkpoint.schema.json")
+        payload = load_json(REPO_ROOT / "examples" / "inquiry_checkpoint.return.example.json")
+        assert isinstance(payload, dict)
+        payload = copy.deepcopy(payload)
+        payload["return_pack"].pop("reentry_note", None)
+
+        errors = [error.message for error in validator.iter_errors(payload)]
+
+        self.assertTrue(any("reentry_note" in message for message in errors))
+
     def test_bridge_schema_requires_shared_envelope_ref(self) -> None:
         validator = validate_memo.validator_for("bridge.schema.json")
         payload = load_json(REPO_ROOT / "examples" / "bridge.kag-lift.example.json")
@@ -101,6 +142,68 @@ class MemoValidatorTestCase(unittest.TestCase):
         with patch.object(validate_memo, "load_json", side_effect=side_effect):
             with self.assertRaises(SystemExit):
                 validate_memo.validate_memory_eval_guardrail_pack()
+
+    def test_return_ready_recall_contract_validates(self) -> None:
+        validate_memo.validate_recall_contract_example(
+            "recall_contract.object.working.return.json",
+            expected_mode="working",
+            expected_allowed_scopes=["thread", "session", "project"],
+            expected_preferred_kinds=["state_capsule", "decision", "episode", "audit_event", "anchor"],
+            expected_temperature_order=["hot", "warm", "cool", "frozen", "cold"],
+            expected_inspect_surface="generated/memory_object_catalog.min.json",
+            expected_expand_surface="generated/memory_object_sections.full.json",
+            expected_source_route_required=False,
+            expected_checkpoint_continuity_supported=True,
+            expected_return_ready=True,
+            expected_preferred_anchor_kinds=["state_capsule", "decision", "anchor"],
+            expected_support_artifact_refs=[
+                "schemas/inquiry_checkpoint.schema.json",
+                "schemas/checkpoint-to-memory-contract.schema.json",
+                "docs/RUNTIME_WRITEBACK_SEAM.md",
+                "docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
+            ],
+        )
+
+    def test_recall_contract_schema_rejects_invalid_preferred_anchor_kind(self) -> None:
+        validator = validate_memo.validator_for("recall_contract.schema.json")
+        payload = load_json(REPO_ROOT / "examples" / "recall_contract.object.working.return.json")
+        assert isinstance(payload, dict)
+        payload = copy.deepcopy(payload)
+        payload["preferred_anchor_kinds"] = ["state_capsule", "router_capsule"]
+
+        errors = [error.message for error in validator.iter_errors(payload)]
+
+        self.assertTrue(any("is not one of" in message for message in errors))
+
+    def test_return_ready_recall_contract_rejects_bad_support_artifact_ref(self) -> None:
+        recall_path = validate_memo.EXAMPLES / "recall_contract.object.working.return.json"
+        original_load_json = validate_memo.load_json
+        payload = load_json(recall_path)
+        assert isinstance(payload, dict)
+        payload = copy.deepcopy(payload)
+        payload["support_artifact_refs"] = ["docs/DOES_NOT_EXIST.md"]
+
+        def side_effect(path: Path) -> dict:
+            if Path(path) == recall_path:
+                return copy.deepcopy(payload)
+            return original_load_json(path)
+
+        with patch.object(validate_memo, "load_json", side_effect=side_effect):
+            with self.assertRaises(SystemExit):
+                validate_memo.validate_recall_contract_example(
+                    "recall_contract.object.working.return.json",
+                    expected_mode="working",
+                    expected_allowed_scopes=["thread", "session", "project"],
+                    expected_preferred_kinds=["state_capsule", "decision", "episode", "audit_event", "anchor"],
+                    expected_temperature_order=["hot", "warm", "cool", "frozen", "cold"],
+                    expected_inspect_surface="generated/memory_object_catalog.min.json",
+                    expected_expand_surface="generated/memory_object_sections.full.json",
+                    expected_source_route_required=False,
+                    expected_checkpoint_continuity_supported=True,
+                    expected_return_ready=True,
+                    expected_preferred_anchor_kinds=["state_capsule", "decision", "anchor"],
+                    expected_support_artifact_refs=["docs/DOES_NOT_EXIST.md"],
+                )
 
     def test_surface_alignment_rejects_duplicate_ids(self) -> None:
         original_load_json = validate_memory_surfaces.load_json

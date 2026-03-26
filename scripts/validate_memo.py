@@ -180,6 +180,14 @@ def validate_example(validator: Draft202012Validator, example_name: str) -> None
             continue
         for index, value in enumerate(values):
             ref_checks.append((f"{list_name}[{index}]", value))
+    return_pack = data.get("return_pack")
+    if isinstance(return_pack, dict):
+        for list_name in ("anchor_refs", "reentry_refs"):
+            values = return_pack.get(list_name)
+            if not isinstance(values, list):
+                continue
+            for index, value in enumerate(values):
+                ref_checks.append((f"return_pack.{list_name}[{index}]", value))
     errors.extend(filter(None, (local_ref_error(value, label) for label, value in ref_checks)))
 
     if errors:
@@ -317,6 +325,10 @@ def validate_recall_contract_example(
     expected_inspect_surface: str,
     expected_expand_surface: str,
     expected_source_route_required: bool,
+    expected_checkpoint_continuity_supported: bool | None = None,
+    expected_return_ready: bool | None = None,
+    expected_preferred_anchor_kinds: list[str] | None = None,
+    expected_support_artifact_refs: list[str] | None = None,
 ) -> None:
     validator = validator_for("recall_contract.schema.json")
     data = load_json(EXAMPLES / example_name)
@@ -325,11 +337,18 @@ def validate_recall_contract_example(
         f"{'.'.join(str(part) for part in err.absolute_path) or '<root>'}: {err.message}"
         for err in sorted(validator.iter_errors(data), key=lambda err: list(err.absolute_path))
     ]
+    support_artifact_refs = data.get("support_artifact_refs")
+    if not isinstance(support_artifact_refs, list):
+        support_artifact_refs = []
     append_ref_errors(
         errors,
         [
             ("inspect_surface", data.get("inspect_surface")),
             ("expand_surface", data.get("expand_surface")),
+        ]
+        + [
+            (f"support_artifact_refs[{index}]", value)
+            for index, value in enumerate(support_artifact_refs)
         ],
     )
 
@@ -347,6 +366,16 @@ def validate_recall_contract_example(
         errors.append(f"{example_name} expand_surface must stay {expected_expand_surface}")
     if data.get("source_route_required") is not expected_source_route_required:
         errors.append(f"{example_name} source_route_required must stay {expected_source_route_required}")
+    if expected_checkpoint_continuity_supported is not None and data.get("checkpoint_continuity_supported") is not expected_checkpoint_continuity_supported:
+        errors.append(
+            f"{example_name} checkpoint_continuity_supported must stay {expected_checkpoint_continuity_supported}"
+        )
+    if expected_return_ready is not None and data.get("return_ready") is not expected_return_ready:
+        errors.append(f"{example_name} return_ready must stay {expected_return_ready}")
+    if expected_preferred_anchor_kinds is not None and data.get("preferred_anchor_kinds") != expected_preferred_anchor_kinds:
+        errors.append(f"{example_name} preferred_anchor_kinds must stay {expected_preferred_anchor_kinds}")
+    if expected_support_artifact_refs is not None and data.get("support_artifact_refs") != expected_support_artifact_refs:
+        errors.append(f"{example_name} support_artifact_refs must stay {expected_support_artifact_refs}")
 
     if errors:
         print(f"[FAIL] {example_name}")
@@ -838,6 +867,7 @@ def main() -> int:
     validate_example(validator_for("memory_object.schema.json"), "claim.tos-bridge-ready.example.json")
     validate_example(validator_for("memory_object.schema.json"), "bridge.kag-lift.example.json")
     validate_example(validator_for("inquiry_checkpoint.schema.json"), "inquiry_checkpoint.example.json")
+    validate_example(validator_for("inquiry_checkpoint.schema.json"), "inquiry_checkpoint.return.example.json")
     validate_example(validator_for("provenance_thread.schema.json"), "provenance_thread.example.json")
     validate_example(validator_for("provenance_thread.schema.json"), "checkpoint_improvement_thread.example.json")
     validate_example(validator_for("provenance_thread.schema.json"), "provenance_thread.kag-lift.example.json")
@@ -900,6 +930,25 @@ def main() -> int:
         expected_inspect_surface="generated/memory_object_catalog.min.json",
         expected_expand_surface="generated/memory_object_sections.full.json",
         expected_source_route_required=False,
+    )
+    validate_recall_contract_example(
+        "recall_contract.object.working.return.json",
+        expected_mode="working",
+        expected_allowed_scopes=["thread", "session", "project"],
+        expected_preferred_kinds=["state_capsule", "decision", "episode", "audit_event", "anchor"],
+        expected_temperature_order=["hot", "warm", "cool", "frozen", "cold"],
+        expected_inspect_surface="generated/memory_object_catalog.min.json",
+        expected_expand_surface="generated/memory_object_sections.full.json",
+        expected_source_route_required=False,
+        expected_checkpoint_continuity_supported=True,
+        expected_return_ready=True,
+        expected_preferred_anchor_kinds=["state_capsule", "decision", "anchor"],
+        expected_support_artifact_refs=[
+            "schemas/inquiry_checkpoint.schema.json",
+            "schemas/checkpoint-to-memory-contract.schema.json",
+            "docs/RUNTIME_WRITEBACK_SEAM.md",
+            "docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
+        ],
     )
     validate_recall_contract_example(
         "recall_contract.object.semantic.json",

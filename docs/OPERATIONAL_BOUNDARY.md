@@ -18,6 +18,7 @@ The stable public boundary of this repository consists of:
 
 These are the public review surfaces a consumer should rely on.
 `provenance_thread`, `witness_trace`, `inquiry_checkpoint`, and checkpoint contracts remain explicit support surfaces in this boundary, not a separate generated family.
+`inquiry_checkpoint` may carry bounded `return_pack` metadata for relaunch, but it remains a route artifact rather than a new durable memory-object family.
 
 ## Consumer Contracts
 
@@ -41,6 +42,7 @@ Keep normalized substrate formation and framework adapters outside this reposito
 ### `abyss-stack`
 
 Consume writeback seams and schema-backed export contracts.
+Runtime may consume checkpoint return-pack refs as relaunch aids, but retry policy and rebuild mechanics remain outside this repository.
 Keep live stores, background jobs, retention, backups, and restore posture outside this repository.
 
 ## What Runtime Owns
