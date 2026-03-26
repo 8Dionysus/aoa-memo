@@ -128,6 +128,20 @@ def validate_surface_alignment() -> None:
     expected_paths = {item["id"]: item["source_path"] for item in catalog["memo_surfaces"]}
 
     for label, items in surfaces.items():
+        seen_ids: set[str] = set()
+        duplicate_ids: set[str] = set()
+        for item in items:
+            item_id = item.get("id") if isinstance(item, dict) else None
+            if not isinstance(item_id, str):
+                continue
+            if item_id in seen_ids:
+                duplicate_ids.add(item_id)
+            seen_ids.add(item_id)
+        if duplicate_ids:
+            raise SystemExit(
+                f"{label}: duplicate ids detected ({', '.join(sorted(duplicate_ids))})"
+            )
+
         ids = {item["id"] for item in items}
         if ids != expected_ids:
             missing = sorted(expected_ids - ids)

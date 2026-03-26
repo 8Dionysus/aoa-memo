@@ -1,0 +1,126 @@
+from __future__ import annotations
+
+import copy
+import json
+import sys
+import unittest
+from pathlib import Path
+from unittest.mock import patch
+
+REPO_ROOT = Path(__file__).resolve().parents[1]
+SCRIPTS_ROOT = REPO_ROOT / "scripts"
+if str(SCRIPTS_ROOT) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS_ROOT))
+
+import validate_memo
+import validate_memory_surfaces
+
+
+def load_json(path: Path) -> object:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+class MemoValidatorTestCase(unittest.TestCase):
+    def test_bridge_schema_requires_shared_envelope_ref(self) -> None:
+        validator = validate_memo.validator_for("bridge.schema.json")
+        payload = load_json(REPO_ROOT / "examples" / "bridge.kag-lift.example.json")
+        assert isinstance(payload, dict)
+        payload = copy.deepcopy(payload)
+        payload["bridges"].pop("shared_envelope_ref", None)
+
+        errors = [error.message for error in validator.iter_errors(payload)]
+
+        self.assertTrue(any("shared_envelope_ref" in message for message in errors))
+
+    def test_bridge_schema_rejects_empty_outward_refs_without_route_capsule(self) -> None:
+        validator = validate_memo.validator_for("bridge.schema.json")
+        payload = load_json(REPO_ROOT / "examples" / "bridge.kag-lift.example.json")
+        assert isinstance(payload, dict)
+        payload = copy.deepcopy(payload)
+        payload["bridges"].pop("route_capsule_ref", None)
+        payload["bridges"]["tos_refs"] = []
+        payload["bridges"]["skill_refs"] = []
+        payload["bridges"]["eval_refs"] = []
+
+        errors = [error.message for error in validator.iter_errors(payload)]
+
+        self.assertTrue(any("valid under any of the given schemas" in message for message in errors))
+
+    def test_checkpoint_schema_requires_all_eight_mapping_rules(self) -> None:
+        validator = validate_memo.validator_for("checkpoint-to-memory-contract.schema.json")
+        payload = load_json(REPO_ROOT / "examples" / "checkpoint_to_memory_contract.example.json")
+        assert isinstance(payload, dict)
+        payload = copy.deepcopy(payload)
+        payload["mapping_rules"] = payload["mapping_rules"][:-1]
+
+        errors = [error.message for error in validator.iter_errors(payload)]
+
+        self.assertTrue(any("is too short" in message for message in errors))
+
+    def test_checkpoint_validator_rejects_conflicting_duplicate_runtime_mappings(self) -> None:
+        contract_path = validate_memo.EXAMPLES / "checkpoint_to_memory_contract.example.json"
+        original_load_json = validate_memo.load_json
+        payload = load_json(contract_path)
+        assert isinstance(payload, dict)
+        payload = copy.deepcopy(payload)
+        payload["mapping_rules"].append(
+            {
+                "runtime_surface": "transition_record",
+                "runtime_refs": ["docs/MEMORY_MODEL.md#checkpoint-route-writeback"],
+                "target_kind": "audit_event",
+                "writeback_class": "memo_surviving_event",
+                "temperature_hint": "cool",
+                "review_state_default": "confirmed",
+                "requires_human_review": False,
+                "notes": "Conflicting duplicate mapping for regression coverage.",
+            }
+        )
+
+        def side_effect(path: Path) -> dict:
+            if Path(path) == contract_path:
+                return copy.deepcopy(payload)
+            return original_load_json(path)
+
+        with patch.object(validate_memo, "load_json", side_effect=side_effect):
+            with self.assertRaises(SystemExit):
+                validate_memo.validate_checkpoint_to_memory_contract()
+
+    def test_guardrail_validator_handles_non_string_case_ids_without_type_error(self) -> None:
+        guardrail_path = validate_memo.EXAMPLES / "memory_eval_guardrail_pack.example.json"
+        original_load_json = validate_memo.load_json
+        payload = load_json(guardrail_path)
+        assert isinstance(payload, dict)
+        payload = copy.deepcopy(payload)
+        payload["cases"][0]["case_id"] = []
+
+        def side_effect(path: Path) -> dict:
+            if Path(path) == guardrail_path:
+                return copy.deepcopy(payload)
+            return original_load_json(path)
+
+        with patch.object(validate_memo, "load_json", side_effect=side_effect):
+            with self.assertRaises(SystemExit):
+                validate_memo.validate_memory_eval_guardrail_pack()
+
+    def test_surface_alignment_rejects_duplicate_ids(self) -> None:
+        original_load_json = validate_memory_surfaces.load_json
+        capsules_path = validate_memory_surfaces.GENERATED / "memory_capsules.json"
+        capsules = load_json(capsules_path)
+        assert isinstance(capsules, dict)
+        capsules = copy.deepcopy(capsules)
+        capsules["memo_surfaces"].append(copy.deepcopy(capsules["memo_surfaces"][0]))
+
+        def side_effect(path: Path) -> dict:
+            if Path(path) == capsules_path:
+                return copy.deepcopy(capsules)
+            return original_load_json(path)
+
+        with patch.object(validate_memory_surfaces, "load_json", side_effect=side_effect):
+            with self.assertRaises(SystemExit) as context:
+                validate_memory_surfaces.validate_surface_alignment()
+
+        self.assertIn("duplicate ids detected", str(context.exception))
+
+
+if __name__ == "__main__":
+    unittest.main()

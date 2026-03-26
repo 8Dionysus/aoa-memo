@@ -600,6 +600,26 @@ def validate_checkpoint_to_memory_contract() -> None:
             + ", ".join(f"{surface}->{kind}" for surface, kind in missing_pairs)
         )
 
+    runtime_surface_targets: dict[str, set[str]] = {}
+    for rule in data.get("mapping_rules", []):
+        if not isinstance(rule, dict):
+            continue
+        runtime_surface = rule.get("runtime_surface")
+        target_kind = rule.get("target_kind")
+        if not isinstance(runtime_surface, str) or not isinstance(target_kind, str):
+            continue
+        runtime_surface_targets.setdefault(runtime_surface, set()).add(target_kind)
+    conflicting_runtime_mappings = {
+        runtime_surface: sorted(target_kinds)
+        for runtime_surface, target_kinds in runtime_surface_targets.items()
+        if len(target_kinds) > 1
+    }
+    for runtime_surface, target_kinds in sorted(conflicting_runtime_mappings.items()):
+        errors.append(
+            "checkpoint_to_memory_contract.example.json has conflicting target kinds for "
+            f"{runtime_surface}: {', '.join(target_kinds)}"
+        )
+
     for target_kind in ("claim", "pattern", "bridge"):
         matching_rules = [
             rule
@@ -751,9 +771,9 @@ def validate_memory_eval_guardrail_pack() -> None:
             continue
         case_id = case.get("case_id")
         focus = case.get("focus")
-        if case_id in seen_case_ids:
-            errors.append(f"duplicate guardrail case id: {case_id}")
         if isinstance(case_id, str):
+            if case_id in seen_case_ids:
+                errors.append(f"duplicate guardrail case id: {case_id}")
             seen_case_ids.add(case_id)
         if isinstance(focus, str):
             seen_focuses.add(focus)
