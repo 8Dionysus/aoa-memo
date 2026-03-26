@@ -48,6 +48,7 @@ The first structural surface for this seam is schema-backed and code-free:
 The checkpoint artifact remains `inquiry_checkpoint`.
 It is not a new memory-object kind.
 It stays a route artifact until a bounded export is written into the current memo canon.
+Return-specific relaunch metadata stays inside `inquiry_checkpoint` as route-scoped structure and does not create a new writeback class.
 
 ## Trace And Restart Reuse
 
