@@ -13,6 +13,7 @@ Object canon, trust/lifecycle posture, and the separate object-facing generated 
 The active next slice is neighbor adoption so adjacent repos can consume the sharpened memo contracts without moving routing, role policy, graph normalization, or verdict logic into this repository.
 The first router-first adoption package formalizes additive inspect -> capsule -> expand consumption across the doctrine and object-facing recall families without changing memo ownership.
 The first recurrence-support landing makes checkpoint relaunch anchors and return-ready working recall explicit without changing memo ownership.
+The first downstream eval adoption wave is now explicitly narrowed to recall precision, provenance fidelity, and staleness so `aoa-evals` can pilot memo proof without pretending to cover every guardrail focus at once.
 
 ## Current contract-hardening waves
 
@@ -223,6 +224,7 @@ This roadmap does **not** aim to turn `aoa-memo` into:
 - `schemas/memory_eval_guardrail_pack.schema.json`
 - `examples/memory_eval_guardrail_pack.example.json`
 - memory-focused eval ideas for `aoa-evals`
+- first narrow downstream diagnostic pilot for recall precision, provenance fidelity, and staleness
 - tests for recall precision and provenance fidelity
 - tests for staleness handling and contradiction handling
 - tests for permission leakage and over-promotion
@@ -284,6 +286,7 @@ Needs memory exports that are graph-ready but still source- and provenance-aware
 ### `aoa-evals`
 
 Needs bounded checks for recall precision, provenance fidelity, and stale-memory behavior.
+The first adoption wave should stay diagnostic and triad-scoped before the rest of the guardrail focuses are pulled into downstream proof bundles.
 
 ### `abyss-stack`
 

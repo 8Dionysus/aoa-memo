@@ -778,6 +778,94 @@ def validate_bridge_export_contracts() -> None:
     print("[OK]   bridge export contract surfaces")
 
 
+def _guardrail_case_input_refs(case: dict[str, object]) -> set[str]:
+    values = case.get("input_refs", [])
+    if not isinstance(values, list):
+        return set()
+    return {value for value in values if isinstance(value, str)}
+
+
+def _validate_guardrail_pilot_cases(
+    case_by_focus: dict[str, dict[str, object]],
+    errors: list[str],
+) -> None:
+    pilot_focuses = {"recall_precision", "provenance_fidelity", "staleness"}
+    missing_pilot_focuses = sorted(pilot_focuses - set(case_by_focus))
+    if missing_pilot_focuses:
+        errors.append(
+            "memory_eval_guardrail_pack.example.json must keep first-pilot focuses: "
+            + ", ".join(missing_pilot_focuses)
+        )
+
+    precision_case = case_by_focus.get("recall_precision")
+    if isinstance(precision_case, dict):
+        refs = _guardrail_case_input_refs(precision_case)
+        recall_contract_refs = [
+            ref for ref in refs if ref.startswith("examples/recall_contract.")
+        ]
+        if not recall_contract_refs:
+            errors.append(
+                "recall_precision guardrail case must reference at least one recall contract example"
+            )
+        doctrine_surface_family = {
+            "generated/memory_catalog.min.json",
+            "generated/memory_capsules.json",
+            "generated/memory_sections.full.json",
+        }
+        object_surface_family = {
+            "generated/memory_object_catalog.min.json",
+            "generated/memory_object_capsules.json",
+            "generated/memory_object_sections.full.json",
+        }
+        if not (
+            doctrine_surface_family.issubset(refs) or object_surface_family.issubset(refs)
+        ):
+            errors.append(
+                "recall_precision guardrail case must reference one inspect/capsule/expand surface family"
+            )
+
+    provenance_case = case_by_focus.get("provenance_fidelity")
+    if isinstance(provenance_case, dict):
+        refs = _guardrail_case_input_refs(provenance_case)
+        if not any(ref.startswith("examples/provenance_thread.") for ref in refs):
+            errors.append(
+                "provenance_fidelity guardrail case must reference a provenance_thread example"
+            )
+        if not any(ref.startswith("examples/claim.") for ref in refs):
+            errors.append(
+                "provenance_fidelity guardrail case must reference a claim example"
+            )
+        if not any(ref.startswith("examples/bridge.") for ref in refs):
+            errors.append(
+                "provenance_fidelity guardrail case must reference a bridge example"
+            )
+
+    staleness_case = case_by_focus.get("staleness")
+    if isinstance(staleness_case, dict):
+        refs = _guardrail_case_input_refs(staleness_case)
+        required_docs = {
+            "docs/LIFECYCLE.md",
+            "docs/MEMORY_TRUST_POSTURE.md",
+        }
+        missing_docs = sorted(required_docs - refs)
+        if missing_docs:
+            errors.append(
+                "staleness guardrail case must reference lifecycle/trust docs: "
+                + ", ".join(missing_docs)
+            )
+        required_examples = {
+            "examples/claim.current-entrypoint.example.json",
+            "examples/claim.superseded.example.json",
+            "examples/claim.retracted.example.json",
+        }
+        missing_examples = sorted(required_examples - refs)
+        if missing_examples:
+            errors.append(
+                "staleness guardrail case must reference current/superseded/retracted examples: "
+                + ", ".join(missing_examples)
+            )
+
+
 def validate_memory_eval_guardrail_pack() -> None:
     validator = validator_for("memory_eval_guardrail_pack.schema.json")
     data = load_json(EXAMPLES / "memory_eval_guardrail_pack.example.json")
@@ -800,6 +888,7 @@ def validate_memory_eval_guardrail_pack() -> None:
 
     seen_case_ids: set[str] = set()
     seen_focuses: set[str] = set()
+    case_by_focus: dict[str, dict[str, object]] = {}
     for case in data.get("cases", []):
         if not isinstance(case, dict):
             continue
@@ -811,6 +900,7 @@ def validate_memory_eval_guardrail_pack() -> None:
             seen_case_ids.add(case_id)
         if isinstance(focus, str):
             seen_focuses.add(focus)
+            case_by_focus[focus] = case
 
     required_focuses = {
         "recall_precision",
@@ -824,6 +914,8 @@ def validate_memory_eval_guardrail_pack() -> None:
     missing_focuses = sorted(required_focuses - seen_focuses)
     if missing_focuses:
         errors.append("memory_eval_guardrail_pack.example.json is missing required focuses: " + ", ".join(missing_focuses))
+
+    _validate_guardrail_pilot_cases(case_by_focus, errors)
 
     if data.get("handoff_target") != "aoa-evals":
         errors.append("memory_eval_guardrail_pack.example.json must hand off to aoa-evals")

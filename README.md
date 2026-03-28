@@ -154,6 +154,7 @@ The inquiry checkpoint contract is validated there as a portable long-horizon ch
 
 `aoa-memo` is in contract hardening.
 The current public baseline now includes doctrine, schemas, separate doctrine and object-facing generated surface families, writeback seams, bridge/export contracts, and memo-side guardrail handoff surfaces without turning the repository into runtime infrastructure or a graph platform.
+The first downstream guardrail pilot is now explicitly scoped to recall precision, provenance fidelity, and staleness so `aoa-evals` can start from a narrow diagnostic adoption wave instead of pretending the full guardrail set is already one proof bundle.
 
 ## Principles
 

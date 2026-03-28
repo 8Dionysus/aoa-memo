@@ -31,6 +31,19 @@ The current guardrail set keeps these risks explicit:
 
 These are memory quality risks, not verdicts by themselves.
 
+## First Downstream Pilot
+
+The first downstream pilot in `aoa-evals` should stay intentionally narrow.
+
+It covers only:
+
+- recall precision
+- provenance fidelity
+- staleness
+
+That pilot is a bounded adoption wave, not the whole guardrail program.
+It does not yet absorb contradiction handling, permission leakage, over-promotion, or hallucinated memory merge checks into the first proof bundle.
+
 ## Machine-readable Handoff Surface
 
 The current schema-backed guardrail handoff surface is:

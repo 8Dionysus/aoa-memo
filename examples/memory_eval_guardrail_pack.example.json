@@ -2,7 +2,7 @@
   "contract_type": "memory_eval_guardrail_pack",
   "pack_id": "memo-guardrails.v0.1",
   "name": "aoa-memo guardrail handoff pack",
-  "purpose": "Translate memo quality risks into bounded handoff cases for aoa-evals without moving verdict logic into aoa-memo.",
+  "purpose": "Translate memo quality risks into bounded handoff cases for aoa-evals without moving verdict logic into aoa-memo. The first downstream pilot is intentionally limited to recall precision, provenance fidelity, and staleness.",
   "boundary_rule": "aoa-memo publishes the cases and expectations; aoa-evals owns scoring and pass/fail logic.",
   "handoff_target": "aoa-evals",
   "source_refs": [
@@ -17,6 +17,8 @@
       "risk": "Router-facing memo recall returns broad but weakly relevant doctrine instead of the smallest relevant surface.",
       "input_refs": [
         "generated/memory_catalog.min.json",
+        "generated/memory_capsules.json",
+        "generated/memory_sections.full.json",
         "examples/recall_contract.router.semantic.json",
         "docs/PLAYBOOK_MEMORY_SCOPES.md"
       ],
@@ -57,7 +59,9 @@
         "docs/LIFECYCLE.md",
         "docs/MEMORY_TEMPERATURES.md",
         "docs/MEMORY_TRUST_POSTURE.md",
-        "examples/claim.current-entrypoint.example.json"
+        "examples/claim.current-entrypoint.example.json",
+        "examples/claim.superseded.example.json",
+        "examples/claim.retracted.example.json"
       ],
       "expected_behavior": [
         "Temperature and lifecycle posture remain visible during recall.",
