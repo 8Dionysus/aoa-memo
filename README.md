@@ -25,11 +25,12 @@ If you are new to this repository, use this path:
 12. Read [docs/AGENT_MEMORY_POSTURE_SEAM](docs/AGENT_MEMORY_POSTURE_SEAM.md) for the memo-side posture fields that `aoa-agents` may consume without moving role policy here.
 13. Read [docs/PLAYBOOK_MEMORY_SCOPES](docs/PLAYBOOK_MEMORY_SCOPES.md) for playbook-facing memory scope and recall-mode guidance.
 14. Read [docs/KAG_TOS_BRIDGE_CONTRACT](docs/KAG_TOS_BRIDGE_CONTRACT.md) for the current chunk-face, graph-face, and ToS-bridge contract.
-15. Read [docs/MEMORY_EVAL_GUARDRAILS](docs/MEMORY_EVAL_GUARDRAILS.md) for the memo-side guardrail handoff surface to `aoa-evals`.
-16. Read [docs/OPERATIONAL_BOUNDARY](docs/OPERATIONAL_BOUNDARY.md) for the stable v1-facing consumer and runtime split.
-17. Read [docs/BOUNDARIES](docs/BOUNDARIES.md) for ownership rules.
-18. Read [ROADMAP](ROADMAP.md) for the current direction.
-19. Read [docs/ROUTING_MEMORY_ADOPTION](docs/ROUTING_MEMORY_ADOPTION.md) for the additive inspect -> capsule -> expand router-facing adoption flow.
+15. Read [docs/KAG_SOURCE_EXPORT](docs/KAG_SOURCE_EXPORT.md) for the source-owned memo donor export that `aoa-kag` may validate and later consume.
+16. Read [docs/MEMORY_EVAL_GUARDRAILS](docs/MEMORY_EVAL_GUARDRAILS.md) for the memo-side guardrail handoff surface to `aoa-evals`.
+17. Read [docs/OPERATIONAL_BOUNDARY](docs/OPERATIONAL_BOUNDARY.md) for the stable v1-facing consumer and runtime split.
+18. Read [docs/BOUNDARIES](docs/BOUNDARIES.md) for ownership rules.
+19. Read [ROADMAP](ROADMAP.md) for the current direction.
+20. Read [docs/ROUTING_MEMORY_ADOPTION](docs/ROUTING_MEMORY_ADOPTION.md) for the additive inspect -> capsule -> expand router-facing adoption flow.
 
 For concrete recall entrypoints, inspect:
 - `examples/recall_contract.working.json`
@@ -120,6 +121,8 @@ This repository includes compact machine-readable memory-layer surfaces at:
   - `generated/memory_object_catalog.min.json`
   - `generated/memory_object_capsules.json`
   - `generated/memory_object_sections.full.json`
+- source-owned KAG donor export:
+  - `generated/kag_export.min.json`
 
 `provenance_thread`, `witness_trace`, `inquiry_checkpoint`, and checkpoint-to-memory contract surfaces remain support surfaces in this split, not a third generated family.
 
@@ -135,13 +138,14 @@ To validate the current memory-layer surface locally, run:
 
 ```bash
 python scripts/generate_memory_object_surfaces.py
+python scripts/generate_kag_export.py
 python scripts/validate_memo.py
 python scripts/validate_memory_surfaces.py
 python scripts/validate_memory_object_surfaces.py
 python scripts/validate_lifecycle_audit_examples.py
 ```
 
-`validate_memo.py` checks the core memory objects, schemas, examples, registry, manifest-backed object surface family contract, and checkpoint-to-memory contract surface.
+`validate_memo.py` checks the core memory objects, schemas, examples, registry, manifest-backed object surface family contract, source-owned memo KAG export, and checkpoint-to-memory contract surface.
 It also checks the chunk-face and graph-face bridge export surfaces, all public recall contract examples, and the memory eval guardrail handoff pack.
 `validate_memory_surfaces.py` checks the router-facing generated doctrine surfaces, cross-surface alignment, and the router semantic and lineage inspect/capsule/expand recall contracts.
 `validate_memory_object_surfaces.py` checks the generator-backed object-facing surfaces, curated manifest coverage, lifecycle link integrity, and the parallel object recall contracts including the object capsule step.
@@ -153,7 +157,7 @@ The inquiry checkpoint contract is validated there as a portable long-horizon ch
 ## Current status
 
 `aoa-memo` is in contract hardening.
-The current public baseline now includes doctrine, schemas, separate doctrine and object-facing generated surface families, writeback seams, bridge/export contracts, and memo-side guardrail handoff surfaces without turning the repository into runtime infrastructure or a graph platform.
+The current public baseline now includes doctrine, schemas, separate doctrine and object-facing generated surface families, a narrow source-owned memo KAG export, writeback seams, bridge/export contracts, and memo-side guardrail handoff surfaces without turning the repository into runtime infrastructure or a graph platform.
 The first downstream guardrail pilot is now explicitly scoped to recall precision, provenance fidelity, and staleness so `aoa-evals` can start from a narrow diagnostic adoption wave instead of pretending the full guardrail set is already one proof bundle.
 
 ## Principles

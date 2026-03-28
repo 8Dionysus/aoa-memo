@@ -14,6 +14,7 @@ The active next slice is neighbor adoption so adjacent repos can consume the sha
 The first router-first adoption package formalizes additive inspect -> capsule -> expand consumption across the doctrine and object-facing recall families without changing memo ownership.
 The first recurrence-support landing makes checkpoint relaunch anchors and return-ready working recall explicit without changing memo ownership.
 The first downstream eval adoption wave is now explicitly narrowed to recall precision, provenance fidelity, and staleness so `aoa-evals` can pilot memo proof without pretending to cover every guardrail focus at once.
+The next KAG-facing adoption slice publishes one source-owned memo export for `aoa-kag` readiness without widening the live federation spine or `aoa-routing` ABI.
 
 ## Current contract-hardening waves
 
@@ -199,10 +200,12 @@ This roadmap does **not** aim to turn `aoa-memo` into:
 **Deliverables:**
 
 - `docs/KAG_TOS_BRIDGE_CONTRACT.md`
+- `docs/KAG_SOURCE_EXPORT.md`
 - `schemas/memory_chunk_face.schema.json`
 - `schemas/memory_graph_face.schema.json`
 - chunk-face contract for memory inspection
 - graph-face contract for downstream associative lifts
+- `generated/kag_export.min.json`
 - ToS node and fragment bridge guidance
 - `kag_lift_status` and related bridge fields
 - examples of chunk-face and graph-face export
@@ -211,6 +214,7 @@ This roadmap does **not** aim to turn `aoa-memo` into:
 **Exit criteria:**
 
 - `aoa-kag` can consume memory exports cleanly
+- `aoa-kag` can validate the published source-owned memo donor export without activating it in the live federation spine yet
 - ToS relations stay explicit and source-aware
 - the memory layer remains source-preserving rather than graph-theatrical
 
@@ -282,6 +286,7 @@ Needs explicit memory posture fields for read scopes, write scopes, promotion ri
 ### `aoa-kag`
 
 Needs memory exports that are graph-ready but still source- and provenance-aware.
+The current next move is publish-only plus consumer readiness, not live federation activation.
 
 ### `aoa-evals`
 
