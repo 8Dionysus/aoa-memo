@@ -31,6 +31,23 @@ class MemoValidatorTestCase(unittest.TestCase):
                     func(*args, **kwargs)
         return context.exception
 
+    def guardrail_payload(self) -> dict:
+        payload = load_json(validate_memo.EXAMPLES / "memory_eval_guardrail_pack.example.json")
+        assert isinstance(payload, dict)
+        return copy.deepcopy(payload)
+
+    def assert_guardrail_payload_fails(self, payload: dict) -> None:
+        guardrail_path = validate_memo.EXAMPLES / "memory_eval_guardrail_pack.example.json"
+        original_load_json = validate_memo.load_json
+
+        def side_effect(path: Path) -> dict:
+            if Path(path) == guardrail_path:
+                return copy.deepcopy(payload)
+            return original_load_json(path)
+
+        with patch.object(validate_memo, "load_json", side_effect=side_effect):
+            self.assert_system_exit_quietly(validate_memo.validate_memory_eval_guardrail_pack)
+
     def test_inquiry_checkpoint_return_example_validates(self) -> None:
         validator = validate_memo.validator_for("inquiry_checkpoint.schema.json")
         payload = load_json(REPO_ROOT / "examples" / "inquiry_checkpoint.return.example.json")
@@ -136,20 +153,58 @@ class MemoValidatorTestCase(unittest.TestCase):
             self.assert_system_exit_quietly(validate_memo.validate_checkpoint_to_memory_contract)
 
     def test_guardrail_validator_handles_non_string_case_ids_without_type_error(self) -> None:
-        guardrail_path = validate_memo.EXAMPLES / "memory_eval_guardrail_pack.example.json"
-        original_load_json = validate_memo.load_json
-        payload = load_json(guardrail_path)
-        assert isinstance(payload, dict)
-        payload = copy.deepcopy(payload)
+        payload = self.guardrail_payload()
         payload["cases"][0]["case_id"] = []
+        self.assert_guardrail_payload_fails(payload)
 
-        def side_effect(path: Path) -> dict:
-            if Path(path) == guardrail_path:
-                return copy.deepcopy(payload)
-            return original_load_json(path)
+    def test_guardrail_validator_rejects_precision_case_without_surface_family(self) -> None:
+        payload = self.guardrail_payload()
+        payload["cases"][0]["input_refs"] = [
+            "examples/recall_contract.router.semantic.json",
+            "docs/PLAYBOOK_MEMORY_SCOPES.md",
+        ]
+        self.assert_guardrail_payload_fails(payload)
 
-        with patch.object(validate_memo, "load_json", side_effect=side_effect):
-            self.assert_system_exit_quietly(validate_memo.validate_memory_eval_guardrail_pack)
+    def test_guardrail_validator_rejects_precision_case_without_recall_contract_ref(self) -> None:
+        payload = self.guardrail_payload()
+        payload["cases"][0]["input_refs"] = [
+            "generated/memory_catalog.min.json",
+            "generated/memory_capsules.json",
+            "generated/memory_sections.full.json",
+        ]
+        self.assert_guardrail_payload_fails(payload)
+
+    def test_guardrail_validator_rejects_provenance_case_without_provenance_thread(self) -> None:
+        payload = self.guardrail_payload()
+        payload["cases"][1]["input_refs"] = [
+            "examples/claim.tos-bridge-ready.example.json",
+            "examples/bridge.kag-lift.example.json",
+        ]
+        self.assert_guardrail_payload_fails(payload)
+
+    def test_guardrail_validator_rejects_staleness_case_without_lifecycle_examples(self) -> None:
+        payload = self.guardrail_payload()
+        payload["cases"][2]["input_refs"] = [
+            "docs/LIFECYCLE.md",
+            "docs/MEMORY_TRUST_POSTURE.md",
+            "docs/MEMORY_TEMPERATURES.md",
+        ]
+        self.assert_guardrail_payload_fails(payload)
+
+    def test_guardrail_validator_rejects_missing_recall_precision_focus(self) -> None:
+        payload = self.guardrail_payload()
+        payload["cases"][0]["focus"] = "precision_shadow"
+        self.assert_guardrail_payload_fails(payload)
+
+    def test_guardrail_validator_rejects_missing_provenance_fidelity_focus(self) -> None:
+        payload = self.guardrail_payload()
+        payload["cases"][1]["focus"] = "provenance_shadow"
+        self.assert_guardrail_payload_fails(payload)
+
+    def test_guardrail_validator_rejects_missing_staleness_focus(self) -> None:
+        payload = self.guardrail_payload()
+        payload["cases"][2]["focus"] = "staleness_shadow"
+        self.assert_guardrail_payload_fails(payload)
 
     def test_return_ready_recall_contract_validates(self) -> None:
         with io.StringIO() as stdout, io.StringIO() as stderr:
