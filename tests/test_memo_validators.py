@@ -1,9 +1,11 @@
 from __future__ import annotations
 
 import copy
+import io
 import json
 import sys
 import unittest
+from contextlib import redirect_stderr, redirect_stdout
 from pathlib import Path
 from unittest.mock import patch
 
@@ -21,6 +23,13 @@ def load_json(path: Path) -> object:
 
 
 class MemoValidatorTestCase(unittest.TestCase):
+    def assert_system_exit_quietly(self, func, /, *args, **kwargs) -> SystemExit:
+        with io.StringIO() as stdout, io.StringIO() as stderr:
+            with redirect_stdout(stdout), redirect_stderr(stderr):
+                with self.assertRaises(SystemExit) as context:
+                    func(*args, **kwargs)
+        return context.exception
+
     def test_inquiry_checkpoint_return_example_validates(self) -> None:
         validator = validate_memo.validator_for("inquiry_checkpoint.schema.json")
         payload = load_json(REPO_ROOT / "examples" / "inquiry_checkpoint.return.example.json")
@@ -123,8 +132,7 @@ class MemoValidatorTestCase(unittest.TestCase):
             return original_load_json(path)
 
         with patch.object(validate_memo, "load_json", side_effect=side_effect):
-            with self.assertRaises(SystemExit):
-                validate_memo.validate_checkpoint_to_memory_contract()
+            self.assert_system_exit_quietly(validate_memo.validate_checkpoint_to_memory_contract)
 
     def test_guardrail_validator_handles_non_string_case_ids_without_type_error(self) -> None:
         guardrail_path = validate_memo.EXAMPLES / "memory_eval_guardrail_pack.example.json"
@@ -140,29 +148,30 @@ class MemoValidatorTestCase(unittest.TestCase):
             return original_load_json(path)
 
         with patch.object(validate_memo, "load_json", side_effect=side_effect):
-            with self.assertRaises(SystemExit):
-                validate_memo.validate_memory_eval_guardrail_pack()
+            self.assert_system_exit_quietly(validate_memo.validate_memory_eval_guardrail_pack)
 
     def test_return_ready_recall_contract_validates(self) -> None:
-        validate_memo.validate_recall_contract_example(
-            "recall_contract.object.working.return.json",
-            expected_mode="working",
-            expected_allowed_scopes=["thread", "session", "project"],
-            expected_preferred_kinds=["state_capsule", "decision", "episode", "audit_event", "anchor"],
-            expected_temperature_order=["hot", "warm", "cool", "frozen", "cold"],
-            expected_inspect_surface="generated/memory_object_catalog.min.json",
-            expected_expand_surface="generated/memory_object_sections.full.json",
-            expected_source_route_required=False,
-            expected_checkpoint_continuity_supported=True,
-            expected_return_ready=True,
-            expected_preferred_anchor_kinds=["state_capsule", "decision", "anchor"],
-            expected_support_artifact_refs=[
-                "schemas/inquiry_checkpoint.schema.json",
-                "schemas/checkpoint-to-memory-contract.schema.json",
-                "docs/RUNTIME_WRITEBACK_SEAM.md",
-                "docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
-            ],
-        )
+        with io.StringIO() as stdout, io.StringIO() as stderr:
+            with redirect_stdout(stdout), redirect_stderr(stderr):
+                validate_memo.validate_recall_contract_example(
+                    "recall_contract.object.working.return.json",
+                    expected_mode="working",
+                    expected_allowed_scopes=["thread", "session", "project"],
+                    expected_preferred_kinds=["state_capsule", "decision", "episode", "audit_event", "anchor"],
+                    expected_temperature_order=["hot", "warm", "cool", "frozen", "cold"],
+                    expected_inspect_surface="generated/memory_object_catalog.min.json",
+                    expected_expand_surface="generated/memory_object_sections.full.json",
+                    expected_source_route_required=False,
+                    expected_checkpoint_continuity_supported=True,
+                    expected_return_ready=True,
+                    expected_preferred_anchor_kinds=["state_capsule", "decision", "anchor"],
+                    expected_support_artifact_refs=[
+                        "schemas/inquiry_checkpoint.schema.json",
+                        "schemas/checkpoint-to-memory-contract.schema.json",
+                        "docs/RUNTIME_WRITEBACK_SEAM.md",
+                        "docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
+                    ],
+                )
 
     def test_recall_contract_schema_rejects_invalid_preferred_anchor_kind(self) -> None:
         validator = validate_memo.validator_for("recall_contract.schema.json")
@@ -189,21 +198,21 @@ class MemoValidatorTestCase(unittest.TestCase):
             return original_load_json(path)
 
         with patch.object(validate_memo, "load_json", side_effect=side_effect):
-            with self.assertRaises(SystemExit):
-                validate_memo.validate_recall_contract_example(
-                    "recall_contract.object.working.return.json",
-                    expected_mode="working",
-                    expected_allowed_scopes=["thread", "session", "project"],
-                    expected_preferred_kinds=["state_capsule", "decision", "episode", "audit_event", "anchor"],
-                    expected_temperature_order=["hot", "warm", "cool", "frozen", "cold"],
-                    expected_inspect_surface="generated/memory_object_catalog.min.json",
-                    expected_expand_surface="generated/memory_object_sections.full.json",
-                    expected_source_route_required=False,
-                    expected_checkpoint_continuity_supported=True,
-                    expected_return_ready=True,
-                    expected_preferred_anchor_kinds=["state_capsule", "decision", "anchor"],
-                    expected_support_artifact_refs=["docs/DOES_NOT_EXIST.md"],
-                )
+            self.assert_system_exit_quietly(
+                validate_memo.validate_recall_contract_example,
+                "recall_contract.object.working.return.json",
+                expected_mode="working",
+                expected_allowed_scopes=["thread", "session", "project"],
+                expected_preferred_kinds=["state_capsule", "decision", "episode", "audit_event", "anchor"],
+                expected_temperature_order=["hot", "warm", "cool", "frozen", "cold"],
+                expected_inspect_surface="generated/memory_object_catalog.min.json",
+                expected_expand_surface="generated/memory_object_sections.full.json",
+                expected_source_route_required=False,
+                expected_checkpoint_continuity_supported=True,
+                expected_return_ready=True,
+                expected_preferred_anchor_kinds=["state_capsule", "decision", "anchor"],
+                expected_support_artifact_refs=["docs/DOES_NOT_EXIST.md"],
+            )
 
     def test_surface_alignment_rejects_duplicate_ids(self) -> None:
         original_load_json = validate_memory_surfaces.load_json
@@ -219,10 +228,9 @@ class MemoValidatorTestCase(unittest.TestCase):
             return original_load_json(path)
 
         with patch.object(validate_memory_surfaces, "load_json", side_effect=side_effect):
-            with self.assertRaises(SystemExit) as context:
-                validate_memory_surfaces.validate_surface_alignment()
+            context = self.assert_system_exit_quietly(validate_memory_surfaces.validate_surface_alignment)
 
-        self.assertIn("duplicate ids detected", str(context.exception))
+        self.assertIn("duplicate ids detected", str(context))
 
 
 if __name__ == "__main__":
