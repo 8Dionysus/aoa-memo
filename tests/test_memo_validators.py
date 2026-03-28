@@ -15,6 +15,7 @@ if str(SCRIPTS_ROOT) not in sys.path:
     sys.path.insert(0, str(SCRIPTS_ROOT))
 
 import validate_memo
+import validate_memory_object_surfaces
 import validate_memory_surfaces
 
 
@@ -212,6 +213,106 @@ class MemoValidatorTestCase(unittest.TestCase):
                 expected_return_ready=True,
                 expected_preferred_anchor_kinds=["state_capsule", "decision", "anchor"],
                 expected_support_artifact_refs=["docs/DOES_NOT_EXIST.md"],
+            )
+
+    def test_router_semantic_recall_contract_requires_capsule_surface(self) -> None:
+        recall_path = validate_memo.EXAMPLES / "recall_contract.router.semantic.json"
+        original_load_json = validate_memo.load_json
+        payload = load_json(recall_path)
+        assert isinstance(payload, dict)
+        payload = copy.deepcopy(payload)
+        payload.pop("capsule_surface", None)
+
+        def side_effect(path: Path) -> dict:
+            if Path(path) == recall_path:
+                return copy.deepcopy(payload)
+            return original_load_json(path)
+
+        with patch.object(validate_memo, "load_json", side_effect=side_effect):
+            self.assert_system_exit_quietly(
+                validate_memo.validate_recall_contract_example,
+                "recall_contract.router.semantic.json",
+                expected_mode="semantic",
+                expected_allowed_scopes=["repo", "project", "ecosystem"],
+                expected_preferred_kinds=["claim", "decision", "pattern", "anchor"],
+                expected_temperature_order=["warm", "cool", "frozen", "cold", "hot"],
+                expected_inspect_surface="generated/memory_catalog.min.json",
+                expected_capsule_surface="generated/memory_capsules.json",
+                expected_expand_surface="generated/memory_sections.full.json",
+                expected_source_route_required=True,
+            )
+
+    def test_router_surface_validator_rejects_wrong_capsule_path(self) -> None:
+        recall_path = validate_memory_surfaces.EXAMPLES / "recall_contract.router.semantic.json"
+        original_load_json = validate_memory_surfaces.load_json
+        payload = load_json(recall_path)
+        assert isinstance(payload, dict)
+        payload = copy.deepcopy(payload)
+        payload["capsule_surface"] = "generated/memory_object_capsules.json"
+
+        def side_effect(path: Path) -> dict:
+            if Path(path) == recall_path:
+                return copy.deepcopy(payload)
+            return original_load_json(path)
+
+        with patch.object(validate_memory_surfaces, "load_json", side_effect=side_effect):
+            self.assert_system_exit_quietly(
+                validate_memory_surfaces.validate_router_recall_contract,
+                recall_path,
+                "semantic",
+                "generated/memory_capsules.json",
+            )
+
+    def test_object_surface_validator_rejects_wrong_capsule_path(self) -> None:
+        recall_path = validate_memory_object_surfaces.EXAMPLES / "recall_contract.object.semantic.json"
+        original_load_json = validate_memory_object_surfaces.load_json
+        payload = load_json(recall_path)
+        assert isinstance(payload, dict)
+        payload = copy.deepcopy(payload)
+        payload["capsule_surface"] = "generated/memory_capsules.json"
+
+        def side_effect(path: Path) -> dict:
+            if Path(path) == recall_path:
+                return copy.deepcopy(payload)
+            return original_load_json(path)
+
+        with patch.object(validate_memory_object_surfaces, "load_json", side_effect=side_effect):
+            self.assert_system_exit_quietly(
+                validate_memory_object_surfaces.validate_recall_contract,
+                recall_path,
+                expected_mode="semantic",
+                expected_allowed_scopes=["repo", "project", "ecosystem"],
+                expected_preferred_kinds=["claim", "decision", "pattern", "anchor"],
+                expected_temperature_order=["warm", "cool", "frozen", "cold", "hot"],
+                expected_source_route_required=True,
+                expected_capsule_surface="generated/memory_object_capsules.json",
+            )
+
+    def test_recall_contract_rejects_nonexistent_capsule_surface_ref(self) -> None:
+        recall_path = validate_memo.EXAMPLES / "recall_contract.object.lineage.json"
+        original_load_json = validate_memo.load_json
+        payload = load_json(recall_path)
+        assert isinstance(payload, dict)
+        payload = copy.deepcopy(payload)
+        payload["capsule_surface"] = "generated/DOES_NOT_EXIST.json"
+
+        def side_effect(path: Path) -> dict:
+            if Path(path) == recall_path:
+                return copy.deepcopy(payload)
+            return original_load_json(path)
+
+        with patch.object(validate_memo, "load_json", side_effect=side_effect):
+            self.assert_system_exit_quietly(
+                validate_memo.validate_recall_contract_example,
+                "recall_contract.object.lineage.json",
+                expected_mode="lineage",
+                expected_allowed_scopes=["project", "workspace", "ecosystem"],
+                expected_preferred_kinds=["bridge", "claim", "episode", "anchor"],
+                expected_temperature_order=["warm", "cool", "frozen", "cold", "hot"],
+                expected_inspect_surface="generated/memory_object_catalog.min.json",
+                expected_capsule_surface="generated/DOES_NOT_EXIST.json",
+                expected_expand_surface="generated/memory_object_sections.full.json",
+                expected_source_route_required=True,
             )
 
     def test_surface_alignment_rejects_duplicate_ids(self) -> None:

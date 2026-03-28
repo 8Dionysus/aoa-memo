@@ -155,6 +155,20 @@
       "main_risk_short": "Main risk: consumers start depending on hidden runtime assumptions instead of explicit public contracts.",
       "validation_short": "Validate by checking stable docs, schemas, generated surfaces, and examples stay public and source-disciplined while runtime machinery stays out.",
       "source_path": "docs/OPERATIONAL_BOUNDARY.md"
+    },
+    {
+      "id": "AOA-M-0012",
+      "name": "routing-memory-adoption",
+      "summary": "Router-first adoption note that formalizes additive inspect, capsule, and expand consumption over doctrine and curated object memo surfaces.",
+      "one_line_intent": "Give router-facing consumers an explicit memo-side inspect -> capsule -> expand flow without moving routing policy into aoa-memo.",
+      "use_when_short": "Use when a router or smaller model needs to decide whether inspect ids, capsule hydration, or full section opening is the smallest sufficient memo step.",
+      "do_not_use_short": "Avoid when the task is routing ranking, dispatch policy, proof claims, or runtime state management.",
+      "inputs_short": "Needs a question about router-facing memo consumption or when to escalate from inspect ids to capsules or sections.",
+      "outputs_short": "Produces the doctrine-first and object-first adoption flow, the join rule, and stronger-source escalation posture.",
+      "core_contract_short": "Core contract: inspect ids first, hydrate through capsules second, and expand only when the capsule step is insufficient.",
+      "main_risk_short": "Main risk: consumers skip the capsule step and either over-open memo sections or infer authority from compact inspect metadata alone.",
+      "validation_short": "Validate by checking router-facing and object semantic or lineage recall contracts publish the correct capsule_surface and preserve the same id across inspect, capsule, and expand.",
+      "source_path": "docs/ROUTING_MEMORY_ADOPTION.md"
     }
   ]
 }

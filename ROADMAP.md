@@ -11,6 +11,7 @@ Build `aoa-memo` as the explicit memory and recall layer of AoA: small, reviewab
 The repository has already named its role, object canon, schemas, doctrine-facing generated surfaces, object-facing generated surfaces, lifecycle posture, temperature posture, runtime writeback seam, and first bridge/export and guardrail handoff surfaces.
 Object canon, trust/lifecycle posture, and the separate object-facing generated family are now in place.
 The active next slice is neighbor adoption so adjacent repos can consume the sharpened memo contracts without moving routing, role policy, graph normalization, or verdict logic into this repository.
+The first router-first adoption package formalizes additive inspect -> capsule -> expand consumption across the doctrine and object-facing recall families without changing memo ownership.
 The first recurrence-support landing makes checkpoint relaunch anchors and return-ready working recall explicit without changing memo ownership.
 
 ## Current contract-hardening waves
@@ -270,6 +271,7 @@ The cleanest first pull request sequence is:
 Already consumes the live `memo` kind, compact memo catalogs, router-ready doctrine recall contracts, and the current parallel object-facing recall family.
 
 Future routing work should keep those memo-facing hints additive, source-owned, and bounded rather than turning `aoa-routing` into memo authority.
+The current memo-side adoption package now makes the capsule step explicit between inspect and full expansion for both doctrine and object-facing semantic or lineage recall.
 
 ### `aoa-agents`
 

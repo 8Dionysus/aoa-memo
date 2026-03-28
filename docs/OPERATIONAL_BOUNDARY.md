@@ -12,8 +12,8 @@ The stable public boundary of this repository consists of:
 
 - doctrine docs that define memory meaning, provenance, lifecycle, temperature, writeback, bridges, guardrails, and boundaries
 - schema-backed memory and contract surfaces
-- a doctrine generated family for layer-meaning inspect and expand surfaces
-- an object generated family for curated memory-object inspect and expand surfaces
+- a doctrine generated family for layer-meaning inspect, capsule, and expand surfaces
+- an object generated family for curated memory-object inspect, capsule, and expand surfaces
 - reviewed examples that show how the layer is meant to be used
 
 These are the public review surfaces a consumer should rely on.
@@ -25,7 +25,13 @@ These are the public review surfaces a consumer should rely on.
 ### `aoa-routing`
 
 Consume compact generated surfaces and recall contracts.
-Use the doctrine family for layer meaning and the object family for object-first inspect/expand.
+Use the doctrine family for layer meaning and the object family for object-first lookup.
+For the current neighbor-adoption package, consume memo surfaces as inspect -> capsule -> expand:
+
+- inspect with the relevant `*.catalog.min.json` surface
+- hydrate through the matching `*.capsules.json` surface
+- open full sections only when the capsule step is insufficient
+
 Keep dispatch logic and route compression policy outside this repository.
 
 ### `aoa-agents`

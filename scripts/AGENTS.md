@@ -33,6 +33,10 @@ When editing scripts here:
 
 If a validator starts depending on a new contract, update the matching nested `AGENTS.md`, examples, schemas, and generated surfaces together.
 
+When validating recall contracts with a compact intermediate step, keep
+`capsule_surface` checks explicit and local-ref-based. Validators here should
+confirm family alignment without turning capsules into routing policy.
+
 ## Validation
 
 After changing scripts, run the affected entrypoints directly. The common sequence is:

@@ -29,6 +29,7 @@ If you are new to this repository, use this path:
 16. Read [docs/OPERATIONAL_BOUNDARY](docs/OPERATIONAL_BOUNDARY.md) for the stable v1-facing consumer and runtime split.
 17. Read [docs/BOUNDARIES](docs/BOUNDARIES.md) for ownership rules.
 18. Read [ROADMAP](ROADMAP.md) for the current direction.
+19. Read [docs/ROUTING_MEMORY_ADOPTION](docs/ROUTING_MEMORY_ADOPTION.md) for the additive inspect -> capsule -> expand router-facing adoption flow.
 
 For concrete recall entrypoints, inspect:
 - `examples/recall_contract.working.json`
@@ -41,7 +42,8 @@ For concrete recall entrypoints, inspect:
 - `examples/recall_contract.object.lineage.json`
 
 The doctrine-first and router-facing recall contracts stay stable.
-The `recall_contract.object.*.json` family is the parallel object-facing inspect/expand entrypoint over curated memory objects.
+The router-facing semantic and lineage contracts now formalize an additive inspect -> capsule -> expand flow over the doctrine family.
+The `recall_contract.object.*.json` family is the parallel object-facing entrypoint over curated memory objects, and its semantic/lineage contracts use the same inspect -> capsule -> expand join rule.
 For return-oriented relaunch over compact object surfaces, inspect `examples/recall_contract.object.working.return.json`.
 
 If you are editing inside `schemas/`, `examples/`, `generated/`, or `scripts/`, also follow the nested `AGENTS.md` in that directory.
@@ -141,8 +143,8 @@ python scripts/validate_lifecycle_audit_examples.py
 
 `validate_memo.py` checks the core memory objects, schemas, examples, registry, manifest-backed object surface family contract, and checkpoint-to-memory contract surface.
 It also checks the chunk-face and graph-face bridge export surfaces, all public recall contract examples, and the memory eval guardrail handoff pack.
-`validate_memory_surfaces.py` checks the router-facing generated doctrine surfaces, cross-surface alignment, and the router semantic and lineage recall contracts.
-`validate_memory_object_surfaces.py` checks the generator-backed object-facing surfaces, curated manifest coverage, lifecycle link integrity, and the parallel object recall contracts.
+`validate_memory_surfaces.py` checks the router-facing generated doctrine surfaces, cross-surface alignment, and the router semantic and lineage inspect/capsule/expand recall contracts.
+`validate_memory_object_surfaces.py` checks the generator-backed object-facing surfaces, curated manifest coverage, lifecycle link integrity, and the parallel object recall contracts including the object capsule step.
 `validate_lifecycle_audit_examples.py` checks lifecycle, provenance-thread, and audit-event example integrity.
 
 The witness trace contract is validated there as a trace export surface, not as a new memory-object kind.

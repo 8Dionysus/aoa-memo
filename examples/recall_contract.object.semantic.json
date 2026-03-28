@@ -21,7 +21,8 @@
     "hot"
   ],
   "inspect_surface": "generated/memory_object_catalog.min.json",
+  "capsule_surface": "generated/memory_object_capsules.json",
   "expand_surface": "generated/memory_object_sections.full.json",
   "source_route_required": true,
-  "notes": "Use when semantic recall should stay on the curated object family rather than the doctrine-facing catalog surfaces."
+  "notes": "Use when semantic recall should stay on curated memory objects: inspect ids first, hydrate through object capsules for compact posture and strongest-next-source hints, then expand into object sections only if needed."
 }

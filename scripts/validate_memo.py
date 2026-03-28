@@ -166,6 +166,7 @@ def validate_example(validator: Draft202012Validator, example_name: str) -> None
         ("payload_ref", data.get("payload_ref")),
         ("bridges.route_capsule_ref", data.get("bridges", {}).get("route_capsule_ref")),
         ("inspect_surface", data.get("inspect_surface")),
+        ("capsule_surface", data.get("capsule_surface")),
         ("expand_surface", data.get("expand_surface")),
     ]
     for list_name in (
@@ -325,6 +326,7 @@ def validate_recall_contract_example(
     expected_inspect_surface: str,
     expected_expand_surface: str,
     expected_source_route_required: bool,
+    expected_capsule_surface: str | None = None,
     expected_checkpoint_continuity_supported: bool | None = None,
     expected_return_ready: bool | None = None,
     expected_preferred_anchor_kinds: list[str] | None = None,
@@ -344,6 +346,7 @@ def validate_recall_contract_example(
         errors,
         [
             ("inspect_surface", data.get("inspect_surface")),
+            ("capsule_surface", data.get("capsule_surface")),
             ("expand_surface", data.get("expand_surface")),
         ]
         + [
@@ -362,6 +365,8 @@ def validate_recall_contract_example(
         errors.append(f"{example_name} temperature_order must stay {expected_temperature_order}")
     if data.get("inspect_surface") != expected_inspect_surface:
         errors.append(f"{example_name} inspect_surface must stay {expected_inspect_surface}")
+    if expected_capsule_surface is not None and data.get("capsule_surface") != expected_capsule_surface:
+        errors.append(f"{example_name} capsule_surface must stay {expected_capsule_surface}")
     if data.get("expand_surface") != expected_expand_surface:
         errors.append(f"{example_name} expand_surface must stay {expected_expand_surface}")
     if data.get("source_route_required") is not expected_source_route_required:
@@ -888,6 +893,7 @@ def main() -> int:
         expected_preferred_kinds=["claim", "decision", "pattern", "anchor"],
         expected_temperature_order=["warm", "cool", "frozen", "cold", "hot"],
         expected_inspect_surface="generated/memory_catalog.min.json",
+        expected_capsule_surface="generated/memory_capsules.json",
         expected_expand_surface="generated/memory_sections.full.json",
         expected_source_route_required=True,
     )
@@ -918,6 +924,7 @@ def main() -> int:
         expected_preferred_kinds=["bridge", "claim", "episode", "anchor"],
         expected_temperature_order=["warm", "cool", "frozen", "cold", "hot"],
         expected_inspect_surface="generated/memory_catalog.min.json",
+        expected_capsule_surface="generated/memory_capsules.json",
         expected_expand_surface="generated/memory_sections.full.json",
         expected_source_route_required=True,
     )
@@ -957,6 +964,7 @@ def main() -> int:
         expected_preferred_kinds=["claim", "decision", "pattern", "anchor"],
         expected_temperature_order=["warm", "cool", "frozen", "cold", "hot"],
         expected_inspect_surface="generated/memory_object_catalog.min.json",
+        expected_capsule_surface="generated/memory_object_capsules.json",
         expected_expand_surface="generated/memory_object_sections.full.json",
         expected_source_route_required=True,
     )
@@ -967,6 +975,7 @@ def main() -> int:
         expected_preferred_kinds=["bridge", "claim", "episode", "anchor"],
         expected_temperature_order=["warm", "cool", "frozen", "cold", "hot"],
         expected_inspect_surface="generated/memory_object_catalog.min.json",
+        expected_capsule_surface="generated/memory_object_capsules.json",
         expected_expand_surface="generated/memory_object_sections.full.json",
         expected_source_route_required=True,
     )

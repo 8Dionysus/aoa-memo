@@ -88,14 +88,14 @@ def validate_sections(path: Path) -> None:
             seen.add(section["section_id"])
 
 
-def validate_router_recall_contract(path: Path, expected_mode: str) -> None:
+def validate_router_recall_contract(path: Path, expected_mode: str, expected_capsule_surface: str) -> None:
     validator = validator_for("recall_contract.schema.json")
     data = load_json(path)
     errors = [
         f"{'.'.join(str(part) for part in err.absolute_path) or '<root>'}: {err.message}"
         for err in sorted(validator.iter_errors(data), key=lambda err: list(err.absolute_path))
     ]
-    for label in ("inspect_surface", "expand_surface"):
+    for label in ("inspect_surface", "capsule_surface", "expand_surface"):
         error = local_ref_error(data.get(label), label)
         if error:
             errors.append(error)
@@ -103,6 +103,8 @@ def validate_router_recall_contract(path: Path, expected_mode: str) -> None:
         errors.append(f"mode must stay '{expected_mode}'")
     if data.get("inspect_surface") != "generated/memory_catalog.min.json":
         errors.append("inspect_surface must stay generated/memory_catalog.min.json")
+    if data.get("capsule_surface") != expected_capsule_surface:
+        errors.append(f"capsule_surface must stay {expected_capsule_surface}")
     if data.get("expand_surface") != "generated/memory_sections.full.json":
         errors.append("expand_surface must stay generated/memory_sections.full.json")
     if data.get("source_route_required") is not True:
@@ -167,8 +169,16 @@ def main() -> int:
     validate_catalog(GENERATED / "memory_catalog.min.json", require_relations=False)
     validate_capsules(GENERATED / "memory_capsules.json")
     validate_sections(GENERATED / "memory_sections.full.json")
-    validate_router_recall_contract(EXAMPLES / "recall_contract.router.semantic.json", "semantic")
-    validate_router_recall_contract(EXAMPLES / "recall_contract.router.lineage.json", "lineage")
+    validate_router_recall_contract(
+        EXAMPLES / "recall_contract.router.semantic.json",
+        "semantic",
+        "generated/memory_capsules.json",
+    )
+    validate_router_recall_contract(
+        EXAMPLES / "recall_contract.router.lineage.json",
+        "lineage",
+        "generated/memory_capsules.json",
+    )
     validate_surface_alignment()
     print("Router-facing memo doctrine surfaces validated successfully.")
     return 0
