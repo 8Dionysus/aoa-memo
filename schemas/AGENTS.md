@@ -43,6 +43,10 @@ Keep alignment between:
 - `memory_chunk_face.schema.json` and `memory_graph_face.schema.json` with the bridge examples and `docs/KAG_TOS_BRIDGE_CONTRACT.md`
 - `checkpoint-to-memory-contract.schema.json` with `checkpoint_to_memory_contract.example.json` and `docs/RUNTIME_WRITEBACK_SEAM.md`
 
+If recall contracts expose a compact intermediate consumer step, keep that
+`capsule_surface` additive, local-ref-valid, and aligned with the intended
+generated family rather than inventing a new routing payload.
+
 ## Validation
 
 After schema edits, run the validators that cover the affected surface:

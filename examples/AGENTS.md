@@ -40,6 +40,13 @@ For recall contracts, keep inspect and expand surfaces aligned with the intended
 - object-facing recall contracts point to `generated/memory_object_catalog.min.json` and `generated/memory_object_sections.full.json`
 - doctrine-first examples may point to docs such as `docs/KAG_TOS_BRIDGE_CONTRACT.md` or `docs/RUNTIME_WRITEBACK_SEAM.md` when deeper explanation is the intended expand surface
 
+If a recall contract also publishes `capsule_surface`, keep it additive and
+family-aligned:
+
+- router-facing doctrine recall contracts use `generated/memory_capsules.json`
+- object-facing semantic or lineage recall contracts use `generated/memory_object_capsules.json`
+- `capsule_surface` stays a compact hydrate step between inspect and expand, not a new recall family
+
 ## Validation
 
 After editing examples, run:

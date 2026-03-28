@@ -365,6 +365,39 @@
         "runtime-split",
         "stable-surfaces"
       ]
+    },
+    {
+      "id": "AOA-M-0012",
+      "name": "routing-memory-adoption",
+      "surface_kind": "doctrine",
+      "summary": "Router-first adoption note that formalizes additive inspect, capsule, and expand consumption over doctrine and curated object memo surfaces.",
+      "primary_focus": "router-adoption",
+      "recall_modes": [
+        "semantic",
+        "lineage",
+        "source_route"
+      ],
+      "status": "confirmed",
+      "temperature": "warm",
+      "source_path": "docs/ROUTING_MEMORY_ADOPTION.md",
+      "inspect_surface": "generated/memory_capsules.json",
+      "expand_surface": "generated/memory_sections.full.json",
+      "related_surface_ids": [
+        "AOA-M-0004",
+        "AOA-M-0009",
+        "AOA-M-0011"
+      ],
+      "strongest_next_sources": [
+        "repo:aoa-routing",
+        "docs/OPERATIONAL_BOUNDARY.md#consumer-contracts",
+        "generated/memory_object_capsules.json"
+      ],
+      "focus_tags": [
+        "router-adoption",
+        "inspect-capsule-expand",
+        "capsules",
+        "stronger-source"
+      ]
     }
   ]
 }

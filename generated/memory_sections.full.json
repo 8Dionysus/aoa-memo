@@ -323,6 +323,34 @@
           "body": "The operational boundary keeps live state stores, checkpoint workers, consolidation jobs, retention machinery, secret handling, deployment posture, and backups outside the repository. `aoa-memo` remains the inspectable doctrine-and-surface layer rather than the runtime body."
         }
       ]
+    },
+    {
+      "id": "AOA-M-0012",
+      "name": "routing-memory-adoption",
+      "source_path": "docs/ROUTING_MEMORY_ADOPTION.md",
+      "sections": [
+        {
+          "section_id": "AOA-M-0012#three-step-flow",
+          "heading": "Three-step flow",
+          "ordinal": 1,
+          "summary": "Formalizes inspect, capsule, and expand as the additive router-facing memo consumption flow.",
+          "body": "Router-facing doctrine and curated object recall should inspect ids first, hydrate through the matching capsule family second, and open full sections only when the capsule step is insufficient. The capsule step is a compact posture surface, not a new recall family or routing policy layer."
+        },
+        {
+          "section_id": "AOA-M-0012#join-rule",
+          "heading": "Join rule",
+          "ordinal": 2,
+          "summary": "Keeps the same id as the join key across inspect, capsule, and full expansion.",
+          "body": "The inspect id is the join key for the capsule and full-section families. No extra hydrate key or router-only lookup key is introduced. This keeps router adoption additive and lets the consumer move from compact inspect to capsules and full sections without hidden translation logic."
+        },
+        {
+          "section_id": "AOA-M-0012#stronger-source-escalation",
+          "heading": "Stronger-source escalation",
+          "ordinal": 3,
+          "summary": "Requires routers to escalate to cited stronger sources when memo grounding is still insufficient.",
+          "body": "If inspect and capsule steps do not provide enough grounding, the router should open full sections and then escalate to the strongest cited source rather than infer proof, rights, or current truth from memo posture alone. Memo surfaces remain bounded memory aids, not authority substitutes."
+        }
+      ]
     }
   ]
 }

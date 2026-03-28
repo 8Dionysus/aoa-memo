@@ -75,6 +75,10 @@
       "type": "string",
       "minLength": 1
     },
+    "capsule_surface": {
+      "type": "string",
+      "minLength": 1
+    },
     "expand_surface": {
       "type": "string",
       "minLength": 1

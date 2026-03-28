@@ -158,6 +158,7 @@ def validate_recall_contract(
     expected_preferred_kinds: list[str],
     expected_temperature_order: list[str],
     expected_source_route_required: bool,
+    expected_capsule_surface: str | None = None,
 ) -> None:
     validator = validator_for("recall_contract.schema.json")
     data = load_json(path)
@@ -165,7 +166,7 @@ def validate_recall_contract(
         f"{'.'.join(str(part) for part in err.absolute_path) or '<root>'}: {err.message}"
         for err in sorted(validator.iter_errors(data), key=lambda err: list(err.absolute_path))
     ]
-    for label in ("inspect_surface", "expand_surface"):
+    for label in ("inspect_surface", "capsule_surface", "expand_surface"):
         error = local_ref_error(data.get(label), label)
         if error:
             errors.append(error)
@@ -179,6 +180,8 @@ def validate_recall_contract(
         errors.append(f"temperature_order must stay {expected_temperature_order}")
     if data.get("inspect_surface") != "generated/memory_object_catalog.min.json":
         errors.append("inspect_surface must stay generated/memory_object_catalog.min.json")
+    if expected_capsule_surface is not None and data.get("capsule_surface") != expected_capsule_surface:
+        errors.append(f"capsule_surface must stay {expected_capsule_surface}")
     if data.get("expand_surface") != "generated/memory_object_sections.full.json":
         errors.append("expand_surface must stay generated/memory_object_sections.full.json")
     if data.get("source_route_required") is not expected_source_route_required:
@@ -228,6 +231,7 @@ def main() -> int:
         expected_preferred_kinds=["claim", "decision", "pattern", "anchor"],
         expected_temperature_order=["warm", "cool", "frozen", "cold", "hot"],
         expected_source_route_required=True,
+        expected_capsule_surface="generated/memory_object_capsules.json",
     )
     validate_recall_contract(
         EXAMPLES / "recall_contract.object.lineage.json",
@@ -236,6 +240,7 @@ def main() -> int:
         expected_preferred_kinds=["bridge", "claim", "episode", "anchor"],
         expected_temperature_order=["warm", "cool", "frozen", "cold", "hot"],
         expected_source_route_required=True,
+        expected_capsule_surface="generated/memory_object_capsules.json",
     )
     validate_determinism()
     print("Object-facing memo surfaces validated successfully.")
