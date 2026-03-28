@@ -65,10 +65,15 @@
         "bridges": {
           "type": "object",
           "required": [
-            "kag_lift_status"
+            "kag_lift_status",
+            "shared_envelope_ref"
           ],
           "properties": {
             "route_capsule_ref": {
+              "type": "string",
+              "minLength": 1
+            },
+            "shared_envelope_ref": {
               "type": "string",
               "minLength": 1
             }
@@ -82,17 +87,35 @@
             {
               "required": [
                 "tos_refs"
-              ]
+              ],
+              "properties": {
+                "tos_refs": {
+                  "type": "array",
+                  "minItems": 1
+                }
+              }
             },
             {
               "required": [
                 "skill_refs"
-              ]
+              ],
+              "properties": {
+                "skill_refs": {
+                  "type": "array",
+                  "minItems": 1
+                }
+              }
             },
             {
               "required": [
                 "eval_refs"
-              ]
+              ],
+              "properties": {
+                "eval_refs": {
+                  "type": "array",
+                  "minItems": 1
+                }
+              }
             }
           ]
         }

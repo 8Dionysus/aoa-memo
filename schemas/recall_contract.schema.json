@@ -75,12 +75,47 @@
       "type": "string",
       "minLength": 1
     },
+    "capsule_surface": {
+      "type": "string",
+      "minLength": 1
+    },
     "expand_surface": {
       "type": "string",
       "minLength": 1
     },
     "source_route_required": {
       "type": "boolean"
+    },
+    "checkpoint_continuity_supported": {
+      "type": "boolean"
+    },
+    "return_ready": {
+      "type": "boolean"
+    },
+    "preferred_anchor_kinds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "anchor",
+          "state_capsule",
+          "episode",
+          "claim",
+          "decision",
+          "pattern",
+          "bridge",
+          "audit_event"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "support_artifact_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
     },
     "notes": {
       "type": "string"

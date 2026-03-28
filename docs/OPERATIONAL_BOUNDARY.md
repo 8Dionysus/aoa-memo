@@ -12,19 +12,26 @@ The stable public boundary of this repository consists of:
 
 - doctrine docs that define memory meaning, provenance, lifecycle, temperature, writeback, bridges, guardrails, and boundaries
 - schema-backed memory and contract surfaces
-- a doctrine generated family for layer-meaning inspect and expand surfaces
-- an object generated family for curated memory-object inspect and expand surfaces
+- a doctrine generated family for layer-meaning inspect, capsule, and expand surfaces
+- an object generated family for curated memory-object inspect, capsule, and expand surfaces
 - reviewed examples that show how the layer is meant to be used
 
 These are the public review surfaces a consumer should rely on.
 `provenance_thread`, `witness_trace`, `inquiry_checkpoint`, and checkpoint contracts remain explicit support surfaces in this boundary, not a separate generated family.
+`inquiry_checkpoint` may carry bounded `return_pack` metadata for relaunch, but it remains a route artifact rather than a new durable memory-object family.
 
 ## Consumer Contracts
 
 ### `aoa-routing`
 
 Consume compact generated surfaces and recall contracts.
-Use the doctrine family for layer meaning and the object family for object-first inspect/expand.
+Use the doctrine family for layer meaning and the object family for object-first lookup.
+For the current neighbor-adoption package, consume memo surfaces as inspect -> capsule -> expand:
+
+- inspect with the relevant `*.catalog.min.json` surface
+- hydrate through the matching `*.capsules.json` surface
+- open full sections only when the capsule step is insufficient
+
 Keep dispatch logic and route compression policy outside this repository.
 
 ### `aoa-agents`
@@ -36,11 +43,15 @@ Keep rights policy, handoff posture, and actor doctrine outside this repository.
 ### `aoa-kag`
 
 Consume bridge objects, chunk faces, graph faces, and provenance-aware exports.
+The current memo-owned KAG export is publish-only and readiness-oriented in this
+slice; it does not activate `aoa-memo` inside the live `aoa-kag`
+`federation_spine`.
 Keep normalized substrate formation and framework adapters outside this repository.
 
 ### `abyss-stack`
 
 Consume writeback seams and schema-backed export contracts.
+Runtime may consume checkpoint return-pack refs as relaunch aids, but retry policy and rebuild mechanics remain outside this repository.
 Keep live stores, background jobs, retention, backups, and restore posture outside this repository.
 
 ## What Runtime Owns

@@ -11,6 +11,7 @@ from __future__ import annotations
 import json
 from datetime import datetime
 from functools import lru_cache
+import os
 from pathlib import Path
 import re
 import sys
@@ -53,6 +54,38 @@ CORE_KIND_EXAMPLE_MAP = {
     "bridge": "bridge.kag-lift.example.json",
     "audit_event": "audit_event.supersession.example.json",
 }
+KAG_EXPORT_REQUIRED_FIELDS = {
+    "owner_repo",
+    "kind",
+    "object_id",
+    "primary_question",
+    "summary_50",
+    "summary_200",
+    "source_inputs",
+    "entry_surface",
+    "section_handles",
+    "direct_relations",
+    "provenance_note",
+    "non_identity_boundary",
+}
+
+
+def validate_nested_agents_surface() -> None:
+    try:
+        from validate_nested_agents import validate_nested_agents_docs
+    except Exception as exc:  # pragma: no cover - defensive wiring guard
+        print("[FAIL] nested AGENTS docs")
+        print(f"  - unable to load nested AGENTS validator: {exc}")
+        raise SystemExit(1) from exc
+
+    try:
+        validate_nested_agents_docs()
+    except RuntimeError as exc:
+        print("[FAIL] nested AGENTS docs")
+        print(f"  - {exc}")
+        raise SystemExit(1) from exc
+
+    print("[OK]   nested AGENTS docs")
 
 
 def load_json(path: Path) -> dict:
@@ -148,6 +181,7 @@ def validate_example(validator: Draft202012Validator, example_name: str) -> None
         ("payload_ref", data.get("payload_ref")),
         ("bridges.route_capsule_ref", data.get("bridges", {}).get("route_capsule_ref")),
         ("inspect_surface", data.get("inspect_surface")),
+        ("capsule_surface", data.get("capsule_surface")),
         ("expand_surface", data.get("expand_surface")),
     ]
     for list_name in (
@@ -162,6 +196,14 @@ def validate_example(validator: Draft202012Validator, example_name: str) -> None
             continue
         for index, value in enumerate(values):
             ref_checks.append((f"{list_name}[{index}]", value))
+    return_pack = data.get("return_pack")
+    if isinstance(return_pack, dict):
+        for list_name in ("anchor_refs", "reentry_refs"):
+            values = return_pack.get(list_name)
+            if not isinstance(values, list):
+                continue
+            for index, value in enumerate(values):
+                ref_checks.append((f"return_pack.{list_name}[{index}]", value))
     errors.extend(filter(None, (local_ref_error(value, label) for label, value in ref_checks)))
 
     if errors:
@@ -299,6 +341,11 @@ def validate_recall_contract_example(
     expected_inspect_surface: str,
     expected_expand_surface: str,
     expected_source_route_required: bool,
+    expected_capsule_surface: str | None = None,
+    expected_checkpoint_continuity_supported: bool | None = None,
+    expected_return_ready: bool | None = None,
+    expected_preferred_anchor_kinds: list[str] | None = None,
+    expected_support_artifact_refs: list[str] | None = None,
 ) -> None:
     validator = validator_for("recall_contract.schema.json")
     data = load_json(EXAMPLES / example_name)
@@ -307,11 +354,19 @@ def validate_recall_contract_example(
         f"{'.'.join(str(part) for part in err.absolute_path) or '<root>'}: {err.message}"
         for err in sorted(validator.iter_errors(data), key=lambda err: list(err.absolute_path))
     ]
+    support_artifact_refs = data.get("support_artifact_refs")
+    if not isinstance(support_artifact_refs, list):
+        support_artifact_refs = []
     append_ref_errors(
         errors,
         [
             ("inspect_surface", data.get("inspect_surface")),
+            ("capsule_surface", data.get("capsule_surface")),
             ("expand_surface", data.get("expand_surface")),
+        ]
+        + [
+            (f"support_artifact_refs[{index}]", value)
+            for index, value in enumerate(support_artifact_refs)
         ],
     )
 
@@ -325,10 +380,22 @@ def validate_recall_contract_example(
         errors.append(f"{example_name} temperature_order must stay {expected_temperature_order}")
     if data.get("inspect_surface") != expected_inspect_surface:
         errors.append(f"{example_name} inspect_surface must stay {expected_inspect_surface}")
+    if expected_capsule_surface is not None and data.get("capsule_surface") != expected_capsule_surface:
+        errors.append(f"{example_name} capsule_surface must stay {expected_capsule_surface}")
     if data.get("expand_surface") != expected_expand_surface:
         errors.append(f"{example_name} expand_surface must stay {expected_expand_surface}")
     if data.get("source_route_required") is not expected_source_route_required:
         errors.append(f"{example_name} source_route_required must stay {expected_source_route_required}")
+    if expected_checkpoint_continuity_supported is not None and data.get("checkpoint_continuity_supported") is not expected_checkpoint_continuity_supported:
+        errors.append(
+            f"{example_name} checkpoint_continuity_supported must stay {expected_checkpoint_continuity_supported}"
+        )
+    if expected_return_ready is not None and data.get("return_ready") is not expected_return_ready:
+        errors.append(f"{example_name} return_ready must stay {expected_return_ready}")
+    if expected_preferred_anchor_kinds is not None and data.get("preferred_anchor_kinds") != expected_preferred_anchor_kinds:
+        errors.append(f"{example_name} preferred_anchor_kinds must stay {expected_preferred_anchor_kinds}")
+    if expected_support_artifact_refs is not None and data.get("support_artifact_refs") != expected_support_artifact_refs:
+        errors.append(f"{example_name} support_artifact_refs must stay {expected_support_artifact_refs}")
 
     if errors:
         print(f"[FAIL] {example_name}")
@@ -370,6 +437,8 @@ def validate_registry() -> None:
     for schema_ref in sorted(expected_schemas):
         if schema_ref not in data.get("schemas", []):
             errors.append(f"generated/memo_registry.min.json must list {schema_ref}")
+    if "docs/KAG_SOURCE_EXPORT.md" not in data.get("core_docs", []):
+        errors.append("generated/memo_registry.min.json must list docs/KAG_SOURCE_EXPORT.md")
 
     families = {
         item.get("family"): item
@@ -380,6 +449,8 @@ def validate_registry() -> None:
         errors.append("generated/memo_registry.min.json must publish doctrine generated_surface_families entry")
     if "memory_objects" not in families:
         errors.append("generated/memo_registry.min.json must publish memory_objects generated_surface_families entry")
+    if "kag_export" not in families:
+        errors.append("generated/memo_registry.min.json must publish kag_export generated_surface_families entry")
 
     doctrine = families.get("doctrine", {})
     doctrine_outputs = [
@@ -412,6 +483,16 @@ def validate_registry() -> None:
         errors.append("memory_objects generated_surface_families entry must keep generator_command python scripts/generate_memory_object_surfaces.py")
     if memory_objects.get("validator_command") != "python scripts/validate_memory_object_surfaces.py":
         errors.append("memory_objects generated_surface_families entry must keep validator_command python scripts/validate_memory_object_surfaces.py")
+
+    kag_export = families.get("kag_export", {})
+    if kag_export.get("source_of_truth") != "aoa-memo-kag-source-export-v1":
+        errors.append("kag_export generated_surface_families entry must keep source_of_truth aoa-memo-kag-source-export-v1")
+    if kag_export.get("outputs") != ["generated/kag_export.min.json"]:
+        errors.append("kag_export generated_surface_families entry must list generated/kag_export.min.json")
+    if kag_export.get("generator_command") != "python scripts/generate_kag_export.py":
+        errors.append("kag_export generated_surface_families entry must keep generator_command python scripts/generate_kag_export.py")
+    if kag_export.get("validator_command") != "python scripts/validate_memo.py":
+        errors.append("kag_export generated_surface_families entry must keep validator_command python scripts/validate_memo.py")
 
     for family_name, family in families.items():
         manifest = family.get("manifest")
@@ -582,6 +663,26 @@ def validate_checkpoint_to_memory_contract() -> None:
             + ", ".join(f"{surface}->{kind}" for surface, kind in missing_pairs)
         )
 
+    runtime_surface_targets: dict[str, set[str]] = {}
+    for rule in data.get("mapping_rules", []):
+        if not isinstance(rule, dict):
+            continue
+        runtime_surface = rule.get("runtime_surface")
+        target_kind = rule.get("target_kind")
+        if not isinstance(runtime_surface, str) or not isinstance(target_kind, str):
+            continue
+        runtime_surface_targets.setdefault(runtime_surface, set()).add(target_kind)
+    conflicting_runtime_mappings = {
+        runtime_surface: sorted(target_kinds)
+        for runtime_surface, target_kinds in runtime_surface_targets.items()
+        if len(target_kinds) > 1
+    }
+    for runtime_surface, target_kinds in sorted(conflicting_runtime_mappings.items()):
+        errors.append(
+            "checkpoint_to_memory_contract.example.json has conflicting target kinds for "
+            f"{runtime_surface}: {', '.join(target_kinds)}"
+        )
+
     for target_kind in ("claim", "pattern", "bridge"):
         matching_rules = [
             rule
@@ -677,6 +778,13 @@ def validate_bridge_export_contracts() -> None:
         errors.append("memory_graph_face.bridge.example.json must expose a relation candidate back to the reviewed claim")
 
     bridge_bridges = bridge.get("bridges", {})
+    shared_envelope_ref = bridge_bridges.get("shared_envelope_ref")
+    if shared_envelope_ref != "repo:aoa-kag/examples/aoa_tos_bridge_envelope.example.json":
+        errors.append("bridge.kag-lift.example.json must keep shared_envelope_ref pointed at the canonical aoa-kag envelope example")
+    append_ref_errors(
+        errors,
+        [("bridge.kag-lift.shared_envelope_ref", shared_envelope_ref)],
+    )
     if bridge_bridges.get("kag_lift_status") != "candidate":
         errors.append("bridge.kag-lift.example.json must keep kag_lift_status as candidate")
     if not bridge_bridges.get("tos_refs"):
@@ -697,6 +805,176 @@ def validate_bridge_export_contracts() -> None:
             print(f"  - {err}")
         raise SystemExit(1)
     print("[OK]   bridge export contract surfaces")
+
+
+def validate_kag_source_export() -> None:
+    try:
+        from generate_kag_export import KAG_EXPORT_PATH, build_kag_export_payload
+    except Exception as exc:  # pragma: no cover - defensive wiring guard
+        print("[FAIL] generated/kag_export.min.json")
+        print(f"  - unable to load KAG export generator: {exc}")
+        raise SystemExit(1) from exc
+
+    errors: list[str] = []
+    expected_payload = build_kag_export_payload()
+    if not KAG_EXPORT_PATH.exists():
+        errors.append("generated/kag_export.min.json must exist")
+        actual_payload = {}
+    else:
+        actual_payload = load_json(KAG_EXPORT_PATH)
+
+    if actual_payload != expected_payload:
+        errors.append("generated/kag_export.min.json must match the committed generator-backed payload")
+
+    missing_fields = sorted(KAG_EXPORT_REQUIRED_FIELDS - set(actual_payload))
+    if missing_fields:
+        errors.append(
+            "generated/kag_export.min.json is missing required fields: "
+            + ", ".join(missing_fields)
+        )
+
+    append_ref_errors(
+        errors,
+        [
+            ("kag_export.entry_surface.path", actual_payload.get("entry_surface", {}).get("path")),
+        ]
+        + [
+            (f"kag_export.direct_relations[{index}].target_ref", relation.get("target_ref"))
+            for index, relation in enumerate(actual_payload.get("direct_relations", []))
+            if isinstance(relation, dict)
+        ],
+    )
+
+    source_inputs = actual_payload.get("source_inputs")
+    if not isinstance(source_inputs, list) or len(source_inputs) != 2:
+        errors.append("generated/kag_export.min.json must keep exactly two source_inputs")
+    else:
+        expected_source_inputs = expected_payload["source_inputs"]
+        if source_inputs != expected_source_inputs:
+            errors.append("generated/kag_export.min.json must keep the memo-primary / ToS-supporting source_inputs split")
+
+    if actual_payload.get("section_handles") != expected_payload["section_handles"]:
+        errors.append("generated/kag_export.min.json must keep the canonical bridge section_handles")
+    if actual_payload.get("direct_relations") != expected_payload["direct_relations"]:
+        errors.append("generated/kag_export.min.json must keep the narrow claim/episode/ToS direct_relations trio")
+
+    kag_root_text = os.environ.get("AOA_KAG_ROOT")
+    if kag_root_text:
+        kag_root = Path(kag_root_text).expanduser().resolve()
+        schema_path = kag_root / "schemas" / "federation-kag-export.schema.json"
+        if not schema_path.exists():
+            errors.append(
+                f"AOA_KAG_ROOT canonical schema path does not exist: {schema_path}"
+            )
+        else:
+            schema = load_json(schema_path)
+            validator = Draft202012Validator(schema, format_checker=FORMAT_CHECKER)
+            schema_errors = [
+                f"{'.'.join(str(part) for part in err.absolute_path) or '<root>'}: {err.message}"
+                for err in sorted(
+                    validator.iter_errors(actual_payload),
+                    key=lambda err: list(err.absolute_path),
+                )
+            ]
+            errors.extend(
+                f"AOA_KAG_ROOT federation-kag-export.schema.json -> {message}"
+                for message in schema_errors
+            )
+
+    if errors:
+        print("[FAIL] generated/kag_export.min.json")
+        for err in errors:
+            print(f"  - {err}")
+        raise SystemExit(1)
+    print("[OK]   generated/kag_export.min.json")
+
+
+def _guardrail_case_input_refs(case: dict[str, object]) -> set[str]:
+    values = case.get("input_refs", [])
+    if not isinstance(values, list):
+        return set()
+    return {value for value in values if isinstance(value, str)}
+
+
+def _validate_guardrail_pilot_cases(
+    case_by_focus: dict[str, dict[str, object]],
+    errors: list[str],
+) -> None:
+    pilot_focuses = {"recall_precision", "provenance_fidelity", "staleness"}
+    missing_pilot_focuses = sorted(pilot_focuses - set(case_by_focus))
+    if missing_pilot_focuses:
+        errors.append(
+            "memory_eval_guardrail_pack.example.json must keep first-pilot focuses: "
+            + ", ".join(missing_pilot_focuses)
+        )
+
+    precision_case = case_by_focus.get("recall_precision")
+    if isinstance(precision_case, dict):
+        refs = _guardrail_case_input_refs(precision_case)
+        recall_contract_refs = [
+            ref for ref in refs if ref.startswith("examples/recall_contract.")
+        ]
+        if not recall_contract_refs:
+            errors.append(
+                "recall_precision guardrail case must reference at least one recall contract example"
+            )
+        doctrine_surface_family = {
+            "generated/memory_catalog.min.json",
+            "generated/memory_capsules.json",
+            "generated/memory_sections.full.json",
+        }
+        object_surface_family = {
+            "generated/memory_object_catalog.min.json",
+            "generated/memory_object_capsules.json",
+            "generated/memory_object_sections.full.json",
+        }
+        if not (
+            doctrine_surface_family.issubset(refs) or object_surface_family.issubset(refs)
+        ):
+            errors.append(
+                "recall_precision guardrail case must reference one inspect/capsule/expand surface family"
+            )
+
+    provenance_case = case_by_focus.get("provenance_fidelity")
+    if isinstance(provenance_case, dict):
+        refs = _guardrail_case_input_refs(provenance_case)
+        if not any(ref.startswith("examples/provenance_thread.") for ref in refs):
+            errors.append(
+                "provenance_fidelity guardrail case must reference a provenance_thread example"
+            )
+        if not any(ref.startswith("examples/claim.") for ref in refs):
+            errors.append(
+                "provenance_fidelity guardrail case must reference a claim example"
+            )
+        if not any(ref.startswith("examples/bridge.") for ref in refs):
+            errors.append(
+                "provenance_fidelity guardrail case must reference a bridge example"
+            )
+
+    staleness_case = case_by_focus.get("staleness")
+    if isinstance(staleness_case, dict):
+        refs = _guardrail_case_input_refs(staleness_case)
+        required_docs = {
+            "docs/LIFECYCLE.md",
+            "docs/MEMORY_TRUST_POSTURE.md",
+        }
+        missing_docs = sorted(required_docs - refs)
+        if missing_docs:
+            errors.append(
+                "staleness guardrail case must reference lifecycle/trust docs: "
+                + ", ".join(missing_docs)
+            )
+        required_examples = {
+            "examples/claim.current-entrypoint.example.json",
+            "examples/claim.superseded.example.json",
+            "examples/claim.retracted.example.json",
+        }
+        missing_examples = sorted(required_examples - refs)
+        if missing_examples:
+            errors.append(
+                "staleness guardrail case must reference current/superseded/retracted examples: "
+                + ", ".join(missing_examples)
+            )
 
 
 def validate_memory_eval_guardrail_pack() -> None:
@@ -721,17 +999,19 @@ def validate_memory_eval_guardrail_pack() -> None:
 
     seen_case_ids: set[str] = set()
     seen_focuses: set[str] = set()
+    case_by_focus: dict[str, dict[str, object]] = {}
     for case in data.get("cases", []):
         if not isinstance(case, dict):
             continue
         case_id = case.get("case_id")
         focus = case.get("focus")
-        if case_id in seen_case_ids:
-            errors.append(f"duplicate guardrail case id: {case_id}")
         if isinstance(case_id, str):
+            if case_id in seen_case_ids:
+                errors.append(f"duplicate guardrail case id: {case_id}")
             seen_case_ids.add(case_id)
         if isinstance(focus, str):
             seen_focuses.add(focus)
+            case_by_focus[focus] = case
 
     required_focuses = {
         "recall_precision",
@@ -745,6 +1025,8 @@ def validate_memory_eval_guardrail_pack() -> None:
     missing_focuses = sorted(required_focuses - seen_focuses)
     if missing_focuses:
         errors.append("memory_eval_guardrail_pack.example.json is missing required focuses: " + ", ".join(missing_focuses))
+
+    _validate_guardrail_pilot_cases(case_by_focus, errors)
 
     if data.get("handoff_target") != "aoa-evals":
         errors.append("memory_eval_guardrail_pack.example.json must hand off to aoa-evals")
@@ -762,6 +1044,7 @@ def validate_memory_eval_guardrail_pack() -> None:
 
 
 def main() -> int:
+    validate_nested_agents_surface()
     validate_support_schema("memory_object_profile.schema.json")
     validate_support_schema("trust_posture.schema.json")
     validate_support_schema("lifecycle_posture.schema.json")
@@ -792,6 +1075,7 @@ def main() -> int:
     validate_example(validator_for("memory_object.schema.json"), "claim.tos-bridge-ready.example.json")
     validate_example(validator_for("memory_object.schema.json"), "bridge.kag-lift.example.json")
     validate_example(validator_for("inquiry_checkpoint.schema.json"), "inquiry_checkpoint.example.json")
+    validate_example(validator_for("inquiry_checkpoint.schema.json"), "inquiry_checkpoint.return.example.json")
     validate_example(validator_for("provenance_thread.schema.json"), "provenance_thread.example.json")
     validate_example(validator_for("provenance_thread.schema.json"), "checkpoint_improvement_thread.example.json")
     validate_example(validator_for("provenance_thread.schema.json"), "provenance_thread.kag-lift.example.json")
@@ -812,6 +1096,7 @@ def main() -> int:
         expected_preferred_kinds=["claim", "decision", "pattern", "anchor"],
         expected_temperature_order=["warm", "cool", "frozen", "cold", "hot"],
         expected_inspect_surface="generated/memory_catalog.min.json",
+        expected_capsule_surface="generated/memory_capsules.json",
         expected_expand_surface="generated/memory_sections.full.json",
         expected_source_route_required=True,
     )
@@ -842,6 +1127,7 @@ def main() -> int:
         expected_preferred_kinds=["bridge", "claim", "episode", "anchor"],
         expected_temperature_order=["warm", "cool", "frozen", "cold", "hot"],
         expected_inspect_surface="generated/memory_catalog.min.json",
+        expected_capsule_surface="generated/memory_capsules.json",
         expected_expand_surface="generated/memory_sections.full.json",
         expected_source_route_required=True,
     )
@@ -856,12 +1142,32 @@ def main() -> int:
         expected_source_route_required=False,
     )
     validate_recall_contract_example(
+        "recall_contract.object.working.return.json",
+        expected_mode="working",
+        expected_allowed_scopes=["thread", "session", "project"],
+        expected_preferred_kinds=["state_capsule", "decision", "episode", "audit_event", "anchor"],
+        expected_temperature_order=["hot", "warm", "cool", "frozen", "cold"],
+        expected_inspect_surface="generated/memory_object_catalog.min.json",
+        expected_expand_surface="generated/memory_object_sections.full.json",
+        expected_source_route_required=False,
+        expected_checkpoint_continuity_supported=True,
+        expected_return_ready=True,
+        expected_preferred_anchor_kinds=["state_capsule", "decision", "anchor"],
+        expected_support_artifact_refs=[
+            "schemas/inquiry_checkpoint.schema.json",
+            "schemas/checkpoint-to-memory-contract.schema.json",
+            "docs/RUNTIME_WRITEBACK_SEAM.md",
+            "docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
+        ],
+    )
+    validate_recall_contract_example(
         "recall_contract.object.semantic.json",
         expected_mode="semantic",
         expected_allowed_scopes=["repo", "project", "ecosystem"],
         expected_preferred_kinds=["claim", "decision", "pattern", "anchor"],
         expected_temperature_order=["warm", "cool", "frozen", "cold", "hot"],
         expected_inspect_surface="generated/memory_object_catalog.min.json",
+        expected_capsule_surface="generated/memory_object_capsules.json",
         expected_expand_surface="generated/memory_object_sections.full.json",
         expected_source_route_required=True,
     )
@@ -872,6 +1178,7 @@ def main() -> int:
         expected_preferred_kinds=["bridge", "claim", "episode", "anchor"],
         expected_temperature_order=["warm", "cool", "frozen", "cold", "hot"],
         expected_inspect_surface="generated/memory_object_catalog.min.json",
+        expected_capsule_surface="generated/memory_object_capsules.json",
         expected_expand_surface="generated/memory_object_sections.full.json",
         expected_source_route_required=True,
     )
@@ -882,6 +1189,7 @@ def main() -> int:
     validate_checkpoint_to_memory_contract()
     validate_witness_trace_contract()
     validate_bridge_export_contracts()
+    validate_kag_source_export()
     validate_memory_eval_guardrail_pack()
     print("\nValidation completed successfully.")
     return 0

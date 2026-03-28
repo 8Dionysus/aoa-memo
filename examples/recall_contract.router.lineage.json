@@ -21,7 +21,8 @@
     "hot"
   ],
   "inspect_surface": "generated/memory_catalog.min.json",
+  "capsule_surface": "generated/memory_capsules.json",
   "expand_surface": "generated/memory_sections.full.json",
   "source_route_required": true,
-  "notes": "Use for compact inspect-first router lineage flow before opening doctrine sections or stronger external sources."
+  "notes": "Use for router lineage flow that inspects doctrine ids first, hydrates through memo capsules for compact provenance posture, and opens doctrine sections only when the capsule step is insufficient."
 }

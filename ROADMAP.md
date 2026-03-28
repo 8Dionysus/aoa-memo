@@ -11,6 +11,10 @@ Build `aoa-memo` as the explicit memory and recall layer of AoA: small, reviewab
 The repository has already named its role, object canon, schemas, doctrine-facing generated surfaces, object-facing generated surfaces, lifecycle posture, temperature posture, runtime writeback seam, and first bridge/export and guardrail handoff surfaces.
 Object canon, trust/lifecycle posture, and the separate object-facing generated family are now in place.
 The active next slice is neighbor adoption so adjacent repos can consume the sharpened memo contracts without moving routing, role policy, graph normalization, or verdict logic into this repository.
+The first router-first adoption package formalizes additive inspect -> capsule -> expand consumption across the doctrine and object-facing recall families without changing memo ownership.
+The first recurrence-support landing makes checkpoint relaunch anchors and return-ready working recall explicit without changing memo ownership.
+The first downstream eval adoption wave is now explicitly narrowed to recall precision, provenance fidelity, and staleness so `aoa-evals` can pilot memo proof without pretending to cover every guardrail focus at once.
+The next KAG-facing adoption slice publishes one source-owned memo export for `aoa-kag` readiness without widening the live federation spine or `aoa-routing` ABI.
 
 ## Current contract-hardening waves
 
@@ -196,10 +200,12 @@ This roadmap does **not** aim to turn `aoa-memo` into:
 **Deliverables:**
 
 - `docs/KAG_TOS_BRIDGE_CONTRACT.md`
+- `docs/KAG_SOURCE_EXPORT.md`
 - `schemas/memory_chunk_face.schema.json`
 - `schemas/memory_graph_face.schema.json`
 - chunk-face contract for memory inspection
 - graph-face contract for downstream associative lifts
+- `generated/kag_export.min.json`
 - ToS node and fragment bridge guidance
 - `kag_lift_status` and related bridge fields
 - examples of chunk-face and graph-face export
@@ -208,6 +214,7 @@ This roadmap does **not** aim to turn `aoa-memo` into:
 **Exit criteria:**
 
 - `aoa-kag` can consume memory exports cleanly
+- `aoa-kag` can validate the published source-owned memo donor export without activating it in the live federation spine yet
 - ToS relations stay explicit and source-aware
 - the memory layer remains source-preserving rather than graph-theatrical
 
@@ -221,6 +228,7 @@ This roadmap does **not** aim to turn `aoa-memo` into:
 - `schemas/memory_eval_guardrail_pack.schema.json`
 - `examples/memory_eval_guardrail_pack.example.json`
 - memory-focused eval ideas for `aoa-evals`
+- first narrow downstream diagnostic pilot for recall precision, provenance fidelity, and staleness
 - tests for recall precision and provenance fidelity
 - tests for staleness handling and contradiction handling
 - tests for permission leakage and over-promotion
@@ -269,6 +277,7 @@ The cleanest first pull request sequence is:
 Already consumes the live `memo` kind, compact memo catalogs, router-ready doctrine recall contracts, and the current parallel object-facing recall family.
 
 Future routing work should keep those memo-facing hints additive, source-owned, and bounded rather than turning `aoa-routing` into memo authority.
+The current memo-side adoption package now makes the capsule step explicit between inspect and full expansion for both doctrine and object-facing semantic or lineage recall.
 
 ### `aoa-agents`
 
@@ -277,10 +286,12 @@ Needs explicit memory posture fields for read scopes, write scopes, promotion ri
 ### `aoa-kag`
 
 Needs memory exports that are graph-ready but still source- and provenance-aware.
+The current next move is publish-only plus consumer readiness, not live federation activation.
 
 ### `aoa-evals`
 
 Needs bounded checks for recall precision, provenance fidelity, and stale-memory behavior.
+The first adoption wave should stay diagnostic and triad-scoped before the rest of the guardrail focuses are pulled into downstream proof bundles.
 
 ### `abyss-stack`
 

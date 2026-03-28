@@ -54,6 +54,9 @@ Before making changes, read in this order:
 4. any generated memory catalogs, capsules, or registry outputs affected by the task
 5. adjacent README surfaces if the task touches provenance, routing, or agents
 
+When working inside `schemas/`, `examples/`, `generated/`, or `scripts/`, also read the nested `AGENTS.md` in that directory.
+Local guidance sharpens the handling of that surface, but it does not override this file's memory-is-not-proof doctrine.
+
 ## Primary objects
 
 The most important objects in this repository are:
@@ -179,6 +182,7 @@ Summarize:
 Run the validation commands documented in `README.md`.
 
 If catalogs, capsules, or other generated memory surfaces changed, regenerate and validate them before finishing.
+`python scripts/validate_memo.py` also checks the local guidance surfaces in `schemas/`, `examples/`, `generated/`, and `scripts/`.
 
 Do not claim checks you did not run.
 
