@@ -17,6 +17,7 @@ Keep the current split clear:
 - `validate_memo.py` is the canonical memory-layer validator and now also checks nested guidance surfaces
 - `validate_memory_surfaces.py` checks the doctrine family under `generated/` plus router-facing recall contracts
 - `generate_memory_object_surfaces.py` rebuilds the object-facing family from curated examples
+- `generate_kag_export.py` rebuilds the source-owned memo KAG export capsule
 - `validate_memory_object_surfaces.py` checks manifest coverage, determinism, lifecycle integrity, and object-facing recall contracts
 - `validate_lifecycle_audit_examples.py` checks lifecycle, provenance-thread, and audit-event example integrity
 - `validate_nested_agents.py` checks that local guidance files stay present and explicit
@@ -29,6 +30,7 @@ When editing scripts here:
 - keep error messages specific and reviewable
 - do not silently widen repository ownership from memory semantics into routing, proof, or runtime policy
 - keep generator behavior deterministic
+- keep KAG export generation source-owned and bridge-focused rather than widening into a graph substrate pack
 - avoid adding hidden network calls, secret handling, or environment-specific assumptions
 
 If a validator starts depending on a new contract, update the matching nested `AGENTS.md`, examples, schemas, and generated surfaces together.
@@ -52,4 +54,5 @@ If generator logic changed, also run:
 
 ```bash
 python scripts/generate_memory_object_surfaces.py
+python scripts/generate_kag_export.py
 ```

@@ -13,6 +13,8 @@ The current recall entrypoints for this surface are `examples/recall_contract.li
 This memo-side contract works beside:
 
 - `aoa-kag/docs/BRIDGE_CONTRACTS.md` for derived bridge coordination
+- `docs/KAG_SOURCE_EXPORT.md` for the source-owned memo donor export that stays
+  narrower than the current bridge faces
 - `aoa-kag/schemas/bridge-envelope.schema.json` and `aoa-kag/examples/aoa_tos_bridge_envelope.example.json` for the shared cross-repo linkage object
 - `schemas/bridge.schema.json` for the memo-side bridge object
 - `schemas/memory_chunk_face.schema.json` and `schemas/memory_graph_face.schema.json` for downstream export faces
@@ -24,6 +26,8 @@ Export bridge faces later.
 
 The memory object remains the reviewable authored/core surface.
 Chunk and graph faces remain bridge-oriented handoff surfaces rather than replacements for the source memory object.
+The source-owned memo KAG export remains a separate tiny donor capsule and does
+not replace those faces.
 
 ## Chunk Face Contract
 
@@ -116,6 +120,9 @@ The current example bundle for this flow is:
 - `examples/recall_contract.router.lineage.json`
 
 The bridge example keeps an explicit `shared_envelope_ref` back to the KAG-owned linkage surface.
+The current source-owned memo export points at the same donor bridge object, but
+it remains publish-only until a later federation activation package widens the
+live spine deliberately.
 
 ## What This Contract Does Not Do
 

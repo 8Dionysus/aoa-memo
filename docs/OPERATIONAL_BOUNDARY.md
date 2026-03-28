@@ -43,6 +43,9 @@ Keep rights policy, handoff posture, and actor doctrine outside this repository.
 ### `aoa-kag`
 
 Consume bridge objects, chunk faces, graph faces, and provenance-aware exports.
+The current memo-owned KAG export is publish-only and readiness-oriented in this
+slice; it does not activate `aoa-memo` inside the live `aoa-kag`
+`federation_spine`.
 Keep normalized substrate formation and framework adapters outside this repository.
 
 ### `abyss-stack`

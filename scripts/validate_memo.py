@@ -11,6 +11,7 @@ from __future__ import annotations
 import json
 from datetime import datetime
 from functools import lru_cache
+import os
 from pathlib import Path
 import re
 import sys
@@ -52,6 +53,20 @@ CORE_KIND_EXAMPLE_MAP = {
     "pattern": "pattern.example.json",
     "bridge": "bridge.kag-lift.example.json",
     "audit_event": "audit_event.supersession.example.json",
+}
+KAG_EXPORT_REQUIRED_FIELDS = {
+    "owner_repo",
+    "kind",
+    "object_id",
+    "primary_question",
+    "summary_50",
+    "summary_200",
+    "source_inputs",
+    "entry_surface",
+    "section_handles",
+    "direct_relations",
+    "provenance_note",
+    "non_identity_boundary",
 }
 
 
@@ -422,6 +437,8 @@ def validate_registry() -> None:
     for schema_ref in sorted(expected_schemas):
         if schema_ref not in data.get("schemas", []):
             errors.append(f"generated/memo_registry.min.json must list {schema_ref}")
+    if "docs/KAG_SOURCE_EXPORT.md" not in data.get("core_docs", []):
+        errors.append("generated/memo_registry.min.json must list docs/KAG_SOURCE_EXPORT.md")
 
     families = {
         item.get("family"): item
@@ -432,6 +449,8 @@ def validate_registry() -> None:
         errors.append("generated/memo_registry.min.json must publish doctrine generated_surface_families entry")
     if "memory_objects" not in families:
         errors.append("generated/memo_registry.min.json must publish memory_objects generated_surface_families entry")
+    if "kag_export" not in families:
+        errors.append("generated/memo_registry.min.json must publish kag_export generated_surface_families entry")
 
     doctrine = families.get("doctrine", {})
     doctrine_outputs = [
@@ -464,6 +483,16 @@ def validate_registry() -> None:
         errors.append("memory_objects generated_surface_families entry must keep generator_command python scripts/generate_memory_object_surfaces.py")
     if memory_objects.get("validator_command") != "python scripts/validate_memory_object_surfaces.py":
         errors.append("memory_objects generated_surface_families entry must keep validator_command python scripts/validate_memory_object_surfaces.py")
+
+    kag_export = families.get("kag_export", {})
+    if kag_export.get("source_of_truth") != "aoa-memo-kag-source-export-v1":
+        errors.append("kag_export generated_surface_families entry must keep source_of_truth aoa-memo-kag-source-export-v1")
+    if kag_export.get("outputs") != ["generated/kag_export.min.json"]:
+        errors.append("kag_export generated_surface_families entry must list generated/kag_export.min.json")
+    if kag_export.get("generator_command") != "python scripts/generate_kag_export.py":
+        errors.append("kag_export generated_surface_families entry must keep generator_command python scripts/generate_kag_export.py")
+    if kag_export.get("validator_command") != "python scripts/validate_memo.py":
+        errors.append("kag_export generated_surface_families entry must keep validator_command python scripts/validate_memo.py")
 
     for family_name, family in families.items():
         manifest = family.get("manifest")
@@ -778,6 +807,88 @@ def validate_bridge_export_contracts() -> None:
     print("[OK]   bridge export contract surfaces")
 
 
+def validate_kag_source_export() -> None:
+    try:
+        from generate_kag_export import KAG_EXPORT_PATH, build_kag_export_payload
+    except Exception as exc:  # pragma: no cover - defensive wiring guard
+        print("[FAIL] generated/kag_export.min.json")
+        print(f"  - unable to load KAG export generator: {exc}")
+        raise SystemExit(1) from exc
+
+    errors: list[str] = []
+    expected_payload = build_kag_export_payload()
+    if not KAG_EXPORT_PATH.exists():
+        errors.append("generated/kag_export.min.json must exist")
+        actual_payload = {}
+    else:
+        actual_payload = load_json(KAG_EXPORT_PATH)
+
+    if actual_payload != expected_payload:
+        errors.append("generated/kag_export.min.json must match the committed generator-backed payload")
+
+    missing_fields = sorted(KAG_EXPORT_REQUIRED_FIELDS - set(actual_payload))
+    if missing_fields:
+        errors.append(
+            "generated/kag_export.min.json is missing required fields: "
+            + ", ".join(missing_fields)
+        )
+
+    append_ref_errors(
+        errors,
+        [
+            ("kag_export.entry_surface.path", actual_payload.get("entry_surface", {}).get("path")),
+        ]
+        + [
+            (f"kag_export.direct_relations[{index}].target_ref", relation.get("target_ref"))
+            for index, relation in enumerate(actual_payload.get("direct_relations", []))
+            if isinstance(relation, dict)
+        ],
+    )
+
+    source_inputs = actual_payload.get("source_inputs")
+    if not isinstance(source_inputs, list) or len(source_inputs) != 2:
+        errors.append("generated/kag_export.min.json must keep exactly two source_inputs")
+    else:
+        expected_source_inputs = expected_payload["source_inputs"]
+        if source_inputs != expected_source_inputs:
+            errors.append("generated/kag_export.min.json must keep the memo-primary / ToS-supporting source_inputs split")
+
+    if actual_payload.get("section_handles") != expected_payload["section_handles"]:
+        errors.append("generated/kag_export.min.json must keep the canonical bridge section_handles")
+    if actual_payload.get("direct_relations") != expected_payload["direct_relations"]:
+        errors.append("generated/kag_export.min.json must keep the narrow claim/episode/ToS direct_relations trio")
+
+    kag_root_text = os.environ.get("AOA_KAG_ROOT")
+    if kag_root_text:
+        kag_root = Path(kag_root_text).expanduser().resolve()
+        schema_path = kag_root / "schemas" / "federation-kag-export.schema.json"
+        if not schema_path.exists():
+            errors.append(
+                f"AOA_KAG_ROOT canonical schema path does not exist: {schema_path}"
+            )
+        else:
+            schema = load_json(schema_path)
+            validator = Draft202012Validator(schema, format_checker=FORMAT_CHECKER)
+            schema_errors = [
+                f"{'.'.join(str(part) for part in err.absolute_path) or '<root>'}: {err.message}"
+                for err in sorted(
+                    validator.iter_errors(actual_payload),
+                    key=lambda err: list(err.absolute_path),
+                )
+            ]
+            errors.extend(
+                f"AOA_KAG_ROOT federation-kag-export.schema.json -> {message}"
+                for message in schema_errors
+            )
+
+    if errors:
+        print("[FAIL] generated/kag_export.min.json")
+        for err in errors:
+            print(f"  - {err}")
+        raise SystemExit(1)
+    print("[OK]   generated/kag_export.min.json")
+
+
 def _guardrail_case_input_refs(case: dict[str, object]) -> set[str]:
     values = case.get("input_refs", [])
     if not isinstance(values, list):
@@ -1078,6 +1189,7 @@ def main() -> int:
     validate_checkpoint_to_memory_contract()
     validate_witness_trace_contract()
     validate_bridge_export_contracts()
+    validate_kag_source_export()
     validate_memory_eval_guardrail_pack()
     print("\nValidation completed successfully.")
     return 0

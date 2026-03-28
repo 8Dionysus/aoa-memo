@@ -17,6 +17,7 @@ if str(SCRIPTS_ROOT) not in sys.path:
 import validate_memo
 import validate_memory_object_surfaces
 import validate_memory_surfaces
+import generate_kag_export
 
 
 def load_json(path: Path) -> object:
@@ -47,6 +48,23 @@ class MemoValidatorTestCase(unittest.TestCase):
 
         with patch.object(validate_memo, "load_json", side_effect=side_effect):
             self.assert_system_exit_quietly(validate_memo.validate_memory_eval_guardrail_pack)
+
+    def kag_export_payload(self) -> dict:
+        payload = load_json(generate_kag_export.KAG_EXPORT_PATH)
+        assert isinstance(payload, dict)
+        return copy.deepcopy(payload)
+
+    def assert_kag_export_payload_fails(self, payload: dict) -> None:
+        export_path = generate_kag_export.KAG_EXPORT_PATH
+        original_load_json = validate_memo.load_json
+
+        def side_effect(path: Path) -> dict:
+            if Path(path) == export_path:
+                return copy.deepcopy(payload)
+            return original_load_json(path)
+
+        with patch.object(validate_memo, "load_json", side_effect=side_effect):
+            self.assert_system_exit_quietly(validate_memo.validate_kag_source_export)
 
     def test_inquiry_checkpoint_return_example_validates(self) -> None:
         validator = validate_memo.validator_for("inquiry_checkpoint.schema.json")
@@ -205,6 +223,34 @@ class MemoValidatorTestCase(unittest.TestCase):
         payload = self.guardrail_payload()
         payload["cases"][2]["focus"] = "staleness_shadow"
         self.assert_guardrail_payload_fails(payload)
+
+    def test_kag_export_validator_rejects_wrong_owner_repo(self) -> None:
+        payload = self.kag_export_payload()
+        payload["owner_repo"] = "aoa-kag"
+        self.assert_kag_export_payload_fails(payload)
+
+    def test_kag_export_validator_rejects_wrong_entry_surface(self) -> None:
+        payload = self.kag_export_payload()
+        payload["entry_surface"]["path"] = "generated/memory_object_sections.full.json"
+        self.assert_kag_export_payload_fails(payload)
+
+    def test_kag_export_validator_rejects_missing_tos_supporting_input(self) -> None:
+        payload = self.kag_export_payload()
+        payload["source_inputs"] = [payload["source_inputs"][0]]
+        self.assert_kag_export_payload_fails(payload)
+
+    def test_kag_export_validator_rejects_wrong_section_handles(self) -> None:
+        payload = self.kag_export_payload()
+        payload["section_handles"] = [
+            "identity-and-recall",
+            "bridges-and-access",
+        ]
+        self.assert_kag_export_payload_fails(payload)
+
+    def test_kag_export_validator_rejects_missing_required_direct_relation(self) -> None:
+        payload = self.kag_export_payload()
+        payload["direct_relations"] = payload["direct_relations"][:-1]
+        self.assert_kag_export_payload_fails(payload)
 
     def test_return_ready_recall_contract_validates(self) -> None:
         with io.StringIO() as stdout, io.StringIO() as stderr:
