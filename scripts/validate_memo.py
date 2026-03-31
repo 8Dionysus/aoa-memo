@@ -3,7 +3,8 @@
 
 This script is intentionally small and honest. It validates the current example
 objects against the local JSON schemas, checks the local artifact refs they
-expose, and performs a light structural check on `generated/memo_registry.min.json`.
+expose, validates the compact questbook writeback surface, and performs a light
+structural check on `generated/memo_registry.min.json`.
 """
 
 from __future__ import annotations
@@ -23,10 +24,22 @@ except ImportError as exc:  # pragma: no cover
     print("Missing dependency: jsonschema. Install it with: pip install jsonschema")
     raise SystemExit(2) from exc
 
+try:
+    import yaml
+except ImportError as exc:  # pragma: no cover
+    print("Missing dependency: PyYAML. Install it with: pip install PyYAML")
+    raise SystemExit(2) from exc
+
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMAS = ROOT / "schemas"
 EXAMPLES = ROOT / "examples"
 GENERATED = ROOT / "generated"
+QUESTBOOK_PATH = ROOT / "QUESTBOOK.md"
+QUESTBOOK_DOC = ROOT / "docs" / "QUEST_EVIDENCE_WRITEBACK.md"
+QUESTBOOK_FILES = {
+    "AOA-MEM-Q-0001": ROOT / "quests" / "AOA-MEM-Q-0001.yaml",
+    "AOA-MEM-Q-0002": ROOT / "quests" / "AOA-MEM-Q-0002.yaml",
+}
 FORMAT_CHECKER = FormatChecker()
 RFC3339_DATETIME = re.compile(
     r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$"
@@ -88,9 +101,70 @@ def validate_nested_agents_surface() -> None:
     print("[OK]   nested AGENTS docs")
 
 
+def validate_questbook_surface() -> None:
+    errors: list[str] = []
+    required_paths = [QUESTBOOK_PATH, QUESTBOOK_DOC, *QUESTBOOK_FILES.values()]
+    for path in required_paths:
+        if not path.exists():
+            errors.append(f"missing file: {path.relative_to(ROOT)}")
+
+    if QUESTBOOK_PATH.exists():
+        questbook_text = load_text(QUESTBOOK_PATH)
+        for quest_id in QUESTBOOK_FILES:
+            if quest_id not in questbook_text:
+                errors.append(f"QUESTBOOK.md must reference {quest_id}")
+
+    if QUESTBOOK_DOC.exists():
+        doc_text = load_text(QUESTBOOK_DOC)
+        if "WRITEBACK_TEMPERATURE_POLICY.md" not in doc_text:
+            errors.append("docs/QUEST_EVIDENCE_WRITEBACK.md must stay anchored to docs/WRITEBACK_TEMPERATURE_POLICY.md")
+        lower_doc = doc_text.lower()
+        for phrase in (
+            "quest state remains source-owned",
+            "good writeback candidates",
+            "bad writeback candidates",
+            "witness trace posture",
+        ):
+            if phrase not in lower_doc:
+                errors.append(f"docs/QUEST_EVIDENCE_WRITEBACK.md must mention {phrase}")
+
+    for quest_id, path in QUESTBOOK_FILES.items():
+        if not path.exists():
+            continue
+        data = load_yaml(path)
+        if not isinstance(data, dict):
+            errors.append(f"{path.relative_to(ROOT)} must parse to a mapping")
+            continue
+        if data.get("schema_version") != "work_quest_v1":
+            errors.append(f"{path.relative_to(ROOT)} must keep schema_version work_quest_v1")
+        if data.get("repo") != "aoa-memo":
+            errors.append(f"{path.relative_to(ROOT)} must keep repo aoa-memo")
+        if data.get("id") != quest_id:
+            errors.append(f"{path.relative_to(ROOT)} must keep id {quest_id}")
+        if data.get("owner_surface") != "docs/QUEST_EVIDENCE_WRITEBACK.md":
+            errors.append(f"{path.relative_to(ROOT)} must keep owner_surface docs/QUEST_EVIDENCE_WRITEBACK.md")
+        if data.get("public_safe") is not True:
+            errors.append(f"{path.relative_to(ROOT)} must keep public_safe true")
+
+    if errors:
+        print("[FAIL] questbook writeback surface")
+        for err in errors:
+            print(f"  - {err}")
+        raise SystemExit(1)
+    print("[OK]   questbook writeback surface")
+
+
 def load_json(path: Path) -> dict:
     with path.open("r", encoding="utf-8") as handle:
         return json.load(handle)
+
+
+def load_text(path: Path) -> str:
+    return path.read_text(encoding="utf-8")
+
+
+def load_yaml(path: Path) -> object:
+    return yaml.safe_load(load_text(path))
 
 
 @FORMAT_CHECKER.checks("date-time")
@@ -1191,6 +1265,7 @@ def main() -> int:
     validate_bridge_export_contracts()
     validate_kag_source_export()
     validate_memory_eval_guardrail_pack()
+    validate_questbook_surface()
     print("\nValidation completed successfully.")
     return 0
 

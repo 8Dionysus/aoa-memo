@@ -66,6 +66,11 @@ class MemoValidatorTestCase(unittest.TestCase):
         with patch.object(validate_memo, "load_json", side_effect=side_effect):
             self.assert_system_exit_quietly(validate_memo.validate_kag_source_export)
 
+    def questbook_payload(self, quest_id: str) -> dict:
+        payload = load_json(REPO_ROOT / "quests" / f"{quest_id}.yaml")
+        assert isinstance(payload, dict)
+        return copy.deepcopy(payload)
+
     def test_inquiry_checkpoint_return_example_validates(self) -> None:
         validator = validate_memo.validator_for("inquiry_checkpoint.schema.json")
         payload = load_json(REPO_ROOT / "examples" / "inquiry_checkpoint.return.example.json")
@@ -169,6 +174,52 @@ class MemoValidatorTestCase(unittest.TestCase):
 
         with patch.object(validate_memo, "load_json", side_effect=side_effect):
             self.assert_system_exit_quietly(validate_memo.validate_checkpoint_to_memory_contract)
+
+    def test_questbook_surface_validates(self) -> None:
+        with io.StringIO() as stdout, io.StringIO() as stderr:
+            with redirect_stdout(stdout), redirect_stderr(stderr):
+                validate_memo.validate_questbook_surface()
+
+    def test_questbook_surface_rejects_missing_tracked_reference(self) -> None:
+        questbook_path = validate_memo.QUESTBOOK_PATH
+        original_load_text = validate_memo.load_text
+
+        def side_effect(path: Path) -> str:
+            text = original_load_text(path)
+            if Path(path) == questbook_path:
+                return text.replace("AOA-MEM-Q-0002", "AOA-MEM-Q-9999")
+            return text
+
+        with patch.object(validate_memo, "load_text", side_effect=side_effect):
+            self.assert_system_exit_quietly(validate_memo.validate_questbook_surface)
+
+    def test_questbook_surface_rejects_source_owned_boundary_phrase_loss(self) -> None:
+        doc_path = validate_memo.QUESTBOOK_DOC
+        original_load_text = validate_memo.load_text
+
+        def side_effect(path: Path) -> str:
+            text = original_load_text(path)
+            if Path(path) == doc_path:
+                return text.replace("quest state remains source-owned", "quest state remains external")
+            return text
+
+        with patch.object(validate_memo, "load_text", side_effect=side_effect):
+            self.assert_system_exit_quietly(validate_memo.validate_questbook_surface)
+
+    def test_questbook_surface_rejects_quest_id_mismatch(self) -> None:
+        quest_path = validate_memo.ROOT / "quests" / "AOA-MEM-Q-0002.yaml"
+        original_load_yaml = validate_memo.load_yaml
+
+        def side_effect(path: Path) -> object:
+            payload = original_load_yaml(path)
+            if Path(path) == quest_path:
+                assert isinstance(payload, dict)
+                payload = copy.deepcopy(payload)
+                payload["id"] = "AOA-MEM-Q-9999"
+            return payload
+
+        with patch.object(validate_memo, "load_yaml", side_effect=side_effect):
+            self.assert_system_exit_quietly(validate_memo.validate_questbook_surface)
 
     def test_guardrail_validator_handles_non_string_case_ids_without_type_error(self) -> None:
         payload = self.guardrail_payload()
