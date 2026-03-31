@@ -1,0 +1,29 @@
+schema_version: work_quest_v1
+repo: aoa-memo
+id: AOA-MEM-Q-0001
+title: Define quest evidence writeback boundaries
+kind: memory
+state: ready
+band: frontier
+priority: now
+difficulty: d3_seam
+risk: r1_repo_local
+control_mode: codex_supervised
+delegate_tier: planner
+fallback_tier: verifier
+wrapper_class: codex_primary
+write_scope: docs_only
+split_required: true
+public_safe: true
+owner_surface: docs/QUEST_EVIDENCE_WRITEBACK.md
+anchor_ref: docs/WRITEBACK_TEMPERATURE_POLICY.md
+evidence:
+  - docs/QUEST_EVIDENCE_WRITEBACK.md states the quest state remains source-owned boundary.
+  - docs/WRITEBACK_TEMPERATURE_POLICY.md stays the anchor for temperature and writeback posture.
+notes:
+  - Quest evidence must stay reviewable without turning memo into quest ownership.
+tags:
+  - questbook
+  - writeback
+  - evidence
+  - boundary

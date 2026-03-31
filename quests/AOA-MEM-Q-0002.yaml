@@ -1,0 +1,30 @@
+schema_version: work_quest_v1
+repo: aoa-memo
+id: AOA-MEM-Q-0002
+title: Define compact witness trace posture for memo recall
+kind: memory
+state: captured
+band: near
+priority: next
+difficulty: d2_slice
+risk: r1_repo_local
+control_mode: codex_supervised
+delegate_tier: archivist
+fallback_tier: verifier
+wrapper_class: local_builder
+write_scope: repo_local
+split_required: false
+public_safe: true
+owner_surface: docs/QUEST_EVIDENCE_WRITEBACK.md
+anchor_ref: docs/QUEST_EVIDENCE_WRITEBACK.md
+evidence:
+  - docs/QUEST_EVIDENCE_WRITEBACK.md names witness trace posture without expanding the contract.
+  - The witness-trace example file is intentionally absent in this pass.
+notes:
+  - Track only until the later compact example pass is explicitly opened.
+  - Do not add the witness-trace example file yet.
+tags:
+  - questbook
+  - witness-trace
+  - recall
+  - boundary
