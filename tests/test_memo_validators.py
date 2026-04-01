@@ -221,6 +221,29 @@ class MemoValidatorTestCase(unittest.TestCase):
         with patch.object(validate_memo, "load_yaml", side_effect=side_effect):
             self.assert_system_exit_quietly(validate_memo.validate_questbook_surface)
 
+    def test_questbook_surface_accepts_additive_chronicle_quest(self) -> None:
+        with io.StringIO() as stdout, io.StringIO() as stderr:
+            with redirect_stdout(stdout), redirect_stderr(stderr):
+                validate_memo.validate_questbook_surface()
+
+    def test_questbook_surface_rejects_missing_additive_anchor_doc(self) -> None:
+        quest_path = validate_memo.ROOT / "quests" / "AOA-MEM-Q-0003.yaml"
+        original_load_yaml = validate_memo.load_yaml
+
+        def side_effect(path: Path) -> object:
+            payload = original_load_yaml(path)
+            if Path(path) == quest_path:
+                assert isinstance(payload, dict)
+                payload = copy.deepcopy(payload)
+                payload["anchor_ref"] = {
+                    "artifact": "quest_chronicle_writeback",
+                    "ref": "docs/DOES_NOT_EXIST.md",
+                }
+            return payload
+
+        with patch.object(validate_memo, "load_yaml", side_effect=side_effect):
+            self.assert_system_exit_quietly(validate_memo.validate_questbook_surface)
+
     def test_guardrail_validator_handles_non_string_case_ids_without_type_error(self) -> None:
         payload = self.guardrail_payload()
         payload["cases"][0]["case_id"] = []

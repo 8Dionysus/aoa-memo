@@ -20,17 +20,18 @@ If you are new to this repository, use this path:
 7. Read [docs/NARRATIVE_CORE_CONTRACT](docs/NARRATIVE_CORE_CONTRACT.md) for the authored/core-memory versus derived-memory split.
 8. Read [docs/WITNESS_TRACE_CONTRACT](docs/WITNESS_TRACE_CONTRACT.md) for the current witness trace export contract.
 9. Read [docs/WRITEBACK_TEMPERATURE_POLICY](docs/WRITEBACK_TEMPERATURE_POLICY.md) for memo-surviving versus bridge-ready writeback posture.
-10. Read [docs/RUNTIME_WRITEBACK_SEAM](docs/RUNTIME_WRITEBACK_SEAM.md) for the bounded runtime-to-memo writeback mapping.
-11. Read [docs/RECURRENCE_MEMORY_SUPPORT_SURFACES](docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md) for the memo-side checkpoint, anchor, and recall surfaces that support recurrence without moving routing or runtime policy here.
-12. Read [docs/AGENT_MEMORY_POSTURE_SEAM](docs/AGENT_MEMORY_POSTURE_SEAM.md) for the memo-side posture fields that `aoa-agents` may consume without moving role policy here.
-13. Read [docs/PLAYBOOK_MEMORY_SCOPES](docs/PLAYBOOK_MEMORY_SCOPES.md) for playbook-facing memory scope and recall-mode guidance.
-14. Read [docs/KAG_TOS_BRIDGE_CONTRACT](docs/KAG_TOS_BRIDGE_CONTRACT.md) for the current chunk-face, graph-face, and ToS-bridge contract.
-15. Read [docs/KAG_SOURCE_EXPORT](docs/KAG_SOURCE_EXPORT.md) for the source-owned memo donor export that `aoa-kag` may validate and later consume.
-16. Read [docs/MEMORY_EVAL_GUARDRAILS](docs/MEMORY_EVAL_GUARDRAILS.md) for the memo-side guardrail handoff surface to `aoa-evals`.
-17. Read [docs/OPERATIONAL_BOUNDARY](docs/OPERATIONAL_BOUNDARY.md) for the stable v1-facing consumer and runtime split.
-18. Read [docs/BOUNDARIES](docs/BOUNDARIES.md) for ownership rules.
-19. Read [ROADMAP](ROADMAP.md) for the current direction.
-20. Read [docs/ROUTING_MEMORY_ADOPTION](docs/ROUTING_MEMORY_ADOPTION.md) for the additive inspect -> capsule -> expand router-facing adoption flow.
+10. Read [docs/QUEST_CHRONICLE_WRITEBACK](docs/QUEST_CHRONICLE_WRITEBACK.md) for the adjunct chronicle witness surface.
+11. Read [docs/RUNTIME_WRITEBACK_SEAM](docs/RUNTIME_WRITEBACK_SEAM.md) for the bounded runtime-to-memo writeback mapping.
+12. Read [docs/RECURRENCE_MEMORY_SUPPORT_SURFACES](docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md) for the memo-side checkpoint, anchor, and recall surfaces that support recurrence without moving routing or runtime policy here.
+13. Read [docs/AGENT_MEMORY_POSTURE_SEAM](docs/AGENT_MEMORY_POSTURE_SEAM.md) for the memo-side posture fields that `aoa-agents` may consume without moving role policy here.
+14. Read [docs/PLAYBOOK_MEMORY_SCOPES](docs/PLAYBOOK_MEMORY_SCOPES.md) for playbook-facing memory scope and recall-mode guidance.
+15. Read [docs/KAG_TOS_BRIDGE_CONTRACT](docs/KAG_TOS_BRIDGE_CONTRACT.md) for the current chunk-face, graph-face, and ToS-bridge contract.
+16. Read [docs/KAG_SOURCE_EXPORT](docs/KAG_SOURCE_EXPORT.md) for the source-owned memo donor export that `aoa-kag` may validate and later consume.
+17. Read [docs/MEMORY_EVAL_GUARDRAILS](docs/MEMORY_EVAL_GUARDRAILS.md) for the memo-side guardrail handoff surface to `aoa-evals`.
+18. Read [docs/OPERATIONAL_BOUNDARY](docs/OPERATIONAL_BOUNDARY.md) for the stable v1-facing consumer and runtime split.
+19. Read [docs/BOUNDARIES](docs/BOUNDARIES.md) for ownership rules.
+20. Read [ROADMAP](ROADMAP.md) for the current direction.
+21. Read [docs/ROUTING_MEMORY_ADOPTION](docs/ROUTING_MEMORY_ADOPTION.md) for the additive inspect -> capsule -> expand router-facing adoption flow.
 
 For concrete recall entrypoints, inspect:
 - `examples/recall_contract.working.json`
@@ -153,6 +154,7 @@ It also checks the chunk-face and graph-face bridge export surfaces, all public 
 
 The witness trace contract is validated there as a trace export surface, not as a new memory-object kind.
 The inquiry checkpoint contract is validated there as a portable long-horizon checkpoint pack, not as a new memory-object kind.
+The adjunct quest chronicle surface is validated as a witness-only memo seam, not as a second quest authority or runtime ledger.
 
 ## Current status
 

@@ -4,7 +4,7 @@ This questbook tracks memory-layer obligations related to quest evidence and wri
 
 ## Frontier
 
-- none yet
+- `AOA-MEM-Q-0003` - define a quest chronicle writeback surface for campaign witness and progression evidence
 
 ## Near
 

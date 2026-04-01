@@ -1,0 +1,49 @@
+schema_version: work_quest_v1
+id: AOA-MEM-Q-0003
+title: Define a quest chronicle writeback surface for campaign witness and progression evidence
+summary: Add a compact chronicle object for recallable lane witness without turning memo into quest ownership or runtime state.
+repo: aoa-memo
+owner_surface: memo/quest-chronicle
+theme_ref: ''
+milestone_ref: ''
+kind: memory
+state: captured
+band: frontier
+difficulty: d2_slice
+risk: r1_repo_local
+control_mode: codex_supervised
+delegate_tier: archivist
+fallback_tier: verifier
+wrapper_class: local_builder
+write_scope: repo_local
+split_required: false
+complexity_basis:
+  scope: 1
+  ambiguity: 1
+  boundary: 2
+  verification: 1
+parent: null
+depends_on: []
+activation:
+  mode: manual
+  note: open when the first bounded chronicle slice is ready to land
+anchor_ref:
+  artifact: quest_chronicle_writeback
+  ref: docs/QUEST_CHRONICLE_WRITEBACK.md
+  note: chronicle must remain witness-shaped and provenance-aware
+handoff_role: memo-maintainer
+evidence:
+  - chronicle stays distinct from source quest state
+  - stage witness posture is explicit
+  - temperature posture is explicit
+harvest:
+  target: memo
+opened_at: '2026-04-01'
+touched_at: '2026-04-01'
+tags:
+  - chronicle
+  - witness
+  - recall
+notes: >
+  Do not let chronicle objects become player sheets, run ledgers, or copied quest authority surfaces.
+public_safe: true
