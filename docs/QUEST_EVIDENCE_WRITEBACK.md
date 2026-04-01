@@ -47,3 +47,9 @@ The quest state remains source-owned. `aoa-memo` keeps the recallable witness of
 - keep the source repo link visible
 - if the memory cannot be described without taking over source state, keep it source-owned
 - memo should preserve evidence, not become the quest owner
+
+## Manual-first pilot writeback
+
+- The March 31 manual-first questbook pilot records one compact writeback note at [QUESTBOOK_MANUAL_FIRST_WRITEBACK.md](QUESTBOOK_MANUAL_FIRST_WRITEBACK.md).
+- That note keeps provenance across `aoa-techniques`, `aoa-skills`, `aoa-evals`, `aoa-playbooks`, and `Dionysus` without copying source-owned quest state into memo truth.
+- It is evidence for recall and archivist handoff, not a second quest authority surface.
