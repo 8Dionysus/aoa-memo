@@ -215,6 +215,46 @@ class MemoValidatorTestCase(unittest.TestCase):
         with patch.object(validate_memo, "load_json", side_effect=side_effect):
             self.assert_system_exit_quietly(validate_memo.validate_runtime_writeback_targets)
 
+    def test_runtime_writeback_intake_surface_validates(self) -> None:
+        with io.StringIO() as stdout, io.StringIO() as stderr:
+            with redirect_stdout(stdout), redirect_stderr(stderr):
+                validate_memo.validate_runtime_writeback_intake()
+
+    def test_runtime_writeback_intake_surface_rejects_owner_review_ref_drift(self) -> None:
+        intake_path = validate_memo.RUNTIME_WRITEBACK_INTAKE_PATH
+        original_load_json = validate_memo.load_json
+        payload = load_json(intake_path)
+        assert isinstance(payload, dict)
+        payload = copy.deepcopy(payload)
+        payload["targets"][0]["owner_review_refs"] = ["docs/RUNTIME_WRITEBACK_SEAM.md"]
+
+        def side_effect(path: Path) -> dict:
+            if Path(path) == intake_path:
+                return copy.deepcopy(payload)
+            return original_load_json(path)
+
+        with patch.object(validate_memo, "load_json", side_effect=side_effect):
+            self.assert_system_exit_quietly(validate_memo.validate_runtime_writeback_intake)
+
+    def test_runtime_writeback_intake_surface_rejects_reviewed_candidate_posture_drift(self) -> None:
+        intake_path = validate_memo.RUNTIME_WRITEBACK_INTAKE_PATH
+        original_load_json = validate_memo.load_json
+        payload = load_json(intake_path)
+        assert isinstance(payload, dict)
+        payload = copy.deepcopy(payload)
+        for item in payload["targets"]:
+            if item["runtime_surface"] == "distillation_claim_candidate":
+                item["intake_posture"] = "capturable_runtime_export"
+                break
+
+        def side_effect(path: Path) -> dict:
+            if Path(path) == intake_path:
+                return copy.deepcopy(payload)
+            return original_load_json(path)
+
+        with patch.object(validate_memo, "load_json", side_effect=side_effect):
+            self.assert_system_exit_quietly(validate_memo.validate_runtime_writeback_intake)
+
     def test_questbook_surface_validates(self) -> None:
         with io.StringIO() as stdout, io.StringIO() as stderr:
             with redirect_stdout(stdout), redirect_stderr(stderr):

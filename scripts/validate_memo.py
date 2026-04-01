@@ -36,6 +36,7 @@ SCHEMAS = ROOT / "schemas"
 EXAMPLES = ROOT / "examples"
 GENERATED = ROOT / "generated"
 RUNTIME_WRITEBACK_TARGETS_PATH = GENERATED / "runtime_writeback_targets.min.json"
+RUNTIME_WRITEBACK_INTAKE_PATH = GENERATED / "runtime_writeback_intake.min.json"
 QUESTBOOK_PATH = ROOT / "QUESTBOOK.md"
 QUESTBOOK_DOC = ROOT / "docs" / "QUEST_EVIDENCE_WRITEBACK.md"
 FOUNDATION_QUESTBOOK_FILES = {
@@ -96,6 +97,21 @@ def load_runtime_writeback_targets_builder():
     if spec is None or spec.loader is None:
         print("[FAIL] runtime_writeback_targets.min.json")
         print("  - unable to load runtime writeback target generator")
+        raise SystemExit(1)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_runtime_writeback_intake_builder():
+    module_path = ROOT / "scripts" / "generate_runtime_writeback_intake.py"
+    spec = importlib.util.spec_from_file_location(
+        "generate_runtime_writeback_intake",
+        module_path,
+    )
+    if spec is None or spec.loader is None:
+        print("[FAIL] runtime_writeback_intake.min.json")
+        print("  - unable to load runtime writeback intake generator")
         raise SystemExit(1)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
@@ -956,6 +972,110 @@ def validate_runtime_writeback_targets() -> None:
     print("[OK]   runtime_writeback_targets.min.json")
 
 
+def validate_runtime_writeback_intake() -> None:
+    builder = load_runtime_writeback_intake_builder()
+    expected = builder.build_runtime_writeback_intake_payload()
+    data = load_json(RUNTIME_WRITEBACK_INTAKE_PATH)
+    target_surface = load_json(RUNTIME_WRITEBACK_TARGETS_PATH)
+
+    errors: list[str] = []
+    if data != expected:
+        errors.append(
+            "generated/runtime_writeback_intake.min.json is out of date; "
+            "run scripts/generate_runtime_writeback_intake.py"
+        )
+
+    expected_source_of_truth = {
+        "runtime_writeback_targets": "generated/runtime_writeback_targets.min.json",
+        "checkpoint_to_memory_contract": "examples/checkpoint_to_memory_contract.example.json",
+        "runtime_writeback_seam": "docs/RUNTIME_WRITEBACK_SEAM.md",
+        "quest_evidence_writeback": "docs/QUEST_EVIDENCE_WRITEBACK.md",
+    }
+    if data.get("source_of_truth") != expected_source_of_truth:
+        errors.append("generated/runtime_writeback_intake.min.json must keep the canonical source_of_truth map")
+
+    targets = data.get("targets")
+    source_targets = target_surface.get("targets") if isinstance(target_surface, dict) else None
+    if not isinstance(targets, list):
+        errors.append("generated/runtime_writeback_intake.min.json targets must be a list")
+    elif not isinstance(source_targets, list):
+        errors.append("generated/runtime_writeback_intake.min.json requires generated/runtime_writeback_targets.min.json targets")
+    else:
+        if len(targets) != len(source_targets):
+            errors.append("generated/runtime_writeback_intake.min.json must include every runtime writeback target exactly once")
+        source_by_surface = {
+            item.get("runtime_surface"): item
+            for item in source_targets
+            if isinstance(item, dict) and isinstance(item.get("runtime_surface"), str)
+        }
+        seen_runtime_surfaces: set[str] = set()
+        for index, item in enumerate(targets):
+            if not isinstance(item, dict):
+                errors.append(f"targets[{index}] must be an object")
+                continue
+            runtime_surface = item.get("runtime_surface")
+            if not isinstance(runtime_surface, str):
+                errors.append(f"targets[{index}].runtime_surface must be a non-empty string")
+                continue
+            if runtime_surface in seen_runtime_surfaces:
+                errors.append(f"targets[{index}].runtime_surface duplicates {runtime_surface!r}")
+                continue
+            seen_runtime_surfaces.add(runtime_surface)
+
+            source_item = source_by_surface.get(runtime_surface)
+            if source_item is None:
+                errors.append(f"targets[{index}] references unknown runtime_surface {runtime_surface!r}")
+                continue
+
+            for field_name in (
+                "target_kind",
+                "writeback_class",
+                "requires_human_review",
+                "review_state_default",
+                "runtime_refs",
+            ):
+                if item.get(field_name) != source_item.get(field_name):
+                    errors.append(
+                        f"targets[{index}].{field_name} must stay aligned with generated/runtime_writeback_targets.min.json"
+                    )
+
+            owner_review_refs = item.get("owner_review_refs")
+            if not isinstance(owner_review_refs, list) or not owner_review_refs or not all(
+                isinstance(ref, str) and ref for ref in owner_review_refs
+            ):
+                errors.append(f"targets[{index}].owner_review_refs must stay a non-empty string list")
+            else:
+                if "docs/RUNTIME_WRITEBACK_SEAM.md" not in owner_review_refs:
+                    errors.append(f"targets[{index}].owner_review_refs must include docs/RUNTIME_WRITEBACK_SEAM.md")
+                if "docs/QUEST_EVIDENCE_WRITEBACK.md" not in owner_review_refs:
+                    errors.append(f"targets[{index}].owner_review_refs must include docs/QUEST_EVIDENCE_WRITEBACK.md")
+
+            writeback_class = item.get("writeback_class")
+            requires_human_review = item.get("requires_human_review")
+            expected_posture = (
+                "review_candidate_only"
+                if writeback_class == "reviewed_candidate"
+                else "review_before_writeback"
+                if requires_human_review is True
+                else "capturable_runtime_export"
+            )
+            if item.get("intake_posture") != expected_posture:
+                errors.append(f"targets[{index}].intake_posture must stay {expected_posture!r}")
+
+            if writeback_class == "reviewed_candidate":
+                if requires_human_review is not True:
+                    errors.append(f"targets[{index}].requires_human_review must stay true for reviewed_candidate mappings")
+                if item.get("review_state_default") != "proposed":
+                    errors.append(f"targets[{index}].review_state_default must stay 'proposed' for reviewed_candidate mappings")
+
+    if errors:
+        print("[FAIL] runtime_writeback_intake.min.json")
+        for err in errors:
+            print(f"  - {err}")
+        raise SystemExit(1)
+    print("[OK]   runtime_writeback_intake.min.json")
+
+
 def validate_bridge_export_contracts() -> None:
     chunk_validator = validator_for("memory_chunk_face.schema.json")
     graph_validator = validator_for("memory_graph_face.schema.json")
@@ -1434,6 +1554,7 @@ def main() -> int:
     validate_core_memory_contract()
     validate_checkpoint_to_memory_contract()
     validate_runtime_writeback_targets()
+    validate_runtime_writeback_intake()
     validate_witness_trace_contract()
     validate_bridge_export_contracts()
     validate_kag_source_export()
