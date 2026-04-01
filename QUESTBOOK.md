@@ -4,12 +4,11 @@ This questbook tracks memory-layer obligations related to quest evidence and wri
 
 ## Frontier
 
-- `AOA-MEM-Q-0001` - define quest evidence writeback boundaries
-- `AOA-MEM-Q-0002` - define compact witness trace posture for memo recall
+- none yet
 
 ## Near
 
-- none yet
+- `AOA-MEM-Q-0002` - define compact witness trace posture for memo recall
 
 ## Blocked / reanchor
 

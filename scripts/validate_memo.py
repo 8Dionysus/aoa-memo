@@ -40,6 +40,7 @@ QUESTBOOK_FILES = {
     "AOA-MEM-Q-0001": ROOT / "quests" / "AOA-MEM-Q-0001.yaml",
     "AOA-MEM-Q-0002": ROOT / "quests" / "AOA-MEM-Q-0002.yaml",
 }
+CLOSED_QUEST_STATES = {"done", "dropped"}
 FORMAT_CHECKER = FormatChecker()
 RFC3339_DATETIME = re.compile(
     r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$"
@@ -108,11 +109,9 @@ def validate_questbook_surface() -> None:
         if not path.exists():
             errors.append(f"missing file: {path.relative_to(ROOT)}")
 
+    questbook_text = ""
     if QUESTBOOK_PATH.exists():
         questbook_text = load_text(QUESTBOOK_PATH)
-        for quest_id in QUESTBOOK_FILES:
-            if quest_id not in questbook_text:
-                errors.append(f"QUESTBOOK.md must reference {quest_id}")
 
     if QUESTBOOK_DOC.exists():
         doc_text = load_text(QUESTBOOK_DOC)
@@ -128,6 +127,8 @@ def validate_questbook_surface() -> None:
             if phrase not in lower_doc:
                 errors.append(f"docs/QUEST_EVIDENCE_WRITEBACK.md must mention {phrase}")
 
+    active_quest_ids: list[str] = []
+    closed_quest_ids: list[str] = []
     for quest_id, path in QUESTBOOK_FILES.items():
         if not path.exists():
             continue
@@ -145,6 +146,18 @@ def validate_questbook_surface() -> None:
             errors.append(f"{path.relative_to(ROOT)} must keep owner_surface docs/QUEST_EVIDENCE_WRITEBACK.md")
         if data.get("public_safe") is not True:
             errors.append(f"{path.relative_to(ROOT)} must keep public_safe true")
+        if data.get("state") in CLOSED_QUEST_STATES:
+            closed_quest_ids.append(quest_id)
+        else:
+            active_quest_ids.append(quest_id)
+
+    if questbook_text:
+        for quest_id in active_quest_ids:
+            if quest_id not in questbook_text:
+                errors.append(f"QUESTBOOK.md must reference active quest id {quest_id}")
+        for quest_id in closed_quest_ids:
+            if quest_id in questbook_text:
+                errors.append(f"QUESTBOOK.md must not list closed quest id {quest_id}")
 
     if errors:
         print("[FAIL] questbook writeback surface")
