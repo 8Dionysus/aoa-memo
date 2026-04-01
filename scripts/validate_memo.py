@@ -899,6 +899,13 @@ def validate_runtime_writeback_targets() -> None:
         expected_targets = contract.get("mapping_rules", [])
         if len(targets) != len(expected_targets):
             errors.append("generated/runtime_writeback_targets.min.json must include every mapping rule exactly once")
+        runtime_surfaces = [
+            target.get("runtime_surface")
+            for target in targets
+            if isinstance(target, dict) and isinstance(target.get("runtime_surface"), str)
+        ]
+        if len(runtime_surfaces) != len(set(runtime_surfaces)):
+            errors.append("generated/runtime_writeback_targets.min.json must not duplicate runtime_surface entries")
         for index, target in enumerate(targets):
             if not isinstance(target, dict):
                 errors.append(f"targets[{index}] must be an object")
@@ -929,6 +936,11 @@ def validate_runtime_writeback_targets() -> None:
                     errors.append(
                         f"targets[{index}].{field_name} must stay aligned with checkpoint_to_memory_contract.example.json"
                     )
+            runtime_refs = target.get("runtime_refs")
+            if not isinstance(runtime_refs, list) or not runtime_refs or not all(
+                isinstance(item, str) and item for item in runtime_refs
+            ):
+                errors.append(f"targets[{index}].runtime_refs must stay a non-empty string list")
 
             if target.get("writeback_class") == "reviewed_candidate":
                 if target.get("review_state_default") != "proposed":
