@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/schemas/runtime-writeback-targets.schema.json",
+  "title": "aoa-memo runtime writeback targets",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "layer",
+    "contract_id",
+    "source_of_truth",
+    "runtime_boundary",
+    "targets"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "layer": {
+      "type": "string",
+      "const": "aoa-memo"
+    },
+    "contract_id": {
+      "type": "string",
+      "const": "aoa-memo.runtime-writeback.v1"
+    },
+    "source_of_truth": {
+      "type": "string",
+      "const": "examples/checkpoint_to_memory_contract.example.json"
+    },
+    "runtime_boundary": {
+      "type": "object"
+    },
+    "targets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "runtime_surface",
+          "target_kind",
+          "writeback_class",
+          "requires_human_review",
+          "review_state_default",
+          "runtime_refs",
+          "notes"
+        ],
+        "properties": {
+          "runtime_surface": {
+            "type": "string",
+            "minLength": 3
+          },
+          "target_kind": {
+            "type": "string",
+            "minLength": 3
+          },
+          "writeback_class": {
+            "type": "string",
+            "minLength": 3
+          },
+          "requires_human_review": {
+            "type": "boolean"
+          },
+          "review_state_default": {
+            "type": "string",
+            "minLength": 3
+          },
+          "runtime_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 3
+            }
+          },
+          "notes": {
+            "type": "string",
+            "minLength": 10
+          }
+        }
+      }
+    }
+  }
+}

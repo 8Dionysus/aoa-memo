@@ -25,6 +25,7 @@ def load_module(script_name: str):
 
 generate_memory_object_surfaces = load_module("generate_memory_object_surfaces.py")
 generate_kag_export = load_module("generate_kag_export.py")
+generate_runtime_writeback_targets = load_module("generate_runtime_writeback_targets.py")
 
 GENERATED_ROOT = REPO_ROOT / "generated"
 EXAMPLES_ROOT = REPO_ROOT / "examples"
@@ -257,6 +258,25 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
         self.assertTrue(
             all(item["review_state_default"] == "proposed" for item in reviewed_candidates)
         )
+
+    def test_runtime_writeback_targets_surface_stays_generator_backed(self) -> None:
+        current = load_json(GENERATED_ROOT / "runtime_writeback_targets.min.json")
+        expected = generate_runtime_writeback_targets.build_runtime_writeback_targets_payload()
+
+        self.assertEqual(current, expected)
+        self.assertEqual(
+            set(current.keys()),
+            {"schema_version", "layer", "contract_id", "source_of_truth", "runtime_boundary", "targets"},
+        )
+        self.assertEqual(current["schema_version"], 1)
+        self.assertEqual(current["layer"], "aoa-memo")
+        self.assertEqual(current["contract_id"], "aoa-memo.runtime-writeback.v1")
+
+        by_surface = {entry["runtime_surface"]: entry for entry in current["targets"]}
+        self.assertEqual(by_surface["checkpoint_export"]["target_kind"], "state_capsule")
+        self.assertFalse(by_surface["checkpoint_export"]["requires_human_review"])
+        self.assertEqual(by_surface["distillation_claim_candidate"]["writeback_class"], "reviewed_candidate")
+        self.assertTrue(by_surface["distillation_claim_candidate"]["requires_human_review"])
 
 
 if __name__ == "__main__":

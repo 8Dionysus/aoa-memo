@@ -175,6 +175,30 @@ class MemoValidatorTestCase(unittest.TestCase):
         with patch.object(validate_memo, "load_json", side_effect=side_effect):
             self.assert_system_exit_quietly(validate_memo.validate_checkpoint_to_memory_contract)
 
+    def test_runtime_writeback_targets_surface_validates(self) -> None:
+        with io.StringIO() as stdout, io.StringIO() as stderr:
+            with redirect_stdout(stdout), redirect_stderr(stderr):
+                validate_memo.validate_runtime_writeback_targets()
+
+    def test_runtime_writeback_targets_surface_rejects_review_state_drift(self) -> None:
+        target_path = validate_memo.RUNTIME_WRITEBACK_TARGETS_PATH
+        original_load_json = validate_memo.load_json
+        payload = load_json(target_path)
+        assert isinstance(payload, dict)
+        payload = copy.deepcopy(payload)
+        for item in payload["targets"]:
+            if item["runtime_surface"] == "distillation_claim_candidate":
+                item["review_state_default"] = "captured"
+                break
+
+        def side_effect(path: Path) -> dict:
+            if Path(path) == target_path:
+                return copy.deepcopy(payload)
+            return original_load_json(path)
+
+        with patch.object(validate_memo, "load_json", side_effect=side_effect):
+            self.assert_system_exit_quietly(validate_memo.validate_runtime_writeback_targets)
+
     def test_questbook_surface_validates(self) -> None:
         with io.StringIO() as stdout, io.StringIO() as stderr:
             with redirect_stdout(stdout), redirect_stderr(stderr):

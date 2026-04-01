@@ -9,6 +9,7 @@ structural check on `generated/memo_registry.min.json`.
 
 from __future__ import annotations
 
+import importlib.util
 import json
 from datetime import datetime
 from functools import lru_cache
@@ -34,6 +35,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SCHEMAS = ROOT / "schemas"
 EXAMPLES = ROOT / "examples"
 GENERATED = ROOT / "generated"
+RUNTIME_WRITEBACK_TARGETS_PATH = GENERATED / "runtime_writeback_targets.min.json"
 QUESTBOOK_PATH = ROOT / "QUESTBOOK.md"
 QUESTBOOK_DOC = ROOT / "docs" / "QUEST_EVIDENCE_WRITEBACK.md"
 FOUNDATION_QUESTBOOK_FILES = {
@@ -83,6 +85,21 @@ KAG_EXPORT_REQUIRED_FIELDS = {
     "provenance_note",
     "non_identity_boundary",
 }
+
+
+def load_runtime_writeback_targets_builder():
+    module_path = ROOT / "scripts" / "generate_runtime_writeback_targets.py"
+    spec = importlib.util.spec_from_file_location(
+        "generate_runtime_writeback_targets",
+        module_path,
+    )
+    if spec is None or spec.loader is None:
+        print("[FAIL] runtime_writeback_targets.min.json")
+        print("  - unable to load runtime writeback target generator")
+        raise SystemExit(1)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
 
 
 def quest_sort_key(quest_id: str) -> tuple[int, str]:
@@ -850,6 +867,83 @@ def validate_checkpoint_to_memory_contract() -> None:
     print("[OK]   checkpoint_to_memory_contract.example.json")
 
 
+def validate_runtime_writeback_targets() -> None:
+    validator = validator_for("runtime-writeback-targets.schema.json")
+    builder = load_runtime_writeback_targets_builder()
+    expected = builder.build_runtime_writeback_targets_payload()
+    data = load_json(RUNTIME_WRITEBACK_TARGETS_PATH)
+    contract = load_json(EXAMPLES / "checkpoint_to_memory_contract.example.json")
+
+    errors = [
+        f"{'.'.join(str(part) for part in err.absolute_path) or '<root>'}: {err.message}"
+        for err in sorted(validator.iter_errors(data), key=lambda err: list(err.absolute_path))
+    ]
+
+    if data != expected:
+        errors.append(
+            "generated/runtime_writeback_targets.min.json is out of date; "
+            "run scripts/generate_runtime_writeback_targets.py"
+        )
+
+    if data.get("contract_id") != "aoa-memo.runtime-writeback.v1":
+        errors.append("generated/runtime_writeback_targets.min.json must keep contract_id aoa-memo.runtime-writeback.v1")
+    if data.get("source_of_truth") != "examples/checkpoint_to_memory_contract.example.json":
+        errors.append("generated/runtime_writeback_targets.min.json must keep source_of_truth examples/checkpoint_to_memory_contract.example.json")
+    if data.get("runtime_boundary") != contract.get("runtime_boundary", {}):
+        errors.append("generated/runtime_writeback_targets.min.json must keep runtime_boundary aligned with checkpoint_to_memory_contract.example.json")
+
+    targets = data.get("targets")
+    if not isinstance(targets, list):
+        errors.append("generated/runtime_writeback_targets.min.json targets must be a list")
+    else:
+        expected_targets = contract.get("mapping_rules", [])
+        if len(targets) != len(expected_targets):
+            errors.append("generated/runtime_writeback_targets.min.json must include every mapping rule exactly once")
+        for index, target in enumerate(targets):
+            if not isinstance(target, dict):
+                errors.append(f"targets[{index}] must be an object")
+                continue
+            runtime_surface = target.get("runtime_surface")
+            if not isinstance(runtime_surface, str):
+                continue
+            matching_rule = next(
+                (
+                    rule
+                    for rule in expected_targets
+                    if isinstance(rule, dict) and rule.get("runtime_surface") == runtime_surface
+                ),
+                None,
+            )
+            if matching_rule is None:
+                errors.append(f"targets[{index}] references unknown runtime_surface {runtime_surface!r}")
+                continue
+            for field_name in (
+                "target_kind",
+                "writeback_class",
+                "requires_human_review",
+                "review_state_default",
+                "runtime_refs",
+                "notes",
+            ):
+                if target.get(field_name) != matching_rule.get(field_name):
+                    errors.append(
+                        f"targets[{index}].{field_name} must stay aligned with checkpoint_to_memory_contract.example.json"
+                    )
+
+            if target.get("writeback_class") == "reviewed_candidate":
+                if target.get("review_state_default") != "proposed":
+                    errors.append(f"targets[{index}].review_state_default must stay 'proposed' for reviewed_candidate mappings")
+                if target.get("requires_human_review") is not True:
+                    errors.append(f"targets[{index}].requires_human_review must stay true for reviewed_candidate mappings")
+
+    if errors:
+        print("[FAIL] runtime_writeback_targets.min.json")
+        for err in errors:
+            print(f"  - {err}")
+        raise SystemExit(1)
+    print("[OK]   runtime_writeback_targets.min.json")
+
+
 def validate_bridge_export_contracts() -> None:
     chunk_validator = validator_for("memory_chunk_face.schema.json")
     graph_validator = validator_for("memory_graph_face.schema.json")
@@ -1327,6 +1421,7 @@ def main() -> int:
     validate_registry()
     validate_core_memory_contract()
     validate_checkpoint_to_memory_contract()
+    validate_runtime_writeback_targets()
     validate_witness_trace_contract()
     validate_bridge_export_contracts()
     validate_kag_source_export()
