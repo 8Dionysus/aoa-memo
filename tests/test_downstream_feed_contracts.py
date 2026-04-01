@@ -195,6 +195,69 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
             self.assertEqual(payload.get("capsule_surface"), contract["capsule_surface"])
             self.assertEqual(payload.get("expand_surface"), contract["expand_surface"])
 
+    def test_checkpoint_to_memory_contract_keeps_execution_safe_writeback_mapping(self) -> None:
+        payload = load_json(EXAMPLES_ROOT / "checkpoint_to_memory_contract.example.json")
+
+        self.assertEqual(payload["contract_type"], "checkpoint_to_memory_contract")
+        self.assertEqual(payload["contract_id"], "aoa-memo.runtime-writeback.v1")
+        self.assertEqual(payload["checkpoint_artifact"]["artifact_name"], "inquiry_checkpoint")
+        self.assertEqual(
+            payload["checkpoint_artifact"]["schema_ref"],
+            "schemas/inquiry_checkpoint.schema.json",
+        )
+        self.assertEqual(payload["checkpoint_artifact"]["posture"], "route_artifact_not_memory_object")
+        self.assertEqual(payload["runtime_boundary"]["scratchpad_posture"], "runtime_local_only")
+        self.assertEqual(payload["runtime_boundary"]["checkpoint_export_kind"], "state_capsule")
+        self.assertEqual(payload["runtime_boundary"]["distillation_review_posture"], "review_required")
+        self.assertEqual(
+            payload["runtime_boundary"]["review_boundary_refs"],
+            [
+                "docs/WRITEBACK_TEMPERATURE_POLICY.md#writeback-classes",
+                "docs/MEMORY_MODEL.md#checkpoint-route-writeback",
+                "repo:aoa-agents/docs/AGENT_MEMORY_POSTURE.md",
+            ],
+        )
+
+        mappings = payload["mapping_rules"]
+        self.assertEqual(
+            [
+                (item["runtime_surface"], item["target_kind"], item["writeback_class"])
+                for item in mappings
+            ],
+            [
+                ("checkpoint_export", "state_capsule", "checkpoint_export"),
+                ("approval_record", "decision", "memo_surviving_event"),
+                ("transition_record", "decision", "memo_surviving_event"),
+                ("execution_trace", "episode", "memo_surviving_event"),
+                ("review_trace", "audit_event", "memo_surviving_event"),
+                ("distillation_claim_candidate", "claim", "reviewed_candidate"),
+                ("distillation_pattern_candidate", "pattern", "reviewed_candidate"),
+                ("distillation_bridge_candidate", "bridge", "reviewed_candidate"),
+            ],
+        )
+
+        checkpoint_export = next(item for item in mappings if item["runtime_surface"] == "checkpoint_export")
+        self.assertFalse(checkpoint_export["requires_human_review"])
+        self.assertEqual(checkpoint_export["review_state_default"], "captured")
+        self.assertIn(
+            "docs/WRITEBACK_TEMPERATURE_POLICY.md#inquiry-checkpoint-packs",
+            checkpoint_export["runtime_refs"],
+        )
+
+        reviewed_candidates = [
+            item
+            for item in mappings
+            if item["writeback_class"] == "reviewed_candidate"
+        ]
+        self.assertEqual(
+            [item["target_kind"] for item in reviewed_candidates],
+            ["claim", "pattern", "bridge"],
+        )
+        self.assertTrue(all(item["requires_human_review"] for item in reviewed_candidates))
+        self.assertTrue(
+            all(item["review_state_default"] == "proposed" for item in reviewed_candidates)
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
