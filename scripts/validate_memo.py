@@ -36,10 +36,11 @@ EXAMPLES = ROOT / "examples"
 GENERATED = ROOT / "generated"
 QUESTBOOK_PATH = ROOT / "QUESTBOOK.md"
 QUESTBOOK_DOC = ROOT / "docs" / "QUEST_EVIDENCE_WRITEBACK.md"
-QUESTBOOK_FILES = {
+FOUNDATION_QUESTBOOK_FILES = {
     "AOA-MEM-Q-0001": ROOT / "quests" / "AOA-MEM-Q-0001.yaml",
     "AOA-MEM-Q-0002": ROOT / "quests" / "AOA-MEM-Q-0002.yaml",
 }
+QUESTBOOK_FILES = FOUNDATION_QUESTBOOK_FILES
 CLOSED_QUEST_STATES = {"done", "dropped"}
 FORMAT_CHECKER = FormatChecker()
 RFC3339_DATETIME = re.compile(
@@ -84,6 +85,39 @@ KAG_EXPORT_REQUIRED_FIELDS = {
 }
 
 
+def quest_sort_key(quest_id: str) -> tuple[int, str]:
+    suffix = quest_id.rsplit("-", 1)[-1]
+    try:
+        return (int(suffix), quest_id)
+    except ValueError:
+        return (sys.maxsize, quest_id)
+
+
+def discover_questbook_files() -> dict[str, Path]:
+    discovered = {
+        path.stem: path
+        for path in (ROOT / "quests").glob("AOA-MEM-Q-*.yaml")
+        if path.is_file()
+    }
+    if not discovered:
+        return dict(FOUNDATION_QUESTBOOK_FILES)
+    return {
+        quest_id: discovered[quest_id]
+        for quest_id in sorted(discovered, key=quest_sort_key)
+    }
+
+
+def quest_anchor_doc_ref(data: dict[str, object]) -> str | None:
+    anchor_ref = data.get("anchor_ref")
+    if isinstance(anchor_ref, str):
+        return anchor_ref
+    if isinstance(anchor_ref, dict):
+        ref_value = anchor_ref.get("ref")
+        if isinstance(ref_value, str):
+            return ref_value
+    return None
+
+
 def validate_nested_agents_surface() -> None:
     try:
         from validate_nested_agents import validate_nested_agents_docs
@@ -104,10 +138,16 @@ def validate_nested_agents_surface() -> None:
 
 def validate_questbook_surface() -> None:
     errors: list[str] = []
-    required_paths = [QUESTBOOK_PATH, QUESTBOOK_DOC, *QUESTBOOK_FILES.values()]
+    questbook_files = discover_questbook_files()
+    missing_foundation = [
+        quest_id for quest_id in FOUNDATION_QUESTBOOK_FILES if quest_id not in questbook_files
+    ]
+    required_paths = [QUESTBOOK_PATH, QUESTBOOK_DOC, *FOUNDATION_QUESTBOOK_FILES.values()]
     for path in required_paths:
         if not path.exists():
             errors.append(f"missing file: {path.relative_to(ROOT)}")
+    for quest_id in missing_foundation:
+        errors.append(f"missing foundation quest file: quests/{quest_id}.yaml")
 
     questbook_text = ""
     if QUESTBOOK_PATH.exists():
@@ -129,7 +169,7 @@ def validate_questbook_surface() -> None:
 
     active_quest_ids: list[str] = []
     closed_quest_ids: list[str] = []
-    for quest_id, path in QUESTBOOK_FILES.items():
+    for quest_id, path in questbook_files.items():
         if not path.exists():
             continue
         data = load_yaml(path)
@@ -142,10 +182,23 @@ def validate_questbook_surface() -> None:
             errors.append(f"{path.relative_to(ROOT)} must keep repo aoa-memo")
         if data.get("id") != quest_id:
             errors.append(f"{path.relative_to(ROOT)} must keep id {quest_id}")
-        if data.get("owner_surface") != "docs/QUEST_EVIDENCE_WRITEBACK.md":
-            errors.append(f"{path.relative_to(ROOT)} must keep owner_surface docs/QUEST_EVIDENCE_WRITEBACK.md")
         if data.get("public_safe") is not True:
             errors.append(f"{path.relative_to(ROOT)} must keep public_safe true")
+        if quest_id in FOUNDATION_QUESTBOOK_FILES:
+            if data.get("owner_surface") != "docs/QUEST_EVIDENCE_WRITEBACK.md":
+                errors.append(
+                    f"{path.relative_to(ROOT)} must keep owner_surface docs/QUEST_EVIDENCE_WRITEBACK.md"
+                )
+        else:
+            anchor_ref = quest_anchor_doc_ref(data)
+            if not isinstance(anchor_ref, str) or not anchor_ref.startswith("docs/"):
+                errors.append(
+                    f"{path.relative_to(ROOT)} must keep anchor_ref within local docs/ for additive memo quests"
+                )
+            else:
+                anchor_error = local_ref_error(anchor_ref, f"{path.relative_to(ROOT)} anchor_ref")
+                if anchor_error:
+                    errors.append(anchor_error)
         if data.get("state") in CLOSED_QUEST_STATES:
             closed_quest_ids.append(quest_id)
         else:
