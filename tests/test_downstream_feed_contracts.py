@@ -26,6 +26,7 @@ def load_module(script_name: str):
 generate_memory_object_surfaces = load_module("generate_memory_object_surfaces.py")
 generate_kag_export = load_module("generate_kag_export.py")
 generate_runtime_writeback_targets = load_module("generate_runtime_writeback_targets.py")
+generate_runtime_writeback_intake = load_module("generate_runtime_writeback_intake.py")
 
 GENERATED_ROOT = REPO_ROOT / "generated"
 EXAMPLES_ROOT = REPO_ROOT / "examples"
@@ -279,6 +280,42 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
         self.assertEqual(by_surface["distillation_claim_candidate"]["writeback_class"], "reviewed_candidate")
         self.assertTrue(by_surface["distillation_claim_candidate"]["requires_human_review"])
         self.assertTrue(all(entry["runtime_refs"] for entry in current["targets"]))
+
+    def test_runtime_writeback_intake_surface_stays_generator_backed(self) -> None:
+        current = load_json(GENERATED_ROOT / "runtime_writeback_intake.min.json")
+        expected = generate_runtime_writeback_intake.build_runtime_writeback_intake_payload()
+
+        self.assertEqual(current, expected)
+        self.assertEqual(current["schema_version"], 1)
+        self.assertEqual(current["layer"], "aoa-memo")
+        self.assertEqual(
+            current["source_of_truth"],
+            {
+                "runtime_writeback_targets": "generated/runtime_writeback_targets.min.json",
+                "checkpoint_to_memory_contract": "examples/checkpoint_to_memory_contract.example.json",
+                "runtime_writeback_seam": "docs/RUNTIME_WRITEBACK_SEAM.md",
+                "quest_evidence_writeback": "docs/QUEST_EVIDENCE_WRITEBACK.md",
+            },
+        )
+
+        runtime_surfaces = [item["runtime_surface"] for item in current["targets"]]
+        self.assertEqual(runtime_surfaces, sorted(runtime_surfaces))
+        self.assertEqual(len(runtime_surfaces), len(set(runtime_surfaces)))
+        self.assertTrue(all(item["owner_review_refs"] for item in current["targets"]))
+        self.assertTrue(
+            all("docs/RUNTIME_WRITEBACK_SEAM.md" in item["owner_review_refs"] for item in current["targets"])
+        )
+        self.assertTrue(
+            all("docs/QUEST_EVIDENCE_WRITEBACK.md" in item["owner_review_refs"] for item in current["targets"])
+        )
+
+        reviewed_candidates = [
+            item for item in current["targets"] if item["writeback_class"] == "reviewed_candidate"
+        ]
+        self.assertTrue(reviewed_candidates)
+        self.assertTrue(all(item["requires_human_review"] for item in reviewed_candidates))
+        self.assertTrue(all(item["review_state_default"] == "proposed" for item in reviewed_candidates))
+        self.assertTrue(all(item["intake_posture"] == "review_candidate_only" for item in reviewed_candidates))
 
 
 if __name__ == "__main__":
