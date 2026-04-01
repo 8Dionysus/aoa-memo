@@ -273,10 +273,12 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
         self.assertEqual(current["contract_id"], "aoa-memo.runtime-writeback.v1")
 
         by_surface = {entry["runtime_surface"]: entry for entry in current["targets"]}
+        self.assertEqual(len(by_surface), len(current["targets"]))
         self.assertEqual(by_surface["checkpoint_export"]["target_kind"], "state_capsule")
         self.assertFalse(by_surface["checkpoint_export"]["requires_human_review"])
         self.assertEqual(by_surface["distillation_claim_candidate"]["writeback_class"], "reviewed_candidate")
         self.assertTrue(by_surface["distillation_claim_candidate"]["requires_human_review"])
+        self.assertTrue(all(entry["runtime_refs"] for entry in current["targets"]))
 
 
 if __name__ == "__main__":
