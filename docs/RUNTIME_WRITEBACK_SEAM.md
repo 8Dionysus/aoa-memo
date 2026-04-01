@@ -45,6 +45,10 @@ The first structural surface for this seam is schema-backed and code-free:
 - `schemas/checkpoint-to-memory-contract.schema.json`
 - `examples/checkpoint_to_memory_contract.example.json`
 
+The compact downstream read surface derived from that contract is:
+
+- `generated/runtime_writeback_targets.min.json`
+
 The checkpoint artifact remains `inquiry_checkpoint`.
 It is not a new memory-object kind.
 It stays a route artifact until a bounded export is written into the current memo canon.
