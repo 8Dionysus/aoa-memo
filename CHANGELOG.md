@@ -7,6 +7,18 @@ Tracking starts with the community-docs baseline for this repository.
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-04-01
+
+First public baseline release of `aoa-memo` as the explicit memory and recall layer in the AoA public surface.
+
+This changelog entry uses the release-prep merge date.
+
+### Summary
+
+- first public baseline release of `aoa-memo` as the memory and recall layer for AoA
+- the public baseline now includes doctrine-facing memory surfaces, object-facing memory surfaces, a bounded source-owned memo export seam, and writeback / guardrail contracts
+- the release keeps memory explicit and reviewable without collapsing memory into proof, routing, or execution ownership
+
 ### Added
 
 - community-docs baseline established for this repository
@@ -20,3 +32,22 @@ Tracking starts with the community-docs baseline for this repository.
 
 - roadmap and doctrine-facing generated surfaces now record that `aoa-routing` already consumes the live `memo` kind and router-ready recall contracts
 - router-facing doctrine recall contracts and object-facing semantic or lineage recall contracts now publish an additive `capsule_surface` between inspect and expand
+
+### Included in this release
+
+- doctrine-facing memory families under `generated/memory_catalog.json`, `generated/memory_catalog.min.json`, `generated/memory_capsules.json`, and `generated/memory_sections.full.json`
+- object-facing memory families under `generated/memory_object_catalog.json`, `generated/memory_object_catalog.min.json`, `generated/memory_object_capsules.json`, and `generated/memory_object_sections.full.json`
+- bounded source-owned export and writeback support seams under `generated/kag_export.min.json`, `generated/runtime_writeback_targets.min.json`, and `generated/runtime_writeback_intake.min.json`
+
+### Validation
+
+- `python scripts/generate_memory_object_surfaces.py`
+- `python scripts/generate_kag_export.py`
+- `python scripts/validate_memo.py`
+- `python scripts/validate_memory_surfaces.py`
+- `python scripts/validate_memory_object_surfaces.py`
+- `python scripts/validate_lifecycle_audit_examples.py`
+
+### Notes
+
+- this release is a repository release of memory contracts and derived memory surfaces, not a claim that memory should replace source truth or proof
