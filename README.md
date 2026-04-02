@@ -2,38 +2,22 @@
 
 `aoa-memo` is the memory and recall layer of the AoA ecosystem.
 
-It exists to make memory explicit, reviewable, and bounded.
-
-This repository is not the main home of reusable techniques, agent workflows, or proof surfaces.
-Its role is different: it should hold memory-oriented objects and contracts that help agents and humans recall, route, and reuse prior work without confusing memory with truth.
+It exists to make memory explicit, reviewable, and bounded. Memory matters here, but memory is not proof.
 
 ## Start here
 
-If you are new to this repository, use this path:
+Use the shortest route by need:
 
-1. Read [CHARTER](CHARTER.md) for the role and boundaries of the memory layer.
-2. Read [docs/MEMORY_MODEL](docs/MEMORY_MODEL.md) for the conceptual model.
-3. Read [docs/MEMORY_OBJECT_PROFILES](docs/MEMORY_OBJECT_PROFILES.md) for the per-kind object canon hardening layer.
-4. Read [docs/MEMORY_TRUST_POSTURE](docs/MEMORY_TRUST_POSTURE.md) for the ordinal-versus-descriptive trust contract.
-5. Read [docs/MEMORY_TEMPERATURES](docs/MEMORY_TEMPERATURES.md) for the operational temperature and decay posture.
-6. Read [docs/LIFECYCLE](docs/LIFECYCLE.md) for current-recall, supersession, retraction, and freeze posture.
-7. Read [docs/NARRATIVE_CORE_CONTRACT](docs/NARRATIVE_CORE_CONTRACT.md) for the authored/core-memory versus derived-memory split.
-8. Read [docs/WITNESS_TRACE_CONTRACT](docs/WITNESS_TRACE_CONTRACT.md) for the current witness trace export contract.
-9. Read [docs/WRITEBACK_TEMPERATURE_POLICY](docs/WRITEBACK_TEMPERATURE_POLICY.md) for memo-surviving versus bridge-ready writeback posture.
-10. Read [docs/QUEST_CHRONICLE_WRITEBACK](docs/QUEST_CHRONICLE_WRITEBACK.md) for the adjunct chronicle witness surface.
-11. Read [docs/RUNTIME_WRITEBACK_SEAM](docs/RUNTIME_WRITEBACK_SEAM.md) for the bounded runtime-to-memo writeback mapping.
-12. Read [docs/RECURRENCE_MEMORY_SUPPORT_SURFACES](docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md) for the memo-side checkpoint, anchor, and recall surfaces that support recurrence without moving routing or runtime policy here.
-13. Read [docs/AGENT_MEMORY_POSTURE_SEAM](docs/AGENT_MEMORY_POSTURE_SEAM.md) for the memo-side posture fields that `aoa-agents` may consume without moving role policy here.
-14. Read [docs/PLAYBOOK_MEMORY_SCOPES](docs/PLAYBOOK_MEMORY_SCOPES.md) for playbook-facing memory scope and recall-mode guidance.
-15. Read [docs/KAG_TOS_BRIDGE_CONTRACT](docs/KAG_TOS_BRIDGE_CONTRACT.md) for the current chunk-face, graph-face, and ToS-bridge contract.
-16. Read [docs/KAG_SOURCE_EXPORT](docs/KAG_SOURCE_EXPORT.md) for the source-owned memo donor export that `aoa-kag` may validate and later consume.
-17. Read [docs/MEMORY_EVAL_GUARDRAILS](docs/MEMORY_EVAL_GUARDRAILS.md) for the memo-side guardrail handoff surface to `aoa-evals`.
-18. Read [docs/OPERATIONAL_BOUNDARY](docs/OPERATIONAL_BOUNDARY.md) for the stable v1-facing consumer and runtime split.
-19. Read [docs/BOUNDARIES](docs/BOUNDARIES.md) for ownership rules.
-20. Read [ROADMAP](ROADMAP.md) for the current direction.
-21. Read [docs/ROUTING_MEMORY_ADOPTION](docs/ROUTING_MEMORY_ADOPTION.md) for the additive inspect -> capsule -> expand router-facing adoption flow.
+- role, boundaries, and conceptual model: [CHARTER](CHARTER.md), [docs/BOUNDARIES](docs/BOUNDARIES.md), and [docs/MEMORY_MODEL](docs/MEMORY_MODEL.md)
+- object canon, trust posture, and lifecycle: [docs/MEMORY_OBJECT_PROFILES](docs/MEMORY_OBJECT_PROFILES.md), [docs/MEMORY_TRUST_POSTURE](docs/MEMORY_TRUST_POSTURE.md), [docs/MEMORY_TEMPERATURES](docs/MEMORY_TEMPERATURES.md), [docs/LIFECYCLE](docs/LIFECYCLE.md), and [docs/NARRATIVE_CORE_CONTRACT](docs/NARRATIVE_CORE_CONTRACT.md)
+- writeback, recurrence, and neighboring-layer seams: [docs/WITNESS_TRACE_CONTRACT](docs/WITNESS_TRACE_CONTRACT.md), [docs/WRITEBACK_TEMPERATURE_POLICY](docs/WRITEBACK_TEMPERATURE_POLICY.md), [docs/QUEST_CHRONICLE_WRITEBACK](docs/QUEST_CHRONICLE_WRITEBACK.md), [docs/RUNTIME_WRITEBACK_SEAM](docs/RUNTIME_WRITEBACK_SEAM.md), [docs/RECURRENCE_MEMORY_SUPPORT_SURFACES](docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md), [docs/AGENT_MEMORY_POSTURE_SEAM](docs/AGENT_MEMORY_POSTURE_SEAM.md), and [docs/PLAYBOOK_MEMORY_SCOPES](docs/PLAYBOOK_MEMORY_SCOPES.md)
+- bridge, export, and guardrail surfaces: [docs/KAG_TOS_BRIDGE_CONTRACT](docs/KAG_TOS_BRIDGE_CONTRACT.md), [docs/KAG_SOURCE_EXPORT](docs/KAG_SOURCE_EXPORT.md), [docs/MEMORY_EVAL_GUARDRAILS](docs/MEMORY_EVAL_GUARDRAILS.md), [docs/OPERATIONAL_BOUNDARY](docs/OPERATIONAL_BOUNDARY.md), and [docs/ROUTING_MEMORY_ADOPTION](docs/ROUTING_MEMORY_ADOPTION.md)
+- current direction: [ROADMAP](ROADMAP.md)
 
-For concrete recall entrypoints, inspect:
+## Public recall entrypoints
+
+For concrete recall contracts, start with:
+
 - `examples/recall_contract.working.json`
 - `examples/recall_contract.semantic.json`
 - `examples/recall_contract.lineage.json`
@@ -42,100 +26,63 @@ For concrete recall entrypoints, inspect:
 - `examples/recall_contract.object.working.json`
 - `examples/recall_contract.object.semantic.json`
 - `examples/recall_contract.object.lineage.json`
+- `examples/recall_contract.object.working.return.json`
 
-The doctrine-first and router-facing recall contracts stay stable.
-The router-facing semantic and lineage contracts now formalize an additive inspect -> capsule -> expand flow over the doctrine family.
-The `recall_contract.object.*.json` family is the parallel object-facing entrypoint over curated memory objects, and its semantic/lineage contracts use the same inspect -> capsule -> expand join rule.
-For return-oriented relaunch over compact object surfaces, inspect `examples/recall_contract.object.working.return.json`.
+The doctrine-first and router-facing recall contracts remain stable. The object-facing family is the parallel entrypoint over curated memory objects, and it follows the same `inspect -> capsule -> expand` join rule.
 
 If you are editing inside `schemas/`, `examples/`, `generated/`, or `scripts/`, also follow the nested `AGENTS.md` in that directory.
 
-For the shortest next route by intent:
-- if you need the ecosystem center and layer map, go to [`Agents-of-Abyss`](https://github.com/8Dionysus/Agents-of-Abyss)
-- if you need navigation and dispatch rather than memory-layer meaning, go to [`aoa-routing`](https://github.com/8Dionysus/aoa-routing)
-- if you need authored practice, execution, or proof meaning, go to [`aoa-techniques`](https://github.com/8Dionysus/aoa-techniques), [`aoa-skills`](https://github.com/8Dionysus/aoa-skills), or [`aoa-evals`](https://github.com/8Dionysus/aoa-evals)
-- if you need explicit role contracts and handoff posture, go to [`aoa-agents`](https://github.com/8Dionysus/aoa-agents)
-- if you need the current public recall entrypoints for working, semantic, or lineage recall, inspect `examples/recall_contract*.json`
+## What `aoa-memo` owns
 
-## Quick route table
+This repository is the source of truth for:
 
-| repository | owns | go here when |
-|---|---|---|
-| `aoa-memo` | memory objects, recall surfaces, provenance threads, temporal relevance, salience, retrieval contracts | you need explicit memory-layer meaning rather than proof or execution meaning |
-| `Agents-of-Abyss` | ecosystem identity, layer map, federation rules, program-level direction | you need the center and the constitutional view of AoA |
-| `aoa-routing` | navigation and dispatch surfaces | you need the smallest next object rather than memory-layer semantics |
-| `aoa-techniques` / `aoa-skills` / `aoa-evals` | authored practice, execution, and proof meaning | you need source-owned meaning rather than memory-layer objects |
-| `aoa-agents` | role contracts, persona boundaries, handoff posture | you need actor-level contracts rather than memory surfaces |
-
-## What this repository is for
-
-`aoa-memo` should own memory-layer meaning about:
-- memory objects
-- recall surfaces
-- provenance threads
-- temporal relevance
-- salience and memory-temperature surfaces
+- memory objects and recall surfaces
+- provenance threads and trace-bearing memory support surfaces
+- temporal relevance, salience, and temperature posture
 - memory-oriented retrieval contracts
+- the boundary between memory, proof, execution, and routing
 
-It is the right place for:
-- memory layer definitions
-- recall and provenance guidance
-- compact memory registries
-- memory object schemas and validation
-- boundaries between memory, proof, and execution
+## What it does not own
 
-## What this repository is not for
+Do not treat this repository as the main home for:
 
-This repository should not absorb primary meaning from neighboring AoA layers.
+- reusable techniques in `aoa-techniques`
+- bounded skill workflows in `aoa-skills`
+- eval bundles or verdict logic in `aoa-evals`
+- navigation and dispatch logic in `aoa-routing`
+- role contracts in `aoa-agents`
+- scenario composition in `aoa-playbooks`
+- derived knowledge substrate semantics in `aoa-kag`
 
-It should not become the main home for:
-- reusable techniques
-- skill bundles
-- eval bundles
-- routing surfaces as such
-- infrastructure implementation details
-- generic notes with no memory contract
+Memory is valuable. It is not the same thing as source meaning, workflow meaning, or proof.
 
-Memory is valuable, but it is not the same as technique, workflow, or proof meaning.
+## Current public surfaces
 
-## Relationship to the AoA federation
+The committed machine-readable surfaces group into four families:
 
-Within AoA:
-- `aoa-techniques` owns practice meaning
-- `aoa-skills` owns execution meaning
-- `aoa-evals` owns bounded proof meaning
-- `aoa-routing` should own dispatch and navigation surfaces
-- `aoa-memo` should own memory and recall meaning
-- `aoa-agents` should eventually own role and persona meaning
+- root registry: `generated/memo_registry.min.json`
+- doctrine family: `generated/memory_catalog.json`, `generated/memory_catalog.min.json`, `generated/memory_capsules.json`, and `generated/memory_sections.full.json`
+- object family: `generated/memory_object_catalog.json`, `generated/memory_object_catalog.min.json`, `generated/memory_object_capsules.json`, and `generated/memory_object_sections.full.json`
+- source-owned memo donor export: `generated/kag_export.min.json`
 
-## Local validation
+`provenance_thread`, `witness_trace`, `inquiry_checkpoint`, and checkpoint-to-memory contract surfaces remain support seams in this split, not a third generated memory-object family.
 
-This repository includes compact machine-readable memory-layer surfaces at:
-- `generated/memo_registry.min.json`
-- doctrine family:
-  - `generated/memory_catalog.json`
-  - `generated/memory_catalog.min.json`
-  - `generated/memory_capsules.json`
-  - `generated/memory_sections.full.json`
-- object family:
-  - `generated/memory_object_catalog.json`
-  - `generated/memory_object_catalog.min.json`
-  - `generated/memory_object_capsules.json`
-  - `generated/memory_object_sections.full.json`
-- source-owned KAG donor export:
-  - `generated/kag_export.min.json`
+## Go here when...
 
-`provenance_thread`, `witness_trace`, `inquiry_checkpoint`, and checkpoint-to-memory contract surfaces remain support surfaces in this split, not a third generated family.
+- you need the ecosystem center and layer map: [`Agents-of-Abyss`](https://github.com/8Dionysus/Agents-of-Abyss)
+- you need the smallest next object or dispatch hint: [`aoa-routing`](https://github.com/8Dionysus/aoa-routing)
+- you need source-owned practice, execution, or proof meaning: [`aoa-techniques`](https://github.com/8Dionysus/aoa-techniques), [`aoa-skills`](https://github.com/8Dionysus/aoa-skills), or [`aoa-evals`](https://github.com/8Dionysus/aoa-evals)
+- you need explicit role contracts and handoff posture: [`aoa-agents`](https://github.com/8Dionysus/aoa-agents)
 
-It now also requires nested local guidance surfaces at:
-- `schemas/AGENTS.md`
-- `examples/AGENTS.md`
-- `generated/AGENTS.md`
-- `scripts/AGENTS.md`
+## Build and validate
 
-The canonical validator `python scripts/validate_memo.py` checks those local guidance surfaces before the rest of the memory-layer validation sequence.
+The canonical validator is:
 
-To validate the current memory-layer surface locally, run:
+```bash
+python scripts/validate_memo.py
+```
+
+For the full local validation pass, run:
 
 ```bash
 python scripts/generate_memory_object_surfaces.py
@@ -146,31 +93,13 @@ python scripts/validate_memory_object_surfaces.py
 python scripts/validate_lifecycle_audit_examples.py
 ```
 
-`validate_memo.py` checks the core memory objects, schemas, examples, registry, manifest-backed object surface family contract, source-owned memo KAG export, and checkpoint-to-memory contract surface.
-It also checks the chunk-face and graph-face bridge export surfaces, all public recall contract examples, and the memory eval guardrail handoff pack.
-`validate_memory_surfaces.py` checks the router-facing generated doctrine surfaces, cross-surface alignment, and the router semantic and lineage inspect/capsule/expand recall contracts.
-`validate_memory_object_surfaces.py` checks the generator-backed object-facing surfaces, curated manifest coverage, lifecycle link integrity, and the parallel object recall contracts including the object capsule step.
-`validate_lifecycle_audit_examples.py` checks lifecycle, provenance-thread, and audit-event example integrity.
+`validate_memo.py` also checks the local guidance surfaces in `schemas/`, `examples/`, `generated/`, and `scripts/`.
 
-The witness trace contract is validated there as a trace export surface, not as a new memory-object kind.
-The inquiry checkpoint contract is validated there as a portable long-horizon checkpoint pack, not as a new memory-object kind.
-The adjunct quest chronicle surface is validated as a witness-only memo seam, not as a second quest authority or runtime ledger.
+## Current contour
 
-## Current status
+`aoa-memo` is in contract hardening. The public baseline now includes doctrine surfaces, object-facing surfaces, a narrow source-owned memo KAG export, writeback seams, bridge/export contracts, and memo-side guardrail handoff surfaces without turning the repository into runtime infrastructure or a graph platform.
 
-`aoa-memo` is in contract hardening.
-The current public baseline now includes doctrine, schemas, separate doctrine and object-facing generated surface families, a narrow source-owned memo KAG export, writeback seams, bridge/export contracts, and memo-side guardrail handoff surfaces without turning the repository into runtime infrastructure or a graph platform.
-The first downstream guardrail pilot is now explicitly scoped to recall precision, provenance fidelity, and staleness so `aoa-evals` can start from a narrow diagnostic adoption wave instead of pretending the full guardrail set is already one proof bundle.
-
-## Principles
-
-- memory should stay explicit and reviewable
-- authored/core memory should stay distinct from derived retrieval substrate
-- trace exports should stay distinct from memory-object taxonomy
-- recall should preserve provenance where possible
-- temporal and salience surfaces should stay bounded
-- memory must not silently replace proof
-- new memory power should become a clear layer, not a fog of context
+The current downstream guardrail pilot stays intentionally narrow: recall precision, provenance fidelity, and staleness. That keeps the memo layer explicit and reviewable without pretending it is already full proof doctrine.
 
 ## License
 
