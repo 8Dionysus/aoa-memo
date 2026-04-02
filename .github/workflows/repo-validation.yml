@@ -18,11 +18,15 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install validator dependency
-        run: python -m pip install jsonschema PyYAML
+      - name: Install validator dependencies
+        run: python -m pip install -r requirements-dev.txt
 
       - name: Run memo validators
         run: |
           python scripts/validate_memo.py
           python scripts/validate_memory_surfaces.py
+          python scripts/validate_memory_object_surfaces.py
           python scripts/validate_lifecycle_audit_examples.py
+
+      - name: Run tests
+        run: python -m pytest -q
