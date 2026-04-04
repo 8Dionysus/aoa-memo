@@ -1,0 +1,42 @@
+{
+  "id": "recall.object.working.phase-alpha",
+  "name": "Object-facing working recall for Phase Alpha reruns",
+  "mode": "working",
+  "allowed_scopes": [
+    "thread",
+    "session",
+    "project"
+  ],
+  "preferred_kinds": [
+    "state_capsule",
+    "decision",
+    "episode",
+    "audit_event",
+    "anchor"
+  ],
+  "temperature_order": [
+    "hot",
+    "warm",
+    "cool",
+    "frozen",
+    "cold"
+  ],
+  "inspect_surface": "generated/memory_object_catalog.min.json",
+  "capsule_surface": "generated/memory_object_capsules.json",
+  "expand_surface": "generated/memory_object_sections.full.json",
+  "source_route_required": false,
+  "checkpoint_continuity_supported": true,
+  "return_ready": true,
+  "preferred_anchor_kinds": [
+    "state_capsule",
+    "decision",
+    "anchor"
+  ],
+  "support_artifact_refs": [
+    "generated/phase_alpha_writeback_map.min.json",
+    "schemas/inquiry_checkpoint.schema.json",
+    "docs/RUNTIME_WRITEBACK_SEAM.md",
+    "docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md"
+  ],
+  "notes": "Use for the Phase Alpha memo-first rerun posture: inspect, then capsule, then expand, and escalate explicitly if memo alone is insufficient."
+}

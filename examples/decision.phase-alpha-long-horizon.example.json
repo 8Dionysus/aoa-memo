@@ -1,0 +1,77 @@
+{
+  "id": "memo.decision.2026-04-02.alpha-long-horizon",
+  "kind": "decision",
+  "title": "Decision to keep the readiness dossier candidate-only",
+  "summary": "Records the bounded choice to treat the Route 4 readiness dossier as reviewer-marked candidate distillation only and to hand continuity proof to the restartable inquiry route.",
+  "scope": [
+    "repo:aoa-playbooks",
+    "project:AoA"
+  ],
+  "owner_refs": [
+    "repo:aoa-memo"
+  ],
+  "payload_ref": "repo:aoa-playbooks/docs/alpha-readiness/long-horizon-model-tier-orchestra.md",
+  "tags": [
+    "phase-alpha",
+    "decision",
+    "long-horizon"
+  ],
+  "time": {
+    "created_at": "2026-04-03T03:18:30Z",
+    "observed_at": "2026-04-03T03:17:00Z",
+    "valid_from": "2026-04-03T03:18:30Z",
+    "valid_to": null
+  },
+  "provenance": {
+    "source_refs": [
+      "repo:aoa-playbooks/docs/alpha-readiness/long-horizon-model-tier-orchestra.md",
+      "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.long-horizon-model-tier-orchestra.md",
+      "repo:abyss-stack/Logs/phase-alpha/alpha-04-long-horizon-model-tier-orchestra/transition_decision.json"
+    ],
+    "episode_refs": [
+      "memo.ep.2026-04-02.alpha-long-horizon"
+    ],
+    "provenance_thread_id": "prov.phase-alpha.curated.2026-04-02"
+  },
+  "trust": {
+    "temperature": "warm",
+    "confidence": 0.93,
+    "authority_kind": "human_reviewed",
+    "authority": "curated Alpha route-04 review",
+    "freshness": 0.99,
+    "salience": 0.91
+  },
+  "lifecycle": {
+    "review_state": "confirmed",
+    "supersedes": [],
+    "superseded_by": null,
+    "retention_class": "operational-gate",
+    "current_recall": {
+      "status": "preferred",
+      "status_reason": "This decision should remain visible while the readiness dossier is being carried into pause/resume rather than promoted into canon."
+    }
+  },
+  "access": {
+    "access_class": "public",
+    "read_scopes": [
+      "public"
+    ],
+    "write_scopes": [
+      "maintainer"
+    ],
+    "promotion_scopes": [
+      "maintainer",
+      "human-review"
+    ]
+  },
+  "bridges": {
+    "tos_refs": [],
+    "skill_refs": [],
+    "eval_refs": [
+      "eval:aoa-long-horizon-depth",
+      "eval:aoa-tool-trajectory-discipline"
+    ],
+    "kag_lift_status": "none",
+    "route_capsule_ref": "repo:aoa-playbooks/docs/alpha-readiness/long-horizon-model-tier-orchestra.md"
+  }
+}

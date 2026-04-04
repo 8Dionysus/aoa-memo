@@ -541,6 +541,474 @@
           "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memory_catalog.min.json. ToS refs: none. Skill refs: none. Eval refs: none. KAG lift status: none."
         }
       ]
+    },
+    {
+      "id": "memo.state.2026-04-02.alpha-local-stack-diagnosis",
+      "kind": "state_capsule",
+      "title": "Local stack readiness state capsule for the Alpha worker path",
+      "source_path": "examples/state_capsule.phase-alpha-local-stack.example.json",
+      "sections": [
+        {
+          "section_id": "memo.state.2026-04-02.alpha-local-stack-diagnosis#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the state_capsule surface, its active recall modes, and its preferred current-recall posture.",
+          "body": "Local stack readiness state capsule for the Alpha worker path. Captures the confirmed startup canon for the live Alpha worker path: 5403 on llama.cpp, 5402 route-api closure, and recurrence proven through a second bounded pass on the same lane. Scope: repo:aoa-playbooks, project:AoA. Primary recall modes: working, episodic. Current recall status: preferred because This capsule is the current startup canon for the Alpha local-stack route and should be consulted before any later mutation route opens. Payload ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.local-stack-diagnosis.md."
+        },
+        {
+          "section_id": "memo.state.2026-04-02.alpha-local-stack-diagnosis#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.phase-alpha.curated.2026-04-02. Source refs: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.local-stack-diagnosis.md, repo:aoa-playbooks/docs/alpha-readiness/local-stack-diagnosis.md, repo:abyss-stack/Logs/phase-alpha/alpha-01-local-stack-diagnosis/startup_canon_map.json. Episode refs: memo.ep.2026-04-02.alpha-local-stack-diagnosis. Related curated object ids: memo.ep.2026-04-02.alpha-local-stack-diagnosis. Strongest next sources: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.local-stack-diagnosis.md, repo:aoa-playbooks/docs/alpha-readiness/local-stack-diagnosis.md, repo:abyss-stack/Logs/phase-alpha/alpha-01-local-stack-diagnosis/startup_canon_map.json."
+        },
+        {
+          "section_id": "memo.state.2026-04-02.alpha-local-stack-diagnosis#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: human_reviewed (curated Alpha route-01 state capsule). Temperature: hot; confidence 0.94; freshness 0.99; salience 0.93. Review state: confirmed. Retention class: working-export. Promotion state: candidate. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.state.2026-04-02.alpha-local-stack-diagnosis#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.local-stack-diagnosis.md. ToS refs: none. Skill refs: skill:aoa-change-protocol. Eval refs: eval:aoa-verification-honesty, eval:aoa-tool-trajectory-discipline. KAG lift status: none."
+        }
+      ]
+    },
+    {
+      "id": "memo.ep.2026-04-02.alpha-local-stack-diagnosis",
+      "kind": "episode",
+      "title": "Local stack diagnosis closed as the first live Alpha route",
+      "source_path": "examples/episode.phase-alpha-local-stack.example.json",
+      "sections": [
+        {
+          "section_id": "memo.ep.2026-04-02.alpha-local-stack-diagnosis#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the episode surface, its active recall modes, and its allowed current-recall posture.",
+          "body": "Local stack diagnosis closed as the first live Alpha route. Records the live diagnosis pass that established the canonical worker-path startup truth on 5403, named bounded operator-surface blockers, and closed with recurrence proven on the same llama.cpp lane. Scope: repo:aoa-playbooks, project:AoA. Primary recall modes: episodic, working. Current recall status: allowed because This episode remains useful as the first live record of canonical startup truth and bounded blocker discovery for Phase Alpha. Payload ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.local-stack-diagnosis.md."
+        },
+        {
+          "section_id": "memo.ep.2026-04-02.alpha-local-stack-diagnosis#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.phase-alpha.curated.2026-04-02. Source refs: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.local-stack-diagnosis.md, repo:aoa-agents/examples/alpha_reference_routes/local-stack-diagnosis.example.json, repo:abyss-stack/Logs/phase-alpha/alpha-01-local-stack-diagnosis/verification_pack.json. Episode refs: none. Related curated object ids: none. Strongest next sources: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.local-stack-diagnosis.md, repo:aoa-agents/examples/alpha_reference_routes/local-stack-diagnosis.example.json, repo:abyss-stack/Logs/phase-alpha/alpha-01-local-stack-diagnosis/verification_pack.json."
+        },
+        {
+          "section_id": "memo.ep.2026-04-02.alpha-local-stack-diagnosis#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: human_reviewed (curated Alpha route-01 review). Temperature: warm; confidence 0.92; freshness 0.98; salience 0.90. Review state: confirmed. Retention class: project-core. Promotion state: none. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.ep.2026-04-02.alpha-local-stack-diagnosis#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.local-stack-diagnosis.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-verification-honesty, eval:aoa-tool-trajectory-discipline. KAG lift status: none."
+        }
+      ]
+    },
+    {
+      "id": "memo.decision.2026-04-02.alpha-local-stack-diagnosis",
+      "kind": "decision",
+      "title": "Decision to keep Alpha local-stack diagnosis on the promoted worker path",
+      "source_path": "examples/decision.phase-alpha-local-stack.example.json",
+      "sections": [
+        {
+          "section_id": "memo.decision.2026-04-02.alpha-local-stack-diagnosis#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the decision surface, its active recall modes, and its allowed current-recall posture.",
+          "body": "Decision to keep Alpha local-stack diagnosis on the promoted worker path. Records the bounded choice to keep the Alpha diagnosis route on the canonical llama.cpp worker path and prove recurrence through a second pass on that same lane. Scope: repo:aoa-playbooks, project:AoA. Primary recall modes: working, semantic, source_route. Current recall status: allowed because This decision should stay visible while Phase Alpha recurrence remains anchored to a bounded second pass on the same canonical llama.cpp lane. Payload ref: repo:aoa-playbooks/docs/alpha-readiness/local-stack-diagnosis.md."
+        },
+        {
+          "section_id": "memo.decision.2026-04-02.alpha-local-stack-diagnosis#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.phase-alpha.curated.2026-04-02. Source refs: repo:aoa-playbooks/docs/alpha-readiness/local-stack-diagnosis.md, repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.local-stack-diagnosis.md, repo:abyss-stack/Logs/phase-alpha/alpha-01-local-stack-diagnosis/blocker_list.json. Episode refs: memo.ep.2026-04-02.alpha-local-stack-diagnosis. Related curated object ids: memo.ep.2026-04-02.alpha-local-stack-diagnosis. Strongest next sources: repo:aoa-playbooks/docs/alpha-readiness/local-stack-diagnosis.md, repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.local-stack-diagnosis.md, repo:abyss-stack/Logs/phase-alpha/alpha-01-local-stack-diagnosis/blocker_list.json."
+        },
+        {
+          "section_id": "memo.decision.2026-04-02.alpha-local-stack-diagnosis#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: human_reviewed (curated Alpha route-01 review). Temperature: warm; confidence 0.94; freshness 0.99; salience 0.89. Review state: confirmed. Retention class: operational-gate. Promotion state: none. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.decision.2026-04-02.alpha-local-stack-diagnosis#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-readiness/local-stack-diagnosis.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-tool-trajectory-discipline. KAG lift status: none."
+        }
+      ]
+    },
+    {
+      "id": "memo.decision.2026-04-02.alpha-self-agent-checkpoint",
+      "kind": "decision",
+      "title": "Checkpoint approval decision for the live Alpha operator-surface refresh",
+      "source_path": "examples/decision.phase-alpha-self-agent-checkpoint.example.json",
+      "sections": [
+        {
+          "section_id": "memo.decision.2026-04-02.alpha-self-agent-checkpoint#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the decision surface, its active recall modes, and its allowed current-recall posture.",
+          "body": "Checkpoint approval decision for the live Alpha operator-surface refresh. Records the explicit decision to land the bounded Route 2 operator-surface refresh only inside the named file boundary, with rollback posture and post-sync runtime health kept review-visible. Scope: repo:aoa-playbooks, project:AoA. Primary recall modes: working, semantic, source_route. Current recall status: allowed because This decision should remain visible whenever later Alpha routes need the bounded approval posture that kept Route 2 inside operator-surface refresh only. Payload ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.self-agent-checkpoint-rollout.md."
+        },
+        {
+          "section_id": "memo.decision.2026-04-02.alpha-self-agent-checkpoint#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.phase-alpha.curated.2026-04-02. Source refs: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.self-agent-checkpoint-rollout.md, repo:aoa-agents/examples/alpha_reference_routes/self-agent-checkpoint-rollout.example.json, repo:abyss-stack/Logs/phase-alpha/alpha-02-self-agent-checkpoint-rollout/approval_record.json, repo:abyss-stack/Logs/phase-alpha/alpha-02-self-agent-checkpoint-rollout/improvement_log.md. Episode refs: none. Related curated object ids: none. Strongest next sources: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.self-agent-checkpoint-rollout.md, repo:aoa-agents/examples/alpha_reference_routes/self-agent-checkpoint-rollout.example.json, repo:abyss-stack/Logs/phase-alpha/alpha-02-self-agent-checkpoint-rollout/approval_record.json."
+        },
+        {
+          "section_id": "memo.decision.2026-04-02.alpha-self-agent-checkpoint#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: human_reviewed (curated Alpha route-02 review). Temperature: warm; confidence 0.95; freshness 0.99; salience 0.93. Review state: confirmed. Retention class: checkpoint. Promotion state: none. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.decision.2026-04-02.alpha-self-agent-checkpoint#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.self-agent-checkpoint-rollout.md. ToS refs: none. Skill refs: skill:aoa-approval-gate-check. Eval refs: eval:aoa-approval-boundary-adherence, eval:aoa-bounded-change-quality. KAG lift status: none."
+        }
+      ]
+    },
+    {
+      "id": "memo.audit.2026-04-02.alpha-self-agent-checkpoint",
+      "kind": "audit_event",
+      "title": "Alpha Route 2 kept rollback and post-sync health review-visible",
+      "source_path": "examples/audit_event.phase-alpha-self-agent-checkpoint.example.json",
+      "sections": [
+        {
+          "section_id": "memo.audit.2026-04-02.alpha-self-agent-checkpoint#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the audit_event surface, its active recall modes, and its allowed current-recall posture.",
+          "body": "Alpha Route 2 kept rollback and post-sync health review-visible. Captures the live checkpoint event in which rollback triggers, parity sync, exact reply, and autonomy closure all remained explicit after the bounded operator-surface refresh. Scope: repo:aoa-playbooks, project:AoA. Primary recall modes: episodic, source_route. Current recall status: allowed because This audit event remains useful when checking whether Route 2 preserved rollback visibility and post-sync runtime closure before handoff to remediation. Payload ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.self-agent-checkpoint-rollout.md."
+        },
+        {
+          "section_id": "memo.audit.2026-04-02.alpha-self-agent-checkpoint#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.phase-alpha.curated.2026-04-02. Source refs: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.self-agent-checkpoint-rollout.md, repo:aoa-playbooks/docs/alpha-readiness/self-agent-checkpoint-rollout.md, repo:abyss-stack/Logs/phase-alpha/alpha-02-self-agent-checkpoint-rollout/rollback_marker.json, repo:abyss-stack/Logs/phase-alpha/alpha-02-self-agent-checkpoint-rollout/health_check.json. Episode refs: memo.decision.2026-04-02.alpha-self-agent-checkpoint. Related curated object ids: memo.decision.2026-04-02.alpha-self-agent-checkpoint. Strongest next sources: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.self-agent-checkpoint-rollout.md, repo:aoa-playbooks/docs/alpha-readiness/self-agent-checkpoint-rollout.md, repo:abyss-stack/Logs/phase-alpha/alpha-02-self-agent-checkpoint-rollout/rollback_marker.json."
+        },
+        {
+          "section_id": "memo.audit.2026-04-02.alpha-self-agent-checkpoint#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: human_reviewed (curated Alpha route-02 audit). Temperature: cool; confidence 0.93; freshness 0.99; salience 0.86. Review state: confirmed. Retention class: audit-trace. Promotion state: none. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.audit.2026-04-02.alpha-self-agent-checkpoint#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.self-agent-checkpoint-rollout.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-approval-boundary-adherence, eval:aoa-bounded-change-quality. KAG lift status: none."
+        }
+      ]
+    },
+    {
+      "id": "memo.ep.2026-04-02.alpha-validation-remediation",
+      "kind": "episode",
+      "title": "Primary Alpha remediation pass closed the pilot and benchmark doctrine drift",
+      "source_path": "examples/episode.phase-alpha-validation-remediation.example.json",
+      "sections": [
+        {
+          "section_id": "memo.ep.2026-04-02.alpha-validation-remediation#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the episode surface, its active recall modes, and its allowed current-recall posture.",
+          "body": "Primary Alpha remediation pass closed the pilot and benchmark doctrine drift. Records the live document-bounded remediation that removed stale `Ollama`, `5401`, and control-lane wording from the pilot and benchmark doctrine before the memo-only rerun closes recurrence. Scope: repo:aoa-playbooks, project:AoA. Primary recall modes: episodic, working. Current recall status: allowed because This episode remains useful when tracing how the canonical doctrine story was cleaned before the later readiness dossier and memo-only rerun. Payload ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation.md."
+        },
+        {
+          "section_id": "memo.ep.2026-04-02.alpha-validation-remediation#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.phase-alpha.curated.2026-04-02. Source refs: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation.md, repo:aoa-agents/examples/alpha_reference_routes/validation-driven-remediation.example.json, repo:abyss-stack/Logs/phase-alpha/alpha-03-validation-driven-remediation/failure_map.json, repo:abyss-stack/Logs/phase-alpha/alpha-03-validation-driven-remediation/revalidation_pack.json. Episode refs: none. Related curated object ids: none. Strongest next sources: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation.md, repo:aoa-agents/examples/alpha_reference_routes/validation-driven-remediation.example.json, repo:abyss-stack/Logs/phase-alpha/alpha-03-validation-driven-remediation/failure_map.json."
+        },
+        {
+          "section_id": "memo.ep.2026-04-02.alpha-validation-remediation#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: human_reviewed (curated Alpha route-03 review). Temperature: warm; confidence 0.92; freshness 0.99; salience 0.91. Review state: confirmed. Retention class: project-core. Promotion state: none. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.ep.2026-04-02.alpha-validation-remediation#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-scope-drift-detection, eval:aoa-verification-honesty, eval:aoa-approval-boundary-adherence. KAG lift status: none."
+        }
+      ]
+    },
+    {
+      "id": "memo.decision.2026-04-02.alpha-validation-remediation",
+      "kind": "decision",
+      "title": "Decision to close Route 3 as doctrine remediation only",
+      "source_path": "examples/decision.phase-alpha-validation-remediation.example.json",
+      "sections": [
+        {
+          "section_id": "memo.decision.2026-04-02.alpha-validation-remediation#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the decision surface, its active recall modes, and its preferred current-recall posture.",
+          "body": "Decision to close Route 3 as doctrine remediation only. Records the bounded decision to remediate the pilot and benchmark doctrine surfaces without widening into runtime-script refactors, while still requiring the memo-only rerun for recurrence closure. Scope: repo:aoa-playbooks, project:AoA. Primary recall modes: working, semantic, source_route. Current recall status: preferred because This decision should anchor the final Alpha rerun because it names both the doctrine-only remediation boundary and the need for memo-first recurrence closure. Payload ref: repo:aoa-playbooks/docs/alpha-readiness/validation-driven-remediation.md."
+        },
+        {
+          "section_id": "memo.decision.2026-04-02.alpha-validation-remediation#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.phase-alpha.curated.2026-04-02. Source refs: repo:aoa-playbooks/docs/alpha-readiness/validation-driven-remediation.md, repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation.md, repo:abyss-stack/Logs/phase-alpha/alpha-03-validation-driven-remediation/remediation_decision.json. Episode refs: memo.ep.2026-04-02.alpha-validation-remediation. Related curated object ids: memo.ep.2026-04-02.alpha-validation-remediation. Strongest next sources: repo:aoa-playbooks/docs/alpha-readiness/validation-driven-remediation.md, repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation.md, repo:abyss-stack/Logs/phase-alpha/alpha-03-validation-driven-remediation/remediation_decision.json."
+        },
+        {
+          "section_id": "memo.decision.2026-04-02.alpha-validation-remediation#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: human_reviewed (curated Alpha route-03 review). Temperature: warm; confidence 0.94; freshness 0.99; salience 0.92. Review state: confirmed. Retention class: operational-gate. Promotion state: none. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.decision.2026-04-02.alpha-validation-remediation#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-readiness/validation-driven-remediation.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-scope-drift-detection, eval:aoa-verification-honesty, eval:aoa-approval-boundary-adherence. KAG lift status: none."
+        }
+      ]
+    },
+    {
+      "id": "memo.ep.2026-04-02.alpha-validation-remediation-rerun",
+      "kind": "episode",
+      "title": "Memo-only rerun of Alpha remediation closed recurrence",
+      "source_path": "examples/episode.phase-alpha-validation-remediation-rerun.example.json",
+      "sections": [
+        {
+          "section_id": "memo.ep.2026-04-02.alpha-validation-remediation-rerun#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the episode surface, its active recall modes, and its allowed current-recall posture.",
+          "body": "Memo-only rerun of Alpha remediation closed recurrence. Records the live rerun that re-entered remediation from landed memo objects and the Phase Alpha recall contract only, without stronger source escalation or hidden scratchpad recovery. Scope: repo:aoa-playbooks, project:AoA. Primary recall modes: episodic, working. Current recall status: allowed because This episode remains useful as the live proof that the rerun stayed memo-first, anchor-first, and escalation-free. Payload ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md."
+        },
+        {
+          "section_id": "memo.ep.2026-04-02.alpha-validation-remediation-rerun#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.phase-alpha.curated.2026-04-02. Source refs: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md, repo:aoa-memo/examples/recall_contract.object.working.phase-alpha.json, repo:abyss-stack/Logs/phase-alpha/alpha-06-validation-driven-remediation-recall-rerun/revalidation_pack.json. Episode refs: memo.ep.2026-04-02.alpha-validation-remediation. Related curated object ids: memo.ep.2026-04-02.alpha-validation-remediation. Strongest next sources: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md, repo:aoa-memo/examples/recall_contract.object.working.phase-alpha.json, repo:abyss-stack/Logs/phase-alpha/alpha-06-validation-driven-remediation-recall-rerun/revalidation_pack.json."
+        },
+        {
+          "section_id": "memo.ep.2026-04-02.alpha-validation-remediation-rerun#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: human_reviewed (curated Alpha route-06 review). Temperature: warm; confidence 0.95; freshness 0.99; salience 0.94. Review state: confirmed. Retention class: project-core. Promotion state: none. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.ep.2026-04-02.alpha-validation-remediation-rerun#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-memo-recall-integrity, eval:aoa-return-anchor-integrity, eval:aoa-verification-honesty. KAG lift status: none."
+        }
+      ]
+    },
+    {
+      "id": "memo.state.2026-04-02.alpha-long-horizon",
+      "kind": "state_capsule",
+      "title": "Long-horizon Alpha readiness dossier state capsule",
+      "source_path": "examples/state_capsule.phase-alpha-long-horizon.example.json",
+      "sections": [
+        {
+          "section_id": "memo.state.2026-04-02.alpha-long-horizon#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the state_capsule surface, its active recall modes, and its allowed current-recall posture.",
+          "body": "Long-horizon Alpha readiness dossier state capsule. Captures the live readiness-dossier posture after Routes 1-3 were distilled into one candidate-only long-horizon packet on the canonical worker path. Scope: repo:aoa-playbooks, project:AoA. Primary recall modes: working, episodic. Current recall status: allowed because This capsule remains useful while the readiness dossier stays candidate-only and prepares the checkpoint pause/resume route. Payload ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.long-horizon-model-tier-orchestra.md."
+        },
+        {
+          "section_id": "memo.state.2026-04-02.alpha-long-horizon#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.phase-alpha.curated.2026-04-02. Source refs: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.long-horizon-model-tier-orchestra.md, repo:aoa-playbooks/docs/alpha-readiness/long-horizon-model-tier-orchestra.md, repo:abyss-stack/Logs/phase-alpha/alpha-04-long-horizon-model-tier-orchestra/verification_result.json. Episode refs: memo.ep.2026-04-02.alpha-long-horizon. Related curated object ids: memo.ep.2026-04-02.alpha-long-horizon. Strongest next sources: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.long-horizon-model-tier-orchestra.md, repo:aoa-playbooks/docs/alpha-readiness/long-horizon-model-tier-orchestra.md, repo:abyss-stack/Logs/phase-alpha/alpha-04-long-horizon-model-tier-orchestra/verification_result.json."
+        },
+        {
+          "section_id": "memo.state.2026-04-02.alpha-long-horizon#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: human_reviewed (curated Alpha route-04 review). Temperature: hot; confidence 0.92; freshness 0.99; salience 0.92. Review state: confirmed. Retention class: working-export. Promotion state: candidate. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.state.2026-04-02.alpha-long-horizon#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.long-horizon-model-tier-orchestra.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-long-horizon-depth, eval:aoa-tool-trajectory-discipline. KAG lift status: none."
+        }
+      ]
+    },
+    {
+      "id": "memo.ep.2026-04-02.alpha-long-horizon",
+      "kind": "episode",
+      "title": "Long-horizon Alpha route episode for the first readiness dossier",
+      "source_path": "examples/episode.phase-alpha-long-horizon.example.json",
+      "sections": [
+        {
+          "section_id": "memo.ep.2026-04-02.alpha-long-horizon#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the episode surface, its active recall modes, and its allowed current-recall posture.",
+          "body": "Long-horizon Alpha route episode for the first readiness dossier. Records the bounded non-mutating dossier pass that stitched the live Route 1-3 surfaces into one candidate-only readiness packet and prepared checkpoint continuity. Scope: repo:aoa-playbooks, project:AoA. Primary recall modes: episodic, working. Current recall status: allowed because This episode remains useful when tracing how the first readiness dossier was formed without widening into canon or mutation. Payload ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.long-horizon-model-tier-orchestra.md."
+        },
+        {
+          "section_id": "memo.ep.2026-04-02.alpha-long-horizon#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.phase-alpha.curated.2026-04-02. Source refs: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.long-horizon-model-tier-orchestra.md, repo:aoa-agents/examples/alpha_reference_routes/long-horizon-model-tier-orchestra.example.json, repo:abyss-stack/Logs/phase-alpha/alpha-04-long-horizon-model-tier-orchestra/distillation_pack.md. Episode refs: none. Related curated object ids: none. Strongest next sources: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.long-horizon-model-tier-orchestra.md, repo:aoa-agents/examples/alpha_reference_routes/long-horizon-model-tier-orchestra.example.json, repo:abyss-stack/Logs/phase-alpha/alpha-04-long-horizon-model-tier-orchestra/distillation_pack.md."
+        },
+        {
+          "section_id": "memo.ep.2026-04-02.alpha-long-horizon#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: human_reviewed (curated Alpha route-04 review). Temperature: warm; confidence 0.90; freshness 0.99; salience 0.90. Review state: confirmed. Retention class: project-core. Promotion state: none. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.ep.2026-04-02.alpha-long-horizon#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.long-horizon-model-tier-orchestra.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-long-horizon-depth, eval:aoa-tool-trajectory-discipline. KAG lift status: none."
+        }
+      ]
+    },
+    {
+      "id": "memo.state.2026-04-02.alpha-restartable-inquiry",
+      "kind": "state_capsule",
+      "title": "Restartable inquiry Alpha state capsule after live pause and resume",
+      "source_path": "examples/state_capsule.phase-alpha-restartable-inquiry.example.json",
+      "sections": [
+        {
+          "section_id": "memo.state.2026-04-02.alpha-restartable-inquiry#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the state_capsule surface, its active recall modes, and its preferred current-recall posture.",
+          "body": "Restartable inquiry Alpha state capsule after live pause and resume. Captures the checkpoint-first posture that now survived a real pause/resume cycle on the canonical worker path and points directly at the memo-only rerun. Scope: repo:aoa-playbooks, project:AoA. Primary recall modes: working, episodic. Current recall status: preferred because This capsule should anchor the next pass because it preserves the checkpoint-first posture that already survived pause/resume on the live path. Payload ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.restartable-inquiry-loop.md."
+        },
+        {
+          "section_id": "memo.state.2026-04-02.alpha-restartable-inquiry#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.phase-alpha.curated.2026-04-02. Source refs: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.restartable-inquiry-loop.md, repo:aoa-playbooks/docs/alpha-readiness/restartable-inquiry-loop.md, repo:abyss-stack/Logs/phase-alpha/alpha-05-restartable-inquiry-loop/inquiry_checkpoint.json. Episode refs: none. Related curated object ids: none. Strongest next sources: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.restartable-inquiry-loop.md, repo:aoa-playbooks/docs/alpha-readiness/restartable-inquiry-loop.md, repo:abyss-stack/Logs/phase-alpha/alpha-05-restartable-inquiry-loop/inquiry_checkpoint.json."
+        },
+        {
+          "section_id": "memo.state.2026-04-02.alpha-restartable-inquiry#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: human_reviewed (curated Alpha route-05 review). Temperature: hot; confidence 0.93; freshness 0.99; salience 0.92. Review state: confirmed. Retention class: working-export. Promotion state: candidate. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.state.2026-04-02.alpha-restartable-inquiry#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.restartable-inquiry-loop.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-long-horizon-depth, eval:aoa-return-anchor-integrity. KAG lift status: none."
+        }
+      ]
+    },
+    {
+      "id": "memo.decision.2026-04-02.alpha-restartable-inquiry",
+      "kind": "decision",
+      "title": "Decision to hand the resumed dossier into the memo-only rerun",
+      "source_path": "examples/decision.phase-alpha-restartable-inquiry.example.json",
+      "sections": [
+        {
+          "section_id": "memo.decision.2026-04-02.alpha-restartable-inquiry#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the decision surface, its active recall modes, and its allowed current-recall posture.",
+          "body": "Decision to hand the resumed dossier into the memo-only rerun. Records the bounded choice to keep the resumed inquiry checkpoint-first and to hand the next pass directly into the final memo-only remediation rerun. Scope: repo:aoa-playbooks, project:AoA. Primary recall modes: working, semantic, source_route. Current recall status: allowed because This decision should remain visible while the resumed dossier is being handed into the final memo-only rerun. Payload ref: repo:aoa-playbooks/docs/alpha-readiness/restartable-inquiry-loop.md."
+        },
+        {
+          "section_id": "memo.decision.2026-04-02.alpha-restartable-inquiry#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.phase-alpha.curated.2026-04-02. Source refs: repo:aoa-playbooks/docs/alpha-readiness/restartable-inquiry-loop.md, repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.restartable-inquiry-loop.md, repo:abyss-stack/Logs/phase-alpha/alpha-05-restartable-inquiry-loop/next_pass_brief.md. Episode refs: none. Related curated object ids: none. Strongest next sources: repo:aoa-playbooks/docs/alpha-readiness/restartable-inquiry-loop.md, repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.restartable-inquiry-loop.md, repo:abyss-stack/Logs/phase-alpha/alpha-05-restartable-inquiry-loop/next_pass_brief.md."
+        },
+        {
+          "section_id": "memo.decision.2026-04-02.alpha-restartable-inquiry#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: human_reviewed (curated Alpha route-05 review). Temperature: warm; confidence 0.94; freshness 0.99; salience 0.91. Review state: confirmed. Retention class: operational-gate. Promotion state: none. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.decision.2026-04-02.alpha-restartable-inquiry#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-readiness/restartable-inquiry-loop.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-long-horizon-depth, eval:aoa-return-anchor-integrity. KAG lift status: none."
+        }
+      ]
+    },
+    {
+      "id": "memo.pattern.2026-04-02.alpha-remediation-recurrence",
+      "kind": "pattern",
+      "title": "Alpha remediation recurrence is proven only through memo-only closure",
+      "source_path": "examples/pattern.phase-alpha-remediation-recurrence.example.json",
+      "sections": [
+        {
+          "section_id": "memo.pattern.2026-04-02.alpha-remediation-recurrence#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the pattern surface, its active recall modes, and its allowed current-recall posture.",
+          "body": "Alpha remediation recurrence is proven only through memo-only closure. Observed across the primary remediation pass and the memo-only rerun: Alpha remediation can claim recurrence only when the rerun stays inspect-capsule-expand, remains anchor-first, and closes without stronger source escalation or hidden scratchpad recovery. Scope: repo:aoa-playbooks, project:AoA. Primary recall modes: procedural, semantic. Current recall status: allowed because This pattern should surface only as bounded remediation experience proven by the memo-only rerun, not as general recurrence doctrine. Payload ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md."
+        },
+        {
+          "section_id": "memo.pattern.2026-04-02.alpha-remediation-recurrence#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.phase-alpha.curated.2026-04-02. Source refs: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation.md, repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md, repo:aoa-memo/examples/recall_contract.object.working.phase-alpha.json, repo:abyss-stack/Logs/phase-alpha/alpha-06-validation-driven-remediation-recall-rerun/remediation_decision.json. Episode refs: memo.ep.2026-04-02.alpha-validation-remediation, memo.ep.2026-04-02.alpha-validation-remediation-rerun. Related curated object ids: memo.ep.2026-04-02.alpha-validation-remediation, memo.ep.2026-04-02.alpha-validation-remediation-rerun. Strongest next sources: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation.md, repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md, repo:aoa-memo/examples/recall_contract.object.working.phase-alpha.json."
+        },
+        {
+          "section_id": "memo.pattern.2026-04-02.alpha-remediation-recurrence#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: human_reviewed (curated Alpha route-06 recurrence review). Temperature: cool; confidence 0.93; freshness 0.99; salience 0.93. Review state: confirmed. Retention class: operational-pattern. Promotion state: none. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.pattern.2026-04-02.alpha-remediation-recurrence#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-memo-recall-integrity, eval:aoa-return-anchor-integrity, eval:aoa-verification-honesty. KAG lift status: none."
+        }
+      ]
     }
   ]
 }

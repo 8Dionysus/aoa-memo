@@ -1,0 +1,75 @@
+{
+  "id": "memo.ep.2026-04-02.alpha-local-stack-diagnosis",
+  "kind": "episode",
+  "title": "Local stack diagnosis closed as the first live Alpha route",
+  "summary": "Records the live diagnosis pass that established the canonical worker-path startup truth on 5403, named bounded operator-surface blockers, and closed with recurrence proven on the same llama.cpp lane.",
+  "scope": [
+    "repo:aoa-playbooks",
+    "project:AoA"
+  ],
+  "owner_refs": [
+    "repo:aoa-memo"
+  ],
+  "payload_ref": "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.local-stack-diagnosis.md",
+  "tags": [
+    "phase-alpha",
+    "local-stack",
+    "episode"
+  ],
+  "time": {
+    "created_at": "2026-04-03T02:58:00Z",
+    "observed_at": "2026-04-03T02:53:00Z",
+    "valid_from": "2026-04-03T02:58:00Z",
+    "valid_to": null
+  },
+  "provenance": {
+    "source_refs": [
+      "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.local-stack-diagnosis.md",
+      "repo:aoa-agents/examples/alpha_reference_routes/local-stack-diagnosis.example.json",
+      "repo:abyss-stack/Logs/phase-alpha/alpha-01-local-stack-diagnosis/verification_pack.json"
+    ],
+    "episode_refs": [],
+    "provenance_thread_id": "prov.phase-alpha.curated.2026-04-02"
+  },
+  "trust": {
+    "temperature": "warm",
+    "confidence": 0.92,
+    "authority_kind": "human_reviewed",
+    "authority": "curated Alpha route-01 review",
+    "freshness": 0.98,
+    "salience": 0.9
+  },
+  "lifecycle": {
+    "review_state": "confirmed",
+    "supersedes": [],
+    "superseded_by": null,
+    "retention_class": "project-core",
+    "current_recall": {
+      "status": "allowed",
+      "status_reason": "This episode remains useful as the first live record of canonical startup truth and bounded blocker discovery for Phase Alpha."
+    }
+  },
+  "access": {
+    "access_class": "public",
+    "read_scopes": [
+      "public"
+    ],
+    "write_scopes": [
+      "maintainer"
+    ],
+    "promotion_scopes": [
+      "maintainer",
+      "human-review"
+    ]
+  },
+  "bridges": {
+    "tos_refs": [],
+    "skill_refs": [],
+    "eval_refs": [
+      "eval:aoa-verification-honesty",
+      "eval:aoa-tool-trajectory-discipline"
+    ],
+    "kag_lift_status": "none",
+    "route_capsule_ref": "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.local-stack-diagnosis.md"
+  }
+}

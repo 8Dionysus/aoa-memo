@@ -37,6 +37,8 @@ EXAMPLES = ROOT / "examples"
 GENERATED = ROOT / "generated"
 RUNTIME_WRITEBACK_TARGETS_PATH = GENERATED / "runtime_writeback_targets.min.json"
 RUNTIME_WRITEBACK_INTAKE_PATH = GENERATED / "runtime_writeback_intake.min.json"
+PHASE_ALPHA_WRITEBACK_MAP_PATH = EXAMPLES / "phase_alpha_writeback_map.example.json"
+PHASE_ALPHA_WRITEBACK_OUTPUT_PATH = GENERATED / "phase_alpha_writeback_map.min.json"
 QUESTBOOK_PATH = ROOT / "QUESTBOOK.md"
 QUESTBOOK_DOC = ROOT / "docs" / "QUEST_EVIDENCE_WRITEBACK.md"
 FOUNDATION_QUESTBOOK_FILES = {
@@ -72,6 +74,37 @@ CORE_KIND_EXAMPLE_MAP = {
     "bridge": "bridge.kag-lift.example.json",
     "audit_event": "audit_event.supersession.example.json",
 }
+PHASE_ALPHA_OBJECT_EXAMPLES_BY_KIND = {
+    "state_capsule": [
+        "state_capsule.phase-alpha-local-stack.example.json",
+        "state_capsule.phase-alpha-long-horizon.example.json",
+        "state_capsule.phase-alpha-restartable-inquiry.example.json",
+    ],
+    "episode": [
+        "episode.phase-alpha-local-stack.example.json",
+        "episode.phase-alpha-validation-remediation.example.json",
+        "episode.phase-alpha-validation-remediation-rerun.example.json",
+        "episode.phase-alpha-long-horizon.example.json",
+    ],
+    "decision": [
+        "decision.phase-alpha-local-stack.example.json",
+        "decision.phase-alpha-self-agent-checkpoint.example.json",
+        "decision.phase-alpha-validation-remediation.example.json",
+        "decision.phase-alpha-restartable-inquiry.example.json",
+    ],
+    "pattern": [
+        "pattern.phase-alpha-remediation-recurrence.example.json",
+    ],
+    "audit_event": [
+        "audit_event.phase-alpha-self-agent-checkpoint.example.json",
+    ],
+}
+PHASE_ALPHA_OBJECT_EXAMPLE_NAMES = tuple(
+    example_name
+    for example_names in PHASE_ALPHA_OBJECT_EXAMPLES_BY_KIND.values()
+    for example_name in example_names
+)
+PHASE_ALPHA_PROVENANCE_THREAD_EXAMPLE = "provenance_thread.phase-alpha-curated.example.json"
 KAG_EXPORT_REQUIRED_FIELDS = {
     "owner_repo",
     "kind",
@@ -112,6 +145,21 @@ def load_runtime_writeback_intake_builder():
     if spec is None or spec.loader is None:
         print("[FAIL] runtime_writeback_intake.min.json")
         print("  - unable to load runtime writeback intake generator")
+        raise SystemExit(1)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_phase_alpha_writeback_builder():
+    module_path = ROOT / "scripts" / "generate_phase_alpha_writeback_map.py"
+    spec = importlib.util.spec_from_file_location(
+        "generate_phase_alpha_writeback_map",
+        module_path,
+    )
+    if spec is None or spec.loader is None:
+        print("[FAIL] phase_alpha_writeback_map.min.json")
+        print("  - unable to load Phase Alpha writeback map generator")
         raise SystemExit(1)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
@@ -416,6 +464,8 @@ def validate_memory_object_profiles() -> None:
             "audit_event.retraction.example.json",
         ],
     }
+    for kind, example_names in PHASE_ALPHA_OBJECT_EXAMPLES_BY_KIND.items():
+        extra_kind_examples.setdefault(kind, []).extend(example_names)
 
     for kind, example_names in extra_kind_examples.items():
         schema_name = Path(CORE_KIND_SCHEMA_MAP[kind]).name
@@ -456,6 +506,7 @@ def validate_trust_lifecycle_contracts() -> None:
         "audit_event.supersession.example.json",
         "audit_event.retraction.example.json",
     ]
+    memory_examples.extend(PHASE_ALPHA_OBJECT_EXAMPLE_NAMES)
 
     for example_name in memory_examples:
         data = load_json(EXAMPLES / example_name)
@@ -1076,6 +1127,85 @@ def validate_runtime_writeback_intake() -> None:
     print("[OK]   runtime_writeback_intake.min.json")
 
 
+def validate_phase_alpha_writeback_map() -> None:
+    builder = load_phase_alpha_writeback_builder()
+    expected = builder.build_phase_alpha_writeback_map_payload()
+    data = load_json(PHASE_ALPHA_WRITEBACK_OUTPUT_PATH)
+    source = load_json(PHASE_ALPHA_WRITEBACK_MAP_PATH)
+
+    errors: list[str] = []
+    if data != expected:
+        errors.append(
+            "generated/phase_alpha_writeback_map.min.json is out of date; "
+            "run scripts/generate_phase_alpha_writeback_map.py"
+        )
+    if not isinstance(source, dict):
+        errors.append("examples/phase_alpha_writeback_map.example.json must stay an object")
+    else:
+        if source.get("surface_type") != "phase_alpha_writeback_map":
+            errors.append(
+                "examples/phase_alpha_writeback_map.example.json surface_type must stay phase_alpha_writeback_map"
+            )
+        playbooks = source.get("playbooks")
+        if not isinstance(playbooks, list) or len(playbooks) != 5:
+            errors.append(
+                "examples/phase_alpha_writeback_map.example.json must keep the five Alpha playbook mappings"
+            )
+        else:
+            expected_ids = ["AOA-P-0014", "AOA-P-0006", "AOA-P-0018", "AOA-P-0008", "AOA-P-0009"]
+            seen_ids: list[str] = []
+            for index, item in enumerate(playbooks):
+                if not isinstance(item, dict):
+                    errors.append(f"playbooks[{index}] must be an object")
+                    continue
+                playbook_id = item.get("playbook_id")
+                seen_ids.append(playbook_id)
+                for field_name in ("writeback_kinds", "source_refs"):
+                    value = item.get(field_name)
+                    if not isinstance(value, list) or not value:
+                        errors.append(f"playbooks[{index}].{field_name} must be a non-empty list")
+                        continue
+                    for ref_index, ref in enumerate(value):
+                        if field_name == "source_refs":
+                            error = local_ref_error(ref, f"playbooks[{index}].source_refs[{ref_index}]")
+                            if error:
+                                errors.append(error)
+                if playbook_id == "AOA-P-0018" and item.get("pattern_after_second_recurrence") is not True:
+                    errors.append("validation-driven-remediation must keep pattern_after_second_recurrence true")
+                if playbook_id == "AOA-P-0008" and item.get("claim_candidate_after_reviewer") is not True:
+                    errors.append("long-horizon-model-tier-orchestra must keep claim_candidate_after_reviewer true")
+                if playbook_id == "AOA-P-0009":
+                    retained = item.get("route_artifacts_retained")
+                    if retained != ["inquiry_checkpoint"]:
+                        errors.append("restartable-inquiry-loop must keep inquiry_checkpoint as a retained route artifact")
+            if seen_ids != expected_ids:
+                errors.append(
+                    "examples/phase_alpha_writeback_map.example.json playbooks drifted from the fixed Alpha order"
+                )
+
+        recall_posture = source.get("recall_posture")
+        if not isinstance(recall_posture, dict):
+            errors.append("examples/phase_alpha_writeback_map.example.json must keep recall_posture")
+        else:
+            if recall_posture.get("path") != ["inspect", "capsule", "expand"]:
+                errors.append("Phase Alpha recall_posture.path must stay inspect -> capsule -> expand")
+            if recall_posture.get("memo_first_only") is not True:
+                errors.append("Phase Alpha recall_posture.memo_first_only must stay true")
+            expected_contract_ref = "examples/recall_contract.object.working.phase-alpha.json"
+            if recall_posture.get("contract_ref") != expected_contract_ref:
+                errors.append(f"Phase Alpha recall_posture.contract_ref must stay {expected_contract_ref}")
+            error = local_ref_error(recall_posture.get("contract_ref"), "recall_posture.contract_ref")
+            if error:
+                errors.append(error)
+
+    if errors:
+        print("[FAIL] phase_alpha_writeback_map")
+        for err in errors:
+            print(f"  - {err}")
+        raise SystemExit(1)
+    print("[OK]   phase_alpha_writeback_map")
+
+
 def validate_bridge_export_contracts() -> None:
     chunk_validator = validator_for("memory_chunk_face.schema.json")
     graph_validator = validator_for("memory_graph_face.schema.json")
@@ -1445,6 +1575,7 @@ def main() -> int:
     validate_example(validator_for("provenance_thread.schema.json"), "provenance_thread.example.json")
     validate_example(validator_for("provenance_thread.schema.json"), "checkpoint_improvement_thread.example.json")
     validate_example(validator_for("provenance_thread.schema.json"), "provenance_thread.kag-lift.example.json")
+    validate_example(validator_for("provenance_thread.schema.json"), PHASE_ALPHA_PROVENANCE_THREAD_EXAMPLE)
     validate_recall_contract_example(
         "recall_contract.semantic.json",
         expected_mode="semantic",
@@ -1527,6 +1658,26 @@ def main() -> int:
         ],
     )
     validate_recall_contract_example(
+        "recall_contract.object.working.phase-alpha.json",
+        expected_mode="working",
+        expected_allowed_scopes=["thread", "session", "project"],
+        expected_preferred_kinds=["state_capsule", "decision", "episode", "audit_event", "anchor"],
+        expected_temperature_order=["hot", "warm", "cool", "frozen", "cold"],
+        expected_inspect_surface="generated/memory_object_catalog.min.json",
+        expected_capsule_surface="generated/memory_object_capsules.json",
+        expected_expand_surface="generated/memory_object_sections.full.json",
+        expected_source_route_required=False,
+        expected_checkpoint_continuity_supported=True,
+        expected_return_ready=True,
+        expected_preferred_anchor_kinds=["state_capsule", "decision", "anchor"],
+        expected_support_artifact_refs=[
+            "generated/phase_alpha_writeback_map.min.json",
+            "schemas/inquiry_checkpoint.schema.json",
+            "docs/RUNTIME_WRITEBACK_SEAM.md",
+            "docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
+        ],
+    )
+    validate_recall_contract_example(
         "recall_contract.object.semantic.json",
         expected_mode="semantic",
         expected_allowed_scopes=["repo", "project", "ecosystem"],
@@ -1555,6 +1706,7 @@ def main() -> int:
     validate_checkpoint_to_memory_contract()
     validate_runtime_writeback_targets()
     validate_runtime_writeback_intake()
+    validate_phase_alpha_writeback_map()
     validate_witness_trace_contract()
     validate_bridge_export_contracts()
     validate_kag_source_export()
