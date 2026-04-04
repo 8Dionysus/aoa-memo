@@ -48,6 +48,24 @@ The quest state remains source-owned. `aoa-memo` keeps the recallable witness of
 - if the memory cannot be described without taking over source state, keep it source-owned
 - memo should preserve evidence, not become the quest owner
 
+## Installed quest-harvest posture
+
+`aoa-quest-harvest` may assist this repo only as a post-session triage skill after a reviewed run, closure, or pause.
+
+- it is not used inside an active route
+- it does not define orchestrator identity
+- it does not replace memo ownership, playbook canon, or eval proof
+- one anecdotal repeat is not enough to promote a writeback pattern
+
+Its allowed verdicts are:
+
+- `keep/open quest`
+- `promote to skill`
+- `promote to playbook`
+- `promote to orchestrator surface`
+- `promote to proof surface`
+- `promote to memo surface`
+
 ## Manual-first pilot writeback
 
 - The March 31 manual-first questbook pilot records one compact writeback note at [QUESTBOOK_MANUAL_FIRST_WRITEBACK.md](QUESTBOOK_MANUAL_FIRST_WRITEBACK.md).
