@@ -1,0 +1,59 @@
+schema_version: work_quest_v1
+id: AOA-MEM-Q-0005
+title: Align review orchestrator quests to closure, residual-risk, and recurrence memo notes
+summary: Define how review-facing quests should recall closure and residual-risk notes without making memo the owner of verdict authority.
+repo: aoa-memo
+owner_surface: docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md
+kind: memory
+state: captured
+band: frontier
+difficulty: d2_slice
+risk: r1_repo_local
+control_mode: codex_supervised
+delegate_tier: archivist
+fallback_tier: verifier
+wrapper_class: local_builder
+write_scope: docs_only
+split_required: false
+public_safe: true
+complexity_basis:
+  scope: 1
+  ambiguity: 1
+  boundary: 2
+  verification: 1
+parent: null
+depends_on:
+  - AOA-MEM-Q-0001
+activation:
+  mode: manual
+anchor_ref:
+  artifact: orchestrator_memory_alignment
+  ref: docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md#review
+orchestrator_class_ref: aoa-agents:review
+capability_target: evidence_closure
+playbook_family_refs:
+  - repo:aoa-playbooks/generated/playbook_review_packet_contracts.min.json
+  - repo:aoa-playbooks/generated/playbook_review_status.min.json
+proof_surface_refs:
+  - repo:aoa-evals/generated/eval_catalog.min.json
+  - repo:aoa-evals/docs/ORCHESTRATOR_PROOF_ALIGNMENT.md
+memory_surface_refs:
+  - generated/memory_object_capsules.json
+  - examples/provenance_thread.phase-alpha-curated.example.json
+  - docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md#review
+handoff_role: memo-maintainer
+evidence:
+  - closure and residual-risk recall stay explicit
+  - provenance continuity remains reviewable
+  - memo does not replace verdict ownership
+harvest:
+  target: memo
+opened_at: '2026-04-03'
+touched_at: '2026-04-03'
+notes: >
+  Keep review memory recurrence-shaped.
+  Memo may preserve closure notes but must not become the owner of closure verdicts.
+tags:
+  - orchestrators
+  - review
+  - recurrence
