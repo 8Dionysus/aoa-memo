@@ -5,6 +5,7 @@ import json
 import sys
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -280,6 +281,23 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
         self.assertEqual(by_surface["distillation_claim_candidate"]["writeback_class"], "reviewed_candidate")
         self.assertTrue(by_surface["distillation_claim_candidate"]["requires_human_review"])
         self.assertTrue(all(entry["runtime_refs"] for entry in current["targets"]))
+
+    def test_runtime_writeback_targets_generator_rejects_missing_required_mapping_field(self) -> None:
+        original_read_json = generate_runtime_writeback_targets.read_json
+        contract_path = generate_runtime_writeback_targets.CONTRACT_PATH
+        payload = load_json(contract_path)
+        self.assertIsInstance(payload, dict)
+        payload = json.loads(json.dumps(payload))
+        payload["mapping_rules"][0].pop("review_state_default", None)
+
+        def side_effect(path: Path) -> object:
+            if Path(path) == contract_path:
+                return payload
+            return original_read_json(path)
+
+        with self.assertRaises(SystemExit):
+            with patch.object(generate_runtime_writeback_targets, "read_json", side_effect=side_effect):
+                generate_runtime_writeback_targets.build_runtime_writeback_targets_payload()
 
     def test_runtime_writeback_intake_surface_stays_generator_backed(self) -> None:
         current = load_json(GENERATED_ROOT / "runtime_writeback_intake.min.json")
