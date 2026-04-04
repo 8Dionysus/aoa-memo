@@ -25,6 +25,58 @@ def read_json(path: Path) -> object:
         raise SystemExit(f"[error] invalid JSON in {path.relative_to(REPO_ROOT).as_posix()}: {exc}")
 
 
+def require_string(payload: dict[str, object], field_name: str, *, context: str) -> str:
+    value = payload.get(field_name)
+    if not isinstance(value, str) or not value:
+        raise SystemExit(f"[error] {context}.{field_name} must be a non-empty string")
+    return value
+
+
+def require_bool(payload: dict[str, object], field_name: str, *, context: str) -> bool:
+    value = payload.get(field_name)
+    if not isinstance(value, bool):
+        raise SystemExit(f"[error] {context}.{field_name} must be a boolean")
+    return value
+
+
+def require_string_list(payload: dict[str, object], field_name: str, *, context: str) -> list[str]:
+    value = payload.get(field_name)
+    if not isinstance(value, list) or not value:
+        raise SystemExit(f"[error] {context}.{field_name} must be a non-empty list")
+    normalized = [item for item in value if isinstance(item, str) and item]
+    if len(normalized) != len(value):
+        raise SystemExit(f"[error] {context}.{field_name} must contain only non-empty strings")
+    return normalized
+
+
+def require_runtime_boundary(payload: dict[str, object]) -> dict[str, object]:
+    runtime_boundary = payload.get("runtime_boundary")
+    if not isinstance(runtime_boundary, dict):
+        raise SystemExit("[error] checkpoint_to_memory_contract.example.json must contain runtime_boundary")
+    return {
+        "scratchpad_posture": require_string(
+            runtime_boundary,
+            "scratchpad_posture",
+            context="checkpoint_to_memory_contract.example.json.runtime_boundary",
+        ),
+        "checkpoint_export_kind": require_string(
+            runtime_boundary,
+            "checkpoint_export_kind",
+            context="checkpoint_to_memory_contract.example.json.runtime_boundary",
+        ),
+        "distillation_review_posture": require_string(
+            runtime_boundary,
+            "distillation_review_posture",
+            context="checkpoint_to_memory_contract.example.json.runtime_boundary",
+        ),
+        "review_boundary_refs": require_string_list(
+            runtime_boundary,
+            "review_boundary_refs",
+            context="checkpoint_to_memory_contract.example.json.runtime_boundary",
+        ),
+    }
+
+
 def build_runtime_writeback_targets_payload() -> dict[str, object]:
     payload = read_json(CONTRACT_PATH)
     if not isinstance(payload, dict):
@@ -35,27 +87,32 @@ def build_runtime_writeback_targets_payload() -> dict[str, object]:
         raise SystemExit("[error] checkpoint_to_memory_contract.example.json must contain mapping_rules")
 
     targets: list[dict[str, object]] = []
-    for item in mapping_rules:
+    for index, item in enumerate(mapping_rules):
         if not isinstance(item, dict):
             raise SystemExit("[error] checkpoint_to_memory_contract.example.json mapping_rules entries must be objects")
+        context = f"checkpoint_to_memory_contract.example.json.mapping_rules[{index}]"
         targets.append(
             {
-                "runtime_surface": item.get("runtime_surface"),
-                "target_kind": item.get("target_kind"),
-                "writeback_class": item.get("writeback_class"),
-                "requires_human_review": item.get("requires_human_review"),
-                "review_state_default": item.get("review_state_default"),
-                "runtime_refs": item.get("runtime_refs"),
-                "notes": item.get("notes"),
+                "runtime_surface": require_string(item, "runtime_surface", context=context),
+                "target_kind": require_string(item, "target_kind", context=context),
+                "writeback_class": require_string(item, "writeback_class", context=context),
+                "requires_human_review": require_bool(item, "requires_human_review", context=context),
+                "review_state_default": require_string(item, "review_state_default", context=context),
+                "runtime_refs": require_string_list(item, "runtime_refs", context=context),
+                "notes": require_string(item, "notes", context=context),
             }
         )
 
     return {
         "schema_version": 1,
         "layer": "aoa-memo",
-        "contract_id": payload.get("contract_id"),
+        "contract_id": require_string(
+            payload,
+            "contract_id",
+            context="checkpoint_to_memory_contract.example.json",
+        ),
         "source_of_truth": "examples/checkpoint_to_memory_contract.example.json",
-        "runtime_boundary": payload.get("runtime_boundary", {}),
+        "runtime_boundary": require_runtime_boundary(payload),
         "targets": targets,
     }
 
