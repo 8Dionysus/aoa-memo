@@ -225,6 +225,15 @@ def main() -> int:
         expected_source_route_required=False,
     )
     validate_recall_contract(
+        EXAMPLES / "recall_contract.object.working.phase-alpha.json",
+        expected_mode="working",
+        expected_allowed_scopes=["thread", "session", "project"],
+        expected_preferred_kinds=["state_capsule", "decision", "episode", "audit_event", "anchor"],
+        expected_temperature_order=["hot", "warm", "cool", "frozen", "cold"],
+        expected_source_route_required=False,
+        expected_capsule_surface="generated/memory_object_capsules.json",
+    )
+    validate_recall_contract(
         EXAMPLES / "recall_contract.object.semantic.json",
         expected_mode="semantic",
         expected_allowed_scopes=["repo", "project", "ecosystem"],

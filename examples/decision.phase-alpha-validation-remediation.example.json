@@ -1,0 +1,78 @@
+{
+  "id": "memo.decision.2026-04-02.alpha-validation-remediation",
+  "kind": "decision",
+  "title": "Decision to close Route 3 as doctrine remediation only",
+  "summary": "Records the bounded decision to remediate the pilot and benchmark doctrine surfaces without widening into runtime-script refactors, while still requiring the memo-only rerun for recurrence closure.",
+  "scope": [
+    "repo:aoa-playbooks",
+    "project:AoA"
+  ],
+  "owner_refs": [
+    "repo:aoa-memo"
+  ],
+  "payload_ref": "repo:aoa-playbooks/docs/alpha-readiness/validation-driven-remediation.md",
+  "tags": [
+    "phase-alpha",
+    "decision",
+    "remediation"
+  ],
+  "time": {
+    "created_at": "2026-04-03T03:14:00Z",
+    "observed_at": "2026-04-03T03:12:50Z",
+    "valid_from": "2026-04-03T03:14:00Z",
+    "valid_to": null
+  },
+  "provenance": {
+    "source_refs": [
+      "repo:aoa-playbooks/docs/alpha-readiness/validation-driven-remediation.md",
+      "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation.md",
+      "repo:abyss-stack/Logs/phase-alpha/alpha-03-validation-driven-remediation/remediation_decision.json"
+    ],
+    "episode_refs": [
+      "memo.ep.2026-04-02.alpha-validation-remediation"
+    ],
+    "provenance_thread_id": "prov.phase-alpha.curated.2026-04-02"
+  },
+  "trust": {
+    "temperature": "warm",
+    "confidence": 0.94,
+    "authority_kind": "human_reviewed",
+    "authority": "curated Alpha route-03 review",
+    "freshness": 0.99,
+    "salience": 0.92
+  },
+  "lifecycle": {
+    "review_state": "confirmed",
+    "supersedes": [],
+    "superseded_by": null,
+    "retention_class": "operational-gate",
+    "current_recall": {
+      "status": "preferred",
+      "status_reason": "This decision should anchor the final Alpha rerun because it names both the doctrine-only remediation boundary and the need for memo-first recurrence closure."
+    }
+  },
+  "access": {
+    "access_class": "public",
+    "read_scopes": [
+      "public"
+    ],
+    "write_scopes": [
+      "maintainer"
+    ],
+    "promotion_scopes": [
+      "maintainer",
+      "human-review"
+    ]
+  },
+  "bridges": {
+    "tos_refs": [],
+    "skill_refs": [],
+    "eval_refs": [
+      "eval:aoa-scope-drift-detection",
+      "eval:aoa-verification-honesty",
+      "eval:aoa-approval-boundary-adherence"
+    ],
+    "kag_lift_status": "none",
+    "route_capsule_ref": "repo:aoa-playbooks/docs/alpha-readiness/validation-driven-remediation.md"
+  }
+}

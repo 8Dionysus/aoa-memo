@@ -1,0 +1,75 @@
+{
+  "id": "memo.ep.2026-04-02.alpha-long-horizon",
+  "kind": "episode",
+  "title": "Long-horizon Alpha route episode for the first readiness dossier",
+  "summary": "Records the bounded non-mutating dossier pass that stitched the live Route 1-3 surfaces into one candidate-only readiness packet and prepared checkpoint continuity.",
+  "scope": [
+    "repo:aoa-playbooks",
+    "project:AoA"
+  ],
+  "owner_refs": [
+    "repo:aoa-memo"
+  ],
+  "payload_ref": "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.long-horizon-model-tier-orchestra.md",
+  "tags": [
+    "phase-alpha",
+    "long-horizon",
+    "episode"
+  ],
+  "time": {
+    "created_at": "2026-04-03T03:17:30Z",
+    "observed_at": "2026-04-03T03:17:00Z",
+    "valid_from": "2026-04-03T03:17:30Z",
+    "valid_to": null
+  },
+  "provenance": {
+    "source_refs": [
+      "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.long-horizon-model-tier-orchestra.md",
+      "repo:aoa-agents/examples/alpha_reference_routes/long-horizon-model-tier-orchestra.example.json",
+      "repo:abyss-stack/Logs/phase-alpha/alpha-04-long-horizon-model-tier-orchestra/distillation_pack.md"
+    ],
+    "episode_refs": [],
+    "provenance_thread_id": "prov.phase-alpha.curated.2026-04-02"
+  },
+  "trust": {
+    "temperature": "warm",
+    "confidence": 0.9,
+    "authority_kind": "human_reviewed",
+    "authority": "curated Alpha route-04 review",
+    "freshness": 0.99,
+    "salience": 0.9
+  },
+  "lifecycle": {
+    "review_state": "confirmed",
+    "supersedes": [],
+    "superseded_by": null,
+    "retention_class": "project-core",
+    "current_recall": {
+      "status": "allowed",
+      "status_reason": "This episode remains useful when tracing how the first readiness dossier was formed without widening into canon or mutation."
+    }
+  },
+  "access": {
+    "access_class": "public",
+    "read_scopes": [
+      "public"
+    ],
+    "write_scopes": [
+      "maintainer"
+    ],
+    "promotion_scopes": [
+      "maintainer",
+      "human-review"
+    ]
+  },
+  "bridges": {
+    "tos_refs": [],
+    "skill_refs": [],
+    "eval_refs": [
+      "eval:aoa-long-horizon-depth",
+      "eval:aoa-tool-trajectory-discipline"
+    ],
+    "kag_lift_status": "none",
+    "route_capsule_ref": "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.long-horizon-model-tier-orchestra.md"
+  }
+}

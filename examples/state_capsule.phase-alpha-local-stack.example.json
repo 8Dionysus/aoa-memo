@@ -1,0 +1,80 @@
+{
+  "id": "memo.state.2026-04-02.alpha-local-stack-diagnosis",
+  "kind": "state_capsule",
+  "title": "Local stack readiness state capsule for the Alpha worker path",
+  "summary": "Captures the confirmed startup canon for the live Alpha worker path: 5403 on llama.cpp, 5402 route-api closure, and recurrence proven through a second bounded pass on the same lane.",
+  "scope": [
+    "repo:aoa-playbooks",
+    "project:AoA"
+  ],
+  "owner_refs": [
+    "repo:aoa-memo"
+  ],
+  "payload_ref": "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.local-stack-diagnosis.md",
+  "tags": [
+    "phase-alpha",
+    "local-stack",
+    "state-capsule"
+  ],
+  "time": {
+    "created_at": "2026-04-03T02:59:00Z",
+    "observed_at": "2026-04-03T02:53:00Z",
+    "valid_from": "2026-04-03T02:59:00Z",
+    "valid_to": null
+  },
+  "provenance": {
+    "source_refs": [
+      "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.local-stack-diagnosis.md",
+      "repo:aoa-playbooks/docs/alpha-readiness/local-stack-diagnosis.md",
+      "repo:abyss-stack/Logs/phase-alpha/alpha-01-local-stack-diagnosis/startup_canon_map.json"
+    ],
+    "episode_refs": [
+      "memo.ep.2026-04-02.alpha-local-stack-diagnosis"
+    ],
+    "provenance_thread_id": "prov.phase-alpha.curated.2026-04-02"
+  },
+  "trust": {
+    "temperature": "hot",
+    "confidence": 0.94,
+    "authority_kind": "human_reviewed",
+    "authority": "curated Alpha route-01 state capsule",
+    "freshness": 0.99,
+    "salience": 0.93
+  },
+  "lifecycle": {
+    "review_state": "confirmed",
+    "supersedes": [],
+    "superseded_by": null,
+    "retention_class": "working-export",
+    "promotion_state": "candidate",
+    "current_recall": {
+      "status": "preferred",
+      "status_reason": "This capsule is the current startup canon for the Alpha local-stack route and should be consulted before any later mutation route opens."
+    }
+  },
+  "access": {
+    "access_class": "public",
+    "read_scopes": [
+      "public"
+    ],
+    "write_scopes": [
+      "maintainer"
+    ],
+    "promotion_scopes": [
+      "maintainer",
+      "human-review"
+    ]
+  },
+  "bridges": {
+    "tos_refs": [],
+    "skill_refs": [
+      "skill:aoa-change-protocol"
+    ],
+    "eval_refs": [
+      "eval:aoa-verification-honesty",
+      "eval:aoa-tool-trajectory-discipline"
+    ],
+    "kag_lift_status": "none",
+    "route_capsule_ref": "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.local-stack-diagnosis.md"
+  }
+}

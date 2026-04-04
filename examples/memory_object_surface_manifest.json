@@ -112,6 +112,101 @@
         "episodic",
         "source_route"
       ]
+    },
+    {
+      "example_path": "examples/state_capsule.phase-alpha-local-stack.example.json",
+      "recall_modes": [
+        "working",
+        "episodic"
+      ]
+    },
+    {
+      "example_path": "examples/episode.phase-alpha-local-stack.example.json",
+      "recall_modes": [
+        "episodic",
+        "working"
+      ]
+    },
+    {
+      "example_path": "examples/decision.phase-alpha-local-stack.example.json",
+      "recall_modes": [
+        "working",
+        "semantic",
+        "source_route"
+      ]
+    },
+    {
+      "example_path": "examples/decision.phase-alpha-self-agent-checkpoint.example.json",
+      "recall_modes": [
+        "working",
+        "semantic",
+        "source_route"
+      ]
+    },
+    {
+      "example_path": "examples/audit_event.phase-alpha-self-agent-checkpoint.example.json",
+      "recall_modes": [
+        "episodic",
+        "source_route"
+      ]
+    },
+    {
+      "example_path": "examples/episode.phase-alpha-validation-remediation.example.json",
+      "recall_modes": [
+        "episodic",
+        "working"
+      ]
+    },
+    {
+      "example_path": "examples/decision.phase-alpha-validation-remediation.example.json",
+      "recall_modes": [
+        "working",
+        "semantic",
+        "source_route"
+      ]
+    },
+    {
+      "example_path": "examples/episode.phase-alpha-validation-remediation-rerun.example.json",
+      "recall_modes": [
+        "episodic",
+        "working"
+      ]
+    },
+    {
+      "example_path": "examples/state_capsule.phase-alpha-long-horizon.example.json",
+      "recall_modes": [
+        "working",
+        "episodic"
+      ]
+    },
+    {
+      "example_path": "examples/episode.phase-alpha-long-horizon.example.json",
+      "recall_modes": [
+        "episodic",
+        "working"
+      ]
+    },
+    {
+      "example_path": "examples/state_capsule.phase-alpha-restartable-inquiry.example.json",
+      "recall_modes": [
+        "working",
+        "episodic"
+      ]
+    },
+    {
+      "example_path": "examples/decision.phase-alpha-restartable-inquiry.example.json",
+      "recall_modes": [
+        "working",
+        "semantic",
+        "source_route"
+      ]
+    },
+    {
+      "example_path": "examples/pattern.phase-alpha-remediation-recurrence.example.json",
+      "recall_modes": [
+        "procedural",
+        "semantic"
+      ]
     }
   ]
 }

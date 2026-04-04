@@ -1,0 +1,81 @@
+{
+  "id": "prov.phase-alpha.curated.2026-04-02",
+  "title": "Phase Alpha curated readiness provenance thread",
+  "summary": "Traces the live curated readiness lane that currently links the closed Route 1 diagnosis pass, the closed Route 2 checkpoint refresh, and the memo objects that keep both steps recallable for later Alpha routes.",
+  "status": "active",
+  "source_refs": [
+    "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.local-stack-diagnosis.md",
+    "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.self-agent-checkpoint-rollout.md",
+    "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation.md",
+    "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.long-horizon-model-tier-orchestra.md",
+    "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.restartable-inquiry-loop.md",
+    "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md",
+    "repo:abyss-stack/Logs/phase-alpha/alpha-02-self-agent-checkpoint-rollout/health_check.json",
+    "repo:abyss-stack/Logs/phase-alpha/alpha-03-validation-driven-remediation/revalidation_pack.json",
+    "repo:abyss-stack/Logs/phase-alpha/alpha-04-long-horizon-model-tier-orchestra/verification_result.json",
+    "repo:abyss-stack/Logs/phase-alpha/alpha-05-restartable-inquiry-loop/inquiry_checkpoint.json",
+    "repo:abyss-stack/Logs/phase-alpha/alpha-06-validation-driven-remediation-recall-rerun/revalidation_pack.json"
+  ],
+  "memory_object_ids": [
+    "memo.state.2026-04-02.alpha-local-stack-diagnosis",
+    "memo.ep.2026-04-02.alpha-local-stack-diagnosis",
+    "memo.decision.2026-04-02.alpha-local-stack-diagnosis",
+    "memo.decision.2026-04-02.alpha-self-agent-checkpoint",
+    "memo.audit.2026-04-02.alpha-self-agent-checkpoint",
+    "memo.ep.2026-04-02.alpha-validation-remediation",
+    "memo.decision.2026-04-02.alpha-validation-remediation",
+    "memo.audit.2026-04-02.alpha-validation-remediation",
+    "memo.state.2026-04-02.alpha-long-horizon",
+    "memo.ep.2026-04-02.alpha-long-horizon",
+    "memo.decision.2026-04-02.alpha-long-horizon",
+    "memo.state.2026-04-02.alpha-restartable-inquiry",
+    "memo.decision.2026-04-02.alpha-restartable-inquiry",
+    "memo.ep.2026-04-02.alpha-validation-remediation-rerun",
+    "memo.decision.2026-04-02.alpha-validation-remediation-rerun",
+    "memo.audit.2026-04-02.alpha-validation-remediation-rerun",
+    "memo.pattern.2026-04-02.alpha-remediation-recurrence"
+  ],
+  "timeline": [
+    {
+      "at": "2026-04-03T02:58:00Z",
+      "action": "closed Route 1 and fixed the canonical startup truth for the live Alpha worker path",
+      "actor_ref": "human+ai"
+    },
+    {
+      "at": "2026-04-03T03:08:00Z",
+      "action": "landed Route 2 as a bounded operator-surface refresh with explicit approval and rollback posture",
+      "actor_ref": "human+ai",
+      "object_id": "memo.decision.2026-04-02.alpha-self-agent-checkpoint"
+    },
+    {
+      "at": "2026-04-03T03:09:00Z",
+      "action": "attached reviewed audit and provenance continuity to the first two live Alpha routes",
+      "actor_ref": "memory-keeper",
+      "note": "Owner-local operational memory only"
+    },
+    {
+      "at": "2026-04-03T03:13:00Z",
+      "action": "closed the doctrine remediation pass and attached Route 3 memory objects to the live Alpha thread",
+      "actor_ref": "memory-keeper",
+      "object_id": "memo.ep.2026-04-02.alpha-validation-remediation"
+    },
+    {
+      "at": "2026-04-03T03:18:30Z",
+      "action": "distilled Routes 1-3 into the first candidate-only readiness dossier and attached the Route 4 memory objects",
+      "actor_ref": "memory-keeper",
+      "object_id": "memo.state.2026-04-02.alpha-long-horizon"
+    },
+    {
+      "at": "2026-04-03T03:21:30Z",
+      "action": "closed the checkpoint pause/resume proof and attached the Route 5 continuity memory objects",
+      "actor_ref": "memory-keeper",
+      "object_id": "memo.state.2026-04-02.alpha-restartable-inquiry"
+    },
+    {
+      "at": "2026-04-03T03:25:00Z",
+      "action": "closed the memo-only rerun and promoted the bounded remediation recurrence pattern",
+      "actor_ref": "memory-keeper",
+      "object_id": "memo.pattern.2026-04-02.alpha-remediation-recurrence"
+    }
+  ]
+}

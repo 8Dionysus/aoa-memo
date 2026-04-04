@@ -1,0 +1,78 @@
+{
+  "id": "memo.ep.2026-04-02.alpha-validation-remediation-rerun",
+  "kind": "episode",
+  "title": "Memo-only rerun of Alpha remediation closed recurrence",
+  "summary": "Records the live rerun that re-entered remediation from landed memo objects and the Phase Alpha recall contract only, without stronger source escalation or hidden scratchpad recovery.",
+  "scope": [
+    "repo:aoa-playbooks",
+    "project:AoA"
+  ],
+  "owner_refs": [
+    "repo:aoa-memo"
+  ],
+  "payload_ref": "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md",
+  "tags": [
+    "phase-alpha",
+    "remediation",
+    "rerun"
+  ],
+  "time": {
+    "created_at": "2026-04-03T03:24:00Z",
+    "observed_at": "2026-04-03T03:23:00Z",
+    "valid_from": "2026-04-03T03:24:00Z",
+    "valid_to": null
+  },
+  "provenance": {
+    "source_refs": [
+      "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md",
+      "repo:aoa-memo/examples/recall_contract.object.working.phase-alpha.json",
+      "repo:abyss-stack/Logs/phase-alpha/alpha-06-validation-driven-remediation-recall-rerun/revalidation_pack.json"
+    ],
+    "episode_refs": [
+      "memo.ep.2026-04-02.alpha-validation-remediation"
+    ],
+    "provenance_thread_id": "prov.phase-alpha.curated.2026-04-02"
+  },
+  "trust": {
+    "temperature": "warm",
+    "confidence": 0.95,
+    "authority_kind": "human_reviewed",
+    "authority": "curated Alpha route-06 review",
+    "freshness": 0.99,
+    "salience": 0.94
+  },
+  "lifecycle": {
+    "review_state": "confirmed",
+    "supersedes": [],
+    "superseded_by": null,
+    "retention_class": "project-core",
+    "current_recall": {
+      "status": "allowed",
+      "status_reason": "This episode remains useful as the live proof that the rerun stayed memo-first, anchor-first, and escalation-free."
+    }
+  },
+  "access": {
+    "access_class": "public",
+    "read_scopes": [
+      "public"
+    ],
+    "write_scopes": [
+      "maintainer"
+    ],
+    "promotion_scopes": [
+      "maintainer",
+      "human-review"
+    ]
+  },
+  "bridges": {
+    "tos_refs": [],
+    "skill_refs": [],
+    "eval_refs": [
+      "eval:aoa-memo-recall-integrity",
+      "eval:aoa-return-anchor-integrity",
+      "eval:aoa-verification-honesty"
+    ],
+    "kag_lift_status": "none",
+    "route_capsule_ref": "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md"
+  }
+}

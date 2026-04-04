@@ -1,0 +1,81 @@
+{
+  "id": "memo.pattern.2026-04-02.alpha-remediation-recurrence",
+  "kind": "pattern",
+  "title": "Alpha remediation recurrence is proven only through memo-only closure",
+  "summary": "Observed across the primary remediation pass and the memo-only rerun: Alpha remediation can claim recurrence only when the rerun stays inspect-capsule-expand, remains anchor-first, and closes without stronger source escalation or hidden scratchpad recovery.",
+  "scope": [
+    "repo:aoa-playbooks",
+    "project:AoA"
+  ],
+  "owner_refs": [
+    "repo:aoa-memo"
+  ],
+  "payload_ref": "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md",
+  "tags": [
+    "phase-alpha",
+    "pattern",
+    "remediation",
+    "recurrence"
+  ],
+  "time": {
+    "created_at": "2026-04-03T03:25:00Z",
+    "observed_at": "2026-04-03T03:24:00Z",
+    "valid_from": "2026-04-03T03:25:00Z",
+    "valid_to": null
+  },
+  "provenance": {
+    "source_refs": [
+      "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation.md",
+      "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md",
+      "repo:aoa-memo/examples/recall_contract.object.working.phase-alpha.json",
+      "repo:abyss-stack/Logs/phase-alpha/alpha-06-validation-driven-remediation-recall-rerun/remediation_decision.json"
+    ],
+    "episode_refs": [
+      "memo.ep.2026-04-02.alpha-validation-remediation",
+      "memo.ep.2026-04-02.alpha-validation-remediation-rerun"
+    ],
+    "provenance_thread_id": "prov.phase-alpha.curated.2026-04-02"
+  },
+  "trust": {
+    "temperature": "cool",
+    "confidence": 0.93,
+    "authority_kind": "human_reviewed",
+    "authority": "curated Alpha route-06 recurrence review",
+    "freshness": 0.99,
+    "salience": 0.93
+  },
+  "lifecycle": {
+    "review_state": "confirmed",
+    "supersedes": [],
+    "superseded_by": null,
+    "retention_class": "operational-pattern",
+    "current_recall": {
+      "status": "allowed",
+      "status_reason": "This pattern should surface only as bounded remediation experience proven by the memo-only rerun, not as general recurrence doctrine."
+    }
+  },
+  "access": {
+    "access_class": "public",
+    "read_scopes": [
+      "public"
+    ],
+    "write_scopes": [
+      "maintainer"
+    ],
+    "promotion_scopes": [
+      "maintainer",
+      "human-review"
+    ]
+  },
+  "bridges": {
+    "tos_refs": [],
+    "skill_refs": [],
+    "eval_refs": [
+      "eval:aoa-memo-recall-integrity",
+      "eval:aoa-return-anchor-integrity",
+      "eval:aoa-verification-honesty"
+    ],
+    "kag_lift_status": "none",
+    "route_capsule_ref": "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md"
+  }
+}
