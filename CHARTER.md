@@ -84,9 +84,9 @@ AoA and ToS need a memory layer that is:
 
 ## Current phase
 
-This repository is in bootstrap.
+This repository is in contract hardening.
 
-The immediate goal is to establish doctrine, boundaries, the conceptual model, and the first routeable memory surfaces before adding heavier schema work or runtime integration.
+The immediate goal is to harden doctrine, object canon, recall contracts, and bounded writeback/export seams without turning the repository into runtime infrastructure or a graph platform.
 
 ## Editing posture
 

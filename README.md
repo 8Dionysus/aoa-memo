@@ -38,7 +38,7 @@ If you are editing inside `schemas/`, `examples/`, `generated/`, or `scripts/`, 
 - recall contracts and memory-object examples: `examples/recall_contract.*.json`, `examples/core_memory_contract.example.json`, `examples/checkpoint_to_memory_contract.example.json`, and `examples/memory_object_surface_manifest.json`
 - writeback, intake, and runtime support surfaces: `generated/runtime_writeback_targets.min.json`, `generated/runtime_writeback_intake.min.json`, [docs/RUNTIME_WRITEBACK_SEAM](docs/RUNTIME_WRITEBACK_SEAM.md), and [docs/QUEST_CHRONICLE_WRITEBACK](docs/QUEST_CHRONICLE_WRITEBACK.md)
 - bridge, export, and guardrail surfaces: `generated/kag_export.min.json`, [docs/KAG_SOURCE_EXPORT](docs/KAG_SOURCE_EXPORT.md), [docs/KAG_TOS_BRIDGE_CONTRACT](docs/KAG_TOS_BRIDGE_CONTRACT.md), and [docs/MEMORY_EVAL_GUARDRAILS](docs/MEMORY_EVAL_GUARDRAILS.md)
-- schemas and local validation: `schemas/`, `python scripts/validate_memo.py`, `python scripts/validate_memory_surfaces.py`, and `python scripts/validate_memory_object_surfaces.py`
+- schemas and local validation: `schemas/`, `python scripts/validate_memo.py`, `python scripts/validate_memory_surfaces.py`, `python scripts/validate_memory_object_surfaces.py`, `python scripts/validate_lifecycle_audit_examples.py`, and `python -m pytest -q tests`
 
 ## What `aoa-memo` owns
 
@@ -90,18 +90,29 @@ The canonical validator is:
 python scripts/validate_memo.py
 ```
 
-For the full local validation pass, run:
+For a read-only current-state validation pass, run:
 
 ```bash
-python scripts/generate_memory_object_surfaces.py
-python scripts/generate_kag_export.py
 python scripts/validate_memo.py
 python scripts/validate_memory_surfaces.py
 python scripts/validate_memory_object_surfaces.py
 python scripts/validate_lifecycle_audit_examples.py
+python -m pytest -q tests
 ```
 
 `validate_memo.py` also checks the local guidance surfaces in `schemas/`, `examples/`, `generated/`, and `scripts/`.
+
+If you changed generator-backed surfaces, regenerate only the touched families first:
+
+```bash
+python scripts/generate_memory_object_surfaces.py
+python scripts/generate_kag_export.py
+python scripts/generate_runtime_writeback_targets.py
+python scripts/generate_runtime_writeback_intake.py
+python scripts/generate_phase_alpha_writeback_map.py
+```
+
+Then rerun the read-only validation pass above and inspect `git status -sb` before opening a PR.
 
 ## Current contour
 
