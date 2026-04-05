@@ -478,7 +478,9 @@ def format_schema_path(path_parts: list[object]) -> str:
 
 
 @lru_cache(maxsize=None)
-def external_quest_schema_validator(schema_path: Path) -> Draft202012Validator:
+def external_quest_schema_validator(schema_path: Path) -> Draft202012Validator | None:
+    if not schema_path.exists():
+        return None
     schema = load_json(schema_path)
     if not isinstance(schema, dict):
         print("[FAIL] questbook writeback surface")
@@ -490,6 +492,8 @@ def external_quest_schema_validator(schema_path: Path) -> Draft202012Validator:
 
 def external_quest_schema_error(data: object, schema_path: Path) -> str | None:
     validator = external_quest_schema_validator(schema_path)
+    if validator is None:
+        return None
     errors = sorted(
         validator.iter_errors(data),
         key=lambda error: (list(error.absolute_path), error.message),
@@ -504,8 +508,11 @@ def external_quest_schema_error(data: object, schema_path: Path) -> str | None:
 
 
 @lru_cache(maxsize=None)
-def load_live_orchestrator_class_ids() -> set[str]:
-    payload = load_json(AOA_AGENTS_ROOT / "generated" / "orchestrator_class_catalog.min.json")
+def load_live_orchestrator_class_ids() -> set[str] | None:
+    catalog_path = AOA_AGENTS_ROOT / "generated" / "orchestrator_class_catalog.min.json"
+    if not catalog_path.exists():
+        return None
+    payload = load_json(catalog_path)
     if not isinstance(payload, dict):
         print("[FAIL] questbook writeback surface")
         print("  - aoa-agents generated/orchestrator_class_catalog.min.json must be a JSON object")
@@ -542,7 +549,10 @@ def validate_orchestrator_class_ref(orchestrator_class_ref: object, *, label: st
     repo_name, separator, class_id = orchestrator_class_ref.partition(":")
     if separator != ":" or repo_name != "aoa-agents" or not class_id:
         return f"{label}: orchestrator_class_ref must use the form aoa-agents:<class_id>"
-    if class_id not in load_live_orchestrator_class_ids():
+    live_class_ids = load_live_orchestrator_class_ids()
+    if live_class_ids is None:
+        return None
+    if class_id not in live_class_ids:
         return (
             f"{label}: orchestrator_class_ref must resolve in "
             "aoa-agents/generated/orchestrator_class_catalog.min.json"
