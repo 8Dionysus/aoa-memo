@@ -335,6 +335,53 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
         self.assertTrue(all(item["review_state_default"] == "proposed" for item in reviewed_candidates))
         self.assertTrue(all(item["intake_posture"] == "review_candidate_only" for item in reviewed_candidates))
 
+    def test_repo_docs_align_on_contract_hardening_stage(self) -> None:
+        readme = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
+        charter = (REPO_ROOT / "CHARTER.md").read_text(encoding="utf-8")
+        roadmap = (REPO_ROOT / "ROADMAP.md").read_text(encoding="utf-8")
+
+        self.assertIn("`aoa-memo` is in contract hardening.", readme)
+        self.assertIn("This repository is in contract hardening.", charter)
+        self.assertNotIn("This repository is in bootstrap.", charter)
+        self.assertIn("`aoa-memo` is in contract hardening.", roadmap)
+
+    def test_readme_surfaces_read_only_validation_and_targeted_generation_routes(self) -> None:
+        readme = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
+
+        for command in (
+            "python scripts/validate_memo.py",
+            "python scripts/validate_memory_surfaces.py",
+            "python scripts/validate_memory_object_surfaces.py",
+            "python scripts/validate_lifecycle_audit_examples.py",
+            "python -m pytest -q tests",
+        ):
+            self.assertIn(command, readme)
+
+        for command in (
+            "python scripts/generate_memory_object_surfaces.py",
+            "python scripts/generate_kag_export.py",
+            "python scripts/generate_runtime_writeback_targets.py",
+            "python scripts/generate_runtime_writeback_intake.py",
+            "python scripts/generate_phase_alpha_writeback_map.py",
+        ):
+            self.assertIn(command, readme)
+
+        self.assertIn("git status -sb", readme)
+
+    def test_contributing_surfaces_current_validation_battery(self) -> None:
+        contributing = (REPO_ROOT / "CONTRIBUTING.md").read_text(encoding="utf-8")
+
+        for command in (
+            "python scripts/validate_memo.py",
+            "python scripts/validate_memory_surfaces.py",
+            "python scripts/validate_memory_object_surfaces.py",
+            "python scripts/validate_lifecycle_audit_examples.py",
+            "python -m pytest -q tests",
+        ):
+            self.assertIn(command, contributing)
+
+        self.assertIn("git status -sb", contributing)
+
 
 if __name__ == "__main__":
     unittest.main()

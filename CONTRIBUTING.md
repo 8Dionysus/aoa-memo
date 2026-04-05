@@ -28,13 +28,17 @@ Please make sure:
 - generated surfaces remain aligned with their source objects
 - examples and docs stay public-safe
 
-Run the documented validators before opening a PR:
+Run the read-only validation battery before opening a PR:
 
 ```bash
 python scripts/validate_memo.py
 python scripts/validate_memory_surfaces.py
+python scripts/validate_memory_object_surfaces.py
 python scripts/validate_lifecycle_audit_examples.py
+python -m pytest -q tests
 ```
+
+If you changed generator-backed surfaces, regenerate only the touched families first, then rerun the read-only validation battery above and inspect `git status -sb`.
 
 ## Preferred PR scope
 
