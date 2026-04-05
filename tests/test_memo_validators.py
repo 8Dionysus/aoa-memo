@@ -276,6 +276,26 @@ class MemoValidatorTestCase(unittest.TestCase):
             with redirect_stdout(stdout), redirect_stderr(stderr):
                 validate_memo.validate_questbook_surface()
 
+    def test_questbook_surface_skips_missing_external_eval_schemas(self) -> None:
+        missing_evals_root = REPO_ROOT / ".tmp" / "missing-aoa-evals"
+
+        validate_memo.external_quest_schema_validator.cache_clear()
+        self.addCleanup(validate_memo.external_quest_schema_validator.cache_clear)
+        with patch.object(validate_memo, "AOA_EVALS_ROOT", missing_evals_root):
+            with io.StringIO() as stdout, io.StringIO() as stderr:
+                with redirect_stdout(stdout), redirect_stderr(stderr):
+                    validate_memo.validate_questbook_surface()
+
+    def test_questbook_surface_skips_missing_external_orchestrator_catalog(self) -> None:
+        missing_agents_root = REPO_ROOT / ".tmp" / "missing-aoa-agents"
+
+        validate_memo.load_live_orchestrator_class_ids.cache_clear()
+        self.addCleanup(validate_memo.load_live_orchestrator_class_ids.cache_clear)
+        with patch.object(validate_memo, "AOA_AGENTS_ROOT", missing_agents_root):
+            with io.StringIO() as stdout, io.StringIO() as stderr:
+                with redirect_stdout(stdout), redirect_stderr(stderr):
+                    validate_memo.validate_questbook_surface()
+
     def test_questbook_surface_rejects_missing_tracked_reference(self) -> None:
         questbook_path = validate_memo.QUESTBOOK_PATH
         original_load_text = validate_memo.load_text
