@@ -39,6 +39,7 @@ EXAMPLES = ROOT / "examples"
 GENERATED = ROOT / "generated"
 RUNTIME_WRITEBACK_TARGETS_PATH = GENERATED / "runtime_writeback_targets.min.json"
 RUNTIME_WRITEBACK_INTAKE_PATH = GENERATED / "runtime_writeback_intake.min.json"
+RUNTIME_WRITEBACK_GOVERNANCE_PATH = GENERATED / "runtime_writeback_governance.min.json"
 PHASE_ALPHA_WRITEBACK_MAP_PATH = EXAMPLES / "phase_alpha_writeback_map.example.json"
 PHASE_ALPHA_WRITEBACK_OUTPUT_PATH = GENERATED / "phase_alpha_writeback_map.min.json"
 QUESTBOOK_PATH = ROOT / "QUESTBOOK.md"
@@ -169,6 +170,21 @@ def load_runtime_writeback_intake_builder():
     if spec is None or spec.loader is None:
         print("[FAIL] runtime_writeback_intake.min.json")
         print("  - unable to load runtime writeback intake generator")
+        raise SystemExit(1)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_runtime_writeback_governance_builder():
+    module_path = ROOT / "scripts" / "generate_runtime_writeback_governance.py"
+    spec = importlib.util.spec_from_file_location(
+        "generate_runtime_writeback_governance",
+        module_path,
+    )
+    if spec is None or spec.loader is None:
+        print("[FAIL] runtime_writeback_governance.min.json")
+        print("  - unable to load runtime writeback governance generator")
         raise SystemExit(1)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
@@ -1475,6 +1491,127 @@ def validate_runtime_writeback_intake() -> None:
     print("[OK]   runtime_writeback_intake.min.json")
 
 
+def validate_runtime_writeback_governance() -> None:
+    builder = load_runtime_writeback_governance_builder()
+    expected = builder.build_runtime_writeback_governance_payload()
+    data = load_json(RUNTIME_WRITEBACK_GOVERNANCE_PATH)
+    target_surface = load_json(RUNTIME_WRITEBACK_TARGETS_PATH)
+    intake_surface = load_json(RUNTIME_WRITEBACK_INTAKE_PATH)
+
+    errors: list[str] = []
+    if data != expected:
+        errors.append(
+            "generated/runtime_writeback_governance.min.json is out of date; "
+            "run scripts/generate_runtime_writeback_governance.py"
+        )
+    if data.get("schema_version") != 1:
+        errors.append("generated/runtime_writeback_governance.min.json must declare schema_version 1")
+    if data.get("layer") != "aoa-memo":
+        errors.append("generated/runtime_writeback_governance.min.json must declare layer aoa-memo")
+    if data.get("scope") != "runtime-writeback":
+        errors.append("generated/runtime_writeback_governance.min.json must declare scope runtime-writeback")
+
+    expected_source_of_truth = {
+        "runtime_writeback_targets": "generated/runtime_writeback_targets.min.json",
+        "runtime_writeback_intake": "generated/runtime_writeback_intake.min.json",
+    }
+    if data.get("source_of_truth") != expected_source_of_truth:
+        errors.append("generated/runtime_writeback_governance.min.json must keep the canonical source_of_truth map")
+
+    targets = data.get("targets")
+    source_targets = target_surface.get("targets") if isinstance(target_surface, dict) else None
+    intake_targets = intake_surface.get("targets") if isinstance(intake_surface, dict) else None
+    if not isinstance(targets, list):
+        errors.append("generated/runtime_writeback_governance.min.json targets must be a list")
+    elif not isinstance(source_targets, list) or not isinstance(intake_targets, list):
+        errors.append(
+            "generated/runtime_writeback_governance.min.json requires runtime writeback target and intake surfaces"
+        )
+    else:
+        source_by_surface = {
+            item.get("runtime_surface"): item
+            for item in source_targets
+            if isinstance(item, dict) and isinstance(item.get("runtime_surface"), str)
+        }
+        intake_by_surface = {
+            item.get("runtime_surface"): item
+            for item in intake_targets
+            if isinstance(item, dict) and isinstance(item.get("runtime_surface"), str)
+        }
+        expected_surfaces = sorted(set(source_by_surface) | set(intake_by_surface))
+        actual_surfaces = [
+            item.get("runtime_surface")
+            for item in targets
+            if isinstance(item, dict) and isinstance(item.get("runtime_surface"), str)
+        ]
+        if actual_surfaces != expected_surfaces:
+            errors.append("generated/runtime_writeback_governance.min.json must cover every runtime writeback surface exactly once")
+        if len(actual_surfaces) != len(set(actual_surfaces)):
+            errors.append("generated/runtime_writeback_governance.min.json must not duplicate runtime_surface entries")
+
+        for index, item in enumerate(targets):
+            if not isinstance(item, dict):
+                errors.append(f"targets[{index}] must be an object")
+                continue
+            runtime_surface = item.get("runtime_surface")
+            if not isinstance(runtime_surface, str):
+                errors.append(f"targets[{index}].runtime_surface must be a non-empty string")
+                continue
+
+            source_item = source_by_surface.get(runtime_surface)
+            intake_item = intake_by_surface.get(runtime_surface)
+            if item.get("in_writeback_targets") is not (source_item is not None):
+                errors.append(f"targets[{index}].in_writeback_targets must reflect generated/runtime_writeback_targets.min.json")
+            if item.get("in_writeback_intake") is not (intake_item is not None):
+                errors.append(f"targets[{index}].in_writeback_intake must reflect generated/runtime_writeback_intake.min.json")
+
+            if source_item is None:
+                errors.append(f"targets[{index}] references missing runtime writeback target {runtime_surface!r}")
+                continue
+            if intake_item is None:
+                errors.append(f"targets[{index}] references missing runtime writeback intake {runtime_surface!r}")
+                continue
+
+            for field_name in (
+                "target_kind",
+                "writeback_class",
+                "requires_human_review",
+                "review_state_default",
+            ):
+                if item.get(field_name) != source_item.get(field_name):
+                    errors.append(
+                        f"targets[{index}].{field_name} must match generated/runtime_writeback_targets.min.json"
+                    )
+                if item.get(field_name) != intake_item.get(field_name):
+                    errors.append(
+                        f"targets[{index}].{field_name} must match generated/runtime_writeback_intake.min.json"
+                    )
+
+            intake_posture = item.get("intake_posture")
+            if intake_posture != intake_item.get("intake_posture"):
+                errors.append(
+                    f"targets[{index}].intake_posture must match generated/runtime_writeback_intake.min.json"
+                )
+            if not isinstance(intake_posture, str) or not intake_posture:
+                errors.append(f"targets[{index}].intake_posture must be a non-empty string")
+
+            blockers = item.get("blockers")
+            if not isinstance(blockers, list) or not all(isinstance(entry, str) for entry in blockers):
+                errors.append(f"targets[{index}].blockers must be a list of strings")
+                continue
+            if item.get("governance_passed") is not (len(blockers) == 0):
+                errors.append(f"targets[{index}].governance_passed must reflect whether blockers is empty")
+            if blockers:
+                errors.append(f"targets[{index}] must not carry blockers in the committed governance surface")
+
+    if errors:
+        print("[FAIL] runtime_writeback_governance.min.json")
+        for err in errors:
+            print(f"  - {err}")
+        raise SystemExit(1)
+    print("[OK]   runtime_writeback_governance.min.json")
+
+
 def validate_phase_alpha_writeback_map() -> None:
     builder = load_phase_alpha_writeback_builder()
     expected = builder.build_phase_alpha_writeback_map_payload()
@@ -2054,6 +2191,7 @@ def main() -> int:
     validate_checkpoint_to_memory_contract()
     validate_runtime_writeback_targets()
     validate_runtime_writeback_intake()
+    validate_runtime_writeback_governance()
     validate_phase_alpha_writeback_map()
     validate_witness_trace_contract()
     validate_bridge_export_contracts()
