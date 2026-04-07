@@ -13,7 +13,7 @@
           "heading": "Identity and Recall",
           "ordinal": 1,
           "summary": "Names the anchor surface, its active recall modes, and its preferred current-recall posture.",
-          "body": "aoa-memo charter remains a stable operating anchor. Stabilizes the charter as a frozen operating axis for interpreting what aoa-memo owns and what must stay in neighboring layers. Scope: repo:aoa-memo, ecosystem:AoA. Primary recall modes: semantic, source_route, lineage. Current recall status: preferred because This anchor should remain the default reference when deciding what aoa-memo may or may not absorb. Payload ref: CHARTER.md#core-rules."
+          "body": "aoa-memo charter remains a stable operating anchor. Stabilizes the charter as a frozen operating axis for interpreting what aoa-memo owns and what must stay in neighboring layers. Scope: repo:aoa-memo, ecosystem:AoA. Scope classes: repo, ecosystem. Primary recall modes: semantic, source_route, lineage. Current recall status: preferred because This anchor should remain the default reference when deciding what aoa-memo may or may not absorb. Payload ref: CHARTER.md#core-rules."
         },
         {
           "section_id": "memo.anchor.2026-03-23.charter-operating-axis#provenance-and-evidence",
@@ -34,7 +34,7 @@
           "heading": "Bridges and Access",
           "ordinal": 4,
           "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
-          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memory_catalog.min.json. ToS refs: none. Skill refs: none. Eval refs: none. KAG lift status: none."
+          "body": "Access class: public. Scope classes: repo, ecosystem. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memory_catalog.min.json. ToS refs: none. Skill refs: none. Eval refs: none. KAG lift status: none."
         }
       ]
     },
@@ -49,7 +49,7 @@
           "heading": "Identity and Recall",
           "ordinal": 1,
           "summary": "Names the state_capsule surface, its active recall modes, and its preferred current-recall posture.",
-          "body": "Current contract-hardening axis exported as a bounded state capsule. Exports the current aoa-memo hardening slice: sharpen per-kind object contracts first, then trust/lifecycle semantics, then object-facing generated surfaces. Scope: thread:contract-hardening, repo:aoa-memo, project:AoA. Primary recall modes: working, episodic. Current recall status: preferred because This capsule is the current bounded working-state export for the active hardening route. Payload ref: ROADMAP.md#current-stage."
+          "body": "Current contract-hardening axis exported as a bounded state capsule. Exports the current aoa-memo hardening slice: sharpen per-kind object contracts first, then trust/lifecycle semantics, then object-facing generated surfaces. Scope: thread:contract-hardening, repo:aoa-memo, project:AoA. Scope classes: thread, repo, project. Primary recall modes: working, episodic. Current recall status: preferred because This capsule is the current bounded working-state export for the active hardening route. Payload ref: ROADMAP.md#current-stage."
         },
         {
           "section_id": "memo.state.2026-03-23.contract-hardening-current-axis#provenance-and-evidence",
@@ -70,7 +70,7 @@
           "heading": "Bridges and Access",
           "ordinal": 4,
           "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
-          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: docs/RUNTIME_WRITEBACK_SEAM.md#mapping-to-preserve. ToS refs: none. Skill refs: none. Eval refs: none. KAG lift status: none."
+          "body": "Access class: public. Scope classes: thread, repo, project. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: docs/RUNTIME_WRITEBACK_SEAM.md#mapping-to-preserve. ToS refs: none. Skill refs: none. Eval refs: none. KAG lift status: none."
         }
       ]
     },
@@ -85,7 +85,7 @@
           "heading": "Identity and Recall",
           "ordinal": 1,
           "summary": "Names the episode surface, its active recall modes, and its allowed current-recall posture.",
-          "body": "Bootstrap foundation draft prepared for aoa-memo. A first doctrine-and-schema baseline was prepared for the aoa-memo repository bootstrap phase. Scope: repo:aoa-memo, project:AoA. Primary recall modes: episodic, working. Current recall status: allowed because This episode remains usable for trace-back and bootstrap interpretation, but it is not the main recall entrypoint. Payload ref: ROADMAP.md#current-stage."
+          "body": "Bootstrap foundation draft prepared for aoa-memo. A first doctrine-and-schema baseline was prepared for the aoa-memo repository bootstrap phase. Scope: repo:aoa-memo, project:AoA. Scope classes: repo, project. Primary recall modes: episodic, working. Current recall status: allowed because This episode remains usable for trace-back and bootstrap interpretation, but it is not the main recall entrypoint. Payload ref: ROADMAP.md#current-stage."
         },
         {
           "section_id": "memo.ep.2026-03-20.bootstrap-foundation#provenance-and-evidence",
@@ -106,7 +106,7 @@
           "heading": "Bridges and Access",
           "ordinal": 4,
           "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
-          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memo_registry.min.json. ToS refs: none. Skill refs: none. Eval refs: none. KAG lift status: none."
+          "body": "Access class: public. Scope classes: repo, project. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memo_registry.min.json. ToS refs: none. Skill refs: none. Eval refs: none. KAG lift status: none."
         }
       ]
     },
@@ -121,7 +121,7 @@
           "heading": "Identity and Recall",
           "ordinal": 1,
           "summary": "Names the episode surface, its active recall modes, and its allowed current-recall posture.",
-          "body": "ToS fragment inspection recorded for memo bridge export. Records that a Tree of Sophia fragment was inspected as the seed event for a bounded memo bridge and downstream KAG-ready handoff. Scope: repo:aoa-memo, project:AoA. Primary recall modes: lineage, episodic, semantic. Current recall status: allowed because This source episode should stay visible as evidence for bridge-oriented recall without becoming the main semantic entrypoint. Payload ref: docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow."
+          "body": "ToS fragment inspection recorded for memo bridge export. Records that a Tree of Sophia fragment was inspected as the seed event for a bounded memo bridge and downstream KAG-ready handoff. Scope: repo:aoa-memo, project:AoA. Scope classes: repo, project. Primary recall modes: lineage, episodic, semantic. Current recall status: allowed because This source episode should stay visible as evidence for bridge-oriented recall without becoming the main semantic entrypoint. Payload ref: docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow."
         },
         {
           "section_id": "memo.ep.2026-03-23.tos-interpretation-bridge-seed#provenance-and-evidence",
@@ -142,7 +142,7 @@
           "heading": "Bridges and Access",
           "ordinal": 4,
           "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
-          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memory_catalog.min.json. ToS refs: repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md#memory-bridge-fragment. Skill refs: none. Eval refs: none. KAG lift status: none."
+          "body": "Access class: public. Scope classes: repo, project. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memory_catalog.min.json. ToS refs: repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md#memory-bridge-fragment. Skill refs: none. Eval refs: none. KAG lift status: none."
         }
       ]
     },
@@ -157,7 +157,7 @@
           "heading": "Identity and Recall",
           "ordinal": 1,
           "summary": "Names the claim surface, its active recall modes, and its preferred current-recall posture.",
-          "body": "Temperature is not truth. Memory temperature tracks activation and consolidation posture, not universal correctness or proof status. Scope: repo:aoa-memo, ecosystem:AoA. Primary recall modes: semantic, source_route. Current recall status: preferred because This remains a current doctrine-level claim for interpreting memo temperature. Payload ref: docs/MEMORY_MODEL.md#axis-2-temperature."
+          "body": "Temperature is not truth. Memory temperature tracks activation and consolidation posture, not universal correctness or proof status. Scope: repo:aoa-memo, ecosystem:AoA. Scope classes: repo, ecosystem. Primary recall modes: semantic, source_route. Current recall status: preferred because This remains a current doctrine-level claim for interpreting memo temperature. Payload ref: docs/MEMORY_MODEL.md#axis-2-temperature."
         },
         {
           "section_id": "memo.claim.2026-03-20.temperature-not-truth#provenance-and-evidence",
@@ -178,7 +178,7 @@
           "heading": "Bridges and Access",
           "ordinal": 4,
           "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
-          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memo_registry.min.json. ToS refs: none. Skill refs: none. Eval refs: none. KAG lift status: candidate."
+          "body": "Access class: public. Scope classes: repo, ecosystem. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memo_registry.min.json. ToS refs: none. Skill refs: none. Eval refs: none. KAG lift status: candidate."
         }
       ]
     },
@@ -193,7 +193,7 @@
           "heading": "Identity and Recall",
           "ordinal": 1,
           "summary": "Names the claim surface, its active recall modes, and its preferred current-recall posture.",
-          "body": "Dedicated memo catalog surfaces are the preferred inspect entrypoint. Router-facing semantic recall should inspect the dedicated memo catalog surfaces rather than relying on the compact registry alone. Scope: repo:aoa-memo, project:AoA. Primary recall modes: semantic, source_route. Current recall status: preferred because This claim is the current inspect entrypoint for router-facing semantic recall. Payload ref: generated/memory_catalog.min.json."
+          "body": "Dedicated memo catalog surfaces are the preferred inspect entrypoint. Router-facing semantic recall should inspect the dedicated memo catalog surfaces rather than relying on the compact registry alone. Scope: repo:aoa-memo, project:AoA. Scope classes: repo, project. Primary recall modes: semantic, source_route. Current recall status: preferred because This claim is the current inspect entrypoint for router-facing semantic recall. Payload ref: generated/memory_catalog.min.json."
         },
         {
           "section_id": "memo.claim.2026-03-21.memo-entrypoint-new#provenance-and-evidence",
@@ -214,7 +214,7 @@
           "heading": "Bridges and Access",
           "ordinal": 4,
           "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
-          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memory_catalog.min.json. ToS refs: none. Skill refs: none. Eval refs: none. KAG lift status: none."
+          "body": "Access class: public. Scope classes: repo, project. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memory_catalog.min.json. ToS refs: none. Skill refs: none. Eval refs: none. KAG lift status: none."
         }
       ]
     },
@@ -229,7 +229,7 @@
           "heading": "Identity and Recall",
           "ordinal": 1,
           "summary": "Names the claim surface, its active recall modes, and its historical current-recall posture.",
-          "body": "Old memo inspect entrypoint points to registry only. Early router-facing recall pointed semantic inspect toward the compact memo registry instead of the dedicated memo catalog surfaces. Scope: repo:aoa-memo, project:AoA. Primary recall modes: semantic, lineage. Current recall status: historical because This claim remains visible for trace-back only because a newer current entrypoint replaced it. Payload ref: generated/memo_registry.min.json."
+          "body": "Old memo inspect entrypoint points to registry only. Early router-facing recall pointed semantic inspect toward the compact memo registry instead of the dedicated memo catalog surfaces. Scope: repo:aoa-memo, project:AoA. Scope classes: repo, project. Primary recall modes: semantic, lineage. Current recall status: historical because This claim remains visible for trace-back only because a newer current entrypoint replaced it. Payload ref: generated/memo_registry.min.json."
         },
         {
           "section_id": "memo.claim.2026-03-21.memo-entrypoint-old#provenance-and-evidence",
@@ -250,7 +250,7 @@
           "heading": "Bridges and Access",
           "ordinal": 4,
           "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
-          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memory_catalog.min.json. ToS refs: none. Skill refs: none. Eval refs: none. KAG lift status: none."
+          "body": "Access class: public. Scope classes: repo, project. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memory_catalog.min.json. ToS refs: none. Skill refs: none. Eval refs: none. KAG lift status: none."
         }
       ]
     },
@@ -265,7 +265,7 @@
           "heading": "Identity and Recall",
           "ordinal": 1,
           "summary": "Names the claim surface, its active recall modes, and its withdrawn current-recall posture.",
-          "body": "Memo registry alone is sufficient as the long-term inspect surface. An over-strong claim that the compact registry by itself was enough as the stable inspect surface for router-facing memo recall. Scope: repo:aoa-memo, project:AoA. Primary recall modes: semantic, lineage. Current recall status: withdrawn because This over-strong claim should not surface as normal current memo meaning. Payload ref: generated/memo_registry.min.json."
+          "body": "Memo registry alone is sufficient as the long-term inspect surface. An over-strong claim that the compact registry by itself was enough as the stable inspect surface for router-facing memo recall. Scope: repo:aoa-memo, project:AoA. Scope classes: repo, project. Primary recall modes: semantic, lineage. Current recall status: withdrawn because This over-strong claim should not surface as normal current memo meaning. Payload ref: generated/memo_registry.min.json."
         },
         {
           "section_id": "memo.claim.2026-03-21.memo-entrypoint-bad-claim#provenance-and-evidence",
@@ -286,7 +286,7 @@
           "heading": "Bridges and Access",
           "ordinal": 4,
           "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
-          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memory_catalog.min.json. ToS refs: none. Skill refs: none. Eval refs: none. KAG lift status: none."
+          "body": "Access class: public. Scope classes: repo, project. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memory_catalog.min.json. ToS refs: none. Skill refs: none. Eval refs: none. KAG lift status: none."
         }
       ]
     },
@@ -301,7 +301,7 @@
           "heading": "Identity and Recall",
           "ordinal": 1,
           "summary": "Names the claim surface, its active recall modes, and its allowed current-recall posture.",
-          "body": "ToS-linked memory should bridge by reference. A memo bridge candidate should preserve Tree of Sophia meaning by reference and provenance rather than by rewriting source-authored material inside aoa-memo. Scope: repo:aoa-memo, project:AoA, ecosystem:AoA. Primary recall modes: semantic, lineage, source_route. Current recall status: allowed because This reviewed claim is suitable for semantic and lineage expansion, but it is not the sole entrypoint for recall. Payload ref: docs/KAG_TOS_BRIDGE_CONTRACT.md#tos-bridge-guidance."
+          "body": "ToS-linked memory should bridge by reference. A memo bridge candidate should preserve Tree of Sophia meaning by reference and provenance rather than by rewriting source-authored material inside aoa-memo. Scope: repo:aoa-memo, project:AoA, ecosystem:AoA. Scope classes: repo, project, ecosystem. Primary recall modes: semantic, lineage, source_route. Current recall status: allowed because This reviewed claim is suitable for semantic and lineage expansion, but it is not the sole entrypoint for recall. Payload ref: docs/KAG_TOS_BRIDGE_CONTRACT.md#tos-bridge-guidance."
         },
         {
           "section_id": "memo.claim.2026-03-23.tos-bridge-by-reference#provenance-and-evidence",
@@ -322,7 +322,7 @@
           "heading": "Bridges and Access",
           "ordinal": 4,
           "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
-          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memory_sections.full.json. ToS refs: repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md#memory-bridge-fragment. Skill refs: none. Eval refs: none. KAG lift status: candidate."
+          "body": "Access class: public. Scope classes: repo, project, ecosystem. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memory_sections.full.json. ToS refs: repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md#memory-bridge-fragment. Skill refs: none. Eval refs: none. KAG lift status: candidate."
         }
       ]
     },
@@ -337,7 +337,7 @@
           "heading": "Identity and Recall",
           "ordinal": 1,
           "summary": "Names the decision surface, its active recall modes, and its allowed current-recall posture.",
-          "body": "Approval record for self-agent checkpoint rollout. Records explicit approval to proceed with a bounded self-agent checkpoint change after the source-of-truth and policy check were named. Scope: repo:aoa-playbooks, ecosystem:AoA. Primary recall modes: working, semantic, source_route. Current recall status: allowed because This decision should remain available during checkpoint-oriented recall as a reviewed gate outcome. Payload ref: docs/MEMORY_MODEL.md#checkpoint-route-writeback."
+          "body": "Approval record for self-agent checkpoint rollout. Records explicit approval to proceed with a bounded self-agent checkpoint change after the source-of-truth and policy check were named. Scope: repo:aoa-playbooks, ecosystem:AoA. Scope classes: repo, ecosystem. Primary recall modes: working, semantic, source_route. Current recall status: allowed because This decision should remain available during checkpoint-oriented recall as a reviewed gate outcome. Payload ref: docs/MEMORY_MODEL.md#checkpoint-route-writeback."
         },
         {
           "section_id": "memo.decision.2026-03-21.self-agent-approval-record#provenance-and-evidence",
@@ -358,7 +358,7 @@
           "heading": "Bridges and Access",
           "ordinal": 4,
           "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
-          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memo_registry.min.json. ToS refs: none. Skill refs: skill:aoa-source-of-truth-check, skill:aoa-approval-gate-check. Eval refs: eval:aoa-approval-boundary-adherence. KAG lift status: candidate."
+          "body": "Access class: public. Scope classes: repo, ecosystem. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memo_registry.min.json. ToS refs: none. Skill refs: skill:aoa-source-of-truth-check, skill:aoa-approval-gate-check. Eval refs: eval:aoa-approval-boundary-adherence. KAG lift status: candidate."
         }
       ]
     },
@@ -373,7 +373,7 @@
           "heading": "Identity and Recall",
           "ordinal": 1,
           "summary": "Names the episode surface, its active recall modes, and its allowed current-recall posture.",
-          "body": "Post-change health check recorded for self-agent checkpoint rollout. Captures the post-change health result after a bounded self-agent checkpoint change completed and before the improvement log was frozen. Scope: repo:aoa-playbooks, ecosystem:AoA. Primary recall modes: working, episodic, source_route. Current recall status: allowed because This health-check episode remains available for bounded review and improvement-thread trace-back. Payload ref: docs/MEMORY_MODEL.md#checkpoint-route-writeback."
+          "body": "Post-change health check recorded for self-agent checkpoint rollout. Captures the post-change health result after a bounded self-agent checkpoint change completed and before the improvement log was frozen. Scope: repo:aoa-playbooks, ecosystem:AoA. Scope classes: repo, ecosystem. Primary recall modes: working, episodic, source_route. Current recall status: allowed because This health-check episode remains available for bounded review and improvement-thread trace-back. Payload ref: docs/MEMORY_MODEL.md#checkpoint-route-writeback."
         },
         {
           "section_id": "memo.ep.2026-03-21.self-agent-health-check#provenance-and-evidence",
@@ -394,7 +394,7 @@
           "heading": "Bridges and Access",
           "ordinal": 4,
           "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
-          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memo_registry.min.json. ToS refs: none. Skill refs: skill:aoa-change-protocol, skill:aoa-dry-run-first. Eval refs: eval:aoa-bounded-change-quality. KAG lift status: none."
+          "body": "Access class: public. Scope classes: repo, ecosystem. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memo_registry.min.json. ToS refs: none. Skill refs: skill:aoa-change-protocol, skill:aoa-dry-run-first. Eval refs: eval:aoa-bounded-change-quality. KAG lift status: none."
         }
       ]
     },
@@ -409,7 +409,7 @@
           "heading": "Identity and Recall",
           "ordinal": 1,
           "summary": "Names the pattern surface, its active recall modes, and its preferred current-recall posture.",
-          "body": "Reviewed candidates stay candidates before durable promotion. Observed across writeback and bridge flows: durable memo growth lands best when candidate claims, patterns, and bridges stay review-gated before wider promotion. Scope: repo:aoa-memo, project:AoA. Primary recall modes: procedural, semantic. Current recall status: preferred because This pattern should surface as current procedural-experience memory because it keeps recurring across bounded writeback flows. Payload ref: docs/WRITEBACK_TEMPERATURE_POLICY.md#what-may-bridge-outward."
+          "body": "Reviewed candidates stay candidates before durable promotion. Observed across writeback and bridge flows: durable memo growth lands best when candidate claims, patterns, and bridges stay review-gated before wider promotion. Scope: repo:aoa-memo, project:AoA. Scope classes: repo, project. Primary recall modes: procedural, semantic. Current recall status: preferred because This pattern should surface as current procedural-experience memory because it keeps recurring across bounded writeback flows. Payload ref: docs/WRITEBACK_TEMPERATURE_POLICY.md#what-may-bridge-outward."
         },
         {
           "section_id": "memo.pattern.2026-03-23.reviewed-candidates-before-promotion#provenance-and-evidence",
@@ -430,7 +430,7 @@
           "heading": "Bridges and Access",
           "ordinal": 4,
           "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
-          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memory_catalog.min.json. ToS refs: none. Skill refs: skill:aoa-dry-run-first. Eval refs: eval:aoa-bounded-change-quality. KAG lift status: none."
+          "body": "Access class: public. Scope classes: repo, project. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memory_catalog.min.json. ToS refs: none. Skill refs: skill:aoa-dry-run-first. Eval refs: eval:aoa-bounded-change-quality. KAG lift status: none."
         }
       ]
     },
@@ -445,7 +445,7 @@
           "heading": "Identity and Recall",
           "ordinal": 1,
           "summary": "Names the bridge surface, its active recall modes, and its allowed current-recall posture.",
-          "body": "Bridge candidate linking memo claim to ToS lineage and KAG lift posture. Connects a reviewed memo claim to Tree of Sophia lineage references while preserving provenance and candidate-only KAG lift posture. Scope: repo:aoa-memo, project:AoA, repo:Tree-of-Sophia. Primary recall modes: lineage, source_route, semantic. Current recall status: allowed because This bridge candidate should remain visible for lineage and KAG-oriented inspection without being treated as a finalized lift. Payload ref: docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow."
+          "body": "Bridge candidate linking memo claim to ToS lineage and KAG lift posture. Connects a reviewed memo claim to Tree of Sophia lineage references while preserving provenance and candidate-only KAG lift posture. Scope: repo:aoa-memo, project:AoA, repo:Tree-of-Sophia. Scope classes: repo, project. Primary recall modes: lineage, source_route, semantic. Current recall status: allowed because This bridge candidate should remain visible for lineage and KAG-oriented inspection without being treated as a finalized lift. Payload ref: docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow."
         },
         {
           "section_id": "memo.bridge.2026-03-23.tos-lineage-kag-candidate#provenance-and-evidence",
@@ -466,7 +466,7 @@
           "heading": "Bridges and Access",
           "ordinal": 4,
           "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
-          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memory_catalog.min.json. ToS refs: repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md#memory-bridge-fragment. Skill refs: none. Eval refs: none. KAG lift status: candidate."
+          "body": "Access class: public. Scope classes: repo, project. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memory_catalog.min.json. ToS refs: repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md#memory-bridge-fragment. Skill refs: none. Eval refs: none. KAG lift status: candidate."
         }
       ]
     },
@@ -481,7 +481,7 @@
           "heading": "Identity and Recall",
           "ordinal": 1,
           "summary": "Names the audit_event surface, its active recall modes, and its historical current-recall posture.",
-          "body": "Superseded registry-only inspect entrypoint with dedicated memo catalog surface. The older inspect-entry claim was superseded once source-owned memo catalog surfaces became available. Scope: repo:aoa-memo, project:AoA. Primary recall modes: episodic, source_route. Current recall status: historical because This audit event should be surfaced mainly when tracing why the current entrypoint replaced an older one. Payload ref: docs/LIFECYCLE.md#supersession."
+          "body": "Superseded registry-only inspect entrypoint with dedicated memo catalog surface. The older inspect-entry claim was superseded once source-owned memo catalog surfaces became available. Scope: repo:aoa-memo, project:AoA. Scope classes: repo, project. Primary recall modes: episodic, source_route. Current recall status: historical because This audit event should be surfaced mainly when tracing why the current entrypoint replaced an older one. Payload ref: docs/LIFECYCLE.md#supersession."
         },
         {
           "section_id": "memo.audit.2026-03-21.router-entrypoint-supersession#provenance-and-evidence",
@@ -502,7 +502,7 @@
           "heading": "Bridges and Access",
           "ordinal": 4,
           "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
-          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memory_catalog.min.json. ToS refs: none. Skill refs: none. Eval refs: none. KAG lift status: none."
+          "body": "Access class: public. Scope classes: repo, project. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memory_catalog.min.json. ToS refs: none. Skill refs: none. Eval refs: none. KAG lift status: none."
         }
       ]
     },
@@ -517,7 +517,7 @@
           "heading": "Identity and Recall",
           "ordinal": 1,
           "summary": "Names the audit_event surface, its active recall modes, and its historical current-recall posture.",
-          "body": "Retracted over-strong claim about registry-only memo inspect sufficiency. A too-strong claim about the registry as a sufficient long-term inspect surface was retracted after doctrine surfaces and dedicated memo catalogs were added. Scope: repo:aoa-memo, project:AoA. Primary recall modes: episodic, source_route. Current recall status: historical because This audit event remains visible for contradiction and retraction trace-back rather than ordinary semantic recall. Payload ref: docs/LIFECYCLE.md#retraction."
+          "body": "Retracted over-strong claim about registry-only memo inspect sufficiency. A too-strong claim about the registry as a sufficient long-term inspect surface was retracted after doctrine surfaces and dedicated memo catalogs were added. Scope: repo:aoa-memo, project:AoA. Scope classes: repo, project. Primary recall modes: episodic, source_route. Current recall status: historical because This audit event remains visible for contradiction and retraction trace-back rather than ordinary semantic recall. Payload ref: docs/LIFECYCLE.md#retraction."
         },
         {
           "section_id": "memo.audit.2026-03-21.router-entrypoint-retraction#provenance-and-evidence",
@@ -538,7 +538,7 @@
           "heading": "Bridges and Access",
           "ordinal": 4,
           "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
-          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memory_catalog.min.json. ToS refs: none. Skill refs: none. Eval refs: none. KAG lift status: none."
+          "body": "Access class: public. Scope classes: repo, project. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memory_catalog.min.json. ToS refs: none. Skill refs: none. Eval refs: none. KAG lift status: none."
         }
       ]
     },
@@ -553,7 +553,7 @@
           "heading": "Identity and Recall",
           "ordinal": 1,
           "summary": "Names the state_capsule surface, its active recall modes, and its preferred current-recall posture.",
-          "body": "Local stack readiness state capsule for the Alpha worker path. Captures the confirmed startup canon for the live Alpha worker path: 5403 on llama.cpp, 5402 route-api closure, and recurrence proven through a second bounded pass on the same lane. Scope: repo:aoa-playbooks, project:AoA. Primary recall modes: working, episodic. Current recall status: preferred because This capsule is the current startup canon for the Alpha local-stack route and should be consulted before any later mutation route opens. Payload ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.local-stack-diagnosis.md."
+          "body": "Local stack readiness state capsule for the Alpha worker path. Captures the confirmed startup canon for the live Alpha worker path: 5403 on llama.cpp, 5402 route-api closure, and recurrence proven through a second bounded pass on the same lane. Scope: repo:aoa-playbooks, project:AoA. Scope classes: repo, project. Primary recall modes: working, episodic. Current recall status: preferred because This capsule is the current startup canon for the Alpha local-stack route and should be consulted before any later mutation route opens. Payload ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.local-stack-diagnosis.md."
         },
         {
           "section_id": "memo.state.2026-04-02.alpha-local-stack-diagnosis#provenance-and-evidence",
@@ -574,7 +574,7 @@
           "heading": "Bridges and Access",
           "ordinal": 4,
           "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
-          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.local-stack-diagnosis.md. ToS refs: none. Skill refs: skill:aoa-change-protocol. Eval refs: eval:aoa-verification-honesty, eval:aoa-tool-trajectory-discipline. KAG lift status: none."
+          "body": "Access class: public. Scope classes: repo, project. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.local-stack-diagnosis.md. ToS refs: none. Skill refs: skill:aoa-change-protocol. Eval refs: eval:aoa-verification-honesty, eval:aoa-tool-trajectory-discipline. KAG lift status: none."
         }
       ]
     },
@@ -589,7 +589,7 @@
           "heading": "Identity and Recall",
           "ordinal": 1,
           "summary": "Names the episode surface, its active recall modes, and its allowed current-recall posture.",
-          "body": "Local stack diagnosis closed as the first live Alpha route. Records the live diagnosis pass that established the canonical worker-path startup truth on 5403, named bounded operator-surface blockers, and closed with recurrence proven on the same llama.cpp lane. Scope: repo:aoa-playbooks, project:AoA. Primary recall modes: episodic, working. Current recall status: allowed because This episode remains useful as the first live record of canonical startup truth and bounded blocker discovery for Phase Alpha. Payload ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.local-stack-diagnosis.md."
+          "body": "Local stack diagnosis closed as the first live Alpha route. Records the live diagnosis pass that established the canonical worker-path startup truth on 5403, named bounded operator-surface blockers, and closed with recurrence proven on the same llama.cpp lane. Scope: repo:aoa-playbooks, project:AoA. Scope classes: repo, project. Primary recall modes: episodic, working. Current recall status: allowed because This episode remains useful as the first live record of canonical startup truth and bounded blocker discovery for Phase Alpha. Payload ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.local-stack-diagnosis.md."
         },
         {
           "section_id": "memo.ep.2026-04-02.alpha-local-stack-diagnosis#provenance-and-evidence",
@@ -610,7 +610,7 @@
           "heading": "Bridges and Access",
           "ordinal": 4,
           "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
-          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.local-stack-diagnosis.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-verification-honesty, eval:aoa-tool-trajectory-discipline. KAG lift status: none."
+          "body": "Access class: public. Scope classes: repo, project. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.local-stack-diagnosis.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-verification-honesty, eval:aoa-tool-trajectory-discipline. KAG lift status: none."
         }
       ]
     },
@@ -625,7 +625,7 @@
           "heading": "Identity and Recall",
           "ordinal": 1,
           "summary": "Names the decision surface, its active recall modes, and its allowed current-recall posture.",
-          "body": "Decision to keep Alpha local-stack diagnosis on the promoted worker path. Records the bounded choice to keep the Alpha diagnosis route on the canonical llama.cpp worker path and prove recurrence through a second pass on that same lane. Scope: repo:aoa-playbooks, project:AoA. Primary recall modes: working, semantic, source_route. Current recall status: allowed because This decision should stay visible while Phase Alpha recurrence remains anchored to a bounded second pass on the same canonical llama.cpp lane. Payload ref: repo:aoa-playbooks/docs/alpha-readiness/local-stack-diagnosis.md."
+          "body": "Decision to keep Alpha local-stack diagnosis on the promoted worker path. Records the bounded choice to keep the Alpha diagnosis route on the canonical llama.cpp worker path and prove recurrence through a second pass on that same lane. Scope: repo:aoa-playbooks, project:AoA. Scope classes: repo, project. Primary recall modes: working, semantic, source_route. Current recall status: allowed because This decision should stay visible while Phase Alpha recurrence remains anchored to a bounded second pass on the same canonical llama.cpp lane. Payload ref: repo:aoa-playbooks/docs/alpha-readiness/local-stack-diagnosis.md."
         },
         {
           "section_id": "memo.decision.2026-04-02.alpha-local-stack-diagnosis#provenance-and-evidence",
@@ -646,7 +646,7 @@
           "heading": "Bridges and Access",
           "ordinal": 4,
           "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
-          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-readiness/local-stack-diagnosis.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-tool-trajectory-discipline. KAG lift status: none."
+          "body": "Access class: public. Scope classes: repo, project. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-readiness/local-stack-diagnosis.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-tool-trajectory-discipline. KAG lift status: none."
         }
       ]
     },
@@ -661,7 +661,7 @@
           "heading": "Identity and Recall",
           "ordinal": 1,
           "summary": "Names the decision surface, its active recall modes, and its allowed current-recall posture.",
-          "body": "Checkpoint approval decision for the live Alpha operator-surface refresh. Records the explicit decision to land the bounded Route 2 operator-surface refresh only inside the named file boundary, with rollback posture and post-sync runtime health kept review-visible. Scope: repo:aoa-playbooks, project:AoA. Primary recall modes: working, semantic, source_route. Current recall status: allowed because This decision should remain visible whenever later Alpha routes need the bounded approval posture that kept Route 2 inside operator-surface refresh only. Payload ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.self-agent-checkpoint-rollout.md."
+          "body": "Checkpoint approval decision for the live Alpha operator-surface refresh. Records the explicit decision to land the bounded Route 2 operator-surface refresh only inside the named file boundary, with rollback posture and post-sync runtime health kept review-visible. Scope: repo:aoa-playbooks, project:AoA. Scope classes: repo, project. Primary recall modes: working, semantic, source_route. Current recall status: allowed because This decision should remain visible whenever later Alpha routes need the bounded approval posture that kept Route 2 inside operator-surface refresh only. Payload ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.self-agent-checkpoint-rollout.md."
         },
         {
           "section_id": "memo.decision.2026-04-02.alpha-self-agent-checkpoint#provenance-and-evidence",
@@ -682,7 +682,7 @@
           "heading": "Bridges and Access",
           "ordinal": 4,
           "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
-          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.self-agent-checkpoint-rollout.md. ToS refs: none. Skill refs: skill:aoa-approval-gate-check. Eval refs: eval:aoa-approval-boundary-adherence, eval:aoa-bounded-change-quality. KAG lift status: none."
+          "body": "Access class: public. Scope classes: repo, project. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.self-agent-checkpoint-rollout.md. ToS refs: none. Skill refs: skill:aoa-approval-gate-check. Eval refs: eval:aoa-approval-boundary-adherence, eval:aoa-bounded-change-quality. KAG lift status: none."
         }
       ]
     },
@@ -697,7 +697,7 @@
           "heading": "Identity and Recall",
           "ordinal": 1,
           "summary": "Names the audit_event surface, its active recall modes, and its allowed current-recall posture.",
-          "body": "Alpha Route 2 kept rollback and post-sync health review-visible. Captures the live checkpoint event in which rollback triggers, parity sync, exact reply, and autonomy closure all remained explicit after the bounded operator-surface refresh. Scope: repo:aoa-playbooks, project:AoA. Primary recall modes: episodic, source_route. Current recall status: allowed because This audit event remains useful when checking whether Route 2 preserved rollback visibility and post-sync runtime closure before handoff to remediation. Payload ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.self-agent-checkpoint-rollout.md."
+          "body": "Alpha Route 2 kept rollback and post-sync health review-visible. Captures the live checkpoint event in which rollback triggers, parity sync, exact reply, and autonomy closure all remained explicit after the bounded operator-surface refresh. Scope: repo:aoa-playbooks, project:AoA. Scope classes: repo, project. Primary recall modes: episodic, source_route. Current recall status: allowed because This audit event remains useful when checking whether Route 2 preserved rollback visibility and post-sync runtime closure before handoff to remediation. Payload ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.self-agent-checkpoint-rollout.md."
         },
         {
           "section_id": "memo.audit.2026-04-02.alpha-self-agent-checkpoint#provenance-and-evidence",
@@ -718,7 +718,7 @@
           "heading": "Bridges and Access",
           "ordinal": 4,
           "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
-          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.self-agent-checkpoint-rollout.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-approval-boundary-adherence, eval:aoa-bounded-change-quality. KAG lift status: none."
+          "body": "Access class: public. Scope classes: repo, project. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.self-agent-checkpoint-rollout.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-approval-boundary-adherence, eval:aoa-bounded-change-quality. KAG lift status: none."
         }
       ]
     },
@@ -733,7 +733,7 @@
           "heading": "Identity and Recall",
           "ordinal": 1,
           "summary": "Names the episode surface, its active recall modes, and its allowed current-recall posture.",
-          "body": "Primary Alpha remediation pass closed the pilot and benchmark doctrine drift. Records the live document-bounded remediation that removed stale `Ollama`, `5401`, and control-lane wording from the pilot and benchmark doctrine before the memo-only rerun closes recurrence. Scope: repo:aoa-playbooks, project:AoA. Primary recall modes: episodic, working. Current recall status: allowed because This episode remains useful when tracing how the canonical doctrine story was cleaned before the later readiness dossier and memo-only rerun. Payload ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation.md."
+          "body": "Primary Alpha remediation pass closed the pilot and benchmark doctrine drift. Records the live document-bounded remediation that removed stale `Ollama`, `5401`, and control-lane wording from the pilot and benchmark doctrine before the memo-only rerun closes recurrence. Scope: repo:aoa-playbooks, project:AoA. Scope classes: repo, project. Primary recall modes: episodic, working. Current recall status: allowed because This episode remains useful when tracing how the canonical doctrine story was cleaned before the later readiness dossier and memo-only rerun. Payload ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation.md."
         },
         {
           "section_id": "memo.ep.2026-04-02.alpha-validation-remediation#provenance-and-evidence",
@@ -754,7 +754,7 @@
           "heading": "Bridges and Access",
           "ordinal": 4,
           "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
-          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-scope-drift-detection, eval:aoa-verification-honesty, eval:aoa-approval-boundary-adherence. KAG lift status: none."
+          "body": "Access class: public. Scope classes: repo, project. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-scope-drift-detection, eval:aoa-verification-honesty, eval:aoa-approval-boundary-adherence. KAG lift status: none."
         }
       ]
     },
@@ -769,7 +769,7 @@
           "heading": "Identity and Recall",
           "ordinal": 1,
           "summary": "Names the decision surface, its active recall modes, and its preferred current-recall posture.",
-          "body": "Decision to close Route 3 as doctrine remediation only. Records the bounded decision to remediate the pilot and benchmark doctrine surfaces without widening into runtime-script refactors, while still requiring the memo-only rerun for recurrence closure. Scope: repo:aoa-playbooks, project:AoA. Primary recall modes: working, semantic, source_route. Current recall status: preferred because This decision should anchor the final Alpha rerun because it names both the doctrine-only remediation boundary and the need for memo-first recurrence closure. Payload ref: repo:aoa-playbooks/docs/alpha-readiness/validation-driven-remediation.md."
+          "body": "Decision to close Route 3 as doctrine remediation only. Records the bounded decision to remediate the pilot and benchmark doctrine surfaces without widening into runtime-script refactors, while still requiring the memo-only rerun for recurrence closure. Scope: repo:aoa-playbooks, project:AoA. Scope classes: repo, project. Primary recall modes: working, semantic, source_route. Current recall status: preferred because This decision should anchor the final Alpha rerun because it names both the doctrine-only remediation boundary and the need for memo-first recurrence closure. Payload ref: repo:aoa-playbooks/docs/alpha-readiness/validation-driven-remediation.md."
         },
         {
           "section_id": "memo.decision.2026-04-02.alpha-validation-remediation#provenance-and-evidence",
@@ -790,7 +790,7 @@
           "heading": "Bridges and Access",
           "ordinal": 4,
           "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
-          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-readiness/validation-driven-remediation.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-scope-drift-detection, eval:aoa-verification-honesty, eval:aoa-approval-boundary-adherence. KAG lift status: none."
+          "body": "Access class: public. Scope classes: repo, project. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-readiness/validation-driven-remediation.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-scope-drift-detection, eval:aoa-verification-honesty, eval:aoa-approval-boundary-adherence. KAG lift status: none."
         }
       ]
     },
@@ -805,7 +805,7 @@
           "heading": "Identity and Recall",
           "ordinal": 1,
           "summary": "Names the episode surface, its active recall modes, and its allowed current-recall posture.",
-          "body": "Memo-only rerun of Alpha remediation closed recurrence. Records the live rerun that re-entered remediation from landed memo objects and the Phase Alpha recall contract only, without stronger source escalation or hidden scratchpad recovery. Scope: repo:aoa-playbooks, project:AoA. Primary recall modes: episodic, working. Current recall status: allowed because This episode remains useful as the live proof that the rerun stayed memo-first, anchor-first, and escalation-free. Payload ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md."
+          "body": "Memo-only rerun of Alpha remediation closed recurrence. Records the live rerun that re-entered remediation from landed memo objects and the Phase Alpha recall contract only, without stronger source escalation or hidden scratchpad recovery. Scope: repo:aoa-playbooks, project:AoA. Scope classes: repo, project. Primary recall modes: episodic, working. Current recall status: allowed because This episode remains useful as the live proof that the rerun stayed memo-first, anchor-first, and escalation-free. Payload ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md."
         },
         {
           "section_id": "memo.ep.2026-04-02.alpha-validation-remediation-rerun#provenance-and-evidence",
@@ -826,7 +826,7 @@
           "heading": "Bridges and Access",
           "ordinal": 4,
           "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
-          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-memo-recall-integrity, eval:aoa-return-anchor-integrity, eval:aoa-verification-honesty. KAG lift status: none."
+          "body": "Access class: public. Scope classes: repo, project. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-memo-recall-integrity, eval:aoa-return-anchor-integrity, eval:aoa-verification-honesty. KAG lift status: none."
         }
       ]
     },
@@ -841,7 +841,7 @@
           "heading": "Identity and Recall",
           "ordinal": 1,
           "summary": "Names the state_capsule surface, its active recall modes, and its allowed current-recall posture.",
-          "body": "Long-horizon Alpha readiness dossier state capsule. Captures the live readiness-dossier posture after Routes 1-3 were distilled into one candidate-only long-horizon packet on the canonical worker path. Scope: repo:aoa-playbooks, project:AoA. Primary recall modes: working, episodic. Current recall status: allowed because This capsule remains useful while the readiness dossier stays candidate-only and prepares the checkpoint pause/resume route. Payload ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.long-horizon-model-tier-orchestra.md."
+          "body": "Long-horizon Alpha readiness dossier state capsule. Captures the live readiness-dossier posture after Routes 1-3 were distilled into one candidate-only long-horizon packet on the canonical worker path. Scope: repo:aoa-playbooks, project:AoA. Scope classes: repo, project. Primary recall modes: working, episodic. Current recall status: allowed because This capsule remains useful while the readiness dossier stays candidate-only and prepares the checkpoint pause/resume route. Payload ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.long-horizon-model-tier-orchestra.md."
         },
         {
           "section_id": "memo.state.2026-04-02.alpha-long-horizon#provenance-and-evidence",
@@ -862,7 +862,7 @@
           "heading": "Bridges and Access",
           "ordinal": 4,
           "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
-          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.long-horizon-model-tier-orchestra.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-long-horizon-depth, eval:aoa-tool-trajectory-discipline. KAG lift status: none."
+          "body": "Access class: public. Scope classes: repo, project. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.long-horizon-model-tier-orchestra.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-long-horizon-depth, eval:aoa-tool-trajectory-discipline. KAG lift status: none."
         }
       ]
     },
@@ -877,7 +877,7 @@
           "heading": "Identity and Recall",
           "ordinal": 1,
           "summary": "Names the episode surface, its active recall modes, and its allowed current-recall posture.",
-          "body": "Long-horizon Alpha route episode for the first readiness dossier. Records the bounded non-mutating dossier pass that stitched the live Route 1-3 surfaces into one candidate-only readiness packet and prepared checkpoint continuity. Scope: repo:aoa-playbooks, project:AoA. Primary recall modes: episodic, working. Current recall status: allowed because This episode remains useful when tracing how the first readiness dossier was formed without widening into canon or mutation. Payload ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.long-horizon-model-tier-orchestra.md."
+          "body": "Long-horizon Alpha route episode for the first readiness dossier. Records the bounded non-mutating dossier pass that stitched the live Route 1-3 surfaces into one candidate-only readiness packet and prepared checkpoint continuity. Scope: repo:aoa-playbooks, project:AoA. Scope classes: repo, project. Primary recall modes: episodic, working. Current recall status: allowed because This episode remains useful when tracing how the first readiness dossier was formed without widening into canon or mutation. Payload ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.long-horizon-model-tier-orchestra.md."
         },
         {
           "section_id": "memo.ep.2026-04-02.alpha-long-horizon#provenance-and-evidence",
@@ -898,7 +898,7 @@
           "heading": "Bridges and Access",
           "ordinal": 4,
           "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
-          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.long-horizon-model-tier-orchestra.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-long-horizon-depth, eval:aoa-tool-trajectory-discipline. KAG lift status: none."
+          "body": "Access class: public. Scope classes: repo, project. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.long-horizon-model-tier-orchestra.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-long-horizon-depth, eval:aoa-tool-trajectory-discipline. KAG lift status: none."
         }
       ]
     },
@@ -913,7 +913,7 @@
           "heading": "Identity and Recall",
           "ordinal": 1,
           "summary": "Names the state_capsule surface, its active recall modes, and its preferred current-recall posture.",
-          "body": "Restartable inquiry Alpha state capsule after live pause and resume. Captures the checkpoint-first posture that now survived a real pause/resume cycle on the canonical worker path and points directly at the memo-only rerun. Scope: repo:aoa-playbooks, project:AoA. Primary recall modes: working, episodic. Current recall status: preferred because This capsule should anchor the next pass because it preserves the checkpoint-first posture that already survived pause/resume on the live path. Payload ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.restartable-inquiry-loop.md."
+          "body": "Restartable inquiry Alpha state capsule after live pause and resume. Captures the checkpoint-first posture that now survived a real pause/resume cycle on the canonical worker path and points directly at the memo-only rerun. Scope: repo:aoa-playbooks, project:AoA. Scope classes: repo, project. Primary recall modes: working, episodic. Current recall status: preferred because This capsule should anchor the next pass because it preserves the checkpoint-first posture that already survived pause/resume on the live path. Payload ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.restartable-inquiry-loop.md."
         },
         {
           "section_id": "memo.state.2026-04-02.alpha-restartable-inquiry#provenance-and-evidence",
@@ -934,7 +934,7 @@
           "heading": "Bridges and Access",
           "ordinal": 4,
           "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
-          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.restartable-inquiry-loop.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-long-horizon-depth, eval:aoa-return-anchor-integrity. KAG lift status: none."
+          "body": "Access class: public. Scope classes: repo, project. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.restartable-inquiry-loop.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-long-horizon-depth, eval:aoa-return-anchor-integrity. KAG lift status: none."
         }
       ]
     },
@@ -949,7 +949,7 @@
           "heading": "Identity and Recall",
           "ordinal": 1,
           "summary": "Names the decision surface, its active recall modes, and its allowed current-recall posture.",
-          "body": "Decision to hand the resumed dossier into the memo-only rerun. Records the bounded choice to keep the resumed inquiry checkpoint-first and to hand the next pass directly into the final memo-only remediation rerun. Scope: repo:aoa-playbooks, project:AoA. Primary recall modes: working, semantic, source_route. Current recall status: allowed because This decision should remain visible while the resumed dossier is being handed into the final memo-only rerun. Payload ref: repo:aoa-playbooks/docs/alpha-readiness/restartable-inquiry-loop.md."
+          "body": "Decision to hand the resumed dossier into the memo-only rerun. Records the bounded choice to keep the resumed inquiry checkpoint-first and to hand the next pass directly into the final memo-only remediation rerun. Scope: repo:aoa-playbooks, project:AoA. Scope classes: repo, project. Primary recall modes: working, semantic, source_route. Current recall status: allowed because This decision should remain visible while the resumed dossier is being handed into the final memo-only rerun. Payload ref: repo:aoa-playbooks/docs/alpha-readiness/restartable-inquiry-loop.md."
         },
         {
           "section_id": "memo.decision.2026-04-02.alpha-restartable-inquiry#provenance-and-evidence",
@@ -970,7 +970,7 @@
           "heading": "Bridges and Access",
           "ordinal": 4,
           "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
-          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-readiness/restartable-inquiry-loop.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-long-horizon-depth, eval:aoa-return-anchor-integrity. KAG lift status: none."
+          "body": "Access class: public. Scope classes: repo, project. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-readiness/restartable-inquiry-loop.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-long-horizon-depth, eval:aoa-return-anchor-integrity. KAG lift status: none."
         }
       ]
     },
@@ -985,7 +985,7 @@
           "heading": "Identity and Recall",
           "ordinal": 1,
           "summary": "Names the pattern surface, its active recall modes, and its allowed current-recall posture.",
-          "body": "Alpha remediation recurrence is proven only through memo-only closure. Observed across the primary remediation pass and the memo-only rerun: Alpha remediation can claim recurrence only when the rerun stays inspect-capsule-expand, remains anchor-first, and closes without stronger source escalation or hidden scratchpad recovery. Scope: repo:aoa-playbooks, project:AoA. Primary recall modes: procedural, semantic. Current recall status: allowed because This pattern should surface only as bounded remediation experience proven by the memo-only rerun, not as general recurrence doctrine. Payload ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md."
+          "body": "Alpha remediation recurrence is proven only through memo-only closure. Observed across the primary remediation pass and the memo-only rerun: Alpha remediation can claim recurrence only when the rerun stays inspect-capsule-expand, remains anchor-first, and closes without stronger source escalation or hidden scratchpad recovery. Scope: repo:aoa-playbooks, project:AoA. Scope classes: repo, project. Primary recall modes: procedural, semantic. Current recall status: allowed because This pattern should surface only as bounded remediation experience proven by the memo-only rerun, not as general recurrence doctrine. Payload ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md."
         },
         {
           "section_id": "memo.pattern.2026-04-02.alpha-remediation-recurrence#provenance-and-evidence",
@@ -1006,7 +1006,7 @@
           "heading": "Bridges and Access",
           "ordinal": 4,
           "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
-          "body": "Access class: public. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-memo-recall-integrity, eval:aoa-return-anchor-integrity, eval:aoa-verification-honesty. KAG lift status: none."
+          "body": "Access class: public. Scope classes: repo, project. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-memo-recall-integrity, eval:aoa-return-anchor-integrity, eval:aoa-verification-honesty. KAG lift status: none."
         }
       ]
     }

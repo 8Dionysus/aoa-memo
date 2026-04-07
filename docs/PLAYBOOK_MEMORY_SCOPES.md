@@ -48,6 +48,8 @@ Playbooks should request the smallest useful scope first:
 
 Scope expansion should be explicit and reviewable.
 
+These same scope classes are the shared cross-repo grammar that `aoa-agents` uses for `memory_rights.allowed_recall_scopes` and governed self-checkpoint `memory_scope`.
+
 ## Checkpoint And Writeback Use
 
 Use the current memo canon like this:

@@ -14,8 +14,10 @@ from generate_memory_object_surfaces import (
     SECTIONS_PATH,
     MANIFEST_PATH,
     SECTION_SPECS,
+    SHARED_SCOPE_CLASSES,
     build_surface_family,
     load_json,
+    scope_classes_for,
 )
 from validate_memo import local_ref_error, validator_for
 
@@ -51,6 +53,9 @@ def validate_full_catalog(data: dict, curated_ids: set[str]) -> None:
         ensure_exists(item["source_path"], f"{FULL_CATALOG_PATH}:{item['id']}:source_path")
         if item["inspect_key"] != item["id"] or item["expand_key"] != item["id"]:
             raise SystemExit(f"{FULL_CATALOG_PATH}: {item['id']} inspect_key and expand_key must match the object id")
+        expected_scope_classes = scope_classes_for(load_json(ROOT / item["source_path"]))
+        if item.get("scope_classes") != expected_scope_classes:
+            raise SystemExit(f"{FULL_CATALOG_PATH}: {item['id']} scope_classes must stay {expected_scope_classes}")
         for ref in item.get("strongest_next_sources", []):
             error = local_ref_error(ref, f"{FULL_CATALOG_PATH}:{item['id']}:strongest_next_sources")
             if error:
@@ -72,6 +77,9 @@ def validate_min_catalog(data: dict, expected_ids: set[str]) -> None:
             raise SystemExit(f"{MIN_CATALOG_PATH}: duplicate id {item['id']}")
         seen_ids.add(item["id"])
         ensure_exists(item["source_path"], f"{MIN_CATALOG_PATH}:{item['id']}:source_path")
+        expected_scope_classes = scope_classes_for(load_json(ROOT / item["source_path"]))
+        if item.get("scope_classes") != expected_scope_classes:
+            raise SystemExit(f"{MIN_CATALOG_PATH}: {item['id']} scope_classes must stay {expected_scope_classes}")
         if item["current_recall_status"] not in EXPORTABLE_RECALL_STATUSES:
             raise SystemExit(f"{MIN_CATALOG_PATH}: {item['id']} must not appear with current_recall_status={item['current_recall_status']}")
     if seen_ids != expected_ids:
@@ -174,6 +182,9 @@ def validate_recall_contract(
         errors.append(f"mode must stay '{expected_mode}'")
     if data.get("allowed_scopes") != expected_allowed_scopes:
         errors.append(f"allowed_scopes must stay {expected_allowed_scopes}")
+    for scope_class in data.get("allowed_scopes", []):
+        if scope_class not in SHARED_SCOPE_CLASSES:
+            errors.append(f"allowed_scopes contains unsupported shared scope class '{scope_class}'")
     if data.get("preferred_kinds") != expected_preferred_kinds:
         errors.append(f"preferred_kinds must stay {expected_preferred_kinds}")
     if data.get("temperature_order") != expected_temperature_order:

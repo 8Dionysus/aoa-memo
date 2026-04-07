@@ -23,6 +23,7 @@ The memo layer may publish the following posture fields for agent-side consumpti
 
 - object `kind`
 - `scope`
+- `scope_classes`
 - `access.access_class`
 - `access.read_scopes`
 - `access.write_scopes`
@@ -38,12 +39,16 @@ The memo layer may publish the following posture fields for agent-side consumpti
 
 These fields let agent contracts talk about memory posture without hard-coding role policy inside `aoa-memo`.
 
+`scope` remains the concrete namespaced object identifier list such as `thread:contract-hardening` or `repo:aoa-memo`.
+`scope_classes` is the derived class list that agent-side contracts may compare against `allowed_recall_scopes` or governed self-checkpoint `memory_scope` without parsing object-local identifiers.
+
 ## Consumer Contract
 
 When `aoa-agents` consumes memo surfaces, it should be able to answer:
 
 - what object kind is being touched
-- which scope the object applies to
+- which scope identifiers the object applies to
+- which scope classes those identifiers reduce to
 - what review or freeze posture the object already has
 - whether the object is a raw event, a reviewed claim, a bridge candidate, or an audit trail
 - which stronger source should be opened next if memory alone is insufficient
@@ -73,6 +78,7 @@ The smallest useful memo-side handoff surface for agent consumers should include
 - source memory id
 - object kind
 - scope
+- scope classes
 - access class
 - read scopes
 - write scopes

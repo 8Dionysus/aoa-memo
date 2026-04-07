@@ -104,6 +104,12 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
         self.assertEqual(capsule_ids, section_ids)
         self.assertTrue(set(object_ids).issubset(capsule_ids))
 
+        shared_scope_classes = set(generate_memory_object_surfaces.SHARED_SCOPE_CLASSES)
+        for item in min_catalog["memory_objects"]:
+            self.assertIn("scope_classes", item)
+            self.assertTrue(item["scope_classes"])
+            self.assertTrue(set(item["scope_classes"]).issubset(shared_scope_classes))
+
     def test_kag_export_stays_generator_backed(self) -> None:
         current = load_json(GENERATED_ROOT / "kag_export.min.json")
         expected = generate_kag_export.build_kag_export_payload()

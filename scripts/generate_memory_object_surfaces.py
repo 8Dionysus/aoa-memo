@@ -79,6 +79,21 @@ def shipped_kinds() -> set[str]:
     return set(schema["properties"]["kind"]["enum"])
 
 
+SHARED_SCOPE_CLASSES = ("thread", "session", "repo", "project", "workspace", "ecosystem")
+
+
+def scope_class_from_identifier(scope_identifier: str) -> str:
+    prefix, separator, _ = scope_identifier.partition(":")
+    scope_class = prefix if separator else scope_identifier
+    if scope_class not in SHARED_SCOPE_CLASSES:
+        raise ValueError(f"unsupported scope class '{scope_class}' from scope identifier '{scope_identifier}'")
+    return scope_class
+
+
+def scope_classes_for(memory_object: JsonDict) -> list[str]:
+    return dedupe([scope_class_from_identifier(scope_identifier) for scope_identifier in memory_object["scope"]])
+
+
 def object_reference_fields(memory_object: JsonDict) -> list[tuple[str, list[str]]]:
     provenance = memory_object.get("provenance", {})
     lifecycle = memory_object.get("lifecycle", {})
@@ -144,6 +159,7 @@ def catalog_item(
         "kind": memory_object["kind"],
         "title": memory_object["title"],
         "summary": memory_object["summary"],
+        "scope_classes": scope_classes_for(memory_object),
         "temperature": trust["temperature"],
         "review_state": lifecycle["review_state"],
         "current_recall_status": lifecycle["current_recall"]["status"],
@@ -236,6 +252,7 @@ def identity_summary(memory_object: JsonDict, recall_modes: list[str]) -> tuple[
     body = (
         f"{memory_object['title']}. {memory_object['summary']} "
         f"Scope: {short_list(memory_object['scope'])}. "
+        f"Scope classes: {short_list(scope_classes_for(memory_object))}. "
         f"Primary recall modes: {short_list(recall_modes)}. "
         f"Current recall status: {current_recall['status']} because "
         f"{clean_sentence_fragment(current_recall['status_reason'])}.{payload_text}"
@@ -291,6 +308,7 @@ def bridges_summary(memory_object: JsonDict, source_path: str) -> tuple[str, str
     summary = "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy."
     body = (
         f"Access class: {access.get('access_class', 'none')}. "
+        f"Scope classes: {short_list(scope_classes_for(memory_object))}. "
         f"Read scopes: {short_list(list(access.get('read_scopes', [])))}. "
         f"Write scopes: {short_list(list(access.get('write_scopes', [])))}. "
         f"Promotion scopes: {short_list(list(access.get('promotion_scopes', [])))}. "
@@ -388,6 +406,10 @@ def load_curated_objects(manifest: JsonDict) -> list[tuple[str, list[str], JsonD
         seen_ids.add(object_id)
         if memory_object["kind"] not in allowed_kinds:
             errors.append(f"{source_path}: object kind {memory_object['kind']} is outside the shipped canon")
+        try:
+            scope_classes_for(memory_object)
+        except ValueError as exc:
+            errors.append(f"{source_path}: {exc}")
         errors.extend(validate_example_refs(memory_object, source_path))
         curated.append((source_path, list(entry["recall_modes"]), memory_object))
 
