@@ -114,13 +114,21 @@ def append_new_receipts(*, log_path: Path, receipts: list[dict[str, Any]]) -> tu
     existing_ids = load_existing_ids(log_path)
     appended = 0
     skipped = 0
+    needs_line_boundary = False
     log_path.parent.mkdir(parents=True, exist_ok=True)
+    if log_path.exists() and log_path.stat().st_size > 0:
+        with log_path.open("rb") as existing_handle:
+            existing_handle.seek(-1, 2)
+            needs_line_boundary = existing_handle.read(1) != b"\n"
     with log_path.open("a", encoding="utf-8") as handle:
         for receipt in receipts:
             event_id = receipt["event_id"]
             if event_id in existing_ids:
                 skipped += 1
                 continue
+            if needs_line_boundary:
+                handle.write("\n")
+                needs_line_boundary = False
             handle.write(json.dumps(receipt, sort_keys=True, ensure_ascii=False) + "\n")
             existing_ids.add(event_id)
             appended += 1
