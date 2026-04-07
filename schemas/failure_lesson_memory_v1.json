@@ -1,0 +1,189 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aoa.local/aoa-memo/schemas/failure_lesson_memory_v1.json",
+  "title": "failure_lesson_memory_v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "memory_id",
+    "object_kind",
+    "title",
+    "repo",
+    "layer",
+    "stressor_family",
+    "source_receipt_refs",
+    "evidence_refs",
+    "lesson_summary",
+    "recommended_posture",
+    "trust_posture",
+    "temperature",
+    "salience",
+    "review_status",
+    "recall_prompts"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "failure_lesson_memory_v1"
+    },
+    "memory_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "object_kind": {
+      "const": "failure_lesson"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "repo": {
+      "type": "string",
+      "minLength": 1
+    },
+    "layer": {
+      "type": "string",
+      "minLength": 1
+    },
+    "surface": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "stressor_family": {
+      "type": "string",
+      "minLength": 1
+    },
+    "bounded_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "value"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "value": {
+          "type": "string",
+          "minLength": 1
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "source_receipt_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "adaptation_delta_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "evidence_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "lesson_summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "recommended_posture": {
+      "type": "string",
+      "minLength": 1
+    },
+    "trust_posture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "signals"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "provisional",
+            "reviewed",
+            "contested"
+          ]
+        },
+        "signals": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "temperature": {
+      "enum": [
+        "hot",
+        "warm",
+        "cool"
+      ]
+    },
+    "salience": {
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "review_status": {
+      "enum": [
+        "draft",
+        "reviewed",
+        "superseded"
+      ]
+    },
+    "recall_prompts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "expires_at_utc": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "supersedes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}
