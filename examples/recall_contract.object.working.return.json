@@ -22,6 +22,7 @@
     "cold"
   ],
   "inspect_surface": "generated/memory_object_catalog.min.json",
+  "capsule_surface": "generated/memory_object_capsules.json",
   "expand_surface": "generated/memory_object_sections.full.json",
   "source_route_required": false,
   "checkpoint_continuity_supported": true,
@@ -37,5 +38,5 @@
     "docs/RUNTIME_WRITEBACK_SEAM.md",
     "docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md"
   ],
-  "notes": "Use for compact object-facing relaunch when checkpoint continuity and explicit memo-side anchors should stay reviewable."
+  "notes": "Use for compact object-facing relaunch when checkpoint continuity and explicit memo-side anchors should stay reviewable: inspect first, hydrate through capsules second, and expand only when the capsule step is insufficient."
 }

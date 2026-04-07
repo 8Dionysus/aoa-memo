@@ -174,7 +174,7 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
             },
             "recall_contract.object.working.return.json": {
                 "inspect_surface": "generated/memory_object_catalog.min.json",
-                "capsule_surface": None,
+                "capsule_surface": "generated/memory_object_capsules.json",
                 "expand_surface": "generated/memory_object_sections.full.json",
                 "mode": "working",
             },

@@ -2130,6 +2130,7 @@ def main() -> int:
         expected_preferred_kinds=["state_capsule", "decision", "episode", "audit_event", "anchor"],
         expected_temperature_order=["hot", "warm", "cool", "frozen", "cold"],
         expected_inspect_surface="generated/memory_object_catalog.min.json",
+        expected_capsule_surface="generated/memory_object_capsules.json",
         expected_expand_surface="generated/memory_object_sections.full.json",
         expected_source_route_required=False,
         expected_checkpoint_continuity_supported=True,

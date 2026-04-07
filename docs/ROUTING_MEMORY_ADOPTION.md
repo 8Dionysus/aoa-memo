@@ -48,6 +48,19 @@ Those contracts use the parallel additive flow:
 2. hydrate selected ids through `generated/memory_object_capsules.json`
 3. open `generated/memory_object_sections.full.json` only when the capsule step is not enough
 
+### Return-ready working recall
+
+Use `examples/recall_contract.object.working.return.json` when checkpoint
+continuity is the reason for re-entry and the caller needs the same bounded
+object-facing join rule without switching to a doctrine-first or router-only
+contract.
+
+That return-ready contract now keeps the same additive flow explicitly:
+
+1. inspect ids in `generated/memory_object_catalog.min.json`
+2. hydrate selected ids through `generated/memory_object_capsules.json`
+3. open `generated/memory_object_sections.full.json` only when the capsule step is not enough
+
 ## Join Rule
 
 The inspect id is the join key across all three steps.
