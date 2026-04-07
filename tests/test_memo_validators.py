@@ -452,6 +452,7 @@ class MemoValidatorTestCase(unittest.TestCase):
                     expected_preferred_kinds=["state_capsule", "decision", "episode", "audit_event", "anchor"],
                     expected_temperature_order=["hot", "warm", "cool", "frozen", "cold"],
                     expected_inspect_surface="generated/memory_object_catalog.min.json",
+                    expected_capsule_surface="generated/memory_object_capsules.json",
                     expected_expand_surface="generated/memory_object_sections.full.json",
                     expected_source_route_required=False,
                     expected_checkpoint_continuity_supported=True,
@@ -498,12 +499,49 @@ class MemoValidatorTestCase(unittest.TestCase):
                 expected_preferred_kinds=["state_capsule", "decision", "episode", "audit_event", "anchor"],
                 expected_temperature_order=["hot", "warm", "cool", "frozen", "cold"],
                 expected_inspect_surface="generated/memory_object_catalog.min.json",
+                expected_capsule_surface="generated/memory_object_capsules.json",
                 expected_expand_surface="generated/memory_object_sections.full.json",
                 expected_source_route_required=False,
                 expected_checkpoint_continuity_supported=True,
                 expected_return_ready=True,
                 expected_preferred_anchor_kinds=["state_capsule", "decision", "anchor"],
                 expected_support_artifact_refs=["docs/DOES_NOT_EXIST.md"],
+            )
+
+    def test_return_ready_recall_contract_requires_capsule_surface(self) -> None:
+        recall_path = validate_memo.EXAMPLES / "recall_contract.object.working.return.json"
+        original_load_json = validate_memo.load_json
+        payload = load_json(recall_path)
+        assert isinstance(payload, dict)
+        payload = copy.deepcopy(payload)
+        payload.pop("capsule_surface", None)
+
+        def side_effect(path: Path) -> dict:
+            if Path(path) == recall_path:
+                return copy.deepcopy(payload)
+            return original_load_json(path)
+
+        with patch.object(validate_memo, "load_json", side_effect=side_effect):
+            self.assert_system_exit_quietly(
+                validate_memo.validate_recall_contract_example,
+                "recall_contract.object.working.return.json",
+                expected_mode="working",
+                expected_allowed_scopes=["thread", "session", "project"],
+                expected_preferred_kinds=["state_capsule", "decision", "episode", "audit_event", "anchor"],
+                expected_temperature_order=["hot", "warm", "cool", "frozen", "cold"],
+                expected_inspect_surface="generated/memory_object_catalog.min.json",
+                expected_capsule_surface="generated/memory_object_capsules.json",
+                expected_expand_surface="generated/memory_object_sections.full.json",
+                expected_source_route_required=False,
+                expected_checkpoint_continuity_supported=True,
+                expected_return_ready=True,
+                expected_preferred_anchor_kinds=["state_capsule", "decision", "anchor"],
+                expected_support_artifact_refs=[
+                    "schemas/inquiry_checkpoint.schema.json",
+                    "schemas/checkpoint-to-memory-contract.schema.json",
+                    "docs/RUNTIME_WRITEBACK_SEAM.md",
+                    "docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
+                ],
             )
 
     def test_router_semantic_recall_contract_requires_capsule_surface(self) -> None:
