@@ -77,6 +77,28 @@ class MemoPublishLiveReceiptsTests(unittest.TestCase):
             with self.assertRaises(module.ReceiptPublishError):
                 module.load_receipts([input_path])
 
+    def test_publish_live_receipts_preserves_jsonl_line_boundaries(self) -> None:
+        module = load_module()
+        with tempfile.TemporaryDirectory() as temp_dir:
+            tmp_path = Path(temp_dir)
+            input_path = tmp_path / "receipt.json"
+            log_path = tmp_path / "memo-writeback-receipts.jsonl"
+            existing_receipt = build_receipt()
+            existing_receipt["event_id"] = "evt-memo-existing"
+            existing_receipt["run_ref"] = "run-memo-existing"
+            input_path.write_text(json.dumps(build_receipt(), indent=2) + "\n", encoding="utf-8")
+            log_path.write_text(json.dumps(existing_receipt, sort_keys=True, ensure_ascii=False), encoding="utf-8")
+
+            receipts = module.load_receipts([input_path])
+            appended, skipped = module.append_new_receipts(log_path=log_path, receipts=receipts)
+
+            self.assertEqual(appended, 1)
+            self.assertEqual(skipped, 0)
+            lines = log_path.read_text(encoding="utf-8").splitlines()
+            self.assertEqual(len(lines), 2)
+            self.assertEqual(json.loads(lines[0])["event_id"], "evt-memo-existing")
+            self.assertEqual(json.loads(lines[1])["event_id"], "evt-memo-001")
+
 
 if __name__ == "__main__":
     unittest.main()
