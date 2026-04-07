@@ -28,6 +28,7 @@ generate_memory_object_surfaces = load_module("generate_memory_object_surfaces.p
 generate_kag_export = load_module("generate_kag_export.py")
 generate_runtime_writeback_targets = load_module("generate_runtime_writeback_targets.py")
 generate_runtime_writeback_intake = load_module("generate_runtime_writeback_intake.py")
+generate_runtime_writeback_governance = load_module("generate_runtime_writeback_governance.py")
 
 GENERATED_ROOT = REPO_ROOT / "generated"
 EXAMPLES_ROOT = REPO_ROOT / "examples"
@@ -334,6 +335,34 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
         self.assertTrue(all(item["requires_human_review"] for item in reviewed_candidates))
         self.assertTrue(all(item["review_state_default"] == "proposed" for item in reviewed_candidates))
         self.assertTrue(all(item["intake_posture"] == "review_candidate_only" for item in reviewed_candidates))
+
+    def test_runtime_writeback_governance_surface_stays_generator_backed(self) -> None:
+        current = load_json(GENERATED_ROOT / "runtime_writeback_governance.min.json")
+        expected = generate_runtime_writeback_governance.build_runtime_writeback_governance_payload()
+
+        self.assertEqual(current, expected)
+        self.assertEqual(
+            set(current.keys()),
+            {"schema_version", "layer", "scope", "source_of_truth", "targets"},
+        )
+        self.assertEqual(current["schema_version"], 1)
+        self.assertEqual(current["layer"], "aoa-memo")
+        self.assertEqual(current["scope"], "runtime-writeback")
+        self.assertEqual(
+            current["source_of_truth"],
+            {
+                "runtime_writeback_targets": "generated/runtime_writeback_targets.min.json",
+                "runtime_writeback_intake": "generated/runtime_writeback_intake.min.json",
+            },
+        )
+        self.assertTrue(all(item["governance_passed"] for item in current["targets"]))
+        self.assertTrue(all(item["in_writeback_targets"] for item in current["targets"]))
+        self.assertTrue(all(item["in_writeback_intake"] for item in current["targets"]))
+        self.assertTrue(all(item["blockers"] == [] for item in current["targets"]))
+
+        by_surface = {item["runtime_surface"]: item for item in current["targets"]}
+        self.assertEqual(by_surface["checkpoint_export"]["intake_posture"], "capturable_runtime_export")
+        self.assertEqual(by_surface["distillation_claim_candidate"]["intake_posture"], "review_candidate_only")
 
     def test_repo_docs_align_on_contract_hardening_stage(self) -> None:
         readme = (REPO_ROOT / "README.md").read_text(encoding="utf-8")

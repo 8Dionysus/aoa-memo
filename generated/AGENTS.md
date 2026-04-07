@@ -9,6 +9,7 @@ This file applies to checked-in artifacts under `generated/`.
 - `memo_registry.min.json` is the compact machine-readable registry surface for the layer
 - the doctrine family consists of `memory_catalog.json`, `memory_catalog.min.json`, `memory_capsules.json`, and `memory_sections.full.json`
 - the object family consists of `memory_object_catalog.json`, `memory_object_catalog.min.json`, `memory_object_capsules.json`, and `memory_object_sections.full.json`
+- `runtime_writeback_governance.min.json` is the derived landing gate for the narrow runtime writeback seam
 - `kag_export.min.json` is the source-owned memo donor export for KAG readiness
 
 Do not treat every file here as the same kind of artifact.
@@ -20,6 +21,7 @@ Keep this split explicit:
 - `generated/memo_registry.min.json` is a source-authored registry contract validated by `scripts/validate_memo.py`
 - the doctrine family is a checked-in router-facing memo surface family validated by `scripts/validate_memory_surfaces.py`
 - the object family is generator-backed and is rebuilt by `scripts/generate_memory_object_surfaces.py` and checked by `scripts/validate_memory_object_surfaces.py`
+- `generated/runtime_writeback_governance.min.json` is rebuilt by `scripts/generate_runtime_writeback_governance.py` and checked by `scripts/validate_memo.py`
 - `generated/kag_export.min.json` is generator-backed, rebuilt by `scripts/generate_kag_export.py`, and checked by `scripts/validate_memo.py`
 
 The object family is derived from curated examples in `examples/memory_object_surface_manifest.json` and the referenced memory-object examples.
@@ -64,4 +66,5 @@ If the object family or KAG export changed, also run:
 ```bash
 python scripts/generate_memory_object_surfaces.py
 python scripts/generate_kag_export.py
+python scripts/generate_runtime_writeback_governance.py
 ```

@@ -48,11 +48,17 @@ The first structural surface for this seam is schema-backed and code-free:
 The compact downstream read surface derived from that contract is:
 
 - `generated/runtime_writeback_targets.min.json`
+- `generated/runtime_writeback_intake.min.json`
+- `generated/runtime_writeback_governance.min.json`
 
 The checkpoint artifact remains `inquiry_checkpoint`.
 It is not a new memory-object kind.
 It stays a route artifact until a bounded export is written into the current memo canon.
 Return-specific relaunch metadata stays inside `inquiry_checkpoint` as route-scoped structure and does not create a new writeback class.
+
+The governance surface is intentionally narrow.
+It checks only that the runtime writeback target map and the runtime writeback intake map remain aligned as one release-facing seam.
+It does not become a governance verdict over the whole memo corpus.
 
 ## Trace And Restart Reuse
 
