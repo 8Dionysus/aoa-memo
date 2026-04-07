@@ -662,6 +662,28 @@ class MemoValidatorTestCase(unittest.TestCase):
 
         self.assertIn("duplicate ids detected", str(context))
 
+    def test_object_surface_validator_rejects_scope_classes_drift(self) -> None:
+        original_load_json = validate_memory_object_surfaces.load_json
+        full_catalog_path = validate_memory_object_surfaces.FULL_CATALOG_PATH
+        full_catalog = load_json(full_catalog_path)
+        assert isinstance(full_catalog, dict)
+        full_catalog = copy.deepcopy(full_catalog)
+        full_catalog["memory_objects"][0]["scope_classes"] = ["session"]
+
+        def side_effect(path: Path) -> dict:
+            if Path(path) == full_catalog_path:
+                return copy.deepcopy(full_catalog)
+            return original_load_json(path)
+
+        with patch.object(validate_memory_object_surfaces, "load_json", side_effect=side_effect):
+            context = self.assert_system_exit_quietly(
+                validate_memory_object_surfaces.validate_full_catalog,
+                full_catalog,
+                {item["id"] for item in full_catalog["memory_objects"]},
+            )
+
+        self.assertIn("scope_classes", str(context))
+
 
 if __name__ == "__main__":
     unittest.main()

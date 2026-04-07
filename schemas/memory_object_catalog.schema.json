@@ -37,6 +37,7 @@
           "kind",
           "title",
           "summary",
+          "scope_classes",
           "temperature",
           "review_state",
           "current_recall_status",
@@ -71,6 +72,22 @@
           "summary": {
             "type": "string",
             "minLength": 1
+          },
+          "scope_classes": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "enum": [
+                "thread",
+                "session",
+                "repo",
+                "project",
+                "workspace",
+                "ecosystem"
+              ]
+            }
           },
           "scope": {
             "type": "array",
