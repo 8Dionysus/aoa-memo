@@ -1,0 +1,46 @@
+{
+  "schema_version": "failure_lesson_memory_v1",
+  "memory_id": "memo:hybrid-query-reground-first",
+  "object_kind": "failure_lesson",
+  "title": "Hybrid query: reground before widening after KAG loss",
+  "repo": "ATM10-Agent",
+  "layer": "application",
+  "surface": "hybrid-query",
+  "stressor_family": "derived_knowledge_unavailable",
+  "bounded_scope": {
+    "kind": "surface_family",
+    "value": "hybrid-query",
+    "notes": "Applies when retrieval remains usable but KAG expansion is unavailable or empty."
+  },
+  "source_receipt_refs": [
+    "ATM10-Agent:stressor_receipt_v1#stress:2026-04-07:retrieval-only-fallback"
+  ],
+  "adaptation_delta_refs": [
+    "ATM10-Agent:adaptation_delta_v1#adapt:2026-04-07:hybrid-query-reground-note"
+  ],
+  "evidence_refs": [
+    "aoa-evals:antifragility_eval_report_v1#eval:ATM10-Agent:hybrid-query:2026-W14",
+    "ATM10-Agent:run/hybrid_query_results.json#session:2026-04-07T12:10:00Z"
+  ],
+  "lesson_summary": "When retrieval succeeds but KAG expansion fails, preserve the bounded retrieval result, mark degradation explicitly, and reground before any broader action.",
+  "recommended_posture": "reground_first",
+  "trust_posture": {
+    "status": "reviewed",
+    "signals": [
+      "source_receipt_present",
+      "adaptation_cited",
+      "bounded_eval_present"
+    ]
+  },
+  "temperature": "warm",
+  "salience": "high",
+  "review_status": "reviewed",
+  "recall_prompts": [
+    "retrieval_only_fallback",
+    "hybrid-query degraded but bounded",
+    "KAG expansion unavailable"
+  ],
+  "expires_at_utc": null,
+  "supersedes": [],
+  "notes": "Memory is context for routing and operator review. It is not proof by itself."
+}
