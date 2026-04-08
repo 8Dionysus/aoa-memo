@@ -942,6 +942,42 @@
         "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md",
         "repo:aoa-memo/examples/recall_contract.object.working.phase-alpha.json"
       ]
+    },
+    {
+      "id": "memo.pattern.2026-04-07.antifragility-stress-recovery-window",
+      "kind": "pattern",
+      "title": "Ordered recovery windows earn recall only after bounded proof",
+      "summary": "Observed across source receipts, fourth-wave eval proof, derived stats, and additive route hints: repeated stress recovery becomes durable memo context only when the ordered window stays bounded and the memory object remains downstream from stronger evidence.",
+      "scope_classes": [
+        "project",
+        "ecosystem"
+      ],
+      "temperature": "cool",
+      "review_state": "confirmed",
+      "current_recall_status": "allowed",
+      "authority_kind": "human_reviewed",
+      "primary_recall_modes": [
+        "procedural",
+        "semantic",
+        "lineage"
+      ],
+      "source_path": "examples/pattern.antifragility-stress-recovery-window.example.json",
+      "inspect_key": "memo.pattern.2026-04-07.antifragility-stress-recovery-window",
+      "expand_key": "memo.pattern.2026-04-07.antifragility-stress-recovery-window",
+      "scope": [
+        "project:AoA",
+        "ecosystem:aoa-antifragility"
+      ],
+      "provenance_thread_id": "prov.aoa-antifragility.fourth-wave.2026-04-07",
+      "related_object_ids": [
+        "memo.ep.2026-04-02.alpha-validation-remediation",
+        "memo.ep.2026-04-02.alpha-validation-remediation-rerun"
+      ],
+      "strongest_next_sources": [
+        "repo:aoa-evals/bundles/aoa-stress-recovery-window/reports/example-report.json",
+        "repo:aoa-stats/generated/stress_recovery_window_summary.min.json",
+        "repo:aoa-routing/generated/composite_stress_route_hints.min.json"
+      ]
     }
   ]
 }

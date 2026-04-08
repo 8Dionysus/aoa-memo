@@ -1,0 +1,50 @@
+{
+  "schema_version": "recovery_pattern_memory_v1",
+  "memory_id": "memo:antifragility-stress-recovery-window",
+  "object_kind": "recovery_pattern",
+  "title": "Repeated bounded recovery stays recallable only after ordered-window proof",
+  "repo": "AoA",
+  "layer": "memory",
+  "surface": "antifragility",
+  "stressor_family": "hybrid-query-kag-unhealthy",
+  "window_scope": {
+    "kind": "longitudinal_window",
+    "value": "2026-W14 ordered stress window",
+    "ordered_window_size": 3,
+    "notes": "Requires more than one reviewed degraded event and a bounded comparative summary before the recovery pattern becomes durable recall context."
+  },
+  "source_receipt_refs": [
+    "ATM10-Agent:stressor_receipt_v1#stress:2026-04-07:retrieval-only-fallback",
+    "abyss-stack:service_degradation_receipt_v1#service:2026-04-07:hybrid-query-kag-unhealthy"
+  ],
+  "eval_report_refs": [
+    "aoa-evals:stress_recovery_window_eval_report_v1#eval:2026-04-07:hybrid-query-kag-unhealthy"
+  ],
+  "stats_summary_refs": [
+    "aoa-stats:stress_recovery_window_summary_v1#summary:2026-04-07:hybrid-query-kag-unhealthy"
+  ],
+  "route_hint_refs": [
+    "aoa-routing:composite_stress_route_hint_v1#route:2026-04-07:hybrid-query-kag-unhealthy"
+  ],
+  "lesson_summary": "When hybrid query degrades because KAG health is weak, repeated bounded recovery should only be recalled after source receipts, the longitudinal eval report, and the derived stats summary all agree that the window stayed bounded.",
+  "recall_posture": "Use as reviewed context for routing and operator recall only after checking the linked receipts, eval report, and stats summary.",
+  "trust_posture": {
+    "status": "reviewed",
+    "signals": [
+      "source_receipts_present",
+      "longitudinal_eval_present",
+      "stats_summary_present",
+      "route_hint_reviewed"
+    ]
+  },
+  "temperature": "cool",
+  "salience": "high",
+  "review_status": "reviewed",
+  "native_pattern_ref": "examples/pattern.antifragility-stress-recovery-window.example.json",
+  "recall_prompts": [
+    "stress recovery window",
+    "repeated bounded recovery",
+    "hybrid-query-kag-unhealthy"
+  ],
+  "notes": "Memo shapes recall and route review. It does not become live health truth."
+}

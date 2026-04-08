@@ -11,6 +11,7 @@ Use the shortest route by need:
 - role, boundaries, and conceptual model: [CHARTER](CHARTER.md), [docs/BOUNDARIES](docs/BOUNDARIES.md), and [docs/MEMORY_MODEL](docs/MEMORY_MODEL.md)
 - object canon, trust posture, and lifecycle: [docs/MEMORY_OBJECT_PROFILES](docs/MEMORY_OBJECT_PROFILES.md), [docs/MEMORY_TRUST_POSTURE](docs/MEMORY_TRUST_POSTURE.md), [docs/MEMORY_TEMPERATURES](docs/MEMORY_TEMPERATURES.md), [docs/LIFECYCLE](docs/LIFECYCLE.md), and [docs/NARRATIVE_CORE_CONTRACT](docs/NARRATIVE_CORE_CONTRACT.md)
 - antifragility failure-lesson seam: [docs/FAILURE_LESSON_MEMORY.md](docs/FAILURE_LESSON_MEMORY.md), [docs/FAILURE_LESSON_RECALL.md](docs/FAILURE_LESSON_RECALL.md), `schemas/failure_lesson_memory_v1.json`, and `examples/failure_lesson_memory.example.json`
+- antifragility recovery-pattern seam: [docs/RECOVERY_PATTERN_MEMORY.md](docs/RECOVERY_PATTERN_MEMORY.md), [docs/RECOVERY_PATTERN_RECALL.md](docs/RECOVERY_PATTERN_RECALL.md), `schemas/recovery_pattern_memory_v1.json`, `examples/recovery_pattern_memory.example.json`, and `examples/pattern.antifragility-stress-recovery-window.example.json`
 - writeback, recurrence, and neighboring-layer seams: [docs/WITNESS_TRACE_CONTRACT](docs/WITNESS_TRACE_CONTRACT.md), [docs/WRITEBACK_TEMPERATURE_POLICY](docs/WRITEBACK_TEMPERATURE_POLICY.md), [docs/QUEST_CHRONICLE_WRITEBACK](docs/QUEST_CHRONICLE_WRITEBACK.md), [docs/RUNTIME_WRITEBACK_SEAM](docs/RUNTIME_WRITEBACK_SEAM.md), [docs/RECURRENCE_MEMORY_SUPPORT_SURFACES](docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md), [docs/AGENT_MEMORY_POSTURE_SEAM](docs/AGENT_MEMORY_POSTURE_SEAM.md), and [docs/PLAYBOOK_MEMORY_SCOPES](docs/PLAYBOOK_MEMORY_SCOPES.md)
 - bridge, export, and guardrail surfaces: [docs/KAG_TOS_BRIDGE_CONTRACT](docs/KAG_TOS_BRIDGE_CONTRACT.md), [docs/KAG_SOURCE_EXPORT](docs/KAG_SOURCE_EXPORT.md), [docs/MEMORY_EVAL_GUARDRAILS](docs/MEMORY_EVAL_GUARDRAILS.md), [docs/OPERATIONAL_BOUNDARY](docs/OPERATIONAL_BOUNDARY.md), and [docs/ROUTING_MEMORY_ADOPTION](docs/ROUTING_MEMORY_ADOPTION.md)
 - current direction: [ROADMAP](ROADMAP.md)
@@ -38,6 +39,7 @@ If you are editing inside `schemas/`, `examples/`, `generated/`, or `scripts/`, 
 - doctrine and object reader surfaces: `generated/memory_catalog.json`, `generated/memory_catalog.min.json`, `generated/memory_capsules.json`, `generated/memory_sections.full.json`, `generated/memory_object_catalog.json`, `generated/memory_object_catalog.min.json`, `generated/memory_object_capsules.json`, and `generated/memory_object_sections.full.json`
 - recall contracts and memory-object examples: `examples/recall_contract.*.json`, `examples/core_memory_contract.example.json`, `examples/checkpoint_to_memory_contract.example.json`, and `examples/memory_object_surface_manifest.json`
 - failure-lesson doctrine and contract surfaces: [docs/FAILURE_LESSON_MEMORY](docs/FAILURE_LESSON_MEMORY.md), [docs/FAILURE_LESSON_RECALL](docs/FAILURE_LESSON_RECALL.md), `schemas/failure_lesson_memory_v1.json`, and `examples/failure_lesson_memory.example.json`
+- recovery-pattern doctrine, adjunct contract, and native pattern surfaces: [docs/RECOVERY_PATTERN_MEMORY](docs/RECOVERY_PATTERN_MEMORY.md), [docs/RECOVERY_PATTERN_RECALL](docs/RECOVERY_PATTERN_RECALL.md), `schemas/recovery_pattern_memory_v1.json`, `examples/recovery_pattern_memory.example.json`, and `examples/pattern.antifragility-stress-recovery-window.example.json`
 - writeback, intake, runtime support, and landing governance surfaces: `generated/runtime_writeback_targets.min.json`, `generated/runtime_writeback_intake.min.json`, `generated/runtime_writeback_governance.min.json`, [docs/RUNTIME_WRITEBACK_SEAM](docs/RUNTIME_WRITEBACK_SEAM.md), and [docs/QUEST_CHRONICLE_WRITEBACK](docs/QUEST_CHRONICLE_WRITEBACK.md)
 - owner-local live receipt publication for closeout/stats integration: `scripts/publish_live_receipts.py` and `.aoa/live_receipts/memo-writeback-receipts.jsonl`
 - bridge, export, and guardrail surfaces: `generated/kag_export.min.json`, [docs/KAG_SOURCE_EXPORT](docs/KAG_SOURCE_EXPORT.md), [docs/KAG_TOS_BRIDGE_CONTRACT](docs/KAG_TOS_BRIDGE_CONTRACT.md), and [docs/MEMORY_EVAL_GUARDRAILS](docs/MEMORY_EVAL_GUARDRAILS.md)
@@ -127,6 +129,11 @@ The current downstream guardrail pilot stays intentionally narrow: recall precis
 Antifragility wave two stays inside that boundary. Failure lessons are bounded
 memory context for later recall and operator posture, not a new proof family
 and not a live runtime writeback lane.
+
+Antifragility wave four extends that same posture to reviewed recovery
+patterns. Memo can preserve repeated-window recovery context and native
+`pattern` recall surfaces, but it still stays downstream from source-owned
+receipts, eval proof, and derived stats summaries.
 
 ## License
 
