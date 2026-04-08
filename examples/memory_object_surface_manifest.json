@@ -207,6 +207,14 @@
         "procedural",
         "semantic"
       ]
+    },
+    {
+      "example_path": "examples/pattern.antifragility-stress-recovery-window.example.json",
+      "recall_modes": [
+        "procedural",
+        "semantic",
+        "lineage"
+      ]
     }
   ]
 }

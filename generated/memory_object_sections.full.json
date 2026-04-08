@@ -1009,6 +1009,42 @@
           "body": "Access class: public. Scope classes: repo, project. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-memo-recall-integrity, eval:aoa-return-anchor-integrity, eval:aoa-verification-honesty. KAG lift status: none."
         }
       ]
+    },
+    {
+      "id": "memo.pattern.2026-04-07.antifragility-stress-recovery-window",
+      "kind": "pattern",
+      "title": "Ordered recovery windows earn recall only after bounded proof",
+      "source_path": "examples/pattern.antifragility-stress-recovery-window.example.json",
+      "sections": [
+        {
+          "section_id": "memo.pattern.2026-04-07.antifragility-stress-recovery-window#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the pattern surface, its active recall modes, and its allowed current-recall posture.",
+          "body": "Ordered recovery windows earn recall only after bounded proof. Observed across source receipts, fourth-wave eval proof, derived stats, and additive route hints: repeated stress recovery becomes durable memo context only when the ordered window stays bounded and the memory object remains downstream from stronger evidence. Scope: project:AoA, ecosystem:aoa-antifragility. Scope classes: project, ecosystem. Primary recall modes: procedural, semantic, lineage. Current recall status: allowed because This pattern should surface as bounded repeated-window recovery context only after checking the linked receipts, proof, and derived summaries. Payload ref: docs/RECOVERY_PATTERN_MEMORY.md#boundary-reminder."
+        },
+        {
+          "section_id": "memo.pattern.2026-04-07.antifragility-stress-recovery-window#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.aoa-antifragility.fourth-wave.2026-04-07. Source refs: repo:aoa-evals/bundles/aoa-stress-recovery-window/reports/example-report.json, repo:aoa-stats/generated/stress_recovery_window_summary.min.json, repo:aoa-routing/generated/composite_stress_route_hints.min.json, docs/RECOVERY_PATTERN_MEMORY.md#what-it-should-carry. Episode refs: memo.ep.2026-04-02.alpha-validation-remediation, memo.ep.2026-04-02.alpha-validation-remediation-rerun. Related curated object ids: memo.ep.2026-04-02.alpha-validation-remediation, memo.ep.2026-04-02.alpha-validation-remediation-rerun. Strongest next sources: repo:aoa-evals/bundles/aoa-stress-recovery-window/reports/example-report.json, repo:aoa-stats/generated/stress_recovery_window_summary.min.json, repo:aoa-routing/generated/composite_stress_route_hints.min.json."
+        },
+        {
+          "section_id": "memo.pattern.2026-04-07.antifragility-stress-recovery-window#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: human_reviewed (fourth-wave reviewed recovery pattern closeout). Temperature: cool; confidence 0.92; freshness 0.98; salience 0.94. Review state: confirmed. Retention class: operational-pattern. Promotion state: none. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.pattern.2026-04-07.antifragility-stress-recovery-window#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Scope classes: project, ecosystem. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-routing/generated/composite_stress_route_hints.min.json. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-stress-recovery-window, eval:aoa-antifragility-posture. KAG lift status: none."
+        }
+      ]
     }
   ]
 }

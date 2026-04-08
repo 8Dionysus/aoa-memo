@@ -1,0 +1,195 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aoa.local/aoa-memo/schemas/recovery_pattern_memory_v1.json",
+  "title": "recovery_pattern_memory_v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "memory_id",
+    "object_kind",
+    "title",
+    "repo",
+    "layer",
+    "stressor_family",
+    "window_scope",
+    "source_receipt_refs",
+    "eval_report_refs",
+    "stats_summary_refs",
+    "lesson_summary",
+    "recall_posture",
+    "trust_posture",
+    "temperature",
+    "salience",
+    "review_status",
+    "native_pattern_ref",
+    "recall_prompts"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "recovery_pattern_memory_v1"
+    },
+    "memory_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "object_kind": {
+      "const": "recovery_pattern"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "repo": {
+      "type": "string",
+      "minLength": 1
+    },
+    "layer": {
+      "type": "string",
+      "minLength": 1
+    },
+    "surface": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "stressor_family": {
+      "type": "string",
+      "minLength": 1
+    },
+    "window_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "value",
+        "ordered_window_size"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "minLength": 1
+        },
+        "value": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ordered_window_size": {
+          "type": "integer",
+          "minimum": 2
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "source_receipt_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "eval_report_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "stats_summary_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "route_hint_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "lesson_summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "recall_posture": {
+      "type": "string",
+      "minLength": 1
+    },
+    "trust_posture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "signals"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "provisional",
+            "reviewed",
+            "contested"
+          ]
+        },
+        "signals": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "temperature": {
+      "enum": [
+        "warm",
+        "cool",
+        "cold"
+      ]
+    },
+    "salience": {
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "review_status": {
+      "enum": [
+        "draft",
+        "reviewed",
+        "superseded"
+      ]
+    },
+    "native_pattern_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "recall_prompts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

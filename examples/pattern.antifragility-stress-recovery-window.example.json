@@ -1,0 +1,80 @@
+{
+  "id": "memo.pattern.2026-04-07.antifragility-stress-recovery-window",
+  "kind": "pattern",
+  "title": "Ordered recovery windows earn recall only after bounded proof",
+  "summary": "Observed across source receipts, fourth-wave eval proof, derived stats, and additive route hints: repeated stress recovery becomes durable memo context only when the ordered window stays bounded and the memory object remains downstream from stronger evidence.",
+  "scope": [
+    "project:AoA",
+    "ecosystem:aoa-antifragility"
+  ],
+  "owner_refs": [
+    "repo:aoa-memo"
+  ],
+  "payload_ref": "docs/RECOVERY_PATTERN_MEMORY.md#boundary-reminder",
+  "tags": [
+    "antifragility",
+    "pattern",
+    "recovery-pattern",
+    "stress-recovery-window"
+  ],
+  "time": {
+    "created_at": "2026-04-07T21:20:00Z",
+    "observed_at": "2026-04-07T21:10:00Z",
+    "valid_from": "2026-04-07T21:20:00Z",
+    "valid_to": null
+  },
+  "provenance": {
+    "source_refs": [
+      "repo:aoa-evals/bundles/aoa-stress-recovery-window/reports/example-report.json",
+      "repo:aoa-stats/generated/stress_recovery_window_summary.min.json",
+      "repo:aoa-routing/generated/composite_stress_route_hints.min.json",
+      "docs/RECOVERY_PATTERN_MEMORY.md#what-it-should-carry"
+    ],
+    "episode_refs": [
+      "memo.ep.2026-04-02.alpha-validation-remediation",
+      "memo.ep.2026-04-02.alpha-validation-remediation-rerun"
+    ],
+    "provenance_thread_id": "prov.aoa-antifragility.fourth-wave.2026-04-07"
+  },
+  "trust": {
+    "temperature": "cool",
+    "confidence": 0.92,
+    "authority_kind": "human_reviewed",
+    "authority": "fourth-wave reviewed recovery pattern closeout",
+    "freshness": 0.98,
+    "salience": 0.94
+  },
+  "lifecycle": {
+    "review_state": "confirmed",
+    "supersedes": [],
+    "superseded_by": null,
+    "retention_class": "operational-pattern",
+    "current_recall": {
+      "status": "allowed",
+      "status_reason": "This pattern should surface as bounded repeated-window recovery context only after checking the linked receipts, proof, and derived summaries."
+    }
+  },
+  "access": {
+    "access_class": "public",
+    "read_scopes": [
+      "public"
+    ],
+    "write_scopes": [
+      "maintainer"
+    ],
+    "promotion_scopes": [
+      "maintainer",
+      "human-review"
+    ]
+  },
+  "bridges": {
+    "tos_refs": [],
+    "skill_refs": [],
+    "eval_refs": [
+      "eval:aoa-stress-recovery-window",
+      "eval:aoa-antifragility-posture"
+    ],
+    "kag_lift_status": "none",
+    "route_capsule_ref": "repo:aoa-routing/generated/composite_stress_route_hints.min.json"
+  }
+}
