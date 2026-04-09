@@ -1,0 +1,55 @@
+schema_version: work_quest_v1
+id: AOA-MEM-Q-0007
+title: Carry the workspace semantic-recall closeout candidate into bounded memo writeback
+summary: Preserve the reviewed semantic-recall unit from workspace closeout as a memo-layer follow-through obligation without turning recall into proof, quest sovereignty, or copied source meaning.
+repo: aoa-memo
+owner_surface: docs/QUEST_EVIDENCE_WRITEBACK.md
+theme_ref: ''
+milestone_ref: ''
+kind: memory
+state: captured
+band: near
+difficulty: d2_slice
+risk: r1_repo_local
+control_mode: codex_supervised
+delegate_tier: archivist
+fallback_tier: verifier
+wrapper_class: local_builder
+write_scope: repo_local
+split_required: false
+complexity_basis:
+  scope: 1
+  ambiguity: 1
+  boundary: 2
+  verification: 1
+parent: null
+depends_on:
+  - AOA-MEM-Q-0001
+activation:
+  mode: on_review_of
+  ref: docs/QUEST_EVIDENCE_WRITEBACK.md
+  note: open when reviewed closeout preserves a provenance-aware recall unit that still needs memo-side landing
+anchor_ref:
+  artifact: quest_evidence_writeback
+  ref: docs/QUEST_EVIDENCE_WRITEBACK.md
+  note: the writeback must stay witness-shaped and provenance-aware
+handoff_role: memo-maintainer
+evidence:
+  - the reviewed workspace closeout kept a memo semantic recall unit alive
+  - provenance hygiene and change legibility mattered, but memory still must not claim proof or source authority
+  - the next honest move is bounded memo writeback triage rather than copying the route as settled truth
+harvest:
+  target: memo
+opened_at: '2026-04-09'
+touched_at: '2026-04-09'
+tags:
+  - memo
+  - recall
+  - writeback
+  - provenance
+notes: >
+  Anchored by session:2026-04-09-workspace-checkpoint-growth. If later review
+  shows this is better expressed as a chronicle or witness-trace adjunct,
+  keep that change inside memo boundaries rather than widening into source
+  quest ownership.
+public_safe: true
