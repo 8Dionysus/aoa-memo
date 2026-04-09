@@ -12,6 +12,7 @@ This questbook tracks memory-layer obligations related to quest evidence and wri
 ## Near
 
 - `AOA-MEM-Q-0002` - define compact witness trace posture for memo recall
+- `AOA-MEM-Q-0007` - carry the workspace semantic-recall closeout candidate into bounded memo writeback
 
 ## Blocked / reanchor
 
