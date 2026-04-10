@@ -79,6 +79,7 @@ RFC3339_DATETIME = re.compile(
 MARKDOWN_HEADING = re.compile(r"^(#{1,6})\s+(.*\S)\s*$")
 SYMBOLIC_REF = re.compile(r"^[A-Za-z][A-Za-z0-9_-]*:")
 WINDOWS_ABSOLUTE_PATH = re.compile(r"^[A-Za-z]:[\\\\/]")
+QUEST_ID_PATTERN = re.compile(r"\bAOA-MEM-Q-\d{4}\b")
 CORE_KIND_SCHEMA_MAP = {
     "anchor": "schemas/anchor.schema.json",
     "state_capsule": "schemas/state_capsule.schema.json",
@@ -271,8 +272,10 @@ def validate_questbook_surface() -> None:
         errors.append(f"missing foundation quest file: quests/{quest_id}.yaml")
 
     questbook_text = ""
+    listed_quest_ids: set[str] = set()
     if QUESTBOOK_PATH.exists():
         questbook_text = load_text(QUESTBOOK_PATH)
+        listed_quest_ids = set(QUEST_ID_PATTERN.findall(questbook_text))
 
     if QUESTBOOK_DOC.exists():
         doc_text = load_text(QUESTBOOK_DOC)
@@ -409,6 +412,9 @@ def validate_questbook_surface() -> None:
         for quest_id in closed_quest_ids:
             if quest_id in questbook_text:
                 errors.append(f"QUESTBOOK.md must not list closed quest id {quest_id}")
+        missing_listed_files = sorted(listed_quest_ids - set(questbook_files))
+        for quest_id in missing_listed_files:
+            errors.append(f"QUESTBOOK.md must not reference missing quest file quests/{quest_id}.yaml")
 
     try:
         actual_catalog = load_json(QUEST_CATALOG_PATH)
@@ -1025,8 +1031,14 @@ def validate_registry() -> None:
     for schema_ref in sorted(expected_schemas):
         if schema_ref not in data.get("schemas", []):
             errors.append(f"generated/memo_registry.min.json must list {schema_ref}")
-    if "docs/KAG_SOURCE_EXPORT.md" not in data.get("core_docs", []):
-        errors.append("generated/memo_registry.min.json must list docs/KAG_SOURCE_EXPORT.md")
+    required_core_docs = (
+        "docs/QUEST_CHRONICLE_WRITEBACK.md",
+        "docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
+        "docs/KAG_SOURCE_EXPORT.md",
+    )
+    for doc_ref in required_core_docs:
+        if doc_ref not in data.get("core_docs", []):
+            errors.append(f"generated/memo_registry.min.json must list {doc_ref}")
 
     families = {
         item.get("family"): item
