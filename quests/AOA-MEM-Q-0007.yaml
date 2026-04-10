@@ -7,7 +7,7 @@ owner_surface: docs/QUEST_EVIDENCE_WRITEBACK.md
 theme_ref: ''
 milestone_ref: ''
 kind: memory
-state: captured
+state: done
 band: near
 difficulty: d2_slice
 risk: r1_repo_local
@@ -51,5 +51,7 @@ notes: >
   Anchored by session:2026-04-09-workspace-checkpoint-growth. If later review
   shows this is better expressed as a chronicle or witness-trace adjunct,
   keep that change inside memo boundaries rather than widening into source
-  quest ownership.
+  quest ownership. Closed once docs/WORKSPACE_CHECKPOINT_GROWTH_WRITEBACK.md
+  preserved the memo-side witness for the reviewed route without copying
+  source-owned state.
 public_safe: true

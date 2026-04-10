@@ -71,3 +71,9 @@ Its allowed verdicts are:
 - The March 31 manual-first questbook pilot records one compact writeback note at [QUESTBOOK_MANUAL_FIRST_WRITEBACK.md](QUESTBOOK_MANUAL_FIRST_WRITEBACK.md).
 - That note keeps provenance across `aoa-techniques`, `aoa-skills`, `aoa-evals`, `aoa-playbooks`, and `Dionysus` without copying source-owned quest state into memo truth.
 - It is evidence for recall and archivist handoff, not a second quest authority surface.
+
+## Workspace checkpoint-growth writeback
+
+- The April 9 workspace checkpoint-growth closeout follow-through records one compact memo note at [WORKSPACE_CHECKPOINT_GROWTH_WRITEBACK.md](WORKSPACE_CHECKPOINT_GROWTH_WRITEBACK.md).
+- That note keeps the reviewed closeout candidate and the later `aoa-playbooks` landing recallable without turning `aoa-memo` into a playbook ledger, quest owner, or role surface.
+- It stays witness-shaped and provenance-aware so later archivist recall can reuse the route without restating source-owned state as memo truth.
