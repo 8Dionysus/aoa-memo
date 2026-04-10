@@ -166,11 +166,15 @@
       }
     },
     "expires_at_utc": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "format": "date-time"
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ]
     },
     "supersedes": {
       "type": "array",

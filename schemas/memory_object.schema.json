@@ -88,11 +88,15 @@
           "format": "date-time"
         },
         "valid_to": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "date-time"
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ]
         }
       }
     },
@@ -226,11 +230,15 @@
           ]
         },
         "retire_after": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "date-time"
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ]
         },
         "manual_veto": {
           "type": "boolean"
@@ -263,18 +271,26 @@
           ]
         },
         "promoted_at": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "date-time"
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ]
         },
         "review_after": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "date-time"
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ]
         }
       }
     }

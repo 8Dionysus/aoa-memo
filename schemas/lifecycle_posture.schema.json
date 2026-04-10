@@ -74,11 +74,15 @@
       ]
     },
     "review_after": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "format": "date-time"
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ]
     },
     "retention_class": {
       "type": "string",

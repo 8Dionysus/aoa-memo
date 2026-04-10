@@ -1,12 +1,16 @@
 from __future__ import annotations
 
 import json
+import sys
 from pathlib import Path
-
-from jsonschema import Draft202012Validator
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
+SCRIPTS_ROOT = REPO_ROOT / "scripts"
+if str(SCRIPTS_ROOT) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS_ROOT))
+
+import validate_memo
 
 
 def load_json(relative_path: str) -> object:
@@ -14,10 +18,22 @@ def load_json(relative_path: str) -> object:
 
 
 def test_failure_lesson_example_validates_against_schema() -> None:
-    schema = load_json("schemas/failure_lesson_memory_v1.json")
+    validator = validate_memo.validator_for("failure_lesson_memory_v1.json")
     example = load_json("examples/failure_lesson_memory.example.json")
 
-    Draft202012Validator(schema).validate(example)
+    validator.validate(example)
+
+
+def test_failure_lesson_example_rejects_invalid_expiry_format() -> None:
+    validator = validate_memo.validator_for("failure_lesson_memory_v1.json")
+    example = load_json("examples/failure_lesson_memory.example.json")
+    assert isinstance(example, dict)
+    example["expires_at_utc"] = "not-a-date-time"
+
+    errors = [error.message for error in validator.iter_errors(example)]
+
+    assert errors
+    assert any("valid under any of the given schemas" in message for message in errors)
 
 
 def test_failure_lesson_surfaces_stay_discoverable_and_non_proof() -> None:

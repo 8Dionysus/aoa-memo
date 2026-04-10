@@ -79,6 +79,17 @@ class MemoValidatorTestCase(unittest.TestCase):
 
         self.assertEqual(errors, [])
 
+    def test_memory_object_schema_rejects_invalid_nullable_datetime(self) -> None:
+        validator = validate_memo.validator_for("memory_object.schema.json")
+        payload = load_json(REPO_ROOT / "examples" / "anchor.example.json")
+        assert isinstance(payload, dict)
+        payload = copy.deepcopy(payload)
+        payload["time"]["valid_to"] = "not-a-date-time"
+
+        errors = [error.message for error in validator.iter_errors(payload)]
+
+        self.assertTrue(any("date-time" in message for message in errors))
+
     def test_inquiry_checkpoint_return_pack_requires_anchor_refs(self) -> None:
         validator = validate_memo.validator_for("inquiry_checkpoint.schema.json")
         payload = load_json(REPO_ROOT / "examples" / "inquiry_checkpoint.return.example.json")
@@ -359,6 +370,39 @@ class MemoValidatorTestCase(unittest.TestCase):
 
         with patch.object(validate_memo, "load_yaml", side_effect=side_effect):
             self.assert_system_exit_quietly(validate_memo.validate_questbook_surface)
+
+    def test_questbook_surface_rejects_listed_additive_quest_without_file(self) -> None:
+        questbook_path = validate_memo.QUESTBOOK_PATH
+        original_load_text = validate_memo.load_text
+
+        def side_effect(path: Path) -> str:
+            text = original_load_text(path)
+            if Path(path) == questbook_path:
+                return text + "\n- `AOA-MEM-Q-9999` - stale additive quest reference\n"
+            return text
+
+        with patch.object(validate_memo, "load_text", side_effect=side_effect):
+            self.assert_system_exit_quietly(validate_memo.validate_questbook_surface)
+
+    def test_validate_registry_requires_recurrence_support_docs(self) -> None:
+        registry_path = validate_memo.GENERATED / "memo_registry.min.json"
+        original_load_json = validate_memo.load_json
+        payload = load_json(registry_path)
+        assert isinstance(payload, dict)
+        payload = copy.deepcopy(payload)
+        payload["core_docs"] = [
+            ref
+            for ref in payload["core_docs"]
+            if ref != "docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md"
+        ]
+
+        def side_effect(path: Path) -> dict:
+            if Path(path) == registry_path:
+                return copy.deepcopy(payload)
+            return original_load_json(path)
+
+        with patch.object(validate_memo, "load_json", side_effect=side_effect):
+            self.assert_system_exit_quietly(validate_memo.validate_registry)
 
     def test_guardrail_validator_handles_non_string_case_ids_without_type_error(self) -> None:
         payload = self.guardrail_payload()

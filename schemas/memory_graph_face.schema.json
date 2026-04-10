@@ -167,11 +167,15 @@
           "format": "date-time"
         },
         "valid_to": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "format": "date-time"
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ]
         }
       }
     },
