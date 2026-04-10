@@ -9,6 +9,20 @@ Tracking starts with the community-docs baseline for this repository.
 
 ## [0.2.0] - 2026-04-10
 
+### Summary
+
+- this release adds runtime writeback landing gates, live receipt publishing, scope classes, capsule-backed recall, and checkpoint-growth memo surfaces
+- memo schemas, JSONL publication boundaries, and writeback references are hardened across the live writeback loop
+- `aoa-memo` remains the bounded memory and recall layer rather than source or proof authority
+
+### Validation
+
+- `python scripts/release_check.py`
+
+### Notes
+
+- detailed writeback, recall, generated-surface, and contributor-surface coverage for this release remains enumerated below under `Added`, `Changed`, and `Included in this release`
+
 ### Added
 
 - runtime writeback landing gate, live receipt publisher, and workspace
