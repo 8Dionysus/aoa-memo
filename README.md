@@ -4,6 +4,8 @@
 
 It exists to make memory explicit, reviewable, and bounded. Memory matters here, but memory is not proof.
 
+> Current release: `v0.2.0`. See [CHANGELOG](CHANGELOG.md) for release notes.
+
 ## Start here
 
 Use the shortest route by need:
