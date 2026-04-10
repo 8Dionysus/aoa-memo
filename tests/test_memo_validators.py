@@ -84,11 +84,12 @@ class MemoValidatorTestCase(unittest.TestCase):
         payload = load_json(REPO_ROOT / "examples" / "anchor.example.json")
         assert isinstance(payload, dict)
         payload = copy.deepcopy(payload)
-        payload["time"]["valid_to"] = "not-a-date-time"
+        payload["time"]["valid_to"] = "bogus"
 
-        errors = [error.message for error in validator.iter_errors(payload)]
+        errors = list(validator.iter_errors(payload))
 
-        self.assertTrue(any("date-time" in message for message in errors))
+        self.assertNotEqual(errors, [])
+        self.assertTrue(any(list(error.path) == ["time", "valid_to"] for error in errors))
 
     def test_inquiry_checkpoint_return_pack_requires_anchor_refs(self) -> None:
         validator = validate_memo.validator_for("inquiry_checkpoint.schema.json")
