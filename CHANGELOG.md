@@ -7,6 +7,25 @@ Tracking starts with the community-docs baseline for this repository.
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-04-10
+
+### Added
+
+- runtime writeback landing gate, live receipt publisher, and workspace
+  checkpoint-growth memo writeback surfaces
+- scope classes for memory-object surfaces, capsule-backed working-return
+  recall, fourth-wave recovery patterns, and antifragility failure-lesson
+  contracts
+- checkpoint closeout bridge install plus repo-local project-foundation and
+  session-harvest follow-through surfaces
+
+### Changed
+
+- hardened memo schemas, nullable datetime validation, JSONL publication
+  boundaries, and writeback refs across the live writeback loop
+- aligned docs and AGENTS guidance with next-wave continuity posture and
+  bounded recall routing
+
 ## [0.1.0] - 2026-04-01
 
 First public baseline release of `aoa-memo` as the explicit memory and recall layer in the AoA public surface.
