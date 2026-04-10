@@ -147,7 +147,7 @@
     "schema_version": "quest_dispatch_v1",
     "id": "AOA-MEM-Q-0007",
     "repo": "aoa-memo",
-    "state": "captured",
+    "state": "done",
     "band": "near",
     "difficulty": "d2_slice",
     "risk": "r1_repo_local",
