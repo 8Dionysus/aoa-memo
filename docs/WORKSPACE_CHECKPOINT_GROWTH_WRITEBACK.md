@@ -10,8 +10,8 @@ surface.
 ## Source-owned boundary
 
 - reviewed closeout preserved `candidate:recall:aoa-memo-memory-catalog-min` as
-  a memo-layer request in
-  `/srv/aoa-sdk/.aoa/session-growth/current/workspace/reviewed-closeout/session-2026-04-09-workspace-checkpoint-growth/HARVEST_PACKET.json`
+  a memo-layer request in the reviewed closeout harvest packet for
+  `session:2026-04-09-workspace-checkpoint-growth`
 - `aoa-playbooks` owns the route and questline follow-through that landed the
   workspace checkpoint-growth run as a second reviewed summary for `AOA-P-0023`
 - `aoa-agents` and `aoa-skills` keep their own surviving follow-through
@@ -27,10 +27,13 @@ surface.
 - the surviving memo unit was not proof, quest sovereignty, or a second route
   ledger; it was a bounded reason to preserve source refs for later recall
 - the playbook-side landing now lives in
-  `/srv/aoa-playbooks/docs/real-runs/2026-04-09.closeout-owner-follow-through-continuity.workspace-checkpoint-growth.md`
+  `repo:aoa-playbooks/docs/real-runs/2026-04-09.closeout-owner-follow-through-continuity.workspace-checkpoint-growth.md`
   and `AOA-PB-Q-0008` is source-owned there
 - the reviewed closeout artifacts remain the provenance anchors for this note:
-  `HARVEST_PACKET.json`, `PROGRESSION_DELTA.json`, and `QUEST_PROMOTION.json`
+  `reviewed-closeout/HARVEST_PACKET.json`,
+  `reviewed-closeout/PROGRESSION_DELTA.json`, and
+  `reviewed-closeout/QUEST_PROMOTION.json` for
+  `session:2026-04-09-workspace-checkpoint-growth`
 - the stable memo-side label for later recall is
   `session:2026-04-09-workspace-checkpoint-growth`
 
