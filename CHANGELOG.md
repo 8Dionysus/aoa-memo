@@ -26,6 +26,17 @@ Tracking starts with the community-docs baseline for this repository.
 - aligned docs and AGENTS guidance with next-wave continuity posture and
   bounded recall routing
 
+### Included in this release
+
+- memo writeback, recall, and recovery surfaces across `docs/`, `generated/`,
+  `schemas/`, `examples/`, and `scripts/`, including Phase Alpha writeback
+  corpus, scope classes, capsule-backed recall, failure-lesson contracts, and
+  live publication support
+- repo-local quest, follow-through, and contributor surfaces under `.agents/`,
+  `.github/`, `CHARTER.md`, `QUESTBOOK.md`, `quests/`, `AGENTS.md`,
+  `README.md`, `CONTRIBUTING.md`, and `tests/`, including orchestrator memory
+  quests, quest-harvest installs, and validation-route alignment
+
 ## [0.1.0] - 2026-04-01
 
 First public baseline release of `aoa-memo` as the explicit memory and recall layer in the AoA public surface.
