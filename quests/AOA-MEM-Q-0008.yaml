@@ -40,7 +40,7 @@ evidence:
   - provenance_hygiene and change_legibility remained hold-shaped rather than source-state authority
 harvest:
   target: memo
-  trigger_count: 1
+  trigger_count: 2
   note: write back only after another reviewed checkpoint confirms the same recall need or provides bounded source-owned evidence
 opened_at: '2026-04-11'
 touched_at: '2026-04-11'
