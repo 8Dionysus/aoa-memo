@@ -767,6 +767,12 @@ def validate_example(validator: Draft202012Validator, example_name: str) -> None
         f"{'.'.join(str(part) for part in err.absolute_path) or '<root>'}: {err.message}"
         for err in sorted(validator.iter_errors(data), key=lambda err: list(err.absolute_path))
     ]
+    lineage_refs = data.get("lineage_refs")
+    if not isinstance(lineage_refs, dict):
+        lineage_refs = {}
+    lineage_context = data.get("lineage_context")
+    if not isinstance(lineage_context, dict):
+        lineage_context = {}
 
     ref_checks = [
         ("payload_ref", data.get("payload_ref")),
@@ -774,11 +780,11 @@ def validate_example(validator: Draft202012Validator, example_name: str) -> None
         ("inspect_surface", data.get("inspect_surface")),
         ("capsule_surface", data.get("capsule_surface")),
         ("expand_surface", data.get("expand_surface")),
-        ("lineage_refs.cluster_ref", data.get("lineage_refs", {}).get("cluster_ref")),
-        ("lineage_refs.candidate_ref", data.get("lineage_refs", {}).get("candidate_ref")),
-        ("lineage_refs.seed_ref", data.get("lineage_refs", {}).get("seed_ref")),
-        ("lineage_refs.object_ref", data.get("lineage_refs", {}).get("object_ref")),
-        ("lineage_context.merged_into", data.get("lineage_context", {}).get("merged_into")),
+        ("lineage_refs.cluster_ref", lineage_refs.get("cluster_ref")),
+        ("lineage_refs.candidate_ref", lineage_refs.get("candidate_ref")),
+        ("lineage_refs.seed_ref", lineage_refs.get("seed_ref")),
+        ("lineage_refs.object_ref", lineage_refs.get("object_ref")),
+        ("lineage_context.merged_into", lineage_context.get("merged_into")),
     ]
     for list_name in (
         "evidence_pack_refs",

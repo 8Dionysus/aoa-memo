@@ -4,6 +4,8 @@ import json
 import sys
 from pathlib import Path
 
+import pytest
+
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS_ROOT = REPO_ROOT / "scripts"
@@ -41,6 +43,27 @@ def test_failure_lesson_lineage_example_validates_against_schema() -> None:
     example = load_json("examples/failure_lesson_memory.lineage.example.json")
 
     validator.validate(example)
+
+
+def test_failure_lesson_lineage_ref_validation_handles_malformed_objects(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    example = load_json("examples/failure_lesson_memory.lineage.example.json")
+    assert isinstance(example, dict)
+    example["lineage_refs"] = "not-an-object"
+    example["lineage_context"] = "not-an-object"
+    (tmp_path / "failure_lesson_memory.lineage.example.json").write_text(
+        json.dumps(example, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    monkeypatch.setattr(validate_memo, "EXAMPLES", tmp_path)
+
+    with pytest.raises(SystemExit):
+        validate_memo.validate_example(
+            validate_memo.validator_for("failure_lesson_memory_v1.json"),
+            "failure_lesson_memory.lineage.example.json",
+        )
 
 
 def test_failure_lesson_surfaces_stay_discoverable_and_non_proof() -> None:
