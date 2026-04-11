@@ -36,6 +36,13 @@ def test_failure_lesson_example_rejects_invalid_expiry_format() -> None:
     assert any("valid under any of the given schemas" in message for message in errors)
 
 
+def test_failure_lesson_lineage_example_validates_against_schema() -> None:
+    validator = validate_memo.validator_for("failure_lesson_memory_v1.json")
+    example = load_json("examples/failure_lesson_memory.lineage.example.json")
+
+    validator.validate(example)
+
+
 def test_failure_lesson_surfaces_stay_discoverable_and_non_proof() -> None:
     readme = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
     memory_doc = (REPO_ROOT / "docs" / "FAILURE_LESSON_MEMORY.md").read_text(encoding="utf-8")
@@ -44,11 +51,14 @@ def test_failure_lesson_surfaces_stay_discoverable_and_non_proof() -> None:
     for fragment in [
         "docs/FAILURE_LESSON_MEMORY.md",
         "docs/FAILURE_LESSON_RECALL.md",
+        "docs/GROWTH_REFINERY_WRITEBACK.md",
         "schemas/failure_lesson_memory_v1.json",
         "examples/failure_lesson_memory.example.json",
+        "examples/failure_lesson_memory.lineage.example.json",
     ]:
         assert fragment in readme
 
     assert "It remains memory, not proof." in memory_doc
+    assert "lineage_refs" in memory_doc
     assert "Memo may shape attention." in recall_doc
     assert "It does not overrule source-owned evidence." in recall_doc

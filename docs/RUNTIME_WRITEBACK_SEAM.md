@@ -60,6 +60,11 @@ The governance surface is intentionally narrow.
 It checks only that the runtime writeback target map and the runtime writeback intake map remain aligned as one release-facing seam.
 It does not become a governance verdict over the whole memo corpus.
 
+Growth-refinery writeback remains a memo-side adjunct on top of this seam.
+When reviewed lineage evidence warrants a durable memory object, reuse existing
+`failure_lesson_memory_v1` and `recovery_pattern_memory_v1` surfaces rather
+than introducing a new writeback family.
+
 ## Trace And Restart Reuse
 
 Reuse existing public surfaces where possible:

@@ -1,0 +1,62 @@
+{
+  "schema_version": "failure_lesson_memory_v1",
+  "memory_id": "memo:session-growth-cycle-owner-reanchor-first",
+  "object_kind": "failure_lesson",
+  "title": "Session growth cycle should not land as a skill-first object",
+  "repo": "aoa-playbooks",
+  "layer": "playbook",
+  "surface": "session-growth-cycle",
+  "stressor_family": "cross_repo_owner_misroute",
+  "bounded_scope": {
+    "kind": "owner_fit_route",
+    "value": "session growth chain",
+    "notes": "Applies when one surviving object spans checkpoint carry, reviewed harvest, seed staging, proof, and bounded memory writeback."
+  },
+  "source_receipt_refs": [
+    "aoa-skills:harvest_packet_receipt_v1#candidate:aoa-playbooks:session-growth-cycle"
+  ],
+  "adaptation_delta_refs": [
+    "aoa-playbooks:review_note_v1#AOA-P-0025:owner-reanchor"
+  ],
+  "lineage_refs": {
+    "cluster_ref": "cluster:checkpoint:session-growth-cycle",
+    "candidate_ref": "candidate:aoa-playbooks:session-growth-cycle",
+    "seed_ref": null,
+    "object_ref": null
+  },
+  "lineage_context": {
+    "owner_hypothesis": "aoa-playbooks",
+    "owner_shape": "playbook",
+    "nearest_wrong_target": "aoa-skills",
+    "status_posture": "reanchor",
+    "supersedes": [],
+    "merged_into": null,
+    "drop_reason": null
+  },
+  "evidence_refs": [
+    "aoa-sdk:closeout_context_lineage_v1#session-growth-cycle",
+    "aoa-evals:aoa-owner-fit-routing-quality#report:session-growth-cycle",
+    "Agents-of-Abyss:reviewable_growth_refinery_v1#owner-boundaries"
+  ],
+  "lesson_summary": "When one reviewed object coordinates checkpoint carry, donor harvest, seed staging, proof, and bounded memo writeback, check owner shape before landing it as a single skill.",
+  "recommended_posture": "recheck_owner_shape_before_skill_landing",
+  "trust_posture": {
+    "status": "reviewed",
+    "signals": [
+      "reviewed_owner_receipt_present",
+      "nearest_wrong_target_recorded",
+      "owner_fit_eval_present"
+    ]
+  },
+  "temperature": "warm",
+  "salience": "high",
+  "review_status": "reviewed",
+  "recall_prompts": [
+    "candidate spans checkpoint harvest seed proof memo",
+    "nearest wrong target aoa-skills",
+    "session growth owner ambiguity"
+  ],
+  "expires_at_utc": null,
+  "supersedes": [],
+  "notes": "Lineage refs are recall support only. Final owner truth stays with reviewed owner-local receipts, seed truth, and landed playbook proof."
+}

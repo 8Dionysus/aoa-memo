@@ -26,6 +26,13 @@ def test_recovery_pattern_adjunct_example_validates_against_schema() -> None:
     Draft202012Validator(schema).validate(example)
 
 
+def test_recovery_pattern_lineage_example_validates_against_schema() -> None:
+    schema = load_json("schemas/recovery_pattern_memory_v1.json")
+    example = load_json("examples/recovery_pattern_memory.lineage.example.json")
+
+    Draft202012Validator(schema).validate(example)
+
+
 def test_native_recovery_pattern_integrates_into_object_family() -> None:
     pattern_example = load_json("examples/pattern.antifragility-stress-recovery-window.example.json")
     validator = validate_memo.validator_for("pattern.schema.json")
@@ -67,12 +74,15 @@ def test_recovery_pattern_surfaces_stay_discoverable_and_non_proof() -> None:
     for fragment in [
         "docs/RECOVERY_PATTERN_MEMORY.md",
         "docs/RECOVERY_PATTERN_RECALL.md",
+        "docs/GROWTH_REFINERY_WRITEBACK.md",
         "schemas/recovery_pattern_memory_v1.json",
         "examples/recovery_pattern_memory.example.json",
+        "examples/recovery_pattern_memory.lineage.example.json",
         "examples/pattern.antifragility-stress-recovery-window.example.json",
     ]:
         assert fragment in readme
 
     assert "It remains memory, not proof." in memory_doc
+    assert "lineage_refs" in memory_doc
     assert "Memo may shape recall and routing review." in recall_doc
     assert "It does not overrule source-owned receipts, eval proof, or derived stats" in recall_doc

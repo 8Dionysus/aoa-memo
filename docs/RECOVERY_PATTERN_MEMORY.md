@@ -36,11 +36,25 @@ A healthy recovery pattern memory object includes:
 - linked eval report references
 - linked stats summary references
 - optional route hint references
+- strongest available lineage refs when the reviewed owner chain is explicit
 - one concise recovery summary
 - one explicit recall posture
 - trust signals
 - a native pattern-object reference when the lesson is promoted into the memo
   object family
+
+When lineage-aware writeback is warranted, keep `lineage_refs` scoped to the
+strongest reviewed chain available at writeback time:
+
+- `cluster_ref`
+- `candidate_ref`
+- `seed_ref`
+- `object_ref`
+
+Optional `lineage_context` may preserve bounded owner-fit cues such as
+`owner_hypothesis`, `owner_shape`, `nearest_wrong_target`, `status_posture`,
+`supersedes`, `merged_into`, and `drop_reason`.
+That context stays subordinate to source-owned receipts, eval proof, and stats.
 
 ## Review posture
 
