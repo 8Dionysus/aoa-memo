@@ -15,11 +15,11 @@ This questbook tracks memory-layer obligations related to quest evidence and wri
 
 ## Blocked / reanchor
 
-- none yet
+- `AOA-MEM-Q-0008` - reanchor checkpoint automation recall as a thin-evidence memo candidate
 
 ## Harvest candidates
 
-- none yet
+- `AOA-MEM-Q-0008` - reanchor checkpoint automation recall as a thin-evidence memo candidate
 
 ## Quest-harvest posture
 

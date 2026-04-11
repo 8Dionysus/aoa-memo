@@ -1,0 +1,56 @@
+schema_version: work_quest_v1
+id: AOA-MEM-Q-0008
+title: Reanchor checkpoint automation recall as a thin-evidence memo candidate
+summary: Preserve the reviewed checkpoint automation recall candidate as a memo-side thin-evidence marker without copying source-owned quest or proof state into memory.
+repo: aoa-memo
+owner_surface: docs/QUEST_EVIDENCE_WRITEBACK.md
+theme_ref: ''
+milestone_ref: ''
+kind: memory
+state: reanchor
+band: latent
+difficulty: d2_slice
+risk: r1_repo_local
+control_mode: human_codex_copilot
+delegate_tier: archivist
+fallback_tier: verifier
+wrapper_class: local_builder
+write_scope: repo_local
+split_required: false
+complexity_basis:
+  scope: 1
+  ambiguity: 1
+  boundary: 2
+  verification: 1
+parent: null
+depends_on:
+  - AOA-MEM-Q-0007
+activation:
+  mode: on_review_of
+  ref: session:2026-04-10T19-59-19-444382Z-aoa-sdk-checkpoint-growth-228d9e46-6c8
+  note: open when checkpoint closeout preserves a recall-shaped hint that should not be lost between sessions
+anchor_ref:
+  artifact: quest_evidence_writeback
+  ref: docs/QUEST_EVIDENCE_WRITEBACK.md
+  note: recall should stay witness-shaped and provenance-aware until repeated evidence justifies stronger writeback
+handoff_role: memo-maintainer
+evidence:
+  - candidate:recall:aoa-memo-memory-catalog-min survived reviewed closeout with medium confidence
+  - the candidate had 1 checkpoint hit and was explicitly blocked by thin-evidence
+  - provenance_hygiene and change_legibility remained hold-shaped rather than source-state authority
+harvest:
+  target: memo
+  trigger_count: 1
+  note: write back only after another reviewed checkpoint confirms the same recall need or provides bounded source-owned evidence
+opened_at: '2026-04-11'
+touched_at: '2026-04-11'
+tags:
+  - checkpoint
+  - recall
+  - thin-evidence
+  - provenance
+notes: >
+  This quest keeps the memo candidate from disappearing while explicitly
+  recording why it remains early: memory is not proof, and one checkpoint hit is
+  not enough to copy source-owned meaning into memo state.
+public_safe: true
