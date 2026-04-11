@@ -148,5 +148,20 @@
     "owner_surface": "docs/QUEST_EVIDENCE_WRITEBACK.md",
     "source_path": "quests/AOA-MEM-Q-0007.yaml",
     "public_safe": true
+  },
+  {
+    "id": "AOA-MEM-Q-0008",
+    "title": "Reanchor checkpoint automation recall as a thin-evidence memo candidate",
+    "repo": "aoa-memo",
+    "theme_ref": "",
+    "milestone_ref": "",
+    "state": "reanchor",
+    "band": "latent",
+    "kind": "memory",
+    "difficulty": "d2_slice",
+    "risk": "r1_repo_local",
+    "owner_surface": "docs/QUEST_EVIDENCE_WRITEBACK.md",
+    "source_path": "quests/AOA-MEM-Q-0008.yaml",
+    "public_safe": true
   }
 ]
