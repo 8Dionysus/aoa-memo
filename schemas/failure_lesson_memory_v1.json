@@ -94,6 +94,105 @@
         "minLength": 1
       }
     },
+    "lineage_refs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "cluster_ref",
+        "candidate_ref",
+        "seed_ref",
+        "object_ref"
+      ],
+      "properties": {
+        "cluster_ref": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "candidate_ref": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "seed_ref": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "object_ref": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        }
+      }
+    },
+    "lineage_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "owner_hypothesis",
+        "owner_shape",
+        "nearest_wrong_target",
+        "status_posture",
+        "supersedes",
+        "merged_into",
+        "drop_reason"
+      ],
+      "properties": {
+        "owner_hypothesis": {
+          "type": "string",
+          "minLength": 1
+        },
+        "owner_shape": {
+          "type": "string",
+          "minLength": 1
+        },
+        "nearest_wrong_target": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "status_posture": {
+          "enum": [
+            "early",
+            "reanchor",
+            "thin-evidence",
+            "stable"
+          ]
+        },
+        "supersedes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "merged_into": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "drop_reason": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        }
+      }
+    },
     "evidence_refs": {
       "type": "array",
       "minItems": 1,
@@ -189,5 +288,10 @@
         "null"
       ]
     }
+  },
+  "dependentRequired": {
+    "lineage_context": [
+      "lineage_refs"
+    ]
   }
 }

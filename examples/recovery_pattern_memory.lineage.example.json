@@ -1,0 +1,67 @@
+{
+  "schema_version": "recovery_pattern_memory_v1",
+  "memory_id": "memo:session-growth-cycle-playbook-reanchor",
+  "object_kind": "recovery_pattern",
+  "title": "Reanchor multi-handoff growth routes to playbook shape before planting",
+  "repo": "aoa-playbooks",
+  "layer": "playbook",
+  "surface": "session-growth-cycle",
+  "stressor_family": "cross_repo_owner_reanchor",
+  "window_scope": {
+    "kind": "reviewed_owner_chain",
+    "value": "checkpoint carry to proof window",
+    "ordered_window_size": 2,
+    "notes": "Use only after reviewed harvest and owner-local proof both confirm that the route remained bounded through reanchor."
+  },
+  "source_receipt_refs": [
+    "aoa-skills:harvest_packet_receipt_v1#candidate:aoa-playbooks:session-growth-cycle",
+    "Dionysus:seed_lineage_entry_v1#seed:aoa:session-growth-cycle"
+  ],
+  "lineage_refs": {
+    "cluster_ref": "cluster:checkpoint:session-growth-cycle",
+    "candidate_ref": "candidate:aoa-playbooks:session-growth-cycle",
+    "seed_ref": "seed:aoa:session-growth-cycle",
+    "object_ref": "playbook:AOA-P-0025"
+  },
+  "lineage_context": {
+    "owner_hypothesis": "aoa-playbooks",
+    "owner_shape": "playbook",
+    "nearest_wrong_target": "aoa-skills",
+    "status_posture": "stable",
+    "supersedes": [],
+    "merged_into": null,
+    "drop_reason": null
+  },
+  "eval_report_refs": [
+    "aoa-evals:aoa-candidate-lineage-integrity#report:session-growth-cycle",
+    "aoa-evals:aoa-owner-fit-routing-quality#report:session-growth-cycle"
+  ],
+  "stats_summary_refs": [
+    "aoa-stats:candidate_lineage_summary_v1#summary:session-growth-cycle"
+  ],
+  "route_hint_refs": [
+    "aoa-playbooks:playbook_registry_v1#AOA-P-0025"
+  ],
+  "lesson_summary": "When a reviewed route spans checkpoint carry, owner harvest, seed staging, proof, and bounded writeback, rechecking owner shape against playbook doctrine can recover the route without widening authority.",
+  "recall_posture": "Use as bounded recall only after checking the linked owner receipt, seed lineage entry, eval reports, and stats summary.",
+  "trust_posture": {
+    "status": "reviewed",
+    "signals": [
+      "reviewed_owner_receipt_present",
+      "seed_lineage_present",
+      "lineage_integrity_eval_present",
+      "owner_fit_eval_present",
+      "stats_summary_present"
+    ]
+  },
+  "temperature": "cool",
+  "salience": "high",
+  "review_status": "reviewed",
+  "native_pattern_ref": "examples/pattern.antifragility-stress-recovery-window.example.json",
+  "recall_prompts": [
+    "multi-handoff growth route needs playbook owner",
+    "reanchor from skill to playbook",
+    "bounded owner-fit recovery"
+  ],
+  "notes": "Memo preserves the bounded recovery pattern and strongest lineage refs. It does not replace owner truth, seed truth, or landed playbook authority."
+}

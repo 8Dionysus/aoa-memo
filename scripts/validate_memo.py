@@ -774,6 +774,11 @@ def validate_example(validator: Draft202012Validator, example_name: str) -> None
         ("inspect_surface", data.get("inspect_surface")),
         ("capsule_surface", data.get("capsule_surface")),
         ("expand_surface", data.get("expand_surface")),
+        ("lineage_refs.cluster_ref", data.get("lineage_refs", {}).get("cluster_ref")),
+        ("lineage_refs.candidate_ref", data.get("lineage_refs", {}).get("candidate_ref")),
+        ("lineage_refs.seed_ref", data.get("lineage_refs", {}).get("seed_ref")),
+        ("lineage_refs.object_ref", data.get("lineage_refs", {}).get("object_ref")),
+        ("lineage_context.merged_into", data.get("lineage_context", {}).get("merged_into")),
     ]
     for list_name in (
         "evidence_pack_refs",
@@ -1023,15 +1028,22 @@ def validate_registry() -> None:
                 errors.append(error)
 
     expected_schemas = {
+        "schemas/failure_lesson_memory_v1.json",
         "schemas/memory_object_surface_manifest.schema.json",
         "schemas/memory_object_catalog.schema.json",
         "schemas/memory_object_capsules.schema.json",
         "schemas/memory_object_sections.schema.json",
+        "schemas/recovery_pattern_memory_v1.json",
     }
     for schema_ref in sorted(expected_schemas):
         if schema_ref not in data.get("schemas", []):
             errors.append(f"generated/memo_registry.min.json must list {schema_ref}")
     required_core_docs = (
+        "docs/FAILURE_LESSON_MEMORY.md",
+        "docs/FAILURE_LESSON_RECALL.md",
+        "docs/RECOVERY_PATTERN_MEMORY.md",
+        "docs/RECOVERY_PATTERN_RECALL.md",
+        "docs/GROWTH_REFINERY_WRITEBACK.md",
         "docs/QUEST_CHRONICLE_WRITEBACK.md",
         "docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
         "docs/KAG_SOURCE_EXPORT.md",
@@ -2049,6 +2061,8 @@ def main() -> int:
     validate_support_schema("pattern.schema.json")
     validate_support_schema("bridge.schema.json")
     validate_support_schema("audit_event.schema.json")
+    validate_support_schema("failure_lesson_memory_v1.json")
+    validate_support_schema("recovery_pattern_memory_v1.json")
     validate_support_schema("memory_object_surface_manifest.schema.json")
     validate_support_schema("memory_object_catalog.schema.json")
     validate_support_schema("memory_object_capsules.schema.json")
@@ -2073,6 +2087,10 @@ def main() -> int:
     validate_example(validator_for("provenance_thread.schema.json"), "checkpoint_improvement_thread.example.json")
     validate_example(validator_for("provenance_thread.schema.json"), "provenance_thread.kag-lift.example.json")
     validate_example(validator_for("provenance_thread.schema.json"), PHASE_ALPHA_PROVENANCE_THREAD_EXAMPLE)
+    validate_example(validator_for("failure_lesson_memory_v1.json"), "failure_lesson_memory.example.json")
+    validate_example(validator_for("failure_lesson_memory_v1.json"), "failure_lesson_memory.lineage.example.json")
+    validate_example(validator_for("recovery_pattern_memory_v1.json"), "recovery_pattern_memory.example.json")
+    validate_example(validator_for("recovery_pattern_memory_v1.json"), "recovery_pattern_memory.lineage.example.json")
     validate_recall_contract_example(
         "recall_contract.semantic.json",
         expected_mode="semantic",

@@ -31,11 +31,25 @@ A healthy failure lesson memory object includes:
 - the stressor family
 - source receipt references
 - optional adaptation references
+- strongest available lineage refs when reviewed owner-chain evidence exists
 - a concise lesson summary
 - a recommended posture for later recall
 - trust signals
 - temperature and salience suitable for recall
 - optional expiry or supersession
+
+When lineage-aware writeback is warranted, keep `lineage_refs` scoped to the
+strongest reviewed chain available at the time of writeback:
+
+- `cluster_ref`
+- `candidate_ref`
+- `seed_ref`
+- `object_ref`
+
+Optional `lineage_context` may preserve bounded owner-fit clues such as
+`owner_hypothesis`, `owner_shape`, `nearest_wrong_target`, `status_posture`,
+`supersedes`, `merged_into`, and `drop_reason`.
+That context is memory support only. It does not become final lineage truth.
 
 ## Review posture
 
