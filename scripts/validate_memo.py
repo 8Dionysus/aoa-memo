@@ -2112,6 +2112,10 @@ def main() -> int:
     validate_example(validator_for("provenance_thread.schema.json"), "provenance_thread.example.json")
     validate_example(validator_for("provenance_thread.schema.json"), "checkpoint_improvement_thread.example.json")
     validate_example(validator_for("provenance_thread.schema.json"), "provenance_thread.kag-lift.example.json")
+    validate_example(
+        validator_for("provenance_thread.schema.json"),
+        "provenance_thread.self-agency-continuity.example.json",
+    )
     validate_example(validator_for("provenance_thread.schema.json"), PHASE_ALPHA_PROVENANCE_THREAD_EXAMPLE)
     validate_example(validator_for("failure_lesson_memory_v1.json"), "failure_lesson_memory.example.json")
     validate_example(validator_for("failure_lesson_memory_v1.json"), "failure_lesson_memory.lineage.example.json")
