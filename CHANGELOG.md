@@ -7,6 +7,32 @@ Tracking starts with the community-docs baseline for this repository.
 
 ## [Unreleased]
 
+## [0.2.1] - 2026-04-12
+
+### Summary
+
+- this patch extends checkpoint recall and rollout-memory writeback through the
+  current continuity wave
+- growth-refinery writeback handling is tightened without widening `aoa-memo`
+  beyond bounded recall
+- the release remains a memory-layer refinement over `v0.2.0`
+
+### Added
+
+- checkpoint recall follow-through quest capture and lineage-aware growth
+  refinery writeback surfaces.
+- rollout memory writeback examples, campaign cadence memo examples, and
+  self-agency continuity writeback support.
+
+### Changed
+
+- growth-refinery memo writeback and review-badge handling are tightened around
+  the current continuity-oriented writeback loop.
+
+### Validation
+
+- `python scripts/release_check.py`
+
 ## [0.2.0] - 2026-04-10
 
 ### Summary
