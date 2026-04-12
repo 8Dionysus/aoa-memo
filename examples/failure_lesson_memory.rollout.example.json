@@ -1,0 +1,46 @@
+{
+  "schema_version": "failure_lesson_memory_v1",
+  "memory_id": "memo:codex-rollout-hooks-tighten-drift-2026-04-11",
+  "object_kind": "failure_lesson",
+  "title": "Hook tightening can push the shared-root Codex rollout into startup drift",
+  "repo": "8Dionysus",
+  "layer": "profile-route",
+  "surface": "generated/codex/rollout",
+  "stressor_family": "shared_root_startup_drift",
+  "bounded_scope": {
+    "kind": "rollout_campaign",
+    "value": "ROLL-20260411-codex-hooks-tighten-02",
+    "notes": "Applies when a bounded shared-root Codex rollout reaches material startup drift before the next honest move is known."
+  },
+  "source_receipt_refs": [
+    "8Dionysus:ROLL-20260411-codex-hooks-tighten-02",
+    "8Dionysus:DRIFT-20260411-codex-hooks-tighten-02"
+  ],
+  "evidence_refs": [
+    "8Dionysus:generated/codex/rollout/deploy_history.jsonl",
+    "8Dionysus:generated/codex/rollout/rollback_windows.min.json",
+    "aoa-stats:generated/codex_rollout_drift_summary.min.json"
+  ],
+  "lesson_summary": "When hook tightening pushes the shared-root Codex plane into startup drift, keep repair bounded and open rollback before widening hook or path changes.",
+  "recommended_posture": "rollback_before_widening_hook_repair",
+  "trust_posture": {
+    "status": "reviewed",
+    "signals": [
+      "checked_in_rollout_history_present",
+      "drift_window_recorded",
+      "rollback_window_recorded",
+      "drift_summary_present"
+    ]
+  },
+  "temperature": "warm",
+  "salience": "high",
+  "review_status": "reviewed",
+  "recall_prompts": [
+    "hook tightening startup drift",
+    "shared-root Codex rollout drift",
+    "rollback before widening repair"
+  ],
+  "expires_at_utc": null,
+  "supersedes": [],
+  "notes": "Memo preserves the caution and strongest reviewed evidence links. It does not replace checked-in rollout history, rollback decisions, or typed deploy status."
+}

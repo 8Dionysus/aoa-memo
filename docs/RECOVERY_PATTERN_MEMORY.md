@@ -23,6 +23,7 @@ following is true:
 - a bounded longitudinal eval confirms the recovery claim
 - derived stats still expose explicit evidence or suppression posture
 - routing and operator review benefit from one reusable bounded recall object
+- a checked-in rollback window preserves one bounded recovery route clearly
 
 Do not create one from a single anecdote, from stats-only inference, or from a
 route hint without stronger upstream evidence.
@@ -33,6 +34,7 @@ A healthy recovery pattern memory object includes:
 
 - the stressor family and ordered window scope
 - source receipt references
+- checked-in rollback or drift-window refs when rollout follow-through is the source
 - linked eval report references
 - linked stats summary references
 - optional route hint references
