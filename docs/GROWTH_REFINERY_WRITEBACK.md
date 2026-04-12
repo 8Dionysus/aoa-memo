@@ -70,6 +70,16 @@ Do not use memo writeback here to:
 - invent a new recurring-runner authority inside `aoa-memo`
 - treat memory as the canonical home of growth-refinery state
 
+## Do Not Recall From Memo Alone
+
+Do not use lineage-aware memo recall as first authority when the linked
+owner receipt, seed lineage entry, eval report, or stats summary is available
+to inspect directly.
+
+If the surviving chain is still `early` or `thin-evidence`, memo may preserve
+bounded context, but landing, repair, and promotion decisions still belong to
+the stronger owner and proof surfaces.
+
 ## Canonical Neighbors
 
 - `docs/RUNTIME_WRITEBACK_SEAM.md` owns the runtime-to-memo boundary
