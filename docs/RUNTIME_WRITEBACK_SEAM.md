@@ -65,6 +65,12 @@ When reviewed lineage evidence warrants a durable memory object, reuse existing
 `failure_lesson_memory_v1` and `recovery_pattern_memory_v1` surfaces rather
 than introducing a new writeback family.
 
+Shared-root Codex rollout follow-through reuses that same boundary.
+Checked-in rollout history, drift windows, rollback windows, and derived
+summaries may justify a bounded failure lesson or recovery pattern, but they do
+not create a rollout-specific memo kind or move rollout authority into
+`aoa-memo`.
+
 ## Trace And Restart Reuse
 
 Reuse existing public surfaces where possible:

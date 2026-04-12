@@ -1,0 +1,54 @@
+{
+  "schema_version": "recovery_pattern_memory_v1",
+  "memory_id": "memo:codex-rollout-revert-to-last-stable-render-2026-04-11",
+  "object_kind": "recovery_pattern",
+  "title": "Revert to the last stable render when shared-root rollout drift turns material",
+  "repo": "8Dionysus",
+  "layer": "profile-route",
+  "surface": "generated/codex/rollout",
+  "stressor_family": "shared_root_startup_drift",
+  "window_scope": {
+    "kind": "bounded_rollout_window",
+    "value": "ROLL-20260411-codex-hooks-tighten-02 -> RBK-20260411-codex-hooks-tighten-02",
+    "ordered_window_size": 2,
+    "notes": "Use only after the failed rollout and the bounded rollback window are both explicit in checked-in history."
+  },
+  "source_receipt_refs": [
+    "8Dionysus:ROLL-20260411-codex-hooks-tighten-02",
+    "8Dionysus:RBK-20260411-codex-hooks-tighten-02"
+  ],
+  "eval_report_refs": [
+    "aoa-evals:aoa-diagnosis-cause-discipline#trusted-rollout-operations",
+    "aoa-evals:aoa-repair-boundedness#trusted-rollout-operations",
+    "aoa-evals:aoa-stress-recovery-window#trusted-rollout-operations"
+  ],
+  "stats_summary_refs": [
+    "aoa-stats:generated/codex_rollout_operations_summary.min.json",
+    "aoa-stats:generated/codex_rollout_drift_summary.min.json"
+  ],
+  "route_hint_refs": [
+    "aoa-playbooks:docs/CODEX_PLANE_ROLLOUT_CYCLE.md",
+    "8Dionysus:docs/CODEX_TRUSTED_ROLLOUT_OPERATIONS.md"
+  ],
+  "lesson_summary": "When a shared-root rollout reaches material startup drift after hook tightening, the bounded recovery pattern is to revert to the last stable render, rerun doctor and smoke, and close rollback only after verified status returns.",
+  "recall_posture": "Use as bounded recall only after checking the linked checked-in rollout history, rollback window, eval anchors, and derived summaries.",
+  "trust_posture": {
+    "status": "reviewed",
+    "signals": [
+      "checked_in_rollout_history_present",
+      "rollback_window_recorded",
+      "stats_summaries_present",
+      "bounded_eval_refs_named"
+    ]
+  },
+  "temperature": "cool",
+  "salience": "high",
+  "review_status": "reviewed",
+  "native_pattern_ref": "examples/pattern.antifragility-stress-recovery-window.example.json",
+  "recall_prompts": [
+    "material startup drift after rollout",
+    "revert to last stable render",
+    "close rollback only after verify"
+  ],
+  "notes": "Memo keeps the bounded recovery pattern subordinate to checked-in rollout history, rollback windows, derived summaries, and typed deploy-status review."
+}

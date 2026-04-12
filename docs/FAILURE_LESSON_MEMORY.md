@@ -20,6 +20,7 @@ A `failure_lesson_memory_v1` object is appropriate when at least one of the foll
 - a single event is severe enough to deserve recall
 - a reviewed adaptation cites the event and changes future handling
 - operators repeatedly need the same cautionary context
+- a checked-in rollout or drift window keeps teaching the same bounded caution
 
 Do not create one for every failed run.
 
@@ -30,6 +31,7 @@ A healthy failure lesson memory object includes:
 - the owner repo and bounded surface
 - the stressor family
 - source receipt references
+- checked-in rollout, drift, or rollback refs when rollout history is the source
 - optional adaptation references
 - strongest available lineage refs when reviewed owner-chain evidence exists
 - a concise lesson summary

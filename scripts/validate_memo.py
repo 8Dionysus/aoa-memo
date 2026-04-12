@@ -2115,8 +2115,10 @@ def main() -> int:
     validate_example(validator_for("provenance_thread.schema.json"), PHASE_ALPHA_PROVENANCE_THREAD_EXAMPLE)
     validate_example(validator_for("failure_lesson_memory_v1.json"), "failure_lesson_memory.example.json")
     validate_example(validator_for("failure_lesson_memory_v1.json"), "failure_lesson_memory.lineage.example.json")
+    validate_example(validator_for("failure_lesson_memory_v1.json"), "failure_lesson_memory.rollout.example.json")
     validate_example(validator_for("recovery_pattern_memory_v1.json"), "recovery_pattern_memory.example.json")
     validate_example(validator_for("recovery_pattern_memory_v1.json"), "recovery_pattern_memory.lineage.example.json")
+    validate_example(validator_for("recovery_pattern_memory_v1.json"), "recovery_pattern_memory.rollout.example.json")
     validate_recall_contract_example(
         "recall_contract.semantic.json",
         expected_mode="semantic",
