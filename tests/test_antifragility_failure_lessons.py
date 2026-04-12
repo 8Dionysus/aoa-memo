@@ -52,6 +52,13 @@ def test_failure_lesson_rollout_example_validates_against_schema() -> None:
     validator.validate(example)
 
 
+def test_failure_lesson_drift_review_example_validates_against_schema() -> None:
+    validator = validate_memo.validator_for("failure_lesson_memory_v1.json")
+    example = load_json("examples/failure_lesson_memory.drift_review.example.json")
+
+    validator.validate(example)
+
+
 def test_failure_lesson_lineage_ref_validation_handles_malformed_objects(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
@@ -81,15 +88,18 @@ def test_failure_lesson_surfaces_stay_discoverable_and_non_proof() -> None:
     for fragment in [
         "docs/FAILURE_LESSON_MEMORY.md",
         "docs/FAILURE_LESSON_RECALL.md",
+        "docs/DRIFT_REVIEW_LESSON_MEMORY.md",
         "docs/GROWTH_REFINERY_WRITEBACK.md",
         "schemas/failure_lesson_memory_v1.json",
         "examples/failure_lesson_memory.example.json",
         "examples/failure_lesson_memory.lineage.example.json",
         "examples/failure_lesson_memory.rollout.example.json",
+        "examples/failure_lesson_memory.drift_review.example.json",
     ]:
         assert fragment in readme
 
     assert "It remains memory, not proof." in memory_doc
+    assert "docs/DRIFT_REVIEW_LESSON_MEMORY.md" in memory_doc
     assert "lineage_refs" in memory_doc
     assert "Memo may shape attention." in recall_doc
     assert "It does not overrule source-owned evidence." in recall_doc

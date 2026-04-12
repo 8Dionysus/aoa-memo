@@ -71,6 +71,12 @@ summaries may justify a bounded failure lesson or recovery pattern, but they do
 not create a rollout-specific memo kind or move rollout authority into
 `aoa-memo`.
 
+The narrower campaign-cadence seam reuses that same rule.
+Source-owned `drift_review_window` and `rollback_followthrough_window` examples
+may justify one bounded failure lesson or recovery pattern, but they still stay
+subordinate to `8Dionysus` rollout and cadence truth plus any stronger eval or
+stats surfaces.
+
 ## Trace And Restart Reuse
 
 Reuse existing public surfaces where possible:

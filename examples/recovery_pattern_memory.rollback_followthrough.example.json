@@ -1,0 +1,53 @@
+{
+  "schema_version": "recovery_pattern_memory_v1",
+  "memory_id": "memo:codex-rollout-cadence-rollback-followthrough-2026-04-12",
+  "object_kind": "recovery_pattern",
+  "title": "Keep rollback follow-through armed behind cadence review instead of using it as convenience",
+  "repo": "8Dionysus",
+  "layer": "profile-route",
+  "surface": "docs/TRUSTED_ROLLOUT_CAMPAIGNS.md",
+  "stressor_family": "shared_root_rollout_campaign_drift",
+  "window_scope": {
+    "kind": "campaign_followthrough_window",
+    "value": "CAMP-20260412-codex-cadence-01 -> RFU-20260412-codex-cadence-01",
+    "ordered_window_size": 2,
+    "notes": "Use only after the cadence route has kept one bounded rollback-followthrough window explicit behind a reviewed drift decision."
+  },
+  "source_receipt_refs": [
+    "8Dionysus:CAMP-20260412-codex-cadence-01",
+    "8Dionysus:RFU-20260412-codex-cadence-01"
+  ],
+  "eval_report_refs": [
+    "aoa-evals:aoa-diagnosis-cause-discipline#trusted-rollout-operations",
+    "aoa-evals:aoa-repair-boundedness#trusted-rollout-operations",
+    "aoa-evals:aoa-stress-recovery-window#trusted-rollout-operations"
+  ],
+  "stats_summary_refs": [
+    "aoa-stats:generated/rollout_campaign_summary.min.json",
+    "aoa-stats:generated/drift_review_summary.min.json"
+  ],
+  "route_hint_refs": [
+    "aoa-playbooks:docs/TRUSTED_ROLLOUT_CAMPAIGN_CADENCE.md",
+    "8Dionysus:docs/TRUSTED_ROLLOUT_CAMPAIGNS.md"
+  ],
+  "lesson_summary": "When campaign cadence still needs a contingent rollback lane, keep rollback follow-through explicit and armed behind review rather than spending it as convenience during maintenance drift.",
+  "recall_posture": "Use as bounded recall only after checking the linked source-owned campaign windows, checked-in rollout history, eval anchors, and derived cadence summaries.",
+  "trust_posture": {
+    "status": "provisional",
+    "signals": [
+      "source_owned_campaign_window_present",
+      "source_owned_rollback_followthrough_window_present",
+      "derived_cadence_summaries_present"
+    ]
+  },
+  "temperature": "cool",
+  "salience": "medium",
+  "review_status": "draft",
+  "native_pattern_ref": "examples/pattern.antifragility-stress-recovery-window.example.json",
+  "recall_prompts": [
+    "rollback follow-through stays contingent",
+    "shared-root cadence recovery lane",
+    "do not spend rollback as convenience"
+  ],
+  "notes": "Memo keeps the cadence recovery pattern subordinate to source-owned campaign windows, checked-in rollout history, eval proof, and derived summaries."
+}
