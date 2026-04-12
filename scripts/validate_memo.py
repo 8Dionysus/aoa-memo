@@ -744,6 +744,25 @@ def append_ref_errors(errors: list[str], ref_checks: list[tuple[str, object]]) -
     errors.extend(filter(None, (local_ref_error(value, label) for label, value in ref_checks)))
 
 
+LINEAGE_REF_CHAIN = ("cluster_ref", "candidate_ref", "seed_ref", "object_ref")
+
+
+def append_lineage_chain_errors(errors: list[str], lineage_refs: object) -> None:
+    if not isinstance(lineage_refs, dict):
+        return
+
+    for index, field_name in enumerate(LINEAGE_REF_CHAIN):
+        value = lineage_refs.get(field_name)
+        if value is None:
+            continue
+        for required_name in LINEAGE_REF_CHAIN[:index]:
+            if lineage_refs.get(required_name) is None:
+                errors.append(
+                    f"lineage_refs.{field_name} requires lineage_refs.{required_name} when later chain links are present"
+                )
+                break
+
+
 @lru_cache(maxsize=None)
 def schema_registry() -> Registry:
     resources: list[tuple[str, Resource]] = []
@@ -807,6 +826,7 @@ def validate_example(validator: Draft202012Validator, example_name: str) -> None
             for index, value in enumerate(values):
                 ref_checks.append((f"return_pack.{list_name}[{index}]", value))
     errors.extend(filter(None, (local_ref_error(value, label) for label, value in ref_checks)))
+    append_lineage_chain_errors(errors, lineage_refs)
 
     if errors:
         print(f"[FAIL] {example_name}")
