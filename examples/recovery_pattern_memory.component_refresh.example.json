@@ -1,0 +1,52 @@
+{
+  "schema_version": "recovery_pattern_memory_v1",
+  "memory_id": "memo:component-refresh-rerender-doctor-cycle-2026-04-12",
+  "object_kind": "recovery_pattern",
+  "title": "Rerender plus doctor before widening shared-root component drift into rollout work",
+  "repo": "8Dionysus",
+  "layer": "profile-route",
+  "surface": "docs/COMPONENT_REFRESH_ROUTE.md",
+  "stressor_family": "shared_root_component_drift",
+  "window_scope": {
+    "kind": "bounded_component_refresh_window",
+    "value": "component:codex-plane:shared-root -> reviewed rerender + doctor route",
+    "ordered_window_size": 2,
+    "notes": "Use only after the owner refresh route, reviewed followthrough decision, and derived component refresh summary all point at the same bounded refresh move."
+  },
+  "source_receipt_refs": [
+    "8Dionysus:docs/COMPONENT_REFRESH_ROUTE.md#component:codex-plane:shared-root",
+    "aoa-sdk:aoa_component_refresh_followthrough_decision_set_v1#component:codex-plane:shared-root"
+  ],
+  "eval_report_refs": [
+    "aoa-evals:aoa-diagnosis-cause-discipline#component-refresh-cycle",
+    "aoa-evals:aoa-repair-boundedness#component-refresh-cycle"
+  ],
+  "stats_summary_refs": [
+    "aoa-stats:generated/component_refresh_summary.min.json"
+  ],
+  "route_hint_refs": [
+    "aoa-playbooks:playbook_registry_v1#AOA-P-0030",
+    "aoa-skills:docs/COMPONENT_REFRESH_LAW.md",
+    "aoa-agents:docs/CODEX_SUBAGENT_REFRESH_LAW.md"
+  ],
+  "lesson_summary": "When shared-root Codex plane drift repeats a rerender-plus-doctor recovery path, keep the pattern as optional memo support only after the owner route, reviewed followthrough decision, and derived summary agree on the same bounded refresh move.",
+  "recall_posture": "Use as bounded recall only after checking the owner refresh route, reviewed followthrough decision, owner law, and derived component refresh summary.",
+  "trust_posture": {
+    "status": "provisional",
+    "signals": [
+      "owner_refresh_route_named",
+      "reviewed_followthrough_decision_present",
+      "derived_component_refresh_summary_present"
+    ]
+  },
+  "temperature": "cool",
+  "salience": "medium",
+  "review_status": "draft",
+  "native_pattern_ref": "examples/pattern.antifragility-stress-recovery-window.example.json",
+  "recall_prompts": [
+    "component refresh rerender plus doctor",
+    "shared-root codex plane drift",
+    "owner-law refresh route before rollout"
+  ],
+  "notes": "Memo keeps the component-refresh recovery pattern subordinate to the owner refresh route, reviewed followthrough decision, owner laws, and derived summary. It must not become the first record of refresh truth or scheduler authority."
+}

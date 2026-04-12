@@ -2123,6 +2123,10 @@ def main() -> int:
     validate_example(validator_for("recovery_pattern_memory_v1.json"), "recovery_pattern_memory.example.json")
     validate_example(validator_for("recovery_pattern_memory_v1.json"), "recovery_pattern_memory.lineage.example.json")
     validate_example(validator_for("recovery_pattern_memory_v1.json"), "recovery_pattern_memory.rollout.example.json")
+    validate_example(
+        validator_for("recovery_pattern_memory_v1.json"),
+        "recovery_pattern_memory.component_refresh.example.json",
+    )
     validate_recall_contract_example(
         "recall_contract.semantic.json",
         expected_mode="semantic",

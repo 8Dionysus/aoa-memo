@@ -47,6 +47,24 @@ def test_recovery_pattern_rollback_followthrough_example_validates_against_schem
     Draft202012Validator(schema).validate(example)
 
 
+def test_recovery_pattern_component_refresh_example_validates_against_schema() -> None:
+    schema = load_json("schemas/recovery_pattern_memory_v1.json")
+    example = load_json("examples/recovery_pattern_memory.component_refresh.example.json")
+
+    Draft202012Validator(schema).validate(example)
+
+
+def test_component_refresh_recovery_pattern_stays_draft_and_owner_bounded() -> None:
+    example = load_json("examples/recovery_pattern_memory.component_refresh.example.json")
+
+    assert example["review_status"] == "draft"
+    assert example["trust_posture"]["status"] == "provisional"
+    assert "aoa-playbooks:playbook_registry_v1#AOA-P-0030" in example["route_hint_refs"]
+    assert "aoa-stats:generated/component_refresh_summary.min.json" in example["stats_summary_refs"]
+    assert "reviewed followthrough decision" in example["recall_posture"]
+    assert "scheduler authority" in example["notes"]
+
+
 def test_native_recovery_pattern_integrates_into_object_family() -> None:
     pattern_example = load_json("examples/pattern.antifragility-stress-recovery-window.example.json")
     validator = validate_memo.validator_for("pattern.schema.json")
@@ -95,12 +113,14 @@ def test_recovery_pattern_surfaces_stay_discoverable_and_non_proof() -> None:
         "examples/recovery_pattern_memory.lineage.example.json",
         "examples/recovery_pattern_memory.rollout.example.json",
         "examples/recovery_pattern_memory.rollback_followthrough.example.json",
+        "examples/recovery_pattern_memory.component_refresh.example.json",
         "examples/pattern.antifragility-stress-recovery-window.example.json",
     ]:
         assert fragment in readme
 
     assert "It remains memory, not proof." in memory_doc
     assert "docs/ROLLBACK_FOLLOWTHROUGH_PATTERN.md" in memory_doc
+    assert "component_refresh.example.json" in memory_doc
     assert "lineage_refs" in memory_doc
     assert "Memo may shape recall and routing review." in recall_doc
     assert "It does not overrule source-owned receipts, eval proof, or derived stats" in recall_doc
