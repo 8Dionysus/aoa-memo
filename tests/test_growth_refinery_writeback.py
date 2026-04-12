@@ -65,6 +65,17 @@ def test_growth_refinery_writeback_doc_keeps_bounded_lineage_rules() -> None:
     assert "Do not use lineage-aware memo recall as first authority" in doc
 
 
+def test_growth_refinery_writeback_doc_maps_prune_cases_to_existing_memo_kinds() -> None:
+    doc = (REPO_ROOT / "docs" / "GROWTH_REFINERY_WRITEBACK.md").read_text(encoding="utf-8")
+    normalized = " ".join(doc.split())
+
+    assert "repeated drop, wrong-owner, or weak-owner supersession belongs in" in normalized
+    assert "repeated reanchor, merge, or proof-first rescue belongs in" in normalized
+    assert "seed staging repeatedly adds no value compared with direct owner landing" in normalized
+    assert "let prune writeback become the first record of drop, merge, or supersession truth" in normalized
+    assert "let memory decide whether a candidate should be dropped, merged, or superseded" in normalized
+
+
 def test_failure_lesson_lineage_example_keeps_partial_chain_and_explanatory_note() -> None:
     example = load_json("examples/failure_lesson_memory.lineage.example.json")
 

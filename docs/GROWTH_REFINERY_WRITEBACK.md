@@ -7,6 +7,8 @@ future reviewed handling of a similar owner-fit or repair situation.
 
 This surface is memo-side support.
 It does not become lineage truth, proof doctrine, or owner authority.
+It is also the bounded home for prune-aware writeback when drop, supersession,
+merge, or seed-no-value outcomes repeat often enough to deserve memory.
 
 ## Reuse Existing Memo Kinds
 
@@ -18,16 +20,28 @@ Use existing memo kinds instead:
 - `recovery_pattern_memory_v1` when the main value is a reusable bounded
   repair or reanchor pattern
 
+Prune-aware mapping stays inside those existing kinds:
+
+- repeated drop, wrong-owner, or weak-owner supersession belongs in
+  `failure_lesson_memory_v1` when the main value is caution
+- repeated reanchor, merge, or proof-first rescue belongs in
+  `recovery_pattern_memory_v1` when the main value is a bounded reusable move
+
 ## Write Back Failure Lessons When
 
-- a candidate was misrouted toward the wrong owner
-- a candidate was dropped for a recurring bounded reason
+- a candidate repeatedly lands in the wrong owner
+- a candidate or staged seed repeatedly drops for the same bounded reason
+- supersession or merge repeatedly happens because the first owner-fit guess
+  was too weak or duplicated a stronger owner surface
+- seed staging repeatedly adds no value compared with direct owner landing
 - a repair widened scope or violated boundaries
 - the same handoff failed more than once
 
 ## Write Back Recovery Patterns When
 
-- a candidate was successfully reanchored to the right owner
+- the same reanchor move fixes owner fit more than once
+- the same merge pattern preserves truth while reducing duplicate owner surfaces
+- the same proof-first rule prevents repeated thin-evidence landings
 - a thin-evidence object became stable through repeated review or proof
 - a bounded repair move worked more than once without widening authority
 
@@ -69,6 +83,8 @@ Do not use memo writeback here to:
 - replace owner-local receipts or proof bundles
 - invent a new recurring-runner authority inside `aoa-memo`
 - treat memory as the canonical home of growth-refinery state
+- let prune writeback become the first record of drop, merge, or supersession truth
+- let memory decide whether a candidate should be dropped, merged, or superseded
 
 ## Do Not Recall From Memo Alone
 
