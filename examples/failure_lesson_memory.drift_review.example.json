@@ -1,0 +1,45 @@
+{
+  "schema_version": "failure_lesson_memory_v1",
+  "memory_id": "memo:codex-rollout-cadence-drift-review-2026-04-12",
+  "object_kind": "failure_lesson",
+  "title": "Campaign cadence should reanchor drift review before widening shared-root rollout work",
+  "repo": "8Dionysus",
+  "layer": "profile-route",
+  "surface": "docs/TRUSTED_ROLLOUT_CAMPAIGNS.md",
+  "stressor_family": "shared_root_rollout_campaign_drift",
+  "bounded_scope": {
+    "kind": "drift_review_window",
+    "value": "DREV-20260412-codex-cadence-01",
+    "notes": "Applies when a grouped rollout campaign has already named drift and the next honest move is reanchor-first review rather than widening maintenance scope."
+  },
+  "source_receipt_refs": [
+    "8Dionysus:CAMP-20260412-codex-cadence-01",
+    "8Dionysus:DREV-20260412-codex-cadence-01"
+  ],
+  "evidence_refs": [
+    "8Dionysus:examples/drift_review_window.example.json",
+    "8Dionysus:docs/TRUSTED_ROLLOUT_CAMPAIGNS.md",
+    "aoa-stats:generated/drift_review_summary.min.json"
+  ],
+  "lesson_summary": "When campaign cadence names hook drift inside one bounded review window, reanchor the route and refresh source-owned rollout posture before widening the maintenance batch.",
+  "recommended_posture": "reanchor_before_widening_campaign_scope",
+  "trust_posture": {
+    "status": "provisional",
+    "signals": [
+      "source_owned_campaign_window_present",
+      "source_owned_drift_review_window_present",
+      "derived_drift_review_summary_present"
+    ]
+  },
+  "temperature": "warm",
+  "salience": "medium",
+  "review_status": "draft",
+  "recall_prompts": [
+    "campaign cadence drift review",
+    "reanchor before widening maintenance",
+    "shared-root rollout hook drift"
+  ],
+  "expires_at_utc": null,
+  "supersedes": [],
+  "notes": "Memo keeps the cadence caution subordinate to source-owned campaign windows, checked-in rollout history, and any stronger proof surfaces."
+}

@@ -86,3 +86,7 @@ The object should not claim:
 - that the current run is healthy by itself
 - that memo now owns route or eval authority
 - that a recovery route is safe without checking linked receipts and proof
+
+For the narrower shared-root campaign-cadence seam, use
+`docs/ROLLBACK_FOLLOWTHROUGH_PATTERN.md` plus
+`examples/recovery_pattern_memory.rollback_followthrough.example.json`.
