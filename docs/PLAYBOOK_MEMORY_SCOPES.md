@@ -44,7 +44,9 @@ Playbooks should request the smallest useful scope first:
 - `project` for repo-bounded doctrine, claims, and patterns
 - `workspace` for neighboring-repo coordination
 - `ecosystem` only when the scenario truly crosses AoA-wide surfaces
-- `ToS node / lineage` only when the playbook explicitly needs source-linked knowledge-world relations
+- when the playbook explicitly needs ToS or bridge-heavy knowledge-world
+  relations, keep the scope class explicit and pair it with recall mode
+  `lineage` rather than inventing a new scope class
 
 Scope expansion should be explicit and reviewable.
 
