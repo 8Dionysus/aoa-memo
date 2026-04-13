@@ -9,6 +9,8 @@ from typing import Any
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_LOG_PATH = REPO_ROOT / ".aoa" / "live_receipts" / "memo-writeback-receipts.jsonl"
+MEMORY_OBJECT_CATALOG_PATH = REPO_ROOT / "generated" / "memory_object_catalog.min.json"
+RECALL_SURFACE_PREFIX = "repo:aoa-memo/generated/memory_object_catalog.min.json#"
 ALLOWED_EVENT_KINDS = {"memo_writeback_receipt"}
 
 
@@ -31,10 +33,38 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         default=str(DEFAULT_LOG_PATH),
         help="Owner-local JSONL log that should receive newly published memo receipts.",
     )
+    parser.add_argument(
+        "--catalog-path",
+        default=str(MEMORY_OBJECT_CATALOG_PATH),
+        help="Generated memory-object recall catalog used to verify receipt adoption.",
+    )
     return parser.parse_args(argv)
 
 
-def validate_receipt(receipt: dict[str, Any], *, location: str) -> None:
+def load_memory_object_catalog(path: Path) -> dict[str, dict[str, Any]]:
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(payload, dict):
+        raise ReceiptPublishError(f"{path}: memory-object catalog must be an object")
+    items = payload.get("memory_objects")
+    if not isinstance(items, list):
+        raise ReceiptPublishError(f"{path}: memory-object catalog must expose memory_objects")
+    by_id: dict[str, dict[str, Any]] = {}
+    for index, item in enumerate(items):
+        if not isinstance(item, dict):
+            raise ReceiptPublishError(f"{path}.memory_objects[{index}]: must be an object")
+        object_id = item.get("id")
+        if not isinstance(object_id, str) or not object_id:
+            raise ReceiptPublishError(f"{path}.memory_objects[{index}].id: must be a non-empty string")
+        by_id[object_id] = item
+    return by_id
+
+
+def validate_receipt(
+    receipt: dict[str, Any],
+    *,
+    location: str,
+    memory_objects_by_id: dict[str, dict[str, Any]],
+) -> None:
     required_fields = (
         "event_kind",
         "event_id",
@@ -56,15 +86,60 @@ def validate_receipt(receipt: dict[str, Any], *, location: str) -> None:
         )
     if not isinstance(receipt["event_id"], str) or not receipt["event_id"]:
         raise ReceiptPublishError(f"{location}.event_id: must be a non-empty string")
-    if not isinstance(receipt["object_ref"], dict):
+    object_ref = receipt["object_ref"]
+    if not isinstance(object_ref, dict):
         raise ReceiptPublishError(f"{location}.object_ref: must be an object")
-    if not isinstance(receipt["evidence_refs"], list):
+    if object_ref.get("kind") != "memory_object":
+        raise ReceiptPublishError(f"{location}.object_ref.kind: must equal 'memory_object'")
+    object_id = object_ref.get("id")
+    if not isinstance(object_id, str) or not object_id:
+        raise ReceiptPublishError(f"{location}.object_ref.id: must be a non-empty string")
+    catalog_entry = memory_objects_by_id.get(object_id)
+    if catalog_entry is None:
+        raise ReceiptPublishError(
+            f"{location}.object_ref.id: {object_id!r} does not resolve in generated memory-object recall catalog"
+        )
+    evidence_refs = receipt["evidence_refs"]
+    if not isinstance(evidence_refs, list) or not evidence_refs:
         raise ReceiptPublishError(f"{location}.evidence_refs: must be a list")
-    if not isinstance(receipt["payload"], dict):
+    evidence_ref_values: list[str] = []
+    for index, evidence_ref in enumerate(evidence_refs):
+        if not isinstance(evidence_ref, dict):
+            raise ReceiptPublishError(f"{location}.evidence_refs[{index}]: must be an object")
+        ref = evidence_ref.get("ref")
+        if not isinstance(ref, str) or not ref:
+            raise ReceiptPublishError(f"{location}.evidence_refs[{index}].ref: must be a non-empty string")
+        evidence_ref_values.append(ref)
+    recall_ref = f"{RECALL_SURFACE_PREFIX}{object_id}"
+    if recall_ref not in evidence_ref_values:
+        raise ReceiptPublishError(
+            f"{location}.evidence_refs: must include adopted recall surface ref {recall_ref!r}"
+        )
+    payload = receipt["payload"]
+    if not isinstance(payload, dict):
         raise ReceiptPublishError(f"{location}.payload: must be an object")
+    for field in ("target_kind", "writeback_class", "review_state"):
+        if not isinstance(payload.get(field), str) or not payload[field]:
+            raise ReceiptPublishError(f"{location}.payload.{field}: must be a non-empty string")
+    if payload["target_kind"] != catalog_entry.get("kind"):
+        raise ReceiptPublishError(
+            f"{location}.payload.target_kind: must match adopted memory object kind "
+            f"{catalog_entry.get('kind')!r}"
+        )
+    if payload["review_state"] != catalog_entry.get("review_state"):
+        raise ReceiptPublishError(
+            f"{location}.payload.review_state: must match adopted memory object review_state "
+            f"{catalog_entry.get('review_state')!r}"
+        )
 
 
-def load_receipts(paths: list[Path]) -> list[dict[str, Any]]:
+def load_receipts(
+    paths: list[Path],
+    *,
+    memory_objects_by_id: dict[str, dict[str, Any]] | None = None,
+) -> list[dict[str, Any]]:
+    if memory_objects_by_id is None:
+        memory_objects_by_id = load_memory_object_catalog(MEMORY_OBJECT_CATALOG_PATH)
     receipts: list[dict[str, Any]] = []
     for path in paths:
         if path.suffix == ".jsonl":
@@ -75,12 +150,16 @@ def load_receipts(paths: list[Path]) -> list[dict[str, Any]]:
                 item = json.loads(line)
                 if not isinstance(item, dict):
                     raise ReceiptPublishError(f"{path}:{line_number}: receipt must be an object")
-                validate_receipt(item, location=f"{path}:{line_number}")
+                validate_receipt(
+                    item,
+                    location=f"{path}:{line_number}",
+                    memory_objects_by_id=memory_objects_by_id,
+                )
                 receipts.append(item)
             continue
         payload = json.loads(path.read_text(encoding="utf-8"))
         if isinstance(payload, dict):
-            validate_receipt(payload, location=str(path))
+            validate_receipt(payload, location=str(path), memory_objects_by_id=memory_objects_by_id)
             receipts.append(payload)
             continue
         if not isinstance(payload, list):
@@ -88,7 +167,7 @@ def load_receipts(paths: list[Path]) -> list[dict[str, Any]]:
         for index, item in enumerate(payload):
             if not isinstance(item, dict):
                 raise ReceiptPublishError(f"{path}[{index}]: receipt must be an object")
-            validate_receipt(item, location=f"{path}[{index}]")
+            validate_receipt(item, location=f"{path}[{index}]", memory_objects_by_id=memory_objects_by_id)
             receipts.append(item)
     return receipts
 
@@ -141,7 +220,9 @@ def main(argv: list[str] | None = None) -> int:
     if not input_paths:
         raise SystemExit("no receipt input files were provided")
     log_path = Path(args.log_path).expanduser().resolve()
-    receipts = load_receipts(input_paths)
+    catalog_path = Path(args.catalog_path).expanduser().resolve()
+    memory_objects_by_id = load_memory_object_catalog(catalog_path)
+    receipts = load_receipts(input_paths, memory_objects_by_id=memory_objects_by_id)
     appended, skipped = append_new_receipts(log_path=log_path, receipts=receipts)
     print(f"[ok] appended {appended} memo receipts to {log_path}")
     print(f"[skip] duplicate event ids skipped: {skipped}")

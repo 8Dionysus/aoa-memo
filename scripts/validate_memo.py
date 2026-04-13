@@ -1706,11 +1706,12 @@ def validate_live_receipt_log() -> None:
         return
 
     catalog = load_json(GENERATED / "memory_object_catalog.min.json")
-    catalog_ids = {
-        item.get("id")
+    catalog_entries_by_id = {
+        item["id"]: item
         for item in catalog.get("memory_objects", [])
         if isinstance(item, dict) and isinstance(item.get("id"), str)
     }
+    catalog_ids = set(catalog_entries_by_id)
     errors: list[str] = []
     seen_event_ids: set[str] = set()
 
@@ -1759,6 +1760,31 @@ def validate_live_receipt_log() -> None:
                     f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: object_ref.id {object_id!r} "
                     "is absent from generated/memory_object_catalog.min.json"
                 )
+
+        payload = receipt.get("payload")
+        if not isinstance(payload, dict):
+            errors.append(f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: payload must be an object")
+        else:
+            for field in ("target_kind", "writeback_class", "review_state"):
+                if not isinstance(payload.get(field), str) or not payload[field]:
+                    errors.append(
+                        f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: payload.{field} "
+                        "must be a non-empty string"
+                    )
+            if isinstance(object_id, str) and object_id in catalog_entries_by_id:
+                catalog_entry = catalog_entries_by_id[object_id]
+                if payload.get("target_kind") != catalog_entry.get("kind"):
+                    errors.append(
+                        f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: payload.target_kind "
+                        f"{payload.get('target_kind')!r} must match catalog kind "
+                        f"{catalog_entry.get('kind')!r}"
+                    )
+                if payload.get("review_state") != catalog_entry.get("review_state"):
+                    errors.append(
+                        f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: payload.review_state "
+                        f"{payload.get('review_state')!r} must match catalog review_state "
+                        f"{catalog_entry.get('review_state')!r}"
+                    )
 
         evidence_refs = receipt.get("evidence_refs")
         if not isinstance(evidence_refs, list):

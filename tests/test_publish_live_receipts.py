@@ -9,6 +9,11 @@ import unittest
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 MODULE_PATH = REPO_ROOT / "scripts" / "publish_live_receipts.py"
+ADOPTED_OBJECT_ID = "memo.decision.2026-04-02.alpha-validation-remediation-rerun"
+ADOPTED_RECALL_REF = (
+    "repo:aoa-memo/generated/memory_object_catalog.min.json#"
+    "memo.decision.2026-04-02.alpha-validation-remediation-rerun"
+)
 
 
 def load_module():
@@ -30,18 +35,19 @@ def build_receipt(event_kind: str = "memo_writeback_receipt") -> dict:
         "object_ref": {
             "repo": "aoa-memo",
             "kind": "memory_object",
-            "id": "memo.decision.2026-04-06.session-closeout",
+            "id": ADOPTED_OBJECT_ID,
             "version": "main",
         },
         "evidence_refs": [
             {
                 "kind": "memory_object",
-                "ref": "repo:aoa-memo/generated/memory_object_catalog.min.json#memo.decision.2026-04-06.session-closeout",
+                "ref": ADOPTED_RECALL_REF,
             }
         ],
         "payload": {
             "target_kind": "decision",
             "writeback_class": "memo_surviving_event",
+            "review_state": "confirmed",
         },
     }
 
@@ -76,6 +82,57 @@ class MemoPublishLiveReceiptsTests(unittest.TestCase):
 
             with self.assertRaises(module.ReceiptPublishError):
                 module.load_receipts([input_path])
+
+    def test_publish_live_receipts_rejects_unadopted_object_id(self) -> None:
+        module = load_module()
+        with tempfile.TemporaryDirectory() as temp_dir:
+            tmp_path = Path(temp_dir)
+            input_path = tmp_path / "receipt.json"
+            receipt = build_receipt()
+            receipt["object_ref"]["id"] = "memo.decision.2026-04-06.session-closeout"
+            receipt["evidence_refs"][0]["ref"] = (
+                "repo:aoa-memo/generated/memory_object_catalog.min.json#"
+                "memo.decision.2026-04-06.session-closeout"
+            )
+            input_path.write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8")
+
+            with self.assertRaises(module.ReceiptPublishError) as ctx:
+                module.load_receipts([input_path])
+
+        self.assertIn("does not resolve in generated memory-object recall catalog", str(ctx.exception))
+
+    def test_publish_live_receipts_requires_adopted_recall_surface_ref(self) -> None:
+        module = load_module()
+        with tempfile.TemporaryDirectory() as temp_dir:
+            tmp_path = Path(temp_dir)
+            input_path = tmp_path / "receipt.json"
+            receipt = build_receipt()
+            receipt["evidence_refs"] = [
+                {
+                    "kind": "runtime_review",
+                    "ref": "repo:abyss-stack/Logs/phase-alpha/revalidation_pack.json",
+                }
+            ]
+            input_path.write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8")
+
+            with self.assertRaises(module.ReceiptPublishError) as ctx:
+                module.load_receipts([input_path])
+
+        self.assertIn("must include adopted recall surface ref", str(ctx.exception))
+
+    def test_publish_live_receipts_requires_payload_to_match_adopted_object(self) -> None:
+        module = load_module()
+        with tempfile.TemporaryDirectory() as temp_dir:
+            tmp_path = Path(temp_dir)
+            input_path = tmp_path / "receipt.json"
+            receipt = build_receipt()
+            receipt["payload"]["target_kind"] = "claim"
+            input_path.write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8")
+
+            with self.assertRaises(module.ReceiptPublishError) as ctx:
+                module.load_receipts([input_path])
+
+        self.assertIn("target_kind: must match adopted memory object kind", str(ctx.exception))
 
     def test_publish_live_receipts_preserves_jsonl_line_boundaries(self) -> None:
         module = load_module()

@@ -310,6 +310,7 @@ class MemoValidatorTestCase(unittest.TestCase):
                 "payload": {
                     "target_kind": "decision",
                     "writeback_class": "memo_surviving_event",
+                    "review_state": "confirmed",
                 },
             }
             log_path.write_text(json.dumps(receipt, sort_keys=True) + "\n", encoding="utf-8")
@@ -349,6 +350,7 @@ class MemoValidatorTestCase(unittest.TestCase):
                 "payload": {
                     "target_kind": "claim",
                     "writeback_class": "memo_surviving_event",
+                    "review_state": "confirmed",
                 },
             }
             log_path.write_text(json.dumps(receipt, sort_keys=True) + "\n", encoding="utf-8")
@@ -357,6 +359,41 @@ class MemoValidatorTestCase(unittest.TestCase):
                 with io.StringIO() as stdout, io.StringIO() as stderr:
                     with redirect_stdout(stdout), redirect_stderr(stderr):
                         validate_memo.validate_live_receipt_log()
+
+    def test_live_receipt_log_rejects_payload_kind_drift_from_catalog(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            log_path = Path(tmpdir) / "memo-writeback-receipts.jsonl"
+            object_id = "memo.claim.2026-03-20.temperature-not-truth"
+            receipt = {
+                "event_kind": "memo_writeback_receipt",
+                "event_id": "evt-memo-payload-kind-drift",
+                "observed_at": "2026-04-13T19:00:00Z",
+                "run_ref": "run-memo-payload-kind-drift",
+                "session_ref": "session:memo-payload-kind-drift",
+                "actor_ref": "aoa-memo:runtime-writeback",
+                "object_ref": {
+                    "repo": "aoa-memo",
+                    "kind": "memory_object",
+                    "id": object_id,
+                    "version": "main",
+                },
+                "evidence_refs": [
+                    {
+                        "kind": "memory_catalog_entry",
+                        "ref": f"repo:aoa-memo/generated/memory_object_catalog.min.json#{object_id}",
+                        "role": "catalog",
+                    },
+                ],
+                "payload": {
+                    "target_kind": "decision",
+                    "writeback_class": "memo_surviving_event",
+                    "review_state": "confirmed",
+                },
+            }
+            log_path.write_text(json.dumps(receipt, sort_keys=True) + "\n", encoding="utf-8")
+
+            with patch.object(validate_memo, "LIVE_RECEIPT_LOG_PATH", log_path):
+                self.assert_system_exit_quietly(validate_memo.validate_live_receipt_log)
 
     def test_questbook_surface_validates(self) -> None:
         with io.StringIO() as stdout, io.StringIO() as stderr:
