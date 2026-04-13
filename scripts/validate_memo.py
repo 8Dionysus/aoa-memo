@@ -78,6 +78,8 @@ RFC3339_DATETIME = re.compile(
     r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$"
 )
 MARKDOWN_HEADING = re.compile(r"^(#{1,6})\s+(.*\S)\s*$")
+README_CURRENT_RELEASE = re.compile(r"Current release:\s+`v(?P<version>\d+\.\d+\.\d+)`")
+CHANGELOG_RELEASE_HEADING = re.compile(r"^## \[(?P<version>\d+\.\d+\.\d+)\]", re.MULTILINE)
 SYMBOLIC_REF = re.compile(r"^[A-Za-z][A-Za-z0-9_-]*:")
 WINDOWS_ABSOLUTE_PATH = re.compile(r"^[A-Za-z]:[\\\\/]")
 QUEST_ID_PATTERN = re.compile(r"\bAOA-MEM-Q-\d{4}\b")
@@ -1052,6 +1054,37 @@ def validate_registry() -> None:
     ]
     missing = [key for key in required if key not in data]
     errors = [f"missing key: {key}" for key in missing]
+
+    registry_version = data.get("version")
+    readme_release = README_CURRENT_RELEASE.search(load_text(ROOT / "README.md"))
+    changelog_release = CHANGELOG_RELEASE_HEADING.search(load_text(ROOT / "CHANGELOG.md"))
+    roadmap = load_text(ROOT / "ROADMAP.md")
+    if not isinstance(registry_version, str) or not registry_version:
+        errors.append("generated/memo_registry.min.json version must be a non-empty string")
+    if readme_release is None:
+        errors.append("README.md must publish a Current release line")
+    if changelog_release is None:
+        errors.append("CHANGELOG.md must publish at least one numeric release heading")
+    if isinstance(registry_version, str) and readme_release is not None:
+        readme_version = readme_release.group("version")
+        if registry_version != readme_version:
+            errors.append(
+                "generated/memo_registry.min.json version must match README.md current release "
+                f"{readme_version!r}"
+            )
+        if f"`v{registry_version}`" not in roadmap:
+            errors.append(
+                "ROADMAP.md must mention the current memo registry release as "
+                f"`v{registry_version}`"
+            )
+    if isinstance(registry_version, str) and changelog_release is not None:
+        changelog_version = changelog_release.group("version")
+        if registry_version != changelog_version:
+            errors.append(
+                "generated/memo_registry.min.json version must match CHANGELOG.md latest release "
+                f"{changelog_version!r}"
+            )
+
     for key in ("core_docs", "schemas"):
         for index, ref in enumerate(data.get(key, [])):
             error = local_ref_error(ref, f"{key}[{index}]")

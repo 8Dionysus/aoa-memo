@@ -480,6 +480,22 @@ class MemoValidatorTestCase(unittest.TestCase):
         with patch.object(validate_memo, "load_json", side_effect=side_effect):
             self.assert_system_exit_quietly(validate_memo.validate_registry)
 
+    def test_validate_registry_rejects_release_version_drift(self) -> None:
+        registry_path = validate_memo.GENERATED / "memo_registry.min.json"
+        original_load_json = validate_memo.load_json
+        payload = load_json(registry_path)
+        assert isinstance(payload, dict)
+        payload = copy.deepcopy(payload)
+        payload["version"] = "9.9.9-draft"
+
+        def side_effect(path: Path) -> dict:
+            if Path(path) == registry_path:
+                return copy.deepcopy(payload)
+            return original_load_json(path)
+
+        with patch.object(validate_memo, "load_json", side_effect=side_effect):
+            self.assert_system_exit_quietly(validate_memo.validate_registry)
+
     def test_guardrail_validator_handles_non_string_case_ids_without_type_error(self) -> None:
         payload = self.guardrail_payload()
         payload["cases"][0]["case_id"] = []
