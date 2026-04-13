@@ -2008,6 +2008,85 @@ def _validate_guardrail_pilot_cases(
             )
 
 
+def _validate_guardrail_wider_cases(
+    case_by_focus: dict[str, dict[str, object]],
+    errors: list[str],
+) -> None:
+    contradiction_case = case_by_focus.get("contradiction_handling")
+    if isinstance(contradiction_case, dict):
+        refs = _guardrail_case_input_refs(contradiction_case)
+        required_refs = {
+            "docs/LIFECYCLE.md",
+            "examples/claim.current-entrypoint.example.json",
+            "examples/claim.superseded.example.json",
+            "examples/claim.retracted.example.json",
+        }
+        missing_refs = sorted(required_refs - refs)
+        if missing_refs:
+            errors.append(
+                "contradiction_handling guardrail case must reference lifecycle and current/superseded/retracted claims: "
+                + ", ".join(missing_refs)
+            )
+
+    permission_case = case_by_focus.get("permission_leakage")
+    if isinstance(permission_case, dict):
+        refs = _guardrail_case_input_refs(permission_case)
+        required_prefixes = {
+            "docs/AGENT_MEMORY_POSTURE_SEAM.md": "agent memory posture seam",
+            "docs/BOUNDARIES.md": "memo boundary doc",
+            "docs/OPERATIONAL_BOUNDARY.md": "operational boundary doc",
+        }
+        missing_labels = [
+            label
+            for prefix, label in required_prefixes.items()
+            if not any(ref.startswith(prefix) for ref in refs)
+        ]
+        if missing_labels:
+            errors.append(
+                "permission_leakage guardrail case must reference: "
+                + ", ".join(sorted(missing_labels))
+            )
+
+    promotion_case = case_by_focus.get("over_promotion")
+    if isinstance(promotion_case, dict):
+        refs = _guardrail_case_input_refs(promotion_case)
+        required_prefixes = {
+            "docs/WRITEBACK_TEMPERATURE_POLICY.md": "writeback temperature policy",
+            "docs/AGENT_MEMORY_POSTURE_SEAM.md": "agent memory posture seam",
+            "examples/bridge.": "bridge candidate example",
+        }
+        missing_labels = [
+            label
+            for prefix, label in required_prefixes.items()
+            if not any(ref.startswith(prefix) for ref in refs)
+        ]
+        if missing_labels:
+            errors.append(
+                "over_promotion guardrail case must reference: "
+                + ", ".join(sorted(missing_labels))
+            )
+
+    merge_case = case_by_focus.get("hallucinated_merge")
+    if isinstance(merge_case, dict):
+        refs = _guardrail_case_input_refs(merge_case)
+        required_prefixes = {
+            "examples/episode.": "episode example",
+            "examples/claim.": "claim example",
+            "examples/bridge.": "bridge example",
+            "examples/provenance_thread.": "provenance_thread example",
+        }
+        missing_labels = [
+            label
+            for prefix, label in required_prefixes.items()
+            if not any(ref.startswith(prefix) for ref in refs)
+        ]
+        if missing_labels:
+            errors.append(
+                "hallucinated_merge guardrail case must reference: "
+                + ", ".join(sorted(missing_labels))
+            )
+
+
 def validate_memory_eval_guardrail_pack() -> None:
     validator = validator_for("memory_eval_guardrail_pack.schema.json")
     data = load_json(EXAMPLES / "memory_eval_guardrail_pack.example.json")
@@ -2058,6 +2137,7 @@ def validate_memory_eval_guardrail_pack() -> None:
         errors.append("memory_eval_guardrail_pack.example.json is missing required focuses: " + ", ".join(missing_focuses))
 
     _validate_guardrail_pilot_cases(case_by_focus, errors)
+    _validate_guardrail_wider_cases(case_by_focus, errors)
 
     if data.get("handoff_target") != "aoa-evals":
         errors.append("memory_eval_guardrail_pack.example.json must hand off to aoa-evals")

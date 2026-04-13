@@ -459,6 +459,40 @@ class MemoValidatorTestCase(unittest.TestCase):
         payload["cases"][2]["focus"] = "staleness_shadow"
         self.assert_guardrail_payload_fails(payload)
 
+    def test_guardrail_validator_rejects_contradiction_case_without_active_claim(self) -> None:
+        payload = self.guardrail_payload()
+        payload["cases"][3]["input_refs"] = [
+            "examples/claim.superseded.example.json",
+            "examples/claim.retracted.example.json",
+            "docs/LIFECYCLE.md",
+        ]
+        self.assert_guardrail_payload_fails(payload)
+
+    def test_guardrail_validator_rejects_permission_case_without_role_boundary(self) -> None:
+        payload = self.guardrail_payload()
+        payload["cases"][4]["input_refs"] = [
+            "docs/BOUNDARIES.md#aoa-agents",
+            "docs/OPERATIONAL_BOUNDARY.md#consumer-contracts",
+        ]
+        self.assert_guardrail_payload_fails(payload)
+
+    def test_guardrail_validator_rejects_promotion_case_without_bridge_candidate(self) -> None:
+        payload = self.guardrail_payload()
+        payload["cases"][5]["input_refs"] = [
+            "docs/WRITEBACK_TEMPERATURE_POLICY.md",
+            "docs/AGENT_MEMORY_POSTURE_SEAM.md#boundary-rule",
+        ]
+        self.assert_guardrail_payload_fails(payload)
+
+    def test_guardrail_validator_rejects_merge_case_without_provenance_thread(self) -> None:
+        payload = self.guardrail_payload()
+        payload["cases"][6]["input_refs"] = [
+            "examples/episode.tos-interpretation.example.json",
+            "examples/claim.tos-bridge-ready.example.json",
+            "examples/bridge.kag-lift.example.json",
+        ]
+        self.assert_guardrail_payload_fails(payload)
+
     def test_kag_export_validator_rejects_wrong_owner_repo(self) -> None:
         payload = self.kag_export_payload()
         payload["owner_repo"] = "aoa-kag"

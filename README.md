@@ -15,7 +15,7 @@ Use the shortest route by need:
 - antifragility failure-lesson seam: [docs/FAILURE_LESSON_MEMORY.md](docs/FAILURE_LESSON_MEMORY.md), [docs/FAILURE_LESSON_RECALL.md](docs/FAILURE_LESSON_RECALL.md), [docs/DRIFT_REVIEW_LESSON_MEMORY.md](docs/DRIFT_REVIEW_LESSON_MEMORY.md), `schemas/failure_lesson_memory_v1.json`, `examples/failure_lesson_memory.example.json`, `examples/failure_lesson_memory.lineage.example.json`, `examples/failure_lesson_memory.rollout.example.json`, and `examples/failure_lesson_memory.drift_review.example.json`
 - antifragility recovery-pattern seam: [docs/RECOVERY_PATTERN_MEMORY.md](docs/RECOVERY_PATTERN_MEMORY.md), [docs/RECOVERY_PATTERN_RECALL.md](docs/RECOVERY_PATTERN_RECALL.md), [docs/ROLLBACK_FOLLOWTHROUGH_PATTERN.md](docs/ROLLBACK_FOLLOWTHROUGH_PATTERN.md), `schemas/recovery_pattern_memory_v1.json`, `examples/recovery_pattern_memory.example.json`, `examples/recovery_pattern_memory.lineage.example.json`, `examples/recovery_pattern_memory.rollout.example.json`, `examples/recovery_pattern_memory.rollback_followthrough.example.json`, `examples/recovery_pattern_memory.component_refresh.example.json`, and `examples/pattern.antifragility-stress-recovery-window.example.json`
 - writeback, recurrence, and neighboring-layer seams: [docs/WITNESS_TRACE_CONTRACT](docs/WITNESS_TRACE_CONTRACT.md), [docs/WRITEBACK_TEMPERATURE_POLICY](docs/WRITEBACK_TEMPERATURE_POLICY.md), [docs/QUEST_CHRONICLE_WRITEBACK](docs/QUEST_CHRONICLE_WRITEBACK.md), [docs/RUNTIME_WRITEBACK_SEAM](docs/RUNTIME_WRITEBACK_SEAM.md), [docs/GROWTH_REFINERY_WRITEBACK](docs/GROWTH_REFINERY_WRITEBACK.md), [docs/SELF_AGENCY_CONTINUITY_WRITEBACK](docs/SELF_AGENCY_CONTINUITY_WRITEBACK.md), `examples/provenance_thread.self-agency-continuity.example.json`, [docs/RECURRENCE_MEMORY_SUPPORT_SURFACES](docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md), [docs/AGENT_MEMORY_POSTURE_SEAM](docs/AGENT_MEMORY_POSTURE_SEAM.md), and [docs/PLAYBOOK_MEMORY_SCOPES](docs/PLAYBOOK_MEMORY_SCOPES.md)
-- pre-Agon memory readiness for future scars, deltas, retention, and recall pressure: [docs/PRE_AGON_MEMORY_READINESS](docs/PRE_AGON_MEMORY_READINESS.md)
+- memory readiness boundary for future durable-consequence, delta, retention, and recall pressure: [docs/MEMORY_READINESS_BOUNDARY](docs/MEMORY_READINESS_BOUNDARY.md)
 - bridge, export, and guardrail surfaces: [docs/KAG_TOS_BRIDGE_CONTRACT](docs/KAG_TOS_BRIDGE_CONTRACT.md), [docs/KAG_SOURCE_EXPORT](docs/KAG_SOURCE_EXPORT.md), [docs/MEMORY_EVAL_GUARDRAILS](docs/MEMORY_EVAL_GUARDRAILS.md), [docs/OPERATIONAL_BOUNDARY](docs/OPERATIONAL_BOUNDARY.md), and [docs/ROUTING_MEMORY_ADOPTION](docs/ROUTING_MEMORY_ADOPTION.md)
 - current direction: [ROADMAP](ROADMAP.md)
 
@@ -45,7 +45,7 @@ If you are editing inside `schemas/`, `examples/`, `generated/`, or `scripts/`, 
 - recovery-pattern doctrine, adjunct contract, and native pattern surfaces: [docs/RECOVERY_PATTERN_MEMORY](docs/RECOVERY_PATTERN_MEMORY.md), [docs/RECOVERY_PATTERN_RECALL](docs/RECOVERY_PATTERN_RECALL.md), [docs/ROLLBACK_FOLLOWTHROUGH_PATTERN](docs/ROLLBACK_FOLLOWTHROUGH_PATTERN.md), `schemas/recovery_pattern_memory_v1.json`, `examples/recovery_pattern_memory.example.json`, `examples/recovery_pattern_memory.lineage.example.json`, `examples/recovery_pattern_memory.rollout.example.json`, `examples/recovery_pattern_memory.rollback_followthrough.example.json`, `examples/recovery_pattern_memory.component_refresh.example.json`, and `examples/pattern.antifragility-stress-recovery-window.example.json`
 - via negativa pruning checklist: [docs/VIA_NEGATIVA_CHECKLIST](docs/VIA_NEGATIVA_CHECKLIST.md)
 - writeback, intake, runtime support, and landing governance surfaces: `generated/runtime_writeback_targets.min.json`, `generated/runtime_writeback_intake.min.json`, `generated/runtime_writeback_governance.min.json`, [docs/RUNTIME_WRITEBACK_SEAM](docs/RUNTIME_WRITEBACK_SEAM.md), [docs/GROWTH_REFINERY_WRITEBACK](docs/GROWTH_REFINERY_WRITEBACK.md), and [docs/QUEST_CHRONICLE_WRITEBACK](docs/QUEST_CHRONICLE_WRITEBACK.md)
-- pre-Agon memory readiness: [docs/PRE_AGON_MEMORY_READINESS](docs/PRE_AGON_MEMORY_READINESS.md)
+- memory readiness boundary: [docs/MEMORY_READINESS_BOUNDARY](docs/MEMORY_READINESS_BOUNDARY.md)
 - owner-local live receipt publication for closeout/stats integration: `scripts/publish_live_receipts.py` and `.aoa/live_receipts/memo-writeback-receipts.jsonl`
 - bridge, export, and guardrail surfaces: `generated/kag_export.min.json`, [docs/KAG_SOURCE_EXPORT](docs/KAG_SOURCE_EXPORT.md), [docs/KAG_TOS_BRIDGE_CONTRACT](docs/KAG_TOS_BRIDGE_CONTRACT.md), and [docs/MEMORY_EVAL_GUARDRAILS](docs/MEMORY_EVAL_GUARDRAILS.md)
 - schemas and local validation: `schemas/`, `python scripts/validate_memo.py`, `python scripts/validate_memory_surfaces.py`, `python scripts/validate_memory_object_surfaces.py`, `python scripts/validate_lifecycle_audit_examples.py`, and `python -m pytest -q tests`
@@ -131,11 +131,11 @@ Then rerun the read-only validation pass above and inspect `git status -sb` befo
 
 The current downstream guardrail pilot stays intentionally narrow: recall precision, provenance fidelity, and staleness. That keeps the memo layer explicit and reviewable without pretending it is already full proof doctrine.
 
-Pre-Agon readiness now has an owner-local holding map. Future scar, delta,
-retention, and recall pressure should route through existing memo objects first
-and then out to `aoa-evals`, `aoa-kag`, `aoa-routing`, `aoa-agents`, or
-`abyss-stack` when proof, graph lift, navigation, role authority, or runtime
-retention is the real owner concern.
+High-pressure memory readiness now has an owner-local boundary map. Future
+durable-consequence, delta, retention, and recall pressure should route through
+existing memo objects first and then out to `aoa-evals`, `aoa-kag`,
+`aoa-routing`, `aoa-agents`, or `abyss-stack` when proof, graph lift,
+navigation, role authority, or runtime retention is the real owner concern.
 
 Antifragility wave two stays inside that boundary. Failure lessons are bounded
 memory context for later recall and operator posture, not a new proof family

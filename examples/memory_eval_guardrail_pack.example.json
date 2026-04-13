@@ -80,6 +80,7 @@
       "focus": "contradiction_handling",
       "risk": "Superseded or retracted memory is silently merged with active memory instead of being surfaced honestly.",
       "input_refs": [
+        "examples/claim.current-entrypoint.example.json",
         "examples/claim.superseded.example.json",
         "examples/claim.retracted.example.json",
         "docs/LIFECYCLE.md"

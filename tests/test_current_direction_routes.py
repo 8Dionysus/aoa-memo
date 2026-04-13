@@ -18,8 +18,8 @@ class CurrentDirectionRoutesTestCase(unittest.TestCase):
         self.assertIn("ROADMAP.md", readme)
         self.assertIn("ROADMAP.md", agents)
 
-    def test_pre_agon_memory_readiness_is_routed(self) -> None:
-        doc_ref = "docs/PRE_AGON_MEMORY_READINESS.md"
+    def test_memory_readiness_boundary_is_routed(self) -> None:
+        doc_ref = "docs/MEMORY_READINESS_BOUNDARY.md"
         readme = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
         roadmap = (REPO_ROOT / "ROADMAP.md").read_text(encoding="utf-8")
         agents = (REPO_ROOT / "AGENTS.md").read_text(encoding="utf-8")
@@ -34,7 +34,7 @@ class CurrentDirectionRoutesTestCase(unittest.TestCase):
         self.assertIn(doc_ref, registry["core_docs"])
 
         for phrase in (
-            "not a live Agon memory ledger",
+            "not a live memory ledger",
             "scar",
             "retention",
             "memory is not proof",
