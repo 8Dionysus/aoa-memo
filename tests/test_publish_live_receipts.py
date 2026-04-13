@@ -18,6 +18,32 @@ ADOPTED_RECALL_REF = (
     "repo:aoa-memo/generated/memory_object_catalog.min.json#"
     "memo.decision.2026-04-02.alpha-validation-remediation-rerun"
 )
+REVIEWED_CANDIDATE_CASES = {
+    "distillation_claim_candidate": {
+        "object_id": "memo.claim.2026-04-03.phase-alpha-runtime-history-later-infra-track",
+        "source_path": "examples/claim.phase-alpha-runtime-history-later-infra-track.example.json",
+        "target_kind": "claim",
+        "review_state": "confirmed",
+        "writeback_anchor_ref": "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation.md",
+        "candidate_seed_ref": "repo:abyss-stack/Logs/phase-alpha/alpha-04-long-horizon-model-tier-orchestra/distillation_pack.md",
+    },
+    "distillation_pattern_candidate": {
+        "object_id": "memo.pattern.2026-04-02.alpha-remediation-recurrence",
+        "source_path": "examples/pattern.phase-alpha-remediation-recurrence.example.json",
+        "target_kind": "pattern",
+        "review_state": "confirmed",
+        "writeback_anchor_ref": "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md",
+        "candidate_seed_ref": "repo:abyss-stack/Logs/phase-alpha/alpha-04-long-horizon-model-tier-orchestra/distillation_pack.md",
+    },
+    "distillation_bridge_candidate": {
+        "object_id": "memo.bridge.2026-03-23.tos-lineage-kag-candidate",
+        "source_path": "examples/bridge.kag-lift.example.json",
+        "target_kind": "bridge",
+        "review_state": "proposed",
+        "writeback_anchor_ref": "repo:aoa-memo/docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow",
+        "candidate_seed_ref": "repo:aoa-memo/examples/claim.tos-bridge-ready.example.json",
+    },
+}
 
 
 def load_module():
@@ -58,6 +84,55 @@ def build_receipt(event_kind: str = "memo_writeback_receipt") -> dict:
             "target_kind": "decision",
             "writeback_class": "memo_surviving_event",
             "review_state": "confirmed",
+        },
+    }
+
+
+def build_reviewed_candidate_receipt(runtime_surface: str) -> dict:
+    case = REVIEWED_CANDIDATE_CASES[runtime_surface]
+    object_id = case["object_id"]
+    return {
+        "event_kind": "memo_writeback_receipt",
+        "event_id": f"evt-{runtime_surface}",
+        "observed_at": "2026-04-13T21:05:00Z",
+        "run_ref": "run-memo-reviewed-candidate-adoption-2026-04-13",
+        "session_ref": "session:2026-04-13-reviewed-candidate-adoption",
+        "actor_ref": "aoa-memo:runtime-writeback",
+        "object_ref": {
+            "repo": "aoa-memo",
+            "kind": "memory_object",
+            "id": object_id,
+            "version": "main",
+        },
+        "evidence_refs": [
+            {
+                "kind": "memory_object",
+                "ref": f"repo:aoa-memo/{case['source_path']}",
+                "role": "primary",
+            },
+            {
+                "kind": "memory_catalog_entry",
+                "ref": f"repo:aoa-memo/generated/memory_object_catalog.min.json#{object_id}",
+                "role": "catalog",
+            },
+            {
+                "kind": "candidate_seed",
+                "ref": case["candidate_seed_ref"],
+                "role": "candidate-seed",
+            },
+            {
+                "kind": "review_anchor",
+                "ref": case["writeback_anchor_ref"],
+                "role": "writeback-anchor",
+            },
+        ],
+        "payload": {
+            "memory_object_ref": case["source_path"],
+            "runtime_surface": runtime_surface,
+            "review_state": case["review_state"],
+            "target_kind": case["target_kind"],
+            "writeback_anchor_ref": case["writeback_anchor_ref"],
+            "writeback_class": "reviewed_candidate",
         },
     }
 
@@ -144,6 +219,34 @@ class MemoPublishLiveReceiptsTests(unittest.TestCase):
 
         self.assertIn("target_kind: must match adopted memory object kind", str(ctx.exception))
 
+    def test_publish_live_receipts_requires_runtime_surface_for_reviewed_candidate(self) -> None:
+        module = load_module()
+        with tempfile.TemporaryDirectory() as temp_dir:
+            tmp_path = Path(temp_dir)
+            input_path = tmp_path / "receipt.json"
+            receipt = build_reviewed_candidate_receipt("distillation_claim_candidate")
+            receipt["payload"].pop("runtime_surface")
+            input_path.write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8")
+
+            with self.assertRaises(module.ReceiptPublishError) as ctx:
+                module.load_receipts([input_path])
+
+        self.assertIn("reviewed_candidate receipts must include a non-empty runtime_surface", str(ctx.exception))
+
+    def test_publish_live_receipts_requires_writeback_anchor_ref_in_evidence_for_reviewed_candidate(self) -> None:
+        module = load_module()
+        with tempfile.TemporaryDirectory() as temp_dir:
+            tmp_path = Path(temp_dir)
+            input_path = tmp_path / "receipt.json"
+            receipt = build_reviewed_candidate_receipt("distillation_bridge_candidate")
+            receipt["evidence_refs"] = receipt["evidence_refs"][:-1]
+            input_path.write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8")
+
+            with self.assertRaises(module.ReceiptPublishError) as ctx:
+                module.load_receipts([input_path])
+
+        self.assertIn("reviewed_candidate receipts must include writeback anchor ref", str(ctx.exception))
+
     def test_publish_live_receipts_preserves_jsonl_line_boundaries(self) -> None:
         module = load_module()
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -182,6 +285,7 @@ class MemoPublishLiveReceiptsTests(unittest.TestCase):
         }
 
         event_ids: set[str] = set()
+        reviewed_candidate_target_kinds: set[str] = set()
         for receipt in receipts:
             event_id = receipt["event_id"]
             object_id = receipt["object_ref"]["id"]
@@ -198,6 +302,14 @@ class MemoPublishLiveReceiptsTests(unittest.TestCase):
             self.assertTrue(sections_by_id[object_id]["sections"])
             if "memory_object_ref" in receipt["payload"]:
                 self.assertEqual(receipt["payload"]["memory_object_ref"], catalog_entry["source_path"])
+            if receipt["payload"]["writeback_class"] == "reviewed_candidate":
+                reviewed_candidate_target_kinds.add(receipt["payload"]["target_kind"])
+                self.assertIn("runtime_surface", receipt["payload"])
+                self.assertIn(
+                    receipt["payload"]["writeback_anchor_ref"],
+                    {ref["ref"] for ref in receipt["evidence_refs"]},
+                )
+        self.assertEqual(reviewed_candidate_target_kinds, {"claim", "pattern", "bridge"})
 
 
 if __name__ == "__main__":
