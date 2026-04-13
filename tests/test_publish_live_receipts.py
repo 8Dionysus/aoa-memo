@@ -9,7 +9,7 @@ import unittest
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 MODULE_PATH = REPO_ROOT / "scripts" / "publish_live_receipts.py"
-LIVE_RECEIPT_LOG_PATH = REPO_ROOT / ".aoa" / "live_receipts" / "memo-writeback-receipts.jsonl"
+RECEIPT_FIXTURE_PATH = REPO_ROOT / "tests" / "fixtures" / "memo_writeback_receipts.example.jsonl"
 MEMORY_OBJECT_CATALOG_PATH = REPO_ROOT / "generated" / "memory_object_catalog.min.json"
 MEMORY_OBJECT_CAPSULES_PATH = REPO_ROOT / "generated" / "memory_object_capsules.json"
 MEMORY_OBJECT_SECTIONS_PATH = REPO_ROOT / "generated" / "memory_object_sections.full.json"
@@ -166,9 +166,9 @@ class MemoPublishLiveReceiptsTests(unittest.TestCase):
             self.assertEqual(json.loads(lines[0])["event_id"], "evt-memo-existing")
             self.assertEqual(json.loads(lines[1])["event_id"], "evt-memo-001")
 
-    def test_checked_in_live_receipts_resolve_to_recall_surface_family(self) -> None:
+    def test_tracked_receipt_fixture_resolves_to_recall_surface_family(self) -> None:
         module = load_module()
-        receipts = module.load_receipts([LIVE_RECEIPT_LOG_PATH])
+        receipts = module.load_receipts([RECEIPT_FIXTURE_PATH])
         self.assertTrue(receipts)
 
         catalog_by_id = module.load_memory_object_catalog(MEMORY_OBJECT_CATALOG_PATH)
