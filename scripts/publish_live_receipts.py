@@ -10,6 +10,7 @@ from typing import Any
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_LOG_PATH = REPO_ROOT / ".aoa" / "live_receipts" / "memo-writeback-receipts.jsonl"
 MEMORY_OBJECT_CATALOG_PATH = REPO_ROOT / "generated" / "memory_object_catalog.min.json"
+RUNTIME_WRITEBACK_TARGETS_PATH = REPO_ROOT / "generated" / "runtime_writeback_targets.min.json"
 RECALL_SURFACE_PREFIX = "repo:aoa-memo/generated/memory_object_catalog.min.json#"
 ALLOWED_EVENT_KINDS = {"memo_writeback_receipt"}
 
@@ -59,11 +60,32 @@ def load_memory_object_catalog(path: Path) -> dict[str, dict[str, Any]]:
     return by_id
 
 
+def load_runtime_writeback_targets(path: Path) -> dict[str, dict[str, Any]]:
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(payload, dict):
+        raise ReceiptPublishError(f"{path}: runtime writeback targets must be an object")
+    items = payload.get("targets")
+    if not isinstance(items, list):
+        raise ReceiptPublishError(f"{path}: runtime writeback targets must expose targets")
+    by_surface: dict[str, dict[str, Any]] = {}
+    for index, item in enumerate(items):
+        if not isinstance(item, dict):
+            raise ReceiptPublishError(f"{path}.targets[{index}]: must be an object")
+        runtime_surface = item.get("runtime_surface")
+        if not isinstance(runtime_surface, str) or not runtime_surface:
+            raise ReceiptPublishError(
+                f"{path}.targets[{index}].runtime_surface: must be a non-empty string"
+            )
+        by_surface[runtime_surface] = item
+    return by_surface
+
+
 def validate_receipt(
     receipt: dict[str, Any],
     *,
     location: str,
     memory_objects_by_id: dict[str, dict[str, Any]],
+    runtime_targets_by_surface: dict[str, dict[str, Any]],
 ) -> None:
     required_fields = (
         "event_kind",
@@ -121,6 +143,15 @@ def validate_receipt(
     for field in ("target_kind", "writeback_class", "review_state"):
         if not isinstance(payload.get(field), str) or not payload[field]:
             raise ReceiptPublishError(f"{location}.payload.{field}: must be a non-empty string")
+    memory_object_ref = payload.get("memory_object_ref")
+    if memory_object_ref is not None:
+        if not isinstance(memory_object_ref, str) or not memory_object_ref:
+            raise ReceiptPublishError(f"{location}.payload.memory_object_ref: must be a non-empty string")
+        if memory_object_ref != catalog_entry.get("source_path"):
+            raise ReceiptPublishError(
+                f"{location}.payload.memory_object_ref: must match adopted memory object source_path "
+                f"{catalog_entry.get('source_path')!r}"
+            )
     if payload["target_kind"] != catalog_entry.get("kind"):
         raise ReceiptPublishError(
             f"{location}.payload.target_kind: must match adopted memory object kind "
@@ -131,15 +162,51 @@ def validate_receipt(
             f"{location}.payload.review_state: must match adopted memory object review_state "
             f"{catalog_entry.get('review_state')!r}"
         )
+    if payload["writeback_class"] == "reviewed_candidate":
+        runtime_surface = payload.get("runtime_surface")
+        if not isinstance(runtime_surface, str) or not runtime_surface:
+            raise ReceiptPublishError(
+                f"{location}.payload.runtime_surface: reviewed_candidate receipts must include a non-empty runtime_surface"
+            )
+        runtime_target = runtime_targets_by_surface.get(runtime_surface)
+        if runtime_target is None:
+            raise ReceiptPublishError(
+                f"{location}.payload.runtime_surface: unknown runtime writeback surface {runtime_surface!r}"
+            )
+        if runtime_target.get("writeback_class") != "reviewed_candidate":
+            raise ReceiptPublishError(
+                f"{location}.payload.runtime_surface: {runtime_surface!r} must resolve to a reviewed_candidate mapping"
+            )
+        if runtime_target.get("target_kind") != payload["target_kind"]:
+            raise ReceiptPublishError(
+                f"{location}.payload.runtime_surface: {runtime_surface!r} must resolve to target_kind "
+                f"{payload['target_kind']!r}"
+            )
+        writeback_anchor_ref = payload.get("writeback_anchor_ref")
+        if not isinstance(writeback_anchor_ref, str) or not writeback_anchor_ref:
+            raise ReceiptPublishError(
+                f"{location}.payload.writeback_anchor_ref: reviewed_candidate receipts must include a non-empty writeback_anchor_ref"
+            )
+        if writeback_anchor_ref not in evidence_ref_values:
+            raise ReceiptPublishError(
+                f"{location}.evidence_refs: reviewed_candidate receipts must include writeback anchor ref {writeback_anchor_ref!r}"
+            )
+        if memory_object_ref is None:
+            raise ReceiptPublishError(
+                f"{location}.payload.memory_object_ref: reviewed_candidate receipts must include adopted memory object source_path"
+            )
 
 
 def load_receipts(
     paths: list[Path],
     *,
     memory_objects_by_id: dict[str, dict[str, Any]] | None = None,
+    runtime_targets_by_surface: dict[str, dict[str, Any]] | None = None,
 ) -> list[dict[str, Any]]:
     if memory_objects_by_id is None:
         memory_objects_by_id = load_memory_object_catalog(MEMORY_OBJECT_CATALOG_PATH)
+    if runtime_targets_by_surface is None:
+        runtime_targets_by_surface = load_runtime_writeback_targets(RUNTIME_WRITEBACK_TARGETS_PATH)
     receipts: list[dict[str, Any]] = []
     for path in paths:
         if path.suffix == ".jsonl":
@@ -154,12 +221,18 @@ def load_receipts(
                     item,
                     location=f"{path}:{line_number}",
                     memory_objects_by_id=memory_objects_by_id,
+                    runtime_targets_by_surface=runtime_targets_by_surface,
                 )
                 receipts.append(item)
             continue
         payload = json.loads(path.read_text(encoding="utf-8"))
         if isinstance(payload, dict):
-            validate_receipt(payload, location=str(path), memory_objects_by_id=memory_objects_by_id)
+            validate_receipt(
+                payload,
+                location=str(path),
+                memory_objects_by_id=memory_objects_by_id,
+                runtime_targets_by_surface=runtime_targets_by_surface,
+            )
             receipts.append(payload)
             continue
         if not isinstance(payload, list):
@@ -167,7 +240,12 @@ def load_receipts(
         for index, item in enumerate(payload):
             if not isinstance(item, dict):
                 raise ReceiptPublishError(f"{path}[{index}]: receipt must be an object")
-            validate_receipt(item, location=f"{path}[{index}]", memory_objects_by_id=memory_objects_by_id)
+            validate_receipt(
+                item,
+                location=f"{path}[{index}]",
+                memory_objects_by_id=memory_objects_by_id,
+                runtime_targets_by_surface=runtime_targets_by_surface,
+            )
             receipts.append(item)
     return receipts
 
@@ -222,7 +300,12 @@ def main(argv: list[str] | None = None) -> int:
     log_path = Path(args.log_path).expanduser().resolve()
     catalog_path = Path(args.catalog_path).expanduser().resolve()
     memory_objects_by_id = load_memory_object_catalog(catalog_path)
-    receipts = load_receipts(input_paths, memory_objects_by_id=memory_objects_by_id)
+    runtime_targets_by_surface = load_runtime_writeback_targets(RUNTIME_WRITEBACK_TARGETS_PATH)
+    receipts = load_receipts(
+        input_paths,
+        memory_objects_by_id=memory_objects_by_id,
+        runtime_targets_by_surface=runtime_targets_by_surface,
+    )
     appended, skipped = append_new_receipts(log_path=log_path, receipts=receipts)
     print(f"[ok] appended {appended} memo receipts to {log_path}")
     print(f"[skip] duplicate event ids skipped: {skipped}")

@@ -41,6 +41,7 @@ RUNTIME_WRITEBACK_TARGETS_PATH = GENERATED / "runtime_writeback_targets.min.json
 RUNTIME_WRITEBACK_INTAKE_PATH = GENERATED / "runtime_writeback_intake.min.json"
 RUNTIME_WRITEBACK_GOVERNANCE_PATH = GENERATED / "runtime_writeback_governance.min.json"
 LIVE_RECEIPT_LOG_PATH = ROOT / ".aoa" / "live_receipts" / "memo-writeback-receipts.jsonl"
+RECALL_SURFACE_PREFIX = "repo:aoa-memo/generated/memory_object_catalog.min.json#"
 PHASE_ALPHA_WRITEBACK_MAP_PATH = EXAMPLES / "phase_alpha_writeback_map.example.json"
 PHASE_ALPHA_WRITEBACK_OUTPUT_PATH = GENERATED / "phase_alpha_writeback_map.min.json"
 QUESTBOOK_PATH = ROOT / "QUESTBOOK.md"
@@ -1714,10 +1715,16 @@ def validate_live_receipt_log() -> None:
         return
 
     catalog = load_json(GENERATED / "memory_object_catalog.min.json")
+    runtime_targets = load_json(RUNTIME_WRITEBACK_TARGETS_PATH)
     catalog_entries_by_id = {
         item["id"]: item
         for item in catalog.get("memory_objects", [])
         if isinstance(item, dict) and isinstance(item.get("id"), str)
+    }
+    runtime_targets_by_surface = {
+        item["runtime_surface"]: item
+        for item in runtime_targets.get("targets", [])
+        if isinstance(item, dict) and isinstance(item.get("runtime_surface"), str)
     }
     catalog_ids = set(catalog_entries_by_id)
     errors: list[str] = []
@@ -1793,11 +1800,57 @@ def validate_live_receipt_log() -> None:
                         f"{payload.get('review_state')!r} must match catalog review_state "
                         f"{catalog_entry.get('review_state')!r}"
                     )
+                memory_object_ref = payload.get("memory_object_ref")
+                if memory_object_ref is not None:
+                    if not isinstance(memory_object_ref, str) or not memory_object_ref:
+                        errors.append(
+                            f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: payload.memory_object_ref must be a non-empty string"
+                        )
+                    elif memory_object_ref != catalog_entry.get("source_path"):
+                        errors.append(
+                            f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: payload.memory_object_ref "
+                            f"{memory_object_ref!r} must match catalog source_path "
+                            f"{catalog_entry.get('source_path')!r}"
+                        )
+                if payload.get("writeback_class") == "reviewed_candidate":
+                    runtime_surface = payload.get("runtime_surface")
+                    if not isinstance(runtime_surface, str) or not runtime_surface:
+                        errors.append(
+                            f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: reviewed_candidate receipts must include payload.runtime_surface"
+                        )
+                    else:
+                        runtime_target = runtime_targets_by_surface.get(runtime_surface)
+                        if runtime_target is None:
+                            errors.append(
+                                f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: payload.runtime_surface "
+                                f"{runtime_surface!r} is absent from generated/runtime_writeback_targets.min.json"
+                            )
+                        else:
+                            if runtime_target.get("writeback_class") != "reviewed_candidate":
+                                errors.append(
+                                    f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: payload.runtime_surface "
+                                    f"{runtime_surface!r} must resolve to a reviewed_candidate mapping"
+                                )
+                            if runtime_target.get("target_kind") != catalog_entry.get("kind"):
+                                errors.append(
+                                    f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: payload.runtime_surface "
+                                    f"{runtime_surface!r} must resolve to catalog kind {catalog_entry.get('kind')!r}"
+                                )
+                    writeback_anchor_ref = payload.get("writeback_anchor_ref")
+                    if not isinstance(writeback_anchor_ref, str) or not writeback_anchor_ref:
+                        errors.append(
+                            f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: reviewed_candidate receipts must include payload.writeback_anchor_ref"
+                        )
+                    if memory_object_ref is None:
+                        errors.append(
+                            f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: reviewed_candidate receipts must include payload.memory_object_ref"
+                        )
 
         evidence_refs = receipt.get("evidence_refs")
         if not isinstance(evidence_refs, list):
             errors.append(f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: evidence_refs must be a list")
             continue
+        evidence_ref_values: list[str] = []
         for evidence_index, evidence in enumerate(evidence_refs):
             if not isinstance(evidence, dict):
                 errors.append(
@@ -1810,6 +1863,7 @@ def validate_live_receipt_log() -> None:
                     f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: evidence_refs[{evidence_index}].ref must be a non-empty string"
                 )
                 continue
+            evidence_ref_values.append(ref)
             if not ref.startswith("repo:aoa-memo/"):
                 continue
             path_text, _, anchor = ref.removeprefix("repo:aoa-memo/").partition("#")
@@ -1834,6 +1888,23 @@ def validate_live_receipt_log() -> None:
                         f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: catalog evidence id {anchor!r} "
                         f"must match object_ref.id {object_id!r}"
                     )
+        if isinstance(object_id, str) and object_id in catalog_ids:
+            expected_recall_ref = f"{RECALL_SURFACE_PREFIX}{object_id}"
+            if expected_recall_ref not in evidence_ref_values:
+                errors.append(
+                    f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: evidence_refs must include adopted recall surface ref "
+                    f"{expected_recall_ref!r}"
+                )
+            if (
+                isinstance(payload, dict)
+                and payload.get("writeback_class") == "reviewed_candidate"
+                and isinstance(payload.get("writeback_anchor_ref"), str)
+                and payload["writeback_anchor_ref"] not in evidence_ref_values
+            ):
+                errors.append(
+                    f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: reviewed_candidate receipts must include writeback anchor ref "
+                    f"{payload['writeback_anchor_ref']!r} in evidence_refs"
+                )
 
     if errors:
         print("[FAIL] live receipt log")

@@ -348,6 +348,7 @@ class MemoValidatorTestCase(unittest.TestCase):
                     },
                 ],
                 "payload": {
+                    "memory_object_ref": "examples/claim.example.json",
                     "target_kind": "claim",
                     "writeback_class": "memo_surviving_event",
                     "review_state": "confirmed",
@@ -385,9 +386,112 @@ class MemoValidatorTestCase(unittest.TestCase):
                     },
                 ],
                 "payload": {
+                    "memory_object_ref": "examples/claim.example.json",
                     "target_kind": "decision",
                     "writeback_class": "memo_surviving_event",
                     "review_state": "confirmed",
+                },
+            }
+            log_path.write_text(json.dumps(receipt, sort_keys=True) + "\n", encoding="utf-8")
+
+            with patch.object(validate_memo, "LIVE_RECEIPT_LOG_PATH", log_path):
+                self.assert_system_exit_quietly(validate_memo.validate_live_receipt_log)
+
+    def test_live_receipt_log_accepts_reviewed_candidate_receipt(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            log_path = Path(tmpdir) / "memo-writeback-receipts.jsonl"
+            object_id = "memo.bridge.2026-03-23.tos-lineage-kag-candidate"
+            receipt = {
+                "event_kind": "memo_writeback_receipt",
+                "event_id": "evt-memo-reviewed-bridge",
+                "observed_at": "2026-04-13T22:00:00Z",
+                "run_ref": "run-memo-reviewed-bridge",
+                "session_ref": "session:memo-reviewed-bridge",
+                "actor_ref": "aoa-memo:runtime-writeback",
+                "object_ref": {
+                    "repo": "aoa-memo",
+                    "kind": "memory_object",
+                    "id": object_id,
+                    "version": "main",
+                },
+                "evidence_refs": [
+                    {
+                        "kind": "memory_object",
+                        "ref": "repo:aoa-memo/examples/bridge.kag-lift.example.json",
+                        "role": "primary",
+                    },
+                    {
+                        "kind": "memory_catalog_entry",
+                        "ref": f"repo:aoa-memo/generated/memory_object_catalog.min.json#{object_id}",
+                        "role": "catalog",
+                    },
+                    {
+                        "kind": "candidate_seed",
+                        "ref": "repo:aoa-memo/examples/claim.tos-bridge-ready.example.json",
+                        "role": "candidate-seed",
+                    },
+                    {
+                        "kind": "review_anchor",
+                        "ref": "repo:aoa-memo/docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow",
+                        "role": "writeback-anchor",
+                    },
+                ],
+                "payload": {
+                    "memory_object_ref": "examples/bridge.kag-lift.example.json",
+                    "runtime_surface": "distillation_bridge_candidate",
+                    "target_kind": "bridge",
+                    "writeback_class": "reviewed_candidate",
+                    "review_state": "proposed",
+                    "writeback_anchor_ref": "repo:aoa-memo/docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow",
+                },
+            }
+            log_path.write_text(json.dumps(receipt, sort_keys=True) + "\n", encoding="utf-8")
+
+            with patch.object(validate_memo, "LIVE_RECEIPT_LOG_PATH", log_path):
+                with io.StringIO() as stdout, io.StringIO() as stderr:
+                    with redirect_stdout(stdout), redirect_stderr(stderr):
+                        validate_memo.validate_live_receipt_log()
+
+    def test_live_receipt_log_rejects_reviewed_candidate_without_runtime_surface(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            log_path = Path(tmpdir) / "memo-writeback-receipts.jsonl"
+            object_id = "memo.pattern.2026-04-02.alpha-remediation-recurrence"
+            receipt = {
+                "event_kind": "memo_writeback_receipt",
+                "event_id": "evt-memo-reviewed-pattern-missing-runtime-surface",
+                "observed_at": "2026-04-13T22:00:00Z",
+                "run_ref": "run-memo-reviewed-pattern-missing-runtime-surface",
+                "session_ref": "session:memo-reviewed-pattern-missing-runtime-surface",
+                "actor_ref": "aoa-memo:runtime-writeback",
+                "object_ref": {
+                    "repo": "aoa-memo",
+                    "kind": "memory_object",
+                    "id": object_id,
+                    "version": "main",
+                },
+                "evidence_refs": [
+                    {
+                        "kind": "memory_object",
+                        "ref": "repo:aoa-memo/examples/pattern.phase-alpha-remediation-recurrence.example.json",
+                        "role": "primary",
+                    },
+                    {
+                        "kind": "memory_catalog_entry",
+                        "ref": f"repo:aoa-memo/generated/memory_object_catalog.min.json#{object_id}",
+                        "role": "catalog",
+                    },
+                    {
+                        "kind": "review_anchor",
+                        "ref": "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md",
+                        "role": "writeback-anchor",
+                    },
+                ],
+                "payload": {
+                    "memory_object_ref": "examples/pattern.phase-alpha-remediation-recurrence.example.json",
+                    "target_kind": "pattern",
+                    "writeback_class": "reviewed_candidate",
+                    "review_state": "confirmed",
+                    "writeback_anchor_ref": "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md",
                 },
             }
             log_path.write_text(json.dumps(receipt, sort_keys=True) + "\n", encoding="utf-8")
