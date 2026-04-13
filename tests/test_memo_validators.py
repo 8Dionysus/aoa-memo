@@ -4,6 +4,7 @@ import copy
 import io
 import json
 import sys
+import tempfile
 import unittest
 from contextlib import redirect_stderr, redirect_stdout
 from pathlib import Path
@@ -282,6 +283,80 @@ class MemoValidatorTestCase(unittest.TestCase):
 
         with patch.object(validate_memo, "load_json", side_effect=side_effect):
             self.assert_system_exit_quietly(validate_memo.validate_runtime_writeback_intake)
+
+    def test_live_receipt_log_rejects_uncataloged_object_ref(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            log_path = Path(tmpdir) / "memo-writeback-receipts.jsonl"
+            receipt = {
+                "event_kind": "memo_writeback_receipt",
+                "event_id": "evt-memo-missing-object",
+                "observed_at": "2026-04-13T19:00:00Z",
+                "run_ref": "run-memo-missing-object",
+                "session_ref": "session:memo-missing-object",
+                "actor_ref": "aoa-memo:runtime-writeback",
+                "object_ref": {
+                    "repo": "aoa-memo",
+                    "kind": "memory_object",
+                    "id": "memo.decision.2099-01-01.missing",
+                    "version": "main",
+                },
+                "evidence_refs": [
+                    {
+                        "kind": "memory_catalog_entry",
+                        "ref": "repo:aoa-memo/generated/memory_object_catalog.min.json#memo.decision.2099-01-01.missing",
+                        "role": "catalog",
+                    }
+                ],
+                "payload": {
+                    "target_kind": "decision",
+                    "writeback_class": "memo_surviving_event",
+                },
+            }
+            log_path.write_text(json.dumps(receipt, sort_keys=True) + "\n", encoding="utf-8")
+
+            with patch.object(validate_memo, "LIVE_RECEIPT_LOG_PATH", log_path):
+                self.assert_system_exit_quietly(validate_memo.validate_live_receipt_log)
+
+    def test_live_receipt_log_accepts_cataloged_object_ref(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            log_path = Path(tmpdir) / "memo-writeback-receipts.jsonl"
+            object_id = "memo.claim.2026-03-20.temperature-not-truth"
+            receipt = {
+                "event_kind": "memo_writeback_receipt",
+                "event_id": "evt-memo-cataloged-object",
+                "observed_at": "2026-04-13T19:00:00Z",
+                "run_ref": "run-memo-cataloged-object",
+                "session_ref": "session:memo-cataloged-object",
+                "actor_ref": "aoa-memo:runtime-writeback",
+                "object_ref": {
+                    "repo": "aoa-memo",
+                    "kind": "memory_object",
+                    "id": object_id,
+                    "version": "main",
+                },
+                "evidence_refs": [
+                    {
+                        "kind": "memory_object",
+                        "ref": "repo:aoa-memo/examples/claim.example.json",
+                        "role": "primary",
+                    },
+                    {
+                        "kind": "memory_catalog_entry",
+                        "ref": f"repo:aoa-memo/generated/memory_object_catalog.min.json#{object_id}",
+                        "role": "catalog",
+                    },
+                ],
+                "payload": {
+                    "target_kind": "claim",
+                    "writeback_class": "memo_surviving_event",
+                },
+            }
+            log_path.write_text(json.dumps(receipt, sort_keys=True) + "\n", encoding="utf-8")
+
+            with patch.object(validate_memo, "LIVE_RECEIPT_LOG_PATH", log_path):
+                with io.StringIO() as stdout, io.StringIO() as stderr:
+                    with redirect_stdout(stdout), redirect_stderr(stderr):
+                        validate_memo.validate_live_receipt_log()
 
     def test_questbook_surface_validates(self) -> None:
         with io.StringIO() as stdout, io.StringIO() as stderr:

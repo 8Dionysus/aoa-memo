@@ -744,6 +744,40 @@
       ]
     },
     {
+      "id": "memo.audit.2026-04-02.alpha-validation-remediation",
+      "kind": "audit_event",
+      "title": "Alpha Route 3 kept doctrinal remediation review-visible",
+      "summary": "Captures the live remediation event in which failure scope, document boundary, and post-sync runtime closure all remained explicit while stale pilot and benchmark wording was removed.",
+      "scope_classes": [
+        "repo",
+        "project"
+      ],
+      "temperature": "cool",
+      "review_state": "confirmed",
+      "current_recall_status": "allowed",
+      "authority_kind": "human_reviewed",
+      "primary_recall_modes": [
+        "episodic",
+        "source_route"
+      ],
+      "source_path": "examples/audit_event.phase-alpha-validation-remediation.example.json",
+      "inspect_key": "memo.audit.2026-04-02.alpha-validation-remediation",
+      "expand_key": "memo.audit.2026-04-02.alpha-validation-remediation",
+      "scope": [
+        "repo:aoa-playbooks",
+        "project:AoA"
+      ],
+      "provenance_thread_id": "prov.phase-alpha.curated.2026-04-02",
+      "related_object_ids": [
+        "memo.ep.2026-04-02.alpha-validation-remediation"
+      ],
+      "strongest_next_sources": [
+        "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation.md",
+        "repo:abyss-stack/Logs/phase-alpha/alpha-03-validation-driven-remediation/boundary_map.json",
+        "repo:abyss-stack/Logs/phase-alpha/alpha-03-validation-driven-remediation/revalidation_pack.json"
+      ]
+    },
+    {
       "id": "memo.ep.2026-04-02.alpha-validation-remediation-rerun",
       "kind": "episode",
       "title": "Memo-only rerun of Alpha remediation closed recurrence",
@@ -774,6 +808,73 @@
       "strongest_next_sources": [
         "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md",
         "repo:aoa-memo/examples/recall_contract.object.working.phase-alpha.json",
+        "repo:abyss-stack/Logs/phase-alpha/alpha-06-validation-driven-remediation-recall-rerun/revalidation_pack.json"
+      ]
+    },
+    {
+      "id": "memo.decision.2026-04-02.alpha-validation-remediation-rerun",
+      "kind": "decision",
+      "title": "Decision to close remediation recurrence under memo-only recall",
+      "summary": "Records the bounded choice to accept the rerun as sufficient proof of remediation recurrence because it stayed inspect-capsule-expand and required no stronger source escalation.",
+      "scope_classes": [
+        "repo",
+        "project"
+      ],
+      "temperature": "warm",
+      "review_state": "confirmed",
+      "current_recall_status": "preferred",
+      "authority_kind": "human_reviewed",
+      "primary_recall_modes": [
+        "working",
+        "semantic",
+        "source_route"
+      ],
+      "source_path": "examples/decision.phase-alpha-validation-remediation-rerun.example.json",
+      "inspect_key": "memo.decision.2026-04-02.alpha-validation-remediation-rerun",
+      "expand_key": "memo.decision.2026-04-02.alpha-validation-remediation-rerun",
+      "scope": [
+        "repo:aoa-playbooks",
+        "project:AoA"
+      ],
+      "provenance_thread_id": "prov.phase-alpha.curated.2026-04-02",
+      "related_object_ids": [
+        "memo.ep.2026-04-02.alpha-validation-remediation-rerun"
+      ],
+      "strongest_next_sources": [
+        "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md",
+        "repo:abyss-stack/Logs/phase-alpha/alpha-06-validation-driven-remediation-recall-rerun/remediation_decision.json"
+      ]
+    },
+    {
+      "id": "memo.audit.2026-04-02.alpha-validation-remediation-rerun",
+      "kind": "audit_event",
+      "title": "Alpha rerun stayed memo-only and escalation-free",
+      "summary": "Captures the live rerun event in which memo-only recall, return anchors, and revalidation all stayed explicit without stronger source escalation.",
+      "scope_classes": [
+        "repo",
+        "project"
+      ],
+      "temperature": "cool",
+      "review_state": "confirmed",
+      "current_recall_status": "allowed",
+      "authority_kind": "human_reviewed",
+      "primary_recall_modes": [
+        "episodic",
+        "source_route"
+      ],
+      "source_path": "examples/audit_event.phase-alpha-validation-remediation-rerun.example.json",
+      "inspect_key": "memo.audit.2026-04-02.alpha-validation-remediation-rerun",
+      "expand_key": "memo.audit.2026-04-02.alpha-validation-remediation-rerun",
+      "scope": [
+        "repo:aoa-playbooks",
+        "project:AoA"
+      ],
+      "provenance_thread_id": "prov.phase-alpha.curated.2026-04-02",
+      "related_object_ids": [
+        "memo.ep.2026-04-02.alpha-validation-remediation-rerun"
+      ],
+      "strongest_next_sources": [
+        "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md",
         "repo:abyss-stack/Logs/phase-alpha/alpha-06-validation-driven-remediation-recall-rerun/revalidation_pack.json"
       ]
     },
@@ -841,6 +942,41 @@
         "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.long-horizon-model-tier-orchestra.md",
         "repo:aoa-agents/examples/alpha_reference_routes/long-horizon-model-tier-orchestra.example.json",
         "repo:abyss-stack/Logs/phase-alpha/alpha-04-long-horizon-model-tier-orchestra/distillation_pack.md"
+      ]
+    },
+    {
+      "id": "memo.decision.2026-04-02.alpha-long-horizon",
+      "kind": "decision",
+      "title": "Decision to keep the readiness dossier candidate-only",
+      "summary": "Records the bounded choice to treat the Route 4 readiness dossier as reviewer-marked candidate distillation only and to hand continuity proof to the restartable inquiry route.",
+      "scope_classes": [
+        "repo",
+        "project"
+      ],
+      "temperature": "warm",
+      "review_state": "confirmed",
+      "current_recall_status": "preferred",
+      "authority_kind": "human_reviewed",
+      "primary_recall_modes": [
+        "working",
+        "semantic",
+        "source_route"
+      ],
+      "source_path": "examples/decision.phase-alpha-long-horizon.example.json",
+      "inspect_key": "memo.decision.2026-04-02.alpha-long-horizon",
+      "expand_key": "memo.decision.2026-04-02.alpha-long-horizon",
+      "scope": [
+        "repo:aoa-playbooks",
+        "project:AoA"
+      ],
+      "provenance_thread_id": "prov.phase-alpha.curated.2026-04-02",
+      "related_object_ids": [
+        "memo.ep.2026-04-02.alpha-long-horizon"
+      ],
+      "strongest_next_sources": [
+        "repo:aoa-playbooks/docs/alpha-readiness/long-horizon-model-tier-orchestra.md",
+        "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.long-horizon-model-tier-orchestra.md",
+        "repo:abyss-stack/Logs/phase-alpha/alpha-04-long-horizon-model-tier-orchestra/transition_decision.json"
       ]
     },
     {
