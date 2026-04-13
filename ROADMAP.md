@@ -14,7 +14,7 @@ The active next slice is neighbor adoption so adjacent repos can consume the sha
 The first router-first adoption package formalizes additive inspect -> capsule -> expand consumption across the doctrine and object-facing recall families without changing memo ownership.
 The first recurrence-support landing makes checkpoint relaunch anchors and return-ready working recall explicit without changing memo ownership.
 The first downstream eval adoption wave is now explicitly narrowed to recall precision, provenance fidelity, and staleness so `aoa-evals` can pilot memo proof without pretending to cover every guardrail focus at once.
-The next KAG-facing adoption slice publishes one source-owned memo export for `aoa-kag` readiness without widening the live federation spine or `aoa-routing` ABI.
+The current KAG-facing adoption slice now publishes `generated/kag_export.min.json` as one source-owned memo export for `aoa-kag` readiness without widening the live federation spine or `aoa-routing` ABI.
 
 ## Current contract-hardening waves
 
