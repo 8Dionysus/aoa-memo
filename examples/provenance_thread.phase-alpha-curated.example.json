@@ -1,7 +1,7 @@
 {
   "id": "prov.phase-alpha.curated.2026-04-02",
   "title": "Phase Alpha curated readiness provenance thread",
-  "summary": "Traces the live curated readiness lane that currently links the closed Route 1 diagnosis pass, the closed Route 2 checkpoint refresh, and the memo objects that keep both steps recallable for later Alpha routes.",
+  "summary": "Traces the live curated readiness lane that now links the closed Alpha routes, the contradiction-aware closure reading, and the lifecycle walkback that keeps residual runtime history explicit instead of smoothed away.",
   "status": "active",
   "source_refs": [
     "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.local-stack-diagnosis.md",
@@ -12,8 +12,12 @@
     "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md",
     "repo:abyss-stack/Logs/phase-alpha/alpha-02-self-agent-checkpoint-rollout/health_check.json",
     "repo:abyss-stack/Logs/phase-alpha/alpha-03-validation-driven-remediation/revalidation_pack.json",
+    "repo:abyss-stack/Logs/phase-alpha/alpha-04-long-horizon-model-tier-orchestra/distillation_pack.md",
     "repo:abyss-stack/Logs/phase-alpha/alpha-04-long-horizon-model-tier-orchestra/verification_result.json",
+    "repo:abyss-stack/Logs/phase-alpha/alpha-05-restartable-inquiry-loop/contradiction_map.json",
+    "repo:abyss-stack/Logs/phase-alpha/alpha-05-restartable-inquiry-loop/decision_ledger.md",
     "repo:abyss-stack/Logs/phase-alpha/alpha-05-restartable-inquiry-loop/inquiry_checkpoint.json",
+    "repo:abyss-stack/Logs/phase-alpha/alpha-06-validation-driven-remediation-recall-rerun/handoff_record.json",
     "repo:abyss-stack/Logs/phase-alpha/alpha-06-validation-driven-remediation-recall-rerun/revalidation_pack.json"
   ],
   "memory_object_ids": [
@@ -33,6 +37,12 @@
     "memo.ep.2026-04-02.alpha-validation-remediation-rerun",
     "memo.decision.2026-04-02.alpha-validation-remediation-rerun",
     "memo.audit.2026-04-02.alpha-validation-remediation-rerun",
+    "memo.claim.2026-04-03.phase-alpha-rerun-pending-handoff",
+    "memo.claim.2026-04-03.phase-alpha-closure-with-residual-runtime-history",
+    "memo.claim.2026-04-03.phase-alpha-runtime-history-fully-retired",
+    "memo.claim.2026-04-03.phase-alpha-runtime-history-later-infra-track",
+    "memo.audit.2026-04-03.phase-alpha-rerun-pending-supersession",
+    "memo.audit.2026-04-03.phase-alpha-runtime-history-overread-retraction",
     "memo.pattern.2026-04-02.alpha-remediation-recurrence"
   ],
   "timeline": [
@@ -72,10 +82,46 @@
       "object_id": "memo.state.2026-04-02.alpha-restartable-inquiry"
     },
     {
+      "at": "2026-04-03T03:21:35Z",
+      "action": "captured the handoff-stage claim that the final memo-only rerun was still pending",
+      "actor_ref": "memory-keeper",
+      "object_id": "memo.claim.2026-04-03.phase-alpha-rerun-pending-handoff"
+    },
+    {
       "at": "2026-04-03T03:25:00Z",
       "action": "closed the memo-only rerun and promoted the bounded remediation recurrence pattern",
       "actor_ref": "memory-keeper",
       "object_id": "memo.pattern.2026-04-02.alpha-remediation-recurrence"
+    },
+    {
+      "at": "2026-04-03T03:25:30Z",
+      "action": "recorded the contradiction-aware closure reading with residual runtime history left explicit outside the bounded proof surface",
+      "actor_ref": "memory-keeper",
+      "object_id": "memo.claim.2026-04-03.phase-alpha-closure-with-residual-runtime-history"
+    },
+    {
+      "at": "2026-04-03T03:25:45Z",
+      "action": "retracted the overread that residual runtime history had been fully retired",
+      "actor_ref": "memory-keeper",
+      "object_id": "memo.claim.2026-04-03.phase-alpha-runtime-history-fully-retired"
+    },
+    {
+      "at": "2026-04-03T03:25:50Z",
+      "action": "recorded the still-open later-track tension for residual runtime history",
+      "actor_ref": "memory-keeper",
+      "object_id": "memo.claim.2026-04-03.phase-alpha-runtime-history-later-infra-track"
+    },
+    {
+      "at": "2026-04-03T03:26:10Z",
+      "action": "captured the supersession audit from handoff-stage pending status to bounded closure",
+      "actor_ref": "memory-keeper",
+      "object_id": "memo.audit.2026-04-03.phase-alpha-rerun-pending-supersession"
+    },
+    {
+      "at": "2026-04-03T03:26:20Z",
+      "action": "captured the audit walkback that keeps the runtime-history overread withdrawn",
+      "actor_ref": "memory-keeper",
+      "object_id": "memo.audit.2026-04-03.phase-alpha-runtime-history-overread-retraction"
     }
   ]
 }

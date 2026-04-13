@@ -1,0 +1,85 @@
+{
+  "id": "memo.claim.2026-04-03.phase-alpha-runtime-history-fully-retired",
+  "kind": "claim",
+  "title": "Phase Alpha fully retired the residual runtime history",
+  "summary": "An over-strong reading that the memo-only rerun fully retired the residual historical runtime-script lineage rather than merely keeping it explicit outside the bounded proof surface.",
+  "scope": [
+    "repo:aoa-playbooks",
+    "project:AoA"
+  ],
+  "owner_refs": [
+    "repo:aoa-memo"
+  ],
+  "payload_ref": "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md",
+  "tags": [
+    "phase-alpha",
+    "claim",
+    "retracted",
+    "overread"
+  ],
+  "time": {
+    "created_at": "2026-04-03T03:25:45Z",
+    "observed_at": "2026-04-03T03:23:00Z",
+    "valid_from": "2026-04-03T03:25:45Z",
+    "valid_to": null
+  },
+  "provenance": {
+    "source_refs": [
+      "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation.md",
+      "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.long-horizon-model-tier-orchestra.md",
+      "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md",
+      "repo:abyss-stack/Logs/phase-alpha/alpha-04-long-horizon-model-tier-orchestra/distillation_pack.md",
+      "repo:abyss-stack/Logs/phase-alpha/alpha-05-restartable-inquiry-loop/decision_ledger.md",
+      "repo:abyss-stack/Logs/phase-alpha/alpha-06-validation-driven-remediation-recall-rerun/handoff_record.json"
+    ],
+    "episode_refs": [
+      "memo.ep.2026-04-02.alpha-validation-remediation-rerun"
+    ],
+    "provenance_thread_id": "prov.phase-alpha.curated.2026-04-02"
+  },
+  "trust": {
+    "temperature": "cold",
+    "confidence": 0.25,
+    "authority_kind": "candidate_under_review",
+    "authority": "claim-under-review",
+    "freshness": 0.43,
+    "salience": 0.38
+  },
+  "lifecycle": {
+    "review_state": "retracted",
+    "supersedes": [],
+    "superseded_by": null,
+    "retention_class": "historical-retracted",
+    "current_recall": {
+      "status": "withdrawn",
+      "status_reason": "This overread should not surface as the current meaning of the Phase Alpha rerun.",
+      "contradiction_refs": [
+        "memo.claim.2026-04-03.phase-alpha-closure-with-residual-runtime-history",
+        "memo.claim.2026-04-03.phase-alpha-runtime-history-later-infra-track"
+      ]
+    }
+  },
+  "access": {
+    "access_class": "public",
+    "read_scopes": [
+      "public"
+    ],
+    "write_scopes": [
+      "maintainer"
+    ],
+    "promotion_scopes": [
+      "maintainer",
+      "human-review"
+    ]
+  },
+  "bridges": {
+    "tos_refs": [],
+    "skill_refs": [],
+    "eval_refs": [
+      "eval:aoa-memo-contradiction-integrity",
+      "eval:aoa-verification-honesty"
+    ],
+    "kag_lift_status": "none",
+    "route_capsule_ref": "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md"
+  }
+}

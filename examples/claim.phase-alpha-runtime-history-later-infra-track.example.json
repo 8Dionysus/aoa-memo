@@ -1,0 +1,85 @@
+{
+  "id": "memo.claim.2026-04-03.phase-alpha-runtime-history-later-infra-track",
+  "kind": "claim",
+  "title": "Residual runtime history may still require a later infra track",
+  "summary": "Records the still-open tension that residual historical runtime-script lineage may still need a later infra-scoped retirement pass before anyone claims that lineage is fully cleaned up beyond the bounded Phase Alpha closure.",
+  "scope": [
+    "repo:aoa-playbooks",
+    "project:AoA"
+  ],
+  "owner_refs": [
+    "repo:aoa-memo"
+  ],
+  "payload_ref": "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation.md",
+  "tags": [
+    "phase-alpha",
+    "claim",
+    "contradiction",
+    "later-track"
+  ],
+  "time": {
+    "created_at": "2026-04-03T03:25:50Z",
+    "observed_at": "2026-04-03T03:12:50Z",
+    "valid_from": "2026-04-03T03:25:50Z",
+    "valid_to": null
+  },
+  "provenance": {
+    "source_refs": [
+      "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation.md",
+      "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.long-horizon-model-tier-orchestra.md",
+      "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.restartable-inquiry-loop.md",
+      "repo:abyss-stack/Logs/phase-alpha/alpha-04-long-horizon-model-tier-orchestra/distillation_pack.md",
+      "repo:abyss-stack/Logs/phase-alpha/alpha-05-restartable-inquiry-loop/contradiction_map.json"
+    ],
+    "episode_refs": [
+      "memo.ep.2026-04-02.alpha-validation-remediation",
+      "memo.ep.2026-04-02.alpha-long-horizon"
+    ],
+    "provenance_thread_id": "prov.phase-alpha.curated.2026-04-02"
+  },
+  "trust": {
+    "temperature": "cool",
+    "confidence": 0.77,
+    "authority_kind": "repo_maintained",
+    "authority": "phase-alpha contradiction curation",
+    "freshness": 0.78,
+    "salience": 0.82
+  },
+  "lifecycle": {
+    "review_state": "confirmed",
+    "supersedes": [],
+    "superseded_by": null,
+    "retention_class": "open-risk",
+    "current_recall": {
+      "status": "allowed",
+      "status_reason": "This claim should remain visible as an explicit still-open tension rather than being smoothed away by the closure reading.",
+      "contradiction_refs": [
+        "memo.claim.2026-04-03.phase-alpha-closure-with-residual-runtime-history",
+        "memo.claim.2026-04-03.phase-alpha-runtime-history-fully-retired"
+      ]
+    }
+  },
+  "access": {
+    "access_class": "public",
+    "read_scopes": [
+      "public"
+    ],
+    "write_scopes": [
+      "maintainer"
+    ],
+    "promotion_scopes": [
+      "maintainer",
+      "human-review"
+    ]
+  },
+  "bridges": {
+    "tos_refs": [],
+    "skill_refs": [],
+    "eval_refs": [
+      "eval:aoa-memo-contradiction-integrity",
+      "eval:aoa-scope-drift-detection"
+    ],
+    "kag_lift_status": "none",
+    "route_capsule_ref": "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation.md"
+  }
+}

@@ -123,6 +123,12 @@ PHASE_ALPHA_OBJECT_EXAMPLES_BY_KIND = {
         "decision.phase-alpha-long-horizon.example.json",
         "decision.phase-alpha-restartable-inquiry.example.json",
     ],
+    "claim": [
+        "claim.phase-alpha-closure-with-residual-runtime-history.example.json",
+        "claim.phase-alpha-rerun-pending-handoff.example.json",
+        "claim.phase-alpha-runtime-history-fully-retired.example.json",
+        "claim.phase-alpha-runtime-history-later-infra-track.example.json",
+    ],
     "pattern": [
         "pattern.phase-alpha-remediation-recurrence.example.json",
     ],
@@ -130,6 +136,8 @@ PHASE_ALPHA_OBJECT_EXAMPLES_BY_KIND = {
         "audit_event.phase-alpha-self-agent-checkpoint.example.json",
         "audit_event.phase-alpha-validation-remediation.example.json",
         "audit_event.phase-alpha-validation-remediation-rerun.example.json",
+        "audit_event.phase-alpha-rerun-pending-supersession.example.json",
+        "audit_event.phase-alpha-runtime-history-overread-retraction.example.json",
     ],
 }
 PHASE_ALPHA_OBJECT_EXAMPLE_NAMES = tuple(
