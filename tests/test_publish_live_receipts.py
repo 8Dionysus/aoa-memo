@@ -9,6 +9,10 @@ import unittest
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 MODULE_PATH = REPO_ROOT / "scripts" / "publish_live_receipts.py"
+RECEIPT_FIXTURE_PATH = REPO_ROOT / "tests" / "fixtures" / "memo_writeback_receipts.example.jsonl"
+MEMORY_OBJECT_CATALOG_PATH = REPO_ROOT / "generated" / "memory_object_catalog.min.json"
+MEMORY_OBJECT_CAPSULES_PATH = REPO_ROOT / "generated" / "memory_object_capsules.json"
+MEMORY_OBJECT_SECTIONS_PATH = REPO_ROOT / "generated" / "memory_object_sections.full.json"
 ADOPTED_OBJECT_ID = "memo.decision.2026-04-02.alpha-validation-remediation-rerun"
 ADOPTED_RECALL_REF = (
     "repo:aoa-memo/generated/memory_object_catalog.min.json#"
@@ -22,6 +26,12 @@ def load_module():
     assert spec is not None and spec.loader is not None
     spec.loader.exec_module(module)
     return module
+
+
+def load_json(path: Path) -> dict:
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    assert isinstance(payload, dict)
+    return payload
 
 
 def build_receipt(event_kind: str = "memo_writeback_receipt") -> dict:
@@ -155,6 +165,39 @@ class MemoPublishLiveReceiptsTests(unittest.TestCase):
             self.assertEqual(len(lines), 2)
             self.assertEqual(json.loads(lines[0])["event_id"], "evt-memo-existing")
             self.assertEqual(json.loads(lines[1])["event_id"], "evt-memo-001")
+
+    def test_tracked_receipt_fixture_resolves_to_recall_surface_family(self) -> None:
+        module = load_module()
+        receipts = module.load_receipts([RECEIPT_FIXTURE_PATH])
+        self.assertTrue(receipts)
+
+        catalog_by_id = module.load_memory_object_catalog(MEMORY_OBJECT_CATALOG_PATH)
+        capsules_by_id = {
+            item["id"]: item
+            for item in load_json(MEMORY_OBJECT_CAPSULES_PATH)["memory_objects"]
+        }
+        sections_by_id = {
+            item["id"]: item
+            for item in load_json(MEMORY_OBJECT_SECTIONS_PATH)["memory_objects"]
+        }
+
+        event_ids: set[str] = set()
+        for receipt in receipts:
+            event_id = receipt["event_id"]
+            object_id = receipt["object_ref"]["id"]
+            catalog_entry = catalog_by_id[object_id]
+
+            self.assertNotIn(event_id, event_ids)
+            event_ids.add(event_id)
+            self.assertIn(object_id, capsules_by_id)
+            self.assertIn(object_id, sections_by_id)
+            self.assertEqual(capsules_by_id[object_id]["kind"], catalog_entry["kind"])
+            self.assertEqual(sections_by_id[object_id]["kind"], catalog_entry["kind"])
+            self.assertEqual(capsules_by_id[object_id]["source_path"], catalog_entry["source_path"])
+            self.assertEqual(sections_by_id[object_id]["source_path"], catalog_entry["source_path"])
+            self.assertTrue(sections_by_id[object_id]["sections"])
+            if "memory_object_ref" in receipt["payload"]:
+                self.assertEqual(receipt["payload"]["memory_object_ref"], catalog_entry["source_path"])
 
 
 if __name__ == "__main__":
