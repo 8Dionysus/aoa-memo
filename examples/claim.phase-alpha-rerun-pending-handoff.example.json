@@ -1,0 +1,79 @@
+{
+  "id": "memo.claim.2026-04-03.phase-alpha-rerun-pending-handoff",
+  "kind": "claim",
+  "title": "Phase Alpha still needed the final memo-only rerun handoff",
+  "summary": "Records the handoff-stage reading that the resumed dossier still required the final memo-only rerun before remediation recurrence could be treated as closed.",
+  "scope": [
+    "repo:aoa-playbooks",
+    "project:AoA"
+  ],
+  "owner_refs": [
+    "repo:aoa-memo"
+  ],
+  "payload_ref": "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.restartable-inquiry-loop.md",
+  "tags": [
+    "phase-alpha",
+    "claim",
+    "handoff",
+    "superseded"
+  ],
+  "time": {
+    "created_at": "2026-04-03T03:21:35Z",
+    "observed_at": "2026-04-03T03:20:00Z",
+    "valid_from": "2026-04-03T03:21:35Z",
+    "valid_to": null
+  },
+  "provenance": {
+    "source_refs": [
+      "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.restartable-inquiry-loop.md",
+      "repo:abyss-stack/Logs/phase-alpha/alpha-05-restartable-inquiry-loop/inquiry_checkpoint.json",
+      "repo:abyss-stack/Logs/phase-alpha/alpha-05-restartable-inquiry-loop/next_pass_brief.md"
+    ],
+    "episode_refs": [
+      "memo.state.2026-04-02.alpha-restartable-inquiry"
+    ],
+    "provenance_thread_id": "prov.phase-alpha.curated.2026-04-02"
+  },
+  "trust": {
+    "temperature": "cool",
+    "confidence": 0.9,
+    "authority_kind": "repo_maintained",
+    "authority": "phase-alpha contradiction curation",
+    "freshness": 0.88,
+    "salience": 0.75
+  },
+  "lifecycle": {
+    "review_state": "superseded",
+    "supersedes": [],
+    "superseded_by": "memo.claim.2026-04-03.phase-alpha-closure-with-residual-runtime-history",
+    "retention_class": "historical-handoff",
+    "current_recall": {
+      "status": "historical",
+      "status_reason": "This claim remains visible only to show the handoff-stage reading that Route 6 later closed.",
+      "replacement_ref": "memo.claim.2026-04-03.phase-alpha-closure-with-residual-runtime-history"
+    }
+  },
+  "access": {
+    "access_class": "public",
+    "read_scopes": [
+      "public"
+    ],
+    "write_scopes": [
+      "maintainer"
+    ],
+    "promotion_scopes": [
+      "maintainer",
+      "human-review"
+    ]
+  },
+  "bridges": {
+    "tos_refs": [],
+    "skill_refs": [],
+    "eval_refs": [
+      "eval:aoa-return-anchor-integrity",
+      "eval:aoa-memo-recall-integrity"
+    ],
+    "kag_lift_status": "none",
+    "route_capsule_ref": "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.restartable-inquiry-loop.md"
+  }
+}

@@ -1119,6 +1119,222 @@
       ]
     },
     {
+      "id": "memo.claim.2026-04-03.phase-alpha-closure-with-residual-runtime-history",
+      "kind": "claim",
+      "title": "Phase Alpha closure holds while residual runtime history stays explicit",
+      "source_path": "examples/claim.phase-alpha-closure-with-residual-runtime-history.example.json",
+      "sections": [
+        {
+          "section_id": "memo.claim.2026-04-03.phase-alpha-closure-with-residual-runtime-history#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the claim surface, its active recall modes, and its preferred current-recall posture.",
+          "body": "Phase Alpha closure holds while residual runtime history stays explicit. Records the contradiction-aware closure reading that Route 6 proved remediation recurrence under memo-only recall while residual historical runtime-script lineage remained named explicitly outside the bounded proof surface. Scope: repo:aoa-playbooks, project:AoA. Scope classes: repo, project. Primary recall modes: semantic, lineage, source_route. Current recall status: preferred because This claim is the current contradiction-aware closure reading for the bounded Phase Alpha memo lane. Payload ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md."
+        },
+        {
+          "section_id": "memo.claim.2026-04-03.phase-alpha-closure-with-residual-runtime-history#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.phase-alpha.curated.2026-04-02. Source refs: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation.md, repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.long-horizon-model-tier-orchestra.md, repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.restartable-inquiry-loop.md, repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md, repo:abyss-stack/Logs/phase-alpha/alpha-05-restartable-inquiry-loop/contradiction_map.json, repo:abyss-stack/Logs/phase-alpha/alpha-06-validation-driven-remediation-recall-rerun/handoff_record.json. Episode refs: memo.ep.2026-04-02.alpha-validation-remediation, memo.ep.2026-04-02.alpha-long-horizon, memo.ep.2026-04-02.alpha-validation-remediation-rerun. Related curated object ids: memo.ep.2026-04-02.alpha-validation-remediation, memo.ep.2026-04-02.alpha-long-horizon, memo.ep.2026-04-02.alpha-validation-remediation-rerun, memo.claim.2026-04-03.phase-alpha-rerun-pending-handoff, memo.claim.2026-04-03.phase-alpha-runtime-history-fully-retired, memo.claim.2026-04-03.phase-alpha-runtime-history-later-infra-track. Strongest next sources: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation.md, repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.long-horizon-model-tier-orchestra.md, repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.restartable-inquiry-loop.md."
+        },
+        {
+          "section_id": "memo.claim.2026-04-03.phase-alpha-closure-with-residual-runtime-history#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: repo_maintained (phase-alpha contradiction curation). Temperature: warm; confidence 0.91; freshness 0.90; salience 0.89. Review state: confirmed. Retention class: operational-gate. Promotion state: none. Supersedes: memo.claim.2026-04-03.phase-alpha-rerun-pending-handoff. Superseded by: none. Replacement ref: none. Contradiction refs: memo.claim.2026-04-03.phase-alpha-runtime-history-fully-retired, memo.claim.2026-04-03.phase-alpha-runtime-history-later-infra-track."
+        },
+        {
+          "section_id": "memo.claim.2026-04-03.phase-alpha-closure-with-residual-runtime-history#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Scope classes: repo, project. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-memo-contradiction-integrity, eval:aoa-memo-recall-integrity, eval:aoa-verification-honesty. KAG lift status: none."
+        }
+      ]
+    },
+    {
+      "id": "memo.claim.2026-04-03.phase-alpha-rerun-pending-handoff",
+      "kind": "claim",
+      "title": "Phase Alpha still needed the final memo-only rerun handoff",
+      "source_path": "examples/claim.phase-alpha-rerun-pending-handoff.example.json",
+      "sections": [
+        {
+          "section_id": "memo.claim.2026-04-03.phase-alpha-rerun-pending-handoff#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the claim surface, its active recall modes, and its historical current-recall posture.",
+          "body": "Phase Alpha still needed the final memo-only rerun handoff. Records the handoff-stage reading that the resumed dossier still required the final memo-only rerun before remediation recurrence could be treated as closed. Scope: repo:aoa-playbooks, project:AoA. Scope classes: repo, project. Primary recall modes: semantic, lineage, source_route. Current recall status: historical because This claim remains visible only to show the handoff-stage reading that Route 6 later closed. Payload ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.restartable-inquiry-loop.md."
+        },
+        {
+          "section_id": "memo.claim.2026-04-03.phase-alpha-rerun-pending-handoff#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.phase-alpha.curated.2026-04-02. Source refs: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.restartable-inquiry-loop.md, repo:abyss-stack/Logs/phase-alpha/alpha-05-restartable-inquiry-loop/inquiry_checkpoint.json, repo:abyss-stack/Logs/phase-alpha/alpha-05-restartable-inquiry-loop/next_pass_brief.md. Episode refs: memo.state.2026-04-02.alpha-restartable-inquiry. Related curated object ids: memo.state.2026-04-02.alpha-restartable-inquiry, memo.claim.2026-04-03.phase-alpha-closure-with-residual-runtime-history. Strongest next sources: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.restartable-inquiry-loop.md, repo:abyss-stack/Logs/phase-alpha/alpha-05-restartable-inquiry-loop/inquiry_checkpoint.json, repo:abyss-stack/Logs/phase-alpha/alpha-05-restartable-inquiry-loop/next_pass_brief.md."
+        },
+        {
+          "section_id": "memo.claim.2026-04-03.phase-alpha-rerun-pending-handoff#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: repo_maintained (phase-alpha contradiction curation). Temperature: cool; confidence 0.90; freshness 0.88; salience 0.75. Review state: superseded. Retention class: historical-handoff. Promotion state: none. Supersedes: none. Superseded by: memo.claim.2026-04-03.phase-alpha-closure-with-residual-runtime-history. Replacement ref: memo.claim.2026-04-03.phase-alpha-closure-with-residual-runtime-history. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.claim.2026-04-03.phase-alpha-rerun-pending-handoff#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Scope classes: repo, project. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.restartable-inquiry-loop.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-return-anchor-integrity, eval:aoa-memo-recall-integrity. KAG lift status: none."
+        }
+      ]
+    },
+    {
+      "id": "memo.claim.2026-04-03.phase-alpha-runtime-history-fully-retired",
+      "kind": "claim",
+      "title": "Phase Alpha fully retired the residual runtime history",
+      "source_path": "examples/claim.phase-alpha-runtime-history-fully-retired.example.json",
+      "sections": [
+        {
+          "section_id": "memo.claim.2026-04-03.phase-alpha-runtime-history-fully-retired#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the claim surface, its active recall modes, and its withdrawn current-recall posture.",
+          "body": "Phase Alpha fully retired the residual runtime history. An over-strong reading that the memo-only rerun fully retired the residual historical runtime-script lineage rather than merely keeping it explicit outside the bounded proof surface. Scope: repo:aoa-playbooks, project:AoA. Scope classes: repo, project. Primary recall modes: semantic, lineage. Current recall status: withdrawn because This overread should not surface as the current meaning of the Phase Alpha rerun. Payload ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md."
+        },
+        {
+          "section_id": "memo.claim.2026-04-03.phase-alpha-runtime-history-fully-retired#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.phase-alpha.curated.2026-04-02. Source refs: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation.md, repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.long-horizon-model-tier-orchestra.md, repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md, repo:abyss-stack/Logs/phase-alpha/alpha-04-long-horizon-model-tier-orchestra/distillation_pack.md, repo:abyss-stack/Logs/phase-alpha/alpha-05-restartable-inquiry-loop/decision_ledger.md, repo:abyss-stack/Logs/phase-alpha/alpha-06-validation-driven-remediation-recall-rerun/handoff_record.json. Episode refs: memo.ep.2026-04-02.alpha-validation-remediation-rerun. Related curated object ids: memo.ep.2026-04-02.alpha-validation-remediation-rerun, memo.claim.2026-04-03.phase-alpha-closure-with-residual-runtime-history, memo.claim.2026-04-03.phase-alpha-runtime-history-later-infra-track. Strongest next sources: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation.md, repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.long-horizon-model-tier-orchestra.md, repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md."
+        },
+        {
+          "section_id": "memo.claim.2026-04-03.phase-alpha-runtime-history-fully-retired#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: candidate_under_review (claim-under-review). Temperature: cold; confidence 0.25; freshness 0.43; salience 0.38. Review state: retracted. Retention class: historical-retracted. Promotion state: none. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: memo.claim.2026-04-03.phase-alpha-closure-with-residual-runtime-history, memo.claim.2026-04-03.phase-alpha-runtime-history-later-infra-track."
+        },
+        {
+          "section_id": "memo.claim.2026-04-03.phase-alpha-runtime-history-fully-retired#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Scope classes: repo, project. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-memo-contradiction-integrity, eval:aoa-verification-honesty. KAG lift status: none."
+        }
+      ]
+    },
+    {
+      "id": "memo.claim.2026-04-03.phase-alpha-runtime-history-later-infra-track",
+      "kind": "claim",
+      "title": "Residual runtime history may still require a later infra track",
+      "source_path": "examples/claim.phase-alpha-runtime-history-later-infra-track.example.json",
+      "sections": [
+        {
+          "section_id": "memo.claim.2026-04-03.phase-alpha-runtime-history-later-infra-track#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the claim surface, its active recall modes, and its allowed current-recall posture.",
+          "body": "Residual runtime history may still require a later infra track. Records the still-open tension that residual historical runtime-script lineage may still need a later infra-scoped retirement pass before anyone claims that lineage is fully cleaned up beyond the bounded Phase Alpha closure. Scope: repo:aoa-playbooks, project:AoA. Scope classes: repo, project. Primary recall modes: semantic, lineage, source_route. Current recall status: allowed because This claim should remain visible as an explicit still-open tension rather than being smoothed away by the closure reading. Payload ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation.md."
+        },
+        {
+          "section_id": "memo.claim.2026-04-03.phase-alpha-runtime-history-later-infra-track#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.phase-alpha.curated.2026-04-02. Source refs: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation.md, repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.long-horizon-model-tier-orchestra.md, repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.restartable-inquiry-loop.md, repo:abyss-stack/Logs/phase-alpha/alpha-04-long-horizon-model-tier-orchestra/distillation_pack.md, repo:abyss-stack/Logs/phase-alpha/alpha-05-restartable-inquiry-loop/contradiction_map.json. Episode refs: memo.ep.2026-04-02.alpha-validation-remediation, memo.ep.2026-04-02.alpha-long-horizon. Related curated object ids: memo.ep.2026-04-02.alpha-validation-remediation, memo.ep.2026-04-02.alpha-long-horizon, memo.claim.2026-04-03.phase-alpha-closure-with-residual-runtime-history, memo.claim.2026-04-03.phase-alpha-runtime-history-fully-retired. Strongest next sources: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation.md, repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.long-horizon-model-tier-orchestra.md, repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.restartable-inquiry-loop.md."
+        },
+        {
+          "section_id": "memo.claim.2026-04-03.phase-alpha-runtime-history-later-infra-track#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: repo_maintained (phase-alpha contradiction curation). Temperature: cool; confidence 0.77; freshness 0.78; salience 0.82. Review state: confirmed. Retention class: open-risk. Promotion state: none. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: memo.claim.2026-04-03.phase-alpha-closure-with-residual-runtime-history, memo.claim.2026-04-03.phase-alpha-runtime-history-fully-retired."
+        },
+        {
+          "section_id": "memo.claim.2026-04-03.phase-alpha-runtime-history-later-infra-track#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Scope classes: repo, project. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-memo-contradiction-integrity, eval:aoa-scope-drift-detection. KAG lift status: none."
+        }
+      ]
+    },
+    {
+      "id": "memo.audit.2026-04-03.phase-alpha-rerun-pending-supersession",
+      "kind": "audit_event",
+      "title": "Superseded the rerun-pending handoff reading with bounded closure",
+      "source_path": "examples/audit_event.phase-alpha-rerun-pending-supersession.example.json",
+      "sections": [
+        {
+          "section_id": "memo.audit.2026-04-03.phase-alpha-rerun-pending-supersession#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the audit_event surface, its active recall modes, and its historical current-recall posture.",
+          "body": "Superseded the rerun-pending handoff reading with bounded closure. Captures the contradiction audit event in which the handoff-stage claim gave way to the Route 6 closure claim once the memo-only rerun actually landed. Scope: repo:aoa-playbooks, project:AoA. Scope classes: repo, project. Primary recall modes: episodic, source_route. Current recall status: historical because This audit event should surface mainly when tracing why the handoff-stage claim became historical. Payload ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md."
+        },
+        {
+          "section_id": "memo.audit.2026-04-03.phase-alpha-rerun-pending-supersession#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.phase-alpha.curated.2026-04-02. Source refs: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.restartable-inquiry-loop.md, repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md, repo:abyss-stack/Logs/phase-alpha/alpha-05-restartable-inquiry-loop/next_pass_brief.md, repo:abyss-stack/Logs/phase-alpha/alpha-06-validation-driven-remediation-recall-rerun/remediation_decision.json. Episode refs: memo.claim.2026-04-03.phase-alpha-rerun-pending-handoff, memo.claim.2026-04-03.phase-alpha-closure-with-residual-runtime-history. Related curated object ids: memo.claim.2026-04-03.phase-alpha-rerun-pending-handoff, memo.claim.2026-04-03.phase-alpha-closure-with-residual-runtime-history. Strongest next sources: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.restartable-inquiry-loop.md, repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md, repo:abyss-stack/Logs/phase-alpha/alpha-05-restartable-inquiry-loop/next_pass_brief.md."
+        },
+        {
+          "section_id": "memo.audit.2026-04-03.phase-alpha-rerun-pending-supersession#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: repo_maintained (phase-alpha contradiction audit). Temperature: cool; confidence 0.89; freshness 0.87; salience 0.77. Review state: confirmed. Retention class: audit-trace. Promotion state: none. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.audit.2026-04-03.phase-alpha-rerun-pending-supersession#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Scope classes: repo, project. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-memo-contradiction-integrity, eval:aoa-memo-recall-integrity. KAG lift status: none."
+        }
+      ]
+    },
+    {
+      "id": "memo.audit.2026-04-03.phase-alpha-runtime-history-overread-retraction",
+      "kind": "audit_event",
+      "title": "Retracted the overread that residual runtime history was fully retired",
+      "source_path": "examples/audit_event.phase-alpha-runtime-history-overread-retraction.example.json",
+      "sections": [
+        {
+          "section_id": "memo.audit.2026-04-03.phase-alpha-runtime-history-overread-retraction#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the audit_event surface, its active recall modes, and its historical current-recall posture.",
+          "body": "Retracted the overread that residual runtime history was fully retired. Captures the contradiction audit event in which the over-strong retirement reading was withdrawn so residual runtime history and later-track pressure stayed visible on the memo surface. Scope: repo:aoa-playbooks, project:AoA. Scope classes: repo, project. Primary recall modes: episodic, source_route. Current recall status: historical because This audit event remains useful when tracing why the retirement overread was withdrawn instead of silently disappearing. Payload ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation.md."
+        },
+        {
+          "section_id": "memo.audit.2026-04-03.phase-alpha-runtime-history-overread-retraction#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.phase-alpha.curated.2026-04-02. Source refs: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation.md, repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.long-horizon-model-tier-orchestra.md, repo:abyss-stack/Logs/phase-alpha/alpha-04-long-horizon-model-tier-orchestra/distillation_pack.md, repo:abyss-stack/Logs/phase-alpha/alpha-05-restartable-inquiry-loop/decision_ledger.md, repo:abyss-stack/Logs/phase-alpha/alpha-06-validation-driven-remediation-recall-rerun/handoff_record.json. Episode refs: memo.claim.2026-04-03.phase-alpha-runtime-history-fully-retired, memo.claim.2026-04-03.phase-alpha-closure-with-residual-runtime-history, memo.claim.2026-04-03.phase-alpha-runtime-history-later-infra-track. Related curated object ids: memo.claim.2026-04-03.phase-alpha-runtime-history-fully-retired, memo.claim.2026-04-03.phase-alpha-closure-with-residual-runtime-history, memo.claim.2026-04-03.phase-alpha-runtime-history-later-infra-track. Strongest next sources: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation.md, repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.long-horizon-model-tier-orchestra.md, repo:abyss-stack/Logs/phase-alpha/alpha-04-long-horizon-model-tier-orchestra/distillation_pack.md."
+        },
+        {
+          "section_id": "memo.audit.2026-04-03.phase-alpha-runtime-history-overread-retraction#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: repo_maintained (phase-alpha contradiction audit). Temperature: cool; confidence 0.90; freshness 0.86; salience 0.81. Review state: confirmed. Retention class: audit-trace. Promotion state: none. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.audit.2026-04-03.phase-alpha-runtime-history-overread-retraction#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Scope classes: repo, project. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-memo-contradiction-integrity, eval:aoa-verification-honesty. KAG lift status: none."
+        }
+      ]
+    },
+    {
       "id": "memo.pattern.2026-04-02.alpha-remediation-recurrence",
       "kind": "pattern",
       "title": "Alpha remediation recurrence is proven only through memo-only closure",

@@ -232,6 +232,51 @@
       ]
     },
     {
+      "example_path": "examples/claim.phase-alpha-closure-with-residual-runtime-history.example.json",
+      "recall_modes": [
+        "semantic",
+        "lineage",
+        "source_route"
+      ]
+    },
+    {
+      "example_path": "examples/claim.phase-alpha-rerun-pending-handoff.example.json",
+      "recall_modes": [
+        "semantic",
+        "lineage",
+        "source_route"
+      ]
+    },
+    {
+      "example_path": "examples/claim.phase-alpha-runtime-history-fully-retired.example.json",
+      "recall_modes": [
+        "semantic",
+        "lineage"
+      ]
+    },
+    {
+      "example_path": "examples/claim.phase-alpha-runtime-history-later-infra-track.example.json",
+      "recall_modes": [
+        "semantic",
+        "lineage",
+        "source_route"
+      ]
+    },
+    {
+      "example_path": "examples/audit_event.phase-alpha-rerun-pending-supersession.example.json",
+      "recall_modes": [
+        "episodic",
+        "source_route"
+      ]
+    },
+    {
+      "example_path": "examples/audit_event.phase-alpha-runtime-history-overread-retraction.example.json",
+      "recall_modes": [
+        "episodic",
+        "source_route"
+      ]
+    },
+    {
       "example_path": "examples/pattern.phase-alpha-remediation-recurrence.example.json",
       "recall_modes": [
         "procedural",
