@@ -15,18 +15,18 @@ The first router-first adoption package formalizes additive inspect -> capsule -
 The first recurrence-support landing makes checkpoint relaunch anchors and return-ready working recall explicit without changing memo ownership.
 The first downstream eval adoption wave is now explicitly narrowed to recall precision, provenance fidelity, and staleness so `aoa-evals` can pilot memo proof without pretending to cover every guardrail focus at once.
 The current KAG-facing adoption slice now publishes `generated/kag_export.min.json` as one source-owned memo export for `aoa-kag` readiness without widening the live federation spine or `aoa-routing` ABI.
-The pre-Agon readiness holding map in `docs/PRE_AGON_MEMORY_READINESS.md` now
-maps future scar, delta, retention, and recall pressure back to existing memo
-objects without planting Agon, creating a live ledger, changing schemas, or
-moving proof, graph lift, navigation, role authority, or runtime retention into
-`aoa-memo`.
+The memory readiness boundary map in `docs/MEMORY_READINESS_BOUNDARY.md` now
+maps future durable-consequence, delta, retention, and recall pressure back to
+existing memo objects without planting a future protocol, creating a live
+ledger, changing schemas, or moving proof, graph lift, navigation, role
+authority, or runtime retention into `aoa-memo`.
 
 The current `v0.2.1` release line also already carries:
 - checkpoint recall follow-through and lineage-aware growth-refinery writeback surfaces through `docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md`, `docs/GROWTH_REFINERY_WRITEBACK.md`, and `docs/QUEST_CHRONICLE_WRITEBACK.md`
 - runtime writeback landing, intake, and governance surfaces through `generated/runtime_writeback_targets.min.json`, `generated/runtime_writeback_intake.min.json`, `generated/runtime_writeback_governance.min.json`, and `docs/RUNTIME_WRITEBACK_SEAM.md`
 - rollout, rollback-followthrough, component-refresh, and self-agency continuity support through `examples/recovery_pattern_memory.rollback_followthrough.example.json`, `examples/recovery_pattern_memory.component_refresh.example.json`, `docs/SELF_AGENCY_CONTINUITY_WRITEBACK.md`, and `examples/provenance_thread.self-agency-continuity.example.json`
 - Phase Alpha writeback routing and owner-local live receipt publication through `generated/phase_alpha_writeback_map.min.json` and `scripts/publish_live_receipts.py`
-- pre-Agon memory readiness through `docs/PRE_AGON_MEMORY_READINESS.md`
+- memory readiness boundary through `docs/MEMORY_READINESS_BOUNDARY.md`
 
 The near-term risk is roadmap drift: checkpoint recall, runtime writeback,
 growth-refinery writeback, and continuity writeback are already shipped
@@ -313,7 +313,7 @@ The first adoption wave should stay diagnostic and triad-scoped before the rest 
 ### `abyss-stack`
 
 Needs to own live stores, background consolidation jobs, retention, and backup posture.
-Future Agon retention checks should keep their durable memo evidence bounded to
+Future retention checks should keep their durable memo evidence bounded to
 `episode` or `audit_event` plus lifecycle and recall posture, while live
 retention workers stay in `abyss-stack`.
 
