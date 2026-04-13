@@ -29,10 +29,15 @@ class RoadmapParityTestCase(unittest.TestCase):
         readme = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
         changelog = (REPO_ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
         roadmap = (REPO_ROOT / "ROADMAP.md").read_text(encoding="utf-8")
+        memo_registry = json.loads(
+            (REPO_ROOT / "generated" / "memo_registry.min.json").read_text(encoding="utf-8")
+        )
 
-        self.assertIn("v0.2.1", readme)
-        self.assertIn("[0.2.1]", changelog)
-        self.assertIn("v0.2.1", roadmap)
+        registry_version = memo_registry["version"]
+        self.assertEqual("0.2.1", registry_version)
+        self.assertIn(f"v{registry_version}", readme)
+        self.assertIn(f"[{registry_version}]", changelog)
+        self.assertIn(f"v{registry_version}", roadmap)
 
         for relative_path in (
             "docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
