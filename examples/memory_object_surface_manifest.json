@@ -166,10 +166,32 @@
       ]
     },
     {
+      "example_path": "examples/audit_event.phase-alpha-validation-remediation.example.json",
+      "recall_modes": [
+        "episodic",
+        "source_route"
+      ]
+    },
+    {
       "example_path": "examples/episode.phase-alpha-validation-remediation-rerun.example.json",
       "recall_modes": [
         "episodic",
         "working"
+      ]
+    },
+    {
+      "example_path": "examples/decision.phase-alpha-validation-remediation-rerun.example.json",
+      "recall_modes": [
+        "working",
+        "semantic",
+        "source_route"
+      ]
+    },
+    {
+      "example_path": "examples/audit_event.phase-alpha-validation-remediation-rerun.example.json",
+      "recall_modes": [
+        "episodic",
+        "source_route"
       ]
     },
     {
@@ -184,6 +206,14 @@
       "recall_modes": [
         "episodic",
         "working"
+      ]
+    },
+    {
+      "example_path": "examples/decision.phase-alpha-long-horizon.example.json",
+      "recall_modes": [
+        "working",
+        "semantic",
+        "source_route"
       ]
     },
     {

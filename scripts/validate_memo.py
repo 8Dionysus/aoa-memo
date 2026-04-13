@@ -40,6 +40,7 @@ GENERATED = ROOT / "generated"
 RUNTIME_WRITEBACK_TARGETS_PATH = GENERATED / "runtime_writeback_targets.min.json"
 RUNTIME_WRITEBACK_INTAKE_PATH = GENERATED / "runtime_writeback_intake.min.json"
 RUNTIME_WRITEBACK_GOVERNANCE_PATH = GENERATED / "runtime_writeback_governance.min.json"
+LIVE_RECEIPT_LOG_PATH = ROOT / ".aoa" / "live_receipts" / "memo-writeback-receipts.jsonl"
 PHASE_ALPHA_WRITEBACK_MAP_PATH = EXAMPLES / "phase_alpha_writeback_map.example.json"
 PHASE_ALPHA_WRITEBACK_OUTPUT_PATH = GENERATED / "phase_alpha_writeback_map.min.json"
 QUESTBOOK_PATH = ROOT / "QUESTBOOK.md"
@@ -116,6 +117,8 @@ PHASE_ALPHA_OBJECT_EXAMPLES_BY_KIND = {
         "decision.phase-alpha-local-stack.example.json",
         "decision.phase-alpha-self-agent-checkpoint.example.json",
         "decision.phase-alpha-validation-remediation.example.json",
+        "decision.phase-alpha-validation-remediation-rerun.example.json",
+        "decision.phase-alpha-long-horizon.example.json",
         "decision.phase-alpha-restartable-inquiry.example.json",
     ],
     "pattern": [
@@ -123,6 +126,8 @@ PHASE_ALPHA_OBJECT_EXAMPLES_BY_KIND = {
     ],
     "audit_event": [
         "audit_event.phase-alpha-self-agent-checkpoint.example.json",
+        "audit_event.phase-alpha-validation-remediation.example.json",
+        "audit_event.phase-alpha-validation-remediation-rerun.example.json",
     ],
 }
 PHASE_ALPHA_OBJECT_EXAMPLE_NAMES = tuple(
@@ -1662,6 +1667,115 @@ def validate_runtime_writeback_governance() -> None:
     print("[OK]   runtime_writeback_governance.min.json")
 
 
+def validate_live_receipt_log() -> None:
+    if not LIVE_RECEIPT_LOG_PATH.exists():
+        print("[OK]   live receipt log absent")
+        return
+
+    catalog = load_json(GENERATED / "memory_object_catalog.min.json")
+    catalog_ids = {
+        item.get("id")
+        for item in catalog.get("memory_objects", [])
+        if isinstance(item, dict) and isinstance(item.get("id"), str)
+    }
+    errors: list[str] = []
+    seen_event_ids: set[str] = set()
+
+    for line_number, raw_line in enumerate(
+        LIVE_RECEIPT_LOG_PATH.read_text(encoding="utf-8").splitlines(),
+        start=1,
+    ):
+        line = raw_line.strip()
+        if not line:
+            continue
+        try:
+            receipt = json.loads(line)
+        except json.JSONDecodeError as exc:
+            errors.append(f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: invalid JSONL receipt: {exc}")
+            continue
+        if not isinstance(receipt, dict):
+            errors.append(f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: receipt must be an object")
+            continue
+
+        event_id = receipt.get("event_id")
+        if not isinstance(event_id, str) or not event_id:
+            errors.append(f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: event_id must be a non-empty string")
+        elif event_id in seen_event_ids:
+            errors.append(f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: duplicate event_id {event_id!r}")
+        else:
+            seen_event_ids.add(event_id)
+
+        if receipt.get("event_kind") != "memo_writeback_receipt":
+            errors.append(
+                f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: event_kind must equal 'memo_writeback_receipt'"
+            )
+
+        object_ref = receipt.get("object_ref")
+        object_id = object_ref.get("id") if isinstance(object_ref, dict) else None
+        if not isinstance(object_ref, dict):
+            errors.append(f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: object_ref must be an object")
+        else:
+            if object_ref.get("repo") != "aoa-memo":
+                errors.append(f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: object_ref.repo must equal 'aoa-memo'")
+            if object_ref.get("kind") != "memory_object":
+                errors.append(f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: object_ref.kind must equal 'memory_object'")
+            if not isinstance(object_id, str) or not object_id:
+                errors.append(f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: object_ref.id must be a non-empty string")
+            elif object_id not in catalog_ids:
+                errors.append(
+                    f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: object_ref.id {object_id!r} "
+                    "is absent from generated/memory_object_catalog.min.json"
+                )
+
+        evidence_refs = receipt.get("evidence_refs")
+        if not isinstance(evidence_refs, list):
+            errors.append(f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: evidence_refs must be a list")
+            continue
+        for evidence_index, evidence in enumerate(evidence_refs):
+            if not isinstance(evidence, dict):
+                errors.append(
+                    f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: evidence_refs[{evidence_index}] must be an object"
+                )
+                continue
+            ref = evidence.get("ref")
+            if not isinstance(ref, str) or not ref:
+                errors.append(
+                    f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: evidence_refs[{evidence_index}].ref must be a non-empty string"
+                )
+                continue
+            if not ref.startswith("repo:aoa-memo/"):
+                continue
+            path_text, _, anchor = ref.removeprefix("repo:aoa-memo/").partition("#")
+            local_path = ROOT / path_text
+            if not local_path.exists():
+                errors.append(
+                    f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: evidence_refs[{evidence_index}].ref "
+                    f"points to missing local path {path_text!r}"
+                )
+                continue
+            if path_text == "generated/memory_object_catalog.min.json":
+                if not anchor:
+                    errors.append(
+                        f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: catalog evidence ref must include a memory object id anchor"
+                    )
+                elif anchor not in catalog_ids:
+                    errors.append(
+                        f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: catalog evidence ref points to uncataloged id {anchor!r}"
+                    )
+                elif isinstance(object_id, str) and anchor != object_id:
+                    errors.append(
+                        f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: catalog evidence id {anchor!r} "
+                        f"must match object_ref.id {object_id!r}"
+                    )
+
+    if errors:
+        print("[FAIL] live receipt log")
+        for err in errors:
+            print(f"  - {err}")
+        raise SystemExit(1)
+    print("[OK]   live receipt log")
+
+
 def validate_phase_alpha_writeback_map() -> None:
     builder = load_phase_alpha_writeback_builder()
     expected = builder.build_phase_alpha_writeback_map_payload()
@@ -2339,6 +2453,7 @@ def main() -> int:
     validate_runtime_writeback_targets()
     validate_runtime_writeback_intake()
     validate_runtime_writeback_governance()
+    validate_live_receipt_log()
     validate_phase_alpha_writeback_map()
     validate_witness_trace_contract()
     validate_bridge_export_contracts()
