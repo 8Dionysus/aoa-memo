@@ -57,11 +57,12 @@ canonical neighboring repository instead of recreating it here.
 Before making changes, read in this order:
 
 1. `README.md`
-2. `CHARTER.md`
-3. `docs/BOUNDARIES.md`
-4. `docs/MEMORY_MODEL.md`
-5. the target source file you plan to edit
-6. any affected generated memory catalogs, capsules, registry outputs, or examples
+2. `ROADMAP.md`
+3. `CHARTER.md`
+4. `docs/BOUNDARIES.md`
+5. `docs/MEMORY_MODEL.md`
+6. the target source file you plan to edit
+7. any affected generated memory catalogs, capsules, registry outputs, or examples
 
 Then branch by task:
 
