@@ -16,6 +16,17 @@ The first recurrence-support landing makes checkpoint relaunch anchors and retur
 The first downstream eval adoption wave is now explicitly narrowed to recall precision, provenance fidelity, and staleness so `aoa-evals` can pilot memo proof without pretending to cover every guardrail focus at once.
 The current KAG-facing adoption slice now publishes `generated/kag_export.min.json` as one source-owned memo export for `aoa-kag` readiness without widening the live federation spine or `aoa-routing` ABI.
 
+The current `v0.2.1` release line also already carries:
+- checkpoint recall follow-through and lineage-aware growth-refinery writeback surfaces through `docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md`, `docs/GROWTH_REFINERY_WRITEBACK.md`, and `docs/QUEST_CHRONICLE_WRITEBACK.md`
+- runtime writeback landing, intake, and governance surfaces through `generated/runtime_writeback_targets.min.json`, `generated/runtime_writeback_intake.min.json`, `generated/runtime_writeback_governance.min.json`, and `docs/RUNTIME_WRITEBACK_SEAM.md`
+- rollout, rollback-followthrough, component-refresh, and self-agency continuity support through `examples/recovery_pattern_memory.rollback_followthrough.example.json`, `examples/recovery_pattern_memory.component_refresh.example.json`, `docs/SELF_AGENCY_CONTINUITY_WRITEBACK.md`, and `examples/provenance_thread.self-agency-continuity.example.json`
+- Phase Alpha writeback routing and owner-local live receipt publication through `generated/phase_alpha_writeback_map.min.json` and `scripts/publish_live_receipts.py`
+
+The near-term risk is roadmap drift: checkpoint recall, runtime writeback,
+growth-refinery writeback, and continuity writeback are already shipped
+memory-layer surfaces and should stay visible here without turning memory into
+proof, routing, or live runtime authority.
+
 ## Current contract-hardening waves
 
 Within the current contract-hardening stage, the cleanest wave order is:

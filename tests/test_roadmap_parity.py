@@ -25,6 +25,37 @@ class RoadmapParityTestCase(unittest.TestCase):
         self.assertIn("`generated/kag_export.min.json`", roadmap)
         self.assertNotIn("The next KAG-facing adoption slice publishes", roadmap)
 
+    def test_roadmap_matches_current_v0_2_1_writeback_surfaces(self) -> None:
+        readme = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
+        changelog = (REPO_ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
+        roadmap = (REPO_ROOT / "ROADMAP.md").read_text(encoding="utf-8")
+
+        self.assertIn("v0.2.1", readme)
+        self.assertIn("[0.2.1]", changelog)
+        self.assertIn("v0.2.1", roadmap)
+
+        for relative_path in (
+            "docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
+            "docs/GROWTH_REFINERY_WRITEBACK.md",
+            "docs/QUEST_CHRONICLE_WRITEBACK.md",
+            "generated/runtime_writeback_targets.min.json",
+            "generated/runtime_writeback_intake.min.json",
+            "generated/runtime_writeback_governance.min.json",
+            "docs/RUNTIME_WRITEBACK_SEAM.md",
+            "examples/recovery_pattern_memory.rollback_followthrough.example.json",
+            "examples/recovery_pattern_memory.component_refresh.example.json",
+            "docs/SELF_AGENCY_CONTINUITY_WRITEBACK.md",
+            "examples/provenance_thread.self-agency-continuity.example.json",
+            "generated/phase_alpha_writeback_map.min.json",
+            "scripts/publish_live_receipts.py",
+        ):
+            self.assertTrue((REPO_ROOT / relative_path).is_file())
+            self.assertIn(relative_path, roadmap)
+
+        self.assertIn("checkpoint recall", changelog)
+        self.assertIn("growth-refinery writeback", roadmap)
+        self.assertIn("roadmap drift", roadmap)
+
 
 if __name__ == "__main__":
     unittest.main()
