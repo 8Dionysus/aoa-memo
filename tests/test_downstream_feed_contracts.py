@@ -139,6 +139,16 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
             [item["role"] for item in current["source_inputs"]],
             ["primary", "supporting"],
         )
+        self.assertEqual(
+            [relation["relation_type"] for relation in current["direct_relations"]],
+            [
+                "source_memory_object",
+                "supported_by_claim",
+                "seeded_by_episode",
+                "points_to_tos_fragment",
+                "provenance_thread",
+            ],
+        )
 
     def test_recall_contract_examples_keep_expected_surface_family_routes(self) -> None:
         expected = {

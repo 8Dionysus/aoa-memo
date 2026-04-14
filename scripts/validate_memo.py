@@ -2725,7 +2725,9 @@ def validate_kag_source_export() -> None:
     if actual_payload.get("section_handles") != expected_payload["section_handles"]:
         errors.append("generated/kag_export.min.json must keep the canonical bridge section_handles")
     if actual_payload.get("direct_relations") != expected_payload["direct_relations"]:
-        errors.append("generated/kag_export.min.json must keep the narrow claim/episode/ToS direct_relations trio")
+        errors.append(
+            "generated/kag_export.min.json must keep the source/claim/episode/ToS/provenance direct_relations set"
+        )
 
     kag_root_text = os.environ.get("AOA_KAG_ROOT")
     if kag_root_text:

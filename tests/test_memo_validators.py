@@ -1124,6 +1124,24 @@ class MemoValidatorTestCase(unittest.TestCase):
         payload["direct_relations"] = payload["direct_relations"][:-1]
         self.assert_kag_export_payload_fails(payload)
 
+    def test_kag_export_validator_rejects_missing_source_memory_object_relation(self) -> None:
+        payload = self.kag_export_payload()
+        payload["direct_relations"] = [
+            relation
+            for relation in payload["direct_relations"]
+            if relation["relation_type"] != "source_memory_object"
+        ]
+        self.assert_kag_export_payload_fails(payload)
+
+    def test_kag_export_validator_rejects_missing_provenance_thread_relation(self) -> None:
+        payload = self.kag_export_payload()
+        payload["direct_relations"] = [
+            relation
+            for relation in payload["direct_relations"]
+            if relation["relation_type"] != "provenance_thread"
+        ]
+        self.assert_kag_export_payload_fails(payload)
+
     def test_return_ready_recall_contract_validates(self) -> None:
         with io.StringIO() as stdout, io.StringIO() as stderr:
             with redirect_stdout(stdout), redirect_stderr(stderr):
