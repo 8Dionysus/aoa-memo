@@ -44,6 +44,10 @@ GROWTH_REFINERY_WRITEBACK_LANES_PATH = GENERATED / "growth_refinery_writeback_la
 LIVE_RECEIPT_LOG_PATH = ROOT / ".aoa" / "live_receipts" / "memo-writeback-receipts.jsonl"
 RECALL_SURFACE_PREFIX = "repo:aoa-memo/generated/memory_object_catalog.min.json#"
 GROWTH_LANE_REF_PREFIX = "repo:aoa-memo/generated/growth_refinery_writeback_lanes.min.json#"
+LIVE_RECEIPT_ACTOR_BY_KIND = {
+    "memo_writeback_receipt": "aoa-memo:runtime-writeback",
+    "memo_growth_writeback_receipt": "aoa-memo:growth-refinery-writeback",
+}
 PHASE_ALPHA_WRITEBACK_MAP_PATH = EXAMPLES / "phase_alpha_writeback_map.example.json"
 PHASE_ALPHA_WRITEBACK_OUTPUT_PATH = GENERATED / "phase_alpha_writeback_map.min.json"
 QUESTBOOK_PATH = ROOT / "QUESTBOOK.md"
@@ -2198,6 +2202,18 @@ def validate_live_receipt_log() -> None:
             errors.append(
                 f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: event_kind must be a supported memo live receipt kind"
             )
+        else:
+            actor_ref = receipt.get("actor_ref")
+            expected_actor_ref = LIVE_RECEIPT_ACTOR_BY_KIND[event_kind]
+            if not isinstance(actor_ref, str) or not actor_ref:
+                errors.append(
+                    f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: actor_ref must be a non-empty string"
+                )
+            elif actor_ref != expected_actor_ref:
+                errors.append(
+                    f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: actor_ref {actor_ref!r} "
+                    f"must equal {expected_actor_ref!r} for {event_kind} receipts"
+                )
 
         object_ref = receipt.get("object_ref")
         object_id = object_ref.get("id") if isinstance(object_ref, dict) else None

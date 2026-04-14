@@ -15,6 +15,10 @@ GROWTH_REFINERY_LANES_PATH = REPO_ROOT / "generated" / "growth_refinery_writebac
 RECALL_SURFACE_PREFIX = "repo:aoa-memo/generated/memory_object_catalog.min.json#"
 GROWTH_LANE_REF_PREFIX = "repo:aoa-memo/generated/growth_refinery_writeback_lanes.min.json#"
 ALLOWED_EVENT_KINDS = {"memo_writeback_receipt", "memo_growth_writeback_receipt"}
+EXPECTED_ACTOR_BY_EVENT_KIND = {
+    "memo_writeback_receipt": "aoa-memo:runtime-writeback",
+    "memo_growth_writeback_receipt": "aoa-memo:growth-refinery-writeback",
+}
 
 
 class ReceiptPublishError(ValueError):
@@ -287,6 +291,14 @@ def validate_receipt(
     if event_kind not in ALLOWED_EVENT_KINDS:
         raise ReceiptPublishError(
             f"{location}.event_kind: unsupported memo receipt kind {event_kind!r}"
+        )
+    actor_ref = receipt["actor_ref"]
+    if not isinstance(actor_ref, str) or not actor_ref:
+        raise ReceiptPublishError(f"{location}.actor_ref: must be a non-empty string")
+    expected_actor_ref = EXPECTED_ACTOR_BY_EVENT_KIND[event_kind]
+    if actor_ref != expected_actor_ref:
+        raise ReceiptPublishError(
+            f"{location}.actor_ref: {event_kind!r} receipts must use actor_ref {expected_actor_ref!r}"
         )
     if not isinstance(receipt["event_id"], str) or not receipt["event_id"]:
         raise ReceiptPublishError(f"{location}.event_id: must be a non-empty string")

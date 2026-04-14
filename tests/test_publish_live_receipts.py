@@ -96,7 +96,7 @@ def build_receipt(event_kind: str = "memo_writeback_receipt") -> dict:
         "observed_at": "2026-04-06T20:10:00Z",
         "run_ref": "run-memo-001",
         "session_ref": "session:test-memo-closeout",
-        "actor_ref": "aoa-memo:writeback",
+        "actor_ref": "aoa-memo:runtime-writeback",
         "object_ref": {
             "repo": "aoa-memo",
             "kind": "memory_object",
@@ -319,6 +319,21 @@ class MemoPublishLiveReceiptsTests(unittest.TestCase):
 
             with self.assertRaises(module.ReceiptPublishError):
                 module.load_receipts([input_path])
+
+    def test_publish_live_receipts_rejects_event_kind_actor_drift(self) -> None:
+        module = load_module()
+        with tempfile.TemporaryDirectory() as temp_dir:
+            tmp_path = Path(temp_dir)
+            input_path = tmp_path / "receipt.json"
+            receipt = build_receipt()
+            receipt["actor_ref"] = "aoa-memo:growth-refinery-writeback"
+            input_path.write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8")
+
+            with self.assertRaises(module.ReceiptPublishError) as ctx:
+                module.load_receipts([input_path])
+
+        self.assertIn("actor_ref", str(ctx.exception))
+        self.assertIn("aoa-memo:runtime-writeback", str(ctx.exception))
 
     def test_publish_live_receipts_rejects_unadopted_object_id(self) -> None:
         module = load_module()
