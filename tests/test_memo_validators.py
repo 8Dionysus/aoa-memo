@@ -403,6 +403,123 @@ class MemoValidatorTestCase(unittest.TestCase):
                     with redirect_stdout(stdout), redirect_stderr(stderr):
                         validate_memo.validate_live_receipt_log()
 
+    def test_live_receipt_log_rejects_cataloged_object_without_capsule_hydration(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            log_path = Path(tmpdir) / "memo-writeback-receipts.jsonl"
+            object_id = "memo.claim.2026-03-20.temperature-not-truth"
+            receipt = {
+                "event_kind": "memo_writeback_receipt",
+                "event_id": "evt-memo-cataloged-object-missing-capsule",
+                "observed_at": "2026-04-13T19:00:00Z",
+                "run_ref": "run-memo-cataloged-object-missing-capsule",
+                "session_ref": "session:memo-cataloged-object-missing-capsule",
+                "actor_ref": "aoa-memo:runtime-writeback",
+                "object_ref": {
+                    "repo": "aoa-memo",
+                    "kind": "memory_object",
+                    "id": object_id,
+                    "version": "main",
+                },
+                "evidence_refs": [
+                    {
+                        "kind": "memory_object",
+                        "ref": "repo:aoa-memo/examples/claim.example.json",
+                        "role": "primary",
+                    },
+                    {
+                        "kind": "memory_catalog_entry",
+                        "ref": f"repo:aoa-memo/generated/memory_object_catalog.min.json#{object_id}",
+                        "role": "catalog",
+                    },
+                ],
+                "payload": {
+                    "memory_object_ref": "examples/claim.example.json",
+                    "target_kind": "claim",
+                    "writeback_class": "memo_surviving_event",
+                    "review_state": "confirmed",
+                },
+            }
+            log_path.write_text(json.dumps(receipt, sort_keys=True) + "\n", encoding="utf-8")
+            capsules_path = validate_memo.GENERATED / "memory_object_capsules.json"
+            capsules = load_json(capsules_path)
+            assert isinstance(capsules, dict)
+            capsules = copy.deepcopy(capsules)
+            capsules["memory_objects"] = [
+                item
+                for item in capsules["memory_objects"]
+                if isinstance(item, dict) and item.get("id") != object_id
+            ]
+            original_load_json = validate_memo.load_json
+
+            def side_effect(path: Path) -> dict:
+                if Path(path) == capsules_path:
+                    return copy.deepcopy(capsules)
+                return original_load_json(path)
+
+            with patch.object(validate_memo, "LIVE_RECEIPT_LOG_PATH", log_path):
+                with patch.object(validate_memo, "load_json", side_effect=side_effect):
+                    ctx = self.assert_system_exit_quietly(validate_memo.validate_live_receipt_log)
+
+        self.assertEqual(ctx.code, 1)
+
+    def test_live_receipt_log_rejects_cataloged_object_without_expand_sections(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            log_path = Path(tmpdir) / "memo-writeback-receipts.jsonl"
+            object_id = "memo.claim.2026-03-20.temperature-not-truth"
+            receipt = {
+                "event_kind": "memo_writeback_receipt",
+                "event_id": "evt-memo-cataloged-object-empty-sections",
+                "observed_at": "2026-04-13T19:00:00Z",
+                "run_ref": "run-memo-cataloged-object-empty-sections",
+                "session_ref": "session:memo-cataloged-object-empty-sections",
+                "actor_ref": "aoa-memo:runtime-writeback",
+                "object_ref": {
+                    "repo": "aoa-memo",
+                    "kind": "memory_object",
+                    "id": object_id,
+                    "version": "main",
+                },
+                "evidence_refs": [
+                    {
+                        "kind": "memory_object",
+                        "ref": "repo:aoa-memo/examples/claim.example.json",
+                        "role": "primary",
+                    },
+                    {
+                        "kind": "memory_catalog_entry",
+                        "ref": f"repo:aoa-memo/generated/memory_object_catalog.min.json#{object_id}",
+                        "role": "catalog",
+                    },
+                ],
+                "payload": {
+                    "memory_object_ref": "examples/claim.example.json",
+                    "target_kind": "claim",
+                    "writeback_class": "memo_surviving_event",
+                    "review_state": "confirmed",
+                },
+            }
+            log_path.write_text(json.dumps(receipt, sort_keys=True) + "\n", encoding="utf-8")
+            sections_path = validate_memo.GENERATED / "memory_object_sections.full.json"
+            sections = load_json(sections_path)
+            assert isinstance(sections, dict)
+            sections = copy.deepcopy(sections)
+            for item in sections["memory_objects"]:
+                if isinstance(item, dict) and item.get("id") == object_id:
+                    item["sections"] = []
+                    break
+            original_load_json = validate_memo.load_json
+
+            def side_effect(path: Path) -> dict:
+                if Path(path) == sections_path:
+                    return copy.deepcopy(sections)
+                return original_load_json(path)
+
+            with patch.object(validate_memo, "LIVE_RECEIPT_LOG_PATH", log_path):
+                with patch.object(validate_memo, "load_json", side_effect=side_effect):
+                    ctx = self.assert_system_exit_quietly(validate_memo.validate_live_receipt_log)
+
+        self.assertEqual(ctx.code, 1)
+
     def test_live_receipt_log_rejects_payload_kind_drift_from_catalog(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:
             log_path = Path(tmpdir) / "memo-writeback-receipts.jsonl"
