@@ -761,6 +761,26 @@ class MemoValidatorTestCase(unittest.TestCase):
         with patch.object(validate_memo, "load_json", side_effect=side_effect):
             self.assert_system_exit_quietly(validate_memo.validate_routing_memory_adoption_surface)
 
+    def test_playbook_memory_scope_surface_validates(self) -> None:
+        with io.StringIO() as stdout, io.StringIO() as stderr:
+            with redirect_stdout(stdout), redirect_stderr(stderr):
+                validate_memo.validate_playbook_memory_scope_surface()
+
+    def test_playbook_memory_scope_surface_rejects_widened_working_scope(self) -> None:
+        recall_path = validate_memo.EXAMPLES / "recall_contract.working.json"
+        original_load_json = validate_memo.load_json
+
+        def side_effect(path: Path) -> object:
+            payload = original_load_json(path)
+            if Path(path) == recall_path:
+                assert isinstance(payload, dict)
+                payload = copy.deepcopy(payload)
+                payload["allowed_scopes"] = ["thread", "session", "project", "ecosystem"]
+            return payload
+
+        with patch.object(validate_memo, "load_json", side_effect=side_effect):
+            self.assert_system_exit_quietly(validate_memo.validate_playbook_memory_scope_surface)
+
     def test_questbook_surface_rejects_missing_additive_anchor_doc(self) -> None:
         quest_path = validate_memo.ROOT / "quests" / "AOA-MEM-Q-0003.yaml"
         original_load_yaml = validate_memo.load_yaml
