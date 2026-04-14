@@ -1412,6 +1412,64 @@ def validate_witness_trace_contract() -> None:
     print("[OK]   witness_trace.example.json")
 
 
+def validate_quest_chronicle_surface() -> None:
+    validator = validator_for("quest_chronicle.schema.json")
+    data = load_json(EXAMPLES / "quest_chronicle.example.json")
+    registry = load_json(GENERATED / "memo_registry.min.json")
+
+    errors = [
+        f"{'.'.join(str(part) for part in err.absolute_path) or '<root>'}: {err.message}"
+        for err in sorted(validator.iter_errors(data), key=lambda err: list(err.absolute_path))
+    ]
+
+    if "quest_chronicle" in registry.get("memory_object_kinds", []):
+        errors.append("quest_chronicle must not appear in generated/memo_registry.min.json memory_object_kinds")
+    if "quest_chronicle" in registry.get("supporting_objects", []):
+        errors.append("quest_chronicle must not appear in generated/memo_registry.min.json supporting_objects")
+    if "schemas/quest_chronicle.schema.json" not in registry.get("schemas", []):
+        errors.append("generated/memo_registry.min.json must list schemas/quest_chronicle.schema.json")
+    if "docs/QUEST_CHRONICLE_WRITEBACK.md" not in registry.get("core_docs", []):
+        errors.append("generated/memo_registry.min.json must list docs/QUEST_CHRONICLE_WRITEBACK.md")
+
+    if data.get("public_safe") is not True:
+        errors.append("quest_chronicle.example.json must stay public_safe")
+    if data.get("temperature") == "hot":
+        errors.append("quest_chronicle.example.json must not default to hot temperature")
+
+    allowed_anchor_refs: set[str] = set()
+    for field_name in ("campaign_ref", "recall_anchor_ref"):
+        value = data.get(field_name)
+        if isinstance(value, str) and value:
+            allowed_anchor_refs.add(value)
+    for field_name in ("quest_refs", "evidence_refs"):
+        values = data.get(field_name)
+        if isinstance(values, list):
+            allowed_anchor_refs.update(value for value in values if isinstance(value, str) and value)
+
+    for index, stage in enumerate(data.get("stage_witness", [])):
+        if not isinstance(stage, dict):
+            continue
+        anchor_ref = stage.get("anchor_ref")
+        if isinstance(anchor_ref, str) and anchor_ref not in allowed_anchor_refs:
+            errors.append(
+                f"quest_chronicle.example.json stage_witness[{index}].anchor_ref must resolve through quest_refs, evidence_refs, campaign_ref, or recall_anchor_ref"
+            )
+        next_recall_cue = stage.get("next_recall_cue")
+        if not isinstance(next_recall_cue, str) or not next_recall_cue.strip():
+            errors.append(f"quest_chronicle.example.json stage_witness[{index}] must include next_recall_cue")
+
+    notes = data.get("notes")
+    if not isinstance(notes, str) or "witness" not in notes.lower() or "not quest authority" not in notes.lower():
+        errors.append("quest_chronicle.example.json notes must keep witness-only, non-authority posture explicit")
+
+    if errors:
+        print("[FAIL] quest_chronicle.example.json")
+        for err in errors:
+            print(f"  - {err}")
+        raise SystemExit(1)
+    print("[OK]   quest_chronicle.example.json")
+
+
 def validate_checkpoint_to_memory_contract() -> None:
     validator = validator_for("checkpoint-to-memory-contract.schema.json")
     data = load_json(EXAMPLES / "checkpoint_to_memory_contract.example.json")
@@ -2715,6 +2773,7 @@ def main() -> int:
     validate_support_schema("checkpoint-to-memory-contract.schema.json")
     validate_support_schema("memory_chunk_face.schema.json")
     validate_support_schema("memory_graph_face.schema.json")
+    validate_support_schema("quest_chronicle.schema.json")
     validate_support_schema("memory_eval_guardrail_pack.schema.json")
     validate_memory_object_surface_manifest()
     validate_example(validator_for("memory_object.schema.json"), "episode.example.json")
@@ -2881,6 +2940,7 @@ def main() -> int:
     validate_live_receipt_log()
     validate_phase_alpha_writeback_map()
     validate_witness_trace_contract()
+    validate_quest_chronicle_surface()
     validate_bridge_export_contracts()
     validate_kag_source_export()
     validate_memory_eval_guardrail_pack()
