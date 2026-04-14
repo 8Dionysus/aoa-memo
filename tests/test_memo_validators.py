@@ -462,6 +462,49 @@ class MemoValidatorTestCase(unittest.TestCase):
 
         self.assertEqual(ctx.code, 1)
 
+    def test_live_receipt_log_rejects_event_kind_actor_drift(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            log_path = Path(tmpdir) / "memo-writeback-receipts.jsonl"
+            object_id = "memo.claim.2026-03-20.temperature-not-truth"
+            receipt = {
+                "event_kind": "memo_writeback_receipt",
+                "event_id": "evt-memo-cataloged-object-actor-drift",
+                "observed_at": "2026-04-13T19:00:00Z",
+                "run_ref": "run-memo-cataloged-object-actor-drift",
+                "session_ref": "session:memo-cataloged-object-actor-drift",
+                "actor_ref": "aoa-memo:growth-refinery-writeback",
+                "object_ref": {
+                    "repo": "aoa-memo",
+                    "kind": "memory_object",
+                    "id": object_id,
+                    "version": "main",
+                },
+                "evidence_refs": [
+                    {
+                        "kind": "memory_object",
+                        "ref": "repo:aoa-memo/examples/claim.example.json",
+                        "role": "primary",
+                    },
+                    {
+                        "kind": "memory_catalog_entry",
+                        "ref": f"repo:aoa-memo/generated/memory_object_catalog.min.json#{object_id}",
+                        "role": "catalog",
+                    },
+                ],
+                "payload": {
+                    "memory_object_ref": "examples/claim.example.json",
+                    "target_kind": "claim",
+                    "writeback_class": "memo_surviving_event",
+                    "review_state": "confirmed",
+                },
+            }
+            log_path.write_text(json.dumps(receipt, sort_keys=True) + "\n", encoding="utf-8")
+
+            with patch.object(validate_memo, "LIVE_RECEIPT_LOG_PATH", log_path):
+                ctx = self.assert_system_exit_quietly(validate_memo.validate_live_receipt_log)
+
+        self.assertEqual(ctx.code, 1)
+
     def test_live_receipt_log_rejects_cataloged_object_without_expand_sections(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:
             log_path = Path(tmpdir) / "memo-writeback-receipts.jsonl"
