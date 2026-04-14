@@ -232,6 +232,21 @@
       ]
     },
     {
+      "example_path": "examples/decision.self-agency-reanchor-window.example.json",
+      "recall_modes": [
+        "working",
+        "semantic",
+        "source_route"
+      ]
+    },
+    {
+      "example_path": "examples/state_capsule.self-agency-continuity-relay.example.json",
+      "recall_modes": [
+        "working",
+        "episodic"
+      ]
+    },
+    {
       "example_path": "examples/claim.phase-alpha-closure-with-residual-runtime-history.example.json",
       "recall_modes": [
         "semantic",

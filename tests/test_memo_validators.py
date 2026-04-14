@@ -941,6 +941,29 @@ class MemoValidatorTestCase(unittest.TestCase):
         with patch.object(validate_memo, "load_json", side_effect=side_effect):
             self.assert_system_exit_quietly(validate_memo.validate_playbook_memory_scope_surface)
 
+    def test_self_agency_continuity_writeback_surface_validates(self) -> None:
+        with io.StringIO() as stdout, io.StringIO() as stderr:
+            with redirect_stdout(stdout), redirect_stderr(stderr):
+                validate_memo.validate_self_agency_continuity_writeback_surface()
+
+    def test_self_agency_continuity_writeback_rejects_unhydrated_memory_object_id(self) -> None:
+        thread_path = validate_memo.EXAMPLES / "provenance_thread.self-agency-continuity.example.json"
+        original_load_json = validate_memo.load_json
+        payload = load_json(thread_path)
+        assert isinstance(payload, dict)
+        payload = copy.deepcopy(payload)
+        payload["memory_object_ids"].append("memo.state.2099-01-01.missing-continuity-relay")
+
+        def side_effect(path: Path) -> object:
+            if Path(path) == thread_path:
+                return copy.deepcopy(payload)
+            return original_load_json(path)
+
+        with patch.object(validate_memo, "load_json", side_effect=side_effect):
+            self.assert_system_exit_quietly(
+                validate_memo.validate_self_agency_continuity_writeback_surface
+            )
+
     def test_questbook_surface_rejects_missing_additive_anchor_doc(self) -> None:
         quest_path = validate_memo.ROOT / "quests" / "AOA-MEM-Q-0003.yaml"
         original_load_yaml = validate_memo.load_yaml

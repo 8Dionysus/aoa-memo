@@ -1119,6 +1119,78 @@
       ]
     },
     {
+      "id": "memo.decision.2026-04-12.self-agency-reanchor-window",
+      "kind": "decision",
+      "title": "Decision to keep the self-agency reanchor window bounded",
+      "source_path": "examples/decision.self-agency-reanchor-window.example.json",
+      "sections": [
+        {
+          "section_id": "memo.decision.2026-04-12.self-agency-reanchor-window#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the decision surface, its active recall modes, and its allowed current-recall posture.",
+          "body": "Decision to keep the self-agency reanchor window bounded. Records the bounded choice to use the named continuity window, playbook route, and proof anchors as relaunch aids without letting memo decide return legitimacy. Scope: repo:aoa-agents, repo:aoa-playbooks, repo:aoa-evals, project:AoA. Scope classes: repo, project. Primary recall modes: working, semantic, source_route. Current recall status: allowed because This decision may support bounded return recall only while the named continuity, playbook, and proof anchors remain inspectable. Payload ref: repo:aoa-agents/examples/self_agent_checkpoint/self_agency_continuity_window.example.json."
+        },
+        {
+          "section_id": "memo.decision.2026-04-12.self-agency-reanchor-window#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.self-agency-continuity.2026-04-12. Source refs: repo:aoa-agents/examples/self_agent_checkpoint/self_agency_continuity_window.example.json, repo:aoa-sdk/examples/closeout_continuity_window.example.json, repo:aoa-playbooks/playbooks/self-agency-continuity-cycle/PLAYBOOK.md, repo:aoa-evals/bundles/aoa-continuity-anchor-integrity/EVAL.md, repo:aoa-evals/bundles/aoa-self-reanchor-correctness/EVAL.md. Episode refs: none. Related curated object ids: none. Strongest next sources: repo:aoa-agents/examples/self_agent_checkpoint/self_agency_continuity_window.example.json, repo:aoa-sdk/examples/closeout_continuity_window.example.json, repo:aoa-playbooks/playbooks/self-agency-continuity-cycle/PLAYBOOK.md."
+        },
+        {
+          "section_id": "memo.decision.2026-04-12.self-agency-reanchor-window#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: candidate_under_review (source-inspected self-agency continuity thread candidate). Temperature: warm; confidence 0.86; freshness 0.96; salience 0.90. Review state: proposed. Retention class: operational-gate. Promotion state: candidate. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.decision.2026-04-12.self-agency-reanchor-window#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Scope classes: repo, project. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/playbooks/self-agency-continuity-cycle/PLAYBOOK.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-continuity-anchor-integrity, eval:aoa-self-reanchor-correctness. KAG lift status: none."
+        }
+      ]
+    },
+    {
+      "id": "memo.state.2026-04-12.self-agency-continuity-relay",
+      "kind": "state_capsule",
+      "title": "Self-agency continuity relay state capsule",
+      "source_path": "examples/state_capsule.self-agency-continuity-relay.example.json",
+      "sections": [
+        {
+          "section_id": "memo.state.2026-04-12.self-agency-continuity-relay#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the state_capsule surface, its active recall modes, and its allowed current-recall posture.",
+          "body": "Self-agency continuity relay state capsule. Captures bounded working state for relaunch across the reviewed continuity window without turning memo into continuity truth or owner authority. Scope: repo:aoa-agents, repo:aoa-playbooks, repo:aoa-evals, project:AoA. Scope classes: repo, project. Primary recall modes: working, episodic. Current recall status: allowed because This capsule may support bounded working recall for relaunch but cannot decide whether the self-agency return is legitimate. Payload ref: repo:aoa-agents/examples/self_agent_checkpoint/self_agency_continuity_window.example.json."
+        },
+        {
+          "section_id": "memo.state.2026-04-12.self-agency-continuity-relay#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.self-agency-continuity.2026-04-12. Source refs: repo:aoa-agents/examples/self_agent_checkpoint/self_agency_continuity_window.example.json, repo:aoa-sdk/examples/closeout_continuity_window.example.json, repo:aoa-playbooks/playbooks/self-agency-continuity-cycle/PLAYBOOK.md, repo:aoa-evals/bundles/aoa-continuity-anchor-integrity/EVAL.md, repo:aoa-evals/bundles/aoa-self-reanchor-correctness/EVAL.md. Episode refs: none. Related curated object ids: none. Strongest next sources: repo:aoa-agents/examples/self_agent_checkpoint/self_agency_continuity_window.example.json, repo:aoa-sdk/examples/closeout_continuity_window.example.json, repo:aoa-playbooks/playbooks/self-agency-continuity-cycle/PLAYBOOK.md."
+        },
+        {
+          "section_id": "memo.state.2026-04-12.self-agency-continuity-relay#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: candidate_under_review (source-inspected self-agency continuity thread candidate). Temperature: hot; confidence 0.84; freshness 0.96; salience 0.89. Review state: proposed. Retention class: continuity-relay. Promotion state: candidate. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.state.2026-04-12.self-agency-continuity-relay#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Scope classes: repo, project. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:aoa-playbooks/playbooks/self-agency-continuity-cycle/PLAYBOOK.md. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-continuity-anchor-integrity, eval:aoa-self-reanchor-correctness. KAG lift status: none."
+        }
+      ]
+    },
+    {
       "id": "memo.claim.2026-04-03.phase-alpha-closure-with-residual-runtime-history",
       "kind": "claim",
       "title": "Phase Alpha closure holds while residual runtime history stays explicit",
