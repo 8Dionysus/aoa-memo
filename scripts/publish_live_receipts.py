@@ -42,9 +42,19 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         help="Generated memory-object recall catalog used to verify receipt adoption.",
     )
     parser.add_argument(
+        "--runtime-targets-path",
+        default=str(RUNTIME_WRITEBACK_TARGETS_PATH),
+        help="Generated runtime writeback targets used to verify reviewed-candidate receipts.",
+    )
+    parser.add_argument(
         "--growth-lanes-path",
         default=str(GROWTH_REFINERY_LANES_PATH),
         help="Generated growth-refinery writeback lanes used to verify support-memory receipts.",
+    )
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Validate inputs and report append/duplicate counts without mutating the live receipt log.",
     )
     return parser.parse_args(argv)
 
@@ -406,6 +416,20 @@ def load_existing_ids(path: Path) -> set[str]:
     return event_ids
 
 
+def count_new_receipts(*, log_path: Path, receipts: list[dict[str, Any]]) -> tuple[int, int]:
+    existing_ids = load_existing_ids(log_path)
+    appended = 0
+    skipped = 0
+    for receipt in receipts:
+        event_id = receipt["event_id"]
+        if event_id in existing_ids:
+            skipped += 1
+            continue
+        existing_ids.add(event_id)
+        appended += 1
+    return appended, skipped
+
+
 def append_new_receipts(*, log_path: Path, receipts: list[dict[str, Any]]) -> tuple[int, int]:
     existing_ids = load_existing_ids(log_path)
     appended = 0
@@ -438,9 +462,10 @@ def main(argv: list[str] | None = None) -> int:
         raise SystemExit("no receipt input files were provided")
     log_path = Path(args.log_path).expanduser().resolve()
     catalog_path = Path(args.catalog_path).expanduser().resolve()
+    runtime_targets_path = Path(args.runtime_targets_path).expanduser().resolve()
     growth_lanes_path = Path(args.growth_lanes_path).expanduser().resolve()
     memory_objects_by_id = load_memory_object_catalog(catalog_path)
-    runtime_targets_by_surface = load_runtime_writeback_targets(RUNTIME_WRITEBACK_TARGETS_PATH)
+    runtime_targets_by_surface = load_runtime_writeback_targets(runtime_targets_path)
     growth_lanes_by_ref = load_growth_refinery_writeback_lanes(growth_lanes_path)
     receipts = load_receipts(
         input_paths,
@@ -448,6 +473,11 @@ def main(argv: list[str] | None = None) -> int:
         runtime_targets_by_surface=runtime_targets_by_surface,
         growth_lanes_by_ref=growth_lanes_by_ref,
     )
+    if args.dry_run:
+        appended, skipped = count_new_receipts(log_path=log_path, receipts=receipts)
+        print(f"[dry-run] would append {appended} memo receipts to {log_path}")
+        print(f"[dry-run] duplicate event ids skipped: {skipped}")
+        return 0
     appended, skipped = append_new_receipts(log_path=log_path, receipts=receipts)
     print(f"[ok] appended {appended} memo receipts to {log_path}")
     print(f"[skip] duplicate event ids skipped: {skipped}")
