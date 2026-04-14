@@ -721,6 +721,26 @@ class MemoValidatorTestCase(unittest.TestCase):
             with redirect_stdout(stdout), redirect_stderr(stderr):
                 validate_memo.validate_questbook_surface()
 
+    def test_quest_chronicle_surface_validates(self) -> None:
+        with io.StringIO() as stdout, io.StringIO() as stderr:
+            with redirect_stdout(stdout), redirect_stderr(stderr):
+                validate_memo.validate_quest_chronicle_surface()
+
+    def test_quest_chronicle_surface_rejects_missing_stage_recall_cue(self) -> None:
+        chronicle_path = validate_memo.EXAMPLES / "quest_chronicle.example.json"
+        original_load_json = validate_memo.load_json
+
+        def side_effect(path: Path) -> object:
+            payload = original_load_json(path)
+            if Path(path) == chronicle_path:
+                assert isinstance(payload, dict)
+                payload = copy.deepcopy(payload)
+                payload["stage_witness"][0].pop("next_recall_cue", None)
+            return payload
+
+        with patch.object(validate_memo, "load_json", side_effect=side_effect):
+            self.assert_system_exit_quietly(validate_memo.validate_quest_chronicle_surface)
+
     def test_questbook_surface_rejects_missing_additive_anchor_doc(self) -> None:
         quest_path = validate_memo.ROOT / "quests" / "AOA-MEM-Q-0003.yaml"
         original_load_yaml = validate_memo.load_yaml
