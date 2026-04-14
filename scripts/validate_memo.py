@@ -879,6 +879,8 @@ def validate_memory_object_profiles() -> None:
         ],
         "audit_event": [
             "audit_event.retraction.example.json",
+            "audit_event.memory-retention-check.example.json",
+            "audit_event.service-governed-fallback.example.json",
         ],
     }
     for kind, example_names in PHASE_ALPHA_OBJECT_EXAMPLES_BY_KIND.items():
@@ -942,6 +944,109 @@ def validate_trust_lifecycle_contracts() -> None:
             print(f"  - {err}")
         raise SystemExit(1)
     print("[OK]   trust/lifecycle contract surfaces")
+
+
+def validate_memory_readiness_boundary_materialization() -> None:
+    boundary_doc = (ROOT / "docs" / "MEMORY_READINESS_BOUNDARY.md").read_text(encoding="utf-8")
+    checkpoint = load_json(EXAMPLES / "inquiry_checkpoint.return.example.json")
+    contradiction = load_json(EXAMPLES / "claim.phase-alpha-runtime-history-later-infra-track.example.json")
+    bridge = load_json(EXAMPLES / "bridge.kag-lift.example.json")
+    retention = load_json(EXAMPLES / "audit_event.memory-retention-check.example.json")
+    service = load_json(EXAMPLES / "audit_event.service-governed-fallback.example.json")
+    catalog = load_json(GENERATED / "memory_object_catalog.min.json")
+    errors: list[str] = []
+
+    for phrase in (
+        "memory delta",
+        "canon delta reference",
+        "retention check",
+        "unresolved contradiction",
+        "survivor or bridge candidate",
+        "civil/service assistant trace",
+    ):
+        if phrase not in boundary_doc:
+            errors.append(f"docs/MEMORY_READINESS_BOUNDARY.md must keep pressure row {phrase!r}")
+
+    memory_delta_refs = checkpoint.get("memory_delta_refs")
+    canon_delta_refs = checkpoint.get("canon_delta_refs")
+    if not isinstance(memory_delta_refs, list) or not memory_delta_refs:
+        errors.append("inquiry_checkpoint.return.example.json must keep non-empty memory_delta_refs")
+    if not isinstance(canon_delta_refs, list) or not canon_delta_refs:
+        errors.append("inquiry_checkpoint.return.example.json must keep non-empty canon_delta_refs")
+    if isinstance(memory_delta_refs, list) and isinstance(canon_delta_refs, list):
+        overlap = sorted(set(memory_delta_refs) & set(canon_delta_refs))
+        if overlap:
+            errors.append(
+                "inquiry_checkpoint.return.example.json must keep memory_delta_refs distinct from canon_delta_refs "
+                f"(overlap={overlap})"
+            )
+
+    contradiction_refs = contradiction.get("lifecycle", {}).get("current_recall", {}).get("contradiction_refs")
+    if not isinstance(contradiction_refs, list) or not contradiction_refs:
+        errors.append(
+            "claim.phase-alpha-runtime-history-later-infra-track.example.json must keep explicit contradiction_refs"
+        )
+
+    bridge_lifecycle = bridge.get("lifecycle", {})
+    if bridge_lifecycle.get("review_state") != "proposed":
+        errors.append("bridge.kag-lift.example.json must keep lifecycle.review_state == 'proposed'")
+    if bridge_lifecycle.get("retention_class") != "bridge-candidate":
+        errors.append("bridge.kag-lift.example.json must keep lifecycle.retention_class == 'bridge-candidate'")
+
+    retention_sources = retention.get("provenance", {}).get("source_refs")
+    if retention.get("kind") != "audit_event":
+        errors.append("audit_event.memory-retention-check.example.json must stay an audit_event")
+    if retention.get("lifecycle", {}).get("retention_class") != "audit-trace":
+        errors.append("audit_event.memory-retention-check.example.json must keep lifecycle.retention_class == 'audit-trace'")
+    if not isinstance(retention_sources, list) or (
+        "docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map" not in retention_sources
+    ):
+        errors.append(
+            "audit_event.memory-retention-check.example.json must cite docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map"
+        )
+
+    service_sources = service.get("provenance", {}).get("source_refs")
+    if service.get("kind") != "audit_event":
+        errors.append("audit_event.service-governed-fallback.example.json must stay an audit_event")
+    if service.get("lifecycle", {}).get("retention_class") != "audit-trace":
+        errors.append(
+            "audit_event.service-governed-fallback.example.json must keep lifecycle.retention_class == 'audit-trace'"
+        )
+    if not isinstance(service_sources, list) or not any(
+        "service_degradation_receipt" in ref for ref in service_sources
+    ):
+        errors.append(
+            "audit_event.service-governed-fallback.example.json must preserve a source receipt ref"
+        )
+    if not isinstance(service_sources, list) or "repo:aoa-agents/docs/AGENT_RUNTIME_SEAM.md" not in service_sources:
+        errors.append(
+            "audit_event.service-governed-fallback.example.json must preserve the aoa-agents owner boundary ref"
+        )
+
+    catalog_objects = catalog.get("memory_objects")
+    catalog_ids: set[str] = set()
+    if isinstance(catalog_objects, list):
+        catalog_ids = {
+            item.get("id")
+            for item in catalog_objects
+            if isinstance(item, dict) and isinstance(item.get("id"), str)
+        }
+    for object_id in (
+        "memo.audit.2026-04-13.memo-entrypoint-retention-check",
+        "memo.audit.2026-04-07.hybrid-query-service-fallback",
+    ):
+        if object_id not in catalog_ids:
+            errors.append(
+                "generated/memory_object_catalog.min.json must surface memory readiness example "
+                f"{object_id}"
+            )
+
+    if errors:
+        print("[FAIL] memory readiness boundary materialization")
+        for err in errors:
+            print(f"  - {err}")
+        raise SystemExit(1)
+    print("[OK]   memory readiness boundary materialization")
 
 
 def validate_memory_object_surface_manifest() -> None:
@@ -2585,6 +2690,7 @@ def main() -> int:
     )
     validate_memory_object_profiles()
     validate_trust_lifecycle_contracts()
+    validate_memory_readiness_boundary_materialization()
     validate_registry()
     validate_core_memory_contract()
     validate_checkpoint_to_memory_contract()
