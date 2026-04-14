@@ -11,6 +11,7 @@ if str(SCRIPTS_ROOT) not in sys.path:
     sys.path.insert(0, str(SCRIPTS_ROOT))
 
 import validate_memo
+import generate_growth_refinery_writeback_lanes
 
 
 def load_json(relative_path: str) -> object:
@@ -104,3 +105,23 @@ def test_recovery_pattern_lineage_example_keeps_full_chain_and_review_first_reca
     assert example["lineage_context"]["status_posture"] == "stable"
     assert "bounded recall only after checking the linked owner receipt" in example["recall_posture"]
     assert "Memo preserves the bounded recovery pattern" in example["notes"]
+
+
+def test_growth_refinery_writeback_lanes_surface_stays_generator_backed() -> None:
+    current = load_json("generated/growth_refinery_writeback_lanes.min.json")
+    expected = generate_growth_refinery_writeback_lanes.build_growth_refinery_writeback_lanes_payload()
+
+    assert current == expected
+    assert current["schema_version"] == 1
+    assert current["layer"] == "aoa-memo"
+    assert current["scope"] == "growth-refinery-writeback"
+
+    by_ref = {item["lane_ref"]: item for item in current["lanes"]}
+    assert set(by_ref) == {"growth_refinery_failure_lesson", "growth_refinery_recovery_pattern"}
+    assert by_ref["growth_refinery_failure_lesson"]["target_kind"] == "failure_lesson"
+    assert by_ref["growth_refinery_failure_lesson"]["object_ref_kind"] == "support_memory"
+    assert by_ref["growth_refinery_failure_lesson"]["writeback_class"] == "growth_refinery_memory"
+    assert "aoa-playbooks:review_note_v1#AOA-P-0025:owner-reanchor" in by_ref["growth_refinery_failure_lesson"]["required_evidence_refs"]
+    assert by_ref["growth_refinery_recovery_pattern"]["target_kind"] == "recovery_pattern"
+    assert "aoa-stats:candidate_lineage_summary_v1#summary:session-growth-cycle" in by_ref["growth_refinery_recovery_pattern"]["required_evidence_refs"]
+    assert "examples/pattern.antifragility-stress-recovery-window.example.json" in by_ref["growth_refinery_recovery_pattern"]["optional_evidence_refs"]

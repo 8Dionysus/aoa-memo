@@ -541,6 +541,115 @@ class MemoValidatorTestCase(unittest.TestCase):
             with patch.object(validate_memo, "LIVE_RECEIPT_LOG_PATH", log_path):
                 self.assert_system_exit_quietly(validate_memo.validate_live_receipt_log)
 
+    def test_live_receipt_log_accepts_growth_refinery_receipt(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            log_path = Path(tmpdir) / "memo-writeback-receipts.jsonl"
+            lane_ref = "growth_refinery_failure_lesson"
+            receipt = {
+                "event_kind": "memo_growth_writeback_receipt",
+                "event_id": "evt-memo-growth-failure-lesson",
+                "observed_at": "2026-04-14T00:05:00Z",
+                "run_ref": "run-memo-growth-refinery-writeback-2026-04-14",
+                "session_ref": "session:memo-growth-refinery-writeback",
+                "actor_ref": "aoa-memo:growth-refinery-writeback",
+                "object_ref": {
+                    "repo": "aoa-memo",
+                    "kind": "support_memory",
+                    "id": "memo:session-growth-cycle-owner-reanchor-first",
+                    "version": "main",
+                },
+                "evidence_refs": [
+                    {
+                        "kind": "support_memory",
+                        "ref": "repo:aoa-memo/examples/failure_lesson_memory.lineage.example.json",
+                        "role": "primary",
+                    },
+                    {
+                        "kind": "growth_lane_entry",
+                        "ref": f"repo:aoa-memo/generated/growth_refinery_writeback_lanes.min.json#{lane_ref}",
+                        "role": "lane",
+                    },
+                    {
+                        "kind": "growth_evidence",
+                        "ref": "aoa-skills:harvest_packet_receipt_v1#candidate:aoa-playbooks:session-growth-cycle",
+                        "role": "required-evidence",
+                    },
+                    {
+                        "kind": "growth_evidence",
+                        "ref": "aoa-playbooks:review_note_v1#AOA-P-0025:owner-reanchor",
+                        "role": "required-evidence",
+                    },
+                    {
+                        "kind": "growth_evidence",
+                        "ref": "aoa-sdk:closeout_context_lineage_v1#session-growth-cycle",
+                        "role": "required-evidence",
+                    },
+                    {
+                        "kind": "growth_evidence",
+                        "ref": "aoa-evals:aoa-owner-fit-routing-quality#report:session-growth-cycle",
+                        "role": "required-evidence",
+                    },
+                    {
+                        "kind": "growth_evidence",
+                        "ref": "Agents-of-Abyss:reviewable_growth_refinery_v1#owner-boundaries",
+                        "role": "required-evidence",
+                    },
+                ],
+                "payload": {
+                    "growth_lane_ref": lane_ref,
+                    "source_example_ref": "examples/failure_lesson_memory.lineage.example.json",
+                    "target_kind": "failure_lesson",
+                    "review_status": "reviewed",
+                    "writeback_class": "growth_refinery_memory",
+                },
+            }
+            log_path.write_text(json.dumps(receipt, sort_keys=True) + "\n", encoding="utf-8")
+
+            with patch.object(validate_memo, "LIVE_RECEIPT_LOG_PATH", log_path):
+                with io.StringIO() as stdout, io.StringIO() as stderr:
+                    with redirect_stdout(stdout), redirect_stderr(stderr):
+                        validate_memo.validate_live_receipt_log()
+
+    def test_live_receipt_log_rejects_growth_refinery_receipt_without_lane_ref(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            log_path = Path(tmpdir) / "memo-writeback-receipts.jsonl"
+            receipt = {
+                "event_kind": "memo_growth_writeback_receipt",
+                "event_id": "evt-memo-growth-recovery-pattern",
+                "observed_at": "2026-04-14T00:05:00Z",
+                "run_ref": "run-memo-growth-refinery-writeback-2026-04-14",
+                "session_ref": "session:memo-growth-refinery-writeback",
+                "actor_ref": "aoa-memo:growth-refinery-writeback",
+                "object_ref": {
+                    "repo": "aoa-memo",
+                    "kind": "support_memory",
+                    "id": "memo:session-growth-cycle-playbook-reanchor",
+                    "version": "main",
+                },
+                "evidence_refs": [
+                    {
+                        "kind": "support_memory",
+                        "ref": "repo:aoa-memo/examples/recovery_pattern_memory.lineage.example.json",
+                        "role": "primary",
+                    },
+                    {
+                        "kind": "growth_evidence",
+                        "ref": "aoa-skills:harvest_packet_receipt_v1#candidate:aoa-playbooks:session-growth-cycle",
+                        "role": "required-evidence",
+                    },
+                ],
+                "payload": {
+                    "source_example_ref": "examples/recovery_pattern_memory.lineage.example.json",
+                    "target_kind": "recovery_pattern",
+                    "review_status": "reviewed",
+                    "writeback_class": "growth_refinery_memory",
+                },
+            }
+            log_path.write_text(json.dumps(receipt, sort_keys=True) + "\n", encoding="utf-8")
+
+            with patch.object(validate_memo, "LIVE_RECEIPT_LOG_PATH", log_path):
+                self.assert_system_exit_quietly(validate_memo.validate_live_receipt_log)
+
     def test_questbook_surface_validates(self) -> None:
         with io.StringIO() as stdout, io.StringIO() as stderr:
             with redirect_stdout(stdout), redirect_stderr(stderr):

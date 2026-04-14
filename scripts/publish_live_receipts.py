@@ -11,8 +11,10 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_LOG_PATH = REPO_ROOT / ".aoa" / "live_receipts" / "memo-writeback-receipts.jsonl"
 MEMORY_OBJECT_CATALOG_PATH = REPO_ROOT / "generated" / "memory_object_catalog.min.json"
 RUNTIME_WRITEBACK_TARGETS_PATH = REPO_ROOT / "generated" / "runtime_writeback_targets.min.json"
+GROWTH_REFINERY_LANES_PATH = REPO_ROOT / "generated" / "growth_refinery_writeback_lanes.min.json"
 RECALL_SURFACE_PREFIX = "repo:aoa-memo/generated/memory_object_catalog.min.json#"
-ALLOWED_EVENT_KINDS = {"memo_writeback_receipt"}
+GROWTH_LANE_REF_PREFIX = "repo:aoa-memo/generated/growth_refinery_writeback_lanes.min.json#"
+ALLOWED_EVENT_KINDS = {"memo_writeback_receipt", "memo_growth_writeback_receipt"}
 
 
 class ReceiptPublishError(ValueError):
@@ -38,6 +40,11 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         "--catalog-path",
         default=str(MEMORY_OBJECT_CATALOG_PATH),
         help="Generated memory-object recall catalog used to verify receipt adoption.",
+    )
+    parser.add_argument(
+        "--growth-lanes-path",
+        default=str(GROWTH_REFINERY_LANES_PATH),
+        help="Generated growth-refinery writeback lanes used to verify support-memory receipts.",
     )
     return parser.parse_args(argv)
 
@@ -80,69 +87,50 @@ def load_runtime_writeback_targets(path: Path) -> dict[str, dict[str, Any]]:
     return by_surface
 
 
-def validate_receipt(
-    receipt: dict[str, Any],
+def load_growth_refinery_writeback_lanes(path: Path) -> dict[str, dict[str, Any]]:
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(payload, dict):
+        raise ReceiptPublishError(f"{path}: growth refinery writeback lanes must be an object")
+    items = payload.get("lanes")
+    if not isinstance(items, list):
+        raise ReceiptPublishError(f"{path}: growth refinery writeback lanes must expose lanes")
+    by_ref: dict[str, dict[str, Any]] = {}
+    for index, item in enumerate(items):
+        if not isinstance(item, dict):
+            raise ReceiptPublishError(f"{path}.lanes[{index}]: must be an object")
+        lane_ref = item.get("lane_ref")
+        if not isinstance(lane_ref, str) or not lane_ref:
+            raise ReceiptPublishError(f"{path}.lanes[{index}].lane_ref: must be a non-empty string")
+        by_ref[lane_ref] = item
+    return by_ref
+
+
+def validate_memo_writeback_receipt(
     *,
+    receipt: dict[str, Any],
     location: str,
+    object_id: str,
+    payload: dict[str, Any],
+    evidence_ref_values: list[str],
     memory_objects_by_id: dict[str, dict[str, Any]],
     runtime_targets_by_surface: dict[str, dict[str, Any]],
 ) -> None:
-    required_fields = (
-        "event_kind",
-        "event_id",
-        "observed_at",
-        "run_ref",
-        "session_ref",
-        "actor_ref",
-        "object_ref",
-        "evidence_refs",
-        "payload",
-    )
-    for field in required_fields:
-        if field not in receipt:
-            raise ReceiptPublishError(f"{location}: missing field {field!r}")
-    event_kind = receipt["event_kind"]
-    if event_kind not in ALLOWED_EVENT_KINDS:
-        raise ReceiptPublishError(
-            f"{location}.event_kind: unsupported memo receipt kind {event_kind!r}"
-        )
-    if not isinstance(receipt["event_id"], str) or not receipt["event_id"]:
-        raise ReceiptPublishError(f"{location}.event_id: must be a non-empty string")
-    object_ref = receipt["object_ref"]
-    if not isinstance(object_ref, dict):
-        raise ReceiptPublishError(f"{location}.object_ref: must be an object")
-    if object_ref.get("kind") != "memory_object":
-        raise ReceiptPublishError(f"{location}.object_ref.kind: must equal 'memory_object'")
-    object_id = object_ref.get("id")
-    if not isinstance(object_id, str) or not object_id:
-        raise ReceiptPublishError(f"{location}.object_ref.id: must be a non-empty string")
     catalog_entry = memory_objects_by_id.get(object_id)
     if catalog_entry is None:
         raise ReceiptPublishError(
             f"{location}.object_ref.id: {object_id!r} does not resolve in generated memory-object recall catalog"
         )
-    evidence_refs = receipt["evidence_refs"]
-    if not isinstance(evidence_refs, list) or not evidence_refs:
-        raise ReceiptPublishError(f"{location}.evidence_refs: must be a list")
-    evidence_ref_values: list[str] = []
-    for index, evidence_ref in enumerate(evidence_refs):
-        if not isinstance(evidence_ref, dict):
-            raise ReceiptPublishError(f"{location}.evidence_refs[{index}]: must be an object")
-        ref = evidence_ref.get("ref")
-        if not isinstance(ref, str) or not ref:
-            raise ReceiptPublishError(f"{location}.evidence_refs[{index}].ref: must be a non-empty string")
-        evidence_ref_values.append(ref)
+
     recall_ref = f"{RECALL_SURFACE_PREFIX}{object_id}"
     if recall_ref not in evidence_ref_values:
         raise ReceiptPublishError(
             f"{location}.evidence_refs: must include adopted recall surface ref {recall_ref!r}"
         )
-    payload = receipt["payload"]
-    if not isinstance(payload, dict):
-        raise ReceiptPublishError(f"{location}.payload: must be an object")
+
     for field in ("target_kind", "writeback_class", "review_state"):
         if not isinstance(payload.get(field), str) or not payload[field]:
             raise ReceiptPublishError(f"{location}.payload.{field}: must be a non-empty string")
+
     memory_object_ref = payload.get("memory_object_ref")
     if memory_object_ref is not None:
         if not isinstance(memory_object_ref, str) or not memory_object_ref:
@@ -162,39 +150,184 @@ def validate_receipt(
             f"{location}.payload.review_state: must match adopted memory object review_state "
             f"{catalog_entry.get('review_state')!r}"
         )
-    if payload["writeback_class"] == "reviewed_candidate":
-        runtime_surface = payload.get("runtime_surface")
-        if not isinstance(runtime_surface, str) or not runtime_surface:
+
+    if payload["writeback_class"] != "reviewed_candidate":
+        return
+
+    runtime_surface = payload.get("runtime_surface")
+    if not isinstance(runtime_surface, str) or not runtime_surface:
+        raise ReceiptPublishError(
+            f"{location}.payload.runtime_surface: reviewed_candidate receipts must include a non-empty runtime_surface"
+        )
+    runtime_target = runtime_targets_by_surface.get(runtime_surface)
+    if runtime_target is None:
+        raise ReceiptPublishError(
+            f"{location}.payload.runtime_surface: unknown runtime writeback surface {runtime_surface!r}"
+        )
+    if runtime_target.get("writeback_class") != "reviewed_candidate":
+        raise ReceiptPublishError(
+            f"{location}.payload.runtime_surface: {runtime_surface!r} must resolve to a reviewed_candidate mapping"
+        )
+    if runtime_target.get("target_kind") != payload["target_kind"]:
+        raise ReceiptPublishError(
+            f"{location}.payload.runtime_surface: {runtime_surface!r} must resolve to target_kind "
+            f"{payload['target_kind']!r}"
+        )
+    writeback_anchor_ref = payload.get("writeback_anchor_ref")
+    if not isinstance(writeback_anchor_ref, str) or not writeback_anchor_ref:
+        raise ReceiptPublishError(
+            f"{location}.payload.writeback_anchor_ref: reviewed_candidate receipts must include a non-empty writeback_anchor_ref"
+        )
+    if writeback_anchor_ref not in evidence_ref_values:
+        raise ReceiptPublishError(
+            f"{location}.evidence_refs: reviewed_candidate receipts must include writeback anchor ref {writeback_anchor_ref!r}"
+        )
+    if memory_object_ref is None:
+        raise ReceiptPublishError(
+            f"{location}.payload.memory_object_ref: reviewed_candidate receipts must include adopted memory object source_path"
+        )
+
+
+def validate_growth_writeback_receipt(
+    *,
+    location: str,
+    object_id: str,
+    payload: dict[str, Any],
+    evidence_ref_values: list[str],
+    growth_lanes_by_ref: dict[str, dict[str, Any]],
+) -> None:
+    for field in ("growth_lane_ref", "target_kind", "writeback_class", "review_status", "source_example_ref"):
+        if not isinstance(payload.get(field), str) or not payload[field]:
+            raise ReceiptPublishError(f"{location}.payload.{field}: must be a non-empty string")
+
+    lane_ref = payload["growth_lane_ref"]
+    lane = growth_lanes_by_ref.get(lane_ref)
+    if lane is None:
+        raise ReceiptPublishError(
+            f"{location}.payload.growth_lane_ref: unknown growth refinery writeback lane {lane_ref!r}"
+        )
+    if object_id != lane.get("memory_id"):
+        raise ReceiptPublishError(
+            f"{location}.object_ref.id: must match lane memory_id {lane.get('memory_id')!r}"
+        )
+    if payload["target_kind"] != lane.get("target_kind"):
+        raise ReceiptPublishError(
+            f"{location}.payload.target_kind: must match lane target_kind {lane.get('target_kind')!r}"
+        )
+    if payload["writeback_class"] != lane.get("writeback_class"):
+        raise ReceiptPublishError(
+            f"{location}.payload.writeback_class: must match lane writeback_class {lane.get('writeback_class')!r}"
+        )
+    if payload["review_status"] != lane.get("review_status"):
+        raise ReceiptPublishError(
+            f"{location}.payload.review_status: must match lane review_status {lane.get('review_status')!r}"
+        )
+    if payload["source_example_ref"] != lane.get("source_path"):
+        raise ReceiptPublishError(
+            f"{location}.payload.source_example_ref: must match lane source_path {lane.get('source_path')!r}"
+        )
+
+    primary_ref = lane.get("primary_ref")
+    if not isinstance(primary_ref, str) or primary_ref not in evidence_ref_values:
+        raise ReceiptPublishError(
+            f"{location}.evidence_refs: must include primary support ref {primary_ref!r}"
+        )
+    expected_lane_ref = f"{GROWTH_LANE_REF_PREFIX}{lane_ref}"
+    if expected_lane_ref not in evidence_ref_values:
+        raise ReceiptPublishError(
+            f"{location}.evidence_refs: must include growth lane ref {expected_lane_ref!r}"
+        )
+
+    required_evidence_refs = lane.get("required_evidence_refs")
+    if not isinstance(required_evidence_refs, list):
+        raise ReceiptPublishError(
+            f"{location}.payload.growth_lane_ref: lane {lane_ref!r} must expose required_evidence_refs"
+        )
+    for required_ref in required_evidence_refs:
+        if required_ref not in evidence_ref_values:
             raise ReceiptPublishError(
-                f"{location}.payload.runtime_surface: reviewed_candidate receipts must include a non-empty runtime_surface"
+                f"{location}.evidence_refs: must include required growth-refinery evidence ref {required_ref!r}"
             )
-        runtime_target = runtime_targets_by_surface.get(runtime_surface)
-        if runtime_target is None:
-            raise ReceiptPublishError(
-                f"{location}.payload.runtime_surface: unknown runtime writeback surface {runtime_surface!r}"
-            )
-        if runtime_target.get("writeback_class") != "reviewed_candidate":
-            raise ReceiptPublishError(
-                f"{location}.payload.runtime_surface: {runtime_surface!r} must resolve to a reviewed_candidate mapping"
-            )
-        if runtime_target.get("target_kind") != payload["target_kind"]:
-            raise ReceiptPublishError(
-                f"{location}.payload.runtime_surface: {runtime_surface!r} must resolve to target_kind "
-                f"{payload['target_kind']!r}"
-            )
-        writeback_anchor_ref = payload.get("writeback_anchor_ref")
-        if not isinstance(writeback_anchor_ref, str) or not writeback_anchor_ref:
-            raise ReceiptPublishError(
-                f"{location}.payload.writeback_anchor_ref: reviewed_candidate receipts must include a non-empty writeback_anchor_ref"
-            )
-        if writeback_anchor_ref not in evidence_ref_values:
-            raise ReceiptPublishError(
-                f"{location}.evidence_refs: reviewed_candidate receipts must include writeback anchor ref {writeback_anchor_ref!r}"
-            )
-        if memory_object_ref is None:
-            raise ReceiptPublishError(
-                f"{location}.payload.memory_object_ref: reviewed_candidate receipts must include adopted memory object source_path"
-            )
+
+
+def validate_receipt(
+    receipt: dict[str, Any],
+    *,
+    location: str,
+    memory_objects_by_id: dict[str, dict[str, Any]],
+    runtime_targets_by_surface: dict[str, dict[str, Any]],
+    growth_lanes_by_ref: dict[str, dict[str, Any]],
+) -> None:
+    required_fields = (
+        "event_kind",
+        "event_id",
+        "observed_at",
+        "run_ref",
+        "session_ref",
+        "actor_ref",
+        "object_ref",
+        "evidence_refs",
+        "payload",
+    )
+    for field in required_fields:
+        if field not in receipt:
+            raise ReceiptPublishError(f"{location}: missing field {field!r}")
+
+    event_kind = receipt["event_kind"]
+    if event_kind not in ALLOWED_EVENT_KINDS:
+        raise ReceiptPublishError(
+            f"{location}.event_kind: unsupported memo receipt kind {event_kind!r}"
+        )
+    if not isinstance(receipt["event_id"], str) or not receipt["event_id"]:
+        raise ReceiptPublishError(f"{location}.event_id: must be a non-empty string")
+
+    object_ref = receipt["object_ref"]
+    if not isinstance(object_ref, dict):
+        raise ReceiptPublishError(f"{location}.object_ref: must be an object")
+    object_id = object_ref.get("id")
+    if not isinstance(object_id, str) or not object_id:
+        raise ReceiptPublishError(f"{location}.object_ref.id: must be a non-empty string")
+
+    evidence_refs = receipt["evidence_refs"]
+    if not isinstance(evidence_refs, list) or not evidence_refs:
+        raise ReceiptPublishError(f"{location}.evidence_refs: must be a list")
+    evidence_ref_values: list[str] = []
+    for index, evidence_ref in enumerate(evidence_refs):
+        if not isinstance(evidence_ref, dict):
+            raise ReceiptPublishError(f"{location}.evidence_refs[{index}]: must be an object")
+        ref = evidence_ref.get("ref")
+        if not isinstance(ref, str) or not ref:
+            raise ReceiptPublishError(f"{location}.evidence_refs[{index}].ref: must be a non-empty string")
+        evidence_ref_values.append(ref)
+
+    payload = receipt["payload"]
+    if not isinstance(payload, dict):
+        raise ReceiptPublishError(f"{location}.payload: must be an object")
+
+    object_kind = object_ref.get("kind")
+    if event_kind == "memo_writeback_receipt":
+        if object_kind != "memory_object":
+            raise ReceiptPublishError(f"{location}.object_ref.kind: must equal 'memory_object'")
+        validate_memo_writeback_receipt(
+            receipt=receipt,
+            location=location,
+            object_id=object_id,
+            payload=payload,
+            evidence_ref_values=evidence_ref_values,
+            memory_objects_by_id=memory_objects_by_id,
+            runtime_targets_by_surface=runtime_targets_by_surface,
+        )
+        return
+
+    if object_kind != "support_memory":
+        raise ReceiptPublishError(f"{location}.object_ref.kind: must equal 'support_memory'")
+    validate_growth_writeback_receipt(
+        location=location,
+        object_id=object_id,
+        payload=payload,
+        evidence_ref_values=evidence_ref_values,
+        growth_lanes_by_ref=growth_lanes_by_ref,
+    )
 
 
 def load_receipts(
@@ -202,11 +335,14 @@ def load_receipts(
     *,
     memory_objects_by_id: dict[str, dict[str, Any]] | None = None,
     runtime_targets_by_surface: dict[str, dict[str, Any]] | None = None,
+    growth_lanes_by_ref: dict[str, dict[str, Any]] | None = None,
 ) -> list[dict[str, Any]]:
     if memory_objects_by_id is None:
         memory_objects_by_id = load_memory_object_catalog(MEMORY_OBJECT_CATALOG_PATH)
     if runtime_targets_by_surface is None:
         runtime_targets_by_surface = load_runtime_writeback_targets(RUNTIME_WRITEBACK_TARGETS_PATH)
+    if growth_lanes_by_ref is None:
+        growth_lanes_by_ref = load_growth_refinery_writeback_lanes(GROWTH_REFINERY_LANES_PATH)
     receipts: list[dict[str, Any]] = []
     for path in paths:
         if path.suffix == ".jsonl":
@@ -222,6 +358,7 @@ def load_receipts(
                     location=f"{path}:{line_number}",
                     memory_objects_by_id=memory_objects_by_id,
                     runtime_targets_by_surface=runtime_targets_by_surface,
+                    growth_lanes_by_ref=growth_lanes_by_ref,
                 )
                 receipts.append(item)
             continue
@@ -232,6 +369,7 @@ def load_receipts(
                 location=str(path),
                 memory_objects_by_id=memory_objects_by_id,
                 runtime_targets_by_surface=runtime_targets_by_surface,
+                growth_lanes_by_ref=growth_lanes_by_ref,
             )
             receipts.append(payload)
             continue
@@ -245,6 +383,7 @@ def load_receipts(
                 location=f"{path}[{index}]",
                 memory_objects_by_id=memory_objects_by_id,
                 runtime_targets_by_surface=runtime_targets_by_surface,
+                growth_lanes_by_ref=growth_lanes_by_ref,
             )
             receipts.append(item)
     return receipts
@@ -299,12 +438,15 @@ def main(argv: list[str] | None = None) -> int:
         raise SystemExit("no receipt input files were provided")
     log_path = Path(args.log_path).expanduser().resolve()
     catalog_path = Path(args.catalog_path).expanduser().resolve()
+    growth_lanes_path = Path(args.growth_lanes_path).expanduser().resolve()
     memory_objects_by_id = load_memory_object_catalog(catalog_path)
     runtime_targets_by_surface = load_runtime_writeback_targets(RUNTIME_WRITEBACK_TARGETS_PATH)
+    growth_lanes_by_ref = load_growth_refinery_writeback_lanes(growth_lanes_path)
     receipts = load_receipts(
         input_paths,
         memory_objects_by_id=memory_objects_by_id,
         runtime_targets_by_surface=runtime_targets_by_surface,
+        growth_lanes_by_ref=growth_lanes_by_ref,
     )
     appended, skipped = append_new_receipts(log_path=log_path, receipts=receipts)
     print(f"[ok] appended {appended} memo receipts to {log_path}")
