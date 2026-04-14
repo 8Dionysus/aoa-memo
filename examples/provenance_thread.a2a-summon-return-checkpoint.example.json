@@ -1,0 +1,40 @@
+{
+  "id": "prov.a2a-summon-return-checkpoint.2026-04-14",
+  "title": "A2A summon return checkpoint provenance thread",
+  "summary": "Preserves the bounded replay chain for the reviewed A2A summon child-return fixture without turning memo writeback into route truth or memo canon.",
+  "status": "active",
+  "writeback_target": "provenance_thread",
+  "anchor_artifact_ref": "repo:aoa-sdk/examples/a2a/summon_return_checkpoint_e2e.fixture.json#reviewed_closeout_request",
+  "source_refs": [
+    "repo:aoa-sdk/examples/a2a/summon_return_checkpoint_e2e.fixture.json",
+    "repo:aoa-skills/skills/aoa-summon/SKILL.md",
+    "repo:aoa-playbooks/playbooks/a2a-summon-return-checkpoint/PLAYBOOK.md",
+    "repo:aoa-evals/bundles/aoa-a2a-summon-return-checkpoint/EVAL.md",
+    "repo:abyss-stack/docs/A2A_RETURN_DRY_RUN.md",
+    "repo:aoa-routing/generated/return_navigation_hints.min.json"
+  ],
+  "memory_object_ids": [
+    "memo.decision.2026-04-14.a2a-return-transition-candidate",
+    "memo.audit.2026-04-14.a2a-return-dry-run-candidate"
+  ],
+  "timeline": [
+    {
+      "at": "2026-04-14T00:00:00Z",
+      "action": "validated the summon request and result against aoa-summon v3",
+      "actor_ref": "agent:reviewer",
+      "note": "The request/result contract stays in aoa-skills while the fixture assembly stays in aoa-sdk."
+    },
+    {
+      "at": "2026-04-14T00:05:00Z",
+      "action": "preserved the reviewed child return and checkpoint bridge as replay aids",
+      "actor_ref": "agent:memory-keeper",
+      "note": "Checkpoint hints remain provisional under the reviewed closeout artifact."
+    },
+    {
+      "at": "2026-04-14T00:10:00Z",
+      "action": "recorded dry-run receipt and routing re-entry refs without promoting memo canon",
+      "actor_ref": "agent:memory-keeper",
+      "object_id": "memo.audit.2026-04-14.a2a-return-dry-run-candidate"
+    }
+  ]
+}
