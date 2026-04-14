@@ -13,6 +13,7 @@ RECEIPT_FIXTURE_PATH = REPO_ROOT / "tests" / "fixtures" / "memo_writeback_receip
 MEMORY_OBJECT_CATALOG_PATH = REPO_ROOT / "generated" / "memory_object_catalog.min.json"
 MEMORY_OBJECT_CAPSULES_PATH = REPO_ROOT / "generated" / "memory_object_capsules.json"
 MEMORY_OBJECT_SECTIONS_PATH = REPO_ROOT / "generated" / "memory_object_sections.full.json"
+GROWTH_REFINERY_LANES_PATH = REPO_ROOT / "generated" / "growth_refinery_writeback_lanes.min.json"
 ADOPTED_OBJECT_ID = "memo.decision.2026-04-02.alpha-validation-remediation-rerun"
 ADOPTED_RECALL_REF = (
     "repo:aoa-memo/generated/memory_object_catalog.min.json#"
@@ -42,6 +43,34 @@ REVIEWED_CANDIDATE_CASES = {
         "review_state": "proposed",
         "writeback_anchor_ref": "repo:aoa-memo/docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow",
         "candidate_seed_ref": "repo:aoa-memo/examples/claim.tos-bridge-ready.example.json",
+    },
+}
+GROWTH_LANE_CASES = {
+    "growth_refinery_failure_lesson": {
+        "memory_id": "memo:session-growth-cycle-owner-reanchor-first",
+        "source_path": "examples/failure_lesson_memory.lineage.example.json",
+        "target_kind": "failure_lesson",
+        "review_status": "reviewed",
+        "required_evidence_refs": [
+            "aoa-skills:harvest_packet_receipt_v1#candidate:aoa-playbooks:session-growth-cycle",
+            "aoa-playbooks:review_note_v1#AOA-P-0025:owner-reanchor",
+            "aoa-sdk:closeout_context_lineage_v1#session-growth-cycle",
+            "aoa-evals:aoa-owner-fit-routing-quality#report:session-growth-cycle",
+            "Agents-of-Abyss:reviewable_growth_refinery_v1#owner-boundaries",
+        ],
+    },
+    "growth_refinery_recovery_pattern": {
+        "memory_id": "memo:session-growth-cycle-playbook-reanchor",
+        "source_path": "examples/recovery_pattern_memory.lineage.example.json",
+        "target_kind": "recovery_pattern",
+        "review_status": "reviewed",
+        "required_evidence_refs": [
+            "aoa-skills:harvest_packet_receipt_v1#candidate:aoa-playbooks:session-growth-cycle",
+            "Dionysus:seed_lineage_entry_v1#seed:aoa:session-growth-cycle",
+            "aoa-evals:aoa-candidate-lineage-integrity#report:session-growth-cycle",
+            "aoa-evals:aoa-owner-fit-routing-quality#report:session-growth-cycle",
+            "aoa-stats:candidate_lineage_summary_v1#summary:session-growth-cycle",
+        ],
     },
 }
 
@@ -133,6 +162,52 @@ def build_reviewed_candidate_receipt(runtime_surface: str) -> dict:
             "target_kind": case["target_kind"],
             "writeback_anchor_ref": case["writeback_anchor_ref"],
             "writeback_class": "reviewed_candidate",
+        },
+    }
+
+
+def build_growth_receipt(lane_ref: str) -> dict:
+    case = GROWTH_LANE_CASES[lane_ref]
+    source_path = case["source_path"]
+    return {
+        "event_kind": "memo_growth_writeback_receipt",
+        "event_id": f"evt-{lane_ref}",
+        "observed_at": "2026-04-14T00:05:00Z",
+        "run_ref": "run-memo-growth-refinery-writeback-2026-04-14",
+        "session_ref": "session:2026-04-14-growth-refinery-writeback",
+        "actor_ref": "aoa-memo:growth-refinery-writeback",
+        "object_ref": {
+            "repo": "aoa-memo",
+            "kind": "support_memory",
+            "id": case["memory_id"],
+            "version": "main",
+        },
+        "evidence_refs": [
+            {
+                "kind": "support_memory",
+                "ref": f"repo:aoa-memo/{source_path}",
+                "role": "primary",
+            },
+            {
+                "kind": "growth_lane_entry",
+                "ref": f"repo:aoa-memo/generated/growth_refinery_writeback_lanes.min.json#{lane_ref}",
+                "role": "lane",
+            },
+        ]
+        + [
+            {
+                "kind": "growth_evidence",
+                "ref": ref,
+                "role": "required-evidence",
+            }
+            for ref in case["required_evidence_refs"]
+        ],
+        "payload": {
+            "growth_lane_ref": lane_ref,
+            "source_example_ref": source_path,
+            "target_kind": case["target_kind"],
+            "review_status": case["review_status"],
+            "writeback_class": "growth_refinery_memory",
         },
     }
 
@@ -247,6 +322,49 @@ class MemoPublishLiveReceiptsTests(unittest.TestCase):
 
         self.assertIn("reviewed_candidate receipts must include writeback anchor ref", str(ctx.exception))
 
+    def test_publish_live_receipts_accepts_growth_refinery_failure_lesson_receipt(self) -> None:
+        module = load_module()
+        with tempfile.TemporaryDirectory() as temp_dir:
+            tmp_path = Path(temp_dir)
+            input_path = tmp_path / "receipt.json"
+            input_path.write_text(
+                json.dumps(build_growth_receipt("growth_refinery_failure_lesson"), indent=2) + "\n",
+                encoding="utf-8",
+            )
+
+            receipts = module.load_receipts([input_path])
+
+        self.assertEqual(len(receipts), 1)
+        self.assertEqual(receipts[0]["event_kind"], "memo_growth_writeback_receipt")
+
+    def test_publish_live_receipts_requires_growth_lane_ref_for_growth_receipt(self) -> None:
+        module = load_module()
+        with tempfile.TemporaryDirectory() as temp_dir:
+            tmp_path = Path(temp_dir)
+            input_path = tmp_path / "receipt.json"
+            receipt = build_growth_receipt("growth_refinery_recovery_pattern")
+            receipt["payload"].pop("growth_lane_ref")
+            input_path.write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8")
+
+            with self.assertRaises(module.ReceiptPublishError) as ctx:
+                module.load_receipts([input_path])
+
+        self.assertIn("payload.growth_lane_ref", str(ctx.exception))
+
+    def test_publish_live_receipts_requires_growth_lane_evidence_refs(self) -> None:
+        module = load_module()
+        with tempfile.TemporaryDirectory() as temp_dir:
+            tmp_path = Path(temp_dir)
+            input_path = tmp_path / "receipt.json"
+            receipt = build_growth_receipt("growth_refinery_recovery_pattern")
+            receipt["evidence_refs"] = receipt["evidence_refs"][:-1]
+            input_path.write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8")
+
+            with self.assertRaises(module.ReceiptPublishError) as ctx:
+                module.load_receipts([input_path])
+
+        self.assertIn("required growth-refinery evidence ref", str(ctx.exception))
+
     def test_publish_live_receipts_preserves_jsonl_line_boundaries(self) -> None:
         module = load_module()
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -275,6 +393,7 @@ class MemoPublishLiveReceiptsTests(unittest.TestCase):
         self.assertTrue(receipts)
 
         catalog_by_id = module.load_memory_object_catalog(MEMORY_OBJECT_CATALOG_PATH)
+        growth_lanes_by_ref = module.load_growth_refinery_writeback_lanes(GROWTH_REFINERY_LANES_PATH)
         capsules_by_id = {
             item["id"]: item
             for item in load_json(MEMORY_OBJECT_CAPSULES_PATH)["memory_objects"]
@@ -286,30 +405,49 @@ class MemoPublishLiveReceiptsTests(unittest.TestCase):
 
         event_ids: set[str] = set()
         reviewed_candidate_target_kinds: set[str] = set()
+        growth_lane_target_kinds: set[str] = set()
         for receipt in receipts:
             event_id = receipt["event_id"]
-            object_id = receipt["object_ref"]["id"]
-            catalog_entry = catalog_by_id[object_id]
-
             self.assertNotIn(event_id, event_ids)
             event_ids.add(event_id)
-            self.assertIn(object_id, capsules_by_id)
-            self.assertIn(object_id, sections_by_id)
-            self.assertEqual(capsules_by_id[object_id]["kind"], catalog_entry["kind"])
-            self.assertEqual(sections_by_id[object_id]["kind"], catalog_entry["kind"])
-            self.assertEqual(capsules_by_id[object_id]["source_path"], catalog_entry["source_path"])
-            self.assertEqual(sections_by_id[object_id]["source_path"], catalog_entry["source_path"])
-            self.assertTrue(sections_by_id[object_id]["sections"])
-            if "memory_object_ref" in receipt["payload"]:
-                self.assertEqual(receipt["payload"]["memory_object_ref"], catalog_entry["source_path"])
-            if receipt["payload"]["writeback_class"] == "reviewed_candidate":
-                reviewed_candidate_target_kinds.add(receipt["payload"]["target_kind"])
-                self.assertIn("runtime_surface", receipt["payload"])
-                self.assertIn(
-                    receipt["payload"]["writeback_anchor_ref"],
-                    {ref["ref"] for ref in receipt["evidence_refs"]},
-                )
+            if receipt["event_kind"] == "memo_writeback_receipt":
+                object_id = receipt["object_ref"]["id"]
+                catalog_entry = catalog_by_id[object_id]
+                self.assertIn(object_id, capsules_by_id)
+                self.assertIn(object_id, sections_by_id)
+                self.assertEqual(capsules_by_id[object_id]["kind"], catalog_entry["kind"])
+                self.assertEqual(sections_by_id[object_id]["kind"], catalog_entry["kind"])
+                self.assertEqual(capsules_by_id[object_id]["source_path"], catalog_entry["source_path"])
+                self.assertEqual(sections_by_id[object_id]["source_path"], catalog_entry["source_path"])
+                self.assertTrue(sections_by_id[object_id]["sections"])
+                if "memory_object_ref" in receipt["payload"]:
+                    self.assertEqual(receipt["payload"]["memory_object_ref"], catalog_entry["source_path"])
+                if receipt["payload"]["writeback_class"] == "reviewed_candidate":
+                    reviewed_candidate_target_kinds.add(receipt["payload"]["target_kind"])
+                    self.assertIn("runtime_surface", receipt["payload"])
+                    self.assertIn(
+                        receipt["payload"]["writeback_anchor_ref"],
+                        {ref["ref"] for ref in receipt["evidence_refs"]},
+                    )
+                continue
+
+            lane_ref = receipt["payload"]["growth_lane_ref"]
+            lane = growth_lanes_by_ref[lane_ref]
+            growth_lane_target_kinds.add(receipt["payload"]["target_kind"])
+            self.assertEqual(receipt["event_kind"], "memo_growth_writeback_receipt")
+            self.assertEqual(receipt["object_ref"]["kind"], lane["object_ref_kind"])
+            self.assertEqual(receipt["object_ref"]["id"], lane["memory_id"])
+            self.assertEqual(receipt["payload"]["source_example_ref"], lane["source_path"])
+            evidence_refs = {ref["ref"] for ref in receipt["evidence_refs"]}
+            self.assertIn(lane["primary_ref"], evidence_refs)
+            self.assertIn(
+                f"repo:aoa-memo/generated/growth_refinery_writeback_lanes.min.json#{lane_ref}",
+                evidence_refs,
+            )
+            for required_ref in lane["required_evidence_refs"]:
+                self.assertIn(required_ref, evidence_refs)
         self.assertEqual(reviewed_candidate_target_kinds, {"claim", "pattern", "bridge"})
+        self.assertEqual(growth_lane_target_kinds, {"failure_lesson", "recovery_pattern"})
 
 
 if __name__ == "__main__":

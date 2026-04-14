@@ -40,8 +40,10 @@ GENERATED = ROOT / "generated"
 RUNTIME_WRITEBACK_TARGETS_PATH = GENERATED / "runtime_writeback_targets.min.json"
 RUNTIME_WRITEBACK_INTAKE_PATH = GENERATED / "runtime_writeback_intake.min.json"
 RUNTIME_WRITEBACK_GOVERNANCE_PATH = GENERATED / "runtime_writeback_governance.min.json"
+GROWTH_REFINERY_WRITEBACK_LANES_PATH = GENERATED / "growth_refinery_writeback_lanes.min.json"
 LIVE_RECEIPT_LOG_PATH = ROOT / ".aoa" / "live_receipts" / "memo-writeback-receipts.jsonl"
 RECALL_SURFACE_PREFIX = "repo:aoa-memo/generated/memory_object_catalog.min.json#"
+GROWTH_LANE_REF_PREFIX = "repo:aoa-memo/generated/growth_refinery_writeback_lanes.min.json#"
 PHASE_ALPHA_WRITEBACK_MAP_PATH = EXAMPLES / "phase_alpha_writeback_map.example.json"
 PHASE_ALPHA_WRITEBACK_OUTPUT_PATH = GENERATED / "phase_alpha_writeback_map.min.json"
 QUESTBOOK_PATH = ROOT / "QUESTBOOK.md"
@@ -202,6 +204,21 @@ def load_runtime_writeback_governance_builder():
     if spec is None or spec.loader is None:
         print("[FAIL] runtime_writeback_governance.min.json")
         print("  - unable to load runtime writeback governance generator")
+        raise SystemExit(1)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def load_growth_refinery_writeback_lanes_builder():
+    module_path = ROOT / "scripts" / "generate_growth_refinery_writeback_lanes.py"
+    spec = importlib.util.spec_from_file_location(
+        "generate_growth_refinery_writeback_lanes",
+        module_path,
+    )
+    if spec is None or spec.loader is None:
+        print("[FAIL] growth_refinery_writeback_lanes.min.json")
+        print("  - unable to load growth refinery writeback lane generator")
         raise SystemExit(1)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
@@ -1814,6 +1831,78 @@ def validate_runtime_writeback_governance() -> None:
     print("[OK]   runtime_writeback_governance.min.json")
 
 
+def validate_growth_refinery_writeback_lanes() -> None:
+    builder = load_growth_refinery_writeback_lanes_builder()
+    expected = builder.build_growth_refinery_writeback_lanes_payload()
+    data = load_json(GROWTH_REFINERY_WRITEBACK_LANES_PATH)
+    errors: list[str] = []
+
+    if data != expected:
+        errors.append(
+            "generated/growth_refinery_writeback_lanes.min.json is out of date; "
+            "run scripts/generate_growth_refinery_writeback_lanes.py"
+        )
+    if data.get("schema_version") != 1:
+        errors.append("generated/growth_refinery_writeback_lanes.min.json must declare schema_version 1")
+    if data.get("layer") != "aoa-memo":
+        errors.append("generated/growth_refinery_writeback_lanes.min.json must declare layer aoa-memo")
+    if data.get("scope") != "growth-refinery-writeback":
+        errors.append("generated/growth_refinery_writeback_lanes.min.json must declare scope growth-refinery-writeback")
+
+    lanes = data.get("lanes")
+    if not isinstance(lanes, list):
+        errors.append("generated/growth_refinery_writeback_lanes.min.json must expose lanes as a list")
+    else:
+        seen_lane_refs: set[str] = set()
+        seen_memory_ids: set[str] = set()
+        for index, lane in enumerate(lanes):
+            if not isinstance(lane, dict):
+                errors.append(f"lanes[{index}] must be an object")
+                continue
+            for field_name in (
+                "lane_ref",
+                "target_kind",
+                "object_ref_kind",
+                "writeback_class",
+                "review_status",
+                "memory_id",
+                "source_path",
+                "primary_ref",
+            ):
+                if not isinstance(lane.get(field_name), str) or not lane[field_name]:
+                    errors.append(f"lanes[{index}].{field_name} must be a non-empty string")
+            lane_ref = lane.get("lane_ref")
+            if isinstance(lane_ref, str):
+                if lane_ref in seen_lane_refs:
+                    errors.append(f"lanes[{index}].lane_ref duplicates {lane_ref!r}")
+                else:
+                    seen_lane_refs.add(lane_ref)
+            memory_id = lane.get("memory_id")
+            if isinstance(memory_id, str):
+                if memory_id in seen_memory_ids:
+                    errors.append(f"lanes[{index}].memory_id duplicates {memory_id!r}")
+                else:
+                    seen_memory_ids.add(memory_id)
+            if lane.get("object_ref_kind") != "support_memory":
+                errors.append(f"lanes[{index}].object_ref_kind must stay 'support_memory'")
+            if lane.get("writeback_class") != "growth_refinery_memory":
+                errors.append(f"lanes[{index}].writeback_class must stay 'growth_refinery_memory'")
+            for list_name in ("required_evidence_refs", "optional_evidence_refs"):
+                values = lane.get(list_name)
+                if not isinstance(values, list) or not all(isinstance(value, str) and value for value in values):
+                    errors.append(f"lanes[{index}].{list_name} must be a list of non-empty strings")
+            required_refs = lane.get("required_evidence_refs")
+            if isinstance(required_refs, list) and not required_refs:
+                errors.append(f"lanes[{index}].required_evidence_refs must not be empty")
+
+    if errors:
+        print("[FAIL] growth_refinery_writeback_lanes.min.json")
+        for err in errors:
+            print(f"  - {err}")
+        raise SystemExit(1)
+    print("[OK]   growth_refinery_writeback_lanes.min.json")
+
+
 def validate_live_receipt_log() -> None:
     if not LIVE_RECEIPT_LOG_PATH.exists():
         print("[OK]   live receipt log absent")
@@ -1821,6 +1910,7 @@ def validate_live_receipt_log() -> None:
 
     catalog = load_json(GENERATED / "memory_object_catalog.min.json")
     runtime_targets = load_json(RUNTIME_WRITEBACK_TARGETS_PATH)
+    growth_lanes = load_json(GROWTH_REFINERY_WRITEBACK_LANES_PATH)
     catalog_entries_by_id = {
         item["id"]: item
         for item in catalog.get("memory_objects", [])
@@ -1830,6 +1920,11 @@ def validate_live_receipt_log() -> None:
         item["runtime_surface"]: item
         for item in runtime_targets.get("targets", [])
         if isinstance(item, dict) and isinstance(item.get("runtime_surface"), str)
+    }
+    growth_lanes_by_ref = {
+        item["lane_ref"]: item
+        for item in growth_lanes.get("lanes", [])
+        if isinstance(item, dict) and isinstance(item.get("lane_ref"), str)
     }
     catalog_ids = set(catalog_entries_by_id)
     errors: list[str] = []
@@ -1859,9 +1954,10 @@ def validate_live_receipt_log() -> None:
         else:
             seen_event_ids.add(event_id)
 
-        if receipt.get("event_kind") != "memo_writeback_receipt":
+        event_kind = receipt.get("event_kind")
+        if event_kind not in {"memo_writeback_receipt", "memo_growth_writeback_receipt"}:
             errors.append(
-                f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: event_kind must equal 'memo_writeback_receipt'"
+                f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: event_kind must be a supported memo live receipt kind"
             )
 
         object_ref = receipt.get("object_ref")
@@ -1871,84 +1967,133 @@ def validate_live_receipt_log() -> None:
         else:
             if object_ref.get("repo") != "aoa-memo":
                 errors.append(f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: object_ref.repo must equal 'aoa-memo'")
-            if object_ref.get("kind") != "memory_object":
-                errors.append(f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: object_ref.kind must equal 'memory_object'")
             if not isinstance(object_id, str) or not object_id:
                 errors.append(f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: object_ref.id must be a non-empty string")
-            elif object_id not in catalog_ids:
-                errors.append(
-                    f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: object_ref.id {object_id!r} "
-                    "is absent from generated/memory_object_catalog.min.json"
-                )
+            elif event_kind == "memo_writeback_receipt":
+                if object_ref.get("kind") != "memory_object":
+                    errors.append(f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: object_ref.kind must equal 'memory_object'")
+                elif object_id not in catalog_ids:
+                    errors.append(
+                        f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: object_ref.id {object_id!r} "
+                        "is absent from generated/memory_object_catalog.min.json"
+                    )
+            elif event_kind == "memo_growth_writeback_receipt":
+                if object_ref.get("kind") != "support_memory":
+                    errors.append(f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: object_ref.kind must equal 'support_memory'")
 
         payload = receipt.get("payload")
+        growth_lane_ref: str | None = None
+        growth_lane: dict | None = None
         if not isinstance(payload, dict):
             errors.append(f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: payload must be an object")
         else:
-            for field in ("target_kind", "writeback_class", "review_state"):
-                if not isinstance(payload.get(field), str) or not payload[field]:
-                    errors.append(
-                        f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: payload.{field} "
-                        "must be a non-empty string"
-                    )
-            if isinstance(object_id, str) and object_id in catalog_entries_by_id:
-                catalog_entry = catalog_entries_by_id[object_id]
-                if payload.get("target_kind") != catalog_entry.get("kind"):
-                    errors.append(
-                        f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: payload.target_kind "
-                        f"{payload.get('target_kind')!r} must match catalog kind "
-                        f"{catalog_entry.get('kind')!r}"
-                    )
-                if payload.get("review_state") != catalog_entry.get("review_state"):
-                    errors.append(
-                        f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: payload.review_state "
-                        f"{payload.get('review_state')!r} must match catalog review_state "
-                        f"{catalog_entry.get('review_state')!r}"
-                    )
-                memory_object_ref = payload.get("memory_object_ref")
-                if memory_object_ref is not None:
-                    if not isinstance(memory_object_ref, str) or not memory_object_ref:
+            if event_kind == "memo_writeback_receipt":
+                for field in ("target_kind", "writeback_class", "review_state"):
+                    if not isinstance(payload.get(field), str) or not payload[field]:
                         errors.append(
-                            f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: payload.memory_object_ref must be a non-empty string"
+                            f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: payload.{field} must be a non-empty string"
                         )
-                    elif memory_object_ref != catalog_entry.get("source_path"):
+                if isinstance(object_id, str) and object_id in catalog_entries_by_id:
+                    catalog_entry = catalog_entries_by_id[object_id]
+                    if payload.get("target_kind") != catalog_entry.get("kind"):
                         errors.append(
-                            f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: payload.memory_object_ref "
-                            f"{memory_object_ref!r} must match catalog source_path "
-                            f"{catalog_entry.get('source_path')!r}"
+                            f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: payload.target_kind "
+                            f"{payload.get('target_kind')!r} must match catalog kind "
+                            f"{catalog_entry.get('kind')!r}"
                         )
-                if payload.get("writeback_class") == "reviewed_candidate":
-                    runtime_surface = payload.get("runtime_surface")
-                    if not isinstance(runtime_surface, str) or not runtime_surface:
+                    if payload.get("review_state") != catalog_entry.get("review_state"):
                         errors.append(
-                            f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: reviewed_candidate receipts must include payload.runtime_surface"
+                            f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: payload.review_state "
+                            f"{payload.get('review_state')!r} must match catalog review_state "
+                            f"{catalog_entry.get('review_state')!r}"
                         )
-                    else:
-                        runtime_target = runtime_targets_by_surface.get(runtime_surface)
-                        if runtime_target is None:
+                    memory_object_ref = payload.get("memory_object_ref")
+                    if memory_object_ref is not None:
+                        if not isinstance(memory_object_ref, str) or not memory_object_ref:
                             errors.append(
-                                f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: payload.runtime_surface "
-                                f"{runtime_surface!r} is absent from generated/runtime_writeback_targets.min.json"
+                                f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: payload.memory_object_ref must be a non-empty string"
+                            )
+                        elif memory_object_ref != catalog_entry.get("source_path"):
+                            errors.append(
+                                f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: payload.memory_object_ref "
+                                f"{memory_object_ref!r} must match catalog source_path "
+                                f"{catalog_entry.get('source_path')!r}"
+                            )
+                    if payload.get("writeback_class") == "reviewed_candidate":
+                        runtime_surface = payload.get("runtime_surface")
+                        if not isinstance(runtime_surface, str) or not runtime_surface:
+                            errors.append(
+                                f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: reviewed_candidate receipts must include payload.runtime_surface"
                             )
                         else:
-                            if runtime_target.get("writeback_class") != "reviewed_candidate":
+                            runtime_target = runtime_targets_by_surface.get(runtime_surface)
+                            if runtime_target is None:
                                 errors.append(
                                     f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: payload.runtime_surface "
-                                    f"{runtime_surface!r} must resolve to a reviewed_candidate mapping"
+                                    f"{runtime_surface!r} is absent from generated/runtime_writeback_targets.min.json"
                                 )
-                            if runtime_target.get("target_kind") != catalog_entry.get("kind"):
-                                errors.append(
-                                    f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: payload.runtime_surface "
-                                    f"{runtime_surface!r} must resolve to catalog kind {catalog_entry.get('kind')!r}"
-                                )
-                    writeback_anchor_ref = payload.get("writeback_anchor_ref")
-                    if not isinstance(writeback_anchor_ref, str) or not writeback_anchor_ref:
+                            else:
+                                if runtime_target.get("writeback_class") != "reviewed_candidate":
+                                    errors.append(
+                                        f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: payload.runtime_surface "
+                                        f"{runtime_surface!r} must resolve to a reviewed_candidate mapping"
+                                    )
+                                if runtime_target.get("target_kind") != catalog_entry.get("kind"):
+                                    errors.append(
+                                        f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: payload.runtime_surface "
+                                        f"{runtime_surface!r} must resolve to catalog kind {catalog_entry.get('kind')!r}"
+                                    )
+                        writeback_anchor_ref = payload.get("writeback_anchor_ref")
+                        if not isinstance(writeback_anchor_ref, str) or not writeback_anchor_ref:
+                            errors.append(
+                                f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: reviewed_candidate receipts must include payload.writeback_anchor_ref"
+                            )
+                        if memory_object_ref is None:
+                            errors.append(
+                                f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: reviewed_candidate receipts must include payload.memory_object_ref"
+                            )
+            elif event_kind == "memo_growth_writeback_receipt":
+                for field in ("growth_lane_ref", "target_kind", "writeback_class", "review_status", "source_example_ref"):
+                    if not isinstance(payload.get(field), str) or not payload[field]:
                         errors.append(
-                            f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: reviewed_candidate receipts must include payload.writeback_anchor_ref"
+                            f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: payload.{field} must be a non-empty string"
                         )
-                    if memory_object_ref is None:
+                growth_lane_ref = payload.get("growth_lane_ref") if isinstance(payload.get("growth_lane_ref"), str) else None
+                growth_lane = growth_lanes_by_ref.get(growth_lane_ref) if growth_lane_ref else None
+                if growth_lane_ref and growth_lane is None:
+                    errors.append(
+                        f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: payload.growth_lane_ref "
+                        f"{growth_lane_ref!r} is absent from generated/growth_refinery_writeback_lanes.min.json"
+                    )
+                if isinstance(growth_lane, dict):
+                    if payload.get("target_kind") != growth_lane.get("target_kind"):
                         errors.append(
-                            f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: reviewed_candidate receipts must include payload.memory_object_ref"
+                            f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: payload.target_kind "
+                            f"{payload.get('target_kind')!r} must match lane target_kind "
+                            f"{growth_lane.get('target_kind')!r}"
+                        )
+                    if payload.get("writeback_class") != growth_lane.get("writeback_class"):
+                        errors.append(
+                            f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: payload.writeback_class "
+                            f"{payload.get('writeback_class')!r} must match lane writeback_class "
+                            f"{growth_lane.get('writeback_class')!r}"
+                        )
+                    if payload.get("review_status") != growth_lane.get("review_status"):
+                        errors.append(
+                            f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: payload.review_status "
+                            f"{payload.get('review_status')!r} must match lane review_status "
+                            f"{growth_lane.get('review_status')!r}"
+                        )
+                    if payload.get("source_example_ref") != growth_lane.get("source_path"):
+                        errors.append(
+                            f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: payload.source_example_ref "
+                            f"{payload.get('source_example_ref')!r} must match lane source_path "
+                            f"{growth_lane.get('source_path')!r}"
+                        )
+                    if isinstance(object_id, str) and object_id != growth_lane.get("memory_id"):
+                        errors.append(
+                            f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: object_ref.id {object_id!r} "
+                            f"must match lane memory_id {growth_lane.get('memory_id')!r}"
                         )
 
         evidence_refs = receipt.get("evidence_refs")
@@ -1993,7 +2138,21 @@ def validate_live_receipt_log() -> None:
                         f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: catalog evidence id {anchor!r} "
                         f"must match object_ref.id {object_id!r}"
                     )
-        if isinstance(object_id, str) and object_id in catalog_ids:
+            if path_text == "generated/growth_refinery_writeback_lanes.min.json":
+                if not anchor:
+                    errors.append(
+                        f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: growth lane evidence ref must include a lane anchor"
+                    )
+                elif anchor not in growth_lanes_by_ref:
+                    errors.append(
+                        f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: growth lane evidence ref points to unknown lane {anchor!r}"
+                    )
+                elif growth_lane_ref is not None and anchor != growth_lane_ref:
+                    errors.append(
+                        f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: growth lane evidence ref {anchor!r} "
+                        f"must match payload.growth_lane_ref {growth_lane_ref!r}"
+                    )
+        if event_kind == "memo_writeback_receipt" and isinstance(object_id, str) and object_id in catalog_ids:
             expected_recall_ref = f"{RECALL_SURFACE_PREFIX}{object_id}"
             if expected_recall_ref not in evidence_ref_values:
                 errors.append(
@@ -2010,6 +2169,27 @@ def validate_live_receipt_log() -> None:
                     f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: reviewed_candidate receipts must include writeback anchor ref "
                     f"{payload['writeback_anchor_ref']!r} in evidence_refs"
                 )
+        if event_kind == "memo_growth_writeback_receipt" and isinstance(growth_lane, dict) and growth_lane_ref is not None:
+            primary_ref = growth_lane.get("primary_ref")
+            if isinstance(primary_ref, str) and primary_ref not in evidence_ref_values:
+                errors.append(
+                    f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: growth receipts must include primary support ref "
+                    f"{primary_ref!r}"
+                )
+            expected_lane_ref = f"{GROWTH_LANE_REF_PREFIX}{growth_lane_ref}"
+            if expected_lane_ref not in evidence_ref_values:
+                errors.append(
+                    f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: growth receipts must include lane ref "
+                    f"{expected_lane_ref!r}"
+                )
+            required_refs = growth_lane.get("required_evidence_refs")
+            if isinstance(required_refs, list):
+                for required_ref in required_refs:
+                    if required_ref not in evidence_ref_values:
+                        errors.append(
+                            f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: growth receipts must include required evidence ref "
+                            f"{required_ref!r}"
+                        )
 
     if errors:
         print("[FAIL] live receipt log")
@@ -2697,6 +2877,7 @@ def main() -> int:
     validate_runtime_writeback_targets()
     validate_runtime_writeback_intake()
     validate_runtime_writeback_governance()
+    validate_growth_refinery_writeback_lanes()
     validate_live_receipt_log()
     validate_phase_alpha_writeback_map()
     validate_witness_trace_contract()
