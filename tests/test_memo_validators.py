@@ -80,6 +80,48 @@ class MemoValidatorTestCase(unittest.TestCase):
 
         self.assertEqual(errors, [])
 
+    def test_memory_readiness_boundary_materialization_validates(self) -> None:
+        validate_memo.validate_memory_readiness_boundary_materialization()
+
+    def test_memory_readiness_boundary_rejects_overlapping_delta_refs(self) -> None:
+        checkpoint_path = validate_memo.EXAMPLES / "inquiry_checkpoint.return.example.json"
+        payload = load_json(checkpoint_path)
+        assert isinstance(payload, dict)
+        payload = copy.deepcopy(payload)
+        payload["canon_delta_refs"] = list(payload["memory_delta_refs"])
+        original_load_json = validate_memo.load_json
+
+        def side_effect(path: Path) -> dict:
+            if Path(path) == checkpoint_path:
+                return copy.deepcopy(payload)
+            return original_load_json(path)
+
+        with patch.object(validate_memo, "load_json", side_effect=side_effect):
+            self.assert_system_exit_quietly(
+                validate_memo.validate_memory_readiness_boundary_materialization
+            )
+
+    def test_memory_readiness_boundary_rejects_service_trace_without_owner_boundary_ref(self) -> None:
+        service_path = validate_memo.EXAMPLES / "audit_event.service-governed-fallback.example.json"
+        payload = load_json(service_path)
+        assert isinstance(payload, dict)
+        payload = copy.deepcopy(payload)
+        payload["provenance"]["source_refs"] = [
+            "abyss-stack:service_degradation_receipt_v1#service:2026-04-07:hybrid-query-kag-unhealthy",
+            "docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map",
+        ]
+        original_load_json = validate_memo.load_json
+
+        def side_effect(path: Path) -> dict:
+            if Path(path) == service_path:
+                return copy.deepcopy(payload)
+            return original_load_json(path)
+
+        with patch.object(validate_memo, "load_json", side_effect=side_effect):
+            self.assert_system_exit_quietly(
+                validate_memo.validate_memory_readiness_boundary_materialization
+            )
+
     def test_memory_object_schema_rejects_invalid_nullable_datetime(self) -> None:
         validator = validate_memo.validator_for("memory_object.schema.json")
         payload = load_json(REPO_ROOT / "examples" / "anchor.example.json")

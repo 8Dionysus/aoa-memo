@@ -1,0 +1,74 @@
+{
+  "id": "memo.audit.2026-04-07.hybrid-query-service-fallback",
+  "kind": "audit_event",
+  "title": "Governed service fallback stayed a memo-side trace",
+  "summary": "Captures the reviewed service degradation and bounded fallback that mattered beyond one run while keeping service contract meaning in aoa-agents and live health truth in abyss-stack.",
+  "scope": [
+    "repo:abyss-stack",
+    "project:AoA"
+  ],
+  "owner_refs": [
+    "repo:aoa-memo"
+  ],
+  "payload_ref": "repo:aoa-agents/docs/AGENT_RUNTIME_SEAM.md",
+  "tags": [
+    "service",
+    "audit",
+    "fallback"
+  ],
+  "time": {
+    "created_at": "2026-04-07T18:40:00Z",
+    "observed_at": "2026-04-07T18:35:00Z",
+    "valid_from": "2026-04-07T18:40:00Z",
+    "valid_to": null
+  },
+  "provenance": {
+    "source_refs": [
+      "abyss-stack:service_degradation_receipt_v1#service:2026-04-07:hybrid-query-kag-unhealthy",
+      "repo:aoa-agents/docs/AGENT_RUNTIME_SEAM.md",
+      "docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map"
+    ],
+    "episode_refs": [],
+    "provenance_thread_id": "prov.memo.readiness-boundary.2026-04-13"
+  },
+  "trust": {
+    "temperature": "cool",
+    "confidence": 0.88,
+    "authority_kind": "human_reviewed",
+    "authority": "reviewed service fallback trace",
+    "freshness": 0.86,
+    "salience": 0.82
+  },
+  "lifecycle": {
+    "review_state": "confirmed",
+    "supersedes": [],
+    "superseded_by": null,
+    "retention_class": "audit-trace",
+    "current_recall": {
+      "status": "allowed",
+      "status_reason": "This audit event remains available as a bounded service-action trace without turning memo into service policy or live health authority."
+    }
+  },
+  "access": {
+    "access_class": "public",
+    "read_scopes": [
+      "public"
+    ],
+    "write_scopes": [
+      "maintainer"
+    ],
+    "promotion_scopes": [
+      "maintainer",
+      "human-review"
+    ]
+  },
+  "bridges": {
+    "tos_refs": [],
+    "skill_refs": [],
+    "eval_refs": [
+      "eval:aoa-memo-recall-integrity"
+    ],
+    "kag_lift_status": "none",
+    "route_capsule_ref": "docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map"
+  }
+}

@@ -277,6 +277,20 @@
       ]
     },
     {
+      "example_path": "examples/audit_event.memory-retention-check.example.json",
+      "recall_modes": [
+        "episodic",
+        "source_route"
+      ]
+    },
+    {
+      "example_path": "examples/audit_event.service-governed-fallback.example.json",
+      "recall_modes": [
+        "episodic",
+        "source_route"
+      ]
+    },
+    {
       "example_path": "examples/pattern.phase-alpha-remediation-recurrence.example.json",
       "recall_modes": [
         "procedural",

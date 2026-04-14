@@ -447,6 +447,30 @@
       "source_path": "examples/audit_event.phase-alpha-runtime-history-overread-retraction.example.json"
     },
     {
+      "id": "memo.audit.2026-04-13.memo-entrypoint-retention-check",
+      "kind": "audit_event",
+      "title": "Retention review kept memo entrypoint recall bounded",
+      "summary": "Captures the bounded retention check that kept the current memo entrypoint claim recallable as memory-layer posture while leaving retention policy and workers outside aoa-memo.",
+      "recall_posture_short": "allowed current recall; confirmed review state; This audit event remains useful when checking why the current memo entrypoint stayed recallable without implying a runtime retention policy inside aoa-memo",
+      "trust_posture_short": "cool temperature; human_reviewed authority; confidence 0.90; freshness 0.94",
+      "use_when_short": "Use when audit_event-level recall is needed and this object remains allowed for episodic, source_route.",
+      "do_not_use_short": "Do not treat this audit_event as proof or stronger than its cited sources.",
+      "strongest_next_source": "docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map",
+      "source_path": "examples/audit_event.memory-retention-check.example.json"
+    },
+    {
+      "id": "memo.audit.2026-04-07.hybrid-query-service-fallback",
+      "kind": "audit_event",
+      "title": "Governed service fallback stayed a memo-side trace",
+      "summary": "Captures the reviewed service degradation and bounded fallback that mattered beyond one run while keeping service contract meaning in aoa-agents and live health truth in abyss-stack.",
+      "recall_posture_short": "allowed current recall; confirmed review state; This audit event remains available as a bounded service-action trace without turning memo into service policy or live health authority",
+      "trust_posture_short": "cool temperature; human_reviewed authority; confidence 0.88; freshness 0.86",
+      "use_when_short": "Use when audit_event-level recall is needed and this object remains allowed for episodic, source_route.",
+      "do_not_use_short": "Do not treat this audit_event as proof or stronger than its cited sources.",
+      "strongest_next_source": "abyss-stack:service_degradation_receipt_v1#service:2026-04-07:hybrid-query-kag-unhealthy",
+      "source_path": "examples/audit_event.service-governed-fallback.example.json"
+    },
+    {
       "id": "memo.pattern.2026-04-02.alpha-remediation-recurrence",
       "kind": "pattern",
       "title": "Alpha remediation recurrence is proven only through memo-only closure",

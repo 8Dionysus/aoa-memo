@@ -1266,6 +1266,70 @@
       ]
     },
     {
+      "id": "memo.audit.2026-04-13.memo-entrypoint-retention-check",
+      "kind": "audit_event",
+      "title": "Retention review kept memo entrypoint recall bounded",
+      "summary": "Captures the bounded retention check that kept the current memo entrypoint claim recallable as memory-layer posture while leaving retention policy and workers outside aoa-memo.",
+      "scope_classes": [
+        "repo",
+        "project"
+      ],
+      "temperature": "cool",
+      "review_state": "confirmed",
+      "current_recall_status": "allowed",
+      "authority_kind": "human_reviewed",
+      "primary_recall_modes": [
+        "episodic",
+        "source_route"
+      ],
+      "source_path": "examples/audit_event.memory-retention-check.example.json",
+      "inspect_key": "memo.audit.2026-04-13.memo-entrypoint-retention-check",
+      "expand_key": "memo.audit.2026-04-13.memo-entrypoint-retention-check",
+      "scope": [
+        "repo:aoa-memo",
+        "project:AoA"
+      ],
+      "provenance_thread_id": "prov.memo.readiness-boundary.2026-04-13",
+      "related_object_ids": [],
+      "strongest_next_sources": [
+        "docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map",
+        "docs/WRITEBACK_TEMPERATURE_POLICY.md",
+        "examples/claim.current-entrypoint.example.json"
+      ]
+    },
+    {
+      "id": "memo.audit.2026-04-07.hybrid-query-service-fallback",
+      "kind": "audit_event",
+      "title": "Governed service fallback stayed a memo-side trace",
+      "summary": "Captures the reviewed service degradation and bounded fallback that mattered beyond one run while keeping service contract meaning in aoa-agents and live health truth in abyss-stack.",
+      "scope_classes": [
+        "repo",
+        "project"
+      ],
+      "temperature": "cool",
+      "review_state": "confirmed",
+      "current_recall_status": "allowed",
+      "authority_kind": "human_reviewed",
+      "primary_recall_modes": [
+        "episodic",
+        "source_route"
+      ],
+      "source_path": "examples/audit_event.service-governed-fallback.example.json",
+      "inspect_key": "memo.audit.2026-04-07.hybrid-query-service-fallback",
+      "expand_key": "memo.audit.2026-04-07.hybrid-query-service-fallback",
+      "scope": [
+        "repo:abyss-stack",
+        "project:AoA"
+      ],
+      "provenance_thread_id": "prov.memo.readiness-boundary.2026-04-13",
+      "related_object_ids": [],
+      "strongest_next_sources": [
+        "abyss-stack:service_degradation_receipt_v1#service:2026-04-07:hybrid-query-kag-unhealthy",
+        "repo:aoa-agents/docs/AGENT_RUNTIME_SEAM.md",
+        "docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map"
+      ]
+    },
+    {
       "id": "memo.pattern.2026-04-02.alpha-remediation-recurrence",
       "kind": "pattern",
       "title": "Alpha remediation recurrence is proven only through memo-only closure",

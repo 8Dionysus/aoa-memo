@@ -1335,6 +1335,78 @@
       ]
     },
     {
+      "id": "memo.audit.2026-04-13.memo-entrypoint-retention-check",
+      "kind": "audit_event",
+      "title": "Retention review kept memo entrypoint recall bounded",
+      "source_path": "examples/audit_event.memory-retention-check.example.json",
+      "sections": [
+        {
+          "section_id": "memo.audit.2026-04-13.memo-entrypoint-retention-check#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the audit_event surface, its active recall modes, and its allowed current-recall posture.",
+          "body": "Retention review kept memo entrypoint recall bounded. Captures the bounded retention check that kept the current memo entrypoint claim recallable as memory-layer posture while leaving retention policy and workers outside aoa-memo. Scope: repo:aoa-memo, project:AoA. Scope classes: repo, project. Primary recall modes: episodic, source_route. Current recall status: allowed because This audit event remains useful when checking why the current memo entrypoint stayed recallable without implying a runtime retention policy inside aoa-memo. Payload ref: examples/claim.current-entrypoint.example.json."
+        },
+        {
+          "section_id": "memo.audit.2026-04-13.memo-entrypoint-retention-check#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.memo.readiness-boundary.2026-04-13. Source refs: docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map, docs/WRITEBACK_TEMPERATURE_POLICY.md, examples/claim.current-entrypoint.example.json. Episode refs: none. Related curated object ids: none. Strongest next sources: docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map, docs/WRITEBACK_TEMPERATURE_POLICY.md, examples/claim.current-entrypoint.example.json."
+        },
+        {
+          "section_id": "memo.audit.2026-04-13.memo-entrypoint-retention-check#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: human_reviewed (repo retention review). Temperature: cool; confidence 0.90; freshness 0.94; salience 0.74. Review state: confirmed. Retention class: audit-trace. Promotion state: none. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.audit.2026-04-13.memo-entrypoint-retention-check#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Scope classes: repo, project. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: examples/claim.current-entrypoint.example.json. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-memo-recall-integrity. KAG lift status: none."
+        }
+      ]
+    },
+    {
+      "id": "memo.audit.2026-04-07.hybrid-query-service-fallback",
+      "kind": "audit_event",
+      "title": "Governed service fallback stayed a memo-side trace",
+      "source_path": "examples/audit_event.service-governed-fallback.example.json",
+      "sections": [
+        {
+          "section_id": "memo.audit.2026-04-07.hybrid-query-service-fallback#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the audit_event surface, its active recall modes, and its allowed current-recall posture.",
+          "body": "Governed service fallback stayed a memo-side trace. Captures the reviewed service degradation and bounded fallback that mattered beyond one run while keeping service contract meaning in aoa-agents and live health truth in abyss-stack. Scope: repo:abyss-stack, project:AoA. Scope classes: repo, project. Primary recall modes: episodic, source_route. Current recall status: allowed because This audit event remains available as a bounded service-action trace without turning memo into service policy or live health authority. Payload ref: repo:aoa-agents/docs/AGENT_RUNTIME_SEAM.md."
+        },
+        {
+          "section_id": "memo.audit.2026-04-07.hybrid-query-service-fallback#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.memo.readiness-boundary.2026-04-13. Source refs: abyss-stack:service_degradation_receipt_v1#service:2026-04-07:hybrid-query-kag-unhealthy, repo:aoa-agents/docs/AGENT_RUNTIME_SEAM.md, docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map. Episode refs: none. Related curated object ids: none. Strongest next sources: abyss-stack:service_degradation_receipt_v1#service:2026-04-07:hybrid-query-kag-unhealthy, repo:aoa-agents/docs/AGENT_RUNTIME_SEAM.md, docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map."
+        },
+        {
+          "section_id": "memo.audit.2026-04-07.hybrid-query-service-fallback#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: human_reviewed (reviewed service fallback trace). Temperature: cool; confidence 0.88; freshness 0.86; salience 0.82. Review state: confirmed. Retention class: audit-trace. Promotion state: none. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.audit.2026-04-07.hybrid-query-service-fallback#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Scope classes: repo, project. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-memo-recall-integrity. KAG lift status: none."
+        }
+      ]
+    },
+    {
       "id": "memo.pattern.2026-04-02.alpha-remediation-recurrence",
       "kind": "pattern",
       "title": "Alpha remediation recurrence is proven only through memo-only closure",
