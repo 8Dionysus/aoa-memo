@@ -2136,11 +2136,23 @@ def validate_live_receipt_log() -> None:
         return
 
     catalog = load_json(GENERATED / "memory_object_catalog.min.json")
+    capsules = load_json(GENERATED / "memory_object_capsules.json")
+    sections = load_json(GENERATED / "memory_object_sections.full.json")
     runtime_targets = load_json(RUNTIME_WRITEBACK_TARGETS_PATH)
     growth_lanes = load_json(GROWTH_REFINERY_WRITEBACK_LANES_PATH)
     catalog_entries_by_id = {
         item["id"]: item
         for item in catalog.get("memory_objects", [])
+        if isinstance(item, dict) and isinstance(item.get("id"), str)
+    }
+    capsule_entries_by_id = {
+        item["id"]: item
+        for item in capsules.get("memory_objects", [])
+        if isinstance(item, dict) and isinstance(item.get("id"), str)
+    }
+    section_entries_by_id = {
+        item["id"]: item
+        for item in sections.get("memory_objects", [])
         if isinstance(item, dict) and isinstance(item.get("id"), str)
     }
     runtime_targets_by_surface = {
@@ -2204,6 +2216,52 @@ def validate_live_receipt_log() -> None:
                         f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: object_ref.id {object_id!r} "
                         "is absent from generated/memory_object_catalog.min.json"
                     )
+                else:
+                    catalog_entry = catalog_entries_by_id[object_id]
+                    capsule_entry = capsule_entries_by_id.get(object_id)
+                    if capsule_entry is None:
+                        errors.append(
+                            f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: object_ref.id {object_id!r} "
+                            "is absent from generated/memory_object_capsules.json"
+                        )
+                    else:
+                        if capsule_entry.get("kind") != catalog_entry.get("kind"):
+                            errors.append(
+                                f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: capsule kind "
+                                f"{capsule_entry.get('kind')!r} must match catalog kind "
+                                f"{catalog_entry.get('kind')!r}"
+                            )
+                        if capsule_entry.get("source_path") != catalog_entry.get("source_path"):
+                            errors.append(
+                                f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: capsule source_path "
+                                f"{capsule_entry.get('source_path')!r} must match catalog source_path "
+                                f"{catalog_entry.get('source_path')!r}"
+                            )
+                    section_entry = section_entries_by_id.get(object_id)
+                    if section_entry is None:
+                        errors.append(
+                            f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: object_ref.id {object_id!r} "
+                            "is absent from generated/memory_object_sections.full.json"
+                        )
+                    else:
+                        if section_entry.get("kind") != catalog_entry.get("kind"):
+                            errors.append(
+                                f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: section kind "
+                                f"{section_entry.get('kind')!r} must match catalog kind "
+                                f"{catalog_entry.get('kind')!r}"
+                            )
+                        if section_entry.get("source_path") != catalog_entry.get("source_path"):
+                            errors.append(
+                                f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: section source_path "
+                                f"{section_entry.get('source_path')!r} must match catalog source_path "
+                                f"{catalog_entry.get('source_path')!r}"
+                            )
+                        section_items = section_entry.get("sections")
+                        if not isinstance(section_items, list) or not section_items:
+                            errors.append(
+                                f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: section entry for {object_id!r} "
+                                "must expose non-empty sections"
+                            )
             elif event_kind == "memo_growth_writeback_receipt":
                 if object_ref.get("kind") != "support_memory":
                     errors.append(f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: object_ref.kind must equal 'support_memory'")
