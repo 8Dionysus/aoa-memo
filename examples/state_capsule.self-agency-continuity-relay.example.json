@@ -1,0 +1,81 @@
+{
+  "id": "memo.state.2026-04-12.self-agency-continuity-relay",
+  "kind": "state_capsule",
+  "title": "Self-agency continuity relay state capsule",
+  "summary": "Captures bounded working state for relaunch across the reviewed continuity window without turning memo into continuity truth or owner authority.",
+  "scope": [
+    "repo:aoa-agents",
+    "repo:aoa-playbooks",
+    "repo:aoa-evals",
+    "project:AoA"
+  ],
+  "owner_refs": [
+    "repo:aoa-memo"
+  ],
+  "payload_ref": "repo:aoa-agents/examples/self_agent_checkpoint/self_agency_continuity_window.example.json",
+  "tags": [
+    "self-agency",
+    "continuity",
+    "state-capsule",
+    "return"
+  ],
+  "time": {
+    "created_at": "2026-04-12T14:20:00Z",
+    "observed_at": "2026-04-12T14:20:00Z",
+    "valid_from": "2026-04-12T14:20:00Z",
+    "valid_to": null
+  },
+  "provenance": {
+    "source_refs": [
+      "repo:aoa-agents/examples/self_agent_checkpoint/self_agency_continuity_window.example.json",
+      "repo:aoa-sdk/examples/closeout_continuity_window.example.json",
+      "repo:aoa-playbooks/playbooks/self-agency-continuity-cycle/PLAYBOOK.md",
+      "repo:aoa-evals/bundles/aoa-continuity-anchor-integrity/EVAL.md",
+      "repo:aoa-evals/bundles/aoa-self-reanchor-correctness/EVAL.md"
+    ],
+    "episode_refs": [],
+    "provenance_thread_id": "prov.self-agency-continuity.2026-04-12"
+  },
+  "trust": {
+    "temperature": "hot",
+    "confidence": 0.84,
+    "authority_kind": "candidate_under_review",
+    "authority": "source-inspected self-agency continuity thread candidate",
+    "freshness": 0.96,
+    "salience": 0.89
+  },
+  "lifecycle": {
+    "review_state": "proposed",
+    "supersedes": [],
+    "superseded_by": null,
+    "retention_class": "continuity-relay",
+    "promotion_state": "candidate",
+    "current_recall": {
+      "status": "allowed",
+      "status_reason": "This capsule may support bounded working recall for relaunch but cannot decide whether the self-agency return is legitimate."
+    }
+  },
+  "access": {
+    "access_class": "public",
+    "read_scopes": [
+      "public"
+    ],
+    "write_scopes": [
+      "maintainer"
+    ],
+    "promotion_scopes": [
+      "maintainer",
+      "human-review"
+    ]
+  },
+  "bridges": {
+    "tos_refs": [],
+    "skill_refs": [],
+    "eval_refs": [
+      "eval:aoa-continuity-anchor-integrity",
+      "eval:aoa-self-reanchor-correctness"
+    ],
+    "kag_lift_status": "none",
+    "route_capsule_ref": "repo:aoa-playbooks/playbooks/self-agency-continuity-cycle/PLAYBOOK.md"
+  }
+}

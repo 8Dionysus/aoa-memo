@@ -1045,6 +1045,75 @@
       ]
     },
     {
+      "id": "memo.decision.2026-04-12.self-agency-reanchor-window",
+      "kind": "decision",
+      "title": "Decision to keep the self-agency reanchor window bounded",
+      "summary": "Records the bounded choice to use the named continuity window, playbook route, and proof anchors as relaunch aids without letting memo decide return legitimacy.",
+      "scope_classes": [
+        "repo",
+        "project"
+      ],
+      "temperature": "warm",
+      "review_state": "proposed",
+      "current_recall_status": "allowed",
+      "authority_kind": "candidate_under_review",
+      "primary_recall_modes": [
+        "working",
+        "semantic",
+        "source_route"
+      ],
+      "source_path": "examples/decision.self-agency-reanchor-window.example.json",
+      "inspect_key": "memo.decision.2026-04-12.self-agency-reanchor-window",
+      "expand_key": "memo.decision.2026-04-12.self-agency-reanchor-window",
+      "scope": [
+        "repo:aoa-agents",
+        "repo:aoa-playbooks",
+        "repo:aoa-evals",
+        "project:AoA"
+      ],
+      "provenance_thread_id": "prov.self-agency-continuity.2026-04-12",
+      "related_object_ids": [],
+      "strongest_next_sources": [
+        "repo:aoa-agents/examples/self_agent_checkpoint/self_agency_continuity_window.example.json",
+        "repo:aoa-sdk/examples/closeout_continuity_window.example.json",
+        "repo:aoa-playbooks/playbooks/self-agency-continuity-cycle/PLAYBOOK.md"
+      ]
+    },
+    {
+      "id": "memo.state.2026-04-12.self-agency-continuity-relay",
+      "kind": "state_capsule",
+      "title": "Self-agency continuity relay state capsule",
+      "summary": "Captures bounded working state for relaunch across the reviewed continuity window without turning memo into continuity truth or owner authority.",
+      "scope_classes": [
+        "repo",
+        "project"
+      ],
+      "temperature": "hot",
+      "review_state": "proposed",
+      "current_recall_status": "allowed",
+      "authority_kind": "candidate_under_review",
+      "primary_recall_modes": [
+        "working",
+        "episodic"
+      ],
+      "source_path": "examples/state_capsule.self-agency-continuity-relay.example.json",
+      "inspect_key": "memo.state.2026-04-12.self-agency-continuity-relay",
+      "expand_key": "memo.state.2026-04-12.self-agency-continuity-relay",
+      "scope": [
+        "repo:aoa-agents",
+        "repo:aoa-playbooks",
+        "repo:aoa-evals",
+        "project:AoA"
+      ],
+      "provenance_thread_id": "prov.self-agency-continuity.2026-04-12",
+      "related_object_ids": [],
+      "strongest_next_sources": [
+        "repo:aoa-agents/examples/self_agent_checkpoint/self_agency_continuity_window.example.json",
+        "repo:aoa-sdk/examples/closeout_continuity_window.example.json",
+        "repo:aoa-playbooks/playbooks/self-agency-continuity-cycle/PLAYBOOK.md"
+      ]
+    },
+    {
       "id": "memo.claim.2026-04-03.phase-alpha-closure-with-residual-runtime-history",
       "kind": "claim",
       "title": "Phase Alpha closure holds while residual runtime history stays explicit",
