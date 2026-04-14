@@ -74,6 +74,27 @@ Refuse writeback when:
 - a checkpoint note is treated as final harvest, progression, or quest truth
 - SDK payloads are treated as runtime authority
 
+## Current Closeout Survivor Placement
+
+For
+`session:2026-04-13T23-45-25-274328Z-aoa-sdk-checkpoint-growth-8a1bacd7-bd9`,
+reviewed closeout kept two memo-shaped survivors:
+
+- `candidate:recall:aoa-memo-memory-catalog-min`
+- `candidate:growth:aoa-memo-commit-code`
+
+Their owner-local landing is this A2A child-return writeback note plus the
+existing provenance-thread example. The memo survivor means the route has a
+bounded recall and replay need; it does not make the child result durable
+memory canon and does not move proof, route, or runtime truth into `aoa-memo`.
+
+Reviewed evidence stays anchored to:
+
+- `repo:aoa-sdk/.aoa/session-growth/current/8a1bacd7-bd9a-48bf-a197-3a04f25b86a5/aoa-sdk/reviewed-closeout-live.md`
+- `repo:aoa-sdk/.aoa/closeout/handoffs/session-2026-04-13T23-45-25-274328Z-aoa-sdk-checkpoint-growth-8a1bacd7-bd9.owner-handoff.json`
+- `repo:aoa-memo/commit:36792d09c5219fdf27029d42bf438d61d85f0cff`
+- `repo:aoa-memo/commit:6c3db904b48419c63887dd46c2da5d782329bab3`
+
 ## Reference Surfaces
 
 - `docs/RUNTIME_WRITEBACK_SEAM.md`
