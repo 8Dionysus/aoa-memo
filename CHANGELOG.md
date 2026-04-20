@@ -7,6 +7,40 @@ Tracking starts with the community-docs baseline for this repository.
 
 ## [Unreleased]
 
+## [0.2.2] - 2026-04-19
+
+### Summary
+
+- this patch adds live receipt publishing, A2A return provenance, and
+  self-agency continuity objects across the memo layer
+- recall landing, writeback lanes, KAG export provenance, and
+  reviewed-candidate adoption are tightened for the current memory wave
+- `aoa-memo` remains the bounded recall and writeback layer rather than proof
+  or routing authority
+
+### Added
+
+- live receipt publishing and hydration validation, A2A child-return
+  provenance fixtures, memory-readiness pressure cases, and growth-refinery
+  live writeback lanes
+- self-agency continuity objects and KAG export provenance relations across
+  memo-facing surfaces
+
+### Changed
+
+- recall landing, reviewed candidate memo receipts, memory-scope package
+  validation, and CI/protection surfaces are tightened around the active
+  writeback loop
+
+### Validation
+
+- `python scripts/release_check.py`
+
+### Notes
+
+- this patch extends bounded recall and provenance-aware writeback without
+  turning `aoa-memo` into an eval, routing, or runtime authority layer
+
 ## [0.2.1] - 2026-04-12
 
 ### Summary
