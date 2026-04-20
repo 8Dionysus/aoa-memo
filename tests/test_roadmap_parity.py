@@ -34,7 +34,7 @@ class RoadmapParityTestCase(unittest.TestCase):
         )
 
         registry_version = memo_registry["version"]
-        self.assertEqual("0.2.1", registry_version)
+        self.assertEqual("0.2.2", registry_version)
         self.assertIn(f"v{registry_version}", readme)
         self.assertIn(f"[{registry_version}]", changelog)
         self.assertIn(f"v{registry_version}", roadmap)
