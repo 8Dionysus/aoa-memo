@@ -34,6 +34,10 @@ def fail(msg: str) -> int:
     return 1
 
 
+def is_forbidden_truthy(value) -> bool:
+    return bool(value) and value is not False
+
+
 def main() -> int:
     if not CONFIG.exists():
         return fail(f'missing config: {CONFIG}')
@@ -59,9 +63,9 @@ def main() -> int:
         if record.get('runtime_effect') != 'none':
             return fail(f'{ref} must keep runtime_effect=none')
         for flag in FORBIDDEN_TRUE_FLAGS:
-            if record.get(flag) is True:
+            if is_forbidden_truthy(record.get(flag)):
                 return fail(f'{ref} forbidden true flag: {flag}')
-        if record.get('live_protocol') is True:
+        if is_forbidden_truthy(record.get('live_protocol')):
             return fail(f'{ref} must not claim live_protocol')
     builder = load_builder()
     expected = builder.build(config)
