@@ -1,0 +1,27 @@
+{
+  "bindings": [
+    {
+      "does_not_emit": [
+        "verdict",
+        "scar",
+        "rank_mutation",
+        "tos_promotion"
+      ],
+      "emits": [
+        "recurrence_observation",
+        "owner_review_candidate"
+      ],
+      "hook_id": "component.agon.wave16.aoa_memo.drift_watch",
+      "surface_globs": [
+        "generated/agon_slc_memo_bridge_registry.min.json",
+        "config/agon_slc_memo_bridge.seed.json",
+        "docs/AGON_SLC_MEMORY_BRIDGE.md",
+        "docs/AGON_SLC_MEMORY_BOUNDARY.md",
+        "docs/AGON_WAVE16_MEMO_LANDING.md"
+      ]
+    }
+  ],
+  "component_id": "component.agon.wave16.aoa_memo",
+  "hook_binding_set_id": "component.agon.wave16.aoa_memo.hooks",
+  "wave": "XVI"
+}

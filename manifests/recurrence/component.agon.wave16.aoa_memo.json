@@ -1,0 +1,23 @@
+{
+  "component_id": "component.agon.wave16.aoa_memo",
+  "forbidden_actions": [
+    "open_arena_session",
+    "issue_verdict",
+    "write_scar",
+    "mutate_rank",
+    "promote_to_tree_of_sophia",
+    "auto_rewrite_owner_repo",
+    "hidden_scheduler_action"
+  ],
+  "observation_only": true,
+  "repo": "aoa-memo",
+  "surfaces": [
+    "generated/agon_slc_memo_bridge_registry.min.json",
+    "config/agon_slc_memo_bridge.seed.json",
+    "docs/AGON_SLC_MEMORY_BRIDGE.md",
+    "docs/AGON_SLC_MEMORY_BOUNDARY.md",
+    "docs/AGON_WAVE16_MEMO_LANDING.md"
+  ],
+  "title": "Wave XVI aoa-memo surfaces",
+  "wave": "XVI"
+}

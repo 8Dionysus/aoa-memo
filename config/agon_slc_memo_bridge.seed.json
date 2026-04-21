@@ -1,0 +1,358 @@
+{
+  "memo_intakes": [
+    {
+      "accepts": [
+        "reviewable_dossier",
+        "trace_refs",
+        "owner_review_refs"
+      ],
+      "assistant_contestant_allowed": false,
+      "authority_posture": "non_authority",
+      "canonical_status": "non_canonical_candidate",
+      "forbidden_effects": [
+        "live_verdict_authority",
+        "durable_scar_write",
+        "retention_execution",
+        "rank_mutation",
+        "trust_mutation",
+        "tree_of_sophia_promotion",
+        "kag_promotion",
+        "hidden_scheduler_action",
+        "assistant_contestant_drift",
+        "auto_doctrine_rewrite",
+        "school_authority",
+        "lineage_canonization",
+        "live_campaign_arena"
+      ],
+      "intake_id": "agon.memo.slc.campaign_episode_chronicle_candidate",
+      "intake_status": "candidate_only",
+      "live_protocol": false,
+      "produces": [
+        "memo_candidate_surface"
+      ],
+      "purpose": "Candidate chronicle intake for one campaign episode.",
+      "review_status": "candidate_only",
+      "runtime_effect": "none",
+      "stop_lines": [
+        "no_live_verdict_authority",
+        "no_durable_scar_write",
+        "no_retention_execution",
+        "no_rank_or_trust_mutation",
+        "no_tree_of_sophia_promotion",
+        "no_kag_promotion",
+        "no_hidden_scheduler_action",
+        "no_assistant_contestant_drift",
+        "no_auto_doctrine_rewrite",
+        "no_school_as_authority",
+        "no_lineage_as_canon",
+        "no_campaign_as_live_arena",
+        "no_center_takeover_of_owner_truth"
+      ],
+      "wave": "XVI"
+    },
+    {
+      "accepts": [
+        "reviewable_dossier",
+        "trace_refs",
+        "owner_review_refs"
+      ],
+      "assistant_contestant_allowed": false,
+      "authority_posture": "non_authority",
+      "canonical_status": "non_canonical_candidate",
+      "forbidden_effects": [
+        "live_verdict_authority",
+        "durable_scar_write",
+        "retention_execution",
+        "rank_mutation",
+        "trust_mutation",
+        "tree_of_sophia_promotion",
+        "kag_promotion",
+        "hidden_scheduler_action",
+        "assistant_contestant_drift",
+        "auto_doctrine_rewrite",
+        "school_authority",
+        "lineage_canonization",
+        "live_campaign_arena"
+      ],
+      "intake_id": "agon.memo.slc.lineage_candidate_intake",
+      "intake_status": "candidate_only",
+      "live_protocol": false,
+      "produces": [
+        "memo_candidate_surface"
+      ],
+      "purpose": "Candidate intake for a sequence of related episodes.",
+      "review_status": "candidate_only",
+      "runtime_effect": "none",
+      "stop_lines": [
+        "no_live_verdict_authority",
+        "no_durable_scar_write",
+        "no_retention_execution",
+        "no_rank_or_trust_mutation",
+        "no_tree_of_sophia_promotion",
+        "no_kag_promotion",
+        "no_hidden_scheduler_action",
+        "no_assistant_contestant_drift",
+        "no_auto_doctrine_rewrite",
+        "no_school_as_authority",
+        "no_lineage_as_canon",
+        "no_campaign_as_live_arena",
+        "no_center_takeover_of_owner_truth"
+      ],
+      "wave": "XVI"
+    },
+    {
+      "accepts": [
+        "reviewable_dossier",
+        "trace_refs",
+        "owner_review_refs"
+      ],
+      "assistant_contestant_allowed": false,
+      "authority_posture": "non_authority",
+      "canonical_status": "non_canonical_candidate",
+      "forbidden_effects": [
+        "live_verdict_authority",
+        "durable_scar_write",
+        "retention_execution",
+        "rank_mutation",
+        "trust_mutation",
+        "tree_of_sophia_promotion",
+        "kag_promotion",
+        "hidden_scheduler_action",
+        "assistant_contestant_drift",
+        "auto_doctrine_rewrite",
+        "school_authority",
+        "lineage_canonization",
+        "live_campaign_arena"
+      ],
+      "intake_id": "agon.memo.slc.school_candidate_dossier_intake",
+      "intake_status": "candidate_only",
+      "live_protocol": false,
+      "produces": [
+        "memo_candidate_surface"
+      ],
+      "purpose": "Candidate dossier for school pressure and repeated posture.",
+      "review_status": "candidate_only",
+      "runtime_effect": "none",
+      "stop_lines": [
+        "no_live_verdict_authority",
+        "no_durable_scar_write",
+        "no_retention_execution",
+        "no_rank_or_trust_mutation",
+        "no_tree_of_sophia_promotion",
+        "no_kag_promotion",
+        "no_hidden_scheduler_action",
+        "no_assistant_contestant_drift",
+        "no_auto_doctrine_rewrite",
+        "no_school_as_authority",
+        "no_lineage_as_canon",
+        "no_campaign_as_live_arena",
+        "no_center_takeover_of_owner_truth"
+      ],
+      "wave": "XVI"
+    },
+    {
+      "accepts": [
+        "reviewable_dossier",
+        "trace_refs",
+        "owner_review_refs"
+      ],
+      "assistant_contestant_allowed": false,
+      "authority_posture": "non_authority",
+      "canonical_status": "non_canonical_candidate",
+      "forbidden_effects": [
+        "live_verdict_authority",
+        "durable_scar_write",
+        "retention_execution",
+        "rank_mutation",
+        "trust_mutation",
+        "tree_of_sophia_promotion",
+        "kag_promotion",
+        "hidden_scheduler_action",
+        "assistant_contestant_drift",
+        "auto_doctrine_rewrite",
+        "school_authority",
+        "lineage_canonization",
+        "live_campaign_arena"
+      ],
+      "intake_id": "agon.memo.slc.rivalry_relation_chronicle",
+      "intake_status": "candidate_only",
+      "live_protocol": false,
+      "produces": [
+        "memo_candidate_surface"
+      ],
+      "purpose": "Chronicle candidate for repeated rivalry or opposition pressure.",
+      "review_status": "candidate_only",
+      "runtime_effect": "none",
+      "stop_lines": [
+        "no_live_verdict_authority",
+        "no_durable_scar_write",
+        "no_retention_execution",
+        "no_rank_or_trust_mutation",
+        "no_tree_of_sophia_promotion",
+        "no_kag_promotion",
+        "no_hidden_scheduler_action",
+        "no_assistant_contestant_drift",
+        "no_auto_doctrine_rewrite",
+        "no_school_as_authority",
+        "no_lineage_as_canon",
+        "no_campaign_as_live_arena",
+        "no_center_takeover_of_owner_truth"
+      ],
+      "wave": "XVI"
+    },
+    {
+      "accepts": [
+        "reviewable_dossier",
+        "trace_refs",
+        "owner_review_refs"
+      ],
+      "assistant_contestant_allowed": false,
+      "authority_posture": "non_authority",
+      "canonical_status": "non_canonical_candidate",
+      "forbidden_effects": [
+        "live_verdict_authority",
+        "durable_scar_write",
+        "retention_execution",
+        "rank_mutation",
+        "trust_mutation",
+        "tree_of_sophia_promotion",
+        "kag_promotion",
+        "hidden_scheduler_action",
+        "assistant_contestant_drift",
+        "auto_doctrine_rewrite",
+        "school_authority",
+        "lineage_canonization",
+        "live_campaign_arena"
+      ],
+      "intake_id": "agon.memo.slc.bifurcation_branch_survival_intake",
+      "intake_status": "candidate_only",
+      "live_protocol": false,
+      "produces": [
+        "memo_candidate_surface"
+      ],
+      "purpose": "Candidate intake for survival of a bifurcated branch across campaigns.",
+      "review_status": "candidate_only",
+      "runtime_effect": "none",
+      "stop_lines": [
+        "no_live_verdict_authority",
+        "no_durable_scar_write",
+        "no_retention_execution",
+        "no_rank_or_trust_mutation",
+        "no_tree_of_sophia_promotion",
+        "no_kag_promotion",
+        "no_hidden_scheduler_action",
+        "no_assistant_contestant_drift",
+        "no_auto_doctrine_rewrite",
+        "no_school_as_authority",
+        "no_lineage_as_canon",
+        "no_campaign_as_live_arena",
+        "no_center_takeover_of_owner_truth"
+      ],
+      "wave": "XVI"
+    },
+    {
+      "accepts": [
+        "reviewable_dossier",
+        "trace_refs",
+        "owner_review_refs"
+      ],
+      "assistant_contestant_allowed": false,
+      "authority_posture": "non_authority",
+      "canonical_status": "non_canonical_candidate",
+      "forbidden_effects": [
+        "live_verdict_authority",
+        "durable_scar_write",
+        "retention_execution",
+        "rank_mutation",
+        "trust_mutation",
+        "tree_of_sophia_promotion",
+        "kag_promotion",
+        "hidden_scheduler_action",
+        "assistant_contestant_drift",
+        "auto_doctrine_rewrite",
+        "school_authority",
+        "lineage_canonization",
+        "live_campaign_arena"
+      ],
+      "intake_id": "agon.memo.slc.doctrine_evolution_chronicle",
+      "intake_status": "candidate_only",
+      "live_protocol": false,
+      "produces": [
+        "memo_candidate_surface"
+      ],
+      "purpose": "Candidate chronicle for doctrine evolution pressure without rewrite.",
+      "review_status": "candidate_only",
+      "runtime_effect": "none",
+      "stop_lines": [
+        "no_live_verdict_authority",
+        "no_durable_scar_write",
+        "no_retention_execution",
+        "no_rank_or_trust_mutation",
+        "no_tree_of_sophia_promotion",
+        "no_kag_promotion",
+        "no_hidden_scheduler_action",
+        "no_assistant_contestant_drift",
+        "no_auto_doctrine_rewrite",
+        "no_school_as_authority",
+        "no_lineage_as_canon",
+        "no_campaign_as_live_arena",
+        "no_center_takeover_of_owner_truth"
+      ],
+      "wave": "XVI"
+    },
+    {
+      "accepts": [
+        "reviewable_dossier",
+        "trace_refs",
+        "owner_review_refs"
+      ],
+      "assistant_contestant_allowed": false,
+      "authority_posture": "non_authority",
+      "canonical_status": "non_canonical_candidate",
+      "forbidden_effects": [
+        "live_verdict_authority",
+        "durable_scar_write",
+        "retention_execution",
+        "rank_mutation",
+        "trust_mutation",
+        "tree_of_sophia_promotion",
+        "kag_promotion",
+        "hidden_scheduler_action",
+        "assistant_contestant_drift",
+        "auto_doctrine_rewrite",
+        "school_authority",
+        "lineage_canonization",
+        "live_campaign_arena"
+      ],
+      "intake_id": "agon.memo.slc.campaign_closeout_chronicle",
+      "intake_status": "candidate_only",
+      "live_protocol": false,
+      "produces": [
+        "memo_candidate_surface"
+      ],
+      "purpose": "Candidate chronicle for campaign closeout without closure grant.",
+      "review_status": "candidate_only",
+      "runtime_effect": "none",
+      "stop_lines": [
+        "no_live_verdict_authority",
+        "no_durable_scar_write",
+        "no_retention_execution",
+        "no_rank_or_trust_mutation",
+        "no_tree_of_sophia_promotion",
+        "no_kag_promotion",
+        "no_hidden_scheduler_action",
+        "no_assistant_contestant_drift",
+        "no_auto_doctrine_rewrite",
+        "no_school_as_authority",
+        "no_lineage_as_canon",
+        "no_campaign_as_live_arena",
+        "no_center_takeover_of_owner_truth"
+      ],
+      "wave": "XVI"
+    }
+  ],
+  "registry_id": "agon.slc_memo_bridge.registry.v1",
+  "runtime_posture": "candidate_only",
+  "wave": "XVI",
+  "wave_name": "Schools / Lineages / Campaigns"
+}
