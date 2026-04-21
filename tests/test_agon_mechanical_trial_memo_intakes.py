@@ -1,5 +1,5 @@
 from __future__ import annotations
-import importlib.util, pathlib
+import importlib.util, json, pathlib
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 
 def load(name, rel):
@@ -19,3 +19,18 @@ def test_build_count_and_digest():
 def test_validator_green():
     mod = load('validator', 'scripts/validate_agon_mechanical_trial_memo_intakes.py')
     assert mod.main() == 0
+
+def test_validator_rejects_missing_generated_registry(tmp_path):
+    validator = load('validator', 'scripts/validate_agon_mechanical_trial_memo_intakes.py')
+    validator.OUT = tmp_path / 'missing.min.json'
+    assert validator.main() == 1
+
+def test_validator_rejects_stale_generated_registry(tmp_path):
+    validator = load('validator', 'scripts/validate_agon_mechanical_trial_memo_intakes.py')
+    builder = load('builder', 'scripts/build_agon_mechanical_trial_memo_intakes.py')
+    stale = builder.build()
+    stale['digest'] = '0' * 64
+    out = tmp_path / 'agon_mechanical_trial_memo_intake_registry.min.json'
+    out.write_text(json.dumps(stale), encoding='utf-8')
+    validator.OUT = out
+    assert validator.main() == 1

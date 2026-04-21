@@ -1,13 +1,67 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "additionalProperties": true,
+  "additionalProperties": false,
   "properties": {
-    "registry_id": {
+    "allowed_records": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "candidate_intakes": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "durable_scar_write": {
+      "const": false
+    },
+    "id": {
       "type": "string"
     },
-    "wave": {
+    "live_protocol": {
+      "const": false
+    },
+    "live_verdict_authority": {
+      "const": false
+    },
+    "rank_mutation": {
+      "const": false
+    },
+    "retention_execution": {
+      "const": false
+    },
+    "runtime_effect": {
+      "type": "string"
+    },
+    "source_surfaces": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "tos_promotion": {
+      "const": false
+    },
+    "trial_id": {
       "type": "string"
     }
   },
+  "required": [
+    "id",
+    "trial_id",
+    "candidate_intakes",
+    "allowed_records",
+    "live_protocol",
+    "runtime_effect",
+    "live_verdict_authority",
+    "durable_scar_write",
+    "rank_mutation",
+    "retention_execution",
+    "tos_promotion"
+  ],
   "type": "object"
 }
