@@ -1,0 +1,16 @@
+{
+  "component_id": "component.agon.vds-memo-bridge",
+  "hidden_scheduler_allowed": false,
+  "hook_binding_set_id": "hooks:component.agon.vds-memo-bridge",
+  "hooks": [
+    {
+      "emits": "memory_candidate_review_queue",
+      "hook_id": "agon.vds.memo.drift",
+      "watches": [
+        "generated/agon_vds_memo_bridge_registry.min.json"
+      ]
+    }
+  ],
+  "owner_repo": "aoa-memo",
+  "runtime_effect": "none"
+}
