@@ -1,0 +1,26 @@
+{
+  "bridge_id": "agon.memo.epistemic.epistemic_delta_candidate_intake",
+  "candidate_outputs": [
+    "memory_intake_candidate",
+    "review_dossier_candidate"
+  ],
+  "forbidden_effects": [
+    "live_verdict_authority",
+    "durable_scar_write",
+    "retention_execution",
+    "rank_mutation",
+    "trust_mutation",
+    "tree_of_sophia_promotion",
+    "kag_promotion",
+    "hidden_scheduler_action",
+    "assistant_contestant_drift",
+    "auto_doctrine_rewrite"
+  ],
+  "intake_for": [
+    "epistemic_delta_candidate_intake"
+  ],
+  "live_protocol": false,
+  "owner_repo": "aoa-memo",
+  "runtime_effect": "candidate_only",
+  "status": "memory_candidate_intake"
+}

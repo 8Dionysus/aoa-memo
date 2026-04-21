@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "bridge_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "candidate_outputs": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "forbidden_effects": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "minItems": 10,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "intake_for": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "live_protocol": {
+      "const": false
+    },
+    "owner_repo": {
+      "const": "aoa-memo"
+    },
+    "runtime_effect": {
+      "enum": [
+        "none",
+        "candidate_only",
+        "local_dry_run_candidate_only",
+        "local_rehearsal_candidate_only"
+      ]
+    },
+    "status": {
+      "const": "memory_candidate_intake"
+    }
+  },
+  "required": [
+    "bridge_id",
+    "candidate_outputs",
+    "forbidden_effects",
+    "intake_for",
+    "live_protocol",
+    "owner_repo",
+    "runtime_effect",
+    "status"
+  ],
+  "title": "Agon Epistemic Memo Bridge",
+  "type": "object"
+}
