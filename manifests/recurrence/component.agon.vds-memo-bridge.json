@@ -1,0 +1,20 @@
+{
+  "component_id": "component.agon.vds-memo-bridge",
+  "may_emit": [
+    "memory_candidate_review_queue",
+    "owner_summary_candidate"
+  ],
+  "must_not_emit": [
+    "live_verdict",
+    "scar_write",
+    "retention_execution",
+    "rank_mutation",
+    "tos_promotion"
+  ],
+  "observation_intent": "Detect drift in VDS Memo Bridge without granting runtime authority.",
+  "observed_surfaces": [
+    "generated/agon_vds_memo_bridge_registry.min.json"
+  ],
+  "owner_repo": "aoa-memo",
+  "status": "seeded_recurrence_observation_component"
+}

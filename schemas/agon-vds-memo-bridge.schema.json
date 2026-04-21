@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "accepts_from": {
+      "type": "string"
+    },
+    "candidate_fields": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "durable_write_allowed": {
+      "const": false
+    },
+    "intake_class": {
+      "type": "string"
+    },
+    "intake_id": {
+      "pattern": "^agon\\.memo\\.vds\\.",
+      "type": "string"
+    },
+    "may_emit": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "must_not_emit": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "intake_id",
+    "intake_class",
+    "accepts_from",
+    "candidate_fields",
+    "durable_write_allowed",
+    "may_emit",
+    "must_not_emit"
+  ],
+  "title": "Agon VDS Memo Bridge Intake",
+  "type": "object"
+}

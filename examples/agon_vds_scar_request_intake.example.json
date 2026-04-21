@@ -1,0 +1,25 @@
+{
+  "accepts_from": "agon.bridge.scar_request.v1",
+  "candidate_fields": [
+    "scar_request_id",
+    "subject_actor_id",
+    "scar_class",
+    "severity",
+    "linked_verdict_id",
+    "linked_delta_id",
+    "rupture_summary",
+    "retention_hint"
+  ],
+  "durable_write_allowed": false,
+  "intake_class": "scar_request_candidate",
+  "intake_id": "agon.memo.vds.scar_request_candidate_intake",
+  "may_emit": [
+    "memo_review_candidate",
+    "scar_dossier_candidate"
+  ],
+  "must_not_emit": [
+    "durable_scar",
+    "rank_mutation",
+    "truth_verdict"
+  ]
+}
