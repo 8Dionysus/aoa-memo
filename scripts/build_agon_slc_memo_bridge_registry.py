@@ -9,14 +9,29 @@ REGISTRY_ID = 'agon.slc_memo_bridge.registry.v1'
 WAVE = 'XVI'
 WAVE_NAME = 'Schools / Lineages / Campaigns'
 
+
+class BuildError(ValueError):
+    pass
+
+
 def digest_obj(obj):
     return hashlib.sha256(json.dumps(obj, ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+
+
+def require_source_string(data, field, expected=None):
+    value = data.get(field)
+    if not isinstance(value, str) or not value:
+        raise BuildError(f'source {field} must be a non-empty string')
+    if expected is not None and value != expected:
+        raise BuildError(f'source {field} must be {expected}')
+    return value
+
 
 def build():
     data = json.loads(SRC.read_text(encoding='utf-8'))
     items = data.get(ITEM_KEY, [])
     return {
-        'registry_id': data['registry_id'],
+        'registry_id': require_source_string(data, 'registry_id', REGISTRY_ID),
         'wave': data.get('wave', WAVE),
         'wave_name': data.get('wave_name', WAVE_NAME),
         'runtime_posture': data.get('runtime_posture', 'candidate_only'),
@@ -29,7 +44,11 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--check', action='store_true')
     args = parser.parse_args()
-    reg = build()
+    try:
+        reg = build()
+    except BuildError as exc:
+        print(str(exc), file=sys.stderr)
+        return 1
     txt = json.dumps(reg, ensure_ascii=False, sort_keys=True, separators=(',', ':')) + '\n'
     if args.check:
         if not OUT.exists() or OUT.read_text(encoding='utf-8') != txt:

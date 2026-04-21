@@ -107,6 +107,8 @@ def validate() -> int:
             return fail(f'missing schema {schema_path}')
 
     source = load_json(SRC)
+    if source.get('registry_id') != 'agon.slc_memo_bridge.registry.v1':
+        return fail('source registry_id must be agon.slc_memo_bridge.registry.v1')
     if source.get('wave') != 'XVI':
         return fail('source wave must be XVI')
     if source.get('wave_name') != 'Schools / Lineages / Campaigns':
@@ -133,7 +135,10 @@ def validate() -> int:
         seen.add(key)
 
     registry = load_json(OUT)
-    expected = load_builder().build()
+    try:
+        expected = load_builder().build()
+    except ValueError as exc:
+        return fail(str(exc))
     if registry != expected:
         return fail('generated registry is stale or does not match builder output')
     err = schema_error(REGISTRY_SCHEMA, registry, 'generated registry')

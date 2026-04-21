@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import importlib.util
 import json
 import pathlib
 import subprocess
@@ -46,6 +47,29 @@ def test_wave16_registry_shape():
 def test_builder_check_and_validator():
     assert subprocess.run([sys.executable, str(ROOT / 'scripts' / 'build_agon_slc_memo_bridge_registry.py'), '--check'], cwd=ROOT).returncode == 0
     assert subprocess.run([sys.executable, str(ROOT / 'scripts' / 'validate_agon_slc_memo_bridge_registry.py')], cwd=ROOT).returncode == 0
+
+
+def test_builder_reports_missing_registry_id_without_keyerror(tmp_path):
+    spec = importlib.util.spec_from_file_location(
+        'build_agon_slc_memo_bridge_registry',
+        ROOT / 'scripts' / 'build_agon_slc_memo_bridge_registry.py',
+    )
+    module = importlib.util.module_from_spec(spec)
+    assert spec.loader is not None
+    spec.loader.exec_module(module)
+
+    source = load(module.SRC)
+    source.pop('registry_id')
+    bad_source = tmp_path / 'agon_slc_memo_bridge.seed.json'
+    bad_source.write_text(json.dumps(source), encoding='utf-8')
+
+    module.SRC = bad_source
+    try:
+        module.build()
+    except module.BuildError as exc:
+        assert str(exc) == 'source registry_id must be a non-empty string'
+    else:
+        raise AssertionError('builder accepted missing registry_id')
 
 
 def test_schemas_constrain_registry_and_entries():
