@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "bridges": {
+      "items": {
+        "$ref": "agon-epistemic-memo-bridge.schema.json"
+      },
+      "maxItems": 7,
+      "minItems": 7,
+      "type": "array"
+    },
+    "count": {
+      "const": 7
+    },
+    "digest": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "registry_id": {
+      "const": "agon.epistemic_memo_bridge.registry.v1"
+    },
+    "runtime_posture": {
+      "const": "candidate_only"
+    },
+    "wave": {
+      "const": "XV"
+    }
+  },
+  "required": [
+    "registry_id",
+    "wave",
+    "runtime_posture",
+    "count",
+    "bridges",
+    "digest"
+  ],
+  "title": "Agon Epistemic Memo Bridge Registry",
+  "type": "object"
+}
