@@ -1,0 +1,24 @@
+{
+  "allowed_records": [
+    "trial_chronicle_candidate",
+    "scar_request_candidate",
+    "delta_receipt_candidate",
+    "retention_request_candidate"
+  ],
+  "candidate_intakes": [
+    "agon.memo.vds.scar_request_candidate_intake",
+    "agon.memo.vds.trial_chronicle_candidate_intake"
+  ],
+  "durable_scar_write": false,
+  "id": "agon.memo.trial_intake.broken_trace.candidate",
+  "live_protocol": false,
+  "live_verdict_authority": false,
+  "rank_mutation": false,
+  "retention_execution": false,
+  "runtime_effect": "none",
+  "source_surfaces": [
+    "abyss-stack/examples/agon_mechanical_trial_event_log.*.example.json"
+  ],
+  "tos_promotion": false,
+  "trial_id": "agon.trial.mechanical.broken_trace.v0"
+}
