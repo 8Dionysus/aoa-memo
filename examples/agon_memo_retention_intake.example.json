@@ -1,0 +1,7 @@
+{
+  "candidate_only": true,
+  "durable_memory_write": false,
+  "intake_id": "agon.memo.retention.example",
+  "rank_mutation": false,
+  "source": "agon.retention.check_request.v1"
+}
