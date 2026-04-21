@@ -1,0 +1,134 @@
+{
+  "beacon_rules": [
+    {
+      "beacon_ref": "component.agon.memory-prebinding-surfaces.review_pressure",
+      "kind": "review_signal",
+      "match_categories": [
+        "change_pressure",
+        "review_signal",
+        "repeat_pattern"
+      ],
+      "match_signals": [
+        "scar_candidate_pressure",
+        "delta_chronicle_pressure",
+        "rupture_candidate_pressure",
+        "retention_candidate_pressure",
+        "trial_chronicle_pressure",
+        "assistant_escalation_chronicle_pressure"
+      ],
+      "notes": "Wave VII recurrence pressure is review-only.",
+      "observation_inputs": [
+        "memory-prebinding-surfaces.generated",
+        "memory-prebinding-surfaces.docs"
+      ],
+      "recommended_actions": [
+        "open owner review dossier",
+        "do not execute live protocol action"
+      ],
+      "status_ladder": [
+        "hint",
+        "watch",
+        "candidate",
+        "review_ready"
+      ],
+      "suppress_when": [
+        "live_verdict_authority_claim_present",
+        "durable_scar_write_claim_present",
+        "stats_authority_claim_present"
+      ],
+      "target_repo": "aoa-memo",
+      "thresholds": {
+        "candidate_observations": 2,
+        "min_unique_evidence_refs": 2,
+        "min_unique_sources": 2,
+        "review_ready_observations": 3,
+        "watch_observations": 1
+      }
+    }
+  ],
+  "candidate_targets": [
+    "generated/agon_memo_prebinding_registry.min.json"
+  ],
+  "component_ref": "component:agon:memory-prebinding-surfaces",
+  "contract_surfaces": [
+    "docs/AGON_MEMORY_PREBINDING.md",
+    "docs/AGON_SCAR_CANDIDATE_INTAKE_MODEL.md",
+    "docs/AGON_RETENTION_CANDIDATE_BOUNDARY.md"
+  ],
+  "decision_surfaces": [
+    "docs/AGON_MEMORY_PREBINDING.md"
+  ],
+  "description": "Memory prebinding surfaces for future Agon scar/delta/retention candidates.",
+  "documentation_surfaces": [
+    "docs/AGON_MEMORY_PREBINDING.md",
+    "docs/AGON_SCAR_CANDIDATE_INTAKE_MODEL.md",
+    "docs/AGON_RETENTION_CANDIDATE_BOUNDARY.md"
+  ],
+  "freshness": {
+    "open_window_days": 7,
+    "repeat_trigger_threshold": 2,
+    "stale_after_days": 14
+  },
+  "generated_surfaces": [
+    "generated/agon_memo_prebinding_registry.min.json"
+  ],
+  "observation_inputs": [
+    {
+      "input_ref": "memory-prebinding-surfaces.generated",
+      "kind": "other",
+      "notes": "Wave VII generated prebinding surface.",
+      "path_globs": [
+        "generated/agon_memo_prebinding_registry.min.json"
+      ]
+    },
+    {
+      "input_ref": "memory-prebinding-surfaces.docs",
+      "kind": "review_note",
+      "notes": "Wave VII prebinding documentation.",
+      "path_globs": [
+        "docs/AGON_*.md"
+      ]
+    }
+  ],
+  "owner_repo": "aoa-memo",
+  "proof_surfaces": [
+    "python scripts/validate_agon_memo_prebindings.py"
+  ],
+  "refresh_routes": [
+    {
+      "action": "revalidate",
+      "commands": [
+        "python scripts/validate_agon_memo_prebindings.py"
+      ],
+      "notes": "Owner-local validation only."
+    }
+  ],
+  "rollback_anchors": [
+    "docs/AGON_MEMORY_PREBINDING.md"
+  ],
+  "schema_version": "aoa_recurrence_component_v2",
+  "signal_edges": [
+    {
+      "kind": "derived_observability",
+      "notes": "Stats may summarize memory candidate pressure.",
+      "target": "component:agon:stats-prebinding-surfaces",
+      "target_repo": "aoa-stats"
+    },
+    {
+      "kind": "requires_future_verdict",
+      "notes": "Durable writes require future verdict law.",
+      "target": "component:agon:court-memo-stats-center-request",
+      "target_repo": "Agents-of-Abyss"
+    }
+  ],
+  "source_inputs": [
+    "config/agon_memo_prebindings.seed.json"
+  ],
+  "tags": [
+    "agon",
+    "wave7",
+    "memo",
+    "memory",
+    "recurrence"
+  ]
+}

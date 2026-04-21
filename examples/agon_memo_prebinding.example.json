@@ -1,0 +1,28 @@
+{
+  "candidate_inputs": [
+    "closure_legality_review_candidate",
+    "trace_integrity_review_candidate",
+    "assistant_boundary_review_candidate"
+  ],
+  "future_artifact_shape": "scar_candidate",
+  "live_authority": false,
+  "live_protocol": false,
+  "must_not": [
+    "write_durable_scar",
+    "mutate_actor_profile",
+    "decide_truth"
+  ],
+  "mutates_rank": false,
+  "opens_arena_session": false,
+  "prebinding_ref": "agon.memo.scar_candidate_intake",
+  "promotes_to_tos": false,
+  "recurrence_review_inputs": [
+    "candidate_dossier",
+    "owner_summary"
+  ],
+  "runs_hidden_scheduler": false,
+  "runtime_effect": "none",
+  "status": "seeded_pre_protocol_memo_prebinding",
+  "title": "Scar candidate intake",
+  "writes_durable_state": false
+}

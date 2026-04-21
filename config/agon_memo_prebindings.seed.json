@@ -1,0 +1,188 @@
+{
+  "live_protocol": false,
+  "notes": "Memory prebindings prepare candidate intake only. Durable scars and retention execution require future protocol verdicts.",
+  "owner_repo": "aoa-memo",
+  "prebindings": [
+    {
+      "candidate_inputs": [
+        "closure_legality_review_candidate",
+        "trace_integrity_review_candidate",
+        "assistant_boundary_review_candidate"
+      ],
+      "future_artifact_shape": "scar_candidate",
+      "live_authority": false,
+      "live_protocol": false,
+      "must_not": [
+        "write_durable_scar",
+        "mutate_actor_profile",
+        "decide_truth"
+      ],
+      "mutates_rank": false,
+      "opens_arena_session": false,
+      "prebinding_ref": "agon.memo.scar_candidate_intake",
+      "promotes_to_tos": false,
+      "recurrence_review_inputs": [
+        "candidate_dossier",
+        "owner_summary"
+      ],
+      "runs_hidden_scheduler": false,
+      "runtime_effect": "none",
+      "status": "seeded_pre_protocol_memo_prebinding",
+      "title": "Scar candidate intake",
+      "writes_durable_state": false
+    },
+    {
+      "candidate_inputs": [
+        "delta_legitimacy_review_candidate",
+        "prediction_trial_observation",
+        "repeated_failure_without_delta"
+      ],
+      "future_artifact_shape": "delta_chronicle_candidate",
+      "live_authority": false,
+      "live_protocol": false,
+      "must_not": [
+        "claim_learning",
+        "write_final_delta_receipt"
+      ],
+      "mutates_rank": false,
+      "opens_arena_session": false,
+      "prebinding_ref": "agon.memo.delta_chronicle_candidate",
+      "promotes_to_tos": false,
+      "recurrence_review_inputs": [
+        "review_queue",
+        "candidate_dossier"
+      ],
+      "runs_hidden_scheduler": false,
+      "runtime_effect": "none",
+      "status": "seeded_pre_protocol_memo_prebinding",
+      "title": "Delta chronicle candidate",
+      "writes_durable_state": false
+    },
+    {
+      "candidate_inputs": [
+        "contradiction_status_review_candidate",
+        "model_divergence_above_threshold",
+        "open_material_contradiction"
+      ],
+      "future_artifact_shape": "rupture_candidate",
+      "live_authority": false,
+      "live_protocol": false,
+      "must_not": [
+        "resolve_contradiction",
+        "promote_branch"
+      ],
+      "mutates_rank": false,
+      "opens_arena_session": false,
+      "prebinding_ref": "agon.memo.rupture_candidate_intake",
+      "promotes_to_tos": false,
+      "recurrence_review_inputs": [
+        "candidate_dossier",
+        "owner_summary"
+      ],
+      "runs_hidden_scheduler": false,
+      "runtime_effect": "none",
+      "status": "seeded_pre_protocol_memo_prebinding",
+      "title": "Rupture candidate intake",
+      "writes_durable_state": false
+    },
+    {
+      "candidate_inputs": [
+        "delta_legitimacy_review_candidate",
+        "scar_candidate",
+        "trial_repeat_pressure"
+      ],
+      "future_artifact_shape": "retention_candidate_request",
+      "live_authority": false,
+      "live_protocol": false,
+      "must_not": [
+        "schedule_retention_execution",
+        "mutate_rank"
+      ],
+      "mutates_rank": false,
+      "opens_arena_session": false,
+      "prebinding_ref": "agon.memo.retention_candidate_intake",
+      "promotes_to_tos": false,
+      "recurrence_review_inputs": [
+        "review_queue",
+        "owner_summary"
+      ],
+      "runs_hidden_scheduler": false,
+      "runtime_effect": "none",
+      "status": "seeded_pre_protocol_memo_prebinding",
+      "title": "Retention candidate intake",
+      "writes_durable_state": false
+    },
+    {
+      "candidate_inputs": [
+        "trial_playbook_observation",
+        "gate_route_hint",
+        "lawful_move_sequence"
+      ],
+      "future_artifact_shape": "trial_chronicle_candidate",
+      "live_authority": false,
+      "live_protocol": false,
+      "must_not": [
+        "declare_trial_outcome",
+        "issue_verdict"
+      ],
+      "mutates_rank": false,
+      "opens_arena_session": false,
+      "prebinding_ref": "agon.memo.trial_chronicle_candidate",
+      "promotes_to_tos": false,
+      "recurrence_review_inputs": [
+        "candidate_dossier"
+      ],
+      "runs_hidden_scheduler": false,
+      "runtime_effect": "none",
+      "status": "seeded_pre_protocol_memo_prebinding",
+      "title": "Trial chronicle candidate",
+      "writes_durable_state": false
+    },
+    {
+      "candidate_inputs": [
+        "assistant_boundary_review_candidate",
+        "assistant_scope_breach",
+        "assistant_anti_drift_alarm"
+      ],
+      "future_artifact_shape": "assistant_escalation_chronicle_candidate",
+      "live_authority": false,
+      "live_protocol": false,
+      "must_not": [
+        "recharter_assistant",
+        "make_assistant_contestant"
+      ],
+      "mutates_rank": false,
+      "opens_arena_session": false,
+      "prebinding_ref": "agon.memo.assistant_escalation_chronicle_candidate",
+      "promotes_to_tos": false,
+      "recurrence_review_inputs": [
+        "review_queue",
+        "owner_summary"
+      ],
+      "runs_hidden_scheduler": false,
+      "runtime_effect": "none",
+      "status": "seeded_pre_protocol_memo_prebinding",
+      "title": "Assistant escalation chronicle candidate",
+      "writes_durable_state": false
+    }
+  ],
+  "required_stop_lines": [
+    "no_arena_session_creation",
+    "no_sealed_commit_runtime",
+    "no_live_verdict_authority",
+    "no_durable_scar_write",
+    "no_retention_schedule_execution",
+    "no_rank_mutation",
+    "no_tree_of_sophia_promotion",
+    "no_hidden_scheduler_action",
+    "no_stats_as_authority",
+    "no_eval_as_sovereign",
+    "no_memo_as_truth",
+    "memo_accepts_candidates_only",
+    "memo_does_not_decide_truth"
+  ],
+  "runtime_effect": "none",
+  "schema_version": "agon_memo_prebinding_seed_v1",
+  "status": "seeded_pre_protocol_memory_prebinding",
+  "wave": "VII"
+}
