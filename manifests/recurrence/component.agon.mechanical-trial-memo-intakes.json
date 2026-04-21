@@ -1,0 +1,10 @@
+{
+  "authority": "observation_only",
+  "component_id": "component.agon.mechanical-trial-memo-intakes",
+  "observation_intent": "Detect drift in mechanical trial memo intakes.",
+  "repo": "aoa-memo",
+  "surfaces": [
+    "generated/agon_mechanical_trial_memo_intake_registry.min.json"
+  ],
+  "wave": "XIII"
+}
