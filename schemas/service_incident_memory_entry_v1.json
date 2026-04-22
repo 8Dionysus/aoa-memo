@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aoa.local/aoa-memo/schemas/service_incident_memory_entry_v1.json",
+  "title": "Service Incident Memory Entry V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "created_at",
+    "evidence_refs",
+    "id",
+    "incident_id",
+    "kind",
+    "memory_allowed",
+    "notes",
+    "owner_repo",
+    "status",
+    "version"
+  ],
+  "properties": {
+    "created_at": {
+      "type": "string",
+      "minLength": 1,
+      "format": "date-time"
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "incident_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "type": "string",
+      "minLength": 1,
+      "const": "service_incident_memory_entry_v1"
+    },
+    "memory_allowed": {
+      "type": "boolean",
+      "const": false
+    },
+    "notes": {
+      "type": "string",
+      "minLength": 1
+    },
+    "owner_repo": {
+      "type": "string",
+      "minLength": 1,
+      "const": "aoa-memo"
+    },
+    "status": {
+      "type": "string",
+      "minLength": 1,
+      "enum": [
+        "active",
+        "allowed",
+        "applied",
+        "blocked",
+        "completed",
+        "draft",
+        "failed",
+        "held",
+        "passed",
+        "proposed",
+        "rejected",
+        "rolled_back",
+        "sealed"
+      ]
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1,
+      "const": "1.1.0"
+    }
+  }
+}

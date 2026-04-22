@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aoa.local/aoa-memo/schemas/office_retention_marker_v1.json",
+  "title": "Office Retention Marker V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "check_after_cycles",
+    "created_at",
+    "evidence_refs",
+    "id",
+    "kind",
+    "notes",
+    "office_id",
+    "owner_repo",
+    "status",
+    "version"
+  ],
+  "properties": {
+    "check_after_cycles": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1,
+      "format": "date-time"
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "type": "string",
+      "minLength": 1,
+      "const": "office_retention_marker_v1"
+    },
+    "notes": {
+      "type": "string",
+      "minLength": 1
+    },
+    "office_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "owner_repo": {
+      "type": "string",
+      "minLength": 1,
+      "const": "aoa-memo"
+    },
+    "status": {
+      "type": "string",
+      "minLength": 1,
+      "enum": [
+        "active",
+        "allowed",
+        "applied",
+        "blocked",
+        "completed",
+        "draft",
+        "failed",
+        "held",
+        "passed",
+        "proposed",
+        "rejected",
+        "rolled_back",
+        "sealed"
+      ]
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1,
+      "const": "1.1.0"
+    }
+  }
+}

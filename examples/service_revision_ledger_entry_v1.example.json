@@ -1,0 +1,14 @@
+{
+  "created_at": "2026-04-22T00:00:00Z",
+  "entry_type": "multi_office_train_activation",
+  "evidence_refs": [
+    "generated/multi_office_train_clean_flow/release_train.json"
+  ],
+  "id": "service_revision_ledger_entry_v1_example",
+  "kind": "service_revision_ledger_entry_v1",
+  "notes": "Example artifact for service_revision_ledger_entry_v1.",
+  "office_id": "notary.assistant",
+  "owner_repo": "aoa-memo",
+  "status": "draft",
+  "version": "1.1.0"
+}
