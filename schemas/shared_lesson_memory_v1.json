@@ -54,7 +54,8 @@
     "evidence_refs": {
       "type": "array",
       "items": {
-        "type": "string"
+        "type": "string",
+        "minLength": 1
       },
       "minItems": 1
     },
@@ -73,7 +74,8 @@
         "repo_scope": {
           "type": "array",
           "items": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           }
         },
         "future_effect": {
