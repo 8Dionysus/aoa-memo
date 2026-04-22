@@ -15,6 +15,23 @@ It is not proof.
 
 memory is not proof.
 
+## Wave 1 boundary contract
+
+Wave 1 adds one compact contract surface for the memo-side boundary between
+memory gate, retention, and writeback:
+
+- `schemas/memory_readiness_boundary_contract.schema.json`
+- `examples/memory_readiness_boundary_contract.example.json`
+
+The contract keeps three claims separate:
+
+- `memory_gate` says what the memo layer may accept
+- `retention_boundary` says where runtime retention still belongs
+- `writeback_boundary` says which bounded exports may survive a route
+
+That seam is a reminder surface, not proof, not a retention worker, and not a
+live ledger.
+
 ## Readiness judgment
 
 `aoa-memo` is ready as a doctrine and surface layer for the first memory
