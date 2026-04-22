@@ -1,0 +1,10 @@
+{
+  "record_id": "remember:titan:mneme:example",
+  "bearer_id": "titan:mneme:founder",
+  "titan_name": "Mneme",
+  "claim": "Memory Loom recall is a route to source, not proof.",
+  "authority": "candidate",
+  "source_refs": [
+    "docs/TITAN_MEMORY_LOOM.md"
+  ]
+}
