@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "kind": "memo_to_kag_bridge_record",
+  "id": "memo_to_kag_bridge_record.example",
+  "status": "candidate",
+  "summary": "Example memo_to_kag_bridge_record object for v0.6 federation harvest seed.",
+  "owner_repo": "aoa-memo",
+  "evidence_refs": [
+    "receipt://v0.6/memo_to_kag_bridge_record/example"
+  ],
+  "payload": {
+    "memory_id": "memo.pattern.001",
+    "kag_candidate_id": "kag.pattern.001",
+    "allowed": true
+  }
+}
