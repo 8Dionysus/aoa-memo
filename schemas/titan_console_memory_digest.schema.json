@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Titan Console Memory Digest",
+  "type": "object",
+  "required": [
+    "session_id",
+    "candidate_status",
+    "summary",
+    "writeback_candidates"
+  ],
+  "properties": {
+    "session_id": {
+      "type": "string"
+    },
+    "candidate_status": {
+      "enum": [
+        "candidate",
+        "approved",
+        "rejected"
+      ]
+    },
+    "summary": {
+      "type": "string"
+    },
+    "writeback_candidates": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
