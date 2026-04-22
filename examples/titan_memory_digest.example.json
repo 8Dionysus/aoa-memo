@@ -1,0 +1,12 @@
+{
+  "digest_id": "example",
+  "created_at": "2026-04-22T00:00:00Z",
+  "authority": "derived_digest",
+  "record_count": 1,
+  "active_record_count": 1,
+  "redaction_count": 0,
+  "by_titan": {
+    "Mneme": 1
+  },
+  "warning": "Digest is a derived memory surface, not owner-repo truth."
+}
