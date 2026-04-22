@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "kind": "pattern_lineage_memory_entry",
+  "id": "pattern_lineage_memory_entry.example",
+  "status": "candidate",
+  "summary": "Example pattern_lineage_memory_entry object for v0.6 federation harvest seed.",
+  "owner_repo": "aoa-memo",
+  "evidence_refs": [
+    "receipt://v0.6/pattern_lineage_memory_entry/example"
+  ],
+  "payload": {
+    "pattern_id": "pattern.wrong_surface.cross_repo.001",
+    "lineage_state": "active",
+    "retention_due": "P3C"
+  }
+}

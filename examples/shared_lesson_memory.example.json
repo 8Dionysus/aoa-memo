@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "kind": "shared_lesson_memory",
+  "id": "shared_lesson_memory.example",
+  "status": "candidate",
+  "summary": "Example shared_lesson_memory object for v0.6 federation harvest seed.",
+  "owner_repo": "aoa-memo",
+  "evidence_refs": [
+    "receipt://v0.6/shared_lesson_memory/example"
+  ],
+  "payload": {
+    "lesson_family": "wrong_surface",
+    "repo_scope": [
+      "aoa-routing",
+      "aoa-agents"
+    ],
+    "future_effect": "preferred_surface"
+  }
+}

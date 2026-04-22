@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "kind": "cross_repo_retention_result",
+  "id": "cross_repo_retention_result.example",
+  "status": "candidate",
+  "summary": "Example cross_repo_retention_result object for v0.6 federation harvest seed.",
+  "owner_repo": "aoa-memo",
+  "evidence_refs": [
+    "receipt://v0.6/cross_repo_retention_result/example"
+  ],
+  "payload": {
+    "pattern_id": "pattern.wrong_surface.cross_repo.001",
+    "result": "held",
+    "cycles": 3
+  }
+}

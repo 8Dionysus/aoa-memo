@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "kind": "federation_memory_gate_decision",
+  "id": "federation_memory_gate_decision.example",
+  "status": "approved",
+  "summary": "Example federation_memory_gate_decision object for v0.6 federation harvest seed.",
+  "owner_repo": "aoa-memo",
+  "evidence_refs": [
+    "receipt://v0.6/federation_memory_gate_decision/example"
+  ],
+  "payload": {
+    "allow": true,
+    "memory_kind": "pattern_lineage_memory",
+    "blockers": []
+  }
+}
