@@ -74,7 +74,10 @@
           "type": "string"
         },
         "blockers": {
-          "type": "array"
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       }
     }
