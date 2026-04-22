@@ -1,0 +1,10 @@
+{
+  "id": "revision.notary.1.1.0",
+  "kind": "assistant_revision_ledger_entry",
+  "agent_id": "abyss.assistant.notary.001",
+  "from_version": "1.0.0",
+  "to_version": "1.1.0",
+  "reason": "experience_patch_certified",
+  "certification_ref": "cert.result.notary.001",
+  "rollback_ref": "rollback.drill.notary.001"
+}

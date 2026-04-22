@@ -1,0 +1,8 @@
+{
+  "id": "memo.cert.writeback.notary.001",
+  "kind": "certification_memory_writeback",
+  "target_agent": "abyss.assistant.notary.001",
+  "writeback_type": "revision_ledger_entry",
+  "source_certification": "cert.result.notary.001",
+  "allowed": true
+}

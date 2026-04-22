@@ -1,0 +1,7 @@
+{
+  "memory_id": "postrel.memory.001",
+  "release_id": "assistant.notary.1.1.0",
+  "retention_outcome": "held",
+  "lesson_ref": "failure.lesson.wrong_surface.001",
+  "expires_or_recheck": "cycle_6"
+}

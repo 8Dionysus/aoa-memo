@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "rollback_revision_ledger_entry",
+  "type": "object",
+  "description": "rollback_revision_ledger_entry schema for AoA experience deployment watchtower v0.5.",
+  "required": [
+    "entry_id",
+    "assistant_id",
+    "from_version",
+    "to_version",
+    "reason",
+    "authorized_by"
+  ],
+  "properties": {
+    "entry_id": {
+      "type": "string"
+    },
+    "assistant_id": {
+      "type": "string"
+    },
+    "from_version": {
+      "type": "string"
+    },
+    "to_version": {
+      "type": "string"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "authorized_by": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

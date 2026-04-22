@@ -1,0 +1,9 @@
+{
+  "id": "memo.watch.notary.001",
+  "kind": "post_release_retention_watch",
+  "agent_id": "abyss.assistant.notary.001",
+  "version": "1.1.0",
+  "target_family": "verification_overclaim",
+  "cycles_remaining": 3,
+  "status": "scheduled"
+}
