@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "post_release_retention_memory",
+  "type": "object",
+  "description": "post_release_retention_memory schema for AoA experience deployment watchtower v0.5.",
+  "required": [
+    "memory_id",
+    "release_id",
+    "retention_outcome",
+    "lesson_ref",
+    "expires_or_recheck"
+  ],
+  "properties": {
+    "memory_id": {
+      "type": "string"
+    },
+    "release_id": {
+      "type": "string"
+    },
+    "retention_outcome": {
+      "type": "string"
+    },
+    "lesson_ref": {
+      "type": "string"
+    },
+    "expires_or_recheck": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,7 @@
+{
+  "gate_id": "memo.gate.deployment.001",
+  "incident_id": "deployment.incident.001",
+  "decision": "allow",
+  "reason": "material recurrence with owner route",
+  "future_effect": "new regression sentinel"
+}

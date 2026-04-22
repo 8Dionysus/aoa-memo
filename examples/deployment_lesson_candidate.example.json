@@ -1,0 +1,7 @@
+{
+  "candidate_id": "lesson.candidate.deploy.001",
+  "incident_id": "deployment.incident.001",
+  "family": "false_completion",
+  "owner_route": "aoa-agents",
+  "proposed_effect": "add canary regression case"
+}

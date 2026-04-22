@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "deployment_incident_memory_gate",
+  "type": "object",
+  "description": "deployment_incident_memory_gate schema for AoA experience deployment watchtower v0.5.",
+  "required": [
+    "gate_id",
+    "incident_id",
+    "decision",
+    "reason",
+    "future_effect"
+  ],
+  "properties": {
+    "gate_id": {
+      "type": "string"
+    },
+    "incident_id": {
+      "type": "string"
+    },
+    "decision": {
+      "type": "string"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "future_effect": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}
