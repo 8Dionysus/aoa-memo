@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 import copy
+from datetime import datetime
 import json
 from pathlib import Path
+import re
 import unittest
 
 from jsonschema import Draft202012Validator, FormatChecker
@@ -11,6 +13,22 @@ from jsonschema import Draft202012Validator, FormatChecker
 ROOT = Path(__file__).resolve().parents[1]
 ESCAPE_VALUE = "__wave5_not_allowed__"
 FORMAT_CHECKER = FormatChecker()
+RFC3339_DATETIME = re.compile(
+    r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$"
+)
+
+
+@FORMAT_CHECKER.checks("date-time")
+def is_rfc3339_datetime(value: object) -> bool:
+    if not isinstance(value, str):
+        return True
+    if not RFC3339_DATETIME.fullmatch(value):
+        return False
+    try:
+        datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        return False
+    return True
 
 WAVE5_CONTRACTS = (
     ('first_office_retention_marker_v1', 'first_office_retention_marker_v1.json'),
