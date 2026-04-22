@@ -1,0 +1,14 @@
+{
+  "created_at": "2026-04-22T00:00:00Z",
+  "evidence_refs": [
+    "generated/multi_office_train_clean_flow/release_train.json"
+  ],
+  "id": "service_incident_memory_entry_v1_example",
+  "incident_id": "inc-office-001",
+  "kind": "service_incident_memory_entry_v1",
+  "memory_allowed": false,
+  "notes": "Example artifact for service_incident_memory_entry_v1.",
+  "owner_repo": "aoa-memo",
+  "status": "draft",
+  "version": "1.1.0"
+}
