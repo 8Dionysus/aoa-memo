@@ -92,7 +92,10 @@
       "type": "string",
       "minLength": 1,
       "enum": [
-        "proposed"
+        "proposed",
+        "applied",
+        "held",
+        "rejected"
       ]
     }
   }

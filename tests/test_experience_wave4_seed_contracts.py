@@ -217,6 +217,27 @@ class ExperienceWave4SeedContractTests(unittest.TestCase):
                 errors = validation_errors(schema, example)
                 self.assertFalse(errors, f"{stem}: {errors[0].message}" if errors else stem)
 
+    def test_governance_contract_discriminators_stay_bounded(self) -> None:
+        writeback_schema, writeback_example = load_contract(
+            "governance_memory_writeback",
+            "governance_memory_writeback_v1.json",
+        )
+        decision_schema, decision_example = load_contract(
+            "governance_decision_memory_v1",
+            "governance_decision_memory_v1.json",
+        )
+
+        self.assertEqual(
+            writeback_schema["properties"]["status"]["enum"],
+            ["proposed", "applied", "held", "rejected"],
+        )
+        self.assertEqual(
+            decision_schema["properties"]["memory_kind"]["const"],
+            "governance_decision",
+        )
+        self.assertFalse(validation_errors(writeback_schema, writeback_example))
+        self.assertFalse(validation_errors(decision_schema, decision_example))
+
     def test_experience_wave4_schemas_reject_unknown_fields(self) -> None:
         exercised = 0
         for stem, schema_file in WAVE4_CONTRACTS:
