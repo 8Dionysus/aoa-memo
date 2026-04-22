@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "candidate_id": "titan-closeout-candidate-example",
+  "source_receipt": "/srv/.titan/receipts/example.json",
+  "proposed_memory": "Use Titan runtime harness receipts for long AoA Codex sessions.",
+  "reason": "Operator asked to continue Titan runtime development.",
+  "acceptance_state": "candidate",
+  "review_after": "2026-05-22",
+  "owner": "Dionysus"
+}

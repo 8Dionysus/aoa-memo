@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aoa.local/schemas/titan_remembrance_record.schema.json",
+  "title": "Titan Remembrance Record",
+  "type": "object",
+  "required": [
+    "record_id",
+    "titan_name",
+    "bearer_id",
+    "role_key",
+    "memory_kind",
+    "source_ref",
+    "summary"
+  ],
+  "properties": {
+    "record_id": {
+      "type": "string"
+    },
+    "titan_name": {
+      "type": "string"
+    },
+    "bearer_id": {
+      "type": "string"
+    },
+    "role_key": {
+      "type": "string"
+    },
+    "incarnation_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "memory_kind": {
+      "type": "string",
+      "enum": [
+        "role",
+        "bearer",
+        "session",
+        "lesson",
+        "fall",
+        "succession",
+        "remembrance"
+      ]
+    },
+    "source_ref": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "redaction_state": {
+      "type": "string",
+      "enum": [
+        "clear",
+        "masked",
+        "tombstoned"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

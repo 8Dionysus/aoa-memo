@@ -1,0 +1,12 @@
+{
+  "record_id": "rem:2026-04-22:atlas:first-appearance",
+  "titan_name": "Atlas",
+  "bearer_id": "titan:atlas:founder",
+  "role_key": "architect",
+  "incarnation_id": null,
+  "memory_kind": "bearer",
+  "source_ref": "Dionysus/tenth_wave.manifest.json",
+  "summary": "Atlas first appears as founding bearer of the architect role class.",
+  "confidence": 1.0,
+  "redaction_state": "clear"
+}

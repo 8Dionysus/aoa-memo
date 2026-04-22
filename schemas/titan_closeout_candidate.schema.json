@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://8dionysus.github.io/schemas/titan_closeout_candidate.schema.json",
+  "title": "Titan Closeout Memory Candidate",
+  "type": "object",
+  "required": [
+    "version",
+    "candidate_id",
+    "source_receipt",
+    "proposed_memory",
+    "reason",
+    "acceptance_state"
+  ],
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "candidate_id": {
+      "type": "string"
+    },
+    "source_receipt": {
+      "type": "string"
+    },
+    "proposed_memory": {
+      "type": "string"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "acceptance_state": {
+      "enum": [
+        "candidate",
+        "accepted",
+        "rejected",
+        "expired"
+      ]
+    },
+    "review_after": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "owner": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Titan Memory Candidate",
+  "type": "object",
+  "required": [
+    "version",
+    "titan",
+    "source",
+    "reason",
+    "scope",
+    "owner_confirmation_needed",
+    "risks"
+  ],
+  "properties": {
+    "version": {
+      "type": "integer",
+      "const": 1
+    },
+    "titan": {
+      "type": "string",
+      "const": "Mneme"
+    },
+    "source": {
+      "type": "string"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "string"
+    },
+    "time_boundary": {
+      "type": "string"
+    },
+    "owner_confirmation_needed": {
+      "type": "boolean"
+    },
+    "risks": {
+      "type": "object",
+      "properties": {
+        "if_stored": {
+          "type": "string"
+        },
+        "if_not_stored": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "titan": "Mneme",
+  "source": "Titan first summon session receipt",
+  "reason": "The fixed Titan names and default gates should persist across future sessions.",
+  "scope": "AoA Titan service cohort identity",
+  "time_boundary": "valid for first Titan wave unless rechartered",
+  "owner_confirmation_needed": true,
+  "risks": {
+    "if_stored": "May over-preserve an early naming decision if the wave is later rechartered.",
+    "if_not_stored": "Future sessions may drift from Atlas, Sentinel, Mneme, Forge, Delta naming."
+  }
+}
