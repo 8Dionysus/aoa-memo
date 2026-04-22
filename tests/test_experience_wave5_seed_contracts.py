@@ -378,6 +378,20 @@ class ExperienceWave5SeedContractTests(unittest.TestCase):
                     exercised += 1
         self.assertGreater(exercised, 0)
 
+    def test_experience_wave5_schemas_reject_bad_datetime_formats(self) -> None:
+        exercised = 0
+        for stem, schema_file in WAVE5_CONTRACTS:
+            schema, example = load_contract(stem, schema_file)
+            for path, constraint in constrained_paths(schema, example, "format"):
+                if constraint != "date-time":
+                    continue
+                with self.subTest(stem=stem, path=path):
+                    mutated = copy.deepcopy(example)
+                    set_path(mutated, path, "not-a-date")
+                    self.assert_invalid(schema, mutated, f"{stem} bad date-time at {path}")
+                    exercised += 1
+        self.assertGreater(exercised, 0)
+
     def test_experience_wave5_schemas_reject_numeric_bound_escapes(self) -> None:
         for stem, schema_file in WAVE5_CONTRACTS:
             schema, example = load_contract(stem, schema_file)
