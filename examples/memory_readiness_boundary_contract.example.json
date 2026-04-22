@@ -1,0 +1,40 @@
+{
+  "contract_id": "aoa-memo.memory-readiness-boundary.v1",
+  "owner_repo": "aoa-memo",
+  "memory_gate": {
+    "accepted_inputs": [
+      "reviewed memory objects",
+      "bounded recall candidates"
+    ],
+    "rejected_inputs": [
+      "live scratchpad residue",
+      "unreviewed proof claims"
+    ],
+    "gate_note": "The memo gate admits only reviewed, bounded inputs."
+  },
+  "retention_boundary": {
+    "owned_by": "abyss-stack",
+    "out_of_scope": [
+      "runtime retention jobs",
+      "live stores",
+      "backups"
+    ],
+    "boundary_note": "Memo may name retention candidates, but it does not execute retention."
+  },
+  "writeback_boundary": {
+    "export_surfaces": [
+      "docs/RUNTIME_WRITEBACK_SEAM.md",
+      "generated/runtime_writeback_targets.min.json"
+    ],
+    "blocked_surfaces": [
+      "live ledgers",
+      "runtime scratchpads"
+    ],
+    "boundary_note": "Memo writeback is a bounded export, not live state."
+  },
+  "source_refs": [
+    "docs/MEMORY_READINESS_BOUNDARY.md#wave-1-boundary-contract",
+    "docs/RUNTIME_WRITEBACK_SEAM.md#checkpoint-to-memory-contract",
+    "docs/WRITEBACK_TEMPERATURE_POLICY.md#inquiry-checkpoint-packs"
+  ]
+}

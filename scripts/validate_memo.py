@@ -50,6 +50,8 @@ LIVE_RECEIPT_ACTOR_BY_KIND = {
 }
 PHASE_ALPHA_WRITEBACK_MAP_PATH = EXAMPLES / "phase_alpha_writeback_map.example.json"
 PHASE_ALPHA_WRITEBACK_OUTPUT_PATH = GENERATED / "phase_alpha_writeback_map.min.json"
+MEMORY_READINESS_BOUNDARY_CONTRACT_PATH = EXAMPLES / "memory_readiness_boundary_contract.example.json"
+MEMORY_READINESS_BOUNDARY_CONTRACT_SCHEMA = "memory_readiness_boundary_contract.schema.json"
 QUESTBOOK_PATH = ROOT / "QUESTBOOK.md"
 QUESTBOOK_DOC = ROOT / "docs" / "QUEST_EVIDENCE_WRITEBACK.md"
 ORCHESTRATOR_MEMORY_ALIGNMENT_DOC = ROOT / "docs" / "ORCHESTRATOR_MEMORY_ALIGNMENT.md"
@@ -1100,6 +1102,54 @@ def validate_memory_readiness_boundary_materialization() -> None:
             print(f"  - {err}")
         raise SystemExit(1)
     print("[OK]   memory readiness boundary materialization")
+
+
+def validate_memory_readiness_boundary_contract() -> None:
+    doc = (ROOT / "docs" / "MEMORY_READINESS_BOUNDARY.md").read_text(encoding="utf-8")
+    schema = validator_for(MEMORY_READINESS_BOUNDARY_CONTRACT_SCHEMA)
+    payload = load_json(MEMORY_READINESS_BOUNDARY_CONTRACT_PATH)
+    errors: list[str] = []
+
+    for token in (
+        "schemas/memory_readiness_boundary_contract.schema.json",
+        "examples/memory_readiness_boundary_contract.example.json",
+        "memory_gate",
+        "retention_boundary",
+        "writeback_boundary",
+    ):
+        if token not in doc:
+            errors.append(f"docs/MEMORY_READINESS_BOUNDARY.md must mention {token}")
+
+    if payload.get("contract_id") != "aoa-memo.memory-readiness-boundary.v1":
+        errors.append(
+            "memory_readiness_boundary_contract.example.json must keep contract_id aoa-memo.memory-readiness-boundary.v1"
+        )
+    if payload.get("owner_repo") != "aoa-memo":
+        errors.append("memory_readiness_boundary_contract.example.json must keep owner_repo aoa-memo")
+
+    errors.extend(
+        f"memory_readiness_boundary_contract.example.json schema violation: {error.message}"
+        for error in schema.iter_errors(payload)
+    )
+
+    gate = payload.get("memory_gate", {})
+    retention = payload.get("retention_boundary", {})
+    writeback = payload.get("writeback_boundary", {})
+    if not isinstance(gate, dict) or "live scratchpad residue" not in gate.get("rejected_inputs", []):
+        errors.append("memory_readiness_boundary_contract.example.json must reject live scratchpad residue")
+    if not isinstance(retention, dict) or retention.get("owned_by") != "abyss-stack":
+        errors.append("memory_readiness_boundary_contract.example.json must keep retention owned by abyss-stack")
+    if not isinstance(writeback, dict) or "docs/RUNTIME_WRITEBACK_SEAM.md" not in writeback.get("export_surfaces", []):
+        errors.append(
+            "memory_readiness_boundary_contract.example.json must point writeback at docs/RUNTIME_WRITEBACK_SEAM.md"
+        )
+
+    if errors:
+        print("[FAIL] memory readiness boundary contract")
+        for err in errors:
+            print(f"  - {err}")
+        raise SystemExit(1)
+    print("[OK]   memory readiness boundary contract")
 
 
 def validate_memory_object_surface_manifest() -> None:
@@ -3351,6 +3401,7 @@ def main() -> int:
     validate_memory_object_profiles()
     validate_trust_lifecycle_contracts()
     validate_memory_readiness_boundary_materialization()
+    validate_memory_readiness_boundary_contract()
     validate_registry()
     validate_core_memory_contract()
     validate_checkpoint_to_memory_contract()
