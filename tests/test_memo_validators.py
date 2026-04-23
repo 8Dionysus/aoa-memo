@@ -134,6 +134,63 @@ class MemoValidatorTestCase(unittest.TestCase):
         self.assertNotEqual(errors, [])
         self.assertTrue(any(list(error.path) == ["time", "valid_to"] for error in errors))
 
+    def test_memo_datetime_checker_accepts_rfc3339_edge_cases(self) -> None:
+        values = [
+            "2026-04-22t00:00:00Z",
+            "2026-04-22T00:00:00z",
+            "2026-04-22T00:00:00.123456789012345678901234567890Z",
+            "0000-01-01T00:00:00Z",
+            "0000-02-29T23:59:59-23:59",
+            "2016-12-31T23:59:60Z",
+            "2016-12-31t23:59:60.123z",
+            "2017-01-01T00:29:60+00:30",
+            "2016-12-31T23:29:60-00:30",
+            "2017-01-01T05:44:60+05:45",
+            "2017-01-01T23:58:60+23:59",
+            "2016-12-31T00:00:60-23:59",
+        ]
+
+        for value in values:
+            with self.subTest(value=value):
+                self.assertTrue(validate_memo.is_rfc3339_datetime(value))
+
+    def test_memo_datetime_checker_rejects_rfc3339_drift(self) -> None:
+        values = [
+            "2026-04-22T00:00:00.Z",
+            "\u0662\u0660\u0662\u0666-04-22T00:00:00Z",
+            "2026-04-22T00:00:00.\u0661Z",
+            "2026-02-30T00:00:00Z",
+            "2026-04-22T24:00:00Z",
+            "2026-04-22T23:60:00Z",
+            "2026-04-22T23:59:61Z",
+            "2026-04-22T23:59:59+24:00",
+            "2026-04-22T23:59:59+23:60",
+            "0000-12-31T23:59:60Z",
+            "0000-01-01T00:29:60+00:30",
+            "2016-12-31T23:59:60+01:00",
+            "2017-01-01T00:59:60+00:30",
+            "0001-01-01T00:00:60+23:59",
+            "9999-12-31T23:59:60-23:59",
+        ]
+
+        for value in values:
+            with self.subTest(value=value):
+                self.assertFalse(validate_memo.is_rfc3339_datetime(value))
+
+    def test_memo_schema_validator_uses_rfc3339_checker(self) -> None:
+        validator = validate_memo.validator_for("memory_object.schema.json")
+        payload = load_json(REPO_ROOT / "examples" / "anchor.example.json")
+        assert isinstance(payload, dict)
+        payload = copy.deepcopy(payload)
+        payload["time"]["created_at"] = "2026-04-22t00:00:00.123456789z"
+        payload["time"]["observed_at"] = "2017-01-01T05:44:60+05:45"
+        payload["time"]["valid_from"] = "0000-02-29T00:00:00Z"
+        payload["promotion"]["promoted_at"] = "2016-12-31T00:00:60-23:59"
+
+        errors = list(validator.iter_errors(payload))
+
+        self.assertEqual(errors, [])
+
     def test_inquiry_checkpoint_return_pack_requires_anchor_refs(self) -> None:
         validator = validate_memo.validator_for("inquiry_checkpoint.schema.json")
         payload = load_json(REPO_ROOT / "examples" / "inquiry_checkpoint.return.example.json")
