@@ -1,0 +1,11 @@
+{
+  "memory_candidate_id": "titan-memory-candidate:example",
+  "kind": "titan_swarm_lesson",
+  "claim": "Sentinel compact review performs better with literal diff excerpts.",
+  "source_refs": [
+    "audit:experience-v12-v20-closeout"
+  ],
+  "titan_name": "Sentinel",
+  "authority": "candidate",
+  "promotion_status": "candidate"
+}
