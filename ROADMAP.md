@@ -21,7 +21,7 @@ existing memo objects without planting a future protocol, creating a live
 ledger, changing schemas, or moving proof, graph lift, navigation, role
 authority, or runtime retention into `aoa-memo`.
 
-The current `v0.2.2` release line also already carries:
+The current `v0.2.3` release line also already carries:
 - checkpoint recall follow-through and lineage-aware growth-refinery writeback surfaces through `docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md`, `docs/GROWTH_REFINERY_WRITEBACK.md`, and `docs/QUEST_CHRONICLE_WRITEBACK.md`
 - runtime writeback landing, intake, and governance surfaces through `generated/runtime_writeback_targets.min.json`, `generated/runtime_writeback_intake.min.json`, `generated/runtime_writeback_governance.min.json`, and `docs/RUNTIME_WRITEBACK_SEAM.md`
 - rollout, rollback-followthrough, component-refresh, and self-agency continuity support through `examples/recovery_pattern_memory.rollback_followthrough.example.json`, `examples/recovery_pattern_memory.component_refresh.example.json`, `docs/SELF_AGENCY_CONTINUITY_WRITEBACK.md`, and `examples/provenance_thread.self-agency-continuity.example.json`

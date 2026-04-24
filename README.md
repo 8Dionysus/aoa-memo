@@ -4,7 +4,7 @@
 
 It exists to make memory explicit, reviewable, and bounded. Memory matters here, but memory is not proof.
 
-> Current release: `v0.2.2`. See [CHANGELOG](CHANGELOG.md) for release notes.
+> Current release: `v0.2.3`. See [CHANGELOG](CHANGELOG.md) for release notes.
 
 ## Start here
 

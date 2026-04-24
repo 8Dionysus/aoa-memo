@@ -7,6 +7,49 @@ Tracking starts with the community-docs baseline for this repository.
 
 ## [Unreleased]
 
+## [0.2.3] - 2026-04-23
+
+### Summary
+
+- this patch expands memo surfaces across Agon prebindings, verdict-delta scar
+  bridges, scar candidate intake, mechanical-trial intakes, retention rank,
+  schools/lineages, KAG/Sophian evidence, and Wave XV epistemic memory
+- Titan memory loom, remembrance provenance, and recall/source-anchor contracts
+  land beside Experience memory readiness, release gates, adoption contracts,
+  governance/runtime memory boundaries, revision ledgers, retention markers,
+  and wave5 datetime validation
+- `aoa-memo` remains the bounded recall and writeback layer; memory stays
+  explicit, provenance-aware, and weaker than proof or source truth
+
+### Added
+
+- Agon memo prebindings, scar bridges, scar candidate intakes, mechanical
+  trial intakes, retention-rank candidate boundaries, schools/lineages,
+  KAG/Sophian evidence packages, and epistemic memo surfaces
+- Titan memory loom posture, Titan bridge/closeout/operator-console memory
+  posture, remembrance provenance contracts, source-ref policy, recall
+  candidate policy, and personality memory policy
+- Experience memory readiness boundaries, release memory gates, adoption
+  forgetting/revision/retention/scar-writeback contracts, governance runtime
+  memory boundaries, installation/service memory boundaries, office incident
+  gates, post-release retention watch, and sovereign-office memory surfaces
+
+### Changed
+
+- memo review follow-ups, contract drift, wave2 and wave4 gates, remembrance
+  source anchors, post-merge contract guards, generated memo registry version,
+  and RFC3339 datetime validation were tightened
+
+### Validation
+
+- `python scripts/release_check.py`
+
+### Notes
+
+- this patch adds recall/writeback and provenance surfaces only; proof remains
+  in `aoa-evals`, routing in `aoa-routing`, and runtime records in
+  `abyss-stack`
+
 ## [0.2.2] - 2026-04-19
 
 ### Summary
