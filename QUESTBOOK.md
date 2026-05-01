@@ -16,10 +16,12 @@ This questbook tracks memory-layer obligations related to quest evidence and wri
 ## Blocked / reanchor
 
 - `AOA-MEM-Q-0008` - reanchor checkpoint automation recall as a thin-evidence memo candidate
+- `AOA-MEM-Q-0009` - reanchor Agents-of-Abyss v0.4.0 recall as a thin-evidence memo candidate
 
 ## Harvest candidates
 
 - `AOA-MEM-Q-0008` - reanchor checkpoint automation recall as a thin-evidence memo candidate
+- `AOA-MEM-Q-0009` - reanchor Agents-of-Abyss v0.4.0 recall as a thin-evidence memo candidate
 
 ## Quest-harvest posture
 

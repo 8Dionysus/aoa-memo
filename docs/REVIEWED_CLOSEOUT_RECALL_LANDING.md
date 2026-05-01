@@ -70,3 +70,12 @@ not a second route ledger.
   needs to re-read why the memo unit survived
 - do not widen this note into quest chronology, role doctrine, or proof
   authority
+
+## 2026-05-01 Reinforcement
+
+The `Agents-of-Abyss` v0.4.0 release closeout preserved
+`candidate:recall:aoa-memo-memory-catalog-min` again, beside the growth-trail
+candidate `candidate:growth:aoa-memo-commit-code`.
+That repeat strengthens the recall landing but still does not create a new memo
+object. The active owner move is tracked as `AOA-MEM-Q-0009` until another
+reviewed route supplies source-owned evidence strong enough for writeback.
