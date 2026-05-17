@@ -480,7 +480,7 @@ class MemoValidatorTestCase(unittest.TestCase):
                 "evidence_refs": [
                     {
                         "kind": "memory_object",
-                        "ref": "repo:aoa-memo/../aoa-memo/examples/claim.example.json",
+                        "ref": "repo:aoa-memo/../outside/examples/claim.example.json",
                         "role": "primary",
                     },
                     {
