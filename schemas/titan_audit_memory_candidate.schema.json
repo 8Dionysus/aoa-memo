@@ -8,6 +8,7 @@
     "kind",
     "claim",
     "source_refs",
+    "owner_route_hint",
     "authority",
     "promotion_status"
   ],
@@ -29,6 +30,11 @@
         "type": "string",
         "minLength": 1
       }
+    },
+    "owner_route_hint": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Repo or surface hint for the source-owned follow-up route; this is provenance routing, not proof authority."
     },
     "titan_name": {
       "enum": [
