@@ -8,6 +8,7 @@
     "source",
     "reason",
     "scope",
+    "time_boundary",
     "owner_confirmation_needed",
     "risks"
   ],
@@ -37,6 +38,10 @@
     },
     "risks": {
       "type": "object",
+      "required": [
+        "if_stored",
+        "if_not_stored"
+      ],
       "properties": {
         "if_stored": {
           "type": "string"

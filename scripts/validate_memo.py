@@ -32,6 +32,7 @@ except ImportError as exc:  # pragma: no cover
     raise SystemExit(2) from exc
 
 ROOT = Path(__file__).resolve().parents[1]
+ROOT_RESOLVED = ROOT.resolve()
 AOA_AGENTS_ROOT = Path(os.environ.get("AOA_AGENTS_ROOT", ROOT.parent / "aoa-agents")).expanduser().resolve()
 AOA_EVALS_ROOT = Path(os.environ.get("AOA_EVALS_ROOT", ROOT.parent / "aoa-evals")).expanduser().resolve()
 SCHEMAS = ROOT / "schemas"
@@ -2733,7 +2734,21 @@ def validate_live_receipt_log() -> None:
             if not ref.startswith("repo:aoa-memo/"):
                 continue
             path_text, _, anchor = ref.removeprefix("repo:aoa-memo/").partition("#")
-            local_path = ROOT / path_text
+            if any(part in {"", ".", ".."} for part in path_text.split("/")):
+                errors.append(
+                    f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: evidence_refs[{evidence_index}].ref "
+                    f"must use a normalized repo-relative path: {path_text!r}"
+                )
+                continue
+            local_path = (ROOT / path_text).resolve()
+            try:
+                local_path.relative_to(ROOT_RESOLVED)
+            except ValueError:
+                errors.append(
+                    f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: evidence_refs[{evidence_index}].ref "
+                    f"escapes the repository root: {path_text!r}"
+                )
+                continue
             if not local_path.exists():
                 errors.append(
                     f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: evidence_refs[{evidence_index}].ref "

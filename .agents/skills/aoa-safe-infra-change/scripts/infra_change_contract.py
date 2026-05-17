@@ -132,7 +132,7 @@ def build_report(payload: dict[str, Any]) -> dict[str, Any]:
     if verification_strength(verification_steps) == "missing":
         warnings.append("Verification posture is missing or too thin.")
 
-    if not rollback_steps:
+    if not rollback_steps and not errors:
         report_state = "confirm-or-hold"
 
     return {

@@ -6,6 +6,8 @@
     "candidate_id",
     "source_records",
     "reason",
+    "owner_surface",
+    "retention_risk",
     "operator_approval"
   ],
   "properties": {

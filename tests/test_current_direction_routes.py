@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 import unittest
 from pathlib import Path
 
@@ -13,10 +14,11 @@ class CurrentDirectionRoutesTestCase(unittest.TestCase):
         roadmap_path = REPO_ROOT / "ROADMAP.md"
         readme = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
         agents = (REPO_ROOT / "AGENTS.md").read_text(encoding="utf-8")
+        roadmap_link = re.compile(r"\[[^\]]*ROADMAP[^\]]*\]\(ROADMAP\.md\)")
 
         self.assertTrue(roadmap_path.is_file())
-        self.assertIn("ROADMAP.md", readme)
-        self.assertIn("ROADMAP.md", agents)
+        self.assertRegex(readme, roadmap_link)
+        self.assertRegex(agents, roadmap_link)
 
     def test_memory_readiness_boundary_is_routed(self) -> None:
         doc_ref = "docs/MEMORY_READINESS_BOUNDARY.md"

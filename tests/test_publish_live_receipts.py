@@ -443,6 +443,20 @@ class MemoPublishLiveReceiptsTests(unittest.TestCase):
 
         self.assertIn("payload.growth_lane_ref", str(ctx.exception))
 
+    def test_publish_live_receipts_rejects_cross_repo_growth_object_ref(self) -> None:
+        module = load_module()
+        with tempfile.TemporaryDirectory() as temp_dir:
+            tmp_path = Path(temp_dir)
+            input_path = tmp_path / "receipt.json"
+            receipt = build_growth_receipt("growth_refinery_recovery_pattern")
+            receipt["object_ref"]["repo"] = "aoa-playbooks"
+            input_path.write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8")
+
+            with self.assertRaises(module.ReceiptPublishError) as ctx:
+                module.load_receipts([input_path])
+
+        self.assertIn("object_ref.repo", str(ctx.exception))
+
     def test_publish_live_receipts_requires_growth_lane_evidence_refs(self) -> None:
         module = load_module()
         with tempfile.TemporaryDirectory() as temp_dir:
