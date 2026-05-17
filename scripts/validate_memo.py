@@ -2734,6 +2734,12 @@ def validate_live_receipt_log() -> None:
             if not ref.startswith("repo:aoa-memo/"):
                 continue
             path_text, _, anchor = ref.removeprefix("repo:aoa-memo/").partition("#")
+            if any(part in {"", ".", ".."} for part in path_text.split("/")):
+                errors.append(
+                    f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: evidence_refs[{evidence_index}].ref "
+                    f"must use a normalized repo-relative path: {path_text!r}"
+                )
+                continue
             local_path = (ROOT / path_text).resolve()
             try:
                 local_path.relative_to(ROOT_RESOLVED)
