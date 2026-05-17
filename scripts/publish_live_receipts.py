@@ -306,6 +306,8 @@ def validate_receipt(
     object_ref = receipt["object_ref"]
     if not isinstance(object_ref, dict):
         raise ReceiptPublishError(f"{location}.object_ref: must be an object")
+    if object_ref.get("repo") != "aoa-memo":
+        raise ReceiptPublishError(f"{location}.object_ref.repo: must equal 'aoa-memo'")
     object_id = object_ref.get("id")
     if not isinstance(object_id, str) or not object_id:
         raise ReceiptPublishError(f"{location}.object_ref.id: must be a non-empty string")
