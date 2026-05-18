@@ -308,6 +308,36 @@
       ]
     },
     {
+      "path": "mechanics/recurrence-support/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "recurrence-support mechanic",
+        "mechanics/recurrence-support/",
+        "OWNER_MAP.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/recurrence-support/docs/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/recurrence-support/docs/",
+        "active mechanic-owned doctrine",
+        "ARTIFACT_TOPOLOGY.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/recurrence-support/legacy/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/recurrence-support/legacy/",
+        "placement provenance",
+        "not the active route",
+        "legacy/INDEX.md"
+      ]
+    },
+    {
       "path": "mechanics/titan/AGENTS.md",
       "min_lines": 35,
       "required_snippets": [

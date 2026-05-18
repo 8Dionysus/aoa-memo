@@ -36,7 +36,7 @@
     "schemas/inquiry_checkpoint.schema.json",
     "schemas/checkpoint-to-memory-contract.schema.json",
     "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
-    "docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md"
+    "mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md"
   ],
   "notes": "Use for compact object-facing relaunch when checkpoint continuity and explicit memo-side anchors should stay reviewable: inspect first, hydrate through capsules second, and expand only when the capsule step is insufficient."
 }

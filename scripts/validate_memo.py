@@ -474,13 +474,14 @@ def validate_questbook_surface() -> None:
         else:
             anchor_ref = quest_anchor_doc_ref(data)
             if not isinstance(anchor_ref, str) or not anchor_ref.startswith(
-                (
-                    "docs/",
-                    "mechanics/adoption/docs/",
-                    "mechanics/consumer-handoff/docs/",
-                    "mechanics/writeback/docs/",
-                    "mechanics/retention/docs/",
-                )
+                    (
+                        "docs/",
+                        "mechanics/adoption/docs/",
+                        "mechanics/consumer-handoff/docs/",
+                        "mechanics/recurrence-support/docs/",
+                        "mechanics/writeback/docs/",
+                        "mechanics/retention/docs/",
+                    )
             ):
                 errors.append(
                     f"{path.relative_to(ROOT)} must keep anchor_ref within local memo docs or mechanics docs for additive memo quests"
@@ -1426,7 +1427,7 @@ def validate_registry() -> None:
         "mechanics/antifragility/docs/RECOVERY_PATTERN_RECALL.md",
         "mechanics/writeback/docs/GROWTH_REFINERY_WRITEBACK.md",
         "mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md",
-        "docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
+        "mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
         "mechanics/consumer-handoff/docs/KAG_SOURCE_EXPORT.md",
     )
     for doc_ref in required_core_docs:
@@ -1579,8 +1580,8 @@ def validate_witness_trace_contract() -> None:
         errors.append("witness_trace must not appear in generated/memo_registry.min.json supporting_objects")
     if "schemas/witness-trace.schema.json" not in registry.get("schemas", []):
         errors.append("generated/memo_registry.min.json must list schemas/witness-trace.schema.json")
-    if "docs/WITNESS_TRACE_CONTRACT.md" not in registry.get("core_docs", []):
-        errors.append("generated/memo_registry.min.json must list docs/WITNESS_TRACE_CONTRACT.md")
+    if "mechanics/recurrence-support/docs/WITNESS_TRACE_CONTRACT.md" not in registry.get("core_docs", []):
+        errors.append("generated/memo_registry.min.json must list mechanics/recurrence-support/docs/WITNESS_TRACE_CONTRACT.md")
 
     if not any(step.get("kind") == "tool" for step in data.get("steps", [])):
         errors.append("witness_trace.example.json must include at least one tool-visible step")
@@ -1794,7 +1795,7 @@ def validate_playbook_memory_scope_surface() -> None:
         "schemas/inquiry_checkpoint.schema.json",
         "schemas/checkpoint-to-memory-contract.schema.json",
         "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
-        "docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
+        "mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
     ]
     if return_contract.get("support_artifact_refs") != expected_support_refs:
         errors.append("recall_contract.object.working.return.json must keep the bounded checkpoint support artifact chain")
@@ -1802,14 +1803,14 @@ def validate_playbook_memory_scope_surface() -> None:
     return_pack = inquiry_return.get("return_pack", {})
     if return_pack.get("reentry_refs") != [
         "examples/recall_contract.object.working.return.json",
-        "docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
+        "mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
     ]:
         errors.append("inquiry_checkpoint.return.example.json must keep object return recall plus recurrence docs as reentry_refs")
     if inquiry_return.get("memory_delta_refs") != ["examples/checkpoint_to_memory_contract.example.json"]:
         errors.append("inquiry_checkpoint.return.example.json must keep checkpoint_to_memory_contract as the bounded memory delta")
     if inquiry_return.get("evidence_pack_refs") != [
         "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
-        "docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
+        "mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
     ]:
         errors.append("inquiry_checkpoint.return.example.json must keep runtime and recurrence docs as evidence_pack_refs")
 
@@ -3473,7 +3474,7 @@ def main() -> int:
             "schemas/inquiry_checkpoint.schema.json",
             "schemas/checkpoint-to-memory-contract.schema.json",
             "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
-            "docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
+            "mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
         ],
     )
     validate_recall_contract_example(
@@ -3493,7 +3494,7 @@ def main() -> int:
             "generated/phase_alpha_writeback_map.min.json",
             "schemas/inquiry_checkpoint.schema.json",
             "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
-            "docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
+            "mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
         ],
     )
     validate_recall_contract_example(

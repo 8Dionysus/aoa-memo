@@ -48,8 +48,8 @@ remaining flat doctrine, while validated districts and mechanics move one owner
 family at a time.
 
 Antifragility, Agon, Titan, adoption, governance, shape-guard,
-consumer-handoff, operational-gate, writeback, and retention are now memo
-mechanics under
+consumer-handoff, operational-gate, recurrence-support, writeback, and
+retention are now memo mechanics under
 [`mechanics/`](../mechanics/README.md), not docs subdirectories.
 In path terms, `mechanics/agon/docs/` owns the former flat and transitional
 `AGON_*` docs and `mechanics/titan/docs/` owns the former flat and
@@ -58,9 +58,10 @@ transitional `TITAN_*` docs.
 | Family | Current flat surfaces |
 |---|---|
 | Core doctrine | `BOUNDARIES`, `MEMORY_MODEL`, `MEMORY_OBJECT_PROFILES`, `MEMORY_TRUST_POSTURE`, `MEMORY_TEMPERATURES`, `LIFECYCLE`, `NARRATIVE_CORE_CONTRACT`, `PROVENANCE_THREADS`, `OPERATIONAL_BOUNDARY` |
-| Recall and writeback | `WITNESS_TRACE_CONTRACT`, [writeback mechanic](../mechanics/writeback/README.md), `RECURRENCE_MEMORY_SUPPORT_SURFACES`, `REVIEWED_CLOSEOUT_RECALL_LANDING` |
+| Recall and writeback | [recurrence-support mechanic](../mechanics/recurrence-support/README.md), [writeback mechanic](../mechanics/writeback/README.md) |
 | Neighbor handoffs | [consumer-handoff mechanic](../mechanics/consumer-handoff/README.md), [adoption mechanic](../mechanics/adoption/README.md) |
 | Operational gates | [operational-gate mechanic](../mechanics/operational-gate/README.md) plus deployment incident, office incident, service revision, and post-release boundary schemas, examples, and tests |
+| Recurrence support | [recurrence-support mechanic](../mechanics/recurrence-support/README.md) plus witness trace, inquiry checkpoint, return recall, reviewed closeout quest, schemas, examples, generated refs, and tests |
 | Antifragility | [antifragility mechanic](../mechanics/antifragility/README.md) plus matching schemas, examples, generated object surfaces, and tests |
 | Adoption, authority, and shape guard | [adoption mechanic](../mechanics/adoption/README.md), [governance mechanic](../mechanics/governance/README.md), [shape-guard mechanic](../mechanics/shape-guard/README.md), [retention mechanic](../mechanics/retention/README.md) |
 | Agon memo seams | [agon mechanic](../mechanics/agon/README.md) plus matching config, schemas, generated registries, examples, tests, quests, and manifests |
@@ -97,6 +98,7 @@ transitional `TITAN_*` docs.
 | Shape-guard mechanic | [mechanics/shape-guard/AGENTS](../mechanics/shape-guard/AGENTS.md), then [mechanics/shape-guard/README](../mechanics/shape-guard/README.md) |
 | Consumer-handoff mechanic | [mechanics/consumer-handoff/AGENTS](../mechanics/consumer-handoff/AGENTS.md), then [mechanics/consumer-handoff/README](../mechanics/consumer-handoff/README.md) |
 | Operational-gate mechanic | [mechanics/operational-gate/AGENTS](../mechanics/operational-gate/AGENTS.md), then [mechanics/operational-gate/README](../mechanics/operational-gate/README.md) |
+| Recurrence-support mechanic | [mechanics/recurrence-support/AGENTS](../mechanics/recurrence-support/AGENTS.md), then [mechanics/recurrence-support/README](../mechanics/recurrence-support/README.md) |
 | Writeback mechanic | [mechanics/writeback/AGENTS](../mechanics/writeback/AGENTS.md), then [mechanics/writeback/README](../mechanics/writeback/README.md) |
 | Retention mechanic | [mechanics/retention/AGENTS](../mechanics/retention/AGENTS.md), then [mechanics/retention/README](../mechanics/retention/README.md) |
 | Mechanic artifact placement | [mechanics/ARTIFACT_TOPOLOGY](../mechanics/ARTIFACT_TOPOLOGY.md) |
@@ -136,7 +138,8 @@ Until then, this README is the map and the flat files remain active surfaces.
 | [mechanics/shape-guard](../mechanics/shape-guard/README.md) | Shape guard memo mechanic |
 | [mechanics/consumer-handoff](../mechanics/consumer-handoff/README.md) | Consumer handoff memo mechanic |
 | [mechanics/operational-gate](../mechanics/operational-gate/README.md) | Operational gate memo mechanic |
-| [mechanics](../mechanics/README.md) | Antifragility, Agon, Titan, adoption, governance, shape-guard, consumer-handoff, operational-gate, writeback, and retention memo mechanics |
+| [mechanics/recurrence-support](../mechanics/recurrence-support/README.md) | Recurrence support memo mechanic |
+| [mechanics](../mechanics/README.md) | Antifragility, Agon, Titan, adoption, governance, shape-guard, consumer-handoff, operational-gate, recurrence-support, writeback, and retention memo mechanics |
 | [manifests](../manifests/AGENTS.md) | recurrence manifests and hook bindings |
 | [quests](../quests/AGENTS.md) | quest files backing `QUESTBOOK.md` |
 | [.agents](../.agents/AGENTS.md) | agent-facing companion lanes |
@@ -155,6 +158,6 @@ Until then, this README is the map and the flat files remain active surfaces.
   districts and flat moved docs have not reappeared.
 - Prefer `scripts/validate_memo_mechanics.py` when antifragility, Agon, Titan,
   adoption, governance, shape-guard, consumer-handoff, operational-gate,
-  writeback, or retention mechanics move.
+  recurrence-support, writeback, or retention mechanics move.
 - Generated surfaces summarize memory doctrine and object examples. They do not
   replace authored docs, schemas, examples, or validators.

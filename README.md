@@ -20,7 +20,7 @@ Use the shortest route by need:
 - Titan Memory Loom, bearer-recall posture, and remembrance source-ref policy: [mechanics/titan/docs/TITAN_MEMORY_LOOM_POSTURE.md](mechanics/titan/docs/TITAN_MEMORY_LOOM_POSTURE.md), [mechanics/titan/docs/TITAN_PERSONALITY_MEMORY_POLICY.md](mechanics/titan/docs/TITAN_PERSONALITY_MEMORY_POLICY.md), [mechanics/titan/docs/TITAN_RECALL_CANDIDATE_POLICY.md](mechanics/titan/docs/TITAN_RECALL_CANDIDATE_POLICY.md), [mechanics/titan/docs/TITAN_REMEMBRANCE_SOURCE_REF_POLICY.md](mechanics/titan/docs/TITAN_REMEMBRANCE_SOURCE_REF_POLICY.md), `schemas/titan_remembrance_record.schema.json`, and `examples/titan_remembrance_record.example.json`
 - antifragility failure-lesson seam: [mechanics/antifragility/docs/FAILURE_LESSON_MEMORY.md](mechanics/antifragility/docs/FAILURE_LESSON_MEMORY.md), [mechanics/antifragility/docs/FAILURE_LESSON_RECALL.md](mechanics/antifragility/docs/FAILURE_LESSON_RECALL.md), [mechanics/antifragility/docs/DRIFT_REVIEW_LESSON_MEMORY.md](mechanics/antifragility/docs/DRIFT_REVIEW_LESSON_MEMORY.md), `schemas/failure_lesson_memory_v1.json`, `examples/failure_lesson_memory.example.json`, `examples/failure_lesson_memory.lineage.example.json`, `examples/failure_lesson_memory.rollout.example.json`, and `examples/failure_lesson_memory.drift_review.example.json`
 - antifragility recovery-pattern seam: [mechanics/antifragility/docs/RECOVERY_PATTERN_MEMORY.md](mechanics/antifragility/docs/RECOVERY_PATTERN_MEMORY.md), [mechanics/antifragility/docs/RECOVERY_PATTERN_RECALL.md](mechanics/antifragility/docs/RECOVERY_PATTERN_RECALL.md), [mechanics/antifragility/docs/ROLLBACK_FOLLOWTHROUGH_PATTERN.md](mechanics/antifragility/docs/ROLLBACK_FOLLOWTHROUGH_PATTERN.md), `schemas/recovery_pattern_memory_v1.json`, `examples/recovery_pattern_memory.example.json`, `examples/recovery_pattern_memory.lineage.example.json`, `examples/recovery_pattern_memory.rollout.example.json`, `examples/recovery_pattern_memory.rollback_followthrough.example.json`, `examples/recovery_pattern_memory.component_refresh.example.json`, and `examples/pattern.antifragility-stress-recovery-window.example.json`
-- writeback, recurrence, and neighboring-layer seams: [docs/WITNESS_TRACE_CONTRACT](docs/WITNESS_TRACE_CONTRACT.md), [mechanics/writeback/WRITEBACK_TEMPERATURE_POLICY](mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md), [mechanics/writeback/QUEST_CHRONICLE_WRITEBACK](mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md), `schemas/quest_chronicle.schema.json`, `examples/quest_chronicle.example.json`, [mechanics/writeback/RUNTIME_WRITEBACK_SEAM](mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md), [mechanics/writeback/GROWTH_REFINERY_WRITEBACK](mechanics/writeback/docs/GROWTH_REFINERY_WRITEBACK.md), [mechanics/writeback/SELF_AGENCY_CONTINUITY_WRITEBACK](mechanics/writeback/docs/SELF_AGENCY_CONTINUITY_WRITEBACK.md), `examples/provenance_thread.self-agency-continuity.example.json`, [docs/RECURRENCE_MEMORY_SUPPORT_SURFACES](docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md), [consumer-handoff/AGENT_MEMORY_POSTURE_SEAM](mechanics/consumer-handoff/docs/AGENT_MEMORY_POSTURE_SEAM.md), and [consumer-handoff/PLAYBOOK_MEMORY_SCOPES](mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md)
+- writeback, recurrence, and neighboring-layer seams: [mechanics/recurrence-support](mechanics/recurrence-support/README.md), [recurrence-support/WITNESS_TRACE_CONTRACT](mechanics/recurrence-support/docs/WITNESS_TRACE_CONTRACT.md), [recurrence-support/RECURRENCE_MEMORY_SUPPORT_SURFACES](mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md), [mechanics/writeback/WRITEBACK_TEMPERATURE_POLICY](mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md), [mechanics/writeback/QUEST_CHRONICLE_WRITEBACK](mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md), `schemas/quest_chronicle.schema.json`, `examples/quest_chronicle.example.json`, [mechanics/writeback/RUNTIME_WRITEBACK_SEAM](mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md), [mechanics/writeback/GROWTH_REFINERY_WRITEBACK](mechanics/writeback/docs/GROWTH_REFINERY_WRITEBACK.md), [mechanics/writeback/SELF_AGENCY_CONTINUITY_WRITEBACK](mechanics/writeback/docs/SELF_AGENCY_CONTINUITY_WRITEBACK.md), `examples/provenance_thread.self-agency-continuity.example.json`, [consumer-handoff/AGENT_MEMORY_POSTURE_SEAM](mechanics/consumer-handoff/docs/AGENT_MEMORY_POSTURE_SEAM.md), and [consumer-handoff/PLAYBOOK_MEMORY_SCOPES](mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md)
 - memory readiness boundary for future durable-consequence, delta, retention, and recall pressure: [docs/MEMORY_READINESS_BOUNDARY](docs/MEMORY_READINESS_BOUNDARY.md)
 - Wave 1 memory gate / retention / writeback boundary contract: [docs/MEMORY_READINESS_BOUNDARY](docs/MEMORY_READINESS_BOUNDARY.md), `schemas/memory_readiness_boundary_contract.schema.json`, and `examples/memory_readiness_boundary_contract.example.json`
 - bridge, export, and guardrail surfaces: [consumer-handoff/KAG_TOS_BRIDGE_CONTRACT](mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md), [consumer-handoff/KAG_SOURCE_EXPORT](mechanics/consumer-handoff/docs/KAG_SOURCE_EXPORT.md), [consumer-handoff/MEMORY_EVAL_GUARDRAILS](mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md), [docs/OPERATIONAL_BOUNDARY](docs/OPERATIONAL_BOUNDARY.md), and [mechanics/adoption/ROUTING_MEMORY_ADOPTION](mechanics/adoption/docs/ROUTING_MEMORY_ADOPTION.md)
@@ -68,6 +68,13 @@ If you are editing inside `schemas/`, `examples/`, `generated/`, or `scripts/`, 
   `schemas/service_revision_ledger_entry_v1.json`,
   `schemas/service_incident_memory_entry_v1.json`, and
   `examples/deployment_incident_memory_gate.example.json`
+- recurrence support, witness trace, and reviewed closeout recall landings:
+  [mechanics/recurrence-support](mechanics/recurrence-support/README.md),
+  [recurrence-support/RECURRENCE_MEMORY_SUPPORT_SURFACES](mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md),
+  [recurrence-support/WITNESS_TRACE_CONTRACT](mechanics/recurrence-support/docs/WITNESS_TRACE_CONTRACT.md),
+  [recurrence-support/REVIEWED_CLOSEOUT_RECALL_LANDING](mechanics/recurrence-support/docs/REVIEWED_CLOSEOUT_RECALL_LANDING.md),
+  `schemas/witness-trace.schema.json`, `schemas/inquiry_checkpoint.schema.json`,
+  and `examples/inquiry_checkpoint.return.example.json`
 - schemas and local validation: `schemas/`, `python scripts/validate_memo.py`, `python scripts/validate_memory_surfaces.py`, `python scripts/validate_memory_object_surfaces.py`, `python scripts/validate_lifecycle_audit_examples.py`, and `python -m pytest -q tests`
 
 ## What `aoa-memo` owns
@@ -120,8 +127,8 @@ generated:
   route-card coverage machine-checkable
 - [mechanics](mechanics/README.md) owns memo-side antifragility, Agon, Titan,
   adoption, governance, shape-guard, consumer-handoff, operational-gate,
-  writeback, and retention mechanics with package cards, owner maps, legacy
-  bridges, and
+  recurrence-support, writeback, and retention mechanics with package cards,
+  owner maps, legacy bridges, and
   `generated/memo_mechanics.min.json`
 - [mechanics/antifragility](mechanics/antifragility/README.md) is the active
   home for former flat failure-lesson and recovery-pattern surfaces
@@ -134,10 +141,11 @@ generated:
   [mechanics/shape-guard](mechanics/shape-guard/README.md),
   [mechanics/consumer-handoff](mechanics/consumer-handoff/README.md),
   [mechanics/operational-gate](mechanics/operational-gate/README.md),
+  [mechanics/recurrence-support](mechanics/recurrence-support/README.md),
   [mechanics/writeback](mechanics/writeback/README.md), and
   [mechanics/retention](mechanics/retention/README.md) are the active homes for
   the former flat adoption/governance/shape-guard/consumer-handoff/
-  operational-gate/writeback/retention docs-root families
+  operational-gate/recurrence-support/writeback/retention docs-root families
 
 This spine does not move flat docs by itself. It exists so later mechanic,
 rollback, or AGENTS-mesh work can land through named owner routes

@@ -93,12 +93,12 @@ Then branch by task:
   `mechanics/antifragility/docs/RECOVERY_PATTERN_MEMORY.md`, and
   `mechanics/antifragility/docs/RECOVERY_PATTERN_RECALL.md`
 - writeback, quest chronicle, runtime support, or recurrence seams:
-  `docs/WITNESS_TRACE_CONTRACT.md`,
+  `mechanics/recurrence-support/docs/WITNESS_TRACE_CONTRACT.md`,
   `mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md`,
   `mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md`,
   `mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md`,
   `docs/MEMORY_READINESS_BOUNDARY.md`,
-  `docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md`,
+  `mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md`,
   `mechanics/consumer-handoff/docs/AGENT_MEMORY_POSTURE_SEAM.md`, and
   `mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md`
 - bridge, export, or guardrail surfaces:

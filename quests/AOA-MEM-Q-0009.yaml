@@ -5,7 +5,7 @@ summary: Preserve the Agents-of-Abyss v0.4.0 closeout recall candidate as a
   memo-side thin-evidence marker without copying center-release state or proof
   claims into memory.
 repo: aoa-memo
-owner_surface: docs/REVIEWED_CLOSEOUT_RECALL_LANDING.md
+owner_surface: mechanics/recurrence-support/docs/REVIEWED_CLOSEOUT_RECALL_LANDING.md
 theme_ref: ''
 milestone_ref: ''
 kind: memory
@@ -34,7 +34,7 @@ activation:
     that should remain owner-local and provenance-aware
 anchor_ref:
   artifact: reviewed_closeout_recall_landing
-  ref: docs/REVIEWED_CLOSEOUT_RECALL_LANDING.md
+  ref: mechanics/recurrence-support/docs/REVIEWED_CLOSEOUT_RECALL_LANDING.md
   note: recall should stay a compact landing cue until repeated evidence
     justifies stronger writeback
 handoff_role: memo-maintainer
