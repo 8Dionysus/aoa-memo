@@ -33,6 +33,15 @@ growth-refinery writeback, and continuity writeback are already shipped
 memory-layer surfaces and should stay visible here without turning memory into
 proof, routing, or live runtime authority.
 
+The current topology hardening path starts with the source-authored route spine
+in `DESIGN.md`, `DESIGN.AGENTS.md`, `docs/README.md`,
+`docs/ROOT_SURFACE_LAW.md`, and `docs/decisions/`. This precedes any thematic
+docs migration so Agon, Titan, adoption, retention, rollback, and writeback
+surfaces are moved only with owner maps, link updates, and validation.
+The maintained Spark fast-loop lane now lives under `.agents/spark/` rather
+than root `Spark/`, aligning agent-lane placement with the new topology spine
+without starting the later generated AGENTS mesh.
+
 ## Current contract-hardening waves
 
 Within the current contract-hardening stage, the cleanest wave order is:

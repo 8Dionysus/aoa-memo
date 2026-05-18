@@ -1,0 +1,40 @@
+# Decisions
+
+This directory holds durable decision records for `aoa-memo`.
+
+Use it when a future contributor will need the rationale for a route,
+topology, source-of-truth split, validator, public contract, or workflow
+expectation.
+
+## What Belongs Here
+
+- structural placement decisions
+- root or docs-root route-law decisions
+- AGENTS mesh or agent-lane decisions
+- validator-authority decisions
+- public-contract and source-of-truth split decisions
+- cross-repo boundary decisions that need local rationale
+
+## What Stays Elsewhere
+
+| Material | Home |
+|---|---|
+| active memory doctrine | current docs such as `MEMORY_MODEL`, `BOUNDARIES`, and `OPERATIONAL_BOUNDARY` |
+| schemas and machine contracts | `schemas/` |
+| public-safe examples | `examples/` |
+| generated companions | `generated/` |
+| release history | `CHANGELOG.md` |
+| future work | `ROADMAP.md` or `QUESTBOOK.md` |
+| raw evidence or private traces | not in this public repo unless sanitized and routed |
+
+## Index
+
+| Decision | Scope |
+|---|---|
+| [2026-05-18-memory-topology-spine](2026-05-18-memory-topology-spine.md) | add topology-spine surfaces before moving flat docs |
+| [2026-05-18-spark-agent-lane-home](2026-05-18-spark-agent-lane-home.md) | move maintained Spark lane from root to `.agents/spark/` |
+
+## Review Rule
+
+Before adding a decision, ask whether the note explains a real choice. If the
+answer is only "this file changed", the changelog or PR summary is enough.
