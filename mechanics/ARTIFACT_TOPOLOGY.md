@@ -87,6 +87,13 @@ owner surface, and coverage refs. Package-local mechanic scripts still belong
 under the owning mechanic; root scripts remain only when they operate as shared
 release gates, repo-wide validators, builders, or imported helpers.
 
+Root `tests/` has a parallel positive ownership rule through `test_families`.
+Each allowed root test file or public fixture must belong to exactly one family
+that names its role, owner surface, and protected refs. Root tests remain only
+when they protect repo-wide behavior, cross-district references, shared memory
+contracts, route-card surfaces, or cross-mechanic regressions; package-local
+mechanic tests belong under the owning mechanic.
+
 Single-mechanic artifacts live in the owning package with their local docs and
 route card. This includes mechanic-local schemas, examples, config seeds,
 generated companions, scripts, tests, manifests, and hook manifests.

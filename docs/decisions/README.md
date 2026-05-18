@@ -54,6 +54,7 @@ expectation.
 | [2026-05-18-root-technical-district-allowlist](2026-05-18-root-technical-district-allowlist.md) | make remaining root technical artifacts exact and machine-auditable |
 | [2026-05-18-root-generated-family-contracts](2026-05-18-root-generated-family-contracts.md) | make root generated outputs family-owned and release-checkable |
 | [2026-05-18-root-script-family-contracts](2026-05-18-root-script-family-contracts.md) | make root scripts family-owned and release/test covered |
+| [2026-05-18-root-test-family-contracts](2026-05-18-root-test-family-contracts.md) | make root tests and public fixtures family-owned and release-checkable |
 | [2026-05-18-mechanic-artifact-inventory](2026-05-18-mechanic-artifact-inventory.md) | add a generated inventory for package-local mechanic artifacts |
 | [2026-05-18-mechanic-parts-shape-validator](2026-05-18-mechanic-parts-shape-validator.md) | make functioning mechanic parts shape release-checkable |
 
