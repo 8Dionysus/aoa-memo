@@ -47,8 +47,9 @@ add [DESIGN.AGENTS](../DESIGN.AGENTS.md).
 remaining flat docs while validated districts move out one owner family at a
 time.
 
-The first moved district is the [Agon Memo District](agon/README.md):
-`docs/agon/` owns the former flat `AGON_*` memo docs.
+The first moved districts are the [Agon Memo District](agon/README.md) and the
+[Titan Memo District](titan/README.md): `docs/agon/` owns the former flat
+`AGON_*` memo docs, and `docs/titan/` owns the former flat `TITAN_*` memo docs.
 
 | Family | Current flat surfaces |
 |---|---|
@@ -58,7 +59,7 @@ The first moved district is the [Agon Memo District](agon/README.md):
 | Antifragility | `FAILURE_LESSON_MEMORY`, `FAILURE_LESSON_RECALL`, `DRIFT_REVIEW_LESSON_MEMORY`, `RECOVERY_PATTERN_MEMORY`, `RECOVERY_PATTERN_RECALL`, `ROLLBACK_FOLLOWTHROUGH_PATTERN` |
 | Adoption and governance | `ADOPTION_*`, `GOVERNANCE_*`, `FEDERATION_*`, `INSTALLATION_MEMORY_BOUNDARIES`, `CERTIFICATION_MEMORY_BOUNDARIES`, `CROSS_REPO_RETENTION_MEMORY` |
 | Agon memo seams | [agon](agon/README.md) district plus matching config, schemas, generated registries, examples, tests, quests, and manifests |
-| Titan memory seams | `TITAN_*` docs and their matching schemas, examples, and tests |
+| Titan memory seams | [titan](titan/README.md) district plus matching schemas, examples, and tests |
 | Decision rationale | [decisions](decisions/README.md) |
 
 ## Claim Routes
@@ -84,6 +85,7 @@ The first moved district is the [Agon Memo District](agon/README.md):
 | Generated parity | source doc or manifest, builder, generated output, validator, and test together |
 | Docs placement | [ROOT_SURFACE_LAW](ROOT_SURFACE_LAW.md) |
 | Agon memo docs | [agon/AGENTS](agon/AGENTS.md), then [agon/README](agon/README.md) |
+| Titan memo docs | [titan/AGENTS](titan/AGENTS.md), then [titan/README](titan/README.md) |
 | Agent-facing shape | [DESIGN.AGENTS](../DESIGN.AGENTS.md), root [AGENTS](../AGENTS.md), and nearest local `AGENTS.md` |
 | Decision rationale | [decisions/AGENTS](decisions/AGENTS.md), then [decisions/README](decisions/README.md) |
 | Public release path | [RELEASING](RELEASING.md), then [CHANGELOG](../CHANGELOG.md) |
@@ -114,6 +116,7 @@ Until then, this README is the map and the flat files remain active surfaces.
 | [tests](../tests/AGENTS.md) | regression surfaces |
 | [config](../config/AGENTS.md) | seed and build inputs |
 | [agon](agon/README.md) | Agon memo docs district |
+| [titan](titan/README.md) | Titan memo docs district |
 | [manifests](../manifests/AGENTS.md) | recurrence manifests and hook bindings |
 | [quests](../quests/AGENTS.md) | quest files backing `QUESTBOOK.md` |
 | [.agents](../.agents/AGENTS.md) | agent-facing companion lanes |

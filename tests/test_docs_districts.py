@@ -33,6 +33,15 @@ class DocsDistrictsTestCase(unittest.TestCase):
         self.assertTrue((REPO_ROOT / "docs" / "agon" / "AGENTS.md").is_file())
         self.assertTrue((REPO_ROOT / "docs" / "agon" / "README.md").is_file())
 
+    def test_titan_docs_live_in_titan_district(self) -> None:
+        flat = sorted((REPO_ROOT / "docs").glob("TITAN_*.md"))
+        district = sorted((REPO_ROOT / "docs" / "titan").glob("TITAN_*.md"))
+
+        self.assertEqual([], flat)
+        self.assertEqual(10, len(district))
+        self.assertTrue((REPO_ROOT / "docs" / "titan" / "AGENTS.md").is_file())
+        self.assertTrue((REPO_ROOT / "docs" / "titan" / "README.md").is_file())
+
 
 if __name__ == "__main__":
     unittest.main()

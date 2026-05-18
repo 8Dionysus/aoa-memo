@@ -53,6 +53,12 @@ The first thematic docs migration is now the Agon memo district:
 `scripts/validate_docs_districts.py`. Titan and adoption/writeback/retention
 remain flat until their own owner maps, validators, and decision records land.
 
+The second thematic docs migration is now the Titan memo district:
+`docs/titan/` owns the former flat Titan docs-root surfaces, with examples and
+tests updated to point at the new source refs. Adoption/writeback/retention
+remains flat until its own owner map, validator extension, and decision record
+land.
+
 ## Current contract-hardening waves
 
 Within the current contract-hardening stage, the cleanest wave order is:
