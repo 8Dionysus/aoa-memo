@@ -100,13 +100,17 @@ def test_native_recovery_pattern_integrates_into_object_family() -> None:
 
 def test_recovery_pattern_surfaces_stay_discoverable_and_non_proof() -> None:
     readme = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
-    memory_doc = (REPO_ROOT / "docs" / "RECOVERY_PATTERN_MEMORY.md").read_text(encoding="utf-8")
-    recall_doc = (REPO_ROOT / "docs" / "RECOVERY_PATTERN_RECALL.md").read_text(encoding="utf-8")
+    memory_doc = (
+        REPO_ROOT / "mechanics" / "antifragility" / "docs" / "RECOVERY_PATTERN_MEMORY.md"
+    ).read_text(encoding="utf-8")
+    recall_doc = (
+        REPO_ROOT / "mechanics" / "antifragility" / "docs" / "RECOVERY_PATTERN_RECALL.md"
+    ).read_text(encoding="utf-8")
 
     for fragment in [
-        "docs/RECOVERY_PATTERN_MEMORY.md",
-        "docs/RECOVERY_PATTERN_RECALL.md",
-        "docs/ROLLBACK_FOLLOWTHROUGH_PATTERN.md",
+        "mechanics/antifragility/docs/RECOVERY_PATTERN_MEMORY.md",
+        "mechanics/antifragility/docs/RECOVERY_PATTERN_RECALL.md",
+        "mechanics/antifragility/docs/ROLLBACK_FOLLOWTHROUGH_PATTERN.md",
         "mechanics/writeback/docs/GROWTH_REFINERY_WRITEBACK.md",
         "schemas/recovery_pattern_memory_v1.json",
         "examples/recovery_pattern_memory.example.json",
@@ -119,7 +123,7 @@ def test_recovery_pattern_surfaces_stay_discoverable_and_non_proof() -> None:
         assert fragment in readme
 
     assert "It remains memory, not proof." in memory_doc
-    assert "docs/ROLLBACK_FOLLOWTHROUGH_PATTERN.md" in memory_doc
+    assert "mechanics/antifragility/docs/ROLLBACK_FOLLOWTHROUGH_PATTERN.md" in memory_doc
     assert "component_refresh.example.json" in memory_doc
     assert "lineage_refs" in memory_doc
     assert "Memo may shape recall and routing review." in recall_doc

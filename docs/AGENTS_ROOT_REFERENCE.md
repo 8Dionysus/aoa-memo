@@ -88,10 +88,10 @@ Then branch by task:
   `docs/LIFECYCLE.md`, and
   `docs/NARRATIVE_CORE_CONTRACT.md`
 - failure-lesson or recovery-pattern surfaces:
-  `docs/FAILURE_LESSON_MEMORY.md`,
-  `docs/FAILURE_LESSON_RECALL.md`,
-  `docs/RECOVERY_PATTERN_MEMORY.md`, and
-  `docs/RECOVERY_PATTERN_RECALL.md`
+  `mechanics/antifragility/docs/FAILURE_LESSON_MEMORY.md`,
+  `mechanics/antifragility/docs/FAILURE_LESSON_RECALL.md`,
+  `mechanics/antifragility/docs/RECOVERY_PATTERN_MEMORY.md`, and
+  `mechanics/antifragility/docs/RECOVERY_PATTERN_RECALL.md`
 - writeback, quest chronicle, runtime support, or recurrence seams:
   `docs/WITNESS_TRACE_CONTRACT.md`,
   `mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md`,

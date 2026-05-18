@@ -101,7 +101,14 @@ def validate() -> list[str]:
             if (REPO_ROOT / former_path).exists():
                 issues.append(f"former flat path still exists: {former_path}")
 
-    forbidden_subdirs = ("docs/agon", "docs/titan", "docs/adoption", "docs/writeback", "docs/retention")
+    forbidden_subdirs = (
+        "docs/antifragility",
+        "docs/agon",
+        "docs/titan",
+        "docs/adoption",
+        "docs/writeback",
+        "docs/retention",
+    )
     for forbidden in forbidden_subdirs:
         if (REPO_ROOT / forbidden).exists():
             issues.append(f"{forbidden} should not exist; use mechanics/<slug>/")

@@ -81,5 +81,5 @@ The object should not claim:
 - that a mutation is safe by itself
 
 For the narrower shared-root campaign-cadence seam, use
-`docs/DRIFT_REVIEW_LESSON_MEMORY.md` plus
+`mechanics/antifragility/docs/DRIFT_REVIEW_LESSON_MEMORY.md` plus
 `examples/failure_lesson_memory.drift_review.example.json`.

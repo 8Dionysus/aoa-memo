@@ -98,6 +98,36 @@
       ]
     },
     {
+      "path": "mechanics/antifragility/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "antifragility mechanic",
+        "mechanics/antifragility/",
+        "OWNER_MAP.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/antifragility/docs/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/antifragility/docs/",
+        "active mechanic-owned doctrine",
+        "ARTIFACT_TOPOLOGY.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/antifragility/legacy/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/antifragility/legacy/",
+        "placement provenance",
+        "not the active route",
+        "legacy/INDEX.md"
+      ]
+    },
+    {
       "path": "mechanics/agon/AGENTS.md",
       "min_lines": 35,
       "required_snippets": [

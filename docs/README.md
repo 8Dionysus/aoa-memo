@@ -47,8 +47,9 @@ add [DESIGN.AGENTS](../DESIGN.AGENTS.md).
 remaining flat doctrine, while validated districts and mechanics move one owner
 family at a time.
 
-Agon, Titan, adoption, writeback, and retention are now memo mechanics under
-[`mechanics/`](../mechanics/README.md), not docs subdirectories.
+Antifragility, Agon, Titan, adoption, writeback, and retention are now memo
+mechanics under [`mechanics/`](../mechanics/README.md), not docs
+subdirectories.
 In path terms, `mechanics/agon/docs/` owns the former flat and transitional
 `AGON_*` docs and `mechanics/titan/docs/` owns the former flat and
 transitional `TITAN_*` docs.
@@ -58,7 +59,7 @@ transitional `TITAN_*` docs.
 | Core doctrine | `BOUNDARIES`, `MEMORY_MODEL`, `MEMORY_OBJECT_PROFILES`, `MEMORY_TRUST_POSTURE`, `MEMORY_TEMPERATURES`, `LIFECYCLE`, `NARRATIVE_CORE_CONTRACT`, `PROVENANCE_THREADS`, `OPERATIONAL_BOUNDARY` |
 | Recall and writeback | `WITNESS_TRACE_CONTRACT`, [writeback mechanic](../mechanics/writeback/README.md), `RECURRENCE_MEMORY_SUPPORT_SURFACES`, `REVIEWED_CLOSEOUT_RECALL_LANDING` |
 | Neighbor seams | `AGENT_MEMORY_POSTURE_SEAM`, `PLAYBOOK_MEMORY_SCOPES`, [adoption mechanic](../mechanics/adoption/README.md), `KAG_TOS_BRIDGE_CONTRACT`, `KAG_SOURCE_EXPORT`, `MEMORY_EVAL_GUARDRAILS` |
-| Antifragility | `FAILURE_LESSON_MEMORY`, `FAILURE_LESSON_RECALL`, `DRIFT_REVIEW_LESSON_MEMORY`, `RECOVERY_PATTERN_MEMORY`, `RECOVERY_PATTERN_RECALL`, `ROLLBACK_FOLLOWTHROUGH_PATTERN` |
+| Antifragility | [antifragility mechanic](../mechanics/antifragility/README.md) plus matching schemas, examples, generated object surfaces, and tests |
 | Adoption and governance | [adoption mechanic](../mechanics/adoption/README.md), [retention mechanic](../mechanics/retention/README.md), `GOVERNANCE_*`, `FEDERATION_*`, `INSTALLATION_MEMORY_BOUNDARIES`, `CERTIFICATION_MEMORY_BOUNDARIES` |
 | Agon memo seams | [agon mechanic](../mechanics/agon/README.md) plus matching config, schemas, generated registries, examples, tests, quests, and manifests |
 | Titan memory seams | [titan mechanic](../mechanics/titan/README.md) plus matching schemas, examples, and tests |
@@ -86,6 +87,7 @@ transitional `TITAN_*` docs.
 | Object canon or lifecycle | [MEMORY_OBJECT_PROFILES](MEMORY_OBJECT_PROFILES.md), [MEMORY_TRUST_POSTURE](MEMORY_TRUST_POSTURE.md), [LIFECYCLE](LIFECYCLE.md) |
 | Generated parity | source doc or manifest, builder, generated output, validator, and test together |
 | Docs placement | [ROOT_SURFACE_LAW](ROOT_SURFACE_LAW.md) |
+| Antifragility mechanic | [mechanics/antifragility/AGENTS](../mechanics/antifragility/AGENTS.md), then [mechanics/antifragility/README](../mechanics/antifragility/README.md) |
 | Agon memo mechanic | [mechanics/agon/AGENTS](../mechanics/agon/AGENTS.md), then [mechanics/agon/README](../mechanics/agon/README.md) |
 | Titan memo mechanic | [mechanics/titan/AGENTS](../mechanics/titan/AGENTS.md), then [mechanics/titan/README](../mechanics/titan/README.md) |
 | Adoption mechanic | [mechanics/adoption/AGENTS](../mechanics/adoption/AGENTS.md), then [mechanics/adoption/README](../mechanics/adoption/README.md) |
@@ -121,9 +123,10 @@ Until then, this README is the map and the flat files remain active surfaces.
 | [scripts](../scripts/AGENTS.md) | builders, validators, and publication helpers |
 | [tests](../tests/AGENTS.md) | regression surfaces |
 | [config](../config/AGENTS.md) | seed and build inputs |
+| [mechanics/antifragility](../mechanics/antifragility/README.md) | Antifragility memo mechanic |
 | [mechanics/agon](../mechanics/agon/README.md) | Agon memo mechanic |
 | [mechanics/titan](../mechanics/titan/README.md) | Titan memo mechanic |
-| [mechanics](../mechanics/README.md) | Agon, Titan, adoption, writeback, and retention memo mechanics |
+| [mechanics](../mechanics/README.md) | Antifragility, Agon, Titan, adoption, writeback, and retention memo mechanics |
 | [manifests](../manifests/AGENTS.md) | recurrence manifests and hook bindings |
 | [quests](../quests/AGENTS.md) | quest files backing `QUESTBOOK.md` |
 | [.agents](../.agents/AGENTS.md) | agent-facing companion lanes |
@@ -140,7 +143,7 @@ Until then, this README is the map and the flat files remain active surfaces.
   docs migration adds or changes local route cards.
 - Prefer `scripts/validate_docs_districts.py` when checking that retired docs
   districts and flat moved docs have not reappeared.
-- Prefer `scripts/validate_memo_mechanics.py` when Agon, Titan, adoption,
-  writeback, or retention mechanics move.
+- Prefer `scripts/validate_memo_mechanics.py` when antifragility, Agon, Titan,
+  adoption, writeback, or retention mechanics move.
 - Generated surfaces summarize memory doctrine and object examples. They do not
   replace authored docs, schemas, examples, or validators.

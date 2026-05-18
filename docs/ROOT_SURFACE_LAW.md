@@ -69,6 +69,7 @@ Current flat `docs/*.md` surfaces should be read through these classes:
 | Core memory doctrine | `BOUNDARIES`, `MEMORY_MODEL`, `MEMORY_OBJECT_PROFILES`, `MEMORY_TRUST_POSTURE`, `MEMORY_TEMPERATURES`, `LIFECYCLE`, `NARRATIVE_CORE_CONTRACT`, `PROVENANCE_THREADS`, `OPERATIONAL_BOUNDARY` | active docs-root surfaces |
 | Neighbor seam docs | `AGENT_MEMORY_POSTURE_SEAM`, `PLAYBOOK_MEMORY_SCOPES`, `KAG_*`, `MEMORY_EVAL_GUARDRAILS` | active docs-root surfaces until a seam district or mechanic exists |
 | Writeback and recurrence docs | `WITNESS_TRACE_CONTRACT`, `RECURRENCE_MEMORY_SUPPORT_SURFACES` | active docs-root surfaces; do not turn them into runtime ledgers |
+| Antifragility mechanic docs | `mechanics/antifragility/docs/*` | active antifragility memo mechanic; keep package map and validator aligned |
 | Agon mechanic docs | `mechanics/agon/docs/AGON_*` | active Agon memo mechanic; keep package map and validator aligned |
 | Titan mechanic docs | `mechanics/titan/docs/TITAN_*` | active Titan memo mechanic; keep package map and validator aligned |
 | Adoption, writeback, and retention mechanics | `mechanics/adoption/docs/*`, `mechanics/writeback/docs/*`, `mechanics/retention/docs/*` | active memo mechanic packages; keep owner maps, legacy bridges, generated index, and validator aligned |
@@ -104,9 +105,10 @@ Before moving a flat `docs/*.md` surface into a district or mechanic:
 4. decide whether a decision record is needed
 5. run the narrow validators before broad release validation
 
-Do not move Agon, Titan, adoption, retention, rollback, or writeback surfaces
-as a cosmetic cleanup. They are current memory-layer seams until a validated
-district or mechanic route replaces their flat path.
+Do not move remaining governance, federation, installation, certification,
+neighbor-seam, or service/office surfaces as cosmetic cleanup. They are current
+memory-layer seams until a validated district or mechanic route replaces their
+flat path.
 
 ## Current Root Cleanup Decisions
 
@@ -120,6 +122,7 @@ district or mechanic route replaces their flat path.
 | `config/agents_mesh.json` | add | config source for current route-card mesh | route cards need a machine-checkable source before docs districts move |
 | `generated/agents_mesh.min.json` | add | generated companion mirror | the mesh is inspectable without treating generated output as authority |
 | `manifests/AGENTS.md` and `quests/AGENTS.md` | add | top-level district route cards | both directories already hold durable public surfaces and should not be AGENTS coverage gaps |
+| flat antifragility docs-root surfaces | moved | `mechanics/antifragility/docs/` | antifragility is an active memo mechanic with owner map, legacy bridge, schemas, examples, generated surfaces, tests, and validation |
 | flat and transitional Agon surfaces | moved | `mechanics/agon/docs/AGON_*.md` | Agon is an active memo mechanic with owner map, legacy bridge, and validation |
 | flat and transitional Titan surfaces | moved | `mechanics/titan/docs/TITAN_*.md` | Titan is an active memo mechanic with owner map, legacy bridge, and validation |
 | flat adoption/writeback/retention docs-root surfaces | moved | `mechanics/adoption/docs/`, `mechanics/writeback/docs/`, `mechanics/retention/docs/` | these families are repeatable memo mechanics with owner maps and legacy bridges, not only documentation districts |

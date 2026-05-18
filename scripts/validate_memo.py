@@ -1417,10 +1417,10 @@ def validate_registry() -> None:
         if schema_ref not in data.get("schemas", []):
             errors.append(f"generated/memo_registry.min.json must list {schema_ref}")
     required_core_docs = (
-        "docs/FAILURE_LESSON_MEMORY.md",
-        "docs/FAILURE_LESSON_RECALL.md",
-        "docs/RECOVERY_PATTERN_MEMORY.md",
-        "docs/RECOVERY_PATTERN_RECALL.md",
+        "mechanics/antifragility/docs/FAILURE_LESSON_MEMORY.md",
+        "mechanics/antifragility/docs/FAILURE_LESSON_RECALL.md",
+        "mechanics/antifragility/docs/RECOVERY_PATTERN_MEMORY.md",
+        "mechanics/antifragility/docs/RECOVERY_PATTERN_RECALL.md",
         "mechanics/writeback/docs/GROWTH_REFINERY_WRITEBACK.md",
         "mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md",
         "docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
