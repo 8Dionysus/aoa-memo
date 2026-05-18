@@ -51,18 +51,18 @@
   ],
   "component_ref": "component:agon:memory-prebinding-surfaces",
   "contract_surfaces": [
-    "docs/AGON_MEMORY_PREBINDING.md",
-    "docs/AGON_SCAR_CANDIDATE_INTAKE_MODEL.md",
-    "docs/AGON_RETENTION_CANDIDATE_BOUNDARY.md"
+    "docs/agon/AGON_MEMORY_PREBINDING.md",
+    "docs/agon/AGON_SCAR_CANDIDATE_INTAKE_MODEL.md",
+    "docs/agon/AGON_RETENTION_CANDIDATE_BOUNDARY.md"
   ],
   "decision_surfaces": [
-    "docs/AGON_MEMORY_PREBINDING.md"
+    "docs/agon/AGON_MEMORY_PREBINDING.md"
   ],
   "description": "Memory prebinding surfaces for future Agon scar/delta/retention candidates.",
   "documentation_surfaces": [
-    "docs/AGON_MEMORY_PREBINDING.md",
-    "docs/AGON_SCAR_CANDIDATE_INTAKE_MODEL.md",
-    "docs/AGON_RETENTION_CANDIDATE_BOUNDARY.md"
+    "docs/agon/AGON_MEMORY_PREBINDING.md",
+    "docs/agon/AGON_SCAR_CANDIDATE_INTAKE_MODEL.md",
+    "docs/agon/AGON_RETENTION_CANDIDATE_BOUNDARY.md"
   ],
   "freshness": {
     "open_window_days": 7,
@@ -86,7 +86,7 @@
       "kind": "review_note",
       "notes": "Wave VII prebinding documentation.",
       "path_globs": [
-        "docs/AGON_*.md"
+        "docs/agon/AGON_*.md"
       ]
     }
   ],
@@ -104,7 +104,7 @@
     }
   ],
   "rollback_anchors": [
-    "docs/AGON_MEMORY_PREBINDING.md"
+    "docs/agon/AGON_MEMORY_PREBINDING.md"
   ],
   "schema_version": "aoa_recurrence_component_v2",
   "signal_edges": [

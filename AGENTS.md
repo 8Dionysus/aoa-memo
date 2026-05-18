@@ -42,6 +42,7 @@ For root or docs-root placement, read `docs/ROOT_SURFACE_LAW.md`.
 | `first-reading` | you need the shortest public overview | `README.md` |
 | `memory-doctrine` | memory meaning, object posture, trust, lifecycle, temperature, or provenance changes | `docs/MEMORY_MODEL.md` |
 | `root-editing` | a root or docs-root surface is added, moved, deleted, or rewritten | `docs/ROOT_SURFACE_LAW.md` |
+| `docs-district` | a thematic docs family is moved or a local docs district route changes | `docs/README.md` -> target district `AGENTS.md` -> `scripts/validate_docs_districts.py` |
 | `agent-surface-design` | agent-facing cards, lanes, or future mesh posture changes | `DESIGN.AGENTS.md` |
 | `agents-mesh` | source-backed route-card coverage or generated mesh parity changes | `config/agents_mesh.json` -> `generated/agents_mesh.min.json` -> mesh validators |
 | `generated-parity` | generated memory surfaces or their sources change | source surface -> builder -> generated output -> validator |
@@ -119,6 +120,7 @@ python scripts/validate_lifecycle_audit_examples.py
 python scripts/validate_agents_mesh.py
 python scripts/build_agents_mesh_index.py --check
 python scripts/validate_agents_mesh_index.py
+python scripts/validate_docs_districts.py
 python -m pytest -q tests
 ```
 

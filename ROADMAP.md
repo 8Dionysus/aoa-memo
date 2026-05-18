@@ -48,6 +48,11 @@ The first generated AGENTS mesh is now the active topology hardening layer:
 docs migrations should add any new local route cards through this mesh before
 landing.
 
+The first thematic docs migration is now the Agon memo district:
+`docs/agon/` owns the former flat Agon docs-root surfaces, backed by
+`scripts/validate_docs_districts.py`. Titan and adoption/writeback/retention
+remain flat until their own owner maps, validators, and decision records land.
+
 ## Current contract-hardening waves
 
 Within the current contract-hardening stage, the cleanest wave order is:

@@ -106,6 +106,8 @@ generated:
 - [.agents/spark](.agents/spark/AGENTS.md) is the maintained fast-loop Spark lane
 - `config/agents_mesh.json` and `generated/agents_mesh.min.json` make current
   route-card coverage machine-checkable
+- [docs/agon](docs/agon/README.md) is the first thematic docs district for
+  former flat Agon docs-root surfaces
 
 This spine does not move flat docs by itself. It exists so later Agon, Titan,
 adoption, retention, rollback, writeback, or AGENTS-mesh work can land through
@@ -158,9 +160,10 @@ Then rerun the read-only validation pass above and inspect `git status -sb` befo
 
 `aoa-memo` is in contract hardening. The public baseline now includes doctrine surfaces, object-facing surfaces, a narrow source-owned memo KAG export, writeback seams, bridge/export contracts, and memo-side guardrail handoff surfaces without turning the repository into runtime infrastructure or a graph platform.
 
-The current topology pass adds the memory-layer design and docs-route spine
-before any thematic docs migration. Flat `docs/*.md` surfaces remain active
-until a validated district route replaces them.
+The current topology pass adds the memory-layer design and docs-route spine.
+Agon memo docs now live under `docs/agon/` as the first validated thematic
+district. Other flat `docs/*.md` surfaces remain active until their validated
+district routes replace them.
 
 The current downstream guardrail pilot stays intentionally narrow: recall precision, provenance fidelity, and staleness. That keeps the memo layer explicit and reviewable without pretending it is already full proof doctrine.
 

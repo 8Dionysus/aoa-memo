@@ -69,7 +69,8 @@ Current flat `docs/*.md` surfaces should be read through these classes:
 | Core memory doctrine | `BOUNDARIES`, `MEMORY_MODEL`, `MEMORY_OBJECT_PROFILES`, `MEMORY_TRUST_POSTURE`, `MEMORY_TEMPERATURES`, `LIFECYCLE`, `NARRATIVE_CORE_CONTRACT`, `PROVENANCE_THREADS`, `OPERATIONAL_BOUNDARY` | active docs-root surfaces |
 | Neighbor seam docs | `AGENT_MEMORY_POSTURE_SEAM`, `PLAYBOOK_MEMORY_SCOPES`, `ROUTING_MEMORY_ADOPTION`, `KAG_*`, `MEMORY_EVAL_GUARDRAILS` | active docs-root surfaces until a seam district exists |
 | Writeback and recurrence docs | `WITNESS_TRACE_CONTRACT`, `RUNTIME_WRITEBACK_SEAM`, `GROWTH_REFINERY_WRITEBACK`, `QUEST_CHRONICLE_WRITEBACK`, `RECURRENCE_MEMORY_SUPPORT_SURFACES` | active docs-root surfaces; do not turn them into runtime ledgers |
-| Agon and Titan docs | `AGON_*`, `TITAN_*` | candidate district material; do not bulk-move without a map and validator |
+| Agon docs | `docs/agon/AGON_*` | active Agon memo district; keep map and validator aligned |
+| Titan docs | `TITAN_*` | candidate district material; do not bulk-move without a map and validator |
 | Adoption, governance, retention, rollback docs | `ADOPTION_*`, `GOVERNANCE_*`, `*_RETENTION_*`, `ROLLBACK_*` | candidate district material; preserve owner stop-lines |
 | Decisions | `docs/decisions/` | rationale only; active docs still define what |
 
@@ -118,6 +119,7 @@ district route replaces their flat path.
 | `config/agents_mesh.json` | add | config source for current route-card mesh | route cards need a machine-checkable source before docs districts move |
 | `generated/agents_mesh.min.json` | add | generated companion mirror | the mesh is inspectable without treating generated output as authority |
 | `manifests/AGENTS.md` and `quests/AGENTS.md` | add | top-level district route cards | both directories already hold durable public surfaces and should not be AGENTS coverage gaps |
+| flat Agon docs-root surfaces | moved | `docs/agon/AGON_*.md` | Agon is the first validated thematic docs district |
 
 ## Final Rule
 
