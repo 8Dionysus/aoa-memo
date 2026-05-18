@@ -19,6 +19,8 @@ Tracking starts with the community-docs baseline for this repository.
 - Add top-level route cards for `manifests/` and `quests/`.
 - Add the `docs/agon/` district for Agon memo docs with a local route card,
   district map, docs-district validator, tests, and decision record.
+- Add the `docs/titan/` district for Titan memo posture docs with a local
+  route card, district map, validator extension, tests, and decision record.
 
 ### Changed
 
@@ -27,6 +29,8 @@ Tracking starts with the community-docs baseline for this repository.
   route card.
 - Move flat Agon docs-root surfaces into `docs/agon/` and update recurrence
   manifest refs to the new district paths.
+- Move flat Titan docs-root surfaces into `docs/titan/` and update Titan source
+  refs in README, examples, and tests.
 
 ## [0.2.3] - 2026-04-23
 

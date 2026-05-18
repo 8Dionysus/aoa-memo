@@ -98,6 +98,16 @@
       ]
     },
     {
+      "path": "docs/titan/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "formerly flat",
+        "Titan memory",
+        "docs/titan/",
+        "validate_docs_districts.py"
+      ]
+    },
+    {
       "path": "examples/AGENTS.md",
       "min_lines": 40,
       "required_snippets": [

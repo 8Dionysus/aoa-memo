@@ -38,6 +38,19 @@ AGON_DOCS = {
     "AGON_WAVE7_MEMO_LANDING.md",
 }
 
+TITAN_DOCS = {
+    "TITAN_AUDIT_MEMORY_POLICY.md",
+    "TITAN_BRIDGE_MEMORY_POSTURE.md",
+    "TITAN_CLOSEOUT_MEMORY_POSTURE.md",
+    "TITAN_CONSOLE_MEMORY_DIGEST.md",
+    "TITAN_MEMORY_LOOM_POSTURE.md",
+    "TITAN_MEMORY_POSTURE.md",
+    "TITAN_PERSONALITY_MEMORY_POLICY.md",
+    "TITAN_RECALL_CANDIDATE_POLICY.md",
+    "TITAN_REMEMBRANCE_SOURCE_REF_POLICY.md",
+    "TITAN_SWARM_MEMORY_POLICY.md",
+}
+
 SKIP_SUFFIXES = (".pyc",)
 SKIP_PATH_PARTS = {".git", ".pytest_cache", "__pycache__"}
 
@@ -65,15 +78,23 @@ def validate() -> list[str]:
     issues: list[str] = []
     docs_root = REPO_ROOT / "docs"
     agon_root = docs_root / "agon"
+    titan_root = docs_root / "titan"
 
     if not (agon_root / "AGENTS.md").is_file():
         issues.append("docs/agon/AGENTS.md is missing")
     if not (agon_root / "README.md").is_file():
         issues.append("docs/agon/README.md is missing")
+    if not (titan_root / "AGENTS.md").is_file():
+        issues.append("docs/titan/AGENTS.md is missing")
+    if not (titan_root / "README.md").is_file():
+        issues.append("docs/titan/README.md is missing")
 
     flat_agon = sorted(path.name for path in docs_root.glob("AGON_*.md"))
     if flat_agon:
         issues.append("flat docs-root Agon files remain: " + ", ".join(flat_agon))
+    flat_titan = sorted(path.name for path in docs_root.glob("TITAN_*.md"))
+    if flat_titan:
+        issues.append("flat docs-root Titan files remain: " + ", ".join(flat_titan))
 
     present_agon = sorted(path.name for path in agon_root.glob("AGON_*.md"))
     if set(present_agon) != AGON_DOCS:
@@ -84,8 +105,20 @@ def validate() -> list[str]:
         if extra:
             issues.append("docs/agon/ has unregistered Agon docs: " + ", ".join(extra))
 
+    present_titan = sorted(path.name for path in titan_root.glob("TITAN_*.md"))
+    if set(present_titan) != TITAN_DOCS:
+        missing = sorted(TITAN_DOCS - set(present_titan))
+        extra = sorted(set(present_titan) - TITAN_DOCS)
+        if missing:
+            issues.append("docs/titan/ is missing Titan docs: " + ", ".join(missing))
+        if extra:
+            issues.append("docs/titan/ has unregistered Titan docs: " + ", ".join(extra))
+
     docs_readme = (docs_root / "README.md").read_text(encoding="utf-8")
     for snippet in ("docs/agon/", "Agon Memo District", "AGON_*"):
+        if snippet not in docs_readme:
+            issues.append(f"docs/README.md must mention {snippet!r}")
+    for snippet in ("docs/titan/", "Titan Memo District", "TITAN_*"):
         if snippet not in docs_readme:
             issues.append(f"docs/README.md must mention {snippet!r}")
 
@@ -93,15 +126,20 @@ def validate() -> list[str]:
     for filename in sorted(AGON_DOCS):
         if filename not in agon_readme:
             issues.append(f"docs/agon/README.md must list {filename}")
+    titan_readme = (titan_root / "README.md").read_text(encoding="utf-8")
+    for filename in sorted(TITAN_DOCS):
+        if filename not in titan_readme:
+            issues.append(f"docs/titan/README.md must list {filename}")
 
-    stale_prefix = "docs/" + "AGON_"
+    stale_prefixes = ("docs/" + "AGON_", "docs/" + "TITAN_")
     for path in tracked_files():
         if not is_text_candidate(path):
             continue
         text = path.read_text(encoding="utf-8", errors="ignore")
         rel = path.relative_to(REPO_ROOT).as_posix()
-        if stale_prefix in text:
-            issues.append(f"{rel}: contains stale flat Agon docs reference")
+        for stale_prefix in stale_prefixes:
+            if stale_prefix in text:
+                issues.append(f"{rel}: contains stale flat docs-root reference")
 
     return issues
 

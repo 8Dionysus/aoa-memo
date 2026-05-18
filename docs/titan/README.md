@@ -1,0 +1,56 @@
+# Titan Memo District
+
+This district contains memo-side Titan memory posture surfaces.
+
+The files here preserve candidate recall, source-ref, audit-memory,
+remembrance, closeout, bridge, console, personality, and swarm memory posture.
+They do not write memory automatically, grant role rights, prove findings,
+persist private data, or replace owner-repo truth.
+
+## Source Families
+
+| Family | Surfaces |
+|---|---|
+| Core memory posture | [TITAN_MEMORY_POSTURE](TITAN_MEMORY_POSTURE.md), [TITAN_MEMORY_LOOM_POSTURE](TITAN_MEMORY_LOOM_POSTURE.md), [TITAN_RECALL_CANDIDATE_POLICY](TITAN_RECALL_CANDIDATE_POLICY.md), [TITAN_REMEMBRANCE_SOURCE_REF_POLICY](TITAN_REMEMBRANCE_SOURCE_REF_POLICY.md) |
+| Closeout and digest posture | [TITAN_BRIDGE_MEMORY_POSTURE](TITAN_BRIDGE_MEMORY_POSTURE.md), [TITAN_CLOSEOUT_MEMORY_POSTURE](TITAN_CLOSEOUT_MEMORY_POSTURE.md), [TITAN_CONSOLE_MEMORY_DIGEST](TITAN_CONSOLE_MEMORY_DIGEST.md) |
+| Specialized policy | [TITAN_AUDIT_MEMORY_POLICY](TITAN_AUDIT_MEMORY_POLICY.md), [TITAN_PERSONALITY_MEMORY_POLICY](TITAN_PERSONALITY_MEMORY_POLICY.md), [TITAN_SWARM_MEMORY_POLICY](TITAN_SWARM_MEMORY_POLICY.md) |
+
+## Companion Surfaces
+
+Titan docs currently pair with:
+
+- `schemas/titan_remembrance_record.schema.json`
+- `examples/titan_remembrance_record.example.json`
+- `examples/titan_audit_memory_candidate.example.json`
+- `tests/test_titan_remembrance_record.py`
+- `tests/test_titan_candidate_schemas.py`
+- `tests/test_titan_audit_memory_candidate.py`
+
+When a Titan source family changes, keep source refs in examples and tests
+aligned with this district.
+
+## Stop-Lines
+
+Titan memo surfaces may say:
+
+- what a recall candidate must include
+- what source refs are needed
+- which uncertainty or owner confirmation remains
+- what should be proposed during closeout
+
+They may not say:
+
+- that memory was durably written
+- that a role right has been granted
+- that a finding has proof status
+- that private or sensitive data can be retained without explicit approval
+- that `aoa-memo` owns Titan source doctrine
+
+## Validation
+
+The district route is pinned by:
+
+```bash
+python scripts/validate_docs_districts.py
+python scripts/release_check.py
+```
