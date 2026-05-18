@@ -1,5 +1,5 @@
 {
-  "schema_version": "aoa_memo_root_technical_districts_v4",
+  "schema_version": "aoa_memo_root_technical_districts_v5",
   "source_of_truth": "mechanics/ARTIFACT_TOPOLOGY.md",
   "route_card_exception": "AGENTS.md",
   "districts": {
@@ -490,6 +490,97 @@
       "protects": [
         ".agents/skills/aoa-safe-infra-change/scripts/infra_change_contract.py",
         ".agents/skills/AGENTS.md"
+      ]
+    }
+  ],
+  "schema_families": [
+    {
+      "id": "core_memory_objects",
+      "role": "memory-object-contract",
+      "owner_surface": "docs/MEMORY_MODEL.md",
+      "schemas": [
+        "schemas/anchor.schema.json",
+        "schemas/audit_event.schema.json",
+        "schemas/bridge.schema.json",
+        "schemas/claim.schema.json",
+        "schemas/decision.schema.json",
+        "schemas/episode.schema.json",
+        "schemas/memory_object.schema.json",
+        "schemas/memory_object_profile.schema.json",
+        "schemas/pattern.schema.json",
+        "schemas/state_capsule.schema.json"
+      ],
+      "source_refs": [
+        "docs/MEMORY_MODEL.md",
+        "docs/MEMORY_OBJECT_PROFILES.md",
+        "examples/anchor.example.json",
+        "examples/state_capsule.example.json",
+        "examples/episode.example.json",
+        "examples/claim.example.json",
+        "examples/decision.phase-alpha-local-stack.example.json",
+        "examples/pattern.example.json",
+        "examples/audit_event.supersession.example.json"
+      ],
+      "validators": [
+        "scripts/validate_memo.py"
+      ]
+    },
+    {
+      "id": "recall_posture_contracts",
+      "role": "recall-posture-contract",
+      "owner_surface": "docs/MEMORY_MODEL.md",
+      "schemas": [
+        "schemas/decay_policy.schema.json",
+        "schemas/lifecycle_posture.schema.json",
+        "schemas/recall_contract.schema.json",
+        "schemas/trust_posture.schema.json"
+      ],
+      "source_refs": [
+        "docs/MEMORY_MODEL.md",
+        "docs/MEMORY_TRUST_POSTURE.md",
+        "docs/LIFECYCLE.md",
+        "examples/recall_contract.semantic.json"
+      ],
+      "validators": [
+        "scripts/validate_memo.py",
+        "scripts/validate_lifecycle_audit_examples.py"
+      ]
+    },
+    {
+      "id": "support_memory_objects",
+      "role": "support-object-contract",
+      "owner_surface": "docs/NARRATIVE_CORE_CONTRACT.md",
+      "schemas": [
+        "schemas/core-memory-contract.schema.json",
+        "schemas/provenance_thread.schema.json"
+      ],
+      "source_refs": [
+        "docs/NARRATIVE_CORE_CONTRACT.md",
+        "examples/core_memory_contract.example.json",
+        "examples/provenance_thread.example.json"
+      ],
+      "validators": [
+        "scripts/validate_memo.py"
+      ]
+    },
+    {
+      "id": "generated_object_surfaces",
+      "role": "generated-surface-contract",
+      "owner_surface": "examples/memory_object_surface_manifest.json",
+      "schemas": [
+        "schemas/memory_object_capsules.schema.json",
+        "schemas/memory_object_catalog.schema.json",
+        "schemas/memory_object_sections.schema.json",
+        "schemas/memory_object_surface_manifest.schema.json"
+      ],
+      "source_refs": [
+        "examples/memory_object_surface_manifest.json",
+        "generated/memory_object_catalog.min.json",
+        "generated/memory_object_capsules.json",
+        "generated/memory_object_sections.full.json"
+      ],
+      "validators": [
+        "scripts/validate_memory_object_surfaces.py"
       ]
     }
   ]

@@ -8,7 +8,7 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 ROOT_DISTRICTS_CONFIG = REPO_ROOT / "config" / "root_technical_districts.json"
-ROOT_DISTRICTS_SCHEMA_VERSION = "aoa_memo_root_technical_districts_v4"
+ROOT_DISTRICTS_SCHEMA_VERSION = "aoa_memo_root_technical_districts_v5"
 ROOT_TECHNICAL_DISTRICTS = (
     "config",
     "examples",
@@ -39,6 +39,12 @@ TEST_FAMILY_ROLES = {
     "mechanic-contract-regression",
     "memory-object-regression",
     "route-and-topology-regression",
+}
+SCHEMA_FAMILY_ROLES = {
+    "generated-surface-contract",
+    "memory-object-contract",
+    "recall-posture-contract",
+    "support-object-contract",
 }
 
 FORBIDDEN_ROOT_PREFIXES = {
@@ -455,6 +461,90 @@ def validate_test_family_contracts(
     return issues
 
 
+def validate_schema_family_contracts(
+    payload: dict[str, object],
+    districts: dict[object, object],
+) -> list[str]:
+    issues: list[str] = []
+    schemas_config = districts.get("schemas")
+    allowed_schema_files: set[str] = set()
+    if isinstance(schemas_config, dict):
+        allowed_files = schemas_config.get("allowed_files")
+        if isinstance(allowed_files, list) and all(isinstance(item, str) for item in allowed_files):
+            allowed_schema_files = set(allowed_files)
+
+    families = payload.get("schema_families")
+    if not isinstance(families, list):
+        return ["config/root_technical_districts.json: schema_families must be a list"]
+
+    seen_family_ids: set[str] = set()
+    schema_to_family: dict[str, str] = {}
+
+    for index, family in enumerate(families):
+        label = f"schema_families[{index}]"
+        if not isinstance(family, dict):
+            issues.append(f"config/root_technical_districts.json: {label} must be an object")
+            continue
+
+        family_id = family.get("id")
+        if not isinstance(family_id, str) or not family_id:
+            issues.append(f"config/root_technical_districts.json: {label}.id must be a non-empty string")
+            family_id = f"<invalid-schema-{index}>"
+        elif family_id in seen_family_ids:
+            issues.append(f"config/root_technical_districts.json: duplicate schema family id {family_id}")
+        seen_family_ids.add(family_id)
+
+        role = family.get("role")
+        if role not in SCHEMA_FAMILY_ROLES:
+            issues.append(
+                f"config/root_technical_districts.json: {family_id}.role must be one of "
+                f"{', '.join(sorted(SCHEMA_FAMILY_ROLES))}"
+            )
+
+        issues.extend(validate_local_ref(family.get("owner_surface"), f"{family_id}.owner_surface"))
+
+        schemas = as_string_list(family.get("schemas"), f"{family_id}.schemas", issues)
+        source_refs = as_string_list(family.get("source_refs"), f"{family_id}.source_refs", issues)
+        validators = as_string_list(family.get("validators"), f"{family_id}.validators", issues)
+
+        if schemas == []:
+            issues.append(f"config/root_technical_districts.json: {family_id}.schemas must not be empty")
+        if source_refs == []:
+            issues.append(f"config/root_technical_districts.json: {family_id}.source_refs must not be empty")
+        if validators == []:
+            issues.append(f"config/root_technical_districts.json: {family_id}.validators must not be empty")
+
+        for field, refs in (("source_refs", source_refs), ("validators", validators)):
+            if refs is None:
+                continue
+            for ref in refs:
+                issues.extend(validate_local_ref(ref, f"{family_id}.{field}"))
+
+        if schemas is None:
+            continue
+        for schema in schemas:
+            schema_path = Path(schema)
+            if schema_path.parts[:1] != ("schemas",):
+                issues.append(f"config/root_technical_districts.json: {family_id}.schemas contains non-root schema path {schema}")
+            if schema_path.name == "AGENTS.md":
+                issues.append(f"config/root_technical_districts.json: {family_id}.schemas must not list route cards")
+            issues.extend(validate_local_ref(schema, f"{family_id}.schemas"))
+            if schema in schema_to_family:
+                issues.append(
+                    f"config/root_technical_districts.json: root schema {schema} appears in both "
+                    f"{schema_to_family[schema]} and {family_id}"
+                )
+            schema_to_family[schema] = family_id
+
+    covered_schemas = set(schema_to_family)
+    for missing in sorted(allowed_schema_files - covered_schemas):
+        issues.append(f"config/root_technical_districts.json: root schema {missing} lacks a schema_families contract")
+    for extra in sorted(covered_schemas - allowed_schema_files):
+        issues.append(f"config/root_technical_districts.json: schema_families covers non-allowed root schema {extra}")
+
+    return issues
+
+
 def validate_root_district_allowlist() -> list[str]:
     issues: list[str] = []
     payload, config_errors = load_root_districts_config()
@@ -515,6 +605,7 @@ def validate_root_district_allowlist() -> list[str]:
     issues.extend(validate_generated_family_contracts(payload, districts))
     issues.extend(validate_script_family_contracts(payload, districts))
     issues.extend(validate_test_family_contracts(payload, districts))
+    issues.extend(validate_schema_family_contracts(payload, districts))
 
     return issues
 
