@@ -67,7 +67,6 @@ Current flat `docs/*.md` surfaces should be read through these classes:
 | Class | Examples | Posture |
 |---|---|---|
 | Core memory doctrine | `BOUNDARIES`, `MEMORY_MODEL`, `MEMORY_OBJECT_PROFILES`, `MEMORY_TRUST_POSTURE`, `MEMORY_TEMPERATURES`, `LIFECYCLE`, `NARRATIVE_CORE_CONTRACT`, `PROVENANCE_THREADS`, `OPERATIONAL_BOUNDARY` | active docs-root surfaces |
-| Neighbor seam docs | `AGENT_MEMORY_POSTURE_SEAM`, `PLAYBOOK_MEMORY_SCOPES`, `KAG_*`, `MEMORY_EVAL_GUARDRAILS` | active docs-root surfaces until a seam district or mechanic exists |
 | Writeback and recurrence docs | `WITNESS_TRACE_CONTRACT`, `RECURRENCE_MEMORY_SUPPORT_SURFACES` | active docs-root surfaces; do not turn them into runtime ledgers |
 | Antifragility mechanic docs | `mechanics/antifragility/docs/*` | active antifragility memo mechanic; keep package map and validator aligned |
 | Agon mechanic docs | `mechanics/agon/docs/AGON_*` | active Agon memo mechanic; keep package map and validator aligned |
@@ -75,6 +74,7 @@ Current flat `docs/*.md` surfaces should be read through these classes:
 | Adoption, writeback, and retention mechanics | `mechanics/adoption/docs/*`, `mechanics/writeback/docs/*`, `mechanics/retention/docs/*` | active memo mechanic packages; keep owner maps, legacy bridges, generated index, and validator aligned |
 | Governance mechanic docs | `mechanics/governance/docs/*` | active governance authority-boundary memo mechanic; keep package map and validator aligned |
 | Shape-guard mechanic docs | `mechanics/shape-guard/docs/*` | active shape/pruning memo mechanic; keep operation-first package map and validator aligned |
+| Consumer handoff mechanic docs | `mechanics/consumer-handoff/docs/*` | active consumer handoff memo mechanic; keep package map, consumer refs, generated companions, and validators aligned |
 | Decisions | `docs/decisions/` | rationale only; active docs still define what |
 
 ## Decision Procedure Before Adding a Root File
@@ -106,9 +106,10 @@ Before moving a flat `docs/*.md` surface into a district or mechanic:
 4. decide whether a decision record is needed
 5. run the narrow validators before broad release validation
 
-Do not move remaining neighbor-seam, service/office, deployment, post-release,
-or operational surfaces as cosmetic cleanup. They are current memory-layer
-seams until a validated district or mechanic route replaces their flat path.
+Do not move remaining service/office, deployment, post-release, recurrence,
+writeback, or operational surfaces as cosmetic cleanup. They are current
+memory-layer seams until a validated district or mechanic route replaces their
+flat path.
 
 ## Current Root Cleanup Decisions
 
@@ -125,6 +126,7 @@ seams until a validated district or mechanic route replaces their flat path.
 | flat antifragility docs-root surfaces | moved | `mechanics/antifragility/docs/` | antifragility is an active memo mechanic with owner map, legacy bridge, schemas, examples, generated surfaces, tests, and validation |
 | flat governance docs-root surfaces | moved | `mechanics/governance/docs/` | governance is an active authority-boundary memo mechanic with owner map, legacy bridge, authority stop-lines, tests, and validation |
 | flat via-negativa checklist | moved | `mechanics/shape-guard/docs/VIA_NEGATIVA_CHECKLIST.md` | via-negativa is a general memory-shape guard, not governance authority memory |
+| flat consumer handoff docs-root surfaces | moved | `mechanics/consumer-handoff/docs/` | agent, playbook, eval, KAG/ToS, KAG export, and orchestrator alignment surfaces are one repeatable handoff operation with stronger owner stop-lines |
 | flat and transitional Agon surfaces | moved | `mechanics/agon/docs/AGON_*.md` | Agon is an active memo mechanic with owner map, legacy bridge, and validation |
 | flat and transitional Titan surfaces | moved | `mechanics/titan/docs/TITAN_*.md` | Titan is an active memo mechanic with owner map, legacy bridge, and validation |
 | flat adoption/writeback/retention docs-root surfaces | moved | `mechanics/adoption/docs/`, `mechanics/writeback/docs/`, `mechanics/retention/docs/` | these families are repeatable memo mechanics with owner maps and legacy bridges, not only documentation districts |

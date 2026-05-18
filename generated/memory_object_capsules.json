@@ -47,7 +47,7 @@
       "trust_posture_short": "warm temperature; source_inspection authority; confidence 0.84; freshness 0.92",
       "use_when_short": "Use when episode-level recall is needed and this object remains allowed for lineage, episodic, semantic.",
       "do_not_use_short": "Do not treat this episode as proof or stronger than its cited sources.",
-      "strongest_next_source": "docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow",
+      "strongest_next_source": "mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow",
       "source_path": "examples/episode.tos-interpretation.example.json"
     },
     {
@@ -107,7 +107,7 @@
       "trust_posture_short": "cool temperature; source_inspection authority; confidence 0.90; freshness 0.90",
       "use_when_short": "Use when claim-level recall is needed and this object remains allowed for semantic, lineage, source_route.",
       "do_not_use_short": "Do not treat this claim as proof or stronger than its cited sources.",
-      "strongest_next_source": "docs/KAG_TOS_BRIDGE_CONTRACT.md#tos-bridge-guidance",
+      "strongest_next_source": "mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#tos-bridge-guidance",
       "source_path": "examples/claim.tos-bridge-ready.example.json"
     },
     {
@@ -155,7 +155,7 @@
       "trust_posture_short": "cool temperature; candidate_under_review authority; confidence 0.86; freshness 0.89",
       "use_when_short": "Use when bridge-level recall is needed and this object remains allowed for lineage, source_route, semantic.",
       "do_not_use_short": "Do not treat this bridge as proof or stronger than its cited sources.",
-      "strongest_next_source": "docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow",
+      "strongest_next_source": "mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow",
       "source_path": "examples/bridge.kag-lift.example.json"
     },
     {

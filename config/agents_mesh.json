@@ -248,6 +248,36 @@
       ]
     },
     {
+      "path": "mechanics/consumer-handoff/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "consumer-handoff mechanic",
+        "mechanics/consumer-handoff/",
+        "OWNER_MAP.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/consumer-handoff/docs/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/consumer-handoff/docs/",
+        "active mechanic-owned doctrine",
+        "ARTIFACT_TOPOLOGY.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/consumer-handoff/legacy/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/consumer-handoff/legacy/",
+        "placement provenance",
+        "not the active route",
+        "legacy/INDEX.md"
+      ]
+    },
+    {
       "path": "mechanics/titan/AGENTS.md",
       "min_lines": 35,
       "required_snippets": [

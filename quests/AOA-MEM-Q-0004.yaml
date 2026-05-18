@@ -3,7 +3,7 @@ id: AOA-MEM-Q-0004
 title: Align router orchestrator quests to inspect-first and capsule-second memo recall
 summary: Define the bounded inspect/capsule recall posture for router-facing quests without turning memo into routing policy.
 repo: aoa-memo
-owner_surface: docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md
+owner_surface: mechanics/consumer-handoff/docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md
 kind: memory
 state: captured
 band: frontier
@@ -28,7 +28,7 @@ activation:
   mode: manual
 anchor_ref:
   artifact: orchestrator_memory_alignment
-  ref: docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md#router
+  ref: mechanics/consumer-handoff/docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md#router
 orchestrator_class_ref: aoa-agents:router
 capability_target: repo_layer_selection
 playbook_family_refs:
@@ -40,7 +40,7 @@ proof_surface_refs:
 memory_surface_refs:
   - generated/memory_object_catalog.min.json
   - generated/memory_object_capsules.json
-  - docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md#router
+  - mechanics/consumer-handoff/docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md#router
 handoff_role: memo-maintainer
 evidence:
   - router recall stays inspect-first

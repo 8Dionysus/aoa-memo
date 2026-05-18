@@ -213,7 +213,7 @@
       ],
       "status": "confirmed",
       "temperature": "warm",
-      "source_path": "docs/AGENT_MEMORY_POSTURE_SEAM.md",
+      "source_path": "mechanics/consumer-handoff/docs/AGENT_MEMORY_POSTURE_SEAM.md",
       "inspect_surface": "generated/memory_capsules.json",
       "expand_surface": "generated/memory_sections.full.json",
       "related_surface_ids": [
@@ -247,7 +247,7 @@
       ],
       "status": "confirmed",
       "temperature": "warm",
-      "source_path": "docs/PLAYBOOK_MEMORY_SCOPES.md",
+      "source_path": "mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md",
       "inspect_surface": "generated/memory_capsules.json",
       "expand_surface": "generated/memory_sections.full.json",
       "related_surface_ids": [
@@ -280,7 +280,7 @@
       ],
       "status": "confirmed",
       "temperature": "cool",
-      "source_path": "docs/KAG_TOS_BRIDGE_CONTRACT.md",
+      "source_path": "mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md",
       "inspect_surface": "generated/memory_capsules.json",
       "expand_surface": "generated/memory_sections.full.json",
       "related_surface_ids": [
@@ -312,7 +312,7 @@
       ],
       "status": "confirmed",
       "temperature": "cool",
-      "source_path": "docs/MEMORY_EVAL_GUARDRAILS.md",
+      "source_path": "mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md",
       "inspect_surface": "generated/memory_capsules.json",
       "expand_surface": "generated/memory_sections.full.json",
       "related_surface_ids": [

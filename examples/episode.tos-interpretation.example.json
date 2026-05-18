@@ -10,7 +10,7 @@
   "owner_refs": [
     "repo:aoa-memo"
   ],
-  "payload_ref": "docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow",
+  "payload_ref": "mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow",
   "tags": [
     "tos",
     "bridge",
@@ -25,7 +25,7 @@
   },
   "provenance": {
     "source_refs": [
-      "docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow",
+      "mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow",
       "repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md"
     ],
     "episode_refs": [],

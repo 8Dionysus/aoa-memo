@@ -228,6 +228,29 @@
       ]
     },
     {
+      "slug": "consumer-handoff",
+      "title": "Consumer Handoff Memo Mechanic",
+      "status": "landed",
+      "operation": "publish memo-owned consumer handoff surfaces so stronger owner layers can inspect, scope, evaluate, bridge, or orchestrate memory without absorbing memo authority",
+      "os_abyss_role": "lets OS Abyss consumers use memo recall through bounded source-linked handoffs while agents, playbooks, evals, KAG, ToS, routing, and runtime keep stronger authority",
+      "docs": [
+        "AGENT_MEMORY_POSTURE_SEAM.md",
+        "KAG_SOURCE_EXPORT.md",
+        "KAG_TOS_BRIDGE_CONTRACT.md",
+        "MEMORY_EVAL_GUARDRAILS.md",
+        "ORCHESTRATOR_MEMORY_ALIGNMENT.md",
+        "PLAYBOOK_MEMORY_SCOPES.md"
+      ],
+      "former_flat_paths": [
+        "docs/AGENT_MEMORY_POSTURE_SEAM.md",
+        "docs/KAG_SOURCE_EXPORT.md",
+        "docs/KAG_TOS_BRIDGE_CONTRACT.md",
+        "docs/MEMORY_EVAL_GUARDRAILS.md",
+        "docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md",
+        "docs/PLAYBOOK_MEMORY_SCOPES.md"
+      ]
+    },
+    {
       "slug": "writeback",
       "title": "Writeback Mechanic",
       "status": "landed",

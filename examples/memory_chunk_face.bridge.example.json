@@ -5,7 +5,7 @@
   "recall_mode": "lineage",
   "capsule_text": "Bridge candidate linking a reviewed memo claim to a Tree of Sophia fragment and exposing the strongest next sources for KAG-oriented downstream inspection.",
   "section_refs": [
-    "docs/KAG_TOS_BRIDGE_CONTRACT.md#chunk-face-contract",
+    "mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#chunk-face-contract",
     "docs/MEMORY_MODEL.md#kag-orientation"
   ],
   "source_refs": [
@@ -13,7 +13,7 @@
     "repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md"
   ],
   "source_fragment_refs": [
-    "docs/KAG_TOS_BRIDGE_CONTRACT.md#tos-bridge-guidance",
+    "mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#tos-bridge-guidance",
     "repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md#memory-bridge-fragment"
   ],
   "provenance_thread_id": "prov.tos-bridge-kag-lift.2026-03-23",

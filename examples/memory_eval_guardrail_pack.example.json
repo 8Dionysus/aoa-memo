@@ -6,7 +6,7 @@
   "boundary_rule": "aoa-memo publishes the cases and expectations; aoa-evals owns scoring and pass/fail logic.",
   "handoff_target": "aoa-evals",
   "source_refs": [
-    "docs/MEMORY_EVAL_GUARDRAILS.md",
+    "mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md",
     "ROADMAP.md#v08-evaluation-and-guardrails",
     "docs/OPERATIONAL_BOUNDARY.md#stable-public-boundary"
   ],
@@ -20,7 +20,7 @@
         "generated/memory_capsules.json",
         "generated/memory_sections.full.json",
         "examples/recall_contract.router.semantic.json",
-        "docs/PLAYBOOK_MEMORY_SCOPES.md"
+        "mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md"
       ],
       "expected_behavior": [
         "Return the smallest relevant memo surface before deeper expansion.",
@@ -102,7 +102,7 @@
       "focus": "permission_leakage",
       "risk": "Consumers infer role rights directly from memo access fields instead of using aoa-agents policy.",
       "input_refs": [
-        "docs/AGENT_MEMORY_POSTURE_SEAM.md#minimal-handoff-fields",
+        "mechanics/consumer-handoff/docs/AGENT_MEMORY_POSTURE_SEAM.md#minimal-handoff-fields",
         "docs/BOUNDARIES.md#aoa-agents",
         "docs/OPERATIONAL_BOUNDARY.md#consumer-contracts"
       ],
@@ -122,7 +122,7 @@
       "risk": "Bridge or claim candidates are promoted into durable canon posture without the intended review boundary.",
       "input_refs": [
         "mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md",
-        "docs/AGENT_MEMORY_POSTURE_SEAM.md#boundary-rule",
+        "mechanics/consumer-handoff/docs/AGENT_MEMORY_POSTURE_SEAM.md#boundary-rule",
         "examples/bridge.kag-lift.example.json"
       ],
       "expected_behavior": [

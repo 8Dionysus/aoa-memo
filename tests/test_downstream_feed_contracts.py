@@ -173,7 +173,7 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
             "recall_contract.lineage.json": {
                 "inspect_surface": "generated/memory_catalog.min.json",
                 "capsule_surface": None,
-                "expand_surface": "docs/KAG_TOS_BRIDGE_CONTRACT.md",
+                "expand_surface": "mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md",
                 "mode": "lineage",
             },
             "recall_contract.router.lineage.json": {

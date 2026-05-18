@@ -4,7 +4,7 @@
   "summary": "Ties the ToS inspection episode, bridge-ready claim, and bridge candidate into one bounded provenance chain for downstream KAG-oriented export.",
   "status": "active",
   "source_refs": [
-    "docs/KAG_TOS_BRIDGE_CONTRACT.md",
+    "mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md",
     "docs/PROVENANCE_THREADS.md",
     "repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md"
   ],

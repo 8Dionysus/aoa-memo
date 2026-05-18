@@ -55,7 +55,9 @@ MEMORY_READINESS_BOUNDARY_CONTRACT_PATH = EXAMPLES / "memory_readiness_boundary_
 MEMORY_READINESS_BOUNDARY_CONTRACT_SCHEMA = "memory_readiness_boundary_contract.schema.json"
 QUESTBOOK_PATH = ROOT / "QUESTBOOK.md"
 QUESTBOOK_DOC = ROOT / "mechanics" / "writeback" / "docs" / "QUEST_EVIDENCE_WRITEBACK.md"
-ORCHESTRATOR_MEMORY_ALIGNMENT_DOC = ROOT / "docs" / "ORCHESTRATOR_MEMORY_ALIGNMENT.md"
+ORCHESTRATOR_MEMORY_ALIGNMENT_DOC = (
+    ROOT / "mechanics" / "consumer-handoff" / "docs" / "ORCHESTRATOR_MEMORY_ALIGNMENT.md"
+)
 QUEST_CATALOG_PATH = GENERATED / "quest_catalog.min.json"
 QUEST_CATALOG_EXAMPLE_PATH = GENERATED / "quest_catalog.min.example.json"
 QUEST_DISPATCH_PATH = GENERATED / "quest_dispatch.min.json"
@@ -452,9 +454,9 @@ def validate_questbook_surface() -> None:
             expected_ref, expected_target = expected_orchestrator_pair
             if data.get("kind") != "memory":
                 errors.append(f"{path.relative_to(ROOT)} must keep kind memory")
-            if data.get("owner_surface") != "docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md":
+            if data.get("owner_surface") != "mechanics/consumer-handoff/docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md":
                 errors.append(
-                    f"{path.relative_to(ROOT)} must keep owner_surface docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md"
+                    f"{path.relative_to(ROOT)} must keep owner_surface mechanics/consumer-handoff/docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md"
                 )
             if orchestrator_class_ref != expected_ref:
                 errors.append(
@@ -475,6 +477,7 @@ def validate_questbook_surface() -> None:
                 (
                     "docs/",
                     "mechanics/adoption/docs/",
+                    "mechanics/consumer-handoff/docs/",
                     "mechanics/writeback/docs/",
                     "mechanics/retention/docs/",
                 )
@@ -505,13 +508,13 @@ def validate_questbook_surface() -> None:
 
     if needs_orchestrator_memory_doc:
         if not ORCHESTRATOR_MEMORY_ALIGNMENT_DOC.exists():
-            errors.append("missing file: docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md")
+            errors.append("missing file: mechanics/consumer-handoff/docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md")
         else:
             memory_alignment_text = load_text(ORCHESTRATOR_MEMORY_ALIGNMENT_DOC)
             for token in ORCHESTRATOR_MEMORY_REQUIRED_TOKENS:
                 if token not in memory_alignment_text:
                     errors.append(
-                        f"docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md must mention {token}"
+                        f"mechanics/consumer-handoff/docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md must mention {token}"
                     )
 
     if questbook_text:
@@ -1424,7 +1427,7 @@ def validate_registry() -> None:
         "mechanics/writeback/docs/GROWTH_REFINERY_WRITEBACK.md",
         "mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md",
         "docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
-        "docs/KAG_SOURCE_EXPORT.md",
+        "mechanics/consumer-handoff/docs/KAG_SOURCE_EXPORT.md",
     )
     for doc_ref in required_core_docs:
         if doc_ref not in data.get("core_docs", []):
@@ -1730,7 +1733,13 @@ def validate_routing_memory_adoption_surface() -> None:
 
 
 def validate_playbook_memory_scope_surface() -> None:
-    doc = load_text(ROOT / "docs" / "PLAYBOOK_MEMORY_SCOPES.md")
+    doc = load_text(
+        ROOT
+        / "mechanics"
+        / "consumer-handoff"
+        / "docs"
+        / "PLAYBOOK_MEMORY_SCOPES.md"
+    )
     doc_compact = " ".join(doc.split())
     readme = load_text(ROOT / "README.md")
     registry = load_json(GENERATED / "memo_registry.min.json")
@@ -1740,10 +1749,10 @@ def validate_playbook_memory_scope_surface() -> None:
     guardrail_pack = load_json(EXAMPLES / "memory_eval_guardrail_pack.example.json")
     errors: list[str] = []
 
-    if "docs/PLAYBOOK_MEMORY_SCOPES.md" not in readme:
-        errors.append("README.md must route docs/PLAYBOOK_MEMORY_SCOPES.md")
-    if "docs/PLAYBOOK_MEMORY_SCOPES.md" not in registry.get("core_docs", []):
-        errors.append("generated/memo_registry.min.json must list docs/PLAYBOOK_MEMORY_SCOPES.md")
+    if "mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md" not in readme:
+        errors.append("README.md must route mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md")
+    if "mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md" not in registry.get("core_docs", []):
+        errors.append("generated/memo_registry.min.json must list mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md")
 
     for fragment in [
         "Playbooks should ask memo for bounded recall modes and explicit scopes.",
@@ -1754,17 +1763,17 @@ def validate_playbook_memory_scope_surface() -> None:
         "When a playbook requests return, it should ask for checkpoint anchors and exported state surfaces, not a new memory family.",
     ]:
         if fragment not in doc_compact:
-            errors.append(f"docs/PLAYBOOK_MEMORY_SCOPES.md must mention {fragment!r}")
+            errors.append(f"mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md must mention {fragment!r}")
 
     for token in ["`working`", "`episodic`", "`semantic`", "`procedural`", "`lineage`", "`source_route`"]:
         if token not in doc:
-            errors.append(f"docs/PLAYBOOK_MEMORY_SCOPES.md must mention {token}")
+            errors.append(f"mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md must mention {token}")
     for token in ["`thread`", "`session`", "`project`", "`workspace`", "`ecosystem`"]:
         if token not in doc:
-            errors.append(f"docs/PLAYBOOK_MEMORY_SCOPES.md must mention {token}")
+            errors.append(f"mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md must mention {token}")
     for token in ["`inquiry_checkpoint`", "`state_capsule`", "`episode`", "`decision`", "`audit_event`", "`provenance_thread`"]:
         if token not in doc:
-            errors.append(f"docs/PLAYBOOK_MEMORY_SCOPES.md must mention {token}")
+            errors.append(f"mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md must mention {token}")
 
     if working_contract.get("mode") != "working":
         errors.append("recall_contract.working.json must stay in working mode")
@@ -1811,8 +1820,8 @@ def validate_playbook_memory_scope_surface() -> None:
             break
     if not isinstance(recall_precision_case, dict):
         errors.append("memory_eval_guardrail_pack.example.json must keep a recall_precision case")
-    elif "docs/PLAYBOOK_MEMORY_SCOPES.md" not in recall_precision_case.get("input_refs", []):
-        errors.append("memory_eval_guardrail_pack.example.json recall_precision case must reference docs/PLAYBOOK_MEMORY_SCOPES.md")
+    elif "mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md" not in recall_precision_case.get("input_refs", []):
+        errors.append("memory_eval_guardrail_pack.example.json recall_precision case must reference mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md")
 
     if errors:
         print("[FAIL] playbook memory scope surface")
@@ -3002,8 +3011,8 @@ def validate_bridge_export_contracts() -> None:
         errors.append("generated/memo_registry.min.json must list schemas/memory_chunk_face.schema.json")
     if "schemas/memory_graph_face.schema.json" not in registry.get("schemas", []):
         errors.append("generated/memo_registry.min.json must list schemas/memory_graph_face.schema.json")
-    if "docs/KAG_TOS_BRIDGE_CONTRACT.md" not in registry.get("core_docs", []):
-        errors.append("generated/memo_registry.min.json must list docs/KAG_TOS_BRIDGE_CONTRACT.md")
+    if "mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md" not in registry.get("core_docs", []):
+        errors.append("generated/memo_registry.min.json must list mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md")
 
     if errors:
         print("[FAIL] bridge export contract surfaces")
@@ -3209,7 +3218,7 @@ def _validate_guardrail_wider_cases(
     if isinstance(permission_case, dict):
         refs = _guardrail_case_input_refs(permission_case)
         required_prefixes = {
-            "docs/AGENT_MEMORY_POSTURE_SEAM.md": "agent memory posture seam",
+            "mechanics/consumer-handoff/docs/AGENT_MEMORY_POSTURE_SEAM.md": "agent memory posture seam",
             "docs/BOUNDARIES.md": "memo boundary doc",
             "docs/OPERATIONAL_BOUNDARY.md": "operational boundary doc",
         }
@@ -3229,7 +3238,7 @@ def _validate_guardrail_wider_cases(
         refs = _guardrail_case_input_refs(promotion_case)
         required_prefixes = {
             "mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md": "writeback temperature policy",
-            "docs/AGENT_MEMORY_POSTURE_SEAM.md": "agent memory posture seam",
+            "mechanics/consumer-handoff/docs/AGENT_MEMORY_POSTURE_SEAM.md": "agent memory posture seam",
             "examples/bridge.": "bridge candidate example",
         }
         missing_labels = [
@@ -3320,8 +3329,8 @@ def validate_memory_eval_guardrail_pack() -> None:
         errors.append("memory_eval_guardrail_pack.example.json must hand off to aoa-evals")
     if "schemas/memory_eval_guardrail_pack.schema.json" not in registry.get("schemas", []):
         errors.append("generated/memo_registry.min.json must list schemas/memory_eval_guardrail_pack.schema.json")
-    if "docs/MEMORY_EVAL_GUARDRAILS.md" not in registry.get("core_docs", []):
-        errors.append("generated/memo_registry.min.json must list docs/MEMORY_EVAL_GUARDRAILS.md")
+    if "mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md" not in registry.get("core_docs", []):
+        errors.append("generated/memo_registry.min.json must list mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md")
 
     if errors:
         print("[FAIL] memory_eval_guardrail_pack.example.json")
@@ -3423,7 +3432,7 @@ def main() -> int:
         expected_preferred_kinds=["bridge", "claim", "episode", "anchor"],
         expected_temperature_order=["warm", "cool", "frozen", "cold", "hot"],
         expected_inspect_surface="generated/memory_catalog.min.json",
-        expected_expand_surface="docs/KAG_TOS_BRIDGE_CONTRACT.md",
+        expected_expand_surface="mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md",
         expected_source_route_required=True,
     )
     validate_recall_contract_example(
