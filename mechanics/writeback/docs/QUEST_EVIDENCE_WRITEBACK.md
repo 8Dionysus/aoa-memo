@@ -39,7 +39,9 @@ The quest state remains source-owned. `aoa-memo` keeps the recallable witness of
 - use witness traces to record what happened, not to replace the source quest
 - keep them redaction-first and provenance-aware
 - write them back only when they help future recall or archivist handoff
-- `AOA-MEM-Q-0002` is tracked here as the later compact example, but the example file is intentionally absent in this pass
+- the witness trace contract and compact example now live under
+  [recurrence-support/WITNESS_TRACE_CONTRACT](../../recurrence-support/docs/WITNESS_TRACE_CONTRACT.md)
+  because route-return trace export is recurrence-support's operation
 
 ## Archivist handoff
 

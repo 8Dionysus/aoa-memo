@@ -64,6 +64,9 @@ Tracking starts with the community-docs baseline for this repository.
   legacy index, AGENTS mesh coverage, generated mechanics coverage,
   package-local schema/example/test artifacts, validators, tests, and decision
   record.
+- Add a builder-backed quest projection check for `generated/quest_catalog`
+  and `generated/quest_dispatch` surfaces so root quest companions are
+  reproducible from `quests/*.yaml`.
 - Add the `mechanics/` atlas plus `adoption`, `writeback`, and `retention`
   memo mechanic packages with package cards, owner maps, provenance bridges,
   legacy indexes, source-backed generated mechanics index, validators, tests,
@@ -116,6 +119,9 @@ Tracking starts with the community-docs baseline for this repository.
   regression test into `mechanics/readiness-boundary/` and update README,
   docs maps, route law, registry refs, generated object surfaces, validators,
   and tests to the new artifact owner path.
+- Close the compact witness trace quest through recurrence-support, route the
+  chronicle quest to writeback, and require current quest `owner_surface` and
+  `anchor_ref` values to resolve into real memo docs or mechanic docs.
 - Extend the AGENTS mesh and memo mechanics validator to include Agon/Titan
   and antifragility/governance/shape-guard/consumer-handoff/operational-gate/
   recurrence-support/lineage-harvest mechanics and mechanic docs/legacy

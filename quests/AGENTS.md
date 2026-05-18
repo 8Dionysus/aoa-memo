@@ -17,7 +17,9 @@ Agon-specific follow-through currently uses `AOM-Q-AGON-*.md` and
 `AOMEMO-Q-AGON-*.md` files that route back to the `mechanics/agon/docs/`
 mechanic docs.
 
-Keep `QUESTBOOK.md`, `quests/`, and any generated quest companions aligned.
+Keep `QUESTBOOK.md`, `quests/`, owning mechanic docs, and generated quest
+companions aligned. Root generated quest companions are projections from these
+source files, not a second quest ledger.
 
 ## Boundaries
 
@@ -34,6 +36,7 @@ When quests change, run:
 
 ```bash
 python scripts/validate_memo.py
+python scripts/build_quest_surfaces.py --check
 python scripts/release_check.py
 ```
 

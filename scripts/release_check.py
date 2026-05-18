@@ -25,6 +25,7 @@ def _env() -> dict[str, str]:
 
 
 COMMANDS = [
+    ("check generated quest surfaces", [sys.executable, "scripts/build_quest_surfaces.py", "--check"]),
     ("validate memo", [sys.executable, "scripts/validate_memo.py"]),
     ("validate Agon memo prebindings", [sys.executable, "mechanics/agon/scripts/validate_agon_memo_prebindings.py"]),
     ("validate Agon epistemic memo bridge", [sys.executable, "mechanics/agon/scripts/validate_agon_epistemic_memo_bridge.py"]),

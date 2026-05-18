@@ -116,6 +116,9 @@ and reviewed closeout recall landing surfaces as one route-return support
 operation. Witness trace contracts live in `mechanics/recurrence-support/`;
 shared recall contracts and quest surfaces remain root-owned only when they
 are cross-mechanic.
+Root quest generated companions are now builder-backed projections from
+`quests/*.yaml`; their owner routes must point back into real memo docs or
+mechanic docs instead of inventing shadow quest homes.
 
 The lineage-harvest migration now owns pattern-lineage memory as one
 cross-repo recurring-signal gate. The pattern-lineage schema, example, and test

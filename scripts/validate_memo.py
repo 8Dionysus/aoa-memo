@@ -91,6 +91,34 @@ ORCHESTRATOR_MEMORY_QUESTS = {
     "AOA-MEM-Q-0005": ("aoa-agents:review", "evidence_closure"),
     "AOA-MEM-Q-0006": ("aoa-agents:bounded_execution", "bounded_next_step"),
 }
+EXPECTED_QUEST_OWNER_SURFACES = {
+    "AOA-MEM-Q-0001": "mechanics/writeback/docs/QUEST_EVIDENCE_WRITEBACK.md",
+    "AOA-MEM-Q-0002": "mechanics/recurrence-support/docs/WITNESS_TRACE_CONTRACT.md",
+    "AOA-MEM-Q-0003": "mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md",
+    "AOA-MEM-Q-0004": "mechanics/consumer-handoff/docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md",
+    "AOA-MEM-Q-0005": "mechanics/consumer-handoff/docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md",
+    "AOA-MEM-Q-0006": "mechanics/consumer-handoff/docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md",
+    "AOA-MEM-Q-0007": "mechanics/writeback/docs/QUEST_EVIDENCE_WRITEBACK.md",
+    "AOA-MEM-Q-0008": "mechanics/writeback/docs/QUEST_EVIDENCE_WRITEBACK.md",
+    "AOA-MEM-Q-0009": "mechanics/recurrence-support/docs/REVIEWED_CLOSEOUT_RECALL_LANDING.md",
+}
+QUEST_LOCAL_DOC_PREFIXES = (
+    "docs/",
+    "mechanics/antifragility/docs/",
+    "mechanics/agon/docs/",
+    "mechanics/adoption/docs/",
+    "mechanics/checkpoint/docs/",
+    "mechanics/consumer-handoff/docs/",
+    "mechanics/governance/docs/",
+    "mechanics/lineage-harvest/docs/",
+    "mechanics/operational-gate/docs/",
+    "mechanics/readiness-boundary/docs/",
+    "mechanics/recurrence-support/docs/",
+    "mechanics/retention/docs/",
+    "mechanics/shape-guard/docs/",
+    "mechanics/titan/docs/",
+    "mechanics/writeback/docs/",
+)
 ORCHESTRATOR_MEMORY_REQUIRED_TOKENS = (
     "## Router",
     "## Review",
@@ -494,30 +522,43 @@ def validate_questbook_surface() -> None:
                 errors.append(
                     f"{path.relative_to(ROOT)} must keep capability_target {expected_target}"
                 )
-        if quest_id in FOUNDATION_QUESTBOOK_FILES:
-            if data.get("owner_surface") != "mechanics/writeback/docs/QUEST_EVIDENCE_WRITEBACK.md":
+        owner_surface = data.get("owner_surface")
+        expected_owner_surface = EXPECTED_QUEST_OWNER_SURFACES.get(quest_id)
+        if expected_owner_surface is not None:
+            if owner_surface != expected_owner_surface:
                 errors.append(
-                    f"{path.relative_to(ROOT)} must keep owner_surface mechanics/writeback/docs/QUEST_EVIDENCE_WRITEBACK.md"
-                )
-        else:
-            anchor_ref = quest_anchor_doc_ref(data)
-            if not isinstance(anchor_ref, str) or not anchor_ref.startswith(
-                    (
-                        "docs/",
-                        "mechanics/adoption/docs/",
-                        "mechanics/consumer-handoff/docs/",
-                        "mechanics/recurrence-support/docs/",
-                        "mechanics/writeback/docs/",
-                        "mechanics/retention/docs/",
-                    )
-            ):
-                errors.append(
-                    f"{path.relative_to(ROOT)} must keep anchor_ref within local memo docs or mechanics docs for additive memo quests"
+                    f"{path.relative_to(ROOT)} must keep owner_surface {expected_owner_surface}"
                 )
             else:
-                anchor_error = local_ref_error(anchor_ref, f"{path.relative_to(ROOT)} anchor_ref")
-                if anchor_error:
-                    errors.append(anchor_error)
+                owner_error = local_ref_error(
+                    owner_surface,
+                    f"{path.relative_to(ROOT)} owner_surface",
+                )
+                if owner_error:
+                    errors.append(owner_error)
+        else:
+            if not isinstance(owner_surface, str) or not owner_surface.startswith(
+                QUEST_LOCAL_DOC_PREFIXES
+            ):
+                errors.append(
+                    f"{path.relative_to(ROOT)} must keep owner_surface within local memo docs or mechanics docs"
+                )
+            else:
+                owner_error = local_ref_error(
+                    owner_surface,
+                    f"{path.relative_to(ROOT)} owner_surface",
+                )
+                if owner_error:
+                    errors.append(owner_error)
+        anchor_ref = quest_anchor_doc_ref(data)
+        if not isinstance(anchor_ref, str) or not anchor_ref.startswith(QUEST_LOCAL_DOC_PREFIXES):
+            errors.append(
+                f"{path.relative_to(ROOT)} must keep anchor_ref within local memo docs or mechanics docs"
+            )
+        else:
+            anchor_error = local_ref_error(anchor_ref, f"{path.relative_to(ROOT)} anchor_ref")
+            if anchor_error:
+                errors.append(anchor_error)
         if data.get("state") in CLOSED_QUEST_STATES:
             closed_quest_ids.append(quest_id)
         else:

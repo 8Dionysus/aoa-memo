@@ -9,10 +9,6 @@ This questbook tracks memory-layer obligations related to quest evidence and wri
 - `AOA-MEM-Q-0005` - align review orchestrator quests to closure, residual-risk, and recurrence memo notes
 - `AOA-MEM-Q-0006` - align bounded-execution orchestrator quests to step-local recall and handoff continuity
 
-## Near
-
-- `AOA-MEM-Q-0002` - define compact witness trace posture for memo recall
-
 ## Blocked / reanchor
 
 - `AOA-MEM-Q-0008` - reanchor checkpoint automation recall as a thin-evidence memo candidate
@@ -42,8 +38,8 @@ Allowed verdicts:
 - `promote to proof surface`
 - `promote to memo surface`
 
-Future generated summaries stay out of scope until a real builder and validator exist for this surface.
-`AOA-MEM-Q-0002` stays tracked only in this pass; the witness-trace example file is intentionally not added yet.
+Generated quest summaries stay builder-backed and validator-checked so root
+generated files remain projections instead of a second quest ledger.
 
 ## Backing files
 

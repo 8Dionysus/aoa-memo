@@ -19,6 +19,7 @@ Keep the current split clear:
 - `generate_memory_object_surfaces.py` rebuilds the object-facing family from curated examples
 - `validate_memory_object_surfaces.py` checks manifest coverage, determinism, lifecycle integrity, and object-facing recall contracts
 - `validate_lifecycle_audit_examples.py` checks lifecycle, provenance-thread, and audit-event example integrity
+- `build_quest_surfaces.py` rebuilds root quest projection surfaces from `quests/*.yaml`
 - `validate_nested_agents.py` checks that local guidance files stay present and explicit
 - `validate_agents_mesh.py`, `build_agents_mesh_index.py`, and `validate_agents_mesh_index.py` keep the source-backed AGENTS mesh aligned with current route cards
 - `validate_docs_districts.py` keeps retired docs districts and moved flat docs
@@ -55,6 +56,7 @@ python scripts/validate_memo.py
 python scripts/validate_memory_surfaces.py
 python scripts/validate_memory_object_surfaces.py
 python scripts/validate_lifecycle_audit_examples.py
+python scripts/build_quest_surfaces.py --check
 python scripts/validate_agents_mesh.py
 python scripts/build_agents_mesh_index.py --check
 python scripts/validate_agents_mesh_index.py
@@ -65,6 +67,7 @@ If generator logic changed, also run:
 
 ```bash
 python scripts/generate_memory_object_surfaces.py
+python scripts/build_quest_surfaces.py
 python mechanics/consumer-handoff/scripts/generate_kag_export.py
 python mechanics/writeback/scripts/generate_runtime_writeback_targets.py
 ```
