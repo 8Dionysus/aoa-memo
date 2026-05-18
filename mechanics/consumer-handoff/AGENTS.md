@@ -58,7 +58,7 @@ python scripts/build_agents_mesh_index.py --check
 python scripts/validate_agents_mesh_index.py
 python scripts/validate_memo.py
 python scripts/validate_memory_surfaces.py
-python -m pytest -q tests/test_consumer_handoff_mechanic.py tests/test_memo_mechanics.py tests/test_agents_mesh.py tests/test_playbook_memory_scopes.py tests/test_downstream_feed_contracts.py tests/test_memo_validators.py
+python -m pytest -q mechanics/consumer-handoff/tests/test_consumer_handoff_mechanic.py tests/test_memo_mechanics.py tests/test_agents_mesh.py mechanics/consumer-handoff/tests/test_playbook_memory_scopes.py tests/test_downstream_feed_contracts.py tests/test_memo_validators.py
 ```
 
 Before landing, also run:

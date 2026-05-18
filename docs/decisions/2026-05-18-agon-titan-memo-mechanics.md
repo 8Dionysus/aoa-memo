@@ -39,8 +39,8 @@ the machine-checkable companion surface.
 - Active Agon and Titan source docs now route through `mechanics/<slug>/`.
 - `docs/agon/` and `docs/titan/` are retired paths; any future reference to
   them must be provenance or decision history, not an active route.
-- Companion artifacts remain in root technical districts until
-  `mechanics/ARTIFACT_TOPOLOGY.md` says a package-local move is warranted.
+- Companion artifacts were later moved into mechanic-local artifact lanes by
+  [2026-05-18-mechanic-artifact-lanes](2026-05-18-mechanic-artifact-lanes.md).
 - Stronger owner claims still route away: Agon source mechanics to
   `Agents-of-Abyss`, Titan role authority to `aoa-agents`, proof to
   `aoa-evals`, runtime to `abyss-stack`, graph lift to `aoa-kag`, and authored

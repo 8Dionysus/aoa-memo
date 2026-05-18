@@ -52,14 +52,14 @@ validators:
 python scripts/validate_memo_mechanics.py
 python scripts/build_memo_mechanics_index.py --check
 python scripts/validate_memo_mechanics_index.py
-python scripts/validate_agon_memo_prebindings.py
-python scripts/validate_agon_epistemic_memo_bridge.py
-python scripts/validate_agon_kag_memo_evidence_package_registry.py
-python scripts/validate_agon_mechanical_trial_memo_intakes.py
-python scripts/validate_agon_retention_rank_memo_bridge.py
-python scripts/validate_agon_slc_memo_bridge_registry.py
-python scripts/validate_agon_sophian_memo_evidence_registry.py
-python scripts/validate_agon_vds_memo_bridge.py
+python mechanics/agon/scripts/validate_agon_memo_prebindings.py
+python mechanics/agon/scripts/validate_agon_epistemic_memo_bridge.py
+python mechanics/agon/scripts/validate_agon_kag_memo_evidence_package_registry.py
+python mechanics/agon/scripts/validate_agon_mechanical_trial_memo_intakes.py
+python mechanics/agon/scripts/validate_agon_retention_rank_memo_bridge.py
+python mechanics/agon/scripts/validate_agon_slc_memo_bridge_registry.py
+python mechanics/agon/scripts/validate_agon_sophian_memo_evidence_registry.py
+python mechanics/agon/scripts/validate_agon_vds_memo_bridge.py
 ```
 
 Before landing, also run:

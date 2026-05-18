@@ -14,8 +14,8 @@ scenario owner.
 - keep reviewed closeout recall landings owner-local and evidence-linked
 - route recurrence doctrine, dispatch, retry policy, rights, proof, and
   scenario choreography to stronger owners
-- keep root schemas, examples, and generated companions in root technical
-  districts while they remain public support contracts
+- keep inquiry checkpoint and witness trace schemas/examples package-local;
+  keep only shared recall and quest companions in root districts
 - update quests, generated surfaces, tests, and validators when active
   recurrence-support paths move
 

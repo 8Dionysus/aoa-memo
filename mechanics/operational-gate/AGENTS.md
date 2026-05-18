@@ -53,8 +53,8 @@ After operational-gate changes, check whether these surfaces moved:
 - `LANDING_LOG.md`
 - `ROADMAP.md`
 - `legacy/INDEX.md`
-- root technical contract refs in `schemas/`, `examples/`, `generated/`,
-  `scripts/`, or `tests/`
+- mechanic-local contract refs in `mechanics/operational-gate/{schemas,examples,tests}/`
+  and adjacent writeback/retention package refs
 - generated mechanics or AGENTS mesh companions
 - docs-root maps, root route cards, decision records, changelog, or roadmap
 
@@ -70,7 +70,7 @@ python scripts/validate_agents_mesh.py
 python scripts/build_agents_mesh_index.py --check
 python scripts/validate_agents_mesh_index.py
 python scripts/validate_memo.py
-python -m pytest -q tests/test_operational_gate_mechanic.py tests/test_memo_mechanics.py tests/test_agents_mesh.py tests/test_experience_wave5_seed_contracts.py
+python -m pytest -q mechanics/operational-gate/tests/test_operational_gate_mechanic.py tests/test_memo_mechanics.py tests/test_agents_mesh.py mechanics/operational-gate/tests/test_experience_wave5_seed_contracts.py
 ```
 
 Before landing, also run:
@@ -81,7 +81,7 @@ python scripts/release_check.py
 
 ## Closeout
 
-Report the operational-gate docs changed, whether root technical contracts
-stayed root-owned, whether old flat docs-root references remain only as
-allowed provenance, and which stronger owner boundaries stayed outside
-`aoa-memo`.
+Report the operational-gate docs changed, whether mechanic-local artifacts and
+adjacent package refs stayed owner-routed, whether old flat docs-root references
+remain only as allowed provenance, and which stronger owner boundaries stayed
+outside `aoa-memo`.

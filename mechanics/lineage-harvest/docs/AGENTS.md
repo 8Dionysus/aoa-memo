@@ -26,8 +26,8 @@ Read:
 ## Boundaries
 
 - Keep active lineage-harvest docs under this directory.
-- Keep root technical artifacts in root districts while
-  `mechanics/ARTIFACT_TOPOLOGY.md` says they are public support contracts.
+- Keep lineage-harvest schemas, examples, and tests package-local unless
+  `mechanics/ARTIFACT_TOPOLOGY.md` proves a shared root contract.
 - Do not reintroduce an active flat docs-root copy.
 - Do not grant proof, KAG promotion, ToS canon, stats certification, runtime
   execution, source-owner consent, or adoption authority.

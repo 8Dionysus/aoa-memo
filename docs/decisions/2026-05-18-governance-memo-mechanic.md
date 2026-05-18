@@ -67,7 +67,7 @@ the machine-checkable companion surface.
 - `generated/agents_mesh.min.json`
 - `scripts/validate_docs_districts.py`
 - `scripts/validate_memo_mechanics.py`
-- `tests/test_governance_mechanic.py`
+- `mechanics/governance/tests/test_governance_mechanic.py`
 - `tests/test_memo_mechanics.py`
 - `tests/test_agents_mesh.py`
 - `tests/test_docs_districts.py`
@@ -81,6 +81,6 @@ python scripts/validate_memo_mechanics_index.py
 python scripts/validate_agents_mesh.py
 python scripts/build_agents_mesh_index.py --check
 python scripts/validate_agents_mesh_index.py
-python -m pytest -q tests/test_governance_mechanic.py tests/test_memo_mechanics.py tests/test_agents_mesh.py tests/test_docs_districts.py
+python -m pytest -q mechanics/governance/tests/test_governance_mechanic.py tests/test_memo_mechanics.py tests/test_agents_mesh.py tests/test_docs_districts.py
 python scripts/release_check.py
 ```

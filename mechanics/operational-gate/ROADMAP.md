@@ -17,5 +17,5 @@
   operation changes from retention evidence to admission gating.
 - Do not move writeback ledgers out of the writeback mechanic unless the
   operation changes from owner return to memory admission.
-- Do not create package-local schemas or examples until artifact topology shows
-  the public root technical lane is no longer the right owner.
+- Keep operational-gate schemas, examples, and tests package-local unless a
+  future contract becomes genuinely shared across mechanics.

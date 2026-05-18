@@ -31,14 +31,14 @@ A service revision ledger entry may be durable memo when it names:
 Memo records the revision as recallable context. It does not say the service
 is running, healthy, deployed, or accepted.
 
-## Root Technical Contracts
+## Mechanic-Local Technical Contracts
 
-Current public contracts remain in root technical districts:
+Current public contracts live with their owning mechanics:
 
-- `schemas/service_revision_ledger_entry_v1.json`
-- `examples/service_revision_ledger_entry_v1.example.json`
-- `schemas/release_revision_ledger_entry_v1.json`
-- `examples/release_revision_ledger_entry_v1.example.json`
+- `mechanics/operational-gate/schemas/service_revision_ledger_entry_v1.json`
+- `mechanics/operational-gate/examples/service_revision_ledger_entry_v1.example.json`
+- `mechanics/writeback/schemas/release_revision_ledger_entry_v1.json`
+- `mechanics/writeback/examples/release_revision_ledger_entry_v1.example.json`
 
 The schemas and examples validate public-safe entry shape. They do not become
 live ledgers.

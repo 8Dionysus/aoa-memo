@@ -35,9 +35,12 @@ an operation-first memo mechanic with package card, owner map, provenance
 bridge, landing log, roadmap, docs route, legacy route, generated mechanics
 coverage, AGENTS mesh coverage, tests, and active path updates.
 
-Keep witness trace, inquiry checkpoint, recall contract, checkpoint-to-memory,
-quest, and generated artifacts in root technical districts while they remain
-public support contracts and release-gate companions.
+Witness trace and inquiry checkpoint artifacts were later moved into the
+recurrence-support artifact lane by
+[2026-05-18-mechanic-artifact-lanes](2026-05-18-mechanic-artifact-lanes.md).
+Shared recall, checkpoint-to-memory, quest, and generated artifacts remain
+with their owning root or writeback surfaces when they serve more than this
+one mechanic.
 
 Keep `docs/PATTERN_LINEAGE_MEMORY.md` flat for now. It is a candidate for a
 separate lineage or federation harvest mechanic, not part of this route-return

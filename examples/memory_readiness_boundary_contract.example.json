@@ -24,7 +24,7 @@
   "writeback_boundary": {
     "export_surfaces": [
       "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
-      "generated/runtime_writeback_targets.min.json"
+      "mechanics/writeback/generated/runtime_writeback_targets.min.json"
     ],
     "blocked_surfaces": [
       "live ledgers",

@@ -2,20 +2,26 @@
 
 ## Guidance for `manifests/`
 
-`manifests/` holds recurrence manifests that describe memo-facing component
-surfaces and their hook bindings.
+`manifests/` is reserved for shared recurrence manifests that are not owned by
+one mechanic package.
 
-These files route repeatable memory-layer obligations. They do not own memory
-truth, proof, role rights, KAG graph semantics, or runtime retention.
+Shared manifests can route repeatable memory-layer obligations. They do not own
+memory truth, proof, role rights, KAG graph semantics, runtime retention, or a
+mechanic package's local artifact contract.
 
 ## Current Shape
 
-The current manifest family is `manifests/recurrence/` and includes
-`component.agon.*` surfaces plus matching hook manifests under
-`manifests/recurrence/hooks/`.
+There are no active shared manifests in root `manifests/` right now.
 
-Keep `component.agon.` records aligned with `mechanics/agon/docs/`, config seeds,
-generated registries, tests, and quests that define the Agon memo seam.
+Mechanic-owned manifests live under the owning package. The Agon recurrence
+manifests and their hook bindings live under:
+
+- `mechanics/agon/manifests/recurrence/`
+- `mechanics/agon/manifests/recurrence/hooks/`
+
+Keep `component.agon.` records aligned with `mechanics/agon/docs/`,
+`mechanics/agon/config/`, `mechanics/agon/generated/`,
+`mechanics/agon/scripts/`, and `mechanics/agon/tests/`.
 
 ## Boundaries
 
@@ -27,10 +33,12 @@ generated registries, tests, and quests that define the Agon memo seam.
 
 ## Validation
 
-When manifests change, run the narrow validator for the affected surface and
-then the broad memo gate:
+When root shared manifests change, add the shared source surface and run the
+broad memo gate. When mechanic-local manifests change, run the owning mechanic
+validator first:
 
 ```bash
+python mechanics/agon/scripts/validate_agon_memo_prebindings.py
 python scripts/validate_memo.py
 python scripts/release_check.py
 ```

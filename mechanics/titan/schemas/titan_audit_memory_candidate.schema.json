@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aoa.local/mechanics/titan/schemas/titan_audit_memory_candidate.schema.json",
+  "title": "Titan audit memory candidate",
+  "type": "object",
+  "required": [
+    "memory_candidate_id",
+    "kind",
+    "claim",
+    "source_refs",
+    "owner_route_hint",
+    "authority",
+    "promotion_status"
+  ],
+  "properties": {
+    "memory_candidate_id": {
+      "type": "string"
+    },
+    "kind": {
+      "const": "titan_swarm_lesson"
+    },
+    "claim": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "owner_route_hint": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Repo or surface hint for the source-owned follow-up route; this is provenance routing, not proof authority."
+    },
+    "titan_name": {
+      "enum": [
+        "Atlas",
+        "Sentinel",
+        "Mneme",
+        "Forge",
+        "Delta"
+      ]
+    },
+    "authority": {
+      "const": "candidate"
+    },
+    "promotion_status": {
+      "const": "candidate"
+    }
+  },
+  "additionalProperties": false
+}

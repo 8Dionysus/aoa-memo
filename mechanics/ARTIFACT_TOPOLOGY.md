@@ -24,7 +24,7 @@ contract-shaped, or shared across multiple memory families:
 | `generated/` | the output is a compact public companion consumed outside one package |
 | `scripts/` | the builder or validator is part of the release gate or shared contract lane |
 | `tests/` | the regression protects repo-wide behavior or cross-district references |
-| `manifests/` | the recurrence manifest is a public component contract rather than package-local lore |
+| `manifests/` | the recurrence manifest is shared across mechanics rather than package-local |
 | `quests/` | the obligation belongs in the public quest store and should survive the current diff |
 
 Root technical districts must not keep convenience aliases for mechanic-owned
@@ -39,6 +39,7 @@ one mechanic's owner boundary:
 mechanics/<slug>/
   config/
   generated/
+  manifests/
   schemas/
   examples/
   scripts/
@@ -52,6 +53,7 @@ instead:
 mechanics/<slug>/parts/<part>/
   config/
   generated/
+  manifests/
   schemas/
   examples/
   scripts/
@@ -62,36 +64,37 @@ Package-local artifact homes must still follow the same stop-lines as the
 mechanic card. A package-local artifact does not become proof, routing logic,
 runtime storage, role authority, KAG substrate truth, or owner acceptance.
 
-## Current Retention Rule
+## Current Placement Rule
 
-The first mechanics migration intentionally kept many schemas, examples,
-generated companions, scripts, and tests in root technical districts because
-they still participate in repo-wide validation and public contract surfaces.
+Root technical districts now keep only shared, repo-wide, or cross-mechanic
+surfaces.
+
+Single-mechanic artifacts live in the owning package with their local docs and
+route card. This includes mechanic-local schemas, examples, config seeds,
+generated companions, scripts, tests, manifests, and hook manifests.
 
 Examples:
 
-- Antifragility schemas, examples, generated object surfaces, and tests remain
-  in root technical districts while they define public failure-lesson and
-  recovery-pattern object contracts.
-- Agon config, schemas, generated registries, manifests, quests, validators,
-  and tests remain in root technical districts while they are public component
-  contracts and release-gate companions.
-- Titan schemas, examples, and tests remain in root technical districts while
-  they define public remembrance and recall candidate contracts.
-- adoption schemas and examples remain in `schemas/` and `examples/` while
-  they teach public memory-object support contracts beyond one package.
-- governance tests remain in `tests/` while they protect the public mechanics
-  index and owner-boundary expectations.
+- Agon config, schemas, examples, generated registries, manifests, hooks,
+  validators, builders, and tests live under `mechanics/agon/`.
+- Titan schemas, examples, and tests live under `mechanics/titan/`.
+- adoption, governance, retention, operational-gate, antifragility,
+  recurrence-support, lineage-harvest, shape-guard, consumer-handoff, and
+  writeback schemas/examples/tests live under their package lanes when they
+  serve that one mechanic.
 - writeback generated companions such as `runtime_writeback_targets`,
-  `runtime_writeback_intake`, and `growth_refinery_writeback_lanes` remain in
-  `generated/` while they are release-gate companions for external consumers.
-- retention examples remain in `examples/` while they validate public-safe
-  audit, office, and post-release memory shapes.
+  `runtime_writeback_intake`, `runtime_writeback_governance`,
+  `growth_refinery_writeback_lanes`, and `phase_alpha_writeback_map` live under
+  `mechanics/writeback/generated/`.
+- the KAG source export lives under `mechanics/consumer-handoff/generated/`.
 
-This is a retention rule, not a permanent claim. When an artifact becomes
-single-mechanic-owned and no longer needs a root technical lane, move it into
-the package with callers, validators, generated outputs, and tests updated in
-the same change.
+Root `schemas/`, `examples/`, `generated/`, `scripts/`, `tests/`, and `config/`
+remain valid for shared memory-object canon, shared recall contracts,
+repo-wide validators, release gates, and cross-mechanic regression tests.
+Root `manifests/` is reserved for future shared recurrence manifests; the
+current active manifests are package-local.
+
+Do not leave active root aliases for moved mechanic artifacts.
 
 ## Move Rule
 

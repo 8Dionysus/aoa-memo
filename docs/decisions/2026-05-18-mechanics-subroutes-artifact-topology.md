@@ -4,6 +4,11 @@
 
 Accepted.
 
+Superseded in part by
+[2026-05-18-mechanic-artifact-lanes](2026-05-18-mechanic-artifact-lanes.md)
+for active mechanic-owned schemas, examples, config, generated companions,
+scripts, tests, manifests, and hook bindings.
+
 ## Context
 
 The first adoption, writeback, and retention mechanics landing moved active

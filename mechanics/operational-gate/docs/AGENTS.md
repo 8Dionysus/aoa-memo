@@ -30,8 +30,8 @@ artifact.
 - Do not claim release approval, current service health, incident root cause,
   runtime remediation, proof verdicts, role rights, route dispatch, stats
   truth, ToS runtime writes, or owner acceptance.
-- Keep root technical artifacts in root districts unless
-  `mechanics/ARTIFACT_TOPOLOGY.md` proves a package-local move.
+- Keep operational-gate technical artifacts in the operational-gate package
+  unless `mechanics/ARTIFACT_TOPOLOGY.md` proves a shared root contract.
 - Keep retention outcomes with retention and writeback return lanes with
   writeback unless this package only gates memory admission.
 - Do not preserve old flat docs-root aliases as active routes.
@@ -43,11 +43,11 @@ python scripts/validate_memo_mechanics.py
 python scripts/build_memo_mechanics_index.py --check
 python scripts/validate_memo_mechanics_index.py
 python scripts/validate_memo.py
-python -m pytest -q tests/test_operational_gate_mechanic.py tests/test_experience_wave5_seed_contracts.py
+python -m pytest -q mechanics/operational-gate/tests/test_operational_gate_mechanic.py mechanics/operational-gate/tests/test_experience_wave5_seed_contracts.py
 ```
 
 ## Closeout
 
-Report active operational-gate docs changed, whether root technical contract
-refs changed, whether artifact placement changed, and whether stronger owners
-remain outside `aoa-memo`.
+Report active operational-gate docs changed, whether package-local contract refs
+changed, whether artifact placement changed, and whether stronger owners remain
+outside `aoa-memo`.

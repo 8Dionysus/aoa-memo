@@ -33,9 +33,9 @@ Move these active docs from flat `docs/` into
 Keep their old flat paths only in `config/memo_mechanics.json`, this decision
 record, and `mechanics/operational-gate/legacy/INDEX.md` as provenance.
 
-Keep the related schemas and examples in root technical districts for now,
-because they are public support contracts and release-gate companions rather
-than package-local implementation artifacts.
+The related schemas, examples, and tests were later moved into mechanic-local
+artifact lanes by
+[2026-05-18-mechanic-artifact-lanes](2026-05-18-mechanic-artifact-lanes.md).
 
 ## Alternatives
 
@@ -81,7 +81,7 @@ than package-local implementation artifacts.
 - `DESIGN.AGENTS.md`
 - `ROADMAP.md`
 - `CHANGELOG.md`
-- `tests/test_operational_gate_mechanic.py`
+- `mechanics/operational-gate/tests/test_operational_gate_mechanic.py`
 - `tests/test_memo_mechanics.py`
 - `tests/test_agents_mesh.py`
 
@@ -95,6 +95,6 @@ python scripts/validate_agents_mesh.py
 python scripts/build_agents_mesh_index.py --check
 python scripts/validate_agents_mesh_index.py
 python scripts/validate_memo.py
-python -m pytest -q tests/test_operational_gate_mechanic.py tests/test_memo_mechanics.py tests/test_agents_mesh.py tests/test_experience_wave5_seed_contracts.py
+python -m pytest -q mechanics/operational-gate/tests/test_operational_gate_mechanic.py tests/test_memo_mechanics.py tests/test_agents_mesh.py mechanics/operational-gate/tests/test_experience_wave5_seed_contracts.py
 python scripts/release_check.py
 ```

@@ -26,6 +26,14 @@ def _env() -> dict[str, str]:
 
 COMMANDS = [
     ("validate memo", [sys.executable, "scripts/validate_memo.py"]),
+    ("validate Agon memo prebindings", [sys.executable, "mechanics/agon/scripts/validate_agon_memo_prebindings.py"]),
+    ("validate Agon epistemic memo bridge", [sys.executable, "mechanics/agon/scripts/validate_agon_epistemic_memo_bridge.py"]),
+    ("validate Agon KAG memo evidence package registry", [sys.executable, "mechanics/agon/scripts/validate_agon_kag_memo_evidence_package_registry.py"]),
+    ("validate Agon mechanical trial memo intakes", [sys.executable, "mechanics/agon/scripts/validate_agon_mechanical_trial_memo_intakes.py"]),
+    ("validate Agon retention-rank memo bridge", [sys.executable, "mechanics/agon/scripts/validate_agon_retention_rank_memo_bridge.py"]),
+    ("validate Agon SLC memo bridge registry", [sys.executable, "mechanics/agon/scripts/validate_agon_slc_memo_bridge_registry.py"]),
+    ("validate Agon Sophian memo evidence registry", [sys.executable, "mechanics/agon/scripts/validate_agon_sophian_memo_evidence_registry.py"]),
+    ("validate Agon VDS memo bridge", [sys.executable, "mechanics/agon/scripts/validate_agon_vds_memo_bridge.py"]),
     ("validate memory surfaces", [sys.executable, "scripts/validate_memory_surfaces.py"]),
     ("validate memory object surfaces", [sys.executable, "scripts/validate_memory_object_surfaces.py"]),
     ("validate lifecycle audit examples", [sys.executable, "scripts/validate_lifecycle_audit_examples.py"]),

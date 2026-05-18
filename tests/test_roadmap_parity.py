@@ -22,7 +22,7 @@ class RoadmapParityTestCase(unittest.TestCase):
 
         self.assertIn("kag_export", families)
         self.assertIn("The current KAG-facing adoption slice now publishes", roadmap)
-        self.assertIn("`generated/kag_export.min.json`", roadmap)
+        self.assertIn("`mechanics/consumer-handoff/generated/kag_export.min.json`", roadmap)
         self.assertNotIn("The next KAG-facing adoption slice publishes", roadmap)
 
     def test_roadmap_matches_current_v0_2_1_writeback_surfaces(self) -> None:
@@ -44,16 +44,16 @@ class RoadmapParityTestCase(unittest.TestCase):
             "mechanics/lineage-harvest/docs/PATTERN_LINEAGE_MEMORY.md",
             "mechanics/writeback/docs/GROWTH_REFINERY_WRITEBACK.md",
             "mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md",
-            "generated/runtime_writeback_targets.min.json",
-            "generated/runtime_writeback_intake.min.json",
-            "generated/runtime_writeback_governance.min.json",
+            "mechanics/writeback/generated/runtime_writeback_targets.min.json",
+            "mechanics/writeback/generated/runtime_writeback_intake.min.json",
+            "mechanics/writeback/generated/runtime_writeback_governance.min.json",
             "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
-            "examples/recovery_pattern_memory.rollback_followthrough.example.json",
-            "examples/recovery_pattern_memory.component_refresh.example.json",
+            "mechanics/antifragility/examples/recovery_pattern_memory.rollback_followthrough.example.json",
+            "mechanics/antifragility/examples/recovery_pattern_memory.component_refresh.example.json",
             "mechanics/writeback/docs/SELF_AGENCY_CONTINUITY_WRITEBACK.md",
-            "examples/provenance_thread.self-agency-continuity.example.json",
-            "generated/phase_alpha_writeback_map.min.json",
-            "scripts/publish_live_receipts.py",
+            "mechanics/writeback/examples/provenance_thread.self-agency-continuity.example.json",
+            "mechanics/writeback/generated/phase_alpha_writeback_map.min.json",
+            "mechanics/writeback/scripts/publish_live_receipts.py",
         ):
             self.assertTrue((REPO_ROOT / relative_path).is_file())
             self.assertIn(relative_path, roadmap)

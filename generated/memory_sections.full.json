@@ -375,8 +375,8 @@
           "section_id": "AOA-M-0013#technical-contracts",
           "heading": "Technical contracts",
           "ordinal": 3,
-          "summary": "Keeps operational-gate schemas and examples in root technical districts while they remain public support contracts.",
-          "body": "The operational-gate package owns source docs and owner maps. Schemas and examples such as `deployment_incident_memory_gate_v1`, service incident entries, service revision ledgers, and train release memory entries remain in root technical districts while they are public support contracts and release-gate companions."
+          "summary": "Keeps operational-gate schemas, examples, and tests in the operational-gate artifact lane.",
+          "body": "The operational-gate package owns source docs, owner maps, schemas, examples, and tests for deployment incidents, service incident entries, service revision ledgers, and train release memory entries. Adjacent writeback and retention artifacts stay with their owning mechanics."
         }
       ]
     },
@@ -403,8 +403,8 @@
           "section_id": "AOA-M-0014#technical-contracts",
           "heading": "Technical contracts",
           "ordinal": 3,
-          "summary": "Keeps recurrence-support schemas, examples, quests, and generated companions root-owned while they remain public support contracts.",
-          "body": "The recurrence-support package owns source docs and owner maps. Witness trace, inquiry checkpoint, return recall, checkpoint-to-memory examples, and reviewed closeout quest artifacts remain in root technical districts while they are public support contracts and release-gate companions."
+          "summary": "Keeps recurrence-support schemas and examples package-local while shared recall and quest companions remain root-owned.",
+          "body": "The recurrence-support package owns source docs, owner maps, inquiry checkpoint schemas/examples, witness trace schemas/examples, and tests. Shared return recall, checkpoint-to-memory, and reviewed closeout quest artifacts remain with their owning root or writeback surfaces."
         }
       ]
     },
@@ -431,8 +431,8 @@
           "section_id": "AOA-M-0015#technical-contracts",
           "heading": "Technical contracts",
           "ordinal": 3,
-          "summary": "Keeps pattern-lineage schema and example root-owned while they remain public support contracts.",
-          "body": "The lineage-harvest package owns source docs and owner maps. `schemas/pattern_lineage_memory_entry_v1.json`, `examples/pattern_lineage_memory_entry.example.json`, and federation-harvest seed tests remain in root technical districts while they are public support contracts and release-gate companions."
+          "summary": "Keeps pattern-lineage schema, example, and tests in the lineage-harvest artifact lane.",
+          "body": "The lineage-harvest package owns source docs, owner maps, `mechanics/lineage-harvest/schemas/pattern_lineage_memory_entry_v1.json`, `mechanics/lineage-harvest/examples/pattern_lineage_memory_entry.example.json`, and its package tests. Cross-wave seed tests stay root-owned only when they protect shared mechanics behavior."
         }
       ]
     }

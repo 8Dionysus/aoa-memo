@@ -30,8 +30,8 @@ artifact.
 - Do not claim route dispatch, runtime retry, live stores, role rights,
   identity continuity, eval verdicts, playbook acceptance, source truth, or
   owner acceptance.
-- Keep root technical artifacts in root districts unless
-  `mechanics/ARTIFACT_TOPOLOGY.md` proves a package-local move.
+- Keep recurrence-support technical artifacts in the recurrence-support package
+  unless `mechanics/ARTIFACT_TOPOLOGY.md` proves a shared root contract.
 - Do not introduce return-only memory-object families.
 - Do not preserve old flat docs-root aliases as active routes.
 
@@ -42,11 +42,11 @@ python scripts/validate_memo_mechanics.py
 python scripts/build_memo_mechanics_index.py --check
 python scripts/validate_memo_mechanics_index.py
 python scripts/validate_memo.py
-python -m pytest -q tests/test_recurrence_support_mechanic.py tests/test_memo_validators.py tests/test_playbook_memory_scopes.py tests/test_roadmap_parity.py
+python -m pytest -q mechanics/recurrence-support/tests/test_recurrence_support_mechanic.py tests/test_memo_validators.py mechanics/consumer-handoff/tests/test_playbook_memory_scopes.py tests/test_roadmap_parity.py
 ```
 
 ## Closeout
 
-Report active recurrence-support docs changed, whether root technical contract
+Report active recurrence-support docs changed, whether package-local contract
 refs changed, whether artifact placement changed, and whether stronger owners
 remain outside `aoa-memo`.

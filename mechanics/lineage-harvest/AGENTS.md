@@ -36,9 +36,9 @@ Read:
 ## Boundaries
 
 - Active lineage-harvest docs live under `mechanics/lineage-harvest/docs/`.
-- Root technical artifacts stay in `schemas/`, `examples/`, `generated/`,
-  `scripts/`, and `tests/` while they remain public support contracts or
-  repo-wide release-gate companions.
+- Lineage-harvest schemas, examples, and tests stay under
+  `mechanics/lineage-harvest/` when they belong only to this mechanic.
+  Root technical districts are for shared or cross-mechanic contracts.
 - The former flat docs-root `PATTERN_LINEAGE_MEMORY.md` placement is
   provenance only. Do not restore it as an active alias.
 - Governance, writeback, retention, and adoption mechanics keep their adjacent

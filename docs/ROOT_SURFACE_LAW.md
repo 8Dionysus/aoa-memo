@@ -75,9 +75,9 @@ Current flat `docs/*.md` surfaces should be read through these classes:
 | Governance mechanic docs | `mechanics/governance/docs/*` | active governance authority-boundary memo mechanic; keep package map and validator aligned |
 | Shape-guard mechanic docs | `mechanics/shape-guard/docs/*` | active shape/pruning memo mechanic; keep operation-first package map and validator aligned |
 | Consumer handoff mechanic docs | `mechanics/consumer-handoff/docs/*` | active consumer handoff memo mechanic; keep package map, consumer refs, generated companions, and validators aligned |
-| Operational gate mechanic docs | `mechanics/operational-gate/docs/*` | active operational admission memo mechanic; keep package map, root technical contracts, generated companions, and validators aligned |
-| Recurrence support mechanic docs | `mechanics/recurrence-support/docs/*` | active route-return support memo mechanic; keep package map, root technical contracts, generated companions, quests, and validators aligned |
-| Lineage harvest mechanic docs | `mechanics/lineage-harvest/docs/*` | active pattern-lineage harvest memo mechanic; keep package map, root technical contracts, generated companions, stronger-owner stop-lines, and validators aligned |
+| Operational gate mechanic docs | `mechanics/operational-gate/docs/*` | active operational admission memo mechanic; keep package map, mechanic-local artifacts, generated companions, and validators aligned |
+| Recurrence support mechanic docs | `mechanics/recurrence-support/docs/*` | active route-return support memo mechanic; keep package map, mechanic-local artifacts, generated companions, quests, and validators aligned |
+| Lineage harvest mechanic docs | `mechanics/lineage-harvest/docs/*` | active pattern-lineage harvest memo mechanic; keep package map, mechanic-local artifacts, generated companions, stronger-owner stop-lines, and validators aligned |
 | Decisions | `docs/decisions/` | rationale only; active docs still define what |
 
 ## Decision Procedure Before Adding a Root File
@@ -135,7 +135,7 @@ route replaces their flat path.
 | flat and transitional Agon surfaces | moved | `mechanics/agon/docs/AGON_*.md` | Agon is an active memo mechanic with owner map, legacy bridge, and validation |
 | flat and transitional Titan surfaces | moved | `mechanics/titan/docs/TITAN_*.md` | Titan is an active memo mechanic with owner map, legacy bridge, and validation |
 | flat adoption/writeback/retention docs-root surfaces | moved | `mechanics/adoption/docs/`, `mechanics/writeback/docs/`, `mechanics/retention/docs/` | these families are repeatable memo mechanics with owner maps and legacy bridges, not only documentation districts |
-| mechanic-adjacent root technical artifacts | retained until proven package-local | `mechanics/ARTIFACT_TOPOLOGY.md` decides future moves | schemas, examples, generated companions, scripts, tests, manifests, and quests may still be repo-wide contracts |
+| mechanic-owned root technical artifacts | moved when single-mechanic-owned | `mechanics/<slug>/{schemas,examples,config,generated,scripts,tests,manifests}` | package-owned artifacts should sit with their mechanics; root technical districts keep only shared or cross-mechanic surfaces |
 
 ## Final Rule
 

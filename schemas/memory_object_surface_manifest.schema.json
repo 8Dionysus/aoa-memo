@@ -31,7 +31,7 @@
         "properties": {
           "example_path": {
             "type": "string",
-            "pattern": "^examples/.+\\.json$"
+            "pattern": "^(examples|mechanics/[a-z0-9-]+/examples)/.+\\.json$"
           },
           "recall_modes": {
             "type": "array",

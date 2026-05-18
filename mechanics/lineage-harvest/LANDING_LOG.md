@@ -6,9 +6,9 @@
   pattern-lineage memory candidates.
 - Moved the former flat docs-root `PATTERN_LINEAGE_MEMORY.md` into
   `mechanics/lineage-harvest/docs/PATTERN_LINEAGE_MEMORY.md`.
-- Kept `schemas/pattern_lineage_memory_entry_v1.json` and
-  `examples/pattern_lineage_memory_entry.example.json` in root technical
-  districts as public support contracts.
+- Routed `mechanics/lineage-harvest/schemas/pattern_lineage_memory_entry_v1.json` and
+  `mechanics/lineage-harvest/examples/pattern_lineage_memory_entry.example.json`
+  through the lineage-harvest mechanic-local artifact lane.
 - Added mechanics index coverage, AGENTS mesh coverage, doctrine recall
   surfaces, tests, and decision rationale.
 
@@ -25,7 +25,7 @@ python scripts/build_agents_mesh_index.py --check
 python scripts/validate_agents_mesh_index.py
 python scripts/validate_memory_surfaces.py
 python scripts/validate_memo.py
-python -m pytest -q tests/test_lineage_harvest_mechanic.py tests/test_memo_mechanics.py tests/test_agents_mesh.py tests/test_recurrence_support_mechanic.py tests/test_experience_wave3_seed_contracts.py
+python -m pytest -q mechanics/lineage-harvest/tests/test_lineage_harvest_mechanic.py tests/test_memo_mechanics.py tests/test_agents_mesh.py mechanics/recurrence-support/tests/test_recurrence_support_mechanic.py tests/test_experience_wave3_seed_contracts.py
 python scripts/release_check.py
 ```
 

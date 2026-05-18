@@ -5,7 +5,8 @@ This file applies to JSON schemas under `schemas/`.
 ## Role of this directory
 
 `schemas/` defines the public contract surface for `aoa-memo`.
-These files decide what counts as a valid memory object, recall contract, provenance thread, bridge export, and generated memo surface.
+These root files decide what counts as a valid shared memory object, recall
+contract, provenance thread, and generated memo surface.
 
 Schema edits are contract edits.
 Treat them as changes to how the memory layer speaks, not as local cleanup.
@@ -16,11 +17,15 @@ Keep these groups distinct:
 
 - core memory object schemas such as `memory_object.schema.json`, `anchor.schema.json`, `state_capsule.schema.json`, `episode.schema.json`, `claim.schema.json`, `decision.schema.json`, `pattern.schema.json`, `bridge.schema.json`, and `audit_event.schema.json`
 - recall and posture schemas such as `recall_contract.schema.json`, `trust_posture.schema.json`, `lifecycle_posture.schema.json`, and `decay_policy.schema.json`
-- support-object schemas such as `provenance_thread.schema.json`, `witness-trace.schema.json`, `checkpoint-to-memory-contract.schema.json`, and `inquiry_checkpoint.schema.json`
-- bridge and handoff schemas such as `memory_chunk_face.schema.json`, `memory_graph_face.schema.json`, `core-memory-contract.schema.json`, and `memory_eval_guardrail_pack.schema.json`
+- shared support-object schemas such as `provenance_thread.schema.json` and `core-memory-contract.schema.json`
 - generated object-surface schemas such as `memory_object_catalog.schema.json`, `memory_object_capsules.schema.json`, `memory_object_sections.schema.json`, and `memory_object_surface_manifest.schema.json`
 
 Do not blur memory objects, recall posture, and support exports into one generic shape.
+
+Mechanic-owned schemas live under `mechanics/<owner>/schemas/`. Examples include
+`mechanics/consumer-handoff/schemas/memory_graph_face.schema.json`,
+`mechanics/writeback/schemas/checkpoint-to-memory-contract.schema.json`, and
+`mechanics/recurrence-support/schemas/inquiry_checkpoint.schema.json`.
 
 ## Editing posture
 
@@ -40,8 +45,8 @@ Keep alignment between:
 
 - `recall_contract.schema.json` and the recall contract examples in `examples/`
 - `memory_object.schema.json` and the per-kind examples plus `docs/MEMORY_OBJECT_PROFILES.md`
-- `memory_chunk_face.schema.json` and `memory_graph_face.schema.json` with the bridge examples and `mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md`
-- `checkpoint-to-memory-contract.schema.json` with `checkpoint_to_memory_contract.example.json` and `mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md`
+- `mechanics/consumer-handoff/schemas/memory_chunk_face.schema.json` and `mechanics/consumer-handoff/schemas/memory_graph_face.schema.json` with the bridge examples and `mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md`
+- `mechanics/writeback/schemas/checkpoint-to-memory-contract.schema.json` with `mechanics/writeback/examples/checkpoint_to_memory_contract.example.json` and `mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md`
 
 If recall contracts expose a compact intermediate consumer step, keep that
 `capsule_surface` additive, local-ref-valid, and aligned with the intended

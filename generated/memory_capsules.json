@@ -195,7 +195,7 @@
       "outputs_short": "Produces relaunch support notes, existing-object writeback mappings, closeout recall landings, and stronger-owner handoffs.",
       "core_contract_short": "Core contract: memo preserves what helps a route return, but stronger owners decide whether return is authorized, proved, routed, retried, or accepted.",
       "main_risk_short": "Main risk: recurrence support starts implying identity continuity, route permission, retry authority, or proof completion.",
-      "validation_short": "Validate by checking recurrence-support docs, root technical refs, quest refs, mechanics index, AGENTS mesh, and release gate stay aligned.",
+      "validation_short": "Validate by checking recurrence-support docs, package-local artifacts, shared quest refs, mechanics index, AGENTS mesh, and release gate stay aligned.",
       "source_path": "mechanics/recurrence-support/README.md"
     },
     {
@@ -209,7 +209,7 @@
       "outputs_short": "Produces pattern-lineage memory candidates, gate memory, owner-local landing hints, derived summary boundaries, and downstream dossier boundary hints.",
       "core_contract_short": "Core contract: memo preserves the lineage candidate and gates; stronger owners decide approval, proof, promotion, adoption, canon, route, rights, stats interpretation, and runtime truth.",
       "main_risk_short": "Main risk: repeated evidence starts masquerading as proof, source consent, KAG promotion, ToS canon, or automatic adoption.",
-      "validation_short": "Validate by checking lineage-harvest docs, root technical contracts, mechanics index, AGENTS mesh, doctrine surfaces, and release gate stay aligned.",
+      "validation_short": "Validate by checking lineage-harvest docs, package-local contracts, mechanics index, AGENTS mesh, doctrine surfaces, and release gate stay aligned.",
       "source_path": "mechanics/lineage-harvest/README.md"
     }
   ]

@@ -31,14 +31,14 @@ Do not admit an incident merely because it was loud, recent, frustrating, or
 operationally adjacent. Without evidence, owner route, review posture, and
 future effect, it remains working context outside durable memo.
 
-## Root Technical Contracts
+## Mechanic-Local Technical Contracts
 
-Current public contract examples remain in root technical districts:
+Current public contract examples live with the operational-gate mechanic:
 
-- `schemas/deployment_incident_memory_gate_v1.json`
-- `examples/deployment_incident_memory_gate.example.json`
-- `schemas/deployment_lesson_candidate_v1.json`
-- `examples/deployment_lesson_candidate.example.json`
+- `mechanics/operational-gate/schemas/deployment_incident_memory_gate_v1.json`
+- `mechanics/operational-gate/examples/deployment_incident_memory_gate.example.json`
+- `mechanics/operational-gate/schemas/deployment_lesson_candidate_v1.json`
+- `mechanics/operational-gate/examples/deployment_lesson_candidate.example.json`
 
 These contracts teach admissible shape. They do not become proof or runtime
 state.

@@ -139,7 +139,7 @@ The current profile-hardening wave uses these canonical schema/example pairs:
 - `claim` -> `schemas/claim.schema.json` -> `examples/claim.example.json`
 - `decision` -> `schemas/decision.schema.json` -> `examples/checkpoint_approval_record.example.json`
 - `pattern` -> `schemas/pattern.schema.json` -> `examples/pattern.example.json`
-- `bridge` -> `schemas/bridge.schema.json` -> `examples/bridge.kag-lift.example.json`
+- `bridge` -> `schemas/bridge.schema.json` -> `mechanics/consumer-handoff/examples/bridge.kag-lift.example.json`
 - `audit_event` -> `schemas/audit_event.schema.json` -> `examples/audit_event.supersession.example.json`
 
 ## Boundary note

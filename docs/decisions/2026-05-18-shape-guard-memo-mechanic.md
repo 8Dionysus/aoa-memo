@@ -72,8 +72,8 @@ memory without decision authority.
 - `scripts/memo_mechanics_common.py`
 - `scripts/validate_memo_mechanics.py`
 - `scripts/validate_memo_mechanics_index.py`
-- `tests/test_shape_guard_mechanic.py`
-- `tests/test_governance_mechanic.py`
+- `mechanics/shape-guard/tests/test_shape_guard_mechanic.py`
+- `mechanics/governance/tests/test_governance_mechanic.py`
 - `tests/test_memo_mechanics.py`
 - `tests/test_agents_mesh.py`
 
@@ -86,6 +86,6 @@ python scripts/validate_memo_mechanics_index.py
 python scripts/validate_agents_mesh.py
 python scripts/build_agents_mesh_index.py --check
 python scripts/validate_agents_mesh_index.py
-python -m pytest -q tests/test_shape_guard_mechanic.py tests/test_governance_mechanic.py tests/test_memo_mechanics.py tests/test_agents_mesh.py
+python -m pytest -q mechanics/shape-guard/tests/test_shape_guard_mechanic.py mechanics/governance/tests/test_governance_mechanic.py tests/test_memo_mechanics.py tests/test_agents_mesh.py
 python scripts/release_check.py
 ```

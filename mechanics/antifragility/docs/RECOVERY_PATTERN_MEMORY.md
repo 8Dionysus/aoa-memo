@@ -89,9 +89,9 @@ The object should not claim:
 
 For the narrower shared-root campaign-cadence seam, use
 `mechanics/antifragility/docs/ROLLBACK_FOLLOWTHROUGH_PATTERN.md` plus
-`examples/recovery_pattern_memory.rollback_followthrough.example.json`.
+`mechanics/antifragility/examples/recovery_pattern_memory.rollback_followthrough.example.json`.
 For owner-law component refresh drift, use
-`examples/recovery_pattern_memory.component_refresh.example.json` only after
+`mechanics/antifragility/examples/recovery_pattern_memory.component_refresh.example.json` only after
 the owner refresh route, reviewed followthrough decision, and derived
 component-refresh summary all exist, and keep the example draft until stronger
 owner-local receipt evidence is worth preserving.

@@ -19,12 +19,12 @@ persist private data, or replace owner-repo truth.
 
 Titan docs currently pair with:
 
-- `schemas/titan_remembrance_record.schema.json`
-- `examples/titan_remembrance_record.example.json`
-- `examples/titan_audit_memory_candidate.example.json`
-- `tests/test_titan_remembrance_record.py`
-- `tests/test_titan_candidate_schemas.py`
-- `tests/test_titan_audit_memory_candidate.py`
+- `mechanics/titan/schemas/titan_remembrance_record.schema.json`
+- `mechanics/titan/examples/titan_remembrance_record.example.json`
+- `mechanics/titan/examples/titan_audit_memory_candidate.example.json`
+- `mechanics/titan/tests/test_titan_remembrance_record.py`
+- `mechanics/titan/tests/test_titan_candidate_schemas.py`
+- `mechanics/titan/tests/test_titan_audit_memory_candidate.py`
 
 When a Titan source family changes, keep source refs in examples and tests
 aligned with this district.

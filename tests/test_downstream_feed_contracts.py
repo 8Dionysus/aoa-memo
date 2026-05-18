@@ -12,10 +12,33 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS_ROOT = REPO_ROOT / "scripts"
 if str(SCRIPTS_ROOT) not in sys.path:
     sys.path.insert(0, str(SCRIPTS_ROOT))
+SCRIPT_PATHS = {
+    "generate_memory_object_surfaces.py": SCRIPTS_ROOT / "generate_memory_object_surfaces.py",
+    "generate_kag_export.py": REPO_ROOT
+    / "mechanics"
+    / "consumer-handoff"
+    / "scripts"
+    / "generate_kag_export.py",
+    "generate_runtime_writeback_targets.py": REPO_ROOT
+    / "mechanics"
+    / "writeback"
+    / "scripts"
+    / "generate_runtime_writeback_targets.py",
+    "generate_runtime_writeback_intake.py": REPO_ROOT
+    / "mechanics"
+    / "writeback"
+    / "scripts"
+    / "generate_runtime_writeback_intake.py",
+    "generate_runtime_writeback_governance.py": REPO_ROOT
+    / "mechanics"
+    / "writeback"
+    / "scripts"
+    / "generate_runtime_writeback_governance.py",
+}
 
 
 def load_module(script_name: str):
-    path = SCRIPTS_ROOT / script_name
+    path = SCRIPT_PATHS[script_name]
     spec = importlib.util.spec_from_file_location(script_name.replace(".py", ""), path)
     if spec is None or spec.loader is None:
         raise RuntimeError(f"unable to load module from {path}")
@@ -32,6 +55,9 @@ generate_runtime_writeback_governance = load_module("generate_runtime_writeback_
 
 GENERATED_ROOT = REPO_ROOT / "generated"
 EXAMPLES_ROOT = REPO_ROOT / "examples"
+CONSUMER_HANDOFF_GENERATED_ROOT = REPO_ROOT / "mechanics" / "consumer-handoff" / "generated"
+WRITEBACK_EXAMPLES_ROOT = REPO_ROOT / "mechanics" / "writeback" / "examples"
+WRITEBACK_GENERATED_ROOT = REPO_ROOT / "mechanics" / "writeback" / "generated"
 
 
 def load_json(path: Path):
@@ -111,7 +137,7 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
             self.assertTrue(set(item["scope_classes"]).issubset(shared_scope_classes))
 
     def test_kag_export_stays_generator_backed(self) -> None:
-        current = load_json(GENERATED_ROOT / "kag_export.min.json")
+        current = load_json(CONSUMER_HANDOFF_GENERATED_ROOT / "kag_export.min.json")
         expected = generate_kag_export.build_kag_export_payload()
 
         self.assertEqual(current, expected)
@@ -216,14 +242,14 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
             self.assertEqual(payload.get("expand_surface"), contract["expand_surface"])
 
     def test_checkpoint_to_memory_contract_keeps_execution_safe_writeback_mapping(self) -> None:
-        payload = load_json(EXAMPLES_ROOT / "checkpoint_to_memory_contract.example.json")
+        payload = load_json(WRITEBACK_EXAMPLES_ROOT / "checkpoint_to_memory_contract.example.json")
 
         self.assertEqual(payload["contract_type"], "checkpoint_to_memory_contract")
         self.assertEqual(payload["contract_id"], "aoa-memo.runtime-writeback.v1")
         self.assertEqual(payload["checkpoint_artifact"]["artifact_name"], "inquiry_checkpoint")
         self.assertEqual(
             payload["checkpoint_artifact"]["schema_ref"],
-            "schemas/inquiry_checkpoint.schema.json",
+            "mechanics/recurrence-support/schemas/inquiry_checkpoint.schema.json",
         )
         self.assertEqual(payload["checkpoint_artifact"]["posture"], "route_artifact_not_memory_object")
         self.assertEqual(payload["runtime_boundary"]["scratchpad_posture"], "runtime_local_only")
@@ -279,7 +305,7 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
         )
 
     def test_runtime_writeback_targets_surface_stays_generator_backed(self) -> None:
-        current = load_json(GENERATED_ROOT / "runtime_writeback_targets.min.json")
+        current = load_json(WRITEBACK_GENERATED_ROOT / "runtime_writeback_targets.min.json")
         expected = generate_runtime_writeback_targets.build_runtime_writeback_targets_payload()
 
         self.assertEqual(current, expected)
@@ -317,7 +343,7 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
                 generate_runtime_writeback_targets.build_runtime_writeback_targets_payload()
 
     def test_runtime_writeback_intake_surface_stays_generator_backed(self) -> None:
-        current = load_json(GENERATED_ROOT / "runtime_writeback_intake.min.json")
+        current = load_json(WRITEBACK_GENERATED_ROOT / "runtime_writeback_intake.min.json")
         expected = generate_runtime_writeback_intake.build_runtime_writeback_intake_payload()
 
         self.assertEqual(current, expected)
@@ -326,8 +352,8 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
         self.assertEqual(
             current["source_of_truth"],
             {
-                "runtime_writeback_targets": "generated/runtime_writeback_targets.min.json",
-                "checkpoint_to_memory_contract": "examples/checkpoint_to_memory_contract.example.json",
+                "runtime_writeback_targets": "mechanics/writeback/generated/runtime_writeback_targets.min.json",
+                "checkpoint_to_memory_contract": "mechanics/writeback/examples/checkpoint_to_memory_contract.example.json",
                 "runtime_writeback_seam": "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
                 "quest_evidence_writeback": "mechanics/writeback/docs/QUEST_EVIDENCE_WRITEBACK.md",
             },
@@ -353,7 +379,7 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
         self.assertTrue(all(item["intake_posture"] == "review_candidate_only" for item in reviewed_candidates))
 
     def test_runtime_writeback_governance_surface_stays_generator_backed(self) -> None:
-        current = load_json(GENERATED_ROOT / "runtime_writeback_governance.min.json")
+        current = load_json(WRITEBACK_GENERATED_ROOT / "runtime_writeback_governance.min.json")
         expected = generate_runtime_writeback_governance.build_runtime_writeback_governance_payload()
 
         self.assertEqual(current, expected)
@@ -367,8 +393,8 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
         self.assertEqual(
             current["source_of_truth"],
             {
-                "runtime_writeback_targets": "generated/runtime_writeback_targets.min.json",
-                "runtime_writeback_intake": "generated/runtime_writeback_intake.min.json",
+                "runtime_writeback_targets": "mechanics/writeback/generated/runtime_writeback_targets.min.json",
+                "runtime_writeback_intake": "mechanics/writeback/generated/runtime_writeback_intake.min.json",
             },
         )
         self.assertTrue(all(item["governance_passed"] for item in current["targets"]))
@@ -404,10 +430,10 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
 
         for command in (
             "python scripts/generate_memory_object_surfaces.py",
-            "python scripts/generate_kag_export.py",
-            "python scripts/generate_runtime_writeback_targets.py",
-            "python scripts/generate_runtime_writeback_intake.py",
-            "python scripts/generate_phase_alpha_writeback_map.py",
+            "python mechanics/consumer-handoff/scripts/generate_kag_export.py",
+            "python mechanics/writeback/scripts/generate_runtime_writeback_targets.py",
+            "python mechanics/writeback/scripts/generate_runtime_writeback_intake.py",
+            "python mechanics/writeback/scripts/generate_phase_alpha_writeback_map.py",
         ):
             self.assertIn(command, readme)
 
