@@ -64,6 +64,7 @@ expectation.
 | [2026-05-18-mechanic-route-card-index](2026-05-18-mechanic-route-card-index.md) | add a generated route-card index for memo mechanic packages |
 | [2026-05-18-mechanic-owner-route-matrix](2026-05-18-mechanic-owner-route-matrix.md) | add a generated owner-route matrix without claiming owner acceptance |
 | [2026-05-18-mechanic-landing-log-index](2026-05-18-mechanic-landing-log-index.md) | add a generated landing receipt index for memo mechanic packages |
+| [2026-05-18-writeback-curated-object-examples](2026-05-18-writeback-curated-object-examples.md) | move writeback-owned curated memory-object examples under the writeback mechanic |
 
 ## Review Rule
 

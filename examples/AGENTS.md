@@ -28,6 +28,11 @@ Not every file here is a memory object.
 Some files are support contracts or router-facing recall entrypoints.
 Keep those roles explicit.
 
+The curated object-surface manifest may reference public memory-object
+examples under a mechanic package when the example's owner boundary is
+mechanic-local. In that case, keep the example under `mechanics/<slug>/examples/`
+and regenerate the object-facing generated family from the root manifest.
+
 Mechanic-owned examples live under their package lane:
 
 - `mechanics/consumer-handoff/examples/` for KAG/ToS bridge, graph/chunk face, and eval guardrail examples

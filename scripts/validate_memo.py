@@ -258,10 +258,10 @@ SELF_AGENCY_CONTINUITY_OBJECT_EXAMPLE_NAMES = tuple(
 )
 SELF_AGENCY_CONTINUITY_EXPECTED_OBJECT_PATHS = {
     "memo.decision.2026-04-12.self-agency-reanchor-window": (
-        "examples/decision.self-agency-reanchor-window.example.json"
+        "mechanics/writeback/examples/decision.self-agency-reanchor-window.example.json"
     ),
     "memo.state.2026-04-12.self-agency-continuity-relay": (
-        "examples/state_capsule.self-agency-continuity-relay.example.json"
+        "mechanics/writeback/examples/state_capsule.self-agency-continuity-relay.example.json"
     ),
 }
 SELF_AGENCY_CONTINUITY_REQUIRED_SOURCE_REFS = [
