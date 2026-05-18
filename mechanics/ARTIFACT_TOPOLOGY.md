@@ -45,6 +45,16 @@ posture, recall contracts, support contracts, generated-surface manifests, or
 cross-family continuity examples; single-mechanic examples belong under the
 owning mechanic.
 
+Root `config/` files use `config_families` for the same reason. Each allowed
+root config file must belong to exactly one source-map family that names its
+role, owner surface, source refs, and validators. Root config stays limited to
+repo-wide source maps and technical control-plane contracts.
+
+Root `manifests/` is reserved by `manifest_policy` until a shared recurrence
+manifest exists. The policy must match the current root `manifests.allowed_files`
+list, which is empty now. Mechanic-local manifests belong under the owning
+mechanic.
+
 ## Mechanic Artifact Lane
 
 Use a mechanic-local artifact home when the artifact only makes sense inside
@@ -97,6 +107,10 @@ recall/posture, support-object, and generated-surface contracts.
 Root `examples/` entries must be grouped by `example_families` as well. This
 keeps public shared examples distinct from mechanic-local examples and makes
 their validator coverage explicit.
+
+Root `config/` entries must be grouped by `config_families`; root `manifests/`
+must match `manifest_policy`. This closes the root technical control plane
+without promoting config or manifests into memory truth.
 
 Root `generated/` has an additional family contract in that same config. Each
 allowed root generated output must belong to exactly one `generated_families`

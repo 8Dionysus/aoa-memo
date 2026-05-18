@@ -121,3 +121,36 @@ def test_root_example_families_name_owner_sources_and_validators() -> None:
         assert family["examples"]
         assert family["source_refs"]
         assert family["validators"]
+
+
+def test_root_config_files_have_family_contracts() -> None:
+    payload = json.loads((REPO_ROOT / "config" / "root_technical_districts.json").read_text())
+    allowed = set(payload["districts"]["config"]["allowed_files"])
+    covered = {
+        config
+        for family in payload["config_families"]
+        for config in family["configs"]
+    }
+
+    assert covered == allowed
+
+
+def test_root_config_families_name_owner_sources_and_validators() -> None:
+    payload = json.loads((REPO_ROOT / "config" / "root_technical_districts.json").read_text())
+
+    for family in payload["config_families"]:
+        assert family["owner_surface"]
+        assert family["configs"]
+        assert family["source_refs"]
+        assert family["validators"]
+
+
+def test_root_manifest_policy_matches_reserved_state() -> None:
+    payload = json.loads((REPO_ROOT / "config" / "root_technical_districts.json").read_text())
+    policy = payload["manifest_policy"]
+
+    assert policy["id"] == "root_manifests_reserved"
+    assert policy["allowed_files"] == payload["districts"]["manifests"]["allowed_files"] == []
+    assert policy["owner_surface"] == "manifests/AGENTS.md"
+    assert policy["source_refs"]
+    assert policy["validators"]

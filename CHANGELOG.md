@@ -91,6 +91,9 @@ Tracking starts with the community-docs baseline for this repository.
 - Extend the root technical contract with example-family ownership so every
   root `examples/` file names its public example role, owner surface, source
   refs, and validators.
+- Extend the root technical contract with config-family ownership and an
+  explicit reserved-empty root manifests policy, so root `config/` and
+  `manifests/` are also machine-owned rather than only allowlisted.
 - Add a builder-backed package-local mechanic artifact inventory at
   `generated/mechanic_artifacts.min.json`, with builder, validator, release
   gate coverage, and tests so mechanic-local schemas, examples, config,

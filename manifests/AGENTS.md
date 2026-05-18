@@ -12,6 +12,9 @@ mechanic package's local artifact contract.
 ## Current Shape
 
 There are no active shared manifests in root `manifests/` right now.
+That empty state is machine-checked by
+`config/root_technical_districts.json` `manifest_policy`, which must match the
+root `manifests.allowed_files` list.
 
 Mechanic-owned manifests live under the owning package. The Agon recurrence
 manifests and their hook bindings live under:
