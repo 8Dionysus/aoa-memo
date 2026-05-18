@@ -20,6 +20,7 @@ CONFIG_REF = "config/memo_mechanics.json"
 MECHANIC_INDEX_REF = "generated/memo_mechanics.min.json"
 ARTIFACT_INVENTORY_REF = "generated/mechanic_artifacts.min.json"
 CARD_INDEX_REF = "generated/memo_mechanic_cards.min.json"
+OWNER_ROUTE_INDEX_REF = "generated/memo_mechanic_owner_routes.min.json"
 GENERATED_BY = "scripts/build_memo_mechanic_readiness.py"
 
 PACKAGE_SURFACES = tuple(PACKAGE_REQUIRED_FILES)
@@ -221,6 +222,7 @@ def build_readiness() -> dict[str, Any]:
         "mechanic_index_ref": MECHANIC_INDEX_REF,
         "artifact_inventory_ref": ARTIFACT_INVENTORY_REF,
         "card_index_ref": CARD_INDEX_REF,
+        "owner_route_index_ref": OWNER_ROUTE_INDEX_REF,
         "generated_by": GENERATED_BY,
         "contract": {
             "package_surfaces": list(PACKAGE_SURFACES),
@@ -259,6 +261,8 @@ def validate_payload(payload: dict[str, Any]) -> list[str]:
         issues.append(f"generated/memo_mechanic_readiness.min.json must route artifact_inventory_ref to {ARTIFACT_INVENTORY_REF}")
     if payload.get("card_index_ref") != CARD_INDEX_REF:
         issues.append(f"generated/memo_mechanic_readiness.min.json must route card_index_ref to {CARD_INDEX_REF}")
+    if payload.get("owner_route_index_ref") != OWNER_ROUTE_INDEX_REF:
+        issues.append(f"generated/memo_mechanic_readiness.min.json must route owner_route_index_ref to {OWNER_ROUTE_INDEX_REF}")
     if payload.get("generated_by") != GENERATED_BY:
         issues.append(f"generated/memo_mechanic_readiness.min.json must name {GENERATED_BY}")
 

@@ -85,6 +85,8 @@ python scripts/validate_memo_mechanics.py
 python scripts/validate_memo_mechanic_parts.py
 python scripts/build_memo_mechanic_cards.py --check
 python scripts/validate_memo_mechanic_cards.py
+python scripts/build_memo_mechanic_owner_routes.py --check
+python scripts/validate_memo_mechanic_owner_routes.py
 python scripts/build_memo_mechanic_readiness.py --check
 python scripts/validate_memo_mechanic_readiness.py
 python scripts/validate_mechanic_artifact_topology.py

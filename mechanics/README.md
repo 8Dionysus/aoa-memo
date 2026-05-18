@@ -30,6 +30,10 @@ ownership, not a new source of mechanic truth.
 the package README mechanic cards. It makes operation, trigger, memo-owned
 posture, stronger owner split, inputs, outputs, stop-lines, validation, and
 next route inspectable without replacing the authored README cards.
+`generated/memo_mechanic_owner_routes.min.json` is the compact generated
+owner-route matrix for package `OWNER_MAP.md` files and README cards. It shows
+which stronger owners receive which kinds of truth without becoming an owner
+request queue or acceptance receipt.
 
 ## Operation-First Law
 
@@ -126,6 +130,10 @@ section.
 Use `python scripts/build_memo_mechanic_cards.py --check` and
 `python scripts/validate_memo_mechanic_cards.py` when package cards change so
 their route-card shape remains machine-readable.
+
+Use `python scripts/build_memo_mechanic_owner_routes.py --check` and
+`python scripts/validate_memo_mechanic_owner_routes.py` when `OWNER_MAP.md` or
+package cards change so stronger-owner handoff routes remain inspectable.
 
 Use `python scripts/build_memo_mechanic_readiness.py --check` and
 `python scripts/validate_memo_mechanic_readiness.py` when package cards,
