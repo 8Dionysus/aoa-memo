@@ -160,12 +160,10 @@
     "tests": {
       "root_role": "repo-wide regression coverage for shared surfaces, generated parity, route maps, and cross-mechanic contracts",
       "allowed_files": [
-        "tests/fixtures/memo_writeback_receipts.example.jsonl",
         "tests/test_agents_mesh.py",
         "tests/test_companion_skill_scripts.py",
         "tests/test_current_direction_routes.py",
         "tests/test_docs_districts.py",
-        "tests/test_downstream_feed_contracts.py",
         "tests/test_experience_wave3_seed_contracts.py",
         "tests/test_mechanic_artifact_inventory.py",
         "tests/test_mechanic_artifact_topology.py",
@@ -587,19 +585,19 @@
       ]
     },
     {
-      "id": "downstream_memory_feed_contracts",
-      "role": "downstream-contract-regression",
-      "owner_surface": "mechanics/consumer-handoff/README.md",
+      "id": "cross_mechanic_wave3_seed_contracts",
+      "role": "cross-mechanic-contract-regression",
+      "owner_surface": "mechanics/lineage-harvest/PARTS.md",
       "tests": [
-        "tests/fixtures/memo_writeback_receipts.example.jsonl",
-        "tests/test_downstream_feed_contracts.py",
         "tests/test_experience_wave3_seed_contracts.py"
       ],
       "protects": [
-        "mechanics/consumer-handoff/docs/KAG_SOURCE_EXPORT.md",
-        "mechanics/checkpoint/examples/checkpoint_to_memory_contract.example.json",
-        "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
-        "mechanics/writeback/generated/runtime_writeback_targets.min.json"
+        "mechanics/adoption/schemas/adoption_memory_writeback_v1.json",
+        "mechanics/antifragility/schemas/shared_lesson_memory_v1.json",
+        "mechanics/consumer-handoff/schemas/memo_to_kag_bridge_record_v1.json",
+        "mechanics/governance/schemas/federation_memory_gate_decision_v1.json",
+        "mechanics/lineage-harvest/schemas/pattern_lineage_memory_entry_v1.json",
+        "mechanics/retention/schemas/cross_repo_retention_result_v1.json"
       ]
     },
     {
@@ -813,7 +811,7 @@
         "scripts/validate_memo.py",
         "scripts/validate_memory_surfaces.py",
         "scripts/validate_memory_object_surfaces.py",
-        "tests/test_downstream_feed_contracts.py"
+        "mechanics/consumer-handoff/tests/test_downstream_feed_contracts.py"
       ]
     },
     {

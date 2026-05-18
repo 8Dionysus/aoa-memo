@@ -10,6 +10,7 @@
 | KAG/ToS bridge handoff | [KAG_TOS_BRIDGE_CONTRACT](./docs/KAG_TOS_BRIDGE_CONTRACT.md) | defines chunk-face, graph-face, and ToS bridge posture without graph ownership |
 | KAG source export | [KAG_SOURCE_EXPORT](./docs/KAG_SOURCE_EXPORT.md) | describes the source-owned tiny donor export for KAG readiness |
 | Orchestrator recall alignment | [ORCHESTRATOR_MEMORY_ALIGNMENT](./docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md) | aligns router, review, and bounded-execution quest families to memo recall posture |
+| Downstream feed regression | `mechanics/consumer-handoff/tests/test_downstream_feed_contracts.py` | keeps consumer-facing recall, KAG export, checkpoint, and writeback read surfaces aligned without becoming runtime authority |
 
 ## Interface
 

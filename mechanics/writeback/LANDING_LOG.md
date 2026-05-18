@@ -2,6 +2,25 @@
 
 ## 2026-05-18
 
+- Moved the tracked writeback receipt fixture from root `tests/fixtures/` into
+  `mechanics/writeback/tests/fixtures/`.
+- Kept receipt publication validation package-local while leaving only
+  cross-mechanic regressions in root `tests/`.
+
+Validation route:
+
+```bash
+python -m pytest -q mechanics/writeback/tests/test_publish_live_receipts.py
+python scripts/release_check.py
+```
+
+## Stop-lines preserved
+
+- No proof, runtime, role, route, source owner acceptance, or stronger-owner
+  authority moved into memo.
+
+## 2026-05-18
+
 - Landed writeback as a memo mechanic package.
 - Moved active writeback source docs from flat `docs/` paths into
   `mechanics/writeback/docs/`.
