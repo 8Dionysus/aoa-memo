@@ -47,9 +47,9 @@ def test_titan_memory_candidate_requires_time_boundary_and_risk_pair() -> None:
 def test_titan_writeback_candidate_requires_owner_surface_and_retention_risk() -> None:
     payload = {
         "candidate_id": "titan-writeback-candidate:example",
-        "source_records": ["repo:aoa-memo/docs/titan/TITAN_MEMORY_LOOM_POSTURE.md"],
+        "source_records": ["repo:aoa-memo/mechanics/titan/docs/TITAN_MEMORY_LOOM_POSTURE.md"],
         "reason": "Example candidate for schema regression.",
-        "owner_surface": "docs/titan/TITAN_MEMORY_LOOM_POSTURE.md",
+        "owner_surface": "mechanics/titan/docs/TITAN_MEMORY_LOOM_POSTURE.md",
         "retention_risk": "May preserve an early wave too strongly.",
         "operator_approval": "pending",
     }

@@ -1,0 +1,31 @@
+# Agon Legacy Index
+
+| Former Path | Active Path |
+|---|---|
+| `docs/AGON_DELTA_CHRONICLE_PREBINDING_MODEL.md`; `docs/agon/AGON_DELTA_CHRONICLE_PREBINDING_MODEL.md` | `mechanics/agon/docs/AGON_DELTA_CHRONICLE_PREBINDING_MODEL.md` |
+| `docs/AGON_EPISTEMIC_MEMORY_BOUNDARY.md`; `docs/agon/AGON_EPISTEMIC_MEMORY_BOUNDARY.md` | `mechanics/agon/docs/AGON_EPISTEMIC_MEMORY_BOUNDARY.md` |
+| `docs/AGON_EPISTEMIC_MEMORY_BRIDGE.md`; `docs/agon/AGON_EPISTEMIC_MEMORY_BRIDGE.md` | `mechanics/agon/docs/AGON_EPISTEMIC_MEMORY_BRIDGE.md` |
+| `docs/AGON_KAG_MEMO_BOUNDARY.md`; `docs/agon/AGON_KAG_MEMO_BOUNDARY.md` | `mechanics/agon/docs/AGON_KAG_MEMO_BOUNDARY.md` |
+| `docs/AGON_KAG_MEMO_EVIDENCE_PACKAGES.md`; `docs/agon/AGON_KAG_MEMO_EVIDENCE_PACKAGES.md` | `mechanics/agon/docs/AGON_KAG_MEMO_EVIDENCE_PACKAGES.md` |
+| `docs/AGON_MECHANICAL_TRIAL_MEMO_INTAKES.md`; `docs/agon/AGON_MECHANICAL_TRIAL_MEMO_INTAKES.md` | `mechanics/agon/docs/AGON_MECHANICAL_TRIAL_MEMO_INTAKES.md` |
+| `docs/AGON_MEMORY_PREBINDING.md`; `docs/agon/AGON_MEMORY_PREBINDING.md` | `mechanics/agon/docs/AGON_MEMORY_PREBINDING.md` |
+| `docs/AGON_MEMO_RECURRENCE_REVIEW_BOUNDARY.md`; `docs/agon/AGON_MEMO_RECURRENCE_REVIEW_BOUNDARY.md` | `mechanics/agon/docs/AGON_MEMO_RECURRENCE_REVIEW_BOUNDARY.md` |
+| `docs/AGON_RANK_MEMORY_BOUNDARY.md`; `docs/agon/AGON_RANK_MEMORY_BOUNDARY.md` | `mechanics/agon/docs/AGON_RANK_MEMORY_BOUNDARY.md` |
+| `docs/AGON_RETENTION_CANDIDATE_BOUNDARY.md`; `docs/agon/AGON_RETENTION_CANDIDATE_BOUNDARY.md` | `mechanics/agon/docs/AGON_RETENTION_CANDIDATE_BOUNDARY.md` |
+| `docs/AGON_RETENTION_CANDIDATE_INTAKE.md`; `docs/agon/AGON_RETENTION_CANDIDATE_INTAKE.md` | `mechanics/agon/docs/AGON_RETENTION_CANDIDATE_INTAKE.md` |
+| `docs/AGON_RETENTION_MEMORY_BRIDGE.md`; `docs/agon/AGON_RETENTION_MEMORY_BRIDGE.md` | `mechanics/agon/docs/AGON_RETENTION_MEMORY_BRIDGE.md` |
+| `docs/AGON_SCAR_CANDIDATE_INTAKE_MODEL.md`; `docs/agon/AGON_SCAR_CANDIDATE_INTAKE_MODEL.md` | `mechanics/agon/docs/AGON_SCAR_CANDIDATE_INTAKE_MODEL.md` |
+| `docs/AGON_SCAR_REQUEST_INTAKE_ALIGNMENT.md`; `docs/agon/AGON_SCAR_REQUEST_INTAKE_ALIGNMENT.md` | `mechanics/agon/docs/AGON_SCAR_REQUEST_INTAKE_ALIGNMENT.md` |
+| `docs/AGON_SLC_MEMORY_BOUNDARY.md`; `docs/agon/AGON_SLC_MEMORY_BOUNDARY.md` | `mechanics/agon/docs/AGON_SLC_MEMORY_BOUNDARY.md` |
+| `docs/AGON_SLC_MEMORY_BRIDGE.md`; `docs/agon/AGON_SLC_MEMORY_BRIDGE.md` | `mechanics/agon/docs/AGON_SLC_MEMORY_BRIDGE.md` |
+| `docs/AGON_SOPHIAN_MEMO_EVIDENCE.md`; `docs/agon/AGON_SOPHIAN_MEMO_EVIDENCE.md` | `mechanics/agon/docs/AGON_SOPHIAN_MEMO_EVIDENCE.md` |
+| `docs/AGON_VDS_MEMO_BRIDGE.md`; `docs/agon/AGON_VDS_MEMO_BRIDGE.md` | `mechanics/agon/docs/AGON_VDS_MEMO_BRIDGE.md` |
+| `docs/AGON_WAVE11_MEMO_LANDING.md`; `docs/agon/AGON_WAVE11_MEMO_LANDING.md` | `mechanics/agon/docs/AGON_WAVE11_MEMO_LANDING.md` |
+| `docs/AGON_WAVE13_MEMO_LANDING.md`; `docs/agon/AGON_WAVE13_MEMO_LANDING.md` | `mechanics/agon/docs/AGON_WAVE13_MEMO_LANDING.md` |
+| `docs/AGON_WAVE13_MEMO_STOP_LINES.md`; `docs/agon/AGON_WAVE13_MEMO_STOP_LINES.md` | `mechanics/agon/docs/AGON_WAVE13_MEMO_STOP_LINES.md` |
+| `docs/AGON_WAVE14_MEMO_LANDING.md`; `docs/agon/AGON_WAVE14_MEMO_LANDING.md` | `mechanics/agon/docs/AGON_WAVE14_MEMO_LANDING.md` |
+| `docs/AGON_WAVE15_MEMO_LANDING.md`; `docs/agon/AGON_WAVE15_MEMO_LANDING.md` | `mechanics/agon/docs/AGON_WAVE15_MEMO_LANDING.md` |
+| `docs/AGON_WAVE16_MEMO_LANDING.md`; `docs/agon/AGON_WAVE16_MEMO_LANDING.md` | `mechanics/agon/docs/AGON_WAVE16_MEMO_LANDING.md` |
+| `docs/AGON_WAVE17_MEMO_LANDING.md`; `docs/agon/AGON_WAVE17_MEMO_LANDING.md` | `mechanics/agon/docs/AGON_WAVE17_MEMO_LANDING.md` |
+| `docs/AGON_WAVE18_MEMO_LANDING.md`; `docs/agon/AGON_WAVE18_MEMO_LANDING.md` | `mechanics/agon/docs/AGON_WAVE18_MEMO_LANDING.md` |
+| `docs/AGON_WAVE7_MEMO_LANDING.md`; `docs/agon/AGON_WAVE7_MEMO_LANDING.md` | `mechanics/agon/docs/AGON_WAVE7_MEMO_LANDING.md` |

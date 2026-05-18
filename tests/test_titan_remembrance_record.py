@@ -47,7 +47,7 @@ def test_legacy_titan_remembrance_record_shape_still_validates() -> None:
         "bearer_id": "titan:atlas:founder",
         "role_key": "architect",
         "memory_kind": "remembrance",
-        "source_ref": "docs/titan/TITAN_MEMORY_LOOM_POSTURE.md",
+        "source_ref": "mechanics/titan/docs/TITAN_MEMORY_LOOM_POSTURE.md",
         "summary": "Legacy remembrance records remain source-anchored memory.",
         "confidence": 0.75,
         "redaction_state": "clear",
@@ -63,7 +63,7 @@ def test_legacy_titan_remembrance_record_rejects_escape_hatches() -> None:
         "bearer_id": "titan:atlas:founder",
         "role_key": "architect",
         "memory_kind": "remembrance",
-        "source_ref": "docs/titan/TITAN_MEMORY_LOOM_POSTURE.md",
+        "source_ref": "mechanics/titan/docs/TITAN_MEMORY_LOOM_POSTURE.md",
         "summary": "Legacy remembrance records remain source-anchored memory.",
     }
     mutated = copy.deepcopy(payload)

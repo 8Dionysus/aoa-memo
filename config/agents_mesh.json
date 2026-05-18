@@ -88,26 +88,6 @@
       ]
     },
     {
-      "path": "docs/agon/AGENTS.md",
-      "min_lines": 40,
-      "required_snippets": [
-        "formerly flat",
-        "candidate-only",
-        "docs/agon/",
-        "validate_docs_districts.py"
-      ]
-    },
-    {
-      "path": "docs/titan/AGENTS.md",
-      "min_lines": 35,
-      "required_snippets": [
-        "formerly flat",
-        "Titan memory",
-        "docs/titan/",
-        "validate_docs_districts.py"
-      ]
-    },
-    {
       "path": "mechanics/AGENTS.md",
       "min_lines": 35,
       "required_snippets": [
@@ -115,6 +95,36 @@
         "mechanics/<slug>/docs/",
         "legacy/",
         "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/agon/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "Agon mechanic",
+        "mechanics/agon/",
+        "OWNER_MAP.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/agon/docs/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "mechanics/agon/docs/",
+        "active mechanic-owned doctrine",
+        "ARTIFACT_TOPOLOGY.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/agon/legacy/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/agon/legacy/",
+        "placement provenance",
+        "not the active route",
+        "legacy/INDEX.md"
       ]
     },
     {
@@ -142,6 +152,36 @@
       "min_lines": 25,
       "required_snippets": [
         "mechanics/adoption/legacy/",
+        "placement provenance",
+        "not the active route",
+        "legacy/INDEX.md"
+      ]
+    },
+    {
+      "path": "mechanics/titan/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "Titan mechanic",
+        "mechanics/titan/",
+        "OWNER_MAP.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/titan/docs/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "mechanics/titan/docs/",
+        "active mechanic-owned doctrine",
+        "ARTIFACT_TOPOLOGY.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/titan/legacy/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/titan/legacy/",
         "placement provenance",
         "not the active route",
         "legacy/INDEX.md"

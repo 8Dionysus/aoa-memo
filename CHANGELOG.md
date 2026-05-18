@@ -17,10 +17,10 @@ Tracking starts with the community-docs baseline for this repository.
   `generated/agents_mesh.min.json`, mesh validators, and regression tests so
   current route-card coverage is machine-checkable before docs districts move.
 - Add top-level route cards for `manifests/` and `quests/`.
-- Add the `docs/agon/` district for Agon memo docs with a local route card,
-  district map, docs-district validator, tests, and decision record.
-- Add the `docs/titan/` district for Titan memo posture docs with a local
-  route card, district map, validator extension, tests, and decision record.
+- Add `mechanics/agon/` and `mechanics/titan/` memo mechanic packages with
+  package cards, owner maps, provenance bridges, legacy indexes,
+  source-backed generated mechanics index coverage, validators, tests, and
+  decision record.
 - Add the `mechanics/` atlas plus `adoption`, `writeback`, and `retention`
   memo mechanic packages with package cards, owner maps, provenance bridges,
   legacy indexes, source-backed generated mechanics index, validators, tests,
@@ -35,15 +35,15 @@ Tracking starts with the community-docs baseline for this repository.
 - Move the maintained Spark fast-loop lane from root `Spark/` to
   `.agents/spark/`, with `.agents/AGENTS.md` as the agent-facing district
   route card.
-- Move flat Agon docs-root surfaces into `docs/agon/` and update recurrence
-  manifest refs to the new district paths.
-- Move flat Titan docs-root surfaces into `docs/titan/` and update Titan source
-  refs in README, examples, and tests.
+- Move transitional Agon docs-district surfaces into `mechanics/agon/docs/`
+  and update recurrence manifest refs to the new mechanic paths.
+- Move transitional Titan docs-district surfaces into `mechanics/titan/docs/`
+  and update Titan source refs in README, examples, and tests.
 - Move flat adoption, writeback, and retention docs-root surfaces into
   `mechanics/<slug>/docs/` and update source refs across docs, examples,
   generated companions, quests, scripts, and tests.
-- Extend the AGENTS mesh and memo mechanics validator to include mechanic
-  docs/legacy subroutes.
+- Extend the AGENTS mesh and memo mechanics validator to include Agon/Titan
+  mechanics and mechanic docs/legacy subroutes.
 
 ## [0.2.3] - 2026-04-23
 

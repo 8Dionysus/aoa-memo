@@ -2,7 +2,7 @@
 
 ## Guidance for `tests/`
 
-`tests/` protects memory schemas, examples, generated catalogs, recall contracts, lifecycle audit examples, docs district migrations, and writeback boundaries.
+`tests/` protects memory schemas, examples, generated catalogs, recall contracts, lifecycle audit examples, retired docs district checks, memo mechanics, and writeback boundaries.
 
 Tests should expose provenance loss, recall overreach, stale context, schema mismatch, AGENTS mesh drift, and generated/source drift.
 

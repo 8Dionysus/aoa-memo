@@ -49,21 +49,19 @@ The first generated AGENTS mesh is now the active topology hardening layer:
 mechanics migrations should add any new local route cards through this mesh
 before landing.
 
-The first thematic docs migration is now the Agon memo district:
-`docs/agon/` owns the former flat Agon docs-root surfaces, backed by
-`scripts/validate_docs_districts.py`.
+The Agon and Titan migration is now mechanic-shaped rather than docs-district
+shaped: `mechanics/agon/` and `mechanics/titan/` own the former flat and
+transitional docs surfaces through package cards, owner maps, provenance
+bridges, legacy indexes, generated mechanics coverage, and validators.
 
-The second thematic docs migration is now the Titan memo district:
-`docs/titan/` owns the former flat Titan docs-root surfaces, with examples and
-tests updated to point at the new source refs.
-
-The third topology migration follows the `Agents-of-Abyss` mechanics pattern:
-`mechanics/adoption/`, `mechanics/writeback/`, and `mechanics/retention/` own
-the former flat adoption, writeback, and retention docs-root families as
-memo-side mechanics. Each package has a route card, package card, direction,
-parts map, owner map, provenance bridge, landing log, roadmap, and legacy
-index. The source-backed `config/memo_mechanics.json` and
-`generated/memo_mechanics.min.json` keep the shape machine-checkable.
+The mechanics topology follows the `Agents-of-Abyss` pattern:
+`mechanics/agon/`, `mechanics/titan/`, `mechanics/adoption/`,
+`mechanics/writeback/`, and `mechanics/retention/` own the former flat or
+transitional owner families as memo-side mechanics. Each package has a route
+card, package card, direction, parts map, owner map, provenance bridge,
+landing log, roadmap, and legacy index. The source-backed
+`config/memo_mechanics.json` and `generated/memo_mechanics.min.json` keep the
+shape machine-checkable.
 
 The current mechanics hardening layer adds `docs/AGENTS.md` and
 `legacy/AGENTS.md` subroutes for each memo mechanic plus

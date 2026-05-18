@@ -14,7 +14,7 @@ The current manifest family is `manifests/recurrence/` and includes
 `component.agon.*` surfaces plus matching hook manifests under
 `manifests/recurrence/hooks/`.
 
-Keep `component.agon.` records aligned with `docs/agon/`, config seeds,
+Keep `component.agon.` records aligned with `mechanics/agon/docs/`, config seeds,
 generated registries, tests, and quests that define the Agon memo seam.
 
 ## Boundaries

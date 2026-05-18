@@ -14,9 +14,9 @@
   "surfaces": [
     "generated/agon_slc_memo_bridge_registry.min.json",
     "config/agon_slc_memo_bridge.seed.json",
-    "docs/agon/AGON_SLC_MEMORY_BRIDGE.md",
-    "docs/agon/AGON_SLC_MEMORY_BOUNDARY.md",
-    "docs/agon/AGON_WAVE16_MEMO_LANDING.md"
+    "mechanics/agon/docs/AGON_SLC_MEMORY_BRIDGE.md",
+    "mechanics/agon/docs/AGON_SLC_MEMORY_BOUNDARY.md",
+    "mechanics/agon/docs/AGON_WAVE16_MEMO_LANDING.md"
   ],
   "title": "Wave XVI aoa-memo surfaces",
   "wave": "XVI"
