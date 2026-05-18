@@ -14,6 +14,8 @@ This file applies to checked-in artifacts under `generated/`.
   package-local mechanic artifact homes
 - `memo_mechanic_cards.min.json` is the compact generated mirror of current
   mechanic README route cards
+- `memo_mechanic_owner_routes.min.json` is the compact generated owner-route
+  matrix for current mechanic packages
 - `memo_mechanic_readiness.min.json` is the compact generated readiness matrix
   for current mechanic packages
 - `quest_catalog.min*.json` and `quest_dispatch.min*.json` are compact public quest projections from `quests/memo/<state>/AOA-MEM-Q-*.yaml`
@@ -41,6 +43,10 @@ Keep this split explicit:
 - `generated/memo_mechanic_cards.min.json` is rebuilt by
   `scripts/build_memo_mechanic_cards.py` from package README mechanic cards
   and checked by `scripts/validate_memo_mechanic_cards.py`
+- `generated/memo_mechanic_owner_routes.min.json` is rebuilt by
+  `scripts/build_memo_mechanic_owner_routes.py` from package `OWNER_MAP.md`
+  files plus mechanic card owner refs, and checked by
+  `scripts/validate_memo_mechanic_owner_routes.py`
 - `generated/memo_mechanic_readiness.min.json` is rebuilt by
   `scripts/build_memo_mechanic_readiness.py` from package cards, source maps,
   and the artifact inventory, then checked by
@@ -106,6 +112,7 @@ python mechanics/questbook/scripts/build_quest_surfaces.py --check
 python scripts/validate_agents_mesh_index.py
 python scripts/validate_mechanic_artifact_inventory.py
 python scripts/validate_memo_mechanic_cards.py
+python scripts/validate_memo_mechanic_owner_routes.py
 python scripts/validate_memo_mechanic_readiness.py
 ```
 

@@ -173,6 +173,13 @@ owner maps, validation routes, stop-lines, and the artifact inventory so agents
 can detect when a mechanic is structurally present but not ready for OS Abyss
 use.
 
+`generated/memo_mechanic_owner_routes.min.json` is the compact generated
+matrix of package-local owner maps and route cards. It exists because
+stronger-owner routing is cross-mechanic and OS Abyss needs one inspection
+surface. It is not an owner request queue, owner acceptance, proof, runtime
+authority, route dispatch, role authority, KAG truth, playbook choreography,
+stats truth, or source doctrine.
+
 Questbook is the intentional root-store exception: `mechanics/questbook/` owns
 quest lifecycle, source contracts, validation, and generated projections, while
 root `QUESTBOOK.md` stays the compact index and root `quests/` stays the public

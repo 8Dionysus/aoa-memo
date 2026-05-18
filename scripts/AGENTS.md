@@ -36,6 +36,9 @@ Keep the current split clear:
   operation-first Active Parts plus Interface shape
 - `build_memo_mechanic_cards.py` and `validate_memo_mechanic_cards.py` keep a
   compact generated route-card index aligned with package README mechanic cards
+- `build_memo_mechanic_owner_routes.py` and
+  `validate_memo_mechanic_owner_routes.py` keep a compact generated
+  owner-route matrix aligned with package `OWNER_MAP.md` files and card refs
 - `build_memo_mechanic_readiness.py` and
   `validate_memo_mechanic_readiness.py` keep a compact readiness matrix for
   every mechanic package, tying package cards, owner maps, stop-lines,
@@ -87,6 +90,8 @@ python scripts/validate_docs_districts.py
 python scripts/validate_memo_mechanic_parts.py
 python scripts/build_memo_mechanic_cards.py --check
 python scripts/validate_memo_mechanic_cards.py
+python scripts/build_memo_mechanic_owner_routes.py --check
+python scripts/validate_memo_mechanic_owner_routes.py
 python scripts/build_memo_mechanic_readiness.py --check
 python scripts/validate_memo_mechanic_readiness.py
 ```
