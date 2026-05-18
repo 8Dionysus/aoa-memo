@@ -9,7 +9,14 @@ import unittest
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
 MODULE_PATH = REPO_ROOT / "mechanics" / "writeback" / "scripts" / "publish_live_receipts.py"
-RECEIPT_FIXTURE_PATH = REPO_ROOT / "tests" / "fixtures" / "memo_writeback_receipts.example.jsonl"
+RECEIPT_FIXTURE_PATH = (
+    REPO_ROOT
+    / "mechanics"
+    / "writeback"
+    / "tests"
+    / "fixtures"
+    / "memo_writeback_receipts.example.jsonl"
+)
 MEMORY_OBJECT_CATALOG_PATH = REPO_ROOT / "generated" / "memory_object_catalog.min.json"
 MEMORY_OBJECT_CAPSULES_PATH = REPO_ROOT / "generated" / "memory_object_capsules.json"
 MEMORY_OBJECT_SECTIONS_PATH = REPO_ROOT / "generated" / "memory_object_sections.full.json"

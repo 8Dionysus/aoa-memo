@@ -2,6 +2,7 @@
 
 | Date | Change | Validation |
 |---|---|---|
+| 2026-05-18 | Moved the downstream feed regression from root `tests/` into `mechanics/consumer-handoff/tests/` and kept root tests limited to cross-mechanic regressions. | `python scripts/release_check.py` |
 | 2026-05-18 | Moved agent, playbook, eval, KAG/ToS, KAG export, and orchestrator alignment handoff surfaces from flat `docs/` into `mechanics/consumer-handoff/docs/`. | `python scripts/release_check.py` |
 
 ## Stop-Lines Preserved

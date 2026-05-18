@@ -35,6 +35,7 @@ SCRIPT_FAMILY_ROLES = {
 }
 TEST_FAMILY_ROLES = {
     "agent-companion-regression",
+    "cross-mechanic-contract-regression",
     "downstream-contract-regression",
     "mechanic-contract-regression",
     "memory-object-regression",

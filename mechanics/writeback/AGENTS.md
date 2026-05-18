@@ -43,7 +43,7 @@ python scripts/build_memo_mechanics_index.py --check
 python scripts/validate_memo_mechanics_index.py
 python scripts/generate_memory_object_surfaces.py
 python scripts/validate_memory_object_surfaces.py
-python -m pytest -q tests/test_downstream_feed_contracts.py mechanics/writeback/tests/test_quest_chronicle_writeback.py mechanics/writeback/tests/test_self_agency_continuity_writeback.py mechanics/writeback/tests/test_a2a_child_return_writeback.py
+python -m pytest -q mechanics/consumer-handoff/tests/test_downstream_feed_contracts.py mechanics/writeback/tests/test_quest_chronicle_writeback.py mechanics/writeback/tests/test_self_agency_continuity_writeback.py mechanics/writeback/tests/test_a2a_child_return_writeback.py
 ```
 
 Before landing, also run:

@@ -71,6 +71,18 @@ class ConsumerHandoffMechanicTestCase(unittest.TestCase):
                 quest,
             )
 
+    def test_downstream_feed_regression_is_package_local(self) -> None:
+        package_test = (
+            REPO_ROOT
+            / "mechanics"
+            / "consumer-handoff"
+            / "tests"
+            / "test_downstream_feed_contracts.py"
+        )
+
+        self.assertTrue(package_test.is_file())
+        self.assertFalse((REPO_ROOT / "tests" / "test_downstream_feed_contracts.py").exists())
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -124,6 +124,10 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Changed
 
+- Move the downstream feed regression into
+  `mechanics/consumer-handoff/tests/`, move the tracked writeback receipt
+  fixture into `mechanics/writeback/tests/fixtures/`, and narrow the remaining
+  root test-family contract to the cross-mechanic Wave 3 seed regression.
 - Move self-agency continuity object examples from root `examples/` into
   `mechanics/writeback/examples/` while keeping them in the root object-surface
   manifest and generated object-facing family.
