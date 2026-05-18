@@ -103,6 +103,12 @@ repo-wide validators, release gates, and cross-mechanic regression tests.
 Root `manifests/` is reserved for future shared recurrence manifests; the
 current active manifests are package-local.
 
+`generated/mechanic_artifacts.min.json` is the compact generated inventory of
+package-local mechanic artifacts. It is not source truth. It lets agents and
+validators inspect which mechanic currently owns each local schema, example,
+config seed, generated companion, script, test, or manifest without forcing
+`PARTS.md` files to become raw file inventories.
+
 Questbook is the intentional root-store exception: `mechanics/questbook/` owns
 quest lifecycle, source contracts, validation, and generated projections, while
 root `QUESTBOOK.md` stays the compact index and root `quests/` stays the public
@@ -140,6 +146,8 @@ For release-bound artifact placement changes, run:
 
 ```bash
 python scripts/validate_mechanic_artifact_topology.py
+python scripts/build_mechanic_artifact_inventory.py --check
+python scripts/validate_mechanic_artifact_inventory.py
 python scripts/validate_memo_mechanics.py
 python scripts/release_check.py
 ```

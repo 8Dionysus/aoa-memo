@@ -19,6 +19,10 @@ may remain in root `schemas/`, `examples/`, `generated/`, `scripts/`, `tests/`,
 `manifests/`, and `config/`. Add to it only when
 `mechanics/ARTIFACT_TOPOLOGY.md` says the file is repo-wide or shared.
 
+When root config allows a generated mechanic companion such as
+`generated/mechanic_artifacts.min.json`, keep the matching builder and
+validator listed in the same root technical-district contract.
+
 Keep config explicit, public-safe, and reviewable. No private memories, personal data, hidden retention rules, secret tokens, or local-only paths.
 
 When config changes generated surfaces, regenerate only the touched family and inspect the diff for recall or provenance drift.
@@ -29,6 +33,8 @@ Verify with:
 python scripts/validate_memo.py
 python scripts/validate_semantic_agents.py
 python scripts/validate_mechanic_artifact_topology.py
+python scripts/build_mechanic_artifact_inventory.py --check
+python scripts/validate_mechanic_artifact_inventory.py
 python scripts/validate_memo_mechanics.py
 python scripts/build_memo_mechanics_index.py --check
 python scripts/validate_memo_mechanics_index.py

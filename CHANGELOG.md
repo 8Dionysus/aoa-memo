@@ -85,6 +85,10 @@ Tracking starts with the community-docs baseline for this repository.
 - Add `config/root_technical_districts.json` as an exact allowlist for root
   technical artifacts so remaining root schemas, examples, generated outputs,
   scripts, tests, manifests, and config files are machine-auditable.
+- Add a builder-backed package-local mechanic artifact inventory at
+  `generated/mechanic_artifacts.min.json`, with builder, validator, release
+  gate coverage, and tests so mechanic-local schemas, examples, config,
+  generated outputs, scripts, tests, and manifests stay inspectable.
 
 ### Changed
 

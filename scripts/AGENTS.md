@@ -22,6 +22,10 @@ Keep the current split clear:
 - `validate_mechanic_artifact_topology.py` keeps single-mechanic schemas,
   examples, config seeds, generated outputs, scripts, tests, and manifests out
   of root technical districts
+- `build_mechanic_artifact_inventory.py` and
+  `validate_mechanic_artifact_inventory.py` keep
+  `generated/mechanic_artifacts.min.json` aligned with package-local mechanic
+  artifact homes
 - quest projection building belongs to `mechanics/questbook/scripts/build_quest_surfaces.py`
 - `validate_nested_agents.py` checks that local guidance files stay present and explicit
 - `validate_agents_mesh.py`, `build_agents_mesh_index.py`, and `validate_agents_mesh_index.py` keep the source-backed AGENTS mesh aligned with current route cards
@@ -60,6 +64,8 @@ python scripts/validate_memory_surfaces.py
 python scripts/validate_memory_object_surfaces.py
 python scripts/validate_lifecycle_audit_examples.py
 python scripts/validate_mechanic_artifact_topology.py
+python scripts/build_mechanic_artifact_inventory.py --check
+python scripts/validate_mechanic_artifact_inventory.py
 python mechanics/questbook/scripts/build_quest_surfaces.py --check
 python scripts/validate_agents_mesh.py
 python scripts/build_agents_mesh_index.py --check

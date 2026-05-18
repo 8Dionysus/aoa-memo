@@ -128,6 +128,8 @@ python scripts/validate_docs_districts.py
 python scripts/validate_memo_mechanics.py
 python scripts/build_memo_mechanics_index.py --check
 python scripts/validate_memo_mechanics_index.py
+python scripts/build_mechanic_artifact_inventory.py --check
+python scripts/validate_mechanic_artifact_inventory.py
 python -m pytest -q tests
 ```
 

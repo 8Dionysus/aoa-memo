@@ -19,6 +19,9 @@ playbook, skill, technique, stats, or source truth must route next.
 | [ARTIFACT_TOPOLOGY](ARTIFACT_TOPOLOGY.md) | placement law for root technical districts versus mechanic-local artifact homes | migration ledger or alias map |
 
 Generated indexes reflect source maps. They do not author mechanic truth.
+`generated/mechanic_artifacts.min.json` is a generated inventory of
+package-local artifact homes, not a replacement for package cards or
+mechanic-owned source docs.
 
 ## Operation-First Law
 
@@ -103,6 +106,10 @@ multiple memory surfaces. Package-local source docs live under the mechanic.
 Use [ARTIFACT_TOPOLOGY](ARTIFACT_TOPOLOGY.md) before moving schemas, examples,
 config, generated companions, scripts, tests, manifests, or questbook surfaces
 between root technical districts and mechanic-local homes.
+
+Use `python scripts/build_mechanic_artifact_inventory.py --check` and
+`python scripts/validate_mechanic_artifact_inventory.py` when package-local
+artifact homes change.
 
 ## Validation
 

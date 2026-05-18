@@ -130,6 +130,7 @@ def validate() -> list[str]:
         f"mechanics/{package['slug']}/PROVENANCE.md" for package in config["packages"]
     )
     allowed_provenance_refs.add("config/memo_mechanics.json")
+    allowed_provenance_refs.add("generated/mechanic_artifacts.min.json")
     allowed_provenance_refs.update(
         path.relative_to(REPO_ROOT).as_posix()
         for path in (REPO_ROOT / "docs" / "decisions").glob("*.md")
