@@ -30,6 +30,13 @@ contract-shaped, or shared across multiple memory families:
 Root technical districts must not keep convenience aliases for mechanic-owned
 source docs. Route to `mechanics/<slug>/docs/` directly.
 
+Root `schemas/` files have a positive ownership rule through
+`schema_families`. Each allowed root schema must belong to exactly one family
+that names its role, owner surface, source refs, and validators. Root schemas
+remain only when they define public memory-object canon, recall/posture
+contracts, shared support-object contracts, or generated-surface contracts;
+single-mechanic schemas belong under the owning mechanic.
+
 ## Mechanic Artifact Lane
 
 Use a mechanic-local artifact home when the artifact only makes sense inside
@@ -73,6 +80,11 @@ surfaces.
 technical artifacts. If a file is not a route card and is not listed there, it
 must either be added with a repo-wide/shared reason or moved under its owning
 mechanic.
+
+Root `schemas/` entries in that config must also be grouped by
+`schema_families`. This keeps the public schema canon distinct from package-local
+mechanic contracts while preserving the root home for shared memory-object,
+recall/posture, support-object, and generated-surface contracts.
 
 Root `generated/` has an additional family contract in that same config. Each
 allowed root generated output must belong to exactly one `generated_families`

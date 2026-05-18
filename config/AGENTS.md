@@ -19,6 +19,12 @@ may remain in root `schemas/`, `examples/`, `generated/`, `scripts/`, `tests/`,
 `manifests/`, and `config/`. Add to it only when
 `mechanics/ARTIFACT_TOPOLOGY.md` says the file is repo-wide or shared.
 
+Root `schemas/` files must belong to exactly one `schema_families` contract
+with a role, owner surface, schema list, source refs, and validators. Root
+schemas are for public memory-object canon, recall/posture contracts,
+support-object contracts, and generated-surface contracts; package-local
+mechanic schemas belong under the owning mechanic.
+
 When root config allows a generated mechanic companion such as
 `generated/mechanic_artifacts.min.json`, keep the matching builder and
 validator listed in the same root technical-district contract. Root
