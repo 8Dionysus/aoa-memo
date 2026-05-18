@@ -10,9 +10,11 @@ The memo layer can help a route return.
 It cannot decide whether return is permitted, which tier owns the next move, or how many retries a runtime may spend.
 
 Mechanic route: [recurrence-support](../README.md) owns this memo-side support
-posture. `Agents-of-Abyss`, `aoa-agents`, `aoa-playbooks`, `aoa-routing`,
-`abyss-stack`, and `aoa-evals` keep the stronger recurrence, handoff, scenario,
-dispatch, runtime, and proof decisions.
+posture. [checkpoint](../../checkpoint/README.md) owns checkpoint artifacts
+that recurrence-support consumes. `Agents-of-Abyss`, `aoa-agents`,
+`aoa-playbooks`, `aoa-routing`, `abyss-stack`, and `aoa-evals` keep the
+stronger recurrence, handoff, scenario, dispatch, runtime, and proof
+decisions.
 
 ## Boundary Rule
 
@@ -37,7 +39,8 @@ Within the federation:
 
 ### 1. `inquiry_checkpoint`
 
-This is the primary pause-and-relaunch artifact.
+This is the primary pause-and-relaunch artifact. Its schema and examples live
+under `mechanics/checkpoint/`.
 
 It already holds the route question, evidence refs, contradiction refs, resolved decisions, open questions, witness refs, memory deltas, canon deltas, restart count, and review posture.
 
@@ -84,7 +87,7 @@ It keeps recurrence reviewable without turning memo into a graph runtime.
 
 ### 8. `checkpoint_to_memory_contract`
 
-The current writeback seam already covers the return pathway:
+The current checkpoint-to-memory contract already covers the return pathway:
 
 - checkpoint export -> `state_capsule`
 - transition record -> `decision`

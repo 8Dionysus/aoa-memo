@@ -4,7 +4,7 @@
   "source_seed_ref": "repo:Dionysus/seed_expansion/seed.aoa.agents-runtime-pack.v0.md#aoa-seed-r3-runtime-writeback-to-memo",
   "checkpoint_artifact": {
     "artifact_name": "inquiry_checkpoint",
-    "schema_ref": "mechanics/recurrence-support/schemas/inquiry_checkpoint.schema.json",
+    "schema_ref": "mechanics/checkpoint/schemas/inquiry_checkpoint.schema.json",
     "posture": "route_artifact_not_memory_object"
   },
   "runtime_boundary": {
@@ -21,7 +21,7 @@
     {
       "runtime_surface": "checkpoint_export",
       "runtime_refs": [
-        "mechanics/recurrence-support/schemas/inquiry_checkpoint.schema.json",
+        "mechanics/checkpoint/schemas/inquiry_checkpoint.schema.json",
         "mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md#inquiry-checkpoint-packs"
       ],
       "target_kind": "state_capsule",

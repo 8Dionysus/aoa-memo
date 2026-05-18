@@ -228,6 +228,31 @@
       ]
     },
     {
+      "slug": "checkpoint",
+      "title": "Checkpoint Memo Mechanic",
+      "status": "landed",
+      "operation": "preserve checkpoint gates, carry packets, approval and health records, and checkpoint-to-memory mappings as reviewable memory without becoming checkpoint executor, runtime store, role authority, proof layer, or route ledger",
+      "os_abyss_role": "keeps OS Abyss checkpoint carry memory reviewable while Agents-of-Abyss, aoa-agents, aoa-playbooks, aoa-routing, aoa-evals, abyss-stack, and source owners keep stronger doctrine, rights, scenario, routing, proof, runtime, and acceptance authority",
+      "docs": [
+        "CHECKPOINT_APPROVAL_HEALTH_MEMORY.md",
+        "CHECKPOINT_CARRY_CONTRACT.md",
+        "CHECKPOINT_MEMORY_BOUNDARY.md",
+        "CHECKPOINT_TO_MEMORY_MAPPING.md"
+      ],
+      "former_flat_paths": [
+        "examples/checkpoint_approval_record.example.json",
+        "examples/checkpoint_health_check.example.json",
+        "examples/checkpoint_improvement_thread.example.json",
+        "examples/decision.phase-alpha-self-agent-checkpoint.example.json",
+        "examples/audit_event.phase-alpha-self-agent-checkpoint.example.json",
+        "mechanics/recurrence-support/schemas/inquiry_checkpoint.schema.json",
+        "mechanics/recurrence-support/examples/inquiry_checkpoint.example.json",
+        "mechanics/recurrence-support/examples/inquiry_checkpoint.return.example.json",
+        "mechanics/writeback/schemas/checkpoint-to-memory-contract.schema.json",
+        "mechanics/writeback/examples/checkpoint_to_memory_contract.example.json"
+      ]
+    },
+    {
       "slug": "consumer-handoff",
       "title": "Consumer Handoff Memo Mechanic",
       "status": "landed",

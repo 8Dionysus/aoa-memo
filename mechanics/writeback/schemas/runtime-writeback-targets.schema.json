@@ -27,7 +27,7 @@
     },
     "source_of_truth": {
       "type": "string",
-      "const": "mechanics/writeback/examples/checkpoint_to_memory_contract.example.json"
+      "const": "mechanics/checkpoint/examples/checkpoint_to_memory_contract.example.json"
     },
     "runtime_boundary": {
       "type": "object",

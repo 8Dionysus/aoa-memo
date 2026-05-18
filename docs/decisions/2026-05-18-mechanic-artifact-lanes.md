@@ -11,11 +11,11 @@ schemas, examples, config seeds, generated companions, scripts, tests, and
 manifests stayed in root technical districts.
 
 That was useful as a transition, but it left a misleading topology: artifacts
-that only made sense inside Agon, Titan, writeback, consumer handoff,
-governance, retention, operational gates, recurrence support, lineage harvest,
-antifragility, shape guard, or adoption looked root-owned because their files
-were still under root `schemas/`, `examples/`, `generated/`, `scripts/`,
-`tests/`, `config/`, and `manifests/`.
+that only made sense inside Agon, Titan, checkpoint, writeback, consumer
+handoff, governance, retention, operational gates, recurrence support, lineage
+harvest, antifragility, shape guard, or adoption looked root-owned because
+their files were still under root `schemas/`, `examples/`, `generated/`,
+`scripts/`, `tests/`, `config/`, and `manifests/`.
 
 ## Decision
 

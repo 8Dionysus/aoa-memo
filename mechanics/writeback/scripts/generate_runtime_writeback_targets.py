@@ -7,7 +7,7 @@ from pathlib import Path
 
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
-CONTRACT_PATH = REPO_ROOT / "mechanics" / "writeback" / "examples" / "checkpoint_to_memory_contract.example.json"
+CONTRACT_PATH = REPO_ROOT / "mechanics" / "checkpoint" / "examples" / "checkpoint_to_memory_contract.example.json"
 OUTPUT_PATH = REPO_ROOT / "mechanics" / "writeback" / "generated" / "runtime_writeback_targets.min.json"
 
 
@@ -80,7 +80,7 @@ def require_runtime_boundary(payload: dict[str, object]) -> dict[str, object]:
 def build_runtime_writeback_targets_payload() -> dict[str, object]:
     payload = read_json(CONTRACT_PATH)
     if not isinstance(payload, dict):
-        raise SystemExit("[error] mechanics/writeback/examples/checkpoint_to_memory_contract.example.json must contain an object")
+        raise SystemExit("[error] mechanics/checkpoint/examples/checkpoint_to_memory_contract.example.json must contain an object")
 
     mapping_rules = payload.get("mapping_rules")
     if not isinstance(mapping_rules, list):
@@ -111,7 +111,7 @@ def build_runtime_writeback_targets_payload() -> dict[str, object]:
             "contract_id",
             context="checkpoint_to_memory_contract.example.json",
         ),
-        "source_of_truth": "mechanics/writeback/examples/checkpoint_to_memory_contract.example.json",
+        "source_of_truth": "mechanics/checkpoint/examples/checkpoint_to_memory_contract.example.json",
         "runtime_boundary": require_runtime_boundary(payload),
         "targets": targets,
     }

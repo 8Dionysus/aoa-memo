@@ -69,7 +69,7 @@
       ]
     },
     {
-      "example_path": "examples/checkpoint_approval_record.example.json",
+      "example_path": "mechanics/checkpoint/examples/checkpoint_approval_record.example.json",
       "recall_modes": [
         "working",
         "semantic",
@@ -77,7 +77,7 @@
       ]
     },
     {
-      "example_path": "examples/checkpoint_health_check.example.json",
+      "example_path": "mechanics/checkpoint/examples/checkpoint_health_check.example.json",
       "recall_modes": [
         "working",
         "episodic",
@@ -136,7 +136,7 @@
       ]
     },
     {
-      "example_path": "examples/decision.phase-alpha-self-agent-checkpoint.example.json",
+      "example_path": "mechanics/checkpoint/examples/decision.phase-alpha-self-agent-checkpoint.example.json",
       "recall_modes": [
         "working",
         "semantic",
@@ -144,7 +144,7 @@
       ]
     },
     {
-      "example_path": "examples/audit_event.phase-alpha-self-agent-checkpoint.example.json",
+      "example_path": "mechanics/checkpoint/examples/audit_event.phase-alpha-self-agent-checkpoint.example.json",
       "recall_modes": [
         "episodic",
         "source_route"

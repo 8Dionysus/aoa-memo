@@ -323,7 +323,7 @@
         "semantic",
         "source_route"
       ],
-      "source_path": "examples/checkpoint_approval_record.example.json",
+      "source_path": "mechanics/checkpoint/examples/checkpoint_approval_record.example.json",
       "inspect_key": "memo.decision.2026-03-21.self-agent-approval-record",
       "expand_key": "memo.decision.2026-03-21.self-agent-approval-record",
       "scope": [
@@ -355,7 +355,7 @@
         "episodic",
         "source_route"
       ],
-      "source_path": "examples/checkpoint_health_check.example.json",
+      "source_path": "mechanics/checkpoint/examples/checkpoint_health_check.example.json",
       "inspect_key": "memo.ep.2026-03-21.self-agent-health-check",
       "expand_key": "memo.ep.2026-03-21.self-agent-health-check",
       "scope": [
@@ -627,7 +627,7 @@
         "semantic",
         "source_route"
       ],
-      "source_path": "examples/decision.phase-alpha-self-agent-checkpoint.example.json",
+      "source_path": "mechanics/checkpoint/examples/decision.phase-alpha-self-agent-checkpoint.example.json",
       "inspect_key": "memo.decision.2026-04-02.alpha-self-agent-checkpoint",
       "expand_key": "memo.decision.2026-04-02.alpha-self-agent-checkpoint",
       "scope": [
@@ -659,7 +659,7 @@
         "episodic",
         "source_route"
       ],
-      "source_path": "examples/audit_event.phase-alpha-self-agent-checkpoint.example.json",
+      "source_path": "mechanics/checkpoint/examples/audit_event.phase-alpha-self-agent-checkpoint.example.json",
       "inspect_key": "memo.audit.2026-04-02.alpha-self-agent-checkpoint",
       "expand_key": "memo.audit.2026-04-02.alpha-self-agent-checkpoint",
       "scope": [

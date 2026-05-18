@@ -34,7 +34,7 @@ It does not own:
 
 For agent-facing topology, also read `DESIGN.AGENTS.md`.
 For root or docs-root placement, read `docs/ROOT_SURFACE_LAW.md`.
-For repeatable antifragility, adoption, governance, shape-guard,
+For repeatable antifragility, adoption, governance, shape-guard, checkpoint,
 consumer-handoff, operational-gate, recurrence-support, lineage-harvest,
 writeback, or retention movement, read `mechanics/README.md`.
 
@@ -46,7 +46,7 @@ writeback, or retention movement, read `mechanics/README.md`.
 | `memory-doctrine` | memory meaning, object posture, trust, lifecycle, temperature, or provenance changes | `docs/MEMORY_MODEL.md` |
 | `root-editing` | a root or docs-root surface is added, moved, deleted, or rewritten | `docs/ROOT_SURFACE_LAW.md` |
 | `docs-placement` | a docs-root surface is classified, retired from flat placement, or checked for old district drift | `docs/README.md` -> `docs/ROOT_SURFACE_LAW.md` -> `scripts/validate_docs_districts.py` |
-| `mechanic-change` | Antifragility, Agon, Titan, adoption, governance, shape-guard, consumer-handoff, operational-gate, recurrence-support, lineage-harvest, writeback, retention, owner split, legacy bridge, artifact placement, or mechanic-facing validation changes | `mechanics/README.md` -> target mechanic `AGENTS.md` -> `mechanics/ARTIFACT_TOPOLOGY.md` when artifacts move -> mechanics validators |
+| `mechanic-change` | Antifragility, Agon, Titan, adoption, governance, shape-guard, checkpoint, consumer-handoff, operational-gate, recurrence-support, lineage-harvest, writeback, retention, owner split, legacy bridge, artifact placement, or mechanic-facing validation changes | `mechanics/README.md` -> target mechanic `AGENTS.md` -> `mechanics/ARTIFACT_TOPOLOGY.md` when artifacts move -> mechanics validators |
 | `agent-surface-design` | agent-facing cards, lanes, or future mesh posture changes | `DESIGN.AGENTS.md` |
 | `agents-mesh` | source-backed route-card coverage or generated mesh parity changes | `config/agents_mesh.json` -> `generated/agents_mesh.min.json` -> mesh validators |
 | `generated-parity` | generated memory surfaces or their sources change | source surface -> builder -> generated output -> validator |

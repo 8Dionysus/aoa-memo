@@ -19,9 +19,10 @@ Former flat docs-root surfaces were:
 - `REVIEWED_CLOSEOUT_RECALL_LANDING.md`
 - `WITNESS_TRACE_CONTRACT.md`
 
-Technical contracts now live with the owning mechanic package. Shared recall,
-quest, and generated validation surfaces remain root-owned only when they serve
-multiple mechanics.
+Checkpoint technical contracts now live with `mechanics/checkpoint/`. Witness
+trace contracts remain with recurrence-support. Shared recall, quest, and
+generated validation surfaces remain root-owned only when they serve multiple
+mechanics.
 
 Use [legacy/INDEX](legacy/INDEX.md) only to audit former placement. Legacy
 paths are historical receipts, not active contracts.

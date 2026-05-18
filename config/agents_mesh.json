@@ -248,6 +248,36 @@
       ]
     },
     {
+      "path": "mechanics/checkpoint/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "checkpoint mechanic",
+        "mechanics/checkpoint/",
+        "OWNER_MAP.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/checkpoint/docs/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/checkpoint/docs/",
+        "active mechanic-owned doctrine",
+        "ARTIFACT_TOPOLOGY.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/checkpoint/legacy/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/checkpoint/legacy/",
+        "placement provenance",
+        "not the active route",
+        "legacy/INDEX.md"
+      ]
+    },
+    {
       "path": "mechanics/consumer-handoff/AGENTS.md",
       "min_lines": 35,
       "required_snippets": [

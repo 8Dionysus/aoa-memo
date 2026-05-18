@@ -42,8 +42,8 @@ This is a mapping contract, not a promotion shortcut.
 
 The first structural surface for this seam is schema-backed and code-free:
 
-- `mechanics/writeback/schemas/checkpoint-to-memory-contract.schema.json`
-- `mechanics/writeback/examples/checkpoint_to_memory_contract.example.json`
+- `mechanics/checkpoint/schemas/checkpoint-to-memory-contract.schema.json`
+- `mechanics/checkpoint/examples/checkpoint_to_memory_contract.example.json`
 
 The compact downstream read surface derived from that contract is:
 
