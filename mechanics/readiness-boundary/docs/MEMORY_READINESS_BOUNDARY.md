@@ -20,8 +20,8 @@ memory is not proof.
 Wave 1 adds one compact contract surface for the memo-side boundary between
 memory gate, retention, and writeback:
 
-- `schemas/memory_readiness_boundary_contract.schema.json`
-- `examples/memory_readiness_boundary_contract.example.json`
+- `mechanics/readiness-boundary/schemas/memory_readiness_boundary_contract.schema.json`
+- `mechanics/readiness-boundary/examples/memory_readiness_boundary_contract.example.json`
 
 The contract keeps three claims separate:
 

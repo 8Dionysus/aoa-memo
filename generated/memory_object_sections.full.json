@@ -1424,7 +1424,7 @@
           "heading": "Provenance and Evidence",
           "ordinal": 2,
           "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
-          "body": "Provenance thread: prov.memo.readiness-boundary.2026-04-13. Source refs: docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map, mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md, examples/claim.current-entrypoint.example.json. Episode refs: none. Related curated object ids: none. Strongest next sources: docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map, mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md, examples/claim.current-entrypoint.example.json."
+          "body": "Provenance thread: prov.memo.readiness-boundary.2026-04-13. Source refs: mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map, mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md, examples/claim.current-entrypoint.example.json. Episode refs: none. Related curated object ids: none. Strongest next sources: mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map, mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md, examples/claim.current-entrypoint.example.json."
         },
         {
           "section_id": "memo.audit.2026-04-13.memo-entrypoint-retention-check#trust-and-lifecycle",
@@ -1460,7 +1460,7 @@
           "heading": "Provenance and Evidence",
           "ordinal": 2,
           "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
-          "body": "Provenance thread: prov.memo.readiness-boundary.2026-04-13. Source refs: abyss-stack:service_degradation_receipt_v1#service:2026-04-07:hybrid-query-kag-unhealthy, repo:aoa-agents/docs/AGENT_RUNTIME_SEAM.md, docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map. Episode refs: none. Related curated object ids: none. Strongest next sources: abyss-stack:service_degradation_receipt_v1#service:2026-04-07:hybrid-query-kag-unhealthy, repo:aoa-agents/docs/AGENT_RUNTIME_SEAM.md, docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map."
+          "body": "Provenance thread: prov.memo.readiness-boundary.2026-04-13. Source refs: abyss-stack:service_degradation_receipt_v1#service:2026-04-07:hybrid-query-kag-unhealthy, repo:aoa-agents/docs/AGENT_RUNTIME_SEAM.md, mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map. Episode refs: none. Related curated object ids: none. Strongest next sources: abyss-stack:service_degradation_receipt_v1#service:2026-04-07:hybrid-query-kag-unhealthy, repo:aoa-agents/docs/AGENT_RUNTIME_SEAM.md, mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map."
         },
         {
           "section_id": "memo.audit.2026-04-07.hybrid-query-service-fallback#trust-and-lifecycle",
@@ -1474,7 +1474,7 @@
           "heading": "Bridges and Access",
           "ordinal": 4,
           "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
-          "body": "Access class: public. Scope classes: repo, project. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-memo-recall-integrity. KAG lift status: none."
+          "body": "Access class: public. Scope classes: repo, project. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map. ToS refs: none. Skill refs: none. Eval refs: eval:aoa-memo-recall-integrity. KAG lift status: none."
         }
       ]
     },

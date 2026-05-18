@@ -26,7 +26,7 @@
     "source_refs": [
       "abyss-stack:service_degradation_receipt_v1#service:2026-04-07:hybrid-query-kag-unhealthy",
       "repo:aoa-agents/docs/AGENT_RUNTIME_SEAM.md",
-      "docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map"
+      "mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map"
     ],
     "episode_refs": [],
     "provenance_thread_id": "prov.memo.readiness-boundary.2026-04-13"
@@ -69,6 +69,6 @@
       "eval:aoa-memo-recall-integrity"
     ],
     "kag_lift_status": "none",
-    "route_capsule_ref": "docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map"
+    "route_capsule_ref": "mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map"
   }
 }

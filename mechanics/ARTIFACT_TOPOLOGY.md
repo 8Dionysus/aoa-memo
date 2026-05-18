@@ -79,9 +79,9 @@ Examples:
   validators, builders, and tests live under `mechanics/agon/`.
 - Titan schemas, examples, and tests live under `mechanics/titan/`.
 - adoption, governance, retention, operational-gate, antifragility,
-  checkpoint, recurrence-support, lineage-harvest, shape-guard,
-  consumer-handoff, and writeback schemas/examples/tests live under their
-  package lanes when they serve that one mechanic.
+  checkpoint, readiness-boundary, recurrence-support, lineage-harvest,
+  shape-guard, consumer-handoff, and writeback schemas/examples/tests live
+  under their package lanes when they serve that one mechanic.
 - writeback generated companions such as `runtime_writeback_targets`,
   `runtime_writeback_intake`, `runtime_writeback_governance`,
   `growth_refinery_writeback_lanes`, and `phase_alpha_writeback_map` live under

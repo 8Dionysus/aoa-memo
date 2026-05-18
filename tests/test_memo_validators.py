@@ -123,7 +123,7 @@ class MemoValidatorTestCase(unittest.TestCase):
         payload = copy.deepcopy(payload)
         payload["provenance"]["source_refs"] = [
             "abyss-stack:service_degradation_receipt_v1#service:2026-04-07:hybrid-query-kag-unhealthy",
-            "docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map",
+            "mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map",
         ]
         original_load_json = validate_memo.load_json
 

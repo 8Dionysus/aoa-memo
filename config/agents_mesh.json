@@ -278,6 +278,36 @@
       ]
     },
     {
+      "path": "mechanics/readiness-boundary/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "readiness-boundary mechanic",
+        "mechanics/readiness-boundary/",
+        "OWNER_MAP.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/readiness-boundary/docs/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/readiness-boundary/docs/",
+        "active mechanic-owned doctrine",
+        "ARTIFACT_TOPOLOGY.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/readiness-boundary/legacy/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/readiness-boundary/legacy/",
+        "placement provenance",
+        "not the active route",
+        "legacy/INDEX.md"
+      ]
+    },
+    {
       "path": "mechanics/consumer-handoff/AGENTS.md",
       "min_lines": 35,
       "required_snippets": [

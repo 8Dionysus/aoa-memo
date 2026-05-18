@@ -22,7 +22,7 @@ promotion, ToS canon, stats certification, runtime truth, or source-owner
 consent.
 The first downstream eval adoption wave is now explicitly narrowed to recall precision, provenance fidelity, and staleness so `aoa-evals` can pilot memo proof without pretending to cover every guardrail focus at once.
 The current KAG-facing adoption slice now publishes `mechanics/consumer-handoff/generated/kag_export.min.json` as one source-owned memo export for `aoa-kag` readiness without widening the live federation spine or `aoa-routing` ABI.
-The memory readiness boundary map in `docs/MEMORY_READINESS_BOUNDARY.md` now
+The memory readiness boundary map in `mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md` now
 maps future durable-consequence, delta, retention, and recall pressure back to
 existing memo objects without planting a future protocol, creating a live
 ledger, changing schemas, or moving proof, graph lift, navigation, role
@@ -34,7 +34,7 @@ The current `v0.2.3` release line also already carries:
 - runtime writeback landing, intake, and governance surfaces through `mechanics/writeback/generated/runtime_writeback_targets.min.json`, `mechanics/writeback/generated/runtime_writeback_intake.min.json`, `mechanics/writeback/generated/runtime_writeback_governance.min.json`, and `mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md`
 - rollout, rollback-followthrough, component-refresh, and self-agency continuity support through `mechanics/antifragility/examples/recovery_pattern_memory.rollback_followthrough.example.json`, `mechanics/antifragility/examples/recovery_pattern_memory.component_refresh.example.json`, `mechanics/writeback/docs/SELF_AGENCY_CONTINUITY_WRITEBACK.md`, and `mechanics/writeback/examples/provenance_thread.self-agency-continuity.example.json`
 - Phase Alpha writeback routing and owner-local live receipt publication through `mechanics/writeback/generated/phase_alpha_writeback_map.min.json` and `mechanics/writeback/scripts/publish_live_receipts.py`
-- memory readiness boundary through `docs/MEMORY_READINESS_BOUNDARY.md`
+- memory readiness boundary through `mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md`
 
 The near-term risk is roadmap drift: checkpoint recall, runtime writeback,
 growth-refinery writeback, and continuity writeback are already shipped
@@ -46,7 +46,7 @@ in `DESIGN.md`, `DESIGN.AGENTS.md`, `docs/README.md`,
 `docs/ROOT_SURFACE_LAW.md`, and `docs/decisions/`. This precedes any thematic
 docs or mechanics migration so antifragility, Agon, Titan, adoption,
 governance, checkpoint, consumer handoff, operational gate, recurrence
-support, lineage harvest, retention, and writeback
+support, lineage harvest, readiness boundary, retention, and writeback
 surfaces are moved only with owner maps, link updates, legacy bridges, and
 validation.
 The maintained Spark fast-loop lane now lives under `.agents/spark/` rather
@@ -80,7 +80,8 @@ rather than a topic bucket.
 The mechanics topology follows the `Agents-of-Abyss` pattern:
 `mechanics/antifragility/`, `mechanics/agon/`, `mechanics/titan/`,
 `mechanics/adoption/`, `mechanics/governance/`, `mechanics/shape-guard/`,
-`mechanics/checkpoint/`, `mechanics/consumer-handoff/`,
+`mechanics/checkpoint/`, `mechanics/readiness-boundary/`,
+`mechanics/consumer-handoff/`,
 `mechanics/operational-gate/`, `mechanics/recurrence-support/`,
 `mechanics/lineage-harvest/`, `mechanics/writeback/`, and
 `mechanics/retention/` own the former flat or transitional owner families as
@@ -101,6 +102,14 @@ approval, health, improvement-thread, and phase-alpha checkpoint examples as
 one checkpoint memory operation. Recurrence-support consumes checkpoint
 artifacts for route return, and writeback consumes the checkpoint-to-memory
 contract for generated runtime writeback companions.
+
+The readiness-boundary migration now owns the memory readiness boundary doc,
+contract schema, example, and regression test as one admission-boundary
+operation. It gates durable-consequence, delta, retention, recall,
+contradiction, bridge-candidate, and service-trace pressure into existing
+memo objects and stronger owner routes without becoming proof, runtime
+retention, KAG substrate, route dispatch, role authority, live ledger, or a
+new object-family author.
 
 The recurrence-support migration now owns recurrence support, witness trace,
 and reviewed closeout recall landing surfaces as one route-return support
