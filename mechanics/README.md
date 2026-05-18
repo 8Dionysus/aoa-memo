@@ -22,6 +22,10 @@ Generated indexes reflect source maps. They do not author mechanic truth.
 `generated/mechanic_artifacts.min.json` is a generated inventory of
 package-local artifact homes, not a replacement for package cards or
 mechanic-owned source docs.
+`generated/memo_mechanic_readiness.min.json` is a generated readiness matrix
+for current packages. It is a machine-checkable mirror of package cards,
+owner maps, parts, validation routes, stop-lines, and local artifact
+ownership, not a new source of mechanic truth.
 
 ## Operation-First Law
 
@@ -114,6 +118,11 @@ artifact homes change.
 Use `python scripts/validate_memo_mechanic_parts.py` when `PARTS.md` files
 change so functioning parts keep a consistent Active Parts table and Interface
 section.
+
+Use `python scripts/build_memo_mechanic_readiness.py --check` and
+`python scripts/validate_memo_mechanic_readiness.py` when package cards,
+owner maps, landing logs, validation routes, or package-local artifacts change
+so OS Abyss can inspect whether every mechanic remains ready.
 
 ## Validation
 

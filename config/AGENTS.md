@@ -47,6 +47,11 @@ validator listed in the same root technical-district contract. Root
 with owner surface, source refs, outputs, validator refs, and builders when the
 family is rebuilt by a script or projection.
 
+`generated/memo_mechanic_readiness.min.json` is also a root generated mechanic
+companion. It is allowed only because it summarizes every mechanic package for
+OS Abyss readiness; single-package readiness details still belong in the
+package card, owner map, parts map, and local artifacts.
+
 Root `scripts/` files must belong to exactly one `script_families` contract
 with a role, owner surface, script list, and coverage refs. This keeps release
 validators, builders, helpers, and orchestration scripts explicit rather than
@@ -71,6 +76,8 @@ python scripts/build_mechanic_artifact_inventory.py --check
 python scripts/validate_mechanic_artifact_inventory.py
 python scripts/validate_memo_mechanics.py
 python scripts/validate_memo_mechanic_parts.py
+python scripts/build_memo_mechanic_readiness.py --check
+python scripts/validate_memo_mechanic_readiness.py
 python scripts/build_memo_mechanics_index.py --check
 python scripts/validate_memo_mechanics_index.py
 python scripts/validate_agents_mesh.py

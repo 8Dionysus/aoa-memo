@@ -172,5 +172,8 @@ Until then, this README is the map and the flat files remain active surfaces.
   adoption, governance, shape-guard, checkpoint, readiness-boundary,
   consumer-handoff, operational-gate, recurrence-support, lineage-harvest,
   writeback, or retention mechanics move.
+- Prefer `generated/memo_mechanic_readiness.min.json` and
+  `scripts/validate_memo_mechanic_readiness.py` when you need to inspect
+  whether all mechanic packages are ready together for OS Abyss use.
 - Generated surfaces summarize memory doctrine and object examples. They do not
   replace authored docs, schemas, examples, or validators.

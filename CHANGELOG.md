@@ -101,6 +101,10 @@ Tracking starts with the community-docs baseline for this repository.
 - Add `scripts/validate_memo_mechanic_parts.py` to keep mechanic `PARTS.md`
   files operation-shaped, with Active Parts tables, source links, interface
   sections, release gate coverage, and regression tests.
+- Add `generated/memo_mechanic_readiness.min.json` with builder, validator,
+  release gate coverage, root technical family contracts, and regression tests
+  so every memo mechanic package has a machine-checkable OS Abyss readiness
+  surface.
 - Extend `config/root_technical_districts.json` with root generated-family
   contracts so every root `generated/` output names its owner surface, source
   refs, validators, and builders when generator-backed or projected.

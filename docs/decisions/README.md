@@ -60,6 +60,7 @@ expectation.
 | [2026-05-18-root-test-family-contracts](2026-05-18-root-test-family-contracts.md) | make root tests and public fixtures family-owned and release-checkable |
 | [2026-05-18-mechanic-artifact-inventory](2026-05-18-mechanic-artifact-inventory.md) | add a generated inventory for package-local mechanic artifacts |
 | [2026-05-18-mechanic-parts-shape-validator](2026-05-18-mechanic-parts-shape-validator.md) | make functioning mechanic parts shape release-checkable |
+| [2026-05-18-mechanic-readiness-matrix](2026-05-18-mechanic-readiness-matrix.md) | add a generated readiness matrix for all memo mechanic packages |
 
 ## Review Rule
 

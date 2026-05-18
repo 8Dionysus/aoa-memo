@@ -23,6 +23,7 @@ python scripts/validate_semantic_agents.py
 python scripts/validate_mechanic_artifact_topology.py
 python scripts/validate_mechanic_artifact_inventory.py
 python scripts/validate_memo_mechanic_parts.py
+python scripts/validate_memo_mechanic_readiness.py
 python scripts/validate_agents_mesh.py
 python scripts/validate_agents_mesh_index.py
 python scripts/validate_docs_districts.py
