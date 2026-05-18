@@ -1,0 +1,87 @@
+# AGENTS.md
+
+## Applies To
+
+This card applies to `mechanics/operational-gate/`.
+
+## Role
+
+The operational-gate mechanic owns memo-side memory admission for operational
+incidents, office/service events, service revisions, release-train memory, and
+post-release boundary surfaces.
+
+It decides how `aoa-memo` preserves operational memory as public, reviewable,
+source-linked recall. It does not decide releases, execute runtime changes,
+prove incidents, grant service rights, route live traffic, or summarize current
+operational health.
+
+## Read Before Editing
+
+Read root `AGENTS.md`, `mechanics/AGENTS.md`, this file, `README.md`,
+`DIRECTION.md`, `PARTS.md`, `OWNER_MAP.md`, and `PROVENANCE.md`.
+
+For source docs, continue through `docs/AGENTS.md` and the target `docs/*.md`
+surface.
+
+For schemas, examples, generated outputs, scripts, tests, quests, or manifests
+that reference operational-gate docs, read the nearest local `AGENTS.md`
+before editing that district.
+
+## Boundaries
+
+- Keep operational-gate docs memory-only, evidence-linked, and
+  operation-first.
+- Do not claim release approval, current service health, incident root cause,
+  runtime remediation, eval verdicts, service role rights, route dispatch, ToS
+  runtime writes, or owner acceptance.
+- Keep old flat docs-root paths out of active references except in provenance,
+  legacy, decisions, and former-path source maps.
+- Do not move public schemas or examples into this package unless the artifact
+  topology rule proves they are single-mechanic-owned.
+- Keep retention outcomes with the retention mechanic and writeback return
+  lanes with the writeback mechanic unless this package is only deciding the
+  admission gate.
+
+## Post-Change Review
+
+After operational-gate changes, check whether these surfaces moved:
+
+- `DIRECTION.md`
+- `PARTS.md`
+- `OWNER_MAP.md`
+- `PROVENANCE.md`
+- `LANDING_LOG.md`
+- `ROADMAP.md`
+- `legacy/INDEX.md`
+- root technical contract refs in `schemas/`, `examples/`, `generated/`,
+  `scripts/`, or `tests/`
+- generated mechanics or AGENTS mesh companions
+- docs-root maps, root route cards, decision records, changelog, or roadmap
+
+Update only surfaces whose future-facing meaning changed.
+
+## Validation
+
+```bash
+python scripts/validate_memo_mechanics.py
+python scripts/build_memo_mechanics_index.py --check
+python scripts/validate_memo_mechanics_index.py
+python scripts/validate_agents_mesh.py
+python scripts/build_agents_mesh_index.py --check
+python scripts/validate_agents_mesh_index.py
+python scripts/validate_memo.py
+python -m pytest -q tests/test_operational_gate_mechanic.py tests/test_memo_mechanics.py tests/test_agents_mesh.py tests/test_experience_wave5_seed_contracts.py
+```
+
+Before landing, also run:
+
+```bash
+python scripts/release_check.py
+```
+
+## Closeout
+
+Report the operational-gate docs changed, whether root technical contracts
+stayed root-owned, whether old flat docs-root references remain only as
+allowed provenance, and which stronger owner boundaries stayed outside
+`aoa-memo`.

@@ -251,6 +251,25 @@
       ]
     },
     {
+      "slug": "operational-gate",
+      "title": "Operational Gate Memo Mechanic",
+      "status": "landed",
+      "operation": "gate operational incidents, office/service revision entries, and post-release memory boundaries into durable recall only when evidence, owner route, review posture, retention posture, and future effect justify memory",
+      "os_abyss_role": "keeps OS Abyss operational memory reviewable while release owners, runtime, evals, agents, playbooks, routing, stats, and source owners keep stronger authority",
+      "docs": [
+        "DEPLOYMENT_INCIDENT_MEMORY_GATE.md",
+        "OFFICE_INCIDENT_MEMORY_GATE.md",
+        "POST_RELEASE_MEMORY_BOUNDARIES.md",
+        "SERVICE_REVISION_LEDGER.md"
+      ],
+      "former_flat_paths": [
+        "docs/DEPLOYMENT_INCIDENT_MEMORY_GATE.md",
+        "docs/OFFICE_INCIDENT_MEMORY_GATE.md",
+        "docs/POST_RELEASE_MEMORY_BOUNDARIES.md",
+        "docs/SERVICE_REVISION_LEDGER.md"
+      ]
+    },
+    {
       "slug": "writeback",
       "title": "Writeback Mechanic",
       "status": "landed",
