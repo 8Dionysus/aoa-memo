@@ -99,3 +99,25 @@ def test_root_schema_families_name_owner_sources_and_validators() -> None:
         assert family["schemas"]
         assert family["source_refs"]
         assert family["validators"]
+
+
+def test_root_examples_have_family_contracts() -> None:
+    payload = json.loads((REPO_ROOT / "config" / "root_technical_districts.json").read_text())
+    allowed = set(payload["districts"]["examples"]["allowed_files"])
+    covered = {
+        example
+        for family in payload["example_families"]
+        for example in family["examples"]
+    }
+
+    assert covered == allowed
+
+
+def test_root_example_families_name_owner_sources_and_validators() -> None:
+    payload = json.loads((REPO_ROOT / "config" / "root_technical_districts.json").read_text())
+
+    for family in payload["example_families"]:
+        assert family["owner_surface"]
+        assert family["examples"]
+        assert family["source_refs"]
+        assert family["validators"]

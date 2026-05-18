@@ -88,6 +88,9 @@ Tracking starts with the community-docs baseline for this repository.
 - Extend the root technical contract with schema-family ownership so every
   root `schemas/` file names its public contract role, owner surface, source
   refs, and validators.
+- Extend the root technical contract with example-family ownership so every
+  root `examples/` file names its public example role, owner surface, source
+  refs, and validators.
 - Add a builder-backed package-local mechanic artifact inventory at
   `generated/mechanic_artifacts.min.json`, with builder, validator, release
   gate coverage, and tests so mechanic-local schemas, examples, config,

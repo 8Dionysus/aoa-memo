@@ -8,7 +8,7 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 ROOT_DISTRICTS_CONFIG = REPO_ROOT / "config" / "root_technical_districts.json"
-ROOT_DISTRICTS_SCHEMA_VERSION = "aoa_memo_root_technical_districts_v5"
+ROOT_DISTRICTS_SCHEMA_VERSION = "aoa_memo_root_technical_districts_v6"
 ROOT_TECHNICAL_DISTRICTS = (
     "config",
     "examples",
@@ -45,6 +45,15 @@ SCHEMA_FAMILY_ROLES = {
     "memory-object-contract",
     "recall-posture-contract",
     "support-object-contract",
+}
+EXAMPLE_FAMILY_ROLES = {
+    "base-memory-object-example",
+    "continuity-relay-example",
+    "lifecycle-audit-example",
+    "phase-alpha-thread-example",
+    "recall-contract-example",
+    "support-contract-example",
+    "surface-manifest-example",
 }
 
 FORBIDDEN_ROOT_PREFIXES = {
@@ -545,6 +554,90 @@ def validate_schema_family_contracts(
     return issues
 
 
+def validate_example_family_contracts(
+    payload: dict[str, object],
+    districts: dict[object, object],
+) -> list[str]:
+    issues: list[str] = []
+    examples_config = districts.get("examples")
+    allowed_example_files: set[str] = set()
+    if isinstance(examples_config, dict):
+        allowed_files = examples_config.get("allowed_files")
+        if isinstance(allowed_files, list) and all(isinstance(item, str) for item in allowed_files):
+            allowed_example_files = set(allowed_files)
+
+    families = payload.get("example_families")
+    if not isinstance(families, list):
+        return ["config/root_technical_districts.json: example_families must be a list"]
+
+    seen_family_ids: set[str] = set()
+    example_to_family: dict[str, str] = {}
+
+    for index, family in enumerate(families):
+        label = f"example_families[{index}]"
+        if not isinstance(family, dict):
+            issues.append(f"config/root_technical_districts.json: {label} must be an object")
+            continue
+
+        family_id = family.get("id")
+        if not isinstance(family_id, str) or not family_id:
+            issues.append(f"config/root_technical_districts.json: {label}.id must be a non-empty string")
+            family_id = f"<invalid-example-{index}>"
+        elif family_id in seen_family_ids:
+            issues.append(f"config/root_technical_districts.json: duplicate example family id {family_id}")
+        seen_family_ids.add(family_id)
+
+        role = family.get("role")
+        if role not in EXAMPLE_FAMILY_ROLES:
+            issues.append(
+                f"config/root_technical_districts.json: {family_id}.role must be one of "
+                f"{', '.join(sorted(EXAMPLE_FAMILY_ROLES))}"
+            )
+
+        issues.extend(validate_local_ref(family.get("owner_surface"), f"{family_id}.owner_surface"))
+
+        examples = as_string_list(family.get("examples"), f"{family_id}.examples", issues)
+        source_refs = as_string_list(family.get("source_refs"), f"{family_id}.source_refs", issues)
+        validators = as_string_list(family.get("validators"), f"{family_id}.validators", issues)
+
+        if examples == []:
+            issues.append(f"config/root_technical_districts.json: {family_id}.examples must not be empty")
+        if source_refs == []:
+            issues.append(f"config/root_technical_districts.json: {family_id}.source_refs must not be empty")
+        if validators == []:
+            issues.append(f"config/root_technical_districts.json: {family_id}.validators must not be empty")
+
+        for field, refs in (("source_refs", source_refs), ("validators", validators)):
+            if refs is None:
+                continue
+            for ref in refs:
+                issues.extend(validate_local_ref(ref, f"{family_id}.{field}"))
+
+        if examples is None:
+            continue
+        for example in examples:
+            example_path = Path(example)
+            if example_path.parts[:1] != ("examples",):
+                issues.append(f"config/root_technical_districts.json: {family_id}.examples contains non-root example path {example}")
+            if example_path.name == "AGENTS.md":
+                issues.append(f"config/root_technical_districts.json: {family_id}.examples must not list route cards")
+            issues.extend(validate_local_ref(example, f"{family_id}.examples"))
+            if example in example_to_family:
+                issues.append(
+                    f"config/root_technical_districts.json: root example {example} appears in both "
+                    f"{example_to_family[example]} and {family_id}"
+                )
+            example_to_family[example] = family_id
+
+    covered_examples = set(example_to_family)
+    for missing in sorted(allowed_example_files - covered_examples):
+        issues.append(f"config/root_technical_districts.json: root example {missing} lacks an example_families contract")
+    for extra in sorted(covered_examples - allowed_example_files):
+        issues.append(f"config/root_technical_districts.json: example_families covers non-allowed root example {extra}")
+
+    return issues
+
+
 def validate_root_district_allowlist() -> list[str]:
     issues: list[str] = []
     payload, config_errors = load_root_districts_config()
@@ -606,6 +699,7 @@ def validate_root_district_allowlist() -> list[str]:
     issues.extend(validate_script_family_contracts(payload, districts))
     issues.extend(validate_test_family_contracts(payload, districts))
     issues.extend(validate_schema_family_contracts(payload, districts))
+    issues.extend(validate_example_family_contracts(payload, districts))
 
     return issues
 
