@@ -25,6 +25,10 @@ Tracking starts with the community-docs baseline for this repository.
   memo mechanic packages with package cards, owner maps, provenance bridges,
   legacy indexes, source-backed generated mechanics index, validators, tests,
   and decision record.
+- Add mechanic docs/legacy subroute cards plus
+  `mechanics/ARTIFACT_TOPOLOGY.md` so active package docs, legacy provenance,
+  and mechanic-adjacent root technical artifacts have separate machine-checked
+  routes.
 
 ### Changed
 
@@ -38,6 +42,8 @@ Tracking starts with the community-docs baseline for this repository.
 - Move flat adoption, writeback, and retention docs-root surfaces into
   `mechanics/<slug>/docs/` and update source refs across docs, examples,
   generated companions, quests, scripts, and tests.
+- Extend the AGENTS mesh and memo mechanics validator to include mechanic
+  docs/legacy subroutes.
 
 ## [0.2.3] - 2026-04-23
 

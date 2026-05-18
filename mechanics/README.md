@@ -15,6 +15,7 @@ playbook, skill, technique, stats, or source truth must route next.
 |---|---|---|
 | [AGENTS](AGENTS.md) | mechanics-tree route law and validation lane | package doctrine |
 | [README](README.md) | this atlas and mechanic card contract | duplicate package map |
+| [ARTIFACT_TOPOLOGY](ARTIFACT_TOPOLOGY.md) | placement law for root technical districts versus mechanic-local artifact homes | migration ledger or alias map |
 
 Generated indexes reflect source maps. They do not author mechanic truth.
 
@@ -65,8 +66,8 @@ surface that matches the work:
 | `PROVENANCE.md` | active-first bridge to legacy placement and source receipts |
 | `LANDING_LOG.md` | checked landings, validation anchors, and stop-lines |
 | `ROADMAP.md` | next contour and condition-based future work |
-| `docs/` | active mechanic-owned doctrine and support notes |
-| `legacy/` | preserved placement history that should not burden active routes |
+| `docs/AGENTS.md` and `docs/` | active mechanic-owned doctrine and support notes |
+| `legacy/AGENTS.md` and `legacy/` | preserved placement history that should not burden active routes |
 
 ## Artifact Placement
 
@@ -74,6 +75,10 @@ Mechanics are not documentation-only packages. When a schema, example, config,
 generated companion, script, test, or quest rule belongs to one mechanic, it may
 remain in the repo-wide technical district only when it is still shared by
 multiple memory surfaces. Package-local source docs live under the mechanic.
+
+Use [ARTIFACT_TOPOLOGY](ARTIFACT_TOPOLOGY.md) before moving schemas, examples,
+config, generated companions, scripts, tests, manifests, or quest rules between
+root technical districts and mechanic-local homes.
 
 ## Validation
 

@@ -18,6 +18,8 @@ PACKAGE_REQUIRED_FILES = (
     "PROVENANCE.md",
     "LANDING_LOG.md",
     "ROADMAP.md",
+    "docs/AGENTS.md",
+    "legacy/AGENTS.md",
     "legacy/README.md",
     "legacy/INDEX.md",
 )

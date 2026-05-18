@@ -22,8 +22,9 @@ Read:
 2. `DESIGN.md`
 3. `DESIGN.AGENTS.md`
 4. `mechanics/README.md`
-5. the nearest `mechanics/<slug>/AGENTS.md`
-6. the package `README.md`, `DIRECTION.md`, `PARTS.md`, `OWNER_MAP.md`, and
+5. `mechanics/ARTIFACT_TOPOLOGY.md` when root technical artifacts may move
+6. the nearest `mechanics/<slug>/AGENTS.md`
+7. the package `README.md`, `DIRECTION.md`, `PARTS.md`, `OWNER_MAP.md`, and
    `PROVENANCE.md`
 
 Use `docs/README.md` when a public docs route points into a mechanic, but do
@@ -41,7 +42,9 @@ Every memo mechanic package must contain:
 - `PROVENANCE.md`
 - `LANDING_LOG.md`
 - `ROADMAP.md`
+- `docs/AGENTS.md`
 - `docs/`
+- `legacy/AGENTS.md`
 - `legacy/README.md`
 - `legacy/INDEX.md`
 
@@ -61,6 +64,8 @@ The package `README.md` is the mechanic card. It must include:
 
 - Active mechanic docs live under `mechanics/<slug>/docs/`.
 - `legacy/` preserves old placement and route history; it is not active law.
+- `mechanics/ARTIFACT_TOPOLOGY.md` governs when a root technical artifact can
+  move into a mechanic-local artifact home.
 - Generated companions summarize source maps and must be rebuilt from source.
 - Keep old flat `docs/*.md` paths out of active references once a mechanic owns
   the surface.

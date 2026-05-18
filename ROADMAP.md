@@ -65,6 +65,12 @@ parts map, owner map, provenance bridge, landing log, roadmap, and legacy
 index. The source-backed `config/memo_mechanics.json` and
 `generated/memo_mechanics.min.json` keep the shape machine-checkable.
 
+The current mechanics hardening layer adds `docs/AGENTS.md` and
+`legacy/AGENTS.md` subroutes for each memo mechanic plus
+`mechanics/ARTIFACT_TOPOLOGY.md`. This keeps active docs, legacy provenance,
+and root technical artifacts separate before any future schema, example,
+generated, script, test, manifest, or quest relocation.
+
 ## Current contract-hardening waves
 
 Within the current contract-hardening stage, the cleanest wave order is:

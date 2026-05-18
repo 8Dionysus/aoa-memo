@@ -154,6 +154,8 @@ landing receipt, it needs a bounded home rather than a root-level spotlight.
 - a bridge can find its downstream owner
 - a repeatable adoption, writeback, or retention move can find its mechanic,
   owner map, and legacy bridge
+- a mechanic-adjacent artifact can tell whether it belongs in a root technical
+  district or a package-local home
 - a future contributor can find why the topology exists
 
 ## Bad Design Smells Like
