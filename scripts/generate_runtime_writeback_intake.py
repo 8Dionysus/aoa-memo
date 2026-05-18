@@ -69,8 +69,8 @@ def build_runtime_writeback_intake_payload() -> dict[str, object]:
         ]
         owner_review_refs.extend(
             [
-                "docs/RUNTIME_WRITEBACK_SEAM.md",
-                "docs/QUEST_EVIDENCE_WRITEBACK.md",
+                "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
+                "mechanics/writeback/docs/QUEST_EVIDENCE_WRITEBACK.md",
             ]
         )
         deduped_owner_review_refs: list[str] = []
@@ -108,8 +108,8 @@ def build_runtime_writeback_intake_payload() -> dict[str, object]:
         "source_of_truth": {
             "runtime_writeback_targets": "generated/runtime_writeback_targets.min.json",
             "checkpoint_to_memory_contract": "examples/checkpoint_to_memory_contract.example.json",
-            "runtime_writeback_seam": "docs/RUNTIME_WRITEBACK_SEAM.md",
-            "quest_evidence_writeback": "docs/QUEST_EVIDENCE_WRITEBACK.md",
+            "runtime_writeback_seam": "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
+            "quest_evidence_writeback": "mechanics/writeback/docs/QUEST_EVIDENCE_WRITEBACK.md",
         },
         "targets": intake_targets,
     }

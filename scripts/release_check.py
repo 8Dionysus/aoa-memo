@@ -33,6 +33,9 @@ COMMANDS = [
     ("check AGENTS mesh index", [sys.executable, "scripts/build_agents_mesh_index.py", "--check"]),
     ("validate AGENTS mesh index", [sys.executable, "scripts/validate_agents_mesh_index.py"]),
     ("validate docs districts", [sys.executable, "scripts/validate_docs_districts.py"]),
+    ("validate memo mechanics", [sys.executable, "scripts/validate_memo_mechanics.py"]),
+    ("check memo mechanics index", [sys.executable, "scripts/build_memo_mechanics_index.py", "--check"]),
+    ("validate memo mechanics index", [sys.executable, "scripts/validate_memo_mechanics_index.py"]),
     ("run tests", [sys.executable, "-m", "pytest", "-q"]),
 ]
 

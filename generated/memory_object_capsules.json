@@ -143,7 +143,7 @@
       "trust_posture_short": "cool temperature; operational_observation authority; confidence 0.83; freshness 0.88",
       "use_when_short": "Use as the current pattern surface for procedural, semantic recall.",
       "do_not_use_short": "Do not treat this pattern as proof or stronger than its cited sources.",
-      "strongest_next_source": "docs/RUNTIME_WRITEBACK_SEAM.md#distillation-posture",
+      "strongest_next_source": "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md#distillation-posture",
       "source_path": "examples/pattern.example.json"
     },
     {

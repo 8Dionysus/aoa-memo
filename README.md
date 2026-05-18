@@ -20,10 +20,10 @@ Use the shortest route by need:
 - Titan Memory Loom, bearer-recall posture, and remembrance source-ref policy: [docs/titan/TITAN_MEMORY_LOOM_POSTURE.md](docs/titan/TITAN_MEMORY_LOOM_POSTURE.md), [docs/titan/TITAN_PERSONALITY_MEMORY_POLICY.md](docs/titan/TITAN_PERSONALITY_MEMORY_POLICY.md), [docs/titan/TITAN_RECALL_CANDIDATE_POLICY.md](docs/titan/TITAN_RECALL_CANDIDATE_POLICY.md), [docs/titan/TITAN_REMEMBRANCE_SOURCE_REF_POLICY.md](docs/titan/TITAN_REMEMBRANCE_SOURCE_REF_POLICY.md), `schemas/titan_remembrance_record.schema.json`, and `examples/titan_remembrance_record.example.json`
 - antifragility failure-lesson seam: [docs/FAILURE_LESSON_MEMORY.md](docs/FAILURE_LESSON_MEMORY.md), [docs/FAILURE_LESSON_RECALL.md](docs/FAILURE_LESSON_RECALL.md), [docs/DRIFT_REVIEW_LESSON_MEMORY.md](docs/DRIFT_REVIEW_LESSON_MEMORY.md), `schemas/failure_lesson_memory_v1.json`, `examples/failure_lesson_memory.example.json`, `examples/failure_lesson_memory.lineage.example.json`, `examples/failure_lesson_memory.rollout.example.json`, and `examples/failure_lesson_memory.drift_review.example.json`
 - antifragility recovery-pattern seam: [docs/RECOVERY_PATTERN_MEMORY.md](docs/RECOVERY_PATTERN_MEMORY.md), [docs/RECOVERY_PATTERN_RECALL.md](docs/RECOVERY_PATTERN_RECALL.md), [docs/ROLLBACK_FOLLOWTHROUGH_PATTERN.md](docs/ROLLBACK_FOLLOWTHROUGH_PATTERN.md), `schemas/recovery_pattern_memory_v1.json`, `examples/recovery_pattern_memory.example.json`, `examples/recovery_pattern_memory.lineage.example.json`, `examples/recovery_pattern_memory.rollout.example.json`, `examples/recovery_pattern_memory.rollback_followthrough.example.json`, `examples/recovery_pattern_memory.component_refresh.example.json`, and `examples/pattern.antifragility-stress-recovery-window.example.json`
-- writeback, recurrence, and neighboring-layer seams: [docs/WITNESS_TRACE_CONTRACT](docs/WITNESS_TRACE_CONTRACT.md), [docs/WRITEBACK_TEMPERATURE_POLICY](docs/WRITEBACK_TEMPERATURE_POLICY.md), [docs/QUEST_CHRONICLE_WRITEBACK](docs/QUEST_CHRONICLE_WRITEBACK.md), `schemas/quest_chronicle.schema.json`, `examples/quest_chronicle.example.json`, [docs/RUNTIME_WRITEBACK_SEAM](docs/RUNTIME_WRITEBACK_SEAM.md), [docs/GROWTH_REFINERY_WRITEBACK](docs/GROWTH_REFINERY_WRITEBACK.md), [docs/SELF_AGENCY_CONTINUITY_WRITEBACK](docs/SELF_AGENCY_CONTINUITY_WRITEBACK.md), `examples/provenance_thread.self-agency-continuity.example.json`, [docs/RECURRENCE_MEMORY_SUPPORT_SURFACES](docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md), [docs/AGENT_MEMORY_POSTURE_SEAM](docs/AGENT_MEMORY_POSTURE_SEAM.md), and [docs/PLAYBOOK_MEMORY_SCOPES](docs/PLAYBOOK_MEMORY_SCOPES.md)
+- writeback, recurrence, and neighboring-layer seams: [docs/WITNESS_TRACE_CONTRACT](docs/WITNESS_TRACE_CONTRACT.md), [mechanics/writeback/WRITEBACK_TEMPERATURE_POLICY](mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md), [mechanics/writeback/QUEST_CHRONICLE_WRITEBACK](mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md), `schemas/quest_chronicle.schema.json`, `examples/quest_chronicle.example.json`, [mechanics/writeback/RUNTIME_WRITEBACK_SEAM](mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md), [mechanics/writeback/GROWTH_REFINERY_WRITEBACK](mechanics/writeback/docs/GROWTH_REFINERY_WRITEBACK.md), [mechanics/writeback/SELF_AGENCY_CONTINUITY_WRITEBACK](mechanics/writeback/docs/SELF_AGENCY_CONTINUITY_WRITEBACK.md), `examples/provenance_thread.self-agency-continuity.example.json`, [docs/RECURRENCE_MEMORY_SUPPORT_SURFACES](docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md), [docs/AGENT_MEMORY_POSTURE_SEAM](docs/AGENT_MEMORY_POSTURE_SEAM.md), and [docs/PLAYBOOK_MEMORY_SCOPES](docs/PLAYBOOK_MEMORY_SCOPES.md)
 - memory readiness boundary for future durable-consequence, delta, retention, and recall pressure: [docs/MEMORY_READINESS_BOUNDARY](docs/MEMORY_READINESS_BOUNDARY.md)
 - Wave 1 memory gate / retention / writeback boundary contract: [docs/MEMORY_READINESS_BOUNDARY](docs/MEMORY_READINESS_BOUNDARY.md), `schemas/memory_readiness_boundary_contract.schema.json`, and `examples/memory_readiness_boundary_contract.example.json`
-- bridge, export, and guardrail surfaces: [docs/KAG_TOS_BRIDGE_CONTRACT](docs/KAG_TOS_BRIDGE_CONTRACT.md), [docs/KAG_SOURCE_EXPORT](docs/KAG_SOURCE_EXPORT.md), [docs/MEMORY_EVAL_GUARDRAILS](docs/MEMORY_EVAL_GUARDRAILS.md), [docs/OPERATIONAL_BOUNDARY](docs/OPERATIONAL_BOUNDARY.md), and [docs/ROUTING_MEMORY_ADOPTION](docs/ROUTING_MEMORY_ADOPTION.md)
+- bridge, export, and guardrail surfaces: [docs/KAG_TOS_BRIDGE_CONTRACT](docs/KAG_TOS_BRIDGE_CONTRACT.md), [docs/KAG_SOURCE_EXPORT](docs/KAG_SOURCE_EXPORT.md), [docs/MEMORY_EVAL_GUARDRAILS](docs/MEMORY_EVAL_GUARDRAILS.md), [docs/OPERATIONAL_BOUNDARY](docs/OPERATIONAL_BOUNDARY.md), and [mechanics/adoption/ROUTING_MEMORY_ADOPTION](mechanics/adoption/docs/ROUTING_MEMORY_ADOPTION.md)
 - current direction: [ROADMAP](ROADMAP.md)
 
 ## Public recall entrypoints
@@ -51,7 +51,7 @@ If you are editing inside `schemas/`, `examples/`, `generated/`, or `scripts/`, 
 - failure-lesson doctrine and contract surfaces: [docs/FAILURE_LESSON_MEMORY](docs/FAILURE_LESSON_MEMORY.md), [docs/FAILURE_LESSON_RECALL](docs/FAILURE_LESSON_RECALL.md), [docs/DRIFT_REVIEW_LESSON_MEMORY](docs/DRIFT_REVIEW_LESSON_MEMORY.md), `schemas/failure_lesson_memory_v1.json`, `examples/failure_lesson_memory.example.json`, `examples/failure_lesson_memory.lineage.example.json`, `examples/failure_lesson_memory.rollout.example.json`, and `examples/failure_lesson_memory.drift_review.example.json`
 - recovery-pattern doctrine, adjunct contract, and native pattern surfaces: [docs/RECOVERY_PATTERN_MEMORY](docs/RECOVERY_PATTERN_MEMORY.md), [docs/RECOVERY_PATTERN_RECALL](docs/RECOVERY_PATTERN_RECALL.md), [docs/ROLLBACK_FOLLOWTHROUGH_PATTERN](docs/ROLLBACK_FOLLOWTHROUGH_PATTERN.md), `schemas/recovery_pattern_memory_v1.json`, `examples/recovery_pattern_memory.example.json`, `examples/recovery_pattern_memory.lineage.example.json`, `examples/recovery_pattern_memory.rollout.example.json`, `examples/recovery_pattern_memory.rollback_followthrough.example.json`, `examples/recovery_pattern_memory.component_refresh.example.json`, and `examples/pattern.antifragility-stress-recovery-window.example.json`
 - via negativa pruning checklist: [docs/VIA_NEGATIVA_CHECKLIST](docs/VIA_NEGATIVA_CHECKLIST.md)
-- writeback, intake, runtime support, and landing governance surfaces: `generated/runtime_writeback_targets.min.json`, `generated/runtime_writeback_intake.min.json`, `generated/runtime_writeback_governance.min.json`, [docs/RUNTIME_WRITEBACK_SEAM](docs/RUNTIME_WRITEBACK_SEAM.md), [docs/GROWTH_REFINERY_WRITEBACK](docs/GROWTH_REFINERY_WRITEBACK.md), [docs/QUEST_CHRONICLE_WRITEBACK](docs/QUEST_CHRONICLE_WRITEBACK.md), `schemas/quest_chronicle.schema.json`, and `examples/quest_chronicle.example.json`
+- writeback, intake, runtime support, and landing governance surfaces: `generated/runtime_writeback_targets.min.json`, `generated/runtime_writeback_intake.min.json`, `generated/runtime_writeback_governance.min.json`, [mechanics/writeback/RUNTIME_WRITEBACK_SEAM](mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md), [mechanics/writeback/GROWTH_REFINERY_WRITEBACK](mechanics/writeback/docs/GROWTH_REFINERY_WRITEBACK.md), [mechanics/writeback/QUEST_CHRONICLE_WRITEBACK](mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md), `schemas/quest_chronicle.schema.json`, and `examples/quest_chronicle.example.json`
 - memory readiness boundary: [docs/MEMORY_READINESS_BOUNDARY](docs/MEMORY_READINESS_BOUNDARY.md)
 - Titan receipt memory, recall candidates, remembrance source refs, bridge digest, and closeout memory posture: [docs/titan/TITAN_MEMORY_POSTURE.md](docs/titan/TITAN_MEMORY_POSTURE.md), [docs/titan/TITAN_MEMORY_LOOM_POSTURE.md](docs/titan/TITAN_MEMORY_LOOM_POSTURE.md), [docs/titan/TITAN_REMEMBRANCE_SOURCE_REF_POLICY.md](docs/titan/TITAN_REMEMBRANCE_SOURCE_REF_POLICY.md), [docs/titan/TITAN_BRIDGE_MEMORY_POSTURE.md](docs/titan/TITAN_BRIDGE_MEMORY_POSTURE.md), [docs/titan/TITAN_CONSOLE_MEMORY_DIGEST.md](docs/titan/TITAN_CONSOLE_MEMORY_DIGEST.md), [docs/titan/TITAN_CLOSEOUT_MEMORY_POSTURE.md](docs/titan/TITAN_CLOSEOUT_MEMORY_POSTURE.md), `schemas/titan_remembrance_record.schema.json`, and `examples/titan_remembrance_record.example.json`
 - owner-local live receipt publication for closeout/stats integration: `scripts/publish_live_receipts.py` and `.aoa/live_receipts/memo-writeback-receipts.jsonl`
@@ -110,10 +110,17 @@ generated:
   former flat Agon docs-root surfaces
 - [docs/titan](docs/titan/README.md) is the second thematic docs district for
   former flat Titan docs-root surfaces
+- [mechanics](mechanics/README.md) owns memo-side adoption, writeback, and
+  retention mechanics with package cards, owner maps, legacy bridges, and
+  `generated/memo_mechanics.min.json`
+- [mechanics/adoption](mechanics/adoption/README.md),
+  [mechanics/writeback](mechanics/writeback/README.md), and
+  [mechanics/retention](mechanics/retention/README.md) are the active homes for
+  the former flat adoption/writeback/retention docs-root families
 
 This spine does not move flat docs by itself. It exists so later Agon, Titan,
-adoption, retention, rollback, writeback, or AGENTS-mesh work can land through
-named owner routes instead of cosmetic cleanup.
+mechanic, rollback, or AGENTS-mesh work can land through named owner routes
+instead of cosmetic cleanup.
 
 ## Go here when...
 
@@ -165,8 +172,10 @@ Then rerun the read-only validation pass above and inspect `git status -sb` befo
 
 The current topology pass adds the memory-layer design and docs-route spine.
 Agon memo docs now live under `docs/agon/`, and Titan memo posture docs now
-live under `docs/titan/`. Other flat `docs/*.md` surfaces remain active until
-their validated district routes replace them.
+live under `docs/titan/`. Adoption, writeback, and retention now live under
+`mechanics/` as memo mechanics with legacy route maps. Other flat `docs/*.md`
+surfaces remain active until their validated district or mechanic routes
+replace them.
 
 The current downstream guardrail pilot stays intentionally narrow: recall precision, provenance fidelity, and staleness. That keeps the memo layer explicit and reviewable without pretending it is already full proof doctrine.
 

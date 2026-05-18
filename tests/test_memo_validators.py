@@ -354,7 +354,7 @@ class MemoValidatorTestCase(unittest.TestCase):
         payload = load_json(intake_path)
         assert isinstance(payload, dict)
         payload = copy.deepcopy(payload)
-        payload["targets"][0]["owner_review_refs"] = ["docs/RUNTIME_WRITEBACK_SEAM.md"]
+        payload["targets"][0]["owner_review_refs"] = ["mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md"]
 
         def side_effect(path: Path) -> dict:
             if Path(path) == intake_path:
@@ -1205,7 +1205,7 @@ class MemoValidatorTestCase(unittest.TestCase):
     def test_guardrail_validator_rejects_promotion_case_without_bridge_candidate(self) -> None:
         payload = self.guardrail_payload()
         payload["cases"][5]["input_refs"] = [
-            "docs/WRITEBACK_TEMPERATURE_POLICY.md",
+            "mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md",
             "docs/AGENT_MEMORY_POSTURE_SEAM.md#boundary-rule",
         ]
         self.assert_guardrail_payload_fails(payload)
@@ -1284,7 +1284,7 @@ class MemoValidatorTestCase(unittest.TestCase):
                     expected_support_artifact_refs=[
                         "schemas/inquiry_checkpoint.schema.json",
                         "schemas/checkpoint-to-memory-contract.schema.json",
-                        "docs/RUNTIME_WRITEBACK_SEAM.md",
+                        "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
                         "docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
                     ],
                 )
@@ -1362,7 +1362,7 @@ class MemoValidatorTestCase(unittest.TestCase):
                 expected_support_artifact_refs=[
                     "schemas/inquiry_checkpoint.schema.json",
                     "schemas/checkpoint-to-memory-contract.schema.json",
-                    "docs/RUNTIME_WRITEBACK_SEAM.md",
+                    "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
                     "docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
                 ],
             )

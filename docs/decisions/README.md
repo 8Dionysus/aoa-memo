@@ -36,6 +36,7 @@ expectation.
 | [2026-05-18-agents-mesh-source-backed-route-cards](2026-05-18-agents-mesh-source-backed-route-cards.md) | add source-backed AGENTS mesh for current route cards |
 | [2026-05-18-agon-docs-district](2026-05-18-agon-docs-district.md) | move flat Agon memo docs into `docs/agon/` |
 | [2026-05-18-titan-docs-district](2026-05-18-titan-docs-district.md) | move flat Titan memo docs into `docs/titan/` |
+| [2026-05-18-adoption-writeback-retention-mechanics](2026-05-18-adoption-writeback-retention-mechanics.md) | move adoption, writeback, and retention docs-root surfaces into memo mechanics |
 
 ## Review Rule
 

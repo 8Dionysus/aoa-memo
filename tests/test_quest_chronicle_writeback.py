@@ -25,7 +25,9 @@ def test_quest_chronicle_example_validates_against_schema() -> None:
 
 
 def test_quest_chronicle_doc_keeps_witness_only_boundary() -> None:
-    doc = (REPO_ROOT / "docs" / "QUEST_CHRONICLE_WRITEBACK.md").read_text(encoding="utf-8")
+    doc = (
+        REPO_ROOT / "mechanics" / "writeback" / "docs" / "QUEST_CHRONICLE_WRITEBACK.md"
+    ).read_text(encoding="utf-8")
 
     for fragment in [
         "A quest chronicle is a witness object.",
@@ -41,7 +43,7 @@ def test_quest_chronicle_surfaces_stay_discoverable_and_non_sovereign() -> None:
     readme = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
     example = load_json("examples/quest_chronicle.example.json")
 
-    assert "docs/QUEST_CHRONICLE_WRITEBACK.md" in readme
+    assert "mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md" in readme
     assert "schemas/quest_chronicle.schema.json" in readme
     assert "examples/quest_chronicle.example.json" in readme
     assert example["public_safe"] is True

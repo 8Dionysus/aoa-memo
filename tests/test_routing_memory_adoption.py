@@ -18,7 +18,9 @@ def load_json(relative_path: str) -> object:
 
 
 def test_routing_memory_adoption_doc_keeps_inspect_capsule_expand_rule() -> None:
-    doc = (REPO_ROOT / "docs" / "ROUTING_MEMORY_ADOPTION.md").read_text(encoding="utf-8")
+    doc = (
+        REPO_ROOT / "mechanics" / "adoption" / "docs" / "ROUTING_MEMORY_ADOPTION.md"
+    ).read_text(encoding="utf-8")
     doc_compact = " ".join(doc.split())
 
     for fragment in [
@@ -57,5 +59,5 @@ def test_routing_memory_adoption_surface_stays_discoverable() -> None:
     readme = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
     registry = load_json("generated/memo_registry.min.json")
 
-    assert "docs/ROUTING_MEMORY_ADOPTION.md" in readme
-    assert "docs/ROUTING_MEMORY_ADOPTION.md" in registry["core_docs"]
+    assert "mechanics/adoption/docs/ROUTING_MEMORY_ADOPTION.md" in readme
+    assert "mechanics/adoption/docs/ROUTING_MEMORY_ADOPTION.md" in registry["core_docs"]

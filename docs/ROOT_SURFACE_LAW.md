@@ -45,7 +45,7 @@ active surfaces and must not be moved casually.
 | Agent route law | `AGENTS.md`, `DESIGN.AGENTS.md`, `.agents/` | agent-facing work needs a stable local lane and a design form for that lane | must not replace source docs, schemas, examples, or validators |
 | Public governance and legal | `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `LICENSE` | GitHub and contributors expect them there | must not become memory doctrine catalogs |
 | Thin indexes | `QUESTBOOK.md` | useful only while compact and route-oriented | must not become a second roadmap or hidden ledger |
-| Tooling and machine districts | `.github/`, `config/`, `docs/`, `examples/`, `generated/`, `manifests/`, `quests/`, `schemas/`, `scripts/`, `tests/` | tooling and repo structure expect stable directories | each district needs local guidance before it becomes complex |
+| Tooling and machine districts | `.github/`, `config/`, `docs/`, `examples/`, `generated/`, `manifests/`, `mechanics/`, `quests/`, `schemas/`, `scripts/`, `tests/` | tooling and repo structure expect stable directories | each district needs local guidance before it becomes complex |
 | Development requirements | `.gitignore`, `requirements-dev.txt` | development hygiene | must stay technical and small |
 
 ## Surfaces That Should Not Live In Root
@@ -67,11 +67,12 @@ Current flat `docs/*.md` surfaces should be read through these classes:
 | Class | Examples | Posture |
 |---|---|---|
 | Core memory doctrine | `BOUNDARIES`, `MEMORY_MODEL`, `MEMORY_OBJECT_PROFILES`, `MEMORY_TRUST_POSTURE`, `MEMORY_TEMPERATURES`, `LIFECYCLE`, `NARRATIVE_CORE_CONTRACT`, `PROVENANCE_THREADS`, `OPERATIONAL_BOUNDARY` | active docs-root surfaces |
-| Neighbor seam docs | `AGENT_MEMORY_POSTURE_SEAM`, `PLAYBOOK_MEMORY_SCOPES`, `ROUTING_MEMORY_ADOPTION`, `KAG_*`, `MEMORY_EVAL_GUARDRAILS` | active docs-root surfaces until a seam district exists |
-| Writeback and recurrence docs | `WITNESS_TRACE_CONTRACT`, `RUNTIME_WRITEBACK_SEAM`, `GROWTH_REFINERY_WRITEBACK`, `QUEST_CHRONICLE_WRITEBACK`, `RECURRENCE_MEMORY_SUPPORT_SURFACES` | active docs-root surfaces; do not turn them into runtime ledgers |
+| Neighbor seam docs | `AGENT_MEMORY_POSTURE_SEAM`, `PLAYBOOK_MEMORY_SCOPES`, `KAG_*`, `MEMORY_EVAL_GUARDRAILS` | active docs-root surfaces until a seam district or mechanic exists |
+| Writeback and recurrence docs | `WITNESS_TRACE_CONTRACT`, `RECURRENCE_MEMORY_SUPPORT_SURFACES` | active docs-root surfaces; do not turn them into runtime ledgers |
 | Agon docs | `docs/agon/AGON_*` | active Agon memo district; keep map and validator aligned |
 | Titan docs | `docs/titan/TITAN_*` | active Titan memo district; keep map and validator aligned |
-| Adoption, governance, retention, rollback docs | `ADOPTION_*`, `GOVERNANCE_*`, `*_RETENTION_*`, `ROLLBACK_*` | candidate district material; preserve owner stop-lines |
+| Adoption, writeback, and retention mechanics | `mechanics/adoption/docs/*`, `mechanics/writeback/docs/*`, `mechanics/retention/docs/*` | active memo mechanic packages; keep owner maps, legacy bridges, generated index, and validator aligned |
+| Governance and rollback docs | `GOVERNANCE_*`, `ROLLBACK_*` | candidate future district or mechanic material; preserve owner stop-lines |
 | Decisions | `docs/decisions/` | rationale only; active docs still define what |
 
 ## Decision Procedure Before Adding a Root File
@@ -94,10 +95,10 @@ the file at root.
 
 ## Migration Procedure Before Moving Flat Docs
 
-Before moving a flat `docs/*.md` surface into a district:
+Before moving a flat `docs/*.md` surface into a district or mechanic:
 
 1. identify the owning family and stop-lines
-2. add or update the district README and nearest `AGENTS.md`
+2. add or update the district or mechanic README and nearest `AGENTS.md`
 3. update all source links, tests, validators, and generated refs that point to
    the old path
 4. decide whether a decision record is needed
@@ -105,7 +106,7 @@ Before moving a flat `docs/*.md` surface into a district:
 
 Do not move Agon, Titan, adoption, retention, rollback, or writeback surfaces
 as a cosmetic cleanup. They are current memory-layer seams until a validated
-district route replaces their flat path.
+district or mechanic route replaces their flat path.
 
 ## Current Root Cleanup Decisions
 
@@ -121,6 +122,7 @@ district route replaces their flat path.
 | `manifests/AGENTS.md` and `quests/AGENTS.md` | add | top-level district route cards | both directories already hold durable public surfaces and should not be AGENTS coverage gaps |
 | flat Agon docs-root surfaces | moved | `docs/agon/AGON_*.md` | Agon is the first validated thematic docs district |
 | flat Titan docs-root surfaces | moved | `docs/titan/TITAN_*.md` | Titan is the second validated thematic docs district |
+| flat adoption/writeback/retention docs-root surfaces | moved | `mechanics/adoption/docs/`, `mechanics/writeback/docs/`, `mechanics/retention/docs/` | these families are repeatable memo mechanics with owner maps and legacy bridges, not only documentation districts |
 
 ## Final Rule
 

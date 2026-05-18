@@ -17,7 +17,7 @@ wrapper_class: codex_primary
 write_scope: docs_only
 split_required: true
 public_safe: true
-owner_surface: docs/QUEST_EVIDENCE_WRITEBACK.md
+owner_surface: mechanics/writeback/docs/QUEST_EVIDENCE_WRITEBACK.md
 complexity_basis:
   scope: 1
   ambiguity: 1
@@ -29,11 +29,11 @@ activation:
   mode: immediate
 anchor_ref:
   artifact: writeback_temperature_policy
-  ref: docs/WRITEBACK_TEMPERATURE_POLICY.md
+  ref: mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md
 handoff_role: memo-maintainer
 evidence:
-  - docs/QUEST_EVIDENCE_WRITEBACK.md states the quest state remains source-owned boundary.
-  - docs/WRITEBACK_TEMPERATURE_POLICY.md stays the anchor for temperature and writeback posture.
+  - mechanics/writeback/docs/QUEST_EVIDENCE_WRITEBACK.md states the quest state remains source-owned boundary.
+  - mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md stays the anchor for temperature and writeback posture.
 harvest:
   target: memo
 opened_at: '2026-04-01'

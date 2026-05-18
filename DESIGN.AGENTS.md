@@ -77,6 +77,8 @@ The long-term mesh should make these lanes explicit:
 
 - `.agents/` for agent-facing companion assets and future maintained lanes
 - `docs/` for memory doctrine and route maps
+- `mechanics/` for repeatable adoption, writeback, and retention mechanics
+  with owner maps and legacy bridges
 - `schemas/` for contracts
 - `examples/` for public-safe object and support examples
 - `generated/` for compact companions

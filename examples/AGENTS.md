@@ -38,7 +38,7 @@ For recall contracts, keep inspect and expand surfaces aligned with the intended
 
 - router-facing recall contracts point to `generated/memory_catalog.min.json` and `generated/memory_sections.full.json`
 - object-facing recall contracts point to `generated/memory_object_catalog.min.json` and `generated/memory_object_sections.full.json`
-- doctrine-first examples may point to docs such as `docs/KAG_TOS_BRIDGE_CONTRACT.md` or `docs/RUNTIME_WRITEBACK_SEAM.md` when deeper explanation is the intended expand surface
+- doctrine-first examples may point to docs such as `docs/KAG_TOS_BRIDGE_CONTRACT.md` or `mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md` when deeper explanation is the intended expand surface
 
 If a recall contract also publishes `capsule_surface`, keep it additive and
 family-aligned:

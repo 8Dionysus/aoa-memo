@@ -180,7 +180,7 @@
       ],
       "status": "confirmed",
       "temperature": "warm",
-      "source_path": "docs/RUNTIME_WRITEBACK_SEAM.md",
+      "source_path": "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
       "inspect_surface": "generated/memory_capsules.json",
       "expand_surface": "generated/memory_sections.full.json",
       "related_surface_ids": [
@@ -379,7 +379,7 @@
       ],
       "status": "confirmed",
       "temperature": "warm",
-      "source_path": "docs/ROUTING_MEMORY_ADOPTION.md",
+      "source_path": "mechanics/adoption/docs/ROUTING_MEMORY_ADOPTION.md",
       "inspect_surface": "generated/memory_capsules.json",
       "expand_surface": "generated/memory_sections.full.json",
       "related_surface_ids": [

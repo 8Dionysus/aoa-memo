@@ -10,7 +10,7 @@
   "owner_refs": [
     "repo:aoa-memo"
   ],
-  "payload_ref": "docs/WRITEBACK_TEMPERATURE_POLICY.md#what-may-bridge-outward",
+  "payload_ref": "mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md#what-may-bridge-outward",
   "tags": [
     "pattern",
     "review",
@@ -25,8 +25,8 @@
   },
   "provenance": {
     "source_refs": [
-      "docs/RUNTIME_WRITEBACK_SEAM.md#distillation-posture",
-      "docs/WRITEBACK_TEMPERATURE_POLICY.md#what-may-bridge-outward",
+      "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md#distillation-posture",
+      "mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md#what-may-bridge-outward",
       "docs/MEMORY_MODEL.md#procedural-experience-memory"
     ],
     "episode_refs": [

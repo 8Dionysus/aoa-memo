@@ -84,7 +84,7 @@
       "core_contract_short": "Core contract: scratchpad stays runtime-local; checkpoint export becomes state_capsule; durable claims, patterns, and bridges remain review-gated candidates.",
       "main_risk_short": "Main risk: turning aoa-memo into a live runtime store or silently promoting runtime artifacts into canon.",
       "validation_short": "Validate by checking the checkpoint-to-memory contract preserves the mapping and keeps review required for distillation candidates.",
-      "source_path": "docs/RUNTIME_WRITEBACK_SEAM.md"
+      "source_path": "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md"
     },
     {
       "id": "AOA-M-0007",
@@ -168,7 +168,7 @@
       "core_contract_short": "Core contract: inspect ids first, hydrate through capsules second, and expand only when the capsule step is insufficient.",
       "main_risk_short": "Main risk: consumers skip the capsule step and either over-open memo sections or infer authority from compact inspect metadata alone.",
       "validation_short": "Validate by checking router-facing and object semantic or lineage recall contracts publish the correct capsule_surface and preserve the same id across inspect, capsule, and expand.",
-      "source_path": "docs/ROUTING_MEMORY_ADOPTION.md"
+      "source_path": "mechanics/adoption/docs/ROUTING_MEMORY_ADOPTION.md"
     }
   ]
 }

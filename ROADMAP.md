@@ -22,9 +22,9 @@ ledger, changing schemas, or moving proof, graph lift, navigation, role
 authority, or runtime retention into `aoa-memo`.
 
 The current `v0.2.3` release line also already carries:
-- checkpoint recall follow-through and lineage-aware growth-refinery writeback surfaces through `docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md`, `docs/GROWTH_REFINERY_WRITEBACK.md`, and `docs/QUEST_CHRONICLE_WRITEBACK.md`
-- runtime writeback landing, intake, and governance surfaces through `generated/runtime_writeback_targets.min.json`, `generated/runtime_writeback_intake.min.json`, `generated/runtime_writeback_governance.min.json`, and `docs/RUNTIME_WRITEBACK_SEAM.md`
-- rollout, rollback-followthrough, component-refresh, and self-agency continuity support through `examples/recovery_pattern_memory.rollback_followthrough.example.json`, `examples/recovery_pattern_memory.component_refresh.example.json`, `docs/SELF_AGENCY_CONTINUITY_WRITEBACK.md`, and `examples/provenance_thread.self-agency-continuity.example.json`
+- checkpoint recall follow-through and lineage-aware growth-refinery writeback surfaces through `docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md`, `mechanics/writeback/docs/GROWTH_REFINERY_WRITEBACK.md`, and `mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md`
+- runtime writeback landing, intake, and governance surfaces through `generated/runtime_writeback_targets.min.json`, `generated/runtime_writeback_intake.min.json`, `generated/runtime_writeback_governance.min.json`, and `mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md`
+- rollout, rollback-followthrough, component-refresh, and self-agency continuity support through `examples/recovery_pattern_memory.rollback_followthrough.example.json`, `examples/recovery_pattern_memory.component_refresh.example.json`, `mechanics/writeback/docs/SELF_AGENCY_CONTINUITY_WRITEBACK.md`, and `examples/provenance_thread.self-agency-continuity.example.json`
 - Phase Alpha writeback routing and owner-local live receipt publication through `generated/phase_alpha_writeback_map.min.json` and `scripts/publish_live_receipts.py`
 - memory readiness boundary through `docs/MEMORY_READINESS_BOUNDARY.md`
 
@@ -36,28 +36,34 @@ proof, routing, or live runtime authority.
 The current topology hardening path starts with the source-authored route spine
 in `DESIGN.md`, `DESIGN.AGENTS.md`, `docs/README.md`,
 `docs/ROOT_SURFACE_LAW.md`, and `docs/decisions/`. This precedes any thematic
-docs migration so Agon, Titan, adoption, retention, rollback, and writeback
-surfaces are moved only with owner maps, link updates, and validation.
+docs or mechanics migration so Agon, Titan, adoption, retention, rollback, and
+writeback surfaces are moved only with owner maps, link updates, legacy
+bridges, and validation.
 The maintained Spark fast-loop lane now lives under `.agents/spark/` rather
 than root `Spark/`, aligning agent-lane placement with the new topology spine
 without treating the lane as root civic law.
 
 The first generated AGENTS mesh is now the active topology hardening layer:
 `config/agents_mesh.json` records current route-card contracts and
-`generated/agents_mesh.min.json` is rebuilt from that source. Future thematic
-docs migrations should add any new local route cards through this mesh before
-landing.
+`generated/agents_mesh.min.json` is rebuilt from that source. Future docs or
+mechanics migrations should add any new local route cards through this mesh
+before landing.
 
 The first thematic docs migration is now the Agon memo district:
 `docs/agon/` owns the former flat Agon docs-root surfaces, backed by
-`scripts/validate_docs_districts.py`. Titan and adoption/writeback/retention
-remain flat until their own owner maps, validators, and decision records land.
+`scripts/validate_docs_districts.py`.
 
 The second thematic docs migration is now the Titan memo district:
 `docs/titan/` owns the former flat Titan docs-root surfaces, with examples and
-tests updated to point at the new source refs. Adoption/writeback/retention
-remains flat until its own owner map, validator extension, and decision record
-land.
+tests updated to point at the new source refs.
+
+The third topology migration follows the `Agents-of-Abyss` mechanics pattern:
+`mechanics/adoption/`, `mechanics/writeback/`, and `mechanics/retention/` own
+the former flat adoption, writeback, and retention docs-root families as
+memo-side mechanics. Each package has a route card, package card, direction,
+parts map, owner map, provenance bridge, landing log, roadmap, and legacy
+index. The source-backed `config/memo_mechanics.json` and
+`generated/memo_mechanics.min.json` keep the shape machine-checkable.
 
 ## Current contract-hardening waves
 
@@ -204,7 +210,7 @@ This roadmap does **not** aim to turn `aoa-memo` into:
 
 - doctrine for `hot`, `warm`, `cool`, `cold`, `frozen`
 - `docs/MEMORY_TEMPERATURES.md`
-- `docs/WRITEBACK_TEMPERATURE_POLICY.md`
+- `mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md`
 - `schemas/decay_policy.schema.json`
 - distinction docs for `confidence`, `authority`, `freshness`, `salience`
 - online capture vs offline consolidation model

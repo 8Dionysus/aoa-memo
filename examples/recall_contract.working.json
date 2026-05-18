@@ -21,7 +21,7 @@
     "cold"
   ],
   "inspect_surface": "generated/memory_catalog.min.json",
-  "expand_surface": "docs/RUNTIME_WRITEBACK_SEAM.md",
+  "expand_surface": "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
   "source_route_required": false,
   "notes": "Use for relaunch, checkpoint recovery, and bounded exported working state before leaving the memo layer."
 }

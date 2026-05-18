@@ -42,6 +42,10 @@ class DocsDistrictsTestCase(unittest.TestCase):
         self.assertTrue((REPO_ROOT / "docs" / "titan" / "AGENTS.md").is_file())
         self.assertTrue((REPO_ROOT / "docs" / "titan" / "README.md").is_file())
 
+    def test_mechanic_owned_families_do_not_create_docs_subdistricts(self) -> None:
+        for district_name in ("adoption", "writeback", "retention"):
+            self.assertFalse((REPO_ROOT / "docs" / district_name).exists())
+
 
 if __name__ == "__main__":
     unittest.main()

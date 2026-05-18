@@ -97,7 +97,7 @@ Reviewed evidence stays anchored to:
 
 ## Reference Surfaces
 
-- `docs/RUNTIME_WRITEBACK_SEAM.md`
+- `mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md`
 - `examples/checkpoint_to_memory_contract.example.json`
 - `examples/provenance_thread.example.json`
 - `docs/PROVENANCE_THREADS.md`

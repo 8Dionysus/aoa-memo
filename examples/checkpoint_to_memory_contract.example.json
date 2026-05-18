@@ -12,7 +12,7 @@
     "checkpoint_export_kind": "state_capsule",
     "distillation_review_posture": "review_required",
     "review_boundary_refs": [
-      "docs/WRITEBACK_TEMPERATURE_POLICY.md#writeback-classes",
+      "mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md#writeback-classes",
       "docs/MEMORY_MODEL.md#checkpoint-route-writeback",
       "repo:aoa-agents/docs/AGENT_MEMORY_POSTURE.md"
     ]
@@ -22,7 +22,7 @@
       "runtime_surface": "checkpoint_export",
       "runtime_refs": [
         "schemas/inquiry_checkpoint.schema.json",
-        "docs/WRITEBACK_TEMPERATURE_POLICY.md#inquiry-checkpoint-packs"
+        "mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md#inquiry-checkpoint-packs"
       ],
       "target_kind": "state_capsule",
       "writeback_class": "checkpoint_export",
@@ -86,7 +86,7 @@
       "runtime_surface": "distillation_claim_candidate",
       "runtime_refs": [
         "repo:aoa-agents/schemas/artifact.distillation_pack.schema.json",
-        "docs/WRITEBACK_TEMPERATURE_POLICY.md#bridge-ready-memory"
+        "mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md#bridge-ready-memory"
       ],
       "target_kind": "claim",
       "writeback_class": "reviewed_candidate",

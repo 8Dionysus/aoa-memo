@@ -46,6 +46,7 @@ and which neighboring owner takes the next stronger claim?
 
 - root public entry and authority surfaces
 - doctrine docs under `docs/`
+- memo-side mechanics under `mechanics/`
 - schema-backed memory and support contracts under `schemas/`
 - public-safe examples under `examples/`
 - generated memory companions under `generated/`
@@ -151,11 +152,14 @@ landing receipt, it needs a bounded home rather than a root-level spotlight.
 - a generated file can find its source
 - a stale object can find its current recall posture
 - a bridge can find its downstream owner
+- a repeatable adoption, writeback, or retention move can find its mechanic,
+  owner map, and legacy bridge
 - a future contributor can find why the topology exists
 
 ## Bad Design Smells Like
 
 - flat docs sprawl with no route map
+- repeatable mechanics hidden as ordinary docs folders
 - memory objects that read like workflows or verdicts
 - generated files cited as source truth
 - writeback surfaces pretending to be live ledgers

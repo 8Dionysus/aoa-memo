@@ -29,7 +29,7 @@ activation:
   note: open when the first bounded chronicle slice is ready to land
 anchor_ref:
   artifact: quest_chronicle_writeback
-  ref: docs/QUEST_CHRONICLE_WRITEBACK.md
+  ref: mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md
   note: chronicle must remain witness-shaped and provenance-aware
 handoff_role: memo-maintainer
 evidence:

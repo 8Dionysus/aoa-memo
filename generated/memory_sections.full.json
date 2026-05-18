@@ -159,7 +159,7 @@
     {
       "id": "AOA-M-0006",
       "name": "runtime-writeback-seam",
-      "source_path": "docs/RUNTIME_WRITEBACK_SEAM.md",
+      "source_path": "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
       "sections": [
         {
           "section_id": "AOA-M-0006#core-rule",
@@ -327,7 +327,7 @@
     {
       "id": "AOA-M-0012",
       "name": "routing-memory-adoption",
-      "source_path": "docs/ROUTING_MEMORY_ADOPTION.md",
+      "source_path": "mechanics/adoption/docs/ROUTING_MEMORY_ADOPTION.md",
       "sections": [
         {
           "section_id": "AOA-M-0012#three-step-flow",

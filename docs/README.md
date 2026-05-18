@@ -43,21 +43,24 @@ add [DESIGN.AGENTS](../DESIGN.AGENTS.md).
 
 ## Current Surface Families
 
-`docs/` is still mostly flat. Treat this map as the topology spine for the
-remaining flat docs while validated districts move out one owner family at a
-time.
+`docs/` is still partly flat. Treat this map as the topology spine for
+remaining flat doctrine, while validated districts and mechanics move one owner
+family at a time.
 
-The first moved districts are the [Agon Memo District](agon/README.md) and the
-[Titan Memo District](titan/README.md): `docs/agon/` owns the former flat
-`AGON_*` memo docs, and `docs/titan/` owns the former flat `TITAN_*` memo docs.
+The moved docs districts are the [Agon Memo District](agon/README.md) and the
+[Titan Memo District](titan/README.md). The repeatable adoption, writeback, and
+retention families are now memo mechanics under
+[`mechanics/`](../mechanics/README.md), not docs subdirectories.
+In path terms, `docs/agon/` owns the former flat `AGON_*` docs and
+`docs/titan/` owns the former flat `TITAN_*` docs.
 
 | Family | Current flat surfaces |
 |---|---|
 | Core doctrine | `BOUNDARIES`, `MEMORY_MODEL`, `MEMORY_OBJECT_PROFILES`, `MEMORY_TRUST_POSTURE`, `MEMORY_TEMPERATURES`, `LIFECYCLE`, `NARRATIVE_CORE_CONTRACT`, `PROVENANCE_THREADS`, `OPERATIONAL_BOUNDARY` |
-| Recall and writeback | `WITNESS_TRACE_CONTRACT`, `WRITEBACK_TEMPERATURE_POLICY`, `QUEST_CHRONICLE_WRITEBACK`, `RUNTIME_WRITEBACK_SEAM`, `GROWTH_REFINERY_WRITEBACK`, `RECURRENCE_MEMORY_SUPPORT_SURFACES`, `REVIEWED_CLOSEOUT_RECALL_LANDING` |
-| Neighbor seams | `AGENT_MEMORY_POSTURE_SEAM`, `PLAYBOOK_MEMORY_SCOPES`, `ROUTING_MEMORY_ADOPTION`, `KAG_TOS_BRIDGE_CONTRACT`, `KAG_SOURCE_EXPORT`, `MEMORY_EVAL_GUARDRAILS` |
+| Recall and writeback | `WITNESS_TRACE_CONTRACT`, [writeback mechanic](../mechanics/writeback/README.md), `RECURRENCE_MEMORY_SUPPORT_SURFACES`, `REVIEWED_CLOSEOUT_RECALL_LANDING` |
+| Neighbor seams | `AGENT_MEMORY_POSTURE_SEAM`, `PLAYBOOK_MEMORY_SCOPES`, [adoption mechanic](../mechanics/adoption/README.md), `KAG_TOS_BRIDGE_CONTRACT`, `KAG_SOURCE_EXPORT`, `MEMORY_EVAL_GUARDRAILS` |
 | Antifragility | `FAILURE_LESSON_MEMORY`, `FAILURE_LESSON_RECALL`, `DRIFT_REVIEW_LESSON_MEMORY`, `RECOVERY_PATTERN_MEMORY`, `RECOVERY_PATTERN_RECALL`, `ROLLBACK_FOLLOWTHROUGH_PATTERN` |
-| Adoption and governance | `ADOPTION_*`, `GOVERNANCE_*`, `FEDERATION_*`, `INSTALLATION_MEMORY_BOUNDARIES`, `CERTIFICATION_MEMORY_BOUNDARIES`, `CROSS_REPO_RETENTION_MEMORY` |
+| Adoption and governance | [adoption mechanic](../mechanics/adoption/README.md), [retention mechanic](../mechanics/retention/README.md), `GOVERNANCE_*`, `FEDERATION_*`, `INSTALLATION_MEMORY_BOUNDARIES`, `CERTIFICATION_MEMORY_BOUNDARIES` |
 | Agon memo seams | [agon](agon/README.md) district plus matching config, schemas, generated registries, examples, tests, quests, and manifests |
 | Titan memory seams | [titan](titan/README.md) district plus matching schemas, examples, and tests |
 | Decision rationale | [decisions](decisions/README.md) |
@@ -69,10 +72,10 @@ The first moved districts are the [Agon Memo District](agon/README.md) and the
 | Does this belong in memory at all? | [CHARTER](../CHARTER.md), then [BOUNDARIES](BOUNDARIES.md) |
 | What kind of memory object is it? | [MEMORY_MODEL](MEMORY_MODEL.md), then [MEMORY_OBJECT_PROFILES](MEMORY_OBJECT_PROFILES.md) |
 | Is this proof or verdict logic? | [BOUNDARIES](BOUNDARIES.md), then route to `aoa-evals` |
-| Is this routing behavior? | [ROUTING_MEMORY_ADOPTION](ROUTING_MEMORY_ADOPTION.md), then route to `aoa-routing` |
+| Is this routing behavior? | [ROUTING_MEMORY_ADOPTION](../mechanics/adoption/docs/ROUTING_MEMORY_ADOPTION.md), then route to `aoa-routing` |
 | Is this a role right or actor policy? | [AGENT_MEMORY_POSTURE_SEAM](AGENT_MEMORY_POSTURE_SEAM.md), then route to `aoa-agents` |
 | Is this a graph lift or retrieval substrate? | [KAG_SOURCE_EXPORT](KAG_SOURCE_EXPORT.md), then route to `aoa-kag` |
-| Is this live runtime storage or retention? | [RUNTIME_WRITEBACK_SEAM](RUNTIME_WRITEBACK_SEAM.md), then route to `abyss-stack` |
+| Is this live runtime storage or retention? | [RUNTIME_WRITEBACK_SEAM](../mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md), then route to `abyss-stack` |
 | Where should a new root or docs-root file live? | [ROOT_SURFACE_LAW](ROOT_SURFACE_LAW.md) |
 | Why was a structural route chosen? | [decisions](decisions/README.md) |
 
@@ -86,6 +89,9 @@ The first moved districts are the [Agon Memo District](agon/README.md) and the
 | Docs placement | [ROOT_SURFACE_LAW](ROOT_SURFACE_LAW.md) |
 | Agon memo docs | [agon/AGENTS](agon/AGENTS.md), then [agon/README](agon/README.md) |
 | Titan memo docs | [titan/AGENTS](titan/AGENTS.md), then [titan/README](titan/README.md) |
+| Adoption mechanic | [mechanics/adoption/AGENTS](../mechanics/adoption/AGENTS.md), then [mechanics/adoption/README](../mechanics/adoption/README.md) |
+| Writeback mechanic | [mechanics/writeback/AGENTS](../mechanics/writeback/AGENTS.md), then [mechanics/writeback/README](../mechanics/writeback/README.md) |
+| Retention mechanic | [mechanics/retention/AGENTS](../mechanics/retention/AGENTS.md), then [mechanics/retention/README](../mechanics/retention/README.md) |
 | Agent-facing shape | [DESIGN.AGENTS](../DESIGN.AGENTS.md), root [AGENTS](../AGENTS.md), and nearest local `AGENTS.md` |
 | Decision rationale | [decisions/AGENTS](decisions/AGENTS.md), then [decisions/README](decisions/README.md) |
 | Public release path | [RELEASING](RELEASING.md), then [CHANGELOG](../CHANGELOG.md) |
@@ -117,6 +123,7 @@ Until then, this README is the map and the flat files remain active surfaces.
 | [config](../config/AGENTS.md) | seed and build inputs |
 | [agon](agon/README.md) | Agon memo docs district |
 | [titan](titan/README.md) | Titan memo docs district |
+| [mechanics](../mechanics/README.md) | adoption, writeback, and retention memo mechanics |
 | [manifests](../manifests/AGENTS.md) | recurrence manifests and hook bindings |
 | [quests](../quests/AGENTS.md) | quest files backing `QUESTBOOK.md` |
 | [.agents](../.agents/AGENTS.md) | agent-facing companion lanes |
@@ -131,7 +138,9 @@ Until then, this README is the map and the flat files remain active surfaces.
   know why a topology route exists.
 - Prefer `config/agents_mesh.json` and `generated/agents_mesh.min.json` when a
   docs migration adds or changes local route cards.
-- Prefer `scripts/validate_docs_districts.py` when a thematic docs family moves
-  out of the flat docs root.
+- Prefer `scripts/validate_docs_districts.py` when an Agon or Titan docs family
+  moves out of the flat docs root.
+- Prefer `scripts/validate_memo_mechanics.py` when adoption, writeback, or
+  retention mechanics move.
 - Generated surfaces summarize memory doctrine and object examples. They do not
   replace authored docs, schemas, examples, or validators.
