@@ -14,7 +14,7 @@ Everything in this directory should stay safe to publish and easy to validate.
 
 Keep the example families legible:
 
-- core memory-object examples such as `anchor.example.json`, `state_capsule.example.json`, `episode.example.json`, `claim.example.json`, `pattern.example.json`, and `checkpoint_approval_record.example.json`
+- core memory-object examples such as `anchor.example.json`, `state_capsule.example.json`, `episode.example.json`, `claim.example.json`, and `pattern.example.json`
 - lifecycle and audit examples such as `claim.current-entrypoint.example.json`, `claim.superseded.example.json`, `claim.retracted.example.json`, `audit_event.supersession.example.json`, `audit_event.retraction.example.json`, and `provenance_thread.lifecycle.example.json`
 - recall contract examples such as `recall_contract.working.json`, `recall_contract.semantic.json`, `recall_contract.lineage.json`, `recall_contract.router.semantic.json`, `recall_contract.router.lineage.json`, `recall_contract.object.working.json`, `recall_contract.object.semantic.json`, and `recall_contract.object.lineage.json`
 - the curated object-surface manifest `memory_object_surface_manifest.json`
@@ -26,8 +26,9 @@ Keep those roles explicit.
 Mechanic-owned examples live under their package lane:
 
 - `mechanics/consumer-handoff/examples/` for KAG/ToS bridge, graph/chunk face, and eval guardrail examples
-- `mechanics/writeback/examples/` for checkpoint-to-memory, quest chronicle, self-agency, rollback, and revision-ledger examples
-- `mechanics/recurrence-support/examples/` for inquiry checkpoint and witness trace examples
+- `mechanics/checkpoint/examples/` for inquiry checkpoint, checkpoint-to-memory, approval, health, and checkpoint improvement examples
+- `mechanics/writeback/examples/` for quest chronicle, self-agency, rollback, and revision-ledger examples
+- `mechanics/recurrence-support/examples/` for witness trace examples
 - `mechanics/agon/examples/`, `mechanics/titan/examples/`, and the other mechanic package examples for their local contracts
 
 ## Editing posture

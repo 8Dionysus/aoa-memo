@@ -404,7 +404,7 @@
           "heading": "Technical contracts",
           "ordinal": 3,
           "summary": "Keeps recurrence-support schemas and examples package-local while shared recall and quest companions remain root-owned.",
-          "body": "The recurrence-support package owns source docs, owner maps, inquiry checkpoint schemas/examples, witness trace schemas/examples, and tests. Shared return recall, checkpoint-to-memory, and reviewed closeout quest artifacts remain with their owning root or writeback surfaces."
+          "body": "The recurrence-support package owns source docs, owner maps, witness trace schemas/examples, and tests. Checkpoint schemas/examples and checkpoint-to-memory mapping live with mechanics/checkpoint. Shared return recall and reviewed closeout quest artifacts remain with their owning root surfaces."
         }
       ]
     },

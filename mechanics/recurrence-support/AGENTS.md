@@ -35,8 +35,9 @@ before editing that district.
 - Do not introduce `return_memory` or another return-only memory-object family.
 - Keep old flat docs-root paths out of active references except in provenance,
   legacy, decisions, and former-path source maps.
-- Do not move public schemas or examples into this package unless
-  `mechanics/ARTIFACT_TOPOLOGY.md` proves they are single-mechanic-owned.
+- Do not move checkpoint schemas or examples back into this package; use
+  `mechanics/checkpoint/` for checkpoint artifacts and this package for
+  route-return support that consumes them.
 - Keep writeback return lanes with writeback and consumer scope posture with
   consumer-handoff unless this package is only preserving relaunch support.
 

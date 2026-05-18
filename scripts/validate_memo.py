@@ -1484,6 +1484,10 @@ def validate_registry() -> None:
         "mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md",
         "mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
         "mechanics/consumer-handoff/docs/KAG_SOURCE_EXPORT.md",
+        "mechanics/checkpoint/docs/CHECKPOINT_MEMORY_BOUNDARY.md",
+        "mechanics/checkpoint/docs/CHECKPOINT_CARRY_CONTRACT.md",
+        "mechanics/checkpoint/docs/CHECKPOINT_APPROVAL_HEALTH_MEMORY.md",
+        "mechanics/checkpoint/docs/CHECKPOINT_TO_MEMORY_MAPPING.md",
     )
     for doc_ref in required_core_docs:
         if doc_ref not in data.get("core_docs", []):
@@ -1847,8 +1851,8 @@ def validate_playbook_memory_scope_surface() -> None:
     if return_contract.get("return_ready") is not True:
         errors.append("recall_contract.object.working.return.json must keep return_ready true")
     expected_support_refs = [
-        "mechanics/recurrence-support/schemas/inquiry_checkpoint.schema.json",
-        "mechanics/writeback/schemas/checkpoint-to-memory-contract.schema.json",
+        "mechanics/checkpoint/schemas/inquiry_checkpoint.schema.json",
+        "mechanics/checkpoint/schemas/checkpoint-to-memory-contract.schema.json",
         "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
         "mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
     ]
@@ -1861,7 +1865,7 @@ def validate_playbook_memory_scope_surface() -> None:
         "mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
     ]:
         errors.append("inquiry_checkpoint.return.example.json must keep object return recall plus recurrence docs as reentry_refs")
-    if inquiry_return.get("memory_delta_refs") != ["mechanics/writeback/examples/checkpoint_to_memory_contract.example.json"]:
+    if inquiry_return.get("memory_delta_refs") != ["mechanics/checkpoint/examples/checkpoint_to_memory_contract.example.json"]:
         errors.append("inquiry_checkpoint.return.example.json must keep checkpoint_to_memory_contract as the bounded memory delta")
     if inquiry_return.get("evidence_pack_refs") != [
         "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
@@ -2123,8 +2127,8 @@ def validate_checkpoint_to_memory_contract() -> None:
             if rule.get("requires_human_review") is not True:
                 errors.append(f"{target_kind} mappings must require human review")
 
-    if "mechanics/writeback/schemas/checkpoint-to-memory-contract.schema.json" not in registry.get("schemas", []):
-        errors.append("generated/memo_registry.min.json must list mechanics/writeback/schemas/checkpoint-to-memory-contract.schema.json")
+    if "mechanics/checkpoint/schemas/checkpoint-to-memory-contract.schema.json" not in registry.get("schemas", []):
+        errors.append("generated/memo_registry.min.json must list mechanics/checkpoint/schemas/checkpoint-to-memory-contract.schema.json")
     if "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md" not in registry.get("core_docs", []):
         errors.append("generated/memo_registry.min.json must list mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md")
 
@@ -2156,8 +2160,8 @@ def validate_runtime_writeback_targets() -> None:
 
     if data.get("contract_id") != "aoa-memo.runtime-writeback.v1":
         errors.append("mechanics/writeback/generated/runtime_writeback_targets.min.json must keep contract_id aoa-memo.runtime-writeback.v1")
-    if data.get("source_of_truth") != "mechanics/writeback/examples/checkpoint_to_memory_contract.example.json":
-        errors.append("mechanics/writeback/generated/runtime_writeback_targets.min.json must keep source_of_truth mechanics/writeback/examples/checkpoint_to_memory_contract.example.json")
+    if data.get("source_of_truth") != "mechanics/checkpoint/examples/checkpoint_to_memory_contract.example.json":
+        errors.append("mechanics/writeback/generated/runtime_writeback_targets.min.json must keep source_of_truth mechanics/checkpoint/examples/checkpoint_to_memory_contract.example.json")
     if data.get("runtime_boundary") != contract.get("runtime_boundary", {}):
         errors.append("mechanics/writeback/generated/runtime_writeback_targets.min.json must keep runtime_boundary aligned with checkpoint_to_memory_contract.example.json")
 
@@ -2240,7 +2244,7 @@ def validate_runtime_writeback_intake() -> None:
 
     expected_source_of_truth = {
         "runtime_writeback_targets": "mechanics/writeback/generated/runtime_writeback_targets.min.json",
-        "checkpoint_to_memory_contract": "mechanics/writeback/examples/checkpoint_to_memory_contract.example.json",
+        "checkpoint_to_memory_contract": "mechanics/checkpoint/examples/checkpoint_to_memory_contract.example.json",
         "runtime_writeback_seam": "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
         "quest_evidence_writeback": "mechanics/writeback/docs/QUEST_EVIDENCE_WRITEBACK.md",
     }
@@ -3539,8 +3543,8 @@ def main() -> int:
         expected_return_ready=True,
         expected_preferred_anchor_kinds=["state_capsule", "decision", "anchor"],
         expected_support_artifact_refs=[
-            "mechanics/recurrence-support/schemas/inquiry_checkpoint.schema.json",
-            "mechanics/writeback/schemas/checkpoint-to-memory-contract.schema.json",
+            "mechanics/checkpoint/schemas/inquiry_checkpoint.schema.json",
+            "mechanics/checkpoint/schemas/checkpoint-to-memory-contract.schema.json",
             "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
             "mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
         ],
@@ -3560,7 +3564,7 @@ def main() -> int:
         expected_preferred_anchor_kinds=["state_capsule", "decision", "anchor"],
         expected_support_artifact_refs=[
             "mechanics/writeback/generated/phase_alpha_writeback_map.min.json",
-            "mechanics/recurrence-support/schemas/inquiry_checkpoint.schema.json",
+            "mechanics/checkpoint/schemas/inquiry_checkpoint.schema.json",
             "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
             "mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
         ],

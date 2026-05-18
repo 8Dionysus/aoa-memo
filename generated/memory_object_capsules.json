@@ -120,7 +120,7 @@
       "use_when_short": "Use when decision-level recall is needed and this object remains allowed for working, semantic, source_route.",
       "do_not_use_short": "Do not treat this decision as proof or stronger than its cited sources.",
       "strongest_next_source": "repo:aoa-agents/docs/SELF_AGENT_CHECKPOINT_STACK.md",
-      "source_path": "examples/checkpoint_approval_record.example.json"
+      "source_path": "mechanics/checkpoint/examples/checkpoint_approval_record.example.json"
     },
     {
       "id": "memo.ep.2026-03-21.self-agent-health-check",
@@ -132,7 +132,7 @@
       "use_when_short": "Use when episode-level recall is needed and this object remains allowed for working, episodic, source_route.",
       "do_not_use_short": "Do not treat this episode as proof or stronger than its cited sources.",
       "strongest_next_source": "repo:aoa-playbooks/playbooks/self-agent-checkpoint-rollout/PLAYBOOK.md",
-      "source_path": "examples/checkpoint_health_check.example.json"
+      "source_path": "mechanics/checkpoint/examples/checkpoint_health_check.example.json"
     },
     {
       "id": "memo.pattern.2026-03-23.reviewed-candidates-before-promotion",
@@ -228,7 +228,7 @@
       "use_when_short": "Use when decision-level recall is needed and this object remains allowed for working, semantic, source_route.",
       "do_not_use_short": "Do not treat this decision as proof or stronger than its cited sources.",
       "strongest_next_source": "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.self-agent-checkpoint-rollout.md",
-      "source_path": "examples/decision.phase-alpha-self-agent-checkpoint.example.json"
+      "source_path": "mechanics/checkpoint/examples/decision.phase-alpha-self-agent-checkpoint.example.json"
     },
     {
       "id": "memo.audit.2026-04-02.alpha-self-agent-checkpoint",
@@ -240,7 +240,7 @@
       "use_when_short": "Use when audit_event-level recall is needed and this object remains allowed for episodic, source_route.",
       "do_not_use_short": "Do not treat this audit_event as proof or stronger than its cited sources.",
       "strongest_next_source": "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.self-agent-checkpoint-rollout.md",
-      "source_path": "examples/audit_event.phase-alpha-self-agent-checkpoint.example.json"
+      "source_path": "mechanics/checkpoint/examples/audit_event.phase-alpha-self-agent-checkpoint.example.json"
     },
     {
       "id": "memo.ep.2026-04-02.alpha-validation-remediation",

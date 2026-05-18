@@ -126,6 +126,9 @@ def validate() -> list[str]:
     allowed_provenance_refs = {
         f"mechanics/{package['slug']}/legacy/INDEX.md" for package in config["packages"]
     }
+    allowed_provenance_refs.update(
+        f"mechanics/{package['slug']}/PROVENANCE.md" for package in config["packages"]
+    )
     allowed_provenance_refs.add("config/memo_mechanics.json")
     allowed_provenance_refs.update(
         path.relative_to(REPO_ROOT).as_posix()

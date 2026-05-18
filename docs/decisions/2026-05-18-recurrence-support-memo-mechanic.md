@@ -9,6 +9,11 @@ Superseded in part on 2026-05-18 by
 `PATTERN_LINEAGE_MEMORY.md` later moved into the separate
 `mechanics/lineage-harvest/` route named here as a future candidate.
 
+Superseded in part again on 2026-05-18 by
+[2026-05-18-checkpoint-memo-mechanic](2026-05-18-checkpoint-memo-mechanic.md):
+checkpoint artifacts moved into `mechanics/checkpoint/`, while
+recurrence-support remains the route-return consumer.
+
 ## Context
 
 `aoa-memo` still had three flat docs-root surfaces that looked like recurrence
@@ -35,12 +40,12 @@ an operation-first memo mechanic with package card, owner map, provenance
 bridge, landing log, roadmap, docs route, legacy route, generated mechanics
 coverage, AGENTS mesh coverage, tests, and active path updates.
 
-Witness trace and inquiry checkpoint artifacts were later moved into the
-recurrence-support artifact lane by
+Witness trace artifacts were later moved into the recurrence-support artifact
+lane by
 [2026-05-18-mechanic-artifact-lanes](2026-05-18-mechanic-artifact-lanes.md).
-Shared recall, checkpoint-to-memory, quest, and generated artifacts remain
-with their owning root or writeback surfaces when they serve more than this
-one mechanic.
+Checkpoint artifacts later moved into `mechanics/checkpoint/`. Shared recall,
+quest, and generated artifacts remain with their owning root or consumer
+surfaces when they serve more than one mechanic.
 
 Keep `docs/PATTERN_LINEAGE_MEMORY.md` flat for now. It is a candidate for a
 separate lineage or federation harvest mechanic, not part of this route-return

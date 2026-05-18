@@ -39,7 +39,7 @@ def test_playbook_memory_scopes_doc_keeps_bounded_scope_rule() -> None:
 def test_playbook_memory_scope_surfaces_keep_return_ready_chain() -> None:
     working = load_json("examples/recall_contract.working.json")
     return_ready = load_json("examples/recall_contract.object.working.return.json")
-    inquiry_return = load_json("mechanics/recurrence-support/examples/inquiry_checkpoint.return.example.json")
+    inquiry_return = load_json("mechanics/checkpoint/examples/inquiry_checkpoint.return.example.json")
 
     assert working["allowed_scopes"] == ["thread", "session", "project"]
     assert working["preferred_kinds"] == ["state_capsule", "decision", "episode", "audit_event"]

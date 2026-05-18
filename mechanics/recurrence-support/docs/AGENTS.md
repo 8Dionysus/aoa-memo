@@ -30,8 +30,9 @@ artifact.
 - Do not claim route dispatch, runtime retry, live stores, role rights,
   identity continuity, eval verdicts, playbook acceptance, source truth, or
   owner acceptance.
-- Keep recurrence-support technical artifacts in the recurrence-support package
-  unless `mechanics/ARTIFACT_TOPOLOGY.md` proves a shared root contract.
+- Keep witness trace technical artifacts in the recurrence-support package.
+  Checkpoint artifacts belong in `mechanics/checkpoint/`; shared recall and
+  quest artifacts remain in their owner districts.
 - Do not introduce return-only memory-object families.
 - Do not preserve old flat docs-root aliases as active routes.
 

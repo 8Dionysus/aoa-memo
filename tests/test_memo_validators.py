@@ -1299,8 +1299,8 @@ class MemoValidatorTestCase(unittest.TestCase):
                     expected_return_ready=True,
                     expected_preferred_anchor_kinds=["state_capsule", "decision", "anchor"],
                     expected_support_artifact_refs=[
-                        "mechanics/recurrence-support/schemas/inquiry_checkpoint.schema.json",
-                        "mechanics/writeback/schemas/checkpoint-to-memory-contract.schema.json",
+                        "mechanics/checkpoint/schemas/inquiry_checkpoint.schema.json",
+                        "mechanics/checkpoint/schemas/checkpoint-to-memory-contract.schema.json",
                         "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
                         "mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
                     ],
@@ -1377,8 +1377,8 @@ class MemoValidatorTestCase(unittest.TestCase):
                 expected_return_ready=True,
                 expected_preferred_anchor_kinds=["state_capsule", "decision", "anchor"],
                 expected_support_artifact_refs=[
-                    "mechanics/recurrence-support/schemas/inquiry_checkpoint.schema.json",
-                    "mechanics/writeback/schemas/checkpoint-to-memory-contract.schema.json",
+                    "mechanics/checkpoint/schemas/inquiry_checkpoint.schema.json",
+                    "mechanics/checkpoint/schemas/checkpoint-to-memory-contract.schema.json",
                     "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
                     "mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
                 ],

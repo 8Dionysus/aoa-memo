@@ -54,6 +54,11 @@ Tracking starts with the community-docs baseline for this repository.
   boundaries, with owner map, provenance bridge, legacy index, AGENTS mesh
   coverage, generated mechanics coverage, doctrine recall coverage,
   validators, tests, and decision record.
+- Add `mechanics/checkpoint/` as the memo mechanic for checkpoint gates, carry
+  packets, approval and health records, improvement threads, and
+  checkpoint-to-memory mappings, with owner map, provenance bridge, legacy
+  index, AGENTS mesh coverage, generated mechanics coverage, package-local
+  artifacts, validators, tests, and decision record.
 - Add the `mechanics/` atlas plus `adoption`, `writeback`, and `retention`
   memo mechanic packages with package cards, owner maps, provenance bridges,
   legacy indexes, source-backed generated mechanics index, validators, tests,
@@ -99,6 +104,9 @@ Tracking starts with the community-docs baseline for this repository.
 - Move the flat pattern-lineage docs-root surface into
   `mechanics/lineage-harvest/docs/` and update README, docs maps, route law,
   generated companions, validators, and tests to the new active path.
+- Move checkpoint-specific schemas and examples into
+  `mechanics/checkpoint/` and update recurrence-support/writeback consumers,
+  generated companions, validators, and tests to the new artifact owner path.
 - Extend the AGENTS mesh and memo mechanics validator to include Agon/Titan
   and antifragility/governance/shape-guard/consumer-handoff/operational-gate/
   recurrence-support/lineage-harvest mechanics and mechanic docs/legacy

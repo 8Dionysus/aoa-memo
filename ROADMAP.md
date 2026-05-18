@@ -12,7 +12,10 @@ The repository has already named its role, object canon, schemas, doctrine-facin
 Object canon, trust/lifecycle posture, and the separate object-facing generated family are now in place.
 The active next slice is neighbor adoption so adjacent repos can consume the sharpened memo contracts without moving routing, role policy, graph normalization, or verdict logic into this repository.
 The first router-first adoption package formalizes additive inspect -> capsule -> expand consumption across the doctrine and object-facing recall families without changing memo ownership.
-The first recurrence-support landing makes checkpoint relaunch anchors and return-ready working recall explicit without changing memo ownership.
+The first checkpoint mechanic landing makes checkpoint relaunch anchors,
+carry packets, approval and health records, and checkpoint-to-memory mappings
+explicit without changing execution, runtime, role, proof, route, or source
+ownership.
 The first lineage-harvest landing makes pattern-lineage memory candidates and
 federation harvest stop-lines explicit without granting memo proof, KAG
 promotion, ToS canon, stats certification, runtime truth, or source-owner
@@ -26,7 +29,7 @@ ledger, changing schemas, or moving proof, graph lift, navigation, role
 authority, or runtime retention into `aoa-memo`.
 
 The current `v0.2.3` release line also already carries:
-- checkpoint recall follow-through and lineage-aware growth-refinery writeback surfaces through `mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md`, `mechanics/writeback/docs/GROWTH_REFINERY_WRITEBACK.md`, and `mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md`
+- checkpoint recall follow-through and lineage-aware growth-refinery writeback surfaces through `mechanics/checkpoint/docs/CHECKPOINT_MEMORY_BOUNDARY.md`, `mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md`, `mechanics/writeback/docs/GROWTH_REFINERY_WRITEBACK.md`, and `mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md`
 - pattern-lineage harvest memory through `mechanics/lineage-harvest/docs/PATTERN_LINEAGE_MEMORY.md`, `mechanics/lineage-harvest/schemas/pattern_lineage_memory_entry_v1.json`, and `mechanics/lineage-harvest/examples/pattern_lineage_memory_entry.example.json`
 - runtime writeback landing, intake, and governance surfaces through `mechanics/writeback/generated/runtime_writeback_targets.min.json`, `mechanics/writeback/generated/runtime_writeback_intake.min.json`, `mechanics/writeback/generated/runtime_writeback_governance.min.json`, and `mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md`
 - rollout, rollback-followthrough, component-refresh, and self-agency continuity support through `mechanics/antifragility/examples/recovery_pattern_memory.rollback_followthrough.example.json`, `mechanics/antifragility/examples/recovery_pattern_memory.component_refresh.example.json`, `mechanics/writeback/docs/SELF_AGENCY_CONTINUITY_WRITEBACK.md`, and `mechanics/writeback/examples/provenance_thread.self-agency-continuity.example.json`
@@ -42,8 +45,8 @@ The current topology hardening path starts with the source-authored route spine
 in `DESIGN.md`, `DESIGN.AGENTS.md`, `docs/README.md`,
 `docs/ROOT_SURFACE_LAW.md`, and `docs/decisions/`. This precedes any thematic
 docs or mechanics migration so antifragility, Agon, Titan, adoption,
-governance, consumer handoff, operational gate, recurrence support, lineage
-harvest, retention, and writeback
+governance, checkpoint, consumer handoff, operational gate, recurrence
+support, lineage harvest, retention, and writeback
 surfaces are moved only with owner maps, link updates, legacy bridges, and
 validation.
 The maintained Spark fast-loop lane now lives under `.agents/spark/` rather
@@ -77,11 +80,12 @@ rather than a topic bucket.
 The mechanics topology follows the `Agents-of-Abyss` pattern:
 `mechanics/antifragility/`, `mechanics/agon/`, `mechanics/titan/`,
 `mechanics/adoption/`, `mechanics/governance/`, `mechanics/shape-guard/`,
-`mechanics/consumer-handoff/`, `mechanics/operational-gate/`,
-`mechanics/recurrence-support/`, `mechanics/lineage-harvest/`,
-`mechanics/writeback/`, and `mechanics/retention/` own the former flat or
-transitional owner families as memo-side mechanics. Each package has a route
-card, package card, operation, direction, parts map, owner map, provenance
+`mechanics/checkpoint/`, `mechanics/consumer-handoff/`,
+`mechanics/operational-gate/`, `mechanics/recurrence-support/`,
+`mechanics/lineage-harvest/`, `mechanics/writeback/`, and
+`mechanics/retention/` own the former flat or transitional owner families as
+memo-side mechanics. Each package has a route card, package card, operation,
+direction, parts map, owner map, provenance
 bridge, landing log, roadmap, and legacy index. The source-backed
 `config/memo_mechanics.json` and `generated/memo_mechanics.min.json` keep the
 shape machine-checkable.
@@ -92,11 +96,17 @@ boundaries as one admission operation. Its schemas, examples, and tests now
 live in `mechanics/operational-gate/` so the admission mechanic carries its own
 contract surface.
 
+The checkpoint migration now owns inquiry checkpoint, checkpoint-to-memory,
+approval, health, improvement-thread, and phase-alpha checkpoint examples as
+one checkpoint memory operation. Recurrence-support consumes checkpoint
+artifacts for route return, and writeback consumes the checkpoint-to-memory
+contract for generated runtime writeback companions.
+
 The recurrence-support migration now owns recurrence support, witness trace,
 and reviewed closeout recall landing surfaces as one route-return support
-operation. Its inquiry checkpoint and witness trace contracts now live in
-`mechanics/recurrence-support/`; shared recall contracts and quest surfaces
-remain root-owned only when they are cross-mechanic.
+operation. Witness trace contracts live in `mechanics/recurrence-support/`;
+shared recall contracts and quest surfaces remain root-owned only when they
+are cross-mechanic.
 
 The lineage-harvest migration now owns pattern-lineage memory as one
 cross-repo recurring-signal gate. The pattern-lineage schema, example, and test
@@ -274,8 +284,8 @@ This roadmap does **not** aim to turn `aoa-memo` into:
 - `mechanics/consumer-handoff/docs/AGENT_MEMORY_POSTURE_SEAM.md`
 - `mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md`
 - cross-repo contract notes for `aoa-agents` memory posture
-- `mechanics/recurrence-support/schemas/inquiry_checkpoint.schema.json`
-- `mechanics/recurrence-support/examples/inquiry_checkpoint.example.json`
+- `mechanics/checkpoint/schemas/inquiry_checkpoint.schema.json`
+- `mechanics/checkpoint/examples/inquiry_checkpoint.example.json`
 - suggested fields for read, write, promotion, and freeze rights
 - playbook-facing guidance for required memory scopes and recall modes
 

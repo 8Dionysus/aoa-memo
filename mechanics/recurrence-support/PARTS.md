@@ -10,15 +10,16 @@
 
 ## Mechanic-Local Technical Contracts
 
-The recurrence-support schemas and examples live with the package because they
-define the route-return support mechanic. Shared recall contracts and reviewed
-closeout quest surfaces remain root-owned only when they serve more than this
-one mechanic:
+Witness trace schemas and examples live with this package because they define
+route-return support. Checkpoint schemas and examples live with
+`mechanics/checkpoint/` because checkpoint is the artifact owner. Shared recall
+contracts and reviewed closeout quest surfaces remain root-owned only when
+they serve more than this one mechanic:
 
 | Contract | Artifact Surface |
 |---|---|
-| Inquiry checkpoint | `mechanics/recurrence-support/schemas/inquiry_checkpoint.schema.json`, `mechanics/recurrence-support/examples/inquiry_checkpoint.example.json`, `mechanics/recurrence-support/examples/inquiry_checkpoint.return.example.json` |
-| Checkpoint to memory contract | `mechanics/writeback/schemas/checkpoint-to-memory-contract.schema.json`, `mechanics/writeback/examples/checkpoint_to_memory_contract.example.json` |
+| Checkpoint artifact consumer refs | `mechanics/checkpoint/schemas/inquiry_checkpoint.schema.json`, `mechanics/checkpoint/examples/inquiry_checkpoint.example.json`, `mechanics/checkpoint/examples/inquiry_checkpoint.return.example.json` |
+| Checkpoint to memory consumer refs | `mechanics/checkpoint/schemas/checkpoint-to-memory-contract.schema.json`, `mechanics/checkpoint/examples/checkpoint_to_memory_contract.example.json` |
 | Witness trace | `mechanics/recurrence-support/schemas/witness-trace.schema.json`, `mechanics/recurrence-support/examples/witness_trace.example.json` |
 | Working return recall | `examples/recall_contract.object.working.return.json`, `examples/recall_contract.object.working.phase-alpha.json` |
 | Reviewed closeout quest | `quests/AOA-MEM-Q-0009.yaml`, `generated/quest_catalog.min.json`, `generated/quest_catalog.min.example.json` |

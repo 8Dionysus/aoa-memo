@@ -8,7 +8,7 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
 TARGETS_PATH = REPO_ROOT / "mechanics" / "writeback" / "generated" / "runtime_writeback_targets.min.json"
-CONTRACT_PATH = REPO_ROOT / "mechanics" / "writeback" / "examples" / "checkpoint_to_memory_contract.example.json"
+CONTRACT_PATH = REPO_ROOT / "mechanics" / "checkpoint" / "examples" / "checkpoint_to_memory_contract.example.json"
 OUTPUT_PATH = REPO_ROOT / "mechanics" / "writeback" / "generated" / "runtime_writeback_intake.min.json"
 
 
@@ -32,7 +32,7 @@ def build_runtime_writeback_intake_payload() -> dict[str, object]:
     if not isinstance(targets_payload, dict):
         raise SystemExit("[error] mechanics/writeback/generated/runtime_writeback_targets.min.json must contain an object")
     if not isinstance(contract_payload, dict):
-        raise SystemExit("[error] mechanics/writeback/examples/checkpoint_to_memory_contract.example.json must contain an object")
+        raise SystemExit("[error] mechanics/checkpoint/examples/checkpoint_to_memory_contract.example.json must contain an object")
 
     targets = targets_payload.get("targets")
     if not isinstance(targets, list):
@@ -40,7 +40,7 @@ def build_runtime_writeback_intake_payload() -> dict[str, object]:
 
     contract_rules = contract_payload.get("mapping_rules")
     if not isinstance(contract_rules, list):
-        raise SystemExit("[error] mechanics/writeback/examples/checkpoint_to_memory_contract.example.json must contain mapping_rules")
+        raise SystemExit("[error] mechanics/checkpoint/examples/checkpoint_to_memory_contract.example.json must contain mapping_rules")
 
     rules_by_surface = {
         rule.get("runtime_surface"): rule
@@ -107,7 +107,7 @@ def build_runtime_writeback_intake_payload() -> dict[str, object]:
         "layer": "aoa-memo",
         "source_of_truth": {
             "runtime_writeback_targets": "mechanics/writeback/generated/runtime_writeback_targets.min.json",
-            "checkpoint_to_memory_contract": "mechanics/writeback/examples/checkpoint_to_memory_contract.example.json",
+            "checkpoint_to_memory_contract": "mechanics/checkpoint/examples/checkpoint_to_memory_contract.example.json",
             "runtime_writeback_seam": "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
             "quest_evidence_writeback": "mechanics/writeback/docs/QUEST_EVIDENCE_WRITEBACK.md",
         },
