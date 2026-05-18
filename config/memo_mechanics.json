@@ -5,6 +5,27 @@
   "generated_ref": "generated/memo_mechanics.min.json",
   "packages": [
     {
+      "slug": "antifragility",
+      "title": "Antifragility Memo Mechanic",
+      "status": "landed",
+      "docs": [
+        "DRIFT_REVIEW_LESSON_MEMORY.md",
+        "FAILURE_LESSON_MEMORY.md",
+        "FAILURE_LESSON_RECALL.md",
+        "RECOVERY_PATTERN_MEMORY.md",
+        "RECOVERY_PATTERN_RECALL.md",
+        "ROLLBACK_FOLLOWTHROUGH_PATTERN.md"
+      ],
+      "former_flat_paths": [
+        "docs/DRIFT_REVIEW_LESSON_MEMORY.md",
+        "docs/FAILURE_LESSON_MEMORY.md",
+        "docs/FAILURE_LESSON_RECALL.md",
+        "docs/RECOVERY_PATTERN_MEMORY.md",
+        "docs/RECOVERY_PATTERN_RECALL.md",
+        "docs/ROLLBACK_FOLLOWTHROUGH_PATTERN.md"
+      ]
+    },
+    {
       "slug": "agon",
       "title": "Agon Memo Mechanic",
       "status": "landed",

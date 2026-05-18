@@ -82,13 +82,17 @@ def test_failure_lesson_lineage_ref_validation_handles_malformed_objects(
 
 def test_failure_lesson_surfaces_stay_discoverable_and_non_proof() -> None:
     readme = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
-    memory_doc = (REPO_ROOT / "docs" / "FAILURE_LESSON_MEMORY.md").read_text(encoding="utf-8")
-    recall_doc = (REPO_ROOT / "docs" / "FAILURE_LESSON_RECALL.md").read_text(encoding="utf-8")
+    memory_doc = (
+        REPO_ROOT / "mechanics" / "antifragility" / "docs" / "FAILURE_LESSON_MEMORY.md"
+    ).read_text(encoding="utf-8")
+    recall_doc = (
+        REPO_ROOT / "mechanics" / "antifragility" / "docs" / "FAILURE_LESSON_RECALL.md"
+    ).read_text(encoding="utf-8")
 
     for fragment in [
-        "docs/FAILURE_LESSON_MEMORY.md",
-        "docs/FAILURE_LESSON_RECALL.md",
-        "docs/DRIFT_REVIEW_LESSON_MEMORY.md",
+        "mechanics/antifragility/docs/FAILURE_LESSON_MEMORY.md",
+        "mechanics/antifragility/docs/FAILURE_LESSON_RECALL.md",
+        "mechanics/antifragility/docs/DRIFT_REVIEW_LESSON_MEMORY.md",
         "mechanics/writeback/docs/GROWTH_REFINERY_WRITEBACK.md",
         "schemas/failure_lesson_memory_v1.json",
         "examples/failure_lesson_memory.example.json",
@@ -99,7 +103,7 @@ def test_failure_lesson_surfaces_stay_discoverable_and_non_proof() -> None:
         assert fragment in readme
 
     assert "It remains memory, not proof." in memory_doc
-    assert "docs/DRIFT_REVIEW_LESSON_MEMORY.md" in memory_doc
+    assert "mechanics/antifragility/docs/DRIFT_REVIEW_LESSON_MEMORY.md" in memory_doc
     assert "lineage_refs" in memory_doc
     assert "Memo may shape attention." in recall_doc
     assert "It does not overrule source-owned evidence." in recall_doc

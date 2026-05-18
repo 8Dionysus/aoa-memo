@@ -165,7 +165,8 @@ landing receipt, it needs a bounded home rather than a root-level spotlight.
 - memory objects that read like workflows or verdicts
 - generated files cited as source truth
 - writeback surfaces pretending to be live ledgers
-- Agon, Titan, adoption, or retention notes without a local owner lane
+- Antifragility, Agon, Titan, adoption, writeback, or retention notes without a
+  local owner lane
 - runtime language pretending this repo stores live memory
 - role rights hidden inside memory schemas
 - KAG exports widening into graph platform behavior

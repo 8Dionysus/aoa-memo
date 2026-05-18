@@ -21,6 +21,10 @@ Tracking starts with the community-docs baseline for this repository.
   package cards, owner maps, provenance bridges, legacy indexes,
   source-backed generated mechanics index coverage, validators, tests, and
   decision record.
+- Add `mechanics/antifragility/` as a memo mechanic package for
+  failure-lesson and recovery-pattern memory, with package cards, owner map,
+  provenance bridge, legacy index, AGENTS mesh coverage, generated mechanics
+  coverage, validators, tests, and decision record.
 - Add the `mechanics/` atlas plus `adoption`, `writeback`, and `retention`
   memo mechanic packages with package cards, owner maps, provenance bridges,
   legacy indexes, source-backed generated mechanics index, validators, tests,
@@ -42,8 +46,11 @@ Tracking starts with the community-docs baseline for this repository.
 - Move flat adoption, writeback, and retention docs-root surfaces into
   `mechanics/<slug>/docs/` and update source refs across docs, examples,
   generated companions, quests, scripts, and tests.
+- Move flat antifragility docs-root surfaces into
+  `mechanics/antifragility/docs/` and update README, registry, examples,
+  generated object surfaces, writeback refs, scripts, and tests.
 - Extend the AGENTS mesh and memo mechanics validator to include Agon/Titan
-  mechanics and mechanic docs/legacy subroutes.
+  and antifragility mechanics and mechanic docs/legacy subroutes.
 
 ## [0.2.3] - 2026-04-23
 

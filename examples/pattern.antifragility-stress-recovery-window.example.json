@@ -10,7 +10,7 @@
   "owner_refs": [
     "repo:aoa-memo"
   ],
-  "payload_ref": "docs/RECOVERY_PATTERN_MEMORY.md#boundary-reminder",
+  "payload_ref": "mechanics/antifragility/docs/RECOVERY_PATTERN_MEMORY.md#boundary-reminder",
   "tags": [
     "antifragility",
     "pattern",
@@ -28,7 +28,7 @@
       "repo:aoa-evals/bundles/aoa-stress-recovery-window/reports/example-report.json",
       "repo:aoa-stats/generated/stress_recovery_window_summary.min.json",
       "repo:aoa-routing/generated/composite_stress_route_hints.min.json",
-      "docs/RECOVERY_PATTERN_MEMORY.md#what-it-should-carry"
+      "mechanics/antifragility/docs/RECOVERY_PATTERN_MEMORY.md#what-it-should-carry"
     ],
     "episode_refs": [
       "memo.ep.2026-04-02.alpha-validation-remediation",

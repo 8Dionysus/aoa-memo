@@ -70,6 +70,9 @@ they still participate in repo-wide validation and public contract surfaces.
 
 Examples:
 
+- Antifragility schemas, examples, generated object surfaces, and tests remain
+  in root technical districts while they define public failure-lesson and
+  recovery-pattern object contracts.
 - Agon config, schemas, generated registries, manifests, quests, validators,
   and tests remain in root technical districts while they are public component
   contracts and release-gate companions.

@@ -6,7 +6,14 @@ import sys
 from memo_mechanics_common import REPO_ROOT, load_config
 
 
-RETIRED_DOCS_DISTRICTS = ("agon", "titan", "adoption", "writeback", "retention")
+RETIRED_DOCS_DISTRICTS = (
+    "antifragility",
+    "agon",
+    "titan",
+    "adoption",
+    "writeback",
+    "retention",
+)
 RETIRED_README_SNIPPETS = (
     "docs/agon/",
     "docs/titan/",

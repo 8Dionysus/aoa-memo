@@ -40,7 +40,7 @@ class AgentsMeshTestCase(unittest.TestCase):
         self.assertEqual("agents-md-mesh-v1", payload["source_of_truth"])
         self.assertEqual("config/agents_mesh.json", payload["config_ref"])
         self.assertEqual("DESIGN.AGENTS.md", payload["authority_ref"])
-        self.assertEqual(31, payload["counts"]["canonical"])
+        self.assertEqual(34, payload["counts"]["canonical"])
         self.assertEqual(0, payload["counts"]["migration"])
 
         paths = {card["path"] for card in payload["cards"]}
@@ -58,6 +58,9 @@ class AgentsMeshTestCase(unittest.TestCase):
                 "generated/AGENTS.md",
                 "manifests/AGENTS.md",
                 "mechanics/AGENTS.md",
+                "mechanics/antifragility/AGENTS.md",
+                "mechanics/antifragility/docs/AGENTS.md",
+                "mechanics/antifragility/legacy/AGENTS.md",
                 "mechanics/agon/AGENTS.md",
                 "mechanics/agon/docs/AGENTS.md",
                 "mechanics/agon/legacy/AGENTS.md",
