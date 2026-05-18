@@ -27,12 +27,12 @@ def test_a2a_child_return_provenance_thread_validates() -> None:
 
 
 def test_a2a_child_return_writeback_stays_candidate_only() -> None:
-    doc = (REPO_ROOT / "docs" / "A2A_CHILD_RETURN_WRITEBACK.md").read_text(
-        encoding="utf-8"
-    )
-    seam = (REPO_ROOT / "docs" / "RUNTIME_WRITEBACK_SEAM.md").read_text(
-        encoding="utf-8"
-    )
+    doc = (
+        REPO_ROOT / "mechanics" / "writeback" / "docs" / "A2A_CHILD_RETURN_WRITEBACK.md"
+    ).read_text(encoding="utf-8")
+    seam = (
+        REPO_ROOT / "mechanics" / "writeback" / "docs" / "RUNTIME_WRITEBACK_SEAM.md"
+    ).read_text(encoding="utf-8")
     example = load_json(
         "examples/provenance_thread.a2a-summon-return-checkpoint.example.json"
     )

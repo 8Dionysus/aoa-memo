@@ -67,7 +67,7 @@
       ],
       "strongest_next_sources": [
         "ROADMAP.md#current-stage",
-        "docs/RUNTIME_WRITEBACK_SEAM.md#mapping-to-preserve"
+        "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md#mapping-to-preserve"
       ]
     },
     {
@@ -399,8 +399,8 @@
         "memo.ep.2026-03-23.tos-interpretation-bridge-seed"
       ],
       "strongest_next_sources": [
-        "docs/RUNTIME_WRITEBACK_SEAM.md#distillation-posture",
-        "docs/WRITEBACK_TEMPERATURE_POLICY.md#what-may-bridge-outward",
+        "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md#distillation-posture",
+        "mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md#what-may-bridge-outward",
         "docs/MEMORY_MODEL.md#procedural-experience-memory"
       ]
     },
@@ -1362,7 +1362,7 @@
       "related_object_ids": [],
       "strongest_next_sources": [
         "docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map",
-        "docs/WRITEBACK_TEMPERATURE_POLICY.md",
+        "mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md",
         "examples/claim.current-entrypoint.example.json"
       ]
     },

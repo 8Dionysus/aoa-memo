@@ -107,7 +107,7 @@ def test_recovery_pattern_surfaces_stay_discoverable_and_non_proof() -> None:
         "docs/RECOVERY_PATTERN_MEMORY.md",
         "docs/RECOVERY_PATTERN_RECALL.md",
         "docs/ROLLBACK_FOLLOWTHROUGH_PATTERN.md",
-        "docs/GROWTH_REFINERY_WRITEBACK.md",
+        "mechanics/writeback/docs/GROWTH_REFINERY_WRITEBACK.md",
         "schemas/recovery_pattern_memory_v1.json",
         "examples/recovery_pattern_memory.example.json",
         "examples/recovery_pattern_memory.lineage.example.json",

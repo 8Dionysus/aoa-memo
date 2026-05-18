@@ -56,7 +56,7 @@
           "heading": "Provenance and Evidence",
           "ordinal": 2,
           "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
-          "body": "Provenance thread: prov.aoa-memo.contract-hardening.2026-03-23. Source refs: ROADMAP.md#current-stage, docs/RUNTIME_WRITEBACK_SEAM.md#mapping-to-preserve. Episode refs: memo.ep.2026-03-20.bootstrap-foundation. Related curated object ids: memo.ep.2026-03-20.bootstrap-foundation. Strongest next sources: ROADMAP.md#current-stage, docs/RUNTIME_WRITEBACK_SEAM.md#mapping-to-preserve."
+          "body": "Provenance thread: prov.aoa-memo.contract-hardening.2026-03-23. Source refs: ROADMAP.md#current-stage, mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md#mapping-to-preserve. Episode refs: memo.ep.2026-03-20.bootstrap-foundation. Related curated object ids: memo.ep.2026-03-20.bootstrap-foundation. Strongest next sources: ROADMAP.md#current-stage, mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md#mapping-to-preserve."
         },
         {
           "section_id": "memo.state.2026-03-23.contract-hardening-current-axis#trust-and-lifecycle",
@@ -70,7 +70,7 @@
           "heading": "Bridges and Access",
           "ordinal": 4,
           "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
-          "body": "Access class: public. Scope classes: thread, repo, project. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: docs/RUNTIME_WRITEBACK_SEAM.md#mapping-to-preserve. ToS refs: none. Skill refs: none. Eval refs: none. KAG lift status: none."
+          "body": "Access class: public. Scope classes: thread, repo, project. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md#mapping-to-preserve. ToS refs: none. Skill refs: none. Eval refs: none. KAG lift status: none."
         }
       ]
     },
@@ -409,14 +409,14 @@
           "heading": "Identity and Recall",
           "ordinal": 1,
           "summary": "Names the pattern surface, its active recall modes, and its preferred current-recall posture.",
-          "body": "Reviewed candidates stay candidates before durable promotion. Observed across writeback and bridge flows: durable memo growth lands best when candidate claims, patterns, and bridges stay review-gated before wider promotion. Scope: repo:aoa-memo, project:AoA. Scope classes: repo, project. Primary recall modes: procedural, semantic. Current recall status: preferred because This pattern should surface as current procedural-experience memory because it keeps recurring across bounded writeback flows. Payload ref: docs/WRITEBACK_TEMPERATURE_POLICY.md#what-may-bridge-outward."
+          "body": "Reviewed candidates stay candidates before durable promotion. Observed across writeback and bridge flows: durable memo growth lands best when candidate claims, patterns, and bridges stay review-gated before wider promotion. Scope: repo:aoa-memo, project:AoA. Scope classes: repo, project. Primary recall modes: procedural, semantic. Current recall status: preferred because This pattern should surface as current procedural-experience memory because it keeps recurring across bounded writeback flows. Payload ref: mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md#what-may-bridge-outward."
         },
         {
           "section_id": "memo.pattern.2026-03-23.reviewed-candidates-before-promotion#provenance-and-evidence",
           "heading": "Provenance and Evidence",
           "ordinal": 2,
           "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
-          "body": "Provenance thread: prov.aoa-memo.contract-hardening.2026-03-23. Source refs: docs/RUNTIME_WRITEBACK_SEAM.md#distillation-posture, docs/WRITEBACK_TEMPERATURE_POLICY.md#what-may-bridge-outward, docs/MEMORY_MODEL.md#procedural-experience-memory. Episode refs: memo.ep.2026-03-21.self-agent-health-check, memo.ep.2026-03-23.tos-interpretation-bridge-seed. Related curated object ids: memo.ep.2026-03-21.self-agent-health-check, memo.ep.2026-03-23.tos-interpretation-bridge-seed. Strongest next sources: docs/RUNTIME_WRITEBACK_SEAM.md#distillation-posture, docs/WRITEBACK_TEMPERATURE_POLICY.md#what-may-bridge-outward, docs/MEMORY_MODEL.md#procedural-experience-memory."
+          "body": "Provenance thread: prov.aoa-memo.contract-hardening.2026-03-23. Source refs: mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md#distillation-posture, mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md#what-may-bridge-outward, docs/MEMORY_MODEL.md#procedural-experience-memory. Episode refs: memo.ep.2026-03-21.self-agent-health-check, memo.ep.2026-03-23.tos-interpretation-bridge-seed. Related curated object ids: memo.ep.2026-03-21.self-agent-health-check, memo.ep.2026-03-23.tos-interpretation-bridge-seed. Strongest next sources: mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md#distillation-posture, mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md#what-may-bridge-outward, docs/MEMORY_MODEL.md#procedural-experience-memory."
         },
         {
           "section_id": "memo.pattern.2026-03-23.reviewed-candidates-before-promotion#trust-and-lifecycle",
@@ -1424,7 +1424,7 @@
           "heading": "Provenance and Evidence",
           "ordinal": 2,
           "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
-          "body": "Provenance thread: prov.memo.readiness-boundary.2026-04-13. Source refs: docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map, docs/WRITEBACK_TEMPERATURE_POLICY.md, examples/claim.current-entrypoint.example.json. Episode refs: none. Related curated object ids: none. Strongest next sources: docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map, docs/WRITEBACK_TEMPERATURE_POLICY.md, examples/claim.current-entrypoint.example.json."
+          "body": "Provenance thread: prov.memo.readiness-boundary.2026-04-13. Source refs: docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map, mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md, examples/claim.current-entrypoint.example.json. Episode refs: none. Related curated object ids: none. Strongest next sources: docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map, mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md, examples/claim.current-entrypoint.example.json."
         },
         {
           "section_id": "memo.audit.2026-04-13.memo-entrypoint-retention-check#trust-and-lifecycle",

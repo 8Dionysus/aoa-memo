@@ -27,4 +27,4 @@ def test_memory_readiness_boundary_contract_example_validates() -> None:
 
     assert errors == []
     assert example["retention_boundary"]["owned_by"] == "abyss-stack"
-    assert "docs/RUNTIME_WRITEBACK_SEAM.md" in example["writeback_boundary"]["export_surfaces"]
+    assert "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md" in example["writeback_boundary"]["export_surfaces"]

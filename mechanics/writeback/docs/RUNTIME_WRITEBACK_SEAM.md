@@ -81,7 +81,7 @@ Reviewed A2A child-return writeback also reuses the same rule. A summon
 decision, return plan, checkpoint bridge plan, reviewed child-result audit, or
 dry-run runtime receipt may justify only bounded `decision`, `audit_event`,
 `state_capsule`, or provenance-thread candidates through
-`docs/A2A_CHILD_RETURN_WRITEBACK.md`; it does not create an A2A-specific memory
+`mechanics/writeback/docs/A2A_CHILD_RETURN_WRITEBACK.md`; it does not create an A2A-specific memory
 kind or move child-route truth into `aoa-memo`.
 
 ## Trace And Restart Reuse

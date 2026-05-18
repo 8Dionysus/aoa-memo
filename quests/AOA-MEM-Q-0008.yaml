@@ -3,7 +3,7 @@ id: AOA-MEM-Q-0008
 title: Reanchor checkpoint automation recall as a thin-evidence memo candidate
 summary: Preserve the reviewed checkpoint automation recall candidate as a memo-side thin-evidence marker without copying source-owned quest or proof state into memory.
 repo: aoa-memo
-owner_surface: docs/QUEST_EVIDENCE_WRITEBACK.md
+owner_surface: mechanics/writeback/docs/QUEST_EVIDENCE_WRITEBACK.md
 theme_ref: ''
 milestone_ref: ''
 kind: memory
@@ -31,7 +31,7 @@ activation:
   note: open when checkpoint closeout preserves a recall-shaped hint that should not be lost between sessions
 anchor_ref:
   artifact: quest_evidence_writeback
-  ref: docs/QUEST_EVIDENCE_WRITEBACK.md
+  ref: mechanics/writeback/docs/QUEST_EVIDENCE_WRITEBACK.md
   note: recall should stay witness-shaped and provenance-aware until repeated evidence justifies stronger writeback
 handoff_role: memo-maintainer
 evidence:

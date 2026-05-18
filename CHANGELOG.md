@@ -21,6 +21,10 @@ Tracking starts with the community-docs baseline for this repository.
   district map, docs-district validator, tests, and decision record.
 - Add the `docs/titan/` district for Titan memo posture docs with a local
   route card, district map, validator extension, tests, and decision record.
+- Add the `mechanics/` atlas plus `adoption`, `writeback`, and `retention`
+  memo mechanic packages with package cards, owner maps, provenance bridges,
+  legacy indexes, source-backed generated mechanics index, validators, tests,
+  and decision record.
 
 ### Changed
 
@@ -31,6 +35,9 @@ Tracking starts with the community-docs baseline for this repository.
   manifest refs to the new district paths.
 - Move flat Titan docs-root surfaces into `docs/titan/` and update Titan source
   refs in README, examples, and tests.
+- Move flat adoption, writeback, and retention docs-root surfaces into
+  `mechanics/<slug>/docs/` and update source refs across docs, examples,
+  generated companions, quests, scripts, and tests.
 
 ## [0.2.3] - 2026-04-23
 
@@ -201,7 +208,7 @@ This changelog entry uses the release-prep merge date.
 - community-docs baseline established for this repository
 - `CHANGELOG.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, and `CONTRIBUTING.md`
 - memo-side contract docs for `aoa-agents`, `aoa-playbooks`, KAG/ToS bridge exports, eval guardrails, and the operational boundary
-- `docs/ROUTING_MEMORY_ADOPTION.md` to formalize router-facing inspect -> capsule -> expand memo consumption without moving routing policy into `aoa-memo`
+- `mechanics/adoption/docs/ROUTING_MEMORY_ADOPTION.md` to formalize router-facing inspect -> capsule -> expand memo consumption without moving routing policy into `aoa-memo`
 - schema-backed chunk-face, graph-face, and eval-guardrail handoff surfaces with bounded examples
 - bridge-lift provenance examples and validation coverage for new bridge/export and guardrail surfaces
 

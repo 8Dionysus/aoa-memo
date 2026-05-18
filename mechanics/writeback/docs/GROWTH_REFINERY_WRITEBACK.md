@@ -98,6 +98,6 @@ the stronger owner and proof surfaces.
 
 ## Canonical Neighbors
 
-- `docs/RUNTIME_WRITEBACK_SEAM.md` owns the runtime-to-memo boundary
+- `mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md` owns the runtime-to-memo boundary
 - `docs/FAILURE_LESSON_MEMORY.md` owns failure-lesson doctrine
 - `docs/RECOVERY_PATTERN_MEMORY.md` owns recovery-pattern doctrine

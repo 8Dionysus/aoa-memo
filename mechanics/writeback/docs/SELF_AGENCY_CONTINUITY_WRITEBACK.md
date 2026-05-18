@@ -64,6 +64,6 @@ Do not:
 
 ## Canonical neighbors
 
-- `docs/RUNTIME_WRITEBACK_SEAM.md` owns the runtime-to-memo boundary
-- `docs/GROWTH_REFINERY_WRITEBACK.md` owns lineage-aware refinery writeback
+- `mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md` owns the runtime-to-memo boundary
+- `mechanics/writeback/docs/GROWTH_REFINERY_WRITEBACK.md` owns lineage-aware refinery writeback
 - `docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md` owns recurring memory support posture

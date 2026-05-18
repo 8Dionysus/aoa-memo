@@ -25,7 +25,7 @@
   "provenance": {
     "source_refs": [
       "docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map",
-      "docs/WRITEBACK_TEMPERATURE_POLICY.md",
+      "mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md",
       "examples/claim.current-entrypoint.example.json"
     ],
     "episode_refs": [],

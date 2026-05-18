@@ -121,7 +121,7 @@
       "focus": "over_promotion",
       "risk": "Bridge or claim candidates are promoted into durable canon posture without the intended review boundary.",
       "input_refs": [
-        "docs/WRITEBACK_TEMPERATURE_POLICY.md",
+        "mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md",
         "docs/AGENT_MEMORY_POSTURE_SEAM.md#boundary-rule",
         "examples/bridge.kag-lift.example.json"
       ],

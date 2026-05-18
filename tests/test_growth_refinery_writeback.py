@@ -53,7 +53,9 @@ def test_lineage_chain_validation_rejects_skipped_upstream_refs() -> None:
 
 
 def test_growth_refinery_writeback_doc_keeps_bounded_lineage_rules() -> None:
-    doc = (REPO_ROOT / "docs" / "GROWTH_REFINERY_WRITEBACK.md").read_text(encoding="utf-8")
+    doc = (
+        REPO_ROOT / "mechanics" / "writeback" / "docs" / "GROWTH_REFINERY_WRITEBACK.md"
+    ).read_text(encoding="utf-8")
     normalized = " ".join(doc.split())
 
     assert "preserve the strongest available chain in" in doc
@@ -67,7 +69,9 @@ def test_growth_refinery_writeback_doc_keeps_bounded_lineage_rules() -> None:
 
 
 def test_growth_refinery_writeback_doc_maps_prune_cases_to_existing_memo_kinds() -> None:
-    doc = (REPO_ROOT / "docs" / "GROWTH_REFINERY_WRITEBACK.md").read_text(encoding="utf-8")
+    doc = (
+        REPO_ROOT / "mechanics" / "writeback" / "docs" / "GROWTH_REFINERY_WRITEBACK.md"
+    ).read_text(encoding="utf-8")
     normalized = " ".join(doc.split())
 
     assert "repeated drop, wrong-owner, or weak-owner supersession belongs in" in normalized

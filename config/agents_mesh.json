@@ -108,6 +108,46 @@
       ]
     },
     {
+      "path": "mechanics/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "memo-side mechanics",
+        "mechanics/<slug>/docs/",
+        "legacy/",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/adoption/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "adoption mechanic",
+        "mechanics/adoption/",
+        "OWNER_MAP.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/writeback/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "writeback mechanic",
+        "mechanics/writeback/",
+        "OWNER_MAP.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/retention/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "retention mechanic",
+        "mechanics/retention/",
+        "OWNER_MAP.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
       "path": "examples/AGENTS.md",
       "min_lines": 40,
       "required_snippets": [

@@ -26,7 +26,7 @@
   "provenance": {
     "source_refs": [
       "ROADMAP.md#current-stage",
-      "docs/RUNTIME_WRITEBACK_SEAM.md#mapping-to-preserve"
+      "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md#mapping-to-preserve"
     ],
     "episode_refs": [
       "memo.ep.2026-03-20.bootstrap-foundation"
@@ -70,6 +70,6 @@
     "skill_refs": [],
     "eval_refs": [],
     "kag_lift_status": "none",
-    "route_capsule_ref": "docs/RUNTIME_WRITEBACK_SEAM.md#mapping-to-preserve"
+    "route_capsule_ref": "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md#mapping-to-preserve"
   }
 }

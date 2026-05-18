@@ -167,7 +167,7 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
             "recall_contract.working.json": {
                 "inspect_surface": "generated/memory_catalog.min.json",
                 "capsule_surface": None,
-                "expand_surface": "docs/RUNTIME_WRITEBACK_SEAM.md",
+                "expand_surface": "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
                 "mode": "working",
             },
             "recall_contract.lineage.json": {
@@ -232,7 +232,7 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
         self.assertEqual(
             payload["runtime_boundary"]["review_boundary_refs"],
             [
-                "docs/WRITEBACK_TEMPERATURE_POLICY.md#writeback-classes",
+                "mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md#writeback-classes",
                 "docs/MEMORY_MODEL.md#checkpoint-route-writeback",
                 "repo:aoa-agents/docs/AGENT_MEMORY_POSTURE.md",
             ],
@@ -260,7 +260,7 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
         self.assertFalse(checkpoint_export["requires_human_review"])
         self.assertEqual(checkpoint_export["review_state_default"], "captured")
         self.assertIn(
-            "docs/WRITEBACK_TEMPERATURE_POLICY.md#inquiry-checkpoint-packs",
+            "mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md#inquiry-checkpoint-packs",
             checkpoint_export["runtime_refs"],
         )
 
@@ -328,8 +328,8 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
             {
                 "runtime_writeback_targets": "generated/runtime_writeback_targets.min.json",
                 "checkpoint_to_memory_contract": "examples/checkpoint_to_memory_contract.example.json",
-                "runtime_writeback_seam": "docs/RUNTIME_WRITEBACK_SEAM.md",
-                "quest_evidence_writeback": "docs/QUEST_EVIDENCE_WRITEBACK.md",
+                "runtime_writeback_seam": "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
+                "quest_evidence_writeback": "mechanics/writeback/docs/QUEST_EVIDENCE_WRITEBACK.md",
             },
         )
 
@@ -338,10 +338,10 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
         self.assertEqual(len(runtime_surfaces), len(set(runtime_surfaces)))
         self.assertTrue(all(item["owner_review_refs"] for item in current["targets"]))
         self.assertTrue(
-            all("docs/RUNTIME_WRITEBACK_SEAM.md" in item["owner_review_refs"] for item in current["targets"])
+            all("mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md" in item["owner_review_refs"] for item in current["targets"])
         )
         self.assertTrue(
-            all("docs/QUEST_EVIDENCE_WRITEBACK.md" in item["owner_review_refs"] for item in current["targets"])
+            all("mechanics/writeback/docs/QUEST_EVIDENCE_WRITEBACK.md" in item["owner_review_refs"] for item in current["targets"])
         )
 
         reviewed_candidates = [

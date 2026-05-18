@@ -54,7 +54,7 @@ PHASE_ALPHA_WRITEBACK_OUTPUT_PATH = GENERATED / "phase_alpha_writeback_map.min.j
 MEMORY_READINESS_BOUNDARY_CONTRACT_PATH = EXAMPLES / "memory_readiness_boundary_contract.example.json"
 MEMORY_READINESS_BOUNDARY_CONTRACT_SCHEMA = "memory_readiness_boundary_contract.schema.json"
 QUESTBOOK_PATH = ROOT / "QUESTBOOK.md"
-QUESTBOOK_DOC = ROOT / "docs" / "QUEST_EVIDENCE_WRITEBACK.md"
+QUESTBOOK_DOC = ROOT / "mechanics" / "writeback" / "docs" / "QUEST_EVIDENCE_WRITEBACK.md"
 ORCHESTRATOR_MEMORY_ALIGNMENT_DOC = ROOT / "docs" / "ORCHESTRATOR_MEMORY_ALIGNMENT.md"
 QUEST_CATALOG_PATH = GENERATED / "quest_catalog.min.json"
 QUEST_CATALOG_EXAMPLE_PATH = GENERATED / "quest_catalog.min.example.json"
@@ -382,7 +382,7 @@ def validate_questbook_surface() -> None:
     if QUESTBOOK_DOC.exists():
         doc_text = load_text(QUESTBOOK_DOC)
         if "WRITEBACK_TEMPERATURE_POLICY.md" not in doc_text:
-            errors.append("docs/QUEST_EVIDENCE_WRITEBACK.md must stay anchored to docs/WRITEBACK_TEMPERATURE_POLICY.md")
+            errors.append("mechanics/writeback/docs/QUEST_EVIDENCE_WRITEBACK.md must stay anchored to mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md")
         lower_doc = doc_text.lower()
         for phrase in (
             "quest state remains source-owned",
@@ -391,7 +391,7 @@ def validate_questbook_surface() -> None:
             "witness trace posture",
         ):
             if phrase not in lower_doc:
-                errors.append(f"docs/QUEST_EVIDENCE_WRITEBACK.md must mention {phrase}")
+                errors.append(f"mechanics/writeback/docs/QUEST_EVIDENCE_WRITEBACK.md must mention {phrase}")
 
     active_quest_ids: list[str] = []
     closed_quest_ids: list[str] = []
@@ -465,15 +465,22 @@ def validate_questbook_surface() -> None:
                     f"{path.relative_to(ROOT)} must keep capability_target {expected_target}"
                 )
         if quest_id in FOUNDATION_QUESTBOOK_FILES:
-            if data.get("owner_surface") != "docs/QUEST_EVIDENCE_WRITEBACK.md":
+            if data.get("owner_surface") != "mechanics/writeback/docs/QUEST_EVIDENCE_WRITEBACK.md":
                 errors.append(
-                    f"{path.relative_to(ROOT)} must keep owner_surface docs/QUEST_EVIDENCE_WRITEBACK.md"
+                    f"{path.relative_to(ROOT)} must keep owner_surface mechanics/writeback/docs/QUEST_EVIDENCE_WRITEBACK.md"
                 )
         else:
             anchor_ref = quest_anchor_doc_ref(data)
-            if not isinstance(anchor_ref, str) or not anchor_ref.startswith("docs/"):
+            if not isinstance(anchor_ref, str) or not anchor_ref.startswith(
+                (
+                    "docs/",
+                    "mechanics/adoption/docs/",
+                    "mechanics/writeback/docs/",
+                    "mechanics/retention/docs/",
+                )
+            ):
                 errors.append(
-                    f"{path.relative_to(ROOT)} must keep anchor_ref within local docs/ for additive memo quests"
+                    f"{path.relative_to(ROOT)} must keep anchor_ref within local memo docs or mechanics docs for additive memo quests"
                 )
             else:
                 anchor_error = local_ref_error(anchor_ref, f"{path.relative_to(ROOT)} anchor_ref")
@@ -1229,9 +1236,9 @@ def validate_memory_readiness_boundary_contract() -> None:
         errors.append("memory_readiness_boundary_contract.example.json must reject live scratchpad residue")
     if not isinstance(retention, dict) or retention.get("owned_by") != "abyss-stack":
         errors.append("memory_readiness_boundary_contract.example.json must keep retention owned by abyss-stack")
-    if not isinstance(writeback, dict) or "docs/RUNTIME_WRITEBACK_SEAM.md" not in writeback.get("export_surfaces", []):
+    if not isinstance(writeback, dict) or "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md" not in writeback.get("export_surfaces", []):
         errors.append(
-            "memory_readiness_boundary_contract.example.json must point writeback at docs/RUNTIME_WRITEBACK_SEAM.md"
+            "memory_readiness_boundary_contract.example.json must point writeback at mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md"
         )
 
     if errors:
@@ -1414,8 +1421,8 @@ def validate_registry() -> None:
         "docs/FAILURE_LESSON_RECALL.md",
         "docs/RECOVERY_PATTERN_MEMORY.md",
         "docs/RECOVERY_PATTERN_RECALL.md",
-        "docs/GROWTH_REFINERY_WRITEBACK.md",
-        "docs/QUEST_CHRONICLE_WRITEBACK.md",
+        "mechanics/writeback/docs/GROWTH_REFINERY_WRITEBACK.md",
+        "mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md",
         "docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
         "docs/KAG_SOURCE_EXPORT.md",
     )
@@ -1604,8 +1611,8 @@ def validate_quest_chronicle_surface() -> None:
         errors.append("quest_chronicle must not appear in generated/memo_registry.min.json supporting_objects")
     if "schemas/quest_chronicle.schema.json" not in registry.get("schemas", []):
         errors.append("generated/memo_registry.min.json must list schemas/quest_chronicle.schema.json")
-    if "docs/QUEST_CHRONICLE_WRITEBACK.md" not in registry.get("core_docs", []):
-        errors.append("generated/memo_registry.min.json must list docs/QUEST_CHRONICLE_WRITEBACK.md")
+    if "mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md" not in registry.get("core_docs", []):
+        errors.append("generated/memo_registry.min.json must list mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md")
 
     if data.get("public_safe") is not True:
         errors.append("quest_chronicle.example.json must stay public_safe")
@@ -1647,16 +1654,16 @@ def validate_quest_chronicle_surface() -> None:
 
 
 def validate_routing_memory_adoption_surface() -> None:
-    doc = load_text(ROOT / "docs" / "ROUTING_MEMORY_ADOPTION.md")
+    doc = load_text(ROOT / "mechanics" / "adoption" / "docs" / "ROUTING_MEMORY_ADOPTION.md")
     doc_compact = " ".join(doc.split())
     readme = load_text(ROOT / "README.md")
     registry = load_json(GENERATED / "memo_registry.min.json")
     errors: list[str] = []
 
-    if "docs/ROUTING_MEMORY_ADOPTION.md" not in readme:
-        errors.append("README.md must route docs/ROUTING_MEMORY_ADOPTION.md")
-    if "docs/ROUTING_MEMORY_ADOPTION.md" not in registry.get("core_docs", []):
-        errors.append("generated/memo_registry.min.json must list docs/ROUTING_MEMORY_ADOPTION.md")
+    if "mechanics/adoption/docs/ROUTING_MEMORY_ADOPTION.md" not in readme:
+        errors.append("README.md must route mechanics/adoption/docs/ROUTING_MEMORY_ADOPTION.md")
+    if "mechanics/adoption/docs/ROUTING_MEMORY_ADOPTION.md" not in registry.get("core_docs", []):
+        errors.append("generated/memo_registry.min.json must list mechanics/adoption/docs/ROUTING_MEMORY_ADOPTION.md")
 
     for fragment in [
         "Inspect first.",
@@ -1667,7 +1674,7 @@ def validate_routing_memory_adoption_surface() -> None:
         "routing authority outside the memory layer",
     ]:
         if fragment not in doc_compact:
-            errors.append(f"docs/ROUTING_MEMORY_ADOPTION.md must mention {fragment!r}")
+            errors.append(f"mechanics/adoption/docs/ROUTING_MEMORY_ADOPTION.md must mention {fragment!r}")
 
     router_contracts = {
         name: load_json(EXAMPLES / name)
@@ -1777,7 +1784,7 @@ def validate_playbook_memory_scope_surface() -> None:
     expected_support_refs = [
         "schemas/inquiry_checkpoint.schema.json",
         "schemas/checkpoint-to-memory-contract.schema.json",
-        "docs/RUNTIME_WRITEBACK_SEAM.md",
+        "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
         "docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
     ]
     if return_contract.get("support_artifact_refs") != expected_support_refs:
@@ -1792,7 +1799,7 @@ def validate_playbook_memory_scope_surface() -> None:
     if inquiry_return.get("memory_delta_refs") != ["examples/checkpoint_to_memory_contract.example.json"]:
         errors.append("inquiry_checkpoint.return.example.json must keep checkpoint_to_memory_contract as the bounded memory delta")
     if inquiry_return.get("evidence_pack_refs") != [
-        "docs/RUNTIME_WRITEBACK_SEAM.md",
+        "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
         "docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
     ]:
         errors.append("inquiry_checkpoint.return.example.json must keep runtime and recurrence docs as evidence_pack_refs")
@@ -1824,8 +1831,8 @@ def validate_self_agency_continuity_writeback_surface() -> None:
     sections = load_json(GENERATED / "memory_object_sections.full.json")
     errors: list[str] = []
 
-    if "docs/SELF_AGENCY_CONTINUITY_WRITEBACK.md" not in readme:
-        errors.append("README.md must route docs/SELF_AGENCY_CONTINUITY_WRITEBACK.md")
+    if "mechanics/writeback/docs/SELF_AGENCY_CONTINUITY_WRITEBACK.md" not in readme:
+        errors.append("README.md must route mechanics/writeback/docs/SELF_AGENCY_CONTINUITY_WRITEBACK.md")
     if thread.get("writeback_target") != "provenance_thread":
         errors.append(
             f"{SELF_AGENCY_CONTINUITY_PROVENANCE_THREAD_EXAMPLE} must write back as a provenance_thread"
@@ -2053,8 +2060,8 @@ def validate_checkpoint_to_memory_contract() -> None:
 
     if "schemas/checkpoint-to-memory-contract.schema.json" not in registry.get("schemas", []):
         errors.append("generated/memo_registry.min.json must list schemas/checkpoint-to-memory-contract.schema.json")
-    if "docs/RUNTIME_WRITEBACK_SEAM.md" not in registry.get("core_docs", []):
-        errors.append("generated/memo_registry.min.json must list docs/RUNTIME_WRITEBACK_SEAM.md")
+    if "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md" not in registry.get("core_docs", []):
+        errors.append("generated/memo_registry.min.json must list mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md")
 
     if errors:
         print("[FAIL] checkpoint_to_memory_contract.example.json")
@@ -2169,8 +2176,8 @@ def validate_runtime_writeback_intake() -> None:
     expected_source_of_truth = {
         "runtime_writeback_targets": "generated/runtime_writeback_targets.min.json",
         "checkpoint_to_memory_contract": "examples/checkpoint_to_memory_contract.example.json",
-        "runtime_writeback_seam": "docs/RUNTIME_WRITEBACK_SEAM.md",
-        "quest_evidence_writeback": "docs/QUEST_EVIDENCE_WRITEBACK.md",
+        "runtime_writeback_seam": "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
+        "quest_evidence_writeback": "mechanics/writeback/docs/QUEST_EVIDENCE_WRITEBACK.md",
     }
     if data.get("source_of_truth") != expected_source_of_truth:
         errors.append("generated/runtime_writeback_intake.min.json must keep the canonical source_of_truth map")
@@ -2226,10 +2233,10 @@ def validate_runtime_writeback_intake() -> None:
             ):
                 errors.append(f"targets[{index}].owner_review_refs must stay a non-empty string list")
             else:
-                if "docs/RUNTIME_WRITEBACK_SEAM.md" not in owner_review_refs:
-                    errors.append(f"targets[{index}].owner_review_refs must include docs/RUNTIME_WRITEBACK_SEAM.md")
-                if "docs/QUEST_EVIDENCE_WRITEBACK.md" not in owner_review_refs:
-                    errors.append(f"targets[{index}].owner_review_refs must include docs/QUEST_EVIDENCE_WRITEBACK.md")
+                if "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md" not in owner_review_refs:
+                    errors.append(f"targets[{index}].owner_review_refs must include mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md")
+                if "mechanics/writeback/docs/QUEST_EVIDENCE_WRITEBACK.md" not in owner_review_refs:
+                    errors.append(f"targets[{index}].owner_review_refs must include mechanics/writeback/docs/QUEST_EVIDENCE_WRITEBACK.md")
 
             writeback_class = item.get("writeback_class")
             requires_human_review = item.get("requires_human_review")
@@ -3221,7 +3228,7 @@ def _validate_guardrail_wider_cases(
     if isinstance(promotion_case, dict):
         refs = _guardrail_case_input_refs(promotion_case)
         required_prefixes = {
-            "docs/WRITEBACK_TEMPERATURE_POLICY.md": "writeback temperature policy",
+            "mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md": "writeback temperature policy",
             "docs/AGENT_MEMORY_POSTURE_SEAM.md": "agent memory posture seam",
             "examples/bridge.": "bridge candidate example",
         }
@@ -3406,7 +3413,7 @@ def main() -> int:
         expected_preferred_kinds=["state_capsule", "decision", "episode", "audit_event"],
         expected_temperature_order=["hot", "warm", "cool", "frozen", "cold"],
         expected_inspect_surface="generated/memory_catalog.min.json",
-        expected_expand_surface="docs/RUNTIME_WRITEBACK_SEAM.md",
+        expected_expand_surface="mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
         expected_source_route_required=False,
     )
     validate_recall_contract_example(
@@ -3456,7 +3463,7 @@ def main() -> int:
         expected_support_artifact_refs=[
             "schemas/inquiry_checkpoint.schema.json",
             "schemas/checkpoint-to-memory-contract.schema.json",
-            "docs/RUNTIME_WRITEBACK_SEAM.md",
+            "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
             "docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
         ],
     )
@@ -3476,7 +3483,7 @@ def main() -> int:
         expected_support_artifact_refs=[
             "generated/phase_alpha_writeback_map.min.json",
             "schemas/inquiry_checkpoint.schema.json",
-            "docs/RUNTIME_WRITEBACK_SEAM.md",
+            "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
             "docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
         ],
     )

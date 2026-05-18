@@ -130,7 +130,7 @@ def build_growth_refinery_writeback_lanes_payload() -> dict[str, object]:
         "layer": "aoa-memo",
         "scope": "growth-refinery-writeback",
         "source_of_truth": {
-            "growth_refinery_writeback": "docs/GROWTH_REFINERY_WRITEBACK.md",
+            "growth_refinery_writeback": "mechanics/writeback/docs/GROWTH_REFINERY_WRITEBACK.md",
             "failure_lesson_example": "examples/failure_lesson_memory.lineage.example.json",
             "recovery_pattern_example": "examples/recovery_pattern_memory.lineage.example.json",
         },

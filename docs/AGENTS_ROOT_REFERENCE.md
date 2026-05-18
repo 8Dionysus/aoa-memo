@@ -94,9 +94,9 @@ Then branch by task:
   `docs/RECOVERY_PATTERN_RECALL.md`
 - writeback, quest chronicle, runtime support, or recurrence seams:
   `docs/WITNESS_TRACE_CONTRACT.md`,
-  `docs/WRITEBACK_TEMPERATURE_POLICY.md`,
-  `docs/QUEST_CHRONICLE_WRITEBACK.md`,
-  `docs/RUNTIME_WRITEBACK_SEAM.md`,
+  `mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md`,
+  `mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md`,
+  `mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md`,
   `docs/MEMORY_READINESS_BOUNDARY.md`,
   `docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md`,
   `docs/AGENT_MEMORY_POSTURE_SEAM.md`, and
@@ -106,7 +106,7 @@ Then branch by task:
   `docs/KAG_SOURCE_EXPORT.md`,
   `docs/MEMORY_EVAL_GUARDRAILS.md`,
   `docs/OPERATIONAL_BOUNDARY.md`, and
-  `docs/ROUTING_MEMORY_ADOPTION.md`
+  `mechanics/adoption/docs/ROUTING_MEMORY_ADOPTION.md`
 
 If you are working inside `schemas/`, `examples/`, `generated/`, or `scripts/`,
 also read the nested `AGENTS.md` in that directory.

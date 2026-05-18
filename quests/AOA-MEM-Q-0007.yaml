@@ -3,7 +3,7 @@ id: AOA-MEM-Q-0007
 title: Carry the workspace semantic-recall closeout candidate into bounded memo writeback
 summary: Preserve the reviewed semantic-recall unit from workspace closeout as a memo-layer follow-through obligation without turning recall into proof, quest sovereignty, or copied source meaning.
 repo: aoa-memo
-owner_surface: docs/QUEST_EVIDENCE_WRITEBACK.md
+owner_surface: mechanics/writeback/docs/QUEST_EVIDENCE_WRITEBACK.md
 theme_ref: ''
 milestone_ref: ''
 kind: memory
@@ -27,11 +27,11 @@ depends_on:
   - AOA-MEM-Q-0001
 activation:
   mode: on_review_of
-  ref: docs/QUEST_EVIDENCE_WRITEBACK.md
+  ref: mechanics/writeback/docs/QUEST_EVIDENCE_WRITEBACK.md
   note: open when reviewed closeout preserves a provenance-aware recall unit that still needs memo-side landing
 anchor_ref:
   artifact: quest_evidence_writeback
-  ref: docs/QUEST_EVIDENCE_WRITEBACK.md
+  ref: mechanics/writeback/docs/QUEST_EVIDENCE_WRITEBACK.md
   note: the writeback must stay witness-shaped and provenance-aware
 handoff_role: memo-maintainer
 evidence:
@@ -51,7 +51,7 @@ notes: >
   Anchored by session:2026-04-09-workspace-checkpoint-growth. If later review
   shows this is better expressed as a chronicle or witness-trace adjunct,
   keep that change inside memo boundaries rather than widening into source
-  quest ownership. Closed once docs/WORKSPACE_CHECKPOINT_GROWTH_WRITEBACK.md
+  quest ownership. Closed once mechanics/writeback/docs/WORKSPACE_CHECKPOINT_GROWTH_WRITEBACK.md
   preserved the memo-side witness for the reviewed route without copying
   source-owned state.
 public_safe: true

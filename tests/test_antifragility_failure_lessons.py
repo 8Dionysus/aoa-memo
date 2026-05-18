@@ -89,7 +89,7 @@ def test_failure_lesson_surfaces_stay_discoverable_and_non_proof() -> None:
         "docs/FAILURE_LESSON_MEMORY.md",
         "docs/FAILURE_LESSON_RECALL.md",
         "docs/DRIFT_REVIEW_LESSON_MEMORY.md",
-        "docs/GROWTH_REFINERY_WRITEBACK.md",
+        "mechanics/writeback/docs/GROWTH_REFINERY_WRITEBACK.md",
         "schemas/failure_lesson_memory_v1.json",
         "examples/failure_lesson_memory.example.json",
         "examples/failure_lesson_memory.lineage.example.json",

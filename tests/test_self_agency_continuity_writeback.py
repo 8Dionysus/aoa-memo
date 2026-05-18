@@ -37,9 +37,13 @@ def test_self_agency_continuity_example_validates_against_provenance_thread_sche
 
 
 def test_self_agency_continuity_doc_keeps_existing_memo_kind_boundary() -> None:
-    doc = (REPO_ROOT / "docs" / "SELF_AGENCY_CONTINUITY_WRITEBACK.md").read_text(
-        encoding="utf-8"
-    )
+    doc = (
+        REPO_ROOT
+        / "mechanics"
+        / "writeback"
+        / "docs"
+        / "SELF_AGENCY_CONTINUITY_WRITEBACK.md"
+    ).read_text(encoding="utf-8")
 
     for fragment in [
         "Do not add a new memory object family for continuity or return.",
@@ -60,7 +64,7 @@ def test_self_agency_continuity_surfaces_stay_discoverable_and_non_sovereign() -
     readme = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
     example = load_json("examples/provenance_thread.self-agency-continuity.example.json")
 
-    assert "docs/SELF_AGENCY_CONTINUITY_WRITEBACK.md" in readme
+    assert "mechanics/writeback/docs/SELF_AGENCY_CONTINUITY_WRITEBACK.md" in readme
     assert "continuity_ref" in example
     assert example["writeback_target"] == "provenance_thread"
     assert example["anchor_artifact_ref"] == "artifact:verification_result:AOA-VERIFY-20260412-0001"
