@@ -56,3 +56,24 @@ def test_root_script_families_name_owner_and_coverage_refs() -> None:
         assert family["owner_surface"]
         assert family["scripts"]
         assert family["covered_by"]
+
+
+def test_root_tests_have_family_contracts() -> None:
+    payload = json.loads((REPO_ROOT / "config" / "root_technical_districts.json").read_text())
+    allowed = set(payload["districts"]["tests"]["allowed_files"])
+    covered = {
+        test
+        for family in payload["test_families"]
+        for test in family["tests"]
+    }
+
+    assert covered == allowed
+
+
+def test_root_test_families_name_owner_and_protected_refs() -> None:
+    payload = json.loads((REPO_ROOT / "config" / "root_technical_districts.json").read_text())
+
+    for family in payload["test_families"]:
+        assert family["owner_surface"]
+        assert family["tests"]
+        assert family["protects"]

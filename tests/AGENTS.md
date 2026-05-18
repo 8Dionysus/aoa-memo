@@ -6,6 +6,11 @@
 
 Tests should expose provenance loss, recall overreach, stale context, schema mismatch, AGENTS mesh drift, and generated/source drift.
 
+Root tests are part of the root technical-district contract. Each non-route
+test file or public fixture must be listed in exactly one
+`config/root_technical_districts.json` `test_families` entry that names the
+owner surface and protected refs.
+
 Do not update expected outputs without checking the source-owned memory docs, schemas, or examples that own the meaning.
 
 Keep fixtures public-safe. No private memories, secrets, hidden telemetry, or unreduced personal data.

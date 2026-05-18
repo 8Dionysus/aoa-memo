@@ -1,5 +1,5 @@
 {
-  "schema_version": "aoa_memo_root_technical_districts_v3",
+  "schema_version": "aoa_memo_root_technical_districts_v4",
   "source_of_truth": "mechanics/ARTIFACT_TOPOLOGY.md",
   "route_card_exception": "AGENTS.md",
   "districts": {
@@ -393,6 +393,103 @@
         "scripts/release_check.py",
         "tests/test_docs_districts.py",
         "tests/test_validate_semantic_agents.py"
+      ]
+    }
+  ],
+  "test_families": [
+    {
+      "id": "agents_mesh_semantic_routes",
+      "role": "route-and-topology-regression",
+      "owner_surface": "DESIGN.AGENTS.md",
+      "tests": [
+        "tests/test_agents_mesh.py",
+        "tests/test_validate_semantic_agents.py"
+      ],
+      "protects": [
+        "config/agents_mesh.json",
+        "generated/agents_mesh.min.json",
+        "scripts/validate_agents_mesh.py",
+        "scripts/validate_semantic_agents.py"
+      ]
+    },
+    {
+      "id": "root_docs_and_direction",
+      "role": "route-and-topology-regression",
+      "owner_surface": "docs/ROOT_SURFACE_LAW.md",
+      "tests": [
+        "tests/test_current_direction_routes.py",
+        "tests/test_docs_districts.py",
+        "tests/test_roadmap_parity.py",
+        "tests/test_topology_spine.py"
+      ],
+      "protects": [
+        "README.md",
+        "ROADMAP.md",
+        "docs/README.md",
+        "docs/ROOT_SURFACE_LAW.md",
+        "docs/decisions/README.md"
+      ]
+    },
+    {
+      "id": "mechanic_indexes_and_artifacts",
+      "role": "mechanic-contract-regression",
+      "owner_surface": "mechanics/ARTIFACT_TOPOLOGY.md",
+      "tests": [
+        "tests/test_mechanic_artifact_inventory.py",
+        "tests/test_mechanic_artifact_topology.py",
+        "tests/test_memo_mechanic_parts.py",
+        "tests/test_memo_mechanics.py"
+      ],
+      "protects": [
+        "mechanics/README.md",
+        "mechanics/ARTIFACT_TOPOLOGY.md",
+        "config/memo_mechanics.json",
+        "config/root_technical_districts.json",
+        "generated/mechanic_artifacts.min.json",
+        "generated/memo_mechanics.min.json"
+      ]
+    },
+    {
+      "id": "memory_schema_and_object_contracts",
+      "role": "memory-object-regression",
+      "owner_surface": "docs/MEMORY_MODEL.md",
+      "tests": [
+        "tests/test_memo_validators.py",
+        "tests/test_phase_alpha_provenance_thread.py"
+      ],
+      "protects": [
+        "schemas/memory_object.schema.json",
+        "examples/provenance_thread.phase-alpha-curated.example.json",
+        "examples/memory_object_surface_manifest.json",
+        "generated/memory_object_catalog.min.json"
+      ]
+    },
+    {
+      "id": "downstream_memory_feed_contracts",
+      "role": "downstream-contract-regression",
+      "owner_surface": "mechanics/consumer-handoff/README.md",
+      "tests": [
+        "tests/fixtures/memo_writeback_receipts.example.jsonl",
+        "tests/test_downstream_feed_contracts.py",
+        "tests/test_experience_wave3_seed_contracts.py"
+      ],
+      "protects": [
+        "mechanics/consumer-handoff/docs/KAG_SOURCE_EXPORT.md",
+        "mechanics/checkpoint/examples/checkpoint_to_memory_contract.example.json",
+        "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
+        "mechanics/writeback/generated/runtime_writeback_targets.min.json"
+      ]
+    },
+    {
+      "id": "agent_companion_skill_contracts",
+      "role": "agent-companion-regression",
+      "owner_surface": ".agents/AGENTS.md",
+      "tests": [
+        "tests/test_companion_skill_scripts.py"
+      ],
+      "protects": [
+        ".agents/skills/aoa-safe-infra-change/scripts/infra_change_contract.py",
+        ".agents/skills/AGENTS.md"
       ]
     }
   ]

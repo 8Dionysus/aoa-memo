@@ -98,6 +98,9 @@ Tracking starts with the community-docs baseline for this repository.
 - Extend the same root technical contract with script-family ownership so every
   root `scripts/` file names its role, owner surface, and release/test coverage
   refs.
+- Extend the root technical contract with test-family ownership so every root
+  `tests/` file and public fixture names its role, owner surface, and protected
+  refs.
 
 ### Changed
 

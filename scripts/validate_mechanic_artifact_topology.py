@@ -8,7 +8,7 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 ROOT_DISTRICTS_CONFIG = REPO_ROOT / "config" / "root_technical_districts.json"
-ROOT_DISTRICTS_SCHEMA_VERSION = "aoa_memo_root_technical_districts_v3"
+ROOT_DISTRICTS_SCHEMA_VERSION = "aoa_memo_root_technical_districts_v4"
 ROOT_TECHNICAL_DISTRICTS = (
     "config",
     "examples",
@@ -32,6 +32,13 @@ SCRIPT_FAMILY_ROLES = {
     "orchestrator",
     "route-card-validator",
     "validator-and-generator",
+}
+TEST_FAMILY_ROLES = {
+    "agent-companion-regression",
+    "downstream-contract-regression",
+    "mechanic-contract-regression",
+    "memory-object-regression",
+    "route-and-topology-regression",
 }
 
 FORBIDDEN_ROOT_PREFIXES = {
@@ -370,6 +377,84 @@ def validate_script_family_contracts(
     return issues
 
 
+def validate_test_family_contracts(
+    payload: dict[str, object],
+    districts: dict[object, object],
+) -> list[str]:
+    issues: list[str] = []
+    tests_config = districts.get("tests")
+    allowed_test_files: set[str] = set()
+    if isinstance(tests_config, dict):
+        allowed_files = tests_config.get("allowed_files")
+        if isinstance(allowed_files, list) and all(isinstance(item, str) for item in allowed_files):
+            allowed_test_files = set(allowed_files)
+
+    families = payload.get("test_families")
+    if not isinstance(families, list):
+        return ["config/root_technical_districts.json: test_families must be a list"]
+
+    seen_family_ids: set[str] = set()
+    test_to_family: dict[str, str] = {}
+
+    for index, family in enumerate(families):
+        label = f"test_families[{index}]"
+        if not isinstance(family, dict):
+            issues.append(f"config/root_technical_districts.json: {label} must be an object")
+            continue
+
+        family_id = family.get("id")
+        if not isinstance(family_id, str) or not family_id:
+            issues.append(f"config/root_technical_districts.json: {label}.id must be a non-empty string")
+            family_id = f"<invalid-test-{index}>"
+        elif family_id in seen_family_ids:
+            issues.append(f"config/root_technical_districts.json: duplicate test family id {family_id}")
+        seen_family_ids.add(family_id)
+
+        role = family.get("role")
+        if role not in TEST_FAMILY_ROLES:
+            issues.append(
+                f"config/root_technical_districts.json: {family_id}.role must be one of "
+                f"{', '.join(sorted(TEST_FAMILY_ROLES))}"
+            )
+
+        issues.extend(validate_local_ref(family.get("owner_surface"), f"{family_id}.owner_surface"))
+
+        tests = as_string_list(family.get("tests"), f"{family_id}.tests", issues)
+        protects = as_string_list(family.get("protects"), f"{family_id}.protects", issues)
+
+        if tests == []:
+            issues.append(f"config/root_technical_districts.json: {family_id}.tests must not be empty")
+        if protects == []:
+            issues.append(f"config/root_technical_districts.json: {family_id}.protects must not be empty")
+
+        for ref in protects or []:
+            issues.extend(validate_local_ref(ref, f"{family_id}.protects"))
+
+        if tests is None:
+            continue
+        for test in tests:
+            test_path = Path(test)
+            if test_path.parts[:1] != ("tests",):
+                issues.append(f"config/root_technical_districts.json: {family_id}.tests contains non-root tests path {test}")
+            if test_path.name == "AGENTS.md":
+                issues.append(f"config/root_technical_districts.json: {family_id}.tests must not list route cards")
+            issues.extend(validate_local_ref(test, f"{family_id}.tests"))
+            if test in test_to_family:
+                issues.append(
+                    f"config/root_technical_districts.json: root test {test} appears in both "
+                    f"{test_to_family[test]} and {family_id}"
+                )
+            test_to_family[test] = family_id
+
+    covered_tests = set(test_to_family)
+    for missing in sorted(allowed_test_files - covered_tests):
+        issues.append(f"config/root_technical_districts.json: root test {missing} lacks a test_families contract")
+    for extra in sorted(covered_tests - allowed_test_files):
+        issues.append(f"config/root_technical_districts.json: test_families covers non-allowed root test {extra}")
+
+    return issues
+
+
 def validate_root_district_allowlist() -> list[str]:
     issues: list[str] = []
     payload, config_errors = load_root_districts_config()
@@ -429,6 +514,7 @@ def validate_root_district_allowlist() -> list[str]:
 
     issues.extend(validate_generated_family_contracts(payload, districts))
     issues.extend(validate_script_family_contracts(payload, districts))
+    issues.extend(validate_test_family_contracts(payload, districts))
 
     return issues
 
