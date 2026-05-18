@@ -8,6 +8,10 @@ authority, or runtime retention.
 
 - Status: `landed`
 
+### Operation
+
+carry memory candidates toward owner review without turning candidate recall into proof or automatic promotion
+
 ### Trigger
 
 Use when adoption, forgetting, revision, retention-adjacent adoption, scar

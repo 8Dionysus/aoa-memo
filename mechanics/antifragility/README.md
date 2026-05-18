@@ -8,6 +8,10 @@ runtime repair.
 
 - Status: `landed`
 
+### Operation
+
+preserve reviewed failure lessons and recovery patterns as recallable memory without granting repair authority
+
 ### Trigger
 
 Use when repeated stress, drift review, rollback follow-through, recovery

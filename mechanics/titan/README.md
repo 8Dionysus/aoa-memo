@@ -9,6 +9,10 @@ policy without granting stronger authority.
 
 - Status: `landed`
 
+### Operation
+
+hold Titan recall, remembrance, audit, digest, closeout, personality, and swarm memory posture as source-linked candidates without granting authority
+
 ### Trigger
 
 Use when Titan memory posture, recall candidates, remembrance source refs,

@@ -4,7 +4,7 @@ from __future__ import annotations
 import json
 import sys
 
-from memo_mechanics_common import GENERATED_PATH, build_index
+from memo_mechanics_common import GENERATED_PATH, INDEX_SCHEMA_VERSION, build_index
 
 
 def main() -> int:
@@ -18,7 +18,7 @@ def main() -> int:
         print("[error] generated memo mechanics index is stale", file=sys.stderr)
         return 1
 
-    if generated.get("schema_version") != "aoa_memo_mechanics_index_v1":
+    if generated.get("schema_version") != INDEX_SCHEMA_VERSION:
         print("[error] generated memo mechanics index has wrong schema_version", file=sys.stderr)
         return 1
 

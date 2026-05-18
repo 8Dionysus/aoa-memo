@@ -218,6 +218,36 @@
       ]
     },
     {
+      "path": "mechanics/shape-guard/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "shape-guard mechanic",
+        "mechanics/shape-guard/",
+        "OWNER_MAP.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/shape-guard/docs/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/shape-guard/docs/",
+        "active mechanic-owned doctrine",
+        "ARTIFACT_TOPOLOGY.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/shape-guard/legacy/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/shape-guard/legacy/",
+        "placement provenance",
+        "not the active route",
+        "legacy/INDEX.md"
+      ]
+    },
+    {
       "path": "mechanics/titan/AGENTS.md",
       "min_lines": 35,
       "required_snippets": [

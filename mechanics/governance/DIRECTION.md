@@ -2,10 +2,9 @@
 
 ## Current
 
-Keep governance, federation, installation, certification, precedent,
-stay-order, and via-negativa memory source-linked, reviewable, and weaker than
-authority, proof, source-owner consent, release approval, or runtime
-governance.
+Keep governance, federation, installation, certification, precedent, and
+stay-order memory source-linked, reviewable, and weaker than authority, proof,
+source-owner consent, release approval, or runtime governance.
 
 ## Operating Contour
 
@@ -14,6 +13,7 @@ governance.
   retention, and consent gates
 - keep installation and certification memory as boundary posture, not approval
 - keep stay orders explicit about authority, expiry, and revocation
+- route general memory-shape pruning to `mechanics/shape-guard/`
 - keep old flat docs-root paths as provenance, not active aliases
 
 ## Stop-Line

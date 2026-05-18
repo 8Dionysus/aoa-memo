@@ -14,5 +14,9 @@ repeatable route signals, authority checks, owner consent, gate outcomes,
 forgetting and expiry posture, source-owner stop-lines, and stronger-owner
 handoffs.
 
+`VIA_NEGATIVA_CHECKLIST.md` now lives in `mechanics/shape-guard/docs/` because
+it is a general memory-shape pruning operation, not governance authority
+memory.
+
 Use [legacy/INDEX](legacy/INDEX.md) only to audit former placement. Legacy
 paths are historical receipts, not active contracts.

@@ -73,7 +73,8 @@ Current flat `docs/*.md` surfaces should be read through these classes:
 | Agon mechanic docs | `mechanics/agon/docs/AGON_*` | active Agon memo mechanic; keep package map and validator aligned |
 | Titan mechanic docs | `mechanics/titan/docs/TITAN_*` | active Titan memo mechanic; keep package map and validator aligned |
 | Adoption, writeback, and retention mechanics | `mechanics/adoption/docs/*`, `mechanics/writeback/docs/*`, `mechanics/retention/docs/*` | active memo mechanic packages; keep owner maps, legacy bridges, generated index, and validator aligned |
-| Governance mechanic docs | `mechanics/governance/docs/*` | active governance memo mechanic; keep package map and validator aligned |
+| Governance mechanic docs | `mechanics/governance/docs/*` | active governance authority-boundary memo mechanic; keep package map and validator aligned |
+| Shape-guard mechanic docs | `mechanics/shape-guard/docs/*` | active shape/pruning memo mechanic; keep operation-first package map and validator aligned |
 | Decisions | `docs/decisions/` | rationale only; active docs still define what |
 
 ## Decision Procedure Before Adding a Root File
@@ -122,7 +123,8 @@ seams until a validated district or mechanic route replaces their flat path.
 | `generated/agents_mesh.min.json` | add | generated companion mirror | the mesh is inspectable without treating generated output as authority |
 | `manifests/AGENTS.md` and `quests/AGENTS.md` | add | top-level district route cards | both directories already hold durable public surfaces and should not be AGENTS coverage gaps |
 | flat antifragility docs-root surfaces | moved | `mechanics/antifragility/docs/` | antifragility is an active memo mechanic with owner map, legacy bridge, schemas, examples, generated surfaces, tests, and validation |
-| flat governance docs-root surfaces | moved | `mechanics/governance/docs/` | governance is an active memo mechanic with owner map, legacy bridge, authority stop-lines, tests, and validation |
+| flat governance docs-root surfaces | moved | `mechanics/governance/docs/` | governance is an active authority-boundary memo mechanic with owner map, legacy bridge, authority stop-lines, tests, and validation |
+| flat via-negativa checklist | moved | `mechanics/shape-guard/docs/VIA_NEGATIVA_CHECKLIST.md` | via-negativa is a general memory-shape guard, not governance authority memory |
 | flat and transitional Agon surfaces | moved | `mechanics/agon/docs/AGON_*.md` | Agon is an active memo mechanic with owner map, legacy bridge, and validation |
 | flat and transitional Titan surfaces | moved | `mechanics/titan/docs/TITAN_*.md` | Titan is an active memo mechanic with owner map, legacy bridge, and validation |
 | flat adoption/writeback/retention docs-root surfaces | moved | `mechanics/adoption/docs/`, `mechanics/writeback/docs/`, `mechanics/retention/docs/` | these families are repeatable memo mechanics with owner maps and legacy bridges, not only documentation districts |

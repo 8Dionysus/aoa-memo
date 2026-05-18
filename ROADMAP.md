@@ -61,18 +61,21 @@ generated mechanics coverage, examples, generated object surfaces, and tests.
 
 The governance migration is now mechanic-shaped:
 `mechanics/governance/` owns governance, federation, installation,
-certification, precedent, stay-order, and via-negativa memory boundaries
-through package cards, owner maps, provenance bridge, legacy index, generated
-mechanics coverage, and tests.
+certification, precedent, and stay-order authority-boundary memory through
+package cards, owner maps, provenance bridge, legacy index, generated mechanics
+coverage, and tests. General via-negativa pruning now belongs to
+`mechanics/shape-guard/` so governance stays an authority-boundary operation
+rather than a topic bucket.
 
 The mechanics topology follows the `Agents-of-Abyss` pattern:
 `mechanics/antifragility/`, `mechanics/agon/`, `mechanics/titan/`,
-`mechanics/adoption/`, `mechanics/governance/`, `mechanics/writeback/`, and
-`mechanics/retention/` own the former flat or transitional owner families as
-memo-side mechanics. Each package has a route card, package card, direction,
-parts map, owner map, provenance bridge, landing log, roadmap, and legacy
-index. The source-backed `config/memo_mechanics.json` and
-`generated/memo_mechanics.min.json` keep the shape machine-checkable.
+`mechanics/adoption/`, `mechanics/governance/`, `mechanics/shape-guard/`,
+`mechanics/writeback/`, and `mechanics/retention/` own the former flat or
+transitional owner families as memo-side mechanics. Each package has a route
+card, package card, operation, direction, parts map, owner map, provenance
+bridge, landing log, roadmap, and legacy index. The source-backed
+`config/memo_mechanics.json` and `generated/memo_mechanics.min.json` keep the
+shape machine-checkable.
 
 The current mechanics hardening layer adds `docs/AGENTS.md` and
 `legacy/AGENTS.md` subroutes for each memo mechanic plus

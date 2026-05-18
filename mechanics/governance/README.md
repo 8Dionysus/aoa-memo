@@ -1,20 +1,23 @@
 # Governance Memo Mechanic
 
-Governance is the memo-side mechanic for preserving reviewable governance,
-federation, installation, certification, precedent, stay-order, and
-via-negativa memory boundaries without becoming authority, proof, runtime
-governance, or source-owner consent.
+Governance is the memo-side mechanic for preserving reviewable
+authority-boundary memory for governance, federation, installation,
+certification, precedent, and stay orders without becoming authority, proof,
+runtime governance, or source-owner consent.
 
 ## Mechanic card
 
 - Status: `landed`
 
+### Operation
+
+preserve authority-boundary memory for governance, federation, installation, certification, precedent, and stay orders without making decisions
+
 ### Trigger
 
 Use when governance route signals, federation harvest boundaries,
-installation or certification memory gates, policy precedents, stay orders, or
-via-negativa pruning rules must become explicit, source-linked, recallable, and
-bounded.
+installation or certification memory gates, policy precedents, or stay orders
+must become explicit, source-linked, recallable, and bounded.
 
 ### Memo owns
 
@@ -40,7 +43,7 @@ owner-routed handoff language.
 
 Governance route signals, owner-local evidence refs, decision refs, authority
 checks, federation pattern candidates, installation/certification gates,
-policy precedents, stay-order records, and pruning rules.
+policy precedents, and stay-order records.
 
 ### Outputs
 

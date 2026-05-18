@@ -1,9 +1,16 @@
 # 2026-05-18: Land Governance as a Memo Mechanic
 
+Correction: `VIA_NEGATIVA_CHECKLIST.md` was later moved to
+`mechanics/shape-guard/docs/` by
+[2026-05-18-shape-guard-memo-mechanic](2026-05-18-shape-guard-memo-mechanic.md).
+Governance remains the active authority-boundary memory mechanic.
+
 ## Context
 
-Governance, federation, installation, certification, precedent, stay-order, and
-via-negativa docs were still flat under `docs/`.
+Governance, federation, installation, certification, precedent, and stay-order
+docs were still flat under `docs/`. `VIA_NEGATIVA_CHECKLIST.md` was also flat
+at the time, but it is now treated as shape-guard material rather than
+governance authority-boundary memory.
 
 They were not core memory doctrine and not neighbor-seam implementation docs.
 They shared a repeated mechanic shape: authority checks, owner consent,
@@ -32,7 +39,8 @@ the machine-checkable companion surface.
   authority-boundary mechanic hidden in the broad docs root.
 - Fold governance into adoption or retention. Those mechanics consume some
   governance pressure, but they do not own federation, stay-order, precedent,
-  installation, certification, or via-negativa memory posture as one route.
+  installation, or certification memory posture as one authority-boundary
+  route.
 - Move incident, service, office, deployment, KAG, agent, playbook, or eval
   seams at the same time. Those are adjacent candidates, but they need separate
   owner maps before moving.

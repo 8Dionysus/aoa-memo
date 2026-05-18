@@ -26,10 +26,14 @@ Tracking starts with the community-docs baseline for this repository.
   provenance bridge, legacy index, AGENTS mesh coverage, generated mechanics
   coverage, validators, tests, and decision record.
 - Add `mechanics/governance/` as a memo mechanic package for governance,
-  federation, installation, certification, precedent, stay-order, and
-  via-negativa memory boundaries, with package cards, owner map, provenance
-  bridge, legacy index, AGENTS mesh coverage, generated mechanics coverage,
+  federation, installation, certification, precedent, and stay-order
+  authority-boundary memory, with package cards, owner map, provenance bridge,
+  legacy index, AGENTS mesh coverage, generated mechanics coverage,
   validators, tests, and decision record.
+- Add `mechanics/shape-guard/` as the memo mechanic for via-negativa
+  memory-shape pruning, with operation-first package metadata, owner map,
+  provenance bridge, legacy index, AGENTS mesh coverage, generated mechanics
+  coverage, validators, tests, and decision record.
 - Add the `mechanics/` atlas plus `adoption`, `writeback`, and `retention`
   memo mechanic packages with package cards, owner maps, provenance bridges,
   legacy indexes, source-backed generated mechanics index, validators, tests,
@@ -57,8 +61,12 @@ Tracking starts with the community-docs baseline for this repository.
 - Move flat governance docs-root surfaces into `mechanics/governance/docs/`
   and update README, docs maps, route law, validators, generated mechanics
   coverage, AGENTS mesh, and tests.
+- Move `VIA_NEGATIVA_CHECKLIST.md` from governance into
+  `mechanics/shape-guard/docs/` and require every memo mechanic card to name
+  its repeatable operation.
 - Extend the AGENTS mesh and memo mechanics validator to include Agon/Titan
-  and antifragility/governance mechanics and mechanic docs/legacy subroutes.
+  and antifragility/governance/shape-guard mechanics and mechanic docs/legacy
+  subroutes.
 
 ## [0.2.3] - 2026-04-23
 

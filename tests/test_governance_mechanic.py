@@ -15,11 +15,16 @@ class GovernanceMechanicTestCase(unittest.TestCase):
         governance = packages["governance"]
 
         self.assertEqual("Governance Memo Mechanic", governance["title"])
-        self.assertEqual(10, len(governance["docs"]))
+        self.assertEqual(9, len(governance["docs"]))
+        self.assertNotIn("VIA_NEGATIVA_CHECKLIST.md", governance["docs"])
 
         for filename in governance["docs"]:
             self.assertFalse((REPO_ROOT / "docs" / filename).exists())
             self.assertTrue((REPO_ROOT / "mechanics" / "governance" / "docs" / filename).is_file())
+
+        self.assertFalse(
+            (REPO_ROOT / "mechanics" / "governance" / "docs" / "VIA_NEGATIVA_CHECKLIST.md").exists()
+        )
 
     def test_governance_owner_map_preserves_stronger_owner_boundaries(self) -> None:
         owner_map = (REPO_ROOT / "mechanics" / "governance" / "OWNER_MAP.md").read_text(

@@ -40,7 +40,8 @@ expectation.
 | [2026-05-18-mechanics-subroutes-artifact-topology](2026-05-18-mechanics-subroutes-artifact-topology.md) | add docs/legacy mechanic subroutes and artifact placement law |
 | [2026-05-18-agon-titan-memo-mechanics](2026-05-18-agon-titan-memo-mechanics.md) | supersede Agon/Titan docs districts with memo mechanic packages |
 | [2026-05-18-antifragility-memo-mechanic](2026-05-18-antifragility-memo-mechanic.md) | move failure-lesson and recovery-pattern docs into an antifragility memo mechanic |
-| [2026-05-18-governance-memo-mechanic](2026-05-18-governance-memo-mechanic.md) | move governance, federation, installation, certification, precedent, stay-order, and via-negativa docs into a governance memo mechanic |
+| [2026-05-18-governance-memo-mechanic](2026-05-18-governance-memo-mechanic.md) | move governance, federation, installation, certification, precedent, and stay-order docs into a governance authority-boundary memo mechanic |
+| [2026-05-18-shape-guard-memo-mechanic](2026-05-18-shape-guard-memo-mechanic.md) | add shape-guard as the via-negativa operation-first memo mechanic |
 
 ## Review Rule
 

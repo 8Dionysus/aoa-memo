@@ -15,7 +15,6 @@ Active governance memo mechanic docs live here.
 | [POLICY_PRECEDENT_MEMORY](POLICY_PRECEDENT_MEMORY.md) | reviewed policy precedent memory |
 | [PRECEDENT_MEMORY_INDEX](PRECEDENT_MEMORY_INDEX.md) | precedent recall posture |
 | [STAY_ORDER_MEMORY](STAY_ORDER_MEMORY.md) | stay-order memory after expiry or revocation |
-| [VIA_NEGATIVA_CHECKLIST](VIA_NEGATIVA_CHECKLIST.md) | pruning questions for preventing authority inflation |
 
 ## Stop-Line
 

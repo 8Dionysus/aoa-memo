@@ -11,4 +11,3 @@
 | `docs/POLICY_PRECEDENT_MEMORY.md` | `mechanics/governance/docs/POLICY_PRECEDENT_MEMORY.md` |
 | `docs/PRECEDENT_MEMORY_INDEX.md` | `mechanics/governance/docs/PRECEDENT_MEMORY_INDEX.md` |
 | `docs/STAY_ORDER_MEMORY.md` | `mechanics/governance/docs/STAY_ORDER_MEMORY.md` |
-| `docs/VIA_NEGATIVA_CHECKLIST.md` | `mechanics/governance/docs/VIA_NEGATIVA_CHECKLIST.md` |
