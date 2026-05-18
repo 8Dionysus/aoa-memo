@@ -81,6 +81,12 @@ the output is generator-backed or a projection. This keeps root generated files
 from becoming an unowned parking lot while preserving public compact companions
 that are intentionally consumed outside one mechanic package.
 
+Root `scripts/` has the same positive ownership rule through `script_families`.
+Each allowed root script must belong to exactly one family that names its role,
+owner surface, and coverage refs. Package-local mechanic scripts still belong
+under the owning mechanic; root scripts remain only when they operate as shared
+release gates, repo-wide validators, builders, or imported helpers.
+
 Single-mechanic artifacts live in the owning package with their local docs and
 route card. This includes mechanic-local schemas, examples, config seeds,
 generated companions, scripts, tests, manifests, and hook manifests.

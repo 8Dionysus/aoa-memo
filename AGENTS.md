@@ -124,6 +124,7 @@ python scripts/validate_lifecycle_audit_examples.py
 python scripts/validate_agents_mesh.py
 python scripts/build_agents_mesh_index.py --check
 python scripts/validate_agents_mesh_index.py
+python scripts/validate_semantic_agents.py
 python scripts/validate_docs_districts.py
 python scripts/validate_memo_mechanics.py
 python scripts/validate_memo_mechanic_parts.py

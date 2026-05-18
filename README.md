@@ -150,7 +150,8 @@ generated:
   `config/root_technical_districts.json` own the root technical-district
   placement contract; `generated/mechanic_artifacts.min.json` mirrors the
   current package-local mechanic artifact inventory, and root `generated/`
-  files are covered by explicit generated-family contracts in the same config
+  and `scripts/` files are covered by explicit family contracts in the same
+  config
 - [mechanics/antifragility](mechanics/antifragility/README.md) is the active
   home for former flat failure-lesson and recovery-pattern surfaces
 - [mechanics/agon](mechanics/agon/README.md) is the active home for former

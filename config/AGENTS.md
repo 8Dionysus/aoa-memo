@@ -26,6 +26,11 @@ validator listed in the same root technical-district contract. Root
 with owner surface, source refs, outputs, validator refs, and builders when the
 family is rebuilt by a script or projection.
 
+Root `scripts/` files must belong to exactly one `script_families` contract
+with a role, owner surface, script list, and coverage refs. This keeps release
+validators, builders, helpers, and orchestration scripts explicit rather than
+only file-allowlisted.
+
 Keep config explicit, public-safe, and reviewable. No private memories, personal data, hidden retention rules, secret tokens, or local-only paths.
 
 When config changes generated surfaces, regenerate only the touched family and inspect the diff for recall or provenance drift.

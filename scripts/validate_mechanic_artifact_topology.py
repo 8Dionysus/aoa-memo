@@ -8,7 +8,7 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 ROOT_DISTRICTS_CONFIG = REPO_ROOT / "config" / "root_technical_districts.json"
-ROOT_DISTRICTS_SCHEMA_VERSION = "aoa_memo_root_technical_districts_v2"
+ROOT_DISTRICTS_SCHEMA_VERSION = "aoa_memo_root_technical_districts_v3"
 ROOT_TECHNICAL_DISTRICTS = (
     "config",
     "examples",
@@ -25,6 +25,14 @@ GENERATED_SOURCE_KINDS = {
     "projection",
 }
 BUILDER_REQUIRED_GENERATED_SOURCE_KINDS = {"generator-backed", "projection"}
+SCRIPT_FAMILY_ROLES = {
+    "docs-and-agent-validator",
+    "mechanic-artifact-validator",
+    "mechanic-validator",
+    "orchestrator",
+    "route-card-validator",
+    "validator-and-generator",
+}
 
 FORBIDDEN_ROOT_PREFIXES = {
     "config": ("agon_",),
@@ -284,6 +292,84 @@ def validate_generated_family_contracts(
     return issues
 
 
+def validate_script_family_contracts(
+    payload: dict[str, object],
+    districts: dict[object, object],
+) -> list[str]:
+    issues: list[str] = []
+    scripts_config = districts.get("scripts")
+    allowed_script_files: set[str] = set()
+    if isinstance(scripts_config, dict):
+        allowed_files = scripts_config.get("allowed_files")
+        if isinstance(allowed_files, list) and all(isinstance(item, str) for item in allowed_files):
+            allowed_script_files = set(allowed_files)
+
+    families = payload.get("script_families")
+    if not isinstance(families, list):
+        return ["config/root_technical_districts.json: script_families must be a list"]
+
+    seen_family_ids: set[str] = set()
+    script_to_family: dict[str, str] = {}
+
+    for index, family in enumerate(families):
+        label = f"script_families[{index}]"
+        if not isinstance(family, dict):
+            issues.append(f"config/root_technical_districts.json: {label} must be an object")
+            continue
+
+        family_id = family.get("id")
+        if not isinstance(family_id, str) or not family_id:
+            issues.append(f"config/root_technical_districts.json: {label}.id must be a non-empty string")
+            family_id = f"<invalid-script-{index}>"
+        elif family_id in seen_family_ids:
+            issues.append(f"config/root_technical_districts.json: duplicate script family id {family_id}")
+        seen_family_ids.add(family_id)
+
+        role = family.get("role")
+        if role not in SCRIPT_FAMILY_ROLES:
+            issues.append(
+                f"config/root_technical_districts.json: {family_id}.role must be one of "
+                f"{', '.join(sorted(SCRIPT_FAMILY_ROLES))}"
+            )
+
+        issues.extend(validate_local_ref(family.get("owner_surface"), f"{family_id}.owner_surface"))
+
+        scripts = as_string_list(family.get("scripts"), f"{family_id}.scripts", issues)
+        covered_by = as_string_list(family.get("covered_by"), f"{family_id}.covered_by", issues)
+
+        if scripts == []:
+            issues.append(f"config/root_technical_districts.json: {family_id}.scripts must not be empty")
+        if covered_by == []:
+            issues.append(f"config/root_technical_districts.json: {family_id}.covered_by must not be empty")
+
+        for ref in covered_by or []:
+            issues.extend(validate_local_ref(ref, f"{family_id}.covered_by"))
+
+        if scripts is None:
+            continue
+        for script in scripts:
+            script_path = Path(script)
+            if script_path.parts[:1] != ("scripts",):
+                issues.append(f"config/root_technical_districts.json: {family_id}.scripts contains non-root script path {script}")
+            if script_path.name == "AGENTS.md":
+                issues.append(f"config/root_technical_districts.json: {family_id}.scripts must not list route cards")
+            issues.extend(validate_local_ref(script, f"{family_id}.scripts"))
+            if script in script_to_family:
+                issues.append(
+                    f"config/root_technical_districts.json: root script {script} appears in both "
+                    f"{script_to_family[script]} and {family_id}"
+                )
+            script_to_family[script] = family_id
+
+    covered_scripts = set(script_to_family)
+    for missing in sorted(allowed_script_files - covered_scripts):
+        issues.append(f"config/root_technical_districts.json: root script {missing} lacks a script_families contract")
+    for extra in sorted(covered_scripts - allowed_script_files):
+        issues.append(f"config/root_technical_districts.json: script_families covers non-allowed root script {extra}")
+
+    return issues
+
+
 def validate_root_district_allowlist() -> list[str]:
     issues: list[str] = []
     payload, config_errors = load_root_districts_config()
@@ -342,6 +428,7 @@ def validate_root_district_allowlist() -> list[str]:
             )
 
     issues.extend(validate_generated_family_contracts(payload, districts))
+    issues.extend(validate_script_family_contracts(payload, districts))
 
     return issues
 

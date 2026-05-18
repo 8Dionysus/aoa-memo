@@ -35,3 +35,24 @@ def test_root_generated_builder_backed_families_name_builders_and_validators() -
         assert family["validators"]
         if family["source_kind"] in {"generator-backed", "projection"}:
             assert family["builders"]
+
+
+def test_root_scripts_have_family_contracts() -> None:
+    payload = json.loads((REPO_ROOT / "config" / "root_technical_districts.json").read_text())
+    allowed = set(payload["districts"]["scripts"]["allowed_files"])
+    covered = {
+        script
+        for family in payload["script_families"]
+        for script in family["scripts"]
+    }
+
+    assert covered == allowed
+
+
+def test_root_script_families_name_owner_and_coverage_refs() -> None:
+    payload = json.loads((REPO_ROOT / "config" / "root_technical_districts.json").read_text())
+
+    for family in payload["script_families"]:
+        assert family["owner_surface"]
+        assert family["scripts"]
+        assert family["covered_by"]

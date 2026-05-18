@@ -1,5 +1,5 @@
 {
-  "schema_version": "aoa_memo_root_technical_districts_v2",
+  "schema_version": "aoa_memo_root_technical_districts_v3",
   "source_of_truth": "mechanics/ARTIFACT_TOPOLOGY.md",
   "route_card_exception": "AGENTS.md",
   "districts": {
@@ -300,6 +300,99 @@
       "validators": [
         "mechanics/questbook/scripts/validate_quest_store.py",
         "scripts/validate_memo.py"
+      ]
+    }
+  ],
+  "script_families": [
+    {
+      "id": "release_gate",
+      "role": "orchestrator",
+      "owner_surface": "scripts/AGENTS.md",
+      "scripts": [
+        "scripts/release_check.py"
+      ],
+      "covered_by": [
+        "AGENTS.md",
+        "scripts/release_check.py"
+      ]
+    },
+    {
+      "id": "core_memory_surfaces",
+      "role": "validator-and-generator",
+      "owner_surface": "scripts/AGENTS.md",
+      "scripts": [
+        "scripts/generate_memory_object_surfaces.py",
+        "scripts/validate_lifecycle_audit_examples.py",
+        "scripts/validate_memo.py",
+        "scripts/validate_memory_object_surfaces.py",
+        "scripts/validate_memory_surfaces.py",
+        "scripts/validate_nested_agents.py"
+      ],
+      "covered_by": [
+        "scripts/release_check.py",
+        "tests/test_memo_validators.py"
+      ]
+    },
+    {
+      "id": "agents_mesh",
+      "role": "route-card-validator",
+      "owner_surface": "DESIGN.AGENTS.md",
+      "scripts": [
+        "scripts/agents_mesh_common.py",
+        "scripts/build_agents_mesh_index.py",
+        "scripts/validate_agents_mesh.py",
+        "scripts/validate_agents_mesh_index.py"
+      ],
+      "covered_by": [
+        "scripts/release_check.py",
+        "tests/test_agents_mesh.py"
+      ]
+    },
+    {
+      "id": "memo_mechanics_index",
+      "role": "mechanic-validator",
+      "owner_surface": "mechanics/README.md",
+      "scripts": [
+        "scripts/build_memo_mechanics_index.py",
+        "scripts/memo_mechanics_common.py",
+        "scripts/validate_memo_mechanic_parts.py",
+        "scripts/validate_memo_mechanics.py",
+        "scripts/validate_memo_mechanics_index.py"
+      ],
+      "covered_by": [
+        "scripts/release_check.py",
+        "tests/test_memo_mechanic_parts.py",
+        "tests/test_memo_mechanics.py"
+      ]
+    },
+    {
+      "id": "mechanic_artifact_contracts",
+      "role": "mechanic-artifact-validator",
+      "owner_surface": "mechanics/ARTIFACT_TOPOLOGY.md",
+      "scripts": [
+        "scripts/build_mechanic_artifact_inventory.py",
+        "scripts/mechanic_artifact_inventory_common.py",
+        "scripts/validate_mechanic_artifact_inventory.py",
+        "scripts/validate_mechanic_artifact_topology.py"
+      ],
+      "covered_by": [
+        "scripts/release_check.py",
+        "tests/test_mechanic_artifact_inventory.py",
+        "tests/test_mechanic_artifact_topology.py"
+      ]
+    },
+    {
+      "id": "docs_agent_surface",
+      "role": "docs-and-agent-validator",
+      "owner_surface": "docs/AGENTS.md",
+      "scripts": [
+        "scripts/validate_docs_districts.py",
+        "scripts/validate_semantic_agents.py"
+      ],
+      "covered_by": [
+        "scripts/release_check.py",
+        "tests/test_docs_districts.py",
+        "tests/test_validate_semantic_agents.py"
       ]
     }
   ]
