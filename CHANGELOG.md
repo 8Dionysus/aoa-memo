@@ -95,6 +95,9 @@ Tracking starts with the community-docs baseline for this repository.
 - Extend `config/root_technical_districts.json` with root generated-family
   contracts so every root `generated/` output names its owner surface, source
   refs, validators, and builders when generator-backed or projected.
+- Extend the same root technical contract with script-family ownership so every
+  root `scripts/` file names its role, owner surface, and release/test coverage
+  refs.
 
 ### Changed
 

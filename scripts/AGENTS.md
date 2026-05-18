@@ -34,6 +34,9 @@ Keep the current split clear:
   from drifting back into active docs-root sprawl
 - `validate_memo_mechanic_parts.py` keeps package `PARTS.md` files in the
   operation-first Active Parts plus Interface shape
+- `config/root_technical_districts.json` groups every root script into a
+  `script_families` contract so root scripts stay release-oriented, covered,
+  and owned rather than merely allowed by path
 
 Mechanic-owned generators and validators live under the owning package, for
 example `mechanics/consumer-handoff/scripts/generate_kag_export.py`,
@@ -73,6 +76,7 @@ python mechanics/questbook/scripts/build_quest_surfaces.py --check
 python scripts/validate_agents_mesh.py
 python scripts/build_agents_mesh_index.py --check
 python scripts/validate_agents_mesh_index.py
+python scripts/validate_semantic_agents.py
 python scripts/validate_docs_districts.py
 python scripts/validate_memo_mechanic_parts.py
 ```
