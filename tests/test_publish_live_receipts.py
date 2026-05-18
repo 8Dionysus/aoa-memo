@@ -41,7 +41,7 @@ REVIEWED_CANDIDATE_CASES = {
         "source_path": "examples/bridge.kag-lift.example.json",
         "target_kind": "bridge",
         "review_state": "proposed",
-        "writeback_anchor_ref": "repo:aoa-memo/docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow",
+        "writeback_anchor_ref": "repo:aoa-memo/mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow",
         "candidate_seed_ref": "repo:aoa-memo/examples/claim.tos-bridge-ready.example.json",
     },
 }

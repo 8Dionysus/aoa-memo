@@ -246,8 +246,8 @@ This roadmap does **not** aim to turn `aoa-memo` into:
 
 **Deliverables:**
 
-- `docs/AGENT_MEMORY_POSTURE_SEAM.md`
-- `docs/PLAYBOOK_MEMORY_SCOPES.md`
+- `mechanics/consumer-handoff/docs/AGENT_MEMORY_POSTURE_SEAM.md`
+- `mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md`
 - cross-repo contract notes for `aoa-agents` memory posture
 - `schemas/inquiry_checkpoint.schema.json`
 - `examples/inquiry_checkpoint.example.json`
@@ -266,8 +266,8 @@ This roadmap does **not** aim to turn `aoa-memo` into:
 
 **Deliverables:**
 
-- `docs/KAG_TOS_BRIDGE_CONTRACT.md`
-- `docs/KAG_SOURCE_EXPORT.md`
+- `mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md`
+- `mechanics/consumer-handoff/docs/KAG_SOURCE_EXPORT.md`
 - `schemas/memory_chunk_face.schema.json`
 - `schemas/memory_graph_face.schema.json`
 - chunk-face contract for memory inspection
@@ -291,7 +291,7 @@ This roadmap does **not** aim to turn `aoa-memo` into:
 
 **Deliverables:**
 
-- `docs/MEMORY_EVAL_GUARDRAILS.md`
+- `mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md`
 - `schemas/memory_eval_guardrail_pack.schema.json`
 - `examples/memory_eval_guardrail_pack.example.json`
 - memory-focused eval ideas for `aoa-evals`

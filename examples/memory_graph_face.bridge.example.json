@@ -33,7 +33,7 @@
       "target_ref": "memo.claim.2026-03-23.tos-bridge-by-reference",
       "evidence_refs": [
         "examples/claim.tos-bridge-ready.example.json",
-        "docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow"
+        "mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow"
       ],
       "confidence": 0.9,
       "status": "candidate",
@@ -44,7 +44,7 @@
       "target_ref": "repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md#memory-bridge-fragment",
       "evidence_refs": [
         "examples/bridge.kag-lift.example.json",
-        "docs/KAG_TOS_BRIDGE_CONTRACT.md#tos-bridge-guidance"
+        "mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#tos-bridge-guidance"
       ],
       "confidence": "source-linked",
       "status": "candidate",

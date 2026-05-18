@@ -3,7 +3,7 @@ id: AOA-MEM-Q-0006
 title: Align bounded-execution orchestrator quests to step-local recall and handoff continuity
 summary: Define the smallest useful recall pack for bounded execution without turning memo into runtime state or silent planning.
 repo: aoa-memo
-owner_surface: docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md
+owner_surface: mechanics/consumer-handoff/docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md
 kind: memory
 state: captured
 band: frontier
@@ -28,7 +28,7 @@ activation:
   mode: manual
 anchor_ref:
   artifact: orchestrator_memory_alignment
-  ref: docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md#bounded-execution
+  ref: mechanics/consumer-handoff/docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md#bounded-execution
 orchestrator_class_ref: aoa-agents:bounded_execution
 capability_target: bounded_next_step
 playbook_family_refs:
@@ -40,7 +40,7 @@ proof_surface_refs:
 memory_surface_refs:
   - examples/recall_contract.object.working.phase-alpha.json
   - generated/memory_object_capsules.json
-  - docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md#bounded-execution
+  - mechanics/consumer-handoff/docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md#bounded-execution
 handoff_role: memo-maintainer
 evidence:
   - step-local recall stays bounded

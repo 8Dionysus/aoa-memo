@@ -34,6 +34,11 @@ Tracking starts with the community-docs baseline for this repository.
   memory-shape pruning, with operation-first package metadata, owner map,
   provenance bridge, legacy index, AGENTS mesh coverage, generated mechanics
   coverage, validators, tests, and decision record.
+- Add `mechanics/consumer-handoff/` as the memo mechanic for bounded
+  downstream handoff surfaces across agents, playbooks, evals, KAG/ToS bridge,
+  KAG export, and orchestrator recall alignment, with owner map, provenance
+  bridge, legacy index, AGENTS mesh coverage, generated mechanics coverage,
+  validators, tests, and decision record.
 - Add the `mechanics/` atlas plus `adoption`, `writeback`, and `retention`
   memo mechanic packages with package cards, owner maps, provenance bridges,
   legacy indexes, source-backed generated mechanics index, validators, tests,
@@ -64,9 +69,13 @@ Tracking starts with the community-docs baseline for this repository.
 - Move `VIA_NEGATIVA_CHECKLIST.md` from governance into
   `mechanics/shape-guard/docs/` and require every memo mechanic card to name
   its repeatable operation.
+- Move flat consumer-handoff docs-root surfaces into
+  `mechanics/consumer-handoff/docs/` and update README, docs maps, route law,
+  quests, examples, generated companions, validators, and tests to the new
+  active paths.
 - Extend the AGENTS mesh and memo mechanics validator to include Agon/Titan
-  and antifragility/governance/shape-guard mechanics and mechanic docs/legacy
-  subroutes.
+  and antifragility/governance/shape-guard/consumer-handoff mechanics and
+  mechanic docs/legacy subroutes.
 
 ## [0.2.3] - 2026-04-23
 

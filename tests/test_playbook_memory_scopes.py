@@ -18,7 +18,13 @@ def load_json(relative_path: str) -> object:
 
 
 def test_playbook_memory_scopes_doc_keeps_bounded_scope_rule() -> None:
-    doc = (REPO_ROOT / "docs" / "PLAYBOOK_MEMORY_SCOPES.md").read_text(encoding="utf-8")
+    doc = (
+        REPO_ROOT
+        / "mechanics"
+        / "consumer-handoff"
+        / "docs"
+        / "PLAYBOOK_MEMORY_SCOPES.md"
+    ).read_text(encoding="utf-8")
     doc_compact = " ".join(doc.split())
 
     for fragment in [
@@ -49,6 +55,5 @@ def test_playbook_memory_scopes_surface_stays_discoverable() -> None:
     readme = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
     registry = load_json("generated/memo_registry.min.json")
 
-    assert "docs/PLAYBOOK_MEMORY_SCOPES.md" in readme
-    assert "docs/PLAYBOOK_MEMORY_SCOPES.md" in registry["core_docs"]
-
+    assert "mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md" in readme
+    assert "mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md" in registry["core_docs"]

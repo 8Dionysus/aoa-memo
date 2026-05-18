@@ -130,7 +130,7 @@
       "provenance_thread_id": "prov.tos-bridge-kag-lift.2026-03-23",
       "related_object_ids": [],
       "strongest_next_sources": [
-        "docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow",
+        "mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow",
         "repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md"
       ]
     },
@@ -301,7 +301,7 @@
         "memo.ep.2026-03-23.tos-interpretation-bridge-seed"
       ],
       "strongest_next_sources": [
-        "docs/KAG_TOS_BRIDGE_CONTRACT.md#tos-bridge-guidance",
+        "mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#tos-bridge-guidance",
         "repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md"
       ]
     },
@@ -435,7 +435,7 @@
         "memo.ep.2026-03-23.tos-interpretation-bridge-seed"
       ],
       "strongest_next_sources": [
-        "docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow",
+        "mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow",
         "repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md"
       ]
     },

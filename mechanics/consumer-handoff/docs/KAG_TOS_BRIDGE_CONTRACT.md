@@ -16,7 +16,7 @@ The current recall entrypoints for this surface are `examples/recall_contract.li
 This memo-side contract works beside:
 
 - `aoa-kag/docs/BRIDGE_CONTRACTS.md` for derived bridge coordination
-- `docs/KAG_SOURCE_EXPORT.md` for the source-owned memo donor export that stays
+- `KAG_SOURCE_EXPORT.md` for the source-owned memo donor export that stays
   narrower than the current bridge faces
 - `aoa-kag/schemas/bridge-envelope.schema.json` and `aoa-kag/examples/aoa_tos_bridge_envelope.example.json` for the shared cross-repo linkage object
 - `schemas/bridge.schema.json` for the memo-side bridge object

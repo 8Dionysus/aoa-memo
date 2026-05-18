@@ -734,7 +734,7 @@ class MemoValidatorTestCase(unittest.TestCase):
                     },
                     {
                         "kind": "review_anchor",
-                        "ref": "repo:aoa-memo/docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow",
+                        "ref": "repo:aoa-memo/mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow",
                         "role": "writeback-anchor",
                     },
                 ],
@@ -744,7 +744,7 @@ class MemoValidatorTestCase(unittest.TestCase):
                     "target_kind": "bridge",
                     "writeback_class": "reviewed_candidate",
                     "review_state": "proposed",
-                    "writeback_anchor_ref": "repo:aoa-memo/docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow",
+                    "writeback_anchor_ref": "repo:aoa-memo/mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow",
                 },
             }
             log_path.write_text(json.dumps(receipt, sort_keys=True) + "\n", encoding="utf-8")
@@ -1140,7 +1140,7 @@ class MemoValidatorTestCase(unittest.TestCase):
         payload = self.guardrail_payload()
         payload["cases"][0]["input_refs"] = [
             "examples/recall_contract.router.semantic.json",
-            "docs/PLAYBOOK_MEMORY_SCOPES.md",
+            "mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md",
         ]
         self.assert_guardrail_payload_fails(payload)
 
@@ -1206,7 +1206,7 @@ class MemoValidatorTestCase(unittest.TestCase):
         payload = self.guardrail_payload()
         payload["cases"][5]["input_refs"] = [
             "mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md",
-            "docs/AGENT_MEMORY_POSTURE_SEAM.md#boundary-rule",
+            "mechanics/consumer-handoff/docs/AGENT_MEMORY_POSTURE_SEAM.md#boundary-rule",
         ]
         self.assert_guardrail_payload_fails(payload)
 

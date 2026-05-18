@@ -47,9 +47,9 @@ add [DESIGN.AGENTS](../DESIGN.AGENTS.md).
 remaining flat doctrine, while validated districts and mechanics move one owner
 family at a time.
 
-Antifragility, Agon, Titan, adoption, governance, shape-guard, writeback, and
-retention are now memo mechanics under [`mechanics/`](../mechanics/README.md),
-not docs subdirectories.
+Antifragility, Agon, Titan, adoption, governance, shape-guard,
+consumer-handoff, writeback, and retention are now memo mechanics under
+[`mechanics/`](../mechanics/README.md), not docs subdirectories.
 In path terms, `mechanics/agon/docs/` owns the former flat and transitional
 `AGON_*` docs and `mechanics/titan/docs/` owns the former flat and
 transitional `TITAN_*` docs.
@@ -58,7 +58,7 @@ transitional `TITAN_*` docs.
 |---|---|
 | Core doctrine | `BOUNDARIES`, `MEMORY_MODEL`, `MEMORY_OBJECT_PROFILES`, `MEMORY_TRUST_POSTURE`, `MEMORY_TEMPERATURES`, `LIFECYCLE`, `NARRATIVE_CORE_CONTRACT`, `PROVENANCE_THREADS`, `OPERATIONAL_BOUNDARY` |
 | Recall and writeback | `WITNESS_TRACE_CONTRACT`, [writeback mechanic](../mechanics/writeback/README.md), `RECURRENCE_MEMORY_SUPPORT_SURFACES`, `REVIEWED_CLOSEOUT_RECALL_LANDING` |
-| Neighbor seams | `AGENT_MEMORY_POSTURE_SEAM`, `PLAYBOOK_MEMORY_SCOPES`, [adoption mechanic](../mechanics/adoption/README.md), `KAG_TOS_BRIDGE_CONTRACT`, `KAG_SOURCE_EXPORT`, `MEMORY_EVAL_GUARDRAILS` |
+| Neighbor handoffs | [consumer-handoff mechanic](../mechanics/consumer-handoff/README.md), [adoption mechanic](../mechanics/adoption/README.md) |
 | Antifragility | [antifragility mechanic](../mechanics/antifragility/README.md) plus matching schemas, examples, generated object surfaces, and tests |
 | Adoption, authority, and shape guard | [adoption mechanic](../mechanics/adoption/README.md), [governance mechanic](../mechanics/governance/README.md), [shape-guard mechanic](../mechanics/shape-guard/README.md), [retention mechanic](../mechanics/retention/README.md) |
 | Agon memo seams | [agon mechanic](../mechanics/agon/README.md) plus matching config, schemas, generated registries, examples, tests, quests, and manifests |
@@ -73,8 +73,8 @@ transitional `TITAN_*` docs.
 | What kind of memory object is it? | [MEMORY_MODEL](MEMORY_MODEL.md), then [MEMORY_OBJECT_PROFILES](MEMORY_OBJECT_PROFILES.md) |
 | Is this proof or verdict logic? | [BOUNDARIES](BOUNDARIES.md), then route to `aoa-evals` |
 | Is this routing behavior? | [ROUTING_MEMORY_ADOPTION](../mechanics/adoption/docs/ROUTING_MEMORY_ADOPTION.md), then route to `aoa-routing` |
-| Is this a role right or actor policy? | [AGENT_MEMORY_POSTURE_SEAM](AGENT_MEMORY_POSTURE_SEAM.md), then route to `aoa-agents` |
-| Is this a graph lift or retrieval substrate? | [KAG_SOURCE_EXPORT](KAG_SOURCE_EXPORT.md), then route to `aoa-kag` |
+| Is this a role right or actor policy? | [consumer-handoff/AGENT_MEMORY_POSTURE_SEAM](../mechanics/consumer-handoff/docs/AGENT_MEMORY_POSTURE_SEAM.md), then route to `aoa-agents` |
+| Is this a graph lift or retrieval substrate? | [consumer-handoff/KAG_SOURCE_EXPORT](../mechanics/consumer-handoff/docs/KAG_SOURCE_EXPORT.md), then route to `aoa-kag` |
 | Is this live runtime storage or retention? | [RUNTIME_WRITEBACK_SEAM](../mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md), then route to `abyss-stack` |
 | Where should a new root or docs-root file live? | [ROOT_SURFACE_LAW](ROOT_SURFACE_LAW.md) |
 | Why was a structural route chosen? | [decisions](decisions/README.md) |
@@ -93,6 +93,7 @@ transitional `TITAN_*` docs.
 | Adoption mechanic | [mechanics/adoption/AGENTS](../mechanics/adoption/AGENTS.md), then [mechanics/adoption/README](../mechanics/adoption/README.md) |
 | Governance mechanic | [mechanics/governance/AGENTS](../mechanics/governance/AGENTS.md), then [mechanics/governance/README](../mechanics/governance/README.md) |
 | Shape-guard mechanic | [mechanics/shape-guard/AGENTS](../mechanics/shape-guard/AGENTS.md), then [mechanics/shape-guard/README](../mechanics/shape-guard/README.md) |
+| Consumer-handoff mechanic | [mechanics/consumer-handoff/AGENTS](../mechanics/consumer-handoff/AGENTS.md), then [mechanics/consumer-handoff/README](../mechanics/consumer-handoff/README.md) |
 | Writeback mechanic | [mechanics/writeback/AGENTS](../mechanics/writeback/AGENTS.md), then [mechanics/writeback/README](../mechanics/writeback/README.md) |
 | Retention mechanic | [mechanics/retention/AGENTS](../mechanics/retention/AGENTS.md), then [mechanics/retention/README](../mechanics/retention/README.md) |
 | Mechanic artifact placement | [mechanics/ARTIFACT_TOPOLOGY](../mechanics/ARTIFACT_TOPOLOGY.md) |
@@ -130,7 +131,8 @@ Until then, this README is the map and the flat files remain active surfaces.
 | [mechanics/titan](../mechanics/titan/README.md) | Titan memo mechanic |
 | [mechanics/governance](../mechanics/governance/README.md) | Governance memo mechanic |
 | [mechanics/shape-guard](../mechanics/shape-guard/README.md) | Shape guard memo mechanic |
-| [mechanics](../mechanics/README.md) | Antifragility, Agon, Titan, adoption, governance, shape-guard, writeback, and retention memo mechanics |
+| [mechanics/consumer-handoff](../mechanics/consumer-handoff/README.md) | Consumer handoff memo mechanic |
+| [mechanics](../mechanics/README.md) | Antifragility, Agon, Titan, adoption, governance, shape-guard, consumer-handoff, writeback, and retention memo mechanics |
 | [manifests](../manifests/AGENTS.md) | recurrence manifests and hook bindings |
 | [quests](../quests/AGENTS.md) | quest files backing `QUESTBOOK.md` |
 | [.agents](../.agents/AGENTS.md) | agent-facing companion lanes |

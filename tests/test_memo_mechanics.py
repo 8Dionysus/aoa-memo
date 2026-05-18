@@ -40,8 +40,8 @@ class MemoMechanicsTestCase(unittest.TestCase):
         self.assertEqual("memo-mechanics-v2", payload["source_of_truth"])
         self.assertEqual("config/memo_mechanics.json", payload["config_ref"])
         self.assertEqual("mechanics/README.md", payload["authority_ref"])
-        self.assertEqual(8, payload["counts"]["packages"])
-        self.assertEqual(82, payload["counts"]["docs"])
+        self.assertEqual(9, payload["counts"]["packages"])
+        self.assertEqual(88, payload["counts"]["docs"])
 
         packages = {package["slug"]: package for package in payload["packages"]}
         self.assertEqual(
@@ -52,6 +52,7 @@ class MemoMechanicsTestCase(unittest.TestCase):
                 "adoption",
                 "governance",
                 "shape-guard",
+                "consumer-handoff",
                 "writeback",
                 "retention",
             },
@@ -63,6 +64,7 @@ class MemoMechanicsTestCase(unittest.TestCase):
         self.assertEqual(6, packages["adoption"]["doc_count"])
         self.assertEqual(9, packages["governance"]["doc_count"])
         self.assertEqual(1, packages["shape-guard"]["doc_count"])
+        self.assertEqual(6, packages["consumer-handoff"]["doc_count"])
         self.assertEqual(17, packages["writeback"]["doc_count"])
         self.assertEqual(6, packages["retention"]["doc_count"])
         for package in packages.values():
@@ -102,6 +104,7 @@ class MemoMechanicsTestCase(unittest.TestCase):
             "adoption",
             "governance",
             "shape-guard",
+            "consumer-handoff",
             "writeback",
             "retention",
         ):

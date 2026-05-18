@@ -99,12 +99,12 @@ Then branch by task:
   `mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md`,
   `docs/MEMORY_READINESS_BOUNDARY.md`,
   `docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md`,
-  `docs/AGENT_MEMORY_POSTURE_SEAM.md`, and
-  `docs/PLAYBOOK_MEMORY_SCOPES.md`
+  `mechanics/consumer-handoff/docs/AGENT_MEMORY_POSTURE_SEAM.md`, and
+  `mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md`
 - bridge, export, or guardrail surfaces:
-  `docs/KAG_TOS_BRIDGE_CONTRACT.md`,
-  `docs/KAG_SOURCE_EXPORT.md`,
-  `docs/MEMORY_EVAL_GUARDRAILS.md`,
+  `mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md`,
+  `mechanics/consumer-handoff/docs/KAG_SOURCE_EXPORT.md`,
+  `mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md`,
   `docs/OPERATIONAL_BOUNDARY.md`, and
   `mechanics/adoption/docs/ROUTING_MEMORY_ADOPTION.md`
 

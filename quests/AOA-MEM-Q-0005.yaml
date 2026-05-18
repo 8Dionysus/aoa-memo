@@ -3,7 +3,7 @@ id: AOA-MEM-Q-0005
 title: Align review orchestrator quests to closure, residual-risk, and recurrence memo notes
 summary: Define how review-facing quests should recall closure and residual-risk notes without making memo the owner of verdict authority.
 repo: aoa-memo
-owner_surface: docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md
+owner_surface: mechanics/consumer-handoff/docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md
 kind: memory
 state: captured
 band: frontier
@@ -28,7 +28,7 @@ activation:
   mode: manual
 anchor_ref:
   artifact: orchestrator_memory_alignment
-  ref: docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md#review
+  ref: mechanics/consumer-handoff/docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md#review
 orchestrator_class_ref: aoa-agents:review
 capability_target: evidence_closure
 playbook_family_refs:
@@ -40,7 +40,7 @@ proof_surface_refs:
 memory_surface_refs:
   - generated/memory_object_capsules.json
   - examples/provenance_thread.phase-alpha-curated.example.json
-  - docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md#review
+  - mechanics/consumer-handoff/docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md#review
 handoff_role: memo-maintainer
 evidence:
   - closure and residual-risk recall stay explicit

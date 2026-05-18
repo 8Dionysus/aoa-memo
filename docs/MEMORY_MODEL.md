@@ -449,7 +449,7 @@ The guiding rule is:
 
 **write the event once, derive downstream surfaces later**
 
-See [KAG_TOS_BRIDGE_CONTRACT](KAG_TOS_BRIDGE_CONTRACT.md) for the current chunk-face, graph-face, and ToS-bridge handoff surfaces.
+See [KAG_TOS_BRIDGE_CONTRACT](../mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md) for the current chunk-face, graph-face, and ToS-bridge handoff surfaces.
 
 Each memory object should be able to expose two compatible faces:
 
@@ -483,7 +483,7 @@ For downstream associative and KAG lifts:
 
 Owns who can read, write, promote, freeze, or hand off memory.
 
-See [AGENT_MEMORY_POSTURE_SEAM](AGENT_MEMORY_POSTURE_SEAM.md) for the memo-side fields that those rights may apply to without moving rights policy into `aoa-memo`.
+See [AGENT_MEMORY_POSTURE_SEAM](../mechanics/consumer-handoff/docs/AGENT_MEMORY_POSTURE_SEAM.md) for the memo-side fields that those rights may apply to without moving rights policy into `aoa-memo`.
 
 ### `aoa-routing`
 
@@ -497,13 +497,13 @@ Owns derived knowledge substrate, graph-ready normalization, and downstream retr
 
 Owns checks for recall precision, provenance fidelity, staleness handling, contradiction handling, and leakage.
 
-See [MEMORY_EVAL_GUARDRAILS](MEMORY_EVAL_GUARDRAILS.md) for the memo-side handoff surface that keeps these risks explicit.
+See [MEMORY_EVAL_GUARDRAILS](../mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md) for the memo-side handoff surface that keeps these risks explicit.
 
 ### `aoa-playbooks`
 
 Owns scenario-level memory requirements and composition rules.
 
-See [PLAYBOOK_MEMORY_SCOPES](PLAYBOOK_MEMORY_SCOPES.md) for the memo-side guidance on scopes and recall modes that playbooks may request.
+See [PLAYBOOK_MEMORY_SCOPES](../mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md) for the memo-side guidance on scopes and recall modes that playbooks may request.
 
 ### `abyss-stack`
 

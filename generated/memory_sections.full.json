@@ -187,7 +187,7 @@
     {
       "id": "AOA-M-0007",
       "name": "agent-memory-posture-seam",
-      "source_path": "docs/AGENT_MEMORY_POSTURE_SEAM.md",
+      "source_path": "mechanics/consumer-handoff/docs/AGENT_MEMORY_POSTURE_SEAM.md",
       "sections": [
         {
           "section_id": "AOA-M-0007#memo-side-posture-fields",
@@ -215,7 +215,7 @@
     {
       "id": "AOA-M-0008",
       "name": "playbook-memory-scopes",
-      "source_path": "docs/PLAYBOOK_MEMORY_SCOPES.md",
+      "source_path": "mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md",
       "sections": [
         {
           "section_id": "AOA-M-0008#bounded-recall-requests",
@@ -243,7 +243,7 @@
     {
       "id": "AOA-M-0009",
       "name": "kag-tos-bridge-contract",
-      "source_path": "docs/KAG_TOS_BRIDGE_CONTRACT.md",
+      "source_path": "mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md",
       "sections": [
         {
           "section_id": "AOA-M-0009#core-rule",
@@ -271,7 +271,7 @@
     {
       "id": "AOA-M-0010",
       "name": "memory-eval-guardrails",
-      "source_path": "docs/MEMORY_EVAL_GUARDRAILS.md",
+      "source_path": "mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md",
       "sections": [
         {
           "section_id": "AOA-M-0010#boundary-rule",

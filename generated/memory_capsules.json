@@ -98,7 +98,7 @@
       "core_contract_short": "Core contract: aoa-memo names the object posture a right would apply to; aoa-agents still owns who has the right and when.",
       "main_risk_short": "Main risk: treating access or promotion fields as grants instead of descriptors.",
       "validation_short": "Validate by checking agent-facing surfaces preserve scope, access, lifecycle, provenance, and stronger source routes without assigning role policy.",
-      "source_path": "docs/AGENT_MEMORY_POSTURE_SEAM.md"
+      "source_path": "mechanics/consumer-handoff/docs/AGENT_MEMORY_POSTURE_SEAM.md"
     },
     {
       "id": "AOA-M-0008",
@@ -112,7 +112,7 @@
       "core_contract_short": "Core contract: playbooks request bounded recall modes and explicit scopes rather than a blank check to the whole memory layer.",
       "main_risk_short": "Main risk: scenario bundles quietly assume whole-repo or whole-ecosystem memory access by default.",
       "validation_short": "Validate by checking the requested scope is explicit, the recall mode matches the scenario, and checkpoint use stays bounded.",
-      "source_path": "docs/PLAYBOOK_MEMORY_SCOPES.md"
+      "source_path": "mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md"
     },
     {
       "id": "AOA-M-0009",
@@ -126,7 +126,7 @@
       "core_contract_short": "Core contract: write the memory event once, preserve provenance and ToS refs, and export candidate bridge faces later.",
       "main_risk_short": "Main risk: graph-facing exports quietly replace reviewable authored/core memory or source-authored ToS material.",
       "validation_short": "Validate by checking the bridge example bundle preserves the episode, claim, provenance thread, ToS refs, and candidate-only lift posture.",
-      "source_path": "docs/KAG_TOS_BRIDGE_CONTRACT.md"
+      "source_path": "mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md"
     },
     {
       "id": "AOA-M-0010",
@@ -140,7 +140,7 @@
       "core_contract_short": "Core contract: aoa-memo publishes the risks and expected behavior; aoa-evals owns scoring and verdicts.",
       "main_risk_short": "Main risk: memory quality becomes a taste debate with no bounded cases for regressions.",
       "validation_short": "Validate by checking the guardrail pack preserves all required focus areas and points to concrete input surfaces.",
-      "source_path": "docs/MEMORY_EVAL_GUARDRAILS.md"
+      "source_path": "mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md"
     },
     {
       "id": "AOA-M-0011",
