@@ -24,7 +24,7 @@
   },
   "provenance": {
     "source_refs": [
-      "docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map",
+      "mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map",
       "mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md",
       "examples/claim.current-entrypoint.example.json"
     ],

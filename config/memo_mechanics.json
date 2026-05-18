@@ -253,6 +253,22 @@
       ]
     },
     {
+      "slug": "readiness-boundary",
+      "title": "Readiness Boundary Memo Mechanic",
+      "status": "landed",
+      "operation": "gate high-pressure memory readiness pressure into existing memory objects and owner routes without becoming proof, runtime retention, graph substrate, route dispatch, role authority, live ledger, or new object-family author",
+      "os_abyss_role": "keeps OS Abyss readiness pressure reviewable while Agents-of-Abyss, aoa-evals, abyss-stack, aoa-kag, aoa-routing, aoa-agents, aoa-playbooks, and source owners keep stronger doctrine, proof, runtime, graph, route, role, scenario, and acceptance authority",
+      "docs": [
+        "MEMORY_READINESS_BOUNDARY.md"
+      ],
+      "former_flat_paths": [
+        "docs/MEMORY_READINESS_BOUNDARY.md",
+        "schemas/memory_readiness_boundary_contract.schema.json",
+        "examples/memory_readiness_boundary_contract.example.json",
+        "tests/test_wave1_boundary_contract.py"
+      ]
+    },
+    {
       "slug": "consumer-handoff",
       "title": "Consumer Handoff Memo Mechanic",
       "status": "landed",

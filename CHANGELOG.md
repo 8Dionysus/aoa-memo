@@ -59,6 +59,11 @@ Tracking starts with the community-docs baseline for this repository.
   checkpoint-to-memory mappings, with owner map, provenance bridge, legacy
   index, AGENTS mesh coverage, generated mechanics coverage, package-local
   artifacts, validators, tests, and decision record.
+- Add `mechanics/readiness-boundary/` as the memo mechanic for high-pressure
+  memory readiness admission boundaries, with owner map, provenance bridge,
+  legacy index, AGENTS mesh coverage, generated mechanics coverage,
+  package-local schema/example/test artifacts, validators, tests, and decision
+  record.
 - Add the `mechanics/` atlas plus `adoption`, `writeback`, and `retention`
   memo mechanic packages with package cards, owner maps, provenance bridges,
   legacy indexes, source-backed generated mechanics index, validators, tests,
@@ -107,6 +112,10 @@ Tracking starts with the community-docs baseline for this repository.
 - Move checkpoint-specific schemas and examples into
   `mechanics/checkpoint/` and update recurrence-support/writeback consumers,
   generated companions, validators, and tests to the new artifact owner path.
+- Move the flat readiness boundary doc plus its schema, example, and
+  regression test into `mechanics/readiness-boundary/` and update README,
+  docs maps, route law, registry refs, generated object surfaces, validators,
+  and tests to the new artifact owner path.
 - Extend the AGENTS mesh and memo mechanics validator to include Agon/Titan
   and antifragility/governance/shape-guard/consumer-handoff/operational-gate/
   recurrence-support/lineage-harvest mechanics and mechanic docs/legacy

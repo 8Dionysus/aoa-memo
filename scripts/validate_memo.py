@@ -43,6 +43,7 @@ MECHANIC_SCHEMA_DIRS = tuple(sorted(MECHANICS.glob("*/schemas")))
 MECHANIC_EXAMPLE_DIRS = tuple(sorted(MECHANICS.glob("*/examples")))
 WRITEBACK = MECHANICS / "writeback"
 CONSUMER_HANDOFF = MECHANICS / "consumer-handoff"
+READINESS_BOUNDARY = MECHANICS / "readiness-boundary"
 RUNTIME_WRITEBACK_TARGETS_PATH = WRITEBACK / "generated" / "runtime_writeback_targets.min.json"
 RUNTIME_WRITEBACK_INTAKE_PATH = WRITEBACK / "generated" / "runtime_writeback_intake.min.json"
 RUNTIME_WRITEBACK_GOVERNANCE_PATH = WRITEBACK / "generated" / "runtime_writeback_governance.min.json"
@@ -56,7 +57,14 @@ LIVE_RECEIPT_ACTOR_BY_KIND = {
 }
 PHASE_ALPHA_WRITEBACK_MAP_PATH = WRITEBACK / "examples" / "phase_alpha_writeback_map.example.json"
 PHASE_ALPHA_WRITEBACK_OUTPUT_PATH = WRITEBACK / "generated" / "phase_alpha_writeback_map.min.json"
-MEMORY_READINESS_BOUNDARY_CONTRACT_PATH = EXAMPLES / "memory_readiness_boundary_contract.example.json"
+MEMORY_READINESS_BOUNDARY_DOC_PATH = READINESS_BOUNDARY / "docs" / "MEMORY_READINESS_BOUNDARY.md"
+MEMORY_READINESS_BOUNDARY_DOC_REF = "mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md"
+MEMORY_READINESS_BOUNDARY_PRESSURE_REF = (
+    "mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map"
+)
+MEMORY_READINESS_BOUNDARY_CONTRACT_PATH = (
+    READINESS_BOUNDARY / "examples" / "memory_readiness_boundary_contract.example.json"
+)
 MEMORY_READINESS_BOUNDARY_CONTRACT_SCHEMA = "memory_readiness_boundary_contract.schema.json"
 QUESTBOOK_PATH = ROOT / "QUESTBOOK.md"
 QUESTBOOK_DOC = ROOT / "mechanics" / "writeback" / "docs" / "QUEST_EVIDENCE_WRITEBACK.md"
@@ -1158,7 +1166,7 @@ def validate_trust_lifecycle_contracts() -> None:
 
 
 def validate_memory_readiness_boundary_materialization() -> None:
-    boundary_doc = (ROOT / "docs" / "MEMORY_READINESS_BOUNDARY.md").read_text(encoding="utf-8")
+    boundary_doc = MEMORY_READINESS_BOUNDARY_DOC_PATH.read_text(encoding="utf-8")
     checkpoint = load_json(example_path_for("inquiry_checkpoint.return.example.json"))
     contradiction = load_json(example_path_for("claim.phase-alpha-runtime-history-later-infra-track.example.json"))
     bridge = load_json(example_path_for("bridge.kag-lift.example.json"))
@@ -1176,7 +1184,7 @@ def validate_memory_readiness_boundary_materialization() -> None:
         "civil/service assistant trace",
     ):
         if phrase not in boundary_doc:
-            errors.append(f"docs/MEMORY_READINESS_BOUNDARY.md must keep pressure row {phrase!r}")
+            errors.append(f"{MEMORY_READINESS_BOUNDARY_DOC_REF} must keep pressure row {phrase!r}")
 
     memory_delta_refs = checkpoint.get("memory_delta_refs")
     canon_delta_refs = checkpoint.get("canon_delta_refs")
@@ -1210,10 +1218,10 @@ def validate_memory_readiness_boundary_materialization() -> None:
     if retention.get("lifecycle", {}).get("retention_class") != "audit-trace":
         errors.append("audit_event.memory-retention-check.example.json must keep lifecycle.retention_class == 'audit-trace'")
     if not isinstance(retention_sources, list) or (
-        "docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map" not in retention_sources
+        MEMORY_READINESS_BOUNDARY_PRESSURE_REF not in retention_sources
     ):
         errors.append(
-            "audit_event.memory-retention-check.example.json must cite docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map"
+            f"audit_event.memory-retention-check.example.json must cite {MEMORY_READINESS_BOUNDARY_PRESSURE_REF}"
         )
 
     service_sources = service.get("provenance", {}).get("source_refs")
@@ -1261,20 +1269,20 @@ def validate_memory_readiness_boundary_materialization() -> None:
 
 
 def validate_memory_readiness_boundary_contract() -> None:
-    doc = (ROOT / "docs" / "MEMORY_READINESS_BOUNDARY.md").read_text(encoding="utf-8")
+    doc = MEMORY_READINESS_BOUNDARY_DOC_PATH.read_text(encoding="utf-8")
     schema = validator_for(MEMORY_READINESS_BOUNDARY_CONTRACT_SCHEMA)
     payload = load_json(MEMORY_READINESS_BOUNDARY_CONTRACT_PATH)
     errors: list[str] = []
 
     for token in (
-        "schemas/memory_readiness_boundary_contract.schema.json",
-        "examples/memory_readiness_boundary_contract.example.json",
+        "mechanics/readiness-boundary/schemas/memory_readiness_boundary_contract.schema.json",
+        "mechanics/readiness-boundary/examples/memory_readiness_boundary_contract.example.json",
         "memory_gate",
         "retention_boundary",
         "writeback_boundary",
     ):
         if token not in doc:
-            errors.append(f"docs/MEMORY_READINESS_BOUNDARY.md must mention {token}")
+            errors.append(f"{MEMORY_READINESS_BOUNDARY_DOC_REF} must mention {token}")
 
     if payload.get("contract_id") != "aoa-memo.memory-readiness-boundary.v1":
         errors.append(
@@ -1488,6 +1496,7 @@ def validate_registry() -> None:
         "mechanics/checkpoint/docs/CHECKPOINT_CARRY_CONTRACT.md",
         "mechanics/checkpoint/docs/CHECKPOINT_APPROVAL_HEALTH_MEMORY.md",
         "mechanics/checkpoint/docs/CHECKPOINT_TO_MEMORY_MAPPING.md",
+        "mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md",
     )
     for doc_ref in required_core_docs:
         if doc_ref not in data.get("core_docs", []):

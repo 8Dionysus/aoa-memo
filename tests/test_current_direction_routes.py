@@ -21,7 +21,7 @@ class CurrentDirectionRoutesTestCase(unittest.TestCase):
         self.assertRegex(agents, roadmap_link)
 
     def test_memory_readiness_boundary_is_routed(self) -> None:
-        doc_ref = "docs/MEMORY_READINESS_BOUNDARY.md"
+        doc_ref = "mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md"
         readme = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
         roadmap = (REPO_ROOT / "ROADMAP.md").read_text(encoding="utf-8")
         agents = (REPO_ROOT / "AGENTS.md").read_text(encoding="utf-8")

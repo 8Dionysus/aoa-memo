@@ -153,9 +153,9 @@ landing receipt, it needs a bounded home rather than a root-level spotlight.
 - a stale object can find its current recall posture
 - a bridge can find its downstream owner
 - a repeatable adoption, governance, shape-guard, checkpoint,
-  consumer-handoff, operational-gate, recurrence-support, lineage-harvest,
-  writeback, or retention move can find its mechanic, owner map, and legacy
-  bridge
+  readiness-boundary, consumer-handoff, operational-gate, recurrence-support,
+  lineage-harvest, writeback, or retention move can find its mechanic, owner
+  map, and legacy bridge
 - a mechanic-adjacent artifact can tell whether it belongs in a root technical
   district or a package-local home
 - a future contributor can find why the topology exists
@@ -168,8 +168,8 @@ landing receipt, it needs a bounded home rather than a root-level spotlight.
 - generated files cited as source truth
 - writeback surfaces pretending to be live ledgers
 - Antifragility, Agon, Titan, adoption, governance, shape-guard, checkpoint,
-  consumer-handoff, operational-gate, recurrence-support, lineage-harvest,
-  writeback, or retention notes without a local owner lane
+  readiness-boundary, consumer-handoff, operational-gate, recurrence-support,
+  lineage-harvest, writeback, or retention notes without a local owner lane
 - runtime language pretending this repo stores live memory
 - role rights hidden inside memory schemas
 - KAG exports widening into graph platform behavior

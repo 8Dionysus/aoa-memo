@@ -67,7 +67,7 @@ Current flat `docs/*.md` surfaces should be read through these classes:
 | Class | Examples | Posture |
 |---|---|---|
 | Core memory doctrine | `BOUNDARIES`, `MEMORY_MODEL`, `MEMORY_OBJECT_PROFILES`, `MEMORY_TRUST_POSTURE`, `MEMORY_TEMPERATURES`, `LIFECYCLE`, `NARRATIVE_CORE_CONTRACT`, `PROVENANCE_THREADS`, `OPERATIONAL_BOUNDARY` | active docs-root surfaces |
-| Writeback, checkpoint, and recurrence support mechanics | `mechanics/writeback/docs/*`, `mechanics/checkpoint/docs/*`, `mechanics/recurrence-support/docs/*` | active memo mechanic packages; do not turn them into runtime ledgers, dispatch, retry, proof, or role policy |
+| Writeback, checkpoint, readiness-boundary, and recurrence support mechanics | `mechanics/writeback/docs/*`, `mechanics/checkpoint/docs/*`, `mechanics/readiness-boundary/docs/*`, `mechanics/recurrence-support/docs/*` | active memo mechanic packages; do not turn them into runtime ledgers, dispatch, retry, proof, graph substrate, route dispatch, or role policy |
 | Antifragility mechanic docs | `mechanics/antifragility/docs/*` | active antifragility memo mechanic; keep package map and validator aligned |
 | Agon mechanic docs | `mechanics/agon/docs/AGON_*` | active Agon memo mechanic; keep package map and validator aligned |
 | Titan mechanic docs | `mechanics/titan/docs/TITAN_*` | active Titan memo mechanic; keep package map and validator aligned |
@@ -75,6 +75,7 @@ Current flat `docs/*.md` surfaces should be read through these classes:
 | Governance mechanic docs | `mechanics/governance/docs/*` | active governance authority-boundary memo mechanic; keep package map and validator aligned |
 | Shape-guard mechanic docs | `mechanics/shape-guard/docs/*` | active shape/pruning memo mechanic; keep operation-first package map and validator aligned |
 | Checkpoint mechanic docs | `mechanics/checkpoint/docs/*` | active checkpoint memory mechanic; keep package map, mechanic-local artifacts, generated companions, consumer refs, and validators aligned |
+| Readiness-boundary mechanic docs | `mechanics/readiness-boundary/docs/*` | active readiness-boundary memo mechanic; keep package map, mechanic-local artifacts, generated refs, owner stop-lines, and validators aligned |
 | Consumer handoff mechanic docs | `mechanics/consumer-handoff/docs/*` | active consumer handoff memo mechanic; keep package map, consumer refs, generated companions, and validators aligned |
 | Operational gate mechanic docs | `mechanics/operational-gate/docs/*` | active operational admission memo mechanic; keep package map, mechanic-local artifacts, generated companions, and validators aligned |
 | Recurrence support mechanic docs | `mechanics/recurrence-support/docs/*` | active route-return support memo mechanic; keep package map, mechanic-local artifacts, generated companions, quests, and validators aligned |
@@ -133,6 +134,7 @@ route replaces their flat path.
 | flat operational gate docs-root surfaces | moved | `mechanics/operational-gate/docs/` | deployment incident, office incident, service revision, and post-release boundary surfaces are one repeatable memory admission operation with release/runtime/proof stop-lines |
 | flat recurrence-support docs-root surfaces | moved | `mechanics/recurrence-support/docs/` | recurrence support, witness trace, and reviewed closeout landing surfaces are one repeatable route-return support operation with dispatch/runtime/role/proof stop-lines |
 | checkpoint support artifacts | moved | `mechanics/checkpoint/` | checkpoint gates, carry packets, approval/health records, improvement threads, and checkpoint-to-memory mappings are one repeatable memory operation with execution/runtime/role/route/proof stop-lines |
+| flat readiness-boundary docs-root surface and artifacts | moved | `mechanics/readiness-boundary/` | memory readiness pressure, its contract schema/example, and its regression test are one repeatable admission-boundary operation with proof/runtime/KAG/route/role/live-ledger/object-family stop-lines |
 | flat pattern-lineage docs-root surface | moved | `mechanics/lineage-harvest/docs/` | pattern-lineage memory is one repeatable lineage-harvest operation with federation/proof/KAG/ToS/stats/runtime/source-owner stop-lines |
 | flat and transitional Agon surfaces | moved | `mechanics/agon/docs/AGON_*.md` | Agon is an active memo mechanic with owner map, legacy bridge, and validation |
 | flat and transitional Titan surfaces | moved | `mechanics/titan/docs/TITAN_*.md` | Titan is an active memo mechanic with owner map, legacy bridge, and validation |

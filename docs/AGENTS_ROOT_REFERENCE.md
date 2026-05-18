@@ -97,7 +97,7 @@ Then branch by task:
   `mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md`,
   `mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md`,
   `mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md`,
-  `docs/MEMORY_READINESS_BOUNDARY.md`,
+  `mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md`,
   `mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md`,
   `mechanics/consumer-handoff/docs/AGENT_MEMORY_POSTURE_SEAM.md`, and
   `mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md`
