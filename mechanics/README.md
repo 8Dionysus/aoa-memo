@@ -26,6 +26,10 @@ mechanic-owned source docs.
 for current packages. It is a machine-checkable mirror of package cards,
 owner maps, parts, validation routes, stop-lines, and local artifact
 ownership, not a new source of mechanic truth.
+`generated/memo_mechanic_cards.min.json` is the compact generated mirror of
+the package README mechanic cards. It makes operation, trigger, memo-owned
+posture, stronger owner split, inputs, outputs, stop-lines, validation, and
+next route inspectable without replacing the authored README cards.
 
 ## Operation-First Law
 
@@ -118,6 +122,10 @@ artifact homes change.
 Use `python scripts/validate_memo_mechanic_parts.py` when `PARTS.md` files
 change so functioning parts keep a consistent Active Parts table and Interface
 section.
+
+Use `python scripts/build_memo_mechanic_cards.py --check` and
+`python scripts/validate_memo_mechanic_cards.py` when package cards change so
+their route-card shape remains machine-readable.
 
 Use `python scripts/build_memo_mechanic_readiness.py --check` and
 `python scripts/validate_memo_mechanic_readiness.py` when package cards,

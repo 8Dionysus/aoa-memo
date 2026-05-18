@@ -34,6 +34,8 @@ Keep the current split clear:
   from drifting back into active docs-root sprawl
 - `validate_memo_mechanic_parts.py` keeps package `PARTS.md` files in the
   operation-first Active Parts plus Interface shape
+- `build_memo_mechanic_cards.py` and `validate_memo_mechanic_cards.py` keep a
+  compact generated route-card index aligned with package README mechanic cards
 - `build_memo_mechanic_readiness.py` and
   `validate_memo_mechanic_readiness.py` keep a compact readiness matrix for
   every mechanic package, tying package cards, owner maps, stop-lines,
@@ -83,6 +85,8 @@ python scripts/validate_agents_mesh_index.py
 python scripts/validate_semantic_agents.py
 python scripts/validate_docs_districts.py
 python scripts/validate_memo_mechanic_parts.py
+python scripts/build_memo_mechanic_cards.py --check
+python scripts/validate_memo_mechanic_cards.py
 python scripts/build_memo_mechanic_readiness.py --check
 python scripts/validate_memo_mechanic_readiness.py
 ```
