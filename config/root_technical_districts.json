@@ -1,5 +1,5 @@
 {
-  "schema_version": "aoa_memo_root_technical_districts_v1",
+  "schema_version": "aoa_memo_root_technical_districts_v2",
   "source_of_truth": "mechanics/ARTIFACT_TOPOLOGY.md",
   "route_card_exception": "AGENTS.md",
   "districts": {
@@ -164,5 +164,143 @@
         "tests/test_validate_semantic_agents.py"
       ]
     }
-  }
+  },
+  "generated_families": [
+    {
+      "id": "memo_registry",
+      "source_kind": "source-authored",
+      "owner_surface": "generated/AGENTS.md",
+      "source_refs": [
+        "generated/memo_registry.min.json"
+      ],
+      "outputs": [
+        "generated/memo_registry.min.json"
+      ],
+      "validators": [
+        "scripts/validate_memo.py"
+      ]
+    },
+    {
+      "id": "doctrine_reader_surfaces",
+      "source_kind": "checked-in-derived",
+      "owner_surface": "generated/AGENTS.md",
+      "source_refs": [
+        "generated/memo_registry.min.json",
+        "docs/MEMORY_MODEL.md",
+        "docs/BOUNDARIES.md"
+      ],
+      "outputs": [
+        "generated/memory_catalog.json",
+        "generated/memory_catalog.min.json",
+        "generated/memory_capsules.json",
+        "generated/memory_sections.full.json"
+      ],
+      "validators": [
+        "scripts/validate_memo.py",
+        "scripts/validate_memory_surfaces.py"
+      ]
+    },
+    {
+      "id": "memory_object_surfaces",
+      "source_kind": "generator-backed",
+      "owner_surface": "generated/AGENTS.md",
+      "source_refs": [
+        "examples/memory_object_surface_manifest.json",
+        "scripts/generate_memory_object_surfaces.py"
+      ],
+      "outputs": [
+        "generated/memory_object_catalog.json",
+        "generated/memory_object_catalog.min.json",
+        "generated/memory_object_capsules.json",
+        "generated/memory_object_sections.full.json"
+      ],
+      "builders": [
+        "scripts/generate_memory_object_surfaces.py"
+      ],
+      "validators": [
+        "scripts/validate_memo.py",
+        "scripts/validate_memory_object_surfaces.py"
+      ]
+    },
+    {
+      "id": "agents_mesh",
+      "source_kind": "generator-backed",
+      "owner_surface": "DESIGN.AGENTS.md",
+      "source_refs": [
+        "config/agents_mesh.json",
+        "AGENTS.md",
+        "DESIGN.AGENTS.md"
+      ],
+      "outputs": [
+        "generated/agents_mesh.min.json"
+      ],
+      "builders": [
+        "scripts/build_agents_mesh_index.py"
+      ],
+      "validators": [
+        "scripts/validate_agents_mesh.py",
+        "scripts/validate_agents_mesh_index.py"
+      ]
+    },
+    {
+      "id": "memo_mechanics_index",
+      "source_kind": "generator-backed",
+      "owner_surface": "mechanics/README.md",
+      "source_refs": [
+        "config/memo_mechanics.json",
+        "mechanics/README.md"
+      ],
+      "outputs": [
+        "generated/memo_mechanics.min.json"
+      ],
+      "builders": [
+        "scripts/build_memo_mechanics_index.py"
+      ],
+      "validators": [
+        "scripts/validate_memo_mechanics.py",
+        "scripts/validate_memo_mechanics_index.py"
+      ]
+    },
+    {
+      "id": "mechanic_artifact_inventory",
+      "source_kind": "generator-backed",
+      "owner_surface": "mechanics/ARTIFACT_TOPOLOGY.md",
+      "source_refs": [
+        "mechanics/ARTIFACT_TOPOLOGY.md",
+        "config/memo_mechanics.json"
+      ],
+      "outputs": [
+        "generated/mechanic_artifacts.min.json"
+      ],
+      "builders": [
+        "scripts/build_mechanic_artifact_inventory.py"
+      ],
+      "validators": [
+        "scripts/validate_mechanic_artifact_inventory.py"
+      ]
+    },
+    {
+      "id": "questbook_projections",
+      "source_kind": "projection",
+      "owner_surface": "mechanics/questbook/README.md",
+      "source_refs": [
+        "QUESTBOOK.md",
+        "mechanics/questbook/docs/QUEST_SOURCE_CONTRACT.md",
+        "quests/memo/README.md"
+      ],
+      "outputs": [
+        "generated/quest_catalog.min.example.json",
+        "generated/quest_catalog.min.json",
+        "generated/quest_dispatch.min.example.json",
+        "generated/quest_dispatch.min.json"
+      ],
+      "builders": [
+        "mechanics/questbook/scripts/build_quest_surfaces.py"
+      ],
+      "validators": [
+        "mechanics/questbook/scripts/validate_quest_store.py",
+        "scripts/validate_memo.py"
+      ]
+    }
+  ]
 }

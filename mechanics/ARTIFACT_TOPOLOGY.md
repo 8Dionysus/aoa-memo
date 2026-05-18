@@ -74,6 +74,13 @@ technical artifacts. If a file is not a route card and is not listed there, it
 must either be added with a repo-wide/shared reason or moved under its owning
 mechanic.
 
+Root `generated/` has an additional family contract in that same config. Each
+allowed root generated output must belong to exactly one `generated_families`
+entry that names its owner surface, source refs, validators, and builders when
+the output is generator-backed or a projection. This keeps root generated files
+from becoming an unowned parking lot while preserving public compact companions
+that are intentionally consumed outside one mechanic package.
+
 Single-mechanic artifacts live in the owning package with their local docs and
 route card. This includes mechanic-local schemas, examples, config seeds,
 generated companions, scripts, tests, manifests, and hook manifests.

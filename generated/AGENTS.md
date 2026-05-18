@@ -35,6 +35,12 @@ Keep this split explicit:
   `scripts/build_mechanic_artifact_inventory.py` from tracked package-local
   artifact homes and checked by `scripts/validate_mechanic_artifact_inventory.py`
 
+`config/root_technical_districts.json` is the machine-readable source for the
+root generated family contract. Every root generated output must appear in
+exactly one `generated_families` entry with its owner surface, source refs,
+outputs, validators, and builders when the output is generator-backed or a
+projection.
+
 The object family is derived from curated examples in `examples/memory_object_surface_manifest.json` and the referenced memory-object examples.
 
 ## Editing posture

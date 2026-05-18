@@ -21,7 +21,10 @@ may remain in root `schemas/`, `examples/`, `generated/`, `scripts/`, `tests/`,
 
 When root config allows a generated mechanic companion such as
 `generated/mechanic_artifacts.min.json`, keep the matching builder and
-validator listed in the same root technical-district contract.
+validator listed in the same root technical-district contract. Root
+`generated/` outputs must belong to exactly one `generated_families` contract
+with owner surface, source refs, outputs, validator refs, and builders when the
+family is rebuilt by a script or projection.
 
 Keep config explicit, public-safe, and reviewable. No private memories, personal data, hidden retention rules, secret tokens, or local-only paths.
 
