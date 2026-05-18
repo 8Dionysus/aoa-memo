@@ -1,0 +1,161 @@
+{
+  "schema_version": "aoa_memo_root_technical_districts_v1",
+  "source_of_truth": "mechanics/ARTIFACT_TOPOLOGY.md",
+  "route_card_exception": "AGENTS.md",
+  "districts": {
+    "config": {
+      "root_role": "repo-wide source maps for validators and generated companions",
+      "allowed_files": [
+        "config/agents_mesh.json",
+        "config/memo_mechanics.json",
+        "config/root_technical_districts.json"
+      ]
+    },
+    "examples": {
+      "root_role": "public shared memory-object, lifecycle, provenance, and recall examples",
+      "allowed_files": [
+        "examples/anchor.example.json",
+        "examples/audit_event.memory-retention-check.example.json",
+        "examples/audit_event.phase-alpha-rerun-pending-supersession.example.json",
+        "examples/audit_event.phase-alpha-runtime-history-overread-retraction.example.json",
+        "examples/audit_event.phase-alpha-validation-remediation-rerun.example.json",
+        "examples/audit_event.phase-alpha-validation-remediation.example.json",
+        "examples/audit_event.retraction.example.json",
+        "examples/audit_event.service-governed-fallback.example.json",
+        "examples/audit_event.supersession.example.json",
+        "examples/claim.current-entrypoint.example.json",
+        "examples/claim.example.json",
+        "examples/claim.phase-alpha-closure-with-residual-runtime-history.example.json",
+        "examples/claim.phase-alpha-rerun-pending-handoff.example.json",
+        "examples/claim.phase-alpha-runtime-history-fully-retired.example.json",
+        "examples/claim.phase-alpha-runtime-history-later-infra-track.example.json",
+        "examples/claim.retracted.example.json",
+        "examples/claim.superseded.example.json",
+        "examples/core_memory_contract.example.json",
+        "examples/decision.phase-alpha-local-stack.example.json",
+        "examples/decision.phase-alpha-long-horizon.example.json",
+        "examples/decision.phase-alpha-restartable-inquiry.example.json",
+        "examples/decision.phase-alpha-validation-remediation-rerun.example.json",
+        "examples/decision.phase-alpha-validation-remediation.example.json",
+        "examples/decision.self-agency-reanchor-window.example.json",
+        "examples/episode.example.json",
+        "examples/episode.phase-alpha-local-stack.example.json",
+        "examples/episode.phase-alpha-long-horizon.example.json",
+        "examples/episode.phase-alpha-validation-remediation-rerun.example.json",
+        "examples/episode.phase-alpha-validation-remediation.example.json",
+        "examples/memory_object_surface_manifest.json",
+        "examples/pattern.example.json",
+        "examples/pattern.phase-alpha-remediation-recurrence.example.json",
+        "examples/provenance_thread.example.json",
+        "examples/provenance_thread.lifecycle.example.json",
+        "examples/provenance_thread.phase-alpha-curated.example.json",
+        "examples/recall_contract.lineage.json",
+        "examples/recall_contract.object.lineage.json",
+        "examples/recall_contract.object.semantic.json",
+        "examples/recall_contract.object.working.json",
+        "examples/recall_contract.object.working.phase-alpha.json",
+        "examples/recall_contract.object.working.return.json",
+        "examples/recall_contract.router.lineage.json",
+        "examples/recall_contract.router.semantic.json",
+        "examples/recall_contract.semantic.json",
+        "examples/recall_contract.working.json",
+        "examples/state_capsule.example.json",
+        "examples/state_capsule.phase-alpha-local-stack.example.json",
+        "examples/state_capsule.phase-alpha-long-horizon.example.json",
+        "examples/state_capsule.phase-alpha-restartable-inquiry.example.json",
+        "examples/state_capsule.self-agency-continuity-relay.example.json"
+      ]
+    },
+    "generated": {
+      "root_role": "public compact companions for repo-wide memory, object, route-card, mechanic, and Questbook surfaces",
+      "allowed_files": [
+        "generated/agents_mesh.min.json",
+        "generated/memo_mechanics.min.json",
+        "generated/memo_registry.min.json",
+        "generated/memory_capsules.json",
+        "generated/memory_catalog.json",
+        "generated/memory_catalog.min.json",
+        "generated/memory_object_capsules.json",
+        "generated/memory_object_catalog.json",
+        "generated/memory_object_catalog.min.json",
+        "generated/memory_object_sections.full.json",
+        "generated/memory_sections.full.json",
+        "generated/quest_catalog.min.example.json",
+        "generated/quest_catalog.min.json",
+        "generated/quest_dispatch.min.example.json",
+        "generated/quest_dispatch.min.json"
+      ]
+    },
+    "manifests": {
+      "root_role": "reserved for future shared recurrence manifests",
+      "allowed_files": []
+    },
+    "schemas": {
+      "root_role": "public shared memory object, recall, provenance, and generated-surface schemas",
+      "allowed_files": [
+        "schemas/anchor.schema.json",
+        "schemas/audit_event.schema.json",
+        "schemas/bridge.schema.json",
+        "schemas/claim.schema.json",
+        "schemas/core-memory-contract.schema.json",
+        "schemas/decay_policy.schema.json",
+        "schemas/decision.schema.json",
+        "schemas/episode.schema.json",
+        "schemas/lifecycle_posture.schema.json",
+        "schemas/memory_object.schema.json",
+        "schemas/memory_object_capsules.schema.json",
+        "schemas/memory_object_catalog.schema.json",
+        "schemas/memory_object_profile.schema.json",
+        "schemas/memory_object_sections.schema.json",
+        "schemas/memory_object_surface_manifest.schema.json",
+        "schemas/pattern.schema.json",
+        "schemas/provenance_thread.schema.json",
+        "schemas/recall_contract.schema.json",
+        "schemas/state_capsule.schema.json",
+        "schemas/trust_posture.schema.json"
+      ]
+    },
+    "scripts": {
+      "root_role": "repo-wide validators, index builders, and shared memory-object generators",
+      "allowed_files": [
+        "scripts/agents_mesh_common.py",
+        "scripts/build_agents_mesh_index.py",
+        "scripts/build_memo_mechanics_index.py",
+        "scripts/generate_memory_object_surfaces.py",
+        "scripts/memo_mechanics_common.py",
+        "scripts/release_check.py",
+        "scripts/validate_agents_mesh.py",
+        "scripts/validate_agents_mesh_index.py",
+        "scripts/validate_docs_districts.py",
+        "scripts/validate_lifecycle_audit_examples.py",
+        "scripts/validate_mechanic_artifact_topology.py",
+        "scripts/validate_memo.py",
+        "scripts/validate_memo_mechanics.py",
+        "scripts/validate_memo_mechanics_index.py",
+        "scripts/validate_memory_object_surfaces.py",
+        "scripts/validate_memory_surfaces.py",
+        "scripts/validate_nested_agents.py",
+        "scripts/validate_semantic_agents.py"
+      ]
+    },
+    "tests": {
+      "root_role": "repo-wide regression coverage for shared surfaces, generated parity, route maps, and cross-mechanic contracts",
+      "allowed_files": [
+        "tests/fixtures/memo_writeback_receipts.example.jsonl",
+        "tests/test_agents_mesh.py",
+        "tests/test_companion_skill_scripts.py",
+        "tests/test_current_direction_routes.py",
+        "tests/test_docs_districts.py",
+        "tests/test_downstream_feed_contracts.py",
+        "tests/test_experience_wave3_seed_contracts.py",
+        "tests/test_mechanic_artifact_topology.py",
+        "tests/test_memo_mechanics.py",
+        "tests/test_memo_validators.py",
+        "tests/test_phase_alpha_provenance_thread.py",
+        "tests/test_roadmap_parity.py",
+        "tests/test_topology_spine.py",
+        "tests/test_validate_semantic_agents.py"
+      ]
+    }
+  }
+}

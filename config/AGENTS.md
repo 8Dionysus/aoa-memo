@@ -14,6 +14,11 @@ to authored `AGENTS.md` cards rather than replacing them.
 packages. It drives `generated/memo_mechanics.min.json`, but package cards and
 mechanic docs remain the active authored surfaces.
 
+`config/root_technical_districts.json` is the exact allowlist for files that
+may remain in root `schemas/`, `examples/`, `generated/`, `scripts/`, `tests/`,
+`manifests/`, and `config/`. Add to it only when
+`mechanics/ARTIFACT_TOPOLOGY.md` says the file is repo-wide or shared.
+
 Keep config explicit, public-safe, and reviewable. No private memories, personal data, hidden retention rules, secret tokens, or local-only paths.
 
 When config changes generated surfaces, regenerate only the touched family and inspect the diff for recall or provenance drift.
@@ -23,6 +28,7 @@ Verify with:
 ```bash
 python scripts/validate_memo.py
 python scripts/validate_semantic_agents.py
+python scripts/validate_mechanic_artifact_topology.py
 python scripts/validate_memo_mechanics.py
 python scripts/build_memo_mechanics_index.py --check
 python scripts/validate_memo_mechanics_index.py
