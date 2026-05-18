@@ -197,6 +197,20 @@
       "main_risk_short": "Main risk: recurrence support starts implying identity continuity, route permission, retry authority, or proof completion.",
       "validation_short": "Validate by checking recurrence-support docs, root technical refs, quest refs, mechanics index, AGENTS mesh, and release gate stay aligned.",
       "source_path": "mechanics/recurrence-support/README.md"
+    },
+    {
+      "id": "AOA-M-0015",
+      "name": "lineage-harvest",
+      "summary": "Pattern-lineage memory mechanic for cross-repo recurring signals, harvest gates, and downstream dossier boundaries.",
+      "one_line_intent": "Keep recurring cross-repo pattern evidence recallable without approving, proving, promoting, adopting, or canonizing the pattern.",
+      "use_when_short": "Use when owner-local signals or repeated cross-repo evidence need a pattern-lineage candidate with evidence, owner route, verdict, retention, and authority gates still visible.",
+      "do_not_use_short": "Avoid when the task is federation approval, proof, KAG promotion, ToS canon, stats certification, runtime watchtower execution, role rights, or owner-local adoption.",
+      "inputs_short": "Needs source-owner evidence refs, recurrence signals, bounded verdict refs when promotion is discussed, retention posture, routing owner-landings, and authority checks.",
+      "outputs_short": "Produces pattern-lineage memory candidates, gate memory, owner-local landing hints, derived summary boundaries, and downstream dossier boundary hints.",
+      "core_contract_short": "Core contract: memo preserves the lineage candidate and gates; stronger owners decide approval, proof, promotion, adoption, canon, route, rights, stats interpretation, and runtime truth.",
+      "main_risk_short": "Main risk: repeated evidence starts masquerading as proof, source consent, KAG promotion, ToS canon, or automatic adoption.",
+      "validation_short": "Validate by checking lineage-harvest docs, root technical contracts, mechanics index, AGENTS mesh, doctrine surfaces, and release gate stay aligned.",
+      "source_path": "mechanics/lineage-harvest/README.md"
     }
   ]
 }

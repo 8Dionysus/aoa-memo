@@ -90,7 +90,15 @@ class RecurrenceSupportMechanicTestCase(unittest.TestCase):
         )
 
     def test_pattern_lineage_stays_out_of_recurrence_support(self) -> None:
-        self.assertTrue((REPO_ROOT / "docs" / "PATTERN_LINEAGE_MEMORY.md").is_file())
+        self.assertTrue(
+            (
+                REPO_ROOT
+                / "mechanics"
+                / "lineage-harvest"
+                / "docs"
+                / "PATTERN_LINEAGE_MEMORY.md"
+            ).is_file()
+        )
         docs_dir = REPO_ROOT / "mechanics" / "recurrence-support" / "docs"
         self.assertFalse((docs_dir / "PATTERN_LINEAGE_MEMORY.md").exists())
 

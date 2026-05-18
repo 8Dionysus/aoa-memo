@@ -77,6 +77,7 @@ Current flat `docs/*.md` surfaces should be read through these classes:
 | Consumer handoff mechanic docs | `mechanics/consumer-handoff/docs/*` | active consumer handoff memo mechanic; keep package map, consumer refs, generated companions, and validators aligned |
 | Operational gate mechanic docs | `mechanics/operational-gate/docs/*` | active operational admission memo mechanic; keep package map, root technical contracts, generated companions, and validators aligned |
 | Recurrence support mechanic docs | `mechanics/recurrence-support/docs/*` | active route-return support memo mechanic; keep package map, root technical contracts, generated companions, quests, and validators aligned |
+| Lineage harvest mechanic docs | `mechanics/lineage-harvest/docs/*` | active pattern-lineage harvest memo mechanic; keep package map, root technical contracts, generated companions, stronger-owner stop-lines, and validators aligned |
 | Decisions | `docs/decisions/` | rationale only; active docs still define what |
 
 ## Decision Procedure Before Adding a Root File
@@ -108,9 +109,9 @@ Before moving a flat `docs/*.md` surface into a district or mechanic:
 4. decide whether a decision record is needed
 5. run the narrow validators before broad release validation
 
-Do not move remaining core operational-boundary or pattern-lineage surfaces as
-cosmetic cleanup. They are current memory-layer seams until a validated
-district or mechanic route replaces their flat path.
+Do not move remaining core operational-boundary surfaces as cosmetic cleanup.
+They are current memory-layer seams until a validated district or mechanic
+route replaces their flat path.
 
 ## Current Root Cleanup Decisions
 
@@ -130,6 +131,7 @@ district or mechanic route replaces their flat path.
 | flat consumer handoff docs-root surfaces | moved | `mechanics/consumer-handoff/docs/` | agent, playbook, eval, KAG/ToS, KAG export, and orchestrator alignment surfaces are one repeatable handoff operation with stronger owner stop-lines |
 | flat operational gate docs-root surfaces | moved | `mechanics/operational-gate/docs/` | deployment incident, office incident, service revision, and post-release boundary surfaces are one repeatable memory admission operation with release/runtime/proof stop-lines |
 | flat recurrence-support docs-root surfaces | moved | `mechanics/recurrence-support/docs/` | recurrence support, witness trace, and reviewed closeout landing surfaces are one repeatable route-return support operation with dispatch/runtime/role/proof stop-lines |
+| flat pattern-lineage docs-root surface | moved | `mechanics/lineage-harvest/docs/` | pattern-lineage memory is one repeatable lineage-harvest operation with federation/proof/KAG/ToS/stats/runtime/source-owner stop-lines |
 | flat and transitional Agon surfaces | moved | `mechanics/agon/docs/AGON_*.md` | Agon is an active memo mechanic with owner map, legacy bridge, and validation |
 | flat and transitional Titan surfaces | moved | `mechanics/titan/docs/TITAN_*.md` | Titan is an active memo mechanic with owner map, legacy bridge, and validation |
 | flat adoption/writeback/retention docs-root surfaces | moved | `mechanics/adoption/docs/`, `mechanics/writeback/docs/`, `mechanics/retention/docs/` | these families are repeatable memo mechanics with owner maps and legacy bridges, not only documentation districts |

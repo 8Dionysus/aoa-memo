@@ -45,6 +45,7 @@ expectation.
 | [2026-05-18-consumer-handoff-memo-mechanic](2026-05-18-consumer-handoff-memo-mechanic.md) | move agent, playbook, eval, KAG/ToS, KAG export, and orchestrator alignment docs into a consumer-handoff memo mechanic |
 | [2026-05-18-operational-gate-memo-mechanic](2026-05-18-operational-gate-memo-mechanic.md) | move deployment, office/service, service revision, and post-release boundary docs into an operational-gate memo mechanic |
 | [2026-05-18-recurrence-support-memo-mechanic](2026-05-18-recurrence-support-memo-mechanic.md) | move recurrence support, witness trace, and reviewed closeout landing docs into a recurrence-support memo mechanic |
+| [2026-05-18-lineage-harvest-memo-mechanic](2026-05-18-lineage-harvest-memo-mechanic.md) | move pattern-lineage memory into a lineage-harvest memo mechanic |
 
 ## Review Rule
 
