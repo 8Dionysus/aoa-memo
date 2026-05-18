@@ -69,6 +69,7 @@ to `aoa-routing`.
 - [PROVENANCE](PROVENANCE.md)
 - [LANDING_LOG](LANDING_LOG.md)
 - [ROADMAP](ROADMAP.md)
+- [examples](examples/)
 - [legacy index](legacy/INDEX.md)
 
 ## Functioning Parts

@@ -37,7 +37,6 @@
         "examples/decision.phase-alpha-restartable-inquiry.example.json",
         "examples/decision.phase-alpha-validation-remediation-rerun.example.json",
         "examples/decision.phase-alpha-validation-remediation.example.json",
-        "examples/decision.self-agency-reanchor-window.example.json",
         "examples/episode.example.json",
         "examples/episode.phase-alpha-local-stack.example.json",
         "examples/episode.phase-alpha-long-horizon.example.json",
@@ -62,8 +61,7 @@
         "examples/state_capsule.example.json",
         "examples/state_capsule.phase-alpha-local-stack.example.json",
         "examples/state_capsule.phase-alpha-long-horizon.example.json",
-        "examples/state_capsule.phase-alpha-restartable-inquiry.example.json",
-        "examples/state_capsule.self-agency-continuity-relay.example.json"
+        "examples/state_capsule.phase-alpha-restartable-inquiry.example.json"
       ]
     },
     "generated": {
@@ -849,22 +847,6 @@
       "validators": [
         "scripts/validate_memo.py",
         "scripts/validate_memory_object_surfaces.py"
-      ]
-    },
-    {
-      "id": "self_agency_continuity_examples",
-      "role": "continuity-relay-example",
-      "owner_surface": "mechanics/writeback/docs/SELF_AGENCY_CONTINUITY_WRITEBACK.md",
-      "examples": [
-        "examples/decision.self-agency-reanchor-window.example.json",
-        "examples/state_capsule.self-agency-continuity-relay.example.json"
-      ],
-      "source_refs": [
-        "mechanics/writeback/docs/SELF_AGENCY_CONTINUITY_WRITEBACK.md",
-        "docs/MEMORY_MODEL.md"
-      ],
-      "validators": [
-        "scripts/validate_memo.py"
       ]
     }
   ],

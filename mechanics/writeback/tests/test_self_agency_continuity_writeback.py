@@ -80,6 +80,10 @@ def test_self_agency_continuity_memory_object_ids_hydrate_through_recall_surface
         "memo.decision.2026-04-12.self-agency-reanchor-window",
         "memo.state.2026-04-12.self-agency-continuity-relay",
     }
+    expected_paths = {
+        "memo.decision.2026-04-12.self-agency-reanchor-window": "mechanics/writeback/examples/decision.self-agency-reanchor-window.example.json",
+        "memo.state.2026-04-12.self-agency-continuity-relay": "mechanics/writeback/examples/state_capsule.self-agency-continuity-relay.example.json",
+    }
     memory_object_ids = set(example["memory_object_ids"])
 
     assert expected_ids <= memory_object_ids
@@ -92,6 +96,8 @@ def test_self_agency_continuity_memory_object_ids_hydrate_through_recall_surface
         assert object_id in catalog
         assert object_id in capsules
         assert object_id in sections
+        if object_id in expected_paths:
+            assert catalog[object_id]["source_path"] == expected_paths[object_id]
         assert capsules[object_id]["kind"] == catalog[object_id]["kind"]
         assert capsules[object_id]["source_path"] == catalog[object_id]["source_path"]
         assert sections[object_id]["kind"] == catalog[object_id]["kind"]

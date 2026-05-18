@@ -121,6 +121,9 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Changed
 
+- Move self-agency continuity object examples from root `examples/` into
+  `mechanics/writeback/examples/` while keeping them in the root object-surface
+  manifest and generated object-facing family.
 - Move the maintained Spark fast-loop lane from root `Spark/` to
   `.agents/spark/`, with `.agents/AGENTS.md` as the agent-facing district
   route card.
