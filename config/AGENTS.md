@@ -25,6 +25,12 @@ schemas are for public memory-object canon, recall/posture contracts,
 support-object contracts, and generated-surface contracts; package-local
 mechanic schemas belong under the owning mechanic.
 
+Root `examples/` files must belong to exactly one `example_families` contract
+with a role, owner surface, example list, source refs, and validators. Root
+examples are for public shared memory objects, lifecycle/audit examples,
+recall contracts, support contracts, and generated-surface manifests;
+package-local mechanic examples belong under the owning mechanic.
+
 When root config allows a generated mechanic companion such as
 `generated/mechanic_artifacts.min.json`, keep the matching builder and
 validator listed in the same root technical-district contract. Root

@@ -10,6 +10,11 @@ They demonstrate how schemas, docs, and generated surfaces fit together.
 Examples here are not private notes and not hidden runtime state.
 Everything in this directory should stay safe to publish and easy to validate.
 
+Root examples are part of the root technical-district contract. Each non-route
+example file must be listed in exactly one
+`config/root_technical_districts.json` `example_families` entry that names the
+owner surface, source refs, and validators.
+
 ## Example families
 
 Keep the example families legible:

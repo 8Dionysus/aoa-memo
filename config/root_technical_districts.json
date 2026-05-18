@@ -1,5 +1,5 @@
 {
-  "schema_version": "aoa_memo_root_technical_districts_v5",
+  "schema_version": "aoa_memo_root_technical_districts_v6",
   "source_of_truth": "mechanics/ARTIFACT_TOPOLOGY.md",
   "route_card_exception": "AGENTS.md",
   "districts": {
@@ -581,6 +581,166 @@
       ],
       "validators": [
         "scripts/validate_memory_object_surfaces.py"
+      ]
+    }
+  ],
+  "example_families": [
+    {
+      "id": "base_memory_object_examples",
+      "role": "base-memory-object-example",
+      "owner_surface": "docs/MEMORY_MODEL.md",
+      "examples": [
+        "examples/anchor.example.json",
+        "examples/claim.example.json",
+        "examples/episode.example.json",
+        "examples/pattern.example.json",
+        "examples/state_capsule.example.json"
+      ],
+      "source_refs": [
+        "docs/MEMORY_MODEL.md",
+        "schemas/memory_object.schema.json"
+      ],
+      "validators": [
+        "scripts/validate_memo.py"
+      ]
+    },
+    {
+      "id": "lifecycle_audit_examples",
+      "role": "lifecycle-audit-example",
+      "owner_surface": "docs/LIFECYCLE.md",
+      "examples": [
+        "examples/audit_event.memory-retention-check.example.json",
+        "examples/audit_event.retraction.example.json",
+        "examples/audit_event.service-governed-fallback.example.json",
+        "examples/audit_event.supersession.example.json",
+        "examples/claim.current-entrypoint.example.json",
+        "examples/claim.retracted.example.json",
+        "examples/claim.superseded.example.json",
+        "examples/provenance_thread.lifecycle.example.json"
+      ],
+      "source_refs": [
+        "docs/LIFECYCLE.md",
+        "docs/MEMORY_TRUST_POSTURE.md",
+        "scripts/validate_lifecycle_audit_examples.py"
+      ],
+      "validators": [
+        "scripts/validate_memo.py",
+        "scripts/validate_lifecycle_audit_examples.py"
+      ]
+    },
+    {
+      "id": "phase_alpha_memory_thread_examples",
+      "role": "phase-alpha-thread-example",
+      "owner_surface": "docs/MEMORY_MODEL.md",
+      "examples": [
+        "examples/audit_event.phase-alpha-rerun-pending-supersession.example.json",
+        "examples/audit_event.phase-alpha-runtime-history-overread-retraction.example.json",
+        "examples/audit_event.phase-alpha-validation-remediation-rerun.example.json",
+        "examples/audit_event.phase-alpha-validation-remediation.example.json",
+        "examples/claim.phase-alpha-closure-with-residual-runtime-history.example.json",
+        "examples/claim.phase-alpha-rerun-pending-handoff.example.json",
+        "examples/claim.phase-alpha-runtime-history-fully-retired.example.json",
+        "examples/claim.phase-alpha-runtime-history-later-infra-track.example.json",
+        "examples/decision.phase-alpha-local-stack.example.json",
+        "examples/decision.phase-alpha-long-horizon.example.json",
+        "examples/decision.phase-alpha-restartable-inquiry.example.json",
+        "examples/decision.phase-alpha-validation-remediation-rerun.example.json",
+        "examples/decision.phase-alpha-validation-remediation.example.json",
+        "examples/episode.phase-alpha-local-stack.example.json",
+        "examples/episode.phase-alpha-long-horizon.example.json",
+        "examples/episode.phase-alpha-validation-remediation-rerun.example.json",
+        "examples/episode.phase-alpha-validation-remediation.example.json",
+        "examples/pattern.phase-alpha-remediation-recurrence.example.json",
+        "examples/provenance_thread.phase-alpha-curated.example.json",
+        "examples/state_capsule.phase-alpha-local-stack.example.json",
+        "examples/state_capsule.phase-alpha-long-horizon.example.json",
+        "examples/state_capsule.phase-alpha-restartable-inquiry.example.json"
+      ],
+      "source_refs": [
+        "docs/MEMORY_MODEL.md",
+        "examples/provenance_thread.phase-alpha-curated.example.json"
+      ],
+      "validators": [
+        "scripts/validate_memo.py",
+        "tests/test_phase_alpha_provenance_thread.py"
+      ]
+    },
+    {
+      "id": "recall_contract_examples",
+      "role": "recall-contract-example",
+      "owner_surface": "docs/MEMORY_MODEL.md",
+      "examples": [
+        "examples/recall_contract.lineage.json",
+        "examples/recall_contract.object.lineage.json",
+        "examples/recall_contract.object.semantic.json",
+        "examples/recall_contract.object.working.json",
+        "examples/recall_contract.object.working.phase-alpha.json",
+        "examples/recall_contract.object.working.return.json",
+        "examples/recall_contract.router.lineage.json",
+        "examples/recall_contract.router.semantic.json",
+        "examples/recall_contract.semantic.json",
+        "examples/recall_contract.working.json"
+      ],
+      "source_refs": [
+        "docs/MEMORY_MODEL.md",
+        "schemas/recall_contract.schema.json",
+        "generated/memory_catalog.min.json",
+        "generated/memory_object_catalog.min.json"
+      ],
+      "validators": [
+        "scripts/validate_memo.py",
+        "scripts/validate_memory_surfaces.py",
+        "scripts/validate_memory_object_surfaces.py",
+        "tests/test_downstream_feed_contracts.py"
+      ]
+    },
+    {
+      "id": "support_contract_examples",
+      "role": "support-contract-example",
+      "owner_surface": "docs/NARRATIVE_CORE_CONTRACT.md",
+      "examples": [
+        "examples/core_memory_contract.example.json",
+        "examples/provenance_thread.example.json"
+      ],
+      "source_refs": [
+        "docs/NARRATIVE_CORE_CONTRACT.md",
+        "schemas/core-memory-contract.schema.json",
+        "schemas/provenance_thread.schema.json"
+      ],
+      "validators": [
+        "scripts/validate_memo.py"
+      ]
+    },
+    {
+      "id": "object_surface_manifest_example",
+      "role": "surface-manifest-example",
+      "owner_surface": "examples/memory_object_surface_manifest.json",
+      "examples": [
+        "examples/memory_object_surface_manifest.json"
+      ],
+      "source_refs": [
+        "schemas/memory_object_surface_manifest.schema.json",
+        "scripts/generate_memory_object_surfaces.py"
+      ],
+      "validators": [
+        "scripts/validate_memo.py",
+        "scripts/validate_memory_object_surfaces.py"
+      ]
+    },
+    {
+      "id": "self_agency_continuity_examples",
+      "role": "continuity-relay-example",
+      "owner_surface": "mechanics/writeback/docs/SELF_AGENCY_CONTINUITY_WRITEBACK.md",
+      "examples": [
+        "examples/decision.self-agency-reanchor-window.example.json",
+        "examples/state_capsule.self-agency-continuity-relay.example.json"
+      ],
+      "source_refs": [
+        "mechanics/writeback/docs/SELF_AGENCY_CONTINUITY_WRITEBACK.md",
+        "docs/MEMORY_MODEL.md"
+      ],
+      "validators": [
+        "scripts/validate_memo.py"
       ]
     }
   ]
