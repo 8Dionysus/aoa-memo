@@ -1,0 +1,180 @@
+{
+  "schema_version": "aoa_memo_agents_mesh_v1",
+  "source_of_truth": "agents-md-mesh-v1",
+  "authority_ref": "DESIGN.AGENTS.md",
+  "system_design_ref": "DESIGN.md",
+  "root_agents_ref": "AGENTS.md",
+  "route_contract_ref": "docs/ROOT_SURFACE_LAW.md",
+  "generated_ref": "generated/agents_mesh.min.json",
+  "canonical_cards": [
+    {
+      "path": ".agents/AGENTS.md",
+      "min_lines": 20,
+      "required_snippets": [
+        "agent-facing companion district",
+        ".agents/<lane>/",
+        "memory truth",
+        "python scripts/release_check.py"
+      ]
+    },
+    {
+      "path": ".agents/skills/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "memory-layer maintenance",
+        "recall contracts",
+        "Memory is valuable. It is not proof",
+        "public-safe"
+      ]
+    },
+    {
+      "path": ".agents/spark/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "only governs work started from `.agents/spark/`",
+        "fast-loop lane",
+        "memory remains explicit and bounded",
+        "Reporting contract"
+      ]
+    },
+    {
+      "path": ".github/AGENTS.md",
+      "min_lines": 20,
+      "required_snippets": [
+        "GitHub platform surface",
+        "Repo Validation",
+        "public-safe",
+        "root `AGENTS.md`"
+      ]
+    },
+    {
+      "path": "AGENTS.md",
+      "min_lines": 80,
+      "required_snippets": [
+        "explicit memory and recall layer",
+        "Route modes",
+        "GitHub landing workflow",
+        "Core validation set"
+      ]
+    },
+    {
+      "path": "config/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "guardrail-support",
+        "memory truth",
+        "public-safe",
+        "provenance drift"
+      ]
+    },
+    {
+      "path": "docs/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "memory models",
+        "memory is not proof",
+        "temporal relevance",
+        "downstream owner repo"
+      ]
+    },
+    {
+      "path": "docs/decisions/AGENTS.md",
+      "min_lines": 30,
+      "required_snippets": [
+        "Decision records",
+        "public-safe",
+        "verification route",
+        "python scripts/release_check.py"
+      ]
+    },
+    {
+      "path": "examples/AGENTS.md",
+      "min_lines": 40,
+      "required_snippets": [
+        "sanitized",
+        "memory_object_surface_manifest.json",
+        "recall_contract.object.lineage.json",
+        "validate_lifecycle_audit_examples.py"
+      ]
+    },
+    {
+      "path": "generated/AGENTS.md",
+      "min_lines": 40,
+      "required_snippets": [
+        "memo_registry.min.json",
+        "memory_object_catalog.json",
+        "kag_export.min.json",
+        "Do not hand-edit"
+      ]
+    },
+    {
+      "path": "manifests/AGENTS.md",
+      "min_lines": 20,
+      "required_snippets": [
+        "recurrence manifests",
+        "component.agon.",
+        "public-safe",
+        "validate_memo.py"
+      ]
+    },
+    {
+      "path": "quests/AGENTS.md",
+      "min_lines": 20,
+      "required_snippets": [
+        "memory-layer obligations",
+        "QUESTBOOK.md",
+        "AOA-MEM-Q-",
+        "validate_memo.py"
+      ]
+    },
+    {
+      "path": "schemas/AGENTS.md",
+      "min_lines": 40,
+      "required_snippets": [
+        "memory_object.schema.json",
+        "recall_contract.schema.json",
+        "memory_graph_face.schema.json",
+        "Schema edits are contract edits"
+      ]
+    },
+    {
+      "path": "scripts/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "validate_memo.py",
+        "validate_nested_agents.py",
+        "deterministic",
+        "hidden runtime infrastructure"
+      ]
+    },
+    {
+      "path": "tests/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "memory schemas",
+        "recall contracts",
+        "provenance loss",
+        "public-safe"
+      ]
+    }
+  ],
+  "top_level_exemptions": [
+    ".aoa",
+    ".deps",
+    ".git",
+    ".pytest_cache",
+    "__pycache__"
+  ],
+  "ignored_directory_names": [
+    ".aoa",
+    ".deps",
+    ".git",
+    ".pytest_cache",
+    "__pycache__"
+  ],
+  "validation_commands": [
+    "python scripts/validate_agents_mesh.py",
+    "python scripts/build_agents_mesh_index.py --check",
+    "python scripts/validate_agents_mesh_index.py"
+  ]
+}

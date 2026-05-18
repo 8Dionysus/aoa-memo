@@ -108,8 +108,10 @@ Until then, this README is the map and the flat files remain active surfaces.
 | [scripts](../scripts/AGENTS.md) | builders, validators, and publication helpers |
 | [tests](../tests/AGENTS.md) | regression surfaces |
 | [config](../config/AGENTS.md) | seed and build inputs |
+| [manifests](../manifests/AGENTS.md) | recurrence manifests and hook bindings |
+| [quests](../quests/AGENTS.md) | quest files backing `QUESTBOOK.md` |
 | [.agents](../.agents/AGENTS.md) | agent-facing companion lanes |
-| [quests](../QUESTBOOK.md) | memory-layer obligations |
+| [QUESTBOOK](../QUESTBOOK.md) | active memory-layer obligation index |
 
 ## Notes
 
@@ -118,5 +120,7 @@ Until then, this README is the map and the flat files remain active surfaces.
   deleting root or docs-root surfaces.
 - Prefer [decisions](decisions/README.md) when future contributors will need to
   know why a topology route exists.
+- Prefer `config/agents_mesh.json` and `generated/agents_mesh.min.json` when a
+  docs migration adds or changes local route cards.
 - Generated surfaces summarize memory doctrine and object examples. They do not
   replace authored docs, schemas, examples, or validators.

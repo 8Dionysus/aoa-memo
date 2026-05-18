@@ -40,7 +40,13 @@ docs migration so Agon, Titan, adoption, retention, rollback, and writeback
 surfaces are moved only with owner maps, link updates, and validation.
 The maintained Spark fast-loop lane now lives under `.agents/spark/` rather
 than root `Spark/`, aligning agent-lane placement with the new topology spine
-without starting the later generated AGENTS mesh.
+without treating the lane as root civic law.
+
+The first generated AGENTS mesh is now the active topology hardening layer:
+`config/agents_mesh.json` records current route-card contracts and
+`generated/agents_mesh.min.json` is rebuilt from that source. Future thematic
+docs migrations should add any new local route cards through this mesh before
+landing.
 
 ## Current contract-hardening waves
 

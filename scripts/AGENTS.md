@@ -21,6 +21,7 @@ Keep the current split clear:
 - `validate_memory_object_surfaces.py` checks manifest coverage, determinism, lifecycle integrity, and object-facing recall contracts
 - `validate_lifecycle_audit_examples.py` checks lifecycle, provenance-thread, and audit-event example integrity
 - `validate_nested_agents.py` checks that local guidance files stay present and explicit
+- `validate_agents_mesh.py`, `build_agents_mesh_index.py`, and `validate_agents_mesh_index.py` keep the source-backed AGENTS mesh aligned with current route cards
 
 ## Editing posture
 
@@ -48,6 +49,9 @@ python scripts/validate_memo.py
 python scripts/validate_memory_surfaces.py
 python scripts/validate_memory_object_surfaces.py
 python scripts/validate_lifecycle_audit_examples.py
+python scripts/validate_agents_mesh.py
+python scripts/build_agents_mesh_index.py --check
+python scripts/validate_agents_mesh_index.py
 ```
 
 If generator logic changed, also run:

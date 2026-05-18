@@ -11,6 +11,7 @@ This file applies to checked-in artifacts under `generated/`.
 - the object family consists of `memory_object_catalog.json`, `memory_object_catalog.min.json`, `memory_object_capsules.json`, and `memory_object_sections.full.json`
 - `runtime_writeback_governance.min.json` is the derived landing gate for the narrow runtime writeback seam
 - `kag_export.min.json` is the source-owned memo donor export for KAG readiness
+- `agents_mesh.min.json` is the compact companion mirror for current AGENTS route-card coverage
 
 Do not treat every file here as the same kind of artifact.
 
@@ -23,6 +24,7 @@ Keep this split explicit:
 - the object family is generator-backed and is rebuilt by `scripts/generate_memory_object_surfaces.py` and checked by `scripts/validate_memory_object_surfaces.py`
 - `generated/runtime_writeback_governance.min.json` is rebuilt by `scripts/generate_runtime_writeback_governance.py` and checked by `scripts/validate_memo.py`
 - `generated/kag_export.min.json` is generator-backed, rebuilt by `scripts/generate_kag_export.py`, and checked by `scripts/validate_memo.py`
+- `generated/agents_mesh.min.json` is rebuilt by `scripts/build_agents_mesh_index.py` from `config/agents_mesh.json` and checked by `scripts/validate_agents_mesh_index.py`
 
 The object family is derived from curated examples in `examples/memory_object_surface_manifest.json` and the referenced memory-object examples.
 
@@ -51,6 +53,13 @@ For `kag_export.min.json`:
 - keep it aligned with the current bridge donor object, capsule entry surface, and canonical section handles
 - do not widen it into a live federation spine or a multi-object graph export pack here
 
+For `agents_mesh.min.json`:
+
+- Do not hand-edit it
+- update `config/agents_mesh.json` and the affected local `AGENTS.md` cards first
+- rebuild it with `python scripts/build_agents_mesh_index.py`
+- keep it a route-card coverage companion, not source memory doctrine
+
 ## Validation
 
 When this directory changes, run the matching checks:
@@ -59,6 +68,7 @@ When this directory changes, run the matching checks:
 python scripts/validate_memo.py
 python scripts/validate_memory_surfaces.py
 python scripts/validate_memory_object_surfaces.py
+python scripts/validate_agents_mesh_index.py
 ```
 
 If the object family or KAG export changed, also run:

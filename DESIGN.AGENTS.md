@@ -86,9 +86,17 @@ The long-term mesh should make these lanes explicit:
 - `manifests/` for recurrence or component manifests
 - `quests/` for tracked memory-layer obligations
 
-The current repository does not yet require a full AGENTS mesh mirror. This
-document establishes the design form that a later `config/agents_mesh.json` and
-`generated/agents_mesh.min.json` can validate.
+The current repository now has a source-backed AGENTS mesh mirror:
+
+- `config/agents_mesh.json` is the source map for current route cards
+- `generated/agents_mesh.min.json` is the compact generated companion
+- `scripts/validate_agents_mesh.py` checks route-card coverage and local card
+  contracts
+- `scripts/build_agents_mesh_index.py --check` and
+  `scripts/validate_agents_mesh_index.py` keep the mirror reproducible
+
+The mesh validates the current `aoa-memo` card form rather than importing a
+sibling repository's heading template.
 
 ## Reading Order Shape
 
@@ -160,16 +168,15 @@ The current broad validation path remains:
 python scripts/release_check.py
 ```
 
-When the AGENTS mesh becomes a generated companion in this repository, its
-validator should check:
+The AGENTS mesh generated companion checks:
 
 - registered cards exist
 - root and local cards preserve source-owner boundaries
 - generated mesh output is reproducible
 - `.agents/` lanes do not live as root civic surfaces by accident
 
-Until then, tests may pin the presence of this design file, required route
-links, and the decision lane.
+Tests also pin this design file, required route links, the decision lane, and
+the mesh validator path.
 
 ## One-Line Rule
 

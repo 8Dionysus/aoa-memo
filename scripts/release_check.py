@@ -29,6 +29,9 @@ COMMANDS = [
     ("validate memory surfaces", [sys.executable, "scripts/validate_memory_surfaces.py"]),
     ("validate memory object surfaces", [sys.executable, "scripts/validate_memory_object_surfaces.py"]),
     ("validate lifecycle audit examples", [sys.executable, "scripts/validate_lifecycle_audit_examples.py"]),
+    ("validate AGENTS mesh", [sys.executable, "scripts/validate_agents_mesh.py"]),
+    ("check AGENTS mesh index", [sys.executable, "scripts/build_agents_mesh_index.py", "--check"]),
+    ("validate AGENTS mesh index", [sys.executable, "scripts/validate_agents_mesh_index.py"]),
     ("run tests", [sys.executable, "-m", "pytest", "-q"]),
 ]
 
