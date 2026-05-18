@@ -14,7 +14,7 @@ runtime retention, or agent role rights.
 The foundation quest family uses `AOA-MEM-Q-*.yaml`.
 
 Agon-specific follow-through currently uses `AOM-Q-AGON-*.md` and
-`AOMEMO-Q-AGON-*.md` files while the Agon docs district is still flat.
+`AOMEMO-Q-AGON-*.md` files that route back to the `docs/agon/` district.
 
 Keep `QUESTBOOK.md`, `quests/`, and any generated quest companions aligned.
 

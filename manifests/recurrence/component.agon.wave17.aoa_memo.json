@@ -16,9 +16,9 @@
   "surfaces": [
     "generated/agon_kag_memo_evidence_package_registry.min.json",
     "config/agon_kag_memo_evidence_packages.seed.json",
-    "docs/AGON_KAG_MEMO_EVIDENCE_PACKAGES.md",
-    "docs/AGON_KAG_MEMO_BOUNDARY.md",
-    "docs/AGON_WAVE17_MEMO_LANDING.md"
+    "docs/agon/AGON_KAG_MEMO_EVIDENCE_PACKAGES.md",
+    "docs/agon/AGON_KAG_MEMO_BOUNDARY.md",
+    "docs/agon/AGON_WAVE17_MEMO_LANDING.md"
   ],
   "title": "Wave XVII aoa-memo surfaces",
   "wave": "XVII"

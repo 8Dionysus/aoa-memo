@@ -2,7 +2,7 @@
 
 ## Guidance for `tests/`
 
-`tests/` protects memory schemas, examples, generated catalogs, recall contracts, lifecycle audit examples, and writeback boundaries.
+`tests/` protects memory schemas, examples, generated catalogs, recall contracts, lifecycle audit examples, docs district migrations, and writeback boundaries.
 
 Tests should expose provenance loss, recall overreach, stale context, schema mismatch, AGENTS mesh drift, and generated/source drift.
 
@@ -17,4 +17,5 @@ python -m pytest -q tests
 python scripts/validate_semantic_agents.py
 python scripts/validate_agents_mesh.py
 python scripts/validate_agents_mesh_index.py
+python scripts/validate_docs_districts.py
 ```

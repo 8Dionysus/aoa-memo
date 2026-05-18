@@ -43,8 +43,12 @@ add [DESIGN.AGENTS](../DESIGN.AGENTS.md).
 
 ## Current Surface Families
 
-`docs/` is still mostly flat. Treat this map as the first topology spine before
-any thematic migration.
+`docs/` is still mostly flat. Treat this map as the topology spine for the
+remaining flat docs while validated districts move out one owner family at a
+time.
+
+The first moved district is the [Agon Memo District](agon/README.md):
+`docs/agon/` owns the former flat `AGON_*` memo docs.
 
 | Family | Current flat surfaces |
 |---|---|
@@ -53,7 +57,7 @@ any thematic migration.
 | Neighbor seams | `AGENT_MEMORY_POSTURE_SEAM`, `PLAYBOOK_MEMORY_SCOPES`, `ROUTING_MEMORY_ADOPTION`, `KAG_TOS_BRIDGE_CONTRACT`, `KAG_SOURCE_EXPORT`, `MEMORY_EVAL_GUARDRAILS` |
 | Antifragility | `FAILURE_LESSON_MEMORY`, `FAILURE_LESSON_RECALL`, `DRIFT_REVIEW_LESSON_MEMORY`, `RECOVERY_PATTERN_MEMORY`, `RECOVERY_PATTERN_RECALL`, `ROLLBACK_FOLLOWTHROUGH_PATTERN` |
 | Adoption and governance | `ADOPTION_*`, `GOVERNANCE_*`, `FEDERATION_*`, `INSTALLATION_MEMORY_BOUNDARIES`, `CERTIFICATION_MEMORY_BOUNDARIES`, `CROSS_REPO_RETENTION_MEMORY` |
-| Agon memo seams | `AGON_*` docs and their matching config, schemas, generated registries, examples, tests, and manifests |
+| Agon memo seams | [agon](agon/README.md) district plus matching config, schemas, generated registries, examples, tests, quests, and manifests |
 | Titan memory seams | `TITAN_*` docs and their matching schemas, examples, and tests |
 | Decision rationale | [decisions](decisions/README.md) |
 
@@ -79,6 +83,7 @@ any thematic migration.
 | Object canon or lifecycle | [MEMORY_OBJECT_PROFILES](MEMORY_OBJECT_PROFILES.md), [MEMORY_TRUST_POSTURE](MEMORY_TRUST_POSTURE.md), [LIFECYCLE](LIFECYCLE.md) |
 | Generated parity | source doc or manifest, builder, generated output, validator, and test together |
 | Docs placement | [ROOT_SURFACE_LAW](ROOT_SURFACE_LAW.md) |
+| Agon memo docs | [agon/AGENTS](agon/AGENTS.md), then [agon/README](agon/README.md) |
 | Agent-facing shape | [DESIGN.AGENTS](../DESIGN.AGENTS.md), root [AGENTS](../AGENTS.md), and nearest local `AGENTS.md` |
 | Decision rationale | [decisions/AGENTS](decisions/AGENTS.md), then [decisions/README](decisions/README.md) |
 | Public release path | [RELEASING](RELEASING.md), then [CHANGELOG](../CHANGELOG.md) |
@@ -108,6 +113,7 @@ Until then, this README is the map and the flat files remain active surfaces.
 | [scripts](../scripts/AGENTS.md) | builders, validators, and publication helpers |
 | [tests](../tests/AGENTS.md) | regression surfaces |
 | [config](../config/AGENTS.md) | seed and build inputs |
+| [agon](agon/README.md) | Agon memo docs district |
 | [manifests](../manifests/AGENTS.md) | recurrence manifests and hook bindings |
 | [quests](../quests/AGENTS.md) | quest files backing `QUESTBOOK.md` |
 | [.agents](../.agents/AGENTS.md) | agent-facing companion lanes |
@@ -122,5 +128,7 @@ Until then, this README is the map and the flat files remain active surfaces.
   know why a topology route exists.
 - Prefer `config/agents_mesh.json` and `generated/agents_mesh.min.json` when a
   docs migration adds or changes local route cards.
+- Prefer `scripts/validate_docs_districts.py` when a thematic docs family moves
+  out of the flat docs root.
 - Generated surfaces summarize memory doctrine and object examples. They do not
   replace authored docs, schemas, examples, or validators.

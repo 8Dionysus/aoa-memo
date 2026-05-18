@@ -17,12 +17,16 @@ Tracking starts with the community-docs baseline for this repository.
   `generated/agents_mesh.min.json`, mesh validators, and regression tests so
   current route-card coverage is machine-checkable before docs districts move.
 - Add top-level route cards for `manifests/` and `quests/`.
+- Add the `docs/agon/` district for Agon memo docs with a local route card,
+  district map, docs-district validator, tests, and decision record.
 
 ### Changed
 
 - Move the maintained Spark fast-loop lane from root `Spark/` to
   `.agents/spark/`, with `.agents/AGENTS.md` as the agent-facing district
   route card.
+- Move flat Agon docs-root surfaces into `docs/agon/` and update recurrence
+  manifest refs to the new district paths.
 
 ## [0.2.3] - 2026-04-23
 

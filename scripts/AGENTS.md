@@ -22,6 +22,7 @@ Keep the current split clear:
 - `validate_lifecycle_audit_examples.py` checks lifecycle, provenance-thread, and audit-event example integrity
 - `validate_nested_agents.py` checks that local guidance files stay present and explicit
 - `validate_agents_mesh.py`, `build_agents_mesh_index.py`, and `validate_agents_mesh_index.py` keep the source-backed AGENTS mesh aligned with current route cards
+- `validate_docs_districts.py` keeps thematic docs migrations, starting with `docs/agon/`, from drifting back into flat docs sprawl
 
 ## Editing posture
 
@@ -52,6 +53,7 @@ python scripts/validate_lifecycle_audit_examples.py
 python scripts/validate_agents_mesh.py
 python scripts/build_agents_mesh_index.py --check
 python scripts/validate_agents_mesh_index.py
+python scripts/validate_docs_districts.py
 ```
 
 If generator logic changed, also run:
