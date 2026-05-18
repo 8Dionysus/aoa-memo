@@ -35,6 +35,7 @@ python scripts/validate_memo.py
 python scripts/validate_memory_surfaces.py
 python scripts/validate_memory_object_surfaces.py
 python scripts/validate_lifecycle_audit_examples.py
+python scripts/build_quest_surfaces.py --check
 python -m pytest -q tests
 ```
 

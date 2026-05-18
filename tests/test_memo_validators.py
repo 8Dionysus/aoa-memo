@@ -34,6 +34,10 @@ generate_kag_export = load_script_module(
     "generate_kag_export",
     REPO_ROOT / "mechanics" / "consumer-handoff" / "scripts" / "generate_kag_export.py",
 )
+build_quest_surfaces = load_script_module(
+    "build_quest_surfaces",
+    SCRIPTS_ROOT / "build_quest_surfaces.py",
+)
 
 
 def load_json(path: Path) -> object:
@@ -930,6 +934,13 @@ class MemoValidatorTestCase(unittest.TestCase):
             with redirect_stdout(stdout), redirect_stderr(stderr):
                 validate_memo.validate_questbook_surface()
 
+    def test_quest_surface_builder_check_validates(self) -> None:
+        argv = ["build_quest_surfaces.py", "--check"]
+        with patch.object(sys, "argv", argv):
+            with io.StringIO() as stdout, io.StringIO() as stderr:
+                with redirect_stdout(stdout), redirect_stderr(stderr):
+                    self.assertEqual(build_quest_surfaces.main(), 0)
+
     def test_questbook_surface_skips_missing_external_eval_schemas(self) -> None:
         missing_evals_root = REPO_ROOT / ".tmp" / "missing-aoa-evals"
 
@@ -957,7 +968,7 @@ class MemoValidatorTestCase(unittest.TestCase):
         def side_effect(path: Path) -> str:
             text = original_load_text(path)
             if Path(path) == questbook_path:
-                return text.replace("AOA-MEM-Q-0002", "AOA-MEM-Q-9999")
+                return text.replace("AOA-MEM-Q-0003", "AOA-MEM-Q-9999")
             return text
 
         with patch.object(validate_memo, "load_text", side_effect=side_effect):
@@ -986,6 +997,36 @@ class MemoValidatorTestCase(unittest.TestCase):
                 assert isinstance(payload, dict)
                 payload = copy.deepcopy(payload)
                 payload["id"] = "AOA-MEM-Q-9999"
+            return payload
+
+        with patch.object(validate_memo, "load_yaml", side_effect=side_effect):
+            self.assert_system_exit_quietly(validate_memo.validate_questbook_surface)
+
+    def test_questbook_surface_rejects_stale_foundation_owner_route(self) -> None:
+        quest_path = validate_memo.ROOT / "quests" / "AOA-MEM-Q-0002.yaml"
+        original_load_yaml = validate_memo.load_yaml
+
+        def side_effect(path: Path) -> object:
+            payload = original_load_yaml(path)
+            if Path(path) == quest_path:
+                assert isinstance(payload, dict)
+                payload = copy.deepcopy(payload)
+                payload["owner_surface"] = "mechanics/writeback/docs/QUEST_EVIDENCE_WRITEBACK.md"
+            return payload
+
+        with patch.object(validate_memo, "load_yaml", side_effect=side_effect):
+            self.assert_system_exit_quietly(validate_memo.validate_questbook_surface)
+
+    def test_questbook_surface_rejects_stale_chronicle_owner_route(self) -> None:
+        quest_path = validate_memo.ROOT / "quests" / "AOA-MEM-Q-0003.yaml"
+        original_load_yaml = validate_memo.load_yaml
+
+        def side_effect(path: Path) -> object:
+            payload = original_load_yaml(path)
+            if Path(path) == quest_path:
+                assert isinstance(payload, dict)
+                payload = copy.deepcopy(payload)
+                payload["owner_surface"] = "memo/quest-chronicle"
             return payload
 
         with patch.object(validate_memo, "load_yaml", side_effect=side_effect):

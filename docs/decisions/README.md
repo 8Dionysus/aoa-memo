@@ -48,6 +48,7 @@ expectation.
 | [2026-05-18-lineage-harvest-memo-mechanic](2026-05-18-lineage-harvest-memo-mechanic.md) | move pattern-lineage memory into a lineage-harvest memo mechanic |
 | [2026-05-18-checkpoint-memo-mechanic](2026-05-18-checkpoint-memo-mechanic.md) | add checkpoint as the memo mechanic for checkpoint gates, carry, approval, health, improvement, and checkpoint-to-memory artifacts |
 | [2026-05-18-readiness-boundary-memo-mechanic](2026-05-18-readiness-boundary-memo-mechanic.md) | move readiness boundary doctrine, schema, example, and regression test into a readiness-boundary memo mechanic |
+| [2026-05-18-quest-generated-owner-routes](2026-05-18-quest-generated-owner-routes.md) | keep root quest generated companions builder-backed and mechanic-routed |
 
 ## Review Rule
 

@@ -87,6 +87,10 @@ Examples:
   `growth_refinery_writeback_lanes`, and `phase_alpha_writeback_map` live under
   `mechanics/writeback/generated/`.
 - the KAG source export lives under `mechanics/consumer-handoff/generated/`.
+- root quest generated companions live under `generated/` only because they
+  project the public `quests/*.yaml` store for outside consumers. Their
+  `owner_surface` and `anchor_ref` values must still route into real memo docs
+  or mechanic docs.
 
 Root `schemas/`, `examples/`, `generated/`, `scripts/`, `tests/`, and `config/`
 remain valid for shared memory-object canon, shared recall contracts,

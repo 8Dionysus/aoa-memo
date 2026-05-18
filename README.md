@@ -16,6 +16,9 @@ Use the shortest route by need:
 - machine-checkable route-card coverage: `config/agents_mesh.json`,
   `generated/agents_mesh.min.json`, `scripts/validate_agents_mesh.py`, and
   `scripts/validate_agents_mesh_index.py`
+- quest projection surfaces: `QUESTBOOK.md`, `quests/*.yaml`,
+  `generated/quest_catalog.min*.json`, `generated/quest_dispatch.min*.json`,
+  and `python scripts/build_quest_surfaces.py --check`
 - object canon, trust posture, and lifecycle: [docs/MEMORY_OBJECT_PROFILES](docs/MEMORY_OBJECT_PROFILES.md), [docs/MEMORY_TRUST_POSTURE](docs/MEMORY_TRUST_POSTURE.md), [docs/MEMORY_TEMPERATURES](docs/MEMORY_TEMPERATURES.md), [docs/LIFECYCLE](docs/LIFECYCLE.md), and [docs/NARRATIVE_CORE_CONTRACT](docs/NARRATIVE_CORE_CONTRACT.md)
 - Titan Memory Loom, bearer-recall posture, and remembrance source-ref policy: [mechanics/titan/docs/TITAN_MEMORY_LOOM_POSTURE.md](mechanics/titan/docs/TITAN_MEMORY_LOOM_POSTURE.md), [mechanics/titan/docs/TITAN_PERSONALITY_MEMORY_POLICY.md](mechanics/titan/docs/TITAN_PERSONALITY_MEMORY_POLICY.md), [mechanics/titan/docs/TITAN_RECALL_CANDIDATE_POLICY.md](mechanics/titan/docs/TITAN_RECALL_CANDIDATE_POLICY.md), [mechanics/titan/docs/TITAN_REMEMBRANCE_SOURCE_REF_POLICY.md](mechanics/titan/docs/TITAN_REMEMBRANCE_SOURCE_REF_POLICY.md), `mechanics/titan/schemas/titan_remembrance_record.schema.json`, and `mechanics/titan/examples/titan_remembrance_record.example.json`
 - antifragility failure-lesson seam: [mechanics/antifragility/docs/FAILURE_LESSON_MEMORY.md](mechanics/antifragility/docs/FAILURE_LESSON_MEMORY.md), [mechanics/antifragility/docs/FAILURE_LESSON_RECALL.md](mechanics/antifragility/docs/FAILURE_LESSON_RECALL.md), [mechanics/antifragility/docs/DRIFT_REVIEW_LESSON_MEMORY.md](mechanics/antifragility/docs/DRIFT_REVIEW_LESSON_MEMORY.md), `mechanics/antifragility/schemas/failure_lesson_memory_v1.json`, `mechanics/antifragility/examples/failure_lesson_memory.example.json`, `mechanics/antifragility/examples/failure_lesson_memory.lineage.example.json`, `mechanics/antifragility/examples/failure_lesson_memory.rollout.example.json`, and `mechanics/antifragility/examples/failure_lesson_memory.drift_review.example.json`
@@ -189,6 +192,7 @@ python scripts/validate_memo.py
 python scripts/validate_memory_surfaces.py
 python scripts/validate_memory_object_surfaces.py
 python scripts/validate_lifecycle_audit_examples.py
+python scripts/build_quest_surfaces.py --check
 python scripts/validate_agents_mesh.py
 python scripts/build_agents_mesh_index.py --check
 python scripts/validate_agents_mesh_index.py
@@ -202,6 +206,7 @@ If you changed generator-backed surfaces, regenerate only the touched families f
 
 ```bash
 python scripts/generate_memory_object_surfaces.py
+python scripts/build_quest_surfaces.py
 python mechanics/consumer-handoff/scripts/generate_kag_export.py
 python mechanics/writeback/scripts/generate_runtime_writeback_targets.py
 python mechanics/writeback/scripts/generate_runtime_writeback_intake.py
