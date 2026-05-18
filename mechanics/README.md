@@ -111,6 +111,10 @@ Use `python scripts/build_mechanic_artifact_inventory.py --check` and
 `python scripts/validate_mechanic_artifact_inventory.py` when package-local
 artifact homes change.
 
+Use `python scripts/validate_memo_mechanic_parts.py` when `PARTS.md` files
+change so functioning parts keep a consistent Active Parts table and Interface
+section.
+
 ## Validation
 
 Executable commands for this atlas live in [mechanics/AGENTS](AGENTS.md).

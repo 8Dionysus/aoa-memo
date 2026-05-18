@@ -89,6 +89,9 @@ Tracking starts with the community-docs baseline for this repository.
   `generated/mechanic_artifacts.min.json`, with builder, validator, release
   gate coverage, and tests so mechanic-local schemas, examples, config,
   generated outputs, scripts, tests, and manifests stay inspectable.
+- Add `scripts/validate_memo_mechanic_parts.py` to keep mechanic `PARTS.md`
+  files operation-shaped, with Active Parts tables, source links, interface
+  sections, release gate coverage, and regression tests.
 
 ### Changed
 
@@ -144,6 +147,8 @@ Tracking starts with the community-docs baseline for this repository.
   and antifragility/governance/shape-guard/consumer-handoff/operational-gate/
   recurrence-support/lineage-harvest/questbook mechanics and mechanic docs/legacy
   subroutes.
+- Normalize governance and lineage-harvest `PARTS.md` into the shared Active
+  Parts plus Interface shape.
 
 ## [0.2.3] - 2026-04-23
 
