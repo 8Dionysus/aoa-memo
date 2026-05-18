@@ -3,6 +3,9 @@
 ## Current
 
 Keep memo quest sources lane-first, public-safe, and generated from source.
+Keep root-published quest generated views governed by
+`parts/generated-views/` rather than moving public read models into
+package-local `generated/`.
 
 ## When Time Comes
 

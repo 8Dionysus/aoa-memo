@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import json
 import sys
 from pathlib import Path
 
@@ -29,6 +30,18 @@ REQUIRED_MARKDOWN_HEADINGS = (
     "## Next Action",
     "## Acceptance Evidence",
     "## Stop-lines",
+)
+QUEST_GENERATED_OUTPUTS = (
+    "generated/quest_catalog.min.example.json",
+    "generated/quest_catalog.min.json",
+    "generated/quest_dispatch.min.example.json",
+    "generated/quest_dispatch.min.json",
+)
+QUEST_GENERATED_BUILDER = "mechanics/questbook/scripts/build_quest_surfaces.py"
+GENERATED_VIEWS_PART_FILES = (
+    "mechanics/questbook/parts/generated-views/README.md",
+    "mechanics/questbook/parts/generated-views/CONTRACT.md",
+    "mechanics/questbook/parts/generated-views/VALIDATION.md",
 )
 
 
@@ -86,6 +99,71 @@ def validate_markdown(path: Path, lane: str, state: str, problems: list[str]) ->
             problems.append(f"{rel(path)}: missing {heading}")
 
 
+def validate_generated_views_part(problems: list[str]) -> None:
+    part_text = ""
+    for part_file in GENERATED_VIEWS_PART_FILES:
+        path = ROOT / part_file
+        if not path.is_file():
+            problems.append(f"{part_file}: generated-views part file is required")
+            continue
+        part_text += "\n" + path.read_text(encoding="utf-8")
+
+    if part_text:
+        for output in QUEST_GENERATED_OUTPUTS:
+            if output not in part_text:
+                problems.append(f"mechanics/questbook/parts/generated-views: missing output {output}")
+        if QUEST_GENERATED_BUILDER not in part_text:
+            problems.append(
+                "mechanics/questbook/parts/generated-views: missing Questbook surface builder"
+            )
+        for forbidden in (
+            "proof or closure verdict",
+            "route dispatch authority",
+            "runtime scheduling or live state",
+            "owner acceptance",
+            "private memory",
+        ):
+            if forbidden not in part_text:
+                problems.append(
+                    "mechanics/questbook/parts/generated-views: missing stop-line "
+                    f"{forbidden!r}"
+                )
+
+    config_path = ROOT / "config" / "root_technical_districts.json"
+    try:
+        config = json.loads(config_path.read_text(encoding="utf-8"))
+    except Exception as exc:  # noqa: BLE001 - validation context
+        problems.append(f"{rel(config_path)}: cannot parse root technical districts: {exc}")
+        return
+
+    generated_allowed = set(config.get("districts", {}).get("generated", {}).get("allowed_files", []))
+    missing_allowed = sorted(set(QUEST_GENERATED_OUTPUTS) - generated_allowed)
+    for output in missing_allowed:
+        problems.append(f"config/root_technical_districts.json: generated allowlist missing {output}")
+
+    families = config.get("generated_families", [])
+    family = next(
+        (
+            item
+            for item in families
+            if isinstance(item, dict) and item.get("id") == "questbook_projections"
+        ),
+        None,
+    )
+    if not isinstance(family, dict):
+        problems.append("config/root_technical_districts.json: missing questbook_projections family")
+        return
+
+    if family.get("source_kind") != "projection":
+        problems.append("questbook_projections family source_kind must be projection")
+    if family.get("owner_surface") != "mechanics/questbook/README.md":
+        problems.append("questbook_projections family owner_surface must be mechanics/questbook/README.md")
+    if tuple(family.get("outputs", [])) != QUEST_GENERATED_OUTPUTS:
+        problems.append("questbook_projections family outputs must match required Questbook outputs")
+    if family.get("builders") != [QUEST_GENERATED_BUILDER]:
+        problems.append("questbook_projections family builders must name the Questbook surface builder")
+
+
 def validate() -> list[str]:
     problems: list[str] = []
     if not (QUESTS / "AGENTS.md").is_file():
@@ -122,6 +200,7 @@ def validate() -> list[str]:
                 else:
                     problems.append(f"{rel(path)}: quest source must be YAML or Markdown")
 
+    validate_generated_views_part(problems)
     return problems
 
 

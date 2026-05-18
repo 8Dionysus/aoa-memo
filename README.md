@@ -25,6 +25,7 @@ Use the shortest route by need:
   `scripts/validate_memo_mechanic_readiness.py`
 - quest projection surfaces: `QUESTBOOK.md`, `quests/memo/<state>/AOA-MEM-Q-*.yaml`,
   `generated/quest_catalog.min*.json`, `generated/quest_dispatch.min*.json`,
+  [mechanics/questbook/parts/generated-views](mechanics/questbook/parts/generated-views/README.md),
   and `python mechanics/questbook/scripts/build_quest_surfaces.py --check`
 - object canon, trust posture, and lifecycle: [docs/MEMORY_OBJECT_PROFILES](docs/MEMORY_OBJECT_PROFILES.md), [docs/MEMORY_TRUST_POSTURE](docs/MEMORY_TRUST_POSTURE.md), [docs/MEMORY_TEMPERATURES](docs/MEMORY_TEMPERATURES.md), [docs/LIFECYCLE](docs/LIFECYCLE.md), and [docs/NARRATIVE_CORE_CONTRACT](docs/NARRATIVE_CORE_CONTRACT.md)
 - Titan Memory Loom, bearer-recall posture, and remembrance source-ref policy: [mechanics/titan/docs/TITAN_MEMORY_LOOM_POSTURE.md](mechanics/titan/docs/TITAN_MEMORY_LOOM_POSTURE.md), [mechanics/titan/docs/TITAN_PERSONALITY_MEMORY_POLICY.md](mechanics/titan/docs/TITAN_PERSONALITY_MEMORY_POLICY.md), [mechanics/titan/docs/TITAN_RECALL_CANDIDATE_POLICY.md](mechanics/titan/docs/TITAN_RECALL_CANDIDATE_POLICY.md), [mechanics/titan/docs/TITAN_REMEMBRANCE_SOURCE_REF_POLICY.md](mechanics/titan/docs/TITAN_REMEMBRANCE_SOURCE_REF_POLICY.md), `mechanics/titan/schemas/titan_remembrance_record.schema.json`, and `mechanics/titan/examples/titan_remembrance_record.example.json`

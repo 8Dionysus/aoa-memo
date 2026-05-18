@@ -5,6 +5,7 @@ Use active surfaces first:
 - [README](README.md)
 - [DIRECTION](DIRECTION.md)
 - [PARTS](PARTS.md)
+- [parts](parts/README.md)
 - [OWNER_MAP](OWNER_MAP.md)
 - [QUEST_SOURCE_CONTRACT](docs/QUEST_SOURCE_CONTRACT.md)
 - [QUESTBOOK](../../QUESTBOOK.md)

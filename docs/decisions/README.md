@@ -65,6 +65,7 @@ expectation.
 | [2026-05-18-mechanic-owner-route-matrix](2026-05-18-mechanic-owner-route-matrix.md) | add a generated owner-route matrix without claiming owner acceptance |
 | [2026-05-18-mechanic-landing-log-index](2026-05-18-mechanic-landing-log-index.md) | add a generated landing receipt index for memo mechanic packages |
 | [2026-05-18-writeback-curated-object-examples](2026-05-18-writeback-curated-object-examples.md) | move writeback-owned curated memory-object examples under the writeback mechanic |
+| [2026-05-18-questbook-generated-views-part](2026-05-18-questbook-generated-views-part.md) | add a part-level contract for root-published Questbook generated read models |
 
 ## Review Rule
 

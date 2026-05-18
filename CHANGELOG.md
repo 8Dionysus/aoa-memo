@@ -71,6 +71,9 @@ Tracking starts with the community-docs baseline for this repository.
   obligations, with lane-first `quests/` source placement, source-contract
   docs, validator, generated projection builder, tests, AGENTS mesh coverage,
   generated mechanics coverage, and decision record.
+- Add `mechanics/questbook/parts/generated-views/` so root-published quest
+  generated read models have an explicit mechanic-owned part contract and
+  validator coverage.
 - Add the `mechanics/` atlas plus `adoption`, `writeback`, and `retention`
   memo mechanic packages with package cards, owner maps, provenance bridges,
   legacy indexes, source-backed generated mechanics index, validators, tests,
