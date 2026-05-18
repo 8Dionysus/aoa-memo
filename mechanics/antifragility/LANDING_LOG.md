@@ -15,3 +15,8 @@ Validation route:
 python scripts/validate_memo_mechanics.py
 python scripts/release_check.py
 ```
+
+## Stop-lines preserved
+
+- No proof, runtime, role, route, source owner acceptance, or stronger-owner
+  authority moved into memo.

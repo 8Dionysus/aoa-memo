@@ -16,6 +16,8 @@ This file applies to checked-in artifacts under `generated/`.
   mechanic README route cards
 - `memo_mechanic_owner_routes.min.json` is the compact generated owner-route
   matrix for current mechanic packages
+- `memo_mechanic_landing_logs.min.json` is the compact generated landing
+  receipt index for current mechanic packages
 - `memo_mechanic_readiness.min.json` is the compact generated readiness matrix
   for current mechanic packages
 - `quest_catalog.min*.json` and `quest_dispatch.min*.json` are compact public quest projections from `quests/memo/<state>/AOA-MEM-Q-*.yaml`
@@ -47,9 +49,12 @@ Keep this split explicit:
   `scripts/build_memo_mechanic_owner_routes.py` from package `OWNER_MAP.md`
   files plus mechanic card owner refs, and checked by
   `scripts/validate_memo_mechanic_owner_routes.py`
+- `generated/memo_mechanic_landing_logs.min.json` is rebuilt by
+  `scripts/build_memo_mechanic_landing_logs.py` from package `LANDING_LOG.md`
+  receipts, and checked by `scripts/validate_memo_mechanic_landing_logs.py`
 - `generated/memo_mechanic_readiness.min.json` is rebuilt by
   `scripts/build_memo_mechanic_readiness.py` from package cards, source maps,
-  and the artifact inventory, then checked by
+  landing logs, and the artifact inventory, then checked by
   `scripts/validate_memo_mechanic_readiness.py`
 
 `config/root_technical_districts.json` is the machine-readable source for the
@@ -113,6 +118,7 @@ python scripts/validate_agents_mesh_index.py
 python scripts/validate_mechanic_artifact_inventory.py
 python scripts/validate_memo_mechanic_cards.py
 python scripts/validate_memo_mechanic_owner_routes.py
+python scripts/validate_memo_mechanic_landing_logs.py
 python scripts/validate_memo_mechanic_readiness.py
 ```
 

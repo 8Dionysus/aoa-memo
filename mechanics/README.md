@@ -34,6 +34,10 @@ next route inspectable without replacing the authored README cards.
 owner-route matrix for package `OWNER_MAP.md` files and README cards. It shows
 which stronger owners receive which kinds of truth without becoming an owner
 request queue or acceptance receipt.
+`generated/memo_mechanic_landing_logs.min.json` is the compact generated
+landing receipt index for package `LANDING_LOG.md` files. It checks dated
+landing evidence, release validation, and stop-lines without becoming proof,
+owner acceptance, or release authority.
 
 ## Operation-First Law
 
@@ -134,6 +138,10 @@ their route-card shape remains machine-readable.
 Use `python scripts/build_memo_mechanic_owner_routes.py --check` and
 `python scripts/validate_memo_mechanic_owner_routes.py` when `OWNER_MAP.md` or
 package cards change so stronger-owner handoff routes remain inspectable.
+
+Use `python scripts/build_memo_mechanic_landing_logs.py --check` and
+`python scripts/validate_memo_mechanic_landing_logs.py` when landing receipts
+change so OS Abyss can inspect what was landed, validated, and bounded.
 
 Use `python scripts/build_memo_mechanic_readiness.py --check` and
 `python scripts/validate_memo_mechanic_readiness.py` when package cards,

@@ -55,6 +55,8 @@ COMMANDS = [
     ("validate memo mechanic cards", [sys.executable, "scripts/validate_memo_mechanic_cards.py"]),
     ("check memo mechanic owner routes", [sys.executable, "scripts/build_memo_mechanic_owner_routes.py", "--check"]),
     ("validate memo mechanic owner routes", [sys.executable, "scripts/validate_memo_mechanic_owner_routes.py"]),
+    ("check memo mechanic landing logs", [sys.executable, "scripts/build_memo_mechanic_landing_logs.py", "--check"]),
+    ("validate memo mechanic landing logs", [sys.executable, "scripts/validate_memo_mechanic_landing_logs.py"]),
     ("check memo mechanic readiness", [sys.executable, "scripts/build_memo_mechanic_readiness.py", "--check"]),
     ("validate memo mechanic readiness", [sys.executable, "scripts/validate_memo_mechanic_readiness.py"]),
     ("run tests", [sys.executable, "-m", "pytest", "-q"]),

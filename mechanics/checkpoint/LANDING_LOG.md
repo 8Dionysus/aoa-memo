@@ -14,6 +14,13 @@ Landed shape:
   refreshed from source
 - validator and regression coverage for checkpoint package ownership
 
+Validation route:
+
+```bash
+python scripts/validate_memo_mechanics.py
+python scripts/release_check.py
+```
+
 Stop-lines preserved:
 
 - no runtime checkpoint worker
