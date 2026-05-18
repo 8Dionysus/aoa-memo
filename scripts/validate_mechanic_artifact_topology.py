@@ -8,7 +8,7 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 ROOT_DISTRICTS_CONFIG = REPO_ROOT / "config" / "root_technical_districts.json"
-ROOT_DISTRICTS_SCHEMA_VERSION = "aoa_memo_root_technical_districts_v6"
+ROOT_DISTRICTS_SCHEMA_VERSION = "aoa_memo_root_technical_districts_v7"
 ROOT_TECHNICAL_DISTRICTS = (
     "config",
     "examples",
@@ -55,6 +55,12 @@ EXAMPLE_FAMILY_ROLES = {
     "support-contract-example",
     "surface-manifest-example",
 }
+CONFIG_FAMILY_ROLES = {
+    "mechanic-index-source-map",
+    "route-card-source-map",
+    "technical-district-source-map",
+}
+MANIFEST_POLICY_ROLE = "reserved-shared-recurrence-manifest-home"
 
 FORBIDDEN_ROOT_PREFIXES = {
     "config": ("agon_",),
@@ -638,6 +644,146 @@ def validate_example_family_contracts(
     return issues
 
 
+def validate_config_family_contracts(
+    payload: dict[str, object],
+    districts: dict[object, object],
+) -> list[str]:
+    issues: list[str] = []
+    config_config = districts.get("config")
+    allowed_config_files: set[str] = set()
+    if isinstance(config_config, dict):
+        allowed_files = config_config.get("allowed_files")
+        if isinstance(allowed_files, list) and all(isinstance(item, str) for item in allowed_files):
+            allowed_config_files = set(allowed_files)
+
+    families = payload.get("config_families")
+    if not isinstance(families, list):
+        return ["config/root_technical_districts.json: config_families must be a list"]
+
+    seen_family_ids: set[str] = set()
+    config_to_family: dict[str, str] = {}
+
+    for index, family in enumerate(families):
+        label = f"config_families[{index}]"
+        if not isinstance(family, dict):
+            issues.append(f"config/root_technical_districts.json: {label} must be an object")
+            continue
+
+        family_id = family.get("id")
+        if not isinstance(family_id, str) or not family_id:
+            issues.append(f"config/root_technical_districts.json: {label}.id must be a non-empty string")
+            family_id = f"<invalid-config-{index}>"
+        elif family_id in seen_family_ids:
+            issues.append(f"config/root_technical_districts.json: duplicate config family id {family_id}")
+        seen_family_ids.add(family_id)
+
+        role = family.get("role")
+        if role not in CONFIG_FAMILY_ROLES:
+            issues.append(
+                f"config/root_technical_districts.json: {family_id}.role must be one of "
+                f"{', '.join(sorted(CONFIG_FAMILY_ROLES))}"
+            )
+
+        issues.extend(validate_local_ref(family.get("owner_surface"), f"{family_id}.owner_surface"))
+
+        configs = as_string_list(family.get("configs"), f"{family_id}.configs", issues)
+        source_refs = as_string_list(family.get("source_refs"), f"{family_id}.source_refs", issues)
+        validators = as_string_list(family.get("validators"), f"{family_id}.validators", issues)
+
+        if configs == []:
+            issues.append(f"config/root_technical_districts.json: {family_id}.configs must not be empty")
+        if source_refs == []:
+            issues.append(f"config/root_technical_districts.json: {family_id}.source_refs must not be empty")
+        if validators == []:
+            issues.append(f"config/root_technical_districts.json: {family_id}.validators must not be empty")
+
+        for field, refs in (("source_refs", source_refs), ("validators", validators)):
+            if refs is None:
+                continue
+            for ref in refs:
+                issues.extend(validate_local_ref(ref, f"{family_id}.{field}"))
+
+        if configs is None:
+            continue
+        for config_path_text in configs:
+            config_path = Path(config_path_text)
+            if config_path.parts[:1] != ("config",):
+                issues.append(
+                    f"config/root_technical_districts.json: {family_id}.configs contains non-root config path {config_path_text}"
+                )
+            if config_path.name == "AGENTS.md":
+                issues.append(f"config/root_technical_districts.json: {family_id}.configs must not list route cards")
+            issues.extend(validate_local_ref(config_path_text, f"{family_id}.configs"))
+            if config_path_text in config_to_family:
+                issues.append(
+                    f"config/root_technical_districts.json: root config {config_path_text} appears in both "
+                    f"{config_to_family[config_path_text]} and {family_id}"
+                )
+            config_to_family[config_path_text] = family_id
+
+    covered_configs = set(config_to_family)
+    for missing in sorted(allowed_config_files - covered_configs):
+        issues.append(f"config/root_technical_districts.json: root config {missing} lacks a config_families contract")
+    for extra in sorted(covered_configs - allowed_config_files):
+        issues.append(f"config/root_technical_districts.json: config_families covers non-allowed root config {extra}")
+
+    return issues
+
+
+def validate_manifest_policy_contract(
+    payload: dict[str, object],
+    districts: dict[object, object],
+) -> list[str]:
+    issues: list[str] = []
+    manifest_policy = payload.get("manifest_policy")
+    if not isinstance(manifest_policy, dict):
+        return ["config/root_technical_districts.json: manifest_policy must be an object"]
+
+    if manifest_policy.get("id") != "root_manifests_reserved":
+        issues.append("config/root_technical_districts.json: manifest_policy.id must be root_manifests_reserved")
+    if manifest_policy.get("role") != MANIFEST_POLICY_ROLE:
+        issues.append(
+            f"config/root_technical_districts.json: manifest_policy.role must be {MANIFEST_POLICY_ROLE}"
+        )
+
+    issues.extend(validate_local_ref(manifest_policy.get("owner_surface"), "manifest_policy.owner_surface"))
+    source_refs = as_string_list(manifest_policy.get("source_refs"), "manifest_policy.source_refs", issues)
+    validators = as_string_list(manifest_policy.get("validators"), "manifest_policy.validators", issues)
+    allowed_files = as_string_list(manifest_policy.get("allowed_files"), "manifest_policy.allowed_files", issues)
+
+    if source_refs == []:
+        issues.append("config/root_technical_districts.json: manifest_policy.source_refs must not be empty")
+    if validators == []:
+        issues.append("config/root_technical_districts.json: manifest_policy.validators must not be empty")
+
+    for field, refs in (("source_refs", source_refs), ("validators", validators)):
+        if refs is None:
+            continue
+        for ref in refs:
+            issues.extend(validate_local_ref(ref, f"manifest_policy.{field}"))
+
+    manifests_config = districts.get("manifests")
+    district_allowed_files: list[str] | None = None
+    if isinstance(manifests_config, dict):
+        value = manifests_config.get("allowed_files")
+        if isinstance(value, list) and all(isinstance(item, str) for item in value):
+            district_allowed_files = value
+    if allowed_files is not None and district_allowed_files is not None and allowed_files != district_allowed_files:
+        issues.append("config/root_technical_districts.json: manifest_policy.allowed_files must match manifests.allowed_files")
+
+    for manifest_path_text in allowed_files or []:
+        manifest_path = Path(manifest_path_text)
+        if manifest_path.parts[:1] != ("manifests",):
+            issues.append(
+                f"config/root_technical_districts.json: manifest_policy.allowed_files contains non-root manifest path {manifest_path_text}"
+            )
+        if manifest_path.name == "AGENTS.md":
+            issues.append("config/root_technical_districts.json: manifest_policy.allowed_files must not list route cards")
+        issues.extend(validate_local_ref(manifest_path_text, "manifest_policy.allowed_files"))
+
+    return issues
+
+
 def validate_root_district_allowlist() -> list[str]:
     issues: list[str] = []
     payload, config_errors = load_root_districts_config()
@@ -700,6 +846,8 @@ def validate_root_district_allowlist() -> list[str]:
     issues.extend(validate_test_family_contracts(payload, districts))
     issues.extend(validate_schema_family_contracts(payload, districts))
     issues.extend(validate_example_family_contracts(payload, districts))
+    issues.extend(validate_config_family_contracts(payload, districts))
+    issues.extend(validate_manifest_policy_contract(payload, districts))
 
     return issues
 

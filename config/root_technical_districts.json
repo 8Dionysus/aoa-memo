@@ -1,5 +1,5 @@
 {
-  "schema_version": "aoa_memo_root_technical_districts_v6",
+  "schema_version": "aoa_memo_root_technical_districts_v7",
   "source_of_truth": "mechanics/ARTIFACT_TOPOLOGY.md",
   "route_card_exception": "AGENTS.md",
   "districts": {
@@ -743,5 +743,70 @@
         "scripts/validate_memo.py"
       ]
     }
-  ]
+  ],
+  "config_families": [
+    {
+      "id": "agents_mesh_source_map",
+      "role": "route-card-source-map",
+      "owner_surface": "DESIGN.AGENTS.md",
+      "configs": [
+        "config/agents_mesh.json"
+      ],
+      "source_refs": [
+        "DESIGN.AGENTS.md",
+        "AGENTS.md"
+      ],
+      "validators": [
+        "scripts/validate_agents_mesh.py",
+        "scripts/build_agents_mesh_index.py",
+        "scripts/validate_agents_mesh_index.py"
+      ]
+    },
+    {
+      "id": "memo_mechanics_source_map",
+      "role": "mechanic-index-source-map",
+      "owner_surface": "mechanics/README.md",
+      "configs": [
+        "config/memo_mechanics.json"
+      ],
+      "source_refs": [
+        "mechanics/README.md",
+        "mechanics/AGENTS.md"
+      ],
+      "validators": [
+        "scripts/validate_memo_mechanics.py",
+        "scripts/build_memo_mechanics_index.py",
+        "scripts/validate_memo_mechanics_index.py"
+      ]
+    },
+    {
+      "id": "root_technical_district_source_map",
+      "role": "technical-district-source-map",
+      "owner_surface": "mechanics/ARTIFACT_TOPOLOGY.md",
+      "configs": [
+        "config/root_technical_districts.json"
+      ],
+      "source_refs": [
+        "mechanics/ARTIFACT_TOPOLOGY.md",
+        "config/AGENTS.md"
+      ],
+      "validators": [
+        "scripts/validate_mechanic_artifact_topology.py",
+        "tests/test_mechanic_artifact_topology.py"
+      ]
+    }
+  ],
+  "manifest_policy": {
+    "id": "root_manifests_reserved",
+    "role": "reserved-shared-recurrence-manifest-home",
+    "owner_surface": "manifests/AGENTS.md",
+    "allowed_files": [],
+    "source_refs": [
+      "manifests/AGENTS.md",
+      "mechanics/ARTIFACT_TOPOLOGY.md"
+    ],
+    "validators": [
+      "scripts/validate_mechanic_artifact_topology.py"
+    ]
+  }
 }

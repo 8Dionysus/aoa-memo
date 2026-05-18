@@ -31,6 +31,15 @@ examples are for public shared memory objects, lifecycle/audit examples,
 recall contracts, support contracts, and generated-surface manifests;
 package-local mechanic examples belong under the owning mechanic.
 
+Root `config/` files must belong to exactly one `config_families` contract
+with a role, owner surface, config list, source refs, and validators. Root
+config remains for repo-wide source maps and control-plane contracts, not
+hidden memory truth.
+
+Root `manifests/` is governed by `manifest_policy`. The current policy is
+reserved-empty for future shared recurrence manifests; mechanic-local
+manifests belong under the owning mechanic.
+
 When root config allows a generated mechanic companion such as
 `generated/mechanic_artifacts.min.json`, keep the matching builder and
 validator listed in the same root technical-district contract. Root

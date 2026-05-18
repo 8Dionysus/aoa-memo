@@ -54,6 +54,7 @@ expectation.
 | [2026-05-18-root-technical-district-allowlist](2026-05-18-root-technical-district-allowlist.md) | make remaining root technical artifacts exact and machine-auditable |
 | [2026-05-18-root-schema-family-contracts](2026-05-18-root-schema-family-contracts.md) | make root schemas family-owned and release-checkable |
 | [2026-05-18-root-example-family-contracts](2026-05-18-root-example-family-contracts.md) | make root examples family-owned and release-checkable |
+| [2026-05-18-root-config-manifest-control-plane](2026-05-18-root-config-manifest-control-plane.md) | make root config family-owned and root manifests policy-owned |
 | [2026-05-18-root-generated-family-contracts](2026-05-18-root-generated-family-contracts.md) | make root generated outputs family-owned and release-checkable |
 | [2026-05-18-root-script-family-contracts](2026-05-18-root-script-family-contracts.md) | make root scripts family-owned and release/test covered |
 | [2026-05-18-root-test-family-contracts](2026-05-18-root-test-family-contracts.md) | make root tests and public fixtures family-owned and release-checkable |
