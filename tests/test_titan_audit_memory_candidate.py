@@ -34,6 +34,16 @@ def test_titan_audit_memory_candidate_accepts_policy_required_owner_route_hint()
     assert list(validator().iter_errors(candidate_payload())) == []
 
 
+def test_titan_audit_memory_candidate_example_matches_schema() -> None:
+    payload = json.loads(
+        (ROOT / "examples" / "titan_audit_memory_candidate.example.json").read_text(
+            encoding="utf-8"
+        )
+    )
+
+    assert list(validator().iter_errors(payload)) == []
+
+
 def test_titan_audit_memory_candidate_requires_owner_route_hint() -> None:
     payload = copy.deepcopy(candidate_payload())
     payload.pop("owner_route_hint")

@@ -5,6 +5,7 @@
   "source_refs": [
     "audit:experience-v12-v20-closeout"
   ],
+  "owner_route_hint": "repo:aoa-memo/docs/TITAN_AUDIT_MEMORY_POLICY.md",
   "titan_name": "Sentinel",
   "authority": "candidate",
   "promotion_status": "candidate"
