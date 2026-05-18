@@ -7,6 +7,19 @@ Tracking starts with the community-docs baseline for this repository.
 
 ## [Unreleased]
 
+### Added
+
+- Add a source-authored topology spine with `DESIGN.md`, `DESIGN.AGENTS.md`,
+  `docs/README.md`, `docs/ROOT_SURFACE_LAW.md`, and `docs/decisions/` so
+  future docs, agent-lane, and placement cleanup can route through explicit
+  owner surfaces before moving flat memory docs.
+
+### Changed
+
+- Move the maintained Spark fast-loop lane from root `Spark/` to
+  `.agents/spark/`, with `.agents/AGENTS.md` as the agent-facing district
+  route card.
+
 ## [0.2.3] - 2026-04-23
 
 ### Summary

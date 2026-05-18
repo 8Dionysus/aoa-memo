@@ -22,13 +22,29 @@ It does not own:
 ## Start here
 
 1. `README.md`
-2. [`ROADMAP.md`](ROADMAP.md)
-3. `CHARTER.md`
-4. `docs/BOUNDARIES.md`
-5. `docs/MEMORY_MODEL.md`
-6. `docs/MEMORY_READINESS_BOUNDARY.md` for readiness, retention, and memory-is-not-proof boundaries
-7. the target memory surface and affected generated outputs
-8. `docs/AGENTS_ROOT_REFERENCE.md` for preserved full root branches
+2. `CHARTER.md`
+3. `DESIGN.md`
+4. [`ROADMAP.md`](ROADMAP.md)
+5. `docs/README.md`
+6. `docs/BOUNDARIES.md`
+7. `docs/MEMORY_MODEL.md`
+8. `docs/MEMORY_READINESS_BOUNDARY.md` for readiness, retention, and memory-is-not-proof boundaries
+9. the target memory surface and affected generated outputs
+10. `docs/AGENTS_ROOT_REFERENCE.md` for preserved full root branches
+
+For agent-facing topology, also read `DESIGN.AGENTS.md`.
+For root or docs-root placement, read `docs/ROOT_SURFACE_LAW.md`.
+
+## Route modes
+
+| Route mode | Use when | First surface |
+|---|---|---|
+| `first-reading` | you need the shortest public overview | `README.md` |
+| `memory-doctrine` | memory meaning, object posture, trust, lifecycle, temperature, or provenance changes | `docs/MEMORY_MODEL.md` |
+| `root-editing` | a root or docs-root surface is added, moved, deleted, or rewritten | `docs/ROOT_SURFACE_LAW.md` |
+| `agent-surface-design` | agent-facing cards, lanes, or future mesh posture changes | `DESIGN.AGENTS.md` |
+| `generated-parity` | generated memory surfaces or their sources change | source surface -> builder -> generated output -> validator |
+| `neighbor-seam` | a change touches proof, routing, role, playbook, KAG, or runtime boundaries | `docs/BOUNDARIES.md` |
 
 
 ## AGENTS stack law
@@ -40,10 +56,39 @@ It does not own:
 - Self-agency, recurrence, quest, progression, checkpoint, or growth language must stay bounded, reviewable, evidence-linked, and reversible.
 - Report what changed, what was verified, what was not verified, and where the next agent should resume.
 
+## Decision review
+
+After structural, ownership, workflow, route-law, validator-authority,
+public-contract, or topology changes, check whether future agents will need a
+decision record to understand why the path was chosen.
+
+Use `docs/decisions/AGENTS.md` and `docs/decisions/README.md` for the local
+decision lane. If no record is needed, say so in closeout.
+
 ## Route away when
 
 - the task needs proof, execution logic, source meaning, routing logic, role authority, or scenario composition
 - memory wording starts pretending to be current truth without explicit temporal and provenance framing
+
+## Post-change route review
+
+Before closeout, check whether the change actually affects these surfaces.
+Update only the ones that moved; otherwise say no update was needed.
+
+- `ROADMAP.md` when repo-level direction, topology posture, consumer adoption,
+  or future triggers changed.
+- `CHANGELOG.md` when public docs, validation, repository structure, generated
+  surfaces, or release-visible behavior changed.
+- `DESIGN.md` when the memory-layer system form changed.
+- `DESIGN.AGENTS.md` when agent-facing form, local route cards, or future mesh
+  posture changed.
+- `docs/ROOT_SURFACE_LAW.md` when root or docs-root placement changes.
+- `docs/decisions/` when future agents need rationale for a route, topology,
+  validator, source-of-truth, or ownership choice.
+- generated surfaces, builders, validators, and tests when a source-backed
+  machine companion changed.
+- neighboring owner repositories when the change routes or constrains their
+  truth.
 
 ## GitHub landing workflow
 

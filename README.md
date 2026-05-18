@@ -10,7 +10,9 @@ It exists to make memory explicit, reviewable, and bounded. Memory matters here,
 
 Use the shortest route by need:
 
-- role, boundaries, and conceptual model: [CHARTER](CHARTER.md), [docs/BOUNDARIES](docs/BOUNDARIES.md), and [docs/MEMORY_MODEL](docs/MEMORY_MODEL.md)
+- role, boundaries, and conceptual model: [CHARTER](CHARTER.md), [DESIGN](DESIGN.md), [docs/BOUNDARIES](docs/BOUNDARIES.md), and [docs/MEMORY_MODEL](docs/MEMORY_MODEL.md)
+- docs topology, root placement, and decision rationale: [docs/README](docs/README.md), [docs/ROOT_SURFACE_LAW](docs/ROOT_SURFACE_LAW.md), and [docs/decisions](docs/decisions/README.md)
+- agent-facing route shape: [AGENTS](AGENTS.md), [DESIGN.AGENTS](DESIGN.AGENTS.md), and the nearest nested `AGENTS.md`
 - object canon, trust posture, and lifecycle: [docs/MEMORY_OBJECT_PROFILES](docs/MEMORY_OBJECT_PROFILES.md), [docs/MEMORY_TRUST_POSTURE](docs/MEMORY_TRUST_POSTURE.md), [docs/MEMORY_TEMPERATURES](docs/MEMORY_TEMPERATURES.md), [docs/LIFECYCLE](docs/LIFECYCLE.md), and [docs/NARRATIVE_CORE_CONTRACT](docs/NARRATIVE_CORE_CONTRACT.md)
 - Titan Memory Loom, bearer-recall posture, and remembrance source-ref policy: [docs/TITAN_MEMORY_LOOM_POSTURE.md](docs/TITAN_MEMORY_LOOM_POSTURE.md), [docs/TITAN_PERSONALITY_MEMORY_POLICY.md](docs/TITAN_PERSONALITY_MEMORY_POLICY.md), [docs/TITAN_RECALL_CANDIDATE_POLICY.md](docs/TITAN_RECALL_CANDIDATE_POLICY.md), [docs/TITAN_REMEMBRANCE_SOURCE_REF_POLICY.md](docs/TITAN_REMEMBRANCE_SOURCE_REF_POLICY.md), `schemas/titan_remembrance_record.schema.json`, and `examples/titan_remembrance_record.example.json`
 - antifragility failure-lesson seam: [docs/FAILURE_LESSON_MEMORY.md](docs/FAILURE_LESSON_MEMORY.md), [docs/FAILURE_LESSON_RECALL.md](docs/FAILURE_LESSON_RECALL.md), [docs/DRIFT_REVIEW_LESSON_MEMORY.md](docs/DRIFT_REVIEW_LESSON_MEMORY.md), `schemas/failure_lesson_memory_v1.json`, `examples/failure_lesson_memory.example.json`, `examples/failure_lesson_memory.lineage.example.json`, `examples/failure_lesson_memory.rollout.example.json`, and `examples/failure_lesson_memory.drift_review.example.json`
@@ -88,6 +90,22 @@ The committed machine-readable surfaces group into four families:
 
 `provenance_thread`, `witness_trace`, `inquiry_checkpoint`, and checkpoint-to-memory contract surfaces remain support seams in this split, not a third generated memory-object family.
 
+## Topology spine
+
+The first topology hardening surface is now source-authored rather than
+generated:
+
+- [DESIGN](DESIGN.md) names the memory-layer system form
+- [DESIGN.AGENTS](DESIGN.AGENTS.md) names the agent-facing guidance form
+- [docs/README](docs/README.md) maps the current flat docs district
+- [docs/ROOT_SURFACE_LAW](docs/ROOT_SURFACE_LAW.md) governs root and docs-root placement
+- [docs/decisions](docs/decisions/README.md) preserves durable rationale
+- [.agents/spark](.agents/spark/AGENTS.md) is the maintained fast-loop Spark lane
+
+This spine does not move flat docs by itself. It exists so later Agon, Titan,
+adoption, retention, rollback, writeback, or AGENTS-mesh work can land through
+named owner routes instead of cosmetic cleanup.
+
 ## Go here when...
 
 - you need the ecosystem center and layer map: [`Agents-of-Abyss`](https://github.com/8Dionysus/Agents-of-Abyss)
@@ -131,6 +149,10 @@ Then rerun the read-only validation pass above and inspect `git status -sb` befo
 ## Current contour
 
 `aoa-memo` is in contract hardening. The public baseline now includes doctrine surfaces, object-facing surfaces, a narrow source-owned memo KAG export, writeback seams, bridge/export contracts, and memo-side guardrail handoff surfaces without turning the repository into runtime infrastructure or a graph platform.
+
+The current topology pass adds the memory-layer design and docs-route spine
+before any thematic docs migration. Flat `docs/*.md` surfaces remain active
+until a validated district route replaces them.
 
 The current downstream guardrail pilot stays intentionally narrow: recall precision, provenance fidelity, and staleness. That keeps the memo layer explicit and reviewable without pretending it is already full proof doctrine.
 

@@ -1,6 +1,6 @@
 # Spark Swarm Recipe — aoa-memo
 
-Рекомендуемый путь назначения: `Spark/SWARM.md`
+Рекомендуемый путь назначения: `.agents/spark/SWARM.md`
 
 ## Для чего этот рой
 Используй Spark здесь для одного memory seam: memory object, registry, recall contract, provenance thread, lifecycle audit example или generated memory surfaces. Этот рой должен укреплять explicit and reviewable memory, не давая памяти тихо подменить proof.
@@ -8,6 +8,8 @@
 ## Читать перед стартом
 - `README.md`
 - `CHARTER.md`
+- `DESIGN.md`
+- `DESIGN.AGENTS.md`
 - `docs/MEMORY_MODEL.md`
 - `docs/NARRATIVE_CORE_CONTRACT.md`
 - `docs/BOUNDARIES.md`

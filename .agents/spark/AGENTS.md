@@ -1,8 +1,8 @@
 # Spark lane for aoa-memo
 
-This file only governs work started from `Spark/`.
+This file only governs work started from `.agents/spark/`.
 
-The root `AGENTS.md` remains authoritative for repository identity, ownership boundaries, reading order, and validation commands. This local file only narrows how GPT-5.3-Codex-Spark should behave when used as the fast-loop lane.
+The root `AGENTS.md` remains authoritative for repository identity, ownership boundaries, reading order, and validation commands. `.agents/AGENTS.md` owns the agent-facing companion district. This local file only narrows how GPT-5.3-Codex-Spark should behave when used as the fast-loop lane.
 
 If `SWARM.md` exists in this directory, treat it as queue / swarm context. This `AGENTS.md` is the operating policy for Spark work.
 
