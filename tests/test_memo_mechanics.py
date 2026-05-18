@@ -40,18 +40,27 @@ class MemoMechanicsTestCase(unittest.TestCase):
         self.assertEqual("memo-mechanics-v1", payload["source_of_truth"])
         self.assertEqual("config/memo_mechanics.json", payload["config_ref"])
         self.assertEqual("mechanics/README.md", payload["authority_ref"])
-        self.assertEqual(6, payload["counts"]["packages"])
-        self.assertEqual(72, payload["counts"]["docs"])
+        self.assertEqual(7, payload["counts"]["packages"])
+        self.assertEqual(82, payload["counts"]["docs"])
 
         packages = {package["slug"]: package for package in payload["packages"]}
         self.assertEqual(
-            {"antifragility", "agon", "titan", "adoption", "writeback", "retention"},
+            {
+                "antifragility",
+                "agon",
+                "titan",
+                "adoption",
+                "governance",
+                "writeback",
+                "retention",
+            },
             set(packages),
         )
         self.assertEqual(6, packages["antifragility"]["doc_count"])
         self.assertEqual(27, packages["agon"]["doc_count"])
         self.assertEqual(10, packages["titan"]["doc_count"])
         self.assertEqual(6, packages["adoption"]["doc_count"])
+        self.assertEqual(10, packages["governance"]["doc_count"])
         self.assertEqual(17, packages["writeback"]["doc_count"])
         self.assertEqual(6, packages["retention"]["doc_count"])
 
@@ -81,7 +90,15 @@ class MemoMechanicsTestCase(unittest.TestCase):
         self.assertIn("Mechanic Artifact Lane", topology)
         self.assertIn("Move Rule", topology)
 
-        for slug in ("antifragility", "agon", "titan", "adoption", "writeback", "retention"):
+        for slug in (
+            "antifragility",
+            "agon",
+            "titan",
+            "adoption",
+            "governance",
+            "writeback",
+            "retention",
+        ):
             self.assertTrue((REPO_ROOT / "mechanics" / slug / "docs" / "AGENTS.md").is_file())
             self.assertTrue((REPO_ROOT / "mechanics" / slug / "legacy" / "AGENTS.md").is_file())
 

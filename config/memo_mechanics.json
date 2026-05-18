@@ -176,6 +176,35 @@
       ]
     },
     {
+      "slug": "governance",
+      "title": "Governance Memo Mechanic",
+      "status": "landed",
+      "docs": [
+        "CERTIFICATION_MEMORY_BOUNDARIES.md",
+        "FEDERATION_FORGETTING_LAW.md",
+        "FEDERATION_MEMORY_BOUNDARIES.md",
+        "GOVERNANCE_MEMORY_BOUNDARIES.md",
+        "GOVERNANCE_RUNTIME_MEMORY_BOUNDARIES.md",
+        "INSTALLATION_MEMORY_BOUNDARIES.md",
+        "POLICY_PRECEDENT_MEMORY.md",
+        "PRECEDENT_MEMORY_INDEX.md",
+        "STAY_ORDER_MEMORY.md",
+        "VIA_NEGATIVA_CHECKLIST.md"
+      ],
+      "former_flat_paths": [
+        "docs/CERTIFICATION_MEMORY_BOUNDARIES.md",
+        "docs/FEDERATION_FORGETTING_LAW.md",
+        "docs/FEDERATION_MEMORY_BOUNDARIES.md",
+        "docs/GOVERNANCE_MEMORY_BOUNDARIES.md",
+        "docs/GOVERNANCE_RUNTIME_MEMORY_BOUNDARIES.md",
+        "docs/INSTALLATION_MEMORY_BOUNDARIES.md",
+        "docs/POLICY_PRECEDENT_MEMORY.md",
+        "docs/PRECEDENT_MEMORY_INDEX.md",
+        "docs/STAY_ORDER_MEMORY.md",
+        "docs/VIA_NEGATIVA_CHECKLIST.md"
+      ]
+    },
+    {
       "slug": "writeback",
       "title": "Writeback Mechanic",
       "status": "landed",

@@ -11,6 +11,7 @@ RETIRED_DOCS_DISTRICTS = (
     "agon",
     "titan",
     "adoption",
+    "governance",
     "writeback",
     "retention",
 )

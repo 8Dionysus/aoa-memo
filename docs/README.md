@@ -47,7 +47,7 @@ add [DESIGN.AGENTS](../DESIGN.AGENTS.md).
 remaining flat doctrine, while validated districts and mechanics move one owner
 family at a time.
 
-Antifragility, Agon, Titan, adoption, writeback, and retention are now memo
+Antifragility, Agon, Titan, adoption, governance, writeback, and retention are now memo
 mechanics under [`mechanics/`](../mechanics/README.md), not docs
 subdirectories.
 In path terms, `mechanics/agon/docs/` owns the former flat and transitional
@@ -60,7 +60,7 @@ transitional `TITAN_*` docs.
 | Recall and writeback | `WITNESS_TRACE_CONTRACT`, [writeback mechanic](../mechanics/writeback/README.md), `RECURRENCE_MEMORY_SUPPORT_SURFACES`, `REVIEWED_CLOSEOUT_RECALL_LANDING` |
 | Neighbor seams | `AGENT_MEMORY_POSTURE_SEAM`, `PLAYBOOK_MEMORY_SCOPES`, [adoption mechanic](../mechanics/adoption/README.md), `KAG_TOS_BRIDGE_CONTRACT`, `KAG_SOURCE_EXPORT`, `MEMORY_EVAL_GUARDRAILS` |
 | Antifragility | [antifragility mechanic](../mechanics/antifragility/README.md) plus matching schemas, examples, generated object surfaces, and tests |
-| Adoption and governance | [adoption mechanic](../mechanics/adoption/README.md), [retention mechanic](../mechanics/retention/README.md), `GOVERNANCE_*`, `FEDERATION_*`, `INSTALLATION_MEMORY_BOUNDARIES`, `CERTIFICATION_MEMORY_BOUNDARIES` |
+| Adoption and governance | [adoption mechanic](../mechanics/adoption/README.md), [governance mechanic](../mechanics/governance/README.md), [retention mechanic](../mechanics/retention/README.md) |
 | Agon memo seams | [agon mechanic](../mechanics/agon/README.md) plus matching config, schemas, generated registries, examples, tests, quests, and manifests |
 | Titan memory seams | [titan mechanic](../mechanics/titan/README.md) plus matching schemas, examples, and tests |
 | Decision rationale | [decisions](decisions/README.md) |
@@ -91,6 +91,7 @@ transitional `TITAN_*` docs.
 | Agon memo mechanic | [mechanics/agon/AGENTS](../mechanics/agon/AGENTS.md), then [mechanics/agon/README](../mechanics/agon/README.md) |
 | Titan memo mechanic | [mechanics/titan/AGENTS](../mechanics/titan/AGENTS.md), then [mechanics/titan/README](../mechanics/titan/README.md) |
 | Adoption mechanic | [mechanics/adoption/AGENTS](../mechanics/adoption/AGENTS.md), then [mechanics/adoption/README](../mechanics/adoption/README.md) |
+| Governance mechanic | [mechanics/governance/AGENTS](../mechanics/governance/AGENTS.md), then [mechanics/governance/README](../mechanics/governance/README.md) |
 | Writeback mechanic | [mechanics/writeback/AGENTS](../mechanics/writeback/AGENTS.md), then [mechanics/writeback/README](../mechanics/writeback/README.md) |
 | Retention mechanic | [mechanics/retention/AGENTS](../mechanics/retention/AGENTS.md), then [mechanics/retention/README](../mechanics/retention/README.md) |
 | Mechanic artifact placement | [mechanics/ARTIFACT_TOPOLOGY](../mechanics/ARTIFACT_TOPOLOGY.md) |
@@ -126,7 +127,8 @@ Until then, this README is the map and the flat files remain active surfaces.
 | [mechanics/antifragility](../mechanics/antifragility/README.md) | Antifragility memo mechanic |
 | [mechanics/agon](../mechanics/agon/README.md) | Agon memo mechanic |
 | [mechanics/titan](../mechanics/titan/README.md) | Titan memo mechanic |
-| [mechanics](../mechanics/README.md) | Antifragility, Agon, Titan, adoption, writeback, and retention memo mechanics |
+| [mechanics/governance](../mechanics/governance/README.md) | Governance memo mechanic |
+| [mechanics](../mechanics/README.md) | Antifragility, Agon, Titan, adoption, governance, writeback, and retention memo mechanics |
 | [manifests](../manifests/AGENTS.md) | recurrence manifests and hook bindings |
 | [quests](../quests/AGENTS.md) | quest files backing `QUESTBOOK.md` |
 | [.agents](../.agents/AGENTS.md) | agent-facing companion lanes |
@@ -144,6 +146,6 @@ Until then, this README is the map and the flat files remain active surfaces.
 - Prefer `scripts/validate_docs_districts.py` when checking that retired docs
   districts and flat moved docs have not reappeared.
 - Prefer `scripts/validate_memo_mechanics.py` when antifragility, Agon, Titan,
-  adoption, writeback, or retention mechanics move.
+  adoption, governance, writeback, or retention mechanics move.
 - Generated surfaces summarize memory doctrine and object examples. They do not
   replace authored docs, schemas, examples, or validators.

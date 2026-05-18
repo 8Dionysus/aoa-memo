@@ -50,7 +50,7 @@ If you are editing inside `schemas/`, `examples/`, `generated/`, or `scripts/`, 
 - recall contracts and memory-object examples: `examples/recall_contract.*.json`, `examples/core_memory_contract.example.json`, `examples/checkpoint_to_memory_contract.example.json`, and `examples/memory_object_surface_manifest.json`
 - failure-lesson doctrine and contract surfaces: [antifragility/FAILURE_LESSON_MEMORY](mechanics/antifragility/docs/FAILURE_LESSON_MEMORY.md), [antifragility/FAILURE_LESSON_RECALL](mechanics/antifragility/docs/FAILURE_LESSON_RECALL.md), [antifragility/DRIFT_REVIEW_LESSON_MEMORY](mechanics/antifragility/docs/DRIFT_REVIEW_LESSON_MEMORY.md), `schemas/failure_lesson_memory_v1.json`, `examples/failure_lesson_memory.example.json`, `examples/failure_lesson_memory.lineage.example.json`, `examples/failure_lesson_memory.rollout.example.json`, and `examples/failure_lesson_memory.drift_review.example.json`
 - recovery-pattern doctrine, adjunct contract, and native pattern surfaces: [antifragility/RECOVERY_PATTERN_MEMORY](mechanics/antifragility/docs/RECOVERY_PATTERN_MEMORY.md), [antifragility/RECOVERY_PATTERN_RECALL](mechanics/antifragility/docs/RECOVERY_PATTERN_RECALL.md), [antifragility/ROLLBACK_FOLLOWTHROUGH_PATTERN](mechanics/antifragility/docs/ROLLBACK_FOLLOWTHROUGH_PATTERN.md), `schemas/recovery_pattern_memory_v1.json`, `examples/recovery_pattern_memory.example.json`, `examples/recovery_pattern_memory.lineage.example.json`, `examples/recovery_pattern_memory.rollout.example.json`, `examples/recovery_pattern_memory.rollback_followthrough.example.json`, `examples/recovery_pattern_memory.component_refresh.example.json`, and `examples/pattern.antifragility-stress-recovery-window.example.json`
-- via negativa pruning checklist: [docs/VIA_NEGATIVA_CHECKLIST](docs/VIA_NEGATIVA_CHECKLIST.md)
+- governance and via-negativa memory boundaries: [mechanics/governance](mechanics/governance/README.md), [governance/VIA_NEGATIVA_CHECKLIST](mechanics/governance/docs/VIA_NEGATIVA_CHECKLIST.md), [governance/GOVERNANCE_MEMORY_BOUNDARIES](mechanics/governance/docs/GOVERNANCE_MEMORY_BOUNDARIES.md), and [governance/FEDERATION_MEMORY_BOUNDARIES](mechanics/governance/docs/FEDERATION_MEMORY_BOUNDARIES.md)
 - writeback, intake, runtime support, and landing governance surfaces: `generated/runtime_writeback_targets.min.json`, `generated/runtime_writeback_intake.min.json`, `generated/runtime_writeback_governance.min.json`, [mechanics/writeback/RUNTIME_WRITEBACK_SEAM](mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md), [mechanics/writeback/GROWTH_REFINERY_WRITEBACK](mechanics/writeback/docs/GROWTH_REFINERY_WRITEBACK.md), [mechanics/writeback/QUEST_CHRONICLE_WRITEBACK](mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md), `schemas/quest_chronicle.schema.json`, and `examples/quest_chronicle.example.json`
 - memory readiness boundary: [docs/MEMORY_READINESS_BOUNDARY](docs/MEMORY_READINESS_BOUNDARY.md)
 - Titan receipt memory, recall candidates, remembrance source refs, bridge digest, and closeout memory posture: [mechanics/titan/docs/TITAN_MEMORY_POSTURE.md](mechanics/titan/docs/TITAN_MEMORY_POSTURE.md), [mechanics/titan/docs/TITAN_MEMORY_LOOM_POSTURE.md](mechanics/titan/docs/TITAN_MEMORY_LOOM_POSTURE.md), [mechanics/titan/docs/TITAN_REMEMBRANCE_SOURCE_REF_POLICY.md](mechanics/titan/docs/TITAN_REMEMBRANCE_SOURCE_REF_POLICY.md), [mechanics/titan/docs/TITAN_BRIDGE_MEMORY_POSTURE.md](mechanics/titan/docs/TITAN_BRIDGE_MEMORY_POSTURE.md), [mechanics/titan/docs/TITAN_CONSOLE_MEMORY_DIGEST.md](mechanics/titan/docs/TITAN_CONSOLE_MEMORY_DIGEST.md), [mechanics/titan/docs/TITAN_CLOSEOUT_MEMORY_POSTURE.md](mechanics/titan/docs/TITAN_CLOSEOUT_MEMORY_POSTURE.md), `schemas/titan_remembrance_record.schema.json`, and `examples/titan_remembrance_record.example.json`
@@ -107,8 +107,8 @@ generated:
 - `config/agents_mesh.json` and `generated/agents_mesh.min.json` make current
   route-card coverage machine-checkable
 - [mechanics](mechanics/README.md) owns memo-side antifragility, Agon, Titan,
-  adoption, writeback, and retention mechanics with package cards, owner maps,
-  legacy bridges, and `generated/memo_mechanics.min.json`
+  adoption, governance, writeback, and retention mechanics with package cards,
+  owner maps, legacy bridges, and `generated/memo_mechanics.min.json`
 - [mechanics/antifragility](mechanics/antifragility/README.md) is the active
   home for former flat failure-lesson and recovery-pattern surfaces
 - [mechanics/agon](mechanics/agon/README.md) is the active home for former
@@ -116,9 +116,10 @@ generated:
 - [mechanics/titan](mechanics/titan/README.md) is the active home for former
   flat and transitional Titan memory posture surfaces
 - [mechanics/adoption](mechanics/adoption/README.md),
+  [mechanics/governance](mechanics/governance/README.md),
   [mechanics/writeback](mechanics/writeback/README.md), and
   [mechanics/retention](mechanics/retention/README.md) are the active homes for
-  the former flat adoption/writeback/retention docs-root families
+  the former flat adoption/governance/writeback/retention docs-root families
 
 This spine does not move flat docs by itself. It exists so later mechanic,
 rollback, or AGENTS-mesh work can land through named owner routes
@@ -173,10 +174,10 @@ Then rerun the read-only validation pass above and inspect `git status -sb` befo
 `aoa-memo` is in contract hardening. The public baseline now includes doctrine surfaces, object-facing surfaces, a narrow source-owned memo KAG export, writeback seams, bridge/export contracts, and memo-side guardrail handoff surfaces without turning the repository into runtime infrastructure or a graph platform.
 
 The current topology pass adds the memory-layer design and docs-route spine.
-Antifragility, Agon, Titan, adoption, writeback, and retention docs now live
-under `mechanics/` as memo mechanics with owner maps, validation, and legacy
-route maps. Other flat `docs/*.md` surfaces remain active until their
-validated district or mechanic routes replace them.
+Antifragility, Agon, Titan, adoption, governance, writeback, and retention
+docs now live under `mechanics/` as memo mechanics with owner maps, validation,
+and legacy route maps. Other flat `docs/*.md` surfaces remain active until
+their validated district or mechanic routes replace them.
 
 The current downstream guardrail pilot stays intentionally narrow: recall precision, provenance fidelity, and staleness. That keeps the memo layer explicit and reviewable without pretending it is already full proof doctrine.
 
