@@ -167,6 +167,12 @@ validators inspect which mechanic currently owns each local schema, example,
 config seed, generated companion, script, test, or manifest without forcing
 `PARTS.md` files to become raw file inventories.
 
+`generated/memo_mechanic_readiness.min.json` is the compact generated readiness
+matrix for current mechanic packages. It joins package cards, source maps,
+owner maps, validation routes, stop-lines, and the artifact inventory so agents
+can detect when a mechanic is structurally present but not ready for OS Abyss
+use.
+
 Questbook is the intentional root-store exception: `mechanics/questbook/` owns
 quest lifecycle, source contracts, validation, and generated projections, while
 root `QUESTBOOK.md` stays the compact index and root `quests/` stays the public
@@ -206,6 +212,8 @@ For release-bound artifact placement changes, run:
 python scripts/validate_mechanic_artifact_topology.py
 python scripts/build_mechanic_artifact_inventory.py --check
 python scripts/validate_mechanic_artifact_inventory.py
+python scripts/build_memo_mechanic_readiness.py --check
+python scripts/validate_memo_mechanic_readiness.py
 python scripts/validate_memo_mechanics.py
 python scripts/release_check.py
 ```

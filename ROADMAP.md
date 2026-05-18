@@ -89,7 +89,9 @@ memo-side mechanics. Each package has a route card, package card, operation,
 direction, parts map, owner map, provenance
 bridge, landing log, roadmap, and legacy index. The source-backed
 `config/memo_mechanics.json` and `generated/memo_mechanics.min.json` keep the
-shape machine-checkable.
+shape machine-checkable. `generated/memo_mechanic_readiness.min.json` now adds
+the OS Abyss readiness matrix over package cards, owner maps, parts, local
+artifacts, stop-lines, and validation routes.
 
 The operational-gate migration now owns deployment incident gates, office
 incident gates, service revision ledger posture, and post-release memory
@@ -129,6 +131,8 @@ The current mechanics hardening layer adds `docs/AGENTS.md` and
 `mechanics/ARTIFACT_TOPOLOGY.md`. This keeps active docs, legacy provenance,
 and mechanic-local artifacts separate after the schema, example, generated,
 script, test, manifest, questbook, and hook relocation.
+The readiness matrix closes the next layer by proving every current package is
+not only present but structurally ready for OS Abyss consumption.
 
 ## Current contract-hardening waves
 

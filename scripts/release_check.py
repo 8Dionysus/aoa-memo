@@ -51,6 +51,8 @@ COMMANDS = [
     ("validate memo mechanic parts", [sys.executable, "scripts/validate_memo_mechanic_parts.py"]),
     ("check memo mechanics index", [sys.executable, "scripts/build_memo_mechanics_index.py", "--check"]),
     ("validate memo mechanics index", [sys.executable, "scripts/validate_memo_mechanics_index.py"]),
+    ("check memo mechanic readiness", [sys.executable, "scripts/build_memo_mechanic_readiness.py", "--check"]),
+    ("validate memo mechanic readiness", [sys.executable, "scripts/validate_memo_mechanic_readiness.py"]),
     ("run tests", [sys.executable, "-m", "pytest", "-q"]),
 ]
 

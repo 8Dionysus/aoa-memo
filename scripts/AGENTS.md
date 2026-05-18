@@ -34,6 +34,10 @@ Keep the current split clear:
   from drifting back into active docs-root sprawl
 - `validate_memo_mechanic_parts.py` keeps package `PARTS.md` files in the
   operation-first Active Parts plus Interface shape
+- `build_memo_mechanic_readiness.py` and
+  `validate_memo_mechanic_readiness.py` keep a compact readiness matrix for
+  every mechanic package, tying package cards, owner maps, stop-lines,
+  validation routes, and package-local artifacts together
 - `config/root_technical_districts.json` groups every root script into a
   `script_families` contract so root scripts stay release-oriented, covered,
   and owned rather than merely allowed by path
@@ -79,6 +83,8 @@ python scripts/validate_agents_mesh_index.py
 python scripts/validate_semantic_agents.py
 python scripts/validate_docs_districts.py
 python scripts/validate_memo_mechanic_parts.py
+python scripts/build_memo_mechanic_readiness.py --check
+python scripts/validate_memo_mechanic_readiness.py
 ```
 
 If generator logic changed, also run:

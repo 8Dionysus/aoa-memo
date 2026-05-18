@@ -1,5 +1,5 @@
 {
-  "schema_version": "aoa_memo_root_technical_districts_v7",
+  "schema_version": "aoa_memo_root_technical_districts_v8",
   "source_of_truth": "mechanics/ARTIFACT_TOPOLOGY.md",
   "route_card_exception": "AGENTS.md",
   "districts": {
@@ -71,6 +71,7 @@
       "allowed_files": [
         "generated/agents_mesh.min.json",
         "generated/mechanic_artifacts.min.json",
+        "generated/memo_mechanic_readiness.min.json",
         "generated/memo_mechanics.min.json",
         "generated/memo_registry.min.json",
         "generated/memory_capsules.json",
@@ -122,9 +123,11 @@
         "scripts/agents_mesh_common.py",
         "scripts/build_agents_mesh_index.py",
         "scripts/build_mechanic_artifact_inventory.py",
+        "scripts/build_memo_mechanic_readiness.py",
         "scripts/build_memo_mechanics_index.py",
         "scripts/generate_memory_object_surfaces.py",
         "scripts/mechanic_artifact_inventory_common.py",
+        "scripts/mechanic_readiness_common.py",
         "scripts/memo_mechanics_common.py",
         "scripts/release_check.py",
         "scripts/validate_agents_mesh.py",
@@ -135,6 +138,7 @@
         "scripts/validate_mechanic_artifact_topology.py",
         "scripts/validate_memo.py",
         "scripts/validate_memo_mechanic_parts.py",
+        "scripts/validate_memo_mechanic_readiness.py",
         "scripts/validate_memo_mechanics.py",
         "scripts/validate_memo_mechanics_index.py",
         "scripts/validate_memory_object_surfaces.py",
@@ -156,6 +160,7 @@
         "tests/test_mechanic_artifact_inventory.py",
         "tests/test_mechanic_artifact_topology.py",
         "tests/test_memo_mechanic_parts.py",
+        "tests/test_memo_mechanic_readiness.py",
         "tests/test_memo_mechanics.py",
         "tests/test_memo_validators.py",
         "tests/test_phase_alpha_provenance_thread.py",
@@ -262,6 +267,25 @@
       ]
     },
     {
+      "id": "memo_mechanic_readiness",
+      "source_kind": "generator-backed",
+      "owner_surface": "mechanics/README.md",
+      "source_refs": [
+        "config/memo_mechanics.json",
+        "mechanics/README.md",
+        "generated/mechanic_artifacts.min.json"
+      ],
+      "outputs": [
+        "generated/memo_mechanic_readiness.min.json"
+      ],
+      "builders": [
+        "scripts/build_memo_mechanic_readiness.py"
+      ],
+      "validators": [
+        "scripts/validate_memo_mechanic_readiness.py"
+      ]
+    },
+    {
       "id": "mechanic_artifact_inventory",
       "source_kind": "generator-backed",
       "owner_surface": "mechanics/ARTIFACT_TOPOLOGY.md",
@@ -353,15 +377,19 @@
       "role": "mechanic-validator",
       "owner_surface": "mechanics/README.md",
       "scripts": [
+        "scripts/build_memo_mechanic_readiness.py",
         "scripts/build_memo_mechanics_index.py",
+        "scripts/mechanic_readiness_common.py",
         "scripts/memo_mechanics_common.py",
         "scripts/validate_memo_mechanic_parts.py",
+        "scripts/validate_memo_mechanic_readiness.py",
         "scripts/validate_memo_mechanics.py",
         "scripts/validate_memo_mechanics_index.py"
       ],
       "covered_by": [
         "scripts/release_check.py",
         "tests/test_memo_mechanic_parts.py",
+        "tests/test_memo_mechanic_readiness.py",
         "tests/test_memo_mechanics.py"
       ]
     },
@@ -438,6 +466,7 @@
         "tests/test_mechanic_artifact_inventory.py",
         "tests/test_mechanic_artifact_topology.py",
         "tests/test_memo_mechanic_parts.py",
+        "tests/test_memo_mechanic_readiness.py",
         "tests/test_memo_mechanics.py"
       ],
       "protects": [
@@ -446,6 +475,7 @@
         "config/memo_mechanics.json",
         "config/root_technical_districts.json",
         "generated/mechanic_artifacts.min.json",
+        "generated/memo_mechanic_readiness.min.json",
         "generated/memo_mechanics.min.json"
       ]
     },

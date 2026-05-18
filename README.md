@@ -16,6 +16,10 @@ Use the shortest route by need:
 - machine-checkable route-card coverage: `config/agents_mesh.json`,
   `generated/agents_mesh.min.json`, `scripts/validate_agents_mesh.py`, and
   `scripts/validate_agents_mesh_index.py`
+- mechanic readiness: [mechanics](mechanics/README.md),
+  `generated/memo_mechanic_readiness.min.json`,
+  `scripts/build_memo_mechanic_readiness.py --check`, and
+  `scripts/validate_memo_mechanic_readiness.py`
 - quest projection surfaces: `QUESTBOOK.md`, `quests/memo/<state>/AOA-MEM-Q-*.yaml`,
   `generated/quest_catalog.min*.json`, `generated/quest_dispatch.min*.json`,
   and `python mechanics/questbook/scripts/build_quest_surfaces.py --check`
@@ -119,11 +123,17 @@ Memory is valuable. It is not the same thing as source meaning, workflow meaning
 
 ## Current public surfaces
 
-The committed machine-readable surfaces group into four families:
+The committed machine-readable surfaces include these families:
 
 - root registry: `generated/memo_registry.min.json`
 - doctrine family: `generated/memory_catalog.json`, `generated/memory_catalog.min.json`, `generated/memory_capsules.json`, and `generated/memory_sections.full.json`
 - object family: `generated/memory_object_catalog.json`, `generated/memory_object_catalog.min.json`, `generated/memory_object_capsules.json`, and `generated/memory_object_sections.full.json`
+- AGENTS mesh: `generated/agents_mesh.min.json`
+- mechanics index: `generated/memo_mechanics.min.json`
+- mechanic artifact inventory: `generated/mechanic_artifacts.min.json`
+- mechanic readiness matrix: `generated/memo_mechanic_readiness.min.json`
+- quest projections: `generated/quest_catalog.min.json` and
+  `generated/quest_dispatch.min.json`
 - source-owned memo donor export: `mechanics/consumer-handoff/generated/kag_export.min.json`
 
 `provenance_thread`, `witness_trace`, `inquiry_checkpoint`, and checkpoint-to-memory contract surfaces remain support seams in this split, not a third generated memory-object family.
@@ -145,7 +155,9 @@ generated:
   adoption, governance, shape-guard, checkpoint, consumer-handoff,
   operational-gate, recurrence-support, lineage-harvest, questbook, writeback,
   and retention mechanics with package cards, owner maps, legacy bridges, and
-  `generated/memo_mechanics.min.json`
+  `generated/memo_mechanics.min.json`; `generated/memo_mechanic_readiness.min.json`
+  adds the compact OS Abyss readiness matrix for those package cards, owner
+  maps, parts, local artifacts, stop-lines, and validation routes
 - [mechanics/ARTIFACT_TOPOLOGY](mechanics/ARTIFACT_TOPOLOGY.md) and
   `config/root_technical_districts.json` own the root technical-district
   placement contract; `generated/mechanic_artifacts.min.json` mirrors the
@@ -205,6 +217,8 @@ python mechanics/questbook/scripts/build_quest_surfaces.py --check
 python scripts/validate_memo_mechanics.py
 python scripts/build_memo_mechanics_index.py --check
 python scripts/validate_memo_mechanics_index.py
+python scripts/build_memo_mechanic_readiness.py --check
+python scripts/validate_memo_mechanic_readiness.py
 python scripts/validate_agents_mesh.py
 python scripts/build_agents_mesh_index.py --check
 python scripts/validate_agents_mesh_index.py
