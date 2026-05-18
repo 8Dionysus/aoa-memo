@@ -8,6 +8,10 @@ landing receipts around Agon without becoming the source Agon mechanic.
 
 - Status: `landed`
 
+### Operation
+
+hold Agon candidate memory, evidence, bridge, retention, rank, and landing posture as reviewable recall without becoming source Agon
+
 ### Trigger
 
 Use when Agon-related candidate memory, scar or rank memory posture,

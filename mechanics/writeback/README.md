@@ -8,6 +8,10 @@ automatic promotion authority.
 
 - Status: `landed`
 
+### Operation
+
+return bounded writeback targets, intakes, chronicles, revisions, rollback memories, and growth notes to owner routes without becoming live storage
+
 ### Trigger
 
 Use when runtime writeback, quest or chronicle writeback, revision ledgers,

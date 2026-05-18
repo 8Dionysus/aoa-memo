@@ -54,6 +54,13 @@ def validate() -> list[str]:
         slug = package["slug"]
         package_root = REPO_ROOT / "mechanics" / slug
         docs_root = package_root / "docs"
+        operation = package.get("operation")
+        os_abyss_role = package.get("os_abyss_role")
+
+        if not isinstance(operation, str) or not operation.strip():
+            issues.append(f"config/memo_mechanics.json: {slug} must name an operation")
+        if not isinstance(os_abyss_role, str) or not os_abyss_role.strip():
+            issues.append(f"config/memo_mechanics.json: {slug} must name its OS Abyss role")
 
         if f"[{slug}]" not in mechanics_readme:
             issues.append(f"mechanics/README.md must route to {slug}")
@@ -72,6 +79,8 @@ def validate() -> list[str]:
             for heading in README_HEADINGS:
                 if heading not in readme:
                     issues.append(f"mechanics/{slug}/README.md must include {heading!r}")
+            if isinstance(operation, str) and operation.strip() and operation not in readme:
+                issues.append(f"mechanics/{slug}/README.md must cite its configured operation")
 
         expected_docs = set(package["docs"])
         present_docs = {

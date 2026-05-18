@@ -2,8 +2,9 @@
 
 This is the branch point for memo-side mechanics.
 
-Use it when a memory-layer surface is not only doctrine, but a repeatable move
-with inputs, outputs, owner split, stop-lines, validation, and legacy routing.
+Use it when a memory-layer surface is not only doctrine, but a repeatable
+operation with inputs, outputs, owner split, stop-lines, validation, and legacy
+routing.
 
 This atlas does not create stronger authority. It keeps `aoa-memo` honest
 about what memory can preserve and where runtime, proof, routing, role, KAG,
@@ -19,6 +20,16 @@ playbook, skill, technique, stats, or source truth must route next.
 
 Generated indexes reflect source maps. They do not author mechanic truth.
 
+## Operation-First Law
+
+A memo mechanic is a repeatable memory-layer operation, not a topic bucket.
+
+Before adding or moving a surface into `mechanics/<slug>/`, name the operation:
+what memory receives, what it preserves or refuses, what exits the mechanic,
+which stronger owner receives the next claim, and how the shape is validated.
+If files only share a noun, theme, wave, or owner name, keep searching for the
+real operation or leave them in their current source route.
+
 ## Mechanic Card Contract
 
 Every `mechanics/<slug>/README.md` is an agent-operable card. It answers when
@@ -31,6 +42,7 @@ Each package README must include these headings in order:
 | Heading | Purpose |
 |---|---|
 | `## Mechanic card` | compact status and entry point |
+| `### Operation` | the repeatable memory-layer operation this package owns |
 | `### Trigger` | when the mechanic applies |
 | `### Memo owns` | what `aoa-memo` may author here |
 | `### Stronger owner split` | repositories or districts that own stronger truth |
@@ -52,7 +64,8 @@ After the card, package README files should stay lightweight and route to
 | [agon](agon/README.md) | How does Agon candidate memory, evidence, bridge, retention, rank, and landing posture stay reviewable without becoming the source Agon mechanic? | landed memo route | [PARTS](agon/PARTS.md), [OWNER_MAP](agon/OWNER_MAP.md), [PROVENANCE](agon/PROVENANCE.md) | trial execution, verdict proof, scar or rank mutation, KAG promotion, Sophian canon, or runtime retention |
 | [titan](titan/README.md) | How does Titan recall, remembrance, audit, digest, closeout, personality, and swarm memory posture stay source-linked without granting authority? | landed memo route | [PARTS](titan/PARTS.md), [OWNER_MAP](titan/OWNER_MAP.md), [PROVENANCE](titan/PROVENANCE.md) | durable write, role right, proof verdict, private retention, or owner-repo doctrine |
 | [adoption](adoption/README.md) | How does a memory candidate become reviewable for adoption without becoming proof or automatic promotion? | landed memo route | [PARTS](adoption/PARTS.md), [OWNER_MAP](adoption/OWNER_MAP.md), [PROVENANCE](adoption/PROVENANCE.md) | adopted truth, proof verdict, route sovereignty, or runtime write |
-| [governance](governance/README.md) | How do governance, federation, installation, certification, precedent, stay-order, and via-negativa memory boundaries stay recallable without becoming authority? | landed memo route | [PARTS](governance/PARTS.md), [OWNER_MAP](governance/OWNER_MAP.md), [PROVENANCE](governance/PROVENANCE.md) | council authority, proof verdict, release approval, Tree-of-Sophia write, source-owner consent, or runtime governance |
+| [governance](governance/README.md) | How do governance, federation, installation, certification, precedent, and stay-order authority boundaries stay recallable without making decisions? | landed memo route | [PARTS](governance/PARTS.md), [OWNER_MAP](governance/OWNER_MAP.md), [PROVENANCE](governance/PROVENANCE.md) | council authority, proof verdict, release approval, Tree-of-Sophia write, source-owner consent, or runtime governance |
+| [shape-guard](shape-guard/README.md) | How does memo prune memory-object and mechanic-shape inflation before new recall forms pretend to be proof, health, or action authority? | landed memo route | [PARTS](shape-guard/PARTS.md), [OWNER_MAP](shape-guard/OWNER_MAP.md), [PROVENANCE](shape-guard/PROVENANCE.md) | proof verdict, current health, deletion execution, role/action authority, KAG promotion, runtime cleanup, or owner adoption |
 | [writeback](writeback/README.md) | How does a memory-layer writeback target, intake, chronicle, revision, rollback, or growth return stay source-linked and bounded? | landed memo route | [PARTS](writeback/PARTS.md), [OWNER_MAP](writeback/OWNER_MAP.md), [PROVENANCE](writeback/PROVENANCE.md) | live ledger, hidden worker, runtime storage, automatic promotion, or owner acceptance |
 | [retention](retention/README.md) | How does retention evidence, watch, marker, or outcome stay reviewable without executing retention? | landed memo route | [PARTS](retention/PARTS.md), [OWNER_MAP](retention/OWNER_MAP.md), [PROVENANCE](retention/PROVENANCE.md) | retention execution, private trace retention, scheduler authority, or runtime policy |
 
@@ -93,3 +106,23 @@ For release-bound mechanics changes, run:
 ```bash
 python scripts/release_check.py
 ```
+
+## Future Growth Rule
+
+Mechanics may grow only when they make OS Abyss memory operations and owner
+routing clearer.
+
+A new memo mechanic branch must name:
+
+- operation
+- trigger
+- memo-owned memory posture
+- stronger owner
+- stop-line
+- generated or validation companion, when one exists
+- current status
+- owner-local landing route
+
+If a mechanic makes the repository look orderly while making proof, runtime,
+role, KAG, source ownership, or action authority harder to name, return through
+[shape-guard](shape-guard/README.md) before moving more files.

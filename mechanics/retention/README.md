@@ -8,6 +8,10 @@ claiming runtime authority.
 
 - Status: `landed`
 
+### Operation
+
+preserve retention evidence, watches, markers, and outcomes as reviewable memory without executing retention
+
 ### Trigger
 
 Use when cross-repo retention memory, office retention markers, governance

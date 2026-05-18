@@ -8,6 +8,7 @@ from typing import Any
 REPO_ROOT = Path(__file__).resolve().parents[1]
 CONFIG_PATH = REPO_ROOT / "config" / "memo_mechanics.json"
 GENERATED_PATH = REPO_ROOT / "generated" / "memo_mechanics.min.json"
+INDEX_SCHEMA_VERSION = "aoa_memo_mechanics_index_v2"
 
 PACKAGE_REQUIRED_FILES = (
     "AGENTS.md",
@@ -26,6 +27,7 @@ PACKAGE_REQUIRED_FILES = (
 
 README_HEADINGS = (
     "## Mechanic card",
+    "### Operation",
     "### Trigger",
     "### Memo owns",
     "### Stronger owner split",
@@ -52,6 +54,8 @@ def build_index() -> dict[str, Any]:
                 "slug": slug,
                 "title": package["title"],
                 "status": package["status"],
+                "operation": package["operation"],
+                "os_abyss_role": package["os_abyss_role"],
                 "path": f"mechanics/{slug}/README.md",
                 "docs_path": f"mechanics/{slug}/docs",
                 "legacy_path": f"mechanics/{slug}/legacy/INDEX.md",
@@ -61,7 +65,7 @@ def build_index() -> dict[str, Any]:
         )
 
     return {
-        "schema_version": "aoa_memo_mechanics_index_v1",
+        "schema_version": INDEX_SCHEMA_VERSION,
         "source_of_truth": config["source_of_truth"],
         "config_ref": "config/memo_mechanics.json",
         "authority_ref": config["authority_ref"],

@@ -7,9 +7,9 @@ This card applies to `mechanics/` and every nested path until a nearer
 
 ## Role
 
-`mechanics/` is the home for memo-side mechanics: repeatable memory-layer moves
-that have inputs, outputs, owner splits, stop-lines, validation, and legacy
-bridges.
+`mechanics/` is the home for memo-side mechanics: repeatable memory-layer
+operations that have inputs, outputs, owner splits, stop-lines, validation, and
+legacy bridges.
 
 It is not the home for constitutional law, proof verdicts, runtime workers,
 role rights, routing implementation, KAG substrate truth, or private memory.
@@ -51,6 +51,7 @@ Every memo mechanic package must contain:
 The package `README.md` is the mechanic card. It must include:
 
 - `## Mechanic card`
+- `### Operation`
 - `### Trigger`
 - `### Memo owns`
 - `### Stronger owner split`
@@ -67,6 +68,8 @@ The package `README.md` is the mechanic card. It must include:
 - `mechanics/ARTIFACT_TOPOLOGY.md` governs when a root technical artifact can
   move into a mechanic-local artifact home.
 - Generated companions summarize source maps and must be rebuilt from source.
+- A mechanic package must name an operation, not only a topic, owner, wave, or
+  file family.
 - Keep old flat `docs/*.md` paths out of active references once a mechanic owns
   the surface.
 - If a move becomes runtime, proof, role authority, route implementation, KAG

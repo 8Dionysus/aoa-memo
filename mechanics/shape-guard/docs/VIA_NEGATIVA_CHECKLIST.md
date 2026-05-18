@@ -1,6 +1,8 @@
 # VIA_NEGATIVA_CHECKLIST
 
-This checklist is for `aoa-memo` as the reviewable memory and recall.
+This checklist is for `aoa-memo` as the reviewable memory and recall layer.
+Use it before adding a memory object family, mechanic package, trust field,
+recall family, or action-facing memory route.
 
 ## Keep intact
 
@@ -19,6 +21,8 @@ This checklist is for `aoa-memo` as the reviewable memory and recall.
 1. Is this memory or proof?
 2. Would a reviewed recall object work instead of a new object family?
 3. Does this object trigger action without owner receipts or eval backing?
+4. Is this a repeatable memory operation, or only a topic bucket?
+5. Which stronger owner accepts the next claim if memory is not enough?
 
 ## Safe exceptions
 

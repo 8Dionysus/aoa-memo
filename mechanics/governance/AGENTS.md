@@ -6,8 +6,9 @@ This card applies to `mechanics/governance/`.
 
 ## Role
 
-The governance mechanic owns memo-side governance, federation, installation,
-certification, precedent, stay-order, and via-negativa memory boundaries.
+The governance mechanic owns memo-side authority-boundary memory for
+governance, federation, installation, certification, precedent, and stay
+orders.
 
 It does not own council authority, source-owner consent, proof verdicts,
 runtime governance, Tree-of-Sophia writes, release approval, or hidden

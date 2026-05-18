@@ -36,11 +36,11 @@ class MemoMechanicsTestCase(unittest.TestCase):
     def test_memo_mechanics_index_names_packages(self) -> None:
         payload = json.loads((REPO_ROOT / "generated" / "memo_mechanics.min.json").read_text())
 
-        self.assertEqual("aoa_memo_mechanics_index_v1", payload["schema_version"])
-        self.assertEqual("memo-mechanics-v1", payload["source_of_truth"])
+        self.assertEqual("aoa_memo_mechanics_index_v2", payload["schema_version"])
+        self.assertEqual("memo-mechanics-v2", payload["source_of_truth"])
         self.assertEqual("config/memo_mechanics.json", payload["config_ref"])
         self.assertEqual("mechanics/README.md", payload["authority_ref"])
-        self.assertEqual(7, payload["counts"]["packages"])
+        self.assertEqual(8, payload["counts"]["packages"])
         self.assertEqual(82, payload["counts"]["docs"])
 
         packages = {package["slug"]: package for package in payload["packages"]}
@@ -51,6 +51,7 @@ class MemoMechanicsTestCase(unittest.TestCase):
                 "titan",
                 "adoption",
                 "governance",
+                "shape-guard",
                 "writeback",
                 "retention",
             },
@@ -60,9 +61,13 @@ class MemoMechanicsTestCase(unittest.TestCase):
         self.assertEqual(27, packages["agon"]["doc_count"])
         self.assertEqual(10, packages["titan"]["doc_count"])
         self.assertEqual(6, packages["adoption"]["doc_count"])
-        self.assertEqual(10, packages["governance"]["doc_count"])
+        self.assertEqual(9, packages["governance"]["doc_count"])
+        self.assertEqual(1, packages["shape-guard"]["doc_count"])
         self.assertEqual(17, packages["writeback"]["doc_count"])
         self.assertEqual(6, packages["retention"]["doc_count"])
+        for package in packages.values():
+            self.assertIn("operation", package)
+            self.assertIn("os_abyss_role", package)
 
     def test_mechanic_docs_live_under_mechanics_not_docs_root(self) -> None:
         config = json.loads((REPO_ROOT / "config" / "memo_mechanics.json").read_text())
@@ -96,6 +101,7 @@ class MemoMechanicsTestCase(unittest.TestCase):
             "titan",
             "adoption",
             "governance",
+            "shape-guard",
             "writeback",
             "retention",
         ):
