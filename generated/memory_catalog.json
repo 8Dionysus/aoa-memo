@@ -398,6 +398,44 @@
         "capsules",
         "stronger-source"
       ]
+    },
+    {
+      "id": "AOA-M-0013",
+      "name": "operational-gate",
+      "surface_kind": "doctrine",
+      "summary": "Operational memory admission mechanic for deployment incidents, office/service incidents, service revision ledgers, and post-release boundaries.",
+      "primary_focus": "operational-memory-admission",
+      "recall_modes": [
+        "working",
+        "episodic",
+        "source_route"
+      ],
+      "status": "confirmed",
+      "temperature": "warm",
+      "source_path": "mechanics/operational-gate/README.md",
+      "inspect_surface": "generated/memory_capsules.json",
+      "expand_surface": "generated/memory_sections.full.json",
+      "related_surface_ids": [
+        "AOA-M-0003",
+        "AOA-M-0011",
+        "AOA-M-0010"
+      ],
+      "strongest_next_sources": [
+        "repo:Agents-of-Abyss",
+        "repo:abyss-stack",
+        "repo:aoa-evals",
+        "repo:aoa-agents",
+        "repo:aoa-playbooks",
+        "repo:aoa-routing",
+        "repo:aoa-stats"
+      ],
+      "focus_tags": [
+        "operational-gate",
+        "incident-memory",
+        "service-revision",
+        "post-release",
+        "owner-route"
+      ]
     }
   ]
 }

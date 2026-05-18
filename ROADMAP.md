@@ -37,8 +37,9 @@ The current topology hardening path starts with the source-authored route spine
 in `DESIGN.md`, `DESIGN.AGENTS.md`, `docs/README.md`,
 `docs/ROOT_SURFACE_LAW.md`, and `docs/decisions/`. This precedes any thematic
 docs or mechanics migration so antifragility, Agon, Titan, adoption,
-governance, retention, and writeback surfaces are moved only with owner maps,
-link updates, legacy bridges, and validation.
+governance, consumer handoff, operational gate, retention, and writeback
+surfaces are moved only with owner maps, link updates, legacy bridges, and
+validation.
 The maintained Spark fast-loop lane now lives under `.agents/spark/` rather
 than root `Spark/`, aligning agent-lane placement with the new topology spine
 without treating the lane as root civic law.
@@ -70,12 +71,19 @@ rather than a topic bucket.
 The mechanics topology follows the `Agents-of-Abyss` pattern:
 `mechanics/antifragility/`, `mechanics/agon/`, `mechanics/titan/`,
 `mechanics/adoption/`, `mechanics/governance/`, `mechanics/shape-guard/`,
+`mechanics/consumer-handoff/`, `mechanics/operational-gate/`,
 `mechanics/writeback/`, and `mechanics/retention/` own the former flat or
 transitional owner families as memo-side mechanics. Each package has a route
 card, package card, operation, direction, parts map, owner map, provenance
 bridge, landing log, roadmap, and legacy index. The source-backed
 `config/memo_mechanics.json` and `generated/memo_mechanics.min.json` keep the
 shape machine-checkable.
+
+The operational-gate migration now owns deployment incident gates, office
+incident gates, service revision ledger posture, and post-release memory
+boundaries as one admission operation. Root technical schemas and examples
+remain in `schemas/` and `examples/` while they are public support contracts,
+not package-local implementation files.
 
 The current mechanics hardening layer adds `docs/AGENTS.md` and
 `legacy/AGENTS.md` subroutes for each memo mechanic plus

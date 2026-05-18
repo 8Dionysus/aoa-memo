@@ -169,6 +169,20 @@
       "main_risk_short": "Main risk: consumers skip the capsule step and either over-open memo sections or infer authority from compact inspect metadata alone.",
       "validation_short": "Validate by checking router-facing and object semantic or lineage recall contracts publish the correct capsule_surface and preserve the same id across inspect, capsule, and expand.",
       "source_path": "mechanics/adoption/docs/ROUTING_MEMORY_ADOPTION.md"
+    },
+    {
+      "id": "AOA-M-0013",
+      "name": "operational-gate",
+      "summary": "Operational memory admission mechanic for deployment incidents, office/service incidents, service revision ledgers, and post-release boundaries.",
+      "one_line_intent": "Decide whether operational events deserve durable memo recall without making memo a release, runtime, proof, role, route, or stats authority.",
+      "use_when_short": "Use when a deployment incident, office/service incident, service revision, or post-release note wants to become durable memo.",
+      "do_not_use_short": "Avoid when the task is release approval, current service health, runtime remediation, eval scoring, role rights, route dispatch, or source-authority acceptance.",
+      "inputs_short": "Needs evidence refs, owner route, review posture, retention or expiry posture, recurrence signals when present, and a future effect.",
+      "outputs_short": "Produces memory admission decisions, service revision recall posture, post-release boundary notes, and stronger-owner handoffs.",
+      "core_contract_short": "Core contract: operational memory enters memo only when evidence, owner route, review posture, retention posture, and future effect justify recall.",
+      "main_risk_short": "Main risk: incident memory starts implying that a service is healthy, fixed, proved, released, or accepted.",
+      "validation_short": "Validate by checking operational-gate docs, schemas, examples, owner maps, mechanics index, AGENTS mesh, and release gate all stay aligned.",
+      "source_path": "mechanics/operational-gate/README.md"
     }
   ]
 }

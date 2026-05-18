@@ -24,6 +24,7 @@ Use the shortest route by need:
 - memory readiness boundary for future durable-consequence, delta, retention, and recall pressure: [docs/MEMORY_READINESS_BOUNDARY](docs/MEMORY_READINESS_BOUNDARY.md)
 - Wave 1 memory gate / retention / writeback boundary contract: [docs/MEMORY_READINESS_BOUNDARY](docs/MEMORY_READINESS_BOUNDARY.md), `schemas/memory_readiness_boundary_contract.schema.json`, and `examples/memory_readiness_boundary_contract.example.json`
 - bridge, export, and guardrail surfaces: [consumer-handoff/KAG_TOS_BRIDGE_CONTRACT](mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md), [consumer-handoff/KAG_SOURCE_EXPORT](mechanics/consumer-handoff/docs/KAG_SOURCE_EXPORT.md), [consumer-handoff/MEMORY_EVAL_GUARDRAILS](mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md), [docs/OPERATIONAL_BOUNDARY](docs/OPERATIONAL_BOUNDARY.md), and [mechanics/adoption/ROUTING_MEMORY_ADOPTION](mechanics/adoption/docs/ROUTING_MEMORY_ADOPTION.md)
+- operational memory gates: [mechanics/operational-gate](mechanics/operational-gate/README.md), [operational-gate/DEPLOYMENT_INCIDENT_MEMORY_GATE](mechanics/operational-gate/docs/DEPLOYMENT_INCIDENT_MEMORY_GATE.md), [operational-gate/OFFICE_INCIDENT_MEMORY_GATE](mechanics/operational-gate/docs/OFFICE_INCIDENT_MEMORY_GATE.md), [operational-gate/SERVICE_REVISION_LEDGER](mechanics/operational-gate/docs/SERVICE_REVISION_LEDGER.md), and [operational-gate/POST_RELEASE_MEMORY_BOUNDARIES](mechanics/operational-gate/docs/POST_RELEASE_MEMORY_BOUNDARIES.md)
 - current direction: [ROADMAP](ROADMAP.md)
 
 ## Public recall entrypoints
@@ -61,6 +62,12 @@ If you are editing inside `schemas/`, `examples/`, `generated/`, or `scripts/`, 
 - Titan receipt memory, recall candidates, remembrance source refs, bridge digest, and closeout memory posture: [mechanics/titan/docs/TITAN_MEMORY_POSTURE.md](mechanics/titan/docs/TITAN_MEMORY_POSTURE.md), [mechanics/titan/docs/TITAN_MEMORY_LOOM_POSTURE.md](mechanics/titan/docs/TITAN_MEMORY_LOOM_POSTURE.md), [mechanics/titan/docs/TITAN_REMEMBRANCE_SOURCE_REF_POLICY.md](mechanics/titan/docs/TITAN_REMEMBRANCE_SOURCE_REF_POLICY.md), [mechanics/titan/docs/TITAN_BRIDGE_MEMORY_POSTURE.md](mechanics/titan/docs/TITAN_BRIDGE_MEMORY_POSTURE.md), [mechanics/titan/docs/TITAN_CONSOLE_MEMORY_DIGEST.md](mechanics/titan/docs/TITAN_CONSOLE_MEMORY_DIGEST.md), [mechanics/titan/docs/TITAN_CLOSEOUT_MEMORY_POSTURE.md](mechanics/titan/docs/TITAN_CLOSEOUT_MEMORY_POSTURE.md), `schemas/titan_remembrance_record.schema.json`, and `examples/titan_remembrance_record.example.json`
 - owner-local live receipt publication for closeout/stats integration: `scripts/publish_live_receipts.py` and `.aoa/live_receipts/memo-writeback-receipts.jsonl`
 - bridge, export, and guardrail surfaces: `generated/kag_export.min.json`, [consumer-handoff/KAG_SOURCE_EXPORT](mechanics/consumer-handoff/docs/KAG_SOURCE_EXPORT.md), [consumer-handoff/KAG_TOS_BRIDGE_CONTRACT](mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md), and [consumer-handoff/MEMORY_EVAL_GUARDRAILS](mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md)
+- operational incident, service revision, and post-release memory gates:
+  [mechanics/operational-gate](mechanics/operational-gate/README.md),
+  `schemas/deployment_incident_memory_gate_v1.json`,
+  `schemas/service_revision_ledger_entry_v1.json`,
+  `schemas/service_incident_memory_entry_v1.json`, and
+  `examples/deployment_incident_memory_gate.example.json`
 - schemas and local validation: `schemas/`, `python scripts/validate_memo.py`, `python scripts/validate_memory_surfaces.py`, `python scripts/validate_memory_object_surfaces.py`, `python scripts/validate_lifecycle_audit_examples.py`, and `python -m pytest -q tests`
 
 ## What `aoa-memo` owns
@@ -112,8 +119,9 @@ generated:
 - `config/agents_mesh.json` and `generated/agents_mesh.min.json` make current
   route-card coverage machine-checkable
 - [mechanics](mechanics/README.md) owns memo-side antifragility, Agon, Titan,
-  adoption, governance, shape-guard, writeback, and retention mechanics with
-  package cards, owner maps, legacy bridges, and
+  adoption, governance, shape-guard, consumer-handoff, operational-gate,
+  writeback, and retention mechanics with package cards, owner maps, legacy
+  bridges, and
   `generated/memo_mechanics.min.json`
 - [mechanics/antifragility](mechanics/antifragility/README.md) is the active
   home for former flat failure-lesson and recovery-pattern surfaces
@@ -125,10 +133,11 @@ generated:
   [mechanics/governance](mechanics/governance/README.md),
   [mechanics/shape-guard](mechanics/shape-guard/README.md),
   [mechanics/consumer-handoff](mechanics/consumer-handoff/README.md),
+  [mechanics/operational-gate](mechanics/operational-gate/README.md),
   [mechanics/writeback](mechanics/writeback/README.md), and
   [mechanics/retention](mechanics/retention/README.md) are the active homes for
-  the former flat adoption/governance/shape-guard/consumer-handoff/writeback/
-  retention docs-root families
+  the former flat adoption/governance/shape-guard/consumer-handoff/
+  operational-gate/writeback/retention docs-root families
 
 This spine does not move flat docs by itself. It exists so later mechanic,
 rollback, or AGENTS-mesh work can land through named owner routes
@@ -183,10 +192,11 @@ Then rerun the read-only validation pass above and inspect `git status -sb` befo
 `aoa-memo` is in contract hardening. The public baseline now includes doctrine surfaces, object-facing surfaces, a narrow source-owned memo KAG export, writeback seams, bridge/export contracts, and memo-side guardrail handoff surfaces without turning the repository into runtime infrastructure or a graph platform.
 
 The current topology pass adds the memory-layer design and docs-route spine.
-Antifragility, Agon, Titan, adoption, governance, shape-guard, writeback, and
-retention docs now live under `mechanics/` as memo mechanics with owner maps,
-validation, and legacy route maps. Other flat `docs/*.md` surfaces remain active until
-their validated district or mechanic routes replace them.
+Antifragility, Agon, Titan, adoption, governance, shape-guard,
+consumer-handoff, operational-gate, writeback, and retention docs now live
+under `mechanics/` as memo mechanics with owner maps, validation, and legacy
+route maps. Other flat `docs/*.md` surfaces remain active until their
+validated district or mechanic routes replace them.
 
 The current downstream guardrail pilot stays intentionally narrow: recall precision, provenance fidelity, and staleness. That keeps the memo layer explicit and reviewable without pretending it is already full proof doctrine.
 

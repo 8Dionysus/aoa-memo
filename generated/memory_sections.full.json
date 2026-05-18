@@ -351,6 +351,34 @@
           "body": "If inspect and capsule steps do not provide enough grounding, the router should open full sections and then escalate to the strongest cited source rather than infer proof, rights, or current truth from memo posture alone. Memo surfaces remain bounded memory aids, not authority substitutes."
         }
       ]
+    },
+    {
+      "id": "AOA-M-0013",
+      "name": "operational-gate",
+      "source_path": "mechanics/operational-gate/README.md",
+      "sections": [
+        {
+          "section_id": "AOA-M-0013#admission-rule",
+          "heading": "Admission rule",
+          "ordinal": 1,
+          "summary": "Requires evidence, owner route, review posture, retention posture, and future effect before operational events become memory.",
+          "body": "Operational events enter durable memo only when they carry evidence refs, an owner route, a review posture, retention or expiry posture, and a concrete future effect. Loud or recent events are not enough."
+        },
+        {
+          "section_id": "AOA-M-0013#owner-split",
+          "heading": "Owner split",
+          "ordinal": 2,
+          "summary": "Keeps release, runtime, proof, role, route, stats, and source authority outside aoa-memo.",
+          "body": "`aoa-memo` owns memory admission and recall posture. Agents-of-Abyss owns program law, runtime owners own live state and remediation, `aoa-evals` owns proof, `aoa-agents` owns rights, `aoa-playbooks` owns choreography, `aoa-routing` owns dispatch, and `aoa-stats` owns derived operational summaries."
+        },
+        {
+          "section_id": "AOA-M-0013#technical-contracts",
+          "heading": "Technical contracts",
+          "ordinal": 3,
+          "summary": "Keeps operational-gate schemas and examples in root technical districts while they remain public support contracts.",
+          "body": "The operational-gate package owns source docs and owner maps. Schemas and examples such as `deployment_incident_memory_gate_v1`, service incident entries, service revision ledgers, and train release memory entries remain in root technical districts while they are public support contracts and release-gate companions."
+        }
+      ]
     }
   ]
 }

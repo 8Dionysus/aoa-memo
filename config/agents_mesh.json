@@ -278,6 +278,36 @@
       ]
     },
     {
+      "path": "mechanics/operational-gate/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "operational-gate mechanic",
+        "mechanics/operational-gate/",
+        "OWNER_MAP.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/operational-gate/docs/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/operational-gate/docs/",
+        "active mechanic-owned doctrine",
+        "ARTIFACT_TOPOLOGY.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/operational-gate/legacy/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/operational-gate/legacy/",
+        "placement provenance",
+        "not the active route",
+        "legacy/INDEX.md"
+      ]
+    },
+    {
       "path": "mechanics/titan/AGENTS.md",
       "min_lines": 35,
       "required_snippets": [

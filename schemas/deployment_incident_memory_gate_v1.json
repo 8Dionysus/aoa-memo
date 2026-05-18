@@ -1,30 +1,66 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aoa.local/aoa-memo/schemas/deployment_incident_memory_gate_v1.json",
   "title": "deployment_incident_memory_gate",
   "type": "object",
-  "description": "deployment_incident_memory_gate schema for AoA experience deployment watchtower v0.5.",
+  "description": "deployment_incident_memory_gate schema for operational-gate memo admission.",
   "required": [
     "gate_id",
     "incident_id",
     "decision",
     "reason",
-    "future_effect"
+    "evidence_refs",
+    "owner_route",
+    "review_posture",
+    "future_effect",
+    "expiry_or_recheck"
   ],
   "properties": {
     "gate_id": {
-      "type": "string"
+      "type": "string",
+      "minLength": 1
     },
     "incident_id": {
-      "type": "string"
+      "type": "string",
+      "minLength": 1
     },
     "decision": {
-      "type": "string"
+      "type": "string",
+      "enum": [
+        "allow",
+        "reject",
+        "expire",
+        "recheck",
+        "route-away"
+      ]
     },
     "reason": {
-      "type": "string"
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "owner_route": {
+      "type": "string",
+      "minLength": 1
+    },
+    "review_posture": {
+      "type": "string",
+      "minLength": 1
     },
     "future_effect": {
-      "type": "string"
+      "type": "string",
+      "minLength": 1
+    },
+    "expiry_or_recheck": {
+      "type": "string",
+      "minLength": 1
     }
   },
   "additionalProperties": false
