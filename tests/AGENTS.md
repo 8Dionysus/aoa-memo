@@ -15,6 +15,7 @@ Verify with:
 ```bash
 python -m pytest -q tests
 python scripts/validate_semantic_agents.py
+python scripts/validate_mechanic_artifact_topology.py
 python scripts/validate_agents_mesh.py
 python scripts/validate_agents_mesh_index.py
 python scripts/validate_docs_districts.py

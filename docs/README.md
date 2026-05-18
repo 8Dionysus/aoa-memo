@@ -64,6 +64,7 @@ transitional `TITAN_*` docs.
 | Operational gates | [operational-gate mechanic](../mechanics/operational-gate/README.md) plus deployment incident, office incident, service revision, and post-release boundary schemas, examples, and tests |
 | Recurrence support | [recurrence-support mechanic](../mechanics/recurrence-support/README.md) plus witness trace, checkpoint consumer refs, return recall, reviewed closeout quest, schemas, examples, generated refs, and tests |
 | Lineage harvest | [lineage-harvest mechanic](../mechanics/lineage-harvest/README.md) plus pattern-lineage schema, example, generated recall surfaces, and tests |
+| Questbook | [questbook mechanic](../mechanics/questbook/README.md) plus root `QUESTBOOK.md`, lane-first `quests/`, generated quest projections, source contract, builder, and tests |
 | Antifragility | [antifragility mechanic](../mechanics/antifragility/README.md) plus matching schemas, examples, generated object surfaces, and tests |
 | Adoption, authority, and shape guard | [adoption mechanic](../mechanics/adoption/README.md), [governance mechanic](../mechanics/governance/README.md), [shape-guard mechanic](../mechanics/shape-guard/README.md), [retention mechanic](../mechanics/retention/README.md) |
 | Agon memo seams | [agon mechanic](../mechanics/agon/README.md) plus matching config, schemas, generated registries, examples, tests, quests, and manifests |
@@ -105,6 +106,7 @@ transitional `TITAN_*` docs.
 | Operational-gate mechanic | [mechanics/operational-gate/AGENTS](../mechanics/operational-gate/AGENTS.md), then [mechanics/operational-gate/README](../mechanics/operational-gate/README.md) |
 | Recurrence-support mechanic | [mechanics/recurrence-support/AGENTS](../mechanics/recurrence-support/AGENTS.md), then [mechanics/recurrence-support/README](../mechanics/recurrence-support/README.md) |
 | Lineage-harvest mechanic | [mechanics/lineage-harvest/AGENTS](../mechanics/lineage-harvest/AGENTS.md), then [mechanics/lineage-harvest/README](../mechanics/lineage-harvest/README.md) |
+| Questbook mechanic | [mechanics/questbook/AGENTS](../mechanics/questbook/AGENTS.md), then [mechanics/questbook/README](../mechanics/questbook/README.md) |
 | Writeback mechanic | [mechanics/writeback/AGENTS](../mechanics/writeback/AGENTS.md), then [mechanics/writeback/README](../mechanics/writeback/README.md) |
 | Retention mechanic | [mechanics/retention/AGENTS](../mechanics/retention/AGENTS.md), then [mechanics/retention/README](../mechanics/retention/README.md) |
 | Mechanic artifact placement | [mechanics/ARTIFACT_TOPOLOGY](../mechanics/ARTIFACT_TOPOLOGY.md) |
@@ -148,7 +150,8 @@ Until then, this README is the map and the flat files remain active surfaces.
 | [mechanics/operational-gate](../mechanics/operational-gate/README.md) | Operational gate memo mechanic |
 | [mechanics/recurrence-support](../mechanics/recurrence-support/README.md) | Recurrence support memo mechanic |
 | [mechanics/lineage-harvest](../mechanics/lineage-harvest/README.md) | Lineage harvest memo mechanic |
-| [mechanics](../mechanics/README.md) | Antifragility, Agon, Titan, adoption, governance, shape-guard, checkpoint, readiness-boundary, consumer-handoff, operational-gate, recurrence-support, lineage-harvest, writeback, and retention memo mechanics |
+| [mechanics/questbook](../mechanics/questbook/README.md) | Questbook memo mechanic |
+| [mechanics](../mechanics/README.md) | Antifragility, Agon, Titan, adoption, governance, shape-guard, checkpoint, readiness-boundary, consumer-handoff, operational-gate, recurrence-support, lineage-harvest, questbook, writeback, and retention memo mechanics |
 | [manifests](../manifests/AGENTS.md) | recurrence manifests and hook bindings |
 | [quests](../quests/AGENTS.md) | quest files backing `QUESTBOOK.md` |
 | [.agents](../.agents/AGENTS.md) | agent-facing companion lanes |

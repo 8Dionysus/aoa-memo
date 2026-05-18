@@ -78,9 +78,9 @@ The long-term mesh should make these lanes explicit:
 - `.agents/` for agent-facing companion assets and future maintained lanes
 - `docs/` for memory doctrine and route maps
 - `mechanics/` for repeatable adoption, consumer handoff, operational gate,
-  recurrence support, lineage harvest, writeback, and retention mechanics with
-  owner maps, active docs subroutes, legacy bridges, and artifact placement
-  law
+  recurrence support, lineage harvest, questbook, writeback, and retention
+  mechanics with owner maps, active docs subroutes, legacy bridges, and
+  artifact placement law
 - `schemas/` for contracts
 - `examples/` for public-safe object and support examples
 - `generated/` for compact companions
@@ -88,7 +88,7 @@ The long-term mesh should make these lanes explicit:
 - `tests/` for regression surfaces
 - `config/` for build or registry inputs
 - `manifests/` for recurrence or component manifests
-- `quests/` for tracked memory-layer obligations
+- `quests/` for tracked memory-layer obligations, governed by Questbook
 
 The current repository now has a source-backed AGENTS mesh mirror:
 

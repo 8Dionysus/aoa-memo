@@ -85,9 +85,9 @@ active surfaces.
 - `docs/README.md`
 - `docs/ROOT_SURFACE_LAW.md`
 - `docs/MEMORY_MODEL.md`
-- `quests/AOA-MEM-Q-0004.yaml`
-- `quests/AOA-MEM-Q-0005.yaml`
-- `quests/AOA-MEM-Q-0006.yaml`
+- `quests/memo/captured/AOA-MEM-Q-0004.yaml`
+- `quests/memo/captured/AOA-MEM-Q-0005.yaml`
+- `quests/memo/captured/AOA-MEM-Q-0006.yaml`
 - `scripts/validate_memo.py`
 - `mechanics/consumer-handoff/tests/test_consumer_handoff_mechanic.py`
 - `tests/test_memo_mechanics.py`

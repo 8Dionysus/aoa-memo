@@ -2,8 +2,8 @@
 
 ## Guidance for `quests/`
 
-`quests/` holds memory-layer obligations that are summarized from
-`QUESTBOOK.md` and validated as public repo state.
+`quests/` holds the public item store for memory-layer obligations that are
+summarized from `QUESTBOOK.md` and validated as public repo state.
 
 Quest files may track memo-facing recall, writeback, recurrence, and adoption
 obligations. They do not own playbook scenario composition, proof outcomes,
@@ -11,11 +11,15 @@ runtime retention, or agent role rights.
 
 ## Current Shape
 
-The foundation quest family uses `AOA-MEM-Q-*.yaml`.
+Quest sources use lane-first lifecycle placement:
 
-Agon-specific follow-through currently uses `AOM-Q-AGON-*.md` and
-`AOMEMO-Q-AGON-*.md` files that route back to the `mechanics/agon/docs/`
-mechanic docs.
+- `quests/memo/<state>/AOA-MEM-Q-*.yaml`
+- `quests/agon/<state>/AOM-Q-AGON-*.md`
+- `quests/agon/<state>/AOMEMO-Q-AGON-*.md`
+
+Questbook law lives in `mechanics/questbook/`. The root `quests/` district is
+the source item store, not a private scratchpad and not a package-local docs
+directory.
 
 Keep `QUESTBOOK.md`, `quests/`, owning mechanic docs, and generated quest
 companions aligned. Root generated quest companions are projections from these
@@ -36,11 +40,13 @@ When quests change, run:
 
 ```bash
 python scripts/validate_memo.py
-python scripts/build_quest_surfaces.py --check
+python mechanics/questbook/scripts/validate_quest_store.py
+python mechanics/questbook/scripts/build_quest_surfaces.py --check
 python scripts/release_check.py
 ```
 
 ## Closeout
 
-Report which `AOA-MEM-Q-` or Agon quest surface changed, whether `QUESTBOOK.md`
-changed, and which validation ran.
+Report which quest lane and lifecycle state changed, whether `QUESTBOOK.md`
+changed, whether generated quest projections were rebuilt, and which
+validation ran.

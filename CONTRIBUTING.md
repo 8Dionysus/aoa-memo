@@ -35,7 +35,11 @@ python scripts/validate_memo.py
 python scripts/validate_memory_surfaces.py
 python scripts/validate_memory_object_surfaces.py
 python scripts/validate_lifecycle_audit_examples.py
-python scripts/build_quest_surfaces.py --check
+python scripts/validate_mechanic_artifact_topology.py
+python mechanics/questbook/scripts/build_quest_surfaces.py --check
+python scripts/validate_memo_mechanics.py
+python scripts/build_memo_mechanics_index.py --check
+python scripts/validate_memo_mechanics_index.py
 python -m pytest -q tests
 ```
 

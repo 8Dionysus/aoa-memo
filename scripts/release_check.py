@@ -25,7 +25,8 @@ def _env() -> dict[str, str]:
 
 
 COMMANDS = [
-    ("check generated quest surfaces", [sys.executable, "scripts/build_quest_surfaces.py", "--check"]),
+    ("validate quest store", [sys.executable, "mechanics/questbook/scripts/validate_quest_store.py"]),
+    ("check generated quest surfaces", [sys.executable, "mechanics/questbook/scripts/build_quest_surfaces.py", "--check"]),
     ("validate memo", [sys.executable, "scripts/validate_memo.py"]),
     ("validate Agon memo prebindings", [sys.executable, "mechanics/agon/scripts/validate_agon_memo_prebindings.py"]),
     ("validate Agon epistemic memo bridge", [sys.executable, "mechanics/agon/scripts/validate_agon_epistemic_memo_bridge.py"]),
@@ -38,6 +39,7 @@ COMMANDS = [
     ("validate memory surfaces", [sys.executable, "scripts/validate_memory_surfaces.py"]),
     ("validate memory object surfaces", [sys.executable, "scripts/validate_memory_object_surfaces.py"]),
     ("validate lifecycle audit examples", [sys.executable, "scripts/validate_lifecycle_audit_examples.py"]),
+    ("validate mechanic artifact topology", [sys.executable, "scripts/validate_mechanic_artifact_topology.py"]),
     ("validate AGENTS mesh", [sys.executable, "scripts/validate_agents_mesh.py"]),
     ("check AGENTS mesh index", [sys.executable, "scripts/build_agents_mesh_index.py", "--check"]),
     ("validate AGENTS mesh index", [sys.executable, "scripts/validate_agents_mesh_index.py"]),

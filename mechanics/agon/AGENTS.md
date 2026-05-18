@@ -64,6 +64,7 @@ python scripts/release_check.py
 ## Closeout
 
 Report the Agon source family changed, whether legacy/provenance was
-consulted, which stronger owner route remains outside `aoa-memo`, and whether
+consulted, whether Agon quest follow-through stayed in `quests/agon/<state>/`,
+which stronger owner route remains outside `aoa-memo`, and whether
 any old Agon docs-root or docs-district reference remains outside allowed
 provenance.

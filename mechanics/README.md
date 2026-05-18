@@ -72,6 +72,7 @@ After the card, package README files should stay lightweight and route to
 | [operational-gate](operational-gate/README.md) | How does memo admit operational incidents, service revisions, and post-release boundaries into recall without becoming release, runtime, proof, role, route, or stats authority? | landed memo route | [PARTS](operational-gate/PARTS.md), [OWNER_MAP](operational-gate/OWNER_MAP.md), [PROVENANCE](operational-gate/PROVENANCE.md) | release approval, current health, incident root cause, runtime remediation, eval proof, role rights, route dispatch, stats truth, or owner acceptance |
 | [recurrence-support](recurrence-support/README.md) | How does memo preserve relaunch anchors, witness trace exports, and reviewed closeout recall landings without becoming router, runtime, role policy, proof, or a second route ledger? | landed memo route | [PARTS](recurrence-support/PARTS.md), [OWNER_MAP](recurrence-support/OWNER_MAP.md), [PROVENANCE](recurrence-support/PROVENANCE.md) | dispatch authority, runtime retry, role rights, proof verdict, scenario choreography, `return_memory`, or owner acceptance |
 | [lineage-harvest](lineage-harvest/README.md) | How does memo gate cross-repo recurring signals into pattern-lineage candidates without becoming federation authority, proof, KAG promoter, ToS canon, stats judge, runtime watchtower, or source owner? | landed memo route | [PARTS](lineage-harvest/PARTS.md), [OWNER_MAP](lineage-harvest/OWNER_MAP.md), [PROVENANCE](lineage-harvest/PROVENANCE.md) | federation approval, proof verdict, KAG promotion, ToS canon, stats certification, runtime execution, assistant self-rewrite, or owner adoption |
+| [questbook](questbook/README.md) | How do memo-facing obligations stay public, lane-first, and generated from source without becoming roadmap, proof, runtime, route, playbook, role, or owner-acceptance authority? | landed memo route | [PARTS](questbook/PARTS.md), [OWNER_MAP](questbook/OWNER_MAP.md), [PROVENANCE](questbook/PROVENANCE.md) | source quest ownership, proof verdict, runtime state, route dispatch, playbook choreography, role authority, hidden memory, or owner acceptance |
 | [writeback](writeback/README.md) | How does a memory-layer writeback target, intake, chronicle, revision, rollback, or growth return stay source-linked and bounded? | landed memo route | [PARTS](writeback/PARTS.md), [OWNER_MAP](writeback/OWNER_MAP.md), [PROVENANCE](writeback/PROVENANCE.md) | live ledger, hidden worker, runtime storage, automatic promotion, or owner acceptance |
 | [retention](retention/README.md) | How does retention evidence, watch, marker, or outcome stay reviewable without executing retention? | landed memo route | [PARTS](retention/PARTS.md), [OWNER_MAP](retention/OWNER_MAP.md), [PROVENANCE](retention/PROVENANCE.md) | retention execution, private trace retention, scheduler authority, or runtime policy |
 
@@ -95,13 +96,13 @@ surface that matches the work:
 ## Artifact Placement
 
 Mechanics are not documentation-only packages. When a schema, example, config,
-generated companion, script, test, or quest rule belongs to one mechanic, it may
+generated companion, script, test, or manifest belongs to one mechanic, it may
 remain in the repo-wide technical district only when it is still shared by
 multiple memory surfaces. Package-local source docs live under the mechanic.
 
 Use [ARTIFACT_TOPOLOGY](ARTIFACT_TOPOLOGY.md) before moving schemas, examples,
-config, generated companions, scripts, tests, manifests, or quest rules between
-root technical districts and mechanic-local homes.
+config, generated companions, scripts, tests, manifests, or questbook surfaces
+between root technical districts and mechanic-local homes.
 
 ## Validation
 

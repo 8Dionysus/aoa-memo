@@ -76,11 +76,21 @@ QUEST_CATALOG_EXAMPLE_PATH = GENERATED / "quest_catalog.min.example.json"
 QUEST_DISPATCH_PATH = GENERATED / "quest_dispatch.min.json"
 QUEST_DISPATCH_EXAMPLE_PATH = GENERATED / "quest_dispatch.min.example.json"
 FOUNDATION_QUESTBOOK_FILES = {
-    "AOA-MEM-Q-0001": ROOT / "quests" / "AOA-MEM-Q-0001.yaml",
-    "AOA-MEM-Q-0002": ROOT / "quests" / "AOA-MEM-Q-0002.yaml",
+    "AOA-MEM-Q-0001": ROOT / "quests" / "memo" / "done" / "AOA-MEM-Q-0001.yaml",
+    "AOA-MEM-Q-0002": ROOT / "quests" / "memo" / "done" / "AOA-MEM-Q-0002.yaml",
 }
 QUESTBOOK_FILES = FOUNDATION_QUESTBOOK_FILES
 CLOSED_QUEST_STATES = {"done", "dropped"}
+QUEST_LIFECYCLE_STATES = {
+    "captured",
+    "triaged",
+    "ready",
+    "active",
+    "blocked",
+    "reanchor",
+    "done",
+    "dropped",
+}
 ALLOWED_ORCHESTRATOR_CAPABILITY_TARGETS = {
     "repo_layer_selection",
     "evidence_closure",
@@ -378,7 +388,7 @@ def quest_sort_key(quest_id: str) -> tuple[int, str]:
 def discover_questbook_files() -> dict[str, Path]:
     discovered = {
         path.stem: path
-        for path in (ROOT / "quests").glob("AOA-MEM-Q-*.yaml")
+        for path in (ROOT / "quests" / "memo").glob("*/AOA-MEM-Q-*.yaml")
         if path.is_file()
     }
     if not discovered:
@@ -387,6 +397,20 @@ def discover_questbook_files() -> dict[str, Path]:
         quest_id: discovered[quest_id]
         for quest_id in sorted(discovered, key=quest_sort_key)
     }
+
+
+def quest_path_state(path: Path) -> str | None:
+    try:
+        relative = path.relative_to(ROOT / "quests")
+    except ValueError:
+        return None
+    parts = relative.parts
+    if len(parts) < 3:
+        return None
+    lane, state = parts[0], parts[1]
+    if lane != "memo" or state not in QUEST_LIFECYCLE_STATES:
+        return None
+    return state
 
 
 def quest_anchor_doc_ref(data: dict[str, object]) -> str | None:
@@ -429,7 +453,8 @@ def validate_questbook_surface() -> None:
         if not path.exists():
             errors.append(f"missing file: {path.relative_to(ROOT)}")
     for quest_id in missing_foundation:
-        errors.append(f"missing foundation quest file: quests/{quest_id}.yaml")
+        expected_path = FOUNDATION_QUESTBOOK_FILES[quest_id].relative_to(ROOT)
+        errors.append(f"missing foundation quest file: {expected_path}")
 
     questbook_text = ""
     listed_quest_ids: set[str] = set()
@@ -472,6 +497,15 @@ def validate_questbook_surface() -> None:
             errors.append(f"{path.relative_to(ROOT)} must keep repo aoa-memo")
         if data.get("id") != quest_id:
             errors.append(f"{path.relative_to(ROOT)} must keep id {quest_id}")
+        path_state = quest_path_state(path)
+        if path_state is None:
+            errors.append(
+                f"{path.relative_to(ROOT)} must live under quests/memo/<state>/"
+            )
+        elif data.get("state") != path_state:
+            errors.append(
+                f"{path.relative_to(ROOT)} must keep state matching path state {path_state}"
+            )
         if data.get("public_safe") is not True:
             errors.append(f"{path.relative_to(ROOT)} must keep public_safe true")
         orchestrator_class_ref = data.get("orchestrator_class_ref")

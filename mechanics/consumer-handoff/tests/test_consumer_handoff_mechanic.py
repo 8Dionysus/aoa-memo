@@ -63,7 +63,9 @@ class ConsumerHandoffMechanicTestCase(unittest.TestCase):
         self.assertTrue(expected_refs.issubset(set(registry["core_docs"])))
 
         for quest_id in ("AOA-MEM-Q-0004", "AOA-MEM-Q-0005", "AOA-MEM-Q-0006"):
-            quest = (REPO_ROOT / "quests" / f"{quest_id}.yaml").read_text(encoding="utf-8")
+            quest = (
+                REPO_ROOT / "quests" / "memo" / "captured" / f"{quest_id}.yaml"
+            ).read_text(encoding="utf-8")
             self.assertIn(
                 "mechanics/consumer-handoff/docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md",
                 quest,

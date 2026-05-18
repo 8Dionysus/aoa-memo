@@ -25,7 +25,8 @@ Agon docs often pair with:
 - `generated/agon_*.min.json`
 - `manifests/recurrence/component.agon.*.json`
 - `manifests/recurrence/hooks/component.agon.*.hooks.json`
-- `quests/AOM-Q-AGON-*.md`
+- `quests/agon/<state>/AOM-Q-AGON-*.md`
+- `quests/agon/<state>/AOMEMO-Q-AGON-*.md`
 - `tests/test_agon_*.py`
 - `scripts/validate_agon_*.py`
 

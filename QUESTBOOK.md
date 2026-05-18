@@ -2,6 +2,10 @@
 
 This questbook tracks memory-layer obligations related to quest evidence and writeback boundaries.
 
+It is a compact public index. Source quest files live in lane-first lifecycle
+directories under [`quests/`](quests/), and Questbook law lives in
+[`mechanics/questbook`](mechanics/questbook/README.md).
+
 ## Frontier
 
 - `AOA-MEM-Q-0003` - define a quest chronicle writeback surface for campaign witness and progression evidence
@@ -43,7 +47,9 @@ generated files remain projections instead of a second quest ledger.
 
 ## Backing files
 
-- `quests/*.yaml`
+- `quests/memo/<state>/AOA-MEM-Q-*.yaml`
+- `quests/agon/<state>/AOM-Q-AGON-*.md`
+- `quests/agon/<state>/AOMEMO-Q-AGON-*.md`
 - `generated/quest_catalog.min.json`
 - `generated/quest_dispatch.min.json`
 - `generated/quest_catalog.min.example.json`

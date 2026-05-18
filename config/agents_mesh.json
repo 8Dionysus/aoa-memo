@@ -428,6 +428,36 @@
       ]
     },
     {
+      "path": "mechanics/questbook/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "Questbook owns",
+        "mechanics/questbook/",
+        "OWNER_MAP.md",
+        "validate_quest_store.py"
+      ]
+    },
+    {
+      "path": "mechanics/questbook/docs/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/questbook/docs/",
+        "active Questbook",
+        "QUEST_SOURCE_CONTRACT",
+        "validate_quest_store.py"
+      ]
+    },
+    {
+      "path": "mechanics/questbook/legacy/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/questbook/legacy/",
+        "placement provenance",
+        "not the active route",
+        "legacy/INDEX.md"
+      ]
+    },
+    {
       "path": "mechanics/titan/AGENTS.md",
       "min_lines": 35,
       "required_snippets": [

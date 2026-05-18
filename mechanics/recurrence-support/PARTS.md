@@ -22,8 +22,8 @@ they serve more than this one mechanic:
 | Checkpoint to memory consumer refs | `mechanics/checkpoint/schemas/checkpoint-to-memory-contract.schema.json`, `mechanics/checkpoint/examples/checkpoint_to_memory_contract.example.json` |
 | Witness trace | `mechanics/recurrence-support/schemas/witness-trace.schema.json`, `mechanics/recurrence-support/examples/witness_trace.example.json` |
 | Working return recall | `examples/recall_contract.object.working.return.json`, `examples/recall_contract.object.working.phase-alpha.json` |
-| Witness trace quest closeout | `quests/AOA-MEM-Q-0002.yaml`, `generated/quest_catalog.min.json`, `generated/quest_catalog.min.example.json` |
-| Reviewed closeout quest | `quests/AOA-MEM-Q-0009.yaml`, `generated/quest_catalog.min.json`, `generated/quest_catalog.min.example.json` |
+| Witness trace quest closeout | `quests/memo/done/AOA-MEM-Q-0002.yaml`, `generated/quest_catalog.min.json`, `generated/quest_catalog.min.example.json` |
+| Reviewed closeout quest | `quests/memo/reanchor/AOA-MEM-Q-0009.yaml`, `generated/quest_catalog.min.json`, `generated/quest_catalog.min.example.json` |
 
 ## Interface
 
