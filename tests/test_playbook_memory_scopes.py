@@ -47,7 +47,7 @@ def test_playbook_memory_scope_surfaces_keep_return_ready_chain() -> None:
     assert return_ready["return_ready"] is True
     assert inquiry_return["return_pack"]["reentry_refs"] == [
         "examples/recall_contract.object.working.return.json",
-        "docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
+        "mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
     ]
 
 

@@ -44,6 +44,11 @@ Tracking starts with the community-docs baseline for this repository.
   service revision ledger entries, and post-release memory boundaries, with
   owner map, provenance bridge, legacy index, AGENTS mesh coverage, generated
   mechanics coverage, validators, tests, and decision record.
+- Add `mechanics/recurrence-support/` as the memo mechanic for bounded
+  relaunch anchors, witness trace exports, and reviewed closeout recall
+  landings, with owner map, provenance bridge, legacy index, AGENTS mesh
+  coverage, generated mechanics coverage, validators, tests, and decision
+  record.
 - Add the `mechanics/` atlas plus `adoption`, `writeback`, and `retention`
   memo mechanic packages with package cards, owner maps, provenance bridges,
   legacy indexes, source-backed generated mechanics index, validators, tests,
@@ -82,9 +87,13 @@ Tracking starts with the community-docs baseline for this repository.
   `mechanics/operational-gate/docs/` and expand the deployment incident and
   post-release boundary docs from placeholder notes into evidence/owner-route
   admission contracts.
+- Move flat recurrence-support docs-root surfaces into
+  `mechanics/recurrence-support/docs/` and update README, docs maps, route
+  law, quests, examples, generated companions, validators, and tests to the
+  new active paths.
 - Extend the AGENTS mesh and memo mechanics validator to include Agon/Titan
-  and antifragility/governance/shape-guard/consumer-handoff/operational-gate
-  mechanics and mechanic docs/legacy subroutes.
+  and antifragility/governance/shape-guard/consumer-handoff/operational-gate/
+  recurrence-support mechanics and mechanic docs/legacy subroutes.
 
 ## [0.2.3] - 2026-04-23
 

@@ -379,6 +379,34 @@
           "body": "The operational-gate package owns source docs and owner maps. Schemas and examples such as `deployment_incident_memory_gate_v1`, service incident entries, service revision ledgers, and train release memory entries remain in root technical districts while they are public support contracts and release-gate companions."
         }
       ]
+    },
+    {
+      "id": "AOA-M-0014",
+      "name": "recurrence-support",
+      "source_path": "mechanics/recurrence-support/README.md",
+      "sections": [
+        {
+          "section_id": "AOA-M-0014#operation",
+          "heading": "Operation",
+          "ordinal": 1,
+          "summary": "Preserves route-return support without creating route, runtime, role, proof, or ledger authority.",
+          "body": "The recurrence-support mechanic preserves bounded relaunch anchors, witness trace exports, and reviewed closeout recall landings so a route can return through reviewable memory instead of hidden context residue."
+        },
+        {
+          "section_id": "AOA-M-0014#owner-split",
+          "heading": "Owner split",
+          "ordinal": 2,
+          "summary": "Keeps recurrence doctrine, dispatch, retry policy, rights, scenario choreography, and proof outside aoa-memo.",
+          "body": "`aoa-memo` owns memo-side support posture. Agents-of-Abyss owns recurrence doctrine, `aoa-routing` owns dispatch, runtime owners own retry and live stores, `aoa-agents` owns rights, `aoa-playbooks` owns scenario return, and `aoa-evals` owns proof."
+        },
+        {
+          "section_id": "AOA-M-0014#technical-contracts",
+          "heading": "Technical contracts",
+          "ordinal": 3,
+          "summary": "Keeps recurrence-support schemas, examples, quests, and generated companions root-owned while they remain public support contracts.",
+          "body": "The recurrence-support package owns source docs and owner maps. Witness trace, inquiry checkpoint, return recall, checkpoint-to-memory examples, and reviewed closeout quest artifacts remain in root technical districts while they are public support contracts and release-gate companions."
+        }
+      ]
     }
   ]
 }

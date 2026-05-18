@@ -22,7 +22,7 @@ ledger, changing schemas, or moving proof, graph lift, navigation, role
 authority, or runtime retention into `aoa-memo`.
 
 The current `v0.2.3` release line also already carries:
-- checkpoint recall follow-through and lineage-aware growth-refinery writeback surfaces through `docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md`, `mechanics/writeback/docs/GROWTH_REFINERY_WRITEBACK.md`, and `mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md`
+- checkpoint recall follow-through and lineage-aware growth-refinery writeback surfaces through `mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md`, `mechanics/writeback/docs/GROWTH_REFINERY_WRITEBACK.md`, and `mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md`
 - runtime writeback landing, intake, and governance surfaces through `generated/runtime_writeback_targets.min.json`, `generated/runtime_writeback_intake.min.json`, `generated/runtime_writeback_governance.min.json`, and `mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md`
 - rollout, rollback-followthrough, component-refresh, and self-agency continuity support through `examples/recovery_pattern_memory.rollback_followthrough.example.json`, `examples/recovery_pattern_memory.component_refresh.example.json`, `mechanics/writeback/docs/SELF_AGENCY_CONTINUITY_WRITEBACK.md`, and `examples/provenance_thread.self-agency-continuity.example.json`
 - Phase Alpha writeback routing and owner-local live receipt publication through `generated/phase_alpha_writeback_map.min.json` and `scripts/publish_live_receipts.py`
@@ -37,7 +37,8 @@ The current topology hardening path starts with the source-authored route spine
 in `DESIGN.md`, `DESIGN.AGENTS.md`, `docs/README.md`,
 `docs/ROOT_SURFACE_LAW.md`, and `docs/decisions/`. This precedes any thematic
 docs or mechanics migration so antifragility, Agon, Titan, adoption,
-governance, consumer handoff, operational gate, retention, and writeback
+governance, consumer handoff, operational gate, recurrence support, retention,
+and writeback
 surfaces are moved only with owner maps, link updates, legacy bridges, and
 validation.
 The maintained Spark fast-loop lane now lives under `.agents/spark/` rather
@@ -72,7 +73,8 @@ The mechanics topology follows the `Agents-of-Abyss` pattern:
 `mechanics/antifragility/`, `mechanics/agon/`, `mechanics/titan/`,
 `mechanics/adoption/`, `mechanics/governance/`, `mechanics/shape-guard/`,
 `mechanics/consumer-handoff/`, `mechanics/operational-gate/`,
-`mechanics/writeback/`, and `mechanics/retention/` own the former flat or
+`mechanics/recurrence-support/`, `mechanics/writeback/`, and
+`mechanics/retention/` own the former flat or
 transitional owner families as memo-side mechanics. Each package has a route
 card, package card, operation, direction, parts map, owner map, provenance
 bridge, landing log, roadmap, and legacy index. The source-backed
@@ -84,6 +86,12 @@ incident gates, service revision ledger posture, and post-release memory
 boundaries as one admission operation. Root technical schemas and examples
 remain in `schemas/` and `examples/` while they are public support contracts,
 not package-local implementation files.
+
+The recurrence-support migration now owns recurrence support, witness trace,
+and reviewed closeout recall landing surfaces as one route-return support
+operation. Root technical schemas, examples, quests, and generated companions
+remain in root technical districts while they are public support contracts and
+release-gate companions.
 
 The current mechanics hardening layer adds `docs/AGENTS.md` and
 `legacy/AGENTS.md` subroutes for each memo mechanic plus

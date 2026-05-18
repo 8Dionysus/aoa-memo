@@ -1104,7 +1104,7 @@ class MemoValidatorTestCase(unittest.TestCase):
         payload["core_docs"] = [
             ref
             for ref in payload["core_docs"]
-            if ref != "docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md"
+            if ref != "mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md"
         ]
 
         def side_effect(path: Path) -> dict:
@@ -1285,7 +1285,7 @@ class MemoValidatorTestCase(unittest.TestCase):
                         "schemas/inquiry_checkpoint.schema.json",
                         "schemas/checkpoint-to-memory-contract.schema.json",
                         "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
-                        "docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
+                        "mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
                     ],
                 )
 
@@ -1363,7 +1363,7 @@ class MemoValidatorTestCase(unittest.TestCase):
                     "schemas/inquiry_checkpoint.schema.json",
                     "schemas/checkpoint-to-memory-contract.schema.json",
                     "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
-                    "docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
+                    "mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
                 ],
             )
 

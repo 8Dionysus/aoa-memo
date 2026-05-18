@@ -270,6 +270,23 @@
       ]
     },
     {
+      "slug": "recurrence-support",
+      "title": "Recurrence Support Memo Mechanic",
+      "status": "landed",
+      "operation": "preserve bounded relaunch anchors, witness trace exports, and reviewed closeout recall landings so routes can return without memo becoming router, runtime, role policy, proof, or a second route ledger",
+      "os_abyss_role": "keeps OS Abyss route return memory reviewable while Agents-of-Abyss, aoa-agents, aoa-playbooks, aoa-routing, aoa-evals, and abyss-stack keep stronger recurrence, rights, scenario, routing, proof, and runtime authority",
+      "docs": [
+        "RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
+        "REVIEWED_CLOSEOUT_RECALL_LANDING.md",
+        "WITNESS_TRACE_CONTRACT.md"
+      ],
+      "former_flat_paths": [
+        "docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
+        "docs/REVIEWED_CLOSEOUT_RECALL_LANDING.md",
+        "docs/WITNESS_TRACE_CONTRACT.md"
+      ]
+    },
+    {
       "slug": "writeback",
       "title": "Writeback Mechanic",
       "status": "landed",

@@ -40,7 +40,7 @@ class RoadmapParityTestCase(unittest.TestCase):
         self.assertIn(f"v{registry_version}", roadmap)
 
         for relative_path in (
-            "docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
+            "mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
             "mechanics/writeback/docs/GROWTH_REFINERY_WRITEBACK.md",
             "mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md",
             "generated/runtime_writeback_targets.min.json",

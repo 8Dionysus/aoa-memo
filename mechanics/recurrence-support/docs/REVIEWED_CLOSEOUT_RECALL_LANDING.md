@@ -2,13 +2,18 @@
 
 ## Purpose
 
-This note is the owner-local landing for the memo-shaped survivor from
+This recurrence-support note is the owner-local landing for the memo-shaped survivor from
 `session:2026-04-13T17-04-26-415462Z-aoa-memo-checkpoint-growth-97a0427d-db7`.
 
 It keeps the surviving memo unit tracked in `aoa-memo` instead of leaving it
 only in reviewed closeout carry.
 It is a bounded recall/writeback note, not proof, not playbook authority, and
 not a second route ledger.
+
+Mechanic route: [recurrence-support](../README.md) owns this memo-side closeout
+landing posture. `aoa-evals` still owns the proof question, `aoa-playbooks`
+owns closeout choreography, and the source owner owns acceptance of any later
+writeback.
 
 ## Source-owned boundary
 

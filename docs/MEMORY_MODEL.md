@@ -404,7 +404,7 @@ Use the current canon like this:
 - route history across the run -> `provenance_thread`
 - failure or lifecycle transition -> `audit_event`
 
-See [WITNESS_TRACE_CONTRACT](WITNESS_TRACE_CONTRACT.md) for the compact trace-export contract and required summary posture.
+See [WITNESS_TRACE_CONTRACT](../mechanics/recurrence-support/docs/WITNESS_TRACE_CONTRACT.md) for the compact trace-export contract and required summary posture.
 
 ## Recall modes
 

@@ -1,9 +1,14 @@
 # Witness Trace Contract
 
-This document defines the current witness trace export contract for the witness/compost pilot wave.
+This recurrence-support document defines the current witness trace export
+contract for the witness/compost pilot wave.
 
 It does not introduce a new memory-object kind.
 It defines the public trace artifact that a scenario route may preserve before selected parts of that route are written back into the current memo taxonomy.
+
+Mechanic route: [recurrence-support](../README.md) owns this memo-side trace
+export posture. `aoa-playbooks` owns scenario use, `aoa-routing` owns route
+behavior, `abyss-stack` owns runtime capture, and `aoa-evals` owns proof.
 
 ## Core rule
 

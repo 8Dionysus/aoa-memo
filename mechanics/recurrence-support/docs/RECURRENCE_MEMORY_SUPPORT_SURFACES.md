@@ -2,10 +2,17 @@
 
 ## Purpose
 
-This document defines how `aoa-memo` supports the AoA recurrence principle without becoming the router, the runtime body, or the authority layer for actor rights.
+This document defines how the recurrence-support memo mechanic lets
+`aoa-memo` support the AoA recurrence principle without becoming the router,
+the runtime body, or the authority layer for actor rights.
 
 The memo layer can help a route return.
 It cannot decide whether return is permitted, which tier owns the next move, or how many retries a runtime may spend.
+
+Mechanic route: [recurrence-support](../README.md) owns this memo-side support
+posture. `Agents-of-Abyss`, `aoa-agents`, `aoa-playbooks`, `aoa-routing`,
+`abyss-stack`, and `aoa-evals` keep the stronger recurrence, handoff, scenario,
+dispatch, runtime, and proof decisions.
 
 ## Boundary Rule
 

@@ -183,6 +183,20 @@
       "main_risk_short": "Main risk: incident memory starts implying that a service is healthy, fixed, proved, released, or accepted.",
       "validation_short": "Validate by checking operational-gate docs, schemas, examples, owner maps, mechanics index, AGENTS mesh, and release gate all stay aligned.",
       "source_path": "mechanics/operational-gate/README.md"
+    },
+    {
+      "id": "AOA-M-0014",
+      "name": "recurrence-support",
+      "summary": "Route-return support mechanic for bounded relaunch anchors, witness trace exports, and reviewed closeout recall landings.",
+      "one_line_intent": "Keep route-return memory reviewable without making memo the router, runtime, role policy, proof layer, or route ledger.",
+      "use_when_short": "Use when a checkpoint, witness trace, return pack, or reviewed closeout recall landing needs bounded memo-owned recurrence support.",
+      "do_not_use_short": "Avoid when the task is dispatch policy, runtime retry, role rights, eval proof, playbook choreography, or source-owner acceptance.",
+      "inputs_short": "Needs checkpoint refs, return packs, witness trace exports, reviewed closeout evidence, owner-local recall candidates, or memory delta refs.",
+      "outputs_short": "Produces relaunch support notes, existing-object writeback mappings, closeout recall landings, and stronger-owner handoffs.",
+      "core_contract_short": "Core contract: memo preserves what helps a route return, but stronger owners decide whether return is authorized, proved, routed, retried, or accepted.",
+      "main_risk_short": "Main risk: recurrence support starts implying identity continuity, route permission, retry authority, or proof completion.",
+      "validation_short": "Validate by checking recurrence-support docs, root technical refs, quest refs, mechanics index, AGENTS mesh, and release gate stay aligned.",
+      "source_path": "mechanics/recurrence-support/README.md"
     }
   ]
 }

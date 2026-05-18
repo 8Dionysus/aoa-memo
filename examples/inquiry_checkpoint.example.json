@@ -27,7 +27,7 @@
     "Validate that canon delta and memory delta remain distinct in the next pass."
   ],
   "witness_refs": [
-    "docs/WITNESS_TRACE_CONTRACT.md"
+    "mechanics/recurrence-support/docs/WITNESS_TRACE_CONTRACT.md"
   ],
   "memory_delta_refs": [
     "memory:decision.temperature-policy",
