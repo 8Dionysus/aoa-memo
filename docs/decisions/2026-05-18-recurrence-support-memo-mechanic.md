@@ -4,6 +4,11 @@
 
 Accepted on 2026-05-18.
 
+Superseded in part on 2026-05-18 by
+[2026-05-18-lineage-harvest-memo-mechanic](2026-05-18-lineage-harvest-memo-mechanic.md):
+`PATTERN_LINEAGE_MEMORY.md` later moved into the separate
+`mechanics/lineage-harvest/` route named here as a future candidate.
+
 ## Context
 
 `aoa-memo` still had three flat docs-root surfaces that looked like recurrence

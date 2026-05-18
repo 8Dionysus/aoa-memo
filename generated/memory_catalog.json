@@ -473,6 +473,48 @@
         "reviewed-closeout",
         "owner-route"
       ]
+    },
+    {
+      "id": "AOA-M-0015",
+      "name": "lineage-harvest",
+      "surface_kind": "doctrine",
+      "summary": "Pattern-lineage memory mechanic for cross-repo recurring signals, harvest gates, and downstream dossier boundaries.",
+      "primary_focus": "pattern-lineage-harvest",
+      "recall_modes": [
+        "lineage",
+        "semantic",
+        "source_route"
+      ],
+      "status": "confirmed",
+      "temperature": "warm",
+      "source_path": "mechanics/lineage-harvest/README.md",
+      "inspect_surface": "generated/memory_capsules.json",
+      "expand_surface": "generated/memory_sections.full.json",
+      "related_surface_ids": [
+        "AOA-M-0003",
+        "AOA-M-0009",
+        "AOA-M-0013",
+        "AOA-M-0014"
+      ],
+      "strongest_next_sources": [
+        "repo:Agents-of-Abyss",
+        "repo:aoa-evals",
+        "repo:aoa-stats",
+        "repo:aoa-kag",
+        "repo:Tree-of-Sophia",
+        "repo:aoa-routing",
+        "repo:aoa-agents",
+        "repo:aoa-playbooks",
+        "repo:abyss-stack",
+        "source-owner-repository"
+      ],
+      "focus_tags": [
+        "lineage-harvest",
+        "pattern-lineage",
+        "federation-harvest-boundary",
+        "owner-route",
+        "dossier-boundary"
+      ]
     }
   ]
 }

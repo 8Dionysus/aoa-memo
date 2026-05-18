@@ -49,6 +49,11 @@ Tracking starts with the community-docs baseline for this repository.
   landings, with owner map, provenance bridge, legacy index, AGENTS mesh
   coverage, generated mechanics coverage, validators, tests, and decision
   record.
+- Add `mechanics/lineage-harvest/` as the memo mechanic for pattern-lineage
+  memory candidates, federation harvest gates, and downstream dossier
+  boundaries, with owner map, provenance bridge, legacy index, AGENTS mesh
+  coverage, generated mechanics coverage, doctrine recall coverage,
+  validators, tests, and decision record.
 - Add the `mechanics/` atlas plus `adoption`, `writeback`, and `retention`
   memo mechanic packages with package cards, owner maps, provenance bridges,
   legacy indexes, source-backed generated mechanics index, validators, tests,
@@ -91,9 +96,13 @@ Tracking starts with the community-docs baseline for this repository.
   `mechanics/recurrence-support/docs/` and update README, docs maps, route
   law, quests, examples, generated companions, validators, and tests to the
   new active paths.
+- Move the flat pattern-lineage docs-root surface into
+  `mechanics/lineage-harvest/docs/` and update README, docs maps, route law,
+  generated companions, validators, and tests to the new active path.
 - Extend the AGENTS mesh and memo mechanics validator to include Agon/Titan
   and antifragility/governance/shape-guard/consumer-handoff/operational-gate/
-  recurrence-support mechanics and mechanic docs/legacy subroutes.
+  recurrence-support/lineage-harvest mechanics and mechanic docs/legacy
+  subroutes.
 
 ## [0.2.3] - 2026-04-23
 

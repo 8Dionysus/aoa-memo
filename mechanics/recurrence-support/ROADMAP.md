@@ -20,5 +20,5 @@
   contracts.
 - Do not absorb route dispatch, runtime retry policy, actor rights, proof, or
   playbook choreography into this package.
-- Do not move `PATTERN_LINEAGE_MEMORY.md` here; lineage harvest is a separate
-  candidate operation.
+- Keep `PATTERN_LINEAGE_MEMORY.md` outside this package; lineage harvest now
+  has the separate `mechanics/lineage-harvest/` owner route.

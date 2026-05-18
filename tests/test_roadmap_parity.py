@@ -41,6 +41,7 @@ class RoadmapParityTestCase(unittest.TestCase):
 
         for relative_path in (
             "mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
+            "mechanics/lineage-harvest/docs/PATTERN_LINEAGE_MEMORY.md",
             "mechanics/writeback/docs/GROWTH_REFINERY_WRITEBACK.md",
             "mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md",
             "generated/runtime_writeback_targets.min.json",

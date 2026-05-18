@@ -2,9 +2,17 @@
 
 ## Purpose
 
-How lineage and supersession memories are written.
+How lineage and supersession memories are written inside the
+lineage-harvest mechanic.
 
 v0.6 turns the deployment-watchtower loop into a federation harvest loop. It sees when the same experience pattern appears across repo boundaries, keeps ownership local, and promotes only reviewed derived patterns upward.
+
+This surface is memo-owned only for pattern-lineage memory posture. Federation
+harvest program authority stays in `Agents-of-Abyss`; source truth and consent
+stay with source repositories; proof stays in `aoa-evals`; recurrence
+summaries stay in `aoa-stats`; KAG promotion stays in `aoa-kag`; authored
+meaning stays in `Tree-of-Sophia`; runtime watchtower execution stays in
+`abyss-stack`.
 
 ## Flow
 
@@ -14,10 +22,11 @@ owner-local signals -> cross-repo recurrence -> federation pattern candidate -> 
 
 ## This surface owns
 
-- aoa-memo v0.6 surface
+- aoa-memo lineage-harvest memory surface
 - explicit inputs and outputs
 - reviewable artifacts and gates
 - owner-local landing hints where applicable
+- downstream dossier boundary hints where permitted
 
 ## This surface does not own
 
@@ -25,6 +34,10 @@ owner-local signals -> cross-repo recurrence -> federation pattern candidate -> 
 - direct Tree-of-Sophia canonization
 - silent assistant or agent self-rewrite
 - proof outside bounded eval verdicts
+- federation harvest approval
+- KAG promotion
+- recurrence certification
+- runtime watchtower execution
 
 ## Inputs
 

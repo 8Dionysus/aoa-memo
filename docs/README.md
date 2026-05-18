@@ -48,8 +48,8 @@ remaining flat doctrine, while validated districts and mechanics move one owner
 family at a time.
 
 Antifragility, Agon, Titan, adoption, governance, shape-guard,
-consumer-handoff, operational-gate, recurrence-support, writeback, and
-retention are now memo mechanics under
+consumer-handoff, operational-gate, recurrence-support, lineage-harvest,
+writeback, and retention are now memo mechanics under
 [`mechanics/`](../mechanics/README.md), not docs subdirectories.
 In path terms, `mechanics/agon/docs/` owns the former flat and transitional
 `AGON_*` docs and `mechanics/titan/docs/` owns the former flat and
@@ -62,6 +62,7 @@ transitional `TITAN_*` docs.
 | Neighbor handoffs | [consumer-handoff mechanic](../mechanics/consumer-handoff/README.md), [adoption mechanic](../mechanics/adoption/README.md) |
 | Operational gates | [operational-gate mechanic](../mechanics/operational-gate/README.md) plus deployment incident, office incident, service revision, and post-release boundary schemas, examples, and tests |
 | Recurrence support | [recurrence-support mechanic](../mechanics/recurrence-support/README.md) plus witness trace, inquiry checkpoint, return recall, reviewed closeout quest, schemas, examples, generated refs, and tests |
+| Lineage harvest | [lineage-harvest mechanic](../mechanics/lineage-harvest/README.md) plus pattern-lineage schema, example, generated recall surfaces, and tests |
 | Antifragility | [antifragility mechanic](../mechanics/antifragility/README.md) plus matching schemas, examples, generated object surfaces, and tests |
 | Adoption, authority, and shape guard | [adoption mechanic](../mechanics/adoption/README.md), [governance mechanic](../mechanics/governance/README.md), [shape-guard mechanic](../mechanics/shape-guard/README.md), [retention mechanic](../mechanics/retention/README.md) |
 | Agon memo seams | [agon mechanic](../mechanics/agon/README.md) plus matching config, schemas, generated registries, examples, tests, quests, and manifests |
@@ -78,6 +79,7 @@ transitional `TITAN_*` docs.
 | Is this routing behavior? | [ROUTING_MEMORY_ADOPTION](../mechanics/adoption/docs/ROUTING_MEMORY_ADOPTION.md), then route to `aoa-routing` |
 | Is this a role right or actor policy? | [consumer-handoff/AGENT_MEMORY_POSTURE_SEAM](../mechanics/consumer-handoff/docs/AGENT_MEMORY_POSTURE_SEAM.md), then route to `aoa-agents` |
 | Is this a graph lift or retrieval substrate? | [consumer-handoff/KAG_SOURCE_EXPORT](../mechanics/consumer-handoff/docs/KAG_SOURCE_EXPORT.md), then route to `aoa-kag` |
+| Is this a recurring cross-repo pattern or federation harvest candidate? | [lineage-harvest/PATTERN_LINEAGE_MEMORY](../mechanics/lineage-harvest/docs/PATTERN_LINEAGE_MEMORY.md), then route stronger claims to `Agents-of-Abyss`, source owners, `aoa-evals`, `aoa-stats`, `aoa-kag`, or `Tree-of-Sophia` |
 | Is this live runtime storage or retention? | [RUNTIME_WRITEBACK_SEAM](../mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md), then route to `abyss-stack` |
 | Where should a new root or docs-root file live? | [ROOT_SURFACE_LAW](ROOT_SURFACE_LAW.md) |
 | Why was a structural route chosen? | [decisions](decisions/README.md) |
@@ -99,6 +101,7 @@ transitional `TITAN_*` docs.
 | Consumer-handoff mechanic | [mechanics/consumer-handoff/AGENTS](../mechanics/consumer-handoff/AGENTS.md), then [mechanics/consumer-handoff/README](../mechanics/consumer-handoff/README.md) |
 | Operational-gate mechanic | [mechanics/operational-gate/AGENTS](../mechanics/operational-gate/AGENTS.md), then [mechanics/operational-gate/README](../mechanics/operational-gate/README.md) |
 | Recurrence-support mechanic | [mechanics/recurrence-support/AGENTS](../mechanics/recurrence-support/AGENTS.md), then [mechanics/recurrence-support/README](../mechanics/recurrence-support/README.md) |
+| Lineage-harvest mechanic | [mechanics/lineage-harvest/AGENTS](../mechanics/lineage-harvest/AGENTS.md), then [mechanics/lineage-harvest/README](../mechanics/lineage-harvest/README.md) |
 | Writeback mechanic | [mechanics/writeback/AGENTS](../mechanics/writeback/AGENTS.md), then [mechanics/writeback/README](../mechanics/writeback/README.md) |
 | Retention mechanic | [mechanics/retention/AGENTS](../mechanics/retention/AGENTS.md), then [mechanics/retention/README](../mechanics/retention/README.md) |
 | Mechanic artifact placement | [mechanics/ARTIFACT_TOPOLOGY](../mechanics/ARTIFACT_TOPOLOGY.md) |
@@ -139,7 +142,8 @@ Until then, this README is the map and the flat files remain active surfaces.
 | [mechanics/consumer-handoff](../mechanics/consumer-handoff/README.md) | Consumer handoff memo mechanic |
 | [mechanics/operational-gate](../mechanics/operational-gate/README.md) | Operational gate memo mechanic |
 | [mechanics/recurrence-support](../mechanics/recurrence-support/README.md) | Recurrence support memo mechanic |
-| [mechanics](../mechanics/README.md) | Antifragility, Agon, Titan, adoption, governance, shape-guard, consumer-handoff, operational-gate, recurrence-support, writeback, and retention memo mechanics |
+| [mechanics/lineage-harvest](../mechanics/lineage-harvest/README.md) | Lineage harvest memo mechanic |
+| [mechanics](../mechanics/README.md) | Antifragility, Agon, Titan, adoption, governance, shape-guard, consumer-handoff, operational-gate, recurrence-support, lineage-harvest, writeback, and retention memo mechanics |
 | [manifests](../manifests/AGENTS.md) | recurrence manifests and hook bindings |
 | [quests](../quests/AGENTS.md) | quest files backing `QUESTBOOK.md` |
 | [.agents](../.agents/AGENTS.md) | agent-facing companion lanes |
@@ -158,6 +162,6 @@ Until then, this README is the map and the flat files remain active surfaces.
   districts and flat moved docs have not reappeared.
 - Prefer `scripts/validate_memo_mechanics.py` when antifragility, Agon, Titan,
   adoption, governance, shape-guard, consumer-handoff, operational-gate,
-  recurrence-support, writeback, or retention mechanics move.
+  recurrence-support, lineage-harvest, writeback, or retention mechanics move.
 - Generated surfaces summarize memory doctrine and object examples. They do not
   replace authored docs, schemas, examples, or validators.

@@ -287,6 +287,19 @@
       ]
     },
     {
+      "slug": "lineage-harvest",
+      "title": "Lineage Harvest Memo Mechanic",
+      "status": "landed",
+      "operation": "gate cross-repo recurring owner-local signals into reviewed pattern-lineage memory candidates and downstream dossier boundaries without making memo the federation authority, proof layer, KAG promoter, ToS canon, stats judge, runtime watchtower, or source owner",
+      "os_abyss_role": "keeps OS Abyss pattern lineage recallable while Agents-of-Abyss, source owners, aoa-evals, aoa-stats, aoa-kag, Tree-of-Sophia, aoa-routing, aoa-agents, aoa-playbooks, and abyss-stack keep stronger federation, ownership, proof, summary, graph, canon, route, role, scenario, and runtime authority",
+      "docs": [
+        "PATTERN_LINEAGE_MEMORY.md"
+      ],
+      "former_flat_paths": [
+        "docs/PATTERN_LINEAGE_MEMORY.md"
+      ]
+    },
+    {
       "slug": "writeback",
       "title": "Writeback Mechanic",
       "status": "landed",

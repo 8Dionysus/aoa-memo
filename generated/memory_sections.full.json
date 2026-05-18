@@ -407,6 +407,34 @@
           "body": "The recurrence-support package owns source docs and owner maps. Witness trace, inquiry checkpoint, return recall, checkpoint-to-memory examples, and reviewed closeout quest artifacts remain in root technical districts while they are public support contracts and release-gate companions."
         }
       ]
+    },
+    {
+      "id": "AOA-M-0015",
+      "name": "lineage-harvest",
+      "source_path": "mechanics/lineage-harvest/README.md",
+      "sections": [
+        {
+          "section_id": "AOA-M-0015#operation",
+          "heading": "Operation",
+          "ordinal": 1,
+          "summary": "Gates recurring owner-local signals into pattern-lineage candidates without granting stronger authority.",
+          "body": "The lineage-harvest mechanic receives cross-repo recurring evidence, owner-local receipts, bounded verdict refs, retention outcomes, and route landings only to preserve a reviewable pattern-lineage memory candidate. Repetition can justify a candidate, never proof by itself."
+        },
+        {
+          "section_id": "AOA-M-0015#owner-split",
+          "heading": "Owner split",
+          "ordinal": 2,
+          "summary": "Keeps federation law, source consent, proof, stats, KAG promotion, ToS canon, routing, role rights, playbooks, and runtime outside memo.",
+          "body": "`aoa-memo` owns the candidate memory and gate visibility. Agents-of-Abyss owns federation program law, source repositories own consent and source truth, `aoa-evals` owns proof, `aoa-stats` owns summaries, `aoa-kag` owns promotion intake, Tree-of-Sophia owns canon, `aoa-routing` owns dispatch, `aoa-agents` owns role rights, `aoa-playbooks` owns adoption choreography, and `abyss-stack` owns runtime watchtower execution."
+        },
+        {
+          "section_id": "AOA-M-0015#technical-contracts",
+          "heading": "Technical contracts",
+          "ordinal": 3,
+          "summary": "Keeps pattern-lineage schema and example root-owned while they remain public support contracts.",
+          "body": "The lineage-harvest package owns source docs and owner maps. `schemas/pattern_lineage_memory_entry_v1.json`, `examples/pattern_lineage_memory_entry.example.json`, and federation-harvest seed tests remain in root technical districts while they are public support contracts and release-gate companions."
+        }
+      ]
     }
   ]
 }
