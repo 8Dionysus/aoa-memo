@@ -6,18 +6,18 @@
 |---|---|
 | [PATTERN_LINEAGE_MEMORY](../../mechanics/lineage-harvest/docs/PATTERN_LINEAGE_MEMORY.md) | active source doc for pattern-lineage memory flow, gates, inputs, outputs, and invariants |
 
-## Root technical contracts
+## Mechanic-Local Technical Contracts
 
-These artifacts remain in root technical districts because they are public
-support contracts and release-gate companions, not private package-local lore.
+These artifacts live with the lineage-harvest mechanic because they define the
+package's own public support contract and regression boundary.
 
 | Artifact | Role |
 |---|---|
-| `schemas/pattern_lineage_memory_entry_v1.json` | public schema for pattern-lineage memory entry examples |
-| `examples/pattern_lineage_memory_entry.example.json` | public-safe example for the pattern-lineage memory entry contract |
-| `examples/federation_memory_gate_decision.example.json` | adjacent governance gate example that names `pattern_lineage_memory` as a memory kind |
+| `mechanics/lineage-harvest/schemas/pattern_lineage_memory_entry_v1.json` | public schema for pattern-lineage memory entry examples |
+| `mechanics/lineage-harvest/examples/pattern_lineage_memory_entry.example.json` | public-safe example for the pattern-lineage memory entry contract |
+| `mechanics/governance/examples/federation_memory_gate_decision.example.json` | adjacent governance gate example that names `pattern_lineage_memory` as a memory kind |
 | `tests/test_experience_wave3_seed_contracts.py` | validates the federation-harvest seed schemas and examples as public contracts |
-| `tests/test_lineage_harvest_mechanic.py` | protects the package boundary, active path, root technical artifact placement, and stronger-owner stop-lines |
+| `mechanics/lineage-harvest/tests/test_lineage_harvest_mechanic.py` | protects the package boundary, active path, mechanic-local artifact placement, and stronger-owner stop-lines |
 
 ## Adjacent mechanic interfaces
 

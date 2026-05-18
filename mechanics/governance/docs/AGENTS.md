@@ -34,7 +34,7 @@ Read root `AGENTS.md`, `mechanics/AGENTS.md`, `mechanics/ARTIFACT_TOPOLOGY.md`,
 python scripts/validate_memo_mechanics.py
 python scripts/build_memo_mechanics_index.py --check
 python scripts/validate_memo_mechanics_index.py
-python -m pytest -q tests/test_governance_mechanic.py tests/test_memo_mechanics.py
+python -m pytest -q mechanics/governance/tests/test_governance_mechanic.py tests/test_memo_mechanics.py
 ```
 
 ## Closeout

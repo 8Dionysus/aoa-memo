@@ -21,8 +21,8 @@ Former flat docs-root surfaces were:
 - `POST_RELEASE_MEMORY_BOUNDARIES.md`
 - `SERVICE_REVISION_LEDGER.md`
 
-Root technical contracts remain root-owned while they serve public schema and
-example validation across memory families.
+Technical contracts now live with the owning mechanic package. Use root
+technical districts only for shared or cross-mechanic contracts.
 
 Use [legacy/INDEX](legacy/INDEX.md) only to audit former placement. Legacy
 paths are historical receipts, not active contracts.

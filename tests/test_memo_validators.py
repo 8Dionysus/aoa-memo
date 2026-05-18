@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import copy
 import io
+import importlib.util
 import json
 import sys
 import tempfile
@@ -18,7 +19,21 @@ if str(SCRIPTS_ROOT) not in sys.path:
 import validate_memo
 import validate_memory_object_surfaces
 import validate_memory_surfaces
-import generate_kag_export
+
+
+def load_script_module(module_name: str, path: Path):
+    spec = importlib.util.spec_from_file_location(module_name, path)
+    if spec is None or spec.loader is None:
+        raise RuntimeError(f"unable to load module from {path}")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+generate_kag_export = load_script_module(
+    "generate_kag_export",
+    REPO_ROOT / "mechanics" / "consumer-handoff" / "scripts" / "generate_kag_export.py",
+)
 
 
 def load_json(path: Path) -> object:
@@ -34,12 +49,12 @@ class MemoValidatorTestCase(unittest.TestCase):
         return context.exception
 
     def guardrail_payload(self) -> dict:
-        payload = load_json(validate_memo.EXAMPLES / "memory_eval_guardrail_pack.example.json")
+        payload = load_json(validate_memo.example_path_for("memory_eval_guardrail_pack.example.json"))
         assert isinstance(payload, dict)
         return copy.deepcopy(payload)
 
     def assert_guardrail_payload_fails(self, payload: dict) -> None:
-        guardrail_path = validate_memo.EXAMPLES / "memory_eval_guardrail_pack.example.json"
+        guardrail_path = validate_memo.example_path_for("memory_eval_guardrail_pack.example.json")
         original_load_json = validate_memo.load_json
 
         def side_effect(path: Path) -> dict:
@@ -74,7 +89,7 @@ class MemoValidatorTestCase(unittest.TestCase):
 
     def test_inquiry_checkpoint_return_example_validates(self) -> None:
         validator = validate_memo.validator_for("inquiry_checkpoint.schema.json")
-        payload = load_json(REPO_ROOT / "examples" / "inquiry_checkpoint.return.example.json")
+        payload = load_json(validate_memo.example_path_for("inquiry_checkpoint.return.example.json"))
 
         errors = [error.message for error in validator.iter_errors(payload)]
 
@@ -84,7 +99,7 @@ class MemoValidatorTestCase(unittest.TestCase):
         validate_memo.validate_memory_readiness_boundary_materialization()
 
     def test_memory_readiness_boundary_rejects_overlapping_delta_refs(self) -> None:
-        checkpoint_path = validate_memo.EXAMPLES / "inquiry_checkpoint.return.example.json"
+        checkpoint_path = validate_memo.example_path_for("inquiry_checkpoint.return.example.json")
         payload = load_json(checkpoint_path)
         assert isinstance(payload, dict)
         payload = copy.deepcopy(payload)
@@ -193,7 +208,7 @@ class MemoValidatorTestCase(unittest.TestCase):
 
     def test_inquiry_checkpoint_return_pack_requires_anchor_refs(self) -> None:
         validator = validate_memo.validator_for("inquiry_checkpoint.schema.json")
-        payload = load_json(REPO_ROOT / "examples" / "inquiry_checkpoint.return.example.json")
+        payload = load_json(validate_memo.example_path_for("inquiry_checkpoint.return.example.json"))
         assert isinstance(payload, dict)
         payload = copy.deepcopy(payload)
         payload["return_pack"].pop("anchor_refs", None)
@@ -204,7 +219,7 @@ class MemoValidatorTestCase(unittest.TestCase):
 
     def test_inquiry_checkpoint_return_pack_requires_reentry_refs(self) -> None:
         validator = validate_memo.validator_for("inquiry_checkpoint.schema.json")
-        payload = load_json(REPO_ROOT / "examples" / "inquiry_checkpoint.return.example.json")
+        payload = load_json(validate_memo.example_path_for("inquiry_checkpoint.return.example.json"))
         assert isinstance(payload, dict)
         payload = copy.deepcopy(payload)
         payload["return_pack"].pop("reentry_refs", None)
@@ -215,7 +230,7 @@ class MemoValidatorTestCase(unittest.TestCase):
 
     def test_inquiry_checkpoint_return_pack_requires_reentry_note(self) -> None:
         validator = validate_memo.validator_for("inquiry_checkpoint.schema.json")
-        payload = load_json(REPO_ROOT / "examples" / "inquiry_checkpoint.return.example.json")
+        payload = load_json(validate_memo.example_path_for("inquiry_checkpoint.return.example.json"))
         assert isinstance(payload, dict)
         payload = copy.deepcopy(payload)
         payload["return_pack"].pop("reentry_note", None)
@@ -226,7 +241,7 @@ class MemoValidatorTestCase(unittest.TestCase):
 
     def test_bridge_schema_requires_shared_envelope_ref(self) -> None:
         validator = validate_memo.validator_for("bridge.schema.json")
-        payload = load_json(REPO_ROOT / "examples" / "bridge.kag-lift.example.json")
+        payload = load_json(validate_memo.example_path_for("bridge.kag-lift.example.json"))
         assert isinstance(payload, dict)
         payload = copy.deepcopy(payload)
         payload["bridges"].pop("shared_envelope_ref", None)
@@ -237,7 +252,7 @@ class MemoValidatorTestCase(unittest.TestCase):
 
     def test_bridge_schema_rejects_empty_outward_refs_without_route_capsule(self) -> None:
         validator = validate_memo.validator_for("bridge.schema.json")
-        payload = load_json(REPO_ROOT / "examples" / "bridge.kag-lift.example.json")
+        payload = load_json(validate_memo.example_path_for("bridge.kag-lift.example.json"))
         assert isinstance(payload, dict)
         payload = copy.deepcopy(payload)
         payload["bridges"].pop("route_capsule_ref", None)
@@ -251,7 +266,7 @@ class MemoValidatorTestCase(unittest.TestCase):
 
     def test_checkpoint_schema_requires_all_eight_mapping_rules(self) -> None:
         validator = validate_memo.validator_for("checkpoint-to-memory-contract.schema.json")
-        payload = load_json(REPO_ROOT / "examples" / "checkpoint_to_memory_contract.example.json")
+        payload = load_json(validate_memo.example_path_for("checkpoint_to_memory_contract.example.json"))
         assert isinstance(payload, dict)
         payload = copy.deepcopy(payload)
         payload["mapping_rules"] = payload["mapping_rules"][:-1]
@@ -261,7 +276,7 @@ class MemoValidatorTestCase(unittest.TestCase):
         self.assertTrue(any("is too short" in message for message in errors))
 
     def test_checkpoint_validator_rejects_conflicting_duplicate_runtime_mappings(self) -> None:
-        contract_path = validate_memo.EXAMPLES / "checkpoint_to_memory_contract.example.json"
+        contract_path = validate_memo.example_path_for("checkpoint_to_memory_contract.example.json")
         original_load_json = validate_memo.load_json
         payload = load_json(contract_path)
         assert isinstance(payload, dict)
@@ -719,7 +734,7 @@ class MemoValidatorTestCase(unittest.TestCase):
                 "evidence_refs": [
                     {
                         "kind": "memory_object",
-                        "ref": "repo:aoa-memo/examples/bridge.kag-lift.example.json",
+                        "ref": "repo:aoa-memo/mechanics/consumer-handoff/examples/bridge.kag-lift.example.json",
                         "role": "primary",
                     },
                     {
@@ -729,7 +744,7 @@ class MemoValidatorTestCase(unittest.TestCase):
                     },
                     {
                         "kind": "candidate_seed",
-                        "ref": "repo:aoa-memo/examples/claim.tos-bridge-ready.example.json",
+                        "ref": "repo:aoa-memo/mechanics/consumer-handoff/examples/claim.tos-bridge-ready.example.json",
                         "role": "candidate-seed",
                     },
                     {
@@ -739,7 +754,7 @@ class MemoValidatorTestCase(unittest.TestCase):
                     },
                 ],
                 "payload": {
-                    "memory_object_ref": "examples/bridge.kag-lift.example.json",
+                    "memory_object_ref": "mechanics/consumer-handoff/examples/bridge.kag-lift.example.json",
                     "runtime_surface": "distillation_bridge_candidate",
                     "target_kind": "bridge",
                     "writeback_class": "reviewed_candidate",
@@ -821,12 +836,12 @@ class MemoValidatorTestCase(unittest.TestCase):
                 "evidence_refs": [
                     {
                         "kind": "support_memory",
-                        "ref": "repo:aoa-memo/examples/failure_lesson_memory.lineage.example.json",
+                        "ref": "repo:aoa-memo/mechanics/antifragility/examples/failure_lesson_memory.lineage.example.json",
                         "role": "primary",
                     },
                     {
                         "kind": "growth_lane_entry",
-                        "ref": f"repo:aoa-memo/generated/growth_refinery_writeback_lanes.min.json#{lane_ref}",
+                        "ref": f"repo:aoa-memo/mechanics/writeback/generated/growth_refinery_writeback_lanes.min.json#{lane_ref}",
                         "role": "lane",
                     },
                     {
@@ -857,7 +872,7 @@ class MemoValidatorTestCase(unittest.TestCase):
                 ],
                 "payload": {
                     "growth_lane_ref": lane_ref,
-                    "source_example_ref": "examples/failure_lesson_memory.lineage.example.json",
+                    "source_example_ref": "mechanics/antifragility/examples/failure_lesson_memory.lineage.example.json",
                     "target_kind": "failure_lesson",
                     "review_status": "reviewed",
                     "writeback_class": "growth_refinery_memory",
@@ -889,7 +904,7 @@ class MemoValidatorTestCase(unittest.TestCase):
                 "evidence_refs": [
                     {
                         "kind": "support_memory",
-                        "ref": "repo:aoa-memo/examples/recovery_pattern_memory.lineage.example.json",
+                        "ref": "repo:aoa-memo/mechanics/antifragility/examples/recovery_pattern_memory.lineage.example.json",
                         "role": "primary",
                     },
                     {
@@ -899,7 +914,7 @@ class MemoValidatorTestCase(unittest.TestCase):
                     },
                 ],
                 "payload": {
-                    "source_example_ref": "examples/recovery_pattern_memory.lineage.example.json",
+                    "source_example_ref": "mechanics/antifragility/examples/recovery_pattern_memory.lineage.example.json",
                     "target_kind": "recovery_pattern",
                     "review_status": "reviewed",
                     "writeback_class": "growth_refinery_memory",
@@ -987,7 +1002,7 @@ class MemoValidatorTestCase(unittest.TestCase):
                 validate_memo.validate_quest_chronicle_surface()
 
     def test_quest_chronicle_surface_rejects_missing_stage_recall_cue(self) -> None:
-        chronicle_path = validate_memo.EXAMPLES / "quest_chronicle.example.json"
+        chronicle_path = validate_memo.example_path_for("quest_chronicle.example.json")
         original_load_json = validate_memo.load_json
 
         def side_effect(path: Path) -> object:
@@ -1047,7 +1062,9 @@ class MemoValidatorTestCase(unittest.TestCase):
                 validate_memo.validate_self_agency_continuity_writeback_surface()
 
     def test_self_agency_continuity_writeback_rejects_unhydrated_memory_object_id(self) -> None:
-        thread_path = validate_memo.EXAMPLES / "provenance_thread.self-agency-continuity.example.json"
+        thread_path = validate_memo.example_path_for(
+            "provenance_thread.self-agency-continuity.example.json"
+        )
         original_load_json = validate_memo.load_json
         payload = load_json(thread_path)
         assert isinstance(payload, dict)
@@ -1156,8 +1173,8 @@ class MemoValidatorTestCase(unittest.TestCase):
     def test_guardrail_validator_rejects_provenance_case_without_provenance_thread(self) -> None:
         payload = self.guardrail_payload()
         payload["cases"][1]["input_refs"] = [
-            "examples/claim.tos-bridge-ready.example.json",
-            "examples/bridge.kag-lift.example.json",
+            "mechanics/consumer-handoff/examples/claim.tos-bridge-ready.example.json",
+            "mechanics/consumer-handoff/examples/bridge.kag-lift.example.json",
         ]
         self.assert_guardrail_payload_fails(payload)
 
@@ -1213,9 +1230,9 @@ class MemoValidatorTestCase(unittest.TestCase):
     def test_guardrail_validator_rejects_merge_case_without_provenance_thread(self) -> None:
         payload = self.guardrail_payload()
         payload["cases"][6]["input_refs"] = [
-            "examples/episode.tos-interpretation.example.json",
-            "examples/claim.tos-bridge-ready.example.json",
-            "examples/bridge.kag-lift.example.json",
+            "mechanics/consumer-handoff/examples/episode.tos-interpretation.example.json",
+            "mechanics/consumer-handoff/examples/claim.tos-bridge-ready.example.json",
+            "mechanics/consumer-handoff/examples/bridge.kag-lift.example.json",
         ]
         self.assert_guardrail_payload_fails(payload)
 
@@ -1282,8 +1299,8 @@ class MemoValidatorTestCase(unittest.TestCase):
                     expected_return_ready=True,
                     expected_preferred_anchor_kinds=["state_capsule", "decision", "anchor"],
                     expected_support_artifact_refs=[
-                        "schemas/inquiry_checkpoint.schema.json",
-                        "schemas/checkpoint-to-memory-contract.schema.json",
+                        "mechanics/recurrence-support/schemas/inquiry_checkpoint.schema.json",
+                        "mechanics/writeback/schemas/checkpoint-to-memory-contract.schema.json",
                         "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
                         "mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
                     ],
@@ -1360,8 +1377,8 @@ class MemoValidatorTestCase(unittest.TestCase):
                 expected_return_ready=True,
                 expected_preferred_anchor_kinds=["state_capsule", "decision", "anchor"],
                 expected_support_artifact_refs=[
-                    "schemas/inquiry_checkpoint.schema.json",
-                    "schemas/checkpoint-to-memory-contract.schema.json",
+                    "mechanics/recurrence-support/schemas/inquiry_checkpoint.schema.json",
+                    "mechanics/writeback/schemas/checkpoint-to-memory-contract.schema.json",
                     "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
                     "mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
                 ],

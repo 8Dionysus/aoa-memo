@@ -18,7 +18,7 @@ federation harvest stop-lines explicit without granting memo proof, KAG
 promotion, ToS canon, stats certification, runtime truth, or source-owner
 consent.
 The first downstream eval adoption wave is now explicitly narrowed to recall precision, provenance fidelity, and staleness so `aoa-evals` can pilot memo proof without pretending to cover every guardrail focus at once.
-The current KAG-facing adoption slice now publishes `generated/kag_export.min.json` as one source-owned memo export for `aoa-kag` readiness without widening the live federation spine or `aoa-routing` ABI.
+The current KAG-facing adoption slice now publishes `mechanics/consumer-handoff/generated/kag_export.min.json` as one source-owned memo export for `aoa-kag` readiness without widening the live federation spine or `aoa-routing` ABI.
 The memory readiness boundary map in `docs/MEMORY_READINESS_BOUNDARY.md` now
 maps future durable-consequence, delta, retention, and recall pressure back to
 existing memo objects without planting a future protocol, creating a live
@@ -27,10 +27,10 @@ authority, or runtime retention into `aoa-memo`.
 
 The current `v0.2.3` release line also already carries:
 - checkpoint recall follow-through and lineage-aware growth-refinery writeback surfaces through `mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md`, `mechanics/writeback/docs/GROWTH_REFINERY_WRITEBACK.md`, and `mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md`
-- pattern-lineage harvest memory through `mechanics/lineage-harvest/docs/PATTERN_LINEAGE_MEMORY.md`, `schemas/pattern_lineage_memory_entry_v1.json`, and `examples/pattern_lineage_memory_entry.example.json`
-- runtime writeback landing, intake, and governance surfaces through `generated/runtime_writeback_targets.min.json`, `generated/runtime_writeback_intake.min.json`, `generated/runtime_writeback_governance.min.json`, and `mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md`
-- rollout, rollback-followthrough, component-refresh, and self-agency continuity support through `examples/recovery_pattern_memory.rollback_followthrough.example.json`, `examples/recovery_pattern_memory.component_refresh.example.json`, `mechanics/writeback/docs/SELF_AGENCY_CONTINUITY_WRITEBACK.md`, and `examples/provenance_thread.self-agency-continuity.example.json`
-- Phase Alpha writeback routing and owner-local live receipt publication through `generated/phase_alpha_writeback_map.min.json` and `scripts/publish_live_receipts.py`
+- pattern-lineage harvest memory through `mechanics/lineage-harvest/docs/PATTERN_LINEAGE_MEMORY.md`, `mechanics/lineage-harvest/schemas/pattern_lineage_memory_entry_v1.json`, and `mechanics/lineage-harvest/examples/pattern_lineage_memory_entry.example.json`
+- runtime writeback landing, intake, and governance surfaces through `mechanics/writeback/generated/runtime_writeback_targets.min.json`, `mechanics/writeback/generated/runtime_writeback_intake.min.json`, `mechanics/writeback/generated/runtime_writeback_governance.min.json`, and `mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md`
+- rollout, rollback-followthrough, component-refresh, and self-agency continuity support through `mechanics/antifragility/examples/recovery_pattern_memory.rollback_followthrough.example.json`, `mechanics/antifragility/examples/recovery_pattern_memory.component_refresh.example.json`, `mechanics/writeback/docs/SELF_AGENCY_CONTINUITY_WRITEBACK.md`, and `mechanics/writeback/examples/provenance_thread.self-agency-continuity.example.json`
+- Phase Alpha writeback routing and owner-local live receipt publication through `mechanics/writeback/generated/phase_alpha_writeback_map.min.json` and `mechanics/writeback/scripts/publish_live_receipts.py`
 - memory readiness boundary through `docs/MEMORY_READINESS_BOUNDARY.md`
 
 The near-term risk is roadmap drift: checkpoint recall, runtime writeback,
@@ -88,26 +88,25 @@ shape machine-checkable.
 
 The operational-gate migration now owns deployment incident gates, office
 incident gates, service revision ledger posture, and post-release memory
-boundaries as one admission operation. Root technical schemas and examples
-remain in `schemas/` and `examples/` while they are public support contracts,
-not package-local implementation files.
+boundaries as one admission operation. Its schemas, examples, and tests now
+live in `mechanics/operational-gate/` so the admission mechanic carries its own
+contract surface.
 
 The recurrence-support migration now owns recurrence support, witness trace,
 and reviewed closeout recall landing surfaces as one route-return support
-operation. Root technical schemas, examples, quests, and generated companions
-remain in root technical districts while they are public support contracts and
-release-gate companions.
+operation. Its inquiry checkpoint and witness trace contracts now live in
+`mechanics/recurrence-support/`; shared recall contracts and quest surfaces
+remain root-owned only when they are cross-mechanic.
 
 The lineage-harvest migration now owns pattern-lineage memory as one
-cross-repo recurring-signal gate. The pattern-lineage schema and example remain
-in root technical districts while they are public support contracts and
-release-gate companions.
+cross-repo recurring-signal gate. The pattern-lineage schema, example, and test
+now live under `mechanics/lineage-harvest/`.
 
 The current mechanics hardening layer adds `docs/AGENTS.md` and
 `legacy/AGENTS.md` subroutes for each memo mechanic plus
 `mechanics/ARTIFACT_TOPOLOGY.md`. This keeps active docs, legacy provenance,
-and root technical artifacts separate before any future schema, example,
-generated, script, test, manifest, or quest relocation.
+and mechanic-local artifacts separate after the schema, example, generated,
+script, test, manifest, and hook relocation.
 
 ## Current contract-hardening waves
 
@@ -275,8 +274,8 @@ This roadmap does **not** aim to turn `aoa-memo` into:
 - `mechanics/consumer-handoff/docs/AGENT_MEMORY_POSTURE_SEAM.md`
 - `mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md`
 - cross-repo contract notes for `aoa-agents` memory posture
-- `schemas/inquiry_checkpoint.schema.json`
-- `examples/inquiry_checkpoint.example.json`
+- `mechanics/recurrence-support/schemas/inquiry_checkpoint.schema.json`
+- `mechanics/recurrence-support/examples/inquiry_checkpoint.example.json`
 - suggested fields for read, write, promotion, and freeze rights
 - playbook-facing guidance for required memory scopes and recall modes
 
@@ -294,11 +293,11 @@ This roadmap does **not** aim to turn `aoa-memo` into:
 
 - `mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md`
 - `mechanics/consumer-handoff/docs/KAG_SOURCE_EXPORT.md`
-- `schemas/memory_chunk_face.schema.json`
-- `schemas/memory_graph_face.schema.json`
+- `mechanics/consumer-handoff/schemas/memory_chunk_face.schema.json`
+- `mechanics/consumer-handoff/schemas/memory_graph_face.schema.json`
 - chunk-face contract for memory inspection
 - graph-face contract for downstream associative lifts
-- `generated/kag_export.min.json`
+- `mechanics/consumer-handoff/generated/kag_export.min.json`
 - ToS node and fragment bridge guidance
 - `kag_lift_status` and related bridge fields
 - examples of chunk-face and graph-face export
@@ -318,8 +317,8 @@ This roadmap does **not** aim to turn `aoa-memo` into:
 **Deliverables:**
 
 - `mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md`
-- `schemas/memory_eval_guardrail_pack.schema.json`
-- `examples/memory_eval_guardrail_pack.example.json`
+- `mechanics/consumer-handoff/schemas/memory_eval_guardrail_pack.schema.json`
+- `mechanics/consumer-handoff/examples/memory_eval_guardrail_pack.example.json`
 - memory-focused eval ideas for `aoa-evals`
 - first narrow downstream diagnostic pilot for recall precision, provenance fidelity, and staleness
 - tests for recall precision and provenance fidelity

@@ -17,13 +17,17 @@ Keep the current split clear:
 - `validate_memo.py` is the canonical memory-layer validator and now also checks nested guidance surfaces
 - `validate_memory_surfaces.py` checks the doctrine family under `generated/` plus router-facing recall contracts
 - `generate_memory_object_surfaces.py` rebuilds the object-facing family from curated examples
-- `generate_kag_export.py` rebuilds the source-owned memo KAG export capsule
 - `validate_memory_object_surfaces.py` checks manifest coverage, determinism, lifecycle integrity, and object-facing recall contracts
 - `validate_lifecycle_audit_examples.py` checks lifecycle, provenance-thread, and audit-event example integrity
 - `validate_nested_agents.py` checks that local guidance files stay present and explicit
 - `validate_agents_mesh.py`, `build_agents_mesh_index.py`, and `validate_agents_mesh_index.py` keep the source-backed AGENTS mesh aligned with current route cards
 - `validate_docs_districts.py` keeps retired docs districts and moved flat docs
   from drifting back into active docs-root sprawl
+
+Mechanic-owned generators and validators live under the owning package, for
+example `mechanics/consumer-handoff/scripts/generate_kag_export.py`,
+`mechanics/writeback/scripts/generate_runtime_writeback_targets.py`, and
+`mechanics/agon/scripts/validate_agon_memo_prebindings.py`.
 
 ## Editing posture
 
@@ -61,5 +65,6 @@ If generator logic changed, also run:
 
 ```bash
 python scripts/generate_memory_object_surfaces.py
-python scripts/generate_kag_export.py
+python mechanics/consumer-handoff/scripts/generate_kag_export.py
+python mechanics/writeback/scripts/generate_runtime_writeback_targets.py
 ```

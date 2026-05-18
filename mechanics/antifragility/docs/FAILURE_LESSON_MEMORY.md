@@ -82,4 +82,4 @@ The object should not claim:
 
 For the narrower shared-root campaign-cadence seam, use
 `mechanics/antifragility/docs/DRIFT_REVIEW_LESSON_MEMORY.md` plus
-`examples/failure_lesson_memory.drift_review.example.json`.
+`mechanics/antifragility/examples/failure_lesson_memory.drift_review.example.json`.

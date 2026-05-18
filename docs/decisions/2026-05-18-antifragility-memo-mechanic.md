@@ -57,8 +57,8 @@ the machine-checkable companion surface.
 - `generated/memo_registry.min.json`
 - `scripts/validate_memo.py`
 - `scripts/validate_memo_mechanics.py`
-- `tests/test_antifragility_failure_lessons.py`
-- `tests/test_antifragility_recovery_patterns.py`
+- `mechanics/antifragility/tests/test_antifragility_failure_lessons.py`
+- `mechanics/antifragility/tests/test_antifragility_recovery_patterns.py`
 - `tests/test_memo_mechanics.py`
 - `tests/test_agents_mesh.py`
 
@@ -71,6 +71,6 @@ python scripts/validate_memo_mechanics_index.py
 python scripts/validate_agents_mesh.py
 python scripts/build_agents_mesh_index.py --check
 python scripts/validate_agents_mesh_index.py
-python -m pytest -q tests/test_antifragility_failure_lessons.py tests/test_antifragility_recovery_patterns.py
+python -m pytest -q mechanics/antifragility/tests/test_antifragility_failure_lessons.py mechanics/antifragility/tests/test_antifragility_recovery_patterns.py
 python scripts/release_check.py
 ```

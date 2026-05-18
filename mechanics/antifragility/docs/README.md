@@ -18,14 +18,14 @@ route behavior, or repair runtime state.
 
 Antifragility docs currently pair with:
 
-- `schemas/failure_lesson_memory_v1.json`
-- `schemas/recovery_pattern_memory_v1.json`
+- `mechanics/antifragility/schemas/failure_lesson_memory_v1.json`
+- `mechanics/antifragility/schemas/recovery_pattern_memory_v1.json`
 - `examples/failure_lesson_memory*.json`
 - `examples/recovery_pattern_memory*.json`
-- `examples/pattern.antifragility-stress-recovery-window.example.json`
+- `mechanics/antifragility/examples/pattern.antifragility-stress-recovery-window.example.json`
 - `generated/memory_object_*.json`
-- `tests/test_antifragility_failure_lessons.py`
-- `tests/test_antifragility_recovery_patterns.py`
+- `mechanics/antifragility/tests/test_antifragility_failure_lessons.py`
+- `mechanics/antifragility/tests/test_antifragility_recovery_patterns.py`
 
 ## Stop-Lines
 

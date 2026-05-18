@@ -8,17 +8,18 @@
 | Witness trace contract | [WITNESS_TRACE_CONTRACT](./docs/WITNESS_TRACE_CONTRACT.md) | keeps witness trace exports reviewable and maps later writeback into existing memo object kinds |
 | Reviewed closeout recall landing | [REVIEWED_CLOSEOUT_RECALL_LANDING](./docs/REVIEWED_CLOSEOUT_RECALL_LANDING.md) | preserves owner-local recall survivors without becoming proof, playbook authority, or a second route ledger |
 
-## Root Technical Contracts
+## Mechanic-Local Technical Contracts
 
-The current schemas, examples, manifests, quests, and generated companions
-remain in root technical districts because they are public memory/support
-contracts, not package-local implementation files:
+The recurrence-support schemas and examples live with the package because they
+define the route-return support mechanic. Shared recall contracts and reviewed
+closeout quest surfaces remain root-owned only when they serve more than this
+one mechanic:
 
-| Contract | Root Surface |
+| Contract | Artifact Surface |
 |---|---|
-| Inquiry checkpoint | `schemas/inquiry_checkpoint.schema.json`, `examples/inquiry_checkpoint.example.json`, `examples/inquiry_checkpoint.return.example.json` |
-| Checkpoint to memory contract | `schemas/checkpoint-to-memory-contract.schema.json`, `examples/checkpoint_to_memory_contract.example.json` |
-| Witness trace | `schemas/witness-trace.schema.json`, `examples/witness_trace.example.json` |
+| Inquiry checkpoint | `mechanics/recurrence-support/schemas/inquiry_checkpoint.schema.json`, `mechanics/recurrence-support/examples/inquiry_checkpoint.example.json`, `mechanics/recurrence-support/examples/inquiry_checkpoint.return.example.json` |
+| Checkpoint to memory contract | `mechanics/writeback/schemas/checkpoint-to-memory-contract.schema.json`, `mechanics/writeback/examples/checkpoint_to_memory_contract.example.json` |
+| Witness trace | `mechanics/recurrence-support/schemas/witness-trace.schema.json`, `mechanics/recurrence-support/examples/witness_trace.example.json` |
 | Working return recall | `examples/recall_contract.object.working.return.json`, `examples/recall_contract.object.working.phase-alpha.json` |
 | Reviewed closeout quest | `quests/AOA-MEM-Q-0009.yaml`, `generated/quest_catalog.min.json`, `generated/quest_catalog.min.example.json` |
 

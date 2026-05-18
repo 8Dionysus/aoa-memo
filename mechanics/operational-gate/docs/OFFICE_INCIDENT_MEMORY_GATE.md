@@ -31,14 +31,14 @@ An office incident may become memory only when it has:
 - a future effect such as a compatibility sentinel, release-train checklist
   item, retention watch, or writeback candidate
 
-## Root Technical Contracts
+## Mechanic-Local Technical Contracts
 
-Current public contracts remain in root technical districts:
+Current public contracts live with the operational-gate mechanic:
 
-- `schemas/service_incident_memory_entry_v1.json`
-- `examples/service_incident_memory_entry_v1.example.json`
-- `schemas/train_release_memory_entry_v1.json`
-- `examples/train_release_memory_entry_v1.example.json`
+- `mechanics/operational-gate/schemas/service_incident_memory_entry_v1.json`
+- `mechanics/operational-gate/examples/service_incident_memory_entry_v1.example.json`
+- `mechanics/operational-gate/schemas/train_release_memory_entry_v1.json`
+- `mechanics/operational-gate/examples/train_release_memory_entry_v1.example.json`
 
 The contracts are memo recall shapes. They are not live office state and do
 not grant assistant rights.

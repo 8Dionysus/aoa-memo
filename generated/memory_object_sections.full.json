@@ -114,7 +114,7 @@
       "id": "memo.ep.2026-03-23.tos-interpretation-bridge-seed",
       "kind": "episode",
       "title": "ToS fragment inspection recorded for memo bridge export",
-      "source_path": "examples/episode.tos-interpretation.example.json",
+      "source_path": "mechanics/consumer-handoff/examples/episode.tos-interpretation.example.json",
       "sections": [
         {
           "section_id": "memo.ep.2026-03-23.tos-interpretation-bridge-seed#identity-and-recall",
@@ -294,7 +294,7 @@
       "id": "memo.claim.2026-03-23.tos-bridge-by-reference",
       "kind": "claim",
       "title": "ToS-linked memory should bridge by reference",
-      "source_path": "examples/claim.tos-bridge-ready.example.json",
+      "source_path": "mechanics/consumer-handoff/examples/claim.tos-bridge-ready.example.json",
       "sections": [
         {
           "section_id": "memo.claim.2026-03-23.tos-bridge-by-reference#identity-and-recall",
@@ -438,7 +438,7 @@
       "id": "memo.bridge.2026-03-23.tos-lineage-kag-candidate",
       "kind": "bridge",
       "title": "Bridge candidate linking memo claim to ToS lineage and KAG lift posture",
-      "source_path": "examples/bridge.kag-lift.example.json",
+      "source_path": "mechanics/consumer-handoff/examples/bridge.kag-lift.example.json",
       "sections": [
         {
           "section_id": "memo.bridge.2026-03-23.tos-lineage-kag-candidate#identity-and-recall",
@@ -1518,7 +1518,7 @@
       "id": "memo.pattern.2026-04-07.antifragility-stress-recovery-window",
       "kind": "pattern",
       "title": "Ordered recovery windows earn recall only after bounded proof",
-      "source_path": "examples/pattern.antifragility-stress-recovery-window.example.json",
+      "source_path": "mechanics/antifragility/examples/pattern.antifragility-stress-recovery-window.example.json",
       "sections": [
         {
           "section_id": "memo.pattern.2026-04-07.antifragility-stress-recovery-window#identity-and-recall",

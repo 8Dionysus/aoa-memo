@@ -51,8 +51,9 @@ After recurrence-support changes, check whether these surfaces moved:
 - `LANDING_LOG.md`
 - `ROADMAP.md`
 - `legacy/INDEX.md`
-- root technical contract refs in `schemas/`, `examples/`, `generated/`,
-  `scripts/`, `quests/`, or `tests/`
+- recurrence-support package contract refs in
+  `mechanics/recurrence-support/{schemas,examples,tests}/` plus shared recall
+  and quest refs
 - generated mechanics or AGENTS mesh companions
 - docs-root maps, root route cards, decision records, changelog, or roadmap
 
@@ -68,7 +69,7 @@ python scripts/validate_agents_mesh.py
 python scripts/build_agents_mesh_index.py --check
 python scripts/validate_agents_mesh_index.py
 python scripts/validate_memo.py
-python -m pytest -q tests/test_recurrence_support_mechanic.py tests/test_memo_mechanics.py tests/test_agents_mesh.py tests/test_memo_validators.py tests/test_playbook_memory_scopes.py tests/test_roadmap_parity.py
+python -m pytest -q mechanics/recurrence-support/tests/test_recurrence_support_mechanic.py tests/test_memo_mechanics.py tests/test_agents_mesh.py tests/test_memo_validators.py mechanics/consumer-handoff/tests/test_playbook_memory_scopes.py tests/test_roadmap_parity.py
 ```
 
 Before landing, also run:
@@ -79,6 +80,7 @@ python scripts/release_check.py
 
 ## Closeout
 
-Report recurrence-support docs changed, whether root technical contracts stayed
-root-owned, whether old flat docs-root references remain only as allowed
-provenance, and which stronger owner boundaries stayed outside `aoa-memo`.
+Report recurrence-support docs changed, whether package-local artifacts and
+shared recall/quest refs stayed owner-routed, whether old flat docs-root
+references remain only as allowed provenance, and which stronger owner
+boundaries stayed outside `aoa-memo`.

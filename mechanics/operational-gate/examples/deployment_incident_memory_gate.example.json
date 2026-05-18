@@ -1,0 +1,13 @@
+{
+  "gate_id": "memo.gate.deployment.001",
+  "incident_id": "deployment.incident.001",
+  "decision": "allow",
+  "reason": "material recurrence with owner route",
+  "evidence_refs": [
+    "repo:aoa-memo/mechanics/operational-gate/examples/deployment_lesson_candidate.example.json"
+  ],
+  "owner_route": "aoa-evals:regression-sentinel",
+  "review_posture": "reviewed recurrence candidate, not proof",
+  "future_effect": "new regression sentinel",
+  "expiry_or_recheck": "recheck after next release validation cycle"
+}

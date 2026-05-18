@@ -25,7 +25,7 @@
       ]
     },
     {
-      "example_path": "examples/episode.tos-interpretation.example.json",
+      "example_path": "mechanics/consumer-handoff/examples/episode.tos-interpretation.example.json",
       "recall_modes": [
         "lineage",
         "episodic",
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "example_path": "examples/claim.tos-bridge-ready.example.json",
+      "example_path": "mechanics/consumer-handoff/examples/claim.tos-bridge-ready.example.json",
       "recall_modes": [
         "semantic",
         "lineage",
@@ -92,7 +92,7 @@
       ]
     },
     {
-      "example_path": "examples/bridge.kag-lift.example.json",
+      "example_path": "mechanics/consumer-handoff/examples/bridge.kag-lift.example.json",
       "recall_modes": [
         "lineage",
         "source_route",
@@ -313,7 +313,7 @@
       ]
     },
     {
-      "example_path": "examples/pattern.antifragility-stress-recovery-window.example.json",
+      "example_path": "mechanics/antifragility/examples/pattern.antifragility-stress-recovery-window.example.json",
       "recall_modes": [
         "procedural",
         "semantic",
