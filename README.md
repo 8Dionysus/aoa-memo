@@ -13,6 +13,9 @@ Use the shortest route by need:
 - role, boundaries, and conceptual model: [CHARTER](CHARTER.md), [DESIGN](DESIGN.md), [docs/BOUNDARIES](docs/BOUNDARIES.md), and [docs/MEMORY_MODEL](docs/MEMORY_MODEL.md)
 - docs topology, root placement, and decision rationale: [docs/README](docs/README.md), [docs/ROOT_SURFACE_LAW](docs/ROOT_SURFACE_LAW.md), and [docs/decisions](docs/decisions/README.md)
 - agent-facing route shape: [AGENTS](AGENTS.md), [DESIGN.AGENTS](DESIGN.AGENTS.md), and the nearest nested `AGENTS.md`
+- machine-checkable route-card coverage: `config/agents_mesh.json`,
+  `generated/agents_mesh.min.json`, `scripts/validate_agents_mesh.py`, and
+  `scripts/validate_agents_mesh_index.py`
 - object canon, trust posture, and lifecycle: [docs/MEMORY_OBJECT_PROFILES](docs/MEMORY_OBJECT_PROFILES.md), [docs/MEMORY_TRUST_POSTURE](docs/MEMORY_TRUST_POSTURE.md), [docs/MEMORY_TEMPERATURES](docs/MEMORY_TEMPERATURES.md), [docs/LIFECYCLE](docs/LIFECYCLE.md), and [docs/NARRATIVE_CORE_CONTRACT](docs/NARRATIVE_CORE_CONTRACT.md)
 - Titan Memory Loom, bearer-recall posture, and remembrance source-ref policy: [docs/TITAN_MEMORY_LOOM_POSTURE.md](docs/TITAN_MEMORY_LOOM_POSTURE.md), [docs/TITAN_PERSONALITY_MEMORY_POLICY.md](docs/TITAN_PERSONALITY_MEMORY_POLICY.md), [docs/TITAN_RECALL_CANDIDATE_POLICY.md](docs/TITAN_RECALL_CANDIDATE_POLICY.md), [docs/TITAN_REMEMBRANCE_SOURCE_REF_POLICY.md](docs/TITAN_REMEMBRANCE_SOURCE_REF_POLICY.md), `schemas/titan_remembrance_record.schema.json`, and `examples/titan_remembrance_record.example.json`
 - antifragility failure-lesson seam: [docs/FAILURE_LESSON_MEMORY.md](docs/FAILURE_LESSON_MEMORY.md), [docs/FAILURE_LESSON_RECALL.md](docs/FAILURE_LESSON_RECALL.md), [docs/DRIFT_REVIEW_LESSON_MEMORY.md](docs/DRIFT_REVIEW_LESSON_MEMORY.md), `schemas/failure_lesson_memory_v1.json`, `examples/failure_lesson_memory.example.json`, `examples/failure_lesson_memory.lineage.example.json`, `examples/failure_lesson_memory.rollout.example.json`, and `examples/failure_lesson_memory.drift_review.example.json`
@@ -101,6 +104,8 @@ generated:
 - [docs/ROOT_SURFACE_LAW](docs/ROOT_SURFACE_LAW.md) governs root and docs-root placement
 - [docs/decisions](docs/decisions/README.md) preserves durable rationale
 - [.agents/spark](.agents/spark/AGENTS.md) is the maintained fast-loop Spark lane
+- `config/agents_mesh.json` and `generated/agents_mesh.min.json` make current
+  route-card coverage machine-checkable
 
 This spine does not move flat docs by itself. It exists so later Agon, Titan,
 adoption, retention, rollback, writeback, or AGENTS-mesh work can land through
@@ -128,6 +133,9 @@ python scripts/validate_memo.py
 python scripts/validate_memory_surfaces.py
 python scripts/validate_memory_object_surfaces.py
 python scripts/validate_lifecycle_audit_examples.py
+python scripts/validate_agents_mesh.py
+python scripts/build_agents_mesh_index.py --check
+python scripts/validate_agents_mesh_index.py
 python -m pytest -q tests
 ```
 

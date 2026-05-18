@@ -43,6 +43,7 @@ For root or docs-root placement, read `docs/ROOT_SURFACE_LAW.md`.
 | `memory-doctrine` | memory meaning, object posture, trust, lifecycle, temperature, or provenance changes | `docs/MEMORY_MODEL.md` |
 | `root-editing` | a root or docs-root surface is added, moved, deleted, or rewritten | `docs/ROOT_SURFACE_LAW.md` |
 | `agent-surface-design` | agent-facing cards, lanes, or future mesh posture changes | `DESIGN.AGENTS.md` |
+| `agents-mesh` | source-backed route-card coverage or generated mesh parity changes | `config/agents_mesh.json` -> `generated/agents_mesh.min.json` -> mesh validators |
 | `generated-parity` | generated memory surfaces or their sources change | source surface -> builder -> generated output -> validator |
 | `neighbor-seam` | a change touches proof, routing, role, playbook, KAG, or runtime boundaries | `docs/BOUNDARIES.md` |
 
@@ -115,6 +116,9 @@ python scripts/validate_memo.py
 python scripts/validate_memory_surfaces.py
 python scripts/validate_memory_object_surfaces.py
 python scripts/validate_lifecycle_audit_examples.py
+python scripts/validate_agents_mesh.py
+python scripts/build_agents_mesh_index.py --check
+python scripts/validate_agents_mesh_index.py
 python -m pytest -q tests
 ```
 

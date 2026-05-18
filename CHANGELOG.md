@@ -13,6 +13,10 @@ Tracking starts with the community-docs baseline for this repository.
   `docs/README.md`, `docs/ROOT_SURFACE_LAW.md`, and `docs/decisions/` so
   future docs, agent-lane, and placement cleanup can route through explicit
   owner surfaces before moving flat memory docs.
+- Add a source-backed AGENTS mesh with `config/agents_mesh.json`,
+  `generated/agents_mesh.min.json`, mesh validators, and regression tests so
+  current route-card coverage is machine-checkable before docs districts move.
+- Add top-level route cards for `manifests/` and `quests/`.
 
 ### Changed
 

@@ -115,6 +115,9 @@ district route replaces their flat path.
 | `docs/README.md` | add | docs district map | flat docs need a navigable map before migration |
 | `docs/decisions/` | add | decision rationale lane | topology choices need durable rationale without bloating active docs |
 | `Spark/` | moved | `.agents/spark/` | maintained agent lanes should live under `.agents/`, not as root civic surfaces |
+| `config/agents_mesh.json` | add | config source for current route-card mesh | route cards need a machine-checkable source before docs districts move |
+| `generated/agents_mesh.min.json` | add | generated companion mirror | the mesh is inspectable without treating generated output as authority |
+| `manifests/AGENTS.md` and `quests/AGENTS.md` | add | top-level district route cards | both directories already hold durable public surfaces and should not be AGENTS coverage gaps |
 
 ## Final Rule
 
