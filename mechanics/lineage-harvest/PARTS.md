@@ -1,10 +1,13 @@
 # Lineage Harvest Parts
 
-## Active docs
+## Active Parts
 
-| Surface | Role |
-|---|---|
-| [PATTERN_LINEAGE_MEMORY](../../mechanics/lineage-harvest/docs/PATTERN_LINEAGE_MEMORY.md) | active source doc for pattern-lineage memory flow, gates, inputs, outputs, and invariants |
+| Part | Source Docs | Contract |
+|---|---|---|
+| Pattern-lineage memory gate | [PATTERN_LINEAGE_MEMORY](./docs/PATTERN_LINEAGE_MEMORY.md) | gates cross-repo recurring signals into reviewed pattern-lineage memory candidates without federation authority |
+| Mechanic-local technical contracts | `mechanics/lineage-harvest/schemas/pattern_lineage_memory_entry_v1.json`, `mechanics/lineage-harvest/examples/pattern_lineage_memory_entry.example.json`, `mechanics/lineage-harvest/tests/test_lineage_harvest_mechanic.py` | keeps the lineage-harvest schema, example, and regression boundary package-local |
+| Adjacent mechanic interfaces | [governance](../governance/README.md), [writeback](../writeback/README.md), [retention](../retention/README.md), [adoption](../adoption/README.md), [consumer-handoff](../consumer-handoff/README.md), [operational-gate](../operational-gate/README.md), [recurrence-support](../recurrence-support/README.md) | routes stronger adjacent memory operations without absorbing their authority |
+| Generated companions | `generated/memo_mechanics.min.json`, `generated/agents_mesh.min.json`, `generated/memo_registry.min.json`, `generated/memory_catalog*.json`, `generated/memory_capsules.json`, `generated/memory_sections.full.json` | exposes compact mirrors while keeping lineage-harvest source truth in package docs and artifacts |
 
 ## Mechanic-Local Technical Contracts
 
@@ -44,3 +47,14 @@ package's own public support contract and regression boundary.
   capsule, and expand surfaces for this mechanic.
 
 Generated companions are mirrors. They do not author lineage-harvest truth.
+
+## Interface
+
+Inputs are cross-repo recurring owner-local signals, federation-harvest gates,
+reviewed source refs, and adjacent mechanic signals that may justify a
+pattern-lineage memory candidate.
+
+Outputs are bounded lineage candidate memory, schema-backed examples,
+provenance-aware review posture, and stronger-owner next routes. This mechanic
+does not approve federation, promote KAG, write ToS canon, certify stats,
+execute runtime watches, or adopt source-owner truth.

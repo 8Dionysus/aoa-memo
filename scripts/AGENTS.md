@@ -31,6 +31,8 @@ Keep the current split clear:
 - `validate_agents_mesh.py`, `build_agents_mesh_index.py`, and `validate_agents_mesh_index.py` keep the source-backed AGENTS mesh aligned with current route cards
 - `validate_docs_districts.py` keeps retired docs districts and moved flat docs
   from drifting back into active docs-root sprawl
+- `validate_memo_mechanic_parts.py` keeps package `PARTS.md` files in the
+  operation-first Active Parts plus Interface shape
 
 Mechanic-owned generators and validators live under the owning package, for
 example `mechanics/consumer-handoff/scripts/generate_kag_export.py`,
@@ -71,6 +73,7 @@ python scripts/validate_agents_mesh.py
 python scripts/build_agents_mesh_index.py --check
 python scripts/validate_agents_mesh_index.py
 python scripts/validate_docs_districts.py
+python scripts/validate_memo_mechanic_parts.py
 ```
 
 If generator logic changed, also run:

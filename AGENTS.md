@@ -126,6 +126,7 @@ python scripts/build_agents_mesh_index.py --check
 python scripts/validate_agents_mesh_index.py
 python scripts/validate_docs_districts.py
 python scripts/validate_memo_mechanics.py
+python scripts/validate_memo_mechanic_parts.py
 python scripts/build_memo_mechanics_index.py --check
 python scripts/validate_memo_mechanics_index.py
 python scripts/build_mechanic_artifact_inventory.py --check
