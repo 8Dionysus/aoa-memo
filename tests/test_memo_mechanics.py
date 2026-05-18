@@ -67,6 +67,18 @@ class MemoMechanicsTestCase(unittest.TestCase):
         ):
             self.assertIn(snippet, text)
 
+    def test_mechanic_subroutes_and_artifact_topology_are_present(self) -> None:
+        topology = (REPO_ROOT / "mechanics" / "ARTIFACT_TOPOLOGY.md").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("Root Technical Districts", topology)
+        self.assertIn("Mechanic Artifact Lane", topology)
+        self.assertIn("Move Rule", topology)
+
+        for slug in ("adoption", "writeback", "retention"):
+            self.assertTrue((REPO_ROOT / "mechanics" / slug / "docs" / "AGENTS.md").is_file())
+            self.assertTrue((REPO_ROOT / "mechanics" / slug / "legacy" / "AGENTS.md").is_file())
+
 
 if __name__ == "__main__":
     unittest.main()

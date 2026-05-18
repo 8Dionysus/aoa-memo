@@ -41,7 +41,7 @@ def validate() -> list[str]:
     config = load_config()
     issues: list[str] = []
 
-    for root_file in ("mechanics/AGENTS.md", "mechanics/README.md"):
+    for root_file in ("mechanics/AGENTS.md", "mechanics/README.md", "mechanics/ARTIFACT_TOPOLOGY.md"):
         if not (REPO_ROOT / root_file).is_file():
             issues.append(f"{root_file} is missing")
 
@@ -75,7 +75,7 @@ def validate() -> list[str]:
 
         expected_docs = set(package["docs"])
         present_docs = {
-            path.name for path in docs_root.glob("*.md")
+            path.name for path in docs_root.glob("*.md") if path.name != "AGENTS.md"
         } if docs_root.is_dir() else set()
         if present_docs != expected_docs:
             missing = sorted(expected_docs - present_docs)

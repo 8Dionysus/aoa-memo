@@ -92,6 +92,7 @@ In path terms, `docs/agon/` owns the former flat `AGON_*` docs and
 | Adoption mechanic | [mechanics/adoption/AGENTS](../mechanics/adoption/AGENTS.md), then [mechanics/adoption/README](../mechanics/adoption/README.md) |
 | Writeback mechanic | [mechanics/writeback/AGENTS](../mechanics/writeback/AGENTS.md), then [mechanics/writeback/README](../mechanics/writeback/README.md) |
 | Retention mechanic | [mechanics/retention/AGENTS](../mechanics/retention/AGENTS.md), then [mechanics/retention/README](../mechanics/retention/README.md) |
+| Mechanic artifact placement | [mechanics/ARTIFACT_TOPOLOGY](../mechanics/ARTIFACT_TOPOLOGY.md) |
 | Agent-facing shape | [DESIGN.AGENTS](../DESIGN.AGENTS.md), root [AGENTS](../AGENTS.md), and nearest local `AGENTS.md` |
 | Decision rationale | [decisions/AGENTS](decisions/AGENTS.md), then [decisions/README](decisions/README.md) |
 | Public release path | [RELEASING](RELEASING.md), then [CHANGELOG](../CHANGELOG.md) |

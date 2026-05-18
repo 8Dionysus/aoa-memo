@@ -45,7 +45,7 @@ For repeatable adoption, writeback, or retention movement, read
 | `memory-doctrine` | memory meaning, object posture, trust, lifecycle, temperature, or provenance changes | `docs/MEMORY_MODEL.md` |
 | `root-editing` | a root or docs-root surface is added, moved, deleted, or rewritten | `docs/ROOT_SURFACE_LAW.md` |
 | `docs-district` | a thematic docs family is moved or a local docs district route changes | `docs/README.md` -> target district `AGENTS.md` -> `scripts/validate_docs_districts.py` |
-| `mechanic-change` | adoption, writeback, retention, owner split, legacy bridge, or mechanic-facing validation changes | `mechanics/README.md` -> target mechanic `AGENTS.md` -> mechanics validators |
+| `mechanic-change` | adoption, writeback, retention, owner split, legacy bridge, artifact placement, or mechanic-facing validation changes | `mechanics/README.md` -> target mechanic `AGENTS.md` -> `mechanics/ARTIFACT_TOPOLOGY.md` when artifacts move -> mechanics validators |
 | `agent-surface-design` | agent-facing cards, lanes, or future mesh posture changes | `DESIGN.AGENTS.md` |
 | `agents-mesh` | source-backed route-card coverage or generated mesh parity changes | `config/agents_mesh.json` -> `generated/agents_mesh.min.json` -> mesh validators |
 | `generated-parity` | generated memory surfaces or their sources change | source surface -> builder -> generated output -> validator |

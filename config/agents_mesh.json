@@ -128,6 +128,26 @@
       ]
     },
     {
+      "path": "mechanics/adoption/docs/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/adoption/docs/",
+        "active mechanic-owned doctrine",
+        "ARTIFACT_TOPOLOGY.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/adoption/legacy/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/adoption/legacy/",
+        "placement provenance",
+        "not the active route",
+        "legacy/INDEX.md"
+      ]
+    },
+    {
       "path": "mechanics/writeback/AGENTS.md",
       "min_lines": 35,
       "required_snippets": [
@@ -138,6 +158,26 @@
       ]
     },
     {
+      "path": "mechanics/writeback/docs/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/writeback/docs/",
+        "active mechanic-owned doctrine",
+        "ARTIFACT_TOPOLOGY.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/writeback/legacy/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/writeback/legacy/",
+        "placement provenance",
+        "not the active route",
+        "legacy/INDEX.md"
+      ]
+    },
+    {
       "path": "mechanics/retention/AGENTS.md",
       "min_lines": 35,
       "required_snippets": [
@@ -145,6 +185,26 @@
         "mechanics/retention/",
         "OWNER_MAP.md",
         "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/retention/docs/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/retention/docs/",
+        "active mechanic-owned doctrine",
+        "ARTIFACT_TOPOLOGY.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/retention/legacy/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/retention/legacy/",
+        "placement provenance",
+        "not the active route",
+        "legacy/INDEX.md"
       ]
     },
     {

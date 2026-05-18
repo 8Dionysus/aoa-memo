@@ -123,6 +123,7 @@ district or mechanic route replaces their flat path.
 | flat Agon docs-root surfaces | moved | `docs/agon/AGON_*.md` | Agon is the first validated thematic docs district |
 | flat Titan docs-root surfaces | moved | `docs/titan/TITAN_*.md` | Titan is the second validated thematic docs district |
 | flat adoption/writeback/retention docs-root surfaces | moved | `mechanics/adoption/docs/`, `mechanics/writeback/docs/`, `mechanics/retention/docs/` | these families are repeatable memo mechanics with owner maps and legacy bridges, not only documentation districts |
+| mechanic-adjacent root technical artifacts | retained until proven package-local | `mechanics/ARTIFACT_TOPOLOGY.md` decides future moves | schemas, examples, generated companions, scripts, tests, manifests, and quests may still be repo-wide contracts |
 
 ## Final Rule
 
