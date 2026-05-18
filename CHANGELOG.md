@@ -82,6 +82,9 @@ Tracking starts with the community-docs baseline for this repository.
 - Add `scripts/validate_mechanic_artifact_topology.py` to make root
   technical-district placement a direct release-gate validator rather than
   only a pytest regression.
+- Add `config/root_technical_districts.json` as an exact allowlist for root
+  technical artifacts so remaining root schemas, examples, generated outputs,
+  scripts, tests, manifests, and config files are machine-auditable.
 
 ### Changed
 

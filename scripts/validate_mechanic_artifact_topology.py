@@ -1,11 +1,22 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import json
 import sys
 from pathlib import Path
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
+ROOT_DISTRICTS_CONFIG = REPO_ROOT / "config" / "root_technical_districts.json"
+ROOT_TECHNICAL_DISTRICTS = (
+    "config",
+    "examples",
+    "generated",
+    "manifests",
+    "schemas",
+    "scripts",
+    "tests",
+)
 
 FORBIDDEN_ROOT_PREFIXES = {
     "config": ("agon_",),
@@ -137,8 +148,81 @@ def root_files(directory: str) -> list[Path]:
     )
 
 
+def load_root_districts_config() -> tuple[dict[str, object] | None, list[str]]:
+    if not ROOT_DISTRICTS_CONFIG.exists():
+        return None, ["config/root_technical_districts.json is missing"]
+    try:
+        payload = json.loads(ROOT_DISTRICTS_CONFIG.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        return None, [f"config/root_technical_districts.json is invalid JSON: {exc}"]
+    if not isinstance(payload, dict):
+        return None, ["config/root_technical_districts.json must be a JSON object"]
+    return payload, []
+
+
+def validate_root_district_allowlist() -> list[str]:
+    issues: list[str] = []
+    payload, config_errors = load_root_districts_config()
+    issues.extend(config_errors)
+    if payload is None:
+        return issues
+
+    if payload.get("schema_version") != "aoa_memo_root_technical_districts_v1":
+        issues.append("config/root_technical_districts.json must keep schema_version aoa_memo_root_technical_districts_v1")
+    if payload.get("source_of_truth") != "mechanics/ARTIFACT_TOPOLOGY.md":
+        issues.append("config/root_technical_districts.json must route source_of_truth to mechanics/ARTIFACT_TOPOLOGY.md")
+
+    districts = payload.get("districts")
+    if not isinstance(districts, dict):
+        issues.append("config/root_technical_districts.json: districts must be an object")
+        return issues
+
+    missing_districts = sorted(set(ROOT_TECHNICAL_DISTRICTS) - set(districts))
+    extra_districts = sorted(set(districts) - set(ROOT_TECHNICAL_DISTRICTS))
+    for district in missing_districts:
+        issues.append(f"config/root_technical_districts.json: missing district {district}")
+    for district in extra_districts:
+        issues.append(f"config/root_technical_districts.json: unsupported district {district}")
+
+    for district in ROOT_TECHNICAL_DISTRICTS:
+        config = districts.get(district)
+        if not isinstance(config, dict):
+            if district in districts:
+                issues.append(f"config/root_technical_districts.json: {district} must be an object")
+            continue
+        if not isinstance(config.get("root_role"), str) or not config.get("root_role"):
+            issues.append(f"config/root_technical_districts.json: {district} must name root_role")
+        allowed_files = config.get("allowed_files")
+        if not isinstance(allowed_files, list) or not all(isinstance(item, str) for item in allowed_files):
+            issues.append(f"config/root_technical_districts.json: {district}.allowed_files must be a string array")
+            continue
+
+        duplicate_paths = sorted({item for item in allowed_files if allowed_files.count(item) > 1})
+        for duplicate_path in duplicate_paths:
+            issues.append(f"config/root_technical_districts.json: duplicate allowed path {duplicate_path}")
+
+        allowed = set(allowed_files)
+        for allowed_path in allowed:
+            parts = Path(allowed_path).parts
+            if not parts or parts[0] != district:
+                issues.append(f"config/root_technical_districts.json: {allowed_path} is outside district {district}")
+            if Path(allowed_path).name == "AGENTS.md":
+                issues.append(f"config/root_technical_districts.json: {allowed_path} should rely on the route-card exception, not allowed_files")
+
+        actual = {path.relative_to(REPO_ROOT).as_posix() for path in root_files(district)}
+        for missing in sorted(allowed - actual):
+            issues.append(f"{missing}: allowed root technical artifact is missing")
+        for unexpected in sorted(actual - allowed):
+            issues.append(
+                f"{unexpected}: root technical artifact must be listed in config/root_technical_districts.json or moved under mechanics/<slug>/"
+            )
+
+    return issues
+
+
 def validate() -> list[str]:
     issues: list[str] = []
+    issues.extend(validate_root_district_allowlist())
 
     for directory, prefixes in FORBIDDEN_ROOT_PREFIXES.items():
         for path in root_files(directory):

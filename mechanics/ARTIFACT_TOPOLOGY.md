@@ -69,6 +69,11 @@ runtime storage, role authority, KAG substrate truth, or owner acceptance.
 Root technical districts now keep only shared, repo-wide, or cross-mechanic
 surfaces.
 
+`config/root_technical_districts.json` is the exact current allowlist for root
+technical artifacts. If a file is not a route card and is not listed there, it
+must either be added with a repo-wide/shared reason or moved under its owning
+mechanic.
+
 Single-mechanic artifacts live in the owning package with their local docs and
 route card. This includes mechanic-local schemas, examples, config seeds,
 generated companions, scripts, tests, manifests, and hook manifests.

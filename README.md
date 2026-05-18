@@ -146,6 +146,9 @@ generated:
   operational-gate, recurrence-support, lineage-harvest, questbook, writeback,
   and retention mechanics with package cards, owner maps, legacy bridges, and
   `generated/memo_mechanics.min.json`
+- [mechanics/ARTIFACT_TOPOLOGY](mechanics/ARTIFACT_TOPOLOGY.md) and
+  `config/root_technical_districts.json` own the root technical-district
+  placement contract
 - [mechanics/antifragility](mechanics/antifragility/README.md) is the active
   home for former flat failure-lesson and recovery-pattern surfaces
 - [mechanics/agon](mechanics/agon/README.md) is the active home for former
