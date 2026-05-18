@@ -153,7 +153,8 @@ Examples:
 - root quest generated companions live under `generated/` only because they
   project the public Questbook store for outside consumers. Their
   `owner_surface` and `anchor_ref` values must still route into real memo docs
-  or mechanic docs.
+  or mechanic docs, and their placement contract lives under
+  `mechanics/questbook/parts/generated-views/`.
 
 Root `schemas/`, `examples/`, `generated/`, `scripts/`, `tests/`, and `config/`
 remain valid for shared memory-object canon, shared recall contracts,
@@ -191,7 +192,8 @@ doctrine.
 Questbook is the intentional root-store exception: `mechanics/questbook/` owns
 quest lifecycle, source contracts, validation, and generated projections, while
 root `QUESTBOOK.md` stays the compact index and root `quests/` stays the public
-lane-first item store.
+lane-first item store. The generated-view part explains why Questbook read
+models stay root-published instead of moving into package-local `generated/`.
 
 Do not leave active root aliases for moved mechanic artifacts.
 

@@ -438,6 +438,16 @@
       ]
     },
     {
+      "path": "mechanics/questbook/parts/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "mechanics/questbook/parts/",
+        "generated/quest_*.json",
+        "generated-views",
+        "validate_quest_store.py"
+      ]
+    },
+    {
       "path": "mechanics/questbook/docs/AGENTS.md",
       "min_lines": 25,
       "required_snippets": [

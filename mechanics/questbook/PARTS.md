@@ -7,7 +7,7 @@
 | Public index | [QUESTBOOK](../../QUESTBOOK.md) | compact list of open memo-facing obligations; not a second roadmap |
 | Quest item store | [quests](../../quests/README.md) | lane-first lifecycle source files under `quests/<lane>/<state>/` |
 | Source contract | [QUEST_SOURCE_CONTRACT](docs/QUEST_SOURCE_CONTRACT.md) | reviewable YAML and Markdown source shape for memo quest objects |
-| Generated projections | [build_quest_surfaces](./scripts/build_quest_surfaces.py), [generated quest catalog](../../generated/quest_catalog.min.json), [generated quest dispatch](../../generated/quest_dispatch.min.json) | compact mirrors that never author quest meaning |
+| Generated views | [generated-views part](parts/generated-views/README.md), [build_quest_surfaces](./scripts/build_quest_surfaces.py), [generated quest catalog](../../generated/quest_catalog.min.json), [generated quest dispatch](../../generated/quest_dispatch.min.json) | root-published read models that never author quest meaning |
 
 ## Interface
 

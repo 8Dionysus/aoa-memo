@@ -55,7 +55,7 @@ Sophian canon write, proof, route dispatch, role authority, or runtime state.
 
 ## Generated Projections
 
-Generated quest surfaces are compact mirrors:
+Generated quest surfaces are compact root-published read models:
 
 - `generated/quest_catalog.min.json`
 - `generated/quest_dispatch.min.json`
@@ -69,3 +69,8 @@ python mechanics/questbook/scripts/build_quest_surfaces.py
 ```
 
 Do not hand-edit generated quest surfaces.
+
+The placement contract lives in
+[`parts/generated-views`](../parts/generated-views/README.md): the Questbook
+mechanic owns the builder, validation, and stop-lines, while root `generated/`
+publishes the compact read models for outside consumers.

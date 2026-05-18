@@ -76,6 +76,7 @@ owning repository.
 - [PROVENANCE](PROVENANCE.md)
 - [LANDING_LOG](LANDING_LOG.md)
 - [ROADMAP](ROADMAP.md)
+- [parts](parts/README.md)
 - [docs](docs/)
 - [legacy index](legacy/INDEX.md)
 - [root quest index](../../QUESTBOOK.md)
@@ -84,7 +85,9 @@ owning repository.
 ## Functioning Parts
 
 The active part map is [PARTS](PARTS.md). Source contract detail lives in
-[QUEST_SOURCE_CONTRACT](docs/QUEST_SOURCE_CONTRACT.md).
+[QUEST_SOURCE_CONTRACT](docs/QUEST_SOURCE_CONTRACT.md). Root-published
+generated read models are governed by the
+[generated-views part](parts/generated-views/README.md).
 
 ## Historical Provenance
 

@@ -35,7 +35,7 @@ Keep this split explicit:
 - `generated/memo_registry.min.json` is a source-authored registry contract validated by `scripts/validate_memo.py`
 - the doctrine family is a checked-in router-facing memo surface family validated by `scripts/validate_memory_surfaces.py`
 - the object family is generator-backed and is rebuilt by `scripts/generate_memory_object_surfaces.py` and checked by `scripts/validate_memory_object_surfaces.py`
-- the quest projection family is rebuilt by `mechanics/questbook/scripts/build_quest_surfaces.py` from lane-first quest sources and checked by `scripts/validate_memo.py`
+- the quest projection family is rebuilt by `mechanics/questbook/scripts/build_quest_surfaces.py` from lane-first quest sources, governed by `mechanics/questbook/parts/generated-views/`, and checked by `scripts/validate_memo.py`
 - `mechanics/writeback/generated/runtime_writeback_governance.min.json` is rebuilt by `mechanics/writeback/scripts/generate_runtime_writeback_governance.py` and checked by `scripts/validate_memo.py`
 - `mechanics/consumer-handoff/generated/kag_export.min.json` is generator-backed, rebuilt by `mechanics/consumer-handoff/scripts/generate_kag_export.py`, and checked by `scripts/validate_memo.py`
 - `generated/agents_mesh.min.json` is rebuilt by `scripts/build_agents_mesh_index.py` from `config/agents_mesh.json` and checked by `scripts/validate_agents_mesh_index.py`
@@ -104,6 +104,7 @@ For the quest projection family:
 - update `quests/memo/<state>/AOA-MEM-Q-*.yaml`, `QUESTBOOK.md`, and the owning mechanic docs first
 - rebuild with `python mechanics/questbook/scripts/build_quest_surfaces.py`
 - keep `owner_surface` and `anchor_ref` routed to real memo docs or mechanics docs
+- keep the generated-view placement contract in `mechanics/questbook/parts/generated-views/`
 
 ## Validation
 
