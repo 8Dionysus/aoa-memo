@@ -75,7 +75,9 @@ def validate() -> list[str]:
 
         expected_docs = set(package["docs"])
         present_docs = {
-            path.name for path in docs_root.glob("*.md") if path.name != "AGENTS.md"
+            path.name
+            for path in docs_root.glob("*.md")
+            if path.name not in {"AGENTS.md", "README.md"}
         } if docs_root.is_dir() else set()
         if present_docs != expected_docs:
             missing = sorted(expected_docs - present_docs)
@@ -99,15 +101,19 @@ def validate() -> list[str]:
             if (REPO_ROOT / former_path).exists():
                 issues.append(f"former flat path still exists: {former_path}")
 
-    forbidden_subdirs = ("docs/adoption", "docs/writeback", "docs/retention")
+    forbidden_subdirs = ("docs/agon", "docs/titan", "docs/adoption", "docs/writeback", "docs/retention")
     for forbidden in forbidden_subdirs:
         if (REPO_ROOT / forbidden).exists():
             issues.append(f"{forbidden} should not exist; use mechanics/<slug>/")
 
-    allowed_legacy_indexes = {
+    allowed_provenance_refs = {
         f"mechanics/{package['slug']}/legacy/INDEX.md" for package in config["packages"]
     }
-    allowed_legacy_indexes.add("config/memo_mechanics.json")
+    allowed_provenance_refs.add("config/memo_mechanics.json")
+    allowed_provenance_refs.update(
+        path.relative_to(REPO_ROOT).as_posix()
+        for path in (REPO_ROOT / "docs" / "decisions").glob("*.md")
+    )
     stale_patterns = {
         former_path: re.compile(rf"(?<![A-Za-z0-9_./-]){re.escape(former_path)}")
         for former_path in all_former_flat_paths
@@ -119,7 +125,7 @@ def validate() -> list[str]:
         rel = path.relative_to(REPO_ROOT).as_posix()
         text = path.read_text(encoding="utf-8", errors="ignore")
         for former_path, pattern in stale_patterns.items():
-            if pattern.search(text) and rel not in allowed_legacy_indexes:
+            if pattern.search(text) and rel not in allowed_provenance_refs:
                 issues.append(f"{rel}: contains stale flat mechanics source ref {former_path}")
 
     return issues

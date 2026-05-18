@@ -17,7 +17,7 @@ Use the shortest route by need:
   `generated/agents_mesh.min.json`, `scripts/validate_agents_mesh.py`, and
   `scripts/validate_agents_mesh_index.py`
 - object canon, trust posture, and lifecycle: [docs/MEMORY_OBJECT_PROFILES](docs/MEMORY_OBJECT_PROFILES.md), [docs/MEMORY_TRUST_POSTURE](docs/MEMORY_TRUST_POSTURE.md), [docs/MEMORY_TEMPERATURES](docs/MEMORY_TEMPERATURES.md), [docs/LIFECYCLE](docs/LIFECYCLE.md), and [docs/NARRATIVE_CORE_CONTRACT](docs/NARRATIVE_CORE_CONTRACT.md)
-- Titan Memory Loom, bearer-recall posture, and remembrance source-ref policy: [docs/titan/TITAN_MEMORY_LOOM_POSTURE.md](docs/titan/TITAN_MEMORY_LOOM_POSTURE.md), [docs/titan/TITAN_PERSONALITY_MEMORY_POLICY.md](docs/titan/TITAN_PERSONALITY_MEMORY_POLICY.md), [docs/titan/TITAN_RECALL_CANDIDATE_POLICY.md](docs/titan/TITAN_RECALL_CANDIDATE_POLICY.md), [docs/titan/TITAN_REMEMBRANCE_SOURCE_REF_POLICY.md](docs/titan/TITAN_REMEMBRANCE_SOURCE_REF_POLICY.md), `schemas/titan_remembrance_record.schema.json`, and `examples/titan_remembrance_record.example.json`
+- Titan Memory Loom, bearer-recall posture, and remembrance source-ref policy: [mechanics/titan/docs/TITAN_MEMORY_LOOM_POSTURE.md](mechanics/titan/docs/TITAN_MEMORY_LOOM_POSTURE.md), [mechanics/titan/docs/TITAN_PERSONALITY_MEMORY_POLICY.md](mechanics/titan/docs/TITAN_PERSONALITY_MEMORY_POLICY.md), [mechanics/titan/docs/TITAN_RECALL_CANDIDATE_POLICY.md](mechanics/titan/docs/TITAN_RECALL_CANDIDATE_POLICY.md), [mechanics/titan/docs/TITAN_REMEMBRANCE_SOURCE_REF_POLICY.md](mechanics/titan/docs/TITAN_REMEMBRANCE_SOURCE_REF_POLICY.md), `schemas/titan_remembrance_record.schema.json`, and `examples/titan_remembrance_record.example.json`
 - antifragility failure-lesson seam: [docs/FAILURE_LESSON_MEMORY.md](docs/FAILURE_LESSON_MEMORY.md), [docs/FAILURE_LESSON_RECALL.md](docs/FAILURE_LESSON_RECALL.md), [docs/DRIFT_REVIEW_LESSON_MEMORY.md](docs/DRIFT_REVIEW_LESSON_MEMORY.md), `schemas/failure_lesson_memory_v1.json`, `examples/failure_lesson_memory.example.json`, `examples/failure_lesson_memory.lineage.example.json`, `examples/failure_lesson_memory.rollout.example.json`, and `examples/failure_lesson_memory.drift_review.example.json`
 - antifragility recovery-pattern seam: [docs/RECOVERY_PATTERN_MEMORY.md](docs/RECOVERY_PATTERN_MEMORY.md), [docs/RECOVERY_PATTERN_RECALL.md](docs/RECOVERY_PATTERN_RECALL.md), [docs/ROLLBACK_FOLLOWTHROUGH_PATTERN.md](docs/ROLLBACK_FOLLOWTHROUGH_PATTERN.md), `schemas/recovery_pattern_memory_v1.json`, `examples/recovery_pattern_memory.example.json`, `examples/recovery_pattern_memory.lineage.example.json`, `examples/recovery_pattern_memory.rollout.example.json`, `examples/recovery_pattern_memory.rollback_followthrough.example.json`, `examples/recovery_pattern_memory.component_refresh.example.json`, and `examples/pattern.antifragility-stress-recovery-window.example.json`
 - writeback, recurrence, and neighboring-layer seams: [docs/WITNESS_TRACE_CONTRACT](docs/WITNESS_TRACE_CONTRACT.md), [mechanics/writeback/WRITEBACK_TEMPERATURE_POLICY](mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md), [mechanics/writeback/QUEST_CHRONICLE_WRITEBACK](mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md), `schemas/quest_chronicle.schema.json`, `examples/quest_chronicle.example.json`, [mechanics/writeback/RUNTIME_WRITEBACK_SEAM](mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md), [mechanics/writeback/GROWTH_REFINERY_WRITEBACK](mechanics/writeback/docs/GROWTH_REFINERY_WRITEBACK.md), [mechanics/writeback/SELF_AGENCY_CONTINUITY_WRITEBACK](mechanics/writeback/docs/SELF_AGENCY_CONTINUITY_WRITEBACK.md), `examples/provenance_thread.self-agency-continuity.example.json`, [docs/RECURRENCE_MEMORY_SUPPORT_SURFACES](docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md), [docs/AGENT_MEMORY_POSTURE_SEAM](docs/AGENT_MEMORY_POSTURE_SEAM.md), and [docs/PLAYBOOK_MEMORY_SCOPES](docs/PLAYBOOK_MEMORY_SCOPES.md)
@@ -53,7 +53,7 @@ If you are editing inside `schemas/`, `examples/`, `generated/`, or `scripts/`, 
 - via negativa pruning checklist: [docs/VIA_NEGATIVA_CHECKLIST](docs/VIA_NEGATIVA_CHECKLIST.md)
 - writeback, intake, runtime support, and landing governance surfaces: `generated/runtime_writeback_targets.min.json`, `generated/runtime_writeback_intake.min.json`, `generated/runtime_writeback_governance.min.json`, [mechanics/writeback/RUNTIME_WRITEBACK_SEAM](mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md), [mechanics/writeback/GROWTH_REFINERY_WRITEBACK](mechanics/writeback/docs/GROWTH_REFINERY_WRITEBACK.md), [mechanics/writeback/QUEST_CHRONICLE_WRITEBACK](mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md), `schemas/quest_chronicle.schema.json`, and `examples/quest_chronicle.example.json`
 - memory readiness boundary: [docs/MEMORY_READINESS_BOUNDARY](docs/MEMORY_READINESS_BOUNDARY.md)
-- Titan receipt memory, recall candidates, remembrance source refs, bridge digest, and closeout memory posture: [docs/titan/TITAN_MEMORY_POSTURE.md](docs/titan/TITAN_MEMORY_POSTURE.md), [docs/titan/TITAN_MEMORY_LOOM_POSTURE.md](docs/titan/TITAN_MEMORY_LOOM_POSTURE.md), [docs/titan/TITAN_REMEMBRANCE_SOURCE_REF_POLICY.md](docs/titan/TITAN_REMEMBRANCE_SOURCE_REF_POLICY.md), [docs/titan/TITAN_BRIDGE_MEMORY_POSTURE.md](docs/titan/TITAN_BRIDGE_MEMORY_POSTURE.md), [docs/titan/TITAN_CONSOLE_MEMORY_DIGEST.md](docs/titan/TITAN_CONSOLE_MEMORY_DIGEST.md), [docs/titan/TITAN_CLOSEOUT_MEMORY_POSTURE.md](docs/titan/TITAN_CLOSEOUT_MEMORY_POSTURE.md), `schemas/titan_remembrance_record.schema.json`, and `examples/titan_remembrance_record.example.json`
+- Titan receipt memory, recall candidates, remembrance source refs, bridge digest, and closeout memory posture: [mechanics/titan/docs/TITAN_MEMORY_POSTURE.md](mechanics/titan/docs/TITAN_MEMORY_POSTURE.md), [mechanics/titan/docs/TITAN_MEMORY_LOOM_POSTURE.md](mechanics/titan/docs/TITAN_MEMORY_LOOM_POSTURE.md), [mechanics/titan/docs/TITAN_REMEMBRANCE_SOURCE_REF_POLICY.md](mechanics/titan/docs/TITAN_REMEMBRANCE_SOURCE_REF_POLICY.md), [mechanics/titan/docs/TITAN_BRIDGE_MEMORY_POSTURE.md](mechanics/titan/docs/TITAN_BRIDGE_MEMORY_POSTURE.md), [mechanics/titan/docs/TITAN_CONSOLE_MEMORY_DIGEST.md](mechanics/titan/docs/TITAN_CONSOLE_MEMORY_DIGEST.md), [mechanics/titan/docs/TITAN_CLOSEOUT_MEMORY_POSTURE.md](mechanics/titan/docs/TITAN_CLOSEOUT_MEMORY_POSTURE.md), `schemas/titan_remembrance_record.schema.json`, and `examples/titan_remembrance_record.example.json`
 - owner-local live receipt publication for closeout/stats integration: `scripts/publish_live_receipts.py` and `.aoa/live_receipts/memo-writeback-receipts.jsonl`
 - bridge, export, and guardrail surfaces: `generated/kag_export.min.json`, [docs/KAG_SOURCE_EXPORT](docs/KAG_SOURCE_EXPORT.md), [docs/KAG_TOS_BRIDGE_CONTRACT](docs/KAG_TOS_BRIDGE_CONTRACT.md), and [docs/MEMORY_EVAL_GUARDRAILS](docs/MEMORY_EVAL_GUARDRAILS.md)
 - schemas and local validation: `schemas/`, `python scripts/validate_memo.py`, `python scripts/validate_memory_surfaces.py`, `python scripts/validate_memory_object_surfaces.py`, `python scripts/validate_lifecycle_audit_examples.py`, and `python -m pytest -q tests`
@@ -100,26 +100,26 @@ generated:
 
 - [DESIGN](DESIGN.md) names the memory-layer system form
 - [DESIGN.AGENTS](DESIGN.AGENTS.md) names the agent-facing guidance form
-- [docs/README](docs/README.md) maps the current flat docs district
+- [docs/README](docs/README.md) maps the current docs district
 - [docs/ROOT_SURFACE_LAW](docs/ROOT_SURFACE_LAW.md) governs root and docs-root placement
 - [docs/decisions](docs/decisions/README.md) preserves durable rationale
 - [.agents/spark](.agents/spark/AGENTS.md) is the maintained fast-loop Spark lane
 - `config/agents_mesh.json` and `generated/agents_mesh.min.json` make current
   route-card coverage machine-checkable
-- [docs/agon](docs/agon/README.md) is the first thematic docs district for
-  former flat Agon docs-root surfaces
-- [docs/titan](docs/titan/README.md) is the second thematic docs district for
-  former flat Titan docs-root surfaces
-- [mechanics](mechanics/README.md) owns memo-side adoption, writeback, and
-  retention mechanics with package cards, owner maps, legacy bridges, and
-  `generated/memo_mechanics.min.json`
+- [mechanics](mechanics/README.md) owns memo-side Agon, Titan, adoption,
+  writeback, and retention mechanics with package cards, owner maps, legacy
+  bridges, and `generated/memo_mechanics.min.json`
+- [mechanics/agon](mechanics/agon/README.md) is the active home for former
+  flat and transitional Agon memory surfaces
+- [mechanics/titan](mechanics/titan/README.md) is the active home for former
+  flat and transitional Titan memory posture surfaces
 - [mechanics/adoption](mechanics/adoption/README.md),
   [mechanics/writeback](mechanics/writeback/README.md), and
   [mechanics/retention](mechanics/retention/README.md) are the active homes for
   the former flat adoption/writeback/retention docs-root families
 
-This spine does not move flat docs by itself. It exists so later Agon, Titan,
-mechanic, rollback, or AGENTS-mesh work can land through named owner routes
+This spine does not move flat docs by itself. It exists so later mechanic,
+rollback, or AGENTS-mesh work can land through named owner routes
 instead of cosmetic cleanup.
 
 ## Go here when...
@@ -171,8 +171,8 @@ Then rerun the read-only validation pass above and inspect `git status -sb` befo
 `aoa-memo` is in contract hardening. The public baseline now includes doctrine surfaces, object-facing surfaces, a narrow source-owned memo KAG export, writeback seams, bridge/export contracts, and memo-side guardrail handoff surfaces without turning the repository into runtime infrastructure or a graph platform.
 
 The current topology pass adds the memory-layer design and docs-route spine.
-Agon memo docs now live under `docs/agon/`, and Titan memo posture docs now
-live under `docs/titan/`. Adoption, writeback, and retention now live under
+Agon memo docs now live under `mechanics/agon/docs/`, and Titan memo posture docs now
+live under `mechanics/titan/docs/`. Adoption, writeback, and retention now live under
 `mechanics/` as memo mechanics with legacy route maps. Other flat `docs/*.md`
 surfaces remain active until their validated district or mechanic routes
 replace them.

@@ -1,6 +1,6 @@
-# Titan Memo District
+# Titan Memo Mechanic Docs
 
-This district contains memo-side Titan memory posture surfaces.
+This directory contains source docs for the Titan memo mechanic.
 
 The files here preserve candidate recall, source-ref, audit-memory,
 remembrance, closeout, bridge, console, personality, and swarm memory posture.
@@ -48,9 +48,9 @@ They may not say:
 
 ## Validation
 
-The district route is pinned by:
+The mechanic-doc route is pinned by:
 
 ```bash
-python scripts/validate_docs_districts.py
+python scripts/validate_memo_mechanics.py
 python scripts/release_check.py
 ```

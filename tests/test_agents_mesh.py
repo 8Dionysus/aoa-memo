@@ -40,7 +40,7 @@ class AgentsMeshTestCase(unittest.TestCase):
         self.assertEqual("agents-md-mesh-v1", payload["source_of_truth"])
         self.assertEqual("config/agents_mesh.json", payload["config_ref"])
         self.assertEqual("DESIGN.AGENTS.md", payload["authority_ref"])
-        self.assertEqual(27, payload["counts"]["canonical"])
+        self.assertEqual(31, payload["counts"]["canonical"])
         self.assertEqual(0, payload["counts"]["migration"])
 
         paths = {card["path"] for card in payload["cards"]}
@@ -53,19 +53,23 @@ class AgentsMeshTestCase(unittest.TestCase):
                 "AGENTS.md",
                 "config/AGENTS.md",
                 "docs/AGENTS.md",
-                "docs/agon/AGENTS.md",
                 "docs/decisions/AGENTS.md",
-                "docs/titan/AGENTS.md",
                 "examples/AGENTS.md",
                 "generated/AGENTS.md",
                 "manifests/AGENTS.md",
                 "mechanics/AGENTS.md",
+                "mechanics/agon/AGENTS.md",
+                "mechanics/agon/docs/AGENTS.md",
+                "mechanics/agon/legacy/AGENTS.md",
                 "mechanics/adoption/AGENTS.md",
                 "mechanics/adoption/docs/AGENTS.md",
                 "mechanics/adoption/legacy/AGENTS.md",
                 "mechanics/retention/AGENTS.md",
                 "mechanics/retention/docs/AGENTS.md",
                 "mechanics/retention/legacy/AGENTS.md",
+                "mechanics/titan/AGENTS.md",
+                "mechanics/titan/docs/AGENTS.md",
+                "mechanics/titan/legacy/AGENTS.md",
                 "mechanics/writeback/AGENTS.md",
                 "mechanics/writeback/docs/AGENTS.md",
                 "mechanics/writeback/legacy/AGENTS.md",

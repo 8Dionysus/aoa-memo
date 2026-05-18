@@ -24,26 +24,32 @@ class DocsDistrictsTestCase(unittest.TestCase):
                 f"stdout:\n{completed.stdout}\nstderr:\n{completed.stderr}"
             )
 
-    def test_agon_docs_live_in_agon_district(self) -> None:
+    def test_agon_docs_live_in_agon_mechanic(self) -> None:
         flat = sorted((REPO_ROOT / "docs").glob("AGON_*.md"))
-        district = sorted((REPO_ROOT / "docs" / "agon").glob("AGON_*.md"))
+        retired_district = REPO_ROOT / "docs" / "agon"
+        mechanic = sorted((REPO_ROOT / "mechanics" / "agon" / "docs").glob("AGON_*.md"))
 
         self.assertEqual([], flat)
-        self.assertEqual(27, len(district))
-        self.assertTrue((REPO_ROOT / "docs" / "agon" / "AGENTS.md").is_file())
-        self.assertTrue((REPO_ROOT / "docs" / "agon" / "README.md").is_file())
+        self.assertFalse(retired_district.exists())
+        self.assertEqual(27, len(mechanic))
+        self.assertTrue((REPO_ROOT / "mechanics" / "agon" / "AGENTS.md").is_file())
+        self.assertTrue((REPO_ROOT / "mechanics" / "agon" / "docs" / "AGENTS.md").is_file())
+        self.assertTrue((REPO_ROOT / "mechanics" / "agon" / "legacy" / "AGENTS.md").is_file())
 
-    def test_titan_docs_live_in_titan_district(self) -> None:
+    def test_titan_docs_live_in_titan_mechanic(self) -> None:
         flat = sorted((REPO_ROOT / "docs").glob("TITAN_*.md"))
-        district = sorted((REPO_ROOT / "docs" / "titan").glob("TITAN_*.md"))
+        retired_district = REPO_ROOT / "docs" / "titan"
+        mechanic = sorted((REPO_ROOT / "mechanics" / "titan" / "docs").glob("TITAN_*.md"))
 
         self.assertEqual([], flat)
-        self.assertEqual(10, len(district))
-        self.assertTrue((REPO_ROOT / "docs" / "titan" / "AGENTS.md").is_file())
-        self.assertTrue((REPO_ROOT / "docs" / "titan" / "README.md").is_file())
+        self.assertFalse(retired_district.exists())
+        self.assertEqual(10, len(mechanic))
+        self.assertTrue((REPO_ROOT / "mechanics" / "titan" / "AGENTS.md").is_file())
+        self.assertTrue((REPO_ROOT / "mechanics" / "titan" / "docs" / "AGENTS.md").is_file())
+        self.assertTrue((REPO_ROOT / "mechanics" / "titan" / "legacy" / "AGENTS.md").is_file())
 
     def test_mechanic_owned_families_do_not_create_docs_subdistricts(self) -> None:
-        for district_name in ("adoption", "writeback", "retention"):
+        for district_name in ("agon", "titan", "adoption", "writeback", "retention"):
             self.assertFalse((REPO_ROOT / "docs" / district_name).exists())
 
 

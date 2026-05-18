@@ -70,6 +70,11 @@ they still participate in repo-wide validation and public contract surfaces.
 
 Examples:
 
+- Agon config, schemas, generated registries, manifests, quests, validators,
+  and tests remain in root technical districts while they are public component
+  contracts and release-gate companions.
+- Titan schemas, examples, and tests remain in root technical districts while
+  they define public remembrance and recall candidate contracts.
 - adoption schemas and examples remain in `schemas/` and `examples/` while
   they teach public memory-object support contracts beyond one package.
 - writeback generated companions such as `runtime_writeback_targets`,

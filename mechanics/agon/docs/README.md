@@ -1,6 +1,6 @@
-# Agon Memo District
+# Agon Memo Mechanic Docs
 
-This district contains memo-side Agon surfaces.
+This directory contains source docs for the Agon memo mechanic.
 
 The files here preserve candidate memory, source-ref, evidence-package,
 retention, bridge, and wave landing posture for Agon-related work. They do not
@@ -51,10 +51,10 @@ They may not say:
 
 ## Validation
 
-The district route is pinned by:
+The mechanic-doc route is pinned by:
 
 ```bash
-python scripts/validate_docs_districts.py
+python scripts/validate_memo_mechanics.py
 python scripts/release_check.py
 ```
 
