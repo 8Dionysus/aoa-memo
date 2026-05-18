@@ -71,6 +71,7 @@
       "allowed_files": [
         "generated/agents_mesh.min.json",
         "generated/mechanic_artifacts.min.json",
+        "generated/memo_mechanic_cards.min.json",
         "generated/memo_mechanic_readiness.min.json",
         "generated/memo_mechanics.min.json",
         "generated/memo_registry.min.json",
@@ -123,10 +124,12 @@
         "scripts/agents_mesh_common.py",
         "scripts/build_agents_mesh_index.py",
         "scripts/build_mechanic_artifact_inventory.py",
+        "scripts/build_memo_mechanic_cards.py",
         "scripts/build_memo_mechanic_readiness.py",
         "scripts/build_memo_mechanics_index.py",
         "scripts/generate_memory_object_surfaces.py",
         "scripts/mechanic_artifact_inventory_common.py",
+        "scripts/memo_mechanic_cards_common.py",
         "scripts/mechanic_readiness_common.py",
         "scripts/memo_mechanics_common.py",
         "scripts/release_check.py",
@@ -137,6 +140,7 @@
         "scripts/validate_mechanic_artifact_inventory.py",
         "scripts/validate_mechanic_artifact_topology.py",
         "scripts/validate_memo.py",
+        "scripts/validate_memo_mechanic_cards.py",
         "scripts/validate_memo_mechanic_parts.py",
         "scripts/validate_memo_mechanic_readiness.py",
         "scripts/validate_memo_mechanics.py",
@@ -159,6 +163,7 @@
         "tests/test_experience_wave3_seed_contracts.py",
         "tests/test_mechanic_artifact_inventory.py",
         "tests/test_mechanic_artifact_topology.py",
+        "tests/test_memo_mechanic_cards.py",
         "tests/test_memo_mechanic_parts.py",
         "tests/test_memo_mechanic_readiness.py",
         "tests/test_memo_mechanics.py",
@@ -267,12 +272,32 @@
       ]
     },
     {
+      "id": "memo_mechanic_cards",
+      "source_kind": "generator-backed",
+      "owner_surface": "mechanics/README.md",
+      "source_refs": [
+        "config/memo_mechanics.json",
+        "mechanics/README.md",
+        "mechanics/AGENTS.md"
+      ],
+      "outputs": [
+        "generated/memo_mechanic_cards.min.json"
+      ],
+      "builders": [
+        "scripts/build_memo_mechanic_cards.py"
+      ],
+      "validators": [
+        "scripts/validate_memo_mechanic_cards.py"
+      ]
+    },
+    {
       "id": "memo_mechanic_readiness",
       "source_kind": "generator-backed",
       "owner_surface": "mechanics/README.md",
       "source_refs": [
         "config/memo_mechanics.json",
         "mechanics/README.md",
+        "generated/memo_mechanic_cards.min.json",
         "generated/mechanic_artifacts.min.json"
       ],
       "outputs": [
@@ -377,10 +402,13 @@
       "role": "mechanic-validator",
       "owner_surface": "mechanics/README.md",
       "scripts": [
+        "scripts/build_memo_mechanic_cards.py",
         "scripts/build_memo_mechanic_readiness.py",
         "scripts/build_memo_mechanics_index.py",
         "scripts/mechanic_readiness_common.py",
+        "scripts/memo_mechanic_cards_common.py",
         "scripts/memo_mechanics_common.py",
+        "scripts/validate_memo_mechanic_cards.py",
         "scripts/validate_memo_mechanic_parts.py",
         "scripts/validate_memo_mechanic_readiness.py",
         "scripts/validate_memo_mechanics.py",
@@ -388,6 +416,7 @@
       ],
       "covered_by": [
         "scripts/release_check.py",
+        "tests/test_memo_mechanic_cards.py",
         "tests/test_memo_mechanic_parts.py",
         "tests/test_memo_mechanic_readiness.py",
         "tests/test_memo_mechanics.py"
@@ -465,6 +494,7 @@
       "tests": [
         "tests/test_mechanic_artifact_inventory.py",
         "tests/test_mechanic_artifact_topology.py",
+        "tests/test_memo_mechanic_cards.py",
         "tests/test_memo_mechanic_parts.py",
         "tests/test_memo_mechanic_readiness.py",
         "tests/test_memo_mechanics.py"
@@ -475,6 +505,7 @@
         "config/memo_mechanics.json",
         "config/root_technical_districts.json",
         "generated/mechanic_artifacts.min.json",
+        "generated/memo_mechanic_cards.min.json",
         "generated/memo_mechanic_readiness.min.json",
         "generated/memo_mechanics.min.json"
       ]

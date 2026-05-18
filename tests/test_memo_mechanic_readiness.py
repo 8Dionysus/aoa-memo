@@ -40,6 +40,7 @@ def test_memo_mechanic_readiness_covers_all_packages() -> None:
     assert payload["config_ref"] == "config/memo_mechanics.json"
     assert payload["mechanic_index_ref"] == "generated/memo_mechanics.min.json"
     assert payload["artifact_inventory_ref"] == "generated/mechanic_artifacts.min.json"
+    assert payload["card_index_ref"] == "generated/memo_mechanic_cards.min.json"
     assert payload["counts"]["packages"] == 15
     assert payload["counts"]["ready_packages"] == payload["counts"]["packages"]
     assert payload["counts"]["docs"] == 102

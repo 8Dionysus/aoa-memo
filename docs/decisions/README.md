@@ -61,6 +61,7 @@ expectation.
 | [2026-05-18-mechanic-artifact-inventory](2026-05-18-mechanic-artifact-inventory.md) | add a generated inventory for package-local mechanic artifacts |
 | [2026-05-18-mechanic-parts-shape-validator](2026-05-18-mechanic-parts-shape-validator.md) | make functioning mechanic parts shape release-checkable |
 | [2026-05-18-mechanic-readiness-matrix](2026-05-18-mechanic-readiness-matrix.md) | add a generated readiness matrix for all memo mechanic packages |
+| [2026-05-18-mechanic-route-card-index](2026-05-18-mechanic-route-card-index.md) | add a generated route-card index for memo mechanic packages |
 
 ## Review Rule
 

@@ -12,6 +12,8 @@ This file applies to checked-in artifacts under `generated/`.
 - `agents_mesh.min.json` is the compact companion mirror for current AGENTS route-card coverage
 - `mechanic_artifacts.min.json` is the compact generated inventory of
   package-local mechanic artifact homes
+- `memo_mechanic_cards.min.json` is the compact generated mirror of current
+  mechanic README route cards
 - `memo_mechanic_readiness.min.json` is the compact generated readiness matrix
   for current mechanic packages
 - `quest_catalog.min*.json` and `quest_dispatch.min*.json` are compact public quest projections from `quests/memo/<state>/AOA-MEM-Q-*.yaml`
@@ -36,6 +38,9 @@ Keep this split explicit:
 - `generated/mechanic_artifacts.min.json` is rebuilt by
   `scripts/build_mechanic_artifact_inventory.py` from tracked package-local
   artifact homes and checked by `scripts/validate_mechanic_artifact_inventory.py`
+- `generated/memo_mechanic_cards.min.json` is rebuilt by
+  `scripts/build_memo_mechanic_cards.py` from package README mechanic cards
+  and checked by `scripts/validate_memo_mechanic_cards.py`
 - `generated/memo_mechanic_readiness.min.json` is rebuilt by
   `scripts/build_memo_mechanic_readiness.py` from package cards, source maps,
   and the artifact inventory, then checked by
@@ -100,6 +105,7 @@ python scripts/validate_memory_object_surfaces.py
 python mechanics/questbook/scripts/build_quest_surfaces.py --check
 python scripts/validate_agents_mesh_index.py
 python scripts/validate_mechanic_artifact_inventory.py
+python scripts/validate_memo_mechanic_cards.py
 python scripts/validate_memo_mechanic_readiness.py
 ```
 
