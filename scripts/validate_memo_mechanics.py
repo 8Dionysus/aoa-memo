@@ -106,6 +106,7 @@ def validate() -> list[str]:
         "docs/agon",
         "docs/titan",
         "docs/adoption",
+        "docs/governance",
         "docs/writeback",
         "docs/retention",
     )

@@ -80,6 +80,8 @@ Examples:
   they define public remembrance and recall candidate contracts.
 - adoption schemas and examples remain in `schemas/` and `examples/` while
   they teach public memory-object support contracts beyond one package.
+- governance tests remain in `tests/` while they protect the public mechanics
+  index and owner-boundary expectations.
 - writeback generated companions such as `runtime_writeback_targets`,
   `runtime_writeback_intake`, and `growth_refinery_writeback_lanes` remain in
   `generated/` while they are release-gate companions for external consumers.

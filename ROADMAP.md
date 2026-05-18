@@ -37,8 +37,8 @@ The current topology hardening path starts with the source-authored route spine
 in `DESIGN.md`, `DESIGN.AGENTS.md`, `docs/README.md`,
 `docs/ROOT_SURFACE_LAW.md`, and `docs/decisions/`. This precedes any thematic
 docs or mechanics migration so antifragility, Agon, Titan, adoption,
-retention, and writeback surfaces are moved only with owner maps, link updates,
-legacy bridges, and validation.
+governance, retention, and writeback surfaces are moved only with owner maps,
+link updates, legacy bridges, and validation.
 The maintained Spark fast-loop lane now lives under `.agents/spark/` rather
 than root `Spark/`, aligning agent-lane placement with the new topology spine
 without treating the lane as root civic law.
@@ -59,14 +59,20 @@ The antifragility migration is now mechanic-shaped as well:
 docs through package cards, owner maps, provenance bridge, legacy index,
 generated mechanics coverage, examples, generated object surfaces, and tests.
 
+The governance migration is now mechanic-shaped:
+`mechanics/governance/` owns governance, federation, installation,
+certification, precedent, stay-order, and via-negativa memory boundaries
+through package cards, owner maps, provenance bridge, legacy index, generated
+mechanics coverage, and tests.
+
 The mechanics topology follows the `Agents-of-Abyss` pattern:
 `mechanics/antifragility/`, `mechanics/agon/`, `mechanics/titan/`,
-`mechanics/adoption/`, `mechanics/writeback/`, and `mechanics/retention/` own
-the former flat or transitional owner families as memo-side mechanics. Each
-package has a route card, package card, direction, parts map, owner map,
-provenance bridge, landing log, roadmap, and legacy index. The source-backed
-`config/memo_mechanics.json` and `generated/memo_mechanics.min.json` keep the
-shape machine-checkable.
+`mechanics/adoption/`, `mechanics/governance/`, `mechanics/writeback/`, and
+`mechanics/retention/` own the former flat or transitional owner families as
+memo-side mechanics. Each package has a route card, package card, direction,
+parts map, owner map, provenance bridge, landing log, roadmap, and legacy
+index. The source-backed `config/memo_mechanics.json` and
+`generated/memo_mechanics.min.json` keep the shape machine-checkable.
 
 The current mechanics hardening layer adds `docs/AGENTS.md` and
 `legacy/AGENTS.md` subroutes for each memo mechanic plus
