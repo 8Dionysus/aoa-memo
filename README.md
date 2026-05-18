@@ -17,7 +17,10 @@ Use the shortest route by need:
   `generated/agents_mesh.min.json`, `scripts/validate_agents_mesh.py`, and
   `scripts/validate_agents_mesh_index.py`
 - mechanic readiness: [mechanics](mechanics/README.md),
+  `generated/memo_mechanic_landing_logs.min.json`,
   `generated/memo_mechanic_readiness.min.json`,
+  `scripts/build_memo_mechanic_landing_logs.py --check`,
+  `scripts/validate_memo_mechanic_landing_logs.py`,
   `scripts/build_memo_mechanic_readiness.py --check`, and
   `scripts/validate_memo_mechanic_readiness.py`
 - quest projection surfaces: `QUESTBOOK.md`, `quests/memo/<state>/AOA-MEM-Q-*.yaml`,
@@ -131,6 +134,7 @@ The committed machine-readable surfaces include these families:
 - AGENTS mesh: `generated/agents_mesh.min.json`
 - mechanics index: `generated/memo_mechanics.min.json`
 - mechanic artifact inventory: `generated/mechanic_artifacts.min.json`
+- mechanic landing receipts: `generated/memo_mechanic_landing_logs.min.json`
 - mechanic readiness matrix: `generated/memo_mechanic_readiness.min.json`
 - quest projections: `generated/quest_catalog.min.json` and
   `generated/quest_dispatch.min.json`
@@ -155,9 +159,11 @@ generated:
   adoption, governance, shape-guard, checkpoint, consumer-handoff,
   operational-gate, recurrence-support, lineage-harvest, questbook, writeback,
   and retention mechanics with package cards, owner maps, legacy bridges, and
-  `generated/memo_mechanics.min.json`; `generated/memo_mechanic_readiness.min.json`
-  adds the compact OS Abyss readiness matrix for those package cards, owner
-  maps, parts, local artifacts, stop-lines, and validation routes
+  `generated/memo_mechanics.min.json`;
+  `generated/memo_mechanic_landing_logs.min.json` makes package landing
+  receipts inspectable, and `generated/memo_mechanic_readiness.min.json` adds
+  the compact OS Abyss readiness matrix for those package cards, owner maps,
+  parts, local artifacts, stop-lines, and validation routes
 - [mechanics/ARTIFACT_TOPOLOGY](mechanics/ARTIFACT_TOPOLOGY.md) and
   `config/root_technical_districts.json` own the root technical-district
   placement contract; `generated/mechanic_artifacts.min.json` mirrors the
@@ -217,6 +223,8 @@ python mechanics/questbook/scripts/build_quest_surfaces.py --check
 python scripts/validate_memo_mechanics.py
 python scripts/build_memo_mechanics_index.py --check
 python scripts/validate_memo_mechanics_index.py
+python scripts/build_memo_mechanic_landing_logs.py --check
+python scripts/validate_memo_mechanic_landing_logs.py
 python scripts/build_memo_mechanic_readiness.py --check
 python scripts/validate_memo_mechanic_readiness.py
 python scripts/validate_agents_mesh.py

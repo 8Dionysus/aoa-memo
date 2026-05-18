@@ -63,6 +63,7 @@ expectation.
 | [2026-05-18-mechanic-readiness-matrix](2026-05-18-mechanic-readiness-matrix.md) | add a generated readiness matrix for all memo mechanic packages |
 | [2026-05-18-mechanic-route-card-index](2026-05-18-mechanic-route-card-index.md) | add a generated route-card index for memo mechanic packages |
 | [2026-05-18-mechanic-owner-route-matrix](2026-05-18-mechanic-owner-route-matrix.md) | add a generated owner-route matrix without claiming owner acceptance |
+| [2026-05-18-mechanic-landing-log-index](2026-05-18-mechanic-landing-log-index.md) | add a generated landing receipt index for memo mechanic packages |
 
 ## Review Rule
 

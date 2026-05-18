@@ -102,6 +102,8 @@ class MemoMechanicsTestCase(unittest.TestCase):
             "scripts/validate_memo_mechanic_cards.py",
             "scripts/build_memo_mechanic_owner_routes.py",
             "scripts/validate_memo_mechanic_owner_routes.py",
+            "scripts/build_memo_mechanic_landing_logs.py",
+            "scripts/validate_memo_mechanic_landing_logs.py",
         ):
             self.assertIn(snippet, text)
 

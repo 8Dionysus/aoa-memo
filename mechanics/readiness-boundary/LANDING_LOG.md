@@ -13,6 +13,13 @@ Landed shape:
 - validators updated to read the package-local contract
 - root docs maps and mechanic atlas updated
 
+Validation route:
+
+```bash
+python scripts/validate_memo_mechanics.py
+python scripts/release_check.py
+```
+
 Stop-line retained:
 
 - no proof authority

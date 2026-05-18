@@ -57,6 +57,11 @@ companion because it summarizes every package owner map into a compact OS
 Abyss route inspection surface. It must not become an owner request queue or
 acceptance receipt.
 
+`generated/memo_mechanic_landing_logs.min.json` is a root generated mechanic
+companion because it summarizes every package landing receipt into a compact
+OS Abyss inspection surface. It checks receipt shape; it does not become proof,
+owner acceptance, runtime authority, or release authority.
+
 `generated/memo_mechanic_readiness.min.json` is also a root generated mechanic
 companion. It is allowed only because it summarizes every mechanic package for
 OS Abyss readiness; single-package readiness details still belong in the
@@ -90,6 +95,8 @@ python scripts/build_memo_mechanic_cards.py --check
 python scripts/validate_memo_mechanic_cards.py
 python scripts/build_memo_mechanic_owner_routes.py --check
 python scripts/validate_memo_mechanic_owner_routes.py
+python scripts/build_memo_mechanic_landing_logs.py --check
+python scripts/validate_memo_mechanic_landing_logs.py
 python scripts/build_memo_mechanic_readiness.py --check
 python scripts/validate_memo_mechanic_readiness.py
 python scripts/build_memo_mechanics_index.py --check

@@ -8,7 +8,7 @@
 
 - `aoa-memo` does not grant role rights or actor identity.
 - `aoa-memo` does not author playbook choreography.
-- `aoa-memo` does not score or prove memory quality.
+- `aoa-memo` does not score, prove, or provide proof of memory quality.
 - `aoa-memo` does not normalize graph truth or activate KAG federation.
 - `aoa-memo` does not rewrite Tree-of-Sophia source meaning.
 - `aoa-memo` does not own route dispatch or runtime execution.

@@ -105,6 +105,10 @@ Tracking starts with the community-docs baseline for this repository.
   release gate coverage, root technical family contracts, and regression tests
   so every memo mechanic package has a machine-checkable OS Abyss readiness
   surface.
+- Add `generated/memo_mechanic_landing_logs.min.json` with builder,
+  validator, release gate coverage, root technical family contracts, and
+  regression tests so every memo mechanic package has a machine-checkable
+  landing receipt surface.
 - Extend `config/root_technical_districts.json` with root generated-family
   contracts so every root `generated/` output names its owner surface, source
   refs, validators, and builders when generator-backed or projected.

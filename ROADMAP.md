@@ -89,9 +89,11 @@ memo-side mechanics. Each package has a route card, package card, operation,
 direction, parts map, owner map, provenance
 bridge, landing log, roadmap, and legacy index. The source-backed
 `config/memo_mechanics.json` and `generated/memo_mechanics.min.json` keep the
-shape machine-checkable. `generated/memo_mechanic_readiness.min.json` now adds
-the OS Abyss readiness matrix over package cards, owner maps, parts, local
-artifacts, stop-lines, and validation routes.
+shape machine-checkable. `generated/memo_mechanic_landing_logs.min.json` now
+makes dated landing receipts, release validation, and stop-lines inspectable,
+and `generated/memo_mechanic_readiness.min.json` adds the OS Abyss readiness
+matrix over package cards, owner maps, parts, local artifacts, stop-lines, and
+validation routes.
 
 The operational-gate migration now owns deployment incident gates, office
 incident gates, service revision ledger posture, and post-release memory
