@@ -7,9 +7,11 @@ import sys
 from collections.abc import Callable
 from pathlib import Path
 
+ROOT = Path(__file__).resolve().parents[3]
+sys.path.insert(0, str(ROOT / "scripts"))
+
 import validate_memo
 
-ROOT = Path(__file__).resolve().parents[1]
 ProjectionBuilder = Callable[[], list[dict[str, object]]]
 
 OUTPUTS: tuple[tuple[Path, ProjectionBuilder], ...] = (
@@ -44,7 +46,7 @@ def main() -> int:
     if mismatches:
         for relative in mismatches:
             print(
-                f"[error] {relative} is out of date; run scripts/build_quest_surfaces.py",
+                f"[error] {relative} is out of date; run mechanics/questbook/scripts/build_quest_surfaces.py",
                 file=sys.stderr,
             )
         return 1

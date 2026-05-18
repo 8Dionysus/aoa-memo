@@ -21,9 +21,11 @@ writeback even though the contract and example live in recurrence-support.
 Keep the quest generated companions in root `generated/` because they project a
 cross-mechanic public quest store.
 
-Make `quests/*.yaml` the source for those generated companions and add
-`scripts/build_quest_surfaces.py` as the deterministic builder. The release
-gate checks the builder output before the broader memo validator.
+Make the memo quest YAML sources the source for those generated companions and
+add a deterministic builder. A later Questbook topology pass moved those
+sources to `quests/memo/<state>/AOA-MEM-Q-*.yaml` and the builder to
+`mechanics/questbook/scripts/build_quest_surfaces.py`. The release gate checks
+the builder output before the broader memo validator.
 
 Require current `AOA-MEM-Q-*` owner routes to resolve into concrete memo docs
 or mechanic docs. Q2 closes through
@@ -43,7 +45,7 @@ or mechanic docs. Q2 closes through
 
 ## Validation
 
-- `python scripts/build_quest_surfaces.py --check`
+- `python mechanics/questbook/scripts/build_quest_surfaces.py --check`
 - `python scripts/validate_memo.py`
 - `python -m pytest -q tests/test_memo_validators.py`
 - `python scripts/release_check.py`

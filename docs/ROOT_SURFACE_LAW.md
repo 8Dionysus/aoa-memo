@@ -78,8 +78,9 @@ Current flat `docs/*.md` surfaces should be read through these classes:
 | Readiness-boundary mechanic docs | `mechanics/readiness-boundary/docs/*` | active readiness-boundary memo mechanic; keep package map, mechanic-local artifacts, generated refs, owner stop-lines, and validators aligned |
 | Consumer handoff mechanic docs | `mechanics/consumer-handoff/docs/*` | active consumer handoff memo mechanic; keep package map, consumer refs, generated companions, and validators aligned |
 | Operational gate mechanic docs | `mechanics/operational-gate/docs/*` | active operational admission memo mechanic; keep package map, mechanic-local artifacts, generated companions, and validators aligned |
-| Recurrence support mechanic docs | `mechanics/recurrence-support/docs/*` | active route-return support memo mechanic; keep package map, mechanic-local artifacts, generated companions, quests, and validators aligned |
+| Recurrence support mechanic docs | `mechanics/recurrence-support/docs/*` | active route-return support memo mechanic; keep package map, mechanic-local artifacts, generated companions, Questbook refs, and validators aligned |
 | Lineage harvest mechanic docs | `mechanics/lineage-harvest/docs/*` | active pattern-lineage harvest memo mechanic; keep package map, mechanic-local artifacts, generated companions, stronger-owner stop-lines, and validators aligned |
+| Questbook mechanic docs | `mechanics/questbook/docs/*` | active public-obligation memo mechanic; root `QUESTBOOK.md` stays an index and root `quests/` stays the lane-first item store |
 | Decisions | `docs/decisions/` | rationale only; active docs still define what |
 
 ## Decision Procedure Before Adding a Root File
@@ -139,6 +140,7 @@ route replaces their flat path.
 | flat and transitional Agon surfaces | moved | `mechanics/agon/docs/AGON_*.md` | Agon is an active memo mechanic with owner map, legacy bridge, and validation |
 | flat and transitional Titan surfaces | moved | `mechanics/titan/docs/TITAN_*.md` | Titan is an active memo mechanic with owner map, legacy bridge, and validation |
 | flat adoption/writeback/retention docs-root surfaces | moved | `mechanics/adoption/docs/`, `mechanics/writeback/docs/`, `mechanics/retention/docs/` | these families are repeatable memo mechanics with owner maps and legacy bridges, not only documentation districts |
+| flat root quest source files | moved | `quests/<lane>/<state>/` | Questbook keeps public obligations in the root item store, with `mechanics/questbook/` owning source contract, validation, and generated projections |
 | mechanic-owned root technical artifacts | moved when single-mechanic-owned | `mechanics/<slug>/{schemas,examples,config,generated,scripts,tests,manifests}` | package-owned artifacts should sit with their mechanics; root technical districts keep only shared or cross-mechanic surfaces |
 
 ## Final Rule

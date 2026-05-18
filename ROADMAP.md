@@ -114,11 +114,11 @@ new object-family author.
 The recurrence-support migration now owns recurrence support, witness trace,
 and reviewed closeout recall landing surfaces as one route-return support
 operation. Witness trace contracts live in `mechanics/recurrence-support/`;
-shared recall contracts and quest surfaces remain root-owned only when they
-are cross-mechanic.
-Root quest generated companions are now builder-backed projections from
-`quests/*.yaml`; their owner routes must point back into real memo docs or
-mechanic docs instead of inventing shadow quest homes.
+shared recall contracts remain root-owned only when they are cross-mechanic.
+Questbook now owns memo obligation mechanics: root `QUESTBOOK.md` is the compact
+index, root `quests/` is the lane-first item store, and generated quest
+companions are builder-backed projections whose owner routes must point back
+into real memo docs or mechanic docs instead of inventing shadow homes.
 
 The lineage-harvest migration now owns pattern-lineage memory as one
 cross-repo recurring-signal gate. The pattern-lineage schema, example, and test
@@ -128,7 +128,7 @@ The current mechanics hardening layer adds `docs/AGENTS.md` and
 `legacy/AGENTS.md` subroutes for each memo mechanic plus
 `mechanics/ARTIFACT_TOPOLOGY.md`. This keeps active docs, legacy provenance,
 and mechanic-local artifacts separate after the schema, example, generated,
-script, test, manifest, and hook relocation.
+script, test, manifest, questbook, and hook relocation.
 
 ## Current contract-hardening waves
 

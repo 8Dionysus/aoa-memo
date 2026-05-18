@@ -10,7 +10,7 @@ This file applies to checked-in artifacts under `generated/`.
 - the doctrine family consists of `memory_catalog.json`, `memory_catalog.min.json`, `memory_capsules.json`, and `memory_sections.full.json`
 - the object family consists of `memory_object_catalog.json`, `memory_object_catalog.min.json`, `memory_object_capsules.json`, and `memory_object_sections.full.json`
 - `agents_mesh.min.json` is the compact companion mirror for current AGENTS route-card coverage
-- `quest_catalog.min*.json` and `quest_dispatch.min*.json` are compact public quest projections from `quests/*.yaml`
+- `quest_catalog.min*.json` and `quest_dispatch.min*.json` are compact public quest projections from `quests/memo/<state>/AOA-MEM-Q-*.yaml`
 
 Do not treat every file here as the same kind of artifact.
 
@@ -25,7 +25,7 @@ Keep this split explicit:
 - `generated/memo_registry.min.json` is a source-authored registry contract validated by `scripts/validate_memo.py`
 - the doctrine family is a checked-in router-facing memo surface family validated by `scripts/validate_memory_surfaces.py`
 - the object family is generator-backed and is rebuilt by `scripts/generate_memory_object_surfaces.py` and checked by `scripts/validate_memory_object_surfaces.py`
-- the quest projection family is rebuilt by `scripts/build_quest_surfaces.py` from `quests/*.yaml` and checked by `scripts/validate_memo.py`
+- the quest projection family is rebuilt by `mechanics/questbook/scripts/build_quest_surfaces.py` from lane-first quest sources and checked by `scripts/validate_memo.py`
 - `mechanics/writeback/generated/runtime_writeback_governance.min.json` is rebuilt by `mechanics/writeback/scripts/generate_runtime_writeback_governance.py` and checked by `scripts/validate_memo.py`
 - `mechanics/consumer-handoff/generated/kag_export.min.json` is generator-backed, rebuilt by `mechanics/consumer-handoff/scripts/generate_kag_export.py`, and checked by `scripts/validate_memo.py`
 - `generated/agents_mesh.min.json` is rebuilt by `scripts/build_agents_mesh_index.py` from `config/agents_mesh.json` and checked by `scripts/validate_agents_mesh_index.py`
@@ -68,8 +68,8 @@ For `agents_mesh.min.json`:
 For the quest projection family:
 
 - Do not hand-edit `generated/quest_catalog.min*.json` or `generated/quest_dispatch.min*.json`
-- update `quests/*.yaml`, `QUESTBOOK.md`, and the owning mechanic docs first
-- rebuild with `python scripts/build_quest_surfaces.py`
+- update `quests/memo/<state>/AOA-MEM-Q-*.yaml`, `QUESTBOOK.md`, and the owning mechanic docs first
+- rebuild with `python mechanics/questbook/scripts/build_quest_surfaces.py`
 - keep `owner_surface` and `anchor_ref` routed to real memo docs or mechanics docs
 
 ## Validation
@@ -80,7 +80,7 @@ When this directory changes, run the matching checks:
 python scripts/validate_memo.py
 python scripts/validate_memory_surfaces.py
 python scripts/validate_memory_object_surfaces.py
-python scripts/build_quest_surfaces.py --check
+python mechanics/questbook/scripts/build_quest_surfaces.py --check
 python scripts/validate_agents_mesh_index.py
 ```
 
@@ -89,7 +89,7 @@ matching generator:
 
 ```bash
 python scripts/generate_memory_object_surfaces.py
-python scripts/build_quest_surfaces.py
+python mechanics/questbook/scripts/build_quest_surfaces.py
 python mechanics/consumer-handoff/scripts/generate_kag_export.py
 python mechanics/writeback/scripts/generate_runtime_writeback_governance.py
 ```

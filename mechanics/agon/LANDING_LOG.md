@@ -8,10 +8,14 @@
 - Preserved former flat docs-root and docs-district lineage through the legacy
   index.
 - Added owner map, provenance bridge, package card, and mechanics validation.
+- Moved Agon-specific quest follow-through notes from flat root `quests/` into
+  the public `quests/agon/ready/` lane and gave them the memo Markdown quest
+  source contract.
 
 Validation route:
 
 ```bash
+python mechanics/questbook/scripts/validate_quest_store.py
 python scripts/validate_memo_mechanics.py
 python scripts/release_check.py
 ```

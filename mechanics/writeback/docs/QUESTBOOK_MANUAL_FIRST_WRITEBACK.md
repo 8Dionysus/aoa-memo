@@ -15,6 +15,6 @@ It is a memo-layer writeback note, not a source-owned quest state surface.
 
 ## Recallable evidence
 
-- The pilot proved that quest state can move in `quests/*.yaml` while human `QUESTBOOK.md` surfaces stay active-only.
+- The pilot proved that quest state can move in lane-first quest sources while human `QUESTBOOK.md` surfaces stay active-only.
 - The pilot also proved that harvest and writeback can stay evidence-first without making `aoa-playbooks` a run ledger or `aoa-memo` a quest owner.
 - Further automation remains deferred until real generated quest projections exist.

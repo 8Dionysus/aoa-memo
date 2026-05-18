@@ -5,8 +5,8 @@
 Memo mechanics are not documentation archives only.
 
 This surface explains where mechanic-adjacent schemas, examples, config,
-generated companions, scripts, tests, manifests, and quest rules should live as
-the mechanics tree matures.
+generated companions, scripts, tests, manifests, and questbook surfaces should
+live as the mechanics tree matures.
 
 It owns placement law only. It does not replace package cards, source docs,
 schema contracts, generated indexes, or release validation.
@@ -25,7 +25,7 @@ contract-shaped, or shared across multiple memory families:
 | `scripts/` | the builder or validator is part of the release gate or shared contract lane |
 | `tests/` | the regression protects repo-wide behavior or cross-district references |
 | `manifests/` | the recurrence manifest is shared across mechanics rather than package-local |
-| `quests/` | the obligation belongs in the public quest store and should survive the current diff |
+| `quests/` | the obligation belongs in the public Questbook item store and should survive the current diff |
 
 Root technical districts must not keep convenience aliases for mechanic-owned
 source docs. Route to `mechanics/<slug>/docs/` directly.
@@ -88,7 +88,7 @@ Examples:
   `mechanics/writeback/generated/`.
 - the KAG source export lives under `mechanics/consumer-handoff/generated/`.
 - root quest generated companions live under `generated/` only because they
-  project the public `quests/*.yaml` store for outside consumers. Their
+  project the public Questbook store for outside consumers. Their
   `owner_surface` and `anchor_ref` values must still route into real memo docs
   or mechanic docs.
 
@@ -97,6 +97,11 @@ remain valid for shared memory-object canon, shared recall contracts,
 repo-wide validators, release gates, and cross-mechanic regression tests.
 Root `manifests/` is reserved for future shared recurrence manifests; the
 current active manifests are package-local.
+
+Questbook is the intentional root-store exception: `mechanics/questbook/` owns
+quest lifecycle, source contracts, validation, and generated projections, while
+root `QUESTBOOK.md` stays the compact index and root `quests/` stays the public
+lane-first item store.
 
 Do not leave active root aliases for moved mechanic artifacts.
 
@@ -129,6 +134,7 @@ Executable validation commands live in [mechanics/AGENTS](AGENTS.md#validation).
 For release-bound artifact placement changes, run:
 
 ```bash
+python scripts/validate_mechanic_artifact_topology.py
 python scripts/validate_memo_mechanics.py
 python scripts/release_check.py
 ```

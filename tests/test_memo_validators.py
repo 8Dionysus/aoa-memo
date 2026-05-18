@@ -36,7 +36,7 @@ generate_kag_export = load_script_module(
 )
 build_quest_surfaces = load_script_module(
     "build_quest_surfaces",
-    SCRIPTS_ROOT / "build_quest_surfaces.py",
+    REPO_ROOT / "mechanics" / "questbook" / "scripts" / "build_quest_surfaces.py",
 )
 
 
@@ -87,7 +87,7 @@ class MemoValidatorTestCase(unittest.TestCase):
             self.assert_system_exit_quietly(validate_memo.validate_kag_source_export)
 
     def questbook_payload(self, quest_id: str) -> dict:
-        payload = load_json(REPO_ROOT / "quests" / f"{quest_id}.yaml")
+        payload = load_json(validate_memo.discover_questbook_files()[quest_id])
         assert isinstance(payload, dict)
         return copy.deepcopy(payload)
 
@@ -988,7 +988,7 @@ class MemoValidatorTestCase(unittest.TestCase):
             self.assert_system_exit_quietly(validate_memo.validate_questbook_surface)
 
     def test_questbook_surface_rejects_quest_id_mismatch(self) -> None:
-        quest_path = validate_memo.ROOT / "quests" / "AOA-MEM-Q-0002.yaml"
+        quest_path = validate_memo.discover_questbook_files()["AOA-MEM-Q-0002"]
         original_load_yaml = validate_memo.load_yaml
 
         def side_effect(path: Path) -> object:
@@ -1003,7 +1003,7 @@ class MemoValidatorTestCase(unittest.TestCase):
             self.assert_system_exit_quietly(validate_memo.validate_questbook_surface)
 
     def test_questbook_surface_rejects_stale_foundation_owner_route(self) -> None:
-        quest_path = validate_memo.ROOT / "quests" / "AOA-MEM-Q-0002.yaml"
+        quest_path = validate_memo.discover_questbook_files()["AOA-MEM-Q-0002"]
         original_load_yaml = validate_memo.load_yaml
 
         def side_effect(path: Path) -> object:
@@ -1018,7 +1018,7 @@ class MemoValidatorTestCase(unittest.TestCase):
             self.assert_system_exit_quietly(validate_memo.validate_questbook_surface)
 
     def test_questbook_surface_rejects_stale_chronicle_owner_route(self) -> None:
-        quest_path = validate_memo.ROOT / "quests" / "AOA-MEM-Q-0003.yaml"
+        quest_path = validate_memo.discover_questbook_files()["AOA-MEM-Q-0003"]
         original_load_yaml = validate_memo.load_yaml
 
         def side_effect(path: Path) -> object:
@@ -1123,7 +1123,7 @@ class MemoValidatorTestCase(unittest.TestCase):
             )
 
     def test_questbook_surface_rejects_missing_additive_anchor_doc(self) -> None:
-        quest_path = validate_memo.ROOT / "quests" / "AOA-MEM-Q-0003.yaml"
+        quest_path = validate_memo.discover_questbook_files()["AOA-MEM-Q-0003"]
         original_load_yaml = validate_memo.load_yaml
 
         def side_effect(path: Path) -> object:

@@ -62,7 +62,7 @@ class RecurrenceSupportMechanicTestCase(unittest.TestCase):
             "mechanics/recurrence-support/schemas/witness-trace.schema.json",
             "mechanics/recurrence-support/examples/witness_trace.example.json",
             "examples/recall_contract.object.working.return.json",
-            "quests/AOA-MEM-Q-0009.yaml",
+            "quests/memo/reanchor/AOA-MEM-Q-0009.yaml",
             "generated/quest_catalog.min.json",
         ):
             self.assertIn(path, parts)
@@ -79,7 +79,9 @@ class RecurrenceSupportMechanicTestCase(unittest.TestCase):
         self.assertIn(active_refs[0], registry["core_docs"])
         self.assertIn(active_refs[2], registry["core_docs"])
 
-        quest = (REPO_ROOT / "quests" / "AOA-MEM-Q-0009.yaml").read_text(encoding="utf-8")
+        quest = (
+            REPO_ROOT / "quests" / "memo" / "reanchor" / "AOA-MEM-Q-0009.yaml"
+        ).read_text(encoding="utf-8")
         self.assertIn(active_refs[1], quest)
 
         catalog = json.loads((REPO_ROOT / "generated" / "memory_catalog.min.json").read_text())

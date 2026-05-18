@@ -1,0 +1,37 @@
+# AGENTS.md
+
+## Applies To
+
+This card applies to `mechanics/questbook/docs/`.
+
+## Role
+
+This directory holds active Questbook mechanic doctrine and support notes.
+
+Docs here explain memo quest source shape, lifecycle placement, generated
+projection boundaries, and owner stop-lines. `QUEST_SOURCE_CONTRACT.md` is the
+active source contract for this docs lane. These docs do not replace root
+`QUESTBOOK.md`, source quest files under `quests/`, generated companions, or
+validators.
+
+## Boundaries
+
+- Keep source-contract wording public-safe and reviewable.
+- Do not import center Questbook authority from `Agents-of-Abyss`; route to it
+  when center doctrine is needed.
+- Do not turn memo quest tracking into proof, runtime state, route dispatch,
+  playbook scenario state, or role authority.
+- Keep generated outputs weaker than source quest files.
+
+## Validation
+
+```bash
+python mechanics/questbook/scripts/validate_quest_store.py
+python scripts/validate_memo_mechanics.py
+python scripts/release_check.py
+```
+
+## Closeout
+
+Report source-contract docs changed, generated projections affected, and
+whether root `QUESTBOOK.md` or `quests/` needed updates.

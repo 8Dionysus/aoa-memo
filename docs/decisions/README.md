@@ -49,6 +49,8 @@ expectation.
 | [2026-05-18-checkpoint-memo-mechanic](2026-05-18-checkpoint-memo-mechanic.md) | add checkpoint as the memo mechanic for checkpoint gates, carry, approval, health, improvement, and checkpoint-to-memory artifacts |
 | [2026-05-18-readiness-boundary-memo-mechanic](2026-05-18-readiness-boundary-memo-mechanic.md) | move readiness boundary doctrine, schema, example, and regression test into a readiness-boundary memo mechanic |
 | [2026-05-18-quest-generated-owner-routes](2026-05-18-quest-generated-owner-routes.md) | keep root quest generated companions builder-backed and mechanic-routed |
+| [2026-05-18-questbook-lane-first-store](2026-05-18-questbook-lane-first-store.md) | add Questbook mechanic and move quest sources into lane-first root store |
+| [2026-05-18-mechanic-artifact-topology-validator](2026-05-18-mechanic-artifact-topology-validator.md) | add a release-gate validator for mechanic-owned root artifact drift |
 
 ## Review Rule
 

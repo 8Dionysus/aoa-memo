@@ -15,3 +15,8 @@ outputs, owner split, stop-lines, validation, and legacy routing.
 
 Use [legacy/INDEX](legacy/INDEX.md) only to audit former placement. Legacy
 paths are historical receipts, not active contracts.
+
+Agon quest follow-through notes were later moved from flat root `quests/` into
+`quests/agon/ready/` because Questbook keeps public obligations in a
+lane-first root item store while Agon docs and validators remain under
+`mechanics/agon/`.
