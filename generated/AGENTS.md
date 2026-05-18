@@ -10,6 +10,8 @@ This file applies to checked-in artifacts under `generated/`.
 - the doctrine family consists of `memory_catalog.json`, `memory_catalog.min.json`, `memory_capsules.json`, and `memory_sections.full.json`
 - the object family consists of `memory_object_catalog.json`, `memory_object_catalog.min.json`, `memory_object_capsules.json`, and `memory_object_sections.full.json`
 - `agents_mesh.min.json` is the compact companion mirror for current AGENTS route-card coverage
+- `mechanic_artifacts.min.json` is the compact generated inventory of
+  package-local mechanic artifact homes
 - `quest_catalog.min*.json` and `quest_dispatch.min*.json` are compact public quest projections from `quests/memo/<state>/AOA-MEM-Q-*.yaml`
 
 Do not treat every file here as the same kind of artifact.
@@ -29,6 +31,9 @@ Keep this split explicit:
 - `mechanics/writeback/generated/runtime_writeback_governance.min.json` is rebuilt by `mechanics/writeback/scripts/generate_runtime_writeback_governance.py` and checked by `scripts/validate_memo.py`
 - `mechanics/consumer-handoff/generated/kag_export.min.json` is generator-backed, rebuilt by `mechanics/consumer-handoff/scripts/generate_kag_export.py`, and checked by `scripts/validate_memo.py`
 - `generated/agents_mesh.min.json` is rebuilt by `scripts/build_agents_mesh_index.py` from `config/agents_mesh.json` and checked by `scripts/validate_agents_mesh_index.py`
+- `generated/mechanic_artifacts.min.json` is rebuilt by
+  `scripts/build_mechanic_artifact_inventory.py` from tracked package-local
+  artifact homes and checked by `scripts/validate_mechanic_artifact_inventory.py`
 
 The object family is derived from curated examples in `examples/memory_object_surface_manifest.json` and the referenced memory-object examples.
 
@@ -82,6 +87,7 @@ python scripts/validate_memory_surfaces.py
 python scripts/validate_memory_object_surfaces.py
 python mechanics/questbook/scripts/build_quest_surfaces.py --check
 python scripts/validate_agents_mesh_index.py
+python scripts/validate_mechanic_artifact_inventory.py
 ```
 
 If the object family or mechanic-generated outputs changed, also run the

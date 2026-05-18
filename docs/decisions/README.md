@@ -52,6 +52,7 @@ expectation.
 | [2026-05-18-questbook-lane-first-store](2026-05-18-questbook-lane-first-store.md) | add Questbook mechanic and move quest sources into lane-first root store |
 | [2026-05-18-mechanic-artifact-topology-validator](2026-05-18-mechanic-artifact-topology-validator.md) | add a release-gate validator for mechanic-owned root artifact drift |
 | [2026-05-18-root-technical-district-allowlist](2026-05-18-root-technical-district-allowlist.md) | make remaining root technical artifacts exact and machine-auditable |
+| [2026-05-18-mechanic-artifact-inventory](2026-05-18-mechanic-artifact-inventory.md) | add a generated inventory for package-local mechanic artifacts |
 
 ## Review Rule
 

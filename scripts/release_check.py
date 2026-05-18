@@ -40,6 +40,8 @@ COMMANDS = [
     ("validate memory object surfaces", [sys.executable, "scripts/validate_memory_object_surfaces.py"]),
     ("validate lifecycle audit examples", [sys.executable, "scripts/validate_lifecycle_audit_examples.py"]),
     ("validate mechanic artifact topology", [sys.executable, "scripts/validate_mechanic_artifact_topology.py"]),
+    ("check mechanic artifact inventory", [sys.executable, "scripts/build_mechanic_artifact_inventory.py", "--check"]),
+    ("validate mechanic artifact inventory", [sys.executable, "scripts/validate_mechanic_artifact_inventory.py"]),
     ("validate AGENTS mesh", [sys.executable, "scripts/validate_agents_mesh.py"]),
     ("check AGENTS mesh index", [sys.executable, "scripts/build_agents_mesh_index.py", "--check"]),
     ("validate AGENTS mesh index", [sys.executable, "scripts/validate_agents_mesh_index.py"]),
