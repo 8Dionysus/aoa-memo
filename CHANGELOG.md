@@ -141,6 +141,10 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Changed
 
+- Move checkpoint inquiry, mapping, approval/health/improvement, Phase Alpha,
+  and boundary regression artifacts into nearest functioning `parts/` homes,
+  with recurrence, consumer-handoff, and writeback refs updated to the
+  part-local checkpoint surfaces.
 - Move writeback schemas, examples, generated companions, scripts, tests, and
   receipt fixtures into nearest functioning `parts/` homes, with the Wave 2
   seed-contract regression registered as a root cross-mechanic test family.

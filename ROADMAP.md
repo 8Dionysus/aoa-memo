@@ -107,9 +107,12 @@ contract surface.
 
 The checkpoint migration now owns inquiry checkpoint, checkpoint-to-memory,
 approval, health, improvement-thread, and phase-alpha checkpoint examples as
-one checkpoint memory operation. Recurrence-support consumes checkpoint
-artifacts for route return, and writeback consumes the checkpoint-to-memory
-contract for generated runtime writeback companions.
+one checkpoint memory operation. Those technical artifacts now live under the
+nearest functioning `mechanics/checkpoint/parts/<part>/` home so carry,
+mapping, record preservation, and boundary regression can be checked as real
+parts. Recurrence-support consumes checkpoint artifacts for route return, and
+writeback consumes the checkpoint-to-memory contract for generated runtime
+writeback companions.
 
 The readiness-boundary migration now owns the memory readiness boundary doc,
 contract schema, example, and regression test as one admission-boundary
@@ -306,8 +309,8 @@ This roadmap does **not** aim to turn `aoa-memo` into:
 - `mechanics/consumer-handoff/docs/AGENT_MEMORY_POSTURE_SEAM.md`
 - `mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md`
 - cross-repo contract notes for `aoa-agents` memory posture
-- `mechanics/checkpoint/schemas/inquiry_checkpoint.schema.json`
-- `mechanics/checkpoint/examples/inquiry_checkpoint.example.json`
+- `mechanics/checkpoint/parts/checkpoint-carry-contract/schemas/inquiry_checkpoint.schema.json`
+- `mechanics/checkpoint/parts/checkpoint-carry-contract/examples/inquiry_checkpoint.example.json`
 - suggested fields for read, write, promotion, and freeze rights
 - playbook-facing guidance for required memory scopes and recall modes
 

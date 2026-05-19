@@ -7,9 +7,14 @@ detail, but OS Abyss uses checkpoints as a repeatable memory operation.
 ## Active Placement
 
 - `mechanics/checkpoint/docs/` owns checkpoint mechanic doctrine.
-- `mechanics/checkpoint/schemas/` owns checkpoint-specific support schemas.
-- `mechanics/checkpoint/examples/` owns checkpoint-specific examples.
-- `mechanics/checkpoint/tests/` owns checkpoint mechanic regression tests.
+- `mechanics/checkpoint/parts/checkpoint-carry-contract/` owns
+  `inquiry_checkpoint` schemas and examples.
+- `mechanics/checkpoint/parts/checkpoint-to-memory-mapping/` owns the
+  checkpoint-to-memory schema and example consumed by writeback.
+- `mechanics/checkpoint/parts/approval-and-health-records/` owns approval,
+  health, improvement, and checkpoint review memory-object examples.
+- `mechanics/checkpoint/parts/checkpoint-memory-boundary/tests/` owns the
+  package boundary regression.
 
 ## Former Placement
 
@@ -25,6 +30,17 @@ Former active paths now route here:
 - `mechanics/recurrence-support/examples/inquiry_checkpoint.return.example.json`
 - `mechanics/writeback/schemas/checkpoint-to-memory-contract.schema.json`
 - `mechanics/writeback/examples/checkpoint_to_memory_contract.example.json`
+- `mechanics/checkpoint/schemas/inquiry_checkpoint.schema.json`
+- `mechanics/checkpoint/schemas/checkpoint-to-memory-contract.schema.json`
+- `mechanics/checkpoint/examples/inquiry_checkpoint.example.json`
+- `mechanics/checkpoint/examples/inquiry_checkpoint.return.example.json`
+- `mechanics/checkpoint/examples/checkpoint_to_memory_contract.example.json`
+- `mechanics/checkpoint/examples/checkpoint_approval_record.example.json`
+- `mechanics/checkpoint/examples/checkpoint_health_check.example.json`
+- `mechanics/checkpoint/examples/checkpoint_improvement_thread.example.json`
+- `mechanics/checkpoint/examples/decision.phase-alpha-self-agent-checkpoint.example.json`
+- `mechanics/checkpoint/examples/audit_event.phase-alpha-self-agent-checkpoint.example.json`
+- `mechanics/checkpoint/tests/test_checkpoint_mechanic.py`
 
 ## Boundary Note
 

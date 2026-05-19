@@ -12,7 +12,12 @@ Stronger claims route through `../../OWNER_MAP.md`. Source placement and legacy 
 
 ## Contract
 
-maps approval and health examples into existing memory objects
+maps approval, health, improvement, and checkpoint review examples into existing memory objects
+
+## Artifact Contract
+
+This part owns checkpoint approval, health, improvement-thread, and review
+examples when they are represented as existing memory object kinds.
 
 ## Stop-lines
 

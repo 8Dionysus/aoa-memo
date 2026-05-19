@@ -15,6 +15,10 @@ This active part belongs to `mechanics/checkpoint/` and materializes the matchin
 
 names what memo may preserve and what routes away
 
+## Owned Artifacts
+
+- `./tests/test_checkpoint_mechanic.py`
+
 ## Next Route
 
 Use `../../OWNER_MAP.md` for stronger owner routing and `../../PROVENANCE.md` for placement history.

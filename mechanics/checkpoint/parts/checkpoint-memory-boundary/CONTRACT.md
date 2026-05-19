@@ -14,6 +14,11 @@ Stronger claims route through `../../OWNER_MAP.md`. Source placement and legacy 
 
 names what memo may preserve and what routes away
 
+## Artifact Contract
+
+This part owns the package boundary regression that proves checkpoint artifacts
+stay part-local and stronger owner claims stay outside memo.
+
 ## Stop-lines
 
 This part inherits the package stop-lines from `../../README.md#must-not-claim` and `../../OWNER_MAP.md`.

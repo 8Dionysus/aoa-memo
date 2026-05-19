@@ -27,7 +27,7 @@ canonical route truth.
 
 ## Mapping
 
-Reuse `mechanics/checkpoint/examples/checkpoint_to_memory_contract.example.json`.
+Reuse `mechanics/checkpoint/parts/checkpoint-to-memory-mapping/examples/checkpoint_to_memory_contract.example.json`.
 
 Recommended mapping:
 
@@ -98,7 +98,7 @@ Reviewed evidence stays anchored to:
 ## Reference Surfaces
 
 - `mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md`
-- `mechanics/checkpoint/examples/checkpoint_to_memory_contract.example.json`
+- `mechanics/checkpoint/parts/checkpoint-to-memory-mapping/examples/checkpoint_to_memory_contract.example.json`
 - `examples/provenance_thread.example.json`
 - `docs/PROVENANCE_THREADS.md`
 - `docs/AUDIT_EVENTS.md`

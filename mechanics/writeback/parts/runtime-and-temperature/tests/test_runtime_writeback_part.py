@@ -36,7 +36,7 @@ def test_runtime_writeback_targets_schema_and_generator_are_part_local() -> None
     Draft202012Validator.check_schema(schema)
     Draft202012Validator(schema).validate(current)
     assert current == generator.build_runtime_writeback_targets_payload()
-    assert current["source_of_truth"] == "mechanics/checkpoint/examples/checkpoint_to_memory_contract.example.json"
+    assert current["source_of_truth"] == "mechanics/checkpoint/parts/checkpoint-to-memory-mapping/examples/checkpoint_to_memory_contract.example.json"
 
 
 def test_runtime_writeback_intake_and_governance_are_generator_backed() -> None:

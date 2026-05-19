@@ -14,6 +14,12 @@ Stronger claims route through `../../OWNER_MAP.md`. Source placement and legacy 
 
 maps checkpoint artifacts into existing object kinds without creating checkpoint-only memory
 
+## Artifact Contract
+
+This part owns the checkpoint-to-memory schema and example consumed by
+`mechanics/writeback/`. Consumers may read this contract, but they do not own
+the checkpoint artifact or its promotion into memory.
+
 ## Stop-lines
 
 This part inherits the package stop-lines from `../../README.md#must-not-claim` and `../../OWNER_MAP.md`.

@@ -29,7 +29,7 @@
     "mechanics/recurrence-support/docs/WITNESS_TRACE_CONTRACT.md"
   ],
   "memory_delta_refs": [
-    "mechanics/checkpoint/examples/checkpoint_to_memory_contract.example.json"
+    "mechanics/checkpoint/parts/checkpoint-to-memory-mapping/examples/checkpoint_to_memory_contract.example.json"
   ],
   "canon_delta_refs": [
     "mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md"
@@ -43,7 +43,7 @@
   "requires_human_review": false,
   "return_pack": {
     "anchor_refs": [
-      "mechanics/checkpoint/examples/checkpoint_to_memory_contract.example.json",
+      "mechanics/checkpoint/parts/checkpoint-to-memory-mapping/examples/checkpoint_to_memory_contract.example.json",
       "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md#checkpoint-to-memory-contract"
     ],
     "reentry_refs": [

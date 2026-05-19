@@ -18,8 +18,8 @@ they serve more than this one mechanic:
 
 | Contract | Artifact Surface |
 |---|---|
-| Checkpoint artifact consumer refs | `mechanics/checkpoint/schemas/inquiry_checkpoint.schema.json`, `mechanics/checkpoint/examples/inquiry_checkpoint.example.json`, `mechanics/checkpoint/examples/inquiry_checkpoint.return.example.json` |
-| Checkpoint to memory consumer refs | `mechanics/checkpoint/schemas/checkpoint-to-memory-contract.schema.json`, `mechanics/checkpoint/examples/checkpoint_to_memory_contract.example.json` |
+| Checkpoint artifact consumer refs | `mechanics/checkpoint/parts/checkpoint-carry-contract/schemas/inquiry_checkpoint.schema.json`, `mechanics/checkpoint/parts/checkpoint-carry-contract/examples/inquiry_checkpoint.example.json`, `mechanics/checkpoint/parts/checkpoint-carry-contract/examples/inquiry_checkpoint.return.example.json` |
+| Checkpoint to memory consumer refs | `mechanics/checkpoint/parts/checkpoint-to-memory-mapping/schemas/checkpoint-to-memory-contract.schema.json`, `mechanics/checkpoint/parts/checkpoint-to-memory-mapping/examples/checkpoint_to_memory_contract.example.json` |
 | Witness trace | `mechanics/recurrence-support/schemas/witness-trace.schema.json`, `mechanics/recurrence-support/examples/witness_trace.example.json` |
 | Working return recall | `examples/recall_contract.object.working.return.json`, `examples/recall_contract.object.working.phase-alpha.json` |
 | Witness trace quest closeout | `quests/memo/done/AOA-MEM-Q-0002.yaml`, `generated/quest_catalog.min.json`, `generated/quest_catalog.min.example.json` |

@@ -14,6 +14,11 @@ Stronger claims route through `../../OWNER_MAP.md`. Source placement and legacy 
 
 keeps pause, return, and carry refs bounded and reviewable
 
+## Artifact Contract
+
+This part owns the `inquiry_checkpoint` support schema and examples. These
+artifacts remain route carry packets, not durable memory-object kinds.
+
 ## Stop-lines
 
 This part inherits the package stop-lines from `../../README.md#must-not-claim` and `../../OWNER_MAP.md`.
