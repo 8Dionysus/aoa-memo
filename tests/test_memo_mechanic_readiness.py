@@ -157,6 +157,14 @@ def test_local_test_dirs_only_include_runnable_test_modules() -> None:
     assert _local_test_dirs(artifacts) == ["mechanics/writeback/tests"]
 
 
+def test_local_test_dirs_reject_fixture_only_test_artifacts() -> None:
+    artifacts = [
+        {"district": "tests", "path": "mechanics/writeback/tests/fixtures/writeback.json"},
+    ]
+
+    assert _local_test_dirs(artifacts) == []
+
+
 def test_local_test_route_requires_runnable_pytest_command() -> None:
     test_dirs = ["mechanics/agon/parts/prebinding-and-candidate-intake/tests"]
     prose_only = (
@@ -170,3 +178,9 @@ def test_local_test_route_requires_runnable_pytest_command() -> None:
 
     assert _has_runnable_local_test_routes(prose_only, test_dirs) is False
     assert _has_runnable_local_test_routes(command_route, test_dirs) is True
+
+
+def test_local_test_route_rejects_empty_runnable_test_dirs() -> None:
+    validation_text = "python -m pytest -q mechanics/writeback/tests"
+
+    assert _has_runnable_local_test_routes(validation_text, []) is False
