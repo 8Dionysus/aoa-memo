@@ -17,6 +17,10 @@ Stronger claims route through `../../OWNER_MAP.md`. Source placement and legacy 
 
 keeps revision and revocation writeback reviewable
 
+Revision, release-revision, and revocation ledger contracts are part-local here
+because they preserve memo-side ledger writeback shape. They do not grant
+release authority, revocation authority, or owner acceptance.
+
 ## Stop-lines
 
 This part inherits the package stop-lines from `../../README.md#must-not-claim` and `../../OWNER_MAP.md`.

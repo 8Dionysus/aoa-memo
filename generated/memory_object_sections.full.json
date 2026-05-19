@@ -1122,7 +1122,7 @@
       "id": "memo.decision.2026-04-12.self-agency-reanchor-window",
       "kind": "decision",
       "title": "Decision to keep the self-agency reanchor window bounded",
-      "source_path": "mechanics/writeback/examples/decision.self-agency-reanchor-window.example.json",
+      "source_path": "mechanics/writeback/parts/growth-and-continuity/examples/decision.self-agency-reanchor-window.example.json",
       "sections": [
         {
           "section_id": "memo.decision.2026-04-12.self-agency-reanchor-window#identity-and-recall",
@@ -1158,7 +1158,7 @@
       "id": "memo.state.2026-04-12.self-agency-continuity-relay",
       "kind": "state_capsule",
       "title": "Self-agency continuity relay state capsule",
-      "source_path": "mechanics/writeback/examples/state_capsule.self-agency-continuity-relay.example.json",
+      "source_path": "mechanics/writeback/parts/growth-and-continuity/examples/state_capsule.self-agency-continuity-relay.example.json",
       "sections": [
         {
           "section_id": "memo.state.2026-04-12.self-agency-continuity-relay#identity-and-recall",

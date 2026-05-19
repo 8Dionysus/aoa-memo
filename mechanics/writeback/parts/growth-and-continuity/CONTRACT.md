@@ -17,6 +17,11 @@ Stronger claims route through `../../OWNER_MAP.md`. Source placement and legacy 
 
 keeps growth and continuity writeback owner-routed
 
+Continuity examples, Phase Alpha writeback map, and growth-refinery generated
+lanes are part-local here because they support memo-side return and growth
+recall. They must remain source-linked and cannot decide route legitimacy,
+agent return legitimacy, playbook truth, or proof truth.
+
 ## Stop-lines
 
 This part inherits the package stop-lines from `../../README.md#must-not-claim` and `../../OWNER_MAP.md`.

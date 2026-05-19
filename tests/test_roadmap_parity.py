@@ -44,16 +44,16 @@ class RoadmapParityTestCase(unittest.TestCase):
             "mechanics/lineage-harvest/docs/PATTERN_LINEAGE_MEMORY.md",
             "mechanics/writeback/docs/GROWTH_REFINERY_WRITEBACK.md",
             "mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md",
-            "mechanics/writeback/generated/runtime_writeback_targets.min.json",
-            "mechanics/writeback/generated/runtime_writeback_intake.min.json",
-            "mechanics/writeback/generated/runtime_writeback_governance.min.json",
+            "mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_targets.min.json",
+            "mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_intake.min.json",
+            "mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_governance.min.json",
             "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
             "mechanics/antifragility/examples/recovery_pattern_memory.rollback_followthrough.example.json",
             "mechanics/antifragility/examples/recovery_pattern_memory.component_refresh.example.json",
             "mechanics/writeback/docs/SELF_AGENCY_CONTINUITY_WRITEBACK.md",
-            "mechanics/writeback/examples/provenance_thread.self-agency-continuity.example.json",
-            "mechanics/writeback/generated/phase_alpha_writeback_map.min.json",
-            "mechanics/writeback/scripts/publish_live_receipts.py",
+            "mechanics/writeback/parts/growth-and-continuity/examples/provenance_thread.self-agency-continuity.example.json",
+            "mechanics/writeback/parts/growth-and-continuity/generated/phase_alpha_writeback_map.min.json",
+            "mechanics/writeback/parts/receipt-publication-regression/scripts/publish_live_receipts.py",
         ):
             self.assertTrue((REPO_ROOT / relative_path).is_file())
             self.assertIn(relative_path, roadmap)

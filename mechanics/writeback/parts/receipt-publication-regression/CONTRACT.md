@@ -8,12 +8,16 @@ Stronger claims route through `../../OWNER_MAP.md`. Source placement and legacy 
 
 ## Source Surfaces
 
-- `mechanics/writeback/tests/fixtures/memo_writeback_receipts.example.jsonl`
-- `mechanics/writeback/tests/test_publish_live_receipts.py`
+- `mechanics/writeback/parts/receipt-publication-regression/tests/fixtures/memo_writeback_receipts.example.jsonl`
+- `mechanics/writeback/parts/receipt-publication-regression/tests/test_publish_live_receipts.py`
 
 ## Contract
 
-keeps tracked writeback receipts package-local and recall-surface backed
+keeps tracked writeback receipts part-local and recall-surface backed
+
+The publication helper and receipt fixture are part-local regression surfaces.
+They may validate and append owner-local memo receipts, but they must not become
+runtime receipt authority or cross-repo stats truth.
 
 ## Stop-lines
 

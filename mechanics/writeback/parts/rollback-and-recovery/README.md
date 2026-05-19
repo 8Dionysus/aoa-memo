@@ -17,6 +17,14 @@ This active part belongs to `mechanics/writeback/` and materializes the matching
 
 keeps rollback memory bounded
 
+## Local Artifacts
+
+- `schemas/rollback_memory_entry_v1.json`
+- `schemas/rollback_revision_ledger_entry_v1.json`
+- `examples/rollback_memory_entry_v1.example.json`
+- `examples/rollback_revision_ledger_entry.example.json`
+- `tests/test_rollback_recovery_contracts.py`
+
 ## Next Route
 
 Use `../../OWNER_MAP.md` for stronger owner routing and `../../PROVENANCE.md` for placement history.

@@ -9,12 +9,18 @@ This active part belongs to `mechanics/writeback/` and materializes the matching
 
 ## Source Surfaces
 
-- `mechanics/writeback/tests/fixtures/memo_writeback_receipts.example.jsonl`
-- `mechanics/writeback/tests/test_publish_live_receipts.py`
+- `mechanics/writeback/parts/receipt-publication-regression/tests/fixtures/memo_writeback_receipts.example.jsonl`
+- `mechanics/writeback/parts/receipt-publication-regression/tests/test_publish_live_receipts.py`
 
 ## Function
 
-keeps tracked writeback receipts package-local and recall-surface backed
+keeps tracked writeback receipts part-local and recall-surface backed
+
+## Local Artifacts
+
+- `scripts/publish_live_receipts.py`
+- `tests/fixtures/memo_writeback_receipts.example.jsonl`
+- `tests/test_publish_live_receipts.py`
 
 ## Next Route
 

@@ -17,6 +17,10 @@ Stronger claims route through `../../OWNER_MAP.md`. Source placement and legacy 
 
 keeps quest writeback source-linked and manual-first
 
+The quest chronicle schema and example are part-local because they witness
+quest memory posture only inside this writeback part. They must not become
+quest authority, campaign state, playbook choreography, or source acceptance.
+
 ## Stop-lines
 
 This part inherits the package stop-lines from `../../README.md#must-not-claim` and `../../OWNER_MAP.md`.

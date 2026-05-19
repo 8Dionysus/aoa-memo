@@ -44,12 +44,12 @@ Recommended mapping:
   `examples/provenance_thread.example.json` as a provenance-thread precedent
   when a human needs route replay.
 - the current full-chain replay candidate is
-  `mechanics/writeback/examples/provenance_thread.a2a-summon-return-checkpoint.example.json`,
+  `mechanics/writeback/parts/growth-and-continuity/examples/provenance_thread.a2a-summon-return-checkpoint.example.json`,
   anchored to
   `repo:aoa-sdk/examples/a2a/summon_return_checkpoint_e2e.fixture.json`.
 
 `provenance_thread` remains a bounded replay aid. It is not a runtime target
-inside `mechanics/writeback/generated/runtime_writeback_targets.min.json`.
+inside `mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_targets.min.json`.
 
 ## Review Gates
 

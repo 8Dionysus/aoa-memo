@@ -22,16 +22,22 @@ SCRIPT_PATHS = {
     "generate_runtime_writeback_targets.py": REPO_ROOT
     / "mechanics"
     / "writeback"
+    / "parts"
+    / "runtime-and-temperature"
     / "scripts"
     / "generate_runtime_writeback_targets.py",
     "generate_runtime_writeback_intake.py": REPO_ROOT
     / "mechanics"
     / "writeback"
+    / "parts"
+    / "runtime-and-temperature"
     / "scripts"
     / "generate_runtime_writeback_intake.py",
     "generate_runtime_writeback_governance.py": REPO_ROOT
     / "mechanics"
     / "writeback"
+    / "parts"
+    / "runtime-and-temperature"
     / "scripts"
     / "generate_runtime_writeback_governance.py",
 }
@@ -57,7 +63,14 @@ GENERATED_ROOT = REPO_ROOT / "generated"
 EXAMPLES_ROOT = REPO_ROOT / "examples"
 CONSUMER_HANDOFF_GENERATED_ROOT = REPO_ROOT / "mechanics" / "consumer-handoff" / "generated"
 CHECKPOINT_EXAMPLES_ROOT = REPO_ROOT / "mechanics" / "checkpoint" / "examples"
-WRITEBACK_GENERATED_ROOT = REPO_ROOT / "mechanics" / "writeback" / "generated"
+WRITEBACK_GENERATED_ROOT = (
+    REPO_ROOT
+    / "mechanics"
+    / "writeback"
+    / "parts"
+    / "runtime-and-temperature"
+    / "generated"
+)
 
 
 def load_json(path: Path):
@@ -352,7 +365,7 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
         self.assertEqual(
             current["source_of_truth"],
             {
-                "runtime_writeback_targets": "mechanics/writeback/generated/runtime_writeback_targets.min.json",
+                "runtime_writeback_targets": "mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_targets.min.json",
                 "checkpoint_to_memory_contract": "mechanics/checkpoint/examples/checkpoint_to_memory_contract.example.json",
                 "runtime_writeback_seam": "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
                 "quest_evidence_writeback": "mechanics/writeback/docs/QUEST_EVIDENCE_WRITEBACK.md",
@@ -393,8 +406,8 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
         self.assertEqual(
             current["source_of_truth"],
             {
-                "runtime_writeback_targets": "mechanics/writeback/generated/runtime_writeback_targets.min.json",
-                "runtime_writeback_intake": "mechanics/writeback/generated/runtime_writeback_intake.min.json",
+                "runtime_writeback_targets": "mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_targets.min.json",
+                "runtime_writeback_intake": "mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_intake.min.json",
             },
         )
         self.assertTrue(all(item["governance_passed"] for item in current["targets"]))
@@ -431,9 +444,9 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
         for command in (
             "python scripts/generate_memory_object_surfaces.py",
             "python mechanics/consumer-handoff/scripts/generate_kag_export.py",
-            "python mechanics/writeback/scripts/generate_runtime_writeback_targets.py",
-            "python mechanics/writeback/scripts/generate_runtime_writeback_intake.py",
-            "python mechanics/writeback/scripts/generate_phase_alpha_writeback_map.py",
+            "python mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_targets.py",
+            "python mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_intake.py",
+            "python mechanics/writeback/parts/growth-and-continuity/scripts/generate_phase_alpha_writeback_map.py",
         ):
             self.assertIn(command, readme)
 

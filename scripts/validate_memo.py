@@ -39,24 +39,30 @@ SCHEMAS = ROOT / "schemas"
 EXAMPLES = ROOT / "examples"
 GENERATED = ROOT / "generated"
 MECHANICS = ROOT / "mechanics"
-MECHANIC_SCHEMA_DIRS = tuple(sorted(MECHANICS.glob("*/schemas")))
-MECHANIC_EXAMPLE_DIRS = tuple(sorted(MECHANICS.glob("*/examples")))
+MECHANIC_SCHEMA_DIRS = tuple(
+    sorted([*MECHANICS.glob("*/schemas"), *MECHANICS.glob("*/parts/*/schemas")])
+)
+MECHANIC_EXAMPLE_DIRS = tuple(
+    sorted([*MECHANICS.glob("*/examples"), *MECHANICS.glob("*/parts/*/examples")])
+)
 WRITEBACK = MECHANICS / "writeback"
+WRITEBACK_RUNTIME_PART = WRITEBACK / "parts" / "runtime-and-temperature"
+WRITEBACK_GROWTH_PART = WRITEBACK / "parts" / "growth-and-continuity"
 CONSUMER_HANDOFF = MECHANICS / "consumer-handoff"
 READINESS_BOUNDARY = MECHANICS / "readiness-boundary"
-RUNTIME_WRITEBACK_TARGETS_PATH = WRITEBACK / "generated" / "runtime_writeback_targets.min.json"
-RUNTIME_WRITEBACK_INTAKE_PATH = WRITEBACK / "generated" / "runtime_writeback_intake.min.json"
-RUNTIME_WRITEBACK_GOVERNANCE_PATH = WRITEBACK / "generated" / "runtime_writeback_governance.min.json"
-GROWTH_REFINERY_WRITEBACK_LANES_PATH = WRITEBACK / "generated" / "growth_refinery_writeback_lanes.min.json"
+RUNTIME_WRITEBACK_TARGETS_PATH = WRITEBACK_RUNTIME_PART / "generated" / "runtime_writeback_targets.min.json"
+RUNTIME_WRITEBACK_INTAKE_PATH = WRITEBACK_RUNTIME_PART / "generated" / "runtime_writeback_intake.min.json"
+RUNTIME_WRITEBACK_GOVERNANCE_PATH = WRITEBACK_RUNTIME_PART / "generated" / "runtime_writeback_governance.min.json"
+GROWTH_REFINERY_WRITEBACK_LANES_PATH = WRITEBACK_GROWTH_PART / "generated" / "growth_refinery_writeback_lanes.min.json"
 LIVE_RECEIPT_LOG_PATH = ROOT / ".aoa" / "live_receipts" / "memo-writeback-receipts.jsonl"
 RECALL_SURFACE_PREFIX = "repo:aoa-memo/generated/memory_object_catalog.min.json#"
-GROWTH_LANE_REF_PREFIX = "repo:aoa-memo/mechanics/writeback/generated/growth_refinery_writeback_lanes.min.json#"
+GROWTH_LANE_REF_PREFIX = "repo:aoa-memo/mechanics/writeback/parts/growth-and-continuity/generated/growth_refinery_writeback_lanes.min.json#"
 LIVE_RECEIPT_ACTOR_BY_KIND = {
     "memo_writeback_receipt": "aoa-memo:runtime-writeback",
     "memo_growth_writeback_receipt": "aoa-memo:growth-refinery-writeback",
 }
-PHASE_ALPHA_WRITEBACK_MAP_PATH = WRITEBACK / "examples" / "phase_alpha_writeback_map.example.json"
-PHASE_ALPHA_WRITEBACK_OUTPUT_PATH = WRITEBACK / "generated" / "phase_alpha_writeback_map.min.json"
+PHASE_ALPHA_WRITEBACK_MAP_PATH = WRITEBACK_GROWTH_PART / "examples" / "phase_alpha_writeback_map.example.json"
+PHASE_ALPHA_WRITEBACK_OUTPUT_PATH = WRITEBACK_GROWTH_PART / "generated" / "phase_alpha_writeback_map.min.json"
 MEMORY_READINESS_BOUNDARY_DOC_PATH = READINESS_BOUNDARY / "docs" / "MEMORY_READINESS_BOUNDARY.md"
 MEMORY_READINESS_BOUNDARY_DOC_REF = "mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md"
 MEMORY_READINESS_BOUNDARY_PRESSURE_REF = (
@@ -258,10 +264,10 @@ SELF_AGENCY_CONTINUITY_OBJECT_EXAMPLE_NAMES = tuple(
 )
 SELF_AGENCY_CONTINUITY_EXPECTED_OBJECT_PATHS = {
     "memo.decision.2026-04-12.self-agency-reanchor-window": (
-        "mechanics/writeback/examples/decision.self-agency-reanchor-window.example.json"
+        "mechanics/writeback/parts/growth-and-continuity/examples/decision.self-agency-reanchor-window.example.json"
     ),
     "memo.state.2026-04-12.self-agency-continuity-relay": (
-        "mechanics/writeback/examples/state_capsule.self-agency-continuity-relay.example.json"
+        "mechanics/writeback/parts/growth-and-continuity/examples/state_capsule.self-agency-continuity-relay.example.json"
     ),
 }
 SELF_AGENCY_CONTINUITY_REQUIRED_SOURCE_REFS = [
@@ -288,7 +294,7 @@ KAG_EXPORT_REQUIRED_FIELDS = {
 
 
 def load_runtime_writeback_targets_builder():
-    module_path = WRITEBACK / "scripts" / "generate_runtime_writeback_targets.py"
+    module_path = WRITEBACK_RUNTIME_PART / "scripts" / "generate_runtime_writeback_targets.py"
     spec = importlib.util.spec_from_file_location(
         "generate_runtime_writeback_targets",
         module_path,
@@ -303,7 +309,7 @@ def load_runtime_writeback_targets_builder():
 
 
 def load_runtime_writeback_intake_builder():
-    module_path = WRITEBACK / "scripts" / "generate_runtime_writeback_intake.py"
+    module_path = WRITEBACK_RUNTIME_PART / "scripts" / "generate_runtime_writeback_intake.py"
     spec = importlib.util.spec_from_file_location(
         "generate_runtime_writeback_intake",
         module_path,
@@ -318,7 +324,7 @@ def load_runtime_writeback_intake_builder():
 
 
 def load_runtime_writeback_governance_builder():
-    module_path = WRITEBACK / "scripts" / "generate_runtime_writeback_governance.py"
+    module_path = WRITEBACK_RUNTIME_PART / "scripts" / "generate_runtime_writeback_governance.py"
     spec = importlib.util.spec_from_file_location(
         "generate_runtime_writeback_governance",
         module_path,
@@ -333,7 +339,7 @@ def load_runtime_writeback_governance_builder():
 
 
 def load_growth_refinery_writeback_lanes_builder():
-    module_path = WRITEBACK / "scripts" / "generate_growth_refinery_writeback_lanes.py"
+    module_path = WRITEBACK_GROWTH_PART / "scripts" / "generate_growth_refinery_writeback_lanes.py"
     spec = importlib.util.spec_from_file_location(
         "generate_growth_refinery_writeback_lanes",
         module_path,
@@ -348,7 +354,7 @@ def load_growth_refinery_writeback_lanes_builder():
 
 
 def load_phase_alpha_writeback_builder():
-    module_path = WRITEBACK / "scripts" / "generate_phase_alpha_writeback_map.py"
+    module_path = WRITEBACK_GROWTH_PART / "scripts" / "generate_phase_alpha_writeback_map.py"
     spec = importlib.util.spec_from_file_location(
         "generate_phase_alpha_writeback_map",
         module_path,
@@ -1782,8 +1788,8 @@ def validate_quest_chronicle_surface() -> None:
         errors.append("quest_chronicle must not appear in generated/memo_registry.min.json memory_object_kinds")
     if "quest_chronicle" in registry.get("supporting_objects", []):
         errors.append("quest_chronicle must not appear in generated/memo_registry.min.json supporting_objects")
-    if "mechanics/writeback/schemas/quest_chronicle.schema.json" not in registry.get("schemas", []):
-        errors.append("generated/memo_registry.min.json must list mechanics/writeback/schemas/quest_chronicle.schema.json")
+    if "mechanics/writeback/parts/quest-and-chronicle/schemas/quest_chronicle.schema.json" not in registry.get("schemas", []):
+        errors.append("generated/memo_registry.min.json must list mechanics/writeback/parts/quest-and-chronicle/schemas/quest_chronicle.schema.json")
     if "mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md" not in registry.get("core_docs", []):
         errors.append("generated/memo_registry.min.json must list mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md")
 
@@ -2264,31 +2270,31 @@ def validate_runtime_writeback_targets() -> None:
 
     if data != expected:
         errors.append(
-            "mechanics/writeback/generated/runtime_writeback_targets.min.json is out of date; "
-            "run mechanics/writeback/scripts/generate_runtime_writeback_targets.py"
+            "mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_targets.min.json is out of date; "
+            "run mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_targets.py"
         )
 
     if data.get("contract_id") != "aoa-memo.runtime-writeback.v1":
-        errors.append("mechanics/writeback/generated/runtime_writeback_targets.min.json must keep contract_id aoa-memo.runtime-writeback.v1")
+        errors.append("mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_targets.min.json must keep contract_id aoa-memo.runtime-writeback.v1")
     if data.get("source_of_truth") != "mechanics/checkpoint/examples/checkpoint_to_memory_contract.example.json":
-        errors.append("mechanics/writeback/generated/runtime_writeback_targets.min.json must keep source_of_truth mechanics/checkpoint/examples/checkpoint_to_memory_contract.example.json")
+        errors.append("mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_targets.min.json must keep source_of_truth mechanics/checkpoint/examples/checkpoint_to_memory_contract.example.json")
     if data.get("runtime_boundary") != contract.get("runtime_boundary", {}):
-        errors.append("mechanics/writeback/generated/runtime_writeback_targets.min.json must keep runtime_boundary aligned with checkpoint_to_memory_contract.example.json")
+        errors.append("mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_targets.min.json must keep runtime_boundary aligned with checkpoint_to_memory_contract.example.json")
 
     targets = data.get("targets")
     if not isinstance(targets, list):
-        errors.append("mechanics/writeback/generated/runtime_writeback_targets.min.json targets must be a list")
+        errors.append("mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_targets.min.json targets must be a list")
     else:
         expected_targets = contract.get("mapping_rules", [])
         if len(targets) != len(expected_targets):
-            errors.append("mechanics/writeback/generated/runtime_writeback_targets.min.json must include every mapping rule exactly once")
+            errors.append("mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_targets.min.json must include every mapping rule exactly once")
         runtime_surfaces = [
             target.get("runtime_surface")
             for target in targets
             if isinstance(target, dict) and isinstance(target.get("runtime_surface"), str)
         ]
         if len(runtime_surfaces) != len(set(runtime_surfaces)):
-            errors.append("mechanics/writeback/generated/runtime_writeback_targets.min.json must not duplicate runtime_surface entries")
+            errors.append("mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_targets.min.json must not duplicate runtime_surface entries")
         for index, target in enumerate(targets):
             if not isinstance(target, dict):
                 errors.append(f"targets[{index}] must be an object")
@@ -2348,28 +2354,28 @@ def validate_runtime_writeback_intake() -> None:
     errors: list[str] = []
     if data != expected:
         errors.append(
-            "mechanics/writeback/generated/runtime_writeback_intake.min.json is out of date; "
-            "run mechanics/writeback/scripts/generate_runtime_writeback_intake.py"
+            "mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_intake.min.json is out of date; "
+            "run mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_intake.py"
         )
 
     expected_source_of_truth = {
-        "runtime_writeback_targets": "mechanics/writeback/generated/runtime_writeback_targets.min.json",
+        "runtime_writeback_targets": "mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_targets.min.json",
         "checkpoint_to_memory_contract": "mechanics/checkpoint/examples/checkpoint_to_memory_contract.example.json",
         "runtime_writeback_seam": "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
         "quest_evidence_writeback": "mechanics/writeback/docs/QUEST_EVIDENCE_WRITEBACK.md",
     }
     if data.get("source_of_truth") != expected_source_of_truth:
-        errors.append("mechanics/writeback/generated/runtime_writeback_intake.min.json must keep the canonical source_of_truth map")
+        errors.append("mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_intake.min.json must keep the canonical source_of_truth map")
 
     targets = data.get("targets")
     source_targets = target_surface.get("targets") if isinstance(target_surface, dict) else None
     if not isinstance(targets, list):
-        errors.append("mechanics/writeback/generated/runtime_writeback_intake.min.json targets must be a list")
+        errors.append("mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_intake.min.json targets must be a list")
     elif not isinstance(source_targets, list):
-        errors.append("mechanics/writeback/generated/runtime_writeback_intake.min.json requires mechanics/writeback/generated/runtime_writeback_targets.min.json targets")
+        errors.append("mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_intake.min.json requires mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_targets.min.json targets")
     else:
         if len(targets) != len(source_targets):
-            errors.append("mechanics/writeback/generated/runtime_writeback_intake.min.json must include every runtime writeback target exactly once")
+            errors.append("mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_intake.min.json must include every runtime writeback target exactly once")
         source_by_surface = {
             item.get("runtime_surface"): item
             for item in source_targets
@@ -2403,7 +2409,7 @@ def validate_runtime_writeback_intake() -> None:
             ):
                 if item.get(field_name) != source_item.get(field_name):
                     errors.append(
-                        f"targets[{index}].{field_name} must stay aligned with mechanics/writeback/generated/runtime_writeback_targets.min.json"
+                        f"targets[{index}].{field_name} must stay aligned with mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_targets.min.json"
                     )
 
             owner_review_refs = item.get("owner_review_refs")
@@ -2453,31 +2459,31 @@ def validate_runtime_writeback_governance() -> None:
     errors: list[str] = []
     if data != expected:
         errors.append(
-            "mechanics/writeback/generated/runtime_writeback_governance.min.json is out of date; "
-            "run mechanics/writeback/scripts/generate_runtime_writeback_governance.py"
+            "mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_governance.min.json is out of date; "
+            "run mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_governance.py"
         )
     if data.get("schema_version") != 1:
-        errors.append("mechanics/writeback/generated/runtime_writeback_governance.min.json must declare schema_version 1")
+        errors.append("mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_governance.min.json must declare schema_version 1")
     if data.get("layer") != "aoa-memo":
-        errors.append("mechanics/writeback/generated/runtime_writeback_governance.min.json must declare layer aoa-memo")
+        errors.append("mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_governance.min.json must declare layer aoa-memo")
     if data.get("scope") != "runtime-writeback":
-        errors.append("mechanics/writeback/generated/runtime_writeback_governance.min.json must declare scope runtime-writeback")
+        errors.append("mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_governance.min.json must declare scope runtime-writeback")
 
     expected_source_of_truth = {
-        "runtime_writeback_targets": "mechanics/writeback/generated/runtime_writeback_targets.min.json",
-        "runtime_writeback_intake": "mechanics/writeback/generated/runtime_writeback_intake.min.json",
+        "runtime_writeback_targets": "mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_targets.min.json",
+        "runtime_writeback_intake": "mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_intake.min.json",
     }
     if data.get("source_of_truth") != expected_source_of_truth:
-        errors.append("mechanics/writeback/generated/runtime_writeback_governance.min.json must keep the canonical source_of_truth map")
+        errors.append("mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_governance.min.json must keep the canonical source_of_truth map")
 
     targets = data.get("targets")
     source_targets = target_surface.get("targets") if isinstance(target_surface, dict) else None
     intake_targets = intake_surface.get("targets") if isinstance(intake_surface, dict) else None
     if not isinstance(targets, list):
-        errors.append("mechanics/writeback/generated/runtime_writeback_governance.min.json targets must be a list")
+        errors.append("mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_governance.min.json targets must be a list")
     elif not isinstance(source_targets, list) or not isinstance(intake_targets, list):
         errors.append(
-            "mechanics/writeback/generated/runtime_writeback_governance.min.json requires runtime writeback target and intake surfaces"
+            "mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_governance.min.json requires runtime writeback target and intake surfaces"
         )
     else:
         source_by_surface = {
@@ -2497,9 +2503,9 @@ def validate_runtime_writeback_governance() -> None:
             if isinstance(item, dict) and isinstance(item.get("runtime_surface"), str)
         ]
         if actual_surfaces != expected_surfaces:
-            errors.append("mechanics/writeback/generated/runtime_writeback_governance.min.json must cover every runtime writeback surface exactly once")
+            errors.append("mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_governance.min.json must cover every runtime writeback surface exactly once")
         if len(actual_surfaces) != len(set(actual_surfaces)):
-            errors.append("mechanics/writeback/generated/runtime_writeback_governance.min.json must not duplicate runtime_surface entries")
+            errors.append("mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_governance.min.json must not duplicate runtime_surface entries")
 
         for index, item in enumerate(targets):
             if not isinstance(item, dict):
@@ -2513,9 +2519,9 @@ def validate_runtime_writeback_governance() -> None:
             source_item = source_by_surface.get(runtime_surface)
             intake_item = intake_by_surface.get(runtime_surface)
             if item.get("in_writeback_targets") is not (source_item is not None):
-                errors.append(f"targets[{index}].in_writeback_targets must reflect mechanics/writeback/generated/runtime_writeback_targets.min.json")
+                errors.append(f"targets[{index}].in_writeback_targets must reflect mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_targets.min.json")
             if item.get("in_writeback_intake") is not (intake_item is not None):
-                errors.append(f"targets[{index}].in_writeback_intake must reflect mechanics/writeback/generated/runtime_writeback_intake.min.json")
+                errors.append(f"targets[{index}].in_writeback_intake must reflect mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_intake.min.json")
 
             if source_item is None:
                 errors.append(f"targets[{index}] references missing runtime writeback target {runtime_surface!r}")
@@ -2532,17 +2538,17 @@ def validate_runtime_writeback_governance() -> None:
             ):
                 if item.get(field_name) != source_item.get(field_name):
                     errors.append(
-                        f"targets[{index}].{field_name} must match mechanics/writeback/generated/runtime_writeback_targets.min.json"
+                        f"targets[{index}].{field_name} must match mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_targets.min.json"
                     )
                 if item.get(field_name) != intake_item.get(field_name):
                     errors.append(
-                        f"targets[{index}].{field_name} must match mechanics/writeback/generated/runtime_writeback_intake.min.json"
+                        f"targets[{index}].{field_name} must match mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_intake.min.json"
                     )
 
             intake_posture = item.get("intake_posture")
             if intake_posture != intake_item.get("intake_posture"):
                 errors.append(
-                    f"targets[{index}].intake_posture must match mechanics/writeback/generated/runtime_writeback_intake.min.json"
+                    f"targets[{index}].intake_posture must match mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_intake.min.json"
                 )
             if not isinstance(intake_posture, str) or not intake_posture:
                 errors.append(f"targets[{index}].intake_posture must be a non-empty string")
@@ -2572,19 +2578,19 @@ def validate_growth_refinery_writeback_lanes() -> None:
 
     if data != expected:
         errors.append(
-            "mechanics/writeback/generated/growth_refinery_writeback_lanes.min.json is out of date; "
-            "run mechanics/writeback/scripts/generate_growth_refinery_writeback_lanes.py"
+            "mechanics/writeback/parts/growth-and-continuity/generated/growth_refinery_writeback_lanes.min.json is out of date; "
+            "run mechanics/writeback/parts/growth-and-continuity/scripts/generate_growth_refinery_writeback_lanes.py"
         )
     if data.get("schema_version") != 1:
-        errors.append("mechanics/writeback/generated/growth_refinery_writeback_lanes.min.json must declare schema_version 1")
+        errors.append("mechanics/writeback/parts/growth-and-continuity/generated/growth_refinery_writeback_lanes.min.json must declare schema_version 1")
     if data.get("layer") != "aoa-memo":
-        errors.append("mechanics/writeback/generated/growth_refinery_writeback_lanes.min.json must declare layer aoa-memo")
+        errors.append("mechanics/writeback/parts/growth-and-continuity/generated/growth_refinery_writeback_lanes.min.json must declare layer aoa-memo")
     if data.get("scope") != "growth-refinery-writeback":
-        errors.append("mechanics/writeback/generated/growth_refinery_writeback_lanes.min.json must declare scope growth-refinery-writeback")
+        errors.append("mechanics/writeback/parts/growth-and-continuity/generated/growth_refinery_writeback_lanes.min.json must declare scope growth-refinery-writeback")
 
     lanes = data.get("lanes")
     if not isinstance(lanes, list):
-        errors.append("mechanics/writeback/generated/growth_refinery_writeback_lanes.min.json must expose lanes as a list")
+        errors.append("mechanics/writeback/parts/growth-and-continuity/generated/growth_refinery_writeback_lanes.min.json must expose lanes as a list")
     else:
         seen_lane_refs: set[str] = set()
         seen_memory_ids: set[str] = set()
@@ -2833,7 +2839,7 @@ def validate_live_receipt_log() -> None:
                             if runtime_target is None:
                                 errors.append(
                                     f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: payload.runtime_surface "
-                                    f"{runtime_surface!r} is absent from mechanics/writeback/generated/runtime_writeback_targets.min.json"
+                                    f"{runtime_surface!r} is absent from mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_targets.min.json"
                                 )
                             else:
                                 if runtime_target.get("writeback_class") != "reviewed_candidate":
@@ -2866,7 +2872,7 @@ def validate_live_receipt_log() -> None:
                 if growth_lane_ref and growth_lane is None:
                     errors.append(
                         f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: payload.growth_lane_ref "
-                        f"{growth_lane_ref!r} is absent from mechanics/writeback/generated/growth_refinery_writeback_lanes.min.json"
+                        f"{growth_lane_ref!r} is absent from mechanics/writeback/parts/growth-and-continuity/generated/growth_refinery_writeback_lanes.min.json"
                     )
                 if isinstance(growth_lane, dict):
                     if payload.get("target_kind") != growth_lane.get("target_kind"):
@@ -2955,7 +2961,7 @@ def validate_live_receipt_log() -> None:
                         f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: catalog evidence id {anchor!r} "
                         f"must match object_ref.id {object_id!r}"
                     )
-            if path_text == "mechanics/writeback/generated/growth_refinery_writeback_lanes.min.json":
+            if path_text == "mechanics/writeback/parts/growth-and-continuity/generated/growth_refinery_writeback_lanes.min.json":
                 if not anchor:
                     errors.append(
                         f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: growth lane evidence ref must include a lane anchor"
@@ -3025,20 +3031,20 @@ def validate_phase_alpha_writeback_map() -> None:
     errors: list[str] = []
     if data != expected:
         errors.append(
-            "mechanics/writeback/generated/phase_alpha_writeback_map.min.json is out of date; "
-            "run mechanics/writeback/scripts/generate_phase_alpha_writeback_map.py"
+            "mechanics/writeback/parts/growth-and-continuity/generated/phase_alpha_writeback_map.min.json is out of date; "
+            "run mechanics/writeback/parts/growth-and-continuity/scripts/generate_phase_alpha_writeback_map.py"
         )
     if not isinstance(source, dict):
-        errors.append("mechanics/writeback/examples/phase_alpha_writeback_map.example.json must stay an object")
+        errors.append("mechanics/writeback/parts/growth-and-continuity/examples/phase_alpha_writeback_map.example.json must stay an object")
     else:
         if source.get("surface_type") != "phase_alpha_writeback_map":
             errors.append(
-                "mechanics/writeback/examples/phase_alpha_writeback_map.example.json surface_type must stay phase_alpha_writeback_map"
+                "mechanics/writeback/parts/growth-and-continuity/examples/phase_alpha_writeback_map.example.json surface_type must stay phase_alpha_writeback_map"
             )
         playbooks = source.get("playbooks")
         if not isinstance(playbooks, list) or len(playbooks) != 5:
             errors.append(
-                "mechanics/writeback/examples/phase_alpha_writeback_map.example.json must keep the five Alpha playbook mappings"
+                "mechanics/writeback/parts/growth-and-continuity/examples/phase_alpha_writeback_map.example.json must keep the five Alpha playbook mappings"
             )
         else:
             expected_ids = ["AOA-P-0014", "AOA-P-0006", "AOA-P-0018", "AOA-P-0008", "AOA-P-0009"]
@@ -3069,12 +3075,12 @@ def validate_phase_alpha_writeback_map() -> None:
                         errors.append("restartable-inquiry-loop must keep inquiry_checkpoint as a retained route artifact")
             if seen_ids != expected_ids:
                 errors.append(
-                    "mechanics/writeback/examples/phase_alpha_writeback_map.example.json playbooks drifted from the fixed Alpha order"
+                    "mechanics/writeback/parts/growth-and-continuity/examples/phase_alpha_writeback_map.example.json playbooks drifted from the fixed Alpha order"
                 )
 
         recall_posture = source.get("recall_posture")
         if not isinstance(recall_posture, dict):
-            errors.append("mechanics/writeback/examples/phase_alpha_writeback_map.example.json must keep recall_posture")
+            errors.append("mechanics/writeback/parts/growth-and-continuity/examples/phase_alpha_writeback_map.example.json must keep recall_posture")
         else:
             if recall_posture.get("path") != ["inspect", "capsule", "expand"]:
                 errors.append("Phase Alpha recall_posture.path must stay inspect -> capsule -> expand")
@@ -3330,7 +3336,7 @@ def _validate_guardrail_pilot_cases(
             (
                 "examples/provenance_thread.",
                 "mechanics/consumer-handoff/examples/provenance_thread.",
-                "mechanics/writeback/examples/provenance_thread.",
+                "mechanics/writeback/parts/growth-and-continuity/examples/provenance_thread.",
             ),
         ):
             errors.append(
@@ -3673,7 +3679,7 @@ def main() -> int:
         expected_return_ready=True,
         expected_preferred_anchor_kinds=["state_capsule", "decision", "anchor"],
         expected_support_artifact_refs=[
-            "mechanics/writeback/generated/phase_alpha_writeback_map.min.json",
+            "mechanics/writeback/parts/growth-and-continuity/generated/phase_alpha_writeback_map.min.json",
             "mechanics/checkpoint/schemas/inquiry_checkpoint.schema.json",
             "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
             "mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",

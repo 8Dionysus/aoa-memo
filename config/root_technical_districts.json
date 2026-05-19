@@ -164,6 +164,7 @@
         "tests/test_companion_skill_scripts.py",
         "tests/test_current_direction_routes.py",
         "tests/test_docs_districts.py",
+        "tests/test_experience_wave2_seed_contracts.py",
         "tests/test_experience_wave3_seed_contracts.py",
         "tests/test_mechanic_artifact_inventory.py",
         "tests/test_mechanic_artifact_topology.py",
@@ -582,6 +583,21 @@
         "examples/provenance_thread.phase-alpha-curated.example.json",
         "examples/memory_object_surface_manifest.json",
         "generated/memory_object_catalog.min.json"
+      ]
+    },
+    {
+      "id": "cross_mechanic_wave2_seed_contracts",
+      "role": "cross-mechanic-contract-regression",
+      "owner_surface": "mechanics/ARTIFACT_TOPOLOGY.md",
+      "tests": [
+        "tests/test_experience_wave2_seed_contracts.py"
+      ],
+      "protects": [
+        "mechanics/governance/schemas/certification_memory_writeback_v1.json",
+        "mechanics/operational-gate/schemas/deployment_incident_memory_gate_v1.json",
+        "mechanics/retention/parts/post-release-retention/schemas/post_release_retention_memory_v1.json",
+        "mechanics/writeback/parts/revision-ledgers/schemas/assistant_revision_ledger_entry_v1.json",
+        "mechanics/writeback/parts/rollback-and-recovery/schemas/rollback_memory_entry_v1.json"
       ]
     },
     {
