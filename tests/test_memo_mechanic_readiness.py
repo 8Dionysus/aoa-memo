@@ -9,7 +9,12 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT / "scripts"))
 
-from mechanic_readiness_common import build_readiness, validate_payload  # noqa: E402
+from mechanic_readiness_common import (  # noqa: E402
+    _has_runnable_local_test_routes,
+    _local_test_dirs,
+    build_readiness,
+    validate_payload,
+)
 
 
 def run_script(*args: str) -> None:
@@ -121,3 +126,28 @@ def test_memo_mechanic_readiness_rejects_hidden_local_test_routes() -> None:
     issues = validate_payload(payload)
     assert "mechanics/agon: readiness check failed: local-test-route" in issues
     assert "mechanics/agon: package-local tests must be named in validation route" in issues
+
+
+def test_local_test_dirs_only_include_runnable_test_modules() -> None:
+    artifacts = [
+        {"district": "tests", "path": "mechanics/writeback/tests/test_writeback.py"},
+        {"district": "tests", "path": "mechanics/writeback/tests/fixtures/writeback.json"},
+        {"district": "examples", "path": "mechanics/writeback/examples/writeback.example.json"},
+    ]
+
+    assert _local_test_dirs(artifacts) == ["mechanics/writeback/tests"]
+
+
+def test_local_test_route_requires_runnable_pytest_command() -> None:
+    test_dirs = ["mechanics/agon/parts/prebinding-and-candidate-intake/tests"]
+    prose_only = (
+        "Validation mentions mechanics/agon/parts/prebinding-and-candidate-intake/tests "
+        "as the relevant local test route."
+    )
+    command_route = (
+        "python -m pytest -q "
+        "mechanics/agon/parts/prebinding-and-candidate-intake/tests/test_prebinding.py"
+    )
+
+    assert _has_runnable_local_test_routes(prose_only, test_dirs) is False
+    assert _has_runnable_local_test_routes(command_route, test_dirs) is True
