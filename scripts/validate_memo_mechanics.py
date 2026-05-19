@@ -140,13 +140,21 @@ def validate() -> list[str]:
         for former_path in all_former_flat_paths
     }
 
+    allowed_legacy_prefixes = tuple(
+        f"mechanics/{package['slug']}/legacy/" for package in config["packages"]
+    )
+
     for path in tracked_files():
         if not is_text_candidate(path):
             continue
         rel = path.relative_to(REPO_ROOT).as_posix()
         text = path.read_text(encoding="utf-8", errors="ignore")
         for former_path, pattern in stale_patterns.items():
-            if pattern.search(text) and rel not in allowed_provenance_refs:
+            if (
+                pattern.search(text)
+                and rel not in allowed_provenance_refs
+                and not rel.startswith(allowed_legacy_prefixes)
+            ):
                 issues.append(f"{rel}: contains stale flat mechanics source ref {former_path}")
 
     return issues

@@ -1,0 +1,78 @@
+{
+  "id": "memo.decision.2026-04-02.alpha-self-agent-checkpoint",
+  "kind": "decision",
+  "title": "Checkpoint approval decision for the live Alpha operator-surface refresh",
+  "summary": "Records the explicit decision to land the bounded Route 2 operator-surface refresh only inside the named file boundary, with rollback posture and post-sync runtime health kept review-visible.",
+  "scope": [
+    "repo:aoa-playbooks",
+    "project:AoA"
+  ],
+  "owner_refs": [
+    "repo:aoa-memo"
+  ],
+  "payload_ref": "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.self-agent-checkpoint-rollout.md",
+  "tags": [
+    "phase-alpha",
+    "decision",
+    "checkpoint"
+  ],
+  "time": {
+    "created_at": "2026-04-03T03:08:00Z",
+    "observed_at": "2026-04-03T03:07:19Z",
+    "valid_from": "2026-04-03T03:08:00Z",
+    "valid_to": null
+  },
+  "provenance": {
+    "source_refs": [
+      "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.self-agent-checkpoint-rollout.md",
+      "repo:aoa-agents/examples/alpha_reference_routes/self-agent-checkpoint-rollout.example.json",
+      "repo:abyss-stack/Logs/phase-alpha/alpha-02-self-agent-checkpoint-rollout/approval_record.json",
+      "repo:abyss-stack/Logs/phase-alpha/alpha-02-self-agent-checkpoint-rollout/improvement_log.md"
+    ],
+    "episode_refs": [],
+    "provenance_thread_id": "prov.phase-alpha.curated.2026-04-02"
+  },
+  "trust": {
+    "temperature": "warm",
+    "confidence": 0.95,
+    "authority_kind": "human_reviewed",
+    "authority": "curated Alpha route-02 review",
+    "freshness": 0.99,
+    "salience": 0.93
+  },
+  "lifecycle": {
+    "review_state": "confirmed",
+    "supersedes": [],
+    "superseded_by": null,
+    "retention_class": "checkpoint",
+    "current_recall": {
+      "status": "allowed",
+      "status_reason": "This decision should remain visible whenever later Alpha routes need the bounded approval posture that kept Route 2 inside operator-surface refresh only."
+    }
+  },
+  "access": {
+    "access_class": "public",
+    "read_scopes": [
+      "public"
+    ],
+    "write_scopes": [
+      "maintainer"
+    ],
+    "promotion_scopes": [
+      "maintainer",
+      "human-review"
+    ]
+  },
+  "bridges": {
+    "tos_refs": [],
+    "skill_refs": [
+      "skill:aoa-approval-gate-check"
+    ],
+    "eval_refs": [
+      "eval:aoa-approval-boundary-adherence",
+      "eval:aoa-bounded-change-quality"
+    ],
+    "kag_lift_status": "none",
+    "route_capsule_ref": "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.self-agent-checkpoint-rollout.md"
+  }
+}

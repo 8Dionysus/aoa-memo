@@ -1,0 +1,42 @@
+{
+  "id": "prov.self-agent-checkpoint.2026-03-21",
+  "title": "Self-agent checkpoint rollout improvement thread",
+  "summary": "Ties approval, rollback marker, post-change health, and the improvement log into one bounded checkpoint provenance chain.",
+  "status": "active",
+  "source_refs": [
+    "repo:aoa-playbooks/playbooks/self-agent-checkpoint-rollout/PLAYBOOK.md",
+    "repo:aoa-agents/docs/SELF_AGENT_CHECKPOINT_STACK.md",
+    "repo:aoa-evals/bundles/aoa-approval-boundary-adherence/EVAL.md",
+    "repo:aoa-evals/bundles/aoa-bounded-change-quality/EVAL.md"
+  ],
+  "memory_object_ids": [
+    "memo.decision.2026-03-21.self-agent-approval-record",
+    "memo.ep.2026-03-21.self-agent-health-check"
+  ],
+  "timeline": [
+    {
+      "at": "2026-03-21T17:10:00Z",
+      "action": "approval gate recorded",
+      "actor_ref": "agent:architect",
+      "object_id": "memo.decision.2026-03-21.self-agent-approval-record"
+    },
+    {
+      "at": "2026-03-21T17:18:00Z",
+      "action": "rollback marker attached",
+      "actor_ref": "agent:coder",
+      "note": "Rollback marker remains a referenced artifact rather than a new memory-object kind."
+    },
+    {
+      "at": "2026-03-21T17:35:00Z",
+      "action": "post-change health check recorded",
+      "actor_ref": "agent:reviewer",
+      "object_id": "memo.ep.2026-03-21.self-agent-health-check"
+    },
+    {
+      "at": "2026-03-21T17:42:00Z",
+      "action": "improvement log appended",
+      "actor_ref": "agent:memory-keeper",
+      "note": "The provenance thread itself remains the bounded improvement-log surface."
+    }
+  ]
+}

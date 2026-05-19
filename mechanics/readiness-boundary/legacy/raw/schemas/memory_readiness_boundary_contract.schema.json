@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/schemas/memory_readiness_boundary_contract.schema.json",
+  "title": "aoa-memo memory readiness boundary contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_id",
+    "owner_repo",
+    "memory_gate",
+    "retention_boundary",
+    "writeback_boundary",
+    "source_refs"
+  ],
+  "properties": {
+    "contract_id": {
+      "const": "aoa-memo.memory-readiness-boundary.v1"
+    },
+    "owner_repo": {
+      "const": "aoa-memo"
+    },
+    "memory_gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "accepted_inputs",
+        "rejected_inputs",
+        "gate_note"
+      ],
+      "properties": {
+        "accepted_inputs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "rejected_inputs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "gate_note": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "retention_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "owned_by",
+        "out_of_scope",
+        "boundary_note"
+      ],
+      "properties": {
+        "owned_by": {
+          "const": "abyss-stack"
+        },
+        "out_of_scope": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "boundary_note": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "writeback_boundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "export_surfaces",
+        "blocked_surfaces",
+        "boundary_note"
+      ],
+      "properties": {
+        "export_surfaces": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "blocked_surfaces": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "boundary_note": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "source_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    }
+  }
+}

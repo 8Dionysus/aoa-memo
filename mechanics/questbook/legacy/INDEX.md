@@ -1,9 +1,34 @@
-# Questbook Legacy Index
+# Questbook Memo Mechanic Legacy Index
 
-| Former surface | Active route | Note |
+This index maps former repo-relative placement to restored raw snapshots and current active routes.
+Use active routes for current work; use raw snapshots only for provenance audit.
+
+| Former Path | Raw Snapshot | Active Route | Source Revision | Note |
+|---|---|---|---|---|
+| `quests/AOA-MEM-Q-0001.yaml` | [raw/quests/AOA-MEM-Q-0001.yaml](raw/quests/AOA-MEM-Q-0001.yaml) | `quests/memo/done/AOA-MEM-Q-0001.yaml` | `29f0d7d36ee9^` | expanded from the former root quest wildcard row |
+| `quests/AOA-MEM-Q-0002.yaml` | [raw/quests/AOA-MEM-Q-0002.yaml](raw/quests/AOA-MEM-Q-0002.yaml) | `quests/memo/done/AOA-MEM-Q-0002.yaml` | `29f0d7d36ee9^` | expanded from the former root quest wildcard row |
+| `quests/AOA-MEM-Q-0003.yaml` | [raw/quests/AOA-MEM-Q-0003.yaml](raw/quests/AOA-MEM-Q-0003.yaml) | `quests/memo/captured/AOA-MEM-Q-0003.yaml` | `29f0d7d36ee9^` | expanded from the former root quest wildcard row |
+| `quests/AOA-MEM-Q-0004.yaml` | [raw/quests/AOA-MEM-Q-0004.yaml](raw/quests/AOA-MEM-Q-0004.yaml) | `quests/memo/captured/AOA-MEM-Q-0004.yaml` | `29f0d7d36ee9^` | expanded from the former root quest wildcard row |
+| `quests/AOA-MEM-Q-0005.yaml` | [raw/quests/AOA-MEM-Q-0005.yaml](raw/quests/AOA-MEM-Q-0005.yaml) | `quests/memo/captured/AOA-MEM-Q-0005.yaml` | `29f0d7d36ee9^` | expanded from the former root quest wildcard row |
+| `quests/AOA-MEM-Q-0006.yaml` | [raw/quests/AOA-MEM-Q-0006.yaml](raw/quests/AOA-MEM-Q-0006.yaml) | `quests/memo/captured/AOA-MEM-Q-0006.yaml` | `29f0d7d36ee9^` | expanded from the former root quest wildcard row |
+| `quests/AOA-MEM-Q-0007.yaml` | [raw/quests/AOA-MEM-Q-0007.yaml](raw/quests/AOA-MEM-Q-0007.yaml) | `quests/memo/done/AOA-MEM-Q-0007.yaml` | `29f0d7d36ee9^` | expanded from the former root quest wildcard row |
+| `quests/AOA-MEM-Q-0008.yaml` | [raw/quests/AOA-MEM-Q-0008.yaml](raw/quests/AOA-MEM-Q-0008.yaml) | `quests/memo/reanchor/AOA-MEM-Q-0008.yaml` | `29f0d7d36ee9^` | expanded from the former root quest wildcard row |
+| `quests/AOA-MEM-Q-0009.yaml` | [raw/quests/AOA-MEM-Q-0009.yaml](raw/quests/AOA-MEM-Q-0009.yaml) | `quests/memo/reanchor/AOA-MEM-Q-0009.yaml` | `29f0d7d36ee9^` | expanded from the former root quest wildcard row |
+| `quests/AOM-Q-AGON-0001-memory-prebinding.md` | [raw/quests/AOM-Q-AGON-0001-memory-prebinding.md](raw/quests/AOM-Q-AGON-0001-memory-prebinding.md) | `quests/agon/ready/AOM-Q-AGON-0001-memory-prebinding.md` | `29f0d7d36ee9^` | expanded from the former root quest wildcard row |
+| `quests/AOM-Q-AGON-0001-retention-memory-intakes.md` | [raw/quests/AOM-Q-AGON-0001-retention-memory-intakes.md](raw/quests/AOM-Q-AGON-0001-retention-memory-intakes.md) | `quests/agon/ready/AOM-Q-AGON-0001-retention-memory-intakes.md` | `29f0d7d36ee9^` | expanded from the former root quest wildcard row |
+| `quests/AOM-Q-AGON-0001-vds-memo-bridge.md` | [raw/quests/AOM-Q-AGON-0001-vds-memo-bridge.md](raw/quests/AOM-Q-AGON-0001-vds-memo-bridge.md) | `quests/agon/ready/AOM-Q-AGON-0001-vds-memo-bridge.md` | `29f0d7d36ee9^` | expanded from the former root quest wildcard row |
+| `quests/AOM-Q-AGON-0002-epistemic-memory-bridge.md` | [raw/quests/AOM-Q-AGON-0002-epistemic-memory-bridge.md](raw/quests/AOM-Q-AGON-0002-epistemic-memory-bridge.md) | `quests/agon/ready/AOM-Q-AGON-0002-epistemic-memory-bridge.md` | `29f0d7d36ee9^` | expanded from the former root quest wildcard row |
+| `quests/AOM-Q-AGON-0002-mechanical-trial-memo-intakes.md` | [raw/quests/AOM-Q-AGON-0002-mechanical-trial-memo-intakes.md](raw/quests/AOM-Q-AGON-0002-mechanical-trial-memo-intakes.md) | `quests/agon/ready/AOM-Q-AGON-0002-mechanical-trial-memo-intakes.md` | `29f0d7d36ee9^` | expanded from the former root quest wildcard row |
+| `quests/AOM-Q-AGON-0002-recurrence-memory-integration.md` | [raw/quests/AOM-Q-AGON-0002-recurrence-memory-integration.md](raw/quests/AOM-Q-AGON-0002-recurrence-memory-integration.md) | `quests/agon/ready/AOM-Q-AGON-0002-recurrence-memory-integration.md` | `29f0d7d36ee9^` | expanded from the former root quest wildcard row |
+| `quests/AOM-Q-AGON-0003-slc-memory-bridge.md` | [raw/quests/AOM-Q-AGON-0003-slc-memory-bridge.md](raw/quests/AOM-Q-AGON-0003-slc-memory-bridge.md) | `quests/agon/ready/AOM-Q-AGON-0003-slc-memory-bridge.md` | `29f0d7d36ee9^` | expanded from the former root quest wildcard row |
+| `quests/AOM-Q-AGON-0004-kag-evidence-packages.md` | [raw/quests/AOM-Q-AGON-0004-kag-evidence-packages.md](raw/quests/AOM-Q-AGON-0004-kag-evidence-packages.md) | `quests/agon/ready/AOM-Q-AGON-0004-kag-evidence-packages.md` | `29f0d7d36ee9^` | expanded from the former root quest wildcard row |
+| `quests/AOMEMO-Q-AGON-0003-sophian-evidence-packages.md` | [raw/quests/AOMEMO-Q-AGON-0003-sophian-evidence-packages.md](raw/quests/AOMEMO-Q-AGON-0003-sophian-evidence-packages.md) | `quests/agon/ready/AOMEMO-Q-AGON-0003-sophian-evidence-packages.md` | `29f0d7d36ee9^` | expanded from the former root quest wildcard row |
+| `scripts/build_quest_surfaces.py` | [raw/scripts/build_quest_surfaces.py](raw/scripts/build_quest_surfaces.py) | `mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py` | `29f0d7d36ee9^` | generated quest projection builder belongs to Questbook mechanic |
+
+## Active-Only Or Pattern Rows
+
+These rows are preserved as route history, but they do not have a one-to-one raw snapshot.
+
+| Historic Cue | Active Route | Note |
 |---|---|---|
-| `quests/AOA-MEM-Q-*.yaml` | `quests/memo/<state>/AOA-MEM-Q-*.yaml` | memo quest sources now use lane-first lifecycle placement |
-| `quests/AOM-Q-AGON-*.md` | `quests/agon/ready/AOM-Q-AGON-*.md` | Agon follow-through remains in root quest item store, not package-local docs |
-| `quests/AOMEMO-Q-AGON-*.md` | `quests/agon/ready/AOMEMO-Q-AGON-*.md` | Agon memo follow-through now carries the Markdown quest source contract |
-| `scripts/build_quest_surfaces.py` | `mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py` | generated quest projection builder belongs to Questbook mechanic |
-| none | `mechanics/questbook/docs/QUEST_SOURCE_CONTRACT.md` | active source contract for memo quest sources |
+| `none` | `mechanics/questbook/docs/QUEST_SOURCE_CONTRACT.md` | active source contract for memo quest sources |
