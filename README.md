@@ -19,14 +19,10 @@ Use the shortest route by need:
 - mechanic readiness: [mechanics](mechanics/README.md),
   `generated/memo_mechanic_landing_logs.min.json`,
   `generated/memo_mechanic_readiness.min.json`,
-  `scripts/build_memo_mechanic_landing_logs.py --check`,
-  `scripts/validate_memo_mechanic_landing_logs.py`,
-  `scripts/build_memo_mechanic_readiness.py --check`, and
-  `scripts/validate_memo_mechanic_readiness.py`
+  and the validation route in [mechanics/AGENTS](mechanics/AGENTS.md#validation)
 - quest projection surfaces: `QUESTBOOK.md`, `quests/memo/<state>/AOA-MEM-Q-*.yaml`,
   `generated/quest_catalog.min*.json`, `generated/quest_dispatch.min*.json`,
-  [mechanics/questbook/parts/quest-read-model-projections](mechanics/questbook/parts/quest-read-model-projections/README.md),
-  and `python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py --check`
+  and [mechanics/questbook/parts/quest-read-model-projections](mechanics/questbook/parts/quest-read-model-projections/README.md)
 - object canon, trust posture, and lifecycle: [docs/MEMORY_OBJECT_PROFILES](docs/MEMORY_OBJECT_PROFILES.md), [docs/MEMORY_TRUST_POSTURE](docs/MEMORY_TRUST_POSTURE.md), [docs/MEMORY_TEMPERATURES](docs/MEMORY_TEMPERATURES.md), [docs/LIFECYCLE](docs/LIFECYCLE.md), and [docs/NARRATIVE_CORE_CONTRACT](docs/NARRATIVE_CORE_CONTRACT.md)
 - Titan Memory Loom, bearer-recall posture, and remembrance source-ref policy: [mechanics/titan/docs/TITAN_MEMORY_LOOM_POSTURE.md](mechanics/titan/docs/TITAN_MEMORY_LOOM_POSTURE.md), [mechanics/titan/docs/TITAN_PERSONALITY_MEMORY_POLICY.md](mechanics/titan/docs/TITAN_PERSONALITY_MEMORY_POLICY.md), [mechanics/titan/docs/TITAN_RECALL_CANDIDATE_POLICY.md](mechanics/titan/docs/TITAN_RECALL_CANDIDATE_POLICY.md), [mechanics/titan/docs/TITAN_REMEMBRANCE_SOURCE_REF_POLICY.md](mechanics/titan/docs/TITAN_REMEMBRANCE_SOURCE_REF_POLICY.md), `mechanics/titan/parts/recall-and-remembrance-posture/schemas/titan_remembrance_record.schema.json`, and `mechanics/titan/parts/recall-and-remembrance-posture/examples/titan_remembrance_record.example.json`
 - antifragility failure-lesson seam: [mechanics/antifragility/docs/FAILURE_LESSON_MEMORY.md](mechanics/antifragility/docs/FAILURE_LESSON_MEMORY.md), [mechanics/antifragility/docs/FAILURE_LESSON_RECALL.md](mechanics/antifragility/docs/FAILURE_LESSON_RECALL.md), [mechanics/antifragility/docs/DRIFT_REVIEW_LESSON_MEMORY.md](mechanics/antifragility/docs/DRIFT_REVIEW_LESSON_MEMORY.md), `mechanics/antifragility/parts/failure-lesson-memory/schemas/failure_lesson_memory_v1.json`, `mechanics/antifragility/parts/failure-lesson-memory/examples/failure_lesson_memory.example.json`, `mechanics/antifragility/parts/failure-lesson-memory/examples/failure_lesson_memory.lineage.example.json`, `mechanics/antifragility/parts/failure-lesson-memory/examples/failure_lesson_memory.rollout.example.json`, and `mechanics/antifragility/parts/failure-lesson-memory/examples/failure_lesson_memory.drift_review.example.json`
@@ -103,7 +99,8 @@ If you are editing inside `schemas/`, `examples/`, `generated/`, or `scripts/`, 
   [lineage-harvest/PATTERN_LINEAGE_MEMORY](mechanics/lineage-harvest/docs/PATTERN_LINEAGE_MEMORY.md),
   `mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/schemas/pattern_lineage_memory_entry_v1.json`, and
   `mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/examples/pattern_lineage_memory_entry.example.json`
-- schemas and local validation: `schemas/`, `python scripts/validate_memo.py`, `python scripts/validate_memory_surfaces.py`, `python scripts/validate_memory_object_surfaces.py`, `python scripts/validate_lifecycle_audit_examples.py`, and `python -m pytest -q tests`
+- schemas and local validation: `schemas/`, `scripts/`, `tests/`, and the
+  executable validation routes in their nearest `AGENTS.md`
 
 ## What `aoa-memo` owns
 
@@ -210,50 +207,9 @@ instead of cosmetic cleanup.
 
 ## Build and validate
 
-The canonical validator is:
-
-```bash
-python scripts/validate_memo.py
-```
-
-For a read-only current-state validation pass, run:
-
-```bash
-python scripts/validate_memo.py
-python scripts/validate_memory_surfaces.py
-python scripts/validate_memory_object_surfaces.py
-python scripts/validate_lifecycle_audit_examples.py
-python scripts/validate_mechanic_artifact_topology.py
-python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py --check
-python scripts/validate_memo_mechanics.py
-python scripts/build_memo_mechanics_index.py --check
-python scripts/validate_memo_mechanics_index.py
-python scripts/build_memo_mechanic_landing_logs.py --check
-python scripts/validate_memo_mechanic_landing_logs.py
-python scripts/build_memo_mechanic_readiness.py --check
-python scripts/validate_memo_mechanic_readiness.py
-python scripts/validate_agents_mesh.py
-python scripts/build_agents_mesh_index.py --check
-python scripts/validate_agents_mesh_index.py
-python scripts/validate_docs_districts.py
-python -m pytest -q tests
-```
-
-`validate_memo.py` also checks the local guidance surfaces in `schemas/`, `examples/`, `generated/`, and `scripts/`.
-
-If you changed generator-backed surfaces, regenerate only the touched families first:
-
-```bash
-python scripts/generate_memory_object_surfaces.py
-python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py
-python mechanics/consumer-handoff/parts/kag-source-export/scripts/generate_kag_export.py
-python mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_targets.py
-python mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_intake.py
-python mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_governance.py
-python mechanics/writeback/parts/growth-and-continuity/scripts/generate_phase_alpha_writeback_map.py
-```
-
-Then rerun the read-only validation pass above and inspect `git status -sb` before opening a PR.
+Executable validation routes live in [AGENTS](AGENTS.md#verify) and the nearest
+nested `AGENTS.md` for the touched district. Generated families should be
+rebuilt from their owning source surfaces before broad validation.
 
 ## Current contour
 

@@ -81,10 +81,8 @@ Rules:
 
 ## Промпт для Verifier
 ```text
-Run all three memory validators and report actual results:
-- python scripts/validate_memo.py
-- python scripts/validate_memory_surfaces.py
-- python scripts/validate_lifecycle_audit_examples.py
+Run the Spark validation route from .agents/spark/AGENTS.md and report actual
+results.
 ```
 
 ## Промпт для Boundary Keeper
@@ -98,11 +96,7 @@ Check:
 ```
 
 ## Verify
-```bash
-python scripts/validate_memo.py
-python scripts/validate_memory_surfaces.py
-python scripts/validate_lifecycle_audit_examples.py
-```
+Executable validation lives in [AGENTS](AGENTS.md#validation).
 
 ## Done when
 - один memory-layer surface strengthened

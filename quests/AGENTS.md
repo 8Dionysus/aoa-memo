@@ -25,6 +25,14 @@ Keep `QUESTBOOK.md`, `quests/`, owning mechanic docs, and generated quest
 companions aligned. Root generated quest companions are projections from these
 source files, not a second quest ledger.
 
+## Route Stack
+
+- Above: root `AGENTS.md`, `QUESTBOOK.md`, and the Questbook mechanic set the
+  public obligation route.
+- Here: `quests/` owns lane-first source files for memo-facing obligations.
+- Below: `quests/<lane>/<state>/` holds source objects. Generated quest
+  catalogs and dispatch files are read models only.
+
 ## Boundaries
 
 - Keep quest payloads public-safe.

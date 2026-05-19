@@ -11,6 +11,15 @@ This card applies to `mechanics/checkpoint/legacy/`.
 It is not the active route for checkpoint work and must not receive new active
 schemas, examples, generated outputs, scripts, or tests.
 
+## Route Stack
+
+- Above: the package `AGENTS.md`, `PROVENANCE.md`, and `OWNER_MAP.md` define
+  the active route and stronger-owner boundary.
+- Here: `INDEX.md` maps former paths to active surfaces, `DISTILLATION_LOG.md`
+  records restoration decisions, and `raw/` contains historical snapshots.
+- Below: `raw/` is evidence only. Do not edit it as current doctrine and do not
+  cite it as an active route.
+
 ## Read Before Editing
 
 Read:

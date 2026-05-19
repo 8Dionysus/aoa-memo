@@ -30,6 +30,15 @@ under the owning package or the nearest functioning part, for example
 `mechanics/writeback/parts/runtime-and-temperature/generated/`, or
 `mechanics/agon/parts/bridge-and-evidence-seams/generated/`.
 
+## Route Stack
+
+- Above: source docs, schemas, examples, config maps, quest sources, and
+  mechanic package cards own meaning.
+- Here: root `generated/` holds compact shared companions for inspection,
+  recall, route-card coverage, mechanics readiness, and quest projections.
+- Below: package-local generated artifacts stay under the owning mechanic or
+  part. Do not copy them into root for convenience.
+
 ## Source and derivation map
 
 Keep this split explicit:

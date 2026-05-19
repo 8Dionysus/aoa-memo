@@ -41,6 +41,19 @@ A Spark task is done here when:
 - generated outputs are aligned when touched
 - the documented validation path ran when relevant
 
+## Validation
+
+For Spark-lane memory-surface work, the narrow default check is:
+
+```bash
+python scripts/validate_memo.py
+python scripts/validate_memory_surfaces.py
+python scripts/validate_lifecycle_audit_examples.py
+```
+
+Use the root or nearest nested `AGENTS.md` when the touched surface names a
+more specific validator.
+
 ## Local note
 
 Spark should behave like a curator of bounded traces here, not like a myth-maker of memory authority.

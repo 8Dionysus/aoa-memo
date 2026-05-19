@@ -8,6 +8,14 @@ It may help an agent inspect memory objects, recall contracts, writeback seams, 
 
 Memory is valuable. It is not proof, not runtime retention, and not a replacement for source-owned meaning in sibling repositories.
 
+## Route Stack
+
+- Above: `.agents/AGENTS.md` owns the companion district and root `AGENTS.md`
+  owns the repository route.
+- Here: exported skills help agents work with memory-layer surfaces.
+- Below: individual skill bundles are portable workflow aids; they must route
+  back to source docs, schemas, examples, generated companions, and validators.
+
 Do not hand-edit exported companion files before changing the source memory, recall, or writeback surface that owns meaning.
 
 Keep everything public-safe: no private memories, secrets, hidden telemetry, or unreduced personal data.

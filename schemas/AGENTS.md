@@ -16,6 +16,15 @@ non-route schema file must be listed in exactly one
 `config/root_technical_districts.json` `schema_families` entry that names the
 owner surface, source refs, and validators.
 
+## Route Stack
+
+- Above: root `AGENTS.md`, docs doctrine, examples, and
+  `config/root_technical_districts.json` decide why a schema is root-wide.
+- Here: root schemas define shared memory, recall, provenance, support, and
+  generated-surface contracts.
+- Below: mechanic-owned schemas live under the owning package or part and must
+  not drift into root without the artifact topology rule.
+
 ## Main schema groups
 
 Keep these groups distinct:

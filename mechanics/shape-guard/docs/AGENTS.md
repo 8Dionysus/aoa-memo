@@ -13,6 +13,18 @@ It is not a legacy route, proof bundle, deletion authority, runtime cleanup
 lane, role-rights surface, route implementation, KAG promotion lane, or source
 owner adoption path.
 
+## Route Stack
+
+- Above: the package `AGENTS.md`, `README.md`, `PARTS.md`, and `OWNER_MAP.md`
+  set the operation and stronger-owner split.
+- Here: `docs/README.md` maps the source family; individual docs own active
+  mechanic doctrine and support notes.
+- Adjacent: package or part artifact homes own schemas, examples, config,
+  generated outputs, scripts, tests, manifests, and quests. Use
+  `mechanics/ARTIFACT_TOPOLOGY.md` before moving root technical artifacts.
+- Below: no nested active law is expected here; legacy context routes through
+  `../PROVENANCE.md` and `../legacy/`.
+
 ## Read Before Editing
 
 Read root `AGENTS.md`, `mechanics/AGENTS.md`, `mechanics/ARTIFACT_TOPOLOGY.md`,

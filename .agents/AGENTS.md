@@ -9,6 +9,14 @@ helps agents work with memory-layer surfaces. It does not own memory truth.
 Memory truth stays in source docs, schemas, examples, generated-source maps,
 and validators.
 
+## Route Stack
+
+- Above: root `AGENTS.md` owns repository identity, owner boundaries, and
+  release route.
+- Here: `.agents/` owns agent-facing companion lanes only.
+- Below: `skills/` holds exported skill companions and `spark/` narrows the
+  fast-loop lane. Neither lane owns memory doctrine.
+
 ## Current Lanes
 
 | Lane | Use |

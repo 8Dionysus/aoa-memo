@@ -77,6 +77,14 @@ Root `tests/` files and public fixtures must belong to exactly one
 refs. Root tests are for repo-wide or cross-mechanic invariants; package-local
 mechanic tests belong under the owning mechanic.
 
+## Route Stack
+
+- Above: root `AGENTS.md` and `mechanics/ARTIFACT_TOPOLOGY.md` decide when a
+  config surface is repo-wide instead of mechanic-local.
+- Here: config files are source maps and validator inputs, not memory truth.
+- Below: generated companions, scripts, tests, schemas, examples, manifests,
+  and mechanic packages must follow the owning family named in config.
+
 Keep config explicit, public-safe, and reviewable. No private memories, personal data, hidden retention rules, secret tokens, or local-only paths.
 
 When config changes generated surfaces, regenerate only the touched family and inspect the diff for recall or provenance drift.

@@ -11,6 +11,14 @@ test file or public fixture must be listed in exactly one
 `config/root_technical_districts.json` `test_families` entry that names the
 owner surface and protected refs.
 
+## Route Stack
+
+- Above: source docs, schemas, examples, scripts, generated companions, and
+  `config/root_technical_districts.json` name what root tests protect.
+- Here: root tests protect repo-wide and cross-mechanic invariants.
+- Below: package-local mechanic tests live under the owning package or part
+  when they protect a single mechanic operation.
+
 Do not update expected outputs without checking the source-owned memory docs, schemas, or examples that own the meaning.
 
 Keep fixtures public-safe. No private memories, secrets, hidden telemetry, or unreduced personal data.

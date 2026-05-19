@@ -8,10 +8,4 @@ Functioning Readiness Boundary memo parts live here. Each part mirrors one activ
 
 ## Validation
 
-Use the package validation lane in [AGENTS](../AGENTS.md#validation).
-
-For part topology changes, also run:
-
-```bash
-python scripts/validate_memo_mechanic_parts.py
-```
+Executable part validation lives in [parts/AGENTS](AGENTS.md#validation) and the package [AGENTS](../AGENTS.md#validation).

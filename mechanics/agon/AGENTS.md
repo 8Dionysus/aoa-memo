@@ -14,6 +14,17 @@ It does not run Agon trials, decide verdicts, write durable scars, mutate rank,
 execute retention, promote KAG substrate, publish Tree-of-Sophia canon, or own
 the source Agon mechanic.
 
+## Route Stack
+
+- Above: root `AGENTS.md` owns repo identity and release route;
+  `mechanics/AGENTS.md` owns shared mechanic package law and validators.
+- Here: `README.md` is the mechanic card, `DIRECTION.md` names current
+  pressure, `PARTS.md` lists active function nodes, `OWNER_MAP.md` names
+  stronger owners, and `PROVENANCE.md` plus `legacy/` preserve placement
+  history.
+- Below: `docs/` holds active source docs, `parts/` holds functioning
+  contracts and artifact homes, and `legacy/` is historical evidence only.
+
 ## Read Before Editing
 
 Read root `AGENTS.md`, `mechanics/AGENTS.md`, this file, `README.md`,
