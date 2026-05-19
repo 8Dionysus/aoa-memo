@@ -82,6 +82,50 @@ The package `README.md` is the mechanic card. It must include:
 
 ## Validation
 
+Run the narrow validator that matches the changed mechanics surface:
+
+- When package-local or part-local artifact homes change:
+
+  ```bash
+  python scripts/build_mechanic_artifact_inventory.py --check
+  python scripts/validate_mechanic_artifact_inventory.py
+  ```
+
+- When `PARTS.md` files or `parts/` contracts change:
+
+  ```bash
+  python scripts/validate_memo_mechanic_parts.py
+  ```
+
+- When package mechanic cards change:
+
+  ```bash
+  python scripts/build_memo_mechanic_cards.py --check
+  python scripts/validate_memo_mechanic_cards.py
+  ```
+
+- When `OWNER_MAP.md` files or package cards change:
+
+  ```bash
+  python scripts/build_memo_mechanic_owner_routes.py --check
+  python scripts/validate_memo_mechanic_owner_routes.py
+  ```
+
+- When landing receipts change:
+
+  ```bash
+  python scripts/build_memo_mechanic_landing_logs.py --check
+  python scripts/validate_memo_mechanic_landing_logs.py
+  ```
+
+- When package cards, owner maps, landing logs, validation routes, or
+  package-local/part-local artifacts change:
+
+  ```bash
+  python scripts/build_memo_mechanic_readiness.py --check
+  python scripts/validate_memo_mechanic_readiness.py
+  ```
+
 For mechanic topology changes, run:
 
 ```bash
