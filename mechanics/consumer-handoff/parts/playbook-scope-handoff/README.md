@@ -10,6 +10,7 @@ This active part belongs to `mechanics/consumer-handoff/` and materializes the m
 ## Source Surfaces
 
 - [PLAYBOOK_MEMORY_SCOPES](../../docs/PLAYBOOK_MEMORY_SCOPES.md)
+- `tests/test_playbook_memory_scopes.py`
 
 ## Function
 

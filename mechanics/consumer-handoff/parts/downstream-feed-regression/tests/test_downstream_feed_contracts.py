@@ -8,7 +8,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
+REPO_ROOT = Path(__file__).resolve().parents[5]
 SCRIPTS_ROOT = REPO_ROOT / "scripts"
 if str(SCRIPTS_ROOT) not in sys.path:
     sys.path.insert(0, str(SCRIPTS_ROOT))
@@ -17,6 +17,8 @@ SCRIPT_PATHS = {
     "generate_kag_export.py": REPO_ROOT
     / "mechanics"
     / "consumer-handoff"
+    / "parts"
+    / "kag-source-export"
     / "scripts"
     / "generate_kag_export.py",
     "generate_runtime_writeback_targets.py": REPO_ROOT
@@ -61,7 +63,14 @@ generate_runtime_writeback_governance = load_module("generate_runtime_writeback_
 
 GENERATED_ROOT = REPO_ROOT / "generated"
 EXAMPLES_ROOT = REPO_ROOT / "examples"
-CONSUMER_HANDOFF_GENERATED_ROOT = REPO_ROOT / "mechanics" / "consumer-handoff" / "generated"
+CONSUMER_HANDOFF_GENERATED_ROOT = (
+    REPO_ROOT
+    / "mechanics"
+    / "consumer-handoff"
+    / "parts"
+    / "kag-source-export"
+    / "generated"
+)
 CHECKPOINT_EXAMPLES_ROOT = (
     REPO_ROOT
     / "mechanics"
@@ -450,7 +459,7 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
 
         for command in (
             "python scripts/generate_memory_object_surfaces.py",
-            "python mechanics/consumer-handoff/scripts/generate_kag_export.py",
+            "python mechanics/consumer-handoff/parts/kag-source-export/scripts/generate_kag_export.py",
             "python mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_targets.py",
             "python mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_intake.py",
             "python mechanics/writeback/parts/growth-and-continuity/scripts/generate_phase_alpha_writeback_map.py",

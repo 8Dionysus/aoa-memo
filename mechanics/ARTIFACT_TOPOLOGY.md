@@ -166,7 +166,8 @@ Examples:
   their nearest `mechanics/writeback/parts/<part>/generated/` home, with
   runtime targets/intake/governance under `runtime-and-temperature` and growth
   or Phase Alpha surfaces under `growth-and-continuity`.
-- the KAG source export lives under `mechanics/consumer-handoff/generated/`.
+- the KAG source export lives under
+  `mechanics/consumer-handoff/parts/kag-source-export/generated/`.
 - root quest generated companions live under `generated/` only because they
   project the public Questbook store for outside consumers. Their
   `owner_surface` and `anchor_ref` values must still route into real memo docs

@@ -10,6 +10,8 @@ This active part belongs to `mechanics/consumer-handoff/` and materializes the m
 ## Source Surfaces
 
 - [MEMORY_EVAL_GUARDRAILS](../../docs/MEMORY_EVAL_GUARDRAILS.md)
+- `schemas/memory_eval_guardrail_pack.schema.json`
+- `examples/memory_eval_guardrail_pack.example.json`
 
 ## Function
 

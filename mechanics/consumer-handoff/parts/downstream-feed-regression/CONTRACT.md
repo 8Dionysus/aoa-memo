@@ -8,11 +8,19 @@ Stronger claims route through `../../OWNER_MAP.md`. Source placement and legacy 
 
 ## Source Surfaces
 
-- `mechanics/consumer-handoff/tests/test_downstream_feed_contracts.py`
+- `mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_downstream_feed_contracts.py`
+- `mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_consumer_handoff_mechanic.py`
 
 ## Contract
 
 keeps consumer-facing recall, KAG export, checkpoint, and writeback read surfaces aligned without becoming runtime authority
+
+## Artifact Contract
+
+The part owns consumer-handoff regression tests that cross generated memory
+families, KAG donor export, checkpoint return, writeback intake, root docs, and
+quest references. It can assert read-surface alignment; it must not become
+runtime authority, proof, route dispatch, or owner acceptance.
 
 ## Stop-lines
 

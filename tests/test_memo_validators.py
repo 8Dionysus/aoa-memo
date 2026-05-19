@@ -32,7 +32,13 @@ def load_script_module(module_name: str, path: Path):
 
 generate_kag_export = load_script_module(
     "generate_kag_export",
-    REPO_ROOT / "mechanics" / "consumer-handoff" / "scripts" / "generate_kag_export.py",
+    REPO_ROOT
+    / "mechanics"
+    / "consumer-handoff"
+    / "parts"
+    / "kag-source-export"
+    / "scripts"
+    / "generate_kag_export.py",
 )
 build_quest_surfaces = load_script_module(
     "build_quest_surfaces",
@@ -738,7 +744,7 @@ class MemoValidatorTestCase(unittest.TestCase):
                 "evidence_refs": [
                     {
                         "kind": "memory_object",
-                        "ref": "repo:aoa-memo/mechanics/consumer-handoff/examples/bridge.kag-lift.example.json",
+                        "ref": "repo:aoa-memo/mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/bridge.kag-lift.example.json",
                         "role": "primary",
                     },
                     {
@@ -748,7 +754,7 @@ class MemoValidatorTestCase(unittest.TestCase):
                     },
                     {
                         "kind": "candidate_seed",
-                        "ref": "repo:aoa-memo/mechanics/consumer-handoff/examples/claim.tos-bridge-ready.example.json",
+                        "ref": "repo:aoa-memo/mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/claim.tos-bridge-ready.example.json",
                         "role": "candidate-seed",
                     },
                     {
@@ -758,7 +764,7 @@ class MemoValidatorTestCase(unittest.TestCase):
                     },
                 ],
                 "payload": {
-                    "memory_object_ref": "mechanics/consumer-handoff/examples/bridge.kag-lift.example.json",
+                    "memory_object_ref": "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/bridge.kag-lift.example.json",
                     "runtime_surface": "distillation_bridge_candidate",
                     "target_kind": "bridge",
                     "writeback_class": "reviewed_candidate",
@@ -1225,8 +1231,8 @@ class MemoValidatorTestCase(unittest.TestCase):
     def test_guardrail_validator_rejects_provenance_case_without_provenance_thread(self) -> None:
         payload = self.guardrail_payload()
         payload["cases"][1]["input_refs"] = [
-            "mechanics/consumer-handoff/examples/claim.tos-bridge-ready.example.json",
-            "mechanics/consumer-handoff/examples/bridge.kag-lift.example.json",
+            "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/claim.tos-bridge-ready.example.json",
+            "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/bridge.kag-lift.example.json",
         ]
         self.assert_guardrail_payload_fails(payload)
 
@@ -1282,9 +1288,9 @@ class MemoValidatorTestCase(unittest.TestCase):
     def test_guardrail_validator_rejects_merge_case_without_provenance_thread(self) -> None:
         payload = self.guardrail_payload()
         payload["cases"][6]["input_refs"] = [
-            "mechanics/consumer-handoff/examples/episode.tos-interpretation.example.json",
-            "mechanics/consumer-handoff/examples/claim.tos-bridge-ready.example.json",
-            "mechanics/consumer-handoff/examples/bridge.kag-lift.example.json",
+            "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/episode.tos-interpretation.example.json",
+            "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/claim.tos-bridge-ready.example.json",
+            "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/bridge.kag-lift.example.json",
         ]
         self.assert_guardrail_payload_fails(payload)
 

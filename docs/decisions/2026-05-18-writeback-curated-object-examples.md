@@ -6,8 +6,8 @@ The root `examples/` lane now has positive family contracts for shared memory
 object, lifecycle, recall, and support examples. The self-agency continuity
 decision and state-capsule examples were still physically stored in root
 `examples/`, even though their family owner was the writeback mechanic and
-`examples/AGENTS.md` already routed self-agency examples to
-`mechanics/writeback/examples/`.
+`examples/AGENTS.md` already routed self-agency examples to the writeback
+mechanic.
 
 Those two examples are still curated memory-object inputs for the root
 object-facing generated family. The question is where the authored examples
@@ -17,7 +17,7 @@ but the owner boundary is mechanic-local.
 ## Decision
 
 Move the self-agency continuity decision and state-capsule examples into
-`mechanics/writeback/examples/`, while keeping
+`mechanics/writeback/parts/growth-and-continuity/examples/`, while keeping
 `examples/memory_object_surface_manifest.json` as the root manifest that
 selects curated object-surface inputs.
 
@@ -42,7 +42,8 @@ single-package artifacts.
 - Root `examples/` no longer carries writeback-owned self-agency object
   examples.
 - The object-facing generated catalog, capsules, and section surfaces now show
-  `mechanics/writeback/examples/...` as the source path for those objects.
+  `mechanics/writeback/parts/growth-and-continuity/examples/...` as the source
+  path for those objects.
 - Future curated object examples can live under a mechanic package when the
   owner boundary is mechanic-local, as long as the root manifest and generated
   family stay deterministic and validated.
@@ -51,8 +52,8 @@ single-package artifacts.
 
 ## Affected Surfaces
 
-- `mechanics/writeback/examples/decision.self-agency-reanchor-window.example.json`
-- `mechanics/writeback/examples/state_capsule.self-agency-continuity-relay.example.json`
+- `mechanics/writeback/parts/growth-and-continuity/examples/decision.self-agency-reanchor-window.example.json`
+- `mechanics/writeback/parts/growth-and-continuity/examples/state_capsule.self-agency-continuity-relay.example.json`
 - `examples/memory_object_surface_manifest.json`
 - `generated/memory_object_catalog.json`
 - `generated/memory_object_catalog.min.json`
@@ -60,7 +61,7 @@ single-package artifacts.
 - `generated/memory_object_sections.full.json`
 - `config/root_technical_districts.json`
 - `scripts/validate_memo.py`
-- `mechanics/writeback/tests/test_self_agency_continuity_writeback.py`
+- `mechanics/writeback/parts/growth-and-continuity/tests/test_self_agency_continuity_writeback.py`
 - `mechanics/writeback/AGENTS.md`
 - `mechanics/writeback/LANDING_LOG.md`
 
@@ -75,6 +76,6 @@ python scripts/validate_memory_object_surfaces.py
 python scripts/validate_mechanic_artifact_topology.py
 python scripts/build_mechanic_artifact_inventory.py --check
 python scripts/validate_mechanic_artifact_inventory.py
-python -m pytest -q mechanics/writeback/tests/test_self_agency_continuity_writeback.py tests/test_mechanic_artifact_topology.py tests/test_mechanic_artifact_inventory.py
+python -m pytest -q mechanics/writeback/parts/growth-and-continuity/tests/test_self_agency_continuity_writeback.py tests/test_mechanic_artifact_topology.py tests/test_mechanic_artifact_inventory.py
 python scripts/release_check.py
 ```

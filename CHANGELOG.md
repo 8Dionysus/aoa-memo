@@ -141,6 +141,10 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Changed
 
+- Move consumer-handoff schemas, examples, generated KAG export, generator,
+  playbook regression, and downstream feed tests into nearest functioning
+  `parts/` homes, with validators and generated references updated to the
+  part-local surfaces.
 - Move checkpoint inquiry, mapping, approval/health/improvement, Phase Alpha,
   and boundary regression artifacts into nearest functioning `parts/` homes,
   with recurrence, consumer-handoff, and writeback refs updated to the
@@ -156,12 +160,13 @@ Tracking starts with the community-docs baseline for this repository.
   functioning `parts/` homes, and remove the stale retention validation
   dependency on governance tests from the retention route.
 - Move the downstream feed regression into
-  `mechanics/consumer-handoff/tests/`, move the tracked writeback receipt
-  fixture into `mechanics/writeback/tests/fixtures/`, and narrow the remaining
+  the consumer-handoff mechanic regression lane, move the tracked writeback receipt
+  fixture into `mechanics/writeback/parts/receipt-publication-regression/tests/fixtures/`,
+  and narrow the remaining
   root test-family contract to the cross-mechanic Wave 3 seed regression.
 - Move self-agency continuity object examples from root `examples/` into
-  `mechanics/writeback/examples/` while keeping them in the root object-surface
-  manifest and generated object-facing family.
+  `mechanics/writeback/parts/growth-and-continuity/examples/` while keeping
+  them in the root object-surface manifest and generated object-facing family.
 - Move the maintained Spark fast-loop lane from root `Spark/` to
   `.agents/spark/`, with `.agents/AGENTS.md` as the agent-facing district
   route card.
@@ -399,12 +404,12 @@ This changelog entry uses the release-prep merge date.
 
 - doctrine-facing memory families under `generated/memory_catalog.json`, `generated/memory_catalog.min.json`, `generated/memory_capsules.json`, and `generated/memory_sections.full.json`
 - object-facing memory families under `generated/memory_object_catalog.json`, `generated/memory_object_catalog.min.json`, `generated/memory_object_capsules.json`, and `generated/memory_object_sections.full.json`
-- bounded source-owned export and writeback support seams under `mechanics/consumer-handoff/generated/kag_export.min.json`, `mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_targets.min.json`, and `mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_intake.min.json`
+- bounded source-owned export and writeback support seams under `mechanics/consumer-handoff/parts/kag-source-export/generated/kag_export.min.json`, `mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_targets.min.json`, and `mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_intake.min.json`
 
 ### Validation
 
 - `python scripts/generate_memory_object_surfaces.py`
-- `python mechanics/consumer-handoff/scripts/generate_kag_export.py`
+- `python mechanics/consumer-handoff/parts/kag-source-export/scripts/generate_kag_export.py`
 - `python scripts/validate_memo.py`
 - `python scripts/validate_memory_surfaces.py`
 - `python scripts/validate_memory_object_surfaces.py`

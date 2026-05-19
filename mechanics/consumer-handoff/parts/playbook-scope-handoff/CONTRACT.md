@@ -9,10 +9,17 @@ Stronger claims route through `../../OWNER_MAP.md`. Source placement and legacy 
 ## Source Surfaces
 
 - [PLAYBOOK_MEMORY_SCOPES](../../docs/PLAYBOOK_MEMORY_SCOPES.md)
+- `tests/test_playbook_memory_scopes.py`
 
 ## Contract
 
 tells playbooks how to request bounded recall modes and scopes
+
+## Artifact Contract
+
+The part owns the local regression that keeps playbook-facing recall scopes,
+return-ready checkpoint continuity, and discoverability aligned. It does not
+define playbook choreography or active quest execution.
 
 ## Stop-lines
 

@@ -9,7 +9,7 @@
     "docs/MEMORY_MODEL.md#kag-orientation"
   ],
   "source_refs": [
-    "mechanics/consumer-handoff/examples/bridge.kag-lift.example.json",
+    "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/bridge.kag-lift.example.json",
     "repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md"
   ],
   "source_fragment_refs": [
@@ -27,7 +27,7 @@
     "memo.bridge.2026-03-23.tos-lineage-kag-candidate"
   ],
   "strongest_next_sources": [
-    "mechanics/consumer-handoff/examples/bridge.kag-lift.example.json",
+    "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/bridge.kag-lift.example.json",
     "repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md",
     "repo:aoa-kag/README.md"
   ],

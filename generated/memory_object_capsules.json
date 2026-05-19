@@ -48,7 +48,7 @@
       "use_when_short": "Use when episode-level recall is needed and this object remains allowed for lineage, episodic, semantic.",
       "do_not_use_short": "Do not treat this episode as proof or stronger than its cited sources.",
       "strongest_next_source": "mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow",
-      "source_path": "mechanics/consumer-handoff/examples/episode.tos-interpretation.example.json"
+      "source_path": "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/episode.tos-interpretation.example.json"
     },
     {
       "id": "memo.claim.2026-03-20.temperature-not-truth",
@@ -108,7 +108,7 @@
       "use_when_short": "Use when claim-level recall is needed and this object remains allowed for semantic, lineage, source_route.",
       "do_not_use_short": "Do not treat this claim as proof or stronger than its cited sources.",
       "strongest_next_source": "mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#tos-bridge-guidance",
-      "source_path": "mechanics/consumer-handoff/examples/claim.tos-bridge-ready.example.json"
+      "source_path": "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/claim.tos-bridge-ready.example.json"
     },
     {
       "id": "memo.decision.2026-03-21.self-agent-approval-record",
@@ -156,7 +156,7 @@
       "use_when_short": "Use when bridge-level recall is needed and this object remains allowed for lineage, source_route, semantic.",
       "do_not_use_short": "Do not treat this bridge as proof or stronger than its cited sources.",
       "strongest_next_source": "mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow",
-      "source_path": "mechanics/consumer-handoff/examples/bridge.kag-lift.example.json"
+      "source_path": "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/bridge.kag-lift.example.json"
     },
     {
       "id": "memo.audit.2026-03-21.router-entrypoint-supersession",

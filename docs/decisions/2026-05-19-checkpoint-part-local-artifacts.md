@@ -54,7 +54,7 @@ the source owner for the checkpoint artifact and mapping.
 
 Expected verification:
 
-- `python -m pytest -q mechanics/checkpoint/parts/checkpoint-memory-boundary/tests tests/test_memo_validators.py mechanics/consumer-handoff/tests/test_downstream_feed_contracts.py mechanics/consumer-handoff/tests/test_playbook_memory_scopes.py mechanics/recurrence-support/tests/test_recurrence_support_mechanic.py mechanics/writeback/parts/runtime-and-temperature/tests/test_runtime_writeback_part.py`
+- `python -m pytest -q mechanics/checkpoint/parts/checkpoint-memory-boundary/tests tests/test_memo_validators.py mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_downstream_feed_contracts.py mechanics/consumer-handoff/parts/playbook-scope-handoff/tests/test_playbook_memory_scopes.py mechanics/recurrence-support/tests/test_recurrence_support_mechanic.py mechanics/writeback/parts/runtime-and-temperature/tests/test_runtime_writeback_part.py`
 - `python mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_targets.py --check`
 - `python mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_intake.py --check`
 - `python mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_governance.py --check`

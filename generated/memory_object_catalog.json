@@ -120,7 +120,7 @@
         "episodic",
         "semantic"
       ],
-      "source_path": "mechanics/consumer-handoff/examples/episode.tos-interpretation.example.json",
+      "source_path": "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/episode.tos-interpretation.example.json",
       "inspect_key": "memo.ep.2026-03-23.tos-interpretation-bridge-seed",
       "expand_key": "memo.ep.2026-03-23.tos-interpretation-bridge-seed",
       "scope": [
@@ -288,7 +288,7 @@
         "lineage",
         "source_route"
       ],
-      "source_path": "mechanics/consumer-handoff/examples/claim.tos-bridge-ready.example.json",
+      "source_path": "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/claim.tos-bridge-ready.example.json",
       "inspect_key": "memo.claim.2026-03-23.tos-bridge-by-reference",
       "expand_key": "memo.claim.2026-03-23.tos-bridge-by-reference",
       "scope": [
@@ -422,7 +422,7 @@
         "source_route",
         "semantic"
       ],
-      "source_path": "mechanics/consumer-handoff/examples/bridge.kag-lift.example.json",
+      "source_path": "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/bridge.kag-lift.example.json",
       "inspect_key": "memo.bridge.2026-03-23.tos-lineage-kag-candidate",
       "expand_key": "memo.bridge.2026-03-23.tos-lineage-kag-candidate",
       "scope": [

@@ -23,7 +23,7 @@ python scripts/release_check.py
 ## 2026-05-18
 
 - Moved the tracked writeback receipt fixture from root `tests/fixtures/` into
-  `mechanics/writeback/tests/fixtures/`.
+  `mechanics/writeback/parts/receipt-publication-regression/tests/fixtures/`.
 - Kept receipt publication validation package-local while leaving only
   cross-mechanic regressions in root `tests/`.
 
@@ -61,7 +61,7 @@ python scripts/release_check.py
 ## 2026-05-18
 
 - Moved self-agency continuity memory-object examples from root `examples/`
-  into `mechanics/writeback/examples/`.
+  into `mechanics/writeback/parts/growth-and-continuity/examples/`.
 - Kept the root object-surface manifest as the repo-wide generated family
   input while routing writeback-owned examples to the writeback mechanic.
 

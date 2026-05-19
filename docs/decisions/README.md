@@ -66,6 +66,7 @@ expectation.
 | [2026-05-19-adoption-retention-part-local-artifacts](2026-05-19-adoption-retention-part-local-artifacts.md) | move adoption and retention schemas, examples, and tests into functioning part-local homes |
 | [2026-05-19-writeback-part-local-artifacts](2026-05-19-writeback-part-local-artifacts.md) | move writeback schemas, examples, generated companions, scripts, tests, and receipt fixtures into functioning part-local homes |
 | [2026-05-19-checkpoint-part-local-artifacts](2026-05-19-checkpoint-part-local-artifacts.md) | move checkpoint schemas, examples, tests, and consumer refs into functioning part-local homes |
+| [2026-05-19-consumer-handoff-part-local-artifacts](2026-05-19-consumer-handoff-part-local-artifacts.md) | move consumer-handoff schemas, examples, generated export, generator, and tests into functioning part-local homes |
 | [2026-05-18-mechanic-readiness-matrix](2026-05-18-mechanic-readiness-matrix.md) | add a generated readiness matrix for all memo mechanic packages |
 | [2026-05-18-mechanic-readiness-artifact-test-coverage](2026-05-18-mechanic-readiness-artifact-test-coverage.md) | require package-local tests for mechanics with package-local non-test artifacts |
 | [2026-05-18-mechanic-readiness-local-test-routes](2026-05-18-mechanic-readiness-local-test-routes.md) | require route-card visibility for package-local mechanic test commands |
