@@ -94,6 +94,32 @@ def _artifact_map() -> dict[str, dict[str, Any]]:
     return {package["slug"]: package for package in build_inventory()["packages"]}
 
 
+def _local_test_dirs(artifact_entries: list[Any]) -> list[str]:
+    test_dirs: set[str] = set()
+    for artifact in artifact_entries:
+        if not isinstance(artifact, dict):
+            continue
+        if artifact.get("district") != "tests" or not isinstance(artifact.get("path"), str):
+            continue
+        path = Path(artifact["path"])
+        if path.suffix == ".py" and path.name.startswith("test"):
+            test_dirs.add(str(path.parent))
+    return sorted(test_dirs)
+
+
+def _has_runnable_local_test_routes(validation_text: str, test_dirs: list[str]) -> bool:
+    covered: set[str] = set()
+    for raw_line in validation_text.splitlines():
+        line = raw_line.strip()
+        if not line.startswith("python -m pytest -q "):
+            continue
+        args = line.split()[4:]
+        for test_dir in test_dirs:
+            if any(arg == test_dir or arg.startswith(f"{test_dir}/") for arg in args):
+                covered.add(test_dir)
+    return all(test_dir in covered for test_dir in test_dirs)
+
+
 def _present_docs(slug: str) -> list[str]:
     docs_root = REPO_ROOT / "mechanics" / slug / "docs"
     if not docs_root.is_dir():
@@ -155,15 +181,7 @@ def build_package_readiness(package: dict[str, Any], artifacts: dict[str, Any]) 
     artifact_entries = artifacts.get("artifacts", [])
     if not isinstance(artifact_entries, list):
         artifact_entries = []
-    test_dirs = sorted(
-        {
-            str(Path(artifact["path"]).parent)
-            for artifact in artifact_entries
-            if isinstance(artifact, dict)
-            and artifact.get("district") == "tests"
-            and isinstance(artifact.get("path"), str)
-        }
-    )
+    test_dirs = _local_test_dirs(artifact_entries)
     local_test_refs = [f"python -m pytest -q {test_dir}" for test_dir in test_dirs]
 
     checks = {
@@ -197,7 +215,10 @@ def build_package_readiness(package: dict[str, Any], artifacts: dict[str, Any]) 
         "landing-log": "python scripts/release_check.py" in landing_log or "python scripts/release_check.py" in agents,
         "validation-route": all(ref in validation_refs for ref in REQUIRED_VALIDATION_REFS),
         "artifact-test-coverage": non_test_artifact_count == 0 or test_artifact_count > 0,
-        "local-test-route": test_artifact_count == 0 or all(test_dir in validation_text for test_dir in test_dirs),
+        "local-test-route": test_artifact_count == 0 or _has_runnable_local_test_routes(
+            validation_text,
+            test_dirs,
+        ),
         "stronger-owner-stop-lines": (
             {"proof", "runtime"}.issubset(set(stop_line_terms))
             and bool({"role", "route", "source owner", "authority"} & set(stop_line_terms))
