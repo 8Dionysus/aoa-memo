@@ -178,6 +178,9 @@ local config, examples, generated companions, manifests, schemas, or scripts
 must have at least one package-local test before it can be considered ready.
 Test-only mechanics remain valid when their operation is a validator or
 shape-guard surface.
+When package-local tests exist, the mechanic's validation route must name the
+local pytest command so a future agent can run the package check without
+reverse-engineering the inventory.
 
 `generated/memo_mechanic_owner_routes.min.json` is the compact generated
 matrix of package-local owner maps and route cards. It exists because

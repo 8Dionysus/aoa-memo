@@ -15,6 +15,9 @@ Tracking starts with the community-docs baseline for this repository.
 - Add readiness artifact-test coverage so a mechanic with package-local
   config, examples, generated companions, manifests, schemas, or scripts
   cannot be marked OS Abyss ready without a package-local regression test.
+- Add readiness local-test-route coverage so mechanic packages with
+  package-local tests must name their local pytest command in validation
+  surfaces.
 - Add a source-authored topology spine with `DESIGN.md`, `DESIGN.AGENTS.md`,
   `docs/README.md`, `docs/ROOT_SURFACE_LAW.md`, and `docs/decisions/` so
   future docs, agent-lane, and placement cleanup can route through explicit

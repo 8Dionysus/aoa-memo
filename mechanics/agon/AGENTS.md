@@ -53,6 +53,7 @@ python mechanics/agon/scripts/validate_agon_retention_rank_memo_bridge.py
 python mechanics/agon/scripts/validate_agon_slc_memo_bridge_registry.py
 python mechanics/agon/scripts/validate_agon_sophian_memo_evidence_registry.py
 python mechanics/agon/scripts/validate_agon_vds_memo_bridge.py
+python -m pytest -q mechanics/agon/tests
 ```
 
 Before landing, also run:

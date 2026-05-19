@@ -17,6 +17,7 @@ Validation route:
 ```bash
 python mechanics/questbook/scripts/validate_quest_store.py
 python scripts/validate_memo_mechanics.py
+python -m pytest -q mechanics/agon/tests
 python scripts/release_check.py
 ```
 
