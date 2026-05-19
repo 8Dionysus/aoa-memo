@@ -68,7 +68,7 @@ def test_memory_readiness_boundary_routes_to_existing_objects_and_stronger_owner
 
 
 def test_registry_routes_readiness_boundary_docs_and_schema() -> None:
-    registry = load_json(REPO_ROOT / "generated" / "memo_registry.min.json")
+    registry = load_json(REPO_ROOT / "generated" / "memory" / "memo_registry.min.json")
     assert isinstance(registry, dict)
     assert "mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md" in registry["core_docs"]
     assert (

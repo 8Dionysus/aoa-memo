@@ -21,9 +21,9 @@ they serve more than this one mechanic:
 | Checkpoint artifact consumer refs | `mechanics/checkpoint/parts/checkpoint-carry-contract/schemas/inquiry_checkpoint.schema.json`, `mechanics/checkpoint/parts/checkpoint-carry-contract/examples/inquiry_checkpoint.example.json`, `mechanics/checkpoint/parts/checkpoint-carry-contract/examples/inquiry_checkpoint.return.example.json` |
 | Checkpoint to memory consumer refs | `mechanics/checkpoint/parts/checkpoint-to-memory-mapping/schemas/checkpoint-to-memory-contract.schema.json`, `mechanics/checkpoint/parts/checkpoint-to-memory-mapping/examples/checkpoint_to_memory_contract.example.json` |
 | Witness trace | `mechanics/recurrence-support/parts/witness-trace-contract/schemas/witness-trace.schema.json`, `mechanics/recurrence-support/parts/witness-trace-contract/examples/witness_trace.example.json`, `mechanics/recurrence-support/parts/witness-trace-contract/tests/test_recurrence_support_mechanic.py` |
-| Working return recall | `examples/recall_contract.object.working.return.json`, `examples/recall_contract.object.working.phase-alpha.json` |
-| Witness trace quest closeout | `quests/memo/done/AOA-MEM-Q-0002.yaml`, `generated/quest_catalog.min.json`, `generated/quest_catalog.min.example.json` |
-| Reviewed closeout quest | `quests/memo/reanchor/AOA-MEM-Q-0009.yaml`, `generated/quest_catalog.min.json`, `generated/quest_catalog.min.example.json` |
+| Working return recall | `examples/recall/recall_contract.object.working.return.json`, `examples/recall/recall_contract.object.working.phase-alpha.json` |
+| Witness trace quest closeout | `quests/memo/done/AOA-MEM-Q-0002.yaml`, `generated/quests/quest_catalog.min.json`, `generated/quests/quest_catalog.min.example.json` |
+| Reviewed closeout quest | `quests/memo/reanchor/AOA-MEM-Q-0009.yaml`, `generated/quests/quest_catalog.min.json`, `generated/quests/quest_catalog.min.example.json` |
 
 ## Interface
 

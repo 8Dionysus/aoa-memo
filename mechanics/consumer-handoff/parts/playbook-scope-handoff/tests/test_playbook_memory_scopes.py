@@ -6,7 +6,7 @@ from pathlib import Path
 
 
 REPO_ROOT = Path(__file__).resolve().parents[5]
-SCRIPTS_ROOT = REPO_ROOT / "scripts"
+SCRIPTS_ROOT = REPO_ROOT / "scripts" / "memory"
 if str(SCRIPTS_ROOT) not in sys.path:
     sys.path.insert(0, str(SCRIPTS_ROOT))
 
@@ -37,8 +37,8 @@ def test_playbook_memory_scopes_doc_keeps_bounded_scope_rule() -> None:
 
 
 def test_playbook_memory_scope_surfaces_keep_return_ready_chain() -> None:
-    working = load_json("examples/recall_contract.working.json")
-    return_ready = load_json("examples/recall_contract.object.working.return.json")
+    working = load_json("examples/recall/recall_contract.working.json")
+    return_ready = load_json("examples/recall/recall_contract.object.working.return.json")
     inquiry_return = load_json("mechanics/checkpoint/parts/checkpoint-carry-contract/examples/inquiry_checkpoint.return.example.json")
 
     assert working["allowed_scopes"] == ["thread", "session", "project"]
@@ -46,14 +46,14 @@ def test_playbook_memory_scope_surfaces_keep_return_ready_chain() -> None:
     assert return_ready["checkpoint_continuity_supported"] is True
     assert return_ready["return_ready"] is True
     assert inquiry_return["return_pack"]["reentry_refs"] == [
-        "examples/recall_contract.object.working.return.json",
+        "examples/recall/recall_contract.object.working.return.json",
         "mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
     ]
 
 
 def test_playbook_memory_scopes_surface_stays_discoverable() -> None:
     readme = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
-    registry = load_json("generated/memo_registry.min.json")
+    registry = load_json("generated/memory/memo_registry.min.json")
 
     assert "mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md" in readme
     assert "mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md" in registry["core_docs"]

@@ -28,8 +28,8 @@ KAG_EXPORT_PATH = (
     / "generated"
     / "kag_export.min.json"
 )
-OBJECT_CAPSULES_PATH = GENERATED / "memory_object_capsules.json"
-OBJECT_SECTIONS_PATH = GENERATED / "memory_object_sections.full.json"
+OBJECT_CAPSULES_PATH = GENERATED / "memory-objects" / "memory_object_capsules.json"
+OBJECT_SECTIONS_PATH = GENERATED / "memory-objects" / "memory_object_sections.full.json"
 
 BRIDGE_ID = "memo.bridge.2026-03-23.tos-lineage-kag-candidate"
 BRIDGE_EXAMPLE_REF = "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/bridge.kag-lift.example.json"
@@ -187,7 +187,7 @@ def build_kag_export_payload() -> JsonDict:
         ],
         "entry_surface": {
             "repo": "aoa-memo",
-            "path": "generated/memory_object_capsules.json",
+            "path": "generated/memory-objects/memory_object_capsules.json",
             "match_key": "id",
             "match_value": BRIDGE_ID,
         },

@@ -20,7 +20,7 @@ Validation run:
 - git diff --check
 
 Skipped checks:
-- python scripts/release_check.py; review did not mutate files.
+- python scripts/release/release_check.py; review did not mutate files.
 
 Remaining risk: Full release gate was not run.
 

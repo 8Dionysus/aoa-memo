@@ -13,7 +13,7 @@ Validation route:
 
 ```bash
 python -m pytest -q mechanics/retention/parts/cross-repo-and-governance-retention/tests mechanics/retention/parts/office-markers/tests mechanics/retention/parts/post-release-retention/tests
-python scripts/release_check.py
+python scripts/release/release_check.py
 ```
 
 ## Stop-lines preserved
@@ -32,7 +32,7 @@ Validation route:
 
 ```bash
 python -m pytest -q mechanics/retention/parts/cross-repo-and-governance-retention/tests mechanics/retention/parts/office-markers/tests mechanics/retention/parts/post-release-retention/tests
-python scripts/release_check.py
+python scripts/release/release_check.py
 ```
 
 ## Stop-lines preserved
@@ -50,8 +50,8 @@ python scripts/release_check.py
 Validation route:
 
 ```bash
-python scripts/validate_memo_mechanics.py
-python scripts/release_check.py
+python scripts/mechanics/validate_memo_mechanics.py
+python scripts/release/release_check.py
 ```
 
 ## Stop-lines preserved

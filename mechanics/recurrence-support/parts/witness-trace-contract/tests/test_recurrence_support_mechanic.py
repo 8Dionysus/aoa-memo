@@ -10,7 +10,7 @@ REPO_ROOT = Path(__file__).resolve().parents[5]
 
 class RecurrenceSupportMechanicTestCase(unittest.TestCase):
     def test_recurrence_support_registers_active_docs(self) -> None:
-        config = json.loads((REPO_ROOT / "config" / "memo_mechanics.json").read_text())
+        config = json.loads((REPO_ROOT / "config" / "mechanics" / "memo_mechanics.json").read_text())
         packages = {package["slug"]: package for package in config["packages"]}
         recurrence_support = packages["recurrence-support"]
 
@@ -61,9 +61,9 @@ class RecurrenceSupportMechanicTestCase(unittest.TestCase):
             "mechanics/checkpoint/parts/checkpoint-to-memory-mapping/examples/checkpoint_to_memory_contract.example.json",
             "mechanics/recurrence-support/parts/witness-trace-contract/schemas/witness-trace.schema.json",
             "mechanics/recurrence-support/parts/witness-trace-contract/examples/witness_trace.example.json",
-            "examples/recall_contract.object.working.return.json",
+            "examples/recall/recall_contract.object.working.return.json",
             "quests/memo/reanchor/AOA-MEM-Q-0009.yaml",
-            "generated/quest_catalog.min.json",
+            "generated/quests/quest_catalog.min.json",
         ):
             self.assertIn(path, parts)
             self.assertTrue((REPO_ROOT / path).is_file())
@@ -75,7 +75,7 @@ class RecurrenceSupportMechanicTestCase(unittest.TestCase):
             "mechanics/recurrence-support/docs/WITNESS_TRACE_CONTRACT.md",
         )
 
-        registry = json.loads((REPO_ROOT / "generated" / "memo_registry.min.json").read_text())
+        registry = json.loads((REPO_ROOT / "generated" / "memory" / "memo_registry.min.json").read_text())
         self.assertIn(active_refs[0], registry["core_docs"])
         self.assertIn(active_refs[2], registry["core_docs"])
 
@@ -84,7 +84,7 @@ class RecurrenceSupportMechanicTestCase(unittest.TestCase):
         ).read_text(encoding="utf-8")
         self.assertIn(active_refs[1], quest)
 
-        catalog = json.loads((REPO_ROOT / "generated" / "memory_catalog.min.json").read_text())
+        catalog = json.loads((REPO_ROOT / "generated" / "memory" / "memory_catalog.min.json").read_text())
         surfaces = {item["id"]: item for item in catalog["memo_surfaces"]}
         self.assertEqual(
             "mechanics/recurrence-support/README.md",

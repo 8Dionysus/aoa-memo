@@ -9,7 +9,12 @@ from typing import Any
 
 REPO_ROOT = Path(__file__).resolve().parents[5]
 DEFAULT_LOG_PATH = REPO_ROOT / ".aoa" / "live_receipts" / "memo-writeback-receipts.jsonl"
-MEMORY_OBJECT_CATALOG_PATH = REPO_ROOT / "generated" / "memory_object_catalog.min.json"
+MEMORY_OBJECT_CATALOG_PATH = (
+    REPO_ROOT
+    / "generated"
+    / "memory-objects"
+    / "memory_object_catalog.min.json"
+)
 RUNTIME_WRITEBACK_TARGETS_PATH = (
     REPO_ROOT
     / "mechanics"
@@ -28,7 +33,7 @@ GROWTH_REFINERY_LANES_PATH = (
     / "generated"
     / "growth_refinery_writeback_lanes.min.json"
 )
-RECALL_SURFACE_PREFIX = "repo:aoa-memo/generated/memory_object_catalog.min.json#"
+RECALL_SURFACE_PREFIX = "repo:aoa-memo/generated/memory-objects/memory_object_catalog.min.json#"
 GROWTH_LANE_REF_PREFIX = (
     "repo:aoa-memo/mechanics/writeback/parts/growth-and-continuity/generated/"
     "growth_refinery_writeback_lanes.min.json#"

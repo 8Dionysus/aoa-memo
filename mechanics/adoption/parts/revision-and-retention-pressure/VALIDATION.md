@@ -5,7 +5,7 @@ Executable validation for this part is routed through the package validation lan
 Run from the repository root:
 
 ```bash
-python scripts/validate_memo_mechanic_parts.py
+python scripts/mechanics/validate_memo_mechanic_parts.py
 python -m pytest -q mechanics/adoption/parts/revision-and-retention-pressure/tests
 ```
 

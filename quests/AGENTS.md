@@ -47,10 +47,10 @@ source files, not a second quest ledger.
 When quests change, run:
 
 ```bash
-python scripts/validate_memo.py
+python scripts/memory/validate_memo.py
 python mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py
 python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py --check
-python scripts/release_check.py
+python scripts/release/release_check.py
 ```
 
 ## Closeout

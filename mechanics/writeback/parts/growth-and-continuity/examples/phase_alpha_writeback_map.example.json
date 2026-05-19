@@ -94,7 +94,7 @@
     }
   ],
   "recall_posture": {
-    "contract_ref": "examples/recall_contract.object.working.phase-alpha.json",
+    "contract_ref": "examples/recall/recall_contract.object.working.phase-alpha.json",
     "path": [
       "inspect",
       "capsule",

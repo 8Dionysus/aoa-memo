@@ -9,7 +9,7 @@ from unittest.mock import patch
 
 
 REPO_ROOT = Path(__file__).resolve().parents[5]
-SCRIPTS_ROOT = REPO_ROOT / "scripts"
+SCRIPTS_ROOT = REPO_ROOT / "scripts" / "memory"
 if str(SCRIPTS_ROOT) not in sys.path:
     sys.path.insert(0, str(SCRIPTS_ROOT))
 SCRIPT_PATHS = {
@@ -61,8 +61,9 @@ generate_runtime_writeback_targets = load_module("generate_runtime_writeback_tar
 generate_runtime_writeback_intake = load_module("generate_runtime_writeback_intake.py")
 generate_runtime_writeback_governance = load_module("generate_runtime_writeback_governance.py")
 
-GENERATED_ROOT = REPO_ROOT / "generated"
-EXAMPLES_ROOT = REPO_ROOT / "examples"
+GENERATED_MEMORY_ROOT = REPO_ROOT / "generated" / "memory"
+GENERATED_MEMORY_OBJECTS_ROOT = REPO_ROOT / "generated" / "memory-objects"
+RECALL_EXAMPLES_ROOT = REPO_ROOT / "examples" / "recall"
 CONSUMER_HANDOFF_GENERATED_ROOT = (
     REPO_ROOT
     / "mechanics"
@@ -95,9 +96,9 @@ def load_json(path: Path):
 
 class MemoDownstreamFeedContractsTests(unittest.TestCase):
     def test_doctrine_family_contracts_stay_aligned(self) -> None:
-        catalog = load_json(GENERATED_ROOT / "memory_catalog.min.json")
-        capsules = load_json(GENERATED_ROOT / "memory_capsules.json")
-        sections = load_json(GENERATED_ROOT / "memory_sections.full.json")
+        catalog = load_json(GENERATED_MEMORY_ROOT / "memory_catalog.min.json")
+        capsules = load_json(GENERATED_MEMORY_ROOT / "memory_capsules.json")
+        sections = load_json(GENERATED_MEMORY_ROOT / "memory_sections.full.json")
 
         self.assertEqual(
             set(catalog.keys()),
@@ -128,12 +129,12 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
         expected = generate_memory_object_surfaces.build_surface_family()
 
         for name, payload in expected.items():
-            current = load_json(GENERATED_ROOT / name)
+            current = load_json(GENERATED_MEMORY_OBJECTS_ROOT / name)
             self.assertEqual(current, payload)
 
-        min_catalog = load_json(GENERATED_ROOT / "memory_object_catalog.min.json")
-        capsules = load_json(GENERATED_ROOT / "memory_object_capsules.json")
-        sections = load_json(GENERATED_ROOT / "memory_object_sections.full.json")
+        min_catalog = load_json(GENERATED_MEMORY_OBJECTS_ROOT / "memory_object_catalog.min.json")
+        capsules = load_json(GENERATED_MEMORY_OBJECTS_ROOT / "memory_object_capsules.json")
+        sections = load_json(GENERATED_MEMORY_OBJECTS_ROOT / "memory_object_sections.full.json")
 
         self.assertEqual(
             set(min_catalog.keys()),
@@ -189,7 +190,7 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
         )
         self.assertEqual(current["owner_repo"], "aoa-memo")
         self.assertEqual(current["kind"], "bridge")
-        self.assertEqual(current["entry_surface"]["path"], "generated/memory_object_capsules.json")
+        self.assertEqual(current["entry_surface"]["path"], "generated/memory-objects/memory_object_capsules.json")
         self.assertEqual(
             [item["role"] for item in current["source_inputs"]],
             ["primary", "supporting"],
@@ -208,63 +209,63 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
     def test_recall_contract_examples_keep_expected_surface_family_routes(self) -> None:
         expected = {
             "recall_contract.semantic.json": {
-                "inspect_surface": "generated/memo_registry.min.json",
+                "inspect_surface": "generated/memory/memo_registry.min.json",
                 "capsule_surface": None,
-                "expand_surface": "docs/MEMORY_MODEL.md",
+                "expand_surface": "docs/memory/MEMORY_MODEL.md",
                 "mode": "semantic",
             },
             "recall_contract.router.semantic.json": {
-                "inspect_surface": "generated/memory_catalog.min.json",
-                "capsule_surface": "generated/memory_capsules.json",
-                "expand_surface": "generated/memory_sections.full.json",
+                "inspect_surface": "generated/memory/memory_catalog.min.json",
+                "capsule_surface": "generated/memory/memory_capsules.json",
+                "expand_surface": "generated/memory/memory_sections.full.json",
                 "mode": "semantic",
             },
             "recall_contract.working.json": {
-                "inspect_surface": "generated/memory_catalog.min.json",
+                "inspect_surface": "generated/memory/memory_catalog.min.json",
                 "capsule_surface": None,
                 "expand_surface": "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
                 "mode": "working",
             },
             "recall_contract.lineage.json": {
-                "inspect_surface": "generated/memory_catalog.min.json",
+                "inspect_surface": "generated/memory/memory_catalog.min.json",
                 "capsule_surface": None,
                 "expand_surface": "mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md",
                 "mode": "lineage",
             },
             "recall_contract.router.lineage.json": {
-                "inspect_surface": "generated/memory_catalog.min.json",
-                "capsule_surface": "generated/memory_capsules.json",
-                "expand_surface": "generated/memory_sections.full.json",
+                "inspect_surface": "generated/memory/memory_catalog.min.json",
+                "capsule_surface": "generated/memory/memory_capsules.json",
+                "expand_surface": "generated/memory/memory_sections.full.json",
                 "mode": "lineage",
             },
             "recall_contract.object.working.json": {
-                "inspect_surface": "generated/memory_object_catalog.min.json",
+                "inspect_surface": "generated/memory-objects/memory_object_catalog.min.json",
                 "capsule_surface": None,
-                "expand_surface": "generated/memory_object_sections.full.json",
+                "expand_surface": "generated/memory-objects/memory_object_sections.full.json",
                 "mode": "working",
             },
             "recall_contract.object.working.return.json": {
-                "inspect_surface": "generated/memory_object_catalog.min.json",
-                "capsule_surface": "generated/memory_object_capsules.json",
-                "expand_surface": "generated/memory_object_sections.full.json",
+                "inspect_surface": "generated/memory-objects/memory_object_catalog.min.json",
+                "capsule_surface": "generated/memory-objects/memory_object_capsules.json",
+                "expand_surface": "generated/memory-objects/memory_object_sections.full.json",
                 "mode": "working",
             },
             "recall_contract.object.semantic.json": {
-                "inspect_surface": "generated/memory_object_catalog.min.json",
-                "capsule_surface": "generated/memory_object_capsules.json",
-                "expand_surface": "generated/memory_object_sections.full.json",
+                "inspect_surface": "generated/memory-objects/memory_object_catalog.min.json",
+                "capsule_surface": "generated/memory-objects/memory_object_capsules.json",
+                "expand_surface": "generated/memory-objects/memory_object_sections.full.json",
                 "mode": "semantic",
             },
             "recall_contract.object.lineage.json": {
-                "inspect_surface": "generated/memory_object_catalog.min.json",
-                "capsule_surface": "generated/memory_object_capsules.json",
-                "expand_surface": "generated/memory_object_sections.full.json",
+                "inspect_surface": "generated/memory-objects/memory_object_catalog.min.json",
+                "capsule_surface": "generated/memory-objects/memory_object_capsules.json",
+                "expand_surface": "generated/memory-objects/memory_object_sections.full.json",
                 "mode": "lineage",
             },
         }
 
         for name, contract in expected.items():
-            payload = load_json(EXAMPLES_ROOT / name)
+            payload = load_json(RECALL_EXAMPLES_ROOT / name)
             self.assertEqual(payload["mode"], contract["mode"])
             self.assertEqual(payload["inspect_surface"], contract["inspect_surface"])
             self.assertEqual(payload.get("capsule_surface"), contract["capsule_surface"])
@@ -288,7 +289,7 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
             payload["runtime_boundary"]["review_boundary_refs"],
             [
                 "mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md#writeback-classes",
-                "docs/MEMORY_MODEL.md#checkpoint-route-writeback",
+                "docs/memory/MEMORY_MODEL.md#checkpoint-route-writeback",
                 "repo:aoa-agents/docs/AGENT_MEMORY_POSTURE.md",
             ],
         )
@@ -454,16 +455,16 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
         self.assertIn("nearest `AGENTS.md`", readme)
 
         for command in (
-            "python scripts/validate_memo.py",
-            "python scripts/validate_memory_surfaces.py",
-            "python scripts/validate_memory_object_surfaces.py",
-            "python scripts/validate_lifecycle_audit_examples.py",
+            "python scripts/memory/validate_memo.py",
+            "python scripts/memory/validate_memory_surfaces.py",
+            "python scripts/memory/validate_memory_object_surfaces.py",
+            "python scripts/memory/validate_lifecycle_audit_examples.py",
             "python -m pytest -q tests",
         ):
             self.assertIn(command, root_agents)
 
         for command in (
-            "python scripts/generate_memory_object_surfaces.py",
+            "python scripts/memory/generate_memory_object_surfaces.py",
             "python mechanics/consumer-handoff/parts/kag-source-export/scripts/generate_kag_export.py",
             "python mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_targets.py",
             "python mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_intake.py",
@@ -480,10 +481,10 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
         self.assertIn("Do not duplicate the full command battery here", contributing)
 
         for command in (
-            "python scripts/validate_memo.py",
-            "python scripts/validate_memory_surfaces.py",
-            "python scripts/validate_memory_object_surfaces.py",
-            "python scripts/validate_lifecycle_audit_examples.py",
+            "python scripts/memory/validate_memo.py",
+            "python scripts/memory/validate_memory_surfaces.py",
+            "python scripts/memory/validate_memory_object_surfaces.py",
+            "python scripts/memory/validate_lifecycle_audit_examples.py",
             "python -m pytest -q tests",
         ):
             self.assertIn(command, root_agents)

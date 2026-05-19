@@ -6,7 +6,7 @@
 |---|---|---|
 | Pattern-lineage memory gate | [PATTERN_LINEAGE_MEMORY](./docs/PATTERN_LINEAGE_MEMORY.md) | gates cross-repo recurring signals into reviewed pattern-lineage memory candidates without federation authority |
 | Adjacent mechanic interfaces | [governance](../governance/README.md), [writeback](../writeback/README.md), [retention](../retention/README.md), [adoption](../adoption/README.md), [consumer-handoff](../consumer-handoff/README.md), [operational-gate](../operational-gate/README.md), [recurrence-support](../recurrence-support/README.md) | routes stronger adjacent memory operations without absorbing their authority |
-| Lineage inspection projections | `generated/memo_mechanics.min.json`, `generated/agents_mesh.min.json`, `generated/memo_registry.min.json`, `generated/memory_catalog*.json`, `generated/memory_capsules.json`, `generated/memory_sections.full.json` | exposes compact mirrors while keeping lineage-harvest source truth in package docs and artifacts |
+| Lineage inspection projections | `generated/mechanics/memo_mechanics.min.json`, `generated/agents/agents_mesh.min.json`, `generated/memory/memo_registry.min.json`, `generated/memory/memory_catalog*.json`, `generated/memory/memory_capsules.json`, `generated/memory/memory_sections.full.json` | exposes compact mirrors while keeping lineage-harvest source truth in package docs and artifacts |
 
 ## Part-Local Artifacts
 
@@ -18,7 +18,7 @@ define that public support contract and regression boundary.
 | `mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/schemas/pattern_lineage_memory_entry_v1.json` | public schema for pattern-lineage memory entry examples |
 | `mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/examples/pattern_lineage_memory_entry.example.json` | public-safe example for the pattern-lineage memory entry contract |
 | `mechanics/governance/parts/federation-boundary/examples/federation_memory_gate_decision.example.json` | adjacent governance gate example that names `pattern_lineage_memory` as a memory kind |
-| `tests/test_cross_mechanic_candidate_contracts.py` | validates the federation-harvest contract schemas and examples as public contracts |
+| `tests/mechanics/test_cross_mechanic_candidate_contracts.py` | validates the federation-harvest contract schemas and examples as public contracts |
 | `mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/tests/test_lineage_harvest_mechanic.py` | protects the package boundary, active path, mechanic-local artifact placement, and stronger-owner stop-lines |
 
 ## Adjacent mechanic interfaces
@@ -35,14 +35,14 @@ define that public support contract and regression boundary.
 
 ## Lineage inspection projections
 
-- `generated/memo_mechanics.min.json` indexes this package from
-  `config/memo_mechanics.json`.
-- `generated/agents_mesh.min.json` indexes this package's route cards from
-  `config/agents_mesh.json`.
-- `generated/memo_registry.min.json` routes core docs to the active
+- `generated/mechanics/memo_mechanics.min.json` indexes this package from
+  `config/mechanics/memo_mechanics.json`.
+- `generated/agents/agents_mesh.min.json` indexes this package's route cards from
+  `config/agents/agents_mesh.json`.
+- `generated/memory/memo_registry.min.json` routes core docs to the active
   `mechanics/lineage-harvest/docs/PATTERN_LINEAGE_MEMORY.md` path.
-- `generated/memory_catalog*.json`, `generated/memory_capsules.json`, and
-  `generated/memory_sections.full.json` expose the `AOA-M-0015` inspect,
+- `generated/memory/memory_catalog*.json`, `generated/memory/memory_capsules.json`, and
+  `generated/memory/memory_sections.full.json` expose the `AOA-M-0015` inspect,
   capsule, and expand surfaces for this mechanic.
 
 Lineage inspection projections are mirrors. They do not author lineage-harvest truth.

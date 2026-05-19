@@ -66,7 +66,7 @@ def test_recurrence_and_writeback_consume_checkpoint_without_owning_it() -> None
 
 
 def test_registry_routes_checkpoint_docs_and_schemas() -> None:
-    registry = load_json("generated/memo_registry.min.json")
+    registry = load_json("generated/memory/memo_registry.min.json")
     for doc_ref in (
         "mechanics/checkpoint/docs/CHECKPOINT_MEMORY_BOUNDARY.md",
         "mechanics/checkpoint/docs/CHECKPOINT_CARRY_CONTRACT.md",
@@ -83,7 +83,7 @@ def test_registry_routes_checkpoint_docs_and_schemas() -> None:
 
 def test_checkpoint_mechanic_validates() -> None:
     completed = subprocess.run(
-        (sys.executable, "scripts/validate_memo_mechanics.py"),
+        (sys.executable, "scripts/mechanics/validate_memo_mechanics.py"),
         cwd=REPO_ROOT,
         check=False,
         capture_output=True,

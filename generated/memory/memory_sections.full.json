@@ -1,0 +1,440 @@
+{
+  "sections_version": 1,
+  "source_of_truth": "aoa-memo-doctrine-route-surfaces-v1",
+  "memo_surfaces": [
+    {
+      "id": "AOA-M-0001",
+      "name": "charter",
+      "source_path": "CHARTER.md",
+      "sections": [
+        {
+          "section_id": "AOA-M-0001#mission",
+          "heading": "Mission",
+          "ordinal": 1,
+          "summary": "Defines aoa-memo as the explicit memory and recall layer.",
+          "body": "`aoa-memo` is the explicit memory and recall layer of the AoA ecosystem. Its job is to make memory objects, provenance threads, temporal posture, and recall surfaces explicit, reviewable, and bounded."
+        },
+        {
+          "section_id": "AOA-M-0001#core-rules",
+          "heading": "Core rules",
+          "ordinal": 2,
+          "summary": "Names the layer's rules about memory, truth, provenance, and downstream graph work.",
+          "body": "Memory is not proof. Events come before claims. Provenance should stay visible. Temperature is not truth. Trust is multi-axial. Graph lifts are downstream. Live runtime state, role rights, and routing stay outside the repo."
+        },
+        {
+          "section_id": "AOA-M-0001#owns-and-does-not-own",
+          "heading": "Owns and does not own",
+          "ordinal": 3,
+          "summary": "Draws a hard line between memory-layer meaning and neighboring responsibilities.",
+          "body": "`aoa-memo` owns memory classes, provenance threads, recall contracts, salience and temperature posture, and public reviewable memory surfaces. It must not absorb reusable techniques, execution workflows, proof doctrine, routing logic, role policy, or runtime infrastructure."
+        }
+      ]
+    },
+    {
+      "id": "AOA-M-0002",
+      "name": "memory-model",
+      "source_path": "docs/memory/MEMORY_MODEL.md",
+      "sections": [
+        {
+          "section_id": "AOA-M-0002#four-axes",
+          "heading": "Four axes",
+          "ordinal": 1,
+          "summary": "States the model's four axes: function, temperature, scope, and trust posture.",
+          "body": "`aoa-memo` uses four axes: function for what kind of remembering is happening, temperature for activation and recallability, scope for where a memory may matter, and trust posture for how it should be interpreted."
+        },
+        {
+          "section_id": "AOA-M-0002#memory-functions",
+          "heading": "Memory functions",
+          "ordinal": 2,
+          "summary": "Distinguishes working, episodic, semantic, procedural-experience, associative, and audit memory.",
+          "body": "Working memory holds current state. Episodic memory records events. Semantic memory stores consolidated reusable statements. Procedural-experience memory remembers what worked or failed. Associative memory connects surfaces. Audit memory records lifecycle changes."
+        },
+        {
+          "section_id": "AOA-M-0002#temperature-and-kag",
+          "heading": "Temperature and KAG orientation",
+          "ordinal": 3,
+          "summary": "Defines temperature as recall posture and keeps KAG lifts downstream.",
+          "body": "Temperature describes recall posture rather than truth. Hot, warm, cool, cold, and frozen describe activation and stability. KAG orientation remains downstream: memory may expose chunk and graph faces, but `aoa-kag` owns normalization and substrate formation."
+        }
+      ]
+    },
+    {
+      "id": "AOA-M-0003",
+      "name": "boundaries",
+      "source_path": "docs/boundaries/BOUNDARIES.md",
+      "sections": [
+        {
+          "section_id": "AOA-M-0003#source-of-truth-rule",
+          "heading": "Source-of-truth rule",
+          "ordinal": 1,
+          "summary": "States that aoa-memo is the source of truth only for explicit memory-layer meaning.",
+          "body": "`aoa-memo` is the source of truth for explicit memory-layer meaning. It is not the source of truth for authored knowledge, execution, proof, routing, agent roles, scenario composition, or runtime infrastructure."
+        },
+        {
+          "section_id": "AOA-M-0003#what-belongs-here",
+          "heading": "What belongs here",
+          "ordinal": 2,
+          "summary": "Lists in-bounds memory surfaces and objects.",
+          "body": "The repo should hold public reviewable memory objects and docs that clarify memory-layer meaning, including provenance-thread structure, validity windows, recall contracts, salience and temperature doctrine, generated registries and capsules, and validation surfaces."
+        },
+        {
+          "section_id": "AOA-M-0003#what-stays-outside",
+          "heading": "What stays outside",
+          "ordinal": 3,
+          "summary": "Maps neighboring repos to their rightful ownership zones.",
+          "body": "ToS owns source-authored texts and lineage structure. Techniques, skills, evals, routing, agents, playbooks, KAG substrate work, and abyss-stack runtime concerns all stay outside aoa-memo and remain the responsibility of their own source repositories."
+        }
+      ]
+    },
+    {
+      "id": "AOA-M-0004",
+      "name": "roadmap",
+      "source_path": "ROADMAP.md",
+      "sections": [
+        {
+          "section_id": "AOA-M-0004#direction-and-north-star",
+          "heading": "Direction and north star",
+          "ordinal": 1,
+          "summary": "Frames aoa-memo as a small, reviewable, provenance-aware, routeable memory layer.",
+          "body": "The direction is to keep `aoa-memo` explicit, provenance-aware, routeable, and KAG-ready without turning it into a runtime database, routing monolith, or graph platform. By v1.0 the layer should be clear, bounded, and integrable."
+        },
+        {
+          "section_id": "AOA-M-0004#milestones",
+          "heading": "Milestones",
+          "ordinal": 2,
+          "summary": "Names the doctrine, schema, generated-surface, provenance, temperature, integration, KAG, eval, and v1.0 phases.",
+          "body": "The milestone sequence starts with doctrine and schemas, then generated public surfaces, provenance and lifecycle, temperature and consolidation, agent and playbook integration, KAG and ToS bridges, evaluation guardrails, and finally the stable doctrine-and-surface boundary at v1.0."
+        },
+        {
+          "section_id": "AOA-M-0004#cross-repo-dependencies",
+          "heading": "Cross-repo dependencies",
+          "ordinal": 3,
+          "summary": "Shows what aoa-routing, aoa-agents, aoa-kag, aoa-evals, abyss-stack, and ToS need from memo.",
+          "body": "`aoa-routing` now consumes the live memo kind, compact memo catalogs, router-ready doctrine recall contracts, and the current parallel object-facing recall family. `aoa-agents` needs explicit memory posture fields. `aoa-kag` needs graph-ready exports. `aoa-evals` needs bounded checks. `abyss-stack` needs to own live stores and jobs. ToS needs bridge contracts rather than duplication."
+        }
+      ]
+    },
+    {
+      "id": "AOA-M-0005",
+      "name": "narrative-core-contract",
+      "source_path": "docs/memory/NARRATIVE_CORE_CONTRACT.md",
+      "sections": [
+        {
+          "section_id": "AOA-M-0005#core-rule",
+          "heading": "Core rule",
+          "ordinal": 1,
+          "summary": "States that core memory is written once and downstream surfaces are derived later.",
+          "body": "Write the memory event once. Derive downstream surfaces later. `aoa-memo` owns explicit, reviewable memory surfaces and should not become a hidden graph platform, embedding empire, or substitute for Tree of Sophia."
+        },
+        {
+          "section_id": "AOA-M-0005#core-memory-surfaces",
+          "heading": "Core memory surfaces",
+          "ordinal": 2,
+          "summary": "Keeps authored/core memory small, readable, and aligned with the shipped memory object taxonomy.",
+          "body": "The authored/core layer should stay small and reviewable. At the current baseline it follows the shipped `memory_object.schema.json` taxonomy and includes anchor, state_capsule, episode, claim, decision, pattern, bridge, and audit_event as direct inspectable surfaces."
+        },
+        {
+          "section_id": "AOA-M-0005#derived-memory-surfaces",
+          "heading": "Derived memory surfaces",
+          "ordinal": 3,
+          "summary": "Allows retrieval-oriented and graph-facing derivatives while keeping them downstream of authored/core memory.",
+          "body": "Derived memory may exist for retrieval, lift preparation, and downstream consumers, including chunk-oriented views, graph-facing relation candidates, embedding indexes, retrieval caches, KAG lift candidates, and framework adapters. These surfaces may accelerate recall, but they do not become the source of truth for memory meaning."
+        },
+        {
+          "section_id": "AOA-M-0005#ownership-split",
+          "heading": "Ownership split",
+          "ordinal": 4,
+          "summary": "Assigns explicit responsibility across aoa-memo, aoa-kag, abyss-stack, and Tree of Sophia.",
+          "body": "`aoa-memo` owns explicit memory objects and provenance posture. `aoa-kag` owns normalized derived substrate and graph-ready projections. `abyss-stack` owns runtime stores, jobs, and storage topology. `Tree-of-Sophia` owns source-authored texts, concepts, and lineage architecture."
+        },
+        {
+          "section_id": "AOA-M-0005#required-handoff-rules",
+          "heading": "Required handoff rules",
+          "ordinal": 5,
+          "summary": "Requires source refs, provenance linkage, temporal posture, review state, and bounded derivation language in downstream handoffs.",
+          "body": "Any handoff from core memory into derived memory should preserve source refs, provenance thread linkage where available, temporal posture, review state, and a bounded statement of what was derived. Return paths from derived memory back into AoA should point toward stronger authored surfaces instead of presenting the derived surface as final truth."
+        }
+      ]
+    },
+    {
+      "id": "AOA-M-0006",
+      "name": "runtime-writeback-seam",
+      "source_path": "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
+      "sections": [
+        {
+          "section_id": "AOA-M-0006#core-rule",
+          "heading": "Core rule",
+          "ordinal": 1,
+          "summary": "Keeps live scratchpad in runtime and restricts aoa-memo to bounded exports or reviewed writeback candidates.",
+          "body": "The runtime writeback seam keeps live scratchpad out of `aoa-memo`. The memo layer receives bounded exports or reviewed candidates, not the whole running state of a route."
+        },
+        {
+          "section_id": "AOA-M-0006#mapping-to-preserve",
+          "heading": "Mapping to preserve",
+          "ordinal": 2,
+          "summary": "Maps checkpoint export, approval and transition records, traces, and distillation output into the existing memo canon.",
+          "body": "The preserved mapping is: checkpoint export becomes `state_capsule`; approval and transition records become `decision`; execution and review traces become `episode` and `audit_event`; `distillation_pack` yields reviewed candidates for `claim`, `pattern`, and `bridge`."
+        },
+        {
+          "section_id": "AOA-M-0006#boundary-split",
+          "heading": "Boundary split",
+          "ordinal": 3,
+          "summary": "Keeps role rights in aoa-agents, scenario shape in aoa-playbooks, and runtime plumbing in abyss-stack.",
+          "body": "`aoa-memo` owns object canon, lifecycle, writeback classes, and review rules. `aoa-agents` keeps memory rights and writeback boundaries. `aoa-playbooks` keeps scenario meaning. `abyss-stack` keeps runtime stores, checkpoint workers, and writeback plumbing."
+        }
+      ]
+    },
+    {
+      "id": "AOA-M-0007",
+      "name": "agent-memory-posture-seam",
+      "source_path": "mechanics/consumer-handoff/docs/AGENT_MEMORY_POSTURE_SEAM.md",
+      "sections": [
+        {
+          "section_id": "AOA-M-0007#memo-side-posture-fields",
+          "heading": "Memo-side posture fields",
+          "ordinal": 1,
+          "summary": "Names the memo fields that aoa-agents may consume without moving role policy into aoa-memo.",
+          "body": "The memo-side posture seam publishes object kind, scope, access descriptors, lifecycle posture, trust temperature, provenance linkage, and route refs. These fields describe what kind of memory surface is being touched, not who is allowed to touch it."
+        },
+        {
+          "section_id": "AOA-M-0007#boundary-split",
+          "heading": "Boundary split",
+          "ordinal": 2,
+          "summary": "Keeps rights and approvals in aoa-agents while letting aoa-memo expose the posture those rights apply to.",
+          "body": "`aoa-memo` names memory object posture. `aoa-agents` still owns who has read, write, promotion, freeze, and handoff rights, when those rights are granted, and which approvals are required."
+        },
+        {
+          "section_id": "AOA-M-0007#minimal-handoff-fields",
+          "heading": "Minimal handoff fields",
+          "ordinal": 3,
+          "summary": "Lists the smallest useful memo-side surface for agent consumers.",
+          "body": "The smallest useful handoff surface includes source memory id, object kind, scope, access class, read and write scopes, promotion scopes when present, lifecycle review state, trust temperature, provenance thread id when present, and stronger source routes for deeper inspection."
+        }
+      ]
+    },
+    {
+      "id": "AOA-M-0008",
+      "name": "playbook-memory-scopes",
+      "source_path": "mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md",
+      "sections": [
+        {
+          "section_id": "AOA-M-0008#bounded-recall-requests",
+          "heading": "Bounded recall requests",
+          "ordinal": 1,
+          "summary": "Requires playbooks to ask for explicit scopes and recall modes rather than broad ambient memory access.",
+          "body": "Playbooks should name the active scope, the recall mode they need, whether checkpoint continuity is required, whether inspect surfaces are enough, and which stronger source should win when memo is ambiguous."
+        },
+        {
+          "section_id": "AOA-M-0008#recall-mode-selection",
+          "heading": "Recall mode selection",
+          "ordinal": 2,
+          "summary": "Maps working, episodic, semantic, procedural, lineage, and source_route modes to scenario needs.",
+          "body": "Use `working` for relaunch and state capsules, `episodic` for event traces, `semantic` for doctrine and stable claims, `procedural` for repeated patterns, `lineage` for ToS-heavy memory walks, and `source_route` when the playbook needs the strongest next source instead of memory alone."
+        },
+        {
+          "section_id": "AOA-M-0008#checkpoint-and-writeback-use",
+          "heading": "Checkpoint and writeback use",
+          "ordinal": 3,
+          "summary": "Shows how playbooks should use inquiry checkpoints, state capsules, episodes, decisions, audits, and provenance threads.",
+          "body": "Checkpoint continuity should use `inquiry_checkpoint` and `state_capsule` for bounded restart posture. Durable scenario traces should land as `episode`, `decision`, `audit_event`, and `provenance_thread` surfaces rather than as hidden scenario-local memory systems."
+        }
+      ]
+    },
+    {
+      "id": "AOA-M-0009",
+      "name": "kag-tos-bridge-contract",
+      "source_path": "mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md",
+      "sections": [
+        {
+          "section_id": "AOA-M-0009#core-rule",
+          "heading": "Core rule",
+          "ordinal": 1,
+          "summary": "Keeps authored/core memory primary and exports bridge faces later.",
+          "body": "The bridge contract keeps the memory object as the reviewable authored/core surface. Chunk and graph faces are exported later as bridge-oriented handoff surfaces rather than replacements for the source memory object."
+        },
+        {
+          "section_id": "AOA-M-0009#chunk-and-graph-faces",
+          "heading": "Chunk and graph faces",
+          "ordinal": 2,
+          "summary": "Separates bounded inspection surfaces from downstream associative lift surfaces.",
+          "body": "Chunk faces preserve capsule text, section refs, source refs, provenance linkage, review state, and strongest next sources for inspection. Graph faces preserve relation candidates, provenance thread ids, ToS refs, time windows, and candidate-only KAG lift posture for downstream consumers."
+        },
+        {
+          "section_id": "AOA-M-0009#end-to-end-flow",
+          "heading": "End-to-end flow",
+          "ordinal": 3,
+          "summary": "Shows the current episode-to-claim-to-bridge-to-export pattern.",
+          "body": "The current flow is: a ToS inspection becomes an `episode`, bounded meaning becomes a `claim`, the outward connection becomes a `bridge`, the bridge exports a chunk face for inspection and a graph face for downstream lift candidates, and `aoa-kag` decides whether to normalize the lift later."
+        }
+      ]
+    },
+    {
+      "id": "AOA-M-0010",
+      "name": "memory-eval-guardrails",
+      "source_path": "mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md",
+      "sections": [
+        {
+          "section_id": "AOA-M-0010#boundary-rule",
+          "heading": "Boundary rule",
+          "ordinal": 1,
+          "summary": "Keeps aoa-memo responsible for the risk cases and aoa-evals responsible for scoring and verdict logic.",
+          "body": "`aoa-memo` names the guardrail risks and machine-readable handoff cases. `aoa-evals` still owns scoring, evidence weighting, thresholds, and verdict language."
+        },
+        {
+          "section_id": "AOA-M-0010#guardrail-cases",
+          "heading": "Guardrail cases",
+          "ordinal": 2,
+          "summary": "Keeps precision, provenance, staleness, contradiction, leakage, over-promotion, and merge risks explicit.",
+          "body": "The current guardrail set names recall precision, provenance fidelity, staleness handling, contradiction handling, permission leakage, over-promotion, and hallucinated memory merges as the bounded failure modes that should stay visible."
+        },
+        {
+          "section_id": "AOA-M-0010#machine-readable-handoff",
+          "heading": "Machine-readable handoff",
+          "ordinal": 3,
+          "summary": "Packages the current guardrail cases into a schema-backed surface for aoa-evals.",
+          "body": "The machine-readable guardrail pack preserves focus areas, input refs, expected behavior, and failure signals so downstream eval work can be grounded in explicit memo-side cases instead of taste alone."
+        }
+      ]
+    },
+    {
+      "id": "AOA-M-0011",
+      "name": "operational-boundary",
+      "source_path": "docs/boundaries/OPERATIONAL_BOUNDARY.md",
+      "sections": [
+        {
+          "section_id": "AOA-M-0011#stable-public-boundary",
+          "heading": "Stable public boundary",
+          "ordinal": 1,
+          "summary": "Defines the stable v1-facing boundary as doctrine, schemas, generated surfaces, and reviewed examples.",
+          "body": "The stable public boundary of `aoa-memo` consists of doctrine docs, schema-backed contract surfaces, compact generated registries and recall surfaces, and reviewed examples. These are the public artifacts that neighboring repos should depend on."
+        },
+        {
+          "section_id": "AOA-M-0011#consumer-contracts",
+          "heading": "Consumer contracts",
+          "ordinal": 2,
+          "summary": "Names how routing, agents, KAG, and runtime consumers should touch aoa-memo.",
+          "body": "`aoa-routing` consumes compact recall surfaces, `aoa-agents` consumes posture descriptors, `aoa-kag` consumes bridge and export faces, and `abyss-stack` consumes writeback seams and export contracts. Each consumer keeps its own policy or runtime implementation outside `aoa-memo`."
+        },
+        {
+          "section_id": "AOA-M-0011#runtime-split",
+          "heading": "Runtime split",
+          "ordinal": 3,
+          "summary": "Keeps live stores, jobs, retention, secrets, and deployment posture out of aoa-memo.",
+          "body": "The operational boundary keeps live state stores, checkpoint workers, consolidation jobs, retention machinery, secret handling, deployment posture, and backups outside the repository. `aoa-memo` remains the inspectable doctrine-and-surface layer rather than the runtime body."
+        }
+      ]
+    },
+    {
+      "id": "AOA-M-0012",
+      "name": "routing-memory-adoption",
+      "source_path": "mechanics/adoption/docs/ROUTING_MEMORY_ADOPTION.md",
+      "sections": [
+        {
+          "section_id": "AOA-M-0012#three-step-flow",
+          "heading": "Three-step flow",
+          "ordinal": 1,
+          "summary": "Formalizes inspect, capsule, and expand as the additive router-facing memo consumption flow.",
+          "body": "Router-facing doctrine and curated object recall should inspect ids first, hydrate through the matching capsule family second, and open full sections only when the capsule step is insufficient. The capsule step is a compact posture surface, not a new recall family or routing policy layer."
+        },
+        {
+          "section_id": "AOA-M-0012#join-rule",
+          "heading": "Join rule",
+          "ordinal": 2,
+          "summary": "Keeps the same id as the join key across inspect, capsule, and full expansion.",
+          "body": "The inspect id is the join key for the capsule and full-section families. No extra hydrate key or router-only lookup key is introduced. This keeps router adoption additive and lets the consumer move from compact inspect to capsules and full sections without hidden translation logic."
+        },
+        {
+          "section_id": "AOA-M-0012#stronger-source-escalation",
+          "heading": "Stronger-source escalation",
+          "ordinal": 3,
+          "summary": "Requires routers to escalate to cited stronger sources when memo grounding is still insufficient.",
+          "body": "If inspect and capsule steps do not provide enough grounding, the router should open full sections and then escalate to the strongest cited source rather than infer proof, rights, or current truth from memo posture alone. Memo surfaces remain bounded memory aids, not authority substitutes."
+        }
+      ]
+    },
+    {
+      "id": "AOA-M-0013",
+      "name": "operational-gate",
+      "source_path": "mechanics/operational-gate/README.md",
+      "sections": [
+        {
+          "section_id": "AOA-M-0013#admission-rule",
+          "heading": "Admission rule",
+          "ordinal": 1,
+          "summary": "Requires evidence, owner route, review posture, retention posture, and future effect before operational events become memory.",
+          "body": "Operational events enter durable memo only when they carry evidence refs, an owner route, a review posture, retention or expiry posture, and a concrete future effect. Loud or recent events are not enough."
+        },
+        {
+          "section_id": "AOA-M-0013#owner-split",
+          "heading": "Owner split",
+          "ordinal": 2,
+          "summary": "Keeps release, runtime, proof, role, route, stats, and source authority outside aoa-memo.",
+          "body": "`aoa-memo` owns memory admission and recall posture. Agents-of-Abyss owns program law, runtime owners own live state and remediation, `aoa-evals` owns proof, `aoa-agents` owns rights, `aoa-playbooks` owns choreography, `aoa-routing` owns dispatch, and `aoa-stats` owns derived operational summaries."
+        },
+        {
+          "section_id": "AOA-M-0013#technical-contracts",
+          "heading": "Technical contracts",
+          "ordinal": 3,
+          "summary": "Keeps operational-gate schemas, examples, and tests in the operational-gate artifact lane.",
+          "body": "The operational-gate package owns source docs, owner maps, schemas, examples, and tests for deployment incidents, service incident entries, service revision ledgers, and train release memory entries. Adjacent writeback and retention artifacts stay with their owning mechanics."
+        }
+      ]
+    },
+    {
+      "id": "AOA-M-0014",
+      "name": "recurrence-support",
+      "source_path": "mechanics/recurrence-support/README.md",
+      "sections": [
+        {
+          "section_id": "AOA-M-0014#operation",
+          "heading": "Operation",
+          "ordinal": 1,
+          "summary": "Preserves route-return support without creating route, runtime, role, proof, or ledger authority.",
+          "body": "The recurrence-support mechanic preserves bounded relaunch anchors, witness trace exports, and reviewed closeout recall landings so a route can return through reviewable memory instead of hidden context residue."
+        },
+        {
+          "section_id": "AOA-M-0014#owner-split",
+          "heading": "Owner split",
+          "ordinal": 2,
+          "summary": "Keeps recurrence doctrine, dispatch, retry policy, rights, scenario choreography, and proof outside aoa-memo.",
+          "body": "`aoa-memo` owns memo-side support posture. Agents-of-Abyss owns recurrence doctrine, `aoa-routing` owns dispatch, runtime owners own retry and live stores, `aoa-agents` owns rights, `aoa-playbooks` owns scenario return, and `aoa-evals` owns proof."
+        },
+        {
+          "section_id": "AOA-M-0014#technical-contracts",
+          "heading": "Technical contracts",
+          "ordinal": 3,
+          "summary": "Keeps recurrence-support schemas and examples package-local while shared recall and quest companions remain root-owned.",
+          "body": "The recurrence-support package owns source docs, owner maps, witness trace schemas/examples, and tests. Checkpoint schemas/examples and checkpoint-to-memory mapping live with mechanics/checkpoint. Shared return recall and reviewed closeout quest artifacts remain with their owning root surfaces."
+        }
+      ]
+    },
+    {
+      "id": "AOA-M-0015",
+      "name": "lineage-harvest",
+      "source_path": "mechanics/lineage-harvest/README.md",
+      "sections": [
+        {
+          "section_id": "AOA-M-0015#operation",
+          "heading": "Operation",
+          "ordinal": 1,
+          "summary": "Gates recurring owner-local signals into pattern-lineage candidates without granting stronger authority.",
+          "body": "The lineage-harvest mechanic receives cross-repo recurring evidence, owner-local receipts, bounded verdict refs, retention outcomes, and route landings only to preserve a reviewable pattern-lineage memory candidate. Repetition can justify a candidate, never proof by itself."
+        },
+        {
+          "section_id": "AOA-M-0015#owner-split",
+          "heading": "Owner split",
+          "ordinal": 2,
+          "summary": "Keeps federation law, source consent, proof, stats, KAG promotion, ToS canon, routing, role rights, playbooks, and runtime outside memo.",
+          "body": "`aoa-memo` owns the candidate memory and gate visibility. Agents-of-Abyss owns federation program law, source repositories own consent and source truth, `aoa-evals` owns proof, `aoa-stats` owns summaries, `aoa-kag` owns promotion intake, Tree-of-Sophia owns canon, `aoa-routing` owns dispatch, `aoa-agents` owns role rights, `aoa-playbooks` owns adoption choreography, and `abyss-stack` owns runtime watchtower execution."
+        },
+        {
+          "section_id": "AOA-M-0015#technical-contracts",
+          "heading": "Technical contracts",
+          "ordinal": 3,
+          "summary": "Keeps pattern-lineage schema, example, and tests in the lineage-harvest artifact lane.",
+          "body": "The lineage-harvest package owns source docs, owner maps, `mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/schemas/pattern_lineage_memory_entry_v1.json`, `mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/examples/pattern_lineage_memory_entry.example.json`, and its package tests. Cross-mechanic candidate tests stay root-owned only when they protect shared mechanics behavior."
+        }
+      ]
+    }
+  ]
+}

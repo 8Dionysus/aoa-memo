@@ -11,13 +11,13 @@ memory truth.
 
 | Surface | Use for | Companion |
 |---|---|---|
-| `agents_mesh.json` | current AGENTS route-card contracts | `generated/agents_mesh.min.json` |
-| `memo_mechanics.json` | current memo mechanic package contracts | `generated/memo_mechanics.min.json` |
-| `root_technical_districts.json` | exact root technical district allowlist and family contracts | `generated/root_technical_districts.min.json` |
+| `agents/agents_mesh.json` | current AGENTS route-card contracts | `generated/agents/agents_mesh.min.json` |
+| `mechanics/memo_mechanics.json` | current memo mechanic package contracts | `generated/mechanics/memo_mechanics.min.json` |
+| `root-topology/root_technical_districts.json` | exact root technical district allowlist and family contracts | `generated/root-topology/root_technical_districts.min.json` |
 
-Use `generated/root_technical_districts.min.json` for a fast map of root
+Use `generated/root-topology/root_technical_districts.min.json` for a fast map of root
 district purpose, route card, family ids, and local routing. Use
-`config/root_technical_districts.json` when you need the exact file list or
+`config/root-topology/root_technical_districts.json` when you need the exact file list or
 family contract.
 
 ## Route Stack
@@ -47,19 +47,19 @@ this directory.
 For root technical district changes, run:
 
 ```bash
-python scripts/validate_mechanic_artifact_topology.py
-python scripts/build_root_technical_districts_index.py --check
-python scripts/validate_root_technical_districts_index.py
+python scripts/mechanics/validate_mechanic_artifact_topology.py
+python scripts/root-topology/build_root_technical_districts_index.py --check
+python scripts/root-topology/validate_root_technical_districts_index.py
 ```
 
 For route-card or mechanic-map changes, add the matching checks:
 
 ```bash
-python scripts/validate_memo.py
-python scripts/validate_agents_mesh.py
-python scripts/build_agents_mesh_index.py --check
-python scripts/validate_agents_mesh_index.py
-python scripts/validate_memo_mechanics.py
-python scripts/build_memo_mechanics_index.py --check
-python scripts/validate_memo_mechanics_index.py
+python scripts/memory/validate_memo.py
+python scripts/agents/validate_agents_mesh.py
+python scripts/agents/build_agents_mesh_index.py --check
+python scripts/agents/validate_agents_mesh_index.py
+python scripts/mechanics/validate_memo_mechanics.py
+python scripts/mechanics/build_memo_mechanics_index.py --check
+python scripts/mechanics/validate_memo_mechanics_index.py
 ```

@@ -41,7 +41,7 @@ Recommended mapping:
   `state_capsule` candidate through the existing `checkpoint_export` mapping.
 - a replay chain across summon request, SDK decision, child result, checkpoint
   bridge, eval packet, memo writeback ref, and dry-run receipt may use
-  `examples/provenance_thread.example.json` as a provenance-thread precedent
+  `examples/support-objects/provenance_thread.example.json` as a provenance-thread precedent
   when a human needs route replay.
 - the current full-chain replay candidate is
   `mechanics/writeback/parts/growth-and-continuity/examples/provenance_thread.a2a-summon-return-checkpoint.example.json`,
@@ -99,6 +99,6 @@ Reviewed evidence stays anchored to:
 
 - `mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md`
 - `mechanics/checkpoint/parts/checkpoint-to-memory-mapping/examples/checkpoint_to_memory_contract.example.json`
-- `examples/provenance_thread.example.json`
-- `docs/PROVENANCE_THREADS.md`
-- `docs/AUDIT_EVENTS.md`
+- `examples/support-objects/provenance_thread.example.json`
+- `docs/posture/PROVENANCE_THREADS.md`
+- `docs/posture/AUDIT_EVENTS.md`

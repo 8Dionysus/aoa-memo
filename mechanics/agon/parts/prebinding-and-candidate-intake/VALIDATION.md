@@ -5,7 +5,7 @@ Executable validation for this part is routed through the package validation lan
 Run from the repository root:
 
 ```bash
-python scripts/validate_memo_mechanic_parts.py
+python scripts/mechanics/validate_memo_mechanic_parts.py
 python mechanics/agon/parts/prebinding-and-candidate-intake/scripts/validate_agon_memo_prebindings.py
 python mechanics/agon/parts/prebinding-and-candidate-intake/scripts/validate_agon_retention_rank_memo_bridge.py
 python -m pytest -q mechanics/agon/parts/prebinding-and-candidate-intake/tests

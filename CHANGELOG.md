@@ -9,7 +9,10 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Added
 
-- Add `generated/root_technical_districts.min.json` with builder, validator,
+- Add semantic root districts for docs, config, schemas, examples, generated,
+  scripts, and tests, with nearest `AGENTS.md` cards so each source family has
+  a readable home, route, and validator.
+- Add `generated/root-topology/root_technical_districts.min.json` with builder, validator,
   release-gate coverage, and tests so root technical districts have a compact
   machine-readable atlas of role, route card, family ids, and local routing.
 - Add a registry-backed `.agents/spark/` Codex Spark lane with memo-specific
@@ -46,11 +49,11 @@ Tracking starts with the community-docs baseline for this repository.
 - Add physical `parts/` contracts for memo mechanics so each active row in
   `PARTS.md` has a `README.md`, `CONTRACT.md`, and `VALIDATION.md` node.
 - Add a source-authored topology spine with `DESIGN.md`, `DESIGN.AGENTS.md`,
-  `docs/README.md`, `docs/ROOT_SURFACE_LAW.md`, and `docs/decisions/` so
+  `docs/README.md`, `docs/root/ROOT_SURFACE_LAW.md`, and `docs/decisions/` so
   future docs, agent-lane, and placement cleanup can route through explicit
   owner surfaces before moving flat memory docs.
-- Add a source-backed AGENTS mesh with `config/agents_mesh.json`,
-  `generated/agents_mesh.min.json`, mesh validators, and regression tests so
+- Add a source-backed AGENTS mesh with `config/agents/agents_mesh.json`,
+  `generated/agents/agents_mesh.min.json`, mesh validators, and regression tests so
   current route-card coverage is machine-checkable before docs districts move.
 - Add top-level route cards for `manifests/` and `quests/`.
 - Add `mechanics/agon/` and `mechanics/titan/` memo mechanic packages with
@@ -100,8 +103,8 @@ Tracking starts with the community-docs baseline for this repository.
   legacy index, AGENTS mesh coverage, generated mechanics coverage,
   package-local schema/example/test artifacts, validators, tests, and decision
   record.
-- Add a builder-backed quest projection check for `generated/quest_catalog`
-  and `generated/quest_dispatch` surfaces so root quest companions are
+- Add a builder-backed quest projection check for `generated/quests/quest_catalog`
+  and `generated/quests/quest_dispatch` surfaces so root quest companions are
   reproducible from source quest files.
 - Add `mechanics/questbook/` as the memo mechanic for public memory-layer
   obligations, with lane-first `quests/` source placement, source-contract
@@ -118,10 +121,10 @@ Tracking starts with the community-docs baseline for this repository.
   `mechanics/ARTIFACT_TOPOLOGY.md` so active package docs, legacy provenance,
   and mechanic-adjacent root technical artifacts have separate machine-checked
   routes.
-- Add `scripts/validate_mechanic_artifact_topology.py` to make root
+- Add `scripts/mechanics/validate_mechanic_artifact_topology.py` to make root
   technical-district placement a direct release-gate validator rather than
   only a pytest regression.
-- Add `config/root_technical_districts.json` as an exact allowlist for root
+- Add `config/root-topology/root_technical_districts.json` as an exact allowlist for root
   technical artifacts so remaining root schemas, examples, generated outputs,
   scripts, tests, manifests, and config files are machine-auditable.
 - Extend the root technical contract with schema-family ownership so every
@@ -134,21 +137,21 @@ Tracking starts with the community-docs baseline for this repository.
   explicit reserved-empty root manifests policy, so root `config/` and
   `manifests/` are also machine-owned rather than only allowlisted.
 - Add a builder-backed package-local mechanic artifact inventory at
-  `generated/mechanic_artifacts.min.json`, with builder, validator, release
+  `generated/mechanics/mechanic_artifacts.min.json`, with builder, validator, release
   gate coverage, and tests so mechanic-local schemas, examples, config,
   generated outputs, scripts, tests, and manifests stay inspectable.
-- Add `scripts/validate_memo_mechanic_parts.py` to keep mechanic `PARTS.md`
+- Add `scripts/mechanics/validate_memo_mechanic_parts.py` to keep mechanic `PARTS.md`
   files operation-shaped, with Active Parts tables, source links, interface
   sections, release gate coverage, and regression tests.
-- Add `generated/memo_mechanic_readiness.min.json` with builder, validator,
+- Add `generated/mechanics/memo_mechanic_readiness.min.json` with builder, validator,
   release gate coverage, root technical family contracts, and regression tests
   so every memo mechanic package has a machine-checkable OS Abyss readiness
   surface.
-- Add `generated/memo_mechanic_landing_logs.min.json` with builder,
+- Add `generated/mechanics/memo_mechanic_landing_logs.min.json` with builder,
   validator, release gate coverage, root technical family contracts, and
   regression tests so every memo mechanic package has a machine-checkable
   landing receipt surface.
-- Extend `config/root_technical_districts.json` with root generated-family
+- Extend `config/root-topology/root_technical_districts.json` with root generated-family
   contracts so every root `generated/` output names its owner surface, source
   refs, validators, and builders when generator-backed or projected.
 - Extend the same root technical contract with script-family ownership so every

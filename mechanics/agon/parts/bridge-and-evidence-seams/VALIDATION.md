@@ -5,7 +5,7 @@ Executable validation for this part is routed through the package validation lan
 Run from the repository root:
 
 ```bash
-python scripts/validate_memo_mechanic_parts.py
+python scripts/mechanics/validate_memo_mechanic_parts.py
 python mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_epistemic_memo_bridge.py
 python mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_kag_memo_evidence_package_registry.py
 python mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_mechanical_trial_memo_intakes.py

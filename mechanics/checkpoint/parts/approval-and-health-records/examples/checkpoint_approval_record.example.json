@@ -10,7 +10,7 @@
   "owner_refs": [
     "repo:aoa-memo"
   ],
-  "payload_ref": "docs/MEMORY_MODEL.md#checkpoint-route-writeback",
+  "payload_ref": "docs/memory/MEMORY_MODEL.md#checkpoint-route-writeback",
   "tags": [
     "self-agent",
     "approval",
@@ -71,6 +71,6 @@
       "eval:aoa-approval-boundary-adherence"
     ],
     "kag_lift_status": "candidate",
-    "route_capsule_ref": "generated/memo_registry.min.json"
+    "route_capsule_ref": "generated/memory/memo_registry.min.json"
   }
 }

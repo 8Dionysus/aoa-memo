@@ -13,9 +13,9 @@ mechanic package's local artifact contract.
 
 There are no active shared manifests in root `manifests/` right now.
 That empty state is machine-checked by
-`config/root_technical_districts.json` `manifest_policy`, which must match the
+`config/root-topology/root_technical_districts.json` `manifest_policy`, which must match the
 root `manifests.allowed_files` list.
-`generated/root_technical_districts.min.json` carries the compact public atlas
+`generated/root-topology/root_technical_districts.min.json` carries the compact public atlas
 entry for this reserved district.
 
 Mechanic-owned manifests live under the owning package or nearest functioning
@@ -33,7 +33,7 @@ the relevant `mechanics/agon/parts/<part>/config/`,
 
 ## Route Stack
 
-- Above: root `AGENTS.md`, `config/root_technical_districts.json`, and the
+- Above: root `AGENTS.md`, `config/root-topology/root_technical_districts.json`, and the
   owning mechanic decide whether a manifest is shared or mechanic-local.
 - Here: root `manifests/` is reserved for shared recurrence manifests.
 - Below: active mechanic manifests belong under the owning package or part
@@ -56,8 +56,8 @@ validator first:
 ```bash
 python mechanics/agon/parts/prebinding-and-candidate-intake/scripts/validate_agon_memo_prebindings.py
 python -m pytest -q mechanics/agon/parts/stage-landing-and-stop-lines/tests
-python scripts/validate_memo.py
-python scripts/release_check.py
+python scripts/memory/validate_memo.py
+python scripts/release/release_check.py
 ```
 
 ## Closeout

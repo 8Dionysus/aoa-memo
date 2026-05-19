@@ -8,7 +8,7 @@
   "source_refs": [
     "mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md",
     "ROADMAP.md#v08-evaluation-and-guardrails",
-    "docs/OPERATIONAL_BOUNDARY.md#stable-public-boundary"
+    "docs/boundaries/OPERATIONAL_BOUNDARY.md#stable-public-boundary"
   ],
   "cases": [
     {
@@ -16,10 +16,10 @@
       "focus": "recall_precision",
       "risk": "Router-facing memo recall returns broad but weakly relevant doctrine instead of the smallest relevant surface.",
       "input_refs": [
-        "generated/memory_catalog.min.json",
-        "generated/memory_capsules.json",
-        "generated/memory_sections.full.json",
-        "examples/recall_contract.router.semantic.json",
+        "generated/memory/memory_catalog.min.json",
+        "generated/memory/memory_capsules.json",
+        "generated/memory/memory_sections.full.json",
+        "examples/recall/recall_contract.router.semantic.json",
         "mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md"
       ],
       "expected_behavior": [
@@ -56,12 +56,12 @@
       "focus": "staleness",
       "risk": "Stale or cooled memory is returned as if it were still current and equally active.",
       "input_refs": [
-        "docs/LIFECYCLE.md",
-        "docs/MEMORY_TEMPERATURES.md",
-        "docs/MEMORY_TRUST_POSTURE.md",
-        "examples/claim.current-entrypoint.example.json",
-        "examples/claim.superseded.example.json",
-        "examples/claim.retracted.example.json"
+        "docs/posture/LIFECYCLE.md",
+        "docs/posture/MEMORY_TEMPERATURES.md",
+        "docs/posture/MEMORY_TRUST_POSTURE.md",
+        "examples/lifecycle/claim.current-entrypoint.example.json",
+        "examples/lifecycle/claim.superseded.example.json",
+        "examples/lifecycle/claim.retracted.example.json"
       ],
       "expected_behavior": [
         "Temperature and lifecycle posture remain visible during recall.",
@@ -80,10 +80,10 @@
       "focus": "contradiction_handling",
       "risk": "Superseded or retracted memory is silently merged with active memory instead of being surfaced honestly.",
       "input_refs": [
-        "examples/claim.current-entrypoint.example.json",
-        "examples/claim.superseded.example.json",
-        "examples/claim.retracted.example.json",
-        "docs/LIFECYCLE.md"
+        "examples/lifecycle/claim.current-entrypoint.example.json",
+        "examples/lifecycle/claim.superseded.example.json",
+        "examples/lifecycle/claim.retracted.example.json",
+        "docs/posture/LIFECYCLE.md"
       ],
       "expected_behavior": [
         "Superseded and retracted states remain explicit.",
@@ -103,8 +103,8 @@
       "risk": "Consumers infer role rights directly from memo access fields instead of using aoa-agents policy.",
       "input_refs": [
         "mechanics/consumer-handoff/docs/AGENT_MEMORY_POSTURE_SEAM.md#minimal-handoff-fields",
-        "docs/BOUNDARIES.md#aoa-agents",
-        "docs/OPERATIONAL_BOUNDARY.md#consumer-contracts"
+        "docs/boundaries/BOUNDARIES.md#aoa-agents",
+        "docs/boundaries/OPERATIONAL_BOUNDARY.md#consumer-contracts"
       ],
       "expected_behavior": [
         "Access and scope fields are treated as descriptors of the object posture, not as grants.",

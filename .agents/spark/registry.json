@@ -55,7 +55,7 @@
       "handoff_template_ref": ".agents/spark/scenarios/recall-contract-check/templates/handoff.md",
       "result_example_ref": ".agents/spark/scenarios/recall-contract-check/examples/result.example.md",
       "default_validation": [
-        "python scripts/validate_memory_surfaces.py",
+        "python scripts/memory/validate_memory_surfaces.py",
         "targeted mechanic validator when the contract is mechanic-local"
       ],
       "done_signal": "recall claim, source, temporal posture, salience limit, and validator route are explicit",
@@ -85,8 +85,8 @@
       "handoff_template_ref": ".agents/spark/scenarios/mechanic-seam-scout/templates/handoff.md",
       "result_example_ref": ".agents/spark/scenarios/mechanic-seam-scout/examples/result.example.md",
       "default_validation": [
-        "python scripts/validate_memo_mechanics.py",
-        "python scripts/validate_memo_mechanic_parts.py"
+        "python scripts/mechanics/validate_memo_mechanics.py",
+        "python scripts/mechanics/validate_memo_mechanic_parts.py"
       ],
       "done_signal": "likely active home, legacy route, stronger owner, part-local artifact home, and next validator are named",
       "stop_line": "do not move mechanic artifacts or author mechanic law during scout-only work"
@@ -115,7 +115,7 @@
       "result_example_ref": ".agents/spark/scenarios/registry-sync/examples/result.example.md",
       "default_validation": [
         "python .agents/spark/scripts/validate_spark_lane.py",
-        "python scripts/build_agents_mesh_index.py --check"
+        "python scripts/agents/build_agents_mesh_index.py --check"
       ],
       "done_signal": "Spark source, registry, docs, validator, release gate, and generated mesh agree",
       "stop_line": "do not create a new source of truth while syncing derived routes"
@@ -144,7 +144,7 @@
       "handoff_template_ref": ".agents/spark/scenarios/release-prep/templates/handoff.md",
       "result_example_ref": ".agents/spark/scenarios/release-prep/examples/result.example.md",
       "default_validation": [
-        "python scripts/release_check.py"
+        "python scripts/release/release_check.py"
       ],
       "done_signal": "changed surfaces, checks, public-claim risks, generated parity, and owner routes are named",
       "stop_line": "do not publish, tag, push, or merge without an explicit user command"
@@ -153,6 +153,6 @@
   "validation_commands": [
     "python .agents/spark/scripts/validate_spark_lane.py",
     "python -m unittest discover -s .agents/spark/tests -p 'test*.py'",
-    "python scripts/release_check.py"
+    "python scripts/release/release_check.py"
   ]
 }

@@ -71,20 +71,20 @@ Update only surfaces whose future-facing meaning changed.
 ## Validation
 
 ```bash
-python scripts/validate_memo_mechanics.py
-python scripts/build_memo_mechanics_index.py --check
-python scripts/validate_memo_mechanics_index.py
-python scripts/validate_agents_mesh.py
-python scripts/build_agents_mesh_index.py --check
-python scripts/validate_agents_mesh_index.py
-python scripts/validate_memo.py
-python -m pytest -q mechanics/readiness-boundary/parts/memory-readiness-boundary/tests/test_readiness_boundary_mechanic.py tests/test_memo_validators.py tests/test_current_direction_routes.py tests/test_mechanic_artifact_topology.py tests/test_memo_mechanics.py
+python scripts/mechanics/validate_memo_mechanics.py
+python scripts/mechanics/build_memo_mechanics_index.py --check
+python scripts/mechanics/validate_memo_mechanics_index.py
+python scripts/agents/validate_agents_mesh.py
+python scripts/agents/build_agents_mesh_index.py --check
+python scripts/agents/validate_agents_mesh_index.py
+python scripts/memory/validate_memo.py
+python -m pytest -q mechanics/readiness-boundary/parts/memory-readiness-boundary/tests/test_readiness_boundary_mechanic.py tests/memory/test_memo_validators.py tests/root-topology/test_current_direction_routes.py tests/root-topology/test_mechanic_artifact_topology.py tests/mechanics/test_memo_mechanics.py
 ```
 
 Before landing, also run:
 
 ```bash
-python scripts/release_check.py
+python scripts/release/release_check.py
 ```
 
 ## Closeout

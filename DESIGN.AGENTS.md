@@ -98,12 +98,12 @@ The long-term mesh should make these lanes explicit:
 
 The current repository now has a source-backed AGENTS mesh mirror:
 
-- `config/agents_mesh.json` is the source map for current route cards
-- `generated/agents_mesh.min.json` is the compact generated companion
-- `scripts/validate_agents_mesh.py` checks route-card coverage and local card
+- `config/agents/agents_mesh.json` is the source map for current route cards
+- `generated/agents/agents_mesh.min.json` is the compact generated companion
+- `scripts/agents/validate_agents_mesh.py` checks route-card coverage and local card
   contracts
-- `scripts/build_agents_mesh_index.py --check` and
-  `scripts/validate_agents_mesh_index.py` keep the mirror reproducible
+- `scripts/agents/build_agents_mesh_index.py --check` and
+  `scripts/agents/validate_agents_mesh_index.py` keep the mirror reproducible
 
 The mesh validates the current `aoa-memo` card form rather than importing a
 sibling repository's heading template.
@@ -191,7 +191,7 @@ docs.
 The current broad validation path remains:
 
 ```bash
-python scripts/release_check.py
+python scripts/release/release_check.py
 ```
 
 The AGENTS mesh generated companion checks:

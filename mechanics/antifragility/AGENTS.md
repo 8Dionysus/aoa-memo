@@ -53,16 +53,16 @@ Update only surfaces whose future-facing meaning changed.
 ## Validation
 
 ```bash
-python scripts/validate_memo_mechanics.py
-python scripts/build_memo_mechanics_index.py --check
-python scripts/validate_memo_mechanics_index.py
+python scripts/mechanics/validate_memo_mechanics.py
+python scripts/mechanics/build_memo_mechanics_index.py --check
+python scripts/mechanics/validate_memo_mechanics_index.py
 python -m pytest -q mechanics/antifragility/parts/failure-lesson-memory/tests mechanics/antifragility/parts/recovery-pattern-memory/tests
 ```
 
 Before landing, also run:
 
 ```bash
-python scripts/release_check.py
+python scripts/release/release_check.py
 ```
 
 ## Closeout

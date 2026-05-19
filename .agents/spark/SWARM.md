@@ -16,9 +16,9 @@ Use this file only when the user explicitly asks for a swarm.
 - `CHARTER.md`
 - `DESIGN.md`
 - `DESIGN.AGENTS.md`
-- `docs/MEMORY_MODEL.md`
-- `docs/NARRATIVE_CORE_CONTRACT.md`
-- `docs/BOUNDARIES.md`
+- `docs/memory/MEMORY_MODEL.md`
+- `docs/memory/NARRATIVE_CORE_CONTRACT.md`
+- `docs/boundaries/BOUNDARIES.md`
 - `ROADMAP.md`
 
 ## Форма роя

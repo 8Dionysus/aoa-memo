@@ -51,10 +51,10 @@ artifact.
 ## Validation
 
 ```bash
-python scripts/validate_memo_mechanics.py
-python scripts/build_memo_mechanics_index.py --check
-python scripts/validate_memo_mechanics_index.py
-python scripts/validate_memo.py
+python scripts/mechanics/validate_memo_mechanics.py
+python scripts/mechanics/build_memo_mechanics_index.py --check
+python scripts/mechanics/validate_memo_mechanics_index.py
+python scripts/memory/validate_memo.py
 python -m pytest -q mechanics/operational-gate/parts/deployment-incident-gate/tests mechanics/operational-gate/parts/post-release-boundaries/tests
 ```
 

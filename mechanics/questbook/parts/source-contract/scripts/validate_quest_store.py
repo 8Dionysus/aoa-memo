@@ -32,10 +32,10 @@ REQUIRED_MARKDOWN_HEADINGS = (
     "## Stop-lines",
 )
 QUEST_GENERATED_OUTPUTS = (
-    "generated/quest_catalog.min.example.json",
-    "generated/quest_catalog.min.json",
-    "generated/quest_dispatch.min.example.json",
-    "generated/quest_dispatch.min.json",
+    "generated/quests/quest_catalog.min.example.json",
+    "generated/quests/quest_catalog.min.json",
+    "generated/quests/quest_dispatch.min.example.json",
+    "generated/quests/quest_dispatch.min.json",
 )
 QUEST_GENERATED_BUILDER = "mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py"
 QUEST_READ_MODEL_PART_FILES = (
@@ -138,7 +138,7 @@ def validate_quest_read_model_projections_part(problems: list[str]) -> None:
                     f"{forbidden!r}"
                 )
 
-    config_path = ROOT / "config" / "root_technical_districts.json"
+    config_path = ROOT / "config" / "root-topology" / "root_technical_districts.json"
     try:
         config = json.loads(config_path.read_text(encoding="utf-8"))
     except Exception as exc:  # noqa: BLE001 - validation context
@@ -148,7 +148,7 @@ def validate_quest_read_model_projections_part(problems: list[str]) -> None:
     generated_allowed = set(config.get("districts", {}).get("generated", {}).get("allowed_files", []))
     missing_allowed = sorted(set(QUEST_GENERATED_OUTPUTS) - generated_allowed)
     for output in missing_allowed:
-        problems.append(f"config/root_technical_districts.json: generated allowlist missing {output}")
+        problems.append(f"config/root-topology/root_technical_districts.json: generated allowlist missing {output}")
 
     families = config.get("generated_families", [])
     family = next(
@@ -160,7 +160,7 @@ def validate_quest_read_model_projections_part(problems: list[str]) -> None:
         None,
     )
     if not isinstance(family, dict):
-        problems.append("config/root_technical_districts.json: missing questbook_projections family")
+        problems.append("config/root-topology/root_technical_districts.json: missing questbook_projections family")
         return
 
     if family.get("source_kind") != "projection":

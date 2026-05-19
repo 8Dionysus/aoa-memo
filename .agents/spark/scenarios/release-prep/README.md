@@ -24,5 +24,5 @@ cross-repo owner action, or human release approval.
 
 ## Validation
 
-Run `python scripts/release_check.py` when release-prep is intended to be
+Run `python scripts/release/release_check.py` when release-prep is intended to be
 gating; otherwise report why it was skipped.

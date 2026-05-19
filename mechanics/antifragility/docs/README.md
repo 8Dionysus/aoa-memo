@@ -25,7 +25,7 @@ Antifragility docs currently pair with:
 - `mechanics/antifragility/parts/failure-lesson-memory/examples/shared_lesson_memory.example.json`
 - `mechanics/antifragility/parts/recovery-pattern-memory/examples/recovery_pattern_memory*.json`
 - `mechanics/antifragility/parts/recovery-pattern-memory/examples/pattern.antifragility-stress-recovery-window.example.json`
-- `generated/memory_object_*.json`
+- `generated/memory-objects/memory_object_*.json`
 - `mechanics/antifragility/parts/failure-lesson-memory/tests/test_antifragility_failure_lessons.py`
 - `mechanics/antifragility/parts/recovery-pattern-memory/tests/test_antifragility_recovery_patterns.py`
 

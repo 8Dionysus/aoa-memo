@@ -45,13 +45,13 @@ Use the package validation route in `mechanics/lineage-harvest/AGENTS.md`.
 For part topology changes, also run:
 
 ```bash
-python scripts/validate_memo_mechanic_parts.py
+python scripts/mechanics/validate_memo_mechanic_parts.py
 ```
 
 Before landing, run:
 
 ```bash
-python scripts/release_check.py
+python scripts/release/release_check.py
 ```
 
 ## Closeout

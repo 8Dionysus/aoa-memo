@@ -94,8 +94,8 @@ These are memo-side descriptors, not grants.
 
 For compact object-first inspection, the current memo-side public surface is:
 
-- `generated/memory_object_catalog.min.json` for inspect
-- `generated/memory_object_sections.full.json` for expansion
+- `generated/memory-objects/memory_object_catalog.min.json` for inspect
+- `generated/memory-objects/memory_object_sections.full.json` for expansion
 
 The doctrine family remains separate and continues to answer layer-meaning questions rather than object-level posture lookup.
 

@@ -6,7 +6,7 @@ from pathlib import Path
 
 
 REPO_ROOT = Path(__file__).resolve().parents[5]
-SCRIPTS_ROOT = REPO_ROOT / "scripts"
+SCRIPTS_ROOT = REPO_ROOT / "scripts" / "memory"
 if str(SCRIPTS_ROOT) not in sys.path:
     sys.path.insert(0, str(SCRIPTS_ROOT))
 
@@ -88,9 +88,9 @@ def test_self_agency_continuity_memory_object_ids_hydrate_through_recall_surface
 
     assert expected_ids <= memory_object_ids
 
-    catalog = memory_object_entries_by_id("generated/memory_object_catalog.min.json")
-    capsules = memory_object_entries_by_id("generated/memory_object_capsules.json")
-    sections = memory_object_entries_by_id("generated/memory_object_sections.full.json")
+    catalog = memory_object_entries_by_id("generated/memory-objects/memory_object_catalog.min.json")
+    capsules = memory_object_entries_by_id("generated/memory-objects/memory_object_capsules.json")
+    sections = memory_object_entries_by_id("generated/memory-objects/memory_object_sections.full.json")
 
     for object_id in memory_object_ids:
         assert object_id in catalog

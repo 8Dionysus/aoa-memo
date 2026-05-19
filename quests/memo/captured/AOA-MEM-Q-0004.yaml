@@ -38,8 +38,8 @@ proof_surface_refs:
   - repo:aoa-evals/generated/eval_catalog.min.json
   - repo:aoa-evals/docs/ORCHESTRATOR_PROOF_ALIGNMENT.md
 memory_surface_refs:
-  - generated/memory_object_catalog.min.json
-  - generated/memory_object_capsules.json
+  - generated/memory-objects/memory_object_catalog.min.json
+  - generated/memory-objects/memory_object_capsules.json
   - mechanics/consumer-handoff/docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md#router
 handoff_role: memo-maintainer
 evidence:

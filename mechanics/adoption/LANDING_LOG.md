@@ -13,7 +13,7 @@ Validation route:
 
 ```bash
 python -m pytest -q mechanics/adoption/parts/adoption-boundary/tests mechanics/adoption/parts/revision-and-retention-pressure/tests mechanics/adoption/parts/scar-and-routing-adoption/tests
-python scripts/release_check.py
+python scripts/release/release_check.py
 ```
 
 ## Stop-lines preserved
@@ -31,8 +31,8 @@ python scripts/release_check.py
 Validation route:
 
 ```bash
-python scripts/validate_memo_mechanics.py
-python scripts/release_check.py
+python scripts/mechanics/validate_memo_mechanics.py
+python scripts/release/release_check.py
 ```
 
 ## Stop-lines preserved

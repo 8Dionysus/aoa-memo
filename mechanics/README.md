@@ -19,22 +19,22 @@ playbook, skill, technique, stats, or source truth must route next.
 | [ARTIFACT_TOPOLOGY](ARTIFACT_TOPOLOGY.md) | placement law for root technical districts versus mechanic-local artifact homes | migration ledger or alias map |
 
 Generated indexes reflect source maps. They do not author mechanic truth.
-`generated/mechanic_artifacts.min.json` is a generated inventory of
+`generated/mechanics/mechanic_artifacts.min.json` is a generated inventory of
 package-local artifact homes, not a replacement for package cards or
 mechanic-owned source docs.
-`generated/memo_mechanic_readiness.min.json` is a generated readiness matrix
+`generated/mechanics/memo_mechanic_readiness.min.json` is a generated readiness matrix
 for current packages. It is a machine-checkable mirror of package cards,
 owner maps, parts, validation routes, stop-lines, and local artifact
 ownership, not a new source of mechanic truth.
-`generated/memo_mechanic_cards.min.json` is the compact generated mirror of
+`generated/mechanics/memo_mechanic_cards.min.json` is the compact generated mirror of
 the package README mechanic cards. It makes operation, trigger, memo-owned
 posture, stronger owner split, inputs, outputs, stop-lines, validation, and
 next route inspectable without replacing the authored README cards.
-`generated/memo_mechanic_owner_routes.min.json` is the compact generated
+`generated/mechanics/memo_mechanic_owner_routes.min.json` is the compact generated
 owner-route matrix for package `OWNER_MAP.md` files and README cards. It shows
 which stronger owners receive which kinds of truth without becoming an owner
 request queue or acceptance receipt.
-`generated/memo_mechanic_landing_logs.min.json` is the compact generated
+`generated/mechanics/memo_mechanic_landing_logs.min.json` is the compact generated
 landing receipt index for package `LANDING_LOG.md` files. It checks dated
 landing evidence, release validation, and stop-lines without becoming proof,
 owner acceptance, or release authority.

@@ -10,7 +10,7 @@ REPO_ROOT = Path(__file__).resolve().parents[5]
 
 class LineageHarvestMechanicTestCase(unittest.TestCase):
     def test_lineage_harvest_registers_active_doc(self) -> None:
-        config = json.loads((REPO_ROOT / "config" / "memo_mechanics.json").read_text())
+        config = json.loads((REPO_ROOT / "config" / "mechanics" / "memo_mechanics.json").read_text())
         packages = {package["slug"]: package for package in config["packages"]}
         lineage_harvest = packages["lineage-harvest"]
 
@@ -59,7 +59,7 @@ class LineageHarvestMechanicTestCase(unittest.TestCase):
             "mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/schemas/pattern_lineage_memory_entry_v1.json",
             "mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/examples/pattern_lineage_memory_entry.example.json",
             "mechanics/governance/parts/federation-boundary/examples/federation_memory_gate_decision.example.json",
-            "tests/test_cross_mechanic_candidate_contracts.py",
+            "tests/mechanics/test_cross_mechanic_candidate_contracts.py",
         ):
             self.assertIn(path, parts)
             self.assertTrue((REPO_ROOT / path).is_file())
@@ -67,11 +67,11 @@ class LineageHarvestMechanicTestCase(unittest.TestCase):
     def test_lineage_refs_point_to_active_mechanic_docs(self) -> None:
         active_ref = "mechanics/lineage-harvest/docs/PATTERN_LINEAGE_MEMORY.md"
 
-        registry = json.loads((REPO_ROOT / "generated" / "memo_registry.min.json").read_text())
+        registry = json.loads((REPO_ROOT / "generated" / "memory" / "memo_registry.min.json").read_text())
         self.assertIn(active_ref, registry["core_docs"])
         self.assertIn("mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/schemas/pattern_lineage_memory_entry_v1.json", registry["schemas"])
 
-        catalog = json.loads((REPO_ROOT / "generated" / "memory_catalog.min.json").read_text())
+        catalog = json.loads((REPO_ROOT / "generated" / "memory" / "memory_catalog.min.json").read_text())
         surfaces = {item["id"]: item for item in catalog["memo_surfaces"]}
         self.assertEqual(
             "mechanics/lineage-harvest/README.md",

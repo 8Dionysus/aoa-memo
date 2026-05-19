@@ -10,7 +10,7 @@ REPO_ROOT = Path(__file__).resolve().parents[5]
 
 class ConsumerHandoffMechanicTestCase(unittest.TestCase):
     def test_consumer_handoff_registers_active_docs(self) -> None:
-        config = json.loads((REPO_ROOT / "config" / "memo_mechanics.json").read_text())
+        config = json.loads((REPO_ROOT / "config" / "mechanics" / "memo_mechanics.json").read_text())
         packages = {package["slug"]: package for package in config["packages"]}
         handoff = packages["consumer-handoff"]
 
@@ -52,7 +52,7 @@ class ConsumerHandoffMechanicTestCase(unittest.TestCase):
             self.assertIn(snippet, readme)
 
     def test_consumer_handoff_updates_generated_and_quest_refs(self) -> None:
-        registry = json.loads((REPO_ROOT / "generated" / "memo_registry.min.json").read_text())
+        registry = json.loads((REPO_ROOT / "generated" / "memory" / "memo_registry.min.json").read_text())
         expected_refs = {
             "mechanics/consumer-handoff/docs/AGENT_MEMORY_POSTURE_SEAM.md",
             "mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md",

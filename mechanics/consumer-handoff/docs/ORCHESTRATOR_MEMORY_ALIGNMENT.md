@@ -13,8 +13,8 @@ The `router` class should stay inspect-first and capsule-second.
 
 It may consume:
 
-- inspect surfaces such as `generated/memory_object_catalog.min.json`
-- capsule surfaces such as `generated/memory_object_capsules.json`
+- inspect surfaces such as `generated/memory-objects/memory_object_catalog.min.json`
+- capsule surfaces such as `generated/memory-objects/memory_object_capsules.json`
 - bounded recall contracts that keep routing grounded without full expansion first
 
 Router memory alignment stays entrypoint-shaped.

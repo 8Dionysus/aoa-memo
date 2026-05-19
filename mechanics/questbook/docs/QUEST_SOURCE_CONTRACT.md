@@ -57,10 +57,10 @@ Sophian canon write, proof, route dispatch, role authority, or runtime state.
 
 Generated quest surfaces are compact root-published read models:
 
-- `generated/quest_catalog.min.json`
-- `generated/quest_dispatch.min.json`
-- `generated/quest_catalog.min.example.json`
-- `generated/quest_dispatch.min.example.json`
+- `generated/quests/quest_catalog.min.json`
+- `generated/quests/quest_dispatch.min.json`
+- `generated/quests/quest_catalog.min.example.json`
+- `generated/quests/quest_dispatch.min.example.json`
 
 Rebuild them with:
 

@@ -1,0 +1,42 @@
+{
+  "id": "recall.object.working.return",
+  "name": "Object-facing working recall for return",
+  "mode": "working",
+  "allowed_scopes": [
+    "thread",
+    "session",
+    "project"
+  ],
+  "preferred_kinds": [
+    "state_capsule",
+    "decision",
+    "episode",
+    "audit_event",
+    "anchor"
+  ],
+  "temperature_order": [
+    "hot",
+    "warm",
+    "cool",
+    "frozen",
+    "cold"
+  ],
+  "inspect_surface": "generated/memory-objects/memory_object_catalog.min.json",
+  "capsule_surface": "generated/memory-objects/memory_object_capsules.json",
+  "expand_surface": "generated/memory-objects/memory_object_sections.full.json",
+  "source_route_required": false,
+  "checkpoint_continuity_supported": true,
+  "return_ready": true,
+  "preferred_anchor_kinds": [
+    "state_capsule",
+    "decision",
+    "anchor"
+  ],
+  "support_artifact_refs": [
+    "mechanics/checkpoint/parts/checkpoint-carry-contract/schemas/inquiry_checkpoint.schema.json",
+    "mechanics/checkpoint/parts/checkpoint-to-memory-mapping/schemas/checkpoint-to-memory-contract.schema.json",
+    "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
+    "mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md"
+  ],
+  "notes": "Use for compact object-facing relaunch when checkpoint continuity and explicit memo-side anchors should stay reviewable: inspect first, hydrate through capsules second, and expand only when the capsule step is insufficient."
+}

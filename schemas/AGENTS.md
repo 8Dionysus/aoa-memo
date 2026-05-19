@@ -13,16 +13,16 @@ Treat them as changes to how the memory layer speaks, not as local cleanup.
 
 Root schemas are also part of the root technical-district contract. Each
 non-route schema file must be listed in exactly one
-`config/root_technical_districts.json` `schema_families` entry that names the
+`config/root-topology/root_technical_districts.json` `schema_families` entry that names the
 owner surface, source refs, and validators.
 
-For quick orientation, `generated/root_technical_districts.min.json` names this
+For quick orientation, `generated/root-topology/root_technical_districts.min.json` names this
 district's role, route card, family ids, and local routing path.
 
 ## Route Stack
 
 - Above: root `AGENTS.md`, docs doctrine, examples, and
-  `config/root_technical_districts.json` decide why a schema is root-wide.
+  `config/root-topology/root_technical_districts.json` decide why a schema is root-wide.
 - Here: root schemas define shared memory, recall, provenance, support, and
   generated-surface contracts.
 - Below: mechanic-owned schemas live under the owning package or part and must
@@ -61,7 +61,7 @@ If you change `memory_object_surface_manifest.schema.json`, `memory_object_catal
 Keep alignment between:
 
 - `recall_contract.schema.json` and the recall contract examples in `examples/`
-- `memory_object.schema.json` and the per-kind examples plus `docs/MEMORY_OBJECT_PROFILES.md`
+- `memory_object.schema.json` and the per-kind examples plus `docs/memory/MEMORY_OBJECT_PROFILES.md`
 - `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/schemas/memory_chunk_face.schema.json` and `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/schemas/memory_graph_face.schema.json` with the bridge examples and `mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md`
 - `mechanics/checkpoint/parts/checkpoint-to-memory-mapping/schemas/checkpoint-to-memory-contract.schema.json` with `mechanics/checkpoint/parts/checkpoint-to-memory-mapping/examples/checkpoint_to_memory_contract.example.json` and `mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md`
 
@@ -74,14 +74,14 @@ generated family rather than inventing a new routing payload.
 After schema edits, run the validators that cover the affected surface:
 
 ```bash
-python scripts/validate_memo.py
-python scripts/validate_memory_surfaces.py
-python scripts/validate_memory_object_surfaces.py
-python scripts/validate_lifecycle_audit_examples.py
+python scripts/memory/validate_memo.py
+python scripts/memory/validate_memory_surfaces.py
+python scripts/memory/validate_memory_object_surfaces.py
+python scripts/memory/validate_lifecycle_audit_examples.py
 ```
 
 If a change touches generator-backed object surfaces, also run:
 
 ```bash
-python scripts/generate_memory_object_surfaces.py
+python scripts/memory/generate_memory_object_surfaces.py
 ```

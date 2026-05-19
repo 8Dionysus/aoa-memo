@@ -38,5 +38,5 @@ Verify decision-lane changes with:
 
 ```bash
 python -m pytest -q tests
-python scripts/release_check.py
+python scripts/release/release_check.py
 ```

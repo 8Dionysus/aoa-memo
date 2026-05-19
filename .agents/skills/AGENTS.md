@@ -23,6 +23,6 @@ Keep everything public-safe: no private memories, secrets, hidden telemetry, or 
 Verify with:
 
 ```bash
-python scripts/validate_memo.py
-python scripts/validate_semantic_agents.py
+python scripts/memory/validate_memo.py
+python scripts/agents/validate_semantic_agents.py
 ```

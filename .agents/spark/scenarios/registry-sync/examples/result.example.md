@@ -20,7 +20,7 @@ Validation run:
 - python .agents/spark/scripts/validate_spark_lane.py
 
 Skipped checks:
-- python scripts/release_check.py; narrow registry sync only.
+- python scripts/release/release_check.py; narrow registry sync only.
 
 Remaining risk: Generated AGENTS mesh must be checked if route-card text changed.
 

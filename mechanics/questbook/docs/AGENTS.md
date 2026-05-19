@@ -39,8 +39,8 @@ validators.
 
 ```bash
 python mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py
-python scripts/validate_memo_mechanics.py
-python scripts/release_check.py
+python scripts/mechanics/validate_memo_mechanics.py
+python scripts/release/release_check.py
 ```
 
 ## Closeout

@@ -36,7 +36,7 @@ quests/<lane>/<state>/<quest-id>
 
 ## Quest Read-Model Projections
 
-`generated/quest_catalog*.json` and `generated/quest_dispatch*.json` are built
+`generated/quests/quest_catalog*.json` and `generated/quests/quest_dispatch*.json` are built
 from `AOA-MEM-Q-*.yaml` sources.
 
 Quest read-model projections are compact mirrors. They do not author quest meaning.

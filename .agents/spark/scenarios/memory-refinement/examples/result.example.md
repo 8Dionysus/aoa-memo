@@ -7,7 +7,7 @@ Scope: one paragraph in a memory doctrine file
 Files read:
 - AGENTS.md
 - .agents/spark/scenarios/memory-refinement/README.md
-- docs/BOUNDARIES.md
+- docs/boundaries/BOUNDARIES.md
 
 Findings:
 - The owner route was already local to aoa-memo.
@@ -19,7 +19,7 @@ Validation run:
 - git diff --check
 
 Skipped checks:
-- python scripts/release_check.py; narrow wording-only edit.
+- python scripts/release/release_check.py; narrow wording-only edit.
 
 Remaining risk: Broader doctrine was not re-audited.
 

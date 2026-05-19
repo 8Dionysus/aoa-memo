@@ -12,16 +12,16 @@ Everything in this directory should stay safe to publish and easy to validate.
 
 Root examples are part of the root technical-district contract. Each non-route
 example file must be listed in exactly one
-`config/root_technical_districts.json` `example_families` entry that names the
+`config/root-topology/root_technical_districts.json` `example_families` entry that names the
 owner surface, source refs, and validators.
 
-For quick orientation, `generated/root_technical_districts.min.json` names this
+For quick orientation, `generated/root-topology/root_technical_districts.min.json` names this
 district's role, route card, family ids, and local routing path.
 
 ## Route Stack
 
 - Above: root `AGENTS.md`, `schemas/AGENTS.md`, and
-  `config/root_technical_districts.json` decide whether an example belongs at
+  `config/root-topology/root_technical_districts.json` decide whether an example belongs at
   root.
 - Here: root examples demonstrate shared public memory shapes.
 - Below: mechanic-owned examples live under the owning package or part, and
@@ -68,15 +68,15 @@ When updating examples:
 
 For recall contracts, keep inspect and expand surfaces aligned with the intended family:
 
-- router-facing recall contracts point to `generated/memory_catalog.min.json` and `generated/memory_sections.full.json`
-- object-facing recall contracts point to `generated/memory_object_catalog.min.json` and `generated/memory_object_sections.full.json`
+- router-facing recall contracts point to `generated/memory/memory_catalog.min.json` and `generated/memory/memory_sections.full.json`
+- object-facing recall contracts point to `generated/memory-objects/memory_object_catalog.min.json` and `generated/memory-objects/memory_object_sections.full.json`
 - doctrine-first examples may point to docs such as `mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md` or `mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md` when deeper explanation is the intended expand surface
 
 If a recall contract also publishes `capsule_surface`, keep it additive and
 family-aligned:
 
-- router-facing doctrine recall contracts use `generated/memory_capsules.json`
-- object-facing semantic or lineage recall contracts use `generated/memory_object_capsules.json`
+- router-facing doctrine recall contracts use `generated/memory/memory_capsules.json`
+- object-facing semantic or lineage recall contracts use `generated/memory-objects/memory_object_capsules.json`
 - `capsule_surface` stays a compact hydrate step between inspect and expand, not a new recall family
 
 ## Validation
@@ -84,14 +84,14 @@ family-aligned:
 After editing examples, run:
 
 ```bash
-python scripts/validate_memo.py
-python scripts/validate_memory_surfaces.py
-python scripts/validate_memory_object_surfaces.py
-python scripts/validate_lifecycle_audit_examples.py
+python scripts/memory/validate_memo.py
+python scripts/memory/validate_memory_surfaces.py
+python scripts/memory/validate_memory_object_surfaces.py
+python scripts/memory/validate_lifecycle_audit_examples.py
 ```
 
 If you changed curated object examples or `memory_object_surface_manifest.json`, regenerate the object-facing family before finishing:
 
 ```bash
-python scripts/generate_memory_object_surfaces.py
+python scripts/memory/generate_memory_object_surfaces.py
 ```

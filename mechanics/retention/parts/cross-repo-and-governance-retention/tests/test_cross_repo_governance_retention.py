@@ -34,7 +34,7 @@ def contract_paths(stem: str, schema_file: str) -> tuple[Path, Path]:
 
 class RetentionMechanicTestCase(unittest.TestCase):
     def test_retention_registers_active_docs(self) -> None:
-        config = load_json("config/memo_mechanics.json")
+        config = load_json("config/mechanics/memo_mechanics.json")
         packages = {package["slug"]: package for package in config["packages"]}  # type: ignore[index]
         retention = packages["retention"]
 

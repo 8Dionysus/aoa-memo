@@ -18,9 +18,9 @@
 Validation route:
 
 ```bash
-python scripts/validate_mechanic_artifact_inventory.py
+python scripts/mechanics/validate_mechanic_artifact_inventory.py
 python -m pytest -q mechanics/agon/parts/prebinding-and-candidate-intake/tests mechanics/agon/parts/bridge-and-evidence-seams/tests mechanics/agon/parts/stage-landing-and-stop-lines/tests
-python scripts/release_check.py
+python scripts/release/release_check.py
 ```
 
 ## 2026-05-18
@@ -39,9 +39,9 @@ Validation route:
 
 ```bash
 python mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py
-python scripts/validate_memo_mechanics.py
+python scripts/mechanics/validate_memo_mechanics.py
 python -m pytest -q mechanics/agon/parts/prebinding-and-candidate-intake/tests mechanics/agon/parts/bridge-and-evidence-seams/tests mechanics/agon/parts/stage-landing-and-stop-lines/tests
-python scripts/release_check.py
+python scripts/release/release_check.py
 ```
 
 ## Stop-lines preserved

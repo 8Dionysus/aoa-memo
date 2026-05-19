@@ -8,12 +8,12 @@ Stronger claims route through `../../OWNER_MAP.md`. Source placement and legacy 
 
 ## Source Surfaces
 
-- `generated/memo_mechanics.min.json`
-- `generated/agents_mesh.min.json`
-- `generated/memo_registry.min.json`
-- `generated/memory_catalog*.json`
-- `generated/memory_capsules.json`
-- `generated/memory_sections.full.json`
+- `generated/mechanics/memo_mechanics.min.json`
+- `generated/agents/agents_mesh.min.json`
+- `generated/memory/memo_registry.min.json`
+- `generated/memory/memory_catalog*.json`
+- `generated/memory/memory_capsules.json`
+- `generated/memory/memory_sections.full.json`
 
 ## Contract
 

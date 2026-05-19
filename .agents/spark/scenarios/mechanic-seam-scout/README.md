@@ -25,6 +25,6 @@ change, generated inventory change, or cross-repo owner judgment.
 
 ## Validation
 
-Use `python scripts/validate_memo_mechanics.py`,
-`python scripts/validate_memo_mechanic_parts.py`, or the named package-local
+Use `python scripts/mechanics/validate_memo_mechanics.py`,
+`python scripts/mechanics/validate_memo_mechanic_parts.py`, or the named package-local
 validator only when a repair is performed.

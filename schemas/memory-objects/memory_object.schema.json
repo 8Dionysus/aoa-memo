@@ -1,0 +1,327 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/schemas/memory-objects/memory_object.schema.json",
+  "title": "aoa-memo memory object",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "id",
+    "kind",
+    "title",
+    "summary",
+    "scope",
+    "time",
+    "provenance",
+    "trust",
+    "lifecycle"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "anchor",
+        "state_capsule",
+        "episode",
+        "claim",
+        "decision",
+        "pattern",
+        "bridge",
+        "audit_event"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scope": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "owner_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "payload_ref": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "time": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "created_at"
+      ],
+      "properties": {
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "observed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "valid_from": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "valid_to": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_refs"
+      ],
+      "properties": {
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "episode_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "provenance_thread_id": {
+          "type": "string"
+        }
+      }
+    },
+    "trust": {
+      "$ref": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/schemas/recall-posture/trust_posture.schema.json"
+    },
+    "lifecycle": {
+      "$ref": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/schemas/recall-posture/lifecycle_posture.schema.json"
+    },
+    "access": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "access_class": {
+          "type": "string"
+        },
+        "read_scopes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "write_scopes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "promotion_scopes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "bridges": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "tos_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "skill_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "eval_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "shared_envelope_ref": {
+          "type": "string"
+        },
+        "kag_lift_status": {
+          "type": "string",
+          "enum": [
+            "none",
+            "candidate",
+            "lifted",
+            "blocked"
+          ]
+        },
+        "route_capsule_ref": {
+          "type": "string"
+        }
+      }
+    },
+    "decay": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ttl_days": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "half_life_days": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "demotion_target": {
+          "type": "string",
+          "enum": [
+            "hot",
+            "warm",
+            "cool",
+            "cold",
+            "retired"
+          ]
+        },
+        "retire_after": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "manual_veto": {
+          "type": "boolean"
+        }
+      }
+    },
+    "promotion": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "trigger": {
+          "type": "string"
+        },
+        "promoted_from": {
+          "type": "string",
+          "enum": [
+            "hot",
+            "warm",
+            "cool",
+            "cold"
+          ]
+        },
+        "promoted_to": {
+          "type": "string",
+          "enum": [
+            "warm",
+            "cool",
+            "cold",
+            "frozen"
+          ]
+        },
+        "promoted_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "review_after": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "trust": {
+            "type": "object",
+            "properties": {
+              "temperature": {
+                "const": "frozen"
+              }
+            },
+            "required": [
+              "temperature"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "lifecycle": {
+            "type": "object",
+            "required": [
+              "freeze_basis"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

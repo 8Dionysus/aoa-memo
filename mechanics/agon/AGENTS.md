@@ -53,9 +53,9 @@ Update only surfaces whose future-facing meaning changed.
 ## Validation
 
 ```bash
-python scripts/validate_memo_mechanics.py
-python scripts/build_memo_mechanics_index.py --check
-python scripts/validate_memo_mechanics_index.py
+python scripts/mechanics/validate_memo_mechanics.py
+python scripts/mechanics/build_memo_mechanics_index.py --check
+python scripts/mechanics/validate_memo_mechanics_index.py
 python mechanics/agon/parts/prebinding-and-candidate-intake/scripts/validate_agon_memo_prebindings.py
 python mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_epistemic_memo_bridge.py
 python mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_kag_memo_evidence_package_registry.py
@@ -70,7 +70,7 @@ python -m pytest -q mechanics/agon/parts/prebinding-and-candidate-intake/tests m
 Before landing, also run:
 
 ```bash
-python scripts/release_check.py
+python scripts/release/release_check.py
 ```
 
 ## Closeout

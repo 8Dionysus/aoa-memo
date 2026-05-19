@@ -23,7 +23,7 @@ The first source-owned memo donor stays intentionally narrow:
 - `owner_repo`: `aoa-memo`
 - `kind`: `bridge`
 - `object_id`: `memo.bridge.2026-03-23.tos-lineage-kag-candidate`
-- `entry_surface`: `generated/memory_object_capsules.json`
+- `entry_surface`: `generated/memory-objects/memory_object_capsules.json`
 - `match_key`: `id`
 
 This keeps the export aligned with the current memo-side bridge candidate that

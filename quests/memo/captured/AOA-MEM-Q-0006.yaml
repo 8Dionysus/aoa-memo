@@ -38,8 +38,8 @@ proof_surface_refs:
   - repo:aoa-evals/generated/eval_catalog.min.json
   - repo:aoa-evals/docs/ORCHESTRATOR_PROOF_ALIGNMENT.md
 memory_surface_refs:
-  - examples/recall_contract.object.working.phase-alpha.json
-  - generated/memory_object_capsules.json
+  - examples/recall/recall_contract.object.working.phase-alpha.json
+  - generated/memory-objects/memory_object_capsules.json
   - mechanics/consumer-handoff/docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md#bounded-execution
 handoff_role: memo-maintainer
 evidence:

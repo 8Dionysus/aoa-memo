@@ -5,7 +5,7 @@ Executable validation for this part is routed through the package validation lan
 Run from the repository root:
 
 ```bash
-python scripts/validate_memo_mechanic_parts.py
+python scripts/mechanics/validate_memo_mechanic_parts.py
 python mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py
 python -m pytest -q mechanics/questbook/parts/source-contract/tests
 ```

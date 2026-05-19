@@ -10,7 +10,7 @@ REPO_ROOT = Path(__file__).resolve().parents[5]
 
 class ShapeGuardMechanicTestCase(unittest.TestCase):
     def test_shape_guard_registers_via_negativa_as_operation(self) -> None:
-        config = json.loads((REPO_ROOT / "config" / "memo_mechanics.json").read_text())
+        config = json.loads((REPO_ROOT / "config" / "mechanics" / "memo_mechanics.json").read_text())
         packages = {package["slug"]: package for package in config["packages"]}
         shape_guard = packages["shape-guard"]
 

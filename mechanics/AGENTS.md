@@ -98,87 +98,87 @@ Run the narrow validator that matches the changed mechanics surface:
 - When package-local or part-local artifact homes change:
 
   ```bash
-  python scripts/validate_mechanic_artifact_topology.py
-  python scripts/build_mechanic_artifact_inventory.py --check
-  python scripts/validate_mechanic_artifact_inventory.py
+  python scripts/mechanics/validate_mechanic_artifact_topology.py
+  python scripts/mechanics/build_mechanic_artifact_inventory.py --check
+  python scripts/mechanics/validate_mechanic_artifact_inventory.py
   ```
 
 - When `mechanics/ARTIFACT_TOPOLOGY.md` changes or a root technical artifact
   moves into a package or part home:
 
   ```bash
-  python scripts/validate_mechanic_artifact_topology.py
-  python scripts/build_mechanic_artifact_inventory.py --check
-  python scripts/validate_mechanic_artifact_inventory.py
-  python scripts/build_memo_mechanic_landing_logs.py --check
-  python scripts/validate_memo_mechanic_landing_logs.py
-  python scripts/build_memo_mechanic_readiness.py --check
-  python scripts/validate_memo_mechanic_readiness.py
-  python scripts/validate_memo_mechanics.py
+  python scripts/mechanics/validate_mechanic_artifact_topology.py
+  python scripts/mechanics/build_mechanic_artifact_inventory.py --check
+  python scripts/mechanics/validate_mechanic_artifact_inventory.py
+  python scripts/mechanics/build_memo_mechanic_landing_logs.py --check
+  python scripts/mechanics/validate_memo_mechanic_landing_logs.py
+  python scripts/mechanics/build_memo_mechanic_readiness.py --check
+  python scripts/mechanics/validate_memo_mechanic_readiness.py
+  python scripts/mechanics/validate_memo_mechanics.py
   ```
 
 - When `PARTS.md` files or `parts/` contracts change:
 
   ```bash
-  python scripts/validate_memo_mechanic_parts.py
+  python scripts/mechanics/validate_memo_mechanic_parts.py
   ```
 
 - When package mechanic cards change:
 
   ```bash
-  python scripts/build_memo_mechanic_cards.py --check
-  python scripts/validate_memo_mechanic_cards.py
+  python scripts/mechanics/build_memo_mechanic_cards.py --check
+  python scripts/mechanics/validate_memo_mechanic_cards.py
   ```
 
 - When `OWNER_MAP.md` files or package cards change:
 
   ```bash
-  python scripts/build_memo_mechanic_owner_routes.py --check
-  python scripts/validate_memo_mechanic_owner_routes.py
+  python scripts/mechanics/build_memo_mechanic_owner_routes.py --check
+  python scripts/mechanics/validate_memo_mechanic_owner_routes.py
   ```
 
 - When landing receipts change:
 
   ```bash
-  python scripts/build_memo_mechanic_landing_logs.py --check
-  python scripts/validate_memo_mechanic_landing_logs.py
+  python scripts/mechanics/build_memo_mechanic_landing_logs.py --check
+  python scripts/mechanics/validate_memo_mechanic_landing_logs.py
   ```
 
 - When package cards, owner maps, landing logs, validation routes, or
   package-local/part-local artifacts change:
 
   ```bash
-  python scripts/build_memo_mechanic_readiness.py --check
-  python scripts/validate_memo_mechanic_readiness.py
+  python scripts/mechanics/build_memo_mechanic_readiness.py --check
+  python scripts/mechanics/validate_memo_mechanic_readiness.py
   ```
 
 For mechanic topology changes, run:
 
 ```bash
-python scripts/validate_memo_mechanics.py
-python scripts/validate_memo_mechanic_parts.py
-python scripts/build_memo_mechanic_cards.py --check
-python scripts/validate_memo_mechanic_cards.py
-python scripts/build_memo_mechanic_owner_routes.py --check
-python scripts/validate_memo_mechanic_owner_routes.py
-python scripts/build_memo_mechanic_landing_logs.py --check
-python scripts/validate_memo_mechanic_landing_logs.py
-python scripts/build_memo_mechanic_readiness.py --check
-python scripts/validate_memo_mechanic_readiness.py
-python scripts/validate_mechanic_artifact_topology.py
-python scripts/build_mechanic_artifact_inventory.py --check
-python scripts/validate_mechanic_artifact_inventory.py
-python scripts/build_memo_mechanics_index.py --check
-python scripts/validate_memo_mechanics_index.py
-python scripts/validate_agents_mesh.py
-python scripts/build_agents_mesh_index.py --check
-python scripts/validate_agents_mesh_index.py
+python scripts/mechanics/validate_memo_mechanics.py
+python scripts/mechanics/validate_memo_mechanic_parts.py
+python scripts/mechanics/build_memo_mechanic_cards.py --check
+python scripts/mechanics/validate_memo_mechanic_cards.py
+python scripts/mechanics/build_memo_mechanic_owner_routes.py --check
+python scripts/mechanics/validate_memo_mechanic_owner_routes.py
+python scripts/mechanics/build_memo_mechanic_landing_logs.py --check
+python scripts/mechanics/validate_memo_mechanic_landing_logs.py
+python scripts/mechanics/build_memo_mechanic_readiness.py --check
+python scripts/mechanics/validate_memo_mechanic_readiness.py
+python scripts/mechanics/validate_mechanic_artifact_topology.py
+python scripts/mechanics/build_mechanic_artifact_inventory.py --check
+python scripts/mechanics/validate_mechanic_artifact_inventory.py
+python scripts/mechanics/build_memo_mechanics_index.py --check
+python scripts/mechanics/validate_memo_mechanics_index.py
+python scripts/agents/validate_agents_mesh.py
+python scripts/agents/build_agents_mesh_index.py --check
+python scripts/agents/validate_agents_mesh_index.py
 ```
 
 Before landing, also run:
 
 ```bash
-python scripts/release_check.py
+python scripts/release/release_check.py
 ```
 
 ## Closeout

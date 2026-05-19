@@ -57,10 +57,10 @@ generated files remain projections instead of a second quest ledger.
 - `quests/memo/<state>/AOA-MEM-Q-*.yaml`
 - `quests/agon/<state>/AOM-Q-AGON-*.md`
 - `quests/agon/<state>/AOMEMO-Q-AGON-*.md`
-- `generated/quest_catalog.min.json`
-- `generated/quest_dispatch.min.json`
-- `generated/quest_catalog.min.example.json`
-- `generated/quest_dispatch.min.example.json`
+- `generated/quests/quest_catalog.min.json`
+- `generated/quests/quest_dispatch.min.json`
+- `generated/quests/quest_catalog.min.example.json`
+- `generated/quests/quest_dispatch.min.example.json`
 
 ## Rule
 

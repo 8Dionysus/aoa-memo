@@ -7,7 +7,7 @@
 | Obligation index | [QUESTBOOK](../../QUESTBOOK.md) | compact list of open memo-facing obligations; not a second roadmap |
 | Quest item store | [quests](../../quests/README.md) | lane-first lifecycle source files under `quests/<lane>/<state>/` |
 | Source contract | [QUEST_SOURCE_CONTRACT](docs/QUEST_SOURCE_CONTRACT.md), [validate_quest_store](parts/source-contract/scripts/validate_quest_store.py) | reviewable YAML and Markdown source shape for memo quest objects |
-| Quest read-model projections | [quest-read-model-projections part](parts/quest-read-model-projections/README.md), [build_quest_surfaces](parts/quest-read-model-projections/scripts/build_quest_surfaces.py), [generated quest catalog](../../generated/quest_catalog.min.json), [generated quest dispatch](../../generated/quest_dispatch.min.json) | root-published read models that never author quest meaning |
+| Quest read-model projections | [quest-read-model-projections part](parts/quest-read-model-projections/README.md), [build_quest_surfaces](parts/quest-read-model-projections/scripts/build_quest_surfaces.py), [generated quest catalog](../../generated/quests/quest_catalog.min.json), [generated quest dispatch](../../generated/quests/quest_dispatch.min.json) | root-published read models that never author quest meaning |
 
 ## Part-Local Artifacts
 

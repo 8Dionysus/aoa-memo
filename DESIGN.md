@@ -179,9 +179,9 @@ landing receipt, it needs a bounded home rather than a root-level spotlight.
 [README](README.md) introduces. [CHARTER](CHARTER.md) authorizes.
 [ROADMAP](ROADMAP.md) points direction. [MEMORY_INDEX](MEMORY_INDEX.md) maps
 the public memory canon without replacing stronger doctrine.
-[BOUNDARIES](docs/BOUNDARIES.md) separates owner truth.
-[MEMORY_MODEL](docs/MEMORY_MODEL.md) defines the memory conceptual model.
-[ROOT_SURFACE_LAW](docs/ROOT_SURFACE_LAW.md) governs root and docs-root
+[BOUNDARIES](docs/boundaries/BOUNDARIES.md) separates owner truth.
+[MEMORY_MODEL](docs/memory/MEMORY_MODEL.md) defines the memory conceptual model.
+[ROOT_SURFACE_LAW](docs/root/ROOT_SURFACE_LAW.md) governs root and docs-root
 placement. [AGENTS](AGENTS.md) routes agents.
 [DESIGN.AGENTS](DESIGN.AGENTS.md) holds the design form of the agent-facing
 layer. `DESIGN.md` holds the system form of the memory layer.

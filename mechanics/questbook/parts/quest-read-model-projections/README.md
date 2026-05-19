@@ -17,10 +17,10 @@ machine-readable mirrors of public quest sources.
 
 ## Outputs
 
-- `generated/quest_catalog.min.json`
-- `generated/quest_catalog.min.example.json`
-- `generated/quest_dispatch.min.json`
-- `generated/quest_dispatch.min.example.json`
+- `generated/quests/quest_catalog.min.json`
+- `generated/quests/quest_catalog.min.example.json`
+- `generated/quests/quest_dispatch.min.json`
+- `generated/quests/quest_dispatch.min.example.json`
 
 ## Part-Local Artifacts
 

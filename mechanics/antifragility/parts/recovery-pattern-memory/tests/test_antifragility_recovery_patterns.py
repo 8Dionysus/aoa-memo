@@ -8,7 +8,7 @@ from jsonschema import Draft202012Validator
 
 
 REPO_ROOT = Path(__file__).resolve().parents[5]
-SCRIPTS_ROOT = REPO_ROOT / "scripts"
+SCRIPTS_ROOT = REPO_ROOT / "scripts" / "memory"
 if str(SCRIPTS_ROOT) not in sys.path:
     sys.path.insert(0, str(SCRIPTS_ROOT))
 
@@ -73,10 +73,10 @@ def test_native_recovery_pattern_integrates_into_object_family() -> None:
     expected_id = "memo.pattern.2026-04-07.antifragility-stress-recovery-window"
     expected_source_path = "mechanics/antifragility/parts/recovery-pattern-memory/examples/pattern.antifragility-stress-recovery-window.example.json"
 
-    full_catalog = load_json("generated/memory_object_catalog.json")
-    min_catalog = load_json("generated/memory_object_catalog.min.json")
-    capsules = load_json("generated/memory_object_capsules.json")
-    sections = load_json("generated/memory_object_sections.full.json")
+    full_catalog = load_json("generated/memory-objects/memory_object_catalog.json")
+    min_catalog = load_json("generated/memory-objects/memory_object_catalog.min.json")
+    capsules = load_json("generated/memory-objects/memory_object_capsules.json")
+    sections = load_json("generated/memory-objects/memory_object_sections.full.json")
 
     assert any(
         item["id"] == expected_id and item["source_path"] == expected_source_path

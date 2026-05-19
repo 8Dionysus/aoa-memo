@@ -27,8 +27,8 @@ memory or mechanic forms.
 
 ### Stronger owner split
 
-- `docs/MEMORY_MODEL.md`, `docs/MEMORY_OBJECT_PROFILES.md`,
-  `docs/MEMORY_TRUST_POSTURE.md`, and `docs/LIFECYCLE.md` own the active memory
+- `docs/memory/MEMORY_MODEL.md`, `docs/memory/MEMORY_OBJECT_PROFILES.md`,
+  `docs/posture/MEMORY_TRUST_POSTURE.md`, and `docs/posture/LIFECYCLE.md` own the active memory
   object canon.
 - Mechanic package cards own package-local operation, owner split, and docs.
 - `aoa-evals` owns proof and bounded verdicts.

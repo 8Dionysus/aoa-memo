@@ -51,15 +51,15 @@ examples, generated outputs, scripts, or tests.
 ## Validation
 
 ```bash
-python scripts/validate_memo_mechanics.py
-python scripts/build_memo_mechanics_index.py --check
-python scripts/validate_memo_mechanics_index.py
-python scripts/validate_memo.py
-python -m pytest -q mechanics/checkpoint/parts/checkpoint-memory-boundary/tests/test_checkpoint_mechanic.py tests/test_memo_validators.py
+python scripts/mechanics/validate_memo_mechanics.py
+python scripts/mechanics/build_memo_mechanics_index.py --check
+python scripts/mechanics/validate_memo_mechanics_index.py
+python scripts/memory/validate_memo.py
+python -m pytest -q mechanics/checkpoint/parts/checkpoint-memory-boundary/tests/test_checkpoint_mechanic.py tests/memory/test_memo_validators.py
 ```
 
 Before landing, also run:
 
 ```bash
-python scripts/release_check.py
+python scripts/release/release_check.py
 ```

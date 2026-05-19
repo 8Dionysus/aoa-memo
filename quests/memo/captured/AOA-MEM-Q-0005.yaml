@@ -38,8 +38,8 @@ proof_surface_refs:
   - repo:aoa-evals/generated/eval_catalog.min.json
   - repo:aoa-evals/docs/ORCHESTRATOR_PROOF_ALIGNMENT.md
 memory_surface_refs:
-  - generated/memory_object_capsules.json
-  - examples/provenance_thread.phase-alpha-curated.example.json
+  - generated/memory-objects/memory_object_capsules.json
+  - examples/phase-alpha/provenance_thread.phase-alpha-curated.example.json
   - mechanics/consumer-handoff/docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md#review
 handoff_role: memo-maintainer
 evidence:
