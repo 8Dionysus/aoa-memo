@@ -157,6 +157,8 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Changed
 
+- Compact the root README Memo Mechanics section so detailed mechanic routing
+  stays in AGENTS/mechanic atlas surfaces rather than root public overview.
 - Upgrade the moved Spark lane from two guidance files into a functional
   one-scenario `done-or-handoff` fast loop for bounded memory-layer work.
 - Align root README, CHARTER, ROADMAP, docs map, design surfaces,

@@ -134,27 +134,30 @@ release history lives in [CHANGELOG](CHANGELOG.md). Durable obligations live in
 
 ## Memo Mechanics
 
-[mechanics](mechanics/README.md) owns repeatable memo-side movement around
-memory canon, source families, technical artifacts, owner handoffs, legacy
-bridges, and validation.
+[mechanics](mechanics/README.md) is the atlas for repeatable memo-side
+movement around memory canon, source families, technical artifacts, owner
+handoffs, legacy bridges, and validation.
 
-| Mechanic | Use for |
-|---|---|
-| [adoption](mechanics/adoption/README.md) | routing adoption and reviewable memory candidate promotion pressure |
-| [agon](mechanics/agon/README.md) | Agon candidate memory, bridge evidence, retention-rank posture, and quest follow-through |
-| [antifragility](mechanics/antifragility/README.md) | failure lessons, recovery patterns, and recallable repair memory |
-| [checkpoint](mechanics/checkpoint/README.md) | checkpoint gates, carry packets, approval/health records, and checkpoint-to-memory mapping |
-| [consumer-handoff](mechanics/consumer-handoff/README.md) | agent, playbook, eval, KAG, ToS, and downstream recall handoffs |
-| [governance](mechanics/governance/README.md) | authority-boundary memory for governance, federation, install, certification, precedent, and stay orders |
-| [lineage-harvest](mechanics/lineage-harvest/README.md) | recurring cross-repo signals and pattern-lineage memory candidates |
-| [operational-gate](mechanics/operational-gate/README.md) | incident, office, service revision, and post-release memory admission |
-| [questbook](mechanics/questbook/README.md) | public memory-layer obligation sources and generated quest projections |
-| [readiness-boundary](mechanics/readiness-boundary/README.md) | high-pressure memory readiness without proof/runtime/role/KAG overclaim |
-| [recurrence-support](mechanics/recurrence-support/README.md) | route-return anchors, witness traces, and reviewed closeout recall |
-| [retention](mechanics/retention/README.md) | retention evidence, markers, watches, and outcomes as reviewable memory |
-| [shape-guard](mechanics/shape-guard/README.md) | memory-shape pruning before forms pretend to be proof or action authority |
-| [titan](mechanics/titan/README.md) | Titan recall, remembrance, digest, closeout, personality, and swarm memory posture |
-| [writeback](mechanics/writeback/README.md) | bounded writeback targets, chronicles, revisions, rollback memory, and growth notes |
+Current mechanic entries: [adoption](mechanics/adoption/README.md),
+[agon](mechanics/agon/README.md),
+[antifragility](mechanics/antifragility/README.md),
+[checkpoint](mechanics/checkpoint/README.md),
+[consumer-handoff](mechanics/consumer-handoff/README.md),
+[governance](mechanics/governance/README.md),
+[lineage-harvest](mechanics/lineage-harvest/README.md),
+[operational-gate](mechanics/operational-gate/README.md),
+[questbook](mechanics/questbook/README.md),
+[readiness-boundary](mechanics/readiness-boundary/README.md),
+[recurrence-support](mechanics/recurrence-support/README.md),
+[retention](mechanics/retention/README.md),
+[shape-guard](mechanics/shape-guard/README.md),
+[titan](mechanics/titan/README.md), and
+[writeback](mechanics/writeback/README.md).
+
+Use root [AGENTS](AGENTS.md) for mechanic-change routing, then follow
+`mechanics/AGENTS.md` and the target `mechanics/<slug>/AGENTS.md` before
+editing. The root README only points to the mechanics atlas; it should not
+duplicate the agent route matrix.
 
 ## Technical Districts
 
