@@ -36,6 +36,7 @@ READINESS_CHECKS = (
     "landing-log",
     "validation-route",
     "artifact-test-coverage",
+    "local-test-route",
     "stronger-owner-stop-lines",
 )
 NON_TEST_ARTIFACT_DIRS = tuple(district for district in ARTIFACT_DIRS if district != "tests")
@@ -151,6 +152,7 @@ def build_package_readiness(package: dict[str, Any], artifacts: dict[str, Any]) 
     )
     non_test_artifact_count = sum(artifact_counts[district] for district in NON_TEST_ARTIFACT_DIRS)
     test_artifact_count = artifact_counts["tests"]
+    local_test_ref = f"python -m pytest -q mechanics/{slug}/tests"
 
     checks = {
         "package-surfaces": all(package_files.values()),
@@ -183,6 +185,7 @@ def build_package_readiness(package: dict[str, Any], artifacts: dict[str, Any]) 
         "landing-log": "python scripts/release_check.py" in landing_log or "python scripts/release_check.py" in agents,
         "validation-route": all(ref in validation_refs for ref in REQUIRED_VALIDATION_REFS),
         "artifact-test-coverage": non_test_artifact_count == 0 or test_artifact_count > 0,
+        "local-test-route": test_artifact_count == 0 or local_test_ref in validation_text,
         "stronger-owner-stop-lines": (
             {"proof", "runtime"}.issubset(set(stop_line_terms))
             and bool({"role", "route", "source owner", "authority"} & set(stop_line_terms))
@@ -212,6 +215,7 @@ def build_package_readiness(package: dict[str, Any], artifacts: dict[str, Any]) 
         "package_files": package_files,
         "readme_headings": readme_headings,
         "validation_refs": validation_refs,
+        "local_test_ref": local_test_ref if test_artifact_count else None,
         "stronger_owner_refs": owner_refs,
         "stop_line_terms": stop_line_terms,
         "checks": checks,
@@ -303,6 +307,10 @@ def validate_payload(payload: dict[str, Any]) -> list[str]:
         if checks.get("artifact-test-coverage") is not True:
             issues.append(
                 f"mechanics/{slug}: package-local non-test artifacts require at least one package-local test"
+            )
+        if checks.get("local-test-route") is not True:
+            issues.append(
+                f"mechanics/{slug}: package-local tests must be named in validation route"
             )
         owner_refs = package.get("stronger_owner_refs")
         if not isinstance(owner_refs, list) or len(owner_refs) < 3:

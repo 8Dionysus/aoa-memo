@@ -44,6 +44,7 @@ def test_memo_mechanic_readiness_covers_all_packages() -> None:
     assert payload["owner_route_index_ref"] == "generated/memo_mechanic_owner_routes.min.json"
     assert payload["landing_log_index_ref"] == "generated/memo_mechanic_landing_logs.min.json"
     assert "artifact-test-coverage" in payload["contract"]["readiness_checks"]
+    assert "local-test-route" in payload["contract"]["readiness_checks"]
     assert payload["counts"]["packages"] == 15
     assert payload["counts"]["ready_packages"] == payload["counts"]["packages"]
     assert payload["counts"]["docs"] == 102
@@ -79,6 +80,9 @@ def test_memo_mechanic_readiness_covers_all_packages() -> None:
         if package["artifacts"]["non_test_count"]:
             assert package["artifacts"]["test_count"] > 0
             assert package["checks"]["artifact-test-coverage"] is True
+        if package["artifacts"]["test_count"]:
+            assert package["local_test_ref"] == f"python -m pytest -q mechanics/{package['slug']}/tests"
+            assert package["checks"]["local-test-route"] is True
         assert "aoa-evals" in package["stronger_owner_refs"]
         assert "abyss-stack" in package["stronger_owner_refs"]
         stop_line_terms = set(package["stop_line_terms"])
@@ -102,3 +106,16 @@ def test_memo_mechanic_readiness_rejects_untested_local_artifacts() -> None:
         "mechanics/retention: package-local non-test artifacts require at least one package-local test"
         in issues
     )
+
+
+def test_memo_mechanic_readiness_rejects_hidden_local_test_routes() -> None:
+    payload = build_readiness()
+    agon = next(package for package in payload["packages"] if package["slug"] == "agon")
+
+    agon["checks"]["local-test-route"] = False
+    agon["ready"] = False
+    payload["counts"]["ready_packages"] -= 1
+
+    issues = validate_payload(payload)
+    assert "mechanics/agon: readiness check failed: local-test-route" in issues
+    assert "mechanics/agon: package-local tests must be named in validation route" in issues
