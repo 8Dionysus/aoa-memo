@@ -211,42 +211,12 @@ Use [ARTIFACT_TOPOLOGY](ARTIFACT_TOPOLOGY.md) before moving schemas, examples,
 config, generated companions, scripts, tests, manifests, or questbook surfaces
 between root technical districts and mechanic-local homes.
 
-Use `python scripts/build_mechanic_artifact_inventory.py --check` and
-`python scripts/validate_mechanic_artifact_inventory.py` when package-local or
-part-local artifact homes change.
-
-Use `python scripts/validate_memo_mechanic_parts.py` when `PARTS.md` files or
-`parts/` contracts change so functioning parts keep a consistent Active Parts
-table, Interface section, physical part directory, contract, and validation
-surface.
-
-Use `python scripts/build_memo_mechanic_cards.py --check` and
-`python scripts/validate_memo_mechanic_cards.py` when package cards change so
-their route-card shape remains machine-readable.
-
-Use `python scripts/build_memo_mechanic_owner_routes.py --check` and
-`python scripts/validate_memo_mechanic_owner_routes.py` when `OWNER_MAP.md` or
-package cards change so stronger-owner handoff routes remain inspectable.
-
-Use `python scripts/build_memo_mechanic_landing_logs.py --check` and
-`python scripts/validate_memo_mechanic_landing_logs.py` when landing receipts
-change so OS Abyss can inspect what was landed, validated, and bounded.
-
-Use `python scripts/build_memo_mechanic_readiness.py --check` and
-`python scripts/validate_memo_mechanic_readiness.py` when package cards,
-owner maps, landing logs, validation routes, or package-local/part-local
-artifacts change
-so OS Abyss can inspect whether every mechanic remains ready.
+Executable validation routes for artifact, part, card, owner-route,
+landing-log, and readiness changes live in [mechanics/AGENTS](AGENTS.md).
 
 ## Validation
 
 Executable commands for this atlas live in [mechanics/AGENTS](AGENTS.md).
-
-For release-bound mechanics changes, run:
-
-```bash
-python scripts/release_check.py
-```
 
 ## Future Growth Rule
 
