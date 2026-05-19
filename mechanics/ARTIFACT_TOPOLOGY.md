@@ -158,8 +158,10 @@ Examples:
 - governance authority-boundary, federation, installation/certification, and
   precedent/stay-order schemas/examples/tests live under their nearest
   `mechanics/governance/parts/<part>/` homes.
-- operational-gate, antifragility, readiness-boundary, recurrence-support,
-  lineage-harvest, and shape-guard schemas/examples/tests live under their
+- antifragility failure-lesson and recovery-pattern schemas/examples/tests
+  live under their nearest `mechanics/antifragility/parts/<part>/` homes.
+- operational-gate, readiness-boundary, recurrence-support, lineage-harvest,
+  and shape-guard schemas/examples/tests live under their
   package lanes when they serve that one mechanic and have not yet been
   split to a sharper functioning part.
 - writeback generated companions such as `runtime_writeback_targets`,

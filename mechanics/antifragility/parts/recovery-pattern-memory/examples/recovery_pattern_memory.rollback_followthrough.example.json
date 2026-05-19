@@ -43,7 +43,7 @@
   "temperature": "cool",
   "salience": "medium",
   "review_status": "draft",
-  "native_pattern_ref": "mechanics/antifragility/examples/pattern.antifragility-stress-recovery-window.example.json",
+  "native_pattern_ref": "mechanics/antifragility/parts/recovery-pattern-memory/examples/pattern.antifragility-stress-recovery-window.example.json",
   "recall_prompts": [
     "rollback follow-through stays contingent",
     "shared-root cadence recovery lane",

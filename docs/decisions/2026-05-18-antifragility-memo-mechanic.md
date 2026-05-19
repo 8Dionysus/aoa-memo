@@ -38,9 +38,11 @@ the machine-checkable companion surface.
 - Active failure-lesson and recovery-pattern docs now route through
   `mechanics/antifragility/`.
 - Old flat `docs/*.md` paths for these surfaces are legacy provenance only.
-- Schemas, examples, generated object surfaces, and tests remain in root
-  technical districts until `mechanics/ARTIFACT_TOPOLOGY.md` warrants a
-  package-local artifact move.
+- Schemas, examples, generated object surfaces, and tests initially remained
+  in technical districts until `mechanics/ARTIFACT_TOPOLOGY.md` warranted a
+  local artifact move. On 2026-05-19 the active antifragility schemas,
+  examples, native pattern source, and tests moved into functioning part-local
+  homes.
 - Stronger owner claims stay routed away: proof to `aoa-evals`, derived
   summaries to `aoa-stats`, dispatch behavior to `aoa-routing`, scenario
   choreography to `aoa-playbooks`, source receipts to owner repositories, and
@@ -57,8 +59,8 @@ the machine-checkable companion surface.
 - `generated/memo_registry.min.json`
 - `scripts/validate_memo.py`
 - `scripts/validate_memo_mechanics.py`
-- `mechanics/antifragility/tests/test_antifragility_failure_lessons.py`
-- `mechanics/antifragility/tests/test_antifragility_recovery_patterns.py`
+- `mechanics/antifragility/parts/failure-lesson-memory/tests/test_antifragility_failure_lessons.py`
+- `mechanics/antifragility/parts/recovery-pattern-memory/tests/test_antifragility_recovery_patterns.py`
 - `tests/test_memo_mechanics.py`
 - `tests/test_agents_mesh.py`
 
@@ -71,6 +73,6 @@ python scripts/validate_memo_mechanics_index.py
 python scripts/validate_agents_mesh.py
 python scripts/build_agents_mesh_index.py --check
 python scripts/validate_agents_mesh_index.py
-python -m pytest -q mechanics/antifragility/tests/test_antifragility_failure_lessons.py mechanics/antifragility/tests/test_antifragility_recovery_patterns.py
+python -m pytest -q mechanics/antifragility/parts/failure-lesson-memory/tests/test_antifragility_failure_lessons.py mechanics/antifragility/parts/recovery-pattern-memory/tests/test_antifragility_recovery_patterns.py
 python scripts/release_check.py
 ```

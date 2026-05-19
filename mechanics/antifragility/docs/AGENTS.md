@@ -33,7 +33,7 @@ Read root `AGENTS.md`, `mechanics/AGENTS.md`, `mechanics/ARTIFACT_TOPOLOGY.md`,
 python scripts/validate_memo_mechanics.py
 python scripts/build_memo_mechanics_index.py --check
 python scripts/validate_memo_mechanics_index.py
-python -m pytest -q mechanics/antifragility/tests/test_antifragility_failure_lessons.py mechanics/antifragility/tests/test_antifragility_recovery_patterns.py
+python -m pytest -q mechanics/antifragility/parts/failure-lesson-memory/tests mechanics/antifragility/parts/recovery-pattern-memory/tests
 ```
 
 ## Closeout

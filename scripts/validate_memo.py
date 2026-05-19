@@ -1583,12 +1583,12 @@ def validate_registry() -> None:
                 errors.append(error)
 
     expected_schemas = {
-        "mechanics/antifragility/schemas/failure_lesson_memory_v1.json",
+        "mechanics/antifragility/parts/failure-lesson-memory/schemas/failure_lesson_memory_v1.json",
         "schemas/memory_object_surface_manifest.schema.json",
         "schemas/memory_object_catalog.schema.json",
         "schemas/memory_object_capsules.schema.json",
         "schemas/memory_object_sections.schema.json",
-        "mechanics/antifragility/schemas/recovery_pattern_memory_v1.json",
+        "mechanics/antifragility/parts/recovery-pattern-memory/schemas/recovery_pattern_memory_v1.json",
     }
     for schema_ref in sorted(expected_schemas):
         if schema_ref not in data.get("schemas", []):

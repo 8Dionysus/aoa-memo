@@ -73,7 +73,7 @@ REVIEWED_CANDIDATE_CASES = {
 GROWTH_LANE_CASES = {
     "growth_refinery_failure_lesson": {
         "memory_id": "memo:session-growth-cycle-owner-reanchor-first",
-        "source_path": "mechanics/antifragility/examples/failure_lesson_memory.lineage.example.json",
+        "source_path": "mechanics/antifragility/parts/failure-lesson-memory/examples/failure_lesson_memory.lineage.example.json",
         "target_kind": "failure_lesson",
         "review_status": "reviewed",
         "required_evidence_refs": [
@@ -86,7 +86,7 @@ GROWTH_LANE_CASES = {
     },
     "growth_refinery_recovery_pattern": {
         "memory_id": "memo:session-growth-cycle-playbook-reanchor",
-        "source_path": "mechanics/antifragility/examples/recovery_pattern_memory.lineage.example.json",
+        "source_path": "mechanics/antifragility/parts/recovery-pattern-memory/examples/recovery_pattern_memory.lineage.example.json",
         "target_kind": "recovery_pattern",
         "review_status": "reviewed",
         "required_evidence_refs": [

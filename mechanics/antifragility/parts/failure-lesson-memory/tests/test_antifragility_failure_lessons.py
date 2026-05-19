@@ -7,7 +7,7 @@ from pathlib import Path
 import pytest
 
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
+REPO_ROOT = Path(__file__).resolve().parents[5]
 SCRIPTS_ROOT = REPO_ROOT / "scripts"
 if str(SCRIPTS_ROOT) not in sys.path:
     sys.path.insert(0, str(SCRIPTS_ROOT))
@@ -21,14 +21,14 @@ def load_json(relative_path: str) -> object:
 
 def test_failure_lesson_example_validates_against_schema() -> None:
     validator = validate_memo.validator_for("failure_lesson_memory_v1.json")
-    example = load_json("mechanics/antifragility/examples/failure_lesson_memory.example.json")
+    example = load_json("mechanics/antifragility/parts/failure-lesson-memory/examples/failure_lesson_memory.example.json")
 
     validator.validate(example)
 
 
 def test_failure_lesson_example_rejects_invalid_expiry_format() -> None:
     validator = validate_memo.validator_for("failure_lesson_memory_v1.json")
-    example = load_json("mechanics/antifragility/examples/failure_lesson_memory.example.json")
+    example = load_json("mechanics/antifragility/parts/failure-lesson-memory/examples/failure_lesson_memory.example.json")
     assert isinstance(example, dict)
     example["expires_at_utc"] = "not-a-date-time"
 
@@ -40,21 +40,21 @@ def test_failure_lesson_example_rejects_invalid_expiry_format() -> None:
 
 def test_failure_lesson_lineage_example_validates_against_schema() -> None:
     validator = validate_memo.validator_for("failure_lesson_memory_v1.json")
-    example = load_json("mechanics/antifragility/examples/failure_lesson_memory.lineage.example.json")
+    example = load_json("mechanics/antifragility/parts/failure-lesson-memory/examples/failure_lesson_memory.lineage.example.json")
 
     validator.validate(example)
 
 
 def test_failure_lesson_rollout_example_validates_against_schema() -> None:
     validator = validate_memo.validator_for("failure_lesson_memory_v1.json")
-    example = load_json("mechanics/antifragility/examples/failure_lesson_memory.rollout.example.json")
+    example = load_json("mechanics/antifragility/parts/failure-lesson-memory/examples/failure_lesson_memory.rollout.example.json")
 
     validator.validate(example)
 
 
 def test_failure_lesson_drift_review_example_validates_against_schema() -> None:
     validator = validate_memo.validator_for("failure_lesson_memory_v1.json")
-    example = load_json("mechanics/antifragility/examples/failure_lesson_memory.drift_review.example.json")
+    example = load_json("mechanics/antifragility/parts/failure-lesson-memory/examples/failure_lesson_memory.drift_review.example.json")
 
     validator.validate(example)
 
@@ -63,7 +63,7 @@ def test_failure_lesson_lineage_ref_validation_handles_malformed_objects(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
-    example = load_json("mechanics/antifragility/examples/failure_lesson_memory.lineage.example.json")
+    example = load_json("mechanics/antifragility/parts/failure-lesson-memory/examples/failure_lesson_memory.lineage.example.json")
     assert isinstance(example, dict)
     example["lineage_refs"] = "not-an-object"
     example["lineage_context"] = "not-an-object"
@@ -94,11 +94,11 @@ def test_failure_lesson_surfaces_stay_discoverable_and_non_proof() -> None:
         "mechanics/antifragility/docs/FAILURE_LESSON_RECALL.md",
         "mechanics/antifragility/docs/DRIFT_REVIEW_LESSON_MEMORY.md",
         "mechanics/writeback/docs/GROWTH_REFINERY_WRITEBACK.md",
-        "mechanics/antifragility/schemas/failure_lesson_memory_v1.json",
-        "mechanics/antifragility/examples/failure_lesson_memory.example.json",
-        "mechanics/antifragility/examples/failure_lesson_memory.lineage.example.json",
-        "mechanics/antifragility/examples/failure_lesson_memory.rollout.example.json",
-        "mechanics/antifragility/examples/failure_lesson_memory.drift_review.example.json",
+        "mechanics/antifragility/parts/failure-lesson-memory/schemas/failure_lesson_memory_v1.json",
+        "mechanics/antifragility/parts/failure-lesson-memory/examples/failure_lesson_memory.example.json",
+        "mechanics/antifragility/parts/failure-lesson-memory/examples/failure_lesson_memory.lineage.example.json",
+        "mechanics/antifragility/parts/failure-lesson-memory/examples/failure_lesson_memory.rollout.example.json",
+        "mechanics/antifragility/parts/failure-lesson-memory/examples/failure_lesson_memory.drift_review.example.json",
     ]:
         assert fragment in readme
 

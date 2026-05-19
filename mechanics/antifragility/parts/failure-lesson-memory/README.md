@@ -12,6 +12,14 @@ This active part belongs to `mechanics/antifragility/` and materializes the matc
 - [FAILURE_LESSON_MEMORY](../../docs/FAILURE_LESSON_MEMORY.md)
 - [FAILURE_LESSON_RECALL](../../docs/FAILURE_LESSON_RECALL.md)
 - [DRIFT_REVIEW_LESSON_MEMORY](../../docs/DRIFT_REVIEW_LESSON_MEMORY.md)
+- `schemas/failure_lesson_memory_v1.json`
+- `schemas/shared_lesson_memory_v1.json`
+- `examples/failure_lesson_memory.example.json`
+- `examples/failure_lesson_memory.lineage.example.json`
+- `examples/failure_lesson_memory.rollout.example.json`
+- `examples/failure_lesson_memory.drift_review.example.json`
+- `examples/shared_lesson_memory.example.json`
+- `tests/test_antifragility_failure_lessons.py`
 
 ## Function
 

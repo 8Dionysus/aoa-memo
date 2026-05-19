@@ -12,6 +12,14 @@ This active part belongs to `mechanics/antifragility/` and materializes the matc
 - [RECOVERY_PATTERN_MEMORY](../../docs/RECOVERY_PATTERN_MEMORY.md)
 - [RECOVERY_PATTERN_RECALL](../../docs/RECOVERY_PATTERN_RECALL.md)
 - [ROLLBACK_FOLLOWTHROUGH_PATTERN](../../docs/ROLLBACK_FOLLOWTHROUGH_PATTERN.md)
+- `schemas/recovery_pattern_memory_v1.json`
+- `examples/recovery_pattern_memory.example.json`
+- `examples/recovery_pattern_memory.lineage.example.json`
+- `examples/recovery_pattern_memory.rollout.example.json`
+- `examples/recovery_pattern_memory.rollback_followthrough.example.json`
+- `examples/recovery_pattern_memory.component_refresh.example.json`
+- `examples/pattern.antifragility-stress-recovery-window.example.json`
+- `tests/test_antifragility_recovery_patterns.py`
 
 ## Function
 
