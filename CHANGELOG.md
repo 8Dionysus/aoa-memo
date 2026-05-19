@@ -138,6 +138,10 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Changed
 
+- Move Titan runnable schemas, examples, and tests into nearest functioning
+  `parts/` homes, split digest/closeout candidate coverage into a part-local
+  regression test, and tighten readiness local-test-route detection around
+  runnable pytest arguments.
 - Move the downstream feed regression into
   `mechanics/consumer-handoff/tests/`, move the tracked writeback receipt
   fixture into `mechanics/writeback/tests/fixtures/`, and narrow the remaining

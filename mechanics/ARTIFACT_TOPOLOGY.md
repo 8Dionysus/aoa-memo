@@ -148,7 +148,9 @@ Examples:
 - Agon prebinding, bridge/evidence, and wave recurrence config, schemas,
   examples, generated registries, manifests, hooks, validators, builders, and
   tests live under the nearest `mechanics/agon/parts/<part>/` home.
-- Titan schemas, examples, and tests live under `mechanics/titan/`.
+- Titan recall/remembrance, closeout/digest, and specialized-policy schemas,
+  examples, and tests live under the nearest `mechanics/titan/parts/<part>/`
+  home.
 - adoption, governance, retention, operational-gate, antifragility,
   checkpoint, readiness-boundary, recurrence-support, lineage-harvest,
   shape-guard, consumer-handoff, and writeback schemas/examples/tests live

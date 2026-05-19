@@ -18,6 +18,12 @@ This active part belongs to `mechanics/titan/` and materializes the matching row
 
 keeps Titan recall and source refs explicit without granting write authority
 
+## Artifact Surfaces
+
+- `schemas/`
+- `examples/`
+- `tests/`
+
 ## Next Route
 
 Use `../../OWNER_MAP.md` for stronger owner routing and `../../PROVENANCE.md` for placement history.

@@ -16,6 +16,21 @@ python scripts/validate_memo_mechanics.py
 python scripts/release_check.py
 ```
 
+## 2026-05-19
+
+- Moved Titan schemas, examples, and tests from package-level artifact homes
+  into the nearest functioning `parts/<part>/` homes.
+- Split mixed candidate tests so core-memory, closeout/digest, and specialized
+  policy have their own part-local pytest routes.
+- Kept Titan docs as source surfaces and moved only runnable contract artifacts.
+
+Validation route:
+
+```bash
+python -m pytest -q mechanics/titan/parts/core-memory-posture/tests mechanics/titan/parts/closeout-and-digest-posture/tests mechanics/titan/parts/specialized-policy/tests
+python scripts/release_check.py
+```
+
 ## Stop-lines preserved
 
 - No proof, runtime, role, route, source owner acceptance, or stronger-owner

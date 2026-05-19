@@ -3,7 +3,9 @@
 ## Current
 
 Keep Titan recall and remembrance memory posture source-linked, reviewable, and
-routed to stronger owners.
+routed to stronger owners. Runnable Titan contract artifacts now belong to the
+nearest functioning part, so future additions should start in `parts/<part>/`
+rather than package-level `schemas/`, `examples`, or `tests`.
 
 ## When Time Comes
 

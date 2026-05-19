@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://aoa.local/mechanics/titan/schemas/titan_audit_memory_candidate.schema.json",
+  "$id": "https://aoa.local/mechanics/titan/parts/specialized-policy/schemas/titan_audit_memory_candidate.schema.json",
   "title": "Titan audit memory candidate",
   "type": "object",
   "required": [

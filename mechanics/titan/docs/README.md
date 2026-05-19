@@ -19,15 +19,16 @@ persist private data, or replace owner-repo truth.
 
 Titan docs currently pair with:
 
-- `mechanics/titan/schemas/titan_remembrance_record.schema.json`
-- `mechanics/titan/examples/titan_remembrance_record.example.json`
-- `mechanics/titan/examples/titan_audit_memory_candidate.example.json`
-- `mechanics/titan/tests/test_titan_remembrance_record.py`
-- `mechanics/titan/tests/test_titan_candidate_schemas.py`
-- `mechanics/titan/tests/test_titan_audit_memory_candidate.py`
+- `mechanics/titan/parts/core-memory-posture/schemas/titan_remembrance_record.schema.json`
+- `mechanics/titan/parts/core-memory-posture/examples/titan_remembrance_record.example.json`
+- `mechanics/titan/parts/closeout-and-digest-posture/examples/titan_bridge_memory_candidate.example.json`
+- `mechanics/titan/parts/specialized-policy/examples/titan_audit_memory_candidate.example.json`
+- `mechanics/titan/parts/core-memory-posture/tests`
+- `mechanics/titan/parts/closeout-and-digest-posture/tests`
+- `mechanics/titan/parts/specialized-policy/tests`
 
-When a Titan source family changes, keep source refs in examples and tests
-aligned with this district.
+When a Titan source family changes, keep source refs in part-local examples,
+schemas, and tests aligned with this district.
 
 ## Stop-Lines
 

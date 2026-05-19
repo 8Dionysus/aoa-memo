@@ -31,3 +31,10 @@ def test_mechanic_artifact_inventory_covers_package_local_artifacts() -> None:
         for artifact in agon["artifacts"]
         if artifact.get("scope") == "part"
     } >= {"prebinding-and-candidate-intake", "bridge-and-evidence-seams"}
+    titan = next(package for package in inventory["packages"] if package["slug"] == "titan")
+    assert {artifact["scope"] for artifact in titan["artifacts"]} == {"part"}
+    assert {
+        artifact["part_slug"]
+        for artifact in titan["artifacts"]
+        if artifact.get("scope") == "part"
+    } == {"core-memory-posture", "closeout-and-digest-posture", "specialized-policy"}

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://aoa.local/mechanics/titan/schemas/titan_remembrance_record.schema.json",
+  "$id": "https://aoa.local/mechanics/titan/parts/core-memory-posture/schemas/titan_remembrance_record.schema.json",
   "title": "Titan Remembrance Record",
   "description": "Titan remembrance records preserve memory candidates with explicit provenance. Memory remains a route to source, not proof.",
   "oneOf": [

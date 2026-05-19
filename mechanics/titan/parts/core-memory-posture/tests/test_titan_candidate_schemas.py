@@ -6,7 +6,7 @@ from pathlib import Path
 from jsonschema import Draft202012Validator
 
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
+REPO_ROOT = Path(__file__).resolve().parents[5]
 
 
 def load_json(relative_path: str) -> dict:
@@ -16,7 +16,7 @@ def load_json(relative_path: str) -> dict:
 
 
 def validator(schema_name: str) -> Draft202012Validator:
-    schema = load_json(f"mechanics/titan/schemas/{schema_name}")
+    schema = load_json(f"mechanics/titan/parts/core-memory-posture/schemas/{schema_name}")
     Draft202012Validator.check_schema(schema)
     return Draft202012Validator(schema)
 
@@ -26,7 +26,9 @@ def error_messages(schema_name: str, payload: dict) -> list[str]:
 
 
 def test_titan_memory_candidate_requires_time_boundary_and_risk_pair() -> None:
-    payload = load_json("mechanics/titan/examples/titan_memory_candidate.example.json")
+    payload = load_json(
+        "mechanics/titan/parts/core-memory-posture/examples/titan_memory_candidate.example.json"
+    )
     assert error_messages("titan_memory_candidate.schema.json", payload) == []
 
     missing_time_boundary = dict(payload)
@@ -58,16 +60,5 @@ def test_titan_writeback_candidate_requires_owner_surface_and_retention_risk() -
     payload.pop("owner_surface")
     assert any("owner_surface" in message for message in error_messages(
         "titan_memory_writeback_candidate.schema.json",
-        payload,
-    ))
-
-
-def test_titan_bridge_memory_candidate_constrains_field_types() -> None:
-    payload = load_json("mechanics/titan/examples/titan_bridge_memory_candidate.example.json")
-    assert error_messages("titan_bridge_memory_candidate.schema.json", payload) == []
-
-    payload["session_id"] = {"not": "a-string"}
-    assert any("is not of type 'string'" in message for message in error_messages(
-        "titan_bridge_memory_candidate.schema.json",
         payload,
     ))

@@ -7,13 +7,13 @@ from pathlib import Path
 from jsonschema import Draft202012Validator
 
 
-ROOT = Path(__file__).resolve().parents[3]
-TITAN_ROOT = ROOT / "mechanics" / "titan"
+ROOT = Path(__file__).resolve().parents[5]
+PART_ROOT = ROOT / "mechanics" / "titan" / "parts" / "specialized-policy"
 
 
 def validator() -> Draft202012Validator:
     schema = json.loads(
-        (TITAN_ROOT / "schemas" / "titan_audit_memory_candidate.schema.json").read_text(
+        (PART_ROOT / "schemas" / "titan_audit_memory_candidate.schema.json").read_text(
             encoding="utf-8"
         )
     )
@@ -41,7 +41,7 @@ def test_titan_audit_memory_candidate_accepts_policy_required_owner_route_hint()
 
 def test_titan_audit_memory_candidate_example_matches_schema() -> None:
     payload = json.loads(
-        (TITAN_ROOT / "examples" / "titan_audit_memory_candidate.example.json").read_text(
+        (PART_ROOT / "examples" / "titan_audit_memory_candidate.example.json").read_text(
             encoding="utf-8"
         )
     )

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://8dionysus.github.io/mechanics/titan/schemas/titan_closeout_candidate.schema.json",
+  "$id": "https://8dionysus.github.io/mechanics/titan/parts/closeout-and-digest-posture/schemas/titan_closeout_candidate.schema.json",
   "title": "Titan Closeout Memory Candidate",
   "type": "object",
   "required": [

@@ -17,6 +17,12 @@ This active part belongs to `mechanics/titan/` and materializes the matching row
 
 keeps audit, personality, and swarm memory posture reviewable
 
+## Artifact Surfaces
+
+- `schemas/`
+- `examples/`
+- `tests/`
+
 ## Next Route
 
 Use `../../OWNER_MAP.md` for stronger owner routing and `../../PROVENANCE.md` for placement history.

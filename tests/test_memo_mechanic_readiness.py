@@ -96,6 +96,13 @@ def test_memo_mechanic_readiness_covers_all_packages() -> None:
         assert {"proof", "runtime"}.issubset(stop_line_terms)
         assert {"role", "route", "source owner", "authority"} & stop_line_terms
 
+    titan = packages["titan"]
+    assert titan["artifacts"]["test_dirs"] == [
+        "mechanics/titan/parts/closeout-and-digest-posture/tests",
+        "mechanics/titan/parts/core-memory-posture/tests",
+        "mechanics/titan/parts/specialized-policy/tests",
+    ]
+
 
 def test_memo_mechanic_readiness_rejects_untested_local_artifacts() -> None:
     payload = build_readiness()
