@@ -125,8 +125,8 @@ config, generated companions, scripts, tests, manifests, or questbook surfaces
 between root technical districts and mechanic-local homes.
 
 Use `python scripts/build_mechanic_artifact_inventory.py --check` and
-`python scripts/validate_mechanic_artifact_inventory.py` when package-local
-artifact homes change.
+`python scripts/validate_mechanic_artifact_inventory.py` when package-local or
+part-local artifact homes change.
 
 Use `python scripts/validate_memo_mechanic_parts.py` when `PARTS.md` files or
 `parts/` contracts change so functioning parts keep a consistent Active Parts
@@ -147,7 +147,8 @@ change so OS Abyss can inspect what was landed, validated, and bounded.
 
 Use `python scripts/build_memo_mechanic_readiness.py --check` and
 `python scripts/validate_memo_mechanic_readiness.py` when package cards,
-owner maps, landing logs, validation routes, or package-local artifacts change
+owner maps, landing logs, validation routes, or package-local/part-local
+artifacts change
 so OS Abyss can inspect whether every mechanic remains ready.
 
 ## Validation

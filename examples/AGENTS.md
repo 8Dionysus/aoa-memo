@@ -39,7 +39,7 @@ Mechanic-owned examples live under their package lane:
 - `mechanics/checkpoint/examples/` for inquiry checkpoint, checkpoint-to-memory, approval, health, and checkpoint improvement examples
 - `mechanics/writeback/examples/` for quest chronicle, self-agency, rollback, and revision-ledger examples
 - `mechanics/recurrence-support/examples/` for witness trace examples
-- `mechanics/agon/examples/`, `mechanics/titan/examples/`, and the other mechanic package examples for their local contracts
+- `mechanics/agon/parts/<part>/examples/`, `mechanics/titan/examples/`, and the other mechanic package examples for their local contracts
 
 ## Editing posture
 

@@ -1,0 +1,93 @@
+from __future__ import annotations
+
+import importlib.util
+import json
+import pathlib
+import subprocess
+import sys
+
+from jsonschema import Draft202012Validator
+
+ROOT = pathlib.Path(__file__).resolve().parents[5]
+OUT = ROOT / 'mechanics/agon/parts/bridge-and-evidence-seams/generated/agon_slc_memo_bridge_registry.min.json'
+ITEM_KEY = 'memo_intakes'
+EXPECTED_COUNT = 7
+UNIQUE_KEY_FIELD = 'intake_id'
+REQUIRED_STOP_LINES = ['no_live_verdict_authority', 'no_durable_scar_write', 'no_retention_execution', 'no_rank_or_trust_mutation', 'no_tree_of_sophia_promotion', 'no_kag_promotion', 'no_hidden_scheduler_action', 'no_assistant_contestant_drift', 'no_auto_doctrine_rewrite', 'no_school_as_authority', 'no_lineage_as_canon', 'no_campaign_as_live_arena', 'no_center_takeover_of_owner_truth']
+REQUIRED_FORBIDDEN = ['live_verdict_authority', 'durable_scar_write', 'retention_execution', 'rank_mutation', 'trust_mutation', 'tree_of_sophia_promotion', 'kag_promotion', 'hidden_scheduler_action', 'assistant_contestant_drift', 'auto_doctrine_rewrite', 'school_authority', 'lineage_canonization', 'live_campaign_arena']
+ENTRY_SCHEMA = ROOT / 'mechanics/agon/parts/bridge-and-evidence-seams/schemas/agon-slc-memo-bridge.schema.json'
+REGISTRY_SCHEMA = ROOT / 'mechanics/agon/parts/bridge-and-evidence-seams/schemas/agon-slc-memo-bridge-registry.schema.json'
+
+
+def load(path: pathlib.Path):
+    return json.loads(path.read_text(encoding='utf-8'))
+
+
+def test_wave16_registry_shape():
+    reg = load(OUT)
+    assert reg['wave'] == 'XVI'
+    assert reg['wave_name'] == 'Schools / Lineages / Campaigns'
+    assert reg['runtime_posture'] == 'candidate_only'
+    assert reg['count'] == EXPECTED_COUNT
+    assert len(reg[ITEM_KEY]) == EXPECTED_COUNT
+    assert len(reg['digest']) == 64
+    keys = set()
+    for item in reg[ITEM_KEY]:
+        assert item['wave'] == 'XVI'
+        assert item['live_protocol'] is False
+        assert item['authority_posture'] == 'non_authority'
+        assert item['review_status'] == 'candidate_only'
+        assert item.get('assistant_contestant_allowed', False) is False
+        assert set(REQUIRED_STOP_LINES) <= set(item['stop_lines'])
+        assert set(REQUIRED_FORBIDDEN) <= set(item['forbidden_effects'])
+        keys.add(item[UNIQUE_KEY_FIELD])
+    assert len(keys) == EXPECTED_COUNT
+
+
+def test_builder_check_and_validator():
+    assert subprocess.run([sys.executable, str(ROOT / 'mechanics/agon/parts/bridge-and-evidence-seams/scripts/build_agon_slc_memo_bridge_registry.py'), '--check'], cwd=ROOT).returncode == 0
+    assert subprocess.run([sys.executable, str(ROOT / 'mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_slc_memo_bridge_registry.py')], cwd=ROOT).returncode == 0
+
+
+def test_builder_reports_missing_registry_id_without_keyerror(tmp_path):
+    spec = importlib.util.spec_from_file_location(
+        'build_agon_slc_memo_bridge_registry',
+        ROOT / 'mechanics/agon/parts/bridge-and-evidence-seams/scripts/build_agon_slc_memo_bridge_registry.py',
+    )
+    module = importlib.util.module_from_spec(spec)
+    assert spec.loader is not None
+    spec.loader.exec_module(module)
+
+    source = load(module.SRC)
+    source.pop('registry_id')
+    bad_source = tmp_path / 'agon_slc_memo_bridge.seed.json'
+    bad_source.write_text(json.dumps(source), encoding='utf-8')
+
+    module.SRC = bad_source
+    try:
+        module.build()
+    except module.BuildError as exc:
+        assert str(exc) == 'source registry_id must be a non-empty string'
+    else:
+        raise AssertionError('builder accepted missing registry_id')
+
+
+def test_schemas_constrain_registry_and_entries():
+    entry_schema = load(ENTRY_SCHEMA)
+    registry_schema = load(REGISTRY_SCHEMA)
+    entry_validator = Draft202012Validator(entry_schema)
+    registry_validator = Draft202012Validator(registry_schema)
+    reg = load(OUT)
+
+    assert not entry_validator.is_valid({})
+    assert not registry_validator.is_valid({})
+    registry_validator.validate(reg)
+    for item in reg[ITEM_KEY]:
+        entry_validator.validate(item)
+
+    bad_item = dict(reg[ITEM_KEY][0])
+    bad_item['stop_lines'] = []
+    assert not entry_validator.is_valid(bad_item)
+    bad_item = dict(reg[ITEM_KEY][0])
+    bad_item['live_protocol'] = 'false'
+    assert not entry_validator.is_valid(bad_item)

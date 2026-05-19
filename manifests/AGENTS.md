@@ -16,15 +16,18 @@ That empty state is machine-checked by
 `config/root_technical_districts.json` `manifest_policy`, which must match the
 root `manifests.allowed_files` list.
 
-Mechanic-owned manifests live under the owning package. The Agon recurrence
-manifests and their hook bindings live under:
+Mechanic-owned manifests live under the owning package or nearest functioning
+part. Agon recurrence manifests and their hook bindings live under:
 
-- `mechanics/agon/manifests/recurrence/`
-- `mechanics/agon/manifests/recurrence/hooks/`
+- `mechanics/agon/parts/prebinding-and-candidate-intake/manifests/recurrence/`
+- `mechanics/agon/parts/bridge-and-evidence-seams/manifests/recurrence/`
+- `mechanics/agon/parts/wave-landing-and-stop-lines/manifests/recurrence/`
 
 Keep `component.agon.` records aligned with `mechanics/agon/docs/`,
-`mechanics/agon/config/`, `mechanics/agon/generated/`,
-`mechanics/agon/scripts/`, and `mechanics/agon/tests/`.
+the relevant `mechanics/agon/parts/<part>/config/`,
+`mechanics/agon/parts/<part>/generated/`,
+`mechanics/agon/parts/<part>/scripts/`, and
+`mechanics/agon/parts/<part>/tests/`.
 
 ## Boundaries
 
@@ -41,7 +44,8 @@ broad memo gate. When mechanic-local manifests change, run the owning mechanic
 validator first:
 
 ```bash
-python mechanics/agon/scripts/validate_agon_memo_prebindings.py
+python mechanics/agon/parts/prebinding-and-candidate-intake/scripts/validate_agon_memo_prebindings.py
+python -m pytest -q mechanics/agon/parts/wave-landing-and-stop-lines/tests
 python scripts/validate_memo.py
 python scripts/release_check.py
 ```

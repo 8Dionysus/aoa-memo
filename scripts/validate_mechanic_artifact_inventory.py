@@ -60,6 +60,7 @@ def validate_payload(payload: dict[str, Any]) -> list[str]:
             path_ref = artifact.get("path")
             district = artifact.get("district")
             package_ref = artifact.get("package_path")
+            scope = artifact.get("scope")
             if not isinstance(path_ref, str) or not path_ref:
                 issues.append(f"{GENERATED_PATH.relative_to(REPO_ROOT)} package {slug} artifact must name path")
                 continue
@@ -72,8 +73,31 @@ def validate_payload(payload: dict[str, Any]) -> list[str]:
                 continue
             if district not in ARTIFACT_DIRS:
                 issues.append(f"{path_ref}: artifact has unsupported district {district!r}")
-            elif parts[2] != district:
-                issues.append(f"{path_ref}: artifact district must match path")
+            if scope not in {"package", "part"}:
+                issues.append(f"{path_ref}: artifact must name scope package or part")
+                continue
+            if scope == "package":
+                if parts[2] != district:
+                    issues.append(f"{path_ref}: package artifact district must match path")
+                if artifact.get("owner_path") != f"mechanics/{slug}":
+                    issues.append(f"{path_ref}: package artifact owner_path must be mechanics/{slug}")
+                if "part_slug" in artifact or "part_path" in artifact:
+                    issues.append(f"{path_ref}: package artifact must not name part fields")
+            elif scope == "part":
+                if len(parts) < 6 or parts[2] != "parts" or parts[4] != district:
+                    issues.append(f"{path_ref}: part artifact must live under mechanics/{slug}/parts/<part>/{district}/")
+                    continue
+                part_slug = parts[3]
+                if artifact.get("part_slug") != part_slug:
+                    issues.append(f"{path_ref}: part_slug must match path")
+                if artifact.get("part_path") != f"parts/{part_slug}":
+                    issues.append(f"{path_ref}: part_path must match path")
+                if artifact.get("owner_path") != f"mechanics/{slug}/parts/{part_slug}":
+                    issues.append(f"{path_ref}: part artifact owner_path must match part path")
+                part_root = REPO_ROOT / "mechanics" / slug / "parts" / part_slug
+                for required in ("README.md", "CONTRACT.md", "VALIDATION.md"):
+                    if not (part_root / required).is_file():
+                        issues.append(f"{path_ref}: part artifact owner missing {required}")
             if package_ref != "/".join(parts[2:]):
                 issues.append(f"{path_ref}: package_path must be path relative to mechanics/{slug}/")
             if not (REPO_ROOT / path_ref).is_file():

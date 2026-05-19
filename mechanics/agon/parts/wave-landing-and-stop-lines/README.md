@@ -23,6 +23,12 @@ This active part belongs to `mechanics/agon/` and materializes the matching row 
 
 keeps landing history reviewable without promoting it to source Agon law
 
+## Technical Homes
+
+- `manifests/` owns wave recurrence components and hook bindings.
+- `tests/` protects manifest references so wave landing surfaces cannot point
+  back to old package-level artifact homes.
+
 ## Next Route
 
 Use `../../OWNER_MAP.md` for stronger owner routing and `../../PROVENANCE.md` for placement history.

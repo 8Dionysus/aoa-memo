@@ -19,7 +19,15 @@ def test_mechanic_artifact_inventory_covers_package_local_artifacts() -> None:
     inventory = build_inventory()
 
     assert inventory["artifact_dirs"] == list(ARTIFACT_DIRS)
+    assert inventory["schema_version"] == "aoa_memo_mechanic_artifact_inventory_v2"
     assert inventory["counts"]["packages_with_artifacts"] >= 10
     assert inventory["counts"]["artifacts"] > 100
     assert any(package["slug"] == "agon" and package["artifact_count"] > 0 for package in inventory["packages"])
     assert any(package["slug"] == "writeback" and package["artifact_count"] > 0 for package in inventory["packages"])
+    agon = next(package for package in inventory["packages"] if package["slug"] == "agon")
+    assert any(artifact["scope"] == "part" for artifact in agon["artifacts"])
+    assert {
+        artifact["part_slug"]
+        for artifact in agon["artifacts"]
+        if artifact.get("scope") == "part"
+    } >= {"prebinding-and-candidate-intake", "bridge-and-evidence-seams"}

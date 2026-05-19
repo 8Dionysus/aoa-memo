@@ -22,6 +22,12 @@ This active part belongs to `mechanics/agon/` and materializes the matching row 
 
 keeps candidate memory explicit before any stronger Agon write
 
+## Technical Homes
+
+- `config/`, `generated/`, `schemas/`, `scripts/`, and `tests/` own memo
+  prebinding and retention-rank candidate intake companions.
+- `manifests/` owns recurrence components and hook bindings for this part.
+
 ## Next Route
 
 Use `../../OWNER_MAP.md` for stronger owner routing and `../../PROVENANCE.md` for placement history.

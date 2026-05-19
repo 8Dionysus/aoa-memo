@@ -152,7 +152,19 @@ def build_package_readiness(package: dict[str, Any], artifacts: dict[str, Any]) 
     )
     non_test_artifact_count = sum(artifact_counts[district] for district in NON_TEST_ARTIFACT_DIRS)
     test_artifact_count = artifact_counts["tests"]
-    local_test_ref = f"python -m pytest -q mechanics/{slug}/tests"
+    artifact_entries = artifacts.get("artifacts", [])
+    if not isinstance(artifact_entries, list):
+        artifact_entries = []
+    test_dirs = sorted(
+        {
+            str(Path(artifact["path"]).parent)
+            for artifact in artifact_entries
+            if isinstance(artifact, dict)
+            and artifact.get("district") == "tests"
+            and isinstance(artifact.get("path"), str)
+        }
+    )
+    local_test_refs = [f"python -m pytest -q {test_dir}" for test_dir in test_dirs]
 
     checks = {
         "package-surfaces": all(package_files.values()),
@@ -185,7 +197,7 @@ def build_package_readiness(package: dict[str, Any], artifacts: dict[str, Any]) 
         "landing-log": "python scripts/release_check.py" in landing_log or "python scripts/release_check.py" in agents,
         "validation-route": all(ref in validation_refs for ref in REQUIRED_VALIDATION_REFS),
         "artifact-test-coverage": non_test_artifact_count == 0 or test_artifact_count > 0,
-        "local-test-route": test_artifact_count == 0 or local_test_ref in validation_text,
+        "local-test-route": test_artifact_count == 0 or all(test_dir in validation_text for test_dir in test_dirs),
         "stronger-owner-stop-lines": (
             {"proof", "runtime"}.issubset(set(stop_line_terms))
             and bool({"role", "route", "source owner", "authority"} & set(stop_line_terms))
@@ -211,11 +223,12 @@ def build_package_readiness(package: dict[str, Any], artifacts: dict[str, Any]) 
             "districts": artifact_districts,
             "non_test_count": non_test_artifact_count,
             "test_count": test_artifact_count,
+            "test_dirs": test_dirs,
         },
         "package_files": package_files,
         "readme_headings": readme_headings,
         "validation_refs": validation_refs,
-        "local_test_ref": local_test_ref if test_artifact_count else None,
+        "local_test_refs": local_test_refs,
         "stronger_owner_refs": owner_refs,
         "stop_line_terms": stop_line_terms,
         "checks": checks,

@@ -25,8 +25,8 @@ Keep the current split clear:
   to explicit generated-family contracts
 - `build_mechanic_artifact_inventory.py` and
   `validate_mechanic_artifact_inventory.py` keep
-  `generated/mechanic_artifacts.min.json` aligned with package-local mechanic
-  artifact homes
+  `generated/mechanic_artifacts.min.json` aligned with package-local and
+  part-local mechanic artifact homes
 - quest projection building belongs to `mechanics/questbook/scripts/build_quest_surfaces.py`
 - `validate_nested_agents.py` checks that local guidance files stay present and explicit
 - `validate_agents_mesh.py`, `build_agents_mesh_index.py`, and `validate_agents_mesh_index.py` keep the source-backed AGENTS mesh aligned with current route cards
@@ -47,7 +47,7 @@ Keep the current split clear:
 - `build_memo_mechanic_readiness.py` and
   `validate_memo_mechanic_readiness.py` keep a compact readiness matrix for
   every mechanic package, tying package cards, owner maps, stop-lines,
-  validation routes, and package-local artifacts together
+  validation routes, and package-local or part-local artifacts together
 - `config/root_technical_districts.json` groups every root script into a
   `script_families` contract so root scripts stay release-oriented, covered,
   and owned rather than merely allowed by path
@@ -55,7 +55,7 @@ Keep the current split clear:
 Mechanic-owned generators and validators live under the owning package, for
 example `mechanics/consumer-handoff/scripts/generate_kag_export.py`,
 `mechanics/writeback/scripts/generate_runtime_writeback_targets.py`, and
-`mechanics/agon/scripts/validate_agon_memo_prebindings.py`.
+`mechanics/agon/parts/prebinding-and-candidate-intake/scripts/validate_agon_memo_prebindings.py`.
 
 ## Editing posture
 

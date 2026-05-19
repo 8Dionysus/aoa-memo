@@ -80,6 +80,11 @@ lift to `aoa-kag`, authored canon to `Tree-of-Sophia`, role authority to
 ## Functioning Parts
 
 The active part map is [PARTS](PARTS.md). Source docs live in [docs](docs/).
+Runnable Agon companions now live under the nearest `parts/<part>/` home:
+prebinding and retention-rank candidate intake under
+`parts/prebinding-and-candidate-intake/`, bridge/evidence registries under
+`parts/bridge-and-evidence-seams/`, and wave recurrence manifests under
+`parts/wave-landing-and-stop-lines/`.
 
 ## Historical Provenance
 

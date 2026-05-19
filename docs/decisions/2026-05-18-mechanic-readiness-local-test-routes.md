@@ -61,7 +61,7 @@ Run:
 ```bash
 python scripts/build_memo_mechanic_readiness.py --check
 python scripts/validate_memo_mechanic_readiness.py
-python -m pytest -q mechanics/agon/tests
+python -m pytest -q mechanics/agon/parts/prebinding-and-candidate-intake/tests mechanics/agon/parts/bridge-and-evidence-seams/tests
 python -m pytest -q tests/test_memo_mechanic_readiness.py
 python scripts/release_check.py
 ```

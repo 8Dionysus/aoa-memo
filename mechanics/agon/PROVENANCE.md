@@ -7,6 +7,7 @@ Use active surfaces first:
 - [PARTS](PARTS.md)
 - [OWNER_MAP](OWNER_MAP.md)
 - [docs](docs/)
+- [parts](parts/)
 
 Agon docs were first moved from flat `docs/AGON_*.md` files into the
 transitional `mechanics/agon/docs/` district. They now live under
@@ -20,3 +21,8 @@ Agon quest follow-through notes were later moved from flat root `quests/` into
 `quests/agon/ready/` because Questbook keeps public obligations in a
 lane-first root item store while Agon docs and validators remain under
 `mechanics/agon/`.
+
+Agon runnable artifacts later moved from package-level technical homes into
+the nearest active part under `mechanics/agon/parts/`. Use those part-local
+homes first for config, examples, generated registries, schemas, scripts,
+tests, manifests, and hook bindings.
