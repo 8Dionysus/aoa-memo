@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from mechanic_artifact_inventory_common import build_inventory
+from mechanic_artifact_inventory_common import ARTIFACT_DIRS, build_inventory
 from memo_mechanics_common import (
     PACKAGE_REQUIRED_FILES,
     README_HEADINGS,
@@ -35,8 +35,10 @@ READINESS_CHECKS = (
     "provenance",
     "landing-log",
     "validation-route",
+    "artifact-test-coverage",
     "stronger-owner-stop-lines",
 )
+NON_TEST_ARTIFACT_DIRS = tuple(district for district in ARTIFACT_DIRS if district != "tests")
 CORE_OWNER_REFS = ("aoa-memo", "aoa-evals", "abyss-stack")
 KNOWN_STRONGER_OWNER_REFS = (
     "Agents-of-Abyss",
@@ -136,14 +138,19 @@ def build_package_readiness(package: dict[str, Any], artifacts: dict[str, Any]) 
         if _text_has(route_text, ref)
     ]
     stop_line_terms = _section_terms("\n".join((readme, owner_map, landing_log)))
+    artifact_counts_raw = artifacts.get("artifact_counts", {})
+    if not isinstance(artifact_counts_raw, dict):
+        artifact_counts_raw = {}
+    artifact_counts = {
+        district: int(artifact_counts_raw.get(district, 0) or 0)
+        for district in ARTIFACT_DIRS
+    }
     artifact_count = int(artifacts.get("artifact_count", 0))
     artifact_districts = sorted(
-        {
-            artifact["district"]
-            for artifact in artifacts.get("artifacts", [])
-            if isinstance(artifact, dict) and isinstance(artifact.get("district"), str)
-        }
+        district for district, count in artifact_counts.items() if count > 0
     )
+    non_test_artifact_count = sum(artifact_counts[district] for district in NON_TEST_ARTIFACT_DIRS)
+    test_artifact_count = artifact_counts["tests"]
 
     checks = {
         "package-surfaces": all(package_files.values()),
@@ -175,6 +182,7 @@ def build_package_readiness(package: dict[str, Any], artifacts: dict[str, Any]) 
         ),
         "landing-log": "python scripts/release_check.py" in landing_log or "python scripts/release_check.py" in agents,
         "validation-route": all(ref in validation_refs for ref in REQUIRED_VALIDATION_REFS),
+        "artifact-test-coverage": non_test_artifact_count == 0 or test_artifact_count > 0,
         "stronger-owner-stop-lines": (
             {"proof", "runtime"}.issubset(set(stop_line_terms))
             and bool({"role", "route", "source owner", "authority"} & set(stop_line_terms))
@@ -196,7 +204,10 @@ def build_package_readiness(package: dict[str, Any], artifacts: dict[str, Any]) 
         },
         "artifacts": {
             "count": artifact_count,
+            "counts": artifact_counts,
             "districts": artifact_districts,
+            "non_test_count": non_test_artifact_count,
+            "test_count": test_artifact_count,
         },
         "package_files": package_files,
         "readme_headings": readme_headings,
@@ -289,6 +300,10 @@ def validate_payload(payload: dict[str, Any]) -> list[str]:
         for check in READINESS_CHECKS:
             if checks.get(check) is not True:
                 issues.append(f"mechanics/{slug}: readiness check failed: {check}")
+        if checks.get("artifact-test-coverage") is not True:
+            issues.append(
+                f"mechanics/{slug}: package-local non-test artifacts require at least one package-local test"
+            )
         owner_refs = package.get("stronger_owner_refs")
         if not isinstance(owner_refs, list) or len(owner_refs) < 3:
             issues.append(f"mechanics/{slug}: must name at least three stronger owner refs")

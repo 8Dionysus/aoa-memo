@@ -12,6 +12,9 @@ Tracking starts with the community-docs baseline for this repository.
 - Add a package-local retention regression boundary so retention docs,
   schemas, examples, and stronger-owner stop-lines are tested inside
   `mechanics/retention/`.
+- Add readiness artifact-test coverage so a mechanic with package-local
+  config, examples, generated companions, manifests, schemas, or scripts
+  cannot be marked OS Abyss ready without a package-local regression test.
 - Add a source-authored topology spine with `DESIGN.md`, `DESIGN.AGENTS.md`,
   `docs/README.md`, `docs/ROOT_SURFACE_LAW.md`, and `docs/decisions/` so
   future docs, agent-lane, and placement cleanup can route through explicit
