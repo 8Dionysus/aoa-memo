@@ -42,6 +42,8 @@ Every memo mechanic package must contain:
 - `PROVENANCE.md`
 - `LANDING_LOG.md`
 - `ROADMAP.md`
+- `parts/AGENTS.md`
+- `parts/README.md`
 - `docs/AGENTS.md`
 - `docs/`
 - `legacy/AGENTS.md`
@@ -70,6 +72,8 @@ The package `README.md` is the mechanic card. It must include:
 - Generated companions summarize source maps and must be rebuilt from source.
 - A mechanic package must name an operation, not only a topic, owner, wave, or
   file family.
+- A mechanic package must materialize active rows from `PARTS.md` under
+  `parts/<part-slug>/` with `README.md`, `CONTRACT.md`, and `VALIDATION.md`.
 - Keep old flat `docs/*.md` paths out of active references once a mechanic owns
   the surface.
 - If a move becomes runtime, proof, role authority, route implementation, KAG

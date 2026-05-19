@@ -60,6 +60,7 @@ expectation.
 | [2026-05-18-root-test-family-contracts](2026-05-18-root-test-family-contracts.md) | make root tests and public fixtures family-owned and release-checkable |
 | [2026-05-18-mechanic-artifact-inventory](2026-05-18-mechanic-artifact-inventory.md) | add a generated inventory for package-local mechanic artifacts |
 | [2026-05-18-mechanic-parts-shape-validator](2026-05-18-mechanic-parts-shape-validator.md) | make functioning mechanic parts shape release-checkable |
+| [2026-05-18-mechanic-physical-parts](2026-05-18-mechanic-physical-parts.md) | materialize each active mechanic part as a physical contract and validation node |
 | [2026-05-18-mechanic-readiness-matrix](2026-05-18-mechanic-readiness-matrix.md) | add a generated readiness matrix for all memo mechanic packages |
 | [2026-05-18-mechanic-readiness-artifact-test-coverage](2026-05-18-mechanic-readiness-artifact-test-coverage.md) | require package-local tests for mechanics with package-local non-test artifacts |
 | [2026-05-18-mechanic-readiness-local-test-routes](2026-05-18-mechanic-readiness-local-test-routes.md) | require route-card visibility for package-local mechanic test commands |

@@ -33,7 +33,8 @@ Keep the current split clear:
 - `validate_docs_districts.py` keeps retired docs districts and moved flat docs
   from drifting back into active docs-root sprawl
 - `validate_memo_mechanic_parts.py` keeps package `PARTS.md` files in the
-  operation-first Active Parts plus Interface shape
+  operation-first Active Parts plus Interface shape and requires physical
+  `parts/<part>/README.md`, `CONTRACT.md`, and `VALIDATION.md` nodes
 - `build_memo_mechanic_cards.py` and `validate_memo_mechanic_cards.py` keep a
   compact generated route-card index aligned with package README mechanic cards
 - `build_memo_mechanic_owner_routes.py` and

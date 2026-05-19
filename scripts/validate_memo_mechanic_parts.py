@@ -17,6 +17,11 @@ ALLOWED_HEADERS = {
 LINK_PATTERN = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
 
 
+def part_slug(part_name: str) -> str:
+    slug = re.sub(r"[^a-z0-9]+", "-", part_name.lower()).strip("-")
+    return slug or "part"
+
+
 def split_table_row(line: str) -> list[str]:
     return [cell.strip() for cell in line.strip().strip("|").split("|")]
 
@@ -47,6 +52,10 @@ def validate_source_links(parts_path: Path, source_cell: str) -> list[str]:
     for target in LINK_PATTERN.findall(source_cell):
         if target.startswith(("http://", "https://", "#")):
             continue
+        if "#" in target:
+            target = target.split("#", 1)[0]
+        if not target:
+            continue
         target_path = (parts_path.parent / target).resolve()
         try:
             target_path.relative_to(REPO_ROOT)
@@ -55,6 +64,78 @@ def validate_source_links(parts_path: Path, source_cell: str) -> list[str]:
             continue
         if not target_path.exists():
             issues.append(f"{parts_path.relative_to(REPO_ROOT)} links missing source: {target}")
+    return issues
+
+
+def validate_markdown_links(markdown_path: Path) -> list[str]:
+    if not markdown_path.is_file():
+        return [f"{markdown_path.relative_to(REPO_ROOT)} is missing"]
+    return validate_source_links(markdown_path, markdown_path.read_text(encoding="utf-8"))
+
+
+def validate_parts_tree(slug: str, rows: list[str]) -> list[str]:
+    issues: list[str] = []
+    package_root = REPO_ROOT / "mechanics" / slug
+    parts_root = package_root / "parts"
+    rel_root = parts_root.relative_to(REPO_ROOT).as_posix()
+
+    root_agents = parts_root / "AGENTS.md"
+    root_readme = parts_root / "README.md"
+    for path in (root_agents, root_readme):
+        if not path.is_file():
+            issues.append(f"{path.relative_to(REPO_ROOT).as_posix()} is missing")
+        else:
+            issues.extend(validate_markdown_links(path))
+
+    root_readme_text = root_readme.read_text(encoding="utf-8") if root_readme.is_file() else ""
+
+    for row in rows:
+        cells = split_table_row(row)
+        if len(cells) != 3:
+            continue
+        part, _source_cell, contract = cells
+        slug_part = part_slug(part)
+        part_root = parts_root / slug_part
+        rel_part = part_root.relative_to(REPO_ROOT).as_posix()
+
+        if not part_root.is_dir():
+            issues.append(f"{rel_part}/ is missing for Active Parts row {part!r}")
+            continue
+
+        if f"{slug_part}/README.md" not in root_readme_text:
+            issues.append(f"{rel_root}/README.md must link part {slug_part}/README.md")
+
+        readme = part_root / "README.md"
+        contract_path = part_root / "CONTRACT.md"
+        validation = part_root / "VALIDATION.md"
+        for path in (readme, contract_path, validation):
+            if not path.is_file():
+                issues.append(f"{path.relative_to(REPO_ROOT).as_posix()} is missing")
+                continue
+            issues.extend(validate_markdown_links(path))
+
+        if readme.is_file():
+            readme_text = readme.read_text(encoding="utf-8")
+            first_line = readme_text.splitlines()[0] if readme_text.splitlines() else ""
+            if not first_line.startswith("# ") or part.lower() not in first_line.lower():
+                issues.append(f"{rel_part}/README.md title must name part {part!r}")
+            for required in ("CONTRACT.md", "VALIDATION.md"):
+                if required not in readme_text:
+                    issues.append(f"{rel_part}/README.md must link {required}")
+
+        if contract_path.is_file():
+            contract_text = contract_path.read_text(encoding="utf-8")
+            for heading in ("## Contract", "## Stop-lines"):
+                if heading not in contract_text:
+                    issues.append(f"{rel_part}/CONTRACT.md must include {heading}")
+            if contract not in contract_text:
+                issues.append(f"{rel_part}/CONTRACT.md must preserve the PARTS.md contract text")
+
+        if validation.is_file():
+            validation_text = validation.read_text(encoding="utf-8")
+            if "python scripts/validate_memo_mechanic_parts.py" not in validation_text:
+                issues.append(f"{rel_part}/VALIDATION.md must name validate_memo_mechanic_parts.py")
+
     return issues
 
 
@@ -107,6 +188,8 @@ def validate_parts_file(slug: str, docs: list[str]) -> list[str]:
     for doc in docs:
         if doc not in text:
             issues.append(f"{rel} must route active doc {doc}")
+
+    issues.extend(validate_parts_tree(slug, rows[2:]))
 
     return issues
 

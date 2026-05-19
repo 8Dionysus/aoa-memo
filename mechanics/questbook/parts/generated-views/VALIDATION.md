@@ -3,6 +3,7 @@
 Use:
 
 ```bash
+python scripts/validate_memo_mechanic_parts.py
 python mechanics/questbook/scripts/validate_quest_store.py
 python mechanics/questbook/scripts/build_quest_surfaces.py --check
 python scripts/validate_memo.py

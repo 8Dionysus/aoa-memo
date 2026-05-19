@@ -72,7 +72,7 @@ Each package README must include these headings in order:
 | `### Next route` | where implementation, proof, memory, runtime, role, KAG, or source meaning goes next |
 
 After the card, package README files should stay lightweight and route to
-`DIRECTION.md`, `PARTS.md`, `OWNER_MAP.md`, `PROVENANCE.md`,
+`DIRECTION.md`, `PARTS.md`, `parts/`, `OWNER_MAP.md`, `PROVENANCE.md`,
 `LANDING_LOG.md`, `ROADMAP.md`, `docs/`, and `legacy/`.
 
 ## Compass
@@ -105,6 +105,7 @@ surface that matches the work:
 | `AGENTS.md` | local route law, post-change review, closeout, validation |
 | `DIRECTION.md` | current operating contour |
 | `PARTS.md` | active functioning parts and source docs |
+| `parts/AGENTS.md` and `parts/` | physical part contracts for each active row in `PARTS.md` |
 | `OWNER_MAP.md` | memo role and stronger owner split |
 | `PROVENANCE.md` | active-first bridge to legacy placement and source receipts |
 | `LANDING_LOG.md` | checked landings, validation anchors, and stop-lines |
@@ -127,9 +128,10 @@ Use `python scripts/build_mechanic_artifact_inventory.py --check` and
 `python scripts/validate_mechanic_artifact_inventory.py` when package-local
 artifact homes change.
 
-Use `python scripts/validate_memo_mechanic_parts.py` when `PARTS.md` files
-change so functioning parts keep a consistent Active Parts table and Interface
-section.
+Use `python scripts/validate_memo_mechanic_parts.py` when `PARTS.md` files or
+`parts/` contracts change so functioning parts keep a consistent Active Parts
+table, Interface section, physical part directory, contract, and validation
+surface.
 
 Use `python scripts/build_memo_mechanic_cards.py --check` and
 `python scripts/validate_memo_mechanic_cards.py` when package cards change so

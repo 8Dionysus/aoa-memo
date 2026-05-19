@@ -108,6 +108,16 @@
       ]
     },
     {
+      "path": "mechanics/antifragility/parts/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "mechanics/antifragility/parts/",
+        "PARTS.md",
+        "OWNER_MAP.md",
+        "validate_memo_mechanic_parts.py"
+      ]
+    },
+    {
       "path": "mechanics/antifragility/docs/AGENTS.md",
       "min_lines": 25,
       "required_snippets": [
@@ -135,6 +145,16 @@
         "mechanics/agon/",
         "OWNER_MAP.md",
         "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/agon/parts/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "mechanics/agon/parts/",
+        "PARTS.md",
+        "OWNER_MAP.md",
+        "validate_memo_mechanic_parts.py"
       ]
     },
     {
@@ -168,6 +188,16 @@
       ]
     },
     {
+      "path": "mechanics/adoption/parts/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "mechanics/adoption/parts/",
+        "PARTS.md",
+        "OWNER_MAP.md",
+        "validate_memo_mechanic_parts.py"
+      ]
+    },
+    {
       "path": "mechanics/adoption/docs/AGENTS.md",
       "min_lines": 25,
       "required_snippets": [
@@ -195,6 +225,16 @@
         "mechanics/governance/",
         "OWNER_MAP.md",
         "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/governance/parts/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "mechanics/governance/parts/",
+        "PARTS.md",
+        "OWNER_MAP.md",
+        "validate_memo_mechanic_parts.py"
       ]
     },
     {
@@ -228,6 +268,16 @@
       ]
     },
     {
+      "path": "mechanics/shape-guard/parts/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "mechanics/shape-guard/parts/",
+        "PARTS.md",
+        "OWNER_MAP.md",
+        "validate_memo_mechanic_parts.py"
+      ]
+    },
+    {
       "path": "mechanics/shape-guard/docs/AGENTS.md",
       "min_lines": 25,
       "required_snippets": [
@@ -255,6 +305,16 @@
         "mechanics/checkpoint/",
         "OWNER_MAP.md",
         "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/checkpoint/parts/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "mechanics/checkpoint/parts/",
+        "PARTS.md",
+        "OWNER_MAP.md",
+        "validate_memo_mechanic_parts.py"
       ]
     },
     {
@@ -288,6 +348,16 @@
       ]
     },
     {
+      "path": "mechanics/readiness-boundary/parts/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "mechanics/readiness-boundary/parts/",
+        "PARTS.md",
+        "OWNER_MAP.md",
+        "validate_memo_mechanic_parts.py"
+      ]
+    },
+    {
       "path": "mechanics/readiness-boundary/docs/AGENTS.md",
       "min_lines": 25,
       "required_snippets": [
@@ -315,6 +385,16 @@
         "mechanics/consumer-handoff/",
         "OWNER_MAP.md",
         "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/consumer-handoff/parts/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "mechanics/consumer-handoff/parts/",
+        "PARTS.md",
+        "OWNER_MAP.md",
+        "validate_memo_mechanic_parts.py"
       ]
     },
     {
@@ -348,6 +428,16 @@
       ]
     },
     {
+      "path": "mechanics/operational-gate/parts/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "mechanics/operational-gate/parts/",
+        "PARTS.md",
+        "OWNER_MAP.md",
+        "validate_memo_mechanic_parts.py"
+      ]
+    },
+    {
       "path": "mechanics/operational-gate/docs/AGENTS.md",
       "min_lines": 25,
       "required_snippets": [
@@ -378,6 +468,16 @@
       ]
     },
     {
+      "path": "mechanics/recurrence-support/parts/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "mechanics/recurrence-support/parts/",
+        "PARTS.md",
+        "OWNER_MAP.md",
+        "validate_memo_mechanic_parts.py"
+      ]
+    },
+    {
       "path": "mechanics/recurrence-support/docs/AGENTS.md",
       "min_lines": 25,
       "required_snippets": [
@@ -405,6 +505,16 @@
         "mechanics/lineage-harvest/",
         "OWNER_MAP.md",
         "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/lineage-harvest/parts/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "mechanics/lineage-harvest/parts/",
+        "PARTS.md",
+        "OWNER_MAP.md",
+        "validate_memo_mechanic_parts.py"
       ]
     },
     {
@@ -478,6 +588,16 @@
       ]
     },
     {
+      "path": "mechanics/titan/parts/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "mechanics/titan/parts/",
+        "PARTS.md",
+        "OWNER_MAP.md",
+        "validate_memo_mechanic_parts.py"
+      ]
+    },
+    {
       "path": "mechanics/titan/docs/AGENTS.md",
       "min_lines": 35,
       "required_snippets": [
@@ -508,6 +628,16 @@
       ]
     },
     {
+      "path": "mechanics/writeback/parts/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "mechanics/writeback/parts/",
+        "PARTS.md",
+        "OWNER_MAP.md",
+        "validate_memo_mechanic_parts.py"
+      ]
+    },
+    {
       "path": "mechanics/writeback/docs/AGENTS.md",
       "min_lines": 25,
       "required_snippets": [
@@ -535,6 +665,16 @@
         "mechanics/retention/",
         "OWNER_MAP.md",
         "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/retention/parts/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "mechanics/retention/parts/",
+        "PARTS.md",
+        "OWNER_MAP.md",
+        "validate_memo_mechanic_parts.py"
       ]
     },
     {

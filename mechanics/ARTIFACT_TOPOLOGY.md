@@ -76,6 +76,9 @@ instead:
 
 ```text
 mechanics/<slug>/parts/<part>/
+  README.md
+  CONTRACT.md
+  VALIDATION.md
   config/
   generated/
   manifests/
@@ -88,6 +91,9 @@ mechanics/<slug>/parts/<part>/
 Package-local artifact homes must still follow the same stop-lines as the
 mechanic card. A package-local artifact does not become proof, routing logic,
 runtime storage, role authority, KAG substrate truth, or owner acceptance.
+Every active row in `mechanics/<slug>/PARTS.md` must now have a physical
+`parts/<part>/` node with a contract and validation surface before deeper
+part-local artifacts are added.
 
 ## Current Placement Rule
 
