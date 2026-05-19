@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Wave 2 adds one bounded memory object family for reviewed failure lessons.
+Stage 2 adds one bounded memory object family for reviewed failure lessons.
 
 This object family exists so the system can remember:
 
@@ -45,7 +45,7 @@ strongest reviewed chain available at the time of writeback:
 
 - `cluster_ref`
 - `candidate_ref`
-- `seed_ref`
+- `source_ref`
 - `object_ref`
 
 Optional `lineage_context` may preserve bounded owner-fit clues such as

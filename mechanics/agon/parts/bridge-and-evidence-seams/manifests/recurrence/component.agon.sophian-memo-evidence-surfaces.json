@@ -21,12 +21,12 @@
     "sdk_hidden_write"
   ],
   "observed_surfaces": [
-    "mechanics/agon/parts/bridge-and-evidence-seams/config/agon_sophian_memo_evidence.seed.json",
+    "mechanics/agon/parts/bridge-and-evidence-seams/config/agon_sophian_memo_evidence.source.json",
     "mechanics/agon/parts/bridge-and-evidence-seams/generated/agon_sophian_memo_evidence_registry.min.json",
     "mechanics/agon/parts/bridge-and-evidence-seams/schemas/agon-sophian-memo-evidence.schema.json",
     "mechanics/agon/parts/bridge-and-evidence-seams/schemas/agon-sophian-memo-evidence-registry.schema.json"
   ],
   "recurrence_posture": "observe_review_queue_only",
   "repo": "aoa-memo",
-  "wave": "XVIII"
+  "stage": "XVIII"
 }

@@ -26,7 +26,7 @@ Former flat docs-root surfaces were:
 The active technical artifacts now live under the nearest functioning part:
 
 - KAG/ToS bridge faces: `parts/kag-tos-bridge-handoff/{schemas,examples}/`
-- KAG source export donor, generator, and seed contract:
+- KAG source export donor, generator, and source contract:
   `parts/kag-source-export/{schemas,examples,generated,scripts}/`
 - Eval guardrail pack: `parts/eval-guardrail-handoff/{schemas,examples}/`
 - Playbook scope regression: `parts/playbook-scope-handoff/tests/`

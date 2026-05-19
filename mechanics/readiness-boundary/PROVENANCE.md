@@ -3,7 +3,7 @@
 Readiness-boundary surfaces previously lived across `docs/`, root `schemas/`,
 root `examples/`, and root `tests/`.
 
-That shape was useful while the boundary was a small wave-one note. It became
+That shape was useful while the boundary was a small stage-one note. It became
 too flat once the repository started moving mechanic-owned technical artifacts
 beside their operation owner.
 
@@ -24,7 +24,7 @@ Former active paths now route here:
 - `docs/MEMORY_READINESS_BOUNDARY.md`
 - `schemas/memory_readiness_boundary_contract.schema.json`
 - `examples/memory_readiness_boundary_contract.example.json`
-- `tests/test_wave1_boundary_contract.py`
+- `tests/test_stage1_boundary_contract.py`
 - `mechanics/readiness-boundary/schemas/memory_readiness_boundary_contract.schema.json`
 - `mechanics/readiness-boundary/examples/memory_readiness_boundary_contract.example.json`
 - `mechanics/readiness-boundary/tests/test_readiness_boundary_mechanic.py`

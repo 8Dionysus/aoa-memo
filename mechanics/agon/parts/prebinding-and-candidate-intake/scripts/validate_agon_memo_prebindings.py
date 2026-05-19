@@ -3,7 +3,7 @@ from __future__ import annotations
 import importlib.util, json, pathlib, sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[5]
-CONFIG = ROOT / 'mechanics/agon/parts/prebinding-and-candidate-intake/config/agon_memo_prebindings.seed.json'
+CONFIG = ROOT / 'mechanics/agon/parts/prebinding-and-candidate-intake/config/agon_memo_prebindings.source.json'
 GENERATED = ROOT / 'mechanics/agon/parts/prebinding-and-candidate-intake/generated/agon_memo_prebinding_registry.min.json'
 RECORD_KEY = 'prebindings'
 BUILDER = ROOT / 'mechanics/agon/parts/prebinding-and-candidate-intake/scripts/build_agon_memo_prebinding_registry.py'
@@ -22,7 +22,7 @@ def load(path: pathlib.Path):
 
 
 def load_builder():
-    spec = importlib.util.spec_from_file_location('wave7_builder', BUILDER)
+    spec = importlib.util.spec_from_file_location('stage7_builder', BUILDER)
     mod = importlib.util.module_from_spec(spec)
     assert spec.loader is not None
     spec.loader.exec_module(mod)

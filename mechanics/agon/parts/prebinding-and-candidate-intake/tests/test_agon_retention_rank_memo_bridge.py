@@ -15,7 +15,7 @@ def _load(path: Path):
     return module
 
 
-def test_generated_registry_matches_seed():
+def test_generated_registry_matches_source():
     builder = _load(ROOT / "mechanics/agon/parts/prebinding-and-candidate-intake/scripts/build_agon_retention_rank_memo_bridge_registry.py")
     generated = json.loads((ROOT / "mechanics/agon/parts/prebinding-and-candidate-intake/generated/agon_retention_rank_memo_bridge_registry.min.json").read_text(encoding="utf-8"))
     assert builder.build_registry() == generated

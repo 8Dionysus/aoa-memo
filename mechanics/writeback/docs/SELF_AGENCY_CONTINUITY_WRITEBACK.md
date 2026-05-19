@@ -5,7 +5,7 @@
 This note defines how `aoa-memo` supports self-agency continuity without
 becoming the policy owner, the runtime body, or the proof layer.
 
-Wave 9 continuity writeback stays memo-side support for bounded relaunch and
+Stage 9 continuity writeback stays memo-side support for bounded relaunch and
 cross-window legibility.
 It does not turn memory into identity proof, route authority, or silent retry
 sovereignty.

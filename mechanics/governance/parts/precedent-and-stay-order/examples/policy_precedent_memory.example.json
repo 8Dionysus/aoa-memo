@@ -11,7 +11,7 @@
   "id": "memo.policy_precedent.example.001",
   "kind": "memo.policy_precedent",
   "notes": [
-    "seed example for v0.8 polis governance"
+    "source example for v0.8 polis governance"
   ],
   "precedent_ref": "experience.policy_precedent.example.001",
   "retention_due_cycles": 3,

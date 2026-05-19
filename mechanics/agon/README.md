@@ -1,7 +1,7 @@
 # Agon Memo Mechanic
 
 Agon is the memo-side mechanic for preserving candidate memory, source refs,
-evidence packages, bridge posture, retention/rank memory boundaries, and wave
+evidence packages, bridge posture, retention/rank memory boundaries, and stage
 landing receipts around Agon without becoming the source Agon mechanic.
 
 ## Mechanic card
@@ -16,7 +16,7 @@ hold Agon candidate memory, evidence, bridge, retention, rank, and landing postu
 
 Use when Agon-related candidate memory, scar or rank memory posture,
 retention intake, evidence packages, KAG/Sophian bridge refs, SLC/VDS bridge
-memory, mechanical trial memo intake, or wave landing notes must become
+memory, mechanical trial memo intake, or stage landing notes must become
 explicit and reviewable.
 
 ### Memo owns
@@ -39,7 +39,7 @@ routes, and landing receipts.
 ### Inputs
 
 Reviewed source refs, candidate memory notes, evidence package definitions,
-bridge candidates, wave landing receipts, recurrence review candidates, and
+bridge candidates, stage landing receipts, recurrence review candidates, and
 owner-handoff notes.
 
 ### Outputs
@@ -83,8 +83,8 @@ The active part map is [PARTS](PARTS.md). Source docs live in [docs](docs/).
 Runnable Agon companions now live under the nearest `parts/<part>/` home:
 prebinding and retention-rank candidate intake under
 `parts/prebinding-and-candidate-intake/`, bridge/evidence registries under
-`parts/bridge-and-evidence-seams/`, and wave recurrence manifests under
-`parts/wave-landing-and-stop-lines/`.
+`parts/bridge-and-evidence-seams/`, and stage recurrence manifests under
+`parts/stage-landing-and-stop-lines/`.
 
 ## Historical Provenance
 

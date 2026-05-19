@@ -2,11 +2,11 @@
 from __future__ import annotations
 import argparse, json, hashlib, pathlib, sys
 ROOT = pathlib.Path(__file__).resolve().parents[5]
-SRC = ROOT / 'mechanics/agon/parts/bridge-and-evidence-seams/config/agon_mechanical_trial_memo_intakes.seed.json'
+SRC = ROOT / 'mechanics/agon/parts/bridge-and-evidence-seams/config/agon_mechanical_trial_memo_intakes.source.json'
 OUT = ROOT / 'mechanics/agon/parts/bridge-and-evidence-seams/generated/agon_mechanical_trial_memo_intake_registry.min.json'
 ITEM_KEY = 'memo_intakes'
 REGISTRY_ID = 'agon.mechanical_trial_memo_intake.registry.v0'
-WAVE = 'XIII'
+STAGE = 'XIII'
 
 def digest_obj(obj):
     return hashlib.sha256(json.dumps(obj, ensure_ascii=False, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
@@ -16,7 +16,7 @@ def build():
     items = data.get(ITEM_KEY, [])
     return {
         'registry_id': data.get('registry_id', REGISTRY_ID),
-        'wave': data.get('wave', WAVE),
+        'stage': data.get('stage', STAGE),
         'runtime_posture': data.get('runtime_posture', 'candidate_only'),
         'count': len(items),
         ITEM_KEY: items,

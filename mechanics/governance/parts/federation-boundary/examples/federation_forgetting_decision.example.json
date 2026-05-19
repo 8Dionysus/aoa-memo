@@ -3,7 +3,7 @@
   "kind": "federation_forgetting_decision",
   "id": "federation_forgetting_decision.example",
   "status": "approved",
-  "summary": "Example federation_forgetting_decision object for v0.6 federation harvest seed.",
+  "summary": "Example federation_forgetting_decision object for v0.6 federation harvest source.",
   "owner_repo": "aoa-memo",
   "evidence_refs": [
     "receipt://v0.6/federation_forgetting_decision/example"

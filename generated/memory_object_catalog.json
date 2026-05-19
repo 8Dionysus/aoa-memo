@@ -103,10 +103,10 @@
       ]
     },
     {
-      "id": "memo.ep.2026-03-23.tos-interpretation-bridge-seed",
+      "id": "memo.ep.2026-03-23.tos-interpretation-bridge-source",
       "kind": "episode",
       "title": "ToS fragment inspection recorded for memo bridge export",
-      "summary": "Records that a Tree of Sophia fragment was inspected as the seed event for a bounded memo bridge and downstream KAG-ready handoff.",
+      "summary": "Records that a Tree of Sophia fragment was inspected as the source event for a bounded memo bridge and downstream KAG-ready handoff.",
       "scope_classes": [
         "repo",
         "project"
@@ -121,8 +121,8 @@
         "semantic"
       ],
       "source_path": "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/episode.tos-interpretation.example.json",
-      "inspect_key": "memo.ep.2026-03-23.tos-interpretation-bridge-seed",
-      "expand_key": "memo.ep.2026-03-23.tos-interpretation-bridge-seed",
+      "inspect_key": "memo.ep.2026-03-23.tos-interpretation-bridge-source",
+      "expand_key": "memo.ep.2026-03-23.tos-interpretation-bridge-source",
       "scope": [
         "repo:aoa-memo",
         "project:AoA"
@@ -298,7 +298,7 @@
       ],
       "provenance_thread_id": "prov.tos-bridge-kag-lift.2026-03-23",
       "related_object_ids": [
-        "memo.ep.2026-03-23.tos-interpretation-bridge-seed"
+        "memo.ep.2026-03-23.tos-interpretation-bridge-source"
       ],
       "strongest_next_sources": [
         "mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#tos-bridge-guidance",
@@ -396,7 +396,7 @@
       "provenance_thread_id": "prov.aoa-memo.contract-hardening.2026-03-23",
       "related_object_ids": [
         "memo.ep.2026-03-21.self-agent-health-check",
-        "memo.ep.2026-03-23.tos-interpretation-bridge-seed"
+        "memo.ep.2026-03-23.tos-interpretation-bridge-source"
       ],
       "strongest_next_sources": [
         "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md#distillation-posture",
@@ -432,7 +432,7 @@
       ],
       "provenance_thread_id": "prov.tos-bridge-kag-lift.2026-03-23",
       "related_object_ids": [
-        "memo.ep.2026-03-23.tos-interpretation-bridge-seed"
+        "memo.ep.2026-03-23.tos-interpretation-bridge-source"
       ],
       "strongest_next_sources": [
         "mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow",
@@ -1437,7 +1437,7 @@
       "id": "memo.pattern.2026-04-07.antifragility-stress-recovery-window",
       "kind": "pattern",
       "title": "Ordered recovery windows earn recall only after bounded proof",
-      "summary": "Observed across source receipts, fourth-wave eval proof, derived stats, and additive route hints: repeated stress recovery becomes durable memo context only when the ordered window stays bounded and the memory object remains downstream from stronger evidence.",
+      "summary": "Observed across source receipts, fourth-stage eval proof, derived stats, and additive route hints: repeated stress recovery becomes durable memo context only when the ordered window stays bounded and the memory object remains downstream from stronger evidence.",
       "scope_classes": [
         "project",
         "ecosystem"
@@ -1458,7 +1458,7 @@
         "project:AoA",
         "ecosystem:aoa-antifragility"
       ],
-      "provenance_thread_id": "prov.aoa-antifragility.fourth-wave.2026-04-07",
+      "provenance_thread_id": "prov.aoa-antifragility.fourth-stage.2026-04-07",
       "related_object_ids": [
         "memo.ep.2026-04-02.alpha-validation-remediation",
         "memo.ep.2026-04-02.alpha-validation-remediation-rerun"

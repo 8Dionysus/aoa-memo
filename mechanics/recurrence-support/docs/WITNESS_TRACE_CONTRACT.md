@@ -1,7 +1,7 @@
 # Witness Trace Contract
 
 This recurrence-support document defines the current witness trace export
-contract for the witness/compost pilot wave.
+contract for the witness/compost pilot stage.
 
 It does not introduce a new memory-object kind.
 It defines the public trace artifact that a scenario route may preserve before selected parts of that route are written back into the current memo taxonomy.

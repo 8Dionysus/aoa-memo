@@ -22,7 +22,7 @@
   ],
   "runs_hidden_scheduler": false,
   "runtime_effect": "none",
-  "status": "seeded_pre_protocol_memo_prebinding",
+  "status": "drafted_pre_protocol_memo_prebinding",
   "title": "Scar candidate intake",
   "writes_durable_state": false
 }

@@ -1,5 +1,5 @@
 {
-  "component_id": "component.agon.wave17.aoa_memo",
+  "component_id": "component.agon.stage17.aoa_memo",
   "forbidden_actions": [
     "open_arena_session",
     "issue_verdict",
@@ -15,11 +15,11 @@
   "repo": "aoa-memo",
   "surfaces": [
     "mechanics/agon/parts/bridge-and-evidence-seams/generated/agon_kag_memo_evidence_package_registry.min.json",
-    "mechanics/agon/parts/bridge-and-evidence-seams/config/agon_kag_memo_evidence_packages.seed.json",
+    "mechanics/agon/parts/bridge-and-evidence-seams/config/agon_kag_memo_evidence_packages.source.json",
     "mechanics/agon/docs/AGON_KAG_MEMO_EVIDENCE_PACKAGES.md",
     "mechanics/agon/docs/AGON_KAG_MEMO_BOUNDARY.md",
-    "mechanics/agon/docs/AGON_WAVE17_MEMO_LANDING.md"
+    "mechanics/agon/docs/AGON_STAGE17_MEMO_LANDING.md"
   ],
-  "title": "Wave XVII aoa-memo surfaces",
-  "wave": "XVII"
+  "title": "Stage XVII aoa-memo surfaces",
+  "stage": "XVII"
 }

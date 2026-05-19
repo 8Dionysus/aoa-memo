@@ -7,9 +7,9 @@ This document defines the runtime-to-memo writeback seam for `aoa-memo`.
 It does not turn `aoa-memo` into a runtime store or a hidden orchestration layer.
 It defines the bounded contract that a future runtime may use when exporting selected state into the memo canon.
 
-## Source Seed
+## Source Origin
 
-Source seed ref:
+Source origin ref:
 
 - `seed_expansion/seed.aoa.agents-runtime-pack.v0.md#aoa-seed-r3-runtime-writeback-to-memo`
 

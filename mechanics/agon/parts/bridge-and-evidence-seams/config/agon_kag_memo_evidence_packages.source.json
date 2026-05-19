@@ -64,7 +64,7 @@
         "no_stats_as_promotion_authority",
         "no_eval_as_promotion_authority"
       ],
-      "wave": "XVII"
+      "stage": "XVII"
     },
     {
       "accepts": [
@@ -130,7 +130,7 @@
         "no_stats_as_promotion_authority",
         "no_eval_as_promotion_authority"
       ],
-      "wave": "XVII"
+      "stage": "XVII"
     },
     {
       "accepts": [
@@ -196,7 +196,7 @@
         "no_stats_as_promotion_authority",
         "no_eval_as_promotion_authority"
       ],
-      "wave": "XVII"
+      "stage": "XVII"
     },
     {
       "accepts": [
@@ -262,7 +262,7 @@
         "no_stats_as_promotion_authority",
         "no_eval_as_promotion_authority"
       ],
-      "wave": "XVII"
+      "stage": "XVII"
     },
     {
       "accepts": [
@@ -328,7 +328,7 @@
         "no_stats_as_promotion_authority",
         "no_eval_as_promotion_authority"
       ],
-      "wave": "XVII"
+      "stage": "XVII"
     },
     {
       "accepts": [
@@ -394,7 +394,7 @@
         "no_stats_as_promotion_authority",
         "no_eval_as_promotion_authority"
       ],
-      "wave": "XVII"
+      "stage": "XVII"
     },
     {
       "accepts": [
@@ -460,11 +460,11 @@
         "no_stats_as_promotion_authority",
         "no_eval_as_promotion_authority"
       ],
-      "wave": "XVII"
+      "stage": "XVII"
     }
   ],
   "registry_id": "agon.kag_memo_evidence_packages.registry.v1",
   "runtime_posture": "candidate_only",
-  "wave": "XVII",
-  "wave_name": "KAG Promotion Path"
+  "stage": "XVII",
+  "stage_name": "KAG Promotion Path"
 }

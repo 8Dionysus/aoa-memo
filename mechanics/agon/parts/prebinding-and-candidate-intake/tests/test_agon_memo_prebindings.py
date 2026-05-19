@@ -10,11 +10,11 @@ def run(cmd):
     return subprocess.run([sys.executable, *cmd], cwd=ROOT, text=True, capture_output=True)
 
 
-def test_wave7_generated_surface_is_current():
+def test_stage7_generated_surface_is_current():
     result = run(['mechanics/agon/parts/prebinding-and-candidate-intake/scripts/build_agon_memo_prebinding_registry.py', '--check'])
     assert result.returncode == 0, result.stderr
 
 
-def test_wave7_validator_passes():
+def test_stage7_validator_passes():
     result = run(['mechanics/agon/parts/prebinding-and-candidate-intake/scripts/validate_agon_memo_prebindings.py'])
     assert result.returncode == 0, result.stderr

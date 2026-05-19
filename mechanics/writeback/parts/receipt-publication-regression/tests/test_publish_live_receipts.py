@@ -51,7 +51,7 @@ REVIEWED_CANDIDATE_CASES = {
         "target_kind": "claim",
         "review_state": "confirmed",
         "writeback_anchor_ref": "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation.md",
-        "candidate_seed_ref": "repo:abyss-stack/Logs/phase-alpha/alpha-04-long-horizon-model-tier-orchestra/distillation_pack.md",
+        "candidate_source_ref": "repo:abyss-stack/Logs/phase-alpha/alpha-04-long-horizon-model-tier-orchestra/distillation_pack.md",
     },
     "distillation_pattern_candidate": {
         "object_id": "memo.pattern.2026-04-02.alpha-remediation-recurrence",
@@ -59,7 +59,7 @@ REVIEWED_CANDIDATE_CASES = {
         "target_kind": "pattern",
         "review_state": "confirmed",
         "writeback_anchor_ref": "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md",
-        "candidate_seed_ref": "repo:abyss-stack/Logs/phase-alpha/alpha-04-long-horizon-model-tier-orchestra/distillation_pack.md",
+        "candidate_source_ref": "repo:abyss-stack/Logs/phase-alpha/alpha-04-long-horizon-model-tier-orchestra/distillation_pack.md",
     },
     "distillation_bridge_candidate": {
         "object_id": "memo.bridge.2026-03-23.tos-lineage-kag-candidate",
@@ -67,7 +67,7 @@ REVIEWED_CANDIDATE_CASES = {
         "target_kind": "bridge",
         "review_state": "proposed",
         "writeback_anchor_ref": "repo:aoa-memo/mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow",
-        "candidate_seed_ref": "repo:aoa-memo/mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/claim.tos-bridge-ready.example.json",
+        "candidate_source_ref": "repo:aoa-memo/mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/claim.tos-bridge-ready.example.json",
     },
 }
 GROWTH_LANE_CASES = {
@@ -91,7 +91,7 @@ GROWTH_LANE_CASES = {
         "review_status": "reviewed",
         "required_evidence_refs": [
             "aoa-skills:harvest_packet_receipt_v1#candidate:aoa-playbooks:session-growth-cycle",
-            "Dionysus:seed_lineage_entry_v1#seed:aoa:session-growth-cycle",
+            "Dionysus:source_lineage_entry_v1#source:aoa:session-growth-cycle",
             "aoa-evals:aoa-candidate-lineage-integrity#report:session-growth-cycle",
             "aoa-evals:aoa-owner-fit-routing-quality#report:session-growth-cycle",
             "aoa-stats:candidate_lineage_summary_v1#summary:session-growth-cycle",
@@ -170,9 +170,9 @@ def build_reviewed_candidate_receipt(runtime_surface: str) -> dict:
                 "role": "catalog",
             },
             {
-                "kind": "candidate_seed",
-                "ref": case["candidate_seed_ref"],
-                "role": "candidate-seed",
+                "kind": "candidate_source",
+                "ref": case["candidate_source_ref"],
+                "role": "candidate-source",
             },
             {
                 "kind": "review_anchor",

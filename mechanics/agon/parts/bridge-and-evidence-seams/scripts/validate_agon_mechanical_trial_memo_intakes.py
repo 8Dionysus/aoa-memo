@@ -2,11 +2,11 @@
 from __future__ import annotations
 import hashlib, json, pathlib, sys
 ROOT = pathlib.Path(__file__).resolve().parents[5]
-SRC = ROOT / 'mechanics/agon/parts/bridge-and-evidence-seams/config/agon_mechanical_trial_memo_intakes.seed.json'
+SRC = ROOT / 'mechanics/agon/parts/bridge-and-evidence-seams/config/agon_mechanical_trial_memo_intakes.source.json'
 OUT = ROOT / 'mechanics/agon/parts/bridge-and-evidence-seams/generated/agon_mechanical_trial_memo_intake_registry.min.json'
 ITEM_KEY = 'memo_intakes'
 REGISTRY_ID = 'agon.mechanical_trial_memo_intake.registry.v0'
-WAVE = 'XIII'
+STAGE = 'XIII'
 RUNTIME_POSTURE = 'candidate_only'
 REQUIRED_FIELDS = ['id', 'trial_id', 'candidate_intakes', 'allowed_records', 'live_protocol', 'runtime_effect', 'live_verdict_authority', 'durable_scar_write', 'rank_mutation', 'retention_execution', 'tos_promotion']
 FORBIDDEN_TRUE_FIELDS = ['live_verdict_authority', 'durable_scar_write', 'rank_mutation', 'retention_execution', 'tos_promotion']
@@ -22,7 +22,7 @@ def digest_obj(obj):
 def expected_registry(data, items):
     return {
         'registry_id': REGISTRY_ID,
-        'wave': WAVE,
+        'stage': STAGE,
         'runtime_posture': RUNTIME_POSTURE,
         'count': len(items),
         ITEM_KEY: items,
@@ -48,8 +48,8 @@ def main():
     data = json.loads(SRC.read_text(encoding='utf-8'))
     if data.get('registry_id') != REGISTRY_ID:
         return fail(f'source registry_id must be {REGISTRY_ID}')
-    if data.get('wave') != WAVE:
-        return fail(f'source wave must be {WAVE}')
+    if data.get('stage') != STAGE:
+        return fail(f'source stage must be {STAGE}')
     if data.get('runtime_posture') != RUNTIME_POSTURE:
         return fail(f'source runtime_posture must be {RUNTIME_POSTURE}')
     items = data.get(ITEM_KEY, [])

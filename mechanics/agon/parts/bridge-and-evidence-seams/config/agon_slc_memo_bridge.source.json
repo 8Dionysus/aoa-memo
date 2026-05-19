@@ -48,7 +48,7 @@
         "no_campaign_as_live_arena",
         "no_center_takeover_of_owner_truth"
       ],
-      "wave": "XVI"
+      "stage": "XVI"
     },
     {
       "accepts": [
@@ -98,7 +98,7 @@
         "no_campaign_as_live_arena",
         "no_center_takeover_of_owner_truth"
       ],
-      "wave": "XVI"
+      "stage": "XVI"
     },
     {
       "accepts": [
@@ -148,7 +148,7 @@
         "no_campaign_as_live_arena",
         "no_center_takeover_of_owner_truth"
       ],
-      "wave": "XVI"
+      "stage": "XVI"
     },
     {
       "accepts": [
@@ -198,7 +198,7 @@
         "no_campaign_as_live_arena",
         "no_center_takeover_of_owner_truth"
       ],
-      "wave": "XVI"
+      "stage": "XVI"
     },
     {
       "accepts": [
@@ -248,7 +248,7 @@
         "no_campaign_as_live_arena",
         "no_center_takeover_of_owner_truth"
       ],
-      "wave": "XVI"
+      "stage": "XVI"
     },
     {
       "accepts": [
@@ -298,7 +298,7 @@
         "no_campaign_as_live_arena",
         "no_center_takeover_of_owner_truth"
       ],
-      "wave": "XVI"
+      "stage": "XVI"
     },
     {
       "accepts": [
@@ -348,11 +348,11 @@
         "no_campaign_as_live_arena",
         "no_center_takeover_of_owner_truth"
       ],
-      "wave": "XVI"
+      "stage": "XVI"
     }
   ],
   "registry_id": "agon.slc_memo_bridge.registry.v1",
   "runtime_posture": "candidate_only",
-  "wave": "XVI",
-  "wave_name": "Schools / Lineages / Campaigns"
+  "stage": "XVI",
+  "stage_name": "Schools / Lineages / Campaigns"
 }

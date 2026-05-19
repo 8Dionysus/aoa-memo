@@ -199,7 +199,7 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
             [
                 "source_memory_object",
                 "supported_by_claim",
-                "seeded_by_episode",
+                "drafted_by_episode",
                 "points_to_tos_fragment",
                 "provenance_thread",
             ],

@@ -4,7 +4,7 @@ source_contract: memo_quest_markdown_contract_v1
 
 ## Quest
 
-Plant Agon Wave XVIII `Sophian Threshold` surfaces for `aoa-memo`.
+Plant Agon Stage XVIII `Sophian Threshold` surfaces for `aoa-memo`.
 
 Acceptance:
 - builder `--check` passes;

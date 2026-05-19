@@ -10,7 +10,7 @@ from typing import Any
 from jsonschema import Draft202012Validator
 
 ROOT = pathlib.Path(__file__).resolve().parents[5]
-SRC = ROOT / 'mechanics/agon/parts/bridge-and-evidence-seams/config/agon_slc_memo_bridge.seed.json'
+SRC = ROOT / 'mechanics/agon/parts/bridge-and-evidence-seams/config/agon_slc_memo_bridge.source.json'
 OUT = ROOT / 'mechanics/agon/parts/bridge-and-evidence-seams/generated/agon_slc_memo_bridge_registry.min.json'
 ENTRY_SCHEMA = ROOT / 'mechanics/agon/parts/bridge-and-evidence-seams/schemas/agon-slc-memo-bridge.schema.json'
 REGISTRY_SCHEMA = ROOT / 'mechanics/agon/parts/bridge-and-evidence-seams/schemas/agon-slc-memo-bridge-registry.schema.json'
@@ -34,7 +34,7 @@ def load_json(path: pathlib.Path) -> Any:
 
 
 def load_builder():
-    spec = importlib.util.spec_from_file_location('_agon_wave16_builder', BUILDER)
+    spec = importlib.util.spec_from_file_location('_agon_stage16_builder', BUILDER)
     module = importlib.util.module_from_spec(spec)
     if spec.loader is None:
         raise RuntimeError(f'cannot load builder {BUILDER}')
@@ -64,8 +64,8 @@ def validate_item(item: dict[str, Any]) -> str | None:
     key = item.get(UNIQUE_KEY_FIELD)
     if not isinstance(key, str) or not key:
         return f'missing {UNIQUE_KEY_FIELD}'
-    if item.get('wave') != 'XVI':
-        return f'{key} wave must be XVI'
+    if item.get('stage') != 'XVI':
+        return f'{key} stage must be XVI'
     if item.get('live_protocol') is not False:
         return f'{key} live_protocol must be false'
     if item.get('assistant_contestant_allowed') is not None and item.get('assistant_contestant_allowed') is not False:
@@ -109,10 +109,10 @@ def validate() -> int:
     source = load_json(SRC)
     if source.get('registry_id') != 'agon.slc_memo_bridge.registry.v1':
         return fail('source registry_id must be agon.slc_memo_bridge.registry.v1')
-    if source.get('wave') != 'XVI':
-        return fail('source wave must be XVI')
-    if source.get('wave_name') != 'Schools / Lineages / Campaigns':
-        return fail('source wave_name mismatch')
+    if source.get('stage') != 'XVI':
+        return fail('source stage must be XVI')
+    if source.get('stage_name') != 'Schools / Lineages / Campaigns':
+        return fail('source stage_name mismatch')
     if source.get('runtime_posture') != 'candidate_only':
         return fail('source runtime_posture must be candidate_only')
     items = source.get(ITEM_KEY)

@@ -3,7 +3,7 @@
 | Concern | Owner |
 |---|---|
 | Operational memory admission rules, evidence/ref requirements, owner-route stop-lines, future-effect wording, and post-release memory boundaries | `aoa-memo` |
-| Center doctrine, experience wave law, live office expansion, and release-train authority | `Agents-of-Abyss` |
+| Center doctrine, experience stage law, live office expansion, and release-train authority | `Agents-of-Abyss` |
 | Live deployment, service state, storage, workers, rollback execution, and remediation | `abyss-stack` or runtime owner |
 | Proof, smoke, regression, quality gates, and verdict language | `aoa-evals` |
 | Assistant/service identity, rights, approvals, and handoff policy | `aoa-agents` |

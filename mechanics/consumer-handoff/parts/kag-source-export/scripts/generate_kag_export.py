@@ -73,7 +73,7 @@ DIRECT_RELATIONS = [
         "target_ref": CLAIM_EXAMPLE_REF,
     },
     {
-        "relation_type": "seeded_by_episode",
+        "relation_type": "drafted_by_episode",
         "target_ref": EPISODE_EXAMPLE_REF,
     },
     {

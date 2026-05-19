@@ -165,7 +165,7 @@ FORBIDDEN_ROOT_PREFIXES = {
         "test_antifragility_",
         "test_consumer_handoff_",
         "test_checkpoint_",
-        "test_wave1_boundary_contract",
+        "test_stage1_boundary_contract",
         "test_governance_mechanic",
         "test_growth_refinery_",
         "test_lineage_harvest_",

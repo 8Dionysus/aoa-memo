@@ -27,7 +27,7 @@
       ],
       "runs_hidden_scheduler": false,
       "runtime_effect": "none",
-      "status": "seeded_pre_protocol_memo_prebinding",
+      "status": "drafted_pre_protocol_memo_prebinding",
       "title": "Scar candidate intake",
       "writes_durable_state": false
     },
@@ -54,7 +54,7 @@
       ],
       "runs_hidden_scheduler": false,
       "runtime_effect": "none",
-      "status": "seeded_pre_protocol_memo_prebinding",
+      "status": "drafted_pre_protocol_memo_prebinding",
       "title": "Delta chronicle candidate",
       "writes_durable_state": false
     },
@@ -81,7 +81,7 @@
       ],
       "runs_hidden_scheduler": false,
       "runtime_effect": "none",
-      "status": "seeded_pre_protocol_memo_prebinding",
+      "status": "drafted_pre_protocol_memo_prebinding",
       "title": "Rupture candidate intake",
       "writes_durable_state": false
     },
@@ -108,7 +108,7 @@
       ],
       "runs_hidden_scheduler": false,
       "runtime_effect": "none",
-      "status": "seeded_pre_protocol_memo_prebinding",
+      "status": "drafted_pre_protocol_memo_prebinding",
       "title": "Retention candidate intake",
       "writes_durable_state": false
     },
@@ -134,7 +134,7 @@
       ],
       "runs_hidden_scheduler": false,
       "runtime_effect": "none",
-      "status": "seeded_pre_protocol_memo_prebinding",
+      "status": "drafted_pre_protocol_memo_prebinding",
       "title": "Trial chronicle candidate",
       "writes_durable_state": false
     },
@@ -161,7 +161,7 @@
       ],
       "runs_hidden_scheduler": false,
       "runtime_effect": "none",
-      "status": "seeded_pre_protocol_memo_prebinding",
+      "status": "drafted_pre_protocol_memo_prebinding",
       "title": "Assistant escalation chronicle candidate",
       "writes_durable_state": false
     }
@@ -182,7 +182,7 @@
     "memo_does_not_decide_truth"
   ],
   "runtime_effect": "none",
-  "schema_version": "agon_memo_prebinding_seed_v1",
-  "status": "seeded_pre_protocol_memory_prebinding",
-  "wave": "VII"
+  "schema_version": "agon_memo_prebinding_source_v1",
+  "status": "drafted_pre_protocol_memory_prebinding",
+  "stage": "VII"
 }

@@ -7,7 +7,7 @@ memory questions.
 
 It prepares `aoa-memo` to answer what existing memory objects can hold and what
 must route to neighboring owner repositories, without starting any future
-protocol, planting a seed pack, changing schemas, or creating a live ledger.
+protocol, planting a source pack, changing schemas, or creating a live ledger.
 
 This is not a live memory ledger.
 It is not a protocol.
@@ -15,9 +15,9 @@ It is not proof.
 
 memory is not proof.
 
-## Wave 1 boundary contract
+## Stage 1 boundary contract
 
-Wave 1 adds one compact contract surface for the memo-side boundary between
+Stage 1 adds one compact contract surface for the memo-side boundary between
 memory gate, retention, and writeback:
 
 - `mechanics/readiness-boundary/parts/memory-readiness-boundary/schemas/memory_readiness_boundary_contract.schema.json`

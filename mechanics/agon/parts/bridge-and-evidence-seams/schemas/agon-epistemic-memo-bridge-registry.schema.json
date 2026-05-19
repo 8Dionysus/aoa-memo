@@ -23,13 +23,13 @@
     "runtime_posture": {
       "const": "candidate_only"
     },
-    "wave": {
+    "stage": {
       "const": "XV"
     }
   },
   "required": [
     "registry_id",
-    "wave",
+    "stage",
     "runtime_posture",
     "count",
     "bridges",

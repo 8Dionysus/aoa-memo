@@ -1,3 +1,3 @@
-# Agon Wave XI Memo Landing
+# Agon Stage XI Memo Landing
 
 Candidate intake for future arena outputs. Memory ownership is protected by refusing center-side scar writes.

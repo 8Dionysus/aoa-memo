@@ -6,7 +6,7 @@ Version: 1.0.0
 
 Defines assistant release revision ledger entries for v1.0.
 
-This document belongs to the v1.0 installation and first sovereign release wave. It turns the experience program from forged seed into installable order: landing, migration, smoke testing, operator review, first live assistant office, governed release, rollback drill, replay audit, and post-release watch.
+This document belongs to the v1.0 installation and first sovereign release stage. It turns the experience program from forged source stage into installable order: landing, migration, smoke testing, operator review, first live assistant office, governed release, rollback drill, replay audit, and post-release watch.
 
 ## Owns
 

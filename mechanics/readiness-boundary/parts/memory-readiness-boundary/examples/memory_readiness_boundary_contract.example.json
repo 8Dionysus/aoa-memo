@@ -33,7 +33,7 @@
     "boundary_note": "Memo writeback is a bounded export, not live state."
   },
   "source_refs": [
-    "mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md#wave-1-boundary-contract",
+    "mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md#stage-1-boundary-contract",
     "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md#checkpoint-to-memory-contract",
     "mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md#inquiry-checkpoint-packs"
   ]

@@ -24,7 +24,7 @@ Move Agon single-part technical artifacts into the nearest functioning part:
   retention-rank candidate intake companions.
 - `parts/bridge-and-evidence-seams/` owns epistemic, KAG, SLC, Sophian, VDS,
   and mechanical-trial memo bridge companions.
-- `parts/wave-landing-and-stop-lines/` owns wave recurrence manifests and hook
+- `parts/stage-landing-and-stop-lines/` owns stage recurrence manifests and hook
   bindings.
 
 Extend `generated/mechanic_artifacts.min.json` so the inventory recognizes both
@@ -54,7 +54,7 @@ python mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_mech
 python mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_slc_memo_bridge_registry.py
 python mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_sophian_memo_evidence_registry.py
 python mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_vds_memo_bridge.py
-python -m pytest -q mechanics/agon/parts/prebinding-and-candidate-intake/tests mechanics/agon/parts/bridge-and-evidence-seams/tests mechanics/agon/parts/wave-landing-and-stop-lines/tests
+python -m pytest -q mechanics/agon/parts/prebinding-and-candidate-intake/tests mechanics/agon/parts/bridge-and-evidence-seams/tests mechanics/agon/parts/stage-landing-and-stop-lines/tests
 python scripts/validate_mechanic_artifact_inventory.py
 python scripts/validate_memo_mechanic_readiness.py
 python scripts/release_check.py

@@ -1,8 +1,8 @@
-# Agon Wave18 Memo Landing
+# Agon Stage XVIII Memo Landing
 
-Landing note for memo-side Wave XVIII surfaces.
+Landing note for memo-side Stage XVIII surfaces.
 
-## Wave XVIII invariant
+## Stage XVIII invariant
 
 `Sophian threshold candidate != Tree-of-Sophia canon`.
 

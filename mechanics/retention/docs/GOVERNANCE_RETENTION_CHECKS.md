@@ -1,6 +1,6 @@
 # Governance Retention Checks
 
-Status: seed v0.8.0  
+Status: source-stage v0.8.0
 Repo landing: `aoa-memo`  
 Layer: Experience Polis Governance
 
@@ -8,7 +8,7 @@ Layer: Experience Polis Governance
 
 Retention checks for council decisions and precedent durability.
 
-v0.8 adds a polis-governance contour around the experience mechanic. Earlier seeds forged capture, distillation, certification, deployment, federation and adoption. This seed asks a harder question: **who may decide when those paths conflict?**
+v0.8 adds a polis-governance contour around the experience mechanic. Earlier source stages forged capture, distillation, certification, deployment, federation and adoption. This source stage asks a harder question: **who may decide when those paths conflict?**
 
 ## Local law
 

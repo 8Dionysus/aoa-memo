@@ -55,10 +55,10 @@
     "tos_canonization_allowed": {
       "const": false
     },
-    "wave": {
+    "stage": {
       "const": "XVIII"
     },
-    "wave_name": {
+    "stage_name": {
       "const": "Sophian Threshold"
     }
   },
@@ -75,8 +75,8 @@
     "review_status",
     "runtime_effect",
     "tos_canonization_allowed",
-    "wave",
-    "wave_name"
+    "stage",
+    "stage_name"
   ],
   "title": "agon-sophian-memo-evidence.schema.json item contract",
   "type": "object"

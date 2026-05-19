@@ -15,12 +15,12 @@
   },
   "source_receipt_refs": [
     "aoa-skills:harvest_packet_receipt_v1#candidate:aoa-playbooks:session-growth-cycle",
-    "Dionysus:seed_lineage_entry_v1#seed:aoa:session-growth-cycle"
+    "Dionysus:source_lineage_entry_v1#source:aoa:session-growth-cycle"
   ],
   "lineage_refs": {
     "cluster_ref": "cluster:checkpoint:session-growth-cycle",
     "candidate_ref": "candidate:aoa-playbooks:session-growth-cycle",
-    "seed_ref": "seed:aoa:session-growth-cycle",
+    "source_ref": "source:aoa:session-growth-cycle",
     "object_ref": "playbook:AOA-P-0025"
   },
   "lineage_context": {
@@ -42,13 +42,13 @@
   "route_hint_refs": [
     "aoa-playbooks:playbook_registry_v1#AOA-P-0025"
   ],
-  "lesson_summary": "When a reviewed route spans checkpoint carry, owner harvest, seed staging, proof, and bounded writeback, rechecking owner shape against playbook doctrine can recover the route without widening authority.",
-  "recall_posture": "Use as bounded recall only after checking the linked owner receipt, seed lineage entry, eval reports, and stats summary.",
+  "lesson_summary": "When a reviewed route spans checkpoint carry, owner harvest, source staging, proof, and bounded writeback, rechecking owner shape against playbook doctrine can recover the route without widening authority.",
+  "recall_posture": "Use as bounded recall only after checking the linked owner receipt, source lineage entry, eval reports, and stats summary.",
   "trust_posture": {
     "status": "reviewed",
     "signals": [
       "reviewed_owner_receipt_present",
-      "seed_lineage_present",
+      "source_lineage_present",
       "lineage_integrity_eval_present",
       "owner_fit_eval_present",
       "stats_summary_present"
@@ -63,5 +63,5 @@
     "reanchor from skill to playbook",
     "bounded owner-fit recovery"
   ],
-  "notes": "Memo preserves the bounded recovery pattern and strongest lineage refs. It does not replace owner truth, seed truth, or landed playbook authority."
+  "notes": "Memo preserves the bounded recovery pattern and strongest lineage refs. It does not replace owner truth, source truth, or landed playbook authority."
 }

@@ -1,4 +1,4 @@
-# Wave landing and stop-lines Validation
+# Stage landing and stop-lines Validation
 
 Executable validation for this part is routed through the package validation lane.
 
@@ -6,7 +6,7 @@ Run from the repository root:
 
 ```bash
 python scripts/validate_memo_mechanic_parts.py
-python -m pytest -q mechanics/agon/parts/wave-landing-and-stop-lines/tests
+python -m pytest -q mechanics/agon/parts/stage-landing-and-stop-lines/tests
 ```
 
 Then run the package-specific commands named in `../../AGENTS.md#validation` for any changed source docs, schemas, examples, generated companions, scripts, tests, manifests, or owner routes.

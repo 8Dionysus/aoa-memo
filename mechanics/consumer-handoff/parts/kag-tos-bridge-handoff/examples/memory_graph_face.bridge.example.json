@@ -19,14 +19,14 @@
   "relation_candidates": [
     {
       "relation_type": "derived_from_episode",
-      "target_ref": "memo.ep.2026-03-23.tos-interpretation-bridge-seed",
+      "target_ref": "memo.ep.2026-03-23.tos-interpretation-bridge-source",
       "evidence_refs": [
         "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/episode.tos-interpretation.example.json",
         "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/provenance_thread.kag-lift.example.json"
       ],
       "confidence": 0.83,
       "status": "candidate",
-      "note": "Preserves the raw event that seeded the bridge."
+      "note": "Preserves the raw event that drafted the bridge."
     },
     {
       "relation_type": "consolidates_claim",

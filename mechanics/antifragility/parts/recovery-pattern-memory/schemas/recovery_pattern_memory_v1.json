@@ -101,7 +101,7 @@
       "required": [
         "cluster_ref",
         "candidate_ref",
-        "seed_ref",
+        "source_ref",
         "object_ref"
       ],
       "properties": {
@@ -119,7 +119,7 @@
           ],
           "minLength": 1
         },
-        "seed_ref": {
+        "source_ref": {
           "type": [
             "string",
             "null"

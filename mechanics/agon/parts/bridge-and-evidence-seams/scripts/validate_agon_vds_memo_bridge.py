@@ -6,7 +6,7 @@ REGISTRY=ROOT/'mechanics/agon/parts/bridge-and-evidence-seams/generated/agon_vds
 def validate():
     d=json.loads(REGISTRY.read_text(encoding='utf-8'))
     assert d['registry_id']=='agon.vds_memo_bridge.registry.v1'
-    assert d['wave']=='XI' and d['live_protocol'] is False and d['runtime_effect']=='none'
+    assert d['stage']=='XI' and d['live_protocol'] is False and d['runtime_effect']=='none'
     assert d['intake_count']>=4
     ids=[]
     for item in d['intakes']:

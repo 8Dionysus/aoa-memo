@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[5]
-CONFIG = ROOT / "mechanics/agon/parts/prebinding-and-candidate-intake/config/agon_retention_rank_memo_bridge.seed.json"
+CONFIG = ROOT / "mechanics/agon/parts/prebinding-and-candidate-intake/config/agon_retention_rank_memo_bridge.source.json"
 OUTPUT = ROOT / "mechanics/agon/parts/prebinding-and-candidate-intake/generated/agon_retention_rank_memo_bridge_registry.min.json"
 
 
@@ -14,18 +14,18 @@ def load_json(path: Path):
 
 
 def build_registry():
-    seed = load_json(CONFIG)
+    source = load_json(CONFIG)
     return {
-        "registry_id": seed["registry_id"],
-        "wave": seed["wave"],
-        "status": seed.get("status", "seeded"),
-        "live_protocol": seed["live_protocol"],
-        "runtime_effect": seed["runtime_effect"],
-        "entry_count": len(seed["entries"]),
-        "entries": sorted(seed["entries"], key=lambda item: item["id"]),
-        "stop_lines": seed.get("stop_lines", []),
-        "source_config": "mechanics/agon/parts/prebinding-and-candidate-intake/config/agon_retention_rank_memo_bridge.seed.json",
-        "generated_note": "Generated from seed config. Review before integration into release checks."
+        "registry_id": source["registry_id"],
+        "stage": source["stage"],
+        "status": source.get("status", "drafted"),
+        "live_protocol": source["live_protocol"],
+        "runtime_effect": source["runtime_effect"],
+        "entry_count": len(source["entries"]),
+        "entries": sorted(source["entries"], key=lambda item: item["id"]),
+        "stop_lines": source.get("stop_lines", []),
+        "source_config": "mechanics/agon/parts/prebinding-and-candidate-intake/config/agon_retention_rank_memo_bridge.source.json",
+        "generated_note": "Generated from source config. Review before integration into release checks."
     }
 
 

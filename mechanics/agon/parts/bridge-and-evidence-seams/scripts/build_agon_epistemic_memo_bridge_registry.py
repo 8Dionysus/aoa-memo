@@ -9,13 +9,13 @@ import sys
 from typing import Any
 
 ROOT = pathlib.Path(__file__).resolve().parents[5]
-SRC = ROOT / "mechanics/agon/parts/bridge-and-evidence-seams/config/agon_epistemic_memo_bridge.seed.json"
+SRC = ROOT / "mechanics/agon/parts/bridge-and-evidence-seams/config/agon_epistemic_memo_bridge.source.json"
 OUT = ROOT / "mechanics/agon/parts/bridge-and-evidence-seams/generated/agon_epistemic_memo_bridge_registry.min.json"
 ITEM_KEY = "bridges"
 REGISTRY_ID = "agon.epistemic_memo_bridge.registry.v1"
-WAVE = "XV"
+STAGE = "XV"
 RUNTIME_POSTURE = "candidate_only"
-REQUIRED_SOURCE_FIELDS = ("registry_id", "wave", "runtime_posture", ITEM_KEY)
+REQUIRED_SOURCE_FIELDS = ("registry_id", "stage", "runtime_posture", ITEM_KEY)
 
 
 class BuildError(ValueError):
@@ -40,8 +40,8 @@ def load_source() -> dict[str, Any]:
             raise BuildError(f"missing source field {field}")
     if data["registry_id"] != REGISTRY_ID:
         raise BuildError(f"registry_id must be {REGISTRY_ID}")
-    if data["wave"] != WAVE:
-        raise BuildError(f"wave must be {WAVE}")
+    if data["stage"] != STAGE:
+        raise BuildError(f"stage must be {STAGE}")
     if data["runtime_posture"] != RUNTIME_POSTURE:
         raise BuildError(f"runtime_posture must be {RUNTIME_POSTURE}")
     if not isinstance(data[ITEM_KEY], list):
@@ -54,7 +54,7 @@ def build() -> dict[str, Any]:
     items = data[ITEM_KEY]
     return {
         "registry_id": REGISTRY_ID,
-        "wave": WAVE,
+        "stage": STAGE,
         "runtime_posture": RUNTIME_POSTURE,
         "count": len(items),
         ITEM_KEY: items,

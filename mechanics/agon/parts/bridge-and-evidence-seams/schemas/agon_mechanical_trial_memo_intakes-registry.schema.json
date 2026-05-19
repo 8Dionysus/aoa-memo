@@ -22,13 +22,13 @@
     "runtime_posture": {
       "type": "string"
     },
-    "wave": {
+    "stage": {
       "const": "XIII"
     }
   },
   "required": [
     "registry_id",
-    "wave",
+    "stage",
     "runtime_posture",
     "count",
     "memo_intakes",

@@ -3,7 +3,7 @@
   "kind": "pattern_lineage_memory_entry",
   "id": "pattern_lineage_memory_entry.example",
   "status": "candidate",
-  "summary": "Example pattern_lineage_memory_entry object for v0.6 federation harvest seed.",
+  "summary": "Example pattern_lineage_memory_entry object for v0.6 federation harvest source.",
   "owner_repo": "aoa-memo",
   "evidence_refs": [
     "receipt://v0.6/pattern_lineage_memory_entry/example"

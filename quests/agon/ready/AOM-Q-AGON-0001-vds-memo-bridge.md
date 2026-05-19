@@ -4,7 +4,7 @@ source_contract: memo_quest_markdown_contract_v1
 
 ## Quest
 
-Land Wave XI VDS Memo Bridge surfaces.
+Land Stage XI VDS Memo Bridge surfaces.
 
 ## Owner Route
 

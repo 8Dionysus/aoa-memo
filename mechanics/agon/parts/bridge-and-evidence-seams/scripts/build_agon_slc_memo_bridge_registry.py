@@ -2,12 +2,12 @@
 from __future__ import annotations
 import argparse, hashlib, json, pathlib, sys
 ROOT = pathlib.Path(__file__).resolve().parents[5]
-SRC = ROOT / 'mechanics/agon/parts/bridge-and-evidence-seams/config/agon_slc_memo_bridge.seed.json'
+SRC = ROOT / 'mechanics/agon/parts/bridge-and-evidence-seams/config/agon_slc_memo_bridge.source.json'
 OUT = ROOT / 'mechanics/agon/parts/bridge-and-evidence-seams/generated/agon_slc_memo_bridge_registry.min.json'
 ITEM_KEY = 'memo_intakes'
 REGISTRY_ID = 'agon.slc_memo_bridge.registry.v1'
-WAVE = 'XVI'
-WAVE_NAME = 'Schools / Lineages / Campaigns'
+STAGE = 'XVI'
+STAGE_NAME = 'Schools / Lineages / Campaigns'
 
 
 class BuildError(ValueError):
@@ -32,8 +32,8 @@ def build():
     items = data.get(ITEM_KEY, [])
     return {
         'registry_id': require_source_string(data, 'registry_id', REGISTRY_ID),
-        'wave': data.get('wave', WAVE),
-        'wave_name': data.get('wave_name', WAVE_NAME),
+        'stage': data.get('stage', STAGE),
+        'stage_name': data.get('stage_name', STAGE_NAME),
         'runtime_posture': data.get('runtime_posture', 'candidate_only'),
         'count': len(items),
         ITEM_KEY: items,
