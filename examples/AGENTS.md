@@ -15,6 +15,9 @@ example file must be listed in exactly one
 `config/root_technical_districts.json` `example_families` entry that names the
 owner surface, source refs, and validators.
 
+For quick orientation, `generated/root_technical_districts.min.json` names this
+district's role, route card, family ids, and local routing path.
+
 ## Route Stack
 
 - Above: root `AGENTS.md`, `schemas/AGENTS.md`, and

@@ -15,6 +15,8 @@ There are no active shared manifests in root `manifests/` right now.
 That empty state is machine-checked by
 `config/root_technical_districts.json` `manifest_policy`, which must match the
 root `manifests.allowed_files` list.
+`generated/root_technical_districts.min.json` carries the compact public atlas
+entry for this reserved district.
 
 Mechanic-owned manifests live under the owning package or nearest functioning
 part. Agon recurrence manifests and their hook bindings live under:

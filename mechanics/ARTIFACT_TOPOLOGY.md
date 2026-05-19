@@ -16,6 +16,10 @@ schema contracts, generated indexes, or release validation.
 Root technical districts remain valid when an artifact is repo-wide, public
 contract-shaped, or shared across multiple memory families:
 
+For quick inspection, `generated/root_technical_districts.min.json` is the
+compact atlas of district roles, route cards, family ids, and local routing.
+The exact file allowlist stays in `config/root_technical_districts.json`.
+
 | District | Root-owned when |
 |---|---|
 | `schemas/` | the contract is part of the public memory-object or support-object canon |
@@ -104,6 +108,9 @@ surfaces.
 technical artifacts. If a file is not a route card and is not listed there, it
 must either be added with a repo-wide/shared reason or moved under its owning
 mechanic.
+
+`generated/root_technical_districts.min.json` is rebuilt from that config so
+agents can inspect the root district topology before opening the full contract.
 
 Root `schemas/` entries in that config must also be grouped by
 `schema_families`. This keeps the public schema canon distinct from package-local

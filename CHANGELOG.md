@@ -9,6 +9,9 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Added
 
+- Add `generated/root_technical_districts.min.json` with builder, validator,
+  release-gate coverage, and tests so root technical districts have a compact
+  machine-readable atlas of role, route card, family ids, and local routing.
 - Add a registry-backed `.agents/spark/` Codex Spark lane with memo-specific
   scenarios, result and handoff packet homes, schemas, validator, tests,
   release-gate wiring, and decision record.

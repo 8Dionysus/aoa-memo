@@ -10,6 +10,8 @@ This file applies to checked-in artifacts under `generated/`.
 - the doctrine family consists of `memory_catalog.json`, `memory_catalog.min.json`, `memory_capsules.json`, and `memory_sections.full.json`
 - the object family consists of `memory_object_catalog.json`, `memory_object_catalog.min.json`, `memory_object_capsules.json`, and `memory_object_sections.full.json`
 - `agents_mesh.min.json` is the compact companion mirror for current AGENTS route-card coverage
+- `root_technical_districts.min.json` is the compact atlas for root technical
+  district purpose, route cards, family ids, and local routing
 - `mechanic_artifacts.min.json` is the compact generated inventory of
   package-local mechanic artifact homes
 - `memo_mechanic_cards.min.json` is the compact generated mirror of current
@@ -50,6 +52,10 @@ Keep this split explicit:
 - `mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_governance.min.json` is rebuilt by `mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_governance.py` and checked by `scripts/validate_memo.py`
 - `mechanics/consumer-handoff/parts/kag-source-export/generated/kag_export.min.json` is generator-backed, rebuilt by `mechanics/consumer-handoff/parts/kag-source-export/scripts/generate_kag_export.py`, and checked by `scripts/validate_memo.py`
 - `generated/agents_mesh.min.json` is rebuilt by `scripts/build_agents_mesh_index.py` from `config/agents_mesh.json` and checked by `scripts/validate_agents_mesh_index.py`
+- `generated/root_technical_districts.min.json` is rebuilt by
+  `scripts/build_root_technical_districts_index.py` from
+  `config/root_technical_districts.json` and checked by
+  `scripts/validate_root_technical_districts_index.py`
 - `generated/mechanic_artifacts.min.json` is rebuilt by
   `scripts/build_mechanic_artifact_inventory.py` from tracked package-local
   artifact homes and checked by `scripts/validate_mechanic_artifact_inventory.py`
@@ -109,6 +115,14 @@ For `agents_mesh.min.json`:
 - rebuild it with `python scripts/build_agents_mesh_index.py`
 - keep it a route-card coverage companion, not source memory doctrine
 
+For `root_technical_districts.min.json`:
+
+- Do not hand-edit it
+- update `config/root_technical_districts.json` and the affected root district
+  `AGENTS.md` first
+- rebuild it with `python scripts/build_root_technical_districts_index.py`
+- keep it a compact atlas for root district routing, not the exact allowlist
+
 For the quest projection family:
 
 - Do not hand-edit `generated/quest_catalog.min*.json` or `generated/quest_dispatch.min*.json`
@@ -127,6 +141,8 @@ python scripts/validate_memory_surfaces.py
 python scripts/validate_memory_object_surfaces.py
 python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py --check
 python scripts/validate_agents_mesh_index.py
+python scripts/build_root_technical_districts_index.py --check
+python scripts/validate_root_technical_districts_index.py
 python scripts/validate_mechanic_artifact_inventory.py
 python scripts/validate_memo_mechanic_cards.py
 python scripts/validate_memo_mechanic_owner_routes.py
