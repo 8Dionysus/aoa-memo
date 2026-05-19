@@ -136,6 +136,14 @@ class AgentsMeshTestCase(unittest.TestCase):
         ):
             self.assertIn(snippet, text)
 
+    def test_release_check_runs_spark_lane_gate(self) -> None:
+        text = (REPO_ROOT / "scripts" / "release_check.py").read_text(encoding="utf-8")
+        for snippet in (
+            ".agents/spark/scripts/validate_spark_lane.py",
+            ".agents/spark/tests",
+        ):
+            self.assertIn(snippet, text)
+
     def test_agents_mesh_ignores_dependency_checkouts(self) -> None:
         config = json.loads((REPO_ROOT / "config" / "agents_mesh.json").read_text())
         self.assertIn(".deps", config["ignored_directory_names"])

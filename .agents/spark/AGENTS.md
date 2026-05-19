@@ -1,69 +1,107 @@
-# Spark lane for aoa-memo
+# AGENTS.md
 
-This file only governs work started from `.agents/spark/`.
+## Applies to
 
-The root `AGENTS.md` remains authoritative for repository identity, ownership boundaries, reading order, and validation commands. `.agents/AGENTS.md` owns the agent-facing companion district. This local file only narrows how GPT-5.3-Codex-Spark should behave when used as the fast-loop lane.
+This card applies to `.agents/spark/` and every nested path under that scope
+until a nearer `AGENTS.md` narrows the lane.
 
-If `SWARM.md` exists in this directory, treat it as queue / swarm context. This `AGENTS.md` is the operating policy for Spark work.
+This lane only governs work started from `.agents/spark/`.
 
-## Default Spark posture
+## Role
 
-- Use Spark for short-loop work where a small diff is enough.
+`.agents/spark/` is the fast, interruptible Codex Spark lane for `aoa-memo`.
+It is calibrated for GPT-5.3-Codex-Spark style work: short-loop memory-layer
+audits, small source-backed edits, quick checks, and portable handoff packets.
+It is the fast-loop lane for one bounded memory-layer surface at a time.
+
+The root `AGENTS.md` remains authoritative for repository identity, ownership
+boundaries, reading order, and release route. `.agents/AGENTS.md` owns the
+agent-facing companion district. Spark is an agent lane, not memory doctrine,
+not a mechanic package, not generated truth, not proof authority, not routing
+logic, not role policy, not KAG substrate, and not runtime state.
+
+The core execution rule is `done-or-handoff`.
+
+## Read before editing
+
+Read root `AGENTS.md`, `.agents/AGENTS.md`, `DESIGN.AGENTS.md`,
+`.agents/spark/README.md`, this card, `.agents/spark/registry.json`, and the
+scenario `README.md` plus `PROMPT.md` for the lane being touched.
+
+If a change touches a memory source surface, read the nearest source doc,
+schema, example, generator, or mechanic `AGENTS.md` before editing.
+
+Read `SPARK_EXTRAPOLATION_NOTEBOOK.md` when changing the lane contract,
+scenario set, validator, tests, release-check wiring, or public Spark framing.
+It records the studied `Agents-of-Abyss`, `aoa-techniques`, `aoa-skills`, and
+OpenAI Codex Spark pattern.
+
+Use `.agents/spark/SWARM.md` only when a Spark swarm is explicitly requested.
+
+## Boundaries
+
+- Choose exactly one registered scenario from `.agents/spark/registry.json`.
+- Keep one bounded memory-layer surface per Spark loop.
 - Start with a map: task, files, risks, and validation path.
-- Prefer one bounded patch per loop.
-- Read the nearest source docs before editing.
-- Use the narrowest relevant validation already documented by the repo.
-- Report exactly what was and was not checked.
-- Escalate instead of widening into a broad architectural rewrite.
+- Prefer one small, reviewable patch per loop.
+- End as `done` or `handoff`; do not depend on an in-session switch to a
+  larger model.
+- Do not run broad tests automatically. Run validation when the user,
+  scenario, or repo law asks for it; otherwise name skipped checks honestly.
+- Do not hand-edit generated surfaces as source truth.
+- Do not turn memory into proof, verdict logic, route sovereignty, role
+  authority, KAG ownership, playbook choreography, runtime state, or live
+  receipt storage.
+- Preserve memory-is-not-proof boundaries even when a recall route is useful.
+- Do not store private traces, secrets, hidden telemetry, or unreduced
+  personal data in Spark packets.
+- Escalate or write a handoff when the task needs deeper architecture,
+  cross-repo owner judgment, public status promotion, or broad synthesis.
 
-## Spark is strongest here for
+Spark is strongest here for memory-surface audits, one-surface refinements,
+recall-contract checks, generated parity checks, mechanic seam scouting,
+concrete diff review, registry sync, small tests, and release-prep passes.
 
-- recall-contract docs, examples, and schema cleanup
-- provenance, salience, temperature, or lifecycle wording alignment
-- generated memory-surface sync work
-- tight audits of temporal posture and reviewability
-- small object-profile clarity fixes
+A done task means memory remains explicit and bounded.
 
-## Do not widen Spark here into
+## Scenario Law
 
-- treating memory as proof
-- rewriting role policy, routing logic, or scenario logic here
-- collapsing episodic, semantic, and provenance distinctions
-- writing objects that pretend to be current truth without temporal framing
+Every scenario must be registered in `.agents/spark/registry.json` and must
+provide:
 
-## Local done signal
-
-A Spark task is done here when:
-
-- memory remains explicit and bounded
-- provenance is still visible
-- temporal and salience posture are clearer
-- generated outputs are aligned when touched
-- the documented validation path ran when relevant
+- `README.md` with scope, done signal, stop-line, and handoff route
+- `PROMPT.md` that can launch a standalone Spark session
+- `templates/result.md`
+- `templates/handoff.md`
+- `examples/result.example.md`
 
 ## Validation
 
-For Spark-lane memory-surface work, the narrow default check is:
+For Spark lane changes, include:
 
 ```bash
-python scripts/validate_memo.py
-python scripts/validate_memory_surfaces.py
-python scripts/validate_lifecycle_audit_examples.py
+python .agents/spark/scripts/validate_spark_lane.py
+python -m unittest discover -s .agents/spark/tests -p 'test*.py'
+python scripts/validate_agents_mesh.py
+python scripts/build_agents_mesh_index.py --check
+python scripts/validate_agents_mesh_index.py
 ```
 
-Use the root or nearest nested `AGENTS.md` when the touched surface names a
-more specific validator.
+For release-facing lane changes, also run:
 
-## Local note
+```bash
+python scripts/release_check.py
+```
 
-Spark should behave like a curator of bounded traces here, not like a myth-maker of memory authority.
+For ordinary memory-surface work inside a scenario, use the narrowest relevant
+validator named by the scenario, source surface, or nearest `AGENTS.md`.
 
 ## Reporting contract
 
-Always report:
+Always report the restated task and touched scope, scenario chosen, files
+changed, whether the change was semantic, structural, or clarity-only,
+validation run, validation skipped, remaining risk, and what still needs a
+slower model or human review.
 
-- the restated task and touched scope
-- which files or surfaces changed
-- whether the change was semantic, structural, or clarity-only
-- what validation actually ran
-- what still needs a slower model or human review
+Spark should behave like a curator of bounded traces here, not like a
+myth-maker of memory authority.

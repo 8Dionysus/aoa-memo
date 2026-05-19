@@ -31,6 +31,7 @@ expectation.
 
 | Decision | Scope |
 |---|---|
+| [2026-05-19-spark-registry-backed-memo-lane](2026-05-19-spark-registry-backed-memo-lane.md) | add registry-backed Spark scenarios, packets, schemas, validator, tests, and release-gate wiring |
 | [2026-05-19-root-memory-index](2026-05-19-root-memory-index.md) | add a compact root memory-canon index and keep README/CONTRIBUTING map-oriented |
 | [2026-05-18-memory-topology-spine](2026-05-18-memory-topology-spine.md) | add topology-spine surfaces before moving flat docs |
 | [2026-05-18-spark-agent-lane-home](2026-05-18-spark-agent-lane-home.md) | move maintained Spark lane from root to `.agents/spark/` |

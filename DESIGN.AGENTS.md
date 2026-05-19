@@ -78,6 +78,9 @@ find the source surface or generator that produced it.
 The long-term mesh should make these lanes explicit:
 
 - `.agents/` for agent-facing companion assets and future maintained lanes
+- `.agents/spark/` for registry-backed Codex Spark launch, result, handoff,
+  validation, and scenario packets; it is a fast lane, not memory doctrine or
+  mechanic law
 - `MEMORY_INDEX.md` for compact memory-canon routing before deeper doctrine
 - `docs/` for memory doctrine and route maps
 - `mechanics/` for repeatable adoption, consumer handoff, operational gate,
@@ -104,6 +107,22 @@ The current repository now has a source-backed AGENTS mesh mirror:
 
 The mesh validates the current `aoa-memo` card form rather than importing a
 sibling repository's heading template.
+
+The Spark lane has its own registry-backed machine shape:
+
+- `.agents/spark/registry.json` is the scenario source for Spark entrypoints.
+- `.agents/spark/scenarios/**` holds launch prompts, result templates, handoff
+  templates, and examples for one-scenario work.
+- `.agents/spark/scripts/validate_spark_lane.py` checks scenario shape,
+  registered-vs-discovered parity, packet markers, storage homes, schemas, and
+  release-check wiring.
+- `.agents/spark/tests/test_spark_lane.py` keeps the validator honest with
+  positive and negative cases.
+
+This lane is useful because future Spark sessions can start, finish, or hand
+off without inventing a route. It stays weaker than memory source docs,
+schemas, examples, mechanics, builders, validators, and sibling-owner
+repositories.
 
 ## Reading Order Shape
 
@@ -181,6 +200,14 @@ The AGENTS mesh generated companion checks:
 - root and local cards preserve source-owner boundaries
 - generated mesh output is reproducible
 - `.agents/` lanes do not live as root civic surfaces by accident
+
+The Spark lane contract checks:
+
+- scenario registry shape
+- prompt/result/handoff packet shape
+- scenario directory parity
+- public-safe memory stop-lines
+- release gate wiring
 
 Tests also pin this design file, required route links, the decision lane, and
 the mesh validator path.
