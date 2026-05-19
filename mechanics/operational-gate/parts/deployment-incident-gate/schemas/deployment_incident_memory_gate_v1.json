@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://aoa.local/aoa-memo/mechanics/operational-gate/schemas/deployment_incident_memory_gate_v1.json",
+  "$id": "https://aoa.local/aoa-memo/mechanics/operational-gate/parts/deployment-incident-gate/schemas/deployment_incident_memory_gate_v1.json",
   "title": "deployment_incident_memory_gate",
   "type": "object",
   "description": "deployment_incident_memory_gate schema for operational-gate memo admission.",

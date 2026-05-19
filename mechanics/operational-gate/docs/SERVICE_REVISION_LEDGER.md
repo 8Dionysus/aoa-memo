@@ -35,8 +35,8 @@ is running, healthy, deployed, or accepted.
 
 Current public contracts live with their owning mechanics:
 
-- `mechanics/operational-gate/schemas/service_revision_ledger_entry_v1.json`
-- `mechanics/operational-gate/examples/service_revision_ledger_entry_v1.example.json`
+- `mechanics/operational-gate/parts/service-revision-ledger/schemas/service_revision_ledger_entry_v1.json`
+- `mechanics/operational-gate/parts/service-revision-ledger/examples/service_revision_ledger_entry_v1.example.json`
 - `mechanics/writeback/parts/revision-ledgers/schemas/release_revision_ledger_entry_v1.json`
 - `mechanics/writeback/parts/revision-ledgers/examples/release_revision_ledger_entry_v1.example.json`
 

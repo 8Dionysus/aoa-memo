@@ -7,7 +7,7 @@ from pathlib import Path
 from jsonschema import Draft202012Validator
 
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
+REPO_ROOT = Path(__file__).resolve().parents[5]
 
 
 class OperationalGateMechanicTestCase(unittest.TestCase):
@@ -58,14 +58,14 @@ class OperationalGateMechanicTestCase(unittest.TestCase):
             encoding="utf-8"
         )
         for path in (
-            "mechanics/operational-gate/schemas/deployment_incident_memory_gate_v1.json",
-            "mechanics/operational-gate/examples/deployment_incident_memory_gate.example.json",
-            "mechanics/operational-gate/schemas/service_incident_memory_entry_v1.json",
-            "mechanics/operational-gate/examples/service_incident_memory_entry_v1.example.json",
-            "mechanics/operational-gate/schemas/service_revision_ledger_entry_v1.json",
-            "mechanics/operational-gate/examples/service_revision_ledger_entry_v1.example.json",
-            "mechanics/operational-gate/schemas/train_release_memory_entry_v1.json",
-            "mechanics/operational-gate/examples/train_release_memory_entry_v1.example.json",
+            "mechanics/operational-gate/parts/deployment-incident-gate/schemas/deployment_incident_memory_gate_v1.json",
+            "mechanics/operational-gate/parts/deployment-incident-gate/examples/deployment_incident_memory_gate.example.json",
+            "mechanics/operational-gate/parts/office-incident-gate/schemas/service_incident_memory_entry_v1.json",
+            "mechanics/operational-gate/parts/office-incident-gate/examples/service_incident_memory_entry_v1.example.json",
+            "mechanics/operational-gate/parts/service-revision-ledger/schemas/service_revision_ledger_entry_v1.json",
+            "mechanics/operational-gate/parts/service-revision-ledger/examples/service_revision_ledger_entry_v1.example.json",
+            "mechanics/operational-gate/parts/post-release-boundaries/schemas/train_release_memory_entry_v1.json",
+            "mechanics/operational-gate/parts/post-release-boundaries/examples/train_release_memory_entry_v1.example.json",
         ):
             self.assertIn(path, parts)
             self.assertTrue((REPO_ROOT / path).is_file())
@@ -76,6 +76,8 @@ class OperationalGateMechanicTestCase(unittest.TestCase):
                 REPO_ROOT
                 / "mechanics"
                 / "operational-gate"
+                / "parts"
+                / "deployment-incident-gate"
                 / "schemas"
                 / "deployment_incident_memory_gate_v1.json"
             ).read_text()
@@ -85,6 +87,8 @@ class OperationalGateMechanicTestCase(unittest.TestCase):
                 REPO_ROOT
                 / "mechanics"
                 / "operational-gate"
+                / "parts"
+                / "deployment-incident-gate"
                 / "examples"
                 / "deployment_incident_memory_gate.example.json"
             ).read_text()

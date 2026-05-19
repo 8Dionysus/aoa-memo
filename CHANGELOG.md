@@ -15,6 +15,9 @@ Tracking starts with the community-docs baseline for this repository.
 - Move antifragility failure-lesson, shared-lesson, recovery-pattern, native
   pattern, and local regression artifacts into their functioning `parts/`
   homes with part-local validation.
+- Move operational-gate deployment, office incident, service revision,
+  post-release, and Wave 5 seed artifacts into functioning `parts/` homes with
+  part-local validation.
 - Add part-local adoption and retention contract tests so those mechanics can
   validate boundary, revision/retention, scar/routing, office marker,
   cross-repo/governance, and post-release artifacts at their owning parts.

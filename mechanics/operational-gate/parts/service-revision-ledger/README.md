@@ -10,6 +10,8 @@ This active part belongs to `mechanics/operational-gate/` and materializes the m
 ## Source Surfaces
 
 - [SERVICE_REVISION_LEDGER](../../docs/SERVICE_REVISION_LEDGER.md)
+- `schemas/service_revision_ledger_entry_v1.json`
+- `examples/service_revision_ledger_entry_v1.example.json`
 
 ## Function
 

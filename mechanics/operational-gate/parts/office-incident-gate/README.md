@@ -10,6 +10,8 @@ This active part belongs to `mechanics/operational-gate/` and materializes the m
 ## Source Surfaces
 
 - [OFFICE_INCIDENT_MEMORY_GATE](../../docs/OFFICE_INCIDENT_MEMORY_GATE.md)
+- `schemas/service_incident_memory_entry_v1.json`
+- `examples/service_incident_memory_entry_v1.example.json`
 
 ## Function
 

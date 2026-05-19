@@ -38,10 +38,10 @@ future effect, it remains working context outside durable memo.
 
 Current public contract examples live with the operational-gate mechanic:
 
-- `mechanics/operational-gate/schemas/deployment_incident_memory_gate_v1.json`
-- `mechanics/operational-gate/examples/deployment_incident_memory_gate.example.json`
-- `mechanics/operational-gate/schemas/deployment_lesson_candidate_v1.json`
-- `mechanics/operational-gate/examples/deployment_lesson_candidate.example.json`
+- `mechanics/operational-gate/parts/deployment-incident-gate/schemas/deployment_incident_memory_gate_v1.json`
+- `mechanics/operational-gate/parts/deployment-incident-gate/examples/deployment_incident_memory_gate.example.json`
+- `mechanics/operational-gate/parts/deployment-incident-gate/schemas/deployment_lesson_candidate_v1.json`
+- `mechanics/operational-gate/parts/deployment-incident-gate/examples/deployment_lesson_candidate.example.json`
 
 These contracts teach admissible shape. They do not become proof or runtime
 state.

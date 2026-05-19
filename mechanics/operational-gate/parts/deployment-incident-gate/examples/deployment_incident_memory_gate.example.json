@@ -4,7 +4,7 @@
   "decision": "allow",
   "reason": "material recurrence with owner route",
   "evidence_refs": [
-    "repo:aoa-memo/mechanics/operational-gate/examples/deployment_lesson_candidate.example.json"
+    "repo:aoa-memo/mechanics/operational-gate/parts/deployment-incident-gate/examples/deployment_lesson_candidate.example.json"
   ],
   "owner_route": "aoa-evals:regression-sentinel",
   "review_posture": "reviewed recurrence candidate, not proof",

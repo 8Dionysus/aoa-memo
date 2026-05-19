@@ -10,7 +10,7 @@ import unittest
 from jsonschema import Draft202012Validator, FormatChecker
 
 
-ROOT = Path(__file__).resolve().parents[3]
+ROOT = Path(__file__).resolve().parents[5]
 ESCAPE_VALUE = "__wave5_not_allowed__"
 FORMAT_CHECKER = FormatChecker()
 RFC3339_DATETIME = re.compile(
@@ -117,9 +117,9 @@ CONTRACT_BASE_BY_STEM = {
     "office_retention_marker_v1": "mechanics/retention/parts/office-markers",
     "release_revision_ledger_entry_v1": "mechanics/writeback/parts/revision-ledgers",
     "rollback_memory_entry_v1": "mechanics/writeback/parts/rollback-and-recovery",
-    "service_incident_memory_entry_v1": "mechanics/operational-gate",
-    "service_revision_ledger_entry_v1": "mechanics/operational-gate",
-    "train_release_memory_entry_v1": "mechanics/operational-gate",
+    "service_incident_memory_entry_v1": "mechanics/operational-gate/parts/office-incident-gate",
+    "service_revision_ledger_entry_v1": "mechanics/operational-gate/parts/service-revision-ledger",
+    "train_release_memory_entry_v1": "mechanics/operational-gate/parts/post-release-boundaries",
 }
 
 
