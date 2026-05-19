@@ -158,6 +158,8 @@ Tracking starts with the community-docs baseline for this repository.
   CONTRIBUTING, CODE_OF_CONDUCT, QUESTBOOK, and SECURITY around explicit
   root-doc authority, memory-canon routing, public-safety posture, and
   AGENTS-owned validation routes.
+- Compact the root README current-contour section so GitHub renders short
+  route labels instead of long monospaced path blocks.
 - Replace wide mechanics atlas tables with wrapping lists so GitHub renders
   the mechanic card contract and compass without cramped code-cell breaks.
 - Move mechanics atlas command runbook details into `mechanics/AGENTS.md` so

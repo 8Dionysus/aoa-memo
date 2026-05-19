@@ -83,48 +83,50 @@ Before adding, trusting, or publishing a memo claim, ask the narrowest owner.
 
 `aoa-memo` is in contract hardening.
 
-The released `v0.2.3` contour includes:
+The released `v0.2.3` contour is routed through these compact entrypoints:
 
-- memory authority and object canon through [CHARTER](CHARTER.md),
-  [DESIGN](DESIGN.md), [MEMORY_INDEX](MEMORY_INDEX.md),
-  [MEMORY_MODEL](docs/MEMORY_MODEL.md), and
-  [MEMORY_OBJECT_PROFILES](docs/MEMORY_OBJECT_PROFILES.md)
-- trust, lifecycle, temperature, provenance, and operational boundaries through
-  [MEMORY_TRUST_POSTURE](docs/MEMORY_TRUST_POSTURE.md),
-  [LIFECYCLE](docs/LIFECYCLE.md), [MEMORY_TEMPERATURES](docs/MEMORY_TEMPERATURES.md),
-  [PROVENANCE_THREADS](docs/PROVENANCE_THREADS.md), and
-  [OPERATIONAL_BOUNDARY](docs/OPERATIONAL_BOUNDARY.md)
-- checkpoint recall and return support through
-  `mechanics/checkpoint/docs/CHECKPOINT_MEMORY_BOUNDARY.md`,
-  `mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md`,
-  and `mechanics/checkpoint/docs/CHECKPOINT_CARRY_CONTRACT.md`
-- lineage-aware growth-refinery writeback through
-  `mechanics/writeback/docs/GROWTH_REFINERY_WRITEBACK.md`,
-  `mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md`, and
-  `mechanics/writeback/docs/SELF_AGENCY_CONTINUITY_WRITEBACK.md`
-- runtime writeback target, intake, governance, and publication seams through
-  `mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_targets.min.json`,
-  `mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_intake.min.json`,
-  `mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_governance.min.json`,
-  `mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md`, and
-  `mechanics/writeback/parts/receipt-publication-regression/scripts/publish_live_receipts.py`
-- recovery, rollback-followthrough, component-refresh, and continuity examples
-  through
-  `mechanics/antifragility/parts/recovery-pattern-memory/examples/recovery_pattern_memory.rollback_followthrough.example.json`,
-  `mechanics/antifragility/parts/recovery-pattern-memory/examples/recovery_pattern_memory.component_refresh.example.json`,
-  `mechanics/writeback/parts/growth-and-continuity/examples/provenance_thread.self-agency-continuity.example.json`, and
-  `mechanics/writeback/parts/growth-and-continuity/generated/phase_alpha_writeback_map.min.json`
-- pattern-lineage memory through
-  `mechanics/lineage-harvest/docs/PATTERN_LINEAGE_MEMORY.md`,
-  `mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/schemas/pattern_lineage_memory_entry_v1.json`, and
-  `mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/examples/pattern_lineage_memory_entry.example.json`
-- memory readiness pressure through
-  `mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md`
-- source-owned memo donor export through
-  `mechanics/consumer-handoff/parts/kag-source-export/generated/kag_export.min.json`
-- Questbook projections through
-  `mechanics/questbook/parts/quest-read-model-projections/README.md`,
-  `generated/quest_catalog.min.json`, and `generated/quest_dispatch.min.json`
+- Authority and canon:
+  [charter](CHARTER.md), [design](DESIGN.md), [memory index](MEMORY_INDEX.md),
+  [memory model](docs/MEMORY_MODEL.md), and
+  [object profiles](docs/MEMORY_OBJECT_PROFILES.md).
+- Trust, lifecycle, temperature, provenance, and operational boundary:
+  [trust posture](docs/MEMORY_TRUST_POSTURE.md),
+  [lifecycle](docs/LIFECYCLE.md),
+  [temperatures](docs/MEMORY_TEMPERATURES.md),
+  [provenance threads](docs/PROVENANCE_THREADS.md), and
+  [operational boundary](docs/OPERATIONAL_BOUNDARY.md).
+- Checkpoint and return recall:
+  [checkpoint boundary](mechanics/checkpoint/docs/CHECKPOINT_MEMORY_BOUNDARY.md),
+  [recurrence support](mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md),
+  and [carry contract](mechanics/checkpoint/docs/CHECKPOINT_CARRY_CONTRACT.md).
+- Consumer adoption and handoff:
+  [routing adoption](mechanics/adoption/docs/ROUTING_MEMORY_ADOPTION.md),
+  [playbook memory scopes](mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md),
+  [KAG export](mechanics/consumer-handoff/docs/KAG_SOURCE_EXPORT.md), and
+  [eval guardrails](mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md).
+- Writeback, chronicle, runtime, and continuity:
+  [growth-refinery writeback](mechanics/writeback/docs/GROWTH_REFINERY_WRITEBACK.md),
+  [quest chronicle](mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md),
+  [self-agency continuity](mechanics/writeback/docs/SELF_AGENCY_CONTINUITY_WRITEBACK.md),
+  [runtime seam](mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md),
+  [runtime targets](mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_targets.min.json),
+  [runtime intake](mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_intake.min.json),
+  [runtime governance](mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_governance.min.json),
+  [receipt publication](mechanics/writeback/parts/receipt-publication-regression/scripts/publish_live_receipts.py),
+  [continuity example](mechanics/writeback/parts/growth-and-continuity/examples/provenance_thread.self-agency-continuity.example.json), and
+  [Phase Alpha map](mechanics/writeback/parts/growth-and-continuity/generated/phase_alpha_writeback_map.min.json).
+- Antifragility and lineage:
+  [antifragility mechanic](mechanics/antifragility/README.md),
+  [rollback follow-through](mechanics/antifragility/parts/recovery-pattern-memory/examples/recovery_pattern_memory.rollback_followthrough.example.json),
+  [component refresh](mechanics/antifragility/parts/recovery-pattern-memory/examples/recovery_pattern_memory.component_refresh.example.json),
+  [pattern-lineage memory](mechanics/lineage-harvest/docs/PATTERN_LINEAGE_MEMORY.md),
+  [pattern-lineage schema](mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/schemas/pattern_lineage_memory_entry_v1.json), and
+  [pattern-lineage example](mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/examples/pattern_lineage_memory_entry.example.json).
+- Readiness and Questbook:
+  [memory readiness boundary](mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md),
+  [Questbook projections](mechanics/questbook/parts/quest-read-model-projections/README.md),
+  [quest catalog](generated/quest_catalog.min.json), and
+  [quest dispatch](generated/quest_dispatch.min.json).
 
 Detailed mechanic futures live in `mechanics/<slug>/ROADMAP.md`. Detailed
 release history lives in [CHANGELOG](CHANGELOG.md). Durable obligations live in
