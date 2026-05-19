@@ -11,7 +11,7 @@ making it a validated memo mechanic package.
 - keep audit memory posture weaker than proof
 - keep bridge, console, closeout, personality, and swarm memory policy bounded
   to public-safe memo posture
-- keep schemas, examples, and tests aligned with active mechanic paths
+- keep schemas, examples, and tests aligned with nearest active part paths
 - keep old flat docs-root and transitional docs-district paths as provenance,
   not active aliases
 

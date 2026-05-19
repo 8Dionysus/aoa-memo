@@ -77,6 +77,8 @@ to the owning source repository.
 ## Functioning Parts
 
 The active part map is [PARTS](PARTS.md). Source docs live in [docs](docs/).
+Runnable Titan schemas, examples, and tests live under the nearest
+`parts/<part>/` home.
 
 ## Historical Provenance
 

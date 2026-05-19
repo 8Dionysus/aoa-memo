@@ -43,7 +43,8 @@ Update only surfaces whose future-facing meaning changed.
 python scripts/validate_memo_mechanics.py
 python scripts/build_memo_mechanics_index.py --check
 python scripts/validate_memo_mechanics_index.py
-python -m pytest -q mechanics/titan/tests/test_titan_remembrance_record.py mechanics/titan/tests/test_titan_candidate_schemas.py mechanics/titan/tests/test_titan_audit_memory_candidate.py
+python -m pytest -q mechanics/titan/parts/core-memory-posture/tests mechanics/titan/parts/specialized-policy/tests
+python -m pytest -q mechanics/titan/parts/core-memory-posture/tests mechanics/titan/parts/closeout-and-digest-posture/tests mechanics/titan/parts/specialized-policy/tests
 ```
 
 Before landing, also run:
