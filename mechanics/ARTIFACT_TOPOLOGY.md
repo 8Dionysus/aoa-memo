@@ -151,10 +151,15 @@ Examples:
 - Titan recall/remembrance, closeout/digest, and specialized-policy schemas,
   examples, and tests live under the nearest `mechanics/titan/parts/<part>/`
   home.
-- adoption, governance, retention, operational-gate, antifragility,
-  checkpoint, readiness-boundary, recurrence-support, lineage-harvest,
-  shape-guard, consumer-handoff, and writeback schemas/examples/tests live
-  under their package lanes when they serve that one mechanic.
+- adoption boundary, adoption revision/retention, adoption scar/routing,
+  retention cross-repo/governance, retention office-marker, and retention
+  post-release schemas, examples, and tests live under their nearest
+  `mechanics/<slug>/parts/<part>/` homes.
+- governance, operational-gate, antifragility, checkpoint,
+  readiness-boundary, recurrence-support, lineage-harvest, shape-guard,
+  consumer-handoff, and writeback schemas/examples/tests live under their
+  package lanes when they serve that one mechanic and have not yet been
+  split to a sharper functioning part.
 - writeback generated companions such as `runtime_writeback_targets`,
   `runtime_writeback_intake`, `runtime_writeback_governance`,
   `growth_refinery_writeback_lanes`, and `phase_alpha_writeback_map` live under

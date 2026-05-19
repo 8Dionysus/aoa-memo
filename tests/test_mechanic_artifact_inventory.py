@@ -38,3 +38,25 @@ def test_mechanic_artifact_inventory_covers_package_local_artifacts() -> None:
         for artifact in titan["artifacts"]
         if artifact.get("scope") == "part"
     } == {"core-memory-posture", "closeout-and-digest-posture", "specialized-policy"}
+    adoption = next(package for package in inventory["packages"] if package["slug"] == "adoption")
+    assert {artifact["scope"] for artifact in adoption["artifacts"]} == {"part"}
+    assert {
+        artifact["part_slug"]
+        for artifact in adoption["artifacts"]
+        if artifact.get("scope") == "part"
+    } == {
+        "adoption-boundary",
+        "revision-and-retention-pressure",
+        "scar-and-routing-adoption",
+    }
+    retention = next(package for package in inventory["packages"] if package["slug"] == "retention")
+    assert {artifact["scope"] for artifact in retention["artifacts"]} == {"part"}
+    assert {
+        artifact["part_slug"]
+        for artifact in retention["artifacts"]
+        if artifact.get("scope") == "part"
+    } == {
+        "cross-repo-and-governance-retention",
+        "office-markers",
+        "post-release-retention",
+    }

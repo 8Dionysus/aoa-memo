@@ -102,6 +102,18 @@ def test_memo_mechanic_readiness_covers_all_packages() -> None:
         "mechanics/titan/parts/core-memory-posture/tests",
         "mechanics/titan/parts/specialized-policy/tests",
     ]
+    adoption = packages["adoption"]
+    assert adoption["artifacts"]["test_dirs"] == [
+        "mechanics/adoption/parts/adoption-boundary/tests",
+        "mechanics/adoption/parts/revision-and-retention-pressure/tests",
+        "mechanics/adoption/parts/scar-and-routing-adoption/tests",
+    ]
+    retention = packages["retention"]
+    assert retention["artifacts"]["test_dirs"] == [
+        "mechanics/retention/parts/cross-repo-and-governance-retention/tests",
+        "mechanics/retention/parts/office-markers/tests",
+        "mechanics/retention/parts/post-release-retention/tests",
+    ]
 
 
 def test_memo_mechanic_readiness_rejects_untested_local_artifacts() -> None:

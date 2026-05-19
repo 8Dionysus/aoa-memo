@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://aoa.local/aoa-memo/mechanics/adoption/schemas/adoption_revision_ledger_entry_v1.json",
-  "title": "adoption_revision_ledger_entry v1",
+  "$id": "https://aoa.local/aoa-memo/mechanics/adoption/parts/revision-and-retention-pressure/schemas/adoption_retention_memory_v1.json",
+  "title": "adoption_retention_memory v1",
   "type": "object",
   "required": [
     "schema_id",
@@ -16,11 +16,11 @@
   "properties": {
     "schema_id": {
       "type": "string",
-      "const": "adoption_revision_ledger_entry_v1"
+      "const": "adoption_retention_memory_v1"
     },
     "kind": {
       "type": "string",
-      "const": "adoption_revision_ledger_entry"
+      "const": "adoption_retention_memory"
     },
     "version": {
       "type": "string",
@@ -78,7 +78,9 @@
         "owner_surface",
         "requires_owner_consent",
         "rollback_required",
-        "retention_cycles"
+        "retention_cycles",
+        "retention_probe",
+        "held_threshold"
       ],
       "additionalProperties": false,
       "properties": {
@@ -105,6 +107,14 @@
         "retention_cycles": {
           "type": "integer",
           "minimum": 1
+        },
+        "retention_probe": {
+          "type": "string"
+        },
+        "held_threshold": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
         }
       }
     }

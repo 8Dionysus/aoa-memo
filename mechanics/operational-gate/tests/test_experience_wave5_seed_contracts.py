@@ -111,20 +111,20 @@ WAVE5_CONTRACTS = (
     ('service_revision_ledger_entry_v1', 'service_revision_ledger_entry_v1.json'),
     ('train_release_memory_entry_v1', 'train_release_memory_entry_v1.json'),
 )
-MECHANIC_BY_STEM = {
-    "first_office_retention_marker_v1": "retention",
-    "installation_memory_entry_v1": "governance",
-    "office_retention_marker_v1": "retention",
-    "release_revision_ledger_entry_v1": "writeback",
-    "rollback_memory_entry_v1": "writeback",
-    "service_incident_memory_entry_v1": "operational-gate",
-    "service_revision_ledger_entry_v1": "operational-gate",
-    "train_release_memory_entry_v1": "operational-gate",
+CONTRACT_BASE_BY_STEM = {
+    "first_office_retention_marker_v1": "mechanics/retention/parts/office-markers",
+    "installation_memory_entry_v1": "mechanics/governance",
+    "office_retention_marker_v1": "mechanics/retention/parts/office-markers",
+    "release_revision_ledger_entry_v1": "mechanics/writeback",
+    "rollback_memory_entry_v1": "mechanics/writeback",
+    "service_incident_memory_entry_v1": "mechanics/operational-gate",
+    "service_revision_ledger_entry_v1": "mechanics/operational-gate",
+    "train_release_memory_entry_v1": "mechanics/operational-gate",
 }
 
 
 def contract_paths(stem: str, schema_file: str) -> tuple[Path, Path]:
-    base = ROOT / "mechanics" / MECHANIC_BY_STEM[stem]
+    base = ROOT / CONTRACT_BASE_BY_STEM[stem]
     return base / "schemas" / schema_file, base / "examples" / f"{stem}.example.json"
 
 

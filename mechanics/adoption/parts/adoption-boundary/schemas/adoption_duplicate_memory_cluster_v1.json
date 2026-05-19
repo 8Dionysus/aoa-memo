@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://aoa.local/aoa-memo/mechanics/adoption/schemas/adoption_memory_writeback_v1.json",
-  "title": "adoption_memory_writeback v1",
+  "$id": "https://aoa.local/aoa-memo/mechanics/adoption/parts/adoption-boundary/schemas/adoption_duplicate_memory_cluster_v1.json",
+  "title": "adoption_duplicate_memory_cluster v1",
   "type": "object",
   "required": [
     "schema_id",
@@ -16,11 +16,11 @@
   "properties": {
     "schema_id": {
       "type": "string",
-      "const": "adoption_memory_writeback_v1"
+      "const": "adoption_duplicate_memory_cluster_v1"
     },
     "kind": {
       "type": "string",
-      "const": "adoption_memory_writeback"
+      "const": "adoption_duplicate_memory_cluster"
     },
     "version": {
       "type": "string",
