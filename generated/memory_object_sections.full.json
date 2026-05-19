@@ -330,7 +330,7 @@
       "id": "memo.decision.2026-03-21.self-agent-approval-record",
       "kind": "decision",
       "title": "Approval record for self-agent checkpoint rollout",
-      "source_path": "mechanics/checkpoint/examples/checkpoint_approval_record.example.json",
+      "source_path": "mechanics/checkpoint/parts/approval-and-health-records/examples/checkpoint_approval_record.example.json",
       "sections": [
         {
           "section_id": "memo.decision.2026-03-21.self-agent-approval-record#identity-and-recall",
@@ -366,7 +366,7 @@
       "id": "memo.ep.2026-03-21.self-agent-health-check",
       "kind": "episode",
       "title": "Post-change health check recorded for self-agent checkpoint rollout",
-      "source_path": "mechanics/checkpoint/examples/checkpoint_health_check.example.json",
+      "source_path": "mechanics/checkpoint/parts/approval-and-health-records/examples/checkpoint_health_check.example.json",
       "sections": [
         {
           "section_id": "memo.ep.2026-03-21.self-agent-health-check#identity-and-recall",
@@ -654,7 +654,7 @@
       "id": "memo.decision.2026-04-02.alpha-self-agent-checkpoint",
       "kind": "decision",
       "title": "Checkpoint approval decision for the live Alpha operator-surface refresh",
-      "source_path": "mechanics/checkpoint/examples/decision.phase-alpha-self-agent-checkpoint.example.json",
+      "source_path": "mechanics/checkpoint/parts/approval-and-health-records/examples/decision.phase-alpha-self-agent-checkpoint.example.json",
       "sections": [
         {
           "section_id": "memo.decision.2026-04-02.alpha-self-agent-checkpoint#identity-and-recall",
@@ -690,7 +690,7 @@
       "id": "memo.audit.2026-04-02.alpha-self-agent-checkpoint",
       "kind": "audit_event",
       "title": "Alpha Route 2 kept rollback and post-sync health review-visible",
-      "source_path": "mechanics/checkpoint/examples/audit_event.phase-alpha-self-agent-checkpoint.example.json",
+      "source_path": "mechanics/checkpoint/parts/approval-and-health-records/examples/audit_event.phase-alpha-self-agent-checkpoint.example.json",
       "sections": [
         {
           "section_id": "memo.audit.2026-04-02.alpha-self-agent-checkpoint#identity-and-recall",

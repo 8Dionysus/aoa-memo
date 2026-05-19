@@ -6,8 +6,9 @@ pretend that a checkpoint executed, passed proof, or granted authority.
 
 ## Current Direction
 
-- Keep checkpoint artifacts under `mechanics/checkpoint/` when they are
-  checkpoint-specific rather than shared public memory canon.
+- Keep checkpoint artifacts under the nearest
+  `mechanics/checkpoint/parts/<part>/` home when they are checkpoint-specific
+  rather than shared public memory canon.
 - Keep `inquiry_checkpoint` as a support artifact, not a new memory-object
   family.
 - Keep checkpoint-to-memory mapping explicit: checkpoint exports map into

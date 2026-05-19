@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/mechanics/checkpoint/schemas/checkpoint-to-memory-contract.schema.json",
+  "$id": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/mechanics/checkpoint/parts/checkpoint-to-memory-mapping/schemas/checkpoint-to-memory-contract.schema.json",
   "title": "aoa-memo checkpoint to memory contract",
   "type": "object",
   "additionalProperties": false,

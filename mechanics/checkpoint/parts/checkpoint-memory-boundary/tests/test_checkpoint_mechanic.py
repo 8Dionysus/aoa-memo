@@ -6,35 +6,35 @@ import sys
 from pathlib import Path
 
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
+REPO_ROOT = Path(__file__).resolve().parents[5]
 
 
 def load_json(relative_path: str) -> dict[str, object]:
     return json.loads((REPO_ROOT / relative_path).read_text(encoding="utf-8"))
 
 
-def test_checkpoint_artifacts_live_in_checkpoint_package() -> None:
+def test_checkpoint_artifacts_live_in_functioning_parts() -> None:
     expected = [
-        "mechanics/checkpoint/schemas/inquiry_checkpoint.schema.json",
-        "mechanics/checkpoint/schemas/checkpoint-to-memory-contract.schema.json",
-        "mechanics/checkpoint/examples/inquiry_checkpoint.example.json",
-        "mechanics/checkpoint/examples/inquiry_checkpoint.return.example.json",
-        "mechanics/checkpoint/examples/checkpoint_to_memory_contract.example.json",
-        "mechanics/checkpoint/examples/checkpoint_approval_record.example.json",
-        "mechanics/checkpoint/examples/checkpoint_health_check.example.json",
-        "mechanics/checkpoint/examples/checkpoint_improvement_thread.example.json",
-        "mechanics/checkpoint/examples/decision.phase-alpha-self-agent-checkpoint.example.json",
-        "mechanics/checkpoint/examples/audit_event.phase-alpha-self-agent-checkpoint.example.json",
+        "mechanics/checkpoint/parts/checkpoint-carry-contract/schemas/inquiry_checkpoint.schema.json",
+        "mechanics/checkpoint/parts/checkpoint-to-memory-mapping/schemas/checkpoint-to-memory-contract.schema.json",
+        "mechanics/checkpoint/parts/checkpoint-carry-contract/examples/inquiry_checkpoint.example.json",
+        "mechanics/checkpoint/parts/checkpoint-carry-contract/examples/inquiry_checkpoint.return.example.json",
+        "mechanics/checkpoint/parts/checkpoint-to-memory-mapping/examples/checkpoint_to_memory_contract.example.json",
+        "mechanics/checkpoint/parts/approval-and-health-records/examples/checkpoint_approval_record.example.json",
+        "mechanics/checkpoint/parts/approval-and-health-records/examples/checkpoint_health_check.example.json",
+        "mechanics/checkpoint/parts/approval-and-health-records/examples/checkpoint_improvement_thread.example.json",
+        "mechanics/checkpoint/parts/approval-and-health-records/examples/decision.phase-alpha-self-agent-checkpoint.example.json",
+        "mechanics/checkpoint/parts/approval-and-health-records/examples/audit_event.phase-alpha-self-agent-checkpoint.example.json",
     ]
     for relative_path in expected:
         assert (REPO_ROOT / relative_path).is_file(), relative_path
 
 
 def test_checkpoint_contract_keeps_existing_object_mapping() -> None:
-    payload = load_json("mechanics/checkpoint/examples/checkpoint_to_memory_contract.example.json")
+    payload = load_json("mechanics/checkpoint/parts/checkpoint-to-memory-mapping/examples/checkpoint_to_memory_contract.example.json")
     assert payload["contract_type"] == "checkpoint_to_memory_contract"
     assert payload["checkpoint_artifact"]["schema_ref"] == (
-        "mechanics/checkpoint/schemas/inquiry_checkpoint.schema.json"
+        "mechanics/checkpoint/parts/checkpoint-carry-contract/schemas/inquiry_checkpoint.schema.json"
     )
 
     pairs = {
@@ -61,8 +61,8 @@ def test_recurrence_and_writeback_consume_checkpoint_without_owning_it() -> None
         encoding="utf-8"
     )
 
-    assert "mechanics/checkpoint/schemas/inquiry_checkpoint.schema.json" in recurrence_parts
-    assert "mechanics/checkpoint/examples/checkpoint_to_memory_contract.example.json" in writeback_seam
+    assert "mechanics/checkpoint/parts/checkpoint-carry-contract/schemas/inquiry_checkpoint.schema.json" in recurrence_parts
+    assert "mechanics/checkpoint/parts/checkpoint-to-memory-mapping/examples/checkpoint_to_memory_contract.example.json" in writeback_seam
 
 
 def test_registry_routes_checkpoint_docs_and_schemas() -> None:
@@ -75,8 +75,8 @@ def test_registry_routes_checkpoint_docs_and_schemas() -> None:
     ):
         assert doc_ref in registry["core_docs"]
     for schema_ref in (
-        "mechanics/checkpoint/schemas/inquiry_checkpoint.schema.json",
-        "mechanics/checkpoint/schemas/checkpoint-to-memory-contract.schema.json",
+        "mechanics/checkpoint/parts/checkpoint-carry-contract/schemas/inquiry_checkpoint.schema.json",
+        "mechanics/checkpoint/parts/checkpoint-to-memory-mapping/schemas/checkpoint-to-memory-contract.schema.json",
     ):
         assert schema_ref in registry["schemas"]
 

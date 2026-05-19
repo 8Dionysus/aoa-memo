@@ -15,6 +15,12 @@ This active part belongs to `mechanics/checkpoint/` and materializes the matchin
 
 keeps pause, return, and carry refs bounded and reviewable
 
+## Owned Artifacts
+
+- `./schemas/inquiry_checkpoint.schema.json`
+- `./examples/inquiry_checkpoint.example.json`
+- `./examples/inquiry_checkpoint.return.example.json`
+
 ## Next Route
 
 Use `../../OWNER_MAP.md` for stronger owner routing and `../../PROVENANCE.md` for placement history.

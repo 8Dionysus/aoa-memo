@@ -54,11 +54,11 @@ class RecurrenceSupportMechanicTestCase(unittest.TestCase):
             encoding="utf-8"
         )
         for path in (
-            "mechanics/checkpoint/schemas/inquiry_checkpoint.schema.json",
-            "mechanics/checkpoint/examples/inquiry_checkpoint.example.json",
-            "mechanics/checkpoint/examples/inquiry_checkpoint.return.example.json",
-            "mechanics/checkpoint/schemas/checkpoint-to-memory-contract.schema.json",
-            "mechanics/checkpoint/examples/checkpoint_to_memory_contract.example.json",
+            "mechanics/checkpoint/parts/checkpoint-carry-contract/schemas/inquiry_checkpoint.schema.json",
+            "mechanics/checkpoint/parts/checkpoint-carry-contract/examples/inquiry_checkpoint.example.json",
+            "mechanics/checkpoint/parts/checkpoint-carry-contract/examples/inquiry_checkpoint.return.example.json",
+            "mechanics/checkpoint/parts/checkpoint-to-memory-mapping/schemas/checkpoint-to-memory-contract.schema.json",
+            "mechanics/checkpoint/parts/checkpoint-to-memory-mapping/examples/checkpoint_to_memory_contract.example.json",
             "mechanics/recurrence-support/schemas/witness-trace.schema.json",
             "mechanics/recurrence-support/examples/witness_trace.example.json",
             "examples/recall_contract.object.working.return.json",

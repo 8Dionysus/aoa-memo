@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/mechanics/checkpoint/schemas/inquiry_checkpoint.schema.json",
+  "$id": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/mechanics/checkpoint/parts/checkpoint-carry-contract/schemas/inquiry_checkpoint.schema.json",
   "title": "aoa-memo inquiry checkpoint",
   "type": "object",
   "additionalProperties": false,

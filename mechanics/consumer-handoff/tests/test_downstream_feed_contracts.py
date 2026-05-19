@@ -62,7 +62,14 @@ generate_runtime_writeback_governance = load_module("generate_runtime_writeback_
 GENERATED_ROOT = REPO_ROOT / "generated"
 EXAMPLES_ROOT = REPO_ROOT / "examples"
 CONSUMER_HANDOFF_GENERATED_ROOT = REPO_ROOT / "mechanics" / "consumer-handoff" / "generated"
-CHECKPOINT_EXAMPLES_ROOT = REPO_ROOT / "mechanics" / "checkpoint" / "examples"
+CHECKPOINT_EXAMPLES_ROOT = (
+    REPO_ROOT
+    / "mechanics"
+    / "checkpoint"
+    / "parts"
+    / "checkpoint-to-memory-mapping"
+    / "examples"
+)
 WRITEBACK_GENERATED_ROOT = (
     REPO_ROOT
     / "mechanics"
@@ -262,7 +269,7 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
         self.assertEqual(payload["checkpoint_artifact"]["artifact_name"], "inquiry_checkpoint")
         self.assertEqual(
             payload["checkpoint_artifact"]["schema_ref"],
-            "mechanics/checkpoint/schemas/inquiry_checkpoint.schema.json",
+            "mechanics/checkpoint/parts/checkpoint-carry-contract/schemas/inquiry_checkpoint.schema.json",
         )
         self.assertEqual(payload["checkpoint_artifact"]["posture"], "route_artifact_not_memory_object")
         self.assertEqual(payload["runtime_boundary"]["scratchpad_posture"], "runtime_local_only")
@@ -366,7 +373,7 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
             current["source_of_truth"],
             {
                 "runtime_writeback_targets": "mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_targets.min.json",
-                "checkpoint_to_memory_contract": "mechanics/checkpoint/examples/checkpoint_to_memory_contract.example.json",
+                "checkpoint_to_memory_contract": "mechanics/checkpoint/parts/checkpoint-to-memory-mapping/examples/checkpoint_to_memory_contract.example.json",
                 "runtime_writeback_seam": "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
                 "quest_evidence_writeback": "mechanics/writeback/docs/QUEST_EVIDENCE_WRITEBACK.md",
             },

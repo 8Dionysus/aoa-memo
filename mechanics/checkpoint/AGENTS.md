@@ -54,7 +54,7 @@ After checkpoint changes, check whether these surfaces moved:
 - `LANDING_LOG.md`
 - `ROADMAP.md`
 - `legacy/INDEX.md`
-- checkpoint package docs, schemas, examples, and tests
+- checkpoint package docs plus part-local schemas, examples, and tests
 - recurrence-support and writeback consumer refs
 - generated mechanics, AGENTS mesh, memory object surfaces, and writeback
   companions
@@ -72,7 +72,7 @@ python scripts/validate_agents_mesh.py
 python scripts/build_agents_mesh_index.py --check
 python scripts/validate_agents_mesh_index.py
 python scripts/validate_memo.py
-python -m pytest -q mechanics/checkpoint/tests/test_checkpoint_mechanic.py tests/test_memo_validators.py mechanics/consumer-handoff/tests/test_downstream_feed_contracts.py tests/test_memo_mechanics.py tests/test_agents_mesh.py tests/test_mechanic_artifact_topology.py
+python -m pytest -q mechanics/checkpoint/parts/checkpoint-memory-boundary/tests/test_checkpoint_mechanic.py tests/test_memo_validators.py mechanics/consumer-handoff/tests/test_downstream_feed_contracts.py tests/test_memo_mechanics.py tests/test_agents_mesh.py tests/test_mechanic_artifact_topology.py
 ```
 
 Before landing, also run:
@@ -83,6 +83,6 @@ python scripts/release_check.py
 
 ## Closeout
 
-Report checkpoint docs changed, whether package-local artifacts and consumer
-refs stayed owner-routed, whether old root examples or schema refs remain, and
-which stronger owner boundaries stayed outside `aoa-memo`.
+Report checkpoint docs changed, whether part-local artifacts and consumer refs
+stayed owner-routed, whether old root or package-level examples/schema refs
+remain, and which stronger owner boundaries stayed outside `aoa-memo`.

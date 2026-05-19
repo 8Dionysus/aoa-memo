@@ -6,9 +6,9 @@ memo objects without creating a checkpoint-only object family.
 ## Mapping Contract
 
 The source contract is
-`mechanics/checkpoint/examples/checkpoint_to_memory_contract.example.json` and
+`mechanics/checkpoint/parts/checkpoint-to-memory-mapping/examples/checkpoint_to_memory_contract.example.json` and
 its schema is
-`mechanics/checkpoint/schemas/checkpoint-to-memory-contract.schema.json`.
+`mechanics/checkpoint/parts/checkpoint-to-memory-mapping/schemas/checkpoint-to-memory-contract.schema.json`.
 
 ## Mapping Rules
 

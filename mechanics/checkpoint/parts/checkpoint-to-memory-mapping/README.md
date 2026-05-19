@@ -15,6 +15,11 @@ This active part belongs to `mechanics/checkpoint/` and materializes the matchin
 
 maps checkpoint artifacts into existing object kinds without creating checkpoint-only memory
 
+## Owned Artifacts
+
+- `./schemas/checkpoint-to-memory-contract.schema.json`
+- `./examples/checkpoint_to_memory_contract.example.json`
+
 ## Next Route
 
 Use `../../OWNER_MAP.md` for stronger owner routing and `../../PROVENANCE.md` for placement history.
