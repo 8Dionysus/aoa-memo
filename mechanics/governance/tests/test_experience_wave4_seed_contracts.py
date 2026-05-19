@@ -18,17 +18,17 @@ WAVE4_CONTRACTS = (
     ('revocation_ledger_entry', 'revocation_ledger_entry_v1.json'),
     ('governance_decision_memory_v1', 'governance_decision_memory_v1.json'),
 )
-MECHANIC_BY_STEM = {
-    "governance_memory_writeback": "governance",
-    "governance_retention_check": "retention",
-    "policy_precedent_memory": "governance",
-    "revocation_ledger_entry": "writeback",
-    "governance_decision_memory_v1": "governance",
+CONTRACT_BASE_BY_STEM = {
+    "governance_memory_writeback": "mechanics/governance",
+    "governance_retention_check": "mechanics/retention/parts/cross-repo-and-governance-retention",
+    "policy_precedent_memory": "mechanics/governance",
+    "revocation_ledger_entry": "mechanics/writeback",
+    "governance_decision_memory_v1": "mechanics/governance",
 }
 
 
 def contract_paths(stem: str, schema_file: str) -> tuple[Path, Path]:
-    base = ROOT / "mechanics" / MECHANIC_BY_STEM[stem]
+    base = ROOT / CONTRACT_BASE_BY_STEM[stem]
     return base / "schemas" / schema_file, base / "examples" / f"{stem}.example.json"
 
 def load_contract(stem: str, schema_file: str) -> tuple[dict[str, object], dict[str, object]]:

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://aoa.local/mechanics/retention/schemas/cross_repo_retention_result_v1.json",
+  "$id": "https://aoa.local/aoa-memo/mechanics/retention/parts/cross-repo-and-governance-retention/schemas/cross_repo_retention_result_v1.json",
   "title": "cross_repo_retention_result_v1",
   "type": "object",
   "required": [

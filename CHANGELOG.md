@@ -12,6 +12,9 @@ Tracking starts with the community-docs baseline for this repository.
 - Extend the mechanic artifact inventory and readiness matrix to recognize
   part-local technical homes, and move Agon runnable artifacts into its
   functioning `parts/` lanes with part-local validation.
+- Add part-local adoption and retention contract tests so those mechanics can
+  validate boundary, revision/retention, scar/routing, office marker,
+  cross-repo/governance, and post-release artifacts at their owning parts.
 - Add a package-local retention regression boundary so retention docs,
   schemas, examples, and stronger-owner stop-lines are tested inside
   `mechanics/retention/`.
@@ -142,6 +145,9 @@ Tracking starts with the community-docs baseline for this repository.
   `parts/` homes, split digest/closeout candidate coverage into a part-local
   regression test, and tighten readiness local-test-route detection around
   runnable pytest arguments.
+- Move adoption and retention schemas, examples, and local tests into nearest
+  functioning `parts/` homes, and remove the stale retention validation
+  dependency on governance tests from the retention route.
 - Move the downstream feed regression into
   `mechanics/consumer-handoff/tests/`, move the tracked writeback receipt
   fixture into `mechanics/writeback/tests/fixtures/`, and narrow the remaining

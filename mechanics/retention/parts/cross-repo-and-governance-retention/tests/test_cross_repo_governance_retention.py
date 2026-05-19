@@ -7,15 +7,11 @@ from pathlib import Path
 from jsonschema import Draft202012Validator
 
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
+REPO_ROOT = Path(__file__).resolve().parents[5]
 
 RETENTION_CONTRACTS = {
     "cross_repo_retention_result": "cross_repo_retention_result_v1.json",
-    "first_office_retention_marker_v1": "first_office_retention_marker_v1.json",
     "governance_retention_check": "governance_retention_check_v1.json",
-    "office_retention_marker_v1": "office_retention_marker_v1.json",
-    "post_release_retention_memory": "post_release_retention_memory_v1.json",
-    "post_release_retention_watch": "post_release_retention_watch_v1.json",
 }
 
 
@@ -26,7 +22,13 @@ def load_json(relative_path: str) -> dict[str, object]:
 
 
 def contract_paths(stem: str, schema_file: str) -> tuple[Path, Path]:
-    base = REPO_ROOT / "mechanics" / "retention"
+    base = (
+        REPO_ROOT
+        / "mechanics"
+        / "retention"
+        / "parts"
+        / "cross-repo-and-governance-retention"
+    )
     return base / "schemas" / schema_file, base / "examples" / f"{stem}.example.json"
 
 
@@ -69,7 +71,7 @@ class RetentionMechanicTestCase(unittest.TestCase):
         ):
             self.assertIn(snippet, readme)
 
-    def test_retention_contracts_are_package_local_and_validate(self) -> None:
+    def test_cross_repo_governance_contracts_are_part_local_and_validate(self) -> None:
         parts = (REPO_ROOT / "mechanics" / "retention" / "PARTS.md").read_text(
             encoding="utf-8"
         )
@@ -94,7 +96,7 @@ class RetentionMechanicTestCase(unittest.TestCase):
                 )
                 self.assertFalse(errors, errors[0].message if errors else "")
 
-    def test_retention_schemas_reject_missing_required_fields(self) -> None:
+    def test_cross_repo_governance_schemas_reject_missing_required_fields(self) -> None:
         for stem, schema_file in RETENTION_CONTRACTS.items():
             schema_path, example_path = contract_paths(stem, schema_file)
             schema = json.loads(schema_path.read_text(encoding="utf-8"))

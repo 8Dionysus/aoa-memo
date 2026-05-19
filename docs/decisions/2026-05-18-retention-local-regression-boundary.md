@@ -4,6 +4,9 @@
 
 Accepted on 2026-05-18.
 
+Amended on 2026-05-19 by the retention part-local artifact move. The original
+package-local test was split into part-local routes.
+
 ## Context
 
 The retention mechanic already owned active docs, schemas, and examples under
@@ -18,8 +21,7 @@ example, or stop-line drift.
 
 ## Decision
 
-Add `mechanics/retention/tests/test_retention_mechanic.py` as the retention
-package-local regression boundary.
+Add part-local retention tests as the retention regression boundary.
 
 The test validates active doc registration, old flat path absence, stronger
 owner stop-lines, package-local schema/example discoverability, schema validity,
@@ -39,7 +41,7 @@ example validity, and required-field rejection.
 
 Expected verification:
 
-- `python -m pytest -q mechanics/retention/tests/test_retention_mechanic.py`
+- `python -m pytest -q mechanics/retention/parts/cross-repo-and-governance-retention/tests mechanics/retention/parts/office-markers/tests mechanics/retention/parts/post-release-retention/tests`
 - `python scripts/build_mechanic_artifact_inventory.py --check`
 - `python scripts/validate_mechanic_artifact_inventory.py`
 - `python scripts/build_memo_mechanic_readiness.py --check`

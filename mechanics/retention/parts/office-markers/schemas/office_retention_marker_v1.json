@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://aoa.local/aoa-memo/mechanics/retention/schemas/office_retention_marker_v1.json",
+  "$id": "https://aoa.local/aoa-memo/mechanics/retention/parts/office-markers/schemas/office_retention_marker_v1.json",
   "title": "Office Retention Marker V1",
   "type": "object",
   "additionalProperties": false,

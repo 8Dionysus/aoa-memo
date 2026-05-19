@@ -23,19 +23,19 @@ WAVE3_STEMS = (
     "pattern_lineage_memory_entry",
     "shared_lesson_memory",
 )
-MECHANIC_BY_STEM = {
-    "adoption_duplicate_memory_cluster": "adoption",
-    "adoption_forgetting_decision": "adoption",
-    "adoption_memory_writeback": "adoption",
-    "adoption_retention_memory": "adoption",
-    "adoption_revision_ledger_entry": "adoption",
-    "adoption_scar_writeback": "adoption",
-    "cross_repo_retention_result": "retention",
-    "federation_forgetting_decision": "governance",
-    "federation_memory_gate_decision": "governance",
-    "memo_to_kag_bridge_record": "consumer-handoff",
-    "pattern_lineage_memory_entry": "lineage-harvest",
-    "shared_lesson_memory": "antifragility",
+CONTRACT_BASE_BY_STEM = {
+    "adoption_duplicate_memory_cluster": "mechanics/adoption/parts/adoption-boundary",
+    "adoption_forgetting_decision": "mechanics/adoption/parts/adoption-boundary",
+    "adoption_memory_writeback": "mechanics/adoption/parts/adoption-boundary",
+    "adoption_retention_memory": "mechanics/adoption/parts/revision-and-retention-pressure",
+    "adoption_revision_ledger_entry": "mechanics/adoption/parts/revision-and-retention-pressure",
+    "adoption_scar_writeback": "mechanics/adoption/parts/scar-and-routing-adoption",
+    "cross_repo_retention_result": "mechanics/retention/parts/cross-repo-and-governance-retention",
+    "federation_forgetting_decision": "mechanics/governance",
+    "federation_memory_gate_decision": "mechanics/governance",
+    "memo_to_kag_bridge_record": "mechanics/consumer-handoff",
+    "pattern_lineage_memory_entry": "mechanics/lineage-harvest",
+    "shared_lesson_memory": "mechanics/antifragility",
 }
 GUARDRAIL_BOOLEAN_FIELDS = {
     "authority_required",
@@ -71,8 +71,7 @@ def load_contract(stem: str) -> tuple[dict[str, object], dict[str, object]]:
 
 
 def contract_paths(stem: str) -> tuple[Path, Path]:
-    mechanic = MECHANIC_BY_STEM[stem]
-    base = ROOT / "mechanics" / mechanic
+    base = ROOT / CONTRACT_BASE_BY_STEM[stem]
     return base / "schemas" / f"{stem}_v1.json", base / "examples" / f"{stem}.example.json"
 
 

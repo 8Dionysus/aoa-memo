@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://aoa.local/aoa-memo/mechanics/adoption/schemas/adoption_forgetting_decision_v1.json",
-  "title": "adoption_forgetting_decision v1",
+  "$id": "https://aoa.local/aoa-memo/mechanics/adoption/parts/scar-and-routing-adoption/schemas/adoption_scar_writeback_v1.json",
+  "title": "adoption_scar_writeback v1",
   "type": "object",
   "required": [
     "schema_id",
@@ -16,11 +16,11 @@
   "properties": {
     "schema_id": {
       "type": "string",
-      "const": "adoption_forgetting_decision_v1"
+      "const": "adoption_scar_writeback_v1"
     },
     "kind": {
       "type": "string",
-      "const": "adoption_forgetting_decision"
+      "const": "adoption_scar_writeback"
     },
     "version": {
       "type": "string",
@@ -78,7 +78,10 @@
         "owner_surface",
         "requires_owner_consent",
         "rollback_required",
-        "retention_cycles"
+        "retention_cycles",
+        "kind_boundary",
+        "required_trial",
+        "allowed_effects"
       ],
       "additionalProperties": false,
       "properties": {
@@ -105,6 +108,20 @@
         "retention_cycles": {
           "type": "integer",
           "minimum": 1
+        },
+        "kind_boundary": {
+          "type": "string"
+        },
+        "required_trial": {
+          "type": "boolean",
+          "const": true
+        },
+        "allowed_effects": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
         }
       }
     }
