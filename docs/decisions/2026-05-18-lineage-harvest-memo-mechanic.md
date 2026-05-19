@@ -40,8 +40,8 @@ card, owner map, provenance bridge, landing log, roadmap, docs route, legacy
 route, generated mechanics coverage, AGENTS mesh coverage, doctrine recall
 coverage, tests, and active path updates.
 
-Keep `mechanics/lineage-harvest/schemas/pattern_lineage_memory_entry_v1.json` and
-`mechanics/lineage-harvest/examples/pattern_lineage_memory_entry.example.json` in root technical
+Keep `mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/schemas/pattern_lineage_memory_entry_v1.json` and
+`mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/examples/pattern_lineage_memory_entry.example.json` in root technical
 districts while they remain public support contracts and release-gate
 companions.
 
@@ -75,5 +75,5 @@ Expected verification:
 - `python scripts/validate_agents_mesh_index.py`
 - `python scripts/validate_memory_surfaces.py`
 - `python scripts/validate_memo.py`
-- `python -m pytest -q mechanics/lineage-harvest/tests/test_lineage_harvest_mechanic.py tests/test_memo_mechanics.py tests/test_agents_mesh.py mechanics/recurrence-support/tests/test_recurrence_support_mechanic.py tests/test_experience_wave3_seed_contracts.py`
+- `python -m pytest -q mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/tests/test_lineage_harvest_mechanic.py tests/test_memo_mechanics.py tests/test_agents_mesh.py mechanics/recurrence-support/parts/witness-trace-contract/tests/test_recurrence_support_mechanic.py tests/test_experience_wave3_seed_contracts.py`
 - `python scripts/release_check.py`

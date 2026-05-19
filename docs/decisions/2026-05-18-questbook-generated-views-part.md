@@ -25,7 +25,7 @@ Keep these outputs in root `generated/`:
 - `generated/quest_dispatch.min.json`
 - `generated/quest_dispatch.min.example.json`
 
-Strengthen `mechanics/questbook/scripts/validate_quest_store.py` so it checks
+Strengthen `mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py` so it checks
 the generated-view part files, the required output list, the required builder,
 and the `questbook_projections` family in
 `config/root_technical_districts.json`.
@@ -46,9 +46,9 @@ and the `questbook_projections` family in
 Use:
 
 ```bash
-python mechanics/questbook/scripts/validate_quest_store.py
-python mechanics/questbook/scripts/build_quest_surfaces.py --check
+python mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py
+python mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py --check
 python scripts/validate_memo_mechanic_parts.py
-python -m pytest -q mechanics/questbook/tests/test_questbook_store.py tests/test_memo_mechanic_parts.py
+python -m pytest -q mechanics/questbook/parts/source-contract/tests/test_questbook_store.py tests/test_memo_mechanic_parts.py
 python scripts/release_check.py
 ```

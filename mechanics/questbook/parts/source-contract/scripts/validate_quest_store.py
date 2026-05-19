@@ -8,7 +8,7 @@ from pathlib import Path
 import yaml
 
 
-ROOT = Path(__file__).resolve().parents[3]
+ROOT = Path(__file__).resolve().parents[5]
 QUESTS = ROOT / "quests"
 
 LIFECYCLE_STATES = {
@@ -37,11 +37,20 @@ QUEST_GENERATED_OUTPUTS = (
     "generated/quest_dispatch.min.example.json",
     "generated/quest_dispatch.min.json",
 )
-QUEST_GENERATED_BUILDER = "mechanics/questbook/scripts/build_quest_surfaces.py"
+QUEST_GENERATED_BUILDER = "mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py"
 GENERATED_VIEWS_PART_FILES = (
     "mechanics/questbook/parts/generated-views/README.md",
     "mechanics/questbook/parts/generated-views/CONTRACT.md",
     "mechanics/questbook/parts/generated-views/VALIDATION.md",
+)
+SOURCE_CONTRACT_PART_FILES = (
+    "mechanics/questbook/parts/source-contract/README.md",
+    "mechanics/questbook/parts/source-contract/CONTRACT.md",
+    "mechanics/questbook/parts/source-contract/VALIDATION.md",
+)
+SOURCE_CONTRACT_ARTIFACTS = (
+    "mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py",
+    "mechanics/questbook/parts/source-contract/tests/test_questbook_store.py",
 )
 
 
@@ -164,6 +173,22 @@ def validate_generated_views_part(problems: list[str]) -> None:
         problems.append("questbook_projections family builders must name the Questbook surface builder")
 
 
+def validate_source_contract_part(problems: list[str]) -> None:
+    part_text = ""
+    for part_file in SOURCE_CONTRACT_PART_FILES:
+        path = ROOT / part_file
+        if not path.is_file():
+            problems.append(f"{part_file}: source-contract part file is required")
+            continue
+        part_text += "\n" + path.read_text(encoding="utf-8")
+
+    for artifact in SOURCE_CONTRACT_ARTIFACTS:
+        if not (ROOT / artifact).is_file():
+            problems.append(f"{artifact}: source-contract artifact is required")
+        if part_text and artifact not in part_text:
+            problems.append(f"mechanics/questbook/parts/source-contract: missing artifact {artifact}")
+
+
 def validate() -> list[str]:
     problems: list[str] = []
     if not (QUESTS / "AGENTS.md").is_file():
@@ -204,6 +229,7 @@ def validate() -> list[str]:
                     problems.append(f"{rel(path)}: quest source must be YAML or Markdown")
 
     validate_generated_views_part(problems)
+    validate_source_contract_part(problems)
     return problems
 
 

@@ -35,7 +35,7 @@ python scripts/release_check.py
 Validation route:
 
 ```bash
-python mechanics/questbook/scripts/validate_quest_store.py
+python mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py
 python scripts/validate_memo_mechanics.py
 python -m pytest -q mechanics/agon/parts/prebinding-and-candidate-intake/tests mechanics/agon/parts/bridge-and-evidence-seams/tests mechanics/agon/parts/wave-landing-and-stop-lines/tests
 python scripts/release_check.py

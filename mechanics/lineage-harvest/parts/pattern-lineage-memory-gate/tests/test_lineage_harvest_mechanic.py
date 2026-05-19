@@ -5,7 +5,7 @@ import unittest
 from pathlib import Path
 
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
+REPO_ROOT = Path(__file__).resolve().parents[5]
 
 
 class LineageHarvestMechanicTestCase(unittest.TestCase):
@@ -56,8 +56,8 @@ class LineageHarvestMechanicTestCase(unittest.TestCase):
             encoding="utf-8"
         )
         for path in (
-            "mechanics/lineage-harvest/schemas/pattern_lineage_memory_entry_v1.json",
-            "mechanics/lineage-harvest/examples/pattern_lineage_memory_entry.example.json",
+            "mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/schemas/pattern_lineage_memory_entry_v1.json",
+            "mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/examples/pattern_lineage_memory_entry.example.json",
             "mechanics/governance/parts/federation-boundary/examples/federation_memory_gate_decision.example.json",
             "tests/test_experience_wave3_seed_contracts.py",
         ):
@@ -69,7 +69,7 @@ class LineageHarvestMechanicTestCase(unittest.TestCase):
 
         registry = json.loads((REPO_ROOT / "generated" / "memo_registry.min.json").read_text())
         self.assertIn(active_ref, registry["core_docs"])
-        self.assertIn("mechanics/lineage-harvest/schemas/pattern_lineage_memory_entry_v1.json", registry["schemas"])
+        self.assertIn("mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/schemas/pattern_lineage_memory_entry_v1.json", registry["schemas"])
 
         catalog = json.loads((REPO_ROOT / "generated" / "memory_catalog.min.json").read_text())
         surfaces = {item["id"]: item for item in catalog["memo_surfaces"]}

@@ -42,7 +42,7 @@ as `quests/<lane>/<state>/<quest-id>`.
 - `mechanics/questbook/`
 - `QUESTBOOK.md`
 - `quests/`
-- `mechanics/questbook/scripts/build_quest_surfaces.py`
+- `mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py`
 - `generated/quest_catalog*.json`
 - `generated/quest_dispatch*.json`
 - `scripts/validate_memo.py`
@@ -53,10 +53,10 @@ as `quests/<lane>/<state>/<quest-id>`.
 ## Verification Route
 
 ```bash
-python mechanics/questbook/scripts/validate_quest_store.py
-python mechanics/questbook/scripts/build_quest_surfaces.py --check
+python mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py
+python mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py --check
 python scripts/validate_memo_mechanics.py
 python scripts/validate_agents_mesh.py
-python -m pytest -q mechanics/questbook/tests tests/test_memo_validators.py tests/test_memo_mechanics.py tests/test_agents_mesh.py
+python -m pytest -q mechanics/questbook/parts/source-contract/tests tests/test_memo_validators.py tests/test_memo_mechanics.py tests/test_agents_mesh.py
 python scripts/release_check.py
 ```

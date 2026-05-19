@@ -26,7 +26,7 @@ validators.
 ## Validation
 
 ```bash
-python mechanics/questbook/scripts/validate_quest_store.py
+python mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py
 python scripts/validate_memo_mechanics.py
 python scripts/release_check.py
 ```

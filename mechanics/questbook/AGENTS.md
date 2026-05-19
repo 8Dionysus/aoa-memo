@@ -52,10 +52,10 @@ Before closeout, review the changed route rather than only the changed file:
 ## Validation
 
 ```bash
-python mechanics/questbook/scripts/validate_quest_store.py
-python mechanics/questbook/scripts/build_quest_surfaces.py --check
+python mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py
+python mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py --check
 python scripts/validate_memo.py
-python -m pytest -q mechanics/questbook/tests tests/test_memo_validators.py
+python -m pytest -q mechanics/questbook/parts/source-contract/tests tests/test_memo_validators.py
 ```
 
 Before landing, also run:

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/mechanics/readiness-boundary/schemas/memory_readiness_boundary_contract.schema.json",
+  "$id": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/mechanics/readiness-boundary/parts/memory-readiness-boundary/schemas/memory_readiness_boundary_contract.schema.json",
   "title": "aoa-memo memory readiness boundary contract",
   "type": "object",
   "additionalProperties": false,

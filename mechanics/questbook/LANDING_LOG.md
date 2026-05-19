@@ -1,5 +1,25 @@
 # Questbook Landing Log
 
+## 2026-05-19
+
+- Moved the Questbook source validator into
+  `mechanics/questbook/parts/source-contract/scripts/`.
+- Moved the generated quest projection builder into
+  `mechanics/questbook/parts/generated-views/scripts/`.
+- Moved the Questbook regression into
+  `mechanics/questbook/parts/source-contract/tests/`.
+- Preserved the root `QUESTBOOK.md`, root `quests/`, and root generated
+  projection outputs as intentional public surfaces.
+
+Validation route:
+
+```bash
+python mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py
+python mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py --check
+python -m pytest -q mechanics/questbook/parts/source-contract/tests
+python scripts/release_check.py
+```
+
 ## 2026-05-18
 
 - Added `parts/generated-views/` as the functioning-part contract for
@@ -17,10 +37,10 @@
 Validation route:
 
 ```bash
-python mechanics/questbook/scripts/validate_quest_store.py
-python mechanics/questbook/scripts/build_quest_surfaces.py --check
+python mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py
+python mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py --check
 python scripts/validate_memo_mechanic_parts.py
-python -m pytest -q mechanics/questbook/tests/test_questbook_store.py tests/test_memo_mechanic_parts.py
+python -m pytest -q mechanics/questbook/parts/source-contract/tests/test_questbook_store.py tests/test_memo_mechanic_parts.py
 python scripts/release_check.py
 ```
 
@@ -29,16 +49,15 @@ python scripts/release_check.py
 - Added Questbook as the memo mechanic for public memory-layer obligations.
 - Moved flat root quest sources into lane-first lifecycle directories under
   `quests/`.
-- Moved the generated quest projection builder into
-  `mechanics/questbook/scripts/`.
+- Added the generated quest projection builder to the Questbook mechanic.
 - Added source-contract and quest-store validation for YAML and Markdown quest
   sources.
 
 Validation route:
 
 ```bash
-python mechanics/questbook/scripts/validate_quest_store.py
-python mechanics/questbook/scripts/build_quest_surfaces.py --check
+python mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py
+python mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py --check
 python scripts/release_check.py
 ```
 

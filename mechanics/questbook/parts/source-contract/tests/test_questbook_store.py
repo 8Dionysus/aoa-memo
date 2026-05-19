@@ -7,8 +7,11 @@ from pathlib import Path
 from unittest.mock import patch
 
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
-sys.path.insert(0, str(REPO_ROOT / "mechanics" / "questbook" / "scripts"))
+REPO_ROOT = Path(__file__).resolve().parents[5]
+sys.path.insert(
+    0,
+    str(REPO_ROOT / "mechanics" / "questbook" / "parts" / "source-contract" / "scripts"),
+)
 
 import validate_quest_store  # noqa: E402
 
@@ -24,17 +27,17 @@ def run_script(*args: str) -> subprocess.CompletedProcess[str]:
 
 
 def test_quest_store_validator_passes() -> None:
-    completed = run_script("mechanics/questbook/scripts/validate_quest_store.py")
+    completed = run_script("mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py")
     assert completed.returncode == 0, completed.stderr or completed.stdout
 
 
 def test_quest_surface_builder_check_passes() -> None:
-    completed = run_script("mechanics/questbook/scripts/build_quest_surfaces.py", "--check")
+    completed = run_script("mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py", "--check")
     assert completed.returncode == 0, completed.stderr or completed.stdout
 
 
 def test_quest_generated_views_part_names_root_outputs_and_builder() -> None:
-    completed = run_script("mechanics/questbook/scripts/validate_quest_store.py")
+    completed = run_script("mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py")
     assert completed.returncode == 0, completed.stderr or completed.stdout
 
     contract = (
@@ -47,7 +50,7 @@ def test_quest_generated_views_part_names_root_outputs_and_builder() -> None:
     ).read_text(encoding="utf-8")
     assert "generated/quest_catalog.min.json" in contract
     assert "generated/quest_dispatch.min.json" in contract
-    assert "mechanics/questbook/scripts/build_quest_surfaces.py" in contract
+    assert "mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py" in contract
 
 
 def test_agon_lane_rejects_yaml_sources() -> None:

@@ -5,7 +5,7 @@ import unittest
 from pathlib import Path
 
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
+REPO_ROOT = Path(__file__).resolve().parents[5]
 
 
 class RecurrenceSupportMechanicTestCase(unittest.TestCase):
@@ -59,8 +59,8 @@ class RecurrenceSupportMechanicTestCase(unittest.TestCase):
             "mechanics/checkpoint/parts/checkpoint-carry-contract/examples/inquiry_checkpoint.return.example.json",
             "mechanics/checkpoint/parts/checkpoint-to-memory-mapping/schemas/checkpoint-to-memory-contract.schema.json",
             "mechanics/checkpoint/parts/checkpoint-to-memory-mapping/examples/checkpoint_to_memory_contract.example.json",
-            "mechanics/recurrence-support/schemas/witness-trace.schema.json",
-            "mechanics/recurrence-support/examples/witness_trace.example.json",
+            "mechanics/recurrence-support/parts/witness-trace-contract/schemas/witness-trace.schema.json",
+            "mechanics/recurrence-support/parts/witness-trace-contract/examples/witness_trace.example.json",
             "examples/recall_contract.object.working.return.json",
             "quests/memo/reanchor/AOA-MEM-Q-0009.yaml",
             "generated/quest_catalog.min.json",

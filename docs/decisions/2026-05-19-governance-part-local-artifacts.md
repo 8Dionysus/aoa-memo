@@ -64,7 +64,7 @@ dispatch, role authority, source-owner consent, or runtime governance.
 
 Expected verification:
 
-- `python -m pytest -q mechanics/governance/parts/governance-boundary/tests tests/test_experience_wave2_seed_contracts.py tests/test_experience_wave3_seed_contracts.py mechanics/operational-gate/parts/post-release-boundaries/tests/test_experience_wave5_seed_contracts.py mechanics/lineage-harvest/tests/test_lineage_harvest_mechanic.py`
+- `python -m pytest -q mechanics/governance/parts/governance-boundary/tests tests/test_experience_wave2_seed_contracts.py tests/test_experience_wave3_seed_contracts.py mechanics/operational-gate/parts/post-release-boundaries/tests/test_experience_wave5_seed_contracts.py mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/tests/test_lineage_harvest_mechanic.py`
 - `python scripts/build_mechanic_artifact_inventory.py --check`
 - `python scripts/validate_mechanic_artifact_inventory.py`
 - `python scripts/build_memo_mechanic_readiness.py --check`

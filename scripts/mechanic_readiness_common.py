@@ -60,8 +60,8 @@ SUPPORTING_VALIDATION_REFS = (
     "python scripts/validate_memo_mechanics.py",
     "python scripts/build_memo_mechanics_index.py --check",
     "python scripts/validate_memo_mechanics_index.py",
-    "python mechanics/questbook/scripts/validate_quest_store.py",
-    "python mechanics/questbook/scripts/build_quest_surfaces.py --check",
+    "python mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py",
+    "python mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py --check",
     "python scripts/validate_memo.py",
 )
 

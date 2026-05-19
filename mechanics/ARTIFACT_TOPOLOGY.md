@@ -163,10 +163,17 @@ Examples:
 - operational-gate deployment, office incident, service revision, and
   post-release schemas/examples/tests live under their nearest
   `mechanics/operational-gate/parts/<part>/` homes.
-- readiness-boundary, recurrence-support, lineage-harvest, and shape-guard
-  schemas/examples/tests live under their
-  package lanes when they serve that one mechanic and have not yet been
-  split to a sharper functioning part.
+- readiness-boundary contract schemas/examples/tests live under
+  `mechanics/readiness-boundary/parts/memory-readiness-boundary/`.
+- recurrence-support witness trace schemas/examples/tests live under
+  `mechanics/recurrence-support/parts/witness-trace-contract/`.
+- lineage-harvest pattern-lineage schemas/examples/tests live under
+  `mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/`.
+- shape-guard via negativa tests live under
+  `mechanics/shape-guard/parts/via-negativa-checklist/`.
+- Questbook source validation lives under
+  `mechanics/questbook/parts/source-contract/`, while the generated-view
+  builder lives under `mechanics/questbook/parts/generated-views/`.
 - writeback generated companions such as `runtime_writeback_targets`,
   `runtime_writeback_intake`, `runtime_writeback_governance`,
   `growth_refinery_writeback_lanes`, and `phase_alpha_writeback_map` live under

@@ -41,7 +41,7 @@ Mechanic-owned examples live under their package lane:
 - `mechanics/consumer-handoff/parts/kag-source-export/examples/` for KAG donor/export seed examples
 - `mechanics/checkpoint/parts/<part>/examples/` for inquiry checkpoint, checkpoint-to-memory, approval, health, checkpoint improvement, and checkpoint review examples
 - `mechanics/writeback/parts/<part>/examples/` for quest chronicle, self-agency, rollback, and revision-ledger examples
-- `mechanics/recurrence-support/examples/` for witness trace examples
+- `mechanics/recurrence-support/parts/witness-trace-contract/examples/` for witness trace examples
 - `mechanics/agon/parts/<part>/examples/`, `mechanics/titan/parts/<part>/examples/`, and the other mechanic package or part examples for their local contracts
 
 ## Editing posture

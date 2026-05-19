@@ -432,7 +432,7 @@
           "heading": "Technical contracts",
           "ordinal": 3,
           "summary": "Keeps pattern-lineage schema, example, and tests in the lineage-harvest artifact lane.",
-          "body": "The lineage-harvest package owns source docs, owner maps, `mechanics/lineage-harvest/schemas/pattern_lineage_memory_entry_v1.json`, `mechanics/lineage-harvest/examples/pattern_lineage_memory_entry.example.json`, and its package tests. Cross-wave seed tests stay root-owned only when they protect shared mechanics behavior."
+          "body": "The lineage-harvest package owns source docs, owner maps, `mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/schemas/pattern_lineage_memory_entry_v1.json`, `mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/examples/pattern_lineage_memory_entry.example.json`, and its package tests. Cross-wave seed tests stay root-owned only when they protect shared mechanics behavior."
         }
       ]
     }

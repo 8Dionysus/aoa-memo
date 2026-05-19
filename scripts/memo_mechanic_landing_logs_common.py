@@ -27,8 +27,8 @@ SUPPORTING_VALIDATION_REFS = (
     "python scripts/validate_memo_mechanic_owner_routes.py",
     "python scripts/build_memo_mechanic_readiness.py --check",
     "python scripts/validate_memo_mechanic_readiness.py",
-    "python mechanics/questbook/scripts/validate_quest_store.py",
-    "python mechanics/questbook/scripts/build_quest_surfaces.py --check",
+    "python mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py",
+    "python mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py --check",
 )
 LANDING_EVIDENCE_TERMS = (
     "landed",
