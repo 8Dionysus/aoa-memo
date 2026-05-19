@@ -39,10 +39,10 @@
       "source_path": "examples/episode.example.json"
     },
     {
-      "id": "memo.ep.2026-03-23.tos-interpretation-bridge-seed",
+      "id": "memo.ep.2026-03-23.tos-interpretation-bridge-source",
       "kind": "episode",
       "title": "ToS fragment inspection recorded for memo bridge export",
-      "summary": "Records that a Tree of Sophia fragment was inspected as the seed event for a bounded memo bridge and downstream KAG-ready handoff.",
+      "summary": "Records that a Tree of Sophia fragment was inspected as the source event for a bounded memo bridge and downstream KAG-ready handoff.",
       "recall_posture_short": "allowed current recall; captured review state; This source episode should stay visible as evidence for bridge-oriented recall without becoming the main semantic entrypoint",
       "trust_posture_short": "warm temperature; source_inspection authority; confidence 0.84; freshness 0.92",
       "use_when_short": "Use when episode-level recall is needed and this object remains allowed for lineage, episodic, semantic.",
@@ -510,7 +510,7 @@
       "id": "memo.pattern.2026-04-07.antifragility-stress-recovery-window",
       "kind": "pattern",
       "title": "Ordered recovery windows earn recall only after bounded proof",
-      "summary": "Observed across source receipts, fourth-wave eval proof, derived stats, and additive route hints: repeated stress recovery becomes durable memo context only when the ordered window stays bounded and the memory object remains downstream from stronger evidence.",
+      "summary": "Observed across source receipts, fourth-stage eval proof, derived stats, and additive route hints: repeated stress recovery becomes durable memo context only when the ordered window stays bounded and the memory object remains downstream from stronger evidence.",
       "recall_posture_short": "allowed current recall; confirmed review state; This pattern should surface as bounded repeated-window recovery context only after checking the linked receipts, proof, and derived summaries",
       "trust_posture_short": "cool temperature; human_reviewed authority; confidence 0.92; freshness 0.98",
       "use_when_short": "Use when pattern-level recall is needed and this object remains allowed for procedural, semantic, lineage.",

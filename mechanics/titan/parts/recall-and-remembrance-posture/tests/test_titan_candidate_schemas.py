@@ -52,7 +52,7 @@ def test_titan_writeback_candidate_requires_owner_surface_and_retention_risk() -
         "source_records": ["repo:aoa-memo/mechanics/titan/docs/TITAN_MEMORY_LOOM_POSTURE.md"],
         "reason": "Example candidate for schema regression.",
         "owner_surface": "mechanics/titan/docs/TITAN_MEMORY_LOOM_POSTURE.md",
-        "retention_risk": "May preserve an early wave too strongly.",
+        "retention_risk": "May preserve an early stage too strongly.",
         "operator_approval": "pending",
     }
     assert error_messages("titan_memory_writeback_candidate.schema.json", payload) == []

@@ -2,7 +2,7 @@
 
 Memo prepares evidence packages for threshold review; memo evidence is not canon.
 
-## Wave XVIII invariant
+## Stage XVIII invariant
 
 `Sophian threshold candidate != Tree-of-Sophia canon`.
 

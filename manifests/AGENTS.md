@@ -21,7 +21,7 @@ part. Agon recurrence manifests and their hook bindings live under:
 
 - `mechanics/agon/parts/prebinding-and-candidate-intake/manifests/recurrence/`
 - `mechanics/agon/parts/bridge-and-evidence-seams/manifests/recurrence/`
-- `mechanics/agon/parts/wave-landing-and-stop-lines/manifests/recurrence/`
+- `mechanics/agon/parts/stage-landing-and-stop-lines/manifests/recurrence/`
 
 Keep `component.agon.` records aligned with `mechanics/agon/docs/`,
 the relevant `mechanics/agon/parts/<part>/config/`,
@@ -53,7 +53,7 @@ validator first:
 
 ```bash
 python mechanics/agon/parts/prebinding-and-candidate-intake/scripts/validate_agon_memo_prebindings.py
-python -m pytest -q mechanics/agon/parts/wave-landing-and-stop-lines/tests
+python -m pytest -q mechanics/agon/parts/stage-landing-and-stop-lines/tests
 python scripts/validate_memo.py
 python scripts/release_check.py
 ```

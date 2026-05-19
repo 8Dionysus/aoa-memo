@@ -10,15 +10,15 @@ from typing import Any
 from jsonschema import Draft202012Validator
 
 ROOT = pathlib.Path(__file__).resolve().parents[5]
-SRC = ROOT / 'mechanics/agon/parts/bridge-and-evidence-seams/config/agon_kag_memo_evidence_packages.seed.json'
+SRC = ROOT / 'mechanics/agon/parts/bridge-and-evidence-seams/config/agon_kag_memo_evidence_packages.source.json'
 OUT = ROOT / 'mechanics/agon/parts/bridge-and-evidence-seams/generated/agon_kag_memo_evidence_package_registry.min.json'
 ENTRY_SCHEMA = ROOT / 'mechanics/agon/parts/bridge-and-evidence-seams/schemas/agon-kag-memo-evidence-package.schema.json'
 REGISTRY_SCHEMA = ROOT / 'mechanics/agon/parts/bridge-and-evidence-seams/schemas/agon-kag-memo-evidence-package-registry.schema.json'
 BUILDER = ROOT / 'mechanics/agon/parts/bridge-and-evidence-seams/scripts/build_agon_kag_memo_evidence_package_registry.py'
 ITEM_KEY = 'memo_packages'
 REGISTRY_ID = 'agon.kag_memo_evidence_packages.registry.v1'
-WAVE = 'XVII'
-WAVE_NAME = 'KAG Promotion Path'
+STAGE = 'XVII'
+STAGE_NAME = 'KAG Promotion Path'
 RUNTIME_POSTURE = 'candidate_only'
 EXPECTED_COUNT = 7
 UNIQUE_KEY_FIELD = 'package_id'
@@ -37,7 +37,7 @@ def load_json(path: pathlib.Path) -> Any:
 
 
 def load_builder():
-    spec = importlib.util.spec_from_file_location('_agon_seed_builder', BUILDER)
+    spec = importlib.util.spec_from_file_location('_agon_source_builder', BUILDER)
     if spec is None or spec.loader is None:
         raise RuntimeError(f'cannot load builder {BUILDER}')
     module = importlib.util.module_from_spec(spec)
@@ -70,8 +70,8 @@ def require_string_list(value: Any, field: str, key: str) -> str | None:
 def validate_source_metadata(source: dict[str, Any]) -> str | None:
     expected = {
         'registry_id': REGISTRY_ID,
-        'wave': WAVE,
-        'wave_name': WAVE_NAME,
+        'stage': STAGE,
+        'stage_name': STAGE_NAME,
         'runtime_posture': RUNTIME_POSTURE,
     }
     for field, expected_value in expected.items():
@@ -84,8 +84,8 @@ def validate_item(item: dict[str, Any]) -> str | None:
     key = item.get(UNIQUE_KEY_FIELD)
     if not isinstance(key, str) or not key:
         return f'missing {UNIQUE_KEY_FIELD}'
-    if item.get('wave') != WAVE:
-        return f'{key} wave must be {WAVE}'
+    if item.get('stage') != STAGE:
+        return f'{key} stage must be {STAGE}'
     if item.get('live_protocol') is not False:
         return f'{key} live_protocol must be false'
     if item.get('assistant_contestant_allowed') is not False:

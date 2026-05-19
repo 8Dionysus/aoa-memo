@@ -1055,7 +1055,7 @@ def append_ref_errors(errors: list[str], ref_checks: list[tuple[str, object]]) -
     errors.extend(filter(None, (local_ref_error(value, label) for label, value in ref_checks)))
 
 
-LINEAGE_REF_CHAIN = ("cluster_ref", "candidate_ref", "seed_ref", "object_ref")
+LINEAGE_REF_CHAIN = ("cluster_ref", "candidate_ref", "source_ref", "object_ref")
 
 
 def append_lineage_chain_errors(errors: list[str], lineage_refs: object) -> None:
@@ -1147,7 +1147,7 @@ def validate_example(validator: Draft202012Validator, example_name: str) -> None
         ("expand_surface", data.get("expand_surface")),
         ("lineage_refs.cluster_ref", lineage_refs.get("cluster_ref")),
         ("lineage_refs.candidate_ref", lineage_refs.get("candidate_ref")),
-        ("lineage_refs.seed_ref", lineage_refs.get("seed_ref")),
+        ("lineage_refs.source_ref", lineage_refs.get("source_ref")),
         ("lineage_refs.object_ref", lineage_refs.get("object_ref")),
         ("lineage_context.merged_into", lineage_context.get("merged_into")),
     ]
@@ -2168,7 +2168,7 @@ def validate_checkpoint_to_memory_contract() -> None:
         for err in sorted(validator.iter_errors(data), key=lambda err: list(err.absolute_path))
     ]
 
-    ref_checks = [("source_seed_ref", data.get("source_seed_ref"))]
+    ref_checks = [("source_event_ref", data.get("source_event_ref"))]
     checkpoint_artifact = data.get("checkpoint_artifact", {})
     if isinstance(checkpoint_artifact, dict):
         ref_checks.append(("checkpoint_artifact.schema_ref", checkpoint_artifact.get("schema_ref")))

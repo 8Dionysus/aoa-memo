@@ -23,17 +23,17 @@ def load(path: pathlib.Path):
     return json.loads(path.read_text(encoding='utf-8'))
 
 
-def test_wave16_registry_shape():
+def test_stage16_registry_shape():
     reg = load(OUT)
-    assert reg['wave'] == 'XVI'
-    assert reg['wave_name'] == 'Schools / Lineages / Campaigns'
+    assert reg['stage'] == 'XVI'
+    assert reg['stage_name'] == 'Schools / Lineages / Campaigns'
     assert reg['runtime_posture'] == 'candidate_only'
     assert reg['count'] == EXPECTED_COUNT
     assert len(reg[ITEM_KEY]) == EXPECTED_COUNT
     assert len(reg['digest']) == 64
     keys = set()
     for item in reg[ITEM_KEY]:
-        assert item['wave'] == 'XVI'
+        assert item['stage'] == 'XVI'
         assert item['live_protocol'] is False
         assert item['authority_posture'] == 'non_authority'
         assert item['review_status'] == 'candidate_only'
@@ -60,7 +60,7 @@ def test_builder_reports_missing_registry_id_without_keyerror(tmp_path):
 
     source = load(module.SRC)
     source.pop('registry_id')
-    bad_source = tmp_path / 'agon_slc_memo_bridge.seed.json'
+    bad_source = tmp_path / 'agon_slc_memo_bridge.source.json'
     bad_source.write_text(json.dumps(source), encoding='utf-8')
 
     module.SRC = bad_source

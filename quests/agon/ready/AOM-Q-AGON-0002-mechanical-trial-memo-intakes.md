@@ -4,7 +4,7 @@ source_contract: memo_quest_markdown_contract_v1
 
 ## Quest
 
-Land candidate-only memory intake surfaces for Wave XIII mechanical trials.
+Land candidate-only memory intake surfaces for Stage XIII mechanical trials.
 
 ## Owner Route
 

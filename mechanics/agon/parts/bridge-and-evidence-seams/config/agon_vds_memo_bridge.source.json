@@ -95,7 +95,7 @@
   "live_protocol": false,
   "registry_id": "agon.vds_memo_bridge.registry.v1",
   "runtime_effect": "none",
-  "status": "seeded_candidate_intake_bridge",
+  "status": "drafted_candidate_intake_bridge",
   "stop_lines": [
     "no_durable_scar_write",
     "no_retention_execution",
@@ -104,5 +104,5 @@
     "no_tos_promotion"
   ],
   "version": "0.1.0",
-  "wave": "XI"
+  "stage": "XI"
 }

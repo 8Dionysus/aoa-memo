@@ -30,8 +30,8 @@
     {
       "hook_id": "detect_canon_authority_leak",
       "mode": "observe_only",
-      "target": "mechanics/agon/parts/bridge-and-evidence-seams/config/agon_sophian_memo_evidence.seed.json"
+      "target": "mechanics/agon/parts/bridge-and-evidence-seams/config/agon_sophian_memo_evidence.source.json"
     }
   ],
-  "wave": "XVIII"
+  "stage": "XVIII"
 }

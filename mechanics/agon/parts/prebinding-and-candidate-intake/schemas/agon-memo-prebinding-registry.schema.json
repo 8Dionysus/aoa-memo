@@ -47,13 +47,13 @@
     "status": {
       "type": "string"
     },
-    "wave": {
+    "stage": {
       "type": "string"
     }
   },
   "required": [
     "schema_version",
-    "wave",
+    "stage",
     "owner_repo",
     "status",
     "live_protocol",

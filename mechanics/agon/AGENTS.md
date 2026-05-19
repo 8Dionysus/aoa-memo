@@ -8,7 +8,7 @@ This card applies to `mechanics/agon/`.
 
 The Agon mechanic owns memo-side Agon candidate memory, source refs,
 prebinding posture, evidence-package memory, bridge memory, retention/rank
-memory boundaries, and wave landing notes.
+memory boundaries, and stage landing notes.
 
 It does not run Agon trials, decide verdicts, write durable scars, mutate rank,
 execute retention, promote KAG substrate, publish Tree-of-Sophia canon, or own
@@ -64,7 +64,7 @@ python mechanics/agon/parts/prebinding-and-candidate-intake/scripts/validate_ago
 python mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_slc_memo_bridge_registry.py
 python mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_sophian_memo_evidence_registry.py
 python mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_vds_memo_bridge.py
-python -m pytest -q mechanics/agon/parts/prebinding-and-candidate-intake/tests mechanics/agon/parts/bridge-and-evidence-seams/tests mechanics/agon/parts/wave-landing-and-stop-lines/tests
+python -m pytest -q mechanics/agon/parts/prebinding-and-candidate-intake/tests mechanics/agon/parts/bridge-and-evidence-seams/tests mechanics/agon/parts/stage-landing-and-stop-lines/tests
 ```
 
 Before landing, also run:

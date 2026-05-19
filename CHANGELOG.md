@@ -157,6 +157,8 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Changed
 
+- Rename active memo-side `wave` and `seed` surfaces to stage/source naming
+  while preserving legacy snapshots and source-owned upstream refs literally.
 - Compact the root README Memo Mechanics section so detailed mechanic routing
   stays in AGENTS/mechanic atlas surfaces rather than root public overview.
 - Rename active root cross-mechanic contract families and part-local

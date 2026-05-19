@@ -3,7 +3,7 @@ from __future__ import annotations
 import argparse, json, pathlib, sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[5]
-CONFIG = ROOT / 'mechanics/agon/parts/prebinding-and-candidate-intake/config/agon_memo_prebindings.seed.json'
+CONFIG = ROOT / 'mechanics/agon/parts/prebinding-and-candidate-intake/config/agon_memo_prebindings.source.json'
 GENERATED = ROOT / 'mechanics/agon/parts/prebinding-and-candidate-intake/generated/agon_memo_prebinding_registry.min.json'
 RECORD_KEY = 'prebindings'
 REGISTRY_SCHEMA = 'agon_memo_prebinding_registry_v1'
@@ -20,7 +20,7 @@ def build(config: dict) -> dict:
     return {
         'schema_version': REGISTRY_SCHEMA,
         'source': str(CONFIG.relative_to(ROOT)),
-        'wave': config.get('wave'),
+        'stage': config.get('stage'),
         'owner_repo': config.get('owner_repo'),
         'status': config.get('status'),
         'live_protocol': config.get('live_protocol'),

@@ -20,7 +20,7 @@ from build_agon_epistemic_memo_bridge_registry import (  # noqa: E402
     REGISTRY_ID,
     RUNTIME_POSTURE,
     SRC,
-    WAVE,
+    STAGE,
     build,
     load_source,
 )
@@ -98,8 +98,8 @@ def validate() -> int:
 
     if data.get("registry_id") != REGISTRY_ID:
         return fail(f"source registry_id must be {REGISTRY_ID}")
-    if data.get("wave") != WAVE:
-        return fail(f"source wave must be {WAVE}")
+    if data.get("stage") != STAGE:
+        return fail(f"source stage must be {STAGE}")
     if data.get("runtime_posture") != RUNTIME_POSTURE:
         return fail(f"source runtime_posture must be {RUNTIME_POSTURE}")
 

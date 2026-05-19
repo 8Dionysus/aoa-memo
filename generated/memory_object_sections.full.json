@@ -111,34 +111,34 @@
       ]
     },
     {
-      "id": "memo.ep.2026-03-23.tos-interpretation-bridge-seed",
+      "id": "memo.ep.2026-03-23.tos-interpretation-bridge-source",
       "kind": "episode",
       "title": "ToS fragment inspection recorded for memo bridge export",
       "source_path": "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/episode.tos-interpretation.example.json",
       "sections": [
         {
-          "section_id": "memo.ep.2026-03-23.tos-interpretation-bridge-seed#identity-and-recall",
+          "section_id": "memo.ep.2026-03-23.tos-interpretation-bridge-source#identity-and-recall",
           "heading": "Identity and Recall",
           "ordinal": 1,
           "summary": "Names the episode surface, its active recall modes, and its allowed current-recall posture.",
-          "body": "ToS fragment inspection recorded for memo bridge export. Records that a Tree of Sophia fragment was inspected as the seed event for a bounded memo bridge and downstream KAG-ready handoff. Scope: repo:aoa-memo, project:AoA. Scope classes: repo, project. Primary recall modes: lineage, episodic, semantic. Current recall status: allowed because This source episode should stay visible as evidence for bridge-oriented recall without becoming the main semantic entrypoint. Payload ref: mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow."
+          "body": "ToS fragment inspection recorded for memo bridge export. Records that a Tree of Sophia fragment was inspected as the source event for a bounded memo bridge and downstream KAG-ready handoff. Scope: repo:aoa-memo, project:AoA. Scope classes: repo, project. Primary recall modes: lineage, episodic, semantic. Current recall status: allowed because This source episode should stay visible as evidence for bridge-oriented recall without becoming the main semantic entrypoint. Payload ref: mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow."
         },
         {
-          "section_id": "memo.ep.2026-03-23.tos-interpretation-bridge-seed#provenance-and-evidence",
+          "section_id": "memo.ep.2026-03-23.tos-interpretation-bridge-source#provenance-and-evidence",
           "heading": "Provenance and Evidence",
           "ordinal": 2,
           "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
           "body": "Provenance thread: prov.tos-bridge-kag-lift.2026-03-23. Source refs: mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow, repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md. Episode refs: none. Related curated object ids: none. Strongest next sources: mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow, repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md."
         },
         {
-          "section_id": "memo.ep.2026-03-23.tos-interpretation-bridge-seed#trust-and-lifecycle",
+          "section_id": "memo.ep.2026-03-23.tos-interpretation-bridge-source#trust-and-lifecycle",
           "heading": "Trust and Lifecycle",
           "ordinal": 3,
           "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
           "body": "Authority kind: source_inspection (source-inspection). Temperature: warm; confidence 0.84; freshness 0.92; salience 0.88. Review state: captured. Retention class: bridge-trace. Promotion state: none. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
         },
         {
-          "section_id": "memo.ep.2026-03-23.tos-interpretation-bridge-seed#bridges-and-access",
+          "section_id": "memo.ep.2026-03-23.tos-interpretation-bridge-source#bridges-and-access",
           "heading": "Bridges and Access",
           "ordinal": 4,
           "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
@@ -308,7 +308,7 @@
           "heading": "Provenance and Evidence",
           "ordinal": 2,
           "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
-          "body": "Provenance thread: prov.tos-bridge-kag-lift.2026-03-23. Source refs: mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#tos-bridge-guidance, repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md. Episode refs: memo.ep.2026-03-23.tos-interpretation-bridge-seed. Related curated object ids: memo.ep.2026-03-23.tos-interpretation-bridge-seed. Strongest next sources: mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#tos-bridge-guidance, repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md."
+          "body": "Provenance thread: prov.tos-bridge-kag-lift.2026-03-23. Source refs: mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#tos-bridge-guidance, repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md. Episode refs: memo.ep.2026-03-23.tos-interpretation-bridge-source. Related curated object ids: memo.ep.2026-03-23.tos-interpretation-bridge-source. Strongest next sources: mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#tos-bridge-guidance, repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md."
         },
         {
           "section_id": "memo.claim.2026-03-23.tos-bridge-by-reference#trust-and-lifecycle",
@@ -416,7 +416,7 @@
           "heading": "Provenance and Evidence",
           "ordinal": 2,
           "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
-          "body": "Provenance thread: prov.aoa-memo.contract-hardening.2026-03-23. Source refs: mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md#distillation-posture, mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md#what-may-bridge-outward, docs/MEMORY_MODEL.md#procedural-experience-memory. Episode refs: memo.ep.2026-03-21.self-agent-health-check, memo.ep.2026-03-23.tos-interpretation-bridge-seed. Related curated object ids: memo.ep.2026-03-21.self-agent-health-check, memo.ep.2026-03-23.tos-interpretation-bridge-seed. Strongest next sources: mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md#distillation-posture, mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md#what-may-bridge-outward, docs/MEMORY_MODEL.md#procedural-experience-memory."
+          "body": "Provenance thread: prov.aoa-memo.contract-hardening.2026-03-23. Source refs: mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md#distillation-posture, mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md#what-may-bridge-outward, docs/MEMORY_MODEL.md#procedural-experience-memory. Episode refs: memo.ep.2026-03-21.self-agent-health-check, memo.ep.2026-03-23.tos-interpretation-bridge-source. Related curated object ids: memo.ep.2026-03-21.self-agent-health-check, memo.ep.2026-03-23.tos-interpretation-bridge-source. Strongest next sources: mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md#distillation-posture, mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md#what-may-bridge-outward, docs/MEMORY_MODEL.md#procedural-experience-memory."
         },
         {
           "section_id": "memo.pattern.2026-03-23.reviewed-candidates-before-promotion#trust-and-lifecycle",
@@ -452,7 +452,7 @@
           "heading": "Provenance and Evidence",
           "ordinal": 2,
           "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
-          "body": "Provenance thread: prov.tos-bridge-kag-lift.2026-03-23. Source refs: mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow, repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md. Episode refs: memo.ep.2026-03-23.tos-interpretation-bridge-seed. Related curated object ids: memo.ep.2026-03-23.tos-interpretation-bridge-seed. Strongest next sources: mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow, repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md."
+          "body": "Provenance thread: prov.tos-bridge-kag-lift.2026-03-23. Source refs: mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow, repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md. Episode refs: memo.ep.2026-03-23.tos-interpretation-bridge-source. Related curated object ids: memo.ep.2026-03-23.tos-interpretation-bridge-source. Strongest next sources: mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow, repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md."
         },
         {
           "section_id": "memo.bridge.2026-03-23.tos-lineage-kag-candidate#trust-and-lifecycle",
@@ -1525,21 +1525,21 @@
           "heading": "Identity and Recall",
           "ordinal": 1,
           "summary": "Names the pattern surface, its active recall modes, and its allowed current-recall posture.",
-          "body": "Ordered recovery windows earn recall only after bounded proof. Observed across source receipts, fourth-wave eval proof, derived stats, and additive route hints: repeated stress recovery becomes durable memo context only when the ordered window stays bounded and the memory object remains downstream from stronger evidence. Scope: project:AoA, ecosystem:aoa-antifragility. Scope classes: project, ecosystem. Primary recall modes: procedural, semantic, lineage. Current recall status: allowed because This pattern should surface as bounded repeated-window recovery context only after checking the linked receipts, proof, and derived summaries. Payload ref: mechanics/antifragility/docs/RECOVERY_PATTERN_MEMORY.md#boundary-reminder."
+          "body": "Ordered recovery windows earn recall only after bounded proof. Observed across source receipts, fourth-stage eval proof, derived stats, and additive route hints: repeated stress recovery becomes durable memo context only when the ordered window stays bounded and the memory object remains downstream from stronger evidence. Scope: project:AoA, ecosystem:aoa-antifragility. Scope classes: project, ecosystem. Primary recall modes: procedural, semantic, lineage. Current recall status: allowed because This pattern should surface as bounded repeated-window recovery context only after checking the linked receipts, proof, and derived summaries. Payload ref: mechanics/antifragility/docs/RECOVERY_PATTERN_MEMORY.md#boundary-reminder."
         },
         {
           "section_id": "memo.pattern.2026-04-07.antifragility-stress-recovery-window#provenance-and-evidence",
           "heading": "Provenance and Evidence",
           "ordinal": 2,
           "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
-          "body": "Provenance thread: prov.aoa-antifragility.fourth-wave.2026-04-07. Source refs: repo:aoa-evals/bundles/aoa-stress-recovery-window/reports/example-report.json, repo:aoa-stats/generated/stress_recovery_window_summary.min.json, repo:aoa-routing/generated/composite_stress_route_hints.min.json, mechanics/antifragility/docs/RECOVERY_PATTERN_MEMORY.md#what-it-should-carry. Episode refs: memo.ep.2026-04-02.alpha-validation-remediation, memo.ep.2026-04-02.alpha-validation-remediation-rerun. Related curated object ids: memo.ep.2026-04-02.alpha-validation-remediation, memo.ep.2026-04-02.alpha-validation-remediation-rerun. Strongest next sources: repo:aoa-evals/bundles/aoa-stress-recovery-window/reports/example-report.json, repo:aoa-stats/generated/stress_recovery_window_summary.min.json, repo:aoa-routing/generated/composite_stress_route_hints.min.json."
+          "body": "Provenance thread: prov.aoa-antifragility.fourth-stage.2026-04-07. Source refs: repo:aoa-evals/bundles/aoa-stress-recovery-window/reports/example-report.json, repo:aoa-stats/generated/stress_recovery_window_summary.min.json, repo:aoa-routing/generated/composite_stress_route_hints.min.json, mechanics/antifragility/docs/RECOVERY_PATTERN_MEMORY.md#what-it-should-carry. Episode refs: memo.ep.2026-04-02.alpha-validation-remediation, memo.ep.2026-04-02.alpha-validation-remediation-rerun. Related curated object ids: memo.ep.2026-04-02.alpha-validation-remediation, memo.ep.2026-04-02.alpha-validation-remediation-rerun. Strongest next sources: repo:aoa-evals/bundles/aoa-stress-recovery-window/reports/example-report.json, repo:aoa-stats/generated/stress_recovery_window_summary.min.json, repo:aoa-routing/generated/composite_stress_route_hints.min.json."
         },
         {
           "section_id": "memo.pattern.2026-04-07.antifragility-stress-recovery-window#trust-and-lifecycle",
           "heading": "Trust and Lifecycle",
           "ordinal": 3,
           "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
-          "body": "Authority kind: human_reviewed (fourth-wave reviewed recovery pattern closeout). Temperature: cool; confidence 0.92; freshness 0.98; salience 0.94. Review state: confirmed. Retention class: operational-pattern. Promotion state: none. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+          "body": "Authority kind: human_reviewed (fourth-stage reviewed recovery pattern closeout). Temperature: cool; confidence 0.92; freshness 0.98; salience 0.94. Review state: confirmed. Retention class: operational-pattern. Promotion state: none. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
         },
         {
           "section_id": "memo.pattern.2026-04-07.antifragility-stress-recovery-window#bridges-and-access",

@@ -2,9 +2,9 @@ from __future__ import annotations
 import json, pathlib, subprocess, sys
 ROOT = pathlib.Path(__file__).resolve().parents[5]
 
-def test_wave17_registry_shape():
+def test_stage17_registry_shape():
     reg = json.loads((ROOT / 'mechanics/agon/parts/bridge-and-evidence-seams/generated/agon_kag_memo_evidence_package_registry.min.json').read_text(encoding='utf-8'))
-    assert reg['wave'] == 'XVII'
+    assert reg['stage'] == 'XVII'
     assert reg['count'] == 7
     assert len(reg['memo_packages']) == 7
     for item in reg['memo_packages']:

@@ -2,7 +2,7 @@
   "id": "memo.pattern.2026-04-07.antifragility-stress-recovery-window",
   "kind": "pattern",
   "title": "Ordered recovery windows earn recall only after bounded proof",
-  "summary": "Observed across source receipts, fourth-wave eval proof, derived stats, and additive route hints: repeated stress recovery becomes durable memo context only when the ordered window stays bounded and the memory object remains downstream from stronger evidence.",
+  "summary": "Observed across source receipts, fourth-stage eval proof, derived stats, and additive route hints: repeated stress recovery becomes durable memo context only when the ordered window stays bounded and the memory object remains downstream from stronger evidence.",
   "scope": [
     "project:AoA",
     "ecosystem:aoa-antifragility"
@@ -34,13 +34,13 @@
       "memo.ep.2026-04-02.alpha-validation-remediation",
       "memo.ep.2026-04-02.alpha-validation-remediation-rerun"
     ],
-    "provenance_thread_id": "prov.aoa-antifragility.fourth-wave.2026-04-07"
+    "provenance_thread_id": "prov.aoa-antifragility.fourth-stage.2026-04-07"
   },
   "trust": {
     "temperature": "cool",
     "confidence": 0.92,
     "authority_kind": "human_reviewed",
-    "authority": "fourth-wave reviewed recovery pattern closeout",
+    "authority": "fourth-stage reviewed recovery pattern closeout",
     "freshness": 0.98,
     "salience": 0.94
   },

@@ -212,7 +212,7 @@
       "type": "array",
       "uniqueItems": true
     },
-    "wave": {
+    "stage": {
       "const": "XVI"
     }
   },
@@ -230,7 +230,7 @@
     "review_status",
     "runtime_effect",
     "stop_lines",
-    "wave"
+    "stage"
   ],
   "title": "agon-slc-memo-bridge.schema.json",
   "type": "object"

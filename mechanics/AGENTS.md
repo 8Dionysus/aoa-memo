@@ -81,7 +81,7 @@ The package `README.md` is the mechanic card. It must include:
 - `mechanics/ARTIFACT_TOPOLOGY.md` governs when a root technical artifact can
   move into a mechanic-local artifact home.
 - Generated companions summarize source maps and must be rebuilt from source.
-- A mechanic package must name an operation, not only a topic, owner, wave, or
+- A mechanic package must name an operation, not only a topic, owner, stage, or
   file family.
 - A mechanic package must materialize active rows from `PARTS.md` under
   `parts/<part-slug>/` with `README.md`, `CONTRACT.md`, and `VALIDATION.md`.

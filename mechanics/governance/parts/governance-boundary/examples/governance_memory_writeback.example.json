@@ -13,7 +13,7 @@
   "kind": "memo.governance_writeback",
   "memory_class": "policy_precedent",
   "notes": [
-    "seed example for v0.8 polis governance"
+    "source example for v0.8 polis governance"
   ],
   "schema_version": "v1",
   "status": "proposed"

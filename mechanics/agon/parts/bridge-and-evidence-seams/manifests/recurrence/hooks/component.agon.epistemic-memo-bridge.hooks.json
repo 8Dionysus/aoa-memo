@@ -19,5 +19,5 @@
   "hook_set_id": "component:agon:epistemic-memo-bridge.hooks",
   "observes_component": "component:agon:epistemic-memo-bridge",
   "posture": "review_queue_only",
-  "wave": "XV"
+  "stage": "XV"
 }

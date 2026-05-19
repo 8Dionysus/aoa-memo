@@ -1,7 +1,7 @@
 {
   "contract_type": "checkpoint_to_memory_contract",
   "contract_id": "aoa-memo.runtime-writeback.v1",
-  "source_seed_ref": "repo:Dionysus/seed_expansion/seed.aoa.agents-runtime-pack.v0.md#aoa-seed-r3-runtime-writeback-to-memo",
+  "source_event_ref": "repo:Dionysus/seed_expansion/seed.aoa.agents-runtime-pack.v0.md#aoa-seed-r3-runtime-writeback-to-memo",
   "checkpoint_artifact": {
     "artifact_name": "inquiry_checkpoint",
     "schema_ref": "mechanics/checkpoint/parts/checkpoint-carry-contract/schemas/inquiry_checkpoint.schema.json",

@@ -3,7 +3,7 @@
   "kind": "memo_to_kag_bridge_record",
   "id": "memo_to_kag_bridge_record.example",
   "status": "candidate",
-  "summary": "Example memo_to_kag_bridge_record object for v0.6 federation harvest seed.",
+  "summary": "Example memo_to_kag_bridge_record object for v0.6 federation harvest source.",
   "owner_repo": "aoa-memo",
   "evidence_refs": [
     "receipt://v0.6/memo_to_kag_bridge_record/example"

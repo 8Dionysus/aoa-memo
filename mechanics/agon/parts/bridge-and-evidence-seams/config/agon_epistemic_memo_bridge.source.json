@@ -185,5 +185,5 @@
   ],
   "registry_id": "agon.epistemic_memo_bridge.registry.v1",
   "runtime_posture": "candidate_only",
-  "wave": "XV"
+  "stage": "XV"
 }

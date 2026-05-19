@@ -6,7 +6,7 @@
 for the Agon memo mechanic.
 
 This docs route keeps Agon candidate memory, bridge, retention, evidence, and
-wave landing notes together while preserving the same boundary:
+stage landing notes together while preserving the same boundary:
 `aoa-memo` remembers candidate context and source refs; it does not run trials,
 write durable scars, mutate rank, decide verdicts, or promote Tree-of-Sophia
 canon.
@@ -75,7 +75,7 @@ python mechanics/agon/parts/prebinding-and-candidate-intake/scripts/validate_ago
 python mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_slc_memo_bridge_registry.py
 python mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_sophian_memo_evidence_registry.py
 python mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_vds_memo_bridge.py
-python -m pytest -q mechanics/agon/parts/prebinding-and-candidate-intake/tests mechanics/agon/parts/bridge-and-evidence-seams/tests mechanics/agon/parts/wave-landing-and-stop-lines/tests
+python -m pytest -q mechanics/agon/parts/prebinding-and-candidate-intake/tests mechanics/agon/parts/bridge-and-evidence-seams/tests mechanics/agon/parts/stage-landing-and-stop-lines/tests
 ```
 
 Before landing, also run:

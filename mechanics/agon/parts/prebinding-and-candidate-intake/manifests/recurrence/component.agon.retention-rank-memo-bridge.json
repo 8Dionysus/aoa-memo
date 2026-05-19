@@ -3,7 +3,7 @@
   "hidden_scheduler_allowed": false,
   "observes": [
     "mechanics/agon/parts/prebinding-and-candidate-intake/generated/agon_retention_rank_memo_bridge_registry.min.json",
-    "mechanics/agon/parts/prebinding-and-candidate-intake/config/agon_retention_rank_memo_bridge.seed.json"
+    "mechanics/agon/parts/prebinding-and-candidate-intake/config/agon_retention_rank_memo_bridge.source.json"
   ],
   "owner_review_required": true,
   "recurrence_role": "observe_retention_rank_pressure_without_authority",
@@ -12,5 +12,5 @@
     "no_rank_or_trust_mutation",
     "no_assistant_contestant_drift"
   ],
-  "wave": "XIV"
+  "stage": "XIV"
 }

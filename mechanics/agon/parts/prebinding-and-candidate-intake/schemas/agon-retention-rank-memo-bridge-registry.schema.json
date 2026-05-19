@@ -7,7 +7,7 @@
     "registry_id": {
       "const": "agon.memo.retention_rank_bridge.registry.v1"
     },
-    "wave": {
+    "stage": {
       "const": "XIV"
     },
     "status": {
@@ -36,7 +36,7 @@
       "$ref": "#/$defs/nonEmptyStringArray"
     },
     "source_config": {
-      "const": "mechanics/agon/parts/prebinding-and-candidate-intake/config/agon_retention_rank_memo_bridge.seed.json"
+      "const": "mechanics/agon/parts/prebinding-and-candidate-intake/config/agon_retention_rank_memo_bridge.source.json"
     },
     "entry_count": {
       "type": "integer",
@@ -49,7 +49,7 @@
   },
   "required": [
     "registry_id",
-    "wave",
+    "stage",
     "status",
     "live_protocol",
     "runtime_effect",

@@ -9,12 +9,12 @@ import sys
 from typing import Any
 
 ROOT = pathlib.Path(__file__).resolve().parents[5]
-SRC = ROOT / 'mechanics/agon/parts/bridge-and-evidence-seams/config/agon_kag_memo_evidence_packages.seed.json'
+SRC = ROOT / 'mechanics/agon/parts/bridge-and-evidence-seams/config/agon_kag_memo_evidence_packages.source.json'
 OUT = ROOT / 'mechanics/agon/parts/bridge-and-evidence-seams/generated/agon_kag_memo_evidence_package_registry.min.json'
 ITEM_KEY = 'memo_packages'
 REGISTRY_ID = 'agon.kag_memo_evidence_packages.registry.v1'
-WAVE = 'XVII'
-WAVE_NAME = 'KAG Promotion Path'
+STAGE = 'XVII'
+STAGE_NAME = 'KAG Promotion Path'
 RUNTIME_POSTURE = 'candidate_only'
 
 
@@ -28,8 +28,8 @@ def load_source() -> dict[str, Any]:
     data = json.loads(SRC.read_text(encoding='utf-8'))
     expected_metadata = {
         'registry_id': REGISTRY_ID,
-        'wave': WAVE,
-        'wave_name': WAVE_NAME,
+        'stage': STAGE,
+        'stage_name': STAGE_NAME,
         'runtime_posture': RUNTIME_POSTURE,
     }
     for field, expected in expected_metadata.items():
@@ -46,8 +46,8 @@ def build() -> dict[str, Any]:
     items = data[ITEM_KEY]
     return {
         'registry_id': REGISTRY_ID,
-        'wave': WAVE,
-        'wave_name': WAVE_NAME,
+        'stage': STAGE,
+        'stage_name': STAGE_NAME,
         'runtime_posture': RUNTIME_POSTURE,
         'count': len(items),
         ITEM_KEY: items,

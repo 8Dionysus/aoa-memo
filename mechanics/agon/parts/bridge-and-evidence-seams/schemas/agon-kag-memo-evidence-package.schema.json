@@ -84,7 +84,7 @@
       "minItems": 1,
       "type": "array"
     },
-    "wave": {
+    "stage": {
       "const": "XVII"
     }
   },
@@ -105,7 +105,7 @@
     "runtime_effect",
     "source_truth_posture",
     "stop_lines",
-    "wave"
+    "stage"
   ],
   "title": "agon-kag-memo-evidence-package.schema.json item contract",
   "type": "object"

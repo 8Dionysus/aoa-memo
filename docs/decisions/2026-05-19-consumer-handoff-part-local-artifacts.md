@@ -15,7 +15,7 @@ Move consumer-handoff technical artifacts to the nearest functioning part:
 
 - bridge object chain, chunk face, and graph face under
   `parts/kag-tos-bridge-handoff/`
-- source-owned KAG donor export, generator, and bridge-record seed contract
+- source-owned KAG donor export, generator, and bridge-record source contract
   under `parts/kag-source-export/`
 - eval guardrail pack schema and example under `parts/eval-guardrail-handoff/`
 - playbook memory-scope regression under `parts/playbook-scope-handoff/`

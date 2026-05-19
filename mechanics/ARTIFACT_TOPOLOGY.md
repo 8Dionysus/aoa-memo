@@ -145,7 +145,7 @@ companions, scripts, tests, manifests, and hook manifests.
 
 Examples:
 
-- Agon prebinding, bridge/evidence, and wave recurrence config, schemas,
+- Agon prebinding, bridge/evidence, and stage recurrence config, schemas,
   examples, generated registries, manifests, hooks, validators, builders, and
   tests live under the nearest `mechanics/agon/parts/<part>/` home.
 - Titan recall/remembrance, closeout/digest, and audit-personality-and-swarm-policy schemas,

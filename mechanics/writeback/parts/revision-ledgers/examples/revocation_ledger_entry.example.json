@@ -11,7 +11,7 @@
   "id": "memo.revocation_ledger_entry.example.001",
   "kind": "memo.revocation_ledger_entry",
   "notes": [
-    "seed example for v0.8 polis governance"
+    "source example for v0.8 polis governance"
   ],
   "replacement_ref": "notary.1.1.3",
   "revoked_ref": "assistant_release:notary.1.2.0",

@@ -30,7 +30,7 @@
               "do not reign",
               "pre-protocol"
             ],
-            "signal": "wave7_stop_line_repeated"
+            "signal": "stage7_stop_line_repeated"
           }
         ],
         "record_id_field": "prebinding_ref"
@@ -47,7 +47,7 @@
         {
           "category": "change_pressure",
           "match": "always",
-          "signal": "wave7_prebinding_surface_changed",
+          "signal": "stage7_prebinding_surface_changed",
           "source_inputs": [
             "memory-prebinding-surfaces.generated"
           ]
@@ -56,7 +56,7 @@
     }
   ],
   "component_ref": "component:agon:memory-prebinding-surfaces",
-  "notes": "Wave VII hook bindings produce recurrence observations only.",
+  "notes": "Stage VII hook bindings produce recurrence observations only.",
   "owner_repo": "aoa-memo",
   "schema_version": "aoa_hook_binding_set_v1"
 }

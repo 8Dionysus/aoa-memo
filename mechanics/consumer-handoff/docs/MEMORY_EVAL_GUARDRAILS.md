@@ -41,7 +41,7 @@ It covers only:
 - provenance fidelity
 - staleness
 
-That pilot is a bounded adoption wave, not the whole guardrail program.
+That pilot is a bounded adoption stage, not the whole guardrail program.
 It does not yet absorb contradiction handling, permission leakage, over-promotion, or hallucinated memory merge checks into the first proof bundle.
 
 ## Machine-readable Handoff Surface

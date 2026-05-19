@@ -32,7 +32,7 @@ teach those shapes.
 
 ### Stronger owner split
 
-- `Agents-of-Abyss` owns center doctrine, experience wave law, live office
+- `Agents-of-Abyss` owns center doctrine, experience stage law, live office
   expansion law, release-train posture, and program authority.
 - `abyss-stack` or the runtime owner owns live deployment, service state,
   workers, storage, rollback execution, and operational remediation.

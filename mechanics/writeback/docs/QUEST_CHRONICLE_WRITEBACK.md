@@ -24,7 +24,7 @@ It must not:
 - become a player sheet or runtime inventory
 - hide unresolved contradictions as settled memory
 
-## Good first-wave chronicle posture
+## Good first-stage chronicle posture
 
 Use a chronicle when:
 
@@ -35,7 +35,7 @@ Use a chronicle when:
 
 ## Temperature posture
 
-Recommended first-wave posture:
+Recommended first-stage posture:
 
 - `warm` for short-horizon campaign witness
 - `cool` for stable summaries that may matter later

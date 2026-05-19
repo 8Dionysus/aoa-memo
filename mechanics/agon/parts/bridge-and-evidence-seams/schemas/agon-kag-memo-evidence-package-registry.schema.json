@@ -85,7 +85,7 @@
           "minItems": 1,
           "type": "array"
         },
-        "wave": {
+        "stage": {
           "const": "XVII"
         }
       },
@@ -106,7 +106,7 @@
         "runtime_effect",
         "source_truth_posture",
         "stop_lines",
-        "wave"
+        "stage"
       ],
       "title": "agon-kag-memo-evidence-package.schema.json item contract",
       "type": "object"
@@ -136,17 +136,17 @@
     "runtime_posture": {
       "const": "candidate_only"
     },
-    "wave": {
+    "stage": {
       "const": "XVII"
     },
-    "wave_name": {
+    "stage_name": {
       "const": "KAG Promotion Path"
     }
   },
   "required": [
     "registry_id",
-    "wave",
-    "wave_name",
+    "stage",
+    "stage_name",
     "runtime_posture",
     "count",
     "memo_packages",

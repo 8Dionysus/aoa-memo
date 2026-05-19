@@ -212,7 +212,7 @@
           "type": "array",
           "uniqueItems": true
         },
-        "wave": {
+        "stage": {
           "const": "XVI"
         }
       },
@@ -230,7 +230,7 @@
         "review_status",
         "runtime_effect",
         "stop_lines",
-        "wave"
+        "stage"
       ],
       "title": "agon-slc-memo-bridge.schema.json",
       "type": "object"
@@ -261,17 +261,17 @@
     "runtime_posture": {
       "const": "candidate_only"
     },
-    "wave": {
+    "stage": {
       "const": "XVI"
     },
-    "wave_name": {
+    "stage_name": {
       "const": "Schools / Lineages / Campaigns"
     }
   },
   "required": [
     "registry_id",
-    "wave",
-    "wave_name",
+    "stage",
+    "stage_name",
     "runtime_posture",
     "count",
     "memo_intakes",

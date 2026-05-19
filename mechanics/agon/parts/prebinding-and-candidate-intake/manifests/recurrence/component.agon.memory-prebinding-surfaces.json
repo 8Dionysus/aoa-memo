@@ -16,7 +16,7 @@
         "trial_chronicle_pressure",
         "assistant_escalation_chronicle_pressure"
       ],
-      "notes": "Wave VII recurrence pressure is review-only.",
+      "notes": "Stage VII recurrence pressure is review-only.",
       "observation_inputs": [
         "memory-prebinding-surfaces.generated",
         "memory-prebinding-surfaces.docs"
@@ -76,7 +76,7 @@
     {
       "input_ref": "memory-prebinding-surfaces.generated",
       "kind": "other",
-      "notes": "Wave VII generated prebinding surface.",
+      "notes": "Stage VII generated prebinding surface.",
       "path_globs": [
         "mechanics/agon/parts/prebinding-and-candidate-intake/generated/agon_memo_prebinding_registry.min.json"
       ]
@@ -84,7 +84,7 @@
     {
       "input_ref": "memory-prebinding-surfaces.docs",
       "kind": "review_note",
-      "notes": "Wave VII prebinding documentation.",
+      "notes": "Stage VII prebinding documentation.",
       "path_globs": [
         "mechanics/agon/docs/AGON_*.md"
       ]
@@ -122,11 +122,11 @@
     }
   ],
   "source_inputs": [
-    "mechanics/agon/parts/prebinding-and-candidate-intake/config/agon_memo_prebindings.seed.json"
+    "mechanics/agon/parts/prebinding-and-candidate-intake/config/agon_memo_prebindings.source.json"
   ],
   "tags": [
     "agon",
-    "wave7",
+    "stage7",
     "memo",
     "memory",
     "recurrence"

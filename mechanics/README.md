@@ -46,7 +46,7 @@ A memo mechanic is a repeatable memory-layer operation, not a topic bucket.
 Before adding or moving a surface into `mechanics/<slug>/`, name the operation:
 what memory receives, what it preserves or refuses, what exits the mechanic,
 which stronger owner receives the next claim, and how the shape is validated.
-If files only share a noun, theme, wave, or owner name, keep searching for the
+If files only share a noun, theme, stage, or owner name, keep searching for the
 real operation or leave them in their current source route.
 
 ## Mechanic Card Contract

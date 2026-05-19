@@ -9,16 +9,16 @@
     "repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md"
   ],
   "memory_object_ids": [
-    "memo.ep.2026-03-23.tos-interpretation-bridge-seed",
+    "memo.ep.2026-03-23.tos-interpretation-bridge-source",
     "memo.claim.2026-03-23.tos-bridge-by-reference",
     "memo.bridge.2026-03-23.tos-lineage-kag-candidate"
   ],
   "timeline": [
     {
       "at": "2026-03-23T16:05:00Z",
-      "action": "inspected ToS fragment for memo bridge seed",
+      "action": "inspected ToS fragment for memo bridge source",
       "actor_ref": "human+ai",
-      "object_id": "memo.ep.2026-03-23.tos-interpretation-bridge-seed"
+      "object_id": "memo.ep.2026-03-23.tos-interpretation-bridge-source"
     },
     {
       "at": "2026-03-23T16:18:00Z",

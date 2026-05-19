@@ -1,3 +1,3 @@
-# Agon Wave XIII Memo Landing
+# Agon Stage XIII Memo Landing
 
 The archive receives rehearsal shadows, not permanent wounds.

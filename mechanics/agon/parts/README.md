@@ -7,7 +7,7 @@ Functioning Agon memo parts live here. Each part mirrors one active row in `../P
 - [Prebinding and candidate intake](prebinding-and-candidate-intake/README.md) - keeps candidate memory explicit before any stronger Agon write
 - [Bridge and evidence seams](bridge-and-evidence-seams/README.md) - keeps evidence and bridge memory source-linked without owning downstream truth
 - [Quest follow-through](quest-follow-through/README.md) - keeps Agon-specific follow-through in the public Questbook item store with owner-routed memo stop-lines
-- [Wave landing and stop-lines](wave-landing-and-stop-lines/README.md) - keeps landing history reviewable without promoting it to source Agon law
+- [Stage landing and stop-lines](stage-landing-and-stop-lines/README.md) - keeps landing history reviewable without promoting it to source Agon law
 
 ## Validation
 

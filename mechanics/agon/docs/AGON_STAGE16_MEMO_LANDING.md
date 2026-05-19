@@ -1,3 +1,3 @@
-# Wave XVI Memo Landing
+# Stage XVI Memo Landing
 
 Landing adds candidate memory intakes for historical Agon forms.

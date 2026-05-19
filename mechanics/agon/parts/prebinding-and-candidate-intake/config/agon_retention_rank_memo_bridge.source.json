@@ -17,7 +17,7 @@
       "kind": "memo_retention_intake",
       "live_authority": false,
       "owner": "aoa-memo",
-      "status": "seeded_candidate_intake"
+      "status": "drafted_candidate_intake"
     },
     {
       "allowed_effect": "candidate_intake_only",
@@ -35,7 +35,7 @@
       "kind": "memo_retention_result_intake",
       "live_authority": false,
       "owner": "aoa-memo",
-      "status": "seeded_candidate_intake"
+      "status": "drafted_candidate_intake"
     },
     {
       "allowed_effect": "candidate_dossier_only",
@@ -49,7 +49,7 @@
       "kind": "repeat_failure_intake",
       "live_authority": false,
       "owner": "aoa-memo",
-      "status": "seeded_candidate_intake"
+      "status": "drafted_candidate_intake"
     },
     {
       "allowed_effect": "candidate_binding_only",
@@ -62,7 +62,7 @@
       "kind": "scar_retention_binding_intake",
       "live_authority": false,
       "owner": "aoa-memo",
-      "status": "seeded_candidate_intake"
+      "status": "drafted_candidate_intake"
     },
     {
       "allowed_effect": "candidate_dossier_only",
@@ -76,7 +76,7 @@
       "kind": "rank_mutation_candidate_intake",
       "live_authority": false,
       "owner": "aoa-memo",
-      "status": "seeded_candidate_intake"
+      "status": "drafted_candidate_intake"
     },
     {
       "allowed_effect": "dossier_candidate_only",
@@ -89,14 +89,14 @@
       "kind": "retention_dossier_candidate",
       "live_authority": false,
       "owner": "aoa-memo",
-      "status": "seeded_candidate_surface"
+      "status": "drafted_candidate_surface"
     }
   ],
   "live_protocol": false,
   "registry_id": "agon.memo.retention_rank_bridge.registry.v1",
   "runtime_effect": "candidate_only",
-  "source_config": "mechanics/agon/parts/prebinding-and-candidate-intake/config/agon_retention_rank_memo_bridge.seed.json",
-  "status": "seeded_wave14_memo_bridge",
+  "source_config": "mechanics/agon/parts/prebinding-and-candidate-intake/config/agon_retention_rank_memo_bridge.source.json",
+  "status": "drafted_stage14_memo_bridge",
   "stop_lines": [
     "no_live_verdict_authority",
     "no_durable_scar_write",
@@ -110,5 +110,5 @@
     "no_assistant_contestant_drift",
     "no_center_takeover_of_agent_eval_memo_stats_truth"
   ],
-  "wave": "XIV"
+  "stage": "XIV"
 }

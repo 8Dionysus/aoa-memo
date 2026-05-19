@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Wave 4 adds one bounded memory adjunct for reviewed recovery patterns that
+Stage 4 adds one bounded memory adjunct for reviewed recovery patterns that
 survived an ordered stress window.
 
 This adjunct exists so the system can remember:
@@ -50,7 +50,7 @@ strongest reviewed chain available at writeback time:
 
 - `cluster_ref`
 - `candidate_ref`
-- `seed_ref`
+- `source_ref`
 - `object_ref`
 
 Optional `lineage_context` may preserve bounded owner-fit cues such as

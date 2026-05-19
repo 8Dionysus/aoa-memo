@@ -1,3 +1,3 @@
-# Agon Wave VII Memo Landing
+# Agon Stage VII Memo Landing
 
 This landing adds memory prebinding only. It is deliberately candidate-shaped and future-verdict-gated.

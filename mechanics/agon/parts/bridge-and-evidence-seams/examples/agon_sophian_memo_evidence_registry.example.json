@@ -40,8 +40,8 @@
       "review_status": "candidate_only",
       "runtime_effect": "candidate_only",
       "tos_canonization_allowed": false,
-      "wave": "XVIII",
-      "wave_name": "Sophian Threshold"
+      "stage": "XVIII",
+      "stage_name": "Sophian Threshold"
     },
     {
       "assistant_contestant_allowed": false,
@@ -78,8 +78,8 @@
       "review_status": "candidate_only",
       "runtime_effect": "candidate_only",
       "tos_canonization_allowed": false,
-      "wave": "XVIII",
-      "wave_name": "Sophian Threshold"
+      "stage": "XVIII",
+      "stage_name": "Sophian Threshold"
     },
     {
       "assistant_contestant_allowed": false,
@@ -116,8 +116,8 @@
       "review_status": "candidate_only",
       "runtime_effect": "candidate_only",
       "tos_canonization_allowed": false,
-      "wave": "XVIII",
-      "wave_name": "Sophian Threshold"
+      "stage": "XVIII",
+      "stage_name": "Sophian Threshold"
     },
     {
       "assistant_contestant_allowed": false,
@@ -154,8 +154,8 @@
       "review_status": "candidate_only",
       "runtime_effect": "candidate_only",
       "tos_canonization_allowed": false,
-      "wave": "XVIII",
-      "wave_name": "Sophian Threshold"
+      "stage": "XVIII",
+      "stage_name": "Sophian Threshold"
     },
     {
       "assistant_contestant_allowed": false,
@@ -192,8 +192,8 @@
       "review_status": "candidate_only",
       "runtime_effect": "candidate_only",
       "tos_canonization_allowed": false,
-      "wave": "XVIII",
-      "wave_name": "Sophian Threshold"
+      "stage": "XVIII",
+      "stage_name": "Sophian Threshold"
     },
     {
       "assistant_contestant_allowed": false,
@@ -230,10 +230,10 @@
       "review_status": "candidate_only",
       "runtime_effect": "candidate_only",
       "tos_canonization_allowed": false,
-      "wave": "XVIII",
-      "wave_name": "Sophian Threshold"
+      "stage": "XVIII",
+      "stage_name": "Sophian Threshold"
     }
   ],
-  "wave": "XVIII",
-  "wave_name": "Sophian Threshold"
+  "stage": "XVIII",
+  "stage_name": "Sophian Threshold"
 }

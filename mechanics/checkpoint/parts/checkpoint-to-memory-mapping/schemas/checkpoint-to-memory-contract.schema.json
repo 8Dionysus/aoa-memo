@@ -7,7 +7,7 @@
   "required": [
     "contract_type",
     "contract_id",
-    "source_seed_ref",
+    "source_event_ref",
     "checkpoint_artifact",
     "runtime_boundary",
     "mapping_rules"
@@ -21,7 +21,7 @@
       "type": "string",
       "minLength": 1
     },
-    "source_seed_ref": {
+    "source_event_ref": {
       "type": "string",
       "minLength": 1
     },

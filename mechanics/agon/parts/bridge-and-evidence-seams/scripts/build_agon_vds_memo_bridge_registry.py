@@ -6,7 +6,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[5]
-CONFIG = ROOT / "mechanics/agon/parts/bridge-and-evidence-seams/config/agon_vds_memo_bridge.seed.json"
+CONFIG = ROOT / "mechanics/agon/parts/bridge-and-evidence-seams/config/agon_vds_memo_bridge.source.json"
 OUTPUT = ROOT / "mechanics/agon/parts/bridge-and-evidence-seams/generated/agon_vds_memo_bridge_registry.min.json"
 
 
@@ -20,17 +20,17 @@ def compact(obj: dict) -> str:
 
 
 def build_registry() -> dict:
-    seed = json.loads(CONFIG.read_text(encoding="utf-8"))
+    source = json.loads(CONFIG.read_text(encoding="utf-8"))
     return {
-        "registry_id": seed["registry_id"],
-        "version": seed["version"],
-        "wave": seed["wave"],
-        "status": seed["status"],
-        "live_protocol": seed["live_protocol"],
-        "runtime_effect": seed["runtime_effect"],
-        "intake_count": len(seed["intakes"]),
-        "intakes": seed["intakes"],
-        "stop_lines": seed["stop_lines"],
+        "registry_id": source["registry_id"],
+        "version": source["version"],
+        "stage": source["stage"],
+        "status": source["status"],
+        "live_protocol": source["live_protocol"],
+        "runtime_effect": source["runtime_effect"],
+        "intake_count": len(source["intakes"]),
+        "intakes": source["intakes"],
+        "stop_lines": source["stop_lines"],
     }
 
 

@@ -759,9 +759,9 @@ class MemoValidatorTestCase(unittest.TestCase):
                         "role": "catalog",
                     },
                     {
-                        "kind": "candidate_seed",
+                        "kind": "candidate_source",
                         "ref": "repo:aoa-memo/mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/claim.tos-bridge-ready.example.json",
-                        "role": "candidate-seed",
+                        "role": "candidate-source",
                     },
                     {
                         "kind": "review_anchor",

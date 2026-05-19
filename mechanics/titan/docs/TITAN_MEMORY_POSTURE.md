@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Define Mneme's memory role in the first Titan wave.
+Define Mneme's memory role in the first Titan stage.
 
 ## Mneme's authority
 
@@ -23,7 +23,7 @@ write canonical owner-repo truth
 promote recall into policy
 create hidden memory ledgers
 auto-store private user memory
-replace seed registry or wave manifests
+replace source registry or stage manifests
 ```
 
 ## Candidate shape

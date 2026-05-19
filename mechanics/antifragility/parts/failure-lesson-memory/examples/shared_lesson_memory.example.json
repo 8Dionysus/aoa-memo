@@ -3,7 +3,7 @@
   "kind": "shared_lesson_memory",
   "id": "shared_lesson_memory.example",
   "status": "candidate",
-  "summary": "Example shared_lesson_memory object for v0.6 federation harvest seed.",
+  "summary": "Example shared_lesson_memory object for v0.6 federation harvest source.",
   "owner_repo": "aoa-memo",
   "evidence_refs": [
     "receipt://v0.6/shared_lesson_memory/example"

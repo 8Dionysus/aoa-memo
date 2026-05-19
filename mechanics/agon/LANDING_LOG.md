@@ -2,6 +2,9 @@
 
 ## 2026-05-19
 
+- Renamed active Agon landing docs, stage manifest bindings, source configs,
+  validators, tests, and generated mirrors away from legacy wave/seed wording
+  while leaving raw legacy snapshots literal.
 - Moved Agon config, examples, generated registries, schemas, scripts, tests,
   recurrence manifests, and hook bindings from package-level technical homes
   into their nearest functioning parts.
@@ -9,14 +12,14 @@
   `parts/prebinding-and-candidate-intake/`.
 - Kept bridge, KAG, SLC, Sophian, VDS, and mechanical-trial memo companions
   under `parts/bridge-and-evidence-seams/`.
-- Kept wave recurrence manifests under `parts/wave-landing-and-stop-lines/`
+- Kept stage recurrence manifests under `parts/stage-landing-and-stop-lines/`
   with a manifest reference regression test.
 
 Validation route:
 
 ```bash
 python scripts/validate_mechanic_artifact_inventory.py
-python -m pytest -q mechanics/agon/parts/prebinding-and-candidate-intake/tests mechanics/agon/parts/bridge-and-evidence-seams/tests mechanics/agon/parts/wave-landing-and-stop-lines/tests
+python -m pytest -q mechanics/agon/parts/prebinding-and-candidate-intake/tests mechanics/agon/parts/bridge-and-evidence-seams/tests mechanics/agon/parts/stage-landing-and-stop-lines/tests
 python scripts/release_check.py
 ```
 
@@ -37,7 +40,7 @@ Validation route:
 ```bash
 python mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py
 python scripts/validate_memo_mechanics.py
-python -m pytest -q mechanics/agon/parts/prebinding-and-candidate-intake/tests mechanics/agon/parts/bridge-and-evidence-seams/tests mechanics/agon/parts/wave-landing-and-stop-lines/tests
+python -m pytest -q mechanics/agon/parts/prebinding-and-candidate-intake/tests mechanics/agon/parts/bridge-and-evidence-seams/tests mechanics/agon/parts/stage-landing-and-stop-lines/tests
 python scripts/release_check.py
 ```
 

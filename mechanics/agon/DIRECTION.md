@@ -8,7 +8,7 @@ making them easier to validate as a mechanic package.
 ## Operating Contour
 
 - preserve Agon evidence and bridge memory without turning it into proof
-- keep scar, rank, retention, and wave landing notes visibly weaker than
+- keep scar, rank, retention, and stage landing notes visibly weaker than
   durable source-owner action
 - keep companion configs, schemas, generated registries, manifests, quests,
   scripts, examples, and tests aligned with active mechanic paths

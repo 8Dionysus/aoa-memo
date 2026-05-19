@@ -8,7 +8,7 @@ future reviewed handling of a similar owner-fit or repair situation.
 This surface is memo-side support.
 It does not become lineage truth, proof doctrine, or owner authority.
 It is also the bounded home for prune-aware writeback when drop, supersession,
-merge, or seed-no-value outcomes repeat often enough to deserve memory.
+merge, or source-no-value outcomes repeat often enough to deserve memory.
 
 ## Reuse Existing Memo Kinds
 
@@ -30,10 +30,10 @@ Prune-aware mapping stays inside those existing kinds:
 ## Write Back Failure Lessons When
 
 - a candidate repeatedly lands in the wrong owner
-- a candidate or staged seed repeatedly drops for the same bounded reason
+- a candidate or staged source repeatedly drops for the same bounded reason
 - supersession or merge repeatedly happens because the first owner-fit guess
   was too weak or duplicated a stronger owner surface
-- seed staging repeatedly adds no value compared with direct owner landing
+- source staging repeatedly adds no value compared with direct owner landing
 - a repair widened scope or violated boundaries
 - the same handoff failed more than once
 
@@ -52,7 +52,7 @@ When reviewed lineage evidence exists, preserve the strongest available chain in
 
 - `cluster_ref`
 - `candidate_ref`
-- `seed_ref`
+- `source_ref`
 - `object_ref`
 
 Earlier refs may remain populated even when later refs are still `null`.
@@ -72,14 +72,14 @@ When bounded owner-fit context will help later recall, preserve it under
 - `drop_reason`
 
 This context helps memory explain why a lesson mattered.
-It does not override owner-local receipts, seed truth, landed object truth, or
+It does not override owner-local receipts, source truth, landed object truth, or
 proof.
 
 ## Negative Rules
 
 Do not use memo writeback here to:
 
-- mint `candidate_ref`, `seed_ref`, or `object_ref`
+- mint `candidate_ref`, `source_ref`, or `object_ref`
 - replace owner-local receipts or proof bundles
 - invent a new recurring-runner authority inside `aoa-memo`
 - treat memory as the canonical home of growth-refinery state
@@ -89,7 +89,7 @@ Do not use memo writeback here to:
 ## Do Not Recall From Memo Alone
 
 Do not use lineage-aware memo recall as first authority when the linked
-owner receipt, seed lineage entry, eval report, or stats summary is available
+owner receipt, source lineage entry, eval report, or stats summary is available
 to inspect directly.
 
 If the surviving chain is still `early` or `thin-evidence`, memo may preserve
