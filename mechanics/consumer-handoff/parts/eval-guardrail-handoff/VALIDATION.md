@@ -5,8 +5,8 @@ Executable validation for this part is routed through the package validation lan
 Run from the repository root:
 
 ```bash
-python scripts/validate_memo_mechanic_parts.py
-python scripts/validate_memo.py
+python scripts/mechanics/validate_memo_mechanic_parts.py
+python scripts/memory/validate_memo.py
 ```
 
 Then run the package-specific commands named in `../../AGENTS.md#validation` for any changed source docs, schemas, examples, generated companions, scripts, tests, manifests, or owner routes.

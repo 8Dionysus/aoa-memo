@@ -20,15 +20,15 @@ Validation route:
 python mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py
 python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py --check
 python -m pytest -q mechanics/questbook/parts/source-contract/tests
-python scripts/release_check.py
+python scripts/release/release_check.py
 ```
 
 ## 2026-05-18
 
 - Added `parts/quest-read-model-projections/` as the functioning-part contract for
   root-published Questbook generated read models.
-- Kept `generated/quest_catalog.min*.json` and
-  `generated/quest_dispatch.min*.json` in root `generated/` because they are
+- Kept `generated/quests/quest_catalog.min*.json` and
+  `generated/quests/quest_dispatch.min*.json` in root `generated/` because they are
   public read models over root `quests/`, not package-local generated
   artifacts.
 - Strengthened the Questbook validator so the part contract, root technical
@@ -42,9 +42,9 @@ Validation route:
 ```bash
 python mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py
 python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py --check
-python scripts/validate_memo_mechanic_parts.py
-python -m pytest -q mechanics/questbook/parts/source-contract/tests/test_questbook_store.py tests/test_memo_mechanic_parts.py
-python scripts/release_check.py
+python scripts/mechanics/validate_memo_mechanic_parts.py
+python -m pytest -q mechanics/questbook/parts/source-contract/tests/test_questbook_store.py tests/mechanics/test_memo_mechanic_parts.py
+python scripts/release/release_check.py
 ```
 
 ## 2026-05-18
@@ -61,7 +61,7 @@ Validation route:
 ```bash
 python mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py
 python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py --check
-python scripts/release_check.py
+python scripts/release/release_check.py
 ```
 
 ## Stop-lines preserved

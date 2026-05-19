@@ -7,8 +7,8 @@
   "current_thesis": "Keep orchestration role-based, keep memory temperature explicit, and relaunch from checkpoint packs instead of raw chat continuity.",
   "axis_summary": "Role-based orchestration, bounded memo writeback, and restartable checkpoint packs remain the active spine.",
   "evidence_pack_refs": [
-    "docs/MEMORY_MODEL.md",
-    "docs/MEMORY_TEMPERATURES.md"
+    "docs/memory/MEMORY_MODEL.md",
+    "docs/posture/MEMORY_TEMPERATURES.md"
   ],
   "contradiction_pack_refs": [
     "question:how far should routing participate in model-tier selection",

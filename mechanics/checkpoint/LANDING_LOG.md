@@ -18,9 +18,9 @@ Landed shape:
 Validation route:
 
 ```bash
-python -m pytest -q mechanics/checkpoint/parts/checkpoint-memory-boundary/tests tests/test_memo_validators.py mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_downstream_feed_contracts.py mechanics/consumer-handoff/parts/playbook-scope-handoff/tests/test_playbook_memory_scopes.py mechanics/recurrence-support/parts/witness-trace-contract/tests/test_recurrence_support_mechanic.py mechanics/writeback/parts/runtime-and-temperature/tests/test_runtime_writeback_part.py
-python scripts/validate_memo.py
-python scripts/release_check.py
+python -m pytest -q mechanics/checkpoint/parts/checkpoint-memory-boundary/tests tests/memory/test_memo_validators.py mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_downstream_feed_contracts.py mechanics/consumer-handoff/parts/playbook-scope-handoff/tests/test_playbook_memory_scopes.py mechanics/recurrence-support/parts/witness-trace-contract/tests/test_recurrence_support_mechanic.py mechanics/writeback/parts/runtime-and-temperature/tests/test_runtime_writeback_part.py
+python scripts/memory/validate_memo.py
+python scripts/release/release_check.py
 ```
 
 Stop-lines preserved:
@@ -47,8 +47,8 @@ Landed shape:
 Validation route:
 
 ```bash
-python scripts/validate_memo_mechanics.py
-python scripts/release_check.py
+python scripts/mechanics/validate_memo_mechanics.py
+python scripts/release/release_check.py
 ```
 
 Stop-lines preserved:

@@ -10,7 +10,7 @@ REPO_ROOT = Path(__file__).resolve().parents[5]
 
 class GovernanceMechanicTestCase(unittest.TestCase):
     def test_governance_mechanic_registers_source_docs(self) -> None:
-        config = json.loads((REPO_ROOT / "config" / "memo_mechanics.json").read_text())
+        config = json.loads((REPO_ROOT / "config" / "mechanics" / "memo_mechanics.json").read_text())
         packages = {package["slug"]: package for package in config["packages"]}
         governance = packages["governance"]
 

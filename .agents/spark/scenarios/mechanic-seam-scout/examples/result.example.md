@@ -21,7 +21,7 @@ Validation run:
 - manual mechanic route pass
 
 Skipped checks:
-- python scripts/validate_memo_mechanics.py; no files changed.
+- python scripts/mechanics/validate_memo_mechanics.py; no files changed.
 
 Remaining risk: No artifact move was attempted.
 

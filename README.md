@@ -20,9 +20,9 @@ the linked owner surface instead of expanding this page.
 | Memory-layer system form | [DESIGN](DESIGN.md) |
 | Agent-facing guidance form | [DESIGN.AGENTS](DESIGN.AGENTS.md) |
 | Public memory canon map | [MEMORY_INDEX](MEMORY_INDEX.md) |
-| Memory model and object posture | [MEMORY_MODEL](docs/MEMORY_MODEL.md), [MEMORY_OBJECT_PROFILES](docs/MEMORY_OBJECT_PROFILES.md) |
-| Trust, temperature, lifecycle, and provenance posture | [MEMORY_TRUST_POSTURE](docs/MEMORY_TRUST_POSTURE.md), [MEMORY_TEMPERATURES](docs/MEMORY_TEMPERATURES.md), [LIFECYCLE](docs/LIFECYCLE.md), [PROVENANCE_THREADS](docs/PROVENANCE_THREADS.md) |
-| Root and docs placement law | [ROOT_SURFACE_LAW](docs/ROOT_SURFACE_LAW.md) |
+| Memory model and object posture | [MEMORY_MODEL](docs/memory/MEMORY_MODEL.md), [MEMORY_OBJECT_PROFILES](docs/memory/MEMORY_OBJECT_PROFILES.md) |
+| Trust, temperature, lifecycle, and provenance posture | [MEMORY_TRUST_POSTURE](docs/posture/MEMORY_TRUST_POSTURE.md), [MEMORY_TEMPERATURES](docs/posture/MEMORY_TEMPERATURES.md), [LIFECYCLE](docs/posture/LIFECYCLE.md), [PROVENANCE_THREADS](docs/posture/PROVENANCE_THREADS.md) |
+| Root and docs placement law | [ROOT_SURFACE_LAW](docs/root/ROOT_SURFACE_LAW.md) |
 | Documentation map | [docs](docs/README.md) |
 | Memo-side mechanics | [mechanics](mechanics/README.md) |
 | Agent route law and local checks | [AGENTS](AGENTS.md) |
@@ -39,14 +39,14 @@ Read only the surface that matches the job.
 | Need | Route |
 |---|---|
 | Shortest honest overview | this README -> [CHARTER](CHARTER.md) -> [DESIGN](DESIGN.md) -> [MEMORY_INDEX](MEMORY_INDEX.md) |
-| Memory object canon | [MEMORY_INDEX](MEMORY_INDEX.md) -> [MEMORY_OBJECT_PROFILES](docs/MEMORY_OBJECT_PROFILES.md) |
-| Memory doctrine | [MEMORY_MODEL](docs/MEMORY_MODEL.md), [BOUNDARIES](docs/BOUNDARIES.md), then the target doctrine file |
+| Memory object canon | [MEMORY_INDEX](MEMORY_INDEX.md) -> [MEMORY_OBJECT_PROFILES](docs/memory/MEMORY_OBJECT_PROFILES.md) |
+| Memory doctrine | [MEMORY_MODEL](docs/memory/MEMORY_MODEL.md), [BOUNDARIES](docs/boundaries/BOUNDARIES.md), then the target doctrine file |
 | Memory readiness pressure | [MEMORY_READINESS_BOUNDARY](mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md) |
 | Memo mechanic work | [mechanics](mechanics/README.md), then the nearest mechanic `AGENTS.md` |
 | Consumer handoff | [consumer-handoff](mechanics/consumer-handoff/README.md), [PLAYBOOK_MEMORY_SCOPES](mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md), [KAG_SOURCE_EXPORT](mechanics/consumer-handoff/docs/KAG_SOURCE_EXPORT.md), or [MEMORY_EVAL_GUARDRAILS](mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md) |
 | Router-facing recall adoption | [ROUTING_MEMORY_ADOPTION](mechanics/adoption/docs/ROUTING_MEMORY_ADOPTION.md) |
 | Self-agency continuity writeback | [SELF_AGENCY_CONTINUITY_WRITEBACK](mechanics/writeback/docs/SELF_AGENCY_CONTINUITY_WRITEBACK.md) |
-| Root or docs-root placement | [ROOT_SURFACE_LAW](docs/ROOT_SURFACE_LAW.md) |
+| Root or docs-root placement | [ROOT_SURFACE_LAW](docs/root/ROOT_SURFACE_LAW.md) |
 | Current direction | [ROADMAP](ROADMAP.md) |
 | Agent editing route | [AGENTS](AGENTS.md), then the nearest nested `AGENTS.md` |
 
@@ -56,10 +56,10 @@ Read only the surface that matches the job.
 |---|---|---|
 | `first-reading` | you need the shortest public overview | `README.md` |
 | `memory-canon` | object kind, support object, recall mode, temperature, or generated companion lookup | [MEMORY_INDEX](MEMORY_INDEX.md) |
-| `memory-doctrine` | memory meaning, trust, lifecycle, temperature, provenance, or boundary wording changes | [MEMORY_MODEL](docs/MEMORY_MODEL.md) and [BOUNDARIES](docs/BOUNDARIES.md) |
+| `memory-doctrine` | memory meaning, trust, lifecycle, temperature, provenance, or boundary wording changes | [MEMORY_MODEL](docs/memory/MEMORY_MODEL.md) and [BOUNDARIES](docs/boundaries/BOUNDARIES.md) |
 | `mechanic-change` | repeatable adoption, handoff, checkpoint, writeback, retention, lineage, operational, Questbook, Agon, Titan, or Antifragility memory movement | [mechanics](mechanics/README.md) |
 | `generated-parity` | generated memory surfaces or their sources change | source surface -> builder -> generated output -> validator |
-| `root-editing` | a root or docs-root surface is added, moved, deleted, or rewritten | [ROOT_SURFACE_LAW](docs/ROOT_SURFACE_LAW.md) |
+| `root-editing` | a root or docs-root surface is added, moved, deleted, or rewritten | [ROOT_SURFACE_LAW](docs/root/ROOT_SURFACE_LAW.md) |
 | `agent-surface-design` | agent cards, AGENTS mesh, or local route guidance changes | [DESIGN.AGENTS](DESIGN.AGENTS.md) |
 | `direction-change` | repo-level direction, horizon posture, or future trigger changes | [ROADMAP](ROADMAP.md) |
 
@@ -69,15 +69,15 @@ Before adding, trusting, or publishing a memo claim, ask the narrowest owner.
 
 | Claim question | Check |
 |---|---|
-| May `aoa-memo` say this at all? | [CHARTER](CHARTER.md), then [BOUNDARIES](docs/BOUNDARIES.md) |
-| What memory object kind is this? | [MEMORY_INDEX](MEMORY_INDEX.md), then [MEMORY_OBJECT_PROFILES](docs/MEMORY_OBJECT_PROFILES.md) |
-| Is this proof, verdict logic, or scoring? | [BOUNDARIES](docs/BOUNDARIES.md), then route to `aoa-evals` |
+| May `aoa-memo` say this at all? | [CHARTER](CHARTER.md), then [BOUNDARIES](docs/boundaries/BOUNDARIES.md) |
+| What memory object kind is this? | [MEMORY_INDEX](MEMORY_INDEX.md), then [MEMORY_OBJECT_PROFILES](docs/memory/MEMORY_OBJECT_PROFILES.md) |
+| Is this proof, verdict logic, or scoring? | [BOUNDARIES](docs/boundaries/BOUNDARIES.md), then route to `aoa-evals` |
 | Is this dispatch or route policy? | [ROUTING_MEMORY_ADOPTION](mechanics/adoption/docs/ROUTING_MEMORY_ADOPTION.md), then route to `aoa-routing` |
 | Is this role, persona, or handoff right? | [AGENT_MEMORY_POSTURE_SEAM](mechanics/consumer-handoff/docs/AGENT_MEMORY_POSTURE_SEAM.md), then route to `aoa-agents` |
 | Is this playbook memory scope? | [PLAYBOOK_MEMORY_SCOPES](mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md), then route choreography to `aoa-playbooks` |
 | Is this KAG or ToS handoff? | [KAG_SOURCE_EXPORT](mechanics/consumer-handoff/docs/KAG_SOURCE_EXPORT.md) and [KAG_TOS_BRIDGE_CONTRACT](mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md) |
 | Is this live runtime retention or storage? | [RUNTIME_WRITEBACK_SEAM](mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md), then route to `abyss-stack` |
-| Is this current enough to recall? | [MEMORY_TRUST_POSTURE](docs/MEMORY_TRUST_POSTURE.md), [MEMORY_TEMPERATURES](docs/MEMORY_TEMPERATURES.md), and [LIFECYCLE](docs/LIFECYCLE.md) |
+| Is this current enough to recall? | [MEMORY_TRUST_POSTURE](docs/posture/MEMORY_TRUST_POSTURE.md), [MEMORY_TEMPERATURES](docs/posture/MEMORY_TEMPERATURES.md), and [LIFECYCLE](docs/posture/LIFECYCLE.md) |
 
 ## Current Contour
 
@@ -87,14 +87,14 @@ The released `v0.2.3` contour is routed through these compact entrypoints:
 
 - Authority and canon:
   [charter](CHARTER.md), [design](DESIGN.md), [memory index](MEMORY_INDEX.md),
-  [memory model](docs/MEMORY_MODEL.md), and
-  [object profiles](docs/MEMORY_OBJECT_PROFILES.md).
+  [memory model](docs/memory/MEMORY_MODEL.md), and
+  [object profiles](docs/memory/MEMORY_OBJECT_PROFILES.md).
 - Trust, lifecycle, temperature, provenance, and operational boundary:
-  [trust posture](docs/MEMORY_TRUST_POSTURE.md),
-  [lifecycle](docs/LIFECYCLE.md),
-  [temperatures](docs/MEMORY_TEMPERATURES.md),
-  [provenance threads](docs/PROVENANCE_THREADS.md), and
-  [operational boundary](docs/OPERATIONAL_BOUNDARY.md).
+  [trust posture](docs/posture/MEMORY_TRUST_POSTURE.md),
+  [lifecycle](docs/posture/LIFECYCLE.md),
+  [temperatures](docs/posture/MEMORY_TEMPERATURES.md),
+  [provenance threads](docs/posture/PROVENANCE_THREADS.md), and
+  [operational boundary](docs/boundaries/OPERATIONAL_BOUNDARY.md).
 - Checkpoint and return recall:
   [checkpoint boundary](mechanics/checkpoint/docs/CHECKPOINT_MEMORY_BOUNDARY.md),
   [recurrence support](mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md),
@@ -125,8 +125,8 @@ The released `v0.2.3` contour is routed through these compact entrypoints:
 - Readiness and Questbook:
   [memory readiness boundary](mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md),
   [Questbook projections](mechanics/questbook/parts/quest-read-model-projections/README.md),
-  [quest catalog](generated/quest_catalog.min.json), and
-  [quest dispatch](generated/quest_dispatch.min.json).
+  [quest catalog](generated/quests/quest_catalog.min.json), and
+  [quest dispatch](generated/quests/quest_dispatch.min.json).
 
 Detailed mechanic futures live in `mechanics/<slug>/ROADMAP.md`. Detailed
 release history lives in [CHANGELOG](CHANGELOG.md). Durable obligations live in
@@ -162,9 +162,9 @@ duplicate the agent route matrix.
 ## Technical Districts
 
 For machine-readable orientation, use
-[root_technical_districts.min.json](generated/root_technical_districts.min.json).
+[root_technical_districts.min.json](generated/root-topology/root_technical_districts.min.json).
 The exact allowlist and family contracts live in
-[config/root_technical_districts.json](config/root_technical_districts.json).
+[config/root-topology/root_technical_districts.json](config/root-topology/root_technical_districts.json).
 
 | District | Use for |
 |---|---|
@@ -187,18 +187,18 @@ mechanic packages, validators, or sibling-owner repositories.
 
 | Surface | Role |
 |---|---|
-| [memo_registry.min.json](generated/memo_registry.min.json) | compact layer registry and validation command map |
-| [memory_catalog.min.json](generated/memory_catalog.min.json) | doctrine inspect surface |
-| [memory_capsules.json](generated/memory_capsules.json) | doctrine capsule hydration surface |
-| [memory_sections.full.json](generated/memory_sections.full.json) | expanded doctrine sections |
-| [memory_object_catalog.min.json](generated/memory_object_catalog.min.json) | object-facing inspect surface |
-| [memory_object_capsules.json](generated/memory_object_capsules.json) | object-facing capsule hydration surface |
-| [memory_object_sections.full.json](generated/memory_object_sections.full.json) | expanded object-facing sections |
-| [agents_mesh.min.json](generated/agents_mesh.min.json) | AGENTS mesh coverage companion |
-| [root_technical_districts.min.json](generated/root_technical_districts.min.json) | compact root technical district atlas |
-| [memo_mechanics.min.json](generated/memo_mechanics.min.json) | compact mechanic package index |
-| [memo_mechanic_readiness.min.json](generated/memo_mechanic_readiness.min.json) | OS Abyss readiness matrix for memo mechanics |
-| [mechanic_artifacts.min.json](generated/mechanic_artifacts.min.json) | mechanic-local artifact inventory |
+| [memo_registry.min.json](generated/memory/memo_registry.min.json) | compact layer registry and validation command map |
+| [memory_catalog.min.json](generated/memory/memory_catalog.min.json) | doctrine inspect surface |
+| [memory_capsules.json](generated/memory/memory_capsules.json) | doctrine capsule hydration surface |
+| [memory_sections.full.json](generated/memory/memory_sections.full.json) | expanded doctrine sections |
+| [memory_object_catalog.min.json](generated/memory-objects/memory_object_catalog.min.json) | object-facing inspect surface |
+| [memory_object_capsules.json](generated/memory-objects/memory_object_capsules.json) | object-facing capsule hydration surface |
+| [memory_object_sections.full.json](generated/memory-objects/memory_object_sections.full.json) | expanded object-facing sections |
+| [agents_mesh.min.json](generated/agents/agents_mesh.min.json) | AGENTS mesh coverage companion |
+| [root_technical_districts.min.json](generated/root-topology/root_technical_districts.min.json) | compact root technical district atlas |
+| [memo_mechanics.min.json](generated/mechanics/memo_mechanics.min.json) | compact mechanic package index |
+| [memo_mechanic_readiness.min.json](generated/mechanics/memo_mechanic_readiness.min.json) | OS Abyss readiness matrix for memo mechanics |
+| [mechanic_artifacts.min.json](generated/mechanics/mechanic_artifacts.min.json) | mechanic-local artifact inventory |
 
 Generated files are companions, not authority. Source docs, schemas, examples,
 mechanic packages, config, builders, validators, and owner repositories keep

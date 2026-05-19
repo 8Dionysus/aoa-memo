@@ -11,8 +11,8 @@
 Validation route:
 
 ```bash
-python -m pytest -q mechanics/writeback/parts/runtime-and-temperature/tests mechanics/writeback/parts/quest-and-chronicle/tests mechanics/writeback/parts/revision-ledgers/tests mechanics/writeback/parts/rollback-and-recovery/tests mechanics/writeback/parts/growth-and-continuity/tests mechanics/writeback/parts/receipt-publication-regression/tests tests/test_cross_mechanic_operational_contracts.py
-python scripts/release_check.py
+python -m pytest -q mechanics/writeback/parts/runtime-and-temperature/tests mechanics/writeback/parts/quest-and-chronicle/tests mechanics/writeback/parts/revision-ledgers/tests mechanics/writeback/parts/rollback-and-recovery/tests mechanics/writeback/parts/growth-and-continuity/tests mechanics/writeback/parts/receipt-publication-regression/tests tests/mechanics/test_cross_mechanic_operational_contracts.py
+python scripts/release/release_check.py
 ```
 
 ## Stop-lines preserved
@@ -31,7 +31,7 @@ Validation route:
 
 ```bash
 python -m pytest -q mechanics/writeback/parts/receipt-publication-regression/tests/test_publish_live_receipts.py
-python scripts/release_check.py
+python scripts/release/release_check.py
 ```
 
 ## Stop-lines preserved
@@ -49,8 +49,8 @@ python scripts/release_check.py
 Validation route:
 
 ```bash
-python scripts/validate_memo_mechanics.py
-python scripts/release_check.py
+python scripts/mechanics/validate_memo_mechanics.py
+python scripts/release/release_check.py
 ```
 
 ## Stop-lines preserved
@@ -68,10 +68,10 @@ python scripts/release_check.py
 Validation route:
 
 ```bash
-python scripts/generate_memory_object_surfaces.py
-python scripts/validate_memory_object_surfaces.py
-python scripts/validate_memo.py
-python scripts/release_check.py
+python scripts/memory/generate_memory_object_surfaces.py
+python scripts/memory/validate_memory_object_surfaces.py
+python scripts/memory/validate_memo.py
+python scripts/release/release_check.py
 ```
 
 ## Stop-lines preserved

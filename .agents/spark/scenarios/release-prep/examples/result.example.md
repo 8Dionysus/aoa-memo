@@ -7,7 +7,7 @@ Scope: release-readiness pass for Spark lane slice
 Files read:
 - AGENTS.md
 - .agents/spark/scenarios/release-prep/README.md
-- scripts/release_check.py
+- scripts/release/release_check.py
 
 Findings:
 - Release gate includes Spark lane validation.
@@ -16,7 +16,7 @@ Changes made:
 - None; release-prep pass only.
 
 Validation run:
-- python scripts/release_check.py
+- python scripts/release/release_check.py
 
 Skipped checks:
 - none

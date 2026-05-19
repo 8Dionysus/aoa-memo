@@ -19,7 +19,7 @@ Validation run:
 - python -m unittest discover -s .agents/spark/tests -p 'test*.py'
 
 Skipped checks:
-- python scripts/release_check.py; test-only local slice.
+- python scripts/release/release_check.py; test-only local slice.
 
 Remaining risk: None for the validator path.
 

@@ -13,10 +13,10 @@ In `../../PARTS.md` terms, they are root-published read models that never author
 
 ## Required Outputs
 
-- `generated/quest_catalog.min.json`
-- `generated/quest_catalog.min.example.json`
-- `generated/quest_dispatch.min.json`
-- `generated/quest_dispatch.min.example.json`
+- `generated/quests/quest_catalog.min.json`
+- `generated/quests/quest_catalog.min.example.json`
+- `generated/quests/quest_dispatch.min.json`
+- `generated/quests/quest_dispatch.min.example.json`
 
 ## Required Builder
 
@@ -28,7 +28,7 @@ In `../../PARTS.md` terms, they are root-published read models that never author
 
 ## Required Family
 
-`config/root_technical_districts.json` must keep a `questbook_projections`
+`config/root-topology/root_technical_districts.json` must keep a `questbook_projections`
 generated family with:
 
 - `source_kind`: `projection`

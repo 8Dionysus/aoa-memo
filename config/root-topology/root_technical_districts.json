@@ -1,0 +1,962 @@
+{
+  "schema_version": "aoa_memo_root_technical_districts_v10",
+  "source_of_truth": "mechanics/ARTIFACT_TOPOLOGY.md",
+  "route_card_exception": "AGENTS.md",
+  "districts": {
+    "config": {
+      "root_role": "repo-wide source maps for validators and generated companions",
+      "allowed_files": [
+        "config/agents/agents_mesh.json",
+        "config/mechanics/memo_mechanics.json",
+        "config/root-topology/root_technical_districts.json"
+      ]
+    },
+    "examples": {
+      "root_role": "public shared memory-object, lifecycle, provenance, and recall examples",
+      "allowed_files": [
+        "examples/memory-objects/anchor.example.json",
+        "examples/lifecycle/audit_event.memory-retention-check.example.json",
+        "examples/phase-alpha/audit_event.phase-alpha-rerun-pending-supersession.example.json",
+        "examples/phase-alpha/audit_event.phase-alpha-runtime-history-overread-retraction.example.json",
+        "examples/phase-alpha/audit_event.phase-alpha-validation-remediation-rerun.example.json",
+        "examples/phase-alpha/audit_event.phase-alpha-validation-remediation.example.json",
+        "examples/lifecycle/audit_event.retraction.example.json",
+        "examples/lifecycle/audit_event.service-governed-fallback.example.json",
+        "examples/lifecycle/audit_event.supersession.example.json",
+        "examples/lifecycle/claim.current-entrypoint.example.json",
+        "examples/memory-objects/claim.example.json",
+        "examples/phase-alpha/claim.phase-alpha-closure-with-residual-runtime-history.example.json",
+        "examples/phase-alpha/claim.phase-alpha-rerun-pending-handoff.example.json",
+        "examples/phase-alpha/claim.phase-alpha-runtime-history-fully-retired.example.json",
+        "examples/phase-alpha/claim.phase-alpha-runtime-history-later-infra-track.example.json",
+        "examples/lifecycle/claim.retracted.example.json",
+        "examples/lifecycle/claim.superseded.example.json",
+        "examples/support-objects/core_memory_contract.example.json",
+        "examples/phase-alpha/decision.phase-alpha-local-stack.example.json",
+        "examples/phase-alpha/decision.phase-alpha-long-horizon.example.json",
+        "examples/phase-alpha/decision.phase-alpha-restartable-inquiry.example.json",
+        "examples/phase-alpha/decision.phase-alpha-validation-remediation-rerun.example.json",
+        "examples/phase-alpha/decision.phase-alpha-validation-remediation.example.json",
+        "examples/memory-objects/episode.example.json",
+        "examples/phase-alpha/episode.phase-alpha-local-stack.example.json",
+        "examples/phase-alpha/episode.phase-alpha-long-horizon.example.json",
+        "examples/phase-alpha/episode.phase-alpha-validation-remediation-rerun.example.json",
+        "examples/phase-alpha/episode.phase-alpha-validation-remediation.example.json",
+        "examples/generated-surfaces/memory_object_surface_manifest.json",
+        "examples/memory-objects/pattern.example.json",
+        "examples/phase-alpha/pattern.phase-alpha-remediation-recurrence.example.json",
+        "examples/support-objects/provenance_thread.example.json",
+        "examples/lifecycle/provenance_thread.lifecycle.example.json",
+        "examples/phase-alpha/provenance_thread.phase-alpha-curated.example.json",
+        "examples/recall/recall_contract.lineage.json",
+        "examples/recall/recall_contract.object.lineage.json",
+        "examples/recall/recall_contract.object.semantic.json",
+        "examples/recall/recall_contract.object.working.json",
+        "examples/recall/recall_contract.object.working.phase-alpha.json",
+        "examples/recall/recall_contract.object.working.return.json",
+        "examples/recall/recall_contract.router.lineage.json",
+        "examples/recall/recall_contract.router.semantic.json",
+        "examples/recall/recall_contract.semantic.json",
+        "examples/recall/recall_contract.working.json",
+        "examples/memory-objects/state_capsule.example.json",
+        "examples/phase-alpha/state_capsule.phase-alpha-local-stack.example.json",
+        "examples/phase-alpha/state_capsule.phase-alpha-long-horizon.example.json",
+        "examples/phase-alpha/state_capsule.phase-alpha-restartable-inquiry.example.json"
+      ]
+    },
+    "generated": {
+      "root_role": "public compact companions for repo-wide memory, object, route-card, mechanic, and Questbook surfaces",
+      "allowed_files": [
+        "generated/agents/agents_mesh.min.json",
+        "generated/mechanics/mechanic_artifacts.min.json",
+        "generated/root-topology/root_technical_districts.min.json",
+        "generated/mechanics/memo_mechanic_cards.min.json",
+        "generated/mechanics/memo_mechanic_landing_logs.min.json",
+        "generated/mechanics/memo_mechanic_owner_routes.min.json",
+        "generated/mechanics/memo_mechanic_readiness.min.json",
+        "generated/mechanics/memo_mechanics.min.json",
+        "generated/memory/memo_registry.min.json",
+        "generated/memory/memory_capsules.json",
+        "generated/memory/memory_catalog.json",
+        "generated/memory/memory_catalog.min.json",
+        "generated/memory-objects/memory_object_capsules.json",
+        "generated/memory-objects/memory_object_catalog.json",
+        "generated/memory-objects/memory_object_catalog.min.json",
+        "generated/memory-objects/memory_object_sections.full.json",
+        "generated/memory/memory_sections.full.json",
+        "generated/quests/quest_catalog.min.example.json",
+        "generated/quests/quest_catalog.min.json",
+        "generated/quests/quest_dispatch.min.example.json",
+        "generated/quests/quest_dispatch.min.json"
+      ]
+    },
+    "manifests": {
+      "root_role": "reserved for future shared recurrence manifests",
+      "allowed_files": []
+    },
+    "schemas": {
+      "root_role": "public shared memory object, recall, provenance, and generated-surface schemas",
+      "allowed_files": [
+        "schemas/memory-objects/anchor.schema.json",
+        "schemas/memory-objects/audit_event.schema.json",
+        "schemas/memory-objects/bridge.schema.json",
+        "schemas/memory-objects/claim.schema.json",
+        "schemas/support-objects/core-memory-contract.schema.json",
+        "schemas/recall-posture/decay_policy.schema.json",
+        "schemas/memory-objects/decision.schema.json",
+        "schemas/memory-objects/episode.schema.json",
+        "schemas/recall-posture/lifecycle_posture.schema.json",
+        "schemas/memory-objects/memory_object.schema.json",
+        "schemas/generated-surfaces/memory_object_capsules.schema.json",
+        "schemas/generated-surfaces/memory_object_catalog.schema.json",
+        "schemas/memory-objects/memory_object_profile.schema.json",
+        "schemas/generated-surfaces/memory_object_sections.schema.json",
+        "schemas/generated-surfaces/memory_object_surface_manifest.schema.json",
+        "schemas/memory-objects/pattern.schema.json",
+        "schemas/support-objects/provenance_thread.schema.json",
+        "schemas/recall-posture/recall_contract.schema.json",
+        "schemas/memory-objects/state_capsule.schema.json",
+        "schemas/recall-posture/trust_posture.schema.json"
+      ]
+    },
+    "scripts": {
+      "root_role": "repo-wide validators, index builders, and shared memory-object generators",
+      "allowed_files": [
+        "scripts/agents/agents_mesh_common.py",
+        "scripts/agents/build_agents_mesh_index.py",
+        "scripts/mechanics/build_mechanic_artifact_inventory.py",
+        "scripts/mechanics/build_memo_mechanic_cards.py",
+        "scripts/mechanics/build_memo_mechanic_landing_logs.py",
+        "scripts/mechanics/build_memo_mechanic_owner_routes.py",
+        "scripts/mechanics/build_memo_mechanic_readiness.py",
+        "scripts/mechanics/build_memo_mechanics_index.py",
+        "scripts/root-topology/build_root_technical_districts_index.py",
+        "scripts/memory/generate_memory_object_surfaces.py",
+        "scripts/mechanics/mechanic_artifact_inventory_common.py",
+        "scripts/mechanics/memo_mechanic_cards_common.py",
+        "scripts/mechanics/memo_mechanic_landing_logs_common.py",
+        "scripts/mechanics/memo_mechanic_owner_routes_common.py",
+        "scripts/mechanics/mechanic_readiness_common.py",
+        "scripts/mechanics/memo_mechanics_common.py",
+        "scripts/root-topology/root_technical_districts_common.py",
+        "scripts/release/release_check.py",
+        "scripts/agents/validate_agents_mesh.py",
+        "scripts/agents/validate_agents_mesh_index.py",
+        "scripts/root-topology/validate_docs_districts.py",
+        "scripts/memory/validate_lifecycle_audit_examples.py",
+        "scripts/mechanics/validate_mechanic_artifact_inventory.py",
+        "scripts/mechanics/validate_mechanic_artifact_topology.py",
+        "scripts/memory/validate_memo.py",
+        "scripts/mechanics/validate_memo_mechanic_cards.py",
+        "scripts/mechanics/validate_memo_mechanic_landing_logs.py",
+        "scripts/mechanics/validate_memo_mechanic_owner_routes.py",
+        "scripts/mechanics/validate_memo_mechanic_parts.py",
+        "scripts/mechanics/validate_memo_mechanic_readiness.py",
+        "scripts/mechanics/validate_memo_mechanics.py",
+        "scripts/mechanics/validate_memo_mechanics_index.py",
+        "scripts/memory/validate_memory_object_surfaces.py",
+        "scripts/memory/validate_memory_surfaces.py",
+        "scripts/memory/validate_nested_agents.py",
+        "scripts/root-topology/validate_root_technical_districts_index.py",
+        "scripts/agents/validate_semantic_agents.py"
+      ]
+    },
+    "tests": {
+      "root_role": "repo-wide regression coverage for shared surfaces, generated parity, route maps, and cross-mechanic contracts",
+      "allowed_files": [
+        "tests/agents/test_agents_mesh.py",
+        "tests/agents/test_companion_skill_scripts.py",
+        "tests/root-topology/test_current_direction_routes.py",
+        "tests/root-topology/test_docs_districts.py",
+        "tests/mechanics/test_cross_mechanic_operational_contracts.py",
+        "tests/mechanics/test_cross_mechanic_candidate_contracts.py",
+        "tests/mechanics/test_mechanic_artifact_inventory.py",
+        "tests/root-topology/test_mechanic_artifact_topology.py",
+        "tests/mechanics/test_memo_mechanic_cards.py",
+        "tests/mechanics/test_memo_mechanic_landing_logs.py",
+        "tests/mechanics/test_memo_mechanic_owner_routes.py",
+        "tests/mechanics/test_memo_mechanic_parts.py",
+        "tests/mechanics/test_memo_mechanic_readiness.py",
+        "tests/mechanics/test_memo_mechanics.py",
+        "tests/memory/test_memo_validators.py",
+        "tests/memory/test_phase_alpha_provenance_thread.py",
+        "tests/root-topology/test_roadmap_parity.py",
+        "tests/root-topology/test_root_technical_districts_index.py",
+        "tests/root-topology/test_topology_spine.py",
+        "tests/agents/test_validate_semantic_agents.py"
+      ]
+    }
+  },
+  "generated_families": [
+    {
+      "id": "memo_registry",
+      "source_kind": "source-authored",
+      "owner_surface": "generated/AGENTS.md",
+      "source_refs": [
+        "generated/memory/memo_registry.min.json"
+      ],
+      "outputs": [
+        "generated/memory/memo_registry.min.json"
+      ],
+      "validators": [
+        "scripts/memory/validate_memo.py"
+      ]
+    },
+    {
+      "id": "doctrine_reader_surfaces",
+      "source_kind": "checked-in-derived",
+      "owner_surface": "generated/AGENTS.md",
+      "source_refs": [
+        "generated/memory/memo_registry.min.json",
+        "docs/memory/MEMORY_MODEL.md",
+        "docs/boundaries/BOUNDARIES.md"
+      ],
+      "outputs": [
+        "generated/memory/memory_catalog.json",
+        "generated/memory/memory_catalog.min.json",
+        "generated/memory/memory_capsules.json",
+        "generated/memory/memory_sections.full.json"
+      ],
+      "validators": [
+        "scripts/memory/validate_memo.py",
+        "scripts/memory/validate_memory_surfaces.py"
+      ]
+    },
+    {
+      "id": "memory_object_surfaces",
+      "source_kind": "generator-backed",
+      "owner_surface": "generated/AGENTS.md",
+      "source_refs": [
+        "examples/generated-surfaces/memory_object_surface_manifest.json",
+        "scripts/memory/generate_memory_object_surfaces.py"
+      ],
+      "outputs": [
+        "generated/memory-objects/memory_object_catalog.json",
+        "generated/memory-objects/memory_object_catalog.min.json",
+        "generated/memory-objects/memory_object_capsules.json",
+        "generated/memory-objects/memory_object_sections.full.json"
+      ],
+      "builders": [
+        "scripts/memory/generate_memory_object_surfaces.py"
+      ],
+      "validators": [
+        "scripts/memory/validate_memo.py",
+        "scripts/memory/validate_memory_object_surfaces.py"
+      ]
+    },
+    {
+      "id": "agents_mesh",
+      "source_kind": "generator-backed",
+      "owner_surface": "DESIGN.AGENTS.md",
+      "source_refs": [
+        "config/agents/agents_mesh.json",
+        "AGENTS.md",
+        "DESIGN.AGENTS.md"
+      ],
+      "outputs": [
+        "generated/agents/agents_mesh.min.json"
+      ],
+      "builders": [
+        "scripts/agents/build_agents_mesh_index.py"
+      ],
+      "validators": [
+        "scripts/agents/validate_agents_mesh.py",
+        "scripts/agents/validate_agents_mesh_index.py"
+      ]
+    },
+    {
+      "id": "memo_mechanics_index",
+      "source_kind": "generator-backed",
+      "owner_surface": "mechanics/README.md",
+      "source_refs": [
+        "config/mechanics/memo_mechanics.json",
+        "mechanics/README.md"
+      ],
+      "outputs": [
+        "generated/mechanics/memo_mechanics.min.json"
+      ],
+      "builders": [
+        "scripts/mechanics/build_memo_mechanics_index.py"
+      ],
+      "validators": [
+        "scripts/mechanics/validate_memo_mechanics.py",
+        "scripts/mechanics/validate_memo_mechanics_index.py"
+      ]
+    },
+    {
+      "id": "memo_mechanic_cards",
+      "source_kind": "generator-backed",
+      "owner_surface": "mechanics/README.md",
+      "source_refs": [
+        "config/mechanics/memo_mechanics.json",
+        "mechanics/README.md",
+        "mechanics/AGENTS.md"
+      ],
+      "outputs": [
+        "generated/mechanics/memo_mechanic_cards.min.json"
+      ],
+      "builders": [
+        "scripts/mechanics/build_memo_mechanic_cards.py"
+      ],
+      "validators": [
+        "scripts/mechanics/validate_memo_mechanic_cards.py"
+      ]
+    },
+    {
+      "id": "memo_mechanic_owner_routes",
+      "source_kind": "generator-backed",
+      "owner_surface": "mechanics/README.md",
+      "source_refs": [
+        "config/mechanics/memo_mechanics.json",
+        "generated/mechanics/memo_mechanic_cards.min.json",
+        "mechanics/README.md",
+        "mechanics/AGENTS.md"
+      ],
+      "outputs": [
+        "generated/mechanics/memo_mechanic_owner_routes.min.json"
+      ],
+      "builders": [
+        "scripts/mechanics/build_memo_mechanic_owner_routes.py"
+      ],
+      "validators": [
+        "scripts/mechanics/validate_memo_mechanic_owner_routes.py"
+      ]
+    },
+    {
+      "id": "memo_mechanic_landing_logs",
+      "source_kind": "generator-backed",
+      "owner_surface": "mechanics/README.md",
+      "source_refs": [
+        "config/mechanics/memo_mechanics.json",
+        "mechanics/README.md",
+        "mechanics/AGENTS.md"
+      ],
+      "outputs": [
+        "generated/mechanics/memo_mechanic_landing_logs.min.json"
+      ],
+      "builders": [
+        "scripts/mechanics/build_memo_mechanic_landing_logs.py"
+      ],
+      "validators": [
+        "scripts/mechanics/validate_memo_mechanic_landing_logs.py"
+      ]
+    },
+    {
+      "id": "memo_mechanic_readiness",
+      "source_kind": "generator-backed",
+      "owner_surface": "mechanics/README.md",
+      "source_refs": [
+        "config/mechanics/memo_mechanics.json",
+        "mechanics/README.md",
+        "generated/mechanics/memo_mechanic_cards.min.json",
+        "generated/mechanics/memo_mechanic_landing_logs.min.json",
+        "generated/mechanics/memo_mechanic_owner_routes.min.json",
+        "generated/mechanics/mechanic_artifacts.min.json"
+      ],
+      "outputs": [
+        "generated/mechanics/memo_mechanic_readiness.min.json"
+      ],
+      "builders": [
+        "scripts/mechanics/build_memo_mechanic_readiness.py"
+      ],
+      "validators": [
+        "scripts/mechanics/validate_memo_mechanic_readiness.py"
+      ]
+    },
+    {
+      "id": "mechanic_artifact_inventory",
+      "source_kind": "generator-backed",
+      "owner_surface": "mechanics/ARTIFACT_TOPOLOGY.md",
+      "source_refs": [
+        "mechanics/ARTIFACT_TOPOLOGY.md",
+        "config/mechanics/memo_mechanics.json"
+      ],
+      "outputs": [
+        "generated/mechanics/mechanic_artifacts.min.json"
+      ],
+      "builders": [
+        "scripts/mechanics/build_mechanic_artifact_inventory.py"
+      ],
+      "validators": [
+        "scripts/mechanics/validate_mechanic_artifact_inventory.py"
+      ]
+    },
+    {
+      "id": "root_technical_districts",
+      "source_kind": "generator-backed",
+      "owner_surface": "mechanics/ARTIFACT_TOPOLOGY.md",
+      "source_refs": [
+        "mechanics/ARTIFACT_TOPOLOGY.md",
+        "config/root-topology/root_technical_districts.json"
+      ],
+      "outputs": [
+        "generated/root-topology/root_technical_districts.min.json"
+      ],
+      "builders": [
+        "scripts/root-topology/build_root_technical_districts_index.py"
+      ],
+      "validators": [
+        "scripts/root-topology/validate_root_technical_districts_index.py",
+        "scripts/mechanics/validate_mechanic_artifact_topology.py"
+      ]
+    },
+    {
+      "id": "questbook_projections",
+      "source_kind": "projection",
+      "owner_surface": "mechanics/questbook/README.md",
+      "source_refs": [
+        "QUESTBOOK.md",
+        "mechanics/questbook/docs/QUEST_SOURCE_CONTRACT.md",
+        "quests/memo/README.md"
+      ],
+      "outputs": [
+        "generated/quests/quest_catalog.min.example.json",
+        "generated/quests/quest_catalog.min.json",
+        "generated/quests/quest_dispatch.min.example.json",
+        "generated/quests/quest_dispatch.min.json"
+      ],
+      "builders": [
+        "mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py"
+      ],
+      "validators": [
+        "mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py",
+        "scripts/memory/validate_memo.py"
+      ]
+    }
+  ],
+  "script_families": [
+    {
+      "id": "release_gate",
+      "role": "orchestrator",
+      "owner_surface": "scripts/AGENTS.md",
+      "scripts": [
+        "scripts/release/release_check.py"
+      ],
+      "covered_by": [
+        "AGENTS.md",
+        "scripts/release/release_check.py"
+      ]
+    },
+    {
+      "id": "core_memory_surfaces",
+      "role": "validator-and-generator",
+      "owner_surface": "scripts/AGENTS.md",
+      "scripts": [
+        "scripts/memory/generate_memory_object_surfaces.py",
+        "scripts/memory/validate_lifecycle_audit_examples.py",
+        "scripts/memory/validate_memo.py",
+        "scripts/memory/validate_memory_object_surfaces.py",
+        "scripts/memory/validate_memory_surfaces.py",
+        "scripts/memory/validate_nested_agents.py"
+      ],
+      "covered_by": [
+        "scripts/release/release_check.py",
+        "tests/memory/test_memo_validators.py"
+      ]
+    },
+    {
+      "id": "agents_mesh",
+      "role": "route-card-validator",
+      "owner_surface": "DESIGN.AGENTS.md",
+      "scripts": [
+        "scripts/agents/agents_mesh_common.py",
+        "scripts/agents/build_agents_mesh_index.py",
+        "scripts/agents/validate_agents_mesh.py",
+        "scripts/agents/validate_agents_mesh_index.py"
+      ],
+      "covered_by": [
+        "scripts/release/release_check.py",
+        "tests/agents/test_agents_mesh.py"
+      ]
+    },
+    {
+      "id": "memo_mechanics_index",
+      "role": "mechanic-validator",
+      "owner_surface": "mechanics/README.md",
+      "scripts": [
+        "scripts/mechanics/build_memo_mechanic_cards.py",
+        "scripts/mechanics/build_memo_mechanic_landing_logs.py",
+        "scripts/mechanics/build_memo_mechanic_owner_routes.py",
+        "scripts/mechanics/build_memo_mechanic_readiness.py",
+        "scripts/mechanics/build_memo_mechanics_index.py",
+        "scripts/mechanics/mechanic_readiness_common.py",
+        "scripts/mechanics/memo_mechanic_cards_common.py",
+        "scripts/mechanics/memo_mechanic_landing_logs_common.py",
+        "scripts/mechanics/memo_mechanic_owner_routes_common.py",
+        "scripts/mechanics/memo_mechanics_common.py",
+        "scripts/mechanics/validate_memo_mechanic_cards.py",
+        "scripts/mechanics/validate_memo_mechanic_landing_logs.py",
+        "scripts/mechanics/validate_memo_mechanic_owner_routes.py",
+        "scripts/mechanics/validate_memo_mechanic_parts.py",
+        "scripts/mechanics/validate_memo_mechanic_readiness.py",
+        "scripts/mechanics/validate_memo_mechanics.py",
+        "scripts/mechanics/validate_memo_mechanics_index.py"
+      ],
+      "covered_by": [
+        "scripts/release/release_check.py",
+        "tests/mechanics/test_memo_mechanic_cards.py",
+        "tests/mechanics/test_memo_mechanic_landing_logs.py",
+        "tests/mechanics/test_memo_mechanic_owner_routes.py",
+        "tests/mechanics/test_memo_mechanic_parts.py",
+        "tests/mechanics/test_memo_mechanic_readiness.py",
+        "tests/mechanics/test_memo_mechanics.py"
+      ]
+    },
+    {
+      "id": "mechanic_artifact_contracts",
+      "role": "mechanic-artifact-validator",
+      "owner_surface": "mechanics/ARTIFACT_TOPOLOGY.md",
+      "scripts": [
+        "scripts/mechanics/build_mechanic_artifact_inventory.py",
+        "scripts/root-topology/build_root_technical_districts_index.py",
+        "scripts/mechanics/mechanic_artifact_inventory_common.py",
+        "scripts/root-topology/root_technical_districts_common.py",
+        "scripts/mechanics/validate_mechanic_artifact_inventory.py",
+        "scripts/mechanics/validate_mechanic_artifact_topology.py",
+        "scripts/root-topology/validate_root_technical_districts_index.py"
+      ],
+      "covered_by": [
+        "scripts/release/release_check.py",
+        "tests/mechanics/test_mechanic_artifact_inventory.py",
+        "tests/root-topology/test_mechanic_artifact_topology.py",
+        "tests/root-topology/test_root_technical_districts_index.py"
+      ]
+    },
+    {
+      "id": "docs_agent_surface",
+      "role": "docs-and-agent-validator",
+      "owner_surface": "docs/AGENTS.md",
+      "scripts": [
+        "scripts/root-topology/validate_docs_districts.py",
+        "scripts/agents/validate_semantic_agents.py"
+      ],
+      "covered_by": [
+        "scripts/release/release_check.py",
+        "tests/root-topology/test_docs_districts.py",
+        "tests/agents/test_validate_semantic_agents.py"
+      ]
+    }
+  ],
+  "test_families": [
+    {
+      "id": "agents_mesh_semantic_routes",
+      "role": "route-and-topology-regression",
+      "owner_surface": "DESIGN.AGENTS.md",
+      "tests": [
+        "tests/agents/test_agents_mesh.py",
+        "tests/agents/test_validate_semantic_agents.py"
+      ],
+      "protects": [
+        "config/agents/agents_mesh.json",
+        "generated/agents/agents_mesh.min.json",
+        "scripts/agents/validate_agents_mesh.py",
+        "scripts/agents/validate_semantic_agents.py"
+      ]
+    },
+    {
+      "id": "root_docs_and_direction",
+      "role": "route-and-topology-regression",
+      "owner_surface": "docs/root/ROOT_SURFACE_LAW.md",
+      "tests": [
+        "tests/root-topology/test_current_direction_routes.py",
+        "tests/root-topology/test_docs_districts.py",
+        "tests/root-topology/test_roadmap_parity.py",
+        "tests/root-topology/test_topology_spine.py"
+      ],
+      "protects": [
+        "README.md",
+        "ROADMAP.md",
+        "docs/README.md",
+        "docs/root/ROOT_SURFACE_LAW.md",
+        "docs/decisions/README.md"
+      ]
+    },
+    {
+      "id": "mechanic_indexes_and_artifacts",
+      "role": "mechanic-contract-regression",
+      "owner_surface": "mechanics/ARTIFACT_TOPOLOGY.md",
+      "tests": [
+        "tests/mechanics/test_mechanic_artifact_inventory.py",
+        "tests/root-topology/test_mechanic_artifact_topology.py",
+        "tests/mechanics/test_memo_mechanic_cards.py",
+        "tests/mechanics/test_memo_mechanic_landing_logs.py",
+        "tests/mechanics/test_memo_mechanic_owner_routes.py",
+        "tests/mechanics/test_memo_mechanic_parts.py",
+        "tests/mechanics/test_memo_mechanic_readiness.py",
+        "tests/mechanics/test_memo_mechanics.py",
+        "tests/root-topology/test_root_technical_districts_index.py"
+      ],
+      "protects": [
+        "mechanics/README.md",
+        "mechanics/ARTIFACT_TOPOLOGY.md",
+        "config/mechanics/memo_mechanics.json",
+        "config/root-topology/root_technical_districts.json",
+        "generated/mechanics/mechanic_artifacts.min.json",
+        "generated/root-topology/root_technical_districts.min.json",
+        "generated/mechanics/memo_mechanic_cards.min.json",
+        "generated/mechanics/memo_mechanic_landing_logs.min.json",
+        "generated/mechanics/memo_mechanic_owner_routes.min.json",
+        "generated/mechanics/memo_mechanic_readiness.min.json",
+        "generated/mechanics/memo_mechanics.min.json"
+      ]
+    },
+    {
+      "id": "memory_schema_and_object_contracts",
+      "role": "memory-object-regression",
+      "owner_surface": "docs/memory/MEMORY_MODEL.md",
+      "tests": [
+        "tests/memory/test_memo_validators.py",
+        "tests/memory/test_phase_alpha_provenance_thread.py"
+      ],
+      "protects": [
+        "schemas/memory-objects/memory_object.schema.json",
+        "examples/phase-alpha/provenance_thread.phase-alpha-curated.example.json",
+        "examples/generated-surfaces/memory_object_surface_manifest.json",
+        "generated/memory-objects/memory_object_catalog.min.json"
+      ]
+    },
+    {
+      "id": "cross_mechanic_operational_contracts",
+      "role": "cross-mechanic-contract-regression",
+      "owner_surface": "mechanics/ARTIFACT_TOPOLOGY.md",
+      "tests": [
+        "tests/mechanics/test_cross_mechanic_operational_contracts.py"
+      ],
+      "protects": [
+        "mechanics/governance/parts/install-and-certification-boundary/schemas/certification_memory_writeback_v1.json",
+        "mechanics/operational-gate/parts/deployment-incident-gate/schemas/deployment_incident_memory_gate_v1.json",
+        "mechanics/retention/parts/post-release-retention/schemas/post_release_retention_memory_v1.json",
+        "mechanics/writeback/parts/revision-ledgers/schemas/assistant_revision_ledger_entry_v1.json",
+        "mechanics/writeback/parts/rollback-and-recovery/schemas/rollback_memory_entry_v1.json"
+      ]
+    },
+    {
+      "id": "cross_mechanic_candidate_contracts",
+      "role": "cross-mechanic-contract-regression",
+      "owner_surface": "mechanics/lineage-harvest/PARTS.md",
+      "tests": [
+        "tests/mechanics/test_cross_mechanic_candidate_contracts.py"
+      ],
+      "protects": [
+        "mechanics/adoption/parts/adoption-boundary/schemas/adoption_memory_writeback_v1.json",
+        "mechanics/antifragility/parts/failure-lesson-memory/schemas/shared_lesson_memory_v1.json",
+        "mechanics/consumer-handoff/parts/kag-source-export/schemas/memo_to_kag_bridge_record_v1.json",
+        "mechanics/governance/parts/federation-boundary/schemas/federation_memory_gate_decision_v1.json",
+        "mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/schemas/pattern_lineage_memory_entry_v1.json",
+        "mechanics/retention/parts/cross-repo-and-governance-retention/schemas/cross_repo_retention_result_v1.json"
+      ]
+    },
+    {
+      "id": "agent_companion_skill_contracts",
+      "role": "agent-companion-regression",
+      "owner_surface": ".agents/AGENTS.md",
+      "tests": [
+        "tests/agents/test_companion_skill_scripts.py"
+      ],
+      "protects": [
+        ".agents/skills/aoa-safe-infra-change/scripts/infra_change_contract.py",
+        ".agents/skills/AGENTS.md"
+      ]
+    }
+  ],
+  "schema_families": [
+    {
+      "id": "core_memory_objects",
+      "role": "memory-object-contract",
+      "owner_surface": "docs/memory/MEMORY_MODEL.md",
+      "schemas": [
+        "schemas/memory-objects/anchor.schema.json",
+        "schemas/memory-objects/audit_event.schema.json",
+        "schemas/memory-objects/bridge.schema.json",
+        "schemas/memory-objects/claim.schema.json",
+        "schemas/memory-objects/decision.schema.json",
+        "schemas/memory-objects/episode.schema.json",
+        "schemas/memory-objects/memory_object.schema.json",
+        "schemas/memory-objects/memory_object_profile.schema.json",
+        "schemas/memory-objects/pattern.schema.json",
+        "schemas/memory-objects/state_capsule.schema.json"
+      ],
+      "source_refs": [
+        "docs/memory/MEMORY_MODEL.md",
+        "docs/memory/MEMORY_OBJECT_PROFILES.md",
+        "examples/memory-objects/anchor.example.json",
+        "examples/memory-objects/state_capsule.example.json",
+        "examples/memory-objects/episode.example.json",
+        "examples/memory-objects/claim.example.json",
+        "examples/phase-alpha/decision.phase-alpha-local-stack.example.json",
+        "examples/memory-objects/pattern.example.json",
+        "examples/lifecycle/audit_event.supersession.example.json"
+      ],
+      "validators": [
+        "scripts/memory/validate_memo.py"
+      ]
+    },
+    {
+      "id": "recall_posture_contracts",
+      "role": "recall-posture-contract",
+      "owner_surface": "docs/memory/MEMORY_MODEL.md",
+      "schemas": [
+        "schemas/recall-posture/decay_policy.schema.json",
+        "schemas/recall-posture/lifecycle_posture.schema.json",
+        "schemas/recall-posture/recall_contract.schema.json",
+        "schemas/recall-posture/trust_posture.schema.json"
+      ],
+      "source_refs": [
+        "docs/memory/MEMORY_MODEL.md",
+        "docs/posture/MEMORY_TRUST_POSTURE.md",
+        "docs/posture/LIFECYCLE.md",
+        "examples/recall/recall_contract.semantic.json"
+      ],
+      "validators": [
+        "scripts/memory/validate_memo.py",
+        "scripts/memory/validate_lifecycle_audit_examples.py"
+      ]
+    },
+    {
+      "id": "support_memory_objects",
+      "role": "support-object-contract",
+      "owner_surface": "docs/memory/NARRATIVE_CORE_CONTRACT.md",
+      "schemas": [
+        "schemas/support-objects/core-memory-contract.schema.json",
+        "schemas/support-objects/provenance_thread.schema.json"
+      ],
+      "source_refs": [
+        "docs/memory/NARRATIVE_CORE_CONTRACT.md",
+        "examples/support-objects/core_memory_contract.example.json",
+        "examples/support-objects/provenance_thread.example.json"
+      ],
+      "validators": [
+        "scripts/memory/validate_memo.py"
+      ]
+    },
+    {
+      "id": "generated_object_surfaces",
+      "role": "generated-surface-contract",
+      "owner_surface": "examples/generated-surfaces/memory_object_surface_manifest.json",
+      "schemas": [
+        "schemas/generated-surfaces/memory_object_capsules.schema.json",
+        "schemas/generated-surfaces/memory_object_catalog.schema.json",
+        "schemas/generated-surfaces/memory_object_sections.schema.json",
+        "schemas/generated-surfaces/memory_object_surface_manifest.schema.json"
+      ],
+      "source_refs": [
+        "examples/generated-surfaces/memory_object_surface_manifest.json",
+        "generated/memory-objects/memory_object_catalog.min.json",
+        "generated/memory-objects/memory_object_capsules.json",
+        "generated/memory-objects/memory_object_sections.full.json"
+      ],
+      "validators": [
+        "scripts/memory/validate_memory_object_surfaces.py"
+      ]
+    }
+  ],
+  "example_families": [
+    {
+      "id": "base_memory_object_examples",
+      "role": "base-memory-object-example",
+      "owner_surface": "docs/memory/MEMORY_MODEL.md",
+      "examples": [
+        "examples/memory-objects/anchor.example.json",
+        "examples/memory-objects/claim.example.json",
+        "examples/memory-objects/episode.example.json",
+        "examples/memory-objects/pattern.example.json",
+        "examples/memory-objects/state_capsule.example.json"
+      ],
+      "source_refs": [
+        "docs/memory/MEMORY_MODEL.md",
+        "schemas/memory-objects/memory_object.schema.json"
+      ],
+      "validators": [
+        "scripts/memory/validate_memo.py"
+      ]
+    },
+    {
+      "id": "lifecycle_audit_examples",
+      "role": "lifecycle-audit-example",
+      "owner_surface": "docs/posture/LIFECYCLE.md",
+      "examples": [
+        "examples/lifecycle/audit_event.memory-retention-check.example.json",
+        "examples/lifecycle/audit_event.retraction.example.json",
+        "examples/lifecycle/audit_event.service-governed-fallback.example.json",
+        "examples/lifecycle/audit_event.supersession.example.json",
+        "examples/lifecycle/claim.current-entrypoint.example.json",
+        "examples/lifecycle/claim.retracted.example.json",
+        "examples/lifecycle/claim.superseded.example.json",
+        "examples/lifecycle/provenance_thread.lifecycle.example.json"
+      ],
+      "source_refs": [
+        "docs/posture/LIFECYCLE.md",
+        "docs/posture/MEMORY_TRUST_POSTURE.md",
+        "scripts/memory/validate_lifecycle_audit_examples.py"
+      ],
+      "validators": [
+        "scripts/memory/validate_memo.py",
+        "scripts/memory/validate_lifecycle_audit_examples.py"
+      ]
+    },
+    {
+      "id": "phase_alpha_memory_thread_examples",
+      "role": "phase-alpha-thread-example",
+      "owner_surface": "docs/memory/MEMORY_MODEL.md",
+      "examples": [
+        "examples/phase-alpha/audit_event.phase-alpha-rerun-pending-supersession.example.json",
+        "examples/phase-alpha/audit_event.phase-alpha-runtime-history-overread-retraction.example.json",
+        "examples/phase-alpha/audit_event.phase-alpha-validation-remediation-rerun.example.json",
+        "examples/phase-alpha/audit_event.phase-alpha-validation-remediation.example.json",
+        "examples/phase-alpha/claim.phase-alpha-closure-with-residual-runtime-history.example.json",
+        "examples/phase-alpha/claim.phase-alpha-rerun-pending-handoff.example.json",
+        "examples/phase-alpha/claim.phase-alpha-runtime-history-fully-retired.example.json",
+        "examples/phase-alpha/claim.phase-alpha-runtime-history-later-infra-track.example.json",
+        "examples/phase-alpha/decision.phase-alpha-local-stack.example.json",
+        "examples/phase-alpha/decision.phase-alpha-long-horizon.example.json",
+        "examples/phase-alpha/decision.phase-alpha-restartable-inquiry.example.json",
+        "examples/phase-alpha/decision.phase-alpha-validation-remediation-rerun.example.json",
+        "examples/phase-alpha/decision.phase-alpha-validation-remediation.example.json",
+        "examples/phase-alpha/episode.phase-alpha-local-stack.example.json",
+        "examples/phase-alpha/episode.phase-alpha-long-horizon.example.json",
+        "examples/phase-alpha/episode.phase-alpha-validation-remediation-rerun.example.json",
+        "examples/phase-alpha/episode.phase-alpha-validation-remediation.example.json",
+        "examples/phase-alpha/pattern.phase-alpha-remediation-recurrence.example.json",
+        "examples/phase-alpha/provenance_thread.phase-alpha-curated.example.json",
+        "examples/phase-alpha/state_capsule.phase-alpha-local-stack.example.json",
+        "examples/phase-alpha/state_capsule.phase-alpha-long-horizon.example.json",
+        "examples/phase-alpha/state_capsule.phase-alpha-restartable-inquiry.example.json"
+      ],
+      "source_refs": [
+        "docs/memory/MEMORY_MODEL.md",
+        "examples/phase-alpha/provenance_thread.phase-alpha-curated.example.json"
+      ],
+      "validators": [
+        "scripts/memory/validate_memo.py",
+        "tests/memory/test_phase_alpha_provenance_thread.py"
+      ]
+    },
+    {
+      "id": "recall_contract_examples",
+      "role": "recall-contract-example",
+      "owner_surface": "docs/memory/MEMORY_MODEL.md",
+      "examples": [
+        "examples/recall/recall_contract.lineage.json",
+        "examples/recall/recall_contract.object.lineage.json",
+        "examples/recall/recall_contract.object.semantic.json",
+        "examples/recall/recall_contract.object.working.json",
+        "examples/recall/recall_contract.object.working.phase-alpha.json",
+        "examples/recall/recall_contract.object.working.return.json",
+        "examples/recall/recall_contract.router.lineage.json",
+        "examples/recall/recall_contract.router.semantic.json",
+        "examples/recall/recall_contract.semantic.json",
+        "examples/recall/recall_contract.working.json"
+      ],
+      "source_refs": [
+        "docs/memory/MEMORY_MODEL.md",
+        "schemas/recall-posture/recall_contract.schema.json",
+        "generated/memory/memory_catalog.min.json",
+        "generated/memory-objects/memory_object_catalog.min.json"
+      ],
+      "validators": [
+        "scripts/memory/validate_memo.py",
+        "scripts/memory/validate_memory_surfaces.py",
+        "scripts/memory/validate_memory_object_surfaces.py",
+        "mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_downstream_feed_contracts.py"
+      ]
+    },
+    {
+      "id": "support_contract_examples",
+      "role": "support-contract-example",
+      "owner_surface": "docs/memory/NARRATIVE_CORE_CONTRACT.md",
+      "examples": [
+        "examples/support-objects/core_memory_contract.example.json",
+        "examples/support-objects/provenance_thread.example.json"
+      ],
+      "source_refs": [
+        "docs/memory/NARRATIVE_CORE_CONTRACT.md",
+        "schemas/support-objects/core-memory-contract.schema.json",
+        "schemas/support-objects/provenance_thread.schema.json"
+      ],
+      "validators": [
+        "scripts/memory/validate_memo.py"
+      ]
+    },
+    {
+      "id": "object_surface_manifest_example",
+      "role": "surface-manifest-example",
+      "owner_surface": "examples/generated-surfaces/memory_object_surface_manifest.json",
+      "examples": [
+        "examples/generated-surfaces/memory_object_surface_manifest.json"
+      ],
+      "source_refs": [
+        "schemas/generated-surfaces/memory_object_surface_manifest.schema.json",
+        "scripts/memory/generate_memory_object_surfaces.py"
+      ],
+      "validators": [
+        "scripts/memory/validate_memo.py",
+        "scripts/memory/validate_memory_object_surfaces.py"
+      ]
+    }
+  ],
+  "config_families": [
+    {
+      "id": "agents_mesh_source_map",
+      "role": "route-card-source-map",
+      "owner_surface": "DESIGN.AGENTS.md",
+      "configs": [
+        "config/agents/agents_mesh.json"
+      ],
+      "source_refs": [
+        "DESIGN.AGENTS.md",
+        "AGENTS.md"
+      ],
+      "validators": [
+        "scripts/agents/validate_agents_mesh.py",
+        "scripts/agents/build_agents_mesh_index.py",
+        "scripts/agents/validate_agents_mesh_index.py"
+      ]
+    },
+    {
+      "id": "memo_mechanics_source_map",
+      "role": "mechanic-index-source-map",
+      "owner_surface": "mechanics/README.md",
+      "configs": [
+        "config/mechanics/memo_mechanics.json"
+      ],
+      "source_refs": [
+        "mechanics/README.md",
+        "mechanics/AGENTS.md"
+      ],
+      "validators": [
+        "scripts/mechanics/validate_memo_mechanics.py",
+        "scripts/mechanics/build_memo_mechanics_index.py",
+        "scripts/mechanics/validate_memo_mechanics_index.py"
+      ]
+    },
+    {
+      "id": "root_technical_district_source_map",
+      "role": "technical-district-source-map",
+      "owner_surface": "mechanics/ARTIFACT_TOPOLOGY.md",
+      "configs": [
+        "config/root-topology/root_technical_districts.json"
+      ],
+      "source_refs": [
+        "mechanics/ARTIFACT_TOPOLOGY.md",
+        "config/AGENTS.md"
+      ],
+      "validators": [
+        "scripts/mechanics/validate_mechanic_artifact_topology.py",
+        "tests/root-topology/test_mechanic_artifact_topology.py"
+      ]
+    }
+  ],
+  "manifest_policy": {
+    "id": "root_manifests_reserved",
+    "role": "reserved-shared-recurrence-manifest-home",
+    "owner_surface": "manifests/AGENTS.md",
+    "allowed_files": [],
+    "source_refs": [
+      "manifests/AGENTS.md",
+      "mechanics/ARTIFACT_TOPOLOGY.md"
+    ],
+    "validators": [
+      "scripts/mechanics/validate_mechanic_artifact_topology.py"
+    ]
+  }
+}

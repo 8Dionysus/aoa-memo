@@ -11,8 +11,8 @@
     "mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md"
   ],
   "contradiction_pack_refs": [
-    "docs/BOUNDARIES.md",
-    "docs/OPERATIONAL_BOUNDARY.md"
+    "docs/boundaries/BOUNDARIES.md",
+    "docs/boundaries/OPERATIONAL_BOUNDARY.md"
   ],
   "resolved_decisions": [
     "Keep recurrence support inside existing memo surfaces.",
@@ -47,7 +47,7 @@
       "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md#checkpoint-to-memory-contract"
     ],
     "reentry_refs": [
-      "examples/recall_contract.object.working.return.json",
+      "examples/recall/recall_contract.object.working.return.json",
       "mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md"
     ],
     "reentry_note": "Resume from the last valid checkpoint, inspect compact object-facing anchors, then continue with bounded working recall."

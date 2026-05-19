@@ -13,7 +13,7 @@
     "distillation_review_posture": "review_required",
     "review_boundary_refs": [
       "mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md#writeback-classes",
-      "docs/MEMORY_MODEL.md#checkpoint-route-writeback",
+      "docs/memory/MEMORY_MODEL.md#checkpoint-route-writeback",
       "repo:aoa-agents/docs/AGENT_MEMORY_POSTURE.md"
     ]
   },
@@ -34,7 +34,7 @@
     {
       "runtime_surface": "approval_record",
       "runtime_refs": [
-        "docs/MEMORY_MODEL.md#checkpoint-route-writeback"
+        "docs/memory/MEMORY_MODEL.md#checkpoint-route-writeback"
       ],
       "target_kind": "decision",
       "writeback_class": "memo_surviving_event",
@@ -73,7 +73,7 @@
       "runtime_surface": "review_trace",
       "runtime_refs": [
         "repo:aoa-agents/schemas/artifact.verification_result.schema.json",
-        "docs/AUDIT_EVENTS.md"
+        "docs/posture/AUDIT_EVENTS.md"
       ],
       "target_kind": "audit_event",
       "writeback_class": "memo_surviving_event",
@@ -99,7 +99,7 @@
       "runtime_surface": "distillation_pattern_candidate",
       "runtime_refs": [
         "repo:aoa-agents/schemas/artifact.distillation_pack.schema.json",
-        "docs/MEMORY_MODEL.md#procedural-experience-memory"
+        "docs/memory/MEMORY_MODEL.md#procedural-experience-memory"
       ],
       "target_kind": "pattern",
       "writeback_class": "reviewed_candidate",
@@ -112,7 +112,7 @@
       "runtime_surface": "distillation_bridge_candidate",
       "runtime_refs": [
         "repo:aoa-agents/schemas/artifact.distillation_pack.schema.json",
-        "docs/MEMORY_MODEL.md#associative-memory"
+        "docs/memory/MEMORY_MODEL.md#associative-memory"
       ],
       "target_kind": "bridge",
       "writeback_class": "reviewed_candidate",

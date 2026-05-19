@@ -23,45 +23,45 @@ Do not turn them into hidden runtime infrastructure.
 
 Keep the current split clear:
 
-- `validate_memo.py` is the canonical memory-layer validator and now also checks nested guidance surfaces
-- `validate_memory_surfaces.py` checks the doctrine family under `generated/` plus router-facing recall contracts
-- `generate_memory_object_surfaces.py` rebuilds the object-facing family from curated examples
-- `validate_memory_object_surfaces.py` checks manifest coverage, determinism, lifecycle integrity, and object-facing recall contracts
-- `validate_lifecycle_audit_examples.py` checks lifecycle, provenance-thread, and audit-event example integrity
-- `validate_mechanic_artifact_topology.py` keeps single-mechanic schemas,
+- `memory/validate_memo.py` is the canonical memory-layer validator and now also checks nested guidance surfaces
+- `memory/validate_memory_surfaces.py` checks the doctrine family under `generated/memory/` plus router-facing recall contracts
+- `memory/generate_memory_object_surfaces.py` rebuilds the object-facing family from curated examples into `generated/memory-objects/`
+- `memory/validate_memory_object_surfaces.py` checks manifest coverage, determinism, lifecycle integrity, and object-facing recall contracts
+- `memory/validate_lifecycle_audit_examples.py` checks lifecycle, provenance-thread, and audit-event example integrity
+- `mechanics/validate_mechanic_artifact_topology.py` keeps single-mechanic schemas,
   examples, config inputs, generated outputs, scripts, tests, and manifests out
   of root technical districts, and checks that root `generated/` outputs belong
   to explicit generated-family contracts
-- `build_mechanic_artifact_inventory.py` and
-  `validate_mechanic_artifact_inventory.py` keep
-  `generated/mechanic_artifacts.min.json` aligned with package-local and
+- `mechanics/build_mechanic_artifact_inventory.py` and
+  `mechanics/validate_mechanic_artifact_inventory.py` keep
+  `generated/mechanics/mechanic_artifacts.min.json` aligned with package-local and
   part-local mechanic artifact homes
-- `build_root_technical_districts_index.py` and
-  `validate_root_technical_districts_index.py` keep
-  `generated/root_technical_districts.min.json` aligned with the root
-  technical district contract in `config/root_technical_districts.json`
+- `root-topology/build_root_technical_districts_index.py` and
+  `root-topology/validate_root_technical_districts_index.py` keep
+  `generated/root-topology/root_technical_districts.min.json` aligned with the root
+  technical district contract in `config/root-topology/root_technical_districts.json`
 - quest projection building belongs to `mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py`
-- `validate_nested_agents.py` checks that local guidance files stay present and explicit
-- `validate_agents_mesh.py`, `build_agents_mesh_index.py`, and `validate_agents_mesh_index.py` keep the source-backed AGENTS mesh aligned with current route cards
-- `validate_docs_districts.py` keeps retired docs districts and moved flat docs
+- `memory/validate_nested_agents.py` checks that local guidance files stay present and explicit
+- `agents/validate_agents_mesh.py`, `agents/build_agents_mesh_index.py`, and `agents/validate_agents_mesh_index.py` keep the source-backed AGENTS mesh aligned with current route cards
+- `root-topology/validate_docs_districts.py` keeps retired docs districts and moved flat docs
   from drifting back into active docs-root sprawl
-- `validate_memo_mechanic_parts.py` keeps package `PARTS.md` files in the
+- `mechanics/validate_memo_mechanic_parts.py` keeps package `PARTS.md` files in the
   operation-first Active Parts plus Interface shape and requires physical
   `parts/<part>/README.md`, `CONTRACT.md`, and `VALIDATION.md` nodes
-- `build_memo_mechanic_cards.py` and `validate_memo_mechanic_cards.py` keep a
+- `mechanics/build_memo_mechanic_cards.py` and `mechanics/validate_memo_mechanic_cards.py` keep a
   compact generated route-card index aligned with package README mechanic cards
-- `build_memo_mechanic_owner_routes.py` and
-  `validate_memo_mechanic_owner_routes.py` keep a compact generated
+- `mechanics/build_memo_mechanic_owner_routes.py` and
+  `mechanics/validate_memo_mechanic_owner_routes.py` keep a compact generated
   owner-route matrix aligned with package `OWNER_MAP.md` files and card refs
-- `build_memo_mechanic_landing_logs.py` and
-  `validate_memo_mechanic_landing_logs.py` keep a compact generated landing
+- `mechanics/build_memo_mechanic_landing_logs.py` and
+  `mechanics/validate_memo_mechanic_landing_logs.py` keep a compact generated landing
   receipt index aligned with package `LANDING_LOG.md` files, validation
   routes, and stop-lines
-- `build_memo_mechanic_readiness.py` and
-  `validate_memo_mechanic_readiness.py` keep a compact readiness matrix for
+- `mechanics/build_memo_mechanic_readiness.py` and
+  `mechanics/validate_memo_mechanic_readiness.py` keep a compact readiness matrix for
   every mechanic package, tying package cards, owner maps, stop-lines,
   validation routes, and package-local or part-local artifacts together
-- `config/root_technical_districts.json` groups every root script into a
+- `config/root-topology/root_technical_districts.json` groups every root script into a
   `script_families` contract so root scripts stay release-oriented, covered,
   and owned rather than merely allowed by path
 
@@ -92,36 +92,36 @@ confirm family alignment without turning capsules into routing policy.
 After changing scripts, run the affected entrypoints directly. The common sequence is:
 
 ```bash
-python scripts/validate_memo.py
-python scripts/validate_memory_surfaces.py
-python scripts/validate_memory_object_surfaces.py
-python scripts/validate_lifecycle_audit_examples.py
-python scripts/validate_mechanic_artifact_topology.py
-python scripts/build_mechanic_artifact_inventory.py --check
-python scripts/validate_mechanic_artifact_inventory.py
-python scripts/build_root_technical_districts_index.py --check
-python scripts/validate_root_technical_districts_index.py
+python scripts/memory/validate_memo.py
+python scripts/memory/validate_memory_surfaces.py
+python scripts/memory/validate_memory_object_surfaces.py
+python scripts/memory/validate_lifecycle_audit_examples.py
+python scripts/mechanics/validate_mechanic_artifact_topology.py
+python scripts/mechanics/build_mechanic_artifact_inventory.py --check
+python scripts/mechanics/validate_mechanic_artifact_inventory.py
+python scripts/root-topology/build_root_technical_districts_index.py --check
+python scripts/root-topology/validate_root_technical_districts_index.py
 python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py --check
-python scripts/validate_agents_mesh.py
-python scripts/build_agents_mesh_index.py --check
-python scripts/validate_agents_mesh_index.py
-python scripts/validate_semantic_agents.py
-python scripts/validate_docs_districts.py
-python scripts/validate_memo_mechanic_parts.py
-python scripts/build_memo_mechanic_cards.py --check
-python scripts/validate_memo_mechanic_cards.py
-python scripts/build_memo_mechanic_owner_routes.py --check
-python scripts/validate_memo_mechanic_owner_routes.py
-python scripts/build_memo_mechanic_landing_logs.py --check
-python scripts/validate_memo_mechanic_landing_logs.py
-python scripts/build_memo_mechanic_readiness.py --check
-python scripts/validate_memo_mechanic_readiness.py
+python scripts/agents/validate_agents_mesh.py
+python scripts/agents/build_agents_mesh_index.py --check
+python scripts/agents/validate_agents_mesh_index.py
+python scripts/agents/validate_semantic_agents.py
+python scripts/root-topology/validate_docs_districts.py
+python scripts/mechanics/validate_memo_mechanic_parts.py
+python scripts/mechanics/build_memo_mechanic_cards.py --check
+python scripts/mechanics/validate_memo_mechanic_cards.py
+python scripts/mechanics/build_memo_mechanic_owner_routes.py --check
+python scripts/mechanics/validate_memo_mechanic_owner_routes.py
+python scripts/mechanics/build_memo_mechanic_landing_logs.py --check
+python scripts/mechanics/validate_memo_mechanic_landing_logs.py
+python scripts/mechanics/build_memo_mechanic_readiness.py --check
+python scripts/mechanics/validate_memo_mechanic_readiness.py
 ```
 
 If generator logic changed, also run:
 
 ```bash
-python scripts/generate_memory_object_surfaces.py
+python scripts/memory/generate_memory_object_surfaces.py
 python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py
 python mechanics/consumer-handoff/parts/kag-source-export/scripts/generate_kag_export.py
 python mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_targets.py

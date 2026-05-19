@@ -1,0 +1,1078 @@
+{
+  "schema_version": "aoa_memo_agents_mesh_v1",
+  "source_of_truth": "agents-md-mesh-v1",
+  "authority_ref": "DESIGN.AGENTS.md",
+  "system_design_ref": "DESIGN.md",
+  "root_agents_ref": "AGENTS.md",
+  "route_contract_ref": "docs/root/ROOT_SURFACE_LAW.md",
+  "generated_ref": "generated/agents/agents_mesh.min.json",
+  "canonical_cards": [
+    {
+      "path": ".agents/AGENTS.md",
+      "min_lines": 20,
+      "required_snippets": [
+        "agent-facing companion district",
+        ".agents/<lane>/",
+        "memory truth",
+        "python scripts/release/release_check.py"
+      ]
+    },
+    {
+      "path": ".agents/skills/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "memory-layer maintenance",
+        "recall contracts",
+        "Memory is valuable. It is not proof",
+        "public-safe"
+      ]
+    },
+    {
+      "path": ".agents/spark/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "only governs work started from `.agents/spark/`",
+        "fast-loop lane",
+        "memory remains explicit and bounded",
+        "Reporting contract"
+      ]
+    },
+    {
+      "path": ".github/AGENTS.md",
+      "min_lines": 20,
+      "required_snippets": [
+        "GitHub platform surface",
+        "Repo Validation",
+        "public-safe",
+        "root `AGENTS.md`"
+      ]
+    },
+    {
+      "path": "AGENTS.md",
+      "min_lines": 80,
+      "required_snippets": [
+        "explicit memory and recall layer",
+        "Route modes",
+        "GitHub landing workflow",
+        "Core validation set"
+      ]
+    },
+    {
+      "path": "config/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "guardrail-support",
+        "memory truth",
+        "public-safe",
+        "provenance drift"
+      ]
+    },
+    {
+      "path": "docs/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "memory models",
+        "memory is not proof",
+        "temporal relevance",
+        "downstream owner repo"
+      ]
+    },
+    {
+      "path": "docs/decisions/AGENTS.md",
+      "min_lines": 30,
+      "required_snippets": [
+        "Decision records",
+        "public-safe",
+        "verification route",
+        "python scripts/release/release_check.py"
+      ]
+    },
+    {
+      "path": "mechanics/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "memo-side mechanics",
+        "mechanics/<slug>/docs/",
+        "legacy/",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/antifragility/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "antifragility mechanic",
+        "mechanics/antifragility/",
+        "OWNER_MAP.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/antifragility/parts/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "mechanics/antifragility/parts/",
+        "PARTS.md",
+        "OWNER_MAP.md",
+        "validate_memo_mechanic_parts.py"
+      ]
+    },
+    {
+      "path": "mechanics/antifragility/docs/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/antifragility/docs/",
+        "active mechanic-owned doctrine",
+        "ARTIFACT_TOPOLOGY.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/antifragility/legacy/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/antifragility/legacy/",
+        "placement provenance",
+        "not the active route",
+        "legacy/INDEX.md"
+      ]
+    },
+    {
+      "path": "mechanics/agon/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "Agon mechanic",
+        "mechanics/agon/",
+        "OWNER_MAP.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/agon/parts/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "mechanics/agon/parts/",
+        "PARTS.md",
+        "OWNER_MAP.md",
+        "validate_memo_mechanic_parts.py"
+      ]
+    },
+    {
+      "path": "mechanics/agon/docs/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "mechanics/agon/docs/",
+        "active mechanic-owned doctrine",
+        "ARTIFACT_TOPOLOGY.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/agon/legacy/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/agon/legacy/",
+        "placement provenance",
+        "not the active route",
+        "legacy/INDEX.md"
+      ]
+    },
+    {
+      "path": "mechanics/adoption/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "adoption mechanic",
+        "mechanics/adoption/",
+        "OWNER_MAP.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/adoption/parts/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "mechanics/adoption/parts/",
+        "PARTS.md",
+        "OWNER_MAP.md",
+        "validate_memo_mechanic_parts.py"
+      ]
+    },
+    {
+      "path": "mechanics/adoption/docs/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/adoption/docs/",
+        "active mechanic-owned doctrine",
+        "ARTIFACT_TOPOLOGY.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/adoption/legacy/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/adoption/legacy/",
+        "placement provenance",
+        "not the active route",
+        "legacy/INDEX.md"
+      ]
+    },
+    {
+      "path": "mechanics/governance/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "governance mechanic",
+        "mechanics/governance/",
+        "OWNER_MAP.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/governance/parts/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "mechanics/governance/parts/",
+        "PARTS.md",
+        "OWNER_MAP.md",
+        "validate_memo_mechanic_parts.py"
+      ]
+    },
+    {
+      "path": "mechanics/governance/docs/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/governance/docs/",
+        "active mechanic-owned doctrine",
+        "ARTIFACT_TOPOLOGY.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/governance/legacy/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/governance/legacy/",
+        "placement provenance",
+        "not the active route",
+        "legacy/INDEX.md"
+      ]
+    },
+    {
+      "path": "mechanics/shape-guard/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "shape-guard mechanic",
+        "mechanics/shape-guard/",
+        "OWNER_MAP.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/shape-guard/parts/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "mechanics/shape-guard/parts/",
+        "PARTS.md",
+        "OWNER_MAP.md",
+        "validate_memo_mechanic_parts.py"
+      ]
+    },
+    {
+      "path": "mechanics/shape-guard/docs/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/shape-guard/docs/",
+        "active mechanic-owned doctrine",
+        "ARTIFACT_TOPOLOGY.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/shape-guard/legacy/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/shape-guard/legacy/",
+        "placement provenance",
+        "not the active route",
+        "legacy/INDEX.md"
+      ]
+    },
+    {
+      "path": "mechanics/checkpoint/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "checkpoint mechanic",
+        "mechanics/checkpoint/",
+        "OWNER_MAP.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/checkpoint/parts/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "mechanics/checkpoint/parts/",
+        "PARTS.md",
+        "OWNER_MAP.md",
+        "validate_memo_mechanic_parts.py"
+      ]
+    },
+    {
+      "path": "mechanics/checkpoint/docs/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/checkpoint/docs/",
+        "active mechanic-owned doctrine",
+        "ARTIFACT_TOPOLOGY.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/checkpoint/legacy/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/checkpoint/legacy/",
+        "placement provenance",
+        "not the active route",
+        "legacy/INDEX.md"
+      ]
+    },
+    {
+      "path": "mechanics/readiness-boundary/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "readiness-boundary mechanic",
+        "mechanics/readiness-boundary/",
+        "OWNER_MAP.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/readiness-boundary/parts/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "mechanics/readiness-boundary/parts/",
+        "PARTS.md",
+        "OWNER_MAP.md",
+        "validate_memo_mechanic_parts.py"
+      ]
+    },
+    {
+      "path": "mechanics/readiness-boundary/docs/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/readiness-boundary/docs/",
+        "active mechanic-owned doctrine",
+        "ARTIFACT_TOPOLOGY.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/readiness-boundary/legacy/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/readiness-boundary/legacy/",
+        "placement provenance",
+        "not the active route",
+        "legacy/INDEX.md"
+      ]
+    },
+    {
+      "path": "mechanics/consumer-handoff/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "consumer-handoff mechanic",
+        "mechanics/consumer-handoff/",
+        "OWNER_MAP.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/consumer-handoff/parts/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "mechanics/consumer-handoff/parts/",
+        "PARTS.md",
+        "OWNER_MAP.md",
+        "validate_memo_mechanic_parts.py"
+      ]
+    },
+    {
+      "path": "mechanics/consumer-handoff/docs/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/consumer-handoff/docs/",
+        "active mechanic-owned doctrine",
+        "ARTIFACT_TOPOLOGY.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/consumer-handoff/legacy/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/consumer-handoff/legacy/",
+        "placement provenance",
+        "not the active route",
+        "legacy/INDEX.md"
+      ]
+    },
+    {
+      "path": "mechanics/operational-gate/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "operational-gate mechanic",
+        "mechanics/operational-gate/",
+        "OWNER_MAP.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/operational-gate/parts/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "mechanics/operational-gate/parts/",
+        "PARTS.md",
+        "OWNER_MAP.md",
+        "validate_memo_mechanic_parts.py"
+      ]
+    },
+    {
+      "path": "mechanics/operational-gate/docs/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/operational-gate/docs/",
+        "active mechanic-owned doctrine",
+        "ARTIFACT_TOPOLOGY.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/operational-gate/legacy/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/operational-gate/legacy/",
+        "placement provenance",
+        "not the active route",
+        "legacy/INDEX.md"
+      ]
+    },
+    {
+      "path": "mechanics/recurrence-support/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "recurrence-support mechanic",
+        "mechanics/recurrence-support/",
+        "OWNER_MAP.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/recurrence-support/parts/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "mechanics/recurrence-support/parts/",
+        "PARTS.md",
+        "OWNER_MAP.md",
+        "validate_memo_mechanic_parts.py"
+      ]
+    },
+    {
+      "path": "mechanics/recurrence-support/docs/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/recurrence-support/docs/",
+        "active mechanic-owned doctrine",
+        "ARTIFACT_TOPOLOGY.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/recurrence-support/legacy/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/recurrence-support/legacy/",
+        "placement provenance",
+        "not the active route",
+        "legacy/INDEX.md"
+      ]
+    },
+    {
+      "path": "mechanics/lineage-harvest/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "lineage-harvest mechanic",
+        "mechanics/lineage-harvest/",
+        "OWNER_MAP.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/lineage-harvest/parts/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "mechanics/lineage-harvest/parts/",
+        "PARTS.md",
+        "OWNER_MAP.md",
+        "validate_memo_mechanic_parts.py"
+      ]
+    },
+    {
+      "path": "mechanics/lineage-harvest/docs/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/lineage-harvest/docs/",
+        "active mechanic-owned doctrine",
+        "ARTIFACT_TOPOLOGY.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/lineage-harvest/legacy/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/lineage-harvest/legacy/",
+        "placement provenance",
+        "not the active route",
+        "legacy/INDEX.md"
+      ]
+    },
+    {
+      "path": "mechanics/questbook/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "Questbook owns",
+        "mechanics/questbook/",
+        "OWNER_MAP.md",
+        "validate_quest_store.py"
+      ]
+    },
+    {
+      "path": "mechanics/questbook/parts/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "mechanics/questbook/parts/",
+        "generated/quests/quest_*.json",
+        "quest-read-model-projections",
+        "validate_quest_store.py"
+      ]
+    },
+    {
+      "path": "mechanics/questbook/docs/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/questbook/docs/",
+        "active Questbook",
+        "QUEST_SOURCE_CONTRACT",
+        "validate_quest_store.py"
+      ]
+    },
+    {
+      "path": "mechanics/questbook/legacy/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/questbook/legacy/",
+        "placement provenance",
+        "not the active route",
+        "legacy/INDEX.md"
+      ]
+    },
+    {
+      "path": "mechanics/titan/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "Titan mechanic",
+        "mechanics/titan/",
+        "OWNER_MAP.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/titan/parts/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "mechanics/titan/parts/",
+        "PARTS.md",
+        "OWNER_MAP.md",
+        "validate_memo_mechanic_parts.py"
+      ]
+    },
+    {
+      "path": "mechanics/titan/docs/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "mechanics/titan/docs/",
+        "active mechanic-owned doctrine",
+        "ARTIFACT_TOPOLOGY.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/titan/legacy/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/titan/legacy/",
+        "placement provenance",
+        "not the active route",
+        "legacy/INDEX.md"
+      ]
+    },
+    {
+      "path": "mechanics/writeback/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "writeback mechanic",
+        "mechanics/writeback/",
+        "OWNER_MAP.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/writeback/parts/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "mechanics/writeback/parts/",
+        "PARTS.md",
+        "OWNER_MAP.md",
+        "validate_memo_mechanic_parts.py"
+      ]
+    },
+    {
+      "path": "mechanics/writeback/docs/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/writeback/docs/",
+        "active mechanic-owned doctrine",
+        "ARTIFACT_TOPOLOGY.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/writeback/legacy/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/writeback/legacy/",
+        "placement provenance",
+        "not the active route",
+        "legacy/INDEX.md"
+      ]
+    },
+    {
+      "path": "mechanics/retention/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "retention mechanic",
+        "mechanics/retention/",
+        "OWNER_MAP.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/retention/parts/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "mechanics/retention/parts/",
+        "PARTS.md",
+        "OWNER_MAP.md",
+        "validate_memo_mechanic_parts.py"
+      ]
+    },
+    {
+      "path": "mechanics/retention/docs/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/retention/docs/",
+        "active mechanic-owned doctrine",
+        "ARTIFACT_TOPOLOGY.md",
+        "validate_memo_mechanics.py"
+      ]
+    },
+    {
+      "path": "mechanics/retention/legacy/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "mechanics/retention/legacy/",
+        "placement provenance",
+        "not the active route",
+        "legacy/INDEX.md"
+      ]
+    },
+    {
+      "path": "examples/AGENTS.md",
+      "min_lines": 40,
+      "required_snippets": [
+        "sanitized",
+        "memory_object_surface_manifest.json",
+        "recall_contract.object.lineage.json",
+        "validate_lifecycle_audit_examples.py"
+      ]
+    },
+    {
+      "path": "generated/AGENTS.md",
+      "min_lines": 40,
+      "required_snippets": [
+        "memo_registry.min.json",
+        "memory_object_catalog.json",
+        "kag_export.min.json",
+        "Do not hand-edit"
+      ]
+    },
+    {
+      "path": "manifests/AGENTS.md",
+      "min_lines": 20,
+      "required_snippets": [
+        "recurrence manifests",
+        "component.agon.",
+        "public-safe",
+        "validate_memo.py"
+      ]
+    },
+    {
+      "path": "quests/AGENTS.md",
+      "min_lines": 20,
+      "required_snippets": [
+        "memory-layer obligations",
+        "QUESTBOOK.md",
+        "AOA-MEM-Q-",
+        "validate_memo.py"
+      ]
+    },
+    {
+      "path": "schemas/AGENTS.md",
+      "min_lines": 40,
+      "required_snippets": [
+        "memory_object.schema.json",
+        "recall_contract.schema.json",
+        "memory_graph_face.schema.json",
+        "Schema edits are contract edits"
+      ]
+    },
+    {
+      "path": "scripts/AGENTS.md",
+      "min_lines": 35,
+      "required_snippets": [
+        "validate_memo.py",
+        "validate_nested_agents.py",
+        "deterministic",
+        "hidden runtime infrastructure"
+      ]
+    },
+    {
+      "path": "tests/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "memory schemas",
+        "recall contracts",
+        "provenance loss",
+        "public-safe"
+      ]
+    },
+    {
+      "path": "config/agents/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "config/agents/",
+        "agents_mesh.json",
+        "generated/agents/agents_mesh.min.json"
+      ]
+    },
+    {
+      "path": "config/mechanics/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "config/mechanics/",
+        "memo_mechanics.json",
+        "generated/mechanics/"
+      ]
+    },
+    {
+      "path": "config/root-topology/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "config/root-topology/",
+        "root_technical_districts.json",
+        "generated/root-topology/root_technical_districts.min.json"
+      ]
+    },
+    {
+      "path": "docs/memory/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "docs/memory/",
+        "MEMORY_MODEL.md",
+        "generated/memory/"
+      ]
+    },
+    {
+      "path": "docs/boundaries/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "docs/boundaries/",
+        "BOUNDARIES.md",
+        "OPERATIONAL_BOUNDARY.md"
+      ]
+    },
+    {
+      "path": "docs/posture/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "docs/posture/",
+        "MEMORY_TRUST_POSTURE.md",
+        "validate_lifecycle_audit_examples.py"
+      ]
+    },
+    {
+      "path": "docs/root/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "docs/root/",
+        "ROOT_SURFACE_LAW.md",
+        "release_check.py"
+      ]
+    },
+    {
+      "path": "schemas/memory-objects/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "schemas/memory-objects/",
+        "memory_object.schema.json",
+        "examples/memory-objects/"
+      ]
+    },
+    {
+      "path": "schemas/recall-posture/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "schemas/recall-posture/",
+        "recall_contract.schema.json",
+        "examples/recall/"
+      ]
+    },
+    {
+      "path": "schemas/support-objects/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "schemas/support-objects/",
+        "provenance_thread.schema.json",
+        "NARRATIVE_CORE_CONTRACT.md"
+      ]
+    },
+    {
+      "path": "schemas/generated-surfaces/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "schemas/generated-surfaces/",
+        "memory_object_catalog.schema.json",
+        "generate_memory_object_surfaces.py"
+      ]
+    },
+    {
+      "path": "examples/memory-objects/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "examples/memory-objects/",
+        "base memory object kinds",
+        "generated/memory-objects/"
+      ]
+    },
+    {
+      "path": "examples/phase-alpha/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "examples/phase-alpha/",
+        "Phase Alpha",
+        "generated/memory-objects/"
+      ]
+    },
+    {
+      "path": "examples/lifecycle/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "examples/lifecycle/",
+        "LIFECYCLE.md",
+        "validate_lifecycle_audit_examples.py"
+      ]
+    },
+    {
+      "path": "examples/recall/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "examples/recall/",
+        "recall contract examples",
+        "generated/memory/"
+      ]
+    },
+    {
+      "path": "examples/support-objects/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "examples/support-objects/",
+        "core memory contracts",
+        "provenance threads"
+      ]
+    },
+    {
+      "path": "examples/generated-surfaces/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "examples/generated-surfaces/",
+        "memory_object_surface_manifest.json",
+        "generated/memory-objects/"
+      ]
+    },
+    {
+      "path": "generated/memory/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "generated/memory/",
+        "generated doctrine",
+        "validate_memory_surfaces.py"
+      ]
+    },
+    {
+      "path": "generated/memory-objects/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "generated/memory-objects/",
+        "object-facing catalog",
+        "generate_memory_object_surfaces.py"
+      ]
+    },
+    {
+      "path": "generated/agents/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "generated/agents/",
+        "AGENTS mesh",
+        "agents_mesh.min.json"
+      ]
+    },
+    {
+      "path": "generated/mechanics/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "generated/mechanics/",
+        "mechanic indexes",
+        "validate_memo_mechanic_readiness.py"
+      ]
+    },
+    {
+      "path": "generated/quests/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "generated/quests/",
+        "Questbook read-model projections",
+        "validate_quest_store.py"
+      ]
+    },
+    {
+      "path": "generated/root-topology/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "generated/root-topology/",
+        "root technical district atlas",
+        "root_technical_districts.min.json"
+      ]
+    },
+    {
+      "path": "scripts/memory/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "scripts/memory/",
+        "validate_memo.py",
+        "tests/memory"
+      ]
+    },
+    {
+      "path": "scripts/agents/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "scripts/agents/",
+        "validate_agents_mesh.py",
+        "tests/agents"
+      ]
+    },
+    {
+      "path": "scripts/mechanics/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "scripts/mechanics/",
+        "validate_memo_mechanics.py",
+        "tests/mechanics"
+      ]
+    },
+    {
+      "path": "scripts/root-topology/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "scripts/root-topology/",
+        "build_root_technical_districts_index.py",
+        "tests/root-topology"
+      ]
+    },
+    {
+      "path": "scripts/release/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "scripts/release/",
+        "release_check.py",
+        "release gate"
+      ]
+    },
+    {
+      "path": "tests/memory/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "tests/memory/",
+        "memory schemas",
+        "generated memory surfaces"
+      ]
+    },
+    {
+      "path": "tests/agents/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "tests/agents/",
+        "AGENTS mesh",
+        "Spark"
+      ]
+    },
+    {
+      "path": "tests/mechanics/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "tests/mechanics/",
+        "mechanic indexes",
+        "generated/mechanics/"
+      ]
+    },
+    {
+      "path": "tests/root-topology/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "tests/root-topology/",
+        "root topology",
+        "docs placement"
+      ]
+    }
+  ],
+  "top_level_exemptions": [
+    ".aoa",
+    ".deps",
+    ".git",
+    ".pytest_cache",
+    "__pycache__"
+  ],
+  "ignored_directory_names": [
+    ".aoa",
+    ".deps",
+    ".git",
+    ".pytest_cache",
+    "__pycache__"
+  ],
+  "validation_commands": [
+    "python scripts/agents/validate_agents_mesh.py",
+    "python scripts/agents/build_agents_mesh_index.py --check",
+    "python scripts/agents/validate_agents_mesh_index.py"
+  ]
+}

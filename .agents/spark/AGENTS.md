@@ -82,15 +82,15 @@ For Spark lane changes, include:
 ```bash
 python .agents/spark/scripts/validate_spark_lane.py
 python -m unittest discover -s .agents/spark/tests -p 'test*.py'
-python scripts/validate_agents_mesh.py
-python scripts/build_agents_mesh_index.py --check
-python scripts/validate_agents_mesh_index.py
+python scripts/agents/validate_agents_mesh.py
+python scripts/agents/build_agents_mesh_index.py --check
+python scripts/agents/validate_agents_mesh_index.py
 ```
 
 For release-facing lane changes, also run:
 
 ```bash
-python scripts/release_check.py
+python scripts/release/release_check.py
 ```
 
 For ordinary memory-surface work inside a scenario, use the narrowest relevant

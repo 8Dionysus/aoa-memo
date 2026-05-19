@@ -5,8 +5,8 @@ Executable validation for this part is routed through the package validation lan
 Run from the repository root:
 
 ```bash
-python scripts/validate_memo_mechanic_parts.py
-python -m pytest -q tests/test_cross_mechanic_operational_contracts.py mechanics/operational-gate/parts/post-release-boundaries/tests/test_post_release_boundary_contracts.py
+python scripts/mechanics/validate_memo_mechanic_parts.py
+python -m pytest -q tests/mechanics/test_cross_mechanic_operational_contracts.py mechanics/operational-gate/parts/post-release-boundaries/tests/test_post_release_boundary_contracts.py
 ```
 
 Then run the package-specific commands named in `../../AGENTS.md#validation` for any changed source docs, schemas, examples, generated companions, scripts, tests, manifests, or owner routes.

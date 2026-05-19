@@ -2,8 +2,8 @@
 
 | Date | Change | Validation |
 |---|---|---|
-| 2026-05-19 | Moved the shape-guard regression into `mechanics/shape-guard/parts/via-negativa-checklist/tests/` so the via-negativa part owns its executable boundary. | `python -m pytest -q mechanics/shape-guard/parts/via-negativa-checklist/tests`; `python scripts/release_check.py` |
-| 2026-05-18 | Moved `VIA_NEGATIVA_CHECKLIST.md` from governance into `mechanics/shape-guard/docs/` and added operation-first mechanics validation. | `python scripts/release_check.py` |
+| 2026-05-19 | Moved the shape-guard regression into `mechanics/shape-guard/parts/via-negativa-checklist/tests/` so the via-negativa part owns its executable boundary. | `python -m pytest -q mechanics/shape-guard/parts/via-negativa-checklist/tests`; `python scripts/release/release_check.py` |
+| 2026-05-18 | Moved `VIA_NEGATIVA_CHECKLIST.md` from governance into `mechanics/shape-guard/docs/` and added operation-first mechanics validation. | `python scripts/release/release_check.py` |
 
 ## Stop-Lines Preserved
 

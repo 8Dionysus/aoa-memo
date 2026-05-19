@@ -48,8 +48,8 @@ def test_quest_read_model_projections_part_names_root_outputs_and_builder() -> N
         / "quest-read-model-projections"
         / "CONTRACT.md"
     ).read_text(encoding="utf-8")
-    assert "generated/quest_catalog.min.json" in contract
-    assert "generated/quest_dispatch.min.json" in contract
+    assert "generated/quests/quest_catalog.min.json" in contract
+    assert "generated/quests/quest_dispatch.min.json" in contract
     assert "mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py" in contract
 
 

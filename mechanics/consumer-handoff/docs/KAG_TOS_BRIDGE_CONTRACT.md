@@ -9,7 +9,7 @@ It is the memo-side companion for the Dionysus first-stage source
 It exists so `aoa-memo` can expose bounded bridge faces without becoming a graph engine or rewriting source-authored ToS meaning.
 The primary coordination note for that source lives in `aoa-kag/docs/BRIDGE_CONTRACTS.md`.
 
-The current recall entrypoints for this surface are `examples/recall_contract.lineage.json` and `examples/recall_contract.router.lineage.json`.
+The current recall entrypoints for this surface are `examples/recall/recall_contract.lineage.json` and `examples/recall/recall_contract.router.lineage.json`.
 
 ## Companion surfaces
 
@@ -19,7 +19,7 @@ This memo-side contract works beside:
 - `KAG_SOURCE_EXPORT.md` for the source-owned memo donor export that stays
   narrower than the current bridge faces
 - `aoa-kag/schemas/bridge-envelope.schema.json` and `aoa-kag/examples/aoa_tos_bridge_envelope.example.json` for the shared cross-repo linkage object
-- `schemas/bridge.schema.json` for the memo-side bridge object
+- `schemas/memory-objects/bridge.schema.json` for the memo-side bridge object
 - `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/schemas/memory_chunk_face.schema.json` and `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/schemas/memory_graph_face.schema.json` for downstream export faces
 
 ## Core Rule
@@ -119,8 +119,8 @@ The current example bundle for this flow is:
 - `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/provenance_thread.kag-lift.example.json`
 - `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/memory_chunk_face.bridge.example.json`
 - `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/memory_graph_face.bridge.example.json`
-- `examples/recall_contract.lineage.json`
-- `examples/recall_contract.router.lineage.json`
+- `examples/recall/recall_contract.lineage.json`
+- `examples/recall/recall_contract.router.lineage.json`
 
 The bridge example keeps an explicit `shared_envelope_ref` back to the KAG-owned linkage surface.
 The current source-owned memo export points at the same donor bridge object, but

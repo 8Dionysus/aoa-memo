@@ -44,10 +44,10 @@ Read root `AGENTS.md`, `mechanics/AGENTS.md`, `mechanics/ARTIFACT_TOPOLOGY.md`,
 ## Validation
 
 ```bash
-python scripts/validate_memo_mechanics.py
-python scripts/build_memo_mechanics_index.py --check
-python scripts/validate_memo_mechanics_index.py
-python -m pytest -q mechanics/shape-guard/parts/via-negativa-checklist/tests/test_shape_guard_mechanic.py tests/test_memo_mechanics.py
+python scripts/mechanics/validate_memo_mechanics.py
+python scripts/mechanics/build_memo_mechanics_index.py --check
+python scripts/mechanics/validate_memo_mechanics_index.py
+python -m pytest -q mechanics/shape-guard/parts/via-negativa-checklist/tests/test_shape_guard_mechanic.py tests/mechanics/test_memo_mechanics.py
 ```
 
 ## Closeout

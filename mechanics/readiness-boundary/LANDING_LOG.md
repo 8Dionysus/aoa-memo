@@ -15,7 +15,7 @@ Validation route:
 
 ```bash
 python -m pytest -q mechanics/readiness-boundary/parts/memory-readiness-boundary/tests
-python scripts/release_check.py
+python scripts/release/release_check.py
 ```
 
 ## 2026-05-18
@@ -33,8 +33,8 @@ Landed shape:
 Validation route:
 
 ```bash
-python scripts/validate_memo_mechanics.py
-python scripts/release_check.py
+python scripts/mechanics/validate_memo_mechanics.py
+python scripts/release/release_check.py
 ```
 
 Stop-line retained:

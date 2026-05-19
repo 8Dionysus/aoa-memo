@@ -33,6 +33,6 @@ When docs change proof, routing, KAG, role, or playbook seams, name the downstre
 Verify with:
 
 ```bash
-python scripts/validate_memo.py
-python scripts/validate_semantic_agents.py
+python scripts/memory/validate_memo.py
+python scripts/agents/validate_semantic_agents.py
 ```

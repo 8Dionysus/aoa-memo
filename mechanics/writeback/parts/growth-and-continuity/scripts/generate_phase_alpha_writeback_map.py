@@ -56,7 +56,7 @@ def build_phase_alpha_writeback_map_payload() -> dict[str, object]:
         "phase": "alpha",
         "source_of_truth": {
             "phase_alpha_writeback_map": "mechanics/writeback/parts/growth-and-continuity/examples/phase_alpha_writeback_map.example.json",
-            "phase_alpha_recall_contract": "examples/recall_contract.object.working.phase-alpha.json",
+            "phase_alpha_recall_contract": "examples/recall/recall_contract.object.working.phase-alpha.json",
         },
         "runtime_boundary": payload.get("runtime_boundary"),
         "playbooks": entries,

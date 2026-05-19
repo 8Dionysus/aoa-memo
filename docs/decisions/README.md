@@ -31,6 +31,7 @@ expectation.
 
 | Decision | Scope |
 |---|---|
+| [2026-05-19-root-semantic-topology](2026-05-19-root-semantic-topology.md) | split active root districts into semantic families with nearest AGENTS cards and machine-checkable topology |
 | [2026-05-19-root-technical-district-atlas](2026-05-19-root-technical-district-atlas.md) | add a compact generated atlas for root technical district role, route cards, family ids, and local routing |
 | [2026-05-19-active-stage-source-naming](2026-05-19-active-stage-source-naming.md) | rename active wave/seed memo surfaces to stage/source while preserving legacy and source-owned refs |
 | [2026-05-19-spark-registry-backed-memo-lane](2026-05-19-spark-registry-backed-memo-lane.md) | add registry-backed Spark scenarios, packets, schemas, validator, tests, and release-gate wiring |

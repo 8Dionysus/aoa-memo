@@ -1,0 +1,25 @@
+# AGENTS.md
+
+Route card for `tests/root-topology/`.
+
+## Purpose
+
+This district owns regression tests for root topology, docs placement, roadmap
+parity, and current direction routes.
+
+## Source
+
+Tests here protect `docs/root/`, `config/root-topology/`,
+`scripts/root-topology/`, and `generated/root-topology/`.
+
+## Route
+
+- Up: `tests/AGENTS.md`, then `AGENTS.md`.
+- Across: `scripts/root-topology/`.
+- Downstream: root district placement and release gate readiness.
+
+## Validate
+
+```bash
+python -m pytest -q tests/root-topology
+```

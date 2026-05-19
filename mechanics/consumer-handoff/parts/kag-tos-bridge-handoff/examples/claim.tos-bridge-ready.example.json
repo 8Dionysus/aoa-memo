@@ -71,6 +71,6 @@
     "skill_refs": [],
     "eval_refs": [],
     "kag_lift_status": "candidate",
-    "route_capsule_ref": "generated/memory_sections.full.json"
+    "route_capsule_ref": "generated/memory/memory_sections.full.json"
   }
 }

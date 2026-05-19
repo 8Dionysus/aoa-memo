@@ -27,5 +27,5 @@ stronger owner, or runtime/proof/role boundary risk.
 
 ## Validation
 
-Use `python scripts/validate_memory_surfaces.py` or the named mechanic-local
+Use `python scripts/memory/validate_memory_surfaces.py` or the named mechanic-local
 validator when the contract is mechanic-local.

@@ -16,9 +16,9 @@ schema contracts, generated indexes, or release validation.
 Root technical districts remain valid when an artifact is repo-wide, public
 contract-shaped, or shared across multiple memory families:
 
-For quick inspection, `generated/root_technical_districts.min.json` is the
+For quick inspection, `generated/root-topology/root_technical_districts.min.json` is the
 compact atlas of district roles, route cards, family ids, and local routing.
-The exact file allowlist stays in `config/root_technical_districts.json`.
+The exact file allowlist stays in `config/root-topology/root_technical_districts.json`.
 
 | District | Root-owned when |
 |---|---|
@@ -104,12 +104,12 @@ part-local artifacts are added.
 Root technical districts now keep only shared, repo-wide, or cross-mechanic
 surfaces.
 
-`config/root_technical_districts.json` is the exact current allowlist for root
+`config/root-topology/root_technical_districts.json` is the exact current allowlist for root
 technical artifacts. If a file is not a route card and is not listed there, it
 must either be added with a repo-wide/shared reason or moved under its owning
 mechanic.
 
-`generated/root_technical_districts.min.json` is rebuilt from that config so
+`generated/root-topology/root_technical_districts.min.json` is rebuilt from that config so
 agents can inspect the root district topology before opening the full contract.
 
 Root `schemas/` entries in that config must also be grouped by
@@ -201,13 +201,13 @@ repo-wide validators, release gates, and cross-mechanic regression tests.
 Root `manifests/` is reserved for future shared recurrence manifests; the
 current active manifests are package-local.
 
-`generated/mechanic_artifacts.min.json` is the compact generated inventory of
+`generated/mechanics/mechanic_artifacts.min.json` is the compact generated inventory of
 package-local and part-local mechanic artifacts. It is not source truth. It lets
 agents and validators inspect which mechanic or functioning part currently owns
 each local schema, example, config input, generated companion, script, test, or
 manifest without forcing `PARTS.md` files to become raw file inventories.
 
-`generated/memo_mechanic_readiness.min.json` is the compact generated readiness
+`generated/mechanics/memo_mechanic_readiness.min.json` is the compact generated readiness
 matrix for current mechanic packages. It joins package cards, source maps,
 owner maps, validation routes, stop-lines, and the artifact inventory so agents
 can detect when a mechanic is structurally present but not ready for OS Abyss
@@ -222,14 +222,14 @@ When package-local or part-local tests exist, the mechanic's validation route
 must name the local pytest command or test directory so a future agent can run
 the package check without reverse-engineering the inventory.
 
-`generated/memo_mechanic_owner_routes.min.json` is the compact generated
+`generated/mechanics/memo_mechanic_owner_routes.min.json` is the compact generated
 matrix of package-local owner maps and route cards. It exists because
 stronger-owner routing is cross-mechanic and OS Abyss needs one inspection
 surface. It is not an owner request queue, owner acceptance, proof, runtime
 authority, route dispatch, role authority, KAG truth, playbook choreography,
 stats truth, or source doctrine.
 
-`generated/memo_mechanic_landing_logs.min.json` is the compact generated
+`generated/mechanics/memo_mechanic_landing_logs.min.json` is the compact generated
 landing receipt index for package-local `LANDING_LOG.md` files. It exists
 because OS Abyss needs one inspection surface for what was landed, which
 release validation was named, and which stop-lines were preserved. It is not
@@ -254,7 +254,7 @@ Before moving a root technical artifact into a mechanic:
 3. add or update the nearest package or part `AGENTS.md`
 4. update callers, docs, tests, builders, and generated companions
 5. remove root aliases rather than preserving duplicate active paths
-6. update `config/memo_mechanics.json` or another source map only when it owns
+6. update `config/mechanics/memo_mechanics.json` or another source map only when it owns
    the changed index
 7. run the narrow mechanic validators before the broad release gate
 

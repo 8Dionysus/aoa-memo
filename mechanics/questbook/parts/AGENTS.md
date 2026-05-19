@@ -39,7 +39,7 @@ For quest-read-model-projections changes, also read `generated/AGENTS.md`,
 - Part docs describe active contracts; they are not raw inventories.
 - Root `QUESTBOOK.md` remains the compact public index.
 - Root `quests/` remains the lane-first public item store.
-- Root `generated/quest_*.json` files remain root-published read models over
+- Root `generated/quests/quest_*.json` files remain root-published read models over
   the public item store, not package-local generated artifacts.
 - Package-local generated artifacts may exist only when they serve one
   package-local mechanic boundary and are not public Questbook read models.
@@ -51,5 +51,5 @@ Use the parent Questbook validation route:
 ```bash
 python mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py
 python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py --check
-python scripts/validate_memo.py
+python scripts/memory/validate_memo.py
 ```

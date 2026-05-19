@@ -15,7 +15,7 @@ Validation route:
 
 ```bash
 python -m pytest -q mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/tests
-python scripts/release_check.py
+python scripts/release/release_check.py
 ```
 
 ## 2026-05-18
@@ -35,16 +35,16 @@ python scripts/release_check.py
 Expected release-bound validation:
 
 ```bash
-python scripts/validate_memo_mechanics.py
-python scripts/build_memo_mechanics_index.py --check
-python scripts/validate_memo_mechanics_index.py
-python scripts/validate_agents_mesh.py
-python scripts/build_agents_mesh_index.py --check
-python scripts/validate_agents_mesh_index.py
-python scripts/validate_memory_surfaces.py
-python scripts/validate_memo.py
-python -m pytest -q mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/tests/test_lineage_harvest_mechanic.py tests/test_memo_mechanics.py tests/test_agents_mesh.py mechanics/recurrence-support/parts/witness-trace-contract/tests/test_recurrence_support_mechanic.py tests/test_cross_mechanic_candidate_contracts.py
-python scripts/release_check.py
+python scripts/mechanics/validate_memo_mechanics.py
+python scripts/mechanics/build_memo_mechanics_index.py --check
+python scripts/mechanics/validate_memo_mechanics_index.py
+python scripts/agents/validate_agents_mesh.py
+python scripts/agents/build_agents_mesh_index.py --check
+python scripts/agents/validate_agents_mesh_index.py
+python scripts/memory/validate_memory_surfaces.py
+python scripts/memory/validate_memo.py
+python -m pytest -q mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/tests/test_lineage_harvest_mechanic.py tests/mechanics/test_memo_mechanics.py tests/agents/test_agents_mesh.py mechanics/recurrence-support/parts/witness-trace-contract/tests/test_recurrence_support_mechanic.py tests/mechanics/test_cross_mechanic_candidate_contracts.py
+python scripts/release/release_check.py
 ```
 
 ## Stop-lines checked

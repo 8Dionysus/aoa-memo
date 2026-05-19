@@ -27,14 +27,14 @@ It does not own:
 4. `MEMORY_INDEX.md`
 5. [`ROADMAP.md`](ROADMAP.md)
 6. `docs/README.md`
-7. `docs/BOUNDARIES.md`
-8. `docs/MEMORY_MODEL.md`
+7. `docs/boundaries/BOUNDARIES.md`
+8. `docs/memory/MEMORY_MODEL.md`
 9. `mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md` for readiness, retention, and memory-is-not-proof boundaries
 10. the target memory surface and affected generated outputs
-11. `docs/AGENTS_ROOT_REFERENCE.md` for preserved full root branches
+11. `docs/root/AGENTS_ROOT_REFERENCE.md` for preserved full root branches
 
 For agent-facing topology, also read `DESIGN.AGENTS.md`.
-For root or docs-root placement, read `docs/ROOT_SURFACE_LAW.md`.
+For root or docs-root placement, read `docs/root/ROOT_SURFACE_LAW.md`.
 For repeatable antifragility, adoption, governance, shape-guard, checkpoint,
 readiness-boundary, consumer-handoff, operational-gate, recurrence-support,
 lineage-harvest, writeback, or retention movement, read `mechanics/README.md`.
@@ -44,15 +44,15 @@ lineage-harvest, writeback, or retention movement, read `mechanics/README.md`.
 | Route mode | Use when | First surface |
 |---|---|---|
 | `first-reading` | you need the shortest public overview | `README.md` |
-| `memory-canon` | memory object kinds, support objects, recall modes, temperature vocabulary, source families, or generated companions are being inspected | `MEMORY_INDEX.md` -> `docs/MEMORY_MODEL.md` -> target source |
-| `memory-doctrine` | memory meaning, object posture, trust, lifecycle, temperature, or provenance changes | `docs/MEMORY_MODEL.md` |
-| `root-editing` | a root or docs-root surface is added, moved, deleted, or rewritten | `docs/ROOT_SURFACE_LAW.md` |
-| `docs-placement` | a docs-root surface is classified, retired from flat placement, or checked for old district drift | `docs/README.md` -> `docs/ROOT_SURFACE_LAW.md` -> `scripts/validate_docs_districts.py` |
+| `memory-canon` | memory object kinds, support objects, recall modes, temperature vocabulary, source families, or generated companions are being inspected | `MEMORY_INDEX.md` -> `docs/memory/MEMORY_MODEL.md` -> target source |
+| `memory-doctrine` | memory meaning, object posture, trust, lifecycle, temperature, or provenance changes | `docs/memory/MEMORY_MODEL.md` |
+| `root-editing` | a root or docs-root surface is added, moved, deleted, or rewritten | `docs/root/ROOT_SURFACE_LAW.md` |
+| `docs-placement` | a docs-root surface is classified, retired from flat placement, or checked for old district drift | `docs/README.md` -> `docs/root/ROOT_SURFACE_LAW.md` -> `scripts/root-topology/validate_docs_districts.py` |
 | `mechanic-change` | Antifragility, Agon, Titan, adoption, governance, shape-guard, checkpoint, readiness-boundary, consumer-handoff, operational-gate, recurrence-support, lineage-harvest, writeback, retention, owner split, legacy bridge, artifact placement, or mechanic-facing validation changes | `mechanics/README.md` -> target mechanic `AGENTS.md` -> `mechanics/ARTIFACT_TOPOLOGY.md` when artifacts move -> mechanics validators |
 | `agent-surface-design` | agent-facing cards, lanes, or future mesh posture changes | `DESIGN.AGENTS.md` |
-| `agents-mesh` | source-backed route-card coverage or generated mesh parity changes | `config/agents_mesh.json` -> `generated/agents_mesh.min.json` -> mesh validators |
+| `agents-mesh` | source-backed route-card coverage or generated mesh parity changes | `config/agents/agents_mesh.json` -> `generated/agents/agents_mesh.min.json` -> mesh validators |
 | `generated-parity` | generated memory surfaces or their sources change | source surface -> builder -> generated output -> validator |
-| `neighbor-seam` | a change touches proof, routing, role, playbook, KAG, or runtime boundaries | `docs/BOUNDARIES.md` |
+| `neighbor-seam` | a change touches proof, routing, role, playbook, KAG, or runtime boundaries | `docs/boundaries/BOUNDARIES.md` |
 
 
 ## AGENTS stack law
@@ -92,7 +92,7 @@ Update only the ones that moved; otherwise say no update was needed.
   posture changed.
 - `MEMORY_INDEX.md` when public memory object, support object, recall-mode,
   source-family, or generated-companion routing changes.
-- `docs/ROOT_SURFACE_LAW.md` when root or docs-root placement changes.
+- `docs/root/ROOT_SURFACE_LAW.md` when root or docs-root placement changes.
 - `docs/decisions/` when future agents need rationale for a route, topology,
   validator, source-of-truth, or ownership choice.
 - generated surfaces, builders, validators, and tests when a source-backed
@@ -121,33 +121,33 @@ If GitHub status or merge permissions cannot be observed, stop the landing route
 Core validation set:
 
 ```bash
-python scripts/validate_memo.py
-python scripts/validate_memory_surfaces.py
-python scripts/validate_memory_object_surfaces.py
-python scripts/validate_lifecycle_audit_examples.py
-python scripts/validate_agents_mesh.py
-python scripts/build_agents_mesh_index.py --check
-python scripts/validate_agents_mesh_index.py
-python scripts/validate_semantic_agents.py
-python scripts/validate_docs_districts.py
-python scripts/validate_memo_mechanics.py
-python scripts/validate_memo_mechanic_parts.py
-python scripts/build_memo_mechanics_index.py --check
-python scripts/validate_memo_mechanics_index.py
-python scripts/build_memo_mechanic_cards.py --check
-python scripts/validate_memo_mechanic_cards.py
-python scripts/build_memo_mechanic_owner_routes.py --check
-python scripts/validate_memo_mechanic_owner_routes.py
-python scripts/build_memo_mechanic_landing_logs.py --check
-python scripts/validate_memo_mechanic_landing_logs.py
-python scripts/build_memo_mechanic_readiness.py --check
-python scripts/validate_memo_mechanic_readiness.py
-python scripts/build_mechanic_artifact_inventory.py --check
-python scripts/validate_mechanic_artifact_inventory.py
+python scripts/memory/validate_memo.py
+python scripts/memory/validate_memory_surfaces.py
+python scripts/memory/validate_memory_object_surfaces.py
+python scripts/memory/validate_lifecycle_audit_examples.py
+python scripts/agents/validate_agents_mesh.py
+python scripts/agents/build_agents_mesh_index.py --check
+python scripts/agents/validate_agents_mesh_index.py
+python scripts/agents/validate_semantic_agents.py
+python scripts/root-topology/validate_docs_districts.py
+python scripts/mechanics/validate_memo_mechanics.py
+python scripts/mechanics/validate_memo_mechanic_parts.py
+python scripts/mechanics/build_memo_mechanics_index.py --check
+python scripts/mechanics/validate_memo_mechanics_index.py
+python scripts/mechanics/build_memo_mechanic_cards.py --check
+python scripts/mechanics/validate_memo_mechanic_cards.py
+python scripts/mechanics/build_memo_mechanic_owner_routes.py --check
+python scripts/mechanics/validate_memo_mechanic_owner_routes.py
+python scripts/mechanics/build_memo_mechanic_landing_logs.py --check
+python scripts/mechanics/validate_memo_mechanic_landing_logs.py
+python scripts/mechanics/build_memo_mechanic_readiness.py --check
+python scripts/mechanics/validate_memo_mechanic_readiness.py
+python scripts/mechanics/build_mechanic_artifact_inventory.py --check
+python scripts/mechanics/validate_mechanic_artifact_inventory.py
 python -m pytest -q tests
 ```
 
-Use branch docs in `docs/AGENTS_ROOT_REFERENCE.md` for object canon, trust posture, lifecycle, writeback, bridge, and guardrail work.
+Use branch docs in `docs/root/AGENTS_ROOT_REFERENCE.md` for object canon, trust posture, lifecycle, writeback, bridge, and guardrail work.
 
 ## Report
 
@@ -155,4 +155,4 @@ State which memory surface and class changed, whether provenance, temporal postu
 
 ## Full reference
 
-`docs/AGENTS_ROOT_REFERENCE.md` preserves the former detailed root guidance, including memory-specific branch reading and hard boundaries.
+`docs/root/AGENTS_ROOT_REFERENCE.md` preserves the former detailed root guidance, including memory-specific branch reading and hard boundaries.

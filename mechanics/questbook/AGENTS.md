@@ -65,14 +65,14 @@ Before closeout, review the changed route rather than only the changed file:
 ```bash
 python mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py
 python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py --check
-python scripts/validate_memo.py
-python -m pytest -q mechanics/questbook/parts/source-contract/tests tests/test_memo_validators.py
+python scripts/memory/validate_memo.py
+python -m pytest -q mechanics/questbook/parts/source-contract/tests tests/memory/test_memo_validators.py
 ```
 
 Before landing, also run:
 
 ```bash
-python scripts/release_check.py
+python scripts/release/release_check.py
 ```
 
 ## Closeout

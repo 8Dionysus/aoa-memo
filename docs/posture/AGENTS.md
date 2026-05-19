@@ -1,0 +1,27 @@
+# AGENTS.md
+
+Route card for `docs/posture/`.
+
+## Purpose
+
+This district owns trust, lifecycle, temperature, provenance, and audit-event
+posture for memo objects and recall surfaces.
+
+## Source
+
+`MEMORY_TRUST_POSTURE.md`, `LIFECYCLE.md`, `MEMORY_TEMPERATURES.md`,
+`PROVENANCE_THREADS.md`, and `AUDIT_EVENTS.md` are source doctrine here.
+
+## Route
+
+- Up: `docs/AGENTS.md`, then `AGENTS.md`.
+- Across: `docs/memory/` for object shape and `examples/lifecycle/` for
+  reviewable lifecycle examples.
+- Downstream: `schemas/recall-posture/` and `schemas/support-objects/`.
+
+## Validate
+
+```bash
+python scripts/memory/validate_memo.py
+python scripts/memory/validate_lifecycle_audit_examples.py
+```

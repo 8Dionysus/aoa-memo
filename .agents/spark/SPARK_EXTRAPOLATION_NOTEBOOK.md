@@ -41,9 +41,9 @@ Local constraints:
 - `.agents/spark/AGENTS.md`
 - `.agents/spark/SWARM.md`
 - `MEMORY_INDEX.md`
-- `docs/BOUNDARIES.md`
-- `docs/MEMORY_MODEL.md`
-- `docs/ROOT_SURFACE_LAW.md`
+- `docs/boundaries/BOUNDARIES.md`
+- `docs/memory/MEMORY_MODEL.md`
+- `docs/root/ROOT_SURFACE_LAW.md`
 - `mechanics/README.md`
 - `docs/decisions/2026-05-18-spark-agent-lane-home.md`
 

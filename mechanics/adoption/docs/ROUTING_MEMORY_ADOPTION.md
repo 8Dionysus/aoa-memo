@@ -25,41 +25,41 @@ It is not a new recall family and not a new routing policy surface.
 Use the router-ready doctrine contracts when the router needs layer meaning,
 boundary interpretation, or memo doctrine orientation:
 
-- `examples/recall_contract.router.semantic.json`
-- `examples/recall_contract.router.lineage.json`
+- `examples/recall/recall_contract.router.semantic.json`
+- `examples/recall/recall_contract.router.lineage.json`
 
 Those contracts use this additive flow:
 
-1. inspect ids in `generated/memory_catalog.min.json`
-2. hydrate selected ids through `generated/memory_capsules.json`
-3. open `generated/memory_sections.full.json` only when the capsule step is not enough
+1. inspect ids in `generated/memory/memory_catalog.min.json`
+2. hydrate selected ids through `generated/memory/memory_capsules.json`
+3. open `generated/memory/memory_sections.full.json` only when the capsule step is not enough
 
 ### Curated object-first lookup
 
 Use the existing object-facing semantic or lineage contracts when the router
 should inspect actual curated memory objects before leaving the memo layer:
 
-- `examples/recall_contract.object.semantic.json`
-- `examples/recall_contract.object.lineage.json`
+- `examples/recall/recall_contract.object.semantic.json`
+- `examples/recall/recall_contract.object.lineage.json`
 
 Those contracts use the parallel additive flow:
 
-1. inspect ids in `generated/memory_object_catalog.min.json`
-2. hydrate selected ids through `generated/memory_object_capsules.json`
-3. open `generated/memory_object_sections.full.json` only when the capsule step is not enough
+1. inspect ids in `generated/memory-objects/memory_object_catalog.min.json`
+2. hydrate selected ids through `generated/memory-objects/memory_object_capsules.json`
+3. open `generated/memory-objects/memory_object_sections.full.json` only when the capsule step is not enough
 
 ### Return-ready working recall
 
-Use `examples/recall_contract.object.working.return.json` when checkpoint
+Use `examples/recall/recall_contract.object.working.return.json` when checkpoint
 continuity is the reason for re-entry and the caller needs the same bounded
 object-facing join rule without switching to a doctrine-first or router-only
 contract.
 
 That return-ready contract now keeps the same additive flow explicitly:
 
-1. inspect ids in `generated/memory_object_catalog.min.json`
-2. hydrate selected ids through `generated/memory_object_capsules.json`
-3. open `generated/memory_object_sections.full.json` only when the capsule step is not enough
+1. inspect ids in `generated/memory-objects/memory_object_catalog.min.json`
+2. hydrate selected ids through `generated/memory-objects/memory_object_capsules.json`
+3. open `generated/memory-objects/memory_object_sections.full.json` only when the capsule step is not enough
 
 ## Join Rule
 

@@ -23,8 +23,8 @@ Use the stronger surface when the change is narrower:
 
 - repository boundary: [CHARTER](CHARTER.md)
 - memory canon map: [MEMORY_INDEX](MEMORY_INDEX.md)
-- memory model: [MEMORY_MODEL](docs/MEMORY_MODEL.md)
-- root and docs placement: [ROOT_SURFACE_LAW](docs/ROOT_SURFACE_LAW.md)
+- memory model: [MEMORY_MODEL](docs/memory/MEMORY_MODEL.md)
+- root and docs placement: [ROOT_SURFACE_LAW](docs/root/ROOT_SURFACE_LAW.md)
 - mechanic-local future pressure: `mechanics/<slug>/ROADMAP.md`
 - checked mechanic landings: `mechanics/<slug>/LANDING_LOG.md`
 - durable obligations: [QUESTBOOK](QUESTBOOK.md) and [quests](quests/)
@@ -84,8 +84,8 @@ The current `v0.2.3` release line also already carries:
 - Phase Alpha writeback routing and owner-local live receipt publication through `mechanics/writeback/parts/growth-and-continuity/generated/phase_alpha_writeback_map.min.json` and `mechanics/writeback/parts/receipt-publication-regression/scripts/publish_live_receipts.py`
 - memory readiness boundary through `mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md`
 - Questbook read-model projection placement through `mechanics/questbook/parts/quest-read-model-projections/README.md`,
-  keeping `generated/quest_catalog.min*.json` and
-  `generated/quest_dispatch.min*.json` root-published while the Questbook
+  keeping `generated/quests/quest_catalog.min*.json` and
+  `generated/quests/quest_dispatch.min*.json` root-published while the Questbook
   mechanic owns the builder, validation, and stop-lines
 
 The near-term risk is roadmap drift: checkpoint recall, runtime writeback,
@@ -95,7 +95,7 @@ proof, routing, or live runtime authority.
 
 The current topology hardening path starts with the source-authored route spine
 in `DESIGN.md`, `DESIGN.AGENTS.md`, `docs/README.md`,
-`docs/ROOT_SURFACE_LAW.md`, and `docs/decisions/`. This precedes any thematic
+`docs/root/ROOT_SURFACE_LAW.md`, and `docs/decisions/`. This precedes any thematic
 docs or mechanics migration so antifragility, Agon, Titan, adoption,
 governance, checkpoint, consumer handoff, operational gate, recurrence
 support, lineage harvest, readiness boundary, retention, and writeback
@@ -106,8 +106,8 @@ than root `Spark/`, aligning agent-lane placement with the new topology spine
 without treating the lane as root civic law.
 
 The first generated AGENTS mesh is now the active topology hardening layer:
-`config/agents_mesh.json` records current route-card contracts and
-`generated/agents_mesh.min.json` is rebuilt from that source. Future docs or
+`config/agents/agents_mesh.json` records current route-card contracts and
+`generated/agents/agents_mesh.min.json` is rebuilt from that source. Future docs or
 mechanics migrations should add any new local route cards through this mesh
 before landing.
 
@@ -140,10 +140,10 @@ The mechanics topology follows the `Agents-of-Abyss` pattern:
 memo-side mechanics. Each package has a route card, package card, operation,
 direction, parts map, owner map, provenance
 bridge, landing log, roadmap, and legacy index. The source-backed
-`config/memo_mechanics.json` and `generated/memo_mechanics.min.json` keep the
-shape machine-checkable. `generated/memo_mechanic_landing_logs.min.json` now
+`config/mechanics/memo_mechanics.json` and `generated/mechanics/memo_mechanics.min.json` keep the
+shape machine-checkable. `generated/mechanics/memo_mechanic_landing_logs.min.json` now
 makes dated landing receipts, release validation, and stop-lines inspectable,
-and `generated/memo_mechanic_readiness.min.json` adds the OS Abyss readiness
+and `generated/mechanics/memo_mechanic_readiness.min.json` adds the OS Abyss readiness
 matrix over package cards, owner maps, parts, local artifacts, stop-lines, and
 validation routes.
 
@@ -248,8 +248,8 @@ This roadmap does **not** aim to turn `aoa-memo` into:
 **Deliverables:**
 
 - `CHARTER.md`
-- `docs/MEMORY_MODEL.md`
-- `docs/BOUNDARIES.md`
+- `docs/memory/MEMORY_MODEL.md`
+- `docs/boundaries/BOUNDARIES.md`
 - `ROADMAP.md`
 - initial glossary of core memory terms
 
@@ -265,11 +265,11 @@ This roadmap does **not** aim to turn `aoa-memo` into:
 
 **Deliverables:**
 
-- `schemas/memory_object.schema.json`
-- `schemas/provenance_thread.schema.json`
-- `schemas/recall_contract.schema.json`
+- `schemas/memory-objects/memory_object.schema.json`
+- `schemas/support-objects/provenance_thread.schema.json`
+- `schemas/recall-posture/recall_contract.schema.json`
 - `examples/` or `fixtures/` for core object kinds
-- `scripts/validate_memo.py`
+- `scripts/memory/validate_memo.py`
 
 **Recommended first-class kinds:**
 
@@ -295,15 +295,15 @@ This roadmap does **not** aim to turn `aoa-memo` into:
 
 **Deliverables:**
 
-- `generated/memo_registry.min.json`
-- `generated/memory_catalog.json`
-- `generated/memory_catalog.min.json`
-- `generated/memory_capsules.json`
-- `generated/memory_sections.full.json`
-- `generated/memory_object_catalog.json`
-- `generated/memory_object_catalog.min.json`
-- `generated/memory_object_capsules.json`
-- `generated/memory_object_sections.full.json`
+- `generated/memory/memo_registry.min.json`
+- `generated/memory/memory_catalog.json`
+- `generated/memory/memory_catalog.min.json`
+- `generated/memory/memory_capsules.json`
+- `generated/memory/memory_sections.full.json`
+- `generated/memory-objects/memory_object_catalog.json`
+- `generated/memory-objects/memory_object_catalog.min.json`
+- `generated/memory-objects/memory_object_capsules.json`
+- `generated/memory-objects/memory_object_sections.full.json`
 
 **Exit criteria:**
 
@@ -335,9 +335,9 @@ This roadmap does **not** aim to turn `aoa-memo` into:
 **Deliverables:**
 
 - doctrine for `hot`, `warm`, `cool`, `cold`, `frozen`
-- `docs/MEMORY_TEMPERATURES.md`
+- `docs/posture/MEMORY_TEMPERATURES.md`
 - `mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md`
-- `schemas/decay_policy.schema.json`
+- `schemas/recall-posture/decay_policy.schema.json`
 - distinction docs for `confidence`, `authority`, `freshness`, `salience`
 - online capture vs offline consolidation model
 - examples of promotion and demotion flows
@@ -420,7 +420,7 @@ This roadmap does **not** aim to turn `aoa-memo` into:
 
 **Deliverables:**
 
-- `docs/OPERATIONAL_BOUNDARY.md`
+- `docs/boundaries/OPERATIONAL_BOUNDARY.md`
 - stable doctrine and schemas
 - stable compact public surfaces
 - clear cross-repo contracts

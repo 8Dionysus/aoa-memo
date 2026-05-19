@@ -27,9 +27,24 @@ RECEIPT_FIXTURE_PATH = (
     / "fixtures"
     / "memo_writeback_receipts.example.jsonl"
 )
-MEMORY_OBJECT_CATALOG_PATH = REPO_ROOT / "generated" / "memory_object_catalog.min.json"
-MEMORY_OBJECT_CAPSULES_PATH = REPO_ROOT / "generated" / "memory_object_capsules.json"
-MEMORY_OBJECT_SECTIONS_PATH = REPO_ROOT / "generated" / "memory_object_sections.full.json"
+MEMORY_OBJECT_CATALOG_PATH = (
+    REPO_ROOT
+    / "generated"
+    / "memory-objects"
+    / "memory_object_catalog.min.json"
+)
+MEMORY_OBJECT_CAPSULES_PATH = (
+    REPO_ROOT
+    / "generated"
+    / "memory-objects"
+    / "memory_object_capsules.json"
+)
+MEMORY_OBJECT_SECTIONS_PATH = (
+    REPO_ROOT
+    / "generated"
+    / "memory-objects"
+    / "memory_object_sections.full.json"
+)
 GROWTH_REFINERY_LANES_PATH = (
     REPO_ROOT
     / "mechanics"
@@ -41,13 +56,13 @@ GROWTH_REFINERY_LANES_PATH = (
 )
 ADOPTED_OBJECT_ID = "memo.decision.2026-04-02.alpha-validation-remediation-rerun"
 ADOPTED_RECALL_REF = (
-    "repo:aoa-memo/generated/memory_object_catalog.min.json#"
+    "repo:aoa-memo/generated/memory-objects/memory_object_catalog.min.json#"
     "memo.decision.2026-04-02.alpha-validation-remediation-rerun"
 )
 REVIEWED_CANDIDATE_CASES = {
     "distillation_claim_candidate": {
         "object_id": "memo.claim.2026-04-03.phase-alpha-runtime-history-later-infra-track",
-        "source_path": "examples/claim.phase-alpha-runtime-history-later-infra-track.example.json",
+        "source_path": "examples/phase-alpha/claim.phase-alpha-runtime-history-later-infra-track.example.json",
         "target_kind": "claim",
         "review_state": "confirmed",
         "writeback_anchor_ref": "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation.md",
@@ -55,7 +70,7 @@ REVIEWED_CANDIDATE_CASES = {
     },
     "distillation_pattern_candidate": {
         "object_id": "memo.pattern.2026-04-02.alpha-remediation-recurrence",
-        "source_path": "examples/pattern.phase-alpha-remediation-recurrence.example.json",
+        "source_path": "examples/phase-alpha/pattern.phase-alpha-remediation-recurrence.example.json",
         "target_kind": "pattern",
         "review_state": "confirmed",
         "writeback_anchor_ref": "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.validation-driven-remediation-recall-rerun.md",
@@ -166,7 +181,7 @@ def build_reviewed_candidate_receipt(runtime_surface: str) -> dict:
             },
             {
                 "kind": "memory_catalog_entry",
-                "ref": f"repo:aoa-memo/generated/memory_object_catalog.min.json#{object_id}",
+                "ref": f"repo:aoa-memo/generated/memory-objects/memory_object_catalog.min.json#{object_id}",
                 "role": "catalog",
             },
             {
@@ -368,7 +383,7 @@ class MemoPublishLiveReceiptsTests(unittest.TestCase):
             receipt = build_receipt()
             receipt["object_ref"]["id"] = "memo.decision.2026-04-06.session-closeout"
             receipt["evidence_refs"][0]["ref"] = (
-                "repo:aoa-memo/generated/memory_object_catalog.min.json#"
+                "repo:aoa-memo/generated/memory-objects/memory_object_catalog.min.json#"
                 "memo.decision.2026-04-06.session-closeout"
             )
             input_path.write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8")

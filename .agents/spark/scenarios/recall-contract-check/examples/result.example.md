@@ -17,10 +17,10 @@ Changes made:
 - None; check-only.
 
 Validation run:
-- python scripts/validate_memory_surfaces.py
+- python scripts/memory/validate_memory_surfaces.py
 
 Skipped checks:
-- python scripts/release_check.py; no files changed.
+- python scripts/release/release_check.py; no files changed.
 
 Remaining risk: Mechanic-local tests were not needed for this read-only check.
 
