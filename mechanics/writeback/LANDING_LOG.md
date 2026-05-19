@@ -5,13 +5,13 @@
 - Moved writeback schemas, examples, generated companions, scripts, tests, and
   receipt fixtures into their nearest functioning `parts/` homes.
 - Split runtime, quest, revision, rollback, growth/continuity, and receipt
-  publication validation into part-local test routes while keeping the Wave 2
-  seed regression as a registered cross-mechanic root test.
+  publication validation into part-local test routes while keeping the
+  operational-contract regression as a registered cross-mechanic root test.
 
 Validation route:
 
 ```bash
-python -m pytest -q mechanics/writeback/parts/runtime-and-temperature/tests mechanics/writeback/parts/quest-and-chronicle/tests mechanics/writeback/parts/revision-ledgers/tests mechanics/writeback/parts/rollback-and-recovery/tests mechanics/writeback/parts/growth-and-continuity/tests mechanics/writeback/parts/receipt-publication-regression/tests tests/test_experience_wave2_seed_contracts.py
+python -m pytest -q mechanics/writeback/parts/runtime-and-temperature/tests mechanics/writeback/parts/quest-and-chronicle/tests mechanics/writeback/parts/revision-ledgers/tests mechanics/writeback/parts/rollback-and-recovery/tests mechanics/writeback/parts/growth-and-continuity/tests mechanics/writeback/parts/receipt-publication-regression/tests tests/test_cross_mechanic_operational_contracts.py
 python scripts/release_check.py
 ```
 

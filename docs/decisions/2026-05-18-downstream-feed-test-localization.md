@@ -11,12 +11,12 @@ one `downstream_memory_feed_contracts` family:
 
 - `tests/test_downstream_feed_contracts.py`
 - `tests/fixtures/memo_writeback_receipts.example.jsonl`
-- `tests/test_experience_wave3_seed_contracts.py`
+- `tests/test_cross_mechanic_candidate_contracts.py`
 
 That grouping was mechanically convenient but semantically wrong. The
 downstream feed regression is the consumer-handoff package's read-surface
 contract. The tracked receipt fixture is writeback-owned test evidence. The
-Wave 3 seed regression is the only item in that group that remains a true
+cross-mechanic candidate-contract regression is the only item in that group that remains a true
 cross-mechanic root test.
 
 Leaving all three in root would keep root `tests/` as an artifact parking lot
@@ -30,9 +30,9 @@ Move the downstream feed regression to
 Move the tracked writeback receipt fixture to
 `mechanics/writeback/parts/receipt-publication-regression/tests/fixtures/memo_writeback_receipts.example.jsonl`.
 
-Keep `tests/test_experience_wave3_seed_contracts.py` in root as the
-cross-mechanic seed-contract regression, and rename its root technical family
-to `cross_mechanic_wave3_seed_contracts`.
+Keep `tests/test_cross_mechanic_candidate_contracts.py` in root as the
+cross-mechanic candidate-contract regression, and rename its root technical family
+to `cross_mechanic_candidate_contracts`.
 
 ## Consequences
 
@@ -40,7 +40,7 @@ to `cross_mechanic_wave3_seed_contracts`.
   alignment now routes through the consumer-handoff mechanic.
 - Writeback receipt publication keeps its durable fixture beside the
   writeback tests that consume it.
-- Root `tests/` keeps only the cross-mechanic seed regression from this group.
+- Root `tests/` keeps only the cross-mechanic contract regression from this group.
 - `scripts/validate_mechanic_artifact_topology.py` now accepts an explicit
   `cross-mechanic-contract-regression` root test-family role.
 
@@ -51,5 +51,5 @@ Expected verification:
 - `python scripts/validate_mechanic_artifact_topology.py`
 - `python scripts/build_mechanic_artifact_inventory.py --check`
 - `python scripts/validate_mechanic_artifact_inventory.py`
-- `python -m pytest -q mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_downstream_feed_contracts.py mechanics/writeback/parts/receipt-publication-regression/tests/test_publish_live_receipts.py tests/test_experience_wave3_seed_contracts.py tests/test_mechanic_artifact_topology.py tests/test_mechanic_artifact_inventory.py`
+- `python -m pytest -q mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_downstream_feed_contracts.py mechanics/writeback/parts/receipt-publication-regression/tests/test_publish_live_receipts.py tests/test_cross_mechanic_candidate_contracts.py tests/test_mechanic_artifact_topology.py tests/test_mechanic_artifact_inventory.py`
 - `python scripts/release_check.py`

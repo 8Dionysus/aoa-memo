@@ -18,7 +18,7 @@ define that public support contract and regression boundary.
 | `mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/schemas/pattern_lineage_memory_entry_v1.json` | public schema for pattern-lineage memory entry examples |
 | `mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/examples/pattern_lineage_memory_entry.example.json` | public-safe example for the pattern-lineage memory entry contract |
 | `mechanics/governance/parts/federation-boundary/examples/federation_memory_gate_decision.example.json` | adjacent governance gate example that names `pattern_lineage_memory` as a memory kind |
-| `tests/test_experience_wave3_seed_contracts.py` | validates the federation-harvest seed schemas and examples as public contracts |
+| `tests/test_cross_mechanic_candidate_contracts.py` | validates the federation-harvest contract schemas and examples as public contracts |
 | `mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/tests/test_lineage_harvest_mechanic.py` | protects the package boundary, active path, mechanic-local artifact placement, and stronger-owner stop-lines |
 
 ## Adjacent mechanic interfaces

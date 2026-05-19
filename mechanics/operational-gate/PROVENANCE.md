@@ -31,7 +31,7 @@ from package-level artifact homes into functioning parts:
 - `parts/service-revision-ledger/` owns service revision ledger entry
   contracts.
 - `parts/post-release-boundaries/` owns train release memory entry contracts
-  and the Wave 5 post-release seed regression.
+  and the post-release-boundary contract regression.
 
 Use root technical districts only for shared or cross-mechanic contracts.
 

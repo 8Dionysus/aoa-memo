@@ -82,7 +82,7 @@ artifact lanes by
 - `ROADMAP.md`
 - `CHANGELOG.md`
 - `mechanics/operational-gate/parts/deployment-incident-gate/tests/test_operational_gate_mechanic.py`
-- `mechanics/operational-gate/parts/post-release-boundaries/tests/test_experience_wave5_seed_contracts.py`
+- `mechanics/operational-gate/parts/post-release-boundaries/tests/test_post_release_boundary_contracts.py`
 - `tests/test_memo_mechanics.py`
 - `tests/test_agents_mesh.py`
 

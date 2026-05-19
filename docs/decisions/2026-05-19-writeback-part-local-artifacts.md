@@ -34,7 +34,7 @@ Move writeback technical artifacts to the nearest functioning part:
 - receipt publication helper, fixture, and regression test under
   `mechanics/writeback/parts/receipt-publication-regression/`
 
-Move the Wave 2 seed-contract regression out of the writeback package and into
+Move the cross-mechanic operational-contract regression out of the writeback package and into
 root `tests/` because it protects a cross-mechanic contract set. Register it in
 the root technical district test-family contract rather than letting writeback
 pretend it owns governance, operational-gate, retention, and writeback at once.
@@ -56,7 +56,7 @@ pretend it owns governance, operational-gate, retention, and writeback at once.
 
 Expected verification:
 
-- `python -m pytest -q mechanics/writeback/parts/runtime-and-temperature/tests mechanics/writeback/parts/quest-and-chronicle/tests mechanics/writeback/parts/revision-ledgers/tests mechanics/writeback/parts/rollback-and-recovery/tests mechanics/writeback/parts/growth-and-continuity/tests mechanics/writeback/parts/receipt-publication-regression/tests tests/test_experience_wave2_seed_contracts.py`
+- `python -m pytest -q mechanics/writeback/parts/runtime-and-temperature/tests mechanics/writeback/parts/quest-and-chronicle/tests mechanics/writeback/parts/revision-ledgers/tests mechanics/writeback/parts/rollback-and-recovery/tests mechanics/writeback/parts/growth-and-continuity/tests mechanics/writeback/parts/receipt-publication-regression/tests tests/test_cross_mechanic_operational_contracts.py`
 - `python mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_targets.py --check`
 - `python mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_intake.py --check`
 - `python mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_governance.py --check`

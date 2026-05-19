@@ -33,7 +33,7 @@ part:
 - retention post-release artifacts under
   `mechanics/retention/parts/post-release-retention/`
 
-Keep cross-mechanic Wave 3 regression coverage at root, but point it at the new
+Keep cross-mechanic candidate-contract regression coverage at root, but point it at the new
 part-local homes. Keep governance tests in governance; retention names only its
 own part-local test route.
 
@@ -55,7 +55,7 @@ Expected verification:
 
 - `python -m pytest -q mechanics/adoption/parts/adoption-boundary/tests mechanics/adoption/parts/revision-and-retention-pressure/tests mechanics/adoption/parts/scar-and-routing-adoption/tests`
 - `python -m pytest -q mechanics/retention/parts/cross-repo-and-governance-retention/tests mechanics/retention/parts/office-markers/tests mechanics/retention/parts/post-release-retention/tests`
-- `python -m pytest -q tests/test_experience_wave3_seed_contracts.py`
+- `python -m pytest -q tests/test_cross_mechanic_candidate_contracts.py`
 - `python scripts/validate_mechanic_artifact_topology.py`
 - `python scripts/build_mechanic_artifact_inventory.py --check`
 - `python scripts/validate_mechanic_artifact_inventory.py`

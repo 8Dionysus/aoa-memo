@@ -61,7 +61,7 @@ The first lineage-harvest landing makes pattern-lineage memory candidates and
 federation harvest stop-lines explicit without granting memo proof, KAG
 promotion, ToS canon, stats certification, runtime truth, or source-owner
 consent.
-The first downstream eval adoption wave is now explicitly narrowed to recall precision, provenance fidelity, and staleness so `aoa-evals` can pilot memo proof without pretending to cover every guardrail focus at once.
+The first downstream eval adoption pass is now explicitly narrowed to recall precision, provenance fidelity, and staleness so `aoa-evals` can pilot memo proof without pretending to cover every guardrail focus at once.
 The current KAG-facing adoption slice now publishes `mechanics/consumer-handoff/parts/kag-source-export/generated/kag_export.min.json` as one source-owned memo export for `aoa-kag` readiness without widening the live federation spine or `aoa-routing` ABI.
 Governance authority-boundary artifacts now live at their owning parts:
 `mechanics/governance/parts/governance-boundary/`,
@@ -191,9 +191,9 @@ script, test, manifest, questbook, and hook relocation.
 The readiness matrix closes the next layer by proving every current package is
 not only present but structurally ready for OS Abyss consumption.
 
-## Current contract-hardening waves
+## Current contract-hardening order
 
-Within the current contract-hardening stage, the cleanest wave order is:
+Within the current contract-hardening stage, the cleanest slice order is:
 
 1. **Object canon hardening**
    Add per-kind memory-object profiles, first-class example coverage for every shipped kind, and validator coverage for the full canon.
@@ -466,7 +466,7 @@ The current next move is publish-only plus consumer readiness, not live federati
 ### `aoa-evals`
 
 Needs bounded checks for recall precision, provenance fidelity, and stale-memory behavior.
-The first adoption wave should stay diagnostic and triad-scoped before the rest of the guardrail focuses are pulled into downstream proof bundles.
+The first adoption pass should stay diagnostic and triad-scoped before the rest of the guardrail focuses are pulled into downstream proof bundles.
 
 ### `abyss-stack`
 

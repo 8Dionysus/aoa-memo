@@ -11,7 +11,7 @@ from jsonschema import Draft202012Validator, FormatChecker
 
 
 ROOT = Path(__file__).resolve().parents[5]
-ESCAPE_VALUE = "__wave5_not_allowed__"
+ESCAPE_VALUE = "__post_release_boundary_not_allowed__"
 FORMAT_CHECKER = FormatChecker()
 RFC3339_DATETIME = re.compile(
     r"^(?P<year>[0-9]{4})-(?P<month>[0-9]{2})-(?P<day>[0-9]{2})"
@@ -101,7 +101,7 @@ def is_rfc3339_datetime(value: object) -> bool:
             return False
     return True
 
-WAVE5_CONTRACTS = (
+POST_RELEASE_BOUNDARY_CONTRACTS = (
     ('first_office_retention_marker_v1', 'first_office_retention_marker_v1.json'),
     ('installation_memory_entry_v1', 'installation_memory_entry_v1.json'),
     ('office_retention_marker_v1', 'office_retention_marker_v1.json'),
@@ -346,32 +346,32 @@ def constrained_paths(schema: object, example: object, keyword: str, path: tuple
     return found
 
 
-class ExperienceWave5SeedContractTests(unittest.TestCase):
+class PostReleaseBoundaryContractTests(unittest.TestCase):
     def assert_invalid(self, schema: dict[str, object], value: object, label: str) -> None:
         errors = validation_errors(schema, value)
         self.assertTrue(errors, f"{label} unexpectedly validated")
 
-    def test_experience_wave5_examples_match_schemas(self) -> None:
-        self.assertTrue(WAVE5_CONTRACTS)
+    def test_post_release_boundary_examples_match_schemas(self) -> None:
+        self.assertTrue(POST_RELEASE_BOUNDARY_CONTRACTS)
         missing_pairs: list[str] = []
-        for stem, schema_file in WAVE5_CONTRACTS:
+        for stem, schema_file in POST_RELEASE_BOUNDARY_CONTRACTS:
             schema_path, example_path = contract_paths(stem, schema_file)
             if not schema_path.exists():
                 missing_pairs.append(f"{example_path.relative_to(ROOT)} -> {schema_path.relative_to(ROOT)}")
             if not example_path.exists():
                 missing_pairs.append(f"{schema_path.relative_to(ROOT)} -> {example_path.relative_to(ROOT)}")
-        self.assertFalse(missing_pairs, "missing wave5 contract pair(s): " + ", ".join(missing_pairs))
+        self.assertFalse(missing_pairs, "missing post-release-boundary contract pair(s): " + ", ".join(missing_pairs))
 
-        for stem, schema_file in WAVE5_CONTRACTS:
+        for stem, schema_file in POST_RELEASE_BOUNDARY_CONTRACTS:
             with self.subTest(stem=stem):
                 schema, example = load_contract(stem, schema_file)
                 Draft202012Validator.check_schema(schema)
                 errors = validation_errors(schema, example)
                 self.assertFalse(errors, f"{stem}: {errors[0].message}" if errors else stem)
 
-    def test_experience_wave5_schemas_reject_unknown_fields(self) -> None:
+    def test_post_release_boundary_schemas_reject_unknown_fields(self) -> None:
         exercised = 0
-        for stem, schema_file in WAVE5_CONTRACTS:
+        for stem, schema_file in POST_RELEASE_BOUNDARY_CONTRACTS:
             schema, example = load_contract(stem, schema_file)
             for path in object_paths(example):
                 with self.subTest(stem=stem, path=path):
@@ -383,9 +383,9 @@ class ExperienceWave5SeedContractTests(unittest.TestCase):
                     exercised += 1
         self.assertGreater(exercised, 0)
 
-    def test_experience_wave5_schemas_reject_wrong_types_for_every_field(self) -> None:
+    def test_post_release_boundary_schemas_reject_wrong_types_for_every_field(self) -> None:
         exercised = 0
-        for stem, schema_file in WAVE5_CONTRACTS:
+        for stem, schema_file in POST_RELEASE_BOUNDARY_CONTRACTS:
             schema, example = load_contract(stem, schema_file)
             for path, value in walk_values(example):
                 with self.subTest(stem=stem, path=path):
@@ -395,9 +395,9 @@ class ExperienceWave5SeedContractTests(unittest.TestCase):
                     exercised += 1
         self.assertGreater(exercised, 0)
 
-    def test_experience_wave5_schemas_reject_missing_required_fields(self) -> None:
+    def test_post_release_boundary_schemas_reject_missing_required_fields(self) -> None:
         exercised = 0
-        for stem, schema_file in WAVE5_CONTRACTS:
+        for stem, schema_file in POST_RELEASE_BOUNDARY_CONTRACTS:
             schema, example = load_contract(stem, schema_file)
             for path in required_paths(schema, example):
                 with self.subTest(stem=stem, path=path):
@@ -407,9 +407,9 @@ class ExperienceWave5SeedContractTests(unittest.TestCase):
                     exercised += 1
         self.assertGreater(exercised, 0)
 
-    def test_experience_wave5_schemas_reject_bad_array_items(self) -> None:
+    def test_post_release_boundary_schemas_reject_bad_array_items(self) -> None:
         exercised = 0
-        for stem, schema_file in WAVE5_CONTRACTS:
+        for stem, schema_file in POST_RELEASE_BOUNDARY_CONTRACTS:
             schema, example = load_contract(stem, schema_file)
             for path in array_paths(example):
                 with self.subTest(stem=stem, path=path):
@@ -424,9 +424,9 @@ class ExperienceWave5SeedContractTests(unittest.TestCase):
                     exercised += 1
         self.assertGreater(exercised, 0)
 
-    def test_experience_wave5_schemas_reject_empty_strings(self) -> None:
+    def test_post_release_boundary_schemas_reject_empty_strings(self) -> None:
         exercised = 0
-        for stem, schema_file in WAVE5_CONTRACTS:
+        for stem, schema_file in POST_RELEASE_BOUNDARY_CONTRACTS:
             schema, example = load_contract(stem, schema_file)
             for path in string_paths(example):
                 with self.subTest(stem=stem, path=path):
@@ -436,9 +436,9 @@ class ExperienceWave5SeedContractTests(unittest.TestCase):
                     exercised += 1
         self.assertGreater(exercised, 0)
 
-    def test_experience_wave5_schemas_reject_const_escapes(self) -> None:
+    def test_post_release_boundary_schemas_reject_const_escapes(self) -> None:
         exercised = 0
-        for stem, schema_file in WAVE5_CONTRACTS:
+        for stem, schema_file in POST_RELEASE_BOUNDARY_CONTRACTS:
             schema, example = load_contract(stem, schema_file)
             for path, _constraint in constrained_paths(schema, example, "const"):
                 with self.subTest(stem=stem, path=path):
@@ -449,9 +449,9 @@ class ExperienceWave5SeedContractTests(unittest.TestCase):
                     exercised += 1
         self.assertGreater(exercised, 0)
 
-    def test_experience_wave5_schemas_reject_enum_escapes(self) -> None:
+    def test_post_release_boundary_schemas_reject_enum_escapes(self) -> None:
         exercised = 0
-        for stem, schema_file in WAVE5_CONTRACTS:
+        for stem, schema_file in POST_RELEASE_BOUNDARY_CONTRACTS:
             schema, example = load_contract(stem, schema_file)
             for path, _constraint in constrained_paths(schema, example, "enum"):
                 with self.subTest(stem=stem, path=path):
@@ -462,9 +462,9 @@ class ExperienceWave5SeedContractTests(unittest.TestCase):
                     exercised += 1
         self.assertGreater(exercised, 0)
 
-    def test_experience_wave5_schemas_reject_bad_datetime_formats(self) -> None:
+    def test_post_release_boundary_schemas_reject_bad_datetime_formats(self) -> None:
         exercised = 0
-        for stem, schema_file in WAVE5_CONTRACTS:
+        for stem, schema_file in POST_RELEASE_BOUNDARY_CONTRACTS:
             schema, example = load_contract(stem, schema_file)
             for path, constraint in constrained_paths(schema, example, "format"):
                 if constraint != "date-time":
@@ -486,9 +486,9 @@ class ExperienceWave5SeedContractTests(unittest.TestCase):
                         exercised += 1
         self.assertGreater(exercised, 0)
 
-    def test_experience_wave5_schemas_accept_rfc3339_datetime_variants(self) -> None:
+    def test_post_release_boundary_schemas_accept_rfc3339_datetime_variants(self) -> None:
         exercised = 0
-        for stem, schema_file in WAVE5_CONTRACTS:
+        for stem, schema_file in POST_RELEASE_BOUNDARY_CONTRACTS:
             schema, example = load_contract(stem, schema_file)
             for path, constraint in constrained_paths(schema, example, "format"):
                 if constraint != "date-time":
@@ -509,8 +509,8 @@ class ExperienceWave5SeedContractTests(unittest.TestCase):
                         exercised += 1
         self.assertGreater(exercised, 0)
 
-    def test_experience_wave5_schemas_reject_numeric_bound_escapes(self) -> None:
-        for stem, schema_file in WAVE5_CONTRACTS:
+    def test_post_release_boundary_schemas_reject_numeric_bound_escapes(self) -> None:
+        for stem, schema_file in POST_RELEASE_BOUNDARY_CONTRACTS:
             schema, example = load_contract(stem, schema_file)
             for path, value in walk_values(example):
                 if not isinstance(value, (int, float)) or isinstance(value, bool):

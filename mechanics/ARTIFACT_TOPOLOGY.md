@@ -140,7 +140,7 @@ mechanic tests belong under the owning mechanic.
 
 Single-mechanic artifacts live in the owning package with their local docs and
 route card. When a functioning part exists, use the nearest part-local home.
-This includes mechanic-local schemas, examples, config seeds, generated
+This includes mechanic-local schemas, examples, config inputs, generated
 companions, scripts, tests, manifests, and hook manifests.
 
 Examples:
@@ -197,7 +197,7 @@ current active manifests are package-local.
 `generated/mechanic_artifacts.min.json` is the compact generated inventory of
 package-local and part-local mechanic artifacts. It is not source truth. It lets
 agents and validators inspect which mechanic or functioning part currently owns
-each local schema, example, config seed, generated companion, script, test, or
+each local schema, example, config input, generated companion, script, test, or
 manifest without forcing `PARTS.md` files to become raw file inventories.
 
 `generated/memo_mechanic_readiness.min.json` is the compact generated readiness

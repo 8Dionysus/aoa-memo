@@ -16,7 +16,7 @@ This active part belongs to `mechanics/governance/` and materializes the matchin
 - `examples/governance_decision_memory_v1.example.json`
 - `examples/governance_memory_writeback.example.json`
 - `tests/test_governance_mechanic.py`
-- `tests/test_experience_wave4_seed_contracts.py`
+- `tests/test_governance_boundary_contracts.py`
 
 ## Function
 

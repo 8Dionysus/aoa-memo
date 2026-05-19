@@ -22,7 +22,7 @@ Move governance technical artifacts to the nearest functioning part:
 - policy precedent contracts under `parts/precedent-and-stay-order/`
 
 Keep governance docs as the authored authority-boundary doctrine and keep
-cross-mechanic seed regressions in their existing owner lanes while pointing
+cross-mechanic contract regressions in their existing owner lanes while pointing
 them at the new part-local contracts.
 
 ## Alternatives
@@ -39,9 +39,9 @@ precedent recall.
 ## Consequences
 
 Governance parts are now executable owner nodes for their authority-boundary
-contracts. Cross-mechanic tests still validate Wave 2, Wave 3, Wave 4, and Wave
-5 seed surfaces, but those tests no longer require governance package-level
-artifact homes.
+contracts. Cross-mechanic tests still validate operational, candidate,
+governance-boundary, and post-release-boundary contract surfaces, but those
+tests no longer require governance package-level artifact homes.
 
 The move keeps `aoa-memo` below stronger owners. It does not grant council
 authority, release approval, proof verdicts, Tree-of-Sophia writes, route
@@ -55,8 +55,8 @@ dispatch, role authority, source-owner consent, or runtime governance.
 - `mechanics/governance/AGENTS.md`
 - `config/root_technical_districts.json`
 - `mechanics/lineage-harvest/PARTS.md`
-- `tests/test_experience_wave3_seed_contracts.py`
-- `mechanics/operational-gate/parts/post-release-boundaries/tests/test_experience_wave5_seed_contracts.py`
+- `tests/test_cross_mechanic_candidate_contracts.py`
+- `mechanics/operational-gate/parts/post-release-boundaries/tests/test_post_release_boundary_contracts.py`
 - `generated/mechanic_artifacts.min.json`
 - `generated/memo_mechanic_readiness.min.json`
 
@@ -64,7 +64,7 @@ dispatch, role authority, source-owner consent, or runtime governance.
 
 Expected verification:
 
-- `python -m pytest -q mechanics/governance/parts/governance-boundary/tests tests/test_experience_wave2_seed_contracts.py tests/test_experience_wave3_seed_contracts.py mechanics/operational-gate/parts/post-release-boundaries/tests/test_experience_wave5_seed_contracts.py mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/tests/test_lineage_harvest_mechanic.py`
+- `python -m pytest -q mechanics/governance/parts/governance-boundary/tests tests/test_cross_mechanic_operational_contracts.py tests/test_cross_mechanic_candidate_contracts.py mechanics/operational-gate/parts/post-release-boundaries/tests/test_post_release_boundary_contracts.py mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/tests/test_lineage_harvest_mechanic.py`
 - `python scripts/build_mechanic_artifact_inventory.py --check`
 - `python scripts/validate_mechanic_artifact_inventory.py`
 - `python scripts/build_memo_mechanic_readiness.py --check`

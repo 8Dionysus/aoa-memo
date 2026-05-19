@@ -66,5 +66,5 @@ Expected verification:
 - `python scripts/build_memo_mechanic_landing_logs.py`
 - `python scripts/build_memo_mechanic_readiness.py`
 - `python scripts/build_agents_mesh_index.py`
-- `python -m pytest -q mechanics/consumer-handoff/parts/downstream-feed-regression/tests mechanics/consumer-handoff/parts/playbook-scope-handoff/tests tests/test_memo_validators.py tests/test_experience_wave3_seed_contracts.py tests/test_roadmap_parity.py`
+- `python -m pytest -q mechanics/consumer-handoff/parts/downstream-feed-regression/tests mechanics/consumer-handoff/parts/playbook-scope-handoff/tests tests/test_memo_validators.py tests/test_cross_mechanic_candidate_contracts.py tests/test_roadmap_parity.py`
 - `python scripts/release_check.py`

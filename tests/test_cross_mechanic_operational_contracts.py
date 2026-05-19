@@ -7,7 +7,7 @@ from jsonschema import Draft202012Validator
 
 
 ROOT = Path(__file__).resolve().parents[1]
-WAVE2_PREFIX_BASES = {
+OPERATIONAL_CONTRACT_PREFIX_BASES = {
     "assistant_revision_": "mechanics/writeback/parts/revision-ledgers",
     "certification_": "mechanics/governance",
     "deployment_": "mechanics/operational-gate",
@@ -16,10 +16,10 @@ WAVE2_PREFIX_BASES = {
 }
 
 
-def wave2_pairs() -> list[tuple[Path, Path]]:
+def operational_contract_pairs() -> list[tuple[Path, Path]]:
     pairs: list[tuple[Path, Path]] = []
     missing_pairs: list[str] = []
-    for prefix, base_ref in WAVE2_PREFIX_BASES.items():
+    for prefix, base_ref in OPERATIONAL_CONTRACT_PREFIX_BASES.items():
         base = ROOT / base_ref
         examples_root = base / "examples"
         schemas_root = base / "schemas"
@@ -32,12 +32,12 @@ def wave2_pairs() -> list[tuple[Path, Path]]:
                 missing_pairs.append(f"{example_path.relative_to(ROOT)} -> {schema_path.relative_to(ROOT)}")
                 continue
             pairs.append((schema_path, example_path))
-    assert not missing_pairs, "missing wave2 schema pair(s): " + ", ".join(missing_pairs)
+    assert not missing_pairs, "missing operational contract schema pair(s): " + ", ".join(missing_pairs)
     return pairs
 
 
-def test_experience_wave2_examples_match_schemas() -> None:
-    pairs = wave2_pairs()
+def test_operational_contract_examples_match_schemas() -> None:
+    pairs = operational_contract_pairs()
     assert pairs
     for schema_path, example_path in pairs:
         schema = json.loads(schema_path.read_text(encoding="utf-8"))

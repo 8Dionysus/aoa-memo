@@ -26,7 +26,7 @@ keeps repeated failure lessons recallable without becoming proof
 
 ## Artifact Contract
 
-The part keeps the failure lesson contract, shared lesson seed contract,
+The part keeps the failure lesson contract, shared lesson contract,
 failure lesson examples, drift-review example, and local regression together.
 `shared_lesson_memory` stays here because it is a lesson-memory support object
 used by antifragility recall, not a standalone operation or proof family.

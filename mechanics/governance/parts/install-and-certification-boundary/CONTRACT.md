@@ -23,7 +23,7 @@ install/certification memory facts without release approval or proof
 
 The part keeps installation and certification memory contracts beside the
 install/certification boundary docs. The artifacts can be checked by
-cross-mechanic release/seed regressions, but they do not approve installs,
+cross-mechanic release/contract regressions, but they do not approve installs,
 certify agents, or replace release proof.
 
 ## Stop-lines

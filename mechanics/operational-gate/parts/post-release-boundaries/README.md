@@ -12,7 +12,7 @@ This active part belongs to `mechanics/operational-gate/` and materializes the m
 - [POST_RELEASE_MEMORY_BOUNDARIES](../../docs/POST_RELEASE_MEMORY_BOUNDARIES.md)
 - `schemas/train_release_memory_entry_v1.json`
 - `examples/train_release_memory_entry_v1.example.json`
-- `tests/test_experience_wave5_seed_contracts.py`
+- `tests/test_post_release_boundary_contracts.py`
 
 ## Function
 

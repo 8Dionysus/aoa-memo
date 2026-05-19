@@ -45,7 +45,7 @@ Post-release boundaries:
 
 - `mechanics/operational-gate/parts/post-release-boundaries/schemas/train_release_memory_entry_v1.json`
 - `mechanics/operational-gate/parts/post-release-boundaries/examples/train_release_memory_entry_v1.example.json`
-- `mechanics/operational-gate/parts/post-release-boundaries/tests/test_experience_wave5_seed_contracts.py`
+- `mechanics/operational-gate/parts/post-release-boundaries/tests/test_post_release_boundary_contracts.py`
 
 ## Neighbor Technical Contracts
 

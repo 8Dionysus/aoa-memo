@@ -164,8 +164,8 @@
         "tests/test_companion_skill_scripts.py",
         "tests/test_current_direction_routes.py",
         "tests/test_docs_districts.py",
-        "tests/test_experience_wave2_seed_contracts.py",
-        "tests/test_experience_wave3_seed_contracts.py",
+        "tests/test_cross_mechanic_operational_contracts.py",
+        "tests/test_cross_mechanic_candidate_contracts.py",
         "tests/test_mechanic_artifact_inventory.py",
         "tests/test_mechanic_artifact_topology.py",
         "tests/test_memo_mechanic_cards.py",
@@ -586,11 +586,11 @@
       ]
     },
     {
-      "id": "cross_mechanic_wave2_seed_contracts",
+      "id": "cross_mechanic_operational_contracts",
       "role": "cross-mechanic-contract-regression",
       "owner_surface": "mechanics/ARTIFACT_TOPOLOGY.md",
       "tests": [
-        "tests/test_experience_wave2_seed_contracts.py"
+        "tests/test_cross_mechanic_operational_contracts.py"
       ],
       "protects": [
         "mechanics/governance/parts/install-and-certification-boundary/schemas/certification_memory_writeback_v1.json",
@@ -601,11 +601,11 @@
       ]
     },
     {
-      "id": "cross_mechanic_wave3_seed_contracts",
+      "id": "cross_mechanic_candidate_contracts",
       "role": "cross-mechanic-contract-regression",
       "owner_surface": "mechanics/lineage-harvest/PARTS.md",
       "tests": [
-        "tests/test_experience_wave3_seed_contracts.py"
+        "tests/test_cross_mechanic_candidate_contracts.py"
       ],
       "protects": [
         "mechanics/adoption/parts/adoption-boundary/schemas/adoption_memory_writeback_v1.json",
