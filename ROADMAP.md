@@ -42,7 +42,7 @@ The current `v0.2.3` release line also already carries:
 - rollout, rollback-followthrough, component-refresh, and self-agency continuity support through `mechanics/antifragility/parts/recovery-pattern-memory/examples/recovery_pattern_memory.rollback_followthrough.example.json`, `mechanics/antifragility/parts/recovery-pattern-memory/examples/recovery_pattern_memory.component_refresh.example.json`, `mechanics/writeback/docs/SELF_AGENCY_CONTINUITY_WRITEBACK.md`, `mechanics/writeback/parts/growth-and-continuity/examples/provenance_thread.self-agency-continuity.example.json`, `mechanics/writeback/parts/growth-and-continuity/examples/decision.self-agency-reanchor-window.example.json`, and `mechanics/writeback/parts/growth-and-continuity/examples/state_capsule.self-agency-continuity-relay.example.json`
 - Phase Alpha writeback routing and owner-local live receipt publication through `mechanics/writeback/parts/growth-and-continuity/generated/phase_alpha_writeback_map.min.json` and `mechanics/writeback/parts/receipt-publication-regression/scripts/publish_live_receipts.py`
 - memory readiness boundary through `mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md`
-- Questbook generated-view placement through `mechanics/questbook/parts/generated-views/README.md`,
+- Questbook read-model projection placement through `mechanics/questbook/parts/quest-read-model-projections/README.md`,
   keeping `generated/quest_catalog.min*.json` and
   `generated/quest_dispatch.min*.json` root-published while the Questbook
   mechanic owns the builder, validation, and stop-lines

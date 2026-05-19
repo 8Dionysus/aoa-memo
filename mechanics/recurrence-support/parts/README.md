@@ -4,7 +4,7 @@ Functioning Recurrence Support memo parts live here. Each part mirrors one activ
 
 ## Parts
 
-- [Recurrence support surfaces](recurrence-support-surfaces/README.md) - preserves checkpoint continuity, relaunch anchors, return packs, and anti-`return_memory` stop-lines
+- [Route-return anchors](route-return-anchors/README.md) - preserves checkpoint continuity, relaunch anchors, return packs, and anti-`return_memory` stop-lines
 - [Witness trace contract](witness-trace-contract/README.md) - keeps witness trace exports reviewable and maps later writeback into existing memo object kinds
 - [Reviewed closeout recall landing](reviewed-closeout-recall-landing/README.md) - preserves owner-local recall survivors without becoming proof, playbook authority, or a second route ledger
 

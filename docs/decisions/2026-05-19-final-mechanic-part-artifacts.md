@@ -28,7 +28,7 @@ Move the remaining package-level artifacts to the nearest owning part:
   `parts/pattern-lineage-memory-gate/{schemas,examples,tests}/`
 - Questbook source validator and regression to
   `parts/source-contract/{scripts,tests}/`
-- Questbook generated-view builder to `parts/generated-views/scripts/`
+- Questbook read-model projection builder to `parts/quest-read-model-projections/scripts/`
 
 Remove the lineage-harvest `mechanic-local-technical-contracts` active part
 because it named a file family rather than an operation. The
@@ -46,7 +46,7 @@ parts name work, not storage categories.
 
 Moving root Questbook generated outputs under the package was rejected. Those
 outputs are root-published read models over the public `quests/` item store;
-their builder and validator are part-local, but the generated views remain
+their builder and validator are part-local, but the quest read-model projections remain
 root surfaces.
 
 ## Consequences
@@ -67,7 +67,7 @@ private memory.
 - `mechanics/recurrence-support/parts/witness-trace-contract/`
 - `mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/`
 - `mechanics/questbook/parts/source-contract/`
-- `mechanics/questbook/parts/generated-views/`
+- `mechanics/questbook/parts/quest-read-model-projections/`
 - package `PARTS.md`, `PROVENANCE.md`, `LANDING_LOG.md`, and validation cards
 - `mechanics/ARTIFACT_TOPOLOGY.md`
 - `config/root_technical_districts.json`
@@ -79,7 +79,7 @@ private memory.
 Expected verification:
 
 - `python mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py`
-- `python mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py --check`
+- `python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py --check`
 - `python -m pytest -q mechanics/shape-guard/parts/via-negativa-checklist/tests mechanics/readiness-boundary/parts/memory-readiness-boundary/tests mechanics/recurrence-support/parts/witness-trace-contract/tests mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/tests mechanics/questbook/parts/source-contract/tests`
 - `python scripts/build_mechanic_artifact_inventory.py --check`
 - `python scripts/validate_mechanic_artifact_inventory.py`

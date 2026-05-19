@@ -553,7 +553,7 @@
       "required_snippets": [
         "mechanics/questbook/parts/",
         "generated/quest_*.json",
-        "generated-views",
+        "quest-read-model-projections",
         "validate_quest_store.py"
       ]
     },

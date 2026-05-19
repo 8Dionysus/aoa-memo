@@ -6,7 +6,7 @@
 |---|---|---|
 | Pattern-lineage memory gate | [PATTERN_LINEAGE_MEMORY](./docs/PATTERN_LINEAGE_MEMORY.md) | gates cross-repo recurring signals into reviewed pattern-lineage memory candidates without federation authority |
 | Adjacent mechanic interfaces | [governance](../governance/README.md), [writeback](../writeback/README.md), [retention](../retention/README.md), [adoption](../adoption/README.md), [consumer-handoff](../consumer-handoff/README.md), [operational-gate](../operational-gate/README.md), [recurrence-support](../recurrence-support/README.md) | routes stronger adjacent memory operations without absorbing their authority |
-| Generated companions | `generated/memo_mechanics.min.json`, `generated/agents_mesh.min.json`, `generated/memo_registry.min.json`, `generated/memory_catalog*.json`, `generated/memory_capsules.json`, `generated/memory_sections.full.json` | exposes compact mirrors while keeping lineage-harvest source truth in package docs and artifacts |
+| Lineage inspection projections | `generated/memo_mechanics.min.json`, `generated/agents_mesh.min.json`, `generated/memo_registry.min.json`, `generated/memory_catalog*.json`, `generated/memory_capsules.json`, `generated/memory_sections.full.json` | exposes compact mirrors while keeping lineage-harvest source truth in package docs and artifacts |
 
 ## Part-Local Artifacts
 
@@ -33,7 +33,7 @@ define that public support contract and regression boundary.
 | [operational-gate](../operational-gate/README.md) | owns operational incident admission into durable memo |
 | [recurrence-support](../recurrence-support/README.md) | owns route-return anchors, witness trace exports, and reviewed closeout recall landings |
 
-## Generated companions
+## Lineage inspection projections
 
 - `generated/memo_mechanics.min.json` indexes this package from
   `config/memo_mechanics.json`.
@@ -45,7 +45,7 @@ define that public support contract and regression boundary.
   `generated/memory_sections.full.json` expose the `AOA-M-0015` inspect,
   capsule, and expand surfaces for this mechanic.
 
-Generated companions are mirrors. They do not author lineage-harvest truth.
+Lineage inspection projections are mirrors. They do not author lineage-harvest truth.
 
 ## Interface
 

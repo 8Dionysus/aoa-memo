@@ -98,7 +98,7 @@ Tracking starts with the community-docs baseline for this repository.
   obligations, with lane-first `quests/` source placement, source-contract
   docs, validator, generated projection builder, tests, AGENTS mesh coverage,
   generated mechanics coverage, and decision record.
-- Add `mechanics/questbook/parts/generated-views/` so root-published quest
+- Add `mechanics/questbook/parts/quest-read-model-projections/` so root-published quest
   generated read models have an explicit mechanic-owned part contract and
   validator coverage.
 - Add the `mechanics/` atlas plus `adoption`, `writeback`, and `retention`
@@ -151,6 +151,9 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Changed
 
+- Harden mechanic part naming by keeping package mechanic slugs stable while
+  renaming weak surface-family part slugs into operation/read-model route
+  names for lineage-harvest, Questbook, recurrence-support, and Titan.
 - Move governance schemas, examples, and local regressions into nearest
   functioning `parts/` homes, with federation, install/certification,
   precedent, lineage, and cross-mechanic seed refs updated to the part-local
@@ -224,7 +227,7 @@ Tracking starts with the community-docs baseline for this repository.
   and tests to the new artifact owner path.
 - Move flat root quest sources into lane-first lifecycle directories under
   `quests/`, move the quest projection builder into
-  `mechanics/questbook/parts/generated-views/scripts/`, and give Agon follow-through Markdown notes
+  `mechanics/questbook/parts/quest-read-model-projections/scripts/`, and give Agon follow-through Markdown notes
   an explicit memo quest source contract.
 - Close the compact witness trace quest through recurrence-support, route the
   chronicle quest to writeback, and require current quest `owner_surface` and

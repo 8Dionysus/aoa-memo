@@ -4,6 +4,6 @@ Keep memo-facing obligations public, lane-first, and owner-routed.
 
 The immediate direction is to keep root `QUESTBOOK.md` compact, keep
 `quests/` as the source item store, and keep generated quest projections
-builder-backed through the generated-views part. Do not let quest tracking
+builder-backed through the quest-read-model-projections part. Do not let quest tracking
 become roadmap duplication, hidden memory, proof, route dispatch, runtime
 state, or owner acceptance.

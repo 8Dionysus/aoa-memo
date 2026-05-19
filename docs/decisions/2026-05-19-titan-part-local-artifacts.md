@@ -15,11 +15,11 @@ parts, single-mechanic artifacts should move to the nearest part-local home.
 Titan schemas, examples, and tests now live under the part that owns their
 memory operation:
 
-- `parts/core-memory-posture/` owns recall, writeback, and remembrance record
+- `parts/recall-and-remembrance-posture/` owns recall, writeback, and remembrance record
   artifacts.
 - `parts/closeout-and-digest-posture/` owns bridge, closeout, console, and
   digest candidate artifacts.
-- `parts/specialized-policy/` owns audit-memory candidate artifacts.
+- `parts/audit-personality-and-swarm-policy/` owns audit-memory candidate artifacts.
 
 The package-level Titan directory remains the route card, owner map,
 provenance, roadmap, and source-doc home. It does not keep active artifact
@@ -61,7 +61,7 @@ behavior, private retention, or source-owner doctrine into `aoa-memo`.
 ## Verification Route
 
 ```bash
-python -m pytest -q mechanics/titan/parts/core-memory-posture/tests mechanics/titan/parts/closeout-and-digest-posture/tests mechanics/titan/parts/specialized-policy/tests
+python -m pytest -q mechanics/titan/parts/recall-and-remembrance-posture/tests mechanics/titan/parts/closeout-and-digest-posture/tests mechanics/titan/parts/audit-personality-and-swarm-policy/tests
 python scripts/validate_mechanic_artifact_inventory.py
 python scripts/validate_memo_mechanic_readiness.py
 python scripts/release_check.py

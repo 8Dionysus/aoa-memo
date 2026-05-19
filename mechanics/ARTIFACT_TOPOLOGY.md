@@ -148,7 +148,7 @@ Examples:
 - Agon prebinding, bridge/evidence, and wave recurrence config, schemas,
   examples, generated registries, manifests, hooks, validators, builders, and
   tests live under the nearest `mechanics/agon/parts/<part>/` home.
-- Titan recall/remembrance, closeout/digest, and specialized-policy schemas,
+- Titan recall/remembrance, closeout/digest, and audit-personality-and-swarm-policy schemas,
   examples, and tests live under the nearest `mechanics/titan/parts/<part>/`
   home.
 - adoption boundary, adoption revision/retention, adoption scar/routing,
@@ -172,8 +172,8 @@ Examples:
 - shape-guard via negativa tests live under
   `mechanics/shape-guard/parts/via-negativa-checklist/`.
 - Questbook source validation lives under
-  `mechanics/questbook/parts/source-contract/`, while the generated-view
-  builder lives under `mechanics/questbook/parts/generated-views/`.
+  `mechanics/questbook/parts/source-contract/`, while the read-model projection
+  builder lives under `mechanics/questbook/parts/quest-read-model-projections/`.
 - writeback generated companions such as `runtime_writeback_targets`,
   `runtime_writeback_intake`, `runtime_writeback_governance`,
   `growth_refinery_writeback_lanes`, and `phase_alpha_writeback_map` live under
@@ -186,7 +186,7 @@ Examples:
   project the public Questbook store for outside consumers. Their
   `owner_surface` and `anchor_ref` values must still route into real memo docs
   or mechanic docs, and their placement contract lives under
-  `mechanics/questbook/parts/generated-views/`.
+  `mechanics/questbook/parts/quest-read-model-projections/`.
 
 Root `schemas/`, `examples/`, `generated/`, `scripts/`, `tests/`, and `config/`
 remain valid for shared memory-object canon, shared recall contracts,
@@ -233,7 +233,7 @@ doctrine.
 Questbook is the intentional root-store exception: `mechanics/questbook/` owns
 quest lifecycle, source contracts, validation, and generated projections, while
 root `QUESTBOOK.md` stays the compact index and root `quests/` stays the public
-lane-first item store. The generated-view part explains why Questbook read
+lane-first item store. The quest-read-model-projections part explains why Questbook read
 models stay root-published instead of moving into package-local `generated/`.
 
 Do not leave active root aliases for moved mechanic artifacts.

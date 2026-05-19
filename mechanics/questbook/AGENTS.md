@@ -31,7 +31,7 @@ matching `mechanics/agon/docs/AGON_*.md` surface.
   artifact directory and not private scratch work.
 - Generated quest catalog and dispatch files are root-published read models
   from quest source files; rebuild them rather than editing by hand. Their
-  part contract is `parts/generated-views/`.
+  part contract is `parts/quest-read-model-projections/`.
 - Do not turn memo quest records into proof, route dispatch, playbook
   scenario state, runtime retention, role authority, or source-owner
   acceptance.
@@ -45,7 +45,7 @@ Before closeout, review the changed route rather than only the changed file:
 - Questbook law changed: check `README.md`, `PARTS.md`, `OWNER_MAP.md`,
   `PROVENANCE.md`, `LANDING_LOG.md`, `ROADMAP.md`, `docs/`, and decisions.
 - Generated projections changed: rebuild with the package builder, run the
-  generated checks, and check `parts/generated-views/`.
+  generated checks, and check `parts/quest-read-model-projections/`.
 - Root quest route changed: update `QUESTBOOK.md`, `quests/AGENTS.md`, and
   `quests/README.md` only when their future-facing route changed.
 
@@ -53,7 +53,7 @@ Before closeout, review the changed route rather than only the changed file:
 
 ```bash
 python mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py
-python mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py --check
+python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py --check
 python scripts/validate_memo.py
 python -m pytest -q mechanics/questbook/parts/source-contract/tests tests/test_memo_validators.py
 ```

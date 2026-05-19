@@ -34,13 +34,13 @@ quests/<lane>/<state>/<quest-id>
 | `done` | landed with enough public evidence to leave the active index |
 | `dropped` | intentionally closed without landing, with a visible reason |
 
-## Generated Views
+## Quest Read-Model Projections
 
 `generated/quest_catalog*.json` and `generated/quest_dispatch*.json` are built
 from `AOA-MEM-Q-*.yaml` sources with:
 
 ```bash
-python mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py
+python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py
 ```
 
-Generated views are compact mirrors. They do not author quest meaning.
+Quest read-model projections are compact mirrors. They do not author quest meaning.

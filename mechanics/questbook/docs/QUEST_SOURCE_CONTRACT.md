@@ -65,12 +65,12 @@ Generated quest surfaces are compact root-published read models:
 Rebuild them with:
 
 ```bash
-python mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py
+python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py
 ```
 
 Do not hand-edit generated quest surfaces.
 
 The placement contract lives in
-[`parts/generated-views`](../parts/generated-views/README.md): the Questbook
+[`parts/quest-read-model-projections`](../parts/quest-read-model-projections/README.md): the Questbook
 mechanic owns the builder, validation, and stop-lines, while root `generated/`
 publishes the compact read models for outside consumers.

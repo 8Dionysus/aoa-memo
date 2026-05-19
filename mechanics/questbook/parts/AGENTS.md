@@ -19,7 +19,7 @@ acceptance.
 Read root `AGENTS.md`, `mechanics/AGENTS.md`, `mechanics/questbook/AGENTS.md`,
 `../README.md`, `../PARTS.md`, and the narrow part README.
 
-For generated-views changes, also read `generated/AGENTS.md`,
+For quest-read-model-projections changes, also read `generated/AGENTS.md`,
 `../../ARTIFACT_TOPOLOGY.md`, and `../docs/QUEST_SOURCE_CONTRACT.md`.
 
 ## Boundaries
@@ -38,6 +38,6 @@ Use the parent Questbook validation route:
 
 ```bash
 python mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py
-python mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py --check
+python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py --check
 python scripts/validate_memo.py
 ```

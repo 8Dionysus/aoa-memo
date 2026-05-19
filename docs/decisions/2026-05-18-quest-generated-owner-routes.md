@@ -24,7 +24,7 @@ cross-mechanic public quest store.
 Make the memo quest YAML sources the source for those generated companions and
 add a deterministic builder. A later Questbook topology pass moved those
 sources to `quests/memo/<state>/AOA-MEM-Q-*.yaml` and the builder to
-`mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py`. The release gate checks
+`mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py`. The release gate checks
 the builder output before the broader memo validator.
 
 Require current `AOA-MEM-Q-*` owner routes to resolve into concrete memo docs
@@ -45,7 +45,7 @@ or mechanic docs. Q2 closes through
 
 ## Validation
 
-- `python mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py --check`
+- `python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py --check`
 - `python scripts/validate_memo.py`
 - `python -m pytest -q tests/test_memo_validators.py`
 - `python scripts/release_check.py`

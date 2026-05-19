@@ -11,21 +11,21 @@ persist private data, or replace owner-repo truth.
 
 | Family | Surfaces |
 |---|---|
-| Core memory posture | [TITAN_MEMORY_POSTURE](TITAN_MEMORY_POSTURE.md), [TITAN_MEMORY_LOOM_POSTURE](TITAN_MEMORY_LOOM_POSTURE.md), [TITAN_RECALL_CANDIDATE_POLICY](TITAN_RECALL_CANDIDATE_POLICY.md), [TITAN_REMEMBRANCE_SOURCE_REF_POLICY](TITAN_REMEMBRANCE_SOURCE_REF_POLICY.md) |
+| Recall and remembrance posture | [TITAN_MEMORY_POSTURE](TITAN_MEMORY_POSTURE.md), [TITAN_MEMORY_LOOM_POSTURE](TITAN_MEMORY_LOOM_POSTURE.md), [TITAN_RECALL_CANDIDATE_POLICY](TITAN_RECALL_CANDIDATE_POLICY.md), [TITAN_REMEMBRANCE_SOURCE_REF_POLICY](TITAN_REMEMBRANCE_SOURCE_REF_POLICY.md) |
 | Closeout and digest posture | [TITAN_BRIDGE_MEMORY_POSTURE](TITAN_BRIDGE_MEMORY_POSTURE.md), [TITAN_CLOSEOUT_MEMORY_POSTURE](TITAN_CLOSEOUT_MEMORY_POSTURE.md), [TITAN_CONSOLE_MEMORY_DIGEST](TITAN_CONSOLE_MEMORY_DIGEST.md) |
-| Specialized policy | [TITAN_AUDIT_MEMORY_POLICY](TITAN_AUDIT_MEMORY_POLICY.md), [TITAN_PERSONALITY_MEMORY_POLICY](TITAN_PERSONALITY_MEMORY_POLICY.md), [TITAN_SWARM_MEMORY_POLICY](TITAN_SWARM_MEMORY_POLICY.md) |
+| Audit, personality, and swarm policy | [TITAN_AUDIT_MEMORY_POLICY](TITAN_AUDIT_MEMORY_POLICY.md), [TITAN_PERSONALITY_MEMORY_POLICY](TITAN_PERSONALITY_MEMORY_POLICY.md), [TITAN_SWARM_MEMORY_POLICY](TITAN_SWARM_MEMORY_POLICY.md) |
 
 ## Companion Surfaces
 
 Titan docs currently pair with:
 
-- `mechanics/titan/parts/core-memory-posture/schemas/titan_remembrance_record.schema.json`
-- `mechanics/titan/parts/core-memory-posture/examples/titan_remembrance_record.example.json`
+- `mechanics/titan/parts/recall-and-remembrance-posture/schemas/titan_remembrance_record.schema.json`
+- `mechanics/titan/parts/recall-and-remembrance-posture/examples/titan_remembrance_record.example.json`
 - `mechanics/titan/parts/closeout-and-digest-posture/examples/titan_bridge_memory_candidate.example.json`
-- `mechanics/titan/parts/specialized-policy/examples/titan_audit_memory_candidate.example.json`
-- `mechanics/titan/parts/core-memory-posture/tests`
+- `mechanics/titan/parts/audit-personality-and-swarm-policy/examples/titan_audit_memory_candidate.example.json`
+- `mechanics/titan/parts/recall-and-remembrance-posture/tests`
 - `mechanics/titan/parts/closeout-and-digest-posture/tests`
-- `mechanics/titan/parts/specialized-policy/tests`
+- `mechanics/titan/parts/audit-personality-and-swarm-policy/tests`
 
 When a Titan source family changes, keep source refs in part-local examples,
 schemas, and tests aligned with this district.

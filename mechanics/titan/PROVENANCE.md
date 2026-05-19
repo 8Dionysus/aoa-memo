@@ -18,10 +18,10 @@ Titan single-mechanic schemas, examples, and tests were later moved from
 package-level `schemas/`, `examples/`, and `tests/` into the nearest
 `parts/<part>/` homes. Active artifact ownership now follows:
 
-- `parts/core-memory-posture/` for recall, writeback, and remembrance records
+- `parts/recall-and-remembrance-posture/` for recall, writeback, and remembrance records
 - `parts/closeout-and-digest-posture/` for bridge, closeout, console, and digest
   candidates
-- `parts/specialized-policy/` for audit-memory candidates
+- `parts/audit-personality-and-swarm-policy/` for audit-memory candidates
 
 Use [legacy/INDEX](legacy/INDEX.md) only to audit former placement. Legacy
 paths are historical receipts, not active contracts.

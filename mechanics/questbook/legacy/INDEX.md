@@ -23,7 +23,7 @@ Use active routes for current work; use raw snapshots only for provenance audit.
 | `quests/AOM-Q-AGON-0003-slc-memory-bridge.md` | [raw/quests/AOM-Q-AGON-0003-slc-memory-bridge.md](raw/quests/AOM-Q-AGON-0003-slc-memory-bridge.md) | `quests/agon/ready/AOM-Q-AGON-0003-slc-memory-bridge.md` | `29f0d7d36ee9^` | expanded from the former root quest wildcard row |
 | `quests/AOM-Q-AGON-0004-kag-evidence-packages.md` | [raw/quests/AOM-Q-AGON-0004-kag-evidence-packages.md](raw/quests/AOM-Q-AGON-0004-kag-evidence-packages.md) | `quests/agon/ready/AOM-Q-AGON-0004-kag-evidence-packages.md` | `29f0d7d36ee9^` | expanded from the former root quest wildcard row |
 | `quests/AOMEMO-Q-AGON-0003-sophian-evidence-packages.md` | [raw/quests/AOMEMO-Q-AGON-0003-sophian-evidence-packages.md](raw/quests/AOMEMO-Q-AGON-0003-sophian-evidence-packages.md) | `quests/agon/ready/AOMEMO-Q-AGON-0003-sophian-evidence-packages.md` | `29f0d7d36ee9^` | expanded from the former root quest wildcard row |
-| `scripts/build_quest_surfaces.py` | [raw/scripts/build_quest_surfaces.py](raw/scripts/build_quest_surfaces.py) | `mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py` | `29f0d7d36ee9^` | generated quest projection builder belongs to Questbook mechanic |
+| `scripts/build_quest_surfaces.py` | [raw/scripts/build_quest_surfaces.py](raw/scripts/build_quest_surfaces.py) | `mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py` | `29f0d7d36ee9^` | generated quest projection builder belongs to Questbook mechanic |
 
 ## Active-Only Or Pattern Rows
 

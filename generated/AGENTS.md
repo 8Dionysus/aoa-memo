@@ -37,7 +37,7 @@ Keep this split explicit:
 - `generated/memo_registry.min.json` is a source-authored registry contract validated by `scripts/validate_memo.py`
 - the doctrine family is a checked-in router-facing memo surface family validated by `scripts/validate_memory_surfaces.py`
 - the object family is generator-backed and is rebuilt by `scripts/generate_memory_object_surfaces.py` and checked by `scripts/validate_memory_object_surfaces.py`
-- the quest projection family is rebuilt by `mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py` from lane-first quest sources, governed by `mechanics/questbook/parts/generated-views/`, and checked by `scripts/validate_memo.py`
+- the quest projection family is rebuilt by `mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py` from lane-first quest sources, governed by `mechanics/questbook/parts/quest-read-model-projections/`, and checked by `scripts/validate_memo.py`
 - `mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_governance.min.json` is rebuilt by `mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_governance.py` and checked by `scripts/validate_memo.py`
 - `mechanics/consumer-handoff/parts/kag-source-export/generated/kag_export.min.json` is generator-backed, rebuilt by `mechanics/consumer-handoff/parts/kag-source-export/scripts/generate_kag_export.py`, and checked by `scripts/validate_memo.py`
 - `generated/agents_mesh.min.json` is rebuilt by `scripts/build_agents_mesh_index.py` from `config/agents_mesh.json` and checked by `scripts/validate_agents_mesh_index.py`
@@ -104,9 +104,9 @@ For the quest projection family:
 
 - Do not hand-edit `generated/quest_catalog.min*.json` or `generated/quest_dispatch.min*.json`
 - update `quests/memo/<state>/AOA-MEM-Q-*.yaml`, `QUESTBOOK.md`, and the owning mechanic docs first
-- rebuild with `python mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py`
+- rebuild with `python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py`
 - keep `owner_surface` and `anchor_ref` routed to real memo docs or mechanics docs
-- keep the generated-view placement contract in `mechanics/questbook/parts/generated-views/`
+- keep the read-model projection placement contract in `mechanics/questbook/parts/quest-read-model-projections/`
 
 ## Validation
 
@@ -116,7 +116,7 @@ When this directory changes, run the matching checks:
 python scripts/validate_memo.py
 python scripts/validate_memory_surfaces.py
 python scripts/validate_memory_object_surfaces.py
-python mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py --check
+python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py --check
 python scripts/validate_agents_mesh_index.py
 python scripts/validate_mechanic_artifact_inventory.py
 python scripts/validate_memo_mechanic_cards.py
@@ -130,7 +130,7 @@ matching generator:
 
 ```bash
 python scripts/generate_memory_object_surfaces.py
-python mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py
+python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py
 python mechanics/consumer-handoff/parts/kag-source-export/scripts/generate_kag_export.py
 python mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_governance.py
 ```

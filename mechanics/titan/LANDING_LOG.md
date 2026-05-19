@@ -18,16 +18,20 @@ python scripts/release_check.py
 
 ## 2026-05-19
 
+- Renamed `parts/core-memory-posture/` to
+  `parts/recall-and-remembrance-posture/` and
+  `parts/specialized-policy/` to `parts/audit-personality-and-swarm-policy/`
+  so Titan part names expose the memory operation they protect.
 - Moved Titan schemas, examples, and tests from package-level artifact homes
   into the nearest functioning `parts/<part>/` homes.
-- Split mixed candidate tests so core-memory, closeout/digest, and specialized
-  policy have their own part-local pytest routes.
+- Split mixed candidate tests so recall/remembrance, closeout/digest, and
+  audit/personality/swarm policy have their own part-local pytest routes.
 - Kept Titan docs as source surfaces and moved only runnable contract artifacts.
 
 Validation route:
 
 ```bash
-python -m pytest -q mechanics/titan/parts/core-memory-posture/tests mechanics/titan/parts/closeout-and-digest-posture/tests mechanics/titan/parts/specialized-policy/tests
+python -m pytest -q mechanics/titan/parts/recall-and-remembrance-posture/tests mechanics/titan/parts/closeout-and-digest-posture/tests mechanics/titan/parts/audit-personality-and-swarm-policy/tests
 python scripts/release_check.py
 ```
 

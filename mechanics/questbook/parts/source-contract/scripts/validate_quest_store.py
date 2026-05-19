@@ -37,11 +37,11 @@ QUEST_GENERATED_OUTPUTS = (
     "generated/quest_dispatch.min.example.json",
     "generated/quest_dispatch.min.json",
 )
-QUEST_GENERATED_BUILDER = "mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py"
-GENERATED_VIEWS_PART_FILES = (
-    "mechanics/questbook/parts/generated-views/README.md",
-    "mechanics/questbook/parts/generated-views/CONTRACT.md",
-    "mechanics/questbook/parts/generated-views/VALIDATION.md",
+QUEST_GENERATED_BUILDER = "mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py"
+QUEST_READ_MODEL_PART_FILES = (
+    "mechanics/questbook/parts/quest-read-model-projections/README.md",
+    "mechanics/questbook/parts/quest-read-model-projections/CONTRACT.md",
+    "mechanics/questbook/parts/quest-read-model-projections/VALIDATION.md",
 )
 SOURCE_CONTRACT_PART_FILES = (
     "mechanics/questbook/parts/source-contract/README.md",
@@ -108,22 +108,22 @@ def validate_markdown(path: Path, lane: str, state: str, problems: list[str]) ->
             problems.append(f"{rel(path)}: missing {heading}")
 
 
-def validate_generated_views_part(problems: list[str]) -> None:
+def validate_quest_read_model_projections_part(problems: list[str]) -> None:
     part_text = ""
-    for part_file in GENERATED_VIEWS_PART_FILES:
+    for part_file in QUEST_READ_MODEL_PART_FILES:
         path = ROOT / part_file
         if not path.is_file():
-            problems.append(f"{part_file}: generated-views part file is required")
+            problems.append(f"{part_file}: quest-read-model-projections part file is required")
             continue
         part_text += "\n" + path.read_text(encoding="utf-8")
 
     if part_text:
         for output in QUEST_GENERATED_OUTPUTS:
             if output not in part_text:
-                problems.append(f"mechanics/questbook/parts/generated-views: missing output {output}")
+                problems.append(f"mechanics/questbook/parts/quest-read-model-projections: missing output {output}")
         if QUEST_GENERATED_BUILDER not in part_text:
             problems.append(
-                "mechanics/questbook/parts/generated-views: missing Questbook surface builder"
+                "mechanics/questbook/parts/quest-read-model-projections: missing Questbook surface builder"
             )
         for forbidden in (
             "proof or closure verdict",
@@ -134,7 +134,7 @@ def validate_generated_views_part(problems: list[str]) -> None:
         ):
             if forbidden not in part_text:
                 problems.append(
-                    "mechanics/questbook/parts/generated-views: missing stop-line "
+                    "mechanics/questbook/parts/quest-read-model-projections: missing stop-line "
                     f"{forbidden!r}"
                 )
 
@@ -228,7 +228,7 @@ def validate() -> list[str]:
                 else:
                     problems.append(f"{rel(path)}: quest source must be YAML or Markdown")
 
-    validate_generated_views_part(problems)
+    validate_quest_read_model_projections_part(problems)
     validate_source_contract_part(problems)
     return problems
 

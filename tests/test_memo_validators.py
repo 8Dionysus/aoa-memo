@@ -46,7 +46,7 @@ build_quest_surfaces = load_script_module(
     / "mechanics"
     / "questbook"
     / "parts"
-    / "generated-views"
+    / "quest-read-model-projections"
     / "scripts"
     / "build_quest_surfaces.py",
 )

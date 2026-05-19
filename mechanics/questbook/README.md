@@ -87,7 +87,7 @@ owning repository.
 The active part map is [PARTS](PARTS.md). Source contract detail lives in
 [QUEST_SOURCE_CONTRACT](docs/QUEST_SOURCE_CONTRACT.md). Root-published
 generated read models are governed by the
-[generated-views part](parts/generated-views/README.md).
+[quest-read-model-projections part](parts/quest-read-model-projections/README.md).
 
 ## Historical Provenance
 

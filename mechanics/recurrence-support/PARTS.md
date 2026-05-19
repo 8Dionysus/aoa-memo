@@ -4,7 +4,7 @@
 
 | Part | Source Docs | Contract |
 |---|---|---|
-| Recurrence support surfaces | [RECURRENCE_MEMORY_SUPPORT_SURFACES](./docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md) | preserves checkpoint continuity, relaunch anchors, return packs, and anti-`return_memory` stop-lines |
+| Route-return anchors | [RECURRENCE_MEMORY_SUPPORT_SURFACES](./docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md) | preserves checkpoint continuity, relaunch anchors, return packs, and anti-`return_memory` stop-lines |
 | Witness trace contract | [WITNESS_TRACE_CONTRACT](./docs/WITNESS_TRACE_CONTRACT.md) | keeps witness trace exports reviewable and maps later writeback into existing memo object kinds |
 | Reviewed closeout recall landing | [REVIEWED_CLOSEOUT_RECALL_LANDING](./docs/REVIEWED_CLOSEOUT_RECALL_LANDING.md) | preserves owner-local recall survivors without becoming proof, playbook authority, or a second route ledger |
 
