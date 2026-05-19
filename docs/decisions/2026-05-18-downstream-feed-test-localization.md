@@ -25,10 +25,10 @@ after the mechanics tree already had package-local test lanes.
 ## Decision
 
 Move the downstream feed regression to
-`mechanics/consumer-handoff/tests/test_downstream_feed_contracts.py`.
+`mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_downstream_feed_contracts.py`.
 
 Move the tracked writeback receipt fixture to
-`mechanics/writeback/tests/fixtures/memo_writeback_receipts.example.jsonl`.
+`mechanics/writeback/parts/receipt-publication-regression/tests/fixtures/memo_writeback_receipts.example.jsonl`.
 
 Keep `tests/test_experience_wave3_seed_contracts.py` in root as the
 cross-mechanic seed-contract regression, and rename its root technical family
@@ -51,5 +51,5 @@ Expected verification:
 - `python scripts/validate_mechanic_artifact_topology.py`
 - `python scripts/build_mechanic_artifact_inventory.py --check`
 - `python scripts/validate_mechanic_artifact_inventory.py`
-- `python -m pytest -q mechanics/consumer-handoff/tests/test_downstream_feed_contracts.py mechanics/writeback/tests/test_publish_live_receipts.py tests/test_experience_wave3_seed_contracts.py tests/test_mechanic_artifact_topology.py tests/test_mechanic_artifact_inventory.py`
+- `python -m pytest -q mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_downstream_feed_contracts.py mechanics/writeback/parts/receipt-publication-regression/tests/test_publish_live_receipts.py tests/test_experience_wave3_seed_contracts.py tests/test_mechanic_artifact_topology.py tests/test_mechanic_artifact_inventory.py`
 - `python scripts/release_check.py`

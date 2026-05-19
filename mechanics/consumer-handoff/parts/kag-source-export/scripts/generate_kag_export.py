@@ -8,19 +8,34 @@ from pathlib import Path
 import sys
 from typing import Any
 
-ROOT = Path(__file__).resolve().parents[3]
-EXAMPLES = ROOT / "mechanics" / "consumer-handoff" / "examples"
+ROOT = Path(__file__).resolve().parents[5]
+EXAMPLES = (
+    ROOT
+    / "mechanics"
+    / "consumer-handoff"
+    / "parts"
+    / "kag-tos-bridge-handoff"
+    / "examples"
+)
 GENERATED = ROOT / "generated"
 
-KAG_EXPORT_PATH = ROOT / "mechanics" / "consumer-handoff" / "generated" / "kag_export.min.json"
+KAG_EXPORT_PATH = (
+    ROOT
+    / "mechanics"
+    / "consumer-handoff"
+    / "parts"
+    / "kag-source-export"
+    / "generated"
+    / "kag_export.min.json"
+)
 OBJECT_CAPSULES_PATH = GENERATED / "memory_object_capsules.json"
 OBJECT_SECTIONS_PATH = GENERATED / "memory_object_sections.full.json"
 
 BRIDGE_ID = "memo.bridge.2026-03-23.tos-lineage-kag-candidate"
-BRIDGE_EXAMPLE_REF = "mechanics/consumer-handoff/examples/bridge.kag-lift.example.json"
-CLAIM_EXAMPLE_REF = "mechanics/consumer-handoff/examples/claim.tos-bridge-ready.example.json"
-EPISODE_EXAMPLE_REF = "mechanics/consumer-handoff/examples/episode.tos-interpretation.example.json"
-PROVENANCE_THREAD_EXAMPLE_REF = "mechanics/consumer-handoff/examples/provenance_thread.kag-lift.example.json"
+BRIDGE_EXAMPLE_REF = "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/bridge.kag-lift.example.json"
+CLAIM_EXAMPLE_REF = "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/claim.tos-bridge-ready.example.json"
+EPISODE_EXAMPLE_REF = "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/episode.tos-interpretation.example.json"
+PROVENANCE_THREAD_EXAMPLE_REF = "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/provenance_thread.kag-lift.example.json"
 TOS_FRAGMENT_REF = "repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md#memory-bridge-fragment"
 SECTION_HANDLES = [
     "identity-and-recall",

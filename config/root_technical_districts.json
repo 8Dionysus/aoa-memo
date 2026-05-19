@@ -610,7 +610,7 @@
       "protects": [
         "mechanics/adoption/parts/adoption-boundary/schemas/adoption_memory_writeback_v1.json",
         "mechanics/antifragility/schemas/shared_lesson_memory_v1.json",
-        "mechanics/consumer-handoff/schemas/memo_to_kag_bridge_record_v1.json",
+        "mechanics/consumer-handoff/parts/kag-source-export/schemas/memo_to_kag_bridge_record_v1.json",
         "mechanics/governance/schemas/federation_memory_gate_decision_v1.json",
         "mechanics/lineage-harvest/schemas/pattern_lineage_memory_entry_v1.json",
         "mechanics/retention/parts/cross-repo-and-governance-retention/schemas/cross_repo_retention_result_v1.json"
@@ -827,7 +827,7 @@
         "scripts/validate_memo.py",
         "scripts/validate_memory_surfaces.py",
         "scripts/validate_memory_object_surfaces.py",
-        "mechanics/consumer-handoff/tests/test_downstream_feed_contracts.py"
+        "mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_downstream_feed_contracts.py"
       ]
     },
     {

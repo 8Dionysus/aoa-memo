@@ -9,10 +9,21 @@ Stronger claims route through `../../OWNER_MAP.md`. Source placement and legacy 
 ## Source Surfaces
 
 - [KAG_SOURCE_EXPORT](../../docs/KAG_SOURCE_EXPORT.md)
+- `schemas/memo_to_kag_bridge_record_v1.json`
+- `examples/memo_to_kag_bridge_record.example.json`
+- `generated/kag_export.min.json`
+- `scripts/generate_kag_export.py`
 
 ## Contract
 
 describes the source-owned tiny donor export for KAG readiness
+
+## Artifact Contract
+
+The part keeps the memo-owned KAG donor export, its generator, and the
+`memo_to_kag_bridge_record` seed contract together. The generated export may
+point toward KAG consumers, but it remains a source-owned memo donor capsule
+and not graph substrate truth or federation activation.
 
 ## Stop-lines
 

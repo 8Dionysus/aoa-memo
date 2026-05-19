@@ -70,7 +70,7 @@ python scripts/validate_agents_mesh.py
 python scripts/build_agents_mesh_index.py --check
 python scripts/validate_agents_mesh_index.py
 python scripts/validate_memo.py
-python -m pytest -q mechanics/recurrence-support/tests/test_recurrence_support_mechanic.py tests/test_memo_mechanics.py tests/test_agents_mesh.py tests/test_memo_validators.py mechanics/consumer-handoff/tests/test_playbook_memory_scopes.py tests/test_roadmap_parity.py
+python -m pytest -q mechanics/recurrence-support/tests/test_recurrence_support_mechanic.py tests/test_memo_mechanics.py tests/test_agents_mesh.py tests/test_memo_validators.py mechanics/consumer-handoff/parts/playbook-scope-handoff/tests/test_playbook_memory_scopes.py tests/test_roadmap_parity.py
 ```
 
 Before landing, also run:

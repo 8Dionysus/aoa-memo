@@ -28,7 +28,7 @@ Keep these groups distinct:
 Do not blur memory objects, recall posture, and support exports into one generic shape.
 
 Mechanic-owned schemas live under `mechanics/<owner>/schemas/`. Examples include
-`mechanics/consumer-handoff/schemas/memory_graph_face.schema.json`,
+`mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/schemas/memory_graph_face.schema.json`,
 `mechanics/checkpoint/parts/checkpoint-to-memory-mapping/schemas/checkpoint-to-memory-contract.schema.json`, and
 `mechanics/checkpoint/parts/checkpoint-carry-contract/schemas/inquiry_checkpoint.schema.json`.
 
@@ -50,7 +50,7 @@ Keep alignment between:
 
 - `recall_contract.schema.json` and the recall contract examples in `examples/`
 - `memory_object.schema.json` and the per-kind examples plus `docs/MEMORY_OBJECT_PROFILES.md`
-- `mechanics/consumer-handoff/schemas/memory_chunk_face.schema.json` and `mechanics/consumer-handoff/schemas/memory_graph_face.schema.json` with the bridge examples and `mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md`
+- `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/schemas/memory_chunk_face.schema.json` and `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/schemas/memory_graph_face.schema.json` with the bridge examples and `mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md`
 - `mechanics/checkpoint/parts/checkpoint-to-memory-mapping/schemas/checkpoint-to-memory-contract.schema.json` with `mechanics/checkpoint/parts/checkpoint-to-memory-mapping/examples/checkpoint_to_memory_contract.example.json` and `mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md`
 
 If recall contracts expose a compact intermediate consumer step, keep that

@@ -10,6 +10,10 @@ This active part belongs to `mechanics/consumer-handoff/` and materializes the m
 ## Source Surfaces
 
 - [KAG_SOURCE_EXPORT](../../docs/KAG_SOURCE_EXPORT.md)
+- `schemas/memo_to_kag_bridge_record_v1.json`
+- `examples/memo_to_kag_bridge_record.example.json`
+- `generated/kag_export.min.json`
+- `scripts/generate_kag_export.py`
 
 ## Function
 

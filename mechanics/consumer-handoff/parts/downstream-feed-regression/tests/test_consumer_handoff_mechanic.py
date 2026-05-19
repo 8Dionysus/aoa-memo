@@ -5,7 +5,7 @@ import unittest
 from pathlib import Path
 
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
+REPO_ROOT = Path(__file__).resolve().parents[5]
 
 
 class ConsumerHandoffMechanicTestCase(unittest.TestCase):
@@ -71,16 +71,27 @@ class ConsumerHandoffMechanicTestCase(unittest.TestCase):
                 quest,
             )
 
-    def test_downstream_feed_regression_is_package_local(self) -> None:
-        package_test = (
+    def test_downstream_feed_regression_is_part_local(self) -> None:
+        part_test = (
             REPO_ROOT
             / "mechanics"
             / "consumer-handoff"
+            / "parts"
+            / "downstream-feed-regression"
             / "tests"
             / "test_downstream_feed_contracts.py"
         )
 
-        self.assertTrue(package_test.is_file())
+        self.assertTrue(part_test.is_file())
+        self.assertFalse(
+            (
+                REPO_ROOT
+                / "mechanics"
+                / "consumer-handoff"
+                / "tests"
+                / "test_downstream_feed_contracts.py"
+            ).exists()
+        )
         self.assertFalse((REPO_ROOT / "tests" / "test_downstream_feed_contracts.py").exists())
 
 

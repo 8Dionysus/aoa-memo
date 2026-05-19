@@ -36,7 +36,9 @@ the object-facing generated family from the root manifest.
 
 Mechanic-owned examples live under their package lane:
 
-- `mechanics/consumer-handoff/examples/` for KAG/ToS bridge, graph/chunk face, and eval guardrail examples
+- `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/` for KAG/ToS bridge and graph/chunk face examples
+- `mechanics/consumer-handoff/parts/eval-guardrail-handoff/examples/` for eval guardrail handoff examples
+- `mechanics/consumer-handoff/parts/kag-source-export/examples/` for KAG donor/export seed examples
 - `mechanics/checkpoint/parts/<part>/examples/` for inquiry checkpoint, checkpoint-to-memory, approval, health, checkpoint improvement, and checkpoint review examples
 - `mechanics/writeback/parts/<part>/examples/` for quest chronicle, self-agency, rollback, and revision-ledger examples
 - `mechanics/recurrence-support/examples/` for witness trace examples

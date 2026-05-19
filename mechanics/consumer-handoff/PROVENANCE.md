@@ -7,6 +7,7 @@ Use active surfaces first:
 - [PARTS](PARTS.md)
 - [OWNER_MAP](OWNER_MAP.md)
 - [docs](docs/)
+- [parts](parts/)
 
 The active route is now `mechanics/consumer-handoff/docs/` because these
 surfaces share one repeatable memory-layer operation: publish bounded
@@ -21,6 +22,19 @@ Former flat docs-root surfaces were:
 - `KAG_TOS_BRIDGE_CONTRACT.md`
 - `KAG_SOURCE_EXPORT.md`
 - `ORCHESTRATOR_MEMORY_ALIGNMENT.md`
+
+The active technical artifacts now live under the nearest functioning part:
+
+- KAG/ToS bridge faces: `parts/kag-tos-bridge-handoff/{schemas,examples}/`
+- KAG source export donor, generator, and seed contract:
+  `parts/kag-source-export/{schemas,examples,generated,scripts}/`
+- Eval guardrail pack: `parts/eval-guardrail-handoff/{schemas,examples}/`
+- Playbook scope regression: `parts/playbook-scope-handoff/tests/`
+- Consumer feed regression: `parts/downstream-feed-regression/tests/`
+
+Former package-level `schemas/`, `examples/`, `generated/`, `scripts/`, and
+`tests/` homes are placement history only after the 2026-05-19 part-local
+artifact move.
 
 Use [legacy/INDEX](legacy/INDEX.md) only to audit former placement. Legacy
 paths are historical receipts, not active contracts.

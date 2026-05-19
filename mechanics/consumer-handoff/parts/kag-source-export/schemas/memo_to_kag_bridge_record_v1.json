@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://aoa.local/mechanics/consumer-handoff/schemas/memo_to_kag_bridge_record_v1.json",
+  "$id": "https://aoa.local/mechanics/consumer-handoff/parts/kag-source-export/schemas/memo_to_kag_bridge_record_v1.json",
   "title": "memo_to_kag_bridge_record_v1",
   "type": "object",
   "required": [

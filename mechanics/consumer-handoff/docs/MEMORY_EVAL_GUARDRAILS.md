@@ -48,8 +48,8 @@ It does not yet absorb contradiction handling, permission leakage, over-promotio
 
 The current schema-backed guardrail handoff surface is:
 
-- `mechanics/consumer-handoff/schemas/memory_eval_guardrail_pack.schema.json`
-- `mechanics/consumer-handoff/examples/memory_eval_guardrail_pack.example.json`
+- `mechanics/consumer-handoff/parts/eval-guardrail-handoff/schemas/memory_eval_guardrail_pack.schema.json`
+- `mechanics/consumer-handoff/parts/eval-guardrail-handoff/examples/memory_eval_guardrail_pack.example.json`
 
 Each case should preserve:
 

@@ -10,6 +10,14 @@ This active part belongs to `mechanics/consumer-handoff/` and materializes the m
 ## Source Surfaces
 
 - [KAG_TOS_BRIDGE_CONTRACT](../../docs/KAG_TOS_BRIDGE_CONTRACT.md)
+- `schemas/memory_chunk_face.schema.json`
+- `schemas/memory_graph_face.schema.json`
+- `examples/episode.tos-interpretation.example.json`
+- `examples/claim.tos-bridge-ready.example.json`
+- `examples/bridge.kag-lift.example.json`
+- `examples/provenance_thread.kag-lift.example.json`
+- `examples/memory_chunk_face.bridge.example.json`
+- `examples/memory_graph_face.bridge.example.json`
 
 ## Function
 

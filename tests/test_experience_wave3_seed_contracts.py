@@ -33,7 +33,7 @@ CONTRACT_BASE_BY_STEM = {
     "cross_repo_retention_result": "mechanics/retention/parts/cross-repo-and-governance-retention",
     "federation_forgetting_decision": "mechanics/governance",
     "federation_memory_gate_decision": "mechanics/governance",
-    "memo_to_kag_bridge_record": "mechanics/consumer-handoff",
+    "memo_to_kag_bridge_record": "mechanics/consumer-handoff/parts/kag-source-export",
     "pattern_lineage_memory_entry": "mechanics/lineage-harvest",
     "shared_lesson_memory": "mechanics/antifragility",
 }

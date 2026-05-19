@@ -80,7 +80,7 @@ If you are editing inside `schemas/`, `examples/`, `generated/`, or `scripts/`, 
 - memory readiness boundary: [mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY](mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md)
 - Titan receipt memory, recall candidates, remembrance source refs, bridge digest, and closeout memory posture: [mechanics/titan/docs/TITAN_MEMORY_POSTURE.md](mechanics/titan/docs/TITAN_MEMORY_POSTURE.md), [mechanics/titan/docs/TITAN_MEMORY_LOOM_POSTURE.md](mechanics/titan/docs/TITAN_MEMORY_LOOM_POSTURE.md), [mechanics/titan/docs/TITAN_REMEMBRANCE_SOURCE_REF_POLICY.md](mechanics/titan/docs/TITAN_REMEMBRANCE_SOURCE_REF_POLICY.md), [mechanics/titan/docs/TITAN_BRIDGE_MEMORY_POSTURE.md](mechanics/titan/docs/TITAN_BRIDGE_MEMORY_POSTURE.md), [mechanics/titan/docs/TITAN_CONSOLE_MEMORY_DIGEST.md](mechanics/titan/docs/TITAN_CONSOLE_MEMORY_DIGEST.md), [mechanics/titan/docs/TITAN_CLOSEOUT_MEMORY_POSTURE.md](mechanics/titan/docs/TITAN_CLOSEOUT_MEMORY_POSTURE.md), `mechanics/titan/parts/core-memory-posture/schemas/titan_remembrance_record.schema.json`, and `mechanics/titan/parts/core-memory-posture/examples/titan_remembrance_record.example.json`
 - owner-local live receipt publication for closeout/stats integration: `mechanics/writeback/parts/receipt-publication-regression/scripts/publish_live_receipts.py` and `.aoa/live_receipts/memo-writeback-receipts.jsonl`
-- bridge, export, and guardrail surfaces: `mechanics/consumer-handoff/generated/kag_export.min.json`, [consumer-handoff/KAG_SOURCE_EXPORT](mechanics/consumer-handoff/docs/KAG_SOURCE_EXPORT.md), [consumer-handoff/KAG_TOS_BRIDGE_CONTRACT](mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md), and [consumer-handoff/MEMORY_EVAL_GUARDRAILS](mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md)
+- bridge, export, and guardrail surfaces: `mechanics/consumer-handoff/parts/kag-source-export/generated/kag_export.min.json`, [consumer-handoff/KAG_SOURCE_EXPORT](mechanics/consumer-handoff/docs/KAG_SOURCE_EXPORT.md), [consumer-handoff/KAG_TOS_BRIDGE_CONTRACT](mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md), and [consumer-handoff/MEMORY_EVAL_GUARDRAILS](mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md)
 - operational incident, service revision, and post-release memory gates:
   [mechanics/operational-gate](mechanics/operational-gate/README.md),
   `mechanics/operational-gate/schemas/deployment_incident_memory_gate_v1.json`,
@@ -139,7 +139,7 @@ The committed machine-readable surfaces include these families:
 - mechanic readiness matrix: `generated/memo_mechanic_readiness.min.json`
 - quest projections: `generated/quest_catalog.min.json` and
   `generated/quest_dispatch.min.json`
-- source-owned memo donor export: `mechanics/consumer-handoff/generated/kag_export.min.json`
+- source-owned memo donor export: `mechanics/consumer-handoff/parts/kag-source-export/generated/kag_export.min.json`
 
 `provenance_thread`, `witness_trace`, `inquiry_checkpoint`, and checkpoint-to-memory contract surfaces remain support seams in this split, not a third generated memory-object family.
 
@@ -242,7 +242,7 @@ If you changed generator-backed surfaces, regenerate only the touched families f
 ```bash
 python scripts/generate_memory_object_surfaces.py
 python mechanics/questbook/scripts/build_quest_surfaces.py
-python mechanics/consumer-handoff/scripts/generate_kag_export.py
+python mechanics/consumer-handoff/parts/kag-source-export/scripts/generate_kag_export.py
 python mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_targets.py
 python mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_intake.py
 python mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_governance.py

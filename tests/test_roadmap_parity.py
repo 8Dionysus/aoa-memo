@@ -22,7 +22,7 @@ class RoadmapParityTestCase(unittest.TestCase):
 
         self.assertIn("kag_export", families)
         self.assertIn("The current KAG-facing adoption slice now publishes", roadmap)
-        self.assertIn("`mechanics/consumer-handoff/generated/kag_export.min.json`", roadmap)
+        self.assertIn("`mechanics/consumer-handoff/parts/kag-source-export/generated/kag_export.min.json`", roadmap)
         self.assertNotIn("The next KAG-facing adoption slice publishes", roadmap)
 
     def test_roadmap_matches_current_v0_2_1_writeback_surfaces(self) -> None:

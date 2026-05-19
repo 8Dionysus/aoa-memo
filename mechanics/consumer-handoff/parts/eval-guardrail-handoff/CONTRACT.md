@@ -9,10 +9,18 @@ Stronger claims route through `../../OWNER_MAP.md`. Source placement and legacy 
 ## Source Surfaces
 
 - [MEMORY_EVAL_GUARDRAILS](../../docs/MEMORY_EVAL_GUARDRAILS.md)
+- `schemas/memory_eval_guardrail_pack.schema.json`
+- `examples/memory_eval_guardrail_pack.example.json`
 
 ## Contract
 
 names memory quality risk cases for downstream proof owners
+
+## Artifact Contract
+
+The part owns the memo-side guardrail handoff pack and schema. It may name
+failure modes and input refs for downstream eval adoption, but scoring,
+thresholds, pass/fail logic, and proof verdicts stay with `aoa-evals`.
 
 ## Stop-lines
 

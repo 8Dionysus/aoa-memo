@@ -89,9 +89,9 @@ active surfaces.
 - `quests/memo/captured/AOA-MEM-Q-0005.yaml`
 - `quests/memo/captured/AOA-MEM-Q-0006.yaml`
 - `scripts/validate_memo.py`
-- `mechanics/consumer-handoff/tests/test_consumer_handoff_mechanic.py`
+- `mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_consumer_handoff_mechanic.py`
 - `tests/test_memo_mechanics.py`
-- `mechanics/consumer-handoff/tests/test_playbook_memory_scopes.py`
+- `mechanics/consumer-handoff/parts/playbook-scope-handoff/tests/test_playbook_memory_scopes.py`
 
 ## Verification Route
 
@@ -104,6 +104,6 @@ python scripts/build_agents_mesh_index.py --check
 python scripts/validate_agents_mesh_index.py
 python scripts/validate_memo.py
 python scripts/validate_memory_surfaces.py
-python -m pytest -q mechanics/consumer-handoff/tests/test_consumer_handoff_mechanic.py tests/test_memo_mechanics.py tests/test_agents_mesh.py mechanics/consumer-handoff/tests/test_playbook_memory_scopes.py tests/test_downstream_feed_contracts.py tests/test_memo_validators.py
+python -m pytest -q mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_consumer_handoff_mechanic.py tests/test_memo_mechanics.py tests/test_agents_mesh.py mechanics/consumer-handoff/parts/playbook-scope-handoff/tests/test_playbook_memory_scopes.py mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_downstream_feed_contracts.py tests/test_memo_validators.py
 python scripts/release_check.py
 ```

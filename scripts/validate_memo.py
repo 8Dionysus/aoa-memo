@@ -49,6 +49,9 @@ WRITEBACK = MECHANICS / "writeback"
 WRITEBACK_RUNTIME_PART = WRITEBACK / "parts" / "runtime-and-temperature"
 WRITEBACK_GROWTH_PART = WRITEBACK / "parts" / "growth-and-continuity"
 CONSUMER_HANDOFF = MECHANICS / "consumer-handoff"
+CONSUMER_HANDOFF_KAG_SOURCE_EXPORT_PART = (
+    CONSUMER_HANDOFF / "parts" / "kag-source-export"
+)
 READINESS_BOUNDARY = MECHANICS / "readiness-boundary"
 RUNTIME_WRITEBACK_TARGETS_PATH = WRITEBACK_RUNTIME_PART / "generated" / "runtime_writeback_targets.min.json"
 RUNTIME_WRITEBACK_INTAKE_PATH = WRITEBACK_RUNTIME_PART / "generated" / "runtime_writeback_intake.min.json"
@@ -369,13 +372,13 @@ def load_phase_alpha_writeback_builder():
 
 
 def load_kag_export_builder():
-    module_path = CONSUMER_HANDOFF / "scripts" / "generate_kag_export.py"
+    module_path = CONSUMER_HANDOFF_KAG_SOURCE_EXPORT_PART / "scripts" / "generate_kag_export.py"
     spec = importlib.util.spec_from_file_location(
         "generate_kag_export",
         module_path,
     )
     if spec is None or spec.loader is None:
-        print("[FAIL] mechanics/consumer-handoff/generated/kag_export.min.json")
+        print("[FAIL] mechanics/consumer-handoff/parts/kag-source-export/generated/kag_export.min.json")
         print("  - unable to load KAG export generator")
         raise SystemExit(1)
     module = importlib.util.module_from_spec(spec)
@@ -1656,10 +1659,10 @@ def validate_registry() -> None:
     kag_export = families.get("kag_export", {})
     if kag_export.get("source_of_truth") != "aoa-memo-kag-source-export-v1":
         errors.append("kag_export generated_surface_families entry must keep source_of_truth aoa-memo-kag-source-export-v1")
-    if kag_export.get("outputs") != ["mechanics/consumer-handoff/generated/kag_export.min.json"]:
-        errors.append("kag_export generated_surface_families entry must list mechanics/consumer-handoff/generated/kag_export.min.json")
-    if kag_export.get("generator_command") != "python mechanics/consumer-handoff/scripts/generate_kag_export.py":
-        errors.append("kag_export generated_surface_families entry must keep generator_command python mechanics/consumer-handoff/scripts/generate_kag_export.py")
+    if kag_export.get("outputs") != ["mechanics/consumer-handoff/parts/kag-source-export/generated/kag_export.min.json"]:
+        errors.append("kag_export generated_surface_families entry must list mechanics/consumer-handoff/parts/kag-source-export/generated/kag_export.min.json")
+    if kag_export.get("generator_command") != "python mechanics/consumer-handoff/parts/kag-source-export/scripts/generate_kag_export.py":
+        errors.append("kag_export generated_surface_families entry must keep generator_command python mechanics/consumer-handoff/parts/kag-source-export/scripts/generate_kag_export.py")
     if kag_export.get("validator_command") != "python scripts/validate_memo.py":
         errors.append("kag_export generated_surface_families entry must keep validator_command python scripts/validate_memo.py")
 
@@ -3183,10 +3186,10 @@ def validate_bridge_export_contracts() -> None:
     if graph.get("kag_lift_status") != bridge_bridges.get("kag_lift_status"):
         errors.append("memory_graph_face.bridge.example.json must match the bridge kag_lift_status")
 
-    if "mechanics/consumer-handoff/schemas/memory_chunk_face.schema.json" not in registry.get("schemas", []):
-        errors.append("generated/memo_registry.min.json must list mechanics/consumer-handoff/schemas/memory_chunk_face.schema.json")
-    if "mechanics/consumer-handoff/schemas/memory_graph_face.schema.json" not in registry.get("schemas", []):
-        errors.append("generated/memo_registry.min.json must list mechanics/consumer-handoff/schemas/memory_graph_face.schema.json")
+    if "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/schemas/memory_chunk_face.schema.json" not in registry.get("schemas", []):
+        errors.append("generated/memo_registry.min.json must list mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/schemas/memory_chunk_face.schema.json")
+    if "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/schemas/memory_graph_face.schema.json" not in registry.get("schemas", []):
+        errors.append("generated/memo_registry.min.json must list mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/schemas/memory_graph_face.schema.json")
     if "mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md" not in registry.get("core_docs", []):
         errors.append("generated/memo_registry.min.json must list mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md")
 
@@ -3205,18 +3208,18 @@ def validate_kag_source_export() -> None:
     errors: list[str] = []
     expected_payload = builder.build_kag_export_payload()
     if not kag_export_path.exists():
-        errors.append("mechanics/consumer-handoff/generated/kag_export.min.json must exist")
+        errors.append("mechanics/consumer-handoff/parts/kag-source-export/generated/kag_export.min.json must exist")
         actual_payload = {}
     else:
         actual_payload = load_json(kag_export_path)
 
     if actual_payload != expected_payload:
-        errors.append("mechanics/consumer-handoff/generated/kag_export.min.json must match the committed generator-backed payload")
+        errors.append("mechanics/consumer-handoff/parts/kag-source-export/generated/kag_export.min.json must match the committed generator-backed payload")
 
     missing_fields = sorted(KAG_EXPORT_REQUIRED_FIELDS - set(actual_payload))
     if missing_fields:
         errors.append(
-            "mechanics/consumer-handoff/generated/kag_export.min.json is missing required fields: "
+            "mechanics/consumer-handoff/parts/kag-source-export/generated/kag_export.min.json is missing required fields: "
             + ", ".join(missing_fields)
         )
 
@@ -3234,17 +3237,17 @@ def validate_kag_source_export() -> None:
 
     source_inputs = actual_payload.get("source_inputs")
     if not isinstance(source_inputs, list) or len(source_inputs) != 2:
-        errors.append("mechanics/consumer-handoff/generated/kag_export.min.json must keep exactly two source_inputs")
+        errors.append("mechanics/consumer-handoff/parts/kag-source-export/generated/kag_export.min.json must keep exactly two source_inputs")
     else:
         expected_source_inputs = expected_payload["source_inputs"]
         if source_inputs != expected_source_inputs:
-            errors.append("mechanics/consumer-handoff/generated/kag_export.min.json must keep the memo-primary / ToS-supporting source_inputs split")
+            errors.append("mechanics/consumer-handoff/parts/kag-source-export/generated/kag_export.min.json must keep the memo-primary / ToS-supporting source_inputs split")
 
     if actual_payload.get("section_handles") != expected_payload["section_handles"]:
-        errors.append("mechanics/consumer-handoff/generated/kag_export.min.json must keep the canonical bridge section_handles")
+        errors.append("mechanics/consumer-handoff/parts/kag-source-export/generated/kag_export.min.json must keep the canonical bridge section_handles")
     if actual_payload.get("direct_relations") != expected_payload["direct_relations"]:
         errors.append(
-            "mechanics/consumer-handoff/generated/kag_export.min.json must keep the source/claim/episode/ToS/provenance direct_relations set"
+            "mechanics/consumer-handoff/parts/kag-source-export/generated/kag_export.min.json must keep the source/claim/episode/ToS/provenance direct_relations set"
         )
 
     kag_root_text = os.environ.get("AOA_KAG_ROOT")
@@ -3271,11 +3274,11 @@ def validate_kag_source_export() -> None:
             )
 
     if errors:
-        print("[FAIL] mechanics/consumer-handoff/generated/kag_export.min.json")
+        print("[FAIL] mechanics/consumer-handoff/parts/kag-source-export/generated/kag_export.min.json")
         for err in errors:
             print(f"  - {err}")
         raise SystemExit(1)
-    print("[OK]   mechanics/consumer-handoff/generated/kag_export.min.json")
+    print("[OK]   mechanics/consumer-handoff/parts/kag-source-export/generated/kag_export.min.json")
 
 
 def _guardrail_case_input_refs(case: dict[str, object]) -> set[str]:
@@ -3335,7 +3338,7 @@ def _validate_guardrail_pilot_cases(
             refs,
             (
                 "examples/provenance_thread.",
-                "mechanics/consumer-handoff/examples/provenance_thread.",
+                "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/provenance_thread.",
                 "mechanics/writeback/parts/growth-and-continuity/examples/provenance_thread.",
             ),
         ):
@@ -3344,14 +3347,14 @@ def _validate_guardrail_pilot_cases(
             )
         if not _has_ref_with_prefix(
             refs,
-            ("examples/claim.", "mechanics/consumer-handoff/examples/claim."),
+            ("examples/claim.", "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/claim."),
         ):
             errors.append(
                 "provenance_fidelity guardrail case must reference a claim example"
             )
         if not _has_ref_with_prefix(
             refs,
-            ("examples/bridge.", "mechanics/consumer-handoff/examples/bridge."),
+            ("examples/bridge.", "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/bridge."),
         ):
             errors.append(
                 "provenance_fidelity guardrail case must reference a bridge example"
@@ -3428,7 +3431,7 @@ def _validate_guardrail_wider_cases(
         required_prefixes = {
             "mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md": "writeback temperature policy",
             "mechanics/consumer-handoff/docs/AGENT_MEMORY_POSTURE_SEAM.md": "agent memory posture seam",
-            "mechanics/consumer-handoff/examples/bridge.": "bridge candidate example",
+            "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/bridge.": "bridge candidate example",
         }
         missing_labels = [
             label
@@ -3445,10 +3448,10 @@ def _validate_guardrail_wider_cases(
     if isinstance(merge_case, dict):
         refs = _guardrail_case_input_refs(merge_case)
         required_prefixes = {
-            "mechanics/consumer-handoff/examples/episode.": "episode example",
-            "mechanics/consumer-handoff/examples/claim.": "claim example",
-            "mechanics/consumer-handoff/examples/bridge.": "bridge example",
-            "mechanics/consumer-handoff/examples/provenance_thread.": "provenance_thread example",
+            "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/episode.": "episode example",
+            "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/claim.": "claim example",
+            "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/bridge.": "bridge example",
+            "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/provenance_thread.": "provenance_thread example",
         }
         missing_labels = [
             label
@@ -3516,8 +3519,8 @@ def validate_memory_eval_guardrail_pack() -> None:
 
     if data.get("handoff_target") != "aoa-evals":
         errors.append("memory_eval_guardrail_pack.example.json must hand off to aoa-evals")
-    if "mechanics/consumer-handoff/schemas/memory_eval_guardrail_pack.schema.json" not in registry.get("schemas", []):
-        errors.append("generated/memo_registry.min.json must list mechanics/consumer-handoff/schemas/memory_eval_guardrail_pack.schema.json")
+    if "mechanics/consumer-handoff/parts/eval-guardrail-handoff/schemas/memory_eval_guardrail_pack.schema.json" not in registry.get("schemas", []):
+        errors.append("generated/memo_registry.min.json must list mechanics/consumer-handoff/parts/eval-guardrail-handoff/schemas/memory_eval_guardrail_pack.schema.json")
     if "mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md" not in registry.get("core_docs", []):
         errors.append("generated/memo_registry.min.json must list mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md")
 

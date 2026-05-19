@@ -37,9 +37,9 @@
       "focus": "provenance_fidelity",
       "risk": "Recall drops source refs or provenance-thread linkage when moving from a memory object to its compact export surfaces.",
       "input_refs": [
-        "mechanics/consumer-handoff/examples/claim.tos-bridge-ready.example.json",
-        "mechanics/consumer-handoff/examples/bridge.kag-lift.example.json",
-        "mechanics/consumer-handoff/examples/provenance_thread.kag-lift.example.json"
+        "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/claim.tos-bridge-ready.example.json",
+        "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/bridge.kag-lift.example.json",
+        "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/provenance_thread.kag-lift.example.json"
       ],
       "expected_behavior": [
         "Preserve the backward walk from claim or bridge to provenance thread and source refs.",
@@ -123,7 +123,7 @@
       "input_refs": [
         "mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md",
         "mechanics/consumer-handoff/docs/AGENT_MEMORY_POSTURE_SEAM.md#boundary-rule",
-        "mechanics/consumer-handoff/examples/bridge.kag-lift.example.json"
+        "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/bridge.kag-lift.example.json"
       ],
       "expected_behavior": [
         "Promotion posture remains visible and review-gated.",
@@ -140,10 +140,10 @@
       "focus": "hallucinated_merge",
       "risk": "Separate episode, claim, and bridge traces are collapsed into one invented memory without explicit provenance.",
       "input_refs": [
-        "mechanics/consumer-handoff/examples/episode.tos-interpretation.example.json",
-        "mechanics/consumer-handoff/examples/claim.tos-bridge-ready.example.json",
-        "mechanics/consumer-handoff/examples/bridge.kag-lift.example.json",
-        "mechanics/consumer-handoff/examples/provenance_thread.kag-lift.example.json"
+        "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/episode.tos-interpretation.example.json",
+        "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/claim.tos-bridge-ready.example.json",
+        "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/bridge.kag-lift.example.json",
+        "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/provenance_thread.kag-lift.example.json"
       ],
       "expected_behavior": [
         "Distinct memory objects remain distinguishable by kind and provenance.",

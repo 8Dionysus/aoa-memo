@@ -20,7 +20,7 @@ This memo-side contract works beside:
   narrower than the current bridge faces
 - `aoa-kag/schemas/bridge-envelope.schema.json` and `aoa-kag/examples/aoa_tos_bridge_envelope.example.json` for the shared cross-repo linkage object
 - `schemas/bridge.schema.json` for the memo-side bridge object
-- `mechanics/consumer-handoff/schemas/memory_chunk_face.schema.json` and `mechanics/consumer-handoff/schemas/memory_graph_face.schema.json` for downstream export faces
+- `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/schemas/memory_chunk_face.schema.json` and `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/schemas/memory_graph_face.schema.json` for downstream export faces
 
 ## Core Rule
 
@@ -49,8 +49,8 @@ It should preserve:
 
 The current schema-backed chunk-face surface is:
 
-- `mechanics/consumer-handoff/schemas/memory_chunk_face.schema.json`
-- `mechanics/consumer-handoff/examples/memory_chunk_face.bridge.example.json`
+- `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/schemas/memory_chunk_face.schema.json`
+- `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/memory_chunk_face.bridge.example.json`
 
 ## Graph Face Contract
 
@@ -69,8 +69,8 @@ It should preserve:
 
 The current schema-backed graph-face surface is:
 
-- `mechanics/consumer-handoff/schemas/memory_graph_face.schema.json`
-- `mechanics/consumer-handoff/examples/memory_graph_face.bridge.example.json`
+- `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/schemas/memory_graph_face.schema.json`
+- `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/memory_graph_face.bridge.example.json`
 
 ## ToS Bridge Guidance
 
@@ -113,12 +113,12 @@ The current end-to-end flow is:
 
 The current example bundle for this flow is:
 
-- `mechanics/consumer-handoff/examples/episode.tos-interpretation.example.json`
-- `mechanics/consumer-handoff/examples/claim.tos-bridge-ready.example.json`
-- `mechanics/consumer-handoff/examples/bridge.kag-lift.example.json`
-- `mechanics/consumer-handoff/examples/provenance_thread.kag-lift.example.json`
-- `mechanics/consumer-handoff/examples/memory_chunk_face.bridge.example.json`
-- `mechanics/consumer-handoff/examples/memory_graph_face.bridge.example.json`
+- `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/episode.tos-interpretation.example.json`
+- `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/claim.tos-bridge-ready.example.json`
+- `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/bridge.kag-lift.example.json`
+- `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/provenance_thread.kag-lift.example.json`
+- `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/memory_chunk_face.bridge.example.json`
+- `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/memory_graph_face.bridge.example.json`
 - `examples/recall_contract.lineage.json`
 - `examples/recall_contract.router.lineage.json`
 

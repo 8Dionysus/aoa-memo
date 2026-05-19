@@ -21,7 +21,7 @@ federation harvest stop-lines explicit without granting memo proof, KAG
 promotion, ToS canon, stats certification, runtime truth, or source-owner
 consent.
 The first downstream eval adoption wave is now explicitly narrowed to recall precision, provenance fidelity, and staleness so `aoa-evals` can pilot memo proof without pretending to cover every guardrail focus at once.
-The current KAG-facing adoption slice now publishes `mechanics/consumer-handoff/generated/kag_export.min.json` as one source-owned memo export for `aoa-kag` readiness without widening the live federation spine or `aoa-routing` ABI.
+The current KAG-facing adoption slice now publishes `mechanics/consumer-handoff/parts/kag-source-export/generated/kag_export.min.json` as one source-owned memo export for `aoa-kag` readiness without widening the live federation spine or `aoa-routing` ABI.
 The memory readiness boundary map in `mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md` now
 maps future durable-consequence, delta, retention, and recall pressure back to
 existing memo objects without planting a future protocol, creating a live
@@ -328,11 +328,11 @@ This roadmap does **not** aim to turn `aoa-memo` into:
 
 - `mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md`
 - `mechanics/consumer-handoff/docs/KAG_SOURCE_EXPORT.md`
-- `mechanics/consumer-handoff/schemas/memory_chunk_face.schema.json`
-- `mechanics/consumer-handoff/schemas/memory_graph_face.schema.json`
+- `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/schemas/memory_chunk_face.schema.json`
+- `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/schemas/memory_graph_face.schema.json`
 - chunk-face contract for memory inspection
 - graph-face contract for downstream associative lifts
-- `mechanics/consumer-handoff/generated/kag_export.min.json`
+- `mechanics/consumer-handoff/parts/kag-source-export/generated/kag_export.min.json`
 - ToS node and fragment bridge guidance
 - `kag_lift_status` and related bridge fields
 - examples of chunk-face and graph-face export
@@ -352,8 +352,8 @@ This roadmap does **not** aim to turn `aoa-memo` into:
 **Deliverables:**
 
 - `mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md`
-- `mechanics/consumer-handoff/schemas/memory_eval_guardrail_pack.schema.json`
-- `mechanics/consumer-handoff/examples/memory_eval_guardrail_pack.example.json`
+- `mechanics/consumer-handoff/parts/eval-guardrail-handoff/schemas/memory_eval_guardrail_pack.schema.json`
+- `mechanics/consumer-handoff/parts/eval-guardrail-handoff/examples/memory_eval_guardrail_pack.example.json`
 - memory-focused eval ideas for `aoa-evals`
 - first narrow downstream diagnostic pilot for recall precision, provenance fidelity, and staleness
 - tests for recall precision and provenance fidelity
