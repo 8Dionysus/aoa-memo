@@ -8,7 +8,13 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT / "scripts"))
 
 from memo_mechanics_common import load_config  # noqa: E402
-from validate_memo_mechanic_parts import active_parts_table, part_slug, split_table_row, validate  # noqa: E402
+from validate_memo_mechanic_parts import (  # noqa: E402
+    active_parts_table,
+    part_slug,
+    split_table_row,
+    validate,
+    validate_source_links,
+)
 
 
 def test_memo_mechanic_parts_shape_is_valid() -> None:
@@ -37,3 +43,14 @@ def test_active_parts_have_physical_part_nodes() -> None:
             total_parts += 1
 
     assert total_parts == 53
+
+
+def test_source_links_allow_local_markdown_fragments() -> None:
+    parts_path = REPO_ROOT / "mechanics" / "lineage-harvest" / "PARTS.md"
+
+    issues = validate_source_links(
+        parts_path,
+        "[lineage memory](./docs/PATTERN_LINEAGE_MEMORY.md#inputs)",
+    )
+
+    assert issues == []

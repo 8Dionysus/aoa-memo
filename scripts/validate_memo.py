@@ -385,12 +385,36 @@ def quest_sort_key(quest_id: str) -> tuple[int, str]:
         return (sys.maxsize, quest_id)
 
 
-def discover_questbook_files() -> dict[str, Path]:
-    discovered = {
-        path.stem: path
-        for path in (ROOT / "quests" / "memo").glob("*/AOA-MEM-Q-*.yaml")
-        if path.is_file()
-    }
+def discover_questbook_file_paths() -> list[Path]:
+    return sorted(
+        (
+            path
+            for path in (ROOT / "quests" / "memo").glob("*/AOA-MEM-Q-*.yaml")
+            if path.is_file()
+        ),
+        key=lambda path: (quest_sort_key(path.stem), path.as_posix()),
+    )
+
+
+def duplicate_questbook_file_issues(paths: list[Path] | None = None) -> list[str]:
+    by_quest_id: dict[str, list[Path]] = {}
+    for path in paths if paths is not None else discover_questbook_file_paths():
+        by_quest_id.setdefault(path.stem, []).append(path)
+
+    issues: list[str] = []
+    for quest_id in sorted(by_quest_id, key=quest_sort_key):
+        duplicates = by_quest_id[quest_id]
+        if len(duplicates) < 2:
+            continue
+        locations = ", ".join(path.relative_to(ROOT).as_posix() for path in duplicates)
+        issues.append(f"duplicate quest id {quest_id}: {locations}")
+    return issues
+
+
+def discover_questbook_files(paths: list[Path] | None = None) -> dict[str, Path]:
+    discovered: dict[str, Path] = {}
+    for path in paths if paths is not None else discover_questbook_file_paths():
+        discovered.setdefault(path.stem, path)
     if not discovered:
         return dict(FOUNDATION_QUESTBOOK_FILES)
     return {
@@ -444,7 +468,9 @@ def validate_nested_agents_surface() -> None:
 
 def validate_questbook_surface() -> None:
     errors: list[str] = []
-    questbook_files = discover_questbook_files()
+    questbook_paths = discover_questbook_file_paths()
+    errors.extend(duplicate_questbook_file_issues(questbook_paths))
+    questbook_files = discover_questbook_files(questbook_paths)
     missing_foundation = [
         quest_id for quest_id in FOUNDATION_QUESTBOOK_FILES if quest_id not in questbook_files
     ]

@@ -47,16 +47,20 @@ def active_parts_table(lines: list[str]) -> tuple[int | None, list[str]]:
     return None, []
 
 
+def local_link_path(target: str) -> str | None:
+    if target.startswith(("http://", "https://", "#")):
+        return None
+    path = target.split("#", 1)[0].split("?", 1)[0]
+    return path or None
+
+
 def validate_source_links(parts_path: Path, source_cell: str) -> list[str]:
     issues: list[str] = []
     for target in LINK_PATTERN.findall(source_cell):
-        if target.startswith(("http://", "https://", "#")):
+        path = local_link_path(target)
+        if path is None:
             continue
-        if "#" in target:
-            target = target.split("#", 1)[0]
-        if not target:
-            continue
-        target_path = (parts_path.parent / target).resolve()
+        target_path = (parts_path.parent / path).resolve()
         try:
             target_path.relative_to(REPO_ROOT)
         except ValueError:
