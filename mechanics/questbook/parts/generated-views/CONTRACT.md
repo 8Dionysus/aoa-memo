@@ -9,6 +9,8 @@ They live in root `generated/` because they are consumed outside one mechanic
 package. The Questbook mechanic owns their source contract, builder, validation,
 and stop-lines. The generated files do not author quest meaning.
 
+In `../PARTS.md` terms, they are root-published read models that never author quest meaning.
+
 ## Required Outputs
 
 - `generated/quest_catalog.min.json`

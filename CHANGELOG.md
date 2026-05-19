@@ -18,6 +18,8 @@ Tracking starts with the community-docs baseline for this repository.
 - Add readiness local-test-route coverage so mechanic packages with
   package-local tests must name their local pytest command in validation
   surfaces.
+- Add physical `parts/` contracts for memo mechanics so each active row in
+  `PARTS.md` has a `README.md`, `CONTRACT.md`, and `VALIDATION.md` node.
 - Add a source-authored topology spine with `DESIGN.md`, `DESIGN.AGENTS.md`,
   `docs/README.md`, `docs/ROOT_SURFACE_LAW.md`, and `docs/decisions/` so
   future docs, agent-lane, and placement cleanup can route through explicit
