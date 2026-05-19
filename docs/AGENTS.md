@@ -10,6 +10,26 @@ Keep provenance, temporal relevance, salience, temperature, and recall pressure 
 
 When docs change proof, routing, KAG, role, or playbook seams, name the downstream owner repo and what remains outside memo authority.
 
+## Route Stack
+
+- Above: root `AGENTS.md` chooses the route mode; `docs/README.md` maps the
+  docs district.
+- Here: root docs own memory doctrine, boundaries, lifecycle, trust,
+  temperature, provenance, and root-surface placement.
+- Below: `docs/decisions/` owns decision rationale. Mechanic doctrine lives
+  under `mechanics/<slug>/docs/` once a mechanic owns the surface.
+
+## Migration Posture
+
+- Do not move flat docs into thematic subdirectories because the directory
+  looks crowded.
+- A docs migration needs an owner family, source map, updated links, validator
+  or test coverage, and a decision record when the route matters later.
+- Use `ROOT_SURFACE_LAW.md` before adding, moving, deleting, or rewriting a
+  root or docs-root surface.
+- When a mechanic owns the surface, route to the nearest
+  `mechanics/<slug>/AGENTS.md` before changing active docs.
+
 Verify with:
 
 ```bash

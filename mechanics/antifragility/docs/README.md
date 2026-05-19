@@ -47,9 +47,4 @@ They may not say:
 
 ## Validation
 
-The mechanic-doc route is pinned by:
-
-```bash
-python scripts/validate_memo_mechanics.py
-python scripts/release_check.py
-```
+Executable validation routes live in [AGENTS](AGENTS.md#validation).

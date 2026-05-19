@@ -11,6 +11,18 @@ console digest, closeout posture, and swarm memory policy together. It does
 not grant memory write authority, role rights, proof status, or private
 retention.
 
+## Route Stack
+
+- Above: the package `AGENTS.md`, `README.md`, `PARTS.md`, and `OWNER_MAP.md`
+  set the operation and stronger-owner split.
+- Here: `docs/README.md` maps the source family; individual docs own active
+  mechanic doctrine and support notes.
+- Adjacent: package or part artifact homes own schemas, examples, config,
+  generated outputs, scripts, tests, manifests, and quests. Use
+  `mechanics/ARTIFACT_TOPOLOGY.md` before moving root technical artifacts.
+- Below: no nested active law is expected here; legacy context routes through
+  `../PROVENANCE.md` and `../legacy/`.
+
 ## Read Before Editing
 
 Start with:
@@ -42,6 +54,9 @@ Start with:
   transitional docs-district paths.
 - Do not add root technical artifacts here; use the artifact topology rule
   before moving schemas, examples, generated outputs, scripts, or tests.
+- When a Titan source family changes, keep source refs in part-local examples,
+  schemas, and tests aligned with this district rather than editing the doc as
+  an isolated note.
 
 ## Validation
 

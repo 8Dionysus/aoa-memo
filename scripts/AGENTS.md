@@ -10,6 +10,15 @@ It validates the memory layer, regenerates the object-facing surface family, and
 These scripts should remain small, reviewable, and honest about what they validate.
 Do not turn them into hidden runtime infrastructure.
 
+## Route Stack
+
+- Above: root `AGENTS.md`, source docs, schemas, examples, config maps, and
+  generated contracts decide what scripts may validate or build.
+- Here: root scripts own shared validators, builders, and release-oriented
+  checks.
+- Below: mechanic-owned generators and validators belong under the owning
+  package or part when the logic is local to one mechanic.
+
 ## Main script families
 
 Keep the current split clear:

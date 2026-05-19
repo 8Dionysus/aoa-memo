@@ -262,18 +262,5 @@ indexed as legacy.
 
 ## Validation
 
-Executable validation commands live in [mechanics/AGENTS](AGENTS.md#validation).
-
-For release-bound artifact placement changes, run:
-
-```bash
-python scripts/validate_mechanic_artifact_topology.py
-python scripts/build_mechanic_artifact_inventory.py --check
-python scripts/validate_mechanic_artifact_inventory.py
-python scripts/build_memo_mechanic_landing_logs.py --check
-python scripts/validate_memo_mechanic_landing_logs.py
-python scripts/build_memo_mechanic_readiness.py --check
-python scripts/validate_memo_mechanic_readiness.py
-python scripts/validate_memo_mechanics.py
-python scripts/release_check.py
-```
+Executable validation commands for artifact placement changes live in
+[mechanics/AGENTS](AGENTS.md#validation).

@@ -14,6 +14,17 @@ legacy bridges.
 It is not the home for constitutional law, proof verdicts, runtime workers,
 role rights, routing implementation, KAG substrate truth, or private memory.
 
+## Route Stack
+
+- Above: root `AGENTS.md` owns repo identity, owner boundaries, and broad
+  landing/verification route.
+- Here: `mechanics/README.md` is the mechanics atlas and
+  `mechanics/ARTIFACT_TOPOLOGY.md` owns root-to-mechanic artifact placement
+  law. This file owns shared package law and executable mechanics validators.
+- Below: each `mechanics/<slug>/AGENTS.md` narrows the operation; its `docs/`,
+  `parts/`, and `legacy/` cards narrow active doctrine, functioning parts, and
+  historical provenance.
+
 ## Read Before Editing
 
 Read:
@@ -87,8 +98,23 @@ Run the narrow validator that matches the changed mechanics surface:
 - When package-local or part-local artifact homes change:
 
   ```bash
+  python scripts/validate_mechanic_artifact_topology.py
   python scripts/build_mechanic_artifact_inventory.py --check
   python scripts/validate_mechanic_artifact_inventory.py
+  ```
+
+- When `mechanics/ARTIFACT_TOPOLOGY.md` changes or a root technical artifact
+  moves into a package or part home:
+
+  ```bash
+  python scripts/validate_mechanic_artifact_topology.py
+  python scripts/build_mechanic_artifact_inventory.py --check
+  python scripts/validate_mechanic_artifact_inventory.py
+  python scripts/build_memo_mechanic_landing_logs.py --check
+  python scripts/validate_memo_mechanic_landing_logs.py
+  python scripts/build_memo_mechanic_readiness.py --check
+  python scripts/validate_memo_mechanic_readiness.py
+  python scripts/validate_memo_mechanics.py
   ```
 
 - When `PARTS.md` files or `parts/` contracts change:

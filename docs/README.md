@@ -116,18 +116,10 @@ transitional `TITAN_*` docs.
 
 ## Thematic Migration Rule
 
-Do not move flat docs into thematic subdirectories just because they look
-crowded.
-
-A migration should happen only when it has:
-
-- an owner family
-- a source map
-- updated links
-- validator or test coverage
-- a decision record when the route will matter later
-
-Until then, this README is the map and the flat files remain active surfaces.
+Operational migration posture lives in [AGENTS](AGENTS.md#migration-posture)
+and placement law lives in [ROOT_SURFACE_LAW](ROOT_SURFACE_LAW.md).
+Until a validated route replaces a flat file, this README is the map and the
+flat files remain active surfaces.
 
 ## Adjacent Routes
 

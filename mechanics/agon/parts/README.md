@@ -11,11 +11,4 @@ Functioning Agon memo parts live here. Each part mirrors one active row in `../P
 
 ## Validation
 
-Use the package validation lane in [AGENTS](../AGENTS.md#validation).
-
-For part topology changes, also run:
-
-```bash
-python scripts/validate_memo_mechanic_parts.py
-python -m pytest -q mechanics/agon/parts/prebinding-and-candidate-intake/tests mechanics/agon/parts/bridge-and-evidence-seams/tests mechanics/agon/parts/wave-landing-and-stop-lines/tests
-```
+Executable part validation lives in [parts/AGENTS](AGENTS.md#validation) and the package [AGENTS](../AGENTS.md#validation).

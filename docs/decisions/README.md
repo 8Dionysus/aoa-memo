@@ -72,6 +72,7 @@ expectation.
 | [2026-05-19-operational-gate-part-local-artifacts](2026-05-19-operational-gate-part-local-artifacts.md) | move operational-gate schemas, examples, and regressions into functioning part-local homes |
 | [2026-05-19-final-mechanic-part-artifacts](2026-05-19-final-mechanic-part-artifacts.md) | move remaining package-level mechanic artifacts into functioning part-local homes |
 | [2026-05-19-mechanic-part-naming-hardening](2026-05-19-mechanic-part-naming-hardening.md) | rename weak surface-family part slugs into operation/read-model part names |
+| [2026-05-19-functional-agents-route-cards](2026-05-19-functional-agents-route-cards.md) | keep README/index files as maps and move operational route stacks into nearest AGENTS cards |
 | [2026-05-18-mechanic-readiness-matrix](2026-05-18-mechanic-readiness-matrix.md) | add a generated readiness matrix for all memo mechanic packages |
 | [2026-05-18-mechanic-readiness-artifact-test-coverage](2026-05-18-mechanic-readiness-artifact-test-coverage.md) | require package-local tests for mechanics with package-local non-test artifacts |
 | [2026-05-18-mechanic-readiness-local-test-routes](2026-05-18-mechanic-readiness-local-test-routes.md) | require route-card visibility for package-local mechanic test commands |

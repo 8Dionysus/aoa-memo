@@ -8,14 +8,6 @@ Legacy is the provenance district for historic placement and raw source snapshot
 - `INDEX.md`: former path, restored raw snapshot, active route, and source revision.
 - `DISTILLATION_LOG.md`: dated accounting for the raw-to-active restoration.
 
-## Use This When
+## Use
 
-- you need the exact historical surface behind an active mechanic document, part, or route
-- you are auditing whether the active mechanic lost context during migration
-- you are checking old placement without reviving old paths as live aliases
-
-## Stop-Lines
-
-- Start from active package docs, parts, and owner maps before using legacy.
-- Do not edit `raw/` as current doctrine. Restore a newer historical blob instead.
-- Do not cite old flat paths as active routes. Use the active route in `INDEX.md`.
+Operational rules for this legacy lane live in [AGENTS](AGENTS.md). Use `INDEX.md` for the route from historical snapshot to active surface.

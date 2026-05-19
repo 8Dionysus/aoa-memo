@@ -15,6 +15,15 @@ example file must be listed in exactly one
 `config/root_technical_districts.json` `example_families` entry that names the
 owner surface, source refs, and validators.
 
+## Route Stack
+
+- Above: root `AGENTS.md`, `schemas/AGENTS.md`, and
+  `config/root_technical_districts.json` decide whether an example belongs at
+  root.
+- Here: root examples demonstrate shared public memory shapes.
+- Below: mechanic-owned examples live under the owning package or part, and
+  object-facing generated outputs rebuild from curated examples.
+
 ## Example families
 
 Keep the example families legible:

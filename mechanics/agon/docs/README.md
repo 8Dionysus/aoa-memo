@@ -30,9 +30,6 @@ Agon docs often pair with:
 - `tests/test_agon_*.py`
 - `scripts/validate_agon_*.py`
 
-When an Agon source family changes, keep the matching companions aligned rather
-than editing the doc as an isolated note.
-
 ## Stop-Lines
 
 Agon memo surfaces may say:
@@ -52,11 +49,4 @@ They may not say:
 
 ## Validation
 
-The mechanic-doc route is pinned by:
-
-```bash
-python scripts/validate_memo_mechanics.py
-python scripts/release_check.py
-```
-
-The broad gate also runs the Agon-specific validators and tests.
+Executable validation routes live in [AGENTS](AGENTS.md#validation).

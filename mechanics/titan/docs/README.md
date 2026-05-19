@@ -27,9 +27,6 @@ Titan docs currently pair with:
 - `mechanics/titan/parts/closeout-and-digest-posture/tests`
 - `mechanics/titan/parts/audit-personality-and-swarm-policy/tests`
 
-When a Titan source family changes, keep source refs in part-local examples,
-schemas, and tests aligned with this district.
-
 ## Stop-Lines
 
 Titan memo surfaces may say:
@@ -49,9 +46,4 @@ They may not say:
 
 ## Validation
 
-The mechanic-doc route is pinned by:
-
-```bash
-python scripts/validate_memo_mechanics.py
-python scripts/release_check.py
-```
+Executable validation routes live in [AGENTS](AGENTS.md#validation).

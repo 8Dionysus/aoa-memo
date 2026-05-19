@@ -14,6 +14,18 @@ They do not own root quest source files, root generated read models, proof,
 route dispatch, runtime state, playbook choreography, role authority, or owner
 acceptance.
 
+## Route Stack
+
+- Above: the package `AGENTS.md` and `PARTS.md` decide which function nodes are
+  active and what each part may own.
+- Here: `parts/README.md` is the part index; each `parts/<part>/` directory is
+  a functioning node with `README.md`, `CONTRACT.md`, and `VALIDATION.md`.
+- Below: part-local schemas, examples, config, generated outputs, scripts,
+  tests, manifests, and quests belong under the owning part when they serve
+  only that part.
+- Sideways: source docs stay in `../docs/`; placement history stays in
+  `../PROVENANCE.md` and `../legacy/`.
+
 ## Read Before Editing
 
 Read root `AGENTS.md`, `mechanics/AGENTS.md`, `mechanics/questbook/AGENTS.md`,

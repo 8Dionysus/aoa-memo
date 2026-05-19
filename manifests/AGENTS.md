@@ -29,6 +29,14 @@ the relevant `mechanics/agon/parts/<part>/config/`,
 `mechanics/agon/parts/<part>/scripts/`, and
 `mechanics/agon/parts/<part>/tests/`.
 
+## Route Stack
+
+- Above: root `AGENTS.md`, `config/root_technical_districts.json`, and the
+  owning mechanic decide whether a manifest is shared or mechanic-local.
+- Here: root `manifests/` is reserved for shared recurrence manifests.
+- Below: active mechanic manifests belong under the owning package or part
+  alongside their config, generated, scripts, and tests.
+
 ## Boundaries
 
 - Keep manifests public-safe and deterministic.

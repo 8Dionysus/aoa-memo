@@ -14,6 +14,18 @@ active source contract for this docs lane. These docs do not replace root
 `QUESTBOOK.md`, source quest files under `quests/`, generated companions, or
 validators.
 
+## Route Stack
+
+- Above: the package `AGENTS.md`, `README.md`, `PARTS.md`, and `OWNER_MAP.md`
+  set the operation and stronger-owner split.
+- Here: `docs/README.md` maps the source family; individual docs own active
+  mechanic doctrine and support notes.
+- Adjacent: package or part artifact homes own schemas, examples, config,
+  generated outputs, scripts, tests, manifests, and quests. Use
+  `mechanics/ARTIFACT_TOPOLOGY.md` before moving root technical artifacts.
+- Below: no nested active law is expected here; legacy context routes through
+  `../PROVENANCE.md` and `../legacy/`.
+
 ## Boundaries
 
 - Keep source-contract wording public-safe and reviewable.

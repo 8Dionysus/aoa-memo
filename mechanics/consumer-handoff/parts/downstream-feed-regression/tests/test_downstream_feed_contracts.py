@@ -445,8 +445,13 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
         self.assertNotIn("This repository is in bootstrap.", charter)
         self.assertIn("`aoa-memo` is in contract hardening.", roadmap)
 
-    def test_readme_surfaces_read_only_validation_and_targeted_generation_routes(self) -> None:
+    def test_readme_routes_validation_and_targeted_generation_to_agents(self) -> None:
         readme = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
+        root_agents = (REPO_ROOT / "AGENTS.md").read_text(encoding="utf-8")
+        scripts_agents = (REPO_ROOT / "scripts" / "AGENTS.md").read_text(encoding="utf-8")
+
+        self.assertIn("Executable validation routes live in [AGENTS](AGENTS.md#verify)", readme)
+        self.assertIn("nearest `AGENTS.md`", readme)
 
         for command in (
             "python scripts/validate_memo.py",
@@ -455,7 +460,7 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
             "python scripts/validate_lifecycle_audit_examples.py",
             "python -m pytest -q tests",
         ):
-            self.assertIn(command, readme)
+            self.assertIn(command, root_agents)
 
         for command in (
             "python scripts/generate_memory_object_surfaces.py",
@@ -464,9 +469,7 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
             "python mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_intake.py",
             "python mechanics/writeback/parts/growth-and-continuity/scripts/generate_phase_alpha_writeback_map.py",
         ):
-            self.assertIn(command, readme)
-
-        self.assertIn("git status -sb", readme)
+            self.assertIn(command, scripts_agents)
 
     def test_contributing_surfaces_current_validation_battery(self) -> None:
         contributing = (REPO_ROOT / "CONTRIBUTING.md").read_text(encoding="utf-8")

@@ -8,6 +8,13 @@ Read the root `AGENTS.md` first. Root `AGENTS.md` owns repository identity, owne
 
 Do not encode sibling-repo doctrine, private workspace assumptions, or hidden release behavior here. Do not add secrets, private environment assumptions, or workflow steps that mutate sibling repositories without explicit owner routing. Keep GitHub automation public-safe, deterministic, and weaker than source-owned repository docs. Do not make CI green by weakening the guardrail that should catch drift.
 
+## Route Stack
+
+- Above: root `AGENTS.md` owns branch, PR, CI, merge, and closeout route.
+- Here: `.github/` owns GitHub-native workflow and repository metadata files.
+- Below: workflow YAML may run validation but must not become source doctrine
+  or a hidden release policy.
+
 ## Platform sync
 
 Keep `.github/CODEOWNERS`, PR templates, and workflow names aligned with the root route card.
