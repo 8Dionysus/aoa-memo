@@ -9,6 +9,9 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Added
 
+- Extend the mechanic artifact inventory and readiness matrix to recognize
+  part-local technical homes, and move Agon runnable artifacts into its
+  functioning `parts/` lanes with part-local validation.
 - Add a package-local retention regression boundary so retention docs,
   schemas, examples, and stronger-owner stop-lines are tested inside
   `mechanics/retention/`.

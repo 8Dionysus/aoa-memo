@@ -81,7 +81,9 @@ def test_memo_mechanic_readiness_covers_all_packages() -> None:
             assert package["artifacts"]["test_count"] > 0
             assert package["checks"]["artifact-test-coverage"] is True
         if package["artifacts"]["test_count"]:
-            assert package["local_test_ref"] == f"python -m pytest -q mechanics/{package['slug']}/tests"
+            assert package["local_test_refs"]
+            for test_dir in package["artifacts"]["test_dirs"]:
+                assert f"python -m pytest -q {test_dir}" in package["local_test_refs"]
             assert package["checks"]["local-test-route"] is True
         assert "aoa-evals" in package["stronger_owner_refs"]
         assert "abyss-stack" in package["stronger_owner_refs"]

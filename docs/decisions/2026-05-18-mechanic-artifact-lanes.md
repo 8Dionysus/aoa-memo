@@ -34,8 +34,10 @@ contracts, repo-wide validators, release gates, source maps, and
 cross-mechanic regression tests.
 
 Root `manifests/` is now reserved for shared recurrence manifests. Active Agon
-recurrence manifests and hook bindings belong under
-`mechanics/agon/manifests/`.
+recurrence manifests and hook bindings first moved under
+`mechanics/agon/manifests/`; once physical parts exist, single-part Agon
+manifests move onward to the nearest `mechanics/agon/parts/<part>/manifests/`
+home.
 
 ## Consequences
 

@@ -26,7 +26,8 @@ Do not treat every file here as the same kind of artifact.
 
 Mechanic-owned generated artifacts do not live in root `generated/`. They belong
 under the owning package, for example `mechanics/writeback/generated/`,
-`mechanics/consumer-handoff/generated/`, and `mechanics/agon/generated/`.
+`mechanics/consumer-handoff/generated/`, or the nearest functioning part such
+as `mechanics/agon/parts/bridge-and-evidence-seams/generated/`.
 
 ## Source and derivation map
 

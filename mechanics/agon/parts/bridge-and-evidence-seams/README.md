@@ -24,6 +24,14 @@ This active part belongs to `mechanics/agon/` and materializes the matching row 
 
 keeps evidence and bridge memory source-linked without owning downstream truth
 
+## Technical Homes
+
+- `config/`, `examples/`, `generated/`, `schemas/`, `scripts/`, and `tests/`
+  own epistemic, KAG, SLC, Sophian, VDS, and mechanical-trial memo bridge
+  companions.
+- `manifests/` owns recurrence components and hook bindings for bridge and
+  evidence observation.
+
 ## Next Route
 
 Use `../../OWNER_MAP.md` for stronger owner routing and `../../PROVENANCE.md` for placement history.

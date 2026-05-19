@@ -17,4 +17,5 @@ For part topology changes, also run:
 
 ```bash
 python scripts/validate_memo_mechanic_parts.py
+python -m pytest -q mechanics/agon/parts/prebinding-and-candidate-intake/tests mechanics/agon/parts/bridge-and-evidence-seams/tests mechanics/agon/parts/wave-landing-and-stop-lines/tests
 ```

@@ -139,13 +139,15 @@ contracts, route-card surfaces, or cross-mechanic regressions; package-local
 mechanic tests belong under the owning mechanic.
 
 Single-mechanic artifacts live in the owning package with their local docs and
-route card. This includes mechanic-local schemas, examples, config seeds,
-generated companions, scripts, tests, manifests, and hook manifests.
+route card. When a functioning part exists, use the nearest part-local home.
+This includes mechanic-local schemas, examples, config seeds, generated
+companions, scripts, tests, manifests, and hook manifests.
 
 Examples:
 
-- Agon config, schemas, examples, generated registries, manifests, hooks,
-  validators, builders, and tests live under `mechanics/agon/`.
+- Agon prebinding, bridge/evidence, and wave recurrence config, schemas,
+  examples, generated registries, manifests, hooks, validators, builders, and
+  tests live under the nearest `mechanics/agon/parts/<part>/` home.
 - Titan schemas, examples, and tests live under `mechanics/titan/`.
 - adoption, governance, retention, operational-gate, antifragility,
   checkpoint, readiness-boundary, recurrence-support, lineage-harvest,
@@ -169,24 +171,25 @@ Root `manifests/` is reserved for future shared recurrence manifests; the
 current active manifests are package-local.
 
 `generated/mechanic_artifacts.min.json` is the compact generated inventory of
-package-local mechanic artifacts. It is not source truth. It lets agents and
-validators inspect which mechanic currently owns each local schema, example,
-config seed, generated companion, script, test, or manifest without forcing
-`PARTS.md` files to become raw file inventories.
+package-local and part-local mechanic artifacts. It is not source truth. It lets
+agents and validators inspect which mechanic or functioning part currently owns
+each local schema, example, config seed, generated companion, script, test, or
+manifest without forcing `PARTS.md` files to become raw file inventories.
 
 `generated/memo_mechanic_readiness.min.json` is the compact generated readiness
 matrix for current mechanic packages. It joins package cards, source maps,
 owner maps, validation routes, stop-lines, and the artifact inventory so agents
 can detect when a mechanic is structurally present but not ready for OS Abyss
 use.
-Readiness also checks package-local artifact test coverage: a mechanic with
-local config, examples, generated companions, manifests, schemas, or scripts
-must have at least one package-local test before it can be considered ready.
+Readiness also checks local artifact test coverage: a mechanic with local
+config, examples, generated companions, manifests, schemas, or scripts must
+have at least one package-local or part-local test before it can be considered
+ready.
 Test-only mechanics remain valid when their operation is a validator or
 shape-guard surface.
-When package-local tests exist, the mechanic's validation route must name the
-local pytest command so a future agent can run the package check without
-reverse-engineering the inventory.
+When package-local or part-local tests exist, the mechanic's validation route
+must name the local pytest command or test directory so a future agent can run
+the package check without reverse-engineering the inventory.
 
 `generated/memo_mechanic_owner_routes.min.json` is the compact generated
 matrix of package-local owner maps and route cards. It exists because

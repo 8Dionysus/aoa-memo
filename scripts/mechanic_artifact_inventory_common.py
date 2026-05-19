@@ -10,7 +10,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 CONFIG_PATH = REPO_ROOT / "config" / "memo_mechanics.json"
 GENERATED_PATH = REPO_ROOT / "generated" / "mechanic_artifacts.min.json"
 
-SCHEMA_VERSION = "aoa_memo_mechanic_artifact_inventory_v1"
+SCHEMA_VERSION = "aoa_memo_mechanic_artifact_inventory_v2"
 SOURCE_OF_TRUTH = "mechanics/ARTIFACT_TOPOLOGY.md"
 CONFIG_REF = "config/memo_mechanics.json"
 
@@ -69,17 +69,32 @@ def package_artifacts(slug: str, tracked_paths: list[str]) -> list[dict[str, str
             continue
         if set(parts) & SKIP_PARTS:
             continue
+        artifact: dict[str, str] | None = None
         district = parts[2]
-        if district not in ARTIFACT_DIRS:
-            continue
-        artifacts.append(
-            {
+        if district in ARTIFACT_DIRS:
+            artifact = {
                 "kind": KIND_BY_DIR[district],
                 "district": district,
+                "scope": "package",
+                "owner_path": f"mechanics/{slug}",
                 "path": path_ref,
                 "package_path": "/".join(parts[2:]),
             }
-        )
+        elif len(parts) >= 6 and parts[2] == "parts" and parts[4] in ARTIFACT_DIRS:
+            part_slug = parts[3]
+            district = parts[4]
+            artifact = {
+                "kind": KIND_BY_DIR[district],
+                "district": district,
+                "scope": "part",
+                "part_slug": part_slug,
+                "part_path": f"parts/{part_slug}",
+                "owner_path": f"mechanics/{slug}/parts/{part_slug}",
+                "path": path_ref,
+                "package_path": "/".join(parts[2:]),
+            }
+        if artifact is not None:
+            artifacts.append(artifact)
 
     return sorted(artifacts, key=lambda item: (item["district"], item["path"]))
 
