@@ -30,8 +30,8 @@ for the placement map.
 ## Validation
 
 ```bash
-python scripts/validate_memo_mechanics.py
-python scripts/release_check.py
+python scripts/mechanics/validate_memo_mechanics.py
+python scripts/release/release_check.py
 ```
 
 ## Closeout

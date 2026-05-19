@@ -40,7 +40,7 @@ Read root `AGENTS.md`, `mechanics/AGENTS.md`, `../AGENTS.md`,
 ## Validation
 
 ```bash
-python scripts/validate_memo_mechanics.py
+python scripts/mechanics/validate_memo_mechanics.py
 ```
 
 ## Closeout

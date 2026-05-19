@@ -31,6 +31,7 @@ expectation.
 
 | Decision | Scope |
 |---|---|
+| [2026-05-19-agents-authority-boundary-audit](2026-05-19-agents-authority-boundary-audit.md) | keep AGENTS-owned route modes, executable validation commands, and stale topology maps out of neighboring docs |
 | [2026-05-19-root-semantic-topology](2026-05-19-root-semantic-topology.md) | split active root districts into semantic families with nearest AGENTS cards and machine-checkable topology |
 | [2026-05-19-root-technical-district-atlas](2026-05-19-root-technical-district-atlas.md) | add a compact generated atlas for root technical district role, route cards, family ids, and local routing |
 | [2026-05-19-active-stage-source-naming](2026-05-19-active-stage-source-naming.md) | rename active wave/seed memo surfaces to stage/source while preserving legacy and source-owned refs |

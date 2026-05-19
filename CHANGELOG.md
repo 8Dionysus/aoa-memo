@@ -163,6 +163,12 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Changed
 
+- Audit root AGENTS authority boundaries by keeping root route modes and
+  executable validation commands in `AGENTS.md`, trimming adjacent README,
+  CHARTER, and `DESIGN.AGENTS.md` duplicates, repairing stale legacy
+  route-card script paths and stale Agon docs companion maps, clarifying Titan
+  closeout wording, and adding mesh validation for neighboring-doc boundaries
+  plus stale flat root script commands in `AGENTS.md`.
 - Rename active memo-side `wave` and `seed` surfaces to stage/source naming
   while preserving legacy snapshots and source-owned upstream refs literally.
 - Compact the root README Memo Mechanics section so detailed mechanic routing

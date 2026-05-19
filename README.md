@@ -50,19 +50,6 @@ Read only the surface that matches the job.
 | Current direction | [ROADMAP](ROADMAP.md) |
 | Agent editing route | [AGENTS](AGENTS.md), then the nearest nested `AGENTS.md` |
 
-## Route Modes
-
-| Route mode | Use when | Start surface |
-|---|---|---|
-| `first-reading` | you need the shortest public overview | `README.md` |
-| `memory-canon` | object kind, support object, recall mode, temperature, or generated companion lookup | [MEMORY_INDEX](MEMORY_INDEX.md) |
-| `memory-doctrine` | memory meaning, trust, lifecycle, temperature, provenance, or boundary wording changes | [MEMORY_MODEL](docs/memory/MEMORY_MODEL.md) and [BOUNDARIES](docs/boundaries/BOUNDARIES.md) |
-| `mechanic-change` | repeatable adoption, handoff, checkpoint, writeback, retention, lineage, operational, Questbook, Agon, Titan, or Antifragility memory movement | [mechanics](mechanics/README.md) |
-| `generated-parity` | generated memory surfaces or their sources change | source surface -> builder -> generated output -> validator |
-| `root-editing` | a root or docs-root surface is added, moved, deleted, or rewritten | [ROOT_SURFACE_LAW](docs/root/ROOT_SURFACE_LAW.md) |
-| `agent-surface-design` | agent cards, AGENTS mesh, or local route guidance changes | [DESIGN.AGENTS](DESIGN.AGENTS.md) |
-| `direction-change` | repo-level direction, horizon posture, or future trigger changes | [ROADMAP](ROADMAP.md) |
-
 ## Memory Check
 
 Before adding, trusting, or publishing a memo claim, ask the narrowest owner.

@@ -117,21 +117,11 @@ This repository is in contract hardening.
 
 The immediate goal is to harden doctrine, object canon, recall contracts, and bounded writeback/export seams without turning the repository into runtime infrastructure or a graph platform.
 
-## Editing posture
+## Change health
 
-Prefer the smallest reviewable change that makes memory clearer.
-
-Before changing root posture, memory-canon boundaries, generated-companion
-routes, or owner split, check:
-
-1. this charter for repository authority
-2. [DESIGN](DESIGN.md) for the system form being preserved
-3. [MEMORY_INDEX](MEMORY_INDEX.md) for the current public memory map
-4. [MEMORY_MODEL](docs/memory/MEMORY_MODEL.md) for conceptual shape
-5. [BOUNDARIES](docs/boundaries/BOUNDARIES.md) for route-away rules
-6. [ROOT_SURFACE_LAW](docs/root/ROOT_SURFACE_LAW.md) for root and docs-root placement
-7. [mechanics](mechanics/README.md) when the change concerns repeatable memory movement
-8. generated surfaces, builders, validators, and tests before claiming parity
+Operational editing routes live in [AGENTS](AGENTS.md) and the nearest local
+`AGENTS.md`. This charter only names the repository authority boundary a
+change must respect.
 
 A good change usually improves one or more of these questions:
 

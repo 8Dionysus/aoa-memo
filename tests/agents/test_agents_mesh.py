@@ -113,6 +113,47 @@ class AgentsMeshTestCase(unittest.TestCase):
         ):
             self.assertIn(snippet, text)
 
+    def test_neighbor_doc_boundary_rules_pin_agents_owned_guidance(self) -> None:
+        config = json.loads((REPO_ROOT / "config" / "agents" / "agents_mesh.json").read_text())
+        rules = {rule["path"]: rule for rule in config["neighbor_doc_boundaries"]}
+
+        self.assertEqual(
+            {
+                "README.md",
+                "CHARTER.md",
+                "DESIGN.AGENTS.md",
+                "mechanics/agon/docs/README.md",
+                "mechanics/titan/docs/TITAN_MEMORY_POSTURE.md",
+            },
+            set(rules),
+        )
+        self.assertIn("## Route Modes", rules["README.md"]["forbidden_snippets"])
+        self.assertIn("## Editing posture", rules["CHARTER.md"]["forbidden_snippets"])
+        self.assertIn(
+            "The current broad validation path remains:",
+            rules["DESIGN.AGENTS.md"]["forbidden_snippets"],
+        )
+        self.assertIn(
+            "`config/agon_*.source.json`",
+            rules["mechanics/agon/docs/README.md"]["forbidden_snippets"],
+        )
+        self.assertIn(
+            "## Closeout\n",
+            rules["mechanics/titan/docs/TITAN_MEMORY_POSTURE.md"]["forbidden_snippets"],
+        )
+
+    def test_agents_cards_do_not_reference_flat_root_script_commands(self) -> None:
+        for path in REPO_ROOT.rglob("AGENTS.md"):
+            rel_path = path.relative_to(REPO_ROOT).as_posix()
+            if ".git/" in rel_path or ".deps/" in rel_path:
+                continue
+            text = path.read_text(encoding="utf-8")
+            self.assertNotRegex(
+                text,
+                r"python scripts/(?!memory/|agents/|mechanics/|root-topology/|release/)",
+                msg=f"{rel_path} contains a stale flat root script route",
+            )
+
     def test_agents_mesh_ignores_dependency_checkouts(self) -> None:
         config = json.loads((REPO_ROOT / "config" / "agents" / "agents_mesh.json").read_text())
         self.assertIn(".deps", config["ignored_directory_names"])

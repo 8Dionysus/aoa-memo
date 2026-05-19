@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -24,6 +25,9 @@ REQUIRED_CONFIG_REFS = (
     "root_agents_ref",
     "route_contract_ref",
     "generated_ref",
+)
+STALE_ROOT_SCRIPT_COMMAND_RE = re.compile(
+    r"python scripts/(?!memory/|agents/|mechanics/|root-topology/|release/)"
 )
 
 
@@ -89,6 +93,11 @@ def validate(repo_root: Path) -> list[str]:
             issues.append(f"{rel_path}: must contain at least one markdown heading")
         if not headings[0].startswith("# "):
             issues.append(f"{rel_path}: first heading must be level 1")
+        stale_command = STALE_ROOT_SCRIPT_COMMAND_RE.search(text)
+        if stale_command:
+            issues.append(
+                f"{rel_path}: contains stale flat root script command {stale_command.group(0)!r}"
+            )
         line_count = len(text.strip().splitlines())
         if line_count < contract["min_lines"]:
             issues.append(
@@ -105,6 +114,38 @@ def validate(repo_root: Path) -> list[str]:
         local_card = repo_root / name / "AGENTS.md"
         if not local_card.is_file():
             issues.append(f"{name}/: tracked top-level directory lacks AGENTS.md")
+
+    boundary_rules = config.get("neighbor_doc_boundaries", ())
+    if not isinstance(boundary_rules, list):
+        issues.append("config/agents/agents_mesh.json: neighbor_doc_boundaries must be a list")
+    else:
+        for rule in boundary_rules:
+            if not isinstance(rule, dict):
+                issues.append("config/agents/agents_mesh.json: neighbor_doc_boundaries entries must be objects")
+                continue
+            rel_path = rule.get("path")
+            if not isinstance(rel_path, str) or not rel_path:
+                issues.append("config/agents/agents_mesh.json: neighbor_doc_boundaries path must be a string")
+                continue
+            path = repo_root / rel_path
+            if not path.is_file():
+                issues.append(f"{rel_path}: neighbor doc boundary target is missing")
+                continue
+            text = path.read_text(encoding="utf-8")
+            required = rule.get("required_snippets", ())
+            forbidden = rule.get("forbidden_snippets", ())
+            if not isinstance(required, list):
+                issues.append(f"{rel_path}: required_snippets must be a list")
+                required = ()
+            if not isinstance(forbidden, list):
+                issues.append(f"{rel_path}: forbidden_snippets must be a list")
+                forbidden = ()
+            for snippet in required:
+                if str(snippet) not in text:
+                    issues.append(f"{rel_path}: missing required neighbor-boundary snippet {snippet!r}")
+            for snippet in forbidden:
+                if str(snippet) in text:
+                    issues.append(f"{rel_path}: contains AGENTS-owned guidance snippet {snippet!r}")
 
     return issues
 
