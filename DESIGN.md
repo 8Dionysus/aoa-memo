@@ -177,12 +177,14 @@ landing receipt, it needs a bounded home rather than a root-level spotlight.
 ## Relationship to Other Root Surfaces
 
 [README](README.md) introduces. [CHARTER](CHARTER.md) authorizes.
-[ROADMAP](ROADMAP.md) points direction. [BOUNDARIES](docs/BOUNDARIES.md)
-separates owner truth. [MEMORY_MODEL](docs/MEMORY_MODEL.md) defines the memory
-conceptual model. [ROOT_SURFACE_LAW](docs/ROOT_SURFACE_LAW.md) governs root and
-docs-root placement. [AGENTS](AGENTS.md) routes agents. [DESIGN.AGENTS](DESIGN.AGENTS.md)
-holds the design form of the agent-facing layer. `DESIGN.md` holds the system
-form of the memory layer.
+[ROADMAP](ROADMAP.md) points direction. [MEMORY_INDEX](MEMORY_INDEX.md) maps
+the public memory canon without replacing stronger doctrine.
+[BOUNDARIES](docs/BOUNDARIES.md) separates owner truth.
+[MEMORY_MODEL](docs/MEMORY_MODEL.md) defines the memory conceptual model.
+[ROOT_SURFACE_LAW](docs/ROOT_SURFACE_LAW.md) governs root and docs-root
+placement. [AGENTS](AGENTS.md) routes agents.
+[DESIGN.AGENTS](DESIGN.AGENTS.md) holds the design form of the agent-facing
+layer. `DESIGN.md` holds the system form of the memory layer.
 
 ## Use by Agents
 
@@ -191,6 +193,7 @@ Agents should consult this file when a change alters:
 - repository shape
 - root surfaces
 - docs topology
+- public memory-canon index shape
 - source versus generated authority
 - memory-object and support-surface boundaries
 - writeback, chronicle, recurrence, or bridge posture

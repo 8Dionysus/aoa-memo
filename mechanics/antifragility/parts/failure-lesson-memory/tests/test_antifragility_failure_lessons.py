@@ -82,6 +82,18 @@ def test_failure_lesson_lineage_ref_validation_handles_malformed_objects(
 
 def test_failure_lesson_surfaces_stay_discoverable_and_non_proof() -> None:
     readme = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
+    package_parts = (
+        REPO_ROOT / "mechanics" / "antifragility" / "PARTS.md"
+    ).read_text(encoding="utf-8")
+    docs_index = (
+        REPO_ROOT / "mechanics" / "antifragility" / "docs" / "README.md"
+    ).read_text(encoding="utf-8")
+    part_readme = (
+        REPO_ROOT / "mechanics" / "antifragility" / "parts" / "failure-lesson-memory" / "README.md"
+    ).read_text(encoding="utf-8")
+    part_contract = (
+        REPO_ROOT / "mechanics" / "antifragility" / "parts" / "failure-lesson-memory" / "CONTRACT.md"
+    ).read_text(encoding="utf-8")
     memory_doc = (
         REPO_ROOT / "mechanics" / "antifragility" / "docs" / "FAILURE_LESSON_MEMORY.md"
     ).read_text(encoding="utf-8")
@@ -100,7 +112,21 @@ def test_failure_lesson_surfaces_stay_discoverable_and_non_proof() -> None:
         "mechanics/antifragility/parts/failure-lesson-memory/examples/failure_lesson_memory.rollout.example.json",
         "mechanics/antifragility/parts/failure-lesson-memory/examples/failure_lesson_memory.drift_review.example.json",
     ]:
-        assert fragment in readme
+        assert (REPO_ROOT / fragment).exists()
+
+    assert "[antifragility](mechanics/antifragility/README.md)" in readme
+    local_route_text = "\n".join([package_parts, docs_index, part_readme, part_contract, memory_doc])
+    for fragment in [
+        "FAILURE_LESSON_MEMORY",
+        "FAILURE_LESSON_RECALL",
+        "DRIFT_REVIEW_LESSON_MEMORY",
+        "failure_lesson_memory_v1.json",
+        "failure_lesson_memory.example.json",
+        "failure_lesson_memory.lineage.example.json",
+        "failure_lesson_memory.rollout.example.json",
+        "failure_lesson_memory.drift_review.example.json",
+    ]:
+        assert fragment in local_route_text
 
     assert "It remains memory, not proof." in memory_doc
     assert "mechanics/antifragility/docs/DRIFT_REVIEW_LESSON_MEMORY.md" in memory_doc

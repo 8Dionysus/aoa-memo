@@ -2,243 +2,212 @@
 
 `aoa-memo` is the memory and recall layer of the AoA ecosystem.
 
-It exists to make memory explicit, reviewable, and bounded. Memory matters here, but memory is not proof.
+A memory object here is explicit, temporal, source-aware, and reviewable. It is
+not proof, not route sovereignty, not runtime state, not role authority, and not
+source-authored knowledge.
+
+Use this README as the public front door. When work becomes doctrinal,
+mechanic-local, generated, schema-backed, quest-bound, or agent-facing, follow
+the linked owner surface instead of expanding this page.
 
 > Current release: `v0.2.3`. See [CHANGELOG](CHANGELOG.md) for release notes.
 
-## Start here
+## What This Repository Does
 
-Use the shortest route by need:
+| Function | Surface |
+|---|---|
+| Repository authority boundary | [CHARTER](CHARTER.md) |
+| Memory-layer system form | [DESIGN](DESIGN.md) |
+| Agent-facing guidance form | [DESIGN.AGENTS](DESIGN.AGENTS.md) |
+| Public memory canon map | [MEMORY_INDEX](MEMORY_INDEX.md) |
+| Memory model and object posture | [MEMORY_MODEL](docs/MEMORY_MODEL.md), [MEMORY_OBJECT_PROFILES](docs/MEMORY_OBJECT_PROFILES.md) |
+| Trust, temperature, lifecycle, and provenance posture | [MEMORY_TRUST_POSTURE](docs/MEMORY_TRUST_POSTURE.md), [MEMORY_TEMPERATURES](docs/MEMORY_TEMPERATURES.md), [LIFECYCLE](docs/LIFECYCLE.md), [PROVENANCE_THREADS](docs/PROVENANCE_THREADS.md) |
+| Root and docs placement law | [ROOT_SURFACE_LAW](docs/ROOT_SURFACE_LAW.md) |
+| Documentation map | [docs](docs/README.md) |
+| Memo-side mechanics | [mechanics](mechanics/README.md) |
+| Agent route law and local checks | [AGENTS](AGENTS.md) |
+| Direction and obligations | [ROADMAP](ROADMAP.md), [QUESTBOOK](QUESTBOOK.md) |
 
-- role, boundaries, and conceptual model: [CHARTER](CHARTER.md), [DESIGN](DESIGN.md), [docs/BOUNDARIES](docs/BOUNDARIES.md), and [docs/MEMORY_MODEL](docs/MEMORY_MODEL.md)
-- docs topology, root placement, and decision rationale: [docs/README](docs/README.md), [docs/ROOT_SURFACE_LAW](docs/ROOT_SURFACE_LAW.md), and [docs/decisions](docs/decisions/README.md)
-- agent-facing route shape: [AGENTS](AGENTS.md), [DESIGN.AGENTS](DESIGN.AGENTS.md), and the nearest nested `AGENTS.md`
-- machine-checkable route-card coverage: `config/agents_mesh.json`,
-  `generated/agents_mesh.min.json`, `scripts/validate_agents_mesh.py`, and
-  `scripts/validate_agents_mesh_index.py`
-- mechanic readiness: [mechanics](mechanics/README.md),
-  `generated/memo_mechanic_landing_logs.min.json`,
-  `generated/memo_mechanic_readiness.min.json`,
-  and the validation route in [mechanics/AGENTS](mechanics/AGENTS.md#validation)
-- quest projection surfaces: `QUESTBOOK.md`, `quests/memo/<state>/AOA-MEM-Q-*.yaml`,
-  `generated/quest_catalog.min*.json`, `generated/quest_dispatch.min*.json`,
-  and [mechanics/questbook/parts/quest-read-model-projections](mechanics/questbook/parts/quest-read-model-projections/README.md)
-- object canon, trust posture, and lifecycle: [docs/MEMORY_OBJECT_PROFILES](docs/MEMORY_OBJECT_PROFILES.md), [docs/MEMORY_TRUST_POSTURE](docs/MEMORY_TRUST_POSTURE.md), [docs/MEMORY_TEMPERATURES](docs/MEMORY_TEMPERATURES.md), [docs/LIFECYCLE](docs/LIFECYCLE.md), and [docs/NARRATIVE_CORE_CONTRACT](docs/NARRATIVE_CORE_CONTRACT.md)
-- Titan Memory Loom, bearer-recall posture, and remembrance source-ref policy: [mechanics/titan/docs/TITAN_MEMORY_LOOM_POSTURE.md](mechanics/titan/docs/TITAN_MEMORY_LOOM_POSTURE.md), [mechanics/titan/docs/TITAN_PERSONALITY_MEMORY_POLICY.md](mechanics/titan/docs/TITAN_PERSONALITY_MEMORY_POLICY.md), [mechanics/titan/docs/TITAN_RECALL_CANDIDATE_POLICY.md](mechanics/titan/docs/TITAN_RECALL_CANDIDATE_POLICY.md), [mechanics/titan/docs/TITAN_REMEMBRANCE_SOURCE_REF_POLICY.md](mechanics/titan/docs/TITAN_REMEMBRANCE_SOURCE_REF_POLICY.md), `mechanics/titan/parts/recall-and-remembrance-posture/schemas/titan_remembrance_record.schema.json`, and `mechanics/titan/parts/recall-and-remembrance-posture/examples/titan_remembrance_record.example.json`
-- antifragility failure-lesson seam: [mechanics/antifragility/docs/FAILURE_LESSON_MEMORY.md](mechanics/antifragility/docs/FAILURE_LESSON_MEMORY.md), [mechanics/antifragility/docs/FAILURE_LESSON_RECALL.md](mechanics/antifragility/docs/FAILURE_LESSON_RECALL.md), [mechanics/antifragility/docs/DRIFT_REVIEW_LESSON_MEMORY.md](mechanics/antifragility/docs/DRIFT_REVIEW_LESSON_MEMORY.md), `mechanics/antifragility/parts/failure-lesson-memory/schemas/failure_lesson_memory_v1.json`, `mechanics/antifragility/parts/failure-lesson-memory/examples/failure_lesson_memory.example.json`, `mechanics/antifragility/parts/failure-lesson-memory/examples/failure_lesson_memory.lineage.example.json`, `mechanics/antifragility/parts/failure-lesson-memory/examples/failure_lesson_memory.rollout.example.json`, and `mechanics/antifragility/parts/failure-lesson-memory/examples/failure_lesson_memory.drift_review.example.json`
-- antifragility recovery-pattern seam: [mechanics/antifragility/docs/RECOVERY_PATTERN_MEMORY.md](mechanics/antifragility/docs/RECOVERY_PATTERN_MEMORY.md), [mechanics/antifragility/docs/RECOVERY_PATTERN_RECALL.md](mechanics/antifragility/docs/RECOVERY_PATTERN_RECALL.md), [mechanics/antifragility/docs/ROLLBACK_FOLLOWTHROUGH_PATTERN.md](mechanics/antifragility/docs/ROLLBACK_FOLLOWTHROUGH_PATTERN.md), `mechanics/antifragility/parts/recovery-pattern-memory/schemas/recovery_pattern_memory_v1.json`, `mechanics/antifragility/parts/recovery-pattern-memory/examples/recovery_pattern_memory.example.json`, `mechanics/antifragility/parts/recovery-pattern-memory/examples/recovery_pattern_memory.lineage.example.json`, `mechanics/antifragility/parts/recovery-pattern-memory/examples/recovery_pattern_memory.rollout.example.json`, `mechanics/antifragility/parts/recovery-pattern-memory/examples/recovery_pattern_memory.rollback_followthrough.example.json`, `mechanics/antifragility/parts/recovery-pattern-memory/examples/recovery_pattern_memory.component_refresh.example.json`, and `mechanics/antifragility/parts/recovery-pattern-memory/examples/pattern.antifragility-stress-recovery-window.example.json`
-- checkpoint, writeback, recurrence, lineage harvest, and neighboring-layer seams: [mechanics/checkpoint](mechanics/checkpoint/README.md), [checkpoint/CHECKPOINT_MEMORY_BOUNDARY](mechanics/checkpoint/docs/CHECKPOINT_MEMORY_BOUNDARY.md), [checkpoint/CHECKPOINT_CARRY_CONTRACT](mechanics/checkpoint/docs/CHECKPOINT_CARRY_CONTRACT.md), `mechanics/checkpoint/parts/checkpoint-carry-contract/schemas/inquiry_checkpoint.schema.json`, `mechanics/checkpoint/parts/checkpoint-to-memory-mapping/examples/checkpoint_to_memory_contract.example.json`, [mechanics/recurrence-support](mechanics/recurrence-support/README.md), [recurrence-support/WITNESS_TRACE_CONTRACT](mechanics/recurrence-support/docs/WITNESS_TRACE_CONTRACT.md), [recurrence-support/RECURRENCE_MEMORY_SUPPORT_SURFACES](mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md), [mechanics/lineage-harvest](mechanics/lineage-harvest/README.md), [lineage-harvest/PATTERN_LINEAGE_MEMORY](mechanics/lineage-harvest/docs/PATTERN_LINEAGE_MEMORY.md), `mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/schemas/pattern_lineage_memory_entry_v1.json`, `mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/examples/pattern_lineage_memory_entry.example.json`, [mechanics/writeback/WRITEBACK_TEMPERATURE_POLICY](mechanics/writeback/docs/WRITEBACK_TEMPERATURE_POLICY.md), [mechanics/writeback/QUEST_CHRONICLE_WRITEBACK](mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md), `mechanics/writeback/parts/quest-and-chronicle/schemas/quest_chronicle.schema.json`, `mechanics/writeback/parts/quest-and-chronicle/examples/quest_chronicle.example.json`, [mechanics/writeback/RUNTIME_WRITEBACK_SEAM](mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md), [mechanics/writeback/GROWTH_REFINERY_WRITEBACK](mechanics/writeback/docs/GROWTH_REFINERY_WRITEBACK.md), [mechanics/writeback/SELF_AGENCY_CONTINUITY_WRITEBACK](mechanics/writeback/docs/SELF_AGENCY_CONTINUITY_WRITEBACK.md), `mechanics/writeback/parts/growth-and-continuity/examples/provenance_thread.self-agency-continuity.example.json`, `mechanics/writeback/parts/growth-and-continuity/examples/decision.self-agency-reanchor-window.example.json`, `mechanics/writeback/parts/growth-and-continuity/examples/state_capsule.self-agency-continuity-relay.example.json`, [consumer-handoff/AGENT_MEMORY_POSTURE_SEAM](mechanics/consumer-handoff/docs/AGENT_MEMORY_POSTURE_SEAM.md), and [consumer-handoff/PLAYBOOK_MEMORY_SCOPES](mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md)
-- memory readiness boundary for future durable-consequence, delta, retention, and recall pressure: [mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY](mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md)
-- Wave 1 memory gate / retention / writeback boundary contract: [mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY](mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md), `mechanics/readiness-boundary/parts/memory-readiness-boundary/schemas/memory_readiness_boundary_contract.schema.json`, and `mechanics/readiness-boundary/parts/memory-readiness-boundary/examples/memory_readiness_boundary_contract.example.json`
-- bridge, export, and guardrail surfaces: [consumer-handoff/KAG_TOS_BRIDGE_CONTRACT](mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md), [consumer-handoff/KAG_SOURCE_EXPORT](mechanics/consumer-handoff/docs/KAG_SOURCE_EXPORT.md), [consumer-handoff/MEMORY_EVAL_GUARDRAILS](mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md), [docs/OPERATIONAL_BOUNDARY](docs/OPERATIONAL_BOUNDARY.md), and [mechanics/adoption/ROUTING_MEMORY_ADOPTION](mechanics/adoption/docs/ROUTING_MEMORY_ADOPTION.md)
-- operational memory gates: [mechanics/operational-gate](mechanics/operational-gate/README.md), [operational-gate/DEPLOYMENT_INCIDENT_MEMORY_GATE](mechanics/operational-gate/docs/DEPLOYMENT_INCIDENT_MEMORY_GATE.md), [operational-gate/OFFICE_INCIDENT_MEMORY_GATE](mechanics/operational-gate/docs/OFFICE_INCIDENT_MEMORY_GATE.md), [operational-gate/SERVICE_REVISION_LEDGER](mechanics/operational-gate/docs/SERVICE_REVISION_LEDGER.md), and [operational-gate/POST_RELEASE_MEMORY_BOUNDARIES](mechanics/operational-gate/docs/POST_RELEASE_MEMORY_BOUNDARIES.md)
-- current direction: [ROADMAP](ROADMAP.md)
+This repository is strongest when it makes memory inspectable and bounded. It
+is weakest when it tries to become proof, routing, runtime, role policy, graph
+substrate, playbook choreography, or the source meaning of neighboring layers.
 
-## Public recall entrypoints
+## Start Here
 
-For concrete recall contracts, start with:
+Read only the surface that matches the job.
 
-- `examples/recall_contract.working.json`
-- `examples/recall_contract.semantic.json`
-- `examples/recall_contract.lineage.json`
-- `examples/recall_contract.router.semantic.json`
-- `examples/recall_contract.router.lineage.json`
-- `examples/recall_contract.object.working.json`
-- `examples/recall_contract.object.semantic.json`
-- `examples/recall_contract.object.lineage.json`
-- `examples/recall_contract.object.working.return.json`
+| Need | Route |
+|---|---|
+| Shortest honest overview | this README -> [CHARTER](CHARTER.md) -> [DESIGN](DESIGN.md) -> [MEMORY_INDEX](MEMORY_INDEX.md) |
+| Memory object canon | [MEMORY_INDEX](MEMORY_INDEX.md) -> [MEMORY_OBJECT_PROFILES](docs/MEMORY_OBJECT_PROFILES.md) |
+| Memory doctrine | [MEMORY_MODEL](docs/MEMORY_MODEL.md), [BOUNDARIES](docs/BOUNDARIES.md), then the target doctrine file |
+| Memory readiness pressure | [MEMORY_READINESS_BOUNDARY](mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md) |
+| Memo mechanic work | [mechanics](mechanics/README.md), then the nearest mechanic `AGENTS.md` |
+| Consumer handoff | [consumer-handoff](mechanics/consumer-handoff/README.md), [PLAYBOOK_MEMORY_SCOPES](mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md), [KAG_SOURCE_EXPORT](mechanics/consumer-handoff/docs/KAG_SOURCE_EXPORT.md), or [MEMORY_EVAL_GUARDRAILS](mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md) |
+| Router-facing recall adoption | [ROUTING_MEMORY_ADOPTION](mechanics/adoption/docs/ROUTING_MEMORY_ADOPTION.md) |
+| Self-agency continuity writeback | [SELF_AGENCY_CONTINUITY_WRITEBACK](mechanics/writeback/docs/SELF_AGENCY_CONTINUITY_WRITEBACK.md) |
+| Root or docs-root placement | [ROOT_SURFACE_LAW](docs/ROOT_SURFACE_LAW.md) |
+| Current direction | [ROADMAP](ROADMAP.md) |
+| Agent editing route | [AGENTS](AGENTS.md), then the nearest nested `AGENTS.md` |
 
-The doctrine-first and router-facing recall contracts remain stable. The object-facing family is the parallel entrypoint over curated memory objects, and it follows the same `inspect -> capsule -> expand` join rule.
+## Route Modes
 
-If you are editing inside `schemas/`, `examples/`, `generated/`, or `scripts/`, also follow the nested `AGENTS.md` in that directory.
+| Route mode | Use when | Start surface |
+|---|---|---|
+| `first-reading` | you need the shortest public overview | `README.md` |
+| `memory-canon` | object kind, support object, recall mode, temperature, or generated companion lookup | [MEMORY_INDEX](MEMORY_INDEX.md) |
+| `memory-doctrine` | memory meaning, trust, lifecycle, temperature, provenance, or boundary wording changes | [MEMORY_MODEL](docs/MEMORY_MODEL.md) and [BOUNDARIES](docs/BOUNDARIES.md) |
+| `mechanic-change` | repeatable adoption, handoff, checkpoint, writeback, retention, lineage, operational, Questbook, Agon, Titan, or Antifragility memory movement | [mechanics](mechanics/README.md) |
+| `generated-parity` | generated memory surfaces or their sources change | source surface -> builder -> generated output -> validator |
+| `root-editing` | a root or docs-root surface is added, moved, deleted, or rewritten | [ROOT_SURFACE_LAW](docs/ROOT_SURFACE_LAW.md) |
+| `agent-surface-design` | agent cards, AGENTS mesh, or local route guidance changes | [DESIGN.AGENTS](DESIGN.AGENTS.md) |
+| `direction-change` | repo-level direction, horizon posture, or future trigger changes | [ROADMAP](ROADMAP.md) |
 
-## Route by need
+## Memory Check
 
-- doctrine and object reader surfaces: `generated/memory_catalog.json`, `generated/memory_catalog.min.json`, `generated/memory_capsules.json`, `generated/memory_sections.full.json`, `generated/memory_object_catalog.json`, `generated/memory_object_catalog.min.json`, `generated/memory_object_capsules.json`, and `generated/memory_object_sections.full.json`
-- recall contracts and memory-object examples: `examples/recall_contract.*.json`, `examples/core_memory_contract.example.json`, `mechanics/checkpoint/parts/checkpoint-to-memory-mapping/examples/checkpoint_to_memory_contract.example.json`, and `examples/memory_object_surface_manifest.json`
-- failure-lesson doctrine and contract surfaces: [antifragility/FAILURE_LESSON_MEMORY](mechanics/antifragility/docs/FAILURE_LESSON_MEMORY.md), [antifragility/FAILURE_LESSON_RECALL](mechanics/antifragility/docs/FAILURE_LESSON_RECALL.md), [antifragility/DRIFT_REVIEW_LESSON_MEMORY](mechanics/antifragility/docs/DRIFT_REVIEW_LESSON_MEMORY.md), `mechanics/antifragility/parts/failure-lesson-memory/schemas/failure_lesson_memory_v1.json`, `mechanics/antifragility/parts/failure-lesson-memory/examples/failure_lesson_memory.example.json`, `mechanics/antifragility/parts/failure-lesson-memory/examples/failure_lesson_memory.lineage.example.json`, `mechanics/antifragility/parts/failure-lesson-memory/examples/failure_lesson_memory.rollout.example.json`, and `mechanics/antifragility/parts/failure-lesson-memory/examples/failure_lesson_memory.drift_review.example.json`
-- recovery-pattern doctrine, adjunct contract, and native pattern surfaces: [antifragility/RECOVERY_PATTERN_MEMORY](mechanics/antifragility/docs/RECOVERY_PATTERN_MEMORY.md), [antifragility/RECOVERY_PATTERN_RECALL](mechanics/antifragility/docs/RECOVERY_PATTERN_RECALL.md), [antifragility/ROLLBACK_FOLLOWTHROUGH_PATTERN](mechanics/antifragility/docs/ROLLBACK_FOLLOWTHROUGH_PATTERN.md), `mechanics/antifragility/parts/recovery-pattern-memory/schemas/recovery_pattern_memory_v1.json`, `mechanics/antifragility/parts/recovery-pattern-memory/examples/recovery_pattern_memory.example.json`, `mechanics/antifragility/parts/recovery-pattern-memory/examples/recovery_pattern_memory.lineage.example.json`, `mechanics/antifragility/parts/recovery-pattern-memory/examples/recovery_pattern_memory.rollout.example.json`, `mechanics/antifragility/parts/recovery-pattern-memory/examples/recovery_pattern_memory.rollback_followthrough.example.json`, `mechanics/antifragility/parts/recovery-pattern-memory/examples/recovery_pattern_memory.component_refresh.example.json`, and `mechanics/antifragility/parts/recovery-pattern-memory/examples/pattern.antifragility-stress-recovery-window.example.json`
-- governance authority-boundary memory and shape guard pruning:
-  [mechanics/governance](mechanics/governance/README.md),
-  [governance/GOVERNANCE_MEMORY_BOUNDARIES](mechanics/governance/docs/GOVERNANCE_MEMORY_BOUNDARIES.md),
-  [governance/FEDERATION_MEMORY_BOUNDARIES](mechanics/governance/docs/FEDERATION_MEMORY_BOUNDARIES.md),
-  `mechanics/governance/parts/governance-boundary/schemas/governance_decision_memory_v1.json`,
-  `mechanics/governance/parts/federation-boundary/schemas/federation_memory_gate_decision_v1.json`,
-  `mechanics/governance/parts/install-and-certification-boundary/schemas/installation_memory_entry_v1.json`,
-  `mechanics/governance/parts/precedent-and-stay-order/schemas/policy_precedent_memory_v1.json`,
-  [mechanics/shape-guard](mechanics/shape-guard/README.md), and
-  [shape-guard/VIA_NEGATIVA_CHECKLIST](mechanics/shape-guard/docs/VIA_NEGATIVA_CHECKLIST.md)
-- writeback, intake, runtime support, and landing governance surfaces: `mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_targets.min.json`, `mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_intake.min.json`, `mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_governance.min.json`, [mechanics/writeback/RUNTIME_WRITEBACK_SEAM](mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md), [mechanics/writeback/GROWTH_REFINERY_WRITEBACK](mechanics/writeback/docs/GROWTH_REFINERY_WRITEBACK.md), [mechanics/writeback/QUEST_CHRONICLE_WRITEBACK](mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md), `mechanics/writeback/parts/quest-and-chronicle/schemas/quest_chronicle.schema.json`, and `mechanics/writeback/parts/quest-and-chronicle/examples/quest_chronicle.example.json`
-- checkpoint carry, approval, health, and mapping surfaces:
-  [mechanics/checkpoint](mechanics/checkpoint/README.md),
-  [checkpoint/CHECKPOINT_MEMORY_BOUNDARY](mechanics/checkpoint/docs/CHECKPOINT_MEMORY_BOUNDARY.md),
-  [checkpoint/CHECKPOINT_TO_MEMORY_MAPPING](mechanics/checkpoint/docs/CHECKPOINT_TO_MEMORY_MAPPING.md),
-  `mechanics/checkpoint/parts/checkpoint-carry-contract/schemas/inquiry_checkpoint.schema.json`,
-  `mechanics/checkpoint/parts/checkpoint-to-memory-mapping/schemas/checkpoint-to-memory-contract.schema.json`,
-  `mechanics/checkpoint/parts/checkpoint-carry-contract/examples/inquiry_checkpoint.return.example.json`, and
-  `mechanics/checkpoint/parts/checkpoint-to-memory-mapping/examples/checkpoint_to_memory_contract.example.json`
-- memory readiness boundary: [mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY](mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md)
-- Titan receipt memory, recall candidates, remembrance source refs, bridge digest, and closeout memory posture: [mechanics/titan/docs/TITAN_MEMORY_POSTURE.md](mechanics/titan/docs/TITAN_MEMORY_POSTURE.md), [mechanics/titan/docs/TITAN_MEMORY_LOOM_POSTURE.md](mechanics/titan/docs/TITAN_MEMORY_LOOM_POSTURE.md), [mechanics/titan/docs/TITAN_REMEMBRANCE_SOURCE_REF_POLICY.md](mechanics/titan/docs/TITAN_REMEMBRANCE_SOURCE_REF_POLICY.md), [mechanics/titan/docs/TITAN_BRIDGE_MEMORY_POSTURE.md](mechanics/titan/docs/TITAN_BRIDGE_MEMORY_POSTURE.md), [mechanics/titan/docs/TITAN_CONSOLE_MEMORY_DIGEST.md](mechanics/titan/docs/TITAN_CONSOLE_MEMORY_DIGEST.md), [mechanics/titan/docs/TITAN_CLOSEOUT_MEMORY_POSTURE.md](mechanics/titan/docs/TITAN_CLOSEOUT_MEMORY_POSTURE.md), `mechanics/titan/parts/recall-and-remembrance-posture/schemas/titan_remembrance_record.schema.json`, and `mechanics/titan/parts/recall-and-remembrance-posture/examples/titan_remembrance_record.example.json`
-- owner-local live receipt publication for closeout/stats integration: `mechanics/writeback/parts/receipt-publication-regression/scripts/publish_live_receipts.py` and `.aoa/live_receipts/memo-writeback-receipts.jsonl`
-- bridge, export, and guardrail surfaces: `mechanics/consumer-handoff/parts/kag-source-export/generated/kag_export.min.json`, [consumer-handoff/KAG_SOURCE_EXPORT](mechanics/consumer-handoff/docs/KAG_SOURCE_EXPORT.md), [consumer-handoff/KAG_TOS_BRIDGE_CONTRACT](mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md), and [consumer-handoff/MEMORY_EVAL_GUARDRAILS](mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md)
-- operational incident, service revision, and post-release memory gates:
-  [mechanics/operational-gate](mechanics/operational-gate/README.md),
-  `mechanics/operational-gate/parts/deployment-incident-gate/schemas/deployment_incident_memory_gate_v1.json`,
-  `mechanics/operational-gate/parts/service-revision-ledger/schemas/service_revision_ledger_entry_v1.json`,
-  `mechanics/operational-gate/parts/office-incident-gate/schemas/service_incident_memory_entry_v1.json`, and
-  `mechanics/operational-gate/parts/deployment-incident-gate/examples/deployment_incident_memory_gate.example.json`
-- recurrence support, witness trace, and reviewed closeout recall landings:
-  [mechanics/recurrence-support](mechanics/recurrence-support/README.md),
-  [recurrence-support/RECURRENCE_MEMORY_SUPPORT_SURFACES](mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md),
-  [recurrence-support/WITNESS_TRACE_CONTRACT](mechanics/recurrence-support/docs/WITNESS_TRACE_CONTRACT.md),
-  [recurrence-support/REVIEWED_CLOSEOUT_RECALL_LANDING](mechanics/recurrence-support/docs/REVIEWED_CLOSEOUT_RECALL_LANDING.md),
-  `mechanics/recurrence-support/parts/witness-trace-contract/schemas/witness-trace.schema.json`, `mechanics/checkpoint/parts/checkpoint-carry-contract/schemas/inquiry_checkpoint.schema.json`,
-  and `mechanics/checkpoint/parts/checkpoint-carry-contract/examples/inquiry_checkpoint.return.example.json`
-- lineage harvest and pattern-lineage memory:
-  [mechanics/lineage-harvest](mechanics/lineage-harvest/README.md),
-  [lineage-harvest/PATTERN_LINEAGE_MEMORY](mechanics/lineage-harvest/docs/PATTERN_LINEAGE_MEMORY.md),
+Before adding, trusting, or publishing a memo claim, ask the narrowest owner.
+
+| Claim question | Check |
+|---|---|
+| May `aoa-memo` say this at all? | [CHARTER](CHARTER.md), then [BOUNDARIES](docs/BOUNDARIES.md) |
+| What memory object kind is this? | [MEMORY_INDEX](MEMORY_INDEX.md), then [MEMORY_OBJECT_PROFILES](docs/MEMORY_OBJECT_PROFILES.md) |
+| Is this proof, verdict logic, or scoring? | [BOUNDARIES](docs/BOUNDARIES.md), then route to `aoa-evals` |
+| Is this dispatch or route policy? | [ROUTING_MEMORY_ADOPTION](mechanics/adoption/docs/ROUTING_MEMORY_ADOPTION.md), then route to `aoa-routing` |
+| Is this role, persona, or handoff right? | [AGENT_MEMORY_POSTURE_SEAM](mechanics/consumer-handoff/docs/AGENT_MEMORY_POSTURE_SEAM.md), then route to `aoa-agents` |
+| Is this playbook memory scope? | [PLAYBOOK_MEMORY_SCOPES](mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md), then route choreography to `aoa-playbooks` |
+| Is this KAG or ToS handoff? | [KAG_SOURCE_EXPORT](mechanics/consumer-handoff/docs/KAG_SOURCE_EXPORT.md) and [KAG_TOS_BRIDGE_CONTRACT](mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md) |
+| Is this live runtime retention or storage? | [RUNTIME_WRITEBACK_SEAM](mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md), then route to `abyss-stack` |
+| Is this current enough to recall? | [MEMORY_TRUST_POSTURE](docs/MEMORY_TRUST_POSTURE.md), [MEMORY_TEMPERATURES](docs/MEMORY_TEMPERATURES.md), and [LIFECYCLE](docs/LIFECYCLE.md) |
+
+## Current Contour
+
+`aoa-memo` is in contract hardening.
+
+The released `v0.2.3` contour includes:
+
+- memory authority and object canon through [CHARTER](CHARTER.md),
+  [DESIGN](DESIGN.md), [MEMORY_INDEX](MEMORY_INDEX.md),
+  [MEMORY_MODEL](docs/MEMORY_MODEL.md), and
+  [MEMORY_OBJECT_PROFILES](docs/MEMORY_OBJECT_PROFILES.md)
+- trust, lifecycle, temperature, provenance, and operational boundaries through
+  [MEMORY_TRUST_POSTURE](docs/MEMORY_TRUST_POSTURE.md),
+  [LIFECYCLE](docs/LIFECYCLE.md), [MEMORY_TEMPERATURES](docs/MEMORY_TEMPERATURES.md),
+  [PROVENANCE_THREADS](docs/PROVENANCE_THREADS.md), and
+  [OPERATIONAL_BOUNDARY](docs/OPERATIONAL_BOUNDARY.md)
+- checkpoint recall and return support through
+  `mechanics/checkpoint/docs/CHECKPOINT_MEMORY_BOUNDARY.md`,
+  `mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md`,
+  and `mechanics/checkpoint/docs/CHECKPOINT_CARRY_CONTRACT.md`
+- lineage-aware growth-refinery writeback through
+  `mechanics/writeback/docs/GROWTH_REFINERY_WRITEBACK.md`,
+  `mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md`, and
+  `mechanics/writeback/docs/SELF_AGENCY_CONTINUITY_WRITEBACK.md`
+- runtime writeback target, intake, governance, and publication seams through
+  `mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_targets.min.json`,
+  `mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_intake.min.json`,
+  `mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_governance.min.json`,
+  `mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md`, and
+  `mechanics/writeback/parts/receipt-publication-regression/scripts/publish_live_receipts.py`
+- recovery, rollback-followthrough, component-refresh, and continuity examples
+  through
+  `mechanics/antifragility/parts/recovery-pattern-memory/examples/recovery_pattern_memory.rollback_followthrough.example.json`,
+  `mechanics/antifragility/parts/recovery-pattern-memory/examples/recovery_pattern_memory.component_refresh.example.json`,
+  `mechanics/writeback/parts/growth-and-continuity/examples/provenance_thread.self-agency-continuity.example.json`, and
+  `mechanics/writeback/parts/growth-and-continuity/generated/phase_alpha_writeback_map.min.json`
+- pattern-lineage memory through
+  `mechanics/lineage-harvest/docs/PATTERN_LINEAGE_MEMORY.md`,
   `mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/schemas/pattern_lineage_memory_entry_v1.json`, and
   `mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/examples/pattern_lineage_memory_entry.example.json`
-- schemas and local validation: `schemas/`, `scripts/`, `tests/`, and the
-  executable validation routes in their nearest `AGENTS.md`
+- memory readiness pressure through
+  `mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md`
+- source-owned memo donor export through
+  `mechanics/consumer-handoff/parts/kag-source-export/generated/kag_export.min.json`
+- Questbook projections through
+  `mechanics/questbook/parts/quest-read-model-projections/README.md`,
+  `generated/quest_catalog.min.json`, and `generated/quest_dispatch.min.json`
 
-## What `aoa-memo` owns
+Detailed mechanic futures live in `mechanics/<slug>/ROADMAP.md`. Detailed
+release history lives in [CHANGELOG](CHANGELOG.md). Durable obligations live in
+[QUESTBOOK](QUESTBOOK.md) and [quests](quests/README.md).
 
-This repository is the source of truth for:
+## Memo Mechanics
 
-- memory objects and recall surfaces
-- provenance threads and trace-bearing memory support surfaces
-- temporal relevance, salience, and temperature posture
-- memory-oriented retrieval contracts
-- the boundary between memory, proof, execution, and routing
+[mechanics](mechanics/README.md) owns repeatable memo-side movement around
+memory canon, source families, technical artifacts, owner handoffs, legacy
+bridges, and validation.
 
-## What it does not own
+| Mechanic | Use for |
+|---|---|
+| [adoption](mechanics/adoption/README.md) | routing adoption and reviewable memory candidate promotion pressure |
+| [agon](mechanics/agon/README.md) | Agon candidate memory, bridge evidence, retention-rank posture, and quest follow-through |
+| [antifragility](mechanics/antifragility/README.md) | failure lessons, recovery patterns, and recallable repair memory |
+| [checkpoint](mechanics/checkpoint/README.md) | checkpoint gates, carry packets, approval/health records, and checkpoint-to-memory mapping |
+| [consumer-handoff](mechanics/consumer-handoff/README.md) | agent, playbook, eval, KAG, ToS, and downstream recall handoffs |
+| [governance](mechanics/governance/README.md) | authority-boundary memory for governance, federation, install, certification, precedent, and stay orders |
+| [lineage-harvest](mechanics/lineage-harvest/README.md) | recurring cross-repo signals and pattern-lineage memory candidates |
+| [operational-gate](mechanics/operational-gate/README.md) | incident, office, service revision, and post-release memory admission |
+| [questbook](mechanics/questbook/README.md) | public memory-layer obligation sources and generated quest projections |
+| [readiness-boundary](mechanics/readiness-boundary/README.md) | high-pressure memory readiness without proof/runtime/role/KAG overclaim |
+| [recurrence-support](mechanics/recurrence-support/README.md) | route-return anchors, witness traces, and reviewed closeout recall |
+| [retention](mechanics/retention/README.md) | retention evidence, markers, watches, and outcomes as reviewable memory |
+| [shape-guard](mechanics/shape-guard/README.md) | memory-shape pruning before forms pretend to be proof or action authority |
+| [titan](mechanics/titan/README.md) | Titan recall, remembrance, digest, closeout, personality, and swarm memory posture |
+| [writeback](mechanics/writeback/README.md) | bounded writeback targets, chronicles, revisions, rollback memory, and growth notes |
 
-Do not treat this repository as the main home for:
+## Technical Districts
 
-- reusable techniques in `aoa-techniques`
-- bounded skill workflows in `aoa-skills`
-- eval bundles or verdict logic in `aoa-evals`
-- navigation and dispatch logic in `aoa-routing`
-- role contracts in `aoa-agents`
-- scenario composition in `aoa-playbooks`
-- derived knowledge substrate semantics in `aoa-kag`
+| District | Use for |
+|---|---|
+| [docs](docs/README.md) | memory doctrine, route maps, boundary docs, release route, and [docs/decisions](docs/decisions/README.md) |
+| [mechanics](mechanics/README.md) | repeatable memo operations and package-local artifacts |
+| [schemas](schemas/AGENTS.md) | memory and support-object contracts |
+| [examples](examples/AGENTS.md) | public-safe memory examples and recall contracts |
+| [generated](generated/AGENTS.md) | compact generated companions |
+| [scripts](scripts/AGENTS.md) | validators, builders, and publication helpers |
+| [tests](tests/AGENTS.md) | regression surfaces |
+| [config](config/AGENTS.md) | source config for route cards, mechanics, and technical districts |
+| [manifests](manifests/AGENTS.md) | reserved manifest posture and future recurrence surfaces |
+| [quests](quests/AGENTS.md) | lane-first quest item store backing root Questbook |
+| [.agents](.agents/AGENTS.md) | agent-facing companion lanes |
 
-Memory is valuable. It is not the same thing as source meaning, workflow meaning, or proof.
+District gates narrow local handling. They do not replace source docs,
+mechanic packages, validators, or sibling-owner repositories.
 
-## Current public surfaces
+## Machine Companions
 
-The committed machine-readable surfaces include these families:
+| Surface | Role |
+|---|---|
+| [memo_registry.min.json](generated/memo_registry.min.json) | compact layer registry and validation command map |
+| [memory_catalog.min.json](generated/memory_catalog.min.json) | doctrine inspect surface |
+| [memory_capsules.json](generated/memory_capsules.json) | doctrine capsule hydration surface |
+| [memory_sections.full.json](generated/memory_sections.full.json) | expanded doctrine sections |
+| [memory_object_catalog.min.json](generated/memory_object_catalog.min.json) | object-facing inspect surface |
+| [memory_object_capsules.json](generated/memory_object_capsules.json) | object-facing capsule hydration surface |
+| [memory_object_sections.full.json](generated/memory_object_sections.full.json) | expanded object-facing sections |
+| [agents_mesh.min.json](generated/agents_mesh.min.json) | AGENTS mesh coverage companion |
+| [memo_mechanics.min.json](generated/memo_mechanics.min.json) | compact mechanic package index |
+| [memo_mechanic_readiness.min.json](generated/memo_mechanic_readiness.min.json) | OS Abyss readiness matrix for memo mechanics |
+| [mechanic_artifacts.min.json](generated/mechanic_artifacts.min.json) | mechanic-local artifact inventory |
 
-- root registry: `generated/memo_registry.min.json`
-- doctrine family: `generated/memory_catalog.json`, `generated/memory_catalog.min.json`, `generated/memory_capsules.json`, and `generated/memory_sections.full.json`
-- object family: `generated/memory_object_catalog.json`, `generated/memory_object_catalog.min.json`, `generated/memory_object_capsules.json`, and `generated/memory_object_sections.full.json`
-- AGENTS mesh: `generated/agents_mesh.min.json`
-- mechanics index: `generated/memo_mechanics.min.json`
-- mechanic artifact inventory: `generated/mechanic_artifacts.min.json`
-- mechanic landing receipts: `generated/memo_mechanic_landing_logs.min.json`
-- mechanic readiness matrix: `generated/memo_mechanic_readiness.min.json`
-- quest projections: `generated/quest_catalog.min.json` and
-  `generated/quest_dispatch.min.json`
-- source-owned memo donor export: `mechanics/consumer-handoff/parts/kag-source-export/generated/kag_export.min.json`
+Generated files are companions, not authority. Source docs, schemas, examples,
+mechanic packages, config, builders, validators, and owner repositories keep
+meaning.
 
-`provenance_thread`, `witness_trace`, `inquiry_checkpoint`, and checkpoint-to-memory contract surfaces remain support seams in this split, not a third generated memory-object family.
+## Validate
 
-## Topology spine
+Executable validation routes live in [AGENTS](AGENTS.md#verify) and the
+nearest `AGENTS.md`. Generated families should be rebuilt from their
+owning source surfaces before broad validation.
 
-The first topology hardening surface is now source-authored rather than
-generated:
+## Working Rule
 
-- [DESIGN](DESIGN.md) names the memory-layer system form
-- [DESIGN.AGENTS](DESIGN.AGENTS.md) names the agent-facing guidance form
-- [docs/README](docs/README.md) maps the current docs district
-- [docs/ROOT_SURFACE_LAW](docs/ROOT_SURFACE_LAW.md) governs root and docs-root placement
-- [docs/decisions](docs/decisions/README.md) preserves durable rationale
-- [.agents/spark](.agents/spark/AGENTS.md) is the maintained fast-loop Spark lane
-- `config/agents_mesh.json` and `generated/agents_mesh.min.json` make current
-  route-card coverage machine-checkable
-- [mechanics](mechanics/README.md) owns memo-side antifragility, Agon, Titan,
-  adoption, governance, shape-guard, checkpoint, consumer-handoff,
-  operational-gate, recurrence-support, lineage-harvest, questbook, writeback,
-  and retention mechanics with package cards, owner maps, legacy bridges, and
-  `generated/memo_mechanics.min.json`;
-  `generated/memo_mechanic_landing_logs.min.json` makes package landing
-  receipts inspectable, and `generated/memo_mechanic_readiness.min.json` adds
-  the compact OS Abyss readiness matrix for those package cards, owner maps,
-  parts, local artifacts, stop-lines, and validation routes
-- [mechanics/ARTIFACT_TOPOLOGY](mechanics/ARTIFACT_TOPOLOGY.md) and
-  `config/root_technical_districts.json` own the root technical-district
-  placement contract; `generated/mechanic_artifacts.min.json` mirrors the
-  current package-local mechanic artifact inventory, root `schemas/`,
-  `examples/`, `generated/`, `scripts/`, `tests/`, and `config/` files are
-  covered by explicit family contracts in the same config, and root
-  `manifests/` is held by an explicit reserved-empty policy
-- [mechanics/antifragility](mechanics/antifragility/README.md) is the active
-  home for former flat failure-lesson and recovery-pattern surfaces
-- [mechanics/agon](mechanics/agon/README.md) is the active home for former
-  flat and transitional Agon memory surfaces
-- [mechanics/titan](mechanics/titan/README.md) is the active home for former
-  flat and transitional Titan memory posture surfaces
-- [mechanics/adoption](mechanics/adoption/README.md),
-  [mechanics/governance](mechanics/governance/README.md),
-  [mechanics/shape-guard](mechanics/shape-guard/README.md),
-  [mechanics/checkpoint](mechanics/checkpoint/README.md),
-  [mechanics/consumer-handoff](mechanics/consumer-handoff/README.md),
-  [mechanics/operational-gate](mechanics/operational-gate/README.md),
-  [mechanics/recurrence-support](mechanics/recurrence-support/README.md),
-  [mechanics/lineage-harvest](mechanics/lineage-harvest/README.md),
-  [mechanics/questbook](mechanics/questbook/README.md),
-  [mechanics/writeback](mechanics/writeback/README.md), and
-  [mechanics/retention](mechanics/retention/README.md) are the active homes for
-  the former flat adoption/governance/shape-guard/checkpoint/
-  consumer-handoff/operational-gate/recurrence-support/lineage-harvest/
-  questbook/writeback/retention docs-root families
+Grow the memory layer by making the next recall route clearer.
 
-This spine does not move flat docs by itself. It exists so later mechanic,
-rollback, or AGENTS-mesh work can land through named owner routes
-instead of cosmetic cleanup.
-
-## Go here when...
-
-- you need the ecosystem center and layer map: [`Agents-of-Abyss`](https://github.com/8Dionysus/Agents-of-Abyss)
-- you need the smallest next object or dispatch hint: [`aoa-routing`](https://github.com/8Dionysus/aoa-routing)
-- you need source-owned practice, execution, or proof meaning: [`aoa-techniques`](https://github.com/8Dionysus/aoa-techniques), [`aoa-skills`](https://github.com/8Dionysus/aoa-skills), or [`aoa-evals`](https://github.com/8Dionysus/aoa-evals)
-- you need explicit role contracts and handoff posture: [`aoa-agents`](https://github.com/8Dionysus/aoa-agents)
-
-## Build and validate
-
-Executable validation routes live in [AGENTS](AGENTS.md#verify) and the nearest
-nested `AGENTS.md` for the touched district. Generated families should be
-rebuilt from their owning source surfaces before broad validation.
-
-## Current contour
-
-`aoa-memo` is in contract hardening. The public baseline now includes doctrine surfaces, object-facing surfaces, a narrow source-owned memo KAG export, writeback seams, bridge/export contracts, and memo-side guardrail handoff surfaces without turning the repository into runtime infrastructure or a graph platform.
-
-The current topology pass adds the memory-layer design and docs-route spine.
-Antifragility, Agon, Titan, adoption, governance, shape-guard,
-consumer-handoff, operational-gate, recurrence-support, lineage-harvest,
-writeback, and retention docs now live under `mechanics/` as memo mechanics
-with owner maps, validation, and legacy route maps. Other flat `docs/*.md`
-surfaces remain active until their validated district or mechanic routes
-replace them.
-
-The current downstream guardrail pilot stays intentionally narrow: recall precision, provenance fidelity, and staleness. That keeps the memo layer explicit and reviewable without pretending it is already full proof doctrine.
-
-High-pressure memory readiness now has an owner-local boundary map. Future
-durable-consequence, delta, retention, and recall pressure should route through
-existing memo objects first and then out to `aoa-evals`, `aoa-kag`,
-`aoa-routing`, `aoa-agents`, or `abyss-stack` when proof, graph lift,
-navigation, role authority, or runtime retention is the real owner concern.
-
-Antifragility wave two stays inside that boundary. Failure lessons are bounded
-memory context for later recall and operator posture, not a new proof family
-and not a live runtime writeback lane.
-
-Antifragility wave four extends that same posture to reviewed recovery
-patterns. Memo can preserve repeated-window recovery context and native
-`pattern` recall surfaces, but it still stays downstream from source-owned
-receipts, eval proof, and derived stats summaries.
+Add docs, schemas, examples, mechanics, generated companions, quests, tests, and
+agent cards only where they make memory more explicit, provenance-aware,
+temporally honest, and bounded. When detail belongs to proof, routing, runtime,
+roles, playbooks, KAG, ToS, a mechanic roadmap, a changelog, a quest, a
+decision record, or a generated companion, route it there.
 
 ## License
 

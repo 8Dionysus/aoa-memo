@@ -8,6 +8,19 @@ Its job is to make memory objects, provenance threads, temporal posture, and rec
 
 The repository exists so that AoA and ToS can remember without turning memory into hidden prompt residue, proof by vibes, or an unowned fog of context.
 
+## Authority Boundary
+
+This charter answers what `aoa-memo` may claim about the memory layer.
+
+Operational editing routes live in [AGENTS](AGENTS.md). The memory-layer system
+form lives in [DESIGN](DESIGN.md). The public memory canon map lives in
+[MEMORY_INDEX](MEMORY_INDEX.md). Detailed doctrine lives in
+[MEMORY_MODEL](docs/MEMORY_MODEL.md), [BOUNDARIES](docs/BOUNDARIES.md), and the
+nearest mechanic package when a repeatable memo operation owns the surface.
+
+This charter gives those routes their repository boundary; it does not replace
+them.
+
 ## Why this layer exists
 
 AoA and ToS need a memory layer that is:
@@ -43,6 +56,8 @@ AoA and ToS need a memory layer that is:
 - recall and retrieval-oriented memory contracts
 - public, reviewable memory registries, catalogs, capsules, and section surfaces
 - schemas, validation rules, and examples for explicit memory objects
+- memo-side mechanics that preserve repeatable memory movement without taking
+  stronger owner authority
 
 ## What this repository does not own
 
@@ -57,6 +72,20 @@ AoA and ToS need a memory layer that is:
 - infrastructure implementation details
 - a hidden graph platform that quietly replaces neighboring layers
 - generic notes with no memory contract
+
+## Memory Discipline
+
+A memory claim is healthy when a reader can identify the object kind, time
+posture, source route, provenance confidence, lifecycle state, and stronger
+owner boundary without relying on private context.
+
+Generated catalogs, capsules, indexes, and read models are companions. They may
+route, compress, or expose memory for machines, but authored docs, schemas,
+examples, mechanics, and validators keep authority.
+
+Mechanics may prepare, gate, preserve, and route memory movement. They do not
+turn candidate recall into proof, runtime action, role rights, route dispatch,
+KAG substrate, playbook choreography, source-owner consent, or current truth.
 
 ## Relationship to neighboring layers
 
@@ -91,6 +120,18 @@ The immediate goal is to harden doctrine, object canon, recall contracts, and bo
 ## Editing posture
 
 Prefer the smallest reviewable change that makes memory clearer.
+
+Before changing root posture, memory-canon boundaries, generated-companion
+routes, or owner split, check:
+
+1. this charter for repository authority
+2. [DESIGN](DESIGN.md) for the system form being preserved
+3. [MEMORY_INDEX](MEMORY_INDEX.md) for the current public memory map
+4. [MEMORY_MODEL](docs/MEMORY_MODEL.md) for conceptual shape
+5. [BOUNDARIES](docs/BOUNDARIES.md) for route-away rules
+6. [ROOT_SURFACE_LAW](docs/ROOT_SURFACE_LAW.md) for root and docs-root placement
+7. [mechanics](mechanics/README.md) when the change concerns repeatable memory movement
+8. generated surfaces, builders, validators, and tests before claiming parity
 
 A good change usually improves one or more of these questions:
 

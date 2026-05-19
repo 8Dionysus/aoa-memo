@@ -1,5 +1,12 @@
 # Security
 
+## Scope
+
+Security-sensitive material in `aoa-memo` includes memory objects, provenance
+threads, witness traces, examples, generated companions, config, scripts,
+release notes, decision records, and public docs. Treat them as public unless a
+stronger owner explicitly says otherwise.
+
 ## Reporting
 
 GitHub private vulnerability reporting is the canonical path for this repository.

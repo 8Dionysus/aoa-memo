@@ -6,6 +6,13 @@ It is a compact public index. Source quest files live in lane-first lifecycle
 directories under [`quests/`](quests/), and Questbook law lives in
 [`mechanics/questbook`](mechanics/questbook/README.md).
 
+## Update Trigger
+
+Update this root index when public memory-layer obligation state changes, a
+quest lane/source file moves, or Questbook generated projections change their
+published route. Do not use it as a second roadmap, release note, or hidden
+quest ledger.
+
 ## Frontier
 
 - `AOA-MEM-Q-0003` - define a quest chronicle writeback surface for campaign witness and progression evidence
@@ -54,3 +61,9 @@ generated files remain projections instead of a second quest ledger.
 - `generated/quest_dispatch.min.json`
 - `generated/quest_catalog.min.example.json`
 - `generated/quest_dispatch.min.example.json`
+
+## Rule
+
+Root `QUESTBOOK.md` stays an index. The `quests/` district owns item files,
+`mechanics/questbook/` owns source contract and validation, and generated
+quest surfaces remain projections.

@@ -41,11 +41,17 @@ def test_quest_chronicle_doc_keeps_witness_only_boundary() -> None:
 
 def test_quest_chronicle_surfaces_stay_discoverable_and_non_sovereign() -> None:
     readme = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
+    part_readme = (
+        REPO_ROOT / "mechanics" / "writeback" / "parts" / "quest-and-chronicle" / "README.md"
+    ).read_text(encoding="utf-8")
     example = load_json("mechanics/writeback/parts/quest-and-chronicle/examples/quest_chronicle.example.json")
 
+    assert "[writeback](mechanics/writeback/README.md)" in readme
     assert "mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md" in readme
-    assert "mechanics/writeback/parts/quest-and-chronicle/schemas/quest_chronicle.schema.json" in readme
-    assert "mechanics/writeback/parts/quest-and-chronicle/examples/quest_chronicle.example.json" in readme
+    assert (REPO_ROOT / "mechanics/writeback/parts/quest-and-chronicle/schemas/quest_chronicle.schema.json").exists()
+    assert (REPO_ROOT / "mechanics/writeback/parts/quest-and-chronicle/examples/quest_chronicle.example.json").exists()
+    assert "`schemas/quest_chronicle.schema.json`" in part_readme
+    assert "`examples/quest_chronicle.example.json`" in part_readme
     assert example["public_safe"] is True
     assert "witness" in example["notes"].lower()
     assert "not quest authority" in example["notes"].lower()

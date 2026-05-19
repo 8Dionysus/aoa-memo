@@ -44,7 +44,7 @@ active surfaces and must not be moved casually.
 | Layer law and public map | `README.md`, `CHARTER.md`, `DESIGN.md`, `ROADMAP.md` | they define the repository's identity, system form, and direction | must stay aligned with source docs and validators |
 | Agent route law | `AGENTS.md`, `DESIGN.AGENTS.md`, `.agents/` | agent-facing work needs a stable local lane and a design form for that lane | must not replace source docs, schemas, examples, or validators |
 | Public governance and legal | `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `LICENSE` | GitHub and contributors expect them there | must not become memory doctrine catalogs |
-| Thin indexes | `QUESTBOOK.md` | useful only while compact and route-oriented | must not become a second roadmap or hidden ledger; generated quest companions must be builder-backed projections |
+| Thin indexes | `MEMORY_INDEX.md`, `QUESTBOOK.md` | useful only while compact and route-oriented | must not become duplicate doctrine, a second roadmap, or a hidden ledger; generated companions must be builder-backed projections |
 | Tooling and machine districts | `.github/`, `config/`, `docs/`, `examples/`, `generated/`, `manifests/`, `mechanics/`, `quests/`, `schemas/`, `scripts/`, `tests/` | tooling and repo structure expect stable directories | each district needs local guidance before it becomes complex |
 | Development requirements | `.gitignore`, `requirements-dev.txt` | development hygiene | must stay technical and small |
 
@@ -122,6 +122,7 @@ route replaces their flat path.
 |---|---|---|---|
 | `DESIGN.md` | add | root system-form surface | the memory layer needs an explicit shape surface before topology cleanup |
 | `DESIGN.AGENTS.md` | add | root agent-surface design surface | future AGENTS mesh work needs a design form |
+| `MEMORY_INDEX.md` | add | root memory-canon index | the memory layer needs a compact public map for object kinds, support objects, recall modes, temperature vocabulary, source families, and generated companions without making `README.md` carry canon detail |
 | `docs/README.md` | add | docs district map | flat docs need a navigable map before migration |
 | `docs/decisions/` | add | decision rationale lane | topology choices need durable rationale without bloating active docs |
 | `Spark/` | moved | `.agents/spark/` | maintained agent lanes should live under `.agents/`, not as root civic surfaces |

@@ -473,6 +473,11 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
 
     def test_contributing_surfaces_current_validation_battery(self) -> None:
         contributing = (REPO_ROOT / "CONTRIBUTING.md").read_text(encoding="utf-8")
+        root_agents = (REPO_ROOT / "AGENTS.md").read_text(encoding="utf-8")
+
+        self.assertIn("Executable validation routes live in [AGENTS](AGENTS.md#verify)", contributing)
+        self.assertIn("nearest local `AGENTS.md`", contributing)
+        self.assertIn("Do not duplicate the full command battery here", contributing)
 
         for command in (
             "python scripts/validate_memo.py",
@@ -481,7 +486,7 @@ class MemoDownstreamFeedContractsTests(unittest.TestCase):
             "python scripts/validate_lifecycle_audit_examples.py",
             "python -m pytest -q tests",
         ):
-            self.assertIn(command, contributing)
+            self.assertIn(command, root_agents)
 
         self.assertIn("git status -sb", contributing)
 

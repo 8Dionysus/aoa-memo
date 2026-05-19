@@ -16,8 +16,9 @@ For the shortest repo overview, read:
 1. [README](../README.md)
 2. [CHARTER](../CHARTER.md)
 3. [DESIGN](../DESIGN.md)
-4. [BOUNDARIES](BOUNDARIES.md)
-5. [MEMORY_MODEL](MEMORY_MODEL.md)
+4. [MEMORY_INDEX](../MEMORY_INDEX.md)
+5. [BOUNDARIES](BOUNDARIES.md)
+6. [MEMORY_MODEL](MEMORY_MODEL.md)
 
 For current direction, add [ROADMAP](../ROADMAP.md). For agent-surface shape,
 add [DESIGN.AGENTS](../DESIGN.AGENTS.md).
@@ -28,6 +29,7 @@ add [DESIGN.AGENTS](../DESIGN.AGENTS.md).
 |---|---|
 | [AGENTS](AGENTS.md) | docs-local route card |
 | [README](README.md) | this district map |
+| [MEMORY_INDEX](../MEMORY_INDEX.md) | root memory canon map for object kinds, support objects, recall modes, temperature vocabulary, source families, and generated companions |
 | [ROOT_SURFACE_LAW](ROOT_SURFACE_LAW.md) | root and docs-root placement law |
 | [BOUNDARIES](BOUNDARIES.md) | repository owner split and route-away rules |
 | [MEMORY_MODEL](MEMORY_MODEL.md) | conceptual model for memory functions, temperature, scope, trust, and object canon |
@@ -76,7 +78,7 @@ transitional `TITAN_*` docs.
 | Question | Route |
 |---|---|
 | Does this belong in memory at all? | [CHARTER](../CHARTER.md), then [BOUNDARIES](BOUNDARIES.md) |
-| What kind of memory object is it? | [MEMORY_MODEL](MEMORY_MODEL.md), then [MEMORY_OBJECT_PROFILES](MEMORY_OBJECT_PROFILES.md) |
+| What kind of memory object is it? | [MEMORY_INDEX](../MEMORY_INDEX.md), then [MEMORY_MODEL](MEMORY_MODEL.md) and [MEMORY_OBJECT_PROFILES](MEMORY_OBJECT_PROFILES.md) |
 | Is this proof or verdict logic? | [BOUNDARIES](BOUNDARIES.md), then route to `aoa-evals` |
 | Is this routing behavior? | [ROUTING_MEMORY_ADOPTION](../mechanics/adoption/docs/ROUTING_MEMORY_ADOPTION.md), then route to `aoa-routing` |
 | Is this a role right or actor policy? | [consumer-handoff/AGENT_MEMORY_POSTURE_SEAM](../mechanics/consumer-handoff/docs/AGENT_MEMORY_POSTURE_SEAM.md), then route to `aoa-agents` |
@@ -90,6 +92,7 @@ transitional `TITAN_*` docs.
 
 | Change | First route |
 |---|---|
+| Memory canon map | [MEMORY_INDEX](../MEMORY_INDEX.md), then the stronger source doc it points to |
 | Memory doctrine | [BOUNDARIES](BOUNDARIES.md), [MEMORY_MODEL](MEMORY_MODEL.md), and the target doc |
 | Object canon or lifecycle | [MEMORY_OBJECT_PROFILES](MEMORY_OBJECT_PROFILES.md), [MEMORY_TRUST_POSTURE](MEMORY_TRUST_POSTURE.md), [LIFECYCLE](LIFECYCLE.md) |
 | Generated parity | source doc or manifest, builder, generated output, validator, and test together |

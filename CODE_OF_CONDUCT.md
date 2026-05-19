@@ -1,5 +1,10 @@
 # Code of Conduct
 
+## Scope
+
+This applies to public collaboration around `aoa-memo` docs, mechanics,
+schemas, examples, generated companions, issues, reviews, and decisions.
+
 ## Our standard
 
 We want this repository to be a public place where people and agents can collaborate clearly, respectfully, and productively.
@@ -10,7 +15,8 @@ Expected behavior:
 - criticize ideas, not people
 - prefer clarity over posturing
 - keep discussion useful for future readers
-- protect public safety by avoiding secret or sensitive detail in public
+- protect public safety by avoiding secret, sensitive, or unreduced private
+  memory detail in public
 
 Unacceptable behavior:
 - harassment

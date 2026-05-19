@@ -9,6 +9,9 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Added
 
+- Add `MEMORY_INDEX.md` as a compact root memory-canon map for object kinds,
+  support objects, recall modes, temperature vocabulary, source families, and
+  generated companions.
 - Extend the mechanic artifact inventory and readiness matrix to recognize
   part-local technical homes, and move Agon runnable artifacts into its
   functioning `parts/` lanes with part-local validation.
@@ -151,6 +154,10 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Changed
 
+- Align root README, CHARTER, ROADMAP, docs map, design surfaces,
+  CONTRIBUTING, CODE_OF_CONDUCT, QUESTBOOK, and SECURITY around explicit
+  root-doc authority, memory-canon routing, public-safety posture, and
+  AGENTS-owned validation routes.
 - Replace wide mechanics atlas tables with wrapping lists so GitHub renders
   the mechanic card contract and compass without cramped code-cell breaks.
 - Move mechanics atlas command runbook details into `mechanics/AGENTS.md` so
