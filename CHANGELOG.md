@@ -151,6 +151,8 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Changed
 
+- Replace wide mechanics atlas tables with wrapping lists so GitHub renders
+  the mechanic card contract and compass without cramped code-cell breaks.
 - Harden mechanic part naming by keeping package mechanic slugs stable while
   renaming weak surface-family part slugs into operation/read-model route
   names for lineage-harvest, Questbook, recurrence-support, and Titan.
