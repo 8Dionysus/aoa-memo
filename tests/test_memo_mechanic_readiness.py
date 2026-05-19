@@ -43,6 +43,7 @@ def test_memo_mechanic_readiness_covers_all_packages() -> None:
     assert payload["card_index_ref"] == "generated/memo_mechanic_cards.min.json"
     assert payload["owner_route_index_ref"] == "generated/memo_mechanic_owner_routes.min.json"
     assert payload["landing_log_index_ref"] == "generated/memo_mechanic_landing_logs.min.json"
+    assert "artifact-test-coverage" in payload["contract"]["readiness_checks"]
     assert payload["counts"]["packages"] == 15
     assert payload["counts"]["ready_packages"] == payload["counts"]["packages"]
     assert payload["counts"]["docs"] == 102
@@ -69,8 +70,35 @@ def test_memo_mechanic_readiness_covers_all_packages() -> None:
     for package in packages.values():
         assert package["ready"] is True
         assert all(package["checks"].values())
+        artifact_counts = package["artifacts"]["counts"]
+        assert package["artifacts"]["count"] == sum(artifact_counts.values())
+        assert package["artifacts"]["non_test_count"] == sum(
+            count for district, count in artifact_counts.items() if district != "tests"
+        )
+        assert package["artifacts"]["test_count"] == artifact_counts["tests"]
+        if package["artifacts"]["non_test_count"]:
+            assert package["artifacts"]["test_count"] > 0
+            assert package["checks"]["artifact-test-coverage"] is True
         assert "aoa-evals" in package["stronger_owner_refs"]
         assert "abyss-stack" in package["stronger_owner_refs"]
         stop_line_terms = set(package["stop_line_terms"])
         assert {"proof", "runtime"}.issubset(stop_line_terms)
         assert {"role", "route", "source owner", "authority"} & stop_line_terms
+
+
+def test_memo_mechanic_readiness_rejects_untested_local_artifacts() -> None:
+    payload = build_readiness()
+    retention = next(package for package in payload["packages"] if package["slug"] == "retention")
+
+    retention["artifacts"]["counts"]["tests"] = 0
+    retention["artifacts"]["test_count"] = 0
+    retention["checks"]["artifact-test-coverage"] = False
+    retention["ready"] = False
+    payload["counts"]["ready_packages"] -= 1
+
+    issues = validate_payload(payload)
+    assert "mechanics/retention: readiness check failed: artifact-test-coverage" in issues
+    assert (
+        "mechanics/retention: package-local non-test artifacts require at least one package-local test"
+        in issues
+    )

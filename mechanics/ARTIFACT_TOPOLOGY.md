@@ -173,6 +173,11 @@ matrix for current mechanic packages. It joins package cards, source maps,
 owner maps, validation routes, stop-lines, and the artifact inventory so agents
 can detect when a mechanic is structurally present but not ready for OS Abyss
 use.
+Readiness also checks package-local artifact test coverage: a mechanic with
+local config, examples, generated companions, manifests, schemas, or scripts
+must have at least one package-local test before it can be considered ready.
+Test-only mechanics remain valid when their operation is a validator or
+shape-guard surface.
 
 `generated/memo_mechanic_owner_routes.min.json` is the compact generated
 matrix of package-local owner maps and route cards. It exists because
