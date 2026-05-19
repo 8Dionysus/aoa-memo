@@ -37,7 +37,7 @@ mechanics/<slug>/parts/
   README.md
 ```
 
-The existing Questbook generated-views part remains specialized, but it now
+The existing Questbook quest-read-model-projections part remains specialized, but it now
 participates in the same part validation contract.
 
 ## Alternatives Considered

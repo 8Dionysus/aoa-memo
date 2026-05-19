@@ -392,7 +392,7 @@
         "generated/quest_dispatch.min.json"
       ],
       "builders": [
-        "mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py"
+        "mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py"
       ],
       "validators": [
         "mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py",

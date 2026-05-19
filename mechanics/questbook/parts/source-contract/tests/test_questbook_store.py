@@ -32,11 +32,11 @@ def test_quest_store_validator_passes() -> None:
 
 
 def test_quest_surface_builder_check_passes() -> None:
-    completed = run_script("mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py", "--check")
+    completed = run_script("mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py", "--check")
     assert completed.returncode == 0, completed.stderr or completed.stdout
 
 
-def test_quest_generated_views_part_names_root_outputs_and_builder() -> None:
+def test_quest_read_model_projections_part_names_root_outputs_and_builder() -> None:
     completed = run_script("mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py")
     assert completed.returncode == 0, completed.stderr or completed.stdout
 
@@ -45,12 +45,12 @@ def test_quest_generated_views_part_names_root_outputs_and_builder() -> None:
         / "mechanics"
         / "questbook"
         / "parts"
-        / "generated-views"
+        / "quest-read-model-projections"
         / "CONTRACT.md"
     ).read_text(encoding="utf-8")
     assert "generated/quest_catalog.min.json" in contract
     assert "generated/quest_dispatch.min.json" in contract
-    assert "mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py" in contract
+    assert "mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py" in contract
 
 
 def test_agon_lane_rejects_yaml_sources() -> None:

@@ -6,7 +6,7 @@ Functioning Lineage Harvest memo parts live here. Each part mirrors one active r
 
 - [Pattern-lineage memory gate](pattern-lineage-memory-gate/README.md) - gates cross-repo recurring signals into reviewed pattern-lineage memory candidates without federation authority
 - [Adjacent mechanic interfaces](adjacent-mechanic-interfaces/README.md) - routes stronger adjacent memory operations without absorbing their authority
-- [Generated companions](generated-companions/README.md) - exposes compact mirrors while keeping lineage-harvest source truth in package docs and artifacts
+- [Lineage inspection projections](lineage-inspection-projections/README.md) - exposes compact mirrors while keeping lineage-harvest source truth in package docs and artifacts
 
 ## Validation
 

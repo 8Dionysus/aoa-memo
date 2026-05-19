@@ -98,9 +98,9 @@ def test_memo_mechanic_readiness_covers_all_packages() -> None:
 
     titan = packages["titan"]
     assert titan["artifacts"]["test_dirs"] == [
+        "mechanics/titan/parts/audit-personality-and-swarm-policy/tests",
         "mechanics/titan/parts/closeout-and-digest-posture/tests",
-        "mechanics/titan/parts/core-memory-posture/tests",
-        "mechanics/titan/parts/specialized-policy/tests",
+        "mechanics/titan/parts/recall-and-remembrance-posture/tests",
     ]
     adoption = packages["adoption"]
     assert adoption["artifacts"]["test_dirs"] == [

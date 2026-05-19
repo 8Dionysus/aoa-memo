@@ -27,7 +27,7 @@ Keep the current split clear:
   `validate_mechanic_artifact_inventory.py` keep
   `generated/mechanic_artifacts.min.json` aligned with package-local and
   part-local mechanic artifact homes
-- quest projection building belongs to `mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py`
+- quest projection building belongs to `mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py`
 - `validate_nested_agents.py` checks that local guidance files stay present and explicit
 - `validate_agents_mesh.py`, `build_agents_mesh_index.py`, and `validate_agents_mesh_index.py` keep the source-backed AGENTS mesh aligned with current route cards
 - `validate_docs_districts.py` keeps retired docs districts and moved flat docs
@@ -86,7 +86,7 @@ python scripts/validate_lifecycle_audit_examples.py
 python scripts/validate_mechanic_artifact_topology.py
 python scripts/build_mechanic_artifact_inventory.py --check
 python scripts/validate_mechanic_artifact_inventory.py
-python mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py --check
+python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py --check
 python scripts/validate_agents_mesh.py
 python scripts/build_agents_mesh_index.py --check
 python scripts/validate_agents_mesh_index.py
@@ -107,7 +107,7 @@ If generator logic changed, also run:
 
 ```bash
 python scripts/generate_memory_object_surfaces.py
-python mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py
+python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py
 python mechanics/consumer-handoff/parts/kag-source-export/scripts/generate_kag_export.py
 python mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_targets.py
 python mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_intake.py

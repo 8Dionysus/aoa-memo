@@ -4,9 +4,9 @@ Functioning Titan memo parts live here. Each part mirrors one active row in `../
 
 ## Parts
 
-- [Core memory posture](core-memory-posture/README.md) - keeps Titan recall and source refs explicit without granting write authority
+- [Recall and remembrance posture](recall-and-remembrance-posture/README.md) - keeps Titan recall and source refs explicit without granting write authority
 - [Closeout and digest posture](closeout-and-digest-posture/README.md) - keeps bridge, closeout, and console memory proposals bounded
-- [Specialized policy](specialized-policy/README.md) - keeps audit, personality, and swarm memory posture reviewable
+- [Audit, personality, and swarm policy](audit-personality-and-swarm-policy/README.md) - keeps audit, personality, and swarm memory posture reviewable
 
 ## Validation
 

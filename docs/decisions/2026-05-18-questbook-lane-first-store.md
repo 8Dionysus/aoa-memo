@@ -7,7 +7,7 @@ files, generated quest catalog and dispatch projections, and several
 Agon-specific follow-through Markdown notes in root `quests/`.
 
 `Agents-of-Abyss` uses a clearer pattern: `mechanics/questbook/` owns quest
-law and generated views, while root `quests/` remains a public item store with
+law and quest read-model projections, while root `quests/` remains a public item store with
 lane-first lifecycle placement.
 
 ## Decision
@@ -42,7 +42,7 @@ as `quests/<lane>/<state>/<quest-id>`.
 - `mechanics/questbook/`
 - `QUESTBOOK.md`
 - `quests/`
-- `mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py`
+- `mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py`
 - `generated/quest_catalog*.json`
 - `generated/quest_dispatch*.json`
 - `scripts/validate_memo.py`
@@ -54,7 +54,7 @@ as `quests/<lane>/<state>/<quest-id>`.
 
 ```bash
 python mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py
-python mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py --check
+python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py --check
 python scripts/validate_memo_mechanics.py
 python scripts/validate_agents_mesh.py
 python -m pytest -q mechanics/questbook/parts/source-contract/tests tests/test_memo_validators.py tests/test_memo_mechanics.py tests/test_agents_mesh.py

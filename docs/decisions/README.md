@@ -71,6 +71,7 @@ expectation.
 | [2026-05-19-antifragility-part-local-artifacts](2026-05-19-antifragility-part-local-artifacts.md) | move antifragility schemas, examples, native pattern source, and regressions into functioning part-local homes |
 | [2026-05-19-operational-gate-part-local-artifacts](2026-05-19-operational-gate-part-local-artifacts.md) | move operational-gate schemas, examples, and regressions into functioning part-local homes |
 | [2026-05-19-final-mechanic-part-artifacts](2026-05-19-final-mechanic-part-artifacts.md) | move remaining package-level mechanic artifacts into functioning part-local homes |
+| [2026-05-19-mechanic-part-naming-hardening](2026-05-19-mechanic-part-naming-hardening.md) | rename weak surface-family part slugs into operation/read-model part names |
 | [2026-05-18-mechanic-readiness-matrix](2026-05-18-mechanic-readiness-matrix.md) | add a generated readiness matrix for all memo mechanic packages |
 | [2026-05-18-mechanic-readiness-artifact-test-coverage](2026-05-18-mechanic-readiness-artifact-test-coverage.md) | require package-local tests for mechanics with package-local non-test artifacts |
 | [2026-05-18-mechanic-readiness-local-test-routes](2026-05-18-mechanic-readiness-local-test-routes.md) | require route-card visibility for package-local mechanic test commands |
@@ -78,7 +79,7 @@ expectation.
 | [2026-05-18-mechanic-owner-route-matrix](2026-05-18-mechanic-owner-route-matrix.md) | add a generated owner-route matrix without claiming owner acceptance |
 | [2026-05-18-mechanic-landing-log-index](2026-05-18-mechanic-landing-log-index.md) | add a generated landing receipt index for memo mechanic packages |
 | [2026-05-18-writeback-curated-object-examples](2026-05-18-writeback-curated-object-examples.md) | move writeback-owned curated memory-object examples under the writeback mechanic |
-| [2026-05-18-questbook-generated-views-part](2026-05-18-questbook-generated-views-part.md) | add a part-level contract for root-published Questbook generated read models |
+| [2026-05-18-questbook-quest-read-model-projections-part](2026-05-18-questbook-quest-read-model-projections-part.md) | add a part-level contract for root-published Questbook generated read models |
 | [2026-05-18-downstream-feed-test-localization](2026-05-18-downstream-feed-test-localization.md) | move consumer-handoff and writeback test artifacts out of root while keeping the cross-mechanic seed regression rooted |
 | [2026-05-18-retention-local-regression-boundary](2026-05-18-retention-local-regression-boundary.md) | add a package-local regression boundary for retention docs, schemas, examples, and stop-lines |
 

@@ -37,7 +37,7 @@ def test_mechanic_artifact_inventory_covers_package_local_artifacts() -> None:
         artifact["part_slug"]
         for artifact in titan["artifacts"]
         if artifact.get("scope") == "part"
-    } == {"core-memory-posture", "closeout-and-digest-posture", "specialized-policy"}
+    } == {"recall-and-remembrance-posture", "closeout-and-digest-posture", "audit-personality-and-swarm-policy"}
     adoption = next(package for package in inventory["packages"] if package["slug"] == "adoption")
     assert {artifact["scope"] for artifact in adoption["artifacts"]} == {"part"}
     assert {

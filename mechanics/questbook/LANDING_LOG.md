@@ -2,10 +2,13 @@
 
 ## 2026-05-19
 
+- Renamed `parts/public-index/` to `parts/obligation-index/` and
+  `parts/generated-views/` to `parts/quest-read-model-projections/` so both
+  public Questbook parts name their owned memo operation.
 - Moved the Questbook source validator into
   `mechanics/questbook/parts/source-contract/scripts/`.
 - Moved the generated quest projection builder into
-  `mechanics/questbook/parts/generated-views/scripts/`.
+  `mechanics/questbook/parts/quest-read-model-projections/scripts/`.
 - Moved the Questbook regression into
   `mechanics/questbook/parts/source-contract/tests/`.
 - Preserved the root `QUESTBOOK.md`, root `quests/`, and root generated
@@ -15,14 +18,14 @@ Validation route:
 
 ```bash
 python mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py
-python mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py --check
+python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py --check
 python -m pytest -q mechanics/questbook/parts/source-contract/tests
 python scripts/release_check.py
 ```
 
 ## 2026-05-18
 
-- Added `parts/generated-views/` as the functioning-part contract for
+- Added `parts/quest-read-model-projections/` as the functioning-part contract for
   root-published Questbook generated read models.
 - Kept `generated/quest_catalog.min*.json` and
   `generated/quest_dispatch.min*.json` in root `generated/` because they are
@@ -38,7 +41,7 @@ Validation route:
 
 ```bash
 python mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py
-python mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py --check
+python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py --check
 python scripts/validate_memo_mechanic_parts.py
 python -m pytest -q mechanics/questbook/parts/source-contract/tests/test_questbook_store.py tests/test_memo_mechanic_parts.py
 python scripts/release_check.py
@@ -57,7 +60,7 @@ Validation route:
 
 ```bash
 python mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py
-python mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py --check
+python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py --check
 python scripts/release_check.py
 ```
 

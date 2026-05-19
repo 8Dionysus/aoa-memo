@@ -2,6 +2,10 @@
 
 ## 2026-05-19
 
+- Renamed `parts/generated-companions/` to
+  `parts/lineage-inspection-projections/` so the part names the lineage
+  inspection operation rather than the generic generated-companion artifact
+  family.
 - Moved the pattern-lineage schema, example, and regression into
   `mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/`.
 - Removed the non-operational `mechanic-local-technical-contracts` active part;
