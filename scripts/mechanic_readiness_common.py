@@ -108,6 +108,8 @@ def _local_test_dirs(artifact_entries: list[Any]) -> list[str]:
 
 
 def _has_runnable_local_test_routes(validation_text: str, test_dirs: list[str]) -> bool:
+    if not test_dirs:
+        return False
     covered: set[str] = set()
     for raw_line in validation_text.splitlines():
         line = raw_line.strip()
@@ -214,7 +216,7 @@ def build_package_readiness(package: dict[str, Any], artifacts: dict[str, Any]) 
         ),
         "landing-log": "python scripts/release_check.py" in landing_log or "python scripts/release_check.py" in agents,
         "validation-route": all(ref in validation_refs for ref in REQUIRED_VALIDATION_REFS),
-        "artifact-test-coverage": non_test_artifact_count == 0 or test_artifact_count > 0,
+        "artifact-test-coverage": non_test_artifact_count == 0 or bool(test_dirs),
         "local-test-route": test_artifact_count == 0 or _has_runnable_local_test_routes(
             validation_text,
             test_dirs,
