@@ -149,17 +149,29 @@ def test_memo_mechanic_readiness_rejects_hidden_local_test_routes() -> None:
 
 def test_local_test_dirs_only_include_runnable_test_modules() -> None:
     artifacts = [
-        {"district": "tests", "path": "mechanics/writeback/tests/test_writeback.py"},
-        {"district": "tests", "path": "mechanics/writeback/tests/fixtures/writeback.json"},
-        {"district": "examples", "path": "mechanics/writeback/examples/writeback.example.json"},
+        {
+            "district": "tests",
+            "path": "mechanics/writeback/parts/quest-and-chronicle/tests/test_writeback.py",
+        },
+        {
+            "district": "tests",
+            "path": "mechanics/writeback/parts/quest-and-chronicle/tests/fixtures/writeback.json",
+        },
+        {
+            "district": "examples",
+            "path": "mechanics/writeback/parts/quest-and-chronicle/examples/writeback.example.json",
+        },
     ]
 
-    assert _local_test_dirs(artifacts) == ["mechanics/writeback/tests"]
+    assert _local_test_dirs(artifacts) == ["mechanics/writeback/parts/quest-and-chronicle/tests"]
 
 
 def test_local_test_dirs_reject_fixture_only_test_artifacts() -> None:
     artifacts = [
-        {"district": "tests", "path": "mechanics/writeback/tests/fixtures/writeback.json"},
+        {
+            "district": "tests",
+            "path": "mechanics/writeback/parts/quest-and-chronicle/tests/fixtures/writeback.json",
+        },
     ]
 
     assert _local_test_dirs(artifacts) == []
@@ -181,6 +193,6 @@ def test_local_test_route_requires_runnable_pytest_command() -> None:
 
 
 def test_local_test_route_rejects_empty_runnable_test_dirs() -> None:
-    validation_text = "python -m pytest -q mechanics/writeback/tests"
+    validation_text = "python -m pytest -q mechanics/writeback/parts/quest-and-chronicle/tests"
 
     assert _has_runnable_local_test_routes(validation_text, []) is False

@@ -156,14 +156,16 @@ Examples:
   post-release schemas, examples, and tests live under their nearest
   `mechanics/<slug>/parts/<part>/` homes.
 - governance, operational-gate, antifragility, checkpoint,
-  readiness-boundary, recurrence-support, lineage-harvest, shape-guard,
-  consumer-handoff, and writeback schemas/examples/tests live under their
+  readiness-boundary, recurrence-support, lineage-harvest, shape-guard, and
+  consumer-handoff schemas/examples/tests live under their
   package lanes when they serve that one mechanic and have not yet been
   split to a sharper functioning part.
 - writeback generated companions such as `runtime_writeback_targets`,
   `runtime_writeback_intake`, `runtime_writeback_governance`,
   `growth_refinery_writeback_lanes`, and `phase_alpha_writeback_map` live under
-  `mechanics/writeback/generated/`.
+  their nearest `mechanics/writeback/parts/<part>/generated/` home, with
+  runtime targets/intake/governance under `runtime-and-temperature` and growth
+  or Phase Alpha surfaces under `growth-and-continuity`.
 - the KAG source export lives under `mechanics/consumer-handoff/generated/`.
 - root quest generated companions live under `generated/` only because they
   project the public Questbook store for outside consumers. Their

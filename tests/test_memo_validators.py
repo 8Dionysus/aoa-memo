@@ -845,7 +845,7 @@ class MemoValidatorTestCase(unittest.TestCase):
                     },
                     {
                         "kind": "growth_lane_entry",
-                        "ref": f"repo:aoa-memo/mechanics/writeback/generated/growth_refinery_writeback_lanes.min.json#{lane_ref}",
+                        "ref": f"repo:aoa-memo/mechanics/writeback/parts/growth-and-continuity/generated/growth_refinery_writeback_lanes.min.json#{lane_ref}",
                         "role": "lane",
                     },
                     {

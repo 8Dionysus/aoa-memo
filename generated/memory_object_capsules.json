@@ -384,7 +384,7 @@
       "use_when_short": "Use when decision-level recall is needed and this object remains allowed for working, semantic, source_route.",
       "do_not_use_short": "Do not treat this decision as proof or stronger than its cited sources.",
       "strongest_next_source": "repo:aoa-agents/examples/self_agent_checkpoint/self_agency_continuity_window.example.json",
-      "source_path": "mechanics/writeback/examples/decision.self-agency-reanchor-window.example.json"
+      "source_path": "mechanics/writeback/parts/growth-and-continuity/examples/decision.self-agency-reanchor-window.example.json"
     },
     {
       "id": "memo.state.2026-04-12.self-agency-continuity-relay",
@@ -396,7 +396,7 @@
       "use_when_short": "Use when state_capsule-level recall is needed and this object remains allowed for working, episodic.",
       "do_not_use_short": "Do not treat this state_capsule as proof or stronger than its cited sources.",
       "strongest_next_source": "repo:aoa-agents/examples/self_agent_checkpoint/self_agency_continuity_window.example.json",
-      "source_path": "mechanics/writeback/examples/state_capsule.self-agency-continuity-relay.example.json"
+      "source_path": "mechanics/writeback/parts/growth-and-continuity/examples/state_capsule.self-agency-continuity-relay.example.json"
     },
     {
       "id": "memo.claim.2026-04-03.phase-alpha-closure-with-residual-runtime-history",

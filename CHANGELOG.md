@@ -141,6 +141,9 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Changed
 
+- Move writeback schemas, examples, generated companions, scripts, tests, and
+  receipt fixtures into nearest functioning `parts/` homes, with the Wave 2
+  seed-contract regression registered as a root cross-mechanic test family.
 - Move Titan runnable schemas, examples, and tests into nearest functioning
   `parts/` homes, split digest/closeout candidate coverage into a part-local
   regression test, and tighten readiness local-test-route detection around
@@ -392,7 +395,7 @@ This changelog entry uses the release-prep merge date.
 
 - doctrine-facing memory families under `generated/memory_catalog.json`, `generated/memory_catalog.min.json`, `generated/memory_capsules.json`, and `generated/memory_sections.full.json`
 - object-facing memory families under `generated/memory_object_catalog.json`, `generated/memory_object_catalog.min.json`, `generated/memory_object_capsules.json`, and `generated/memory_object_sections.full.json`
-- bounded source-owned export and writeback support seams under `mechanics/consumer-handoff/generated/kag_export.min.json`, `mechanics/writeback/generated/runtime_writeback_targets.min.json`, and `mechanics/writeback/generated/runtime_writeback_intake.min.json`
+- bounded source-owned export and writeback support seams under `mechanics/consumer-handoff/generated/kag_export.min.json`, `mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_targets.min.json`, and `mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_intake.min.json`
 
 ### Validation
 

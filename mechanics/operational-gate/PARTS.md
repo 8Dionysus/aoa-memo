@@ -21,7 +21,7 @@ artifacts stay in the writeback package.
 | Deployment lesson candidate | `mechanics/operational-gate/schemas/deployment_lesson_candidate_v1.json`, `mechanics/operational-gate/examples/deployment_lesson_candidate.example.json` |
 | Service incident memory entry | `mechanics/operational-gate/schemas/service_incident_memory_entry_v1.json`, `mechanics/operational-gate/examples/service_incident_memory_entry_v1.example.json` |
 | Service revision ledger entry | `mechanics/operational-gate/schemas/service_revision_ledger_entry_v1.json`, `mechanics/operational-gate/examples/service_revision_ledger_entry_v1.example.json` |
-| Release revision ledger entry | `mechanics/writeback/schemas/release_revision_ledger_entry_v1.json`, `mechanics/writeback/examples/release_revision_ledger_entry_v1.example.json` |
+| Release revision ledger entry | `mechanics/writeback/parts/revision-ledgers/schemas/release_revision_ledger_entry_v1.json`, `mechanics/writeback/parts/revision-ledgers/examples/release_revision_ledger_entry_v1.example.json` |
 | Train release memory entry | `mechanics/operational-gate/schemas/train_release_memory_entry_v1.json`, `mechanics/operational-gate/examples/train_release_memory_entry_v1.example.json` |
 
 ## Interface

@@ -15,6 +15,11 @@ Stronger claims route through `../../OWNER_MAP.md`. Source placement and legacy 
 
 keeps runtime writeback mapped without runtime ownership
 
+The runtime target schema, generated runtime target/intake/governance surfaces,
+and their builders are part-local here. They may describe memo-side runtime
+writeback posture, but they must not become live runtime storage or worker
+scheduling.
+
 ## Stop-lines
 
 This part inherits the package stop-lines from `../../README.md#must-not-claim` and `../../OWNER_MAP.md`.

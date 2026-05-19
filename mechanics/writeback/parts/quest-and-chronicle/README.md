@@ -18,6 +18,12 @@ This active part belongs to `mechanics/writeback/` and materializes the matching
 
 keeps quest writeback source-linked and manual-first
 
+## Local Artifacts
+
+- `schemas/quest_chronicle.schema.json`
+- `examples/quest_chronicle.example.json`
+- `tests/test_quest_chronicle_writeback.py`
+
 ## Next Route
 
 Use `../../OWNER_MAP.md` for stronger owner routing and `../../PROVENANCE.md` for placement history.

@@ -28,7 +28,7 @@ After writeback changes, check whether these surfaces moved:
 - `PROVENANCE.md`
 - `LANDING_LOG.md`
 - `ROADMAP.md`
-- `examples/`
+- part-local examples, schemas, generated companions, scripts, and tests
 - `legacy/INDEX.md`
 - generated runtime writeback companions
 - generated mechanics or AGENTS mesh companions
@@ -43,7 +43,12 @@ python scripts/build_memo_mechanics_index.py --check
 python scripts/validate_memo_mechanics_index.py
 python scripts/generate_memory_object_surfaces.py
 python scripts/validate_memory_object_surfaces.py
-python -m pytest -q mechanics/consumer-handoff/tests/test_downstream_feed_contracts.py mechanics/writeback/tests/test_quest_chronicle_writeback.py mechanics/writeback/tests/test_self_agency_continuity_writeback.py mechanics/writeback/tests/test_a2a_child_return_writeback.py
+python mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_targets.py --check
+python mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_intake.py --check
+python mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_governance.py --check
+python mechanics/writeback/parts/growth-and-continuity/scripts/generate_growth_refinery_writeback_lanes.py --check
+python mechanics/writeback/parts/growth-and-continuity/scripts/generate_phase_alpha_writeback_map.py --check
+python -m pytest -q mechanics/writeback/parts/runtime-and-temperature/tests mechanics/writeback/parts/quest-and-chronicle/tests mechanics/writeback/parts/revision-ledgers/tests mechanics/writeback/parts/rollback-and-recovery/tests mechanics/writeback/parts/growth-and-continuity/tests mechanics/writeback/parts/receipt-publication-regression/tests mechanics/consumer-handoff/tests/test_downstream_feed_contracts.py tests/test_experience_wave2_seed_contracts.py
 ```
 
 Before landing, also run:

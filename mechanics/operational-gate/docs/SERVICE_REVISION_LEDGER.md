@@ -37,8 +37,8 @@ Current public contracts live with their owning mechanics:
 
 - `mechanics/operational-gate/schemas/service_revision_ledger_entry_v1.json`
 - `mechanics/operational-gate/examples/service_revision_ledger_entry_v1.example.json`
-- `mechanics/writeback/schemas/release_revision_ledger_entry_v1.json`
-- `mechanics/writeback/examples/release_revision_ledger_entry_v1.example.json`
+- `mechanics/writeback/parts/revision-ledgers/schemas/release_revision_ledger_entry_v1.json`
+- `mechanics/writeback/parts/revision-ledgers/examples/release_revision_ledger_entry_v1.example.json`
 
 The schemas and examples validate public-safe entry shape. They do not become
 live ledgers.

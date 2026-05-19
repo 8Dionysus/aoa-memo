@@ -232,7 +232,7 @@
       ]
     },
     {
-      "example_path": "mechanics/writeback/examples/decision.self-agency-reanchor-window.example.json",
+      "example_path": "mechanics/writeback/parts/growth-and-continuity/examples/decision.self-agency-reanchor-window.example.json",
       "recall_modes": [
         "working",
         "semantic",
@@ -240,7 +240,7 @@
       ]
     },
     {
-      "example_path": "mechanics/writeback/examples/state_capsule.self-agency-continuity-relay.example.json",
+      "example_path": "mechanics/writeback/parts/growth-and-continuity/examples/state_capsule.self-agency-continuity-relay.example.json",
       "recall_modes": [
         "working",
         "episodic"

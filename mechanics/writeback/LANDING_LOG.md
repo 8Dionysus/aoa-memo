@@ -1,5 +1,25 @@
 # Writeback Landing Log
 
+## 2026-05-19
+
+- Moved writeback schemas, examples, generated companions, scripts, tests, and
+  receipt fixtures into their nearest functioning `parts/` homes.
+- Split runtime, quest, revision, rollback, growth/continuity, and receipt
+  publication validation into part-local test routes while keeping the Wave 2
+  seed regression as a registered cross-mechanic root test.
+
+Validation route:
+
+```bash
+python -m pytest -q mechanics/writeback/parts/runtime-and-temperature/tests mechanics/writeback/parts/quest-and-chronicle/tests mechanics/writeback/parts/revision-ledgers/tests mechanics/writeback/parts/rollback-and-recovery/tests mechanics/writeback/parts/growth-and-continuity/tests mechanics/writeback/parts/receipt-publication-regression/tests tests/test_experience_wave2_seed_contracts.py
+python scripts/release_check.py
+```
+
+## Stop-lines preserved
+
+- No proof, runtime, role, route, source owner acceptance, KAG, playbook,
+  stats, or stronger-owner authority moved into memo.
+
 ## 2026-05-18
 
 - Moved the tracked writeback receipt fixture from root `tests/fixtures/` into
@@ -10,7 +30,7 @@
 Validation route:
 
 ```bash
-python -m pytest -q mechanics/writeback/tests/test_publish_live_receipts.py
+python -m pytest -q mechanics/writeback/parts/receipt-publication-regression/tests/test_publish_live_receipts.py
 python scripts/release_check.py
 ```
 

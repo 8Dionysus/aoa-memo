@@ -47,9 +47,9 @@ The first structural surface for this seam is schema-backed and code-free:
 
 The compact downstream read surface derived from that contract is:
 
-- `mechanics/writeback/generated/runtime_writeback_targets.min.json`
-- `mechanics/writeback/generated/runtime_writeback_intake.min.json`
-- `mechanics/writeback/generated/runtime_writeback_governance.min.json`
+- `mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_targets.min.json`
+- `mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_intake.min.json`
+- `mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_governance.min.json`
 
 The checkpoint artifact remains `inquiry_checkpoint`.
 It is not a new memory-object kind.

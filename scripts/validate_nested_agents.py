@@ -26,7 +26,7 @@ REQUIRED_NESTED_AGENTS = {
             "memory_object_surface_manifest.json",
             "recall_contract.router.semantic.json",
             "recall_contract.object.working.json",
-            "mechanics/writeback/examples/",
+            "mechanics/writeback/parts/<part>/examples/",
             "mechanics/recurrence-support/examples/",
             "mechanics/consumer-handoff/examples/",
             "sanitized",

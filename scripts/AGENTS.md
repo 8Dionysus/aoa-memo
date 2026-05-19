@@ -54,7 +54,7 @@ Keep the current split clear:
 
 Mechanic-owned generators and validators live under the owning package, for
 example `mechanics/consumer-handoff/scripts/generate_kag_export.py`,
-`mechanics/writeback/scripts/generate_runtime_writeback_targets.py`, and
+`mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_targets.py`, and
 `mechanics/agon/parts/prebinding-and-candidate-intake/scripts/validate_agon_memo_prebindings.py`.
 
 ## Editing posture
@@ -109,5 +109,9 @@ If generator logic changed, also run:
 python scripts/generate_memory_object_surfaces.py
 python mechanics/questbook/scripts/build_quest_surfaces.py
 python mechanics/consumer-handoff/scripts/generate_kag_export.py
-python mechanics/writeback/scripts/generate_runtime_writeback_targets.py
+python mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_targets.py
+python mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_intake.py
+python mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_governance.py
+python mechanics/writeback/parts/growth-and-continuity/scripts/generate_growth_refinery_writeback_lanes.py
+python mechanics/writeback/parts/growth-and-continuity/scripts/generate_phase_alpha_writeback_map.py
 ```

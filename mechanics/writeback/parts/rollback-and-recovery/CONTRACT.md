@@ -16,6 +16,10 @@ Stronger claims route through `../../OWNER_MAP.md`. Source placement and legacy 
 
 keeps rollback memory bounded
 
+Rollback memory and rollback revision ledger contracts are part-local here
+because they record bounded rollback recall posture. They must not become
+deployment rollback authority or runtime restoration logic.
+
 ## Stop-lines
 
 This part inherits the package stop-lines from `../../README.md#must-not-claim` and `../../OWNER_MAP.md`.

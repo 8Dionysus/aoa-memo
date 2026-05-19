@@ -31,15 +31,16 @@ Keep those roles explicit.
 The curated object-surface manifest may reference public memory-object
 examples under a mechanic package when the example's owner boundary is
 mechanic-local. In that case, keep the example under `mechanics/<slug>/examples/`
-and regenerate the object-facing generated family from the root manifest.
+or the nearest `mechanics/<slug>/parts/<part>/examples/` home and regenerate
+the object-facing generated family from the root manifest.
 
 Mechanic-owned examples live under their package lane:
 
 - `mechanics/consumer-handoff/examples/` for KAG/ToS bridge, graph/chunk face, and eval guardrail examples
 - `mechanics/checkpoint/examples/` for inquiry checkpoint, checkpoint-to-memory, approval, health, and checkpoint improvement examples
-- `mechanics/writeback/examples/` for quest chronicle, self-agency, rollback, and revision-ledger examples
+- `mechanics/writeback/parts/<part>/examples/` for quest chronicle, self-agency, rollback, and revision-ledger examples
 - `mechanics/recurrence-support/examples/` for witness trace examples
-- `mechanics/agon/parts/<part>/examples/`, `mechanics/titan/parts/<part>/examples/`, and the other mechanic package examples for their local contracts
+- `mechanics/agon/parts/<part>/examples/`, `mechanics/titan/parts/<part>/examples/`, and the other mechanic package or part examples for their local contracts
 
 ## Editing posture
 

@@ -22,7 +22,7 @@ CONTRACT_BASE_BY_STEM = {
     "governance_memory_writeback": "mechanics/governance",
     "governance_retention_check": "mechanics/retention/parts/cross-repo-and-governance-retention",
     "policy_precedent_memory": "mechanics/governance",
-    "revocation_ledger_entry": "mechanics/writeback",
+    "revocation_ledger_entry": "mechanics/writeback/parts/revision-ledgers",
     "governance_decision_memory_v1": "mechanics/governance",
 }
 

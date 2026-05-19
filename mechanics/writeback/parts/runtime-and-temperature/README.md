@@ -16,6 +16,17 @@ This active part belongs to `mechanics/writeback/` and materializes the matching
 
 keeps runtime writeback mapped without runtime ownership
 
+## Local Artifacts
+
+- `schemas/runtime-writeback-targets.schema.json`
+- `generated/runtime_writeback_targets.min.json`
+- `generated/runtime_writeback_intake.min.json`
+- `generated/runtime_writeback_governance.min.json`
+- `scripts/generate_runtime_writeback_targets.py`
+- `scripts/generate_runtime_writeback_intake.py`
+- `scripts/generate_runtime_writeback_governance.py`
+- `tests/test_runtime_writeback_part.py`
+
 ## Next Route
 
 Use `../../OWNER_MAP.md` for stronger owner routing and `../../PROVENANCE.md` for placement history.
