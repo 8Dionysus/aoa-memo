@@ -11,6 +11,10 @@ This active part belongs to `mechanics/governance/` and materializes the matchin
 
 - [FEDERATION_MEMORY_BOUNDARIES](../../docs/FEDERATION_MEMORY_BOUNDARIES.md)
 - [FEDERATION_FORGETTING_LAW](../../docs/FEDERATION_FORGETTING_LAW.md)
+- `schemas/federation_forgetting_decision_v1.json`
+- `schemas/federation_memory_gate_decision_v1.json`
+- `examples/federation_forgetting_decision.example.json`
+- `examples/federation_memory_gate_decision.example.json`
 
 ## Function
 

@@ -8,7 +8,7 @@ import unittest
 from jsonschema import Draft202012Validator
 
 
-ROOT = Path(__file__).resolve().parents[3]
+ROOT = Path(__file__).resolve().parents[5]
 ENUM_ESCAPE_VALUE = "__wave4_not_allowed__"
 
 WAVE4_CONTRACTS = (
@@ -19,11 +19,11 @@ WAVE4_CONTRACTS = (
     ('governance_decision_memory_v1', 'governance_decision_memory_v1.json'),
 )
 CONTRACT_BASE_BY_STEM = {
-    "governance_memory_writeback": "mechanics/governance",
+    "governance_memory_writeback": "mechanics/governance/parts/governance-boundary",
     "governance_retention_check": "mechanics/retention/parts/cross-repo-and-governance-retention",
-    "policy_precedent_memory": "mechanics/governance",
+    "policy_precedent_memory": "mechanics/governance/parts/precedent-and-stay-order",
     "revocation_ledger_entry": "mechanics/writeback/parts/revision-ledgers",
-    "governance_decision_memory_v1": "mechanics/governance",
+    "governance_decision_memory_v1": "mechanics/governance/parts/governance-boundary",
 }
 
 

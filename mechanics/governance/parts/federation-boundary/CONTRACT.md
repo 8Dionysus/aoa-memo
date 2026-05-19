@@ -10,10 +10,21 @@ Stronger claims route through `../../OWNER_MAP.md`. Source placement and legacy 
 
 - [FEDERATION_MEMORY_BOUNDARIES](../../docs/FEDERATION_MEMORY_BOUNDARIES.md)
 - [FEDERATION_FORGETTING_LAW](../../docs/FEDERATION_FORGETTING_LAW.md)
+- `schemas/federation_forgetting_decision_v1.json`
+- `schemas/federation_memory_gate_decision_v1.json`
+- `examples/federation_forgetting_decision.example.json`
+- `examples/federation_memory_gate_decision.example.json`
 
 ## Contract
 
 cross-repo pattern memory, forgetting, and harvest gates without promotion authority
+
+## Artifact Contract
+
+The part keeps federation gate and forgetting contracts beside the federation
+boundary docs. These examples may be consumed by lineage-harvest tests, but
+they remain governance-owned memory gates, not pattern-lineage adoption or KAG
+promotion.
 
 ## Stop-lines
 

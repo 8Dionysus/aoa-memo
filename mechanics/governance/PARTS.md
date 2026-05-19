@@ -9,6 +9,15 @@
 | Install and certification boundary | [INSTALLATION_MEMORY_BOUNDARIES](./docs/INSTALLATION_MEMORY_BOUNDARIES.md), [CERTIFICATION_MEMORY_BOUNDARIES](./docs/CERTIFICATION_MEMORY_BOUNDARIES.md) | install/certification memory facts without release approval or proof |
 | Precedent and stay order | [POLICY_PRECEDENT_MEMORY](./docs/POLICY_PRECEDENT_MEMORY.md), [PRECEDENT_MEMORY_INDEX](./docs/PRECEDENT_MEMORY_INDEX.md), [STAY_ORDER_MEMORY](./docs/STAY_ORDER_MEMORY.md) | recallable policy precedent and stay-order memory without forced adoption |
 
+## Part-Local Artifacts
+
+| Part | Artifact Homes |
+|---|---|
+| Governance boundary | `parts/governance-boundary/schemas/`, `parts/governance-boundary/examples/`, `parts/governance-boundary/tests/` |
+| Federation boundary | `parts/federation-boundary/schemas/`, `parts/federation-boundary/examples/` |
+| Install and certification boundary | `parts/install-and-certification-boundary/schemas/`, `parts/install-and-certification-boundary/examples/` |
+| Precedent and stay order | `parts/precedent-and-stay-order/schemas/`, `parts/precedent-and-stay-order/examples/` |
+
 ## Interface
 
 Inputs are governance decisions, federation boundary signals, installation and

@@ -113,7 +113,7 @@ WAVE5_CONTRACTS = (
 )
 CONTRACT_BASE_BY_STEM = {
     "first_office_retention_marker_v1": "mechanics/retention/parts/office-markers",
-    "installation_memory_entry_v1": "mechanics/governance",
+    "installation_memory_entry_v1": "mechanics/governance/parts/install-and-certification-boundary",
     "office_retention_marker_v1": "mechanics/retention/parts/office-markers",
     "release_revision_ledger_entry_v1": "mechanics/writeback/parts/revision-ledgers",
     "rollback_memory_entry_v1": "mechanics/writeback/parts/rollback-and-recovery",

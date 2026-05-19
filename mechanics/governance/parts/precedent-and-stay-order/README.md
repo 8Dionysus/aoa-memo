@@ -12,6 +12,8 @@ This active part belongs to `mechanics/governance/` and materializes the matchin
 - [POLICY_PRECEDENT_MEMORY](../../docs/POLICY_PRECEDENT_MEMORY.md)
 - [PRECEDENT_MEMORY_INDEX](../../docs/PRECEDENT_MEMORY_INDEX.md)
 - [STAY_ORDER_MEMORY](../../docs/STAY_ORDER_MEMORY.md)
+- `schemas/policy_precedent_memory_v1.json`
+- `examples/policy_precedent_memory.example.json`
 
 ## Function
 

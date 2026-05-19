@@ -22,6 +22,13 @@ promotion, ToS canon, stats certification, runtime truth, or source-owner
 consent.
 The first downstream eval adoption wave is now explicitly narrowed to recall precision, provenance fidelity, and staleness so `aoa-evals` can pilot memo proof without pretending to cover every guardrail focus at once.
 The current KAG-facing adoption slice now publishes `mechanics/consumer-handoff/parts/kag-source-export/generated/kag_export.min.json` as one source-owned memo export for `aoa-kag` readiness without widening the live federation spine or `aoa-routing` ABI.
+Governance authority-boundary artifacts now live at their owning parts:
+`mechanics/governance/parts/governance-boundary/`,
+`mechanics/governance/parts/federation-boundary/`,
+`mechanics/governance/parts/install-and-certification-boundary/`, and
+`mechanics/governance/parts/precedent-and-stay-order/`, keeping governance
+memory operational without making `aoa-memo` a council, release, proof, or
+runtime authority.
 The memory readiness boundary map in `mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md` now
 maps future durable-consequence, delta, retention, and recall pressure back to
 existing memo objects without planting a future protocol, creating a live

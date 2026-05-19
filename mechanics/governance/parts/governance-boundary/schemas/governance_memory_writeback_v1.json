@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://aoa.local/aoa-memo/mechanics/governance/schemas/governance_memory_writeback_v1.json",
+  "$id": "https://aoa.local/aoa-memo/mechanics/governance/parts/governance-boundary/schemas/governance_memory_writeback_v1.json",
   "title": "Governance Memory Writeback V1",
   "type": "object",
   "additionalProperties": false,

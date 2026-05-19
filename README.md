@@ -66,6 +66,10 @@ If you are editing inside `schemas/`, `examples/`, `generated/`, or `scripts/`, 
   [mechanics/governance](mechanics/governance/README.md),
   [governance/GOVERNANCE_MEMORY_BOUNDARIES](mechanics/governance/docs/GOVERNANCE_MEMORY_BOUNDARIES.md),
   [governance/FEDERATION_MEMORY_BOUNDARIES](mechanics/governance/docs/FEDERATION_MEMORY_BOUNDARIES.md),
+  `mechanics/governance/parts/governance-boundary/schemas/governance_decision_memory_v1.json`,
+  `mechanics/governance/parts/federation-boundary/schemas/federation_memory_gate_decision_v1.json`,
+  `mechanics/governance/parts/install-and-certification-boundary/schemas/installation_memory_entry_v1.json`,
+  `mechanics/governance/parts/precedent-and-stay-order/schemas/policy_precedent_memory_v1.json`,
   [mechanics/shape-guard](mechanics/shape-guard/README.md), and
   [shape-guard/VIA_NEGATIVA_CHECKLIST](mechanics/shape-guard/docs/VIA_NEGATIVA_CHECKLIST.md)
 - writeback, intake, runtime support, and landing governance surfaces: `mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_targets.min.json`, `mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_intake.min.json`, `mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_governance.min.json`, [mechanics/writeback/RUNTIME_WRITEBACK_SEAM](mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md), [mechanics/writeback/GROWTH_REFINERY_WRITEBACK](mechanics/writeback/docs/GROWTH_REFINERY_WRITEBACK.md), [mechanics/writeback/QUEST_CHRONICLE_WRITEBACK](mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md), `mechanics/writeback/parts/quest-and-chronicle/schemas/quest_chronicle.schema.json`, and `mechanics/writeback/parts/quest-and-chronicle/examples/quest_chronicle.example.json`

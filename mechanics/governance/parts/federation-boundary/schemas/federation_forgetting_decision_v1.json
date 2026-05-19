@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://aoa.local/mechanics/governance/schemas/federation_memory_gate_decision_v1.json",
-  "title": "federation_memory_gate_decision_v1",
+  "$id": "https://aoa.local/mechanics/governance/parts/federation-boundary/schemas/federation_forgetting_decision_v1.json",
+  "title": "federation_forgetting_decision_v1",
   "type": "object",
   "required": [
     "schema_version",
@@ -20,7 +20,7 @@
     },
     "kind": {
       "type": "string",
-      "const": "federation_memory_gate_decision"
+      "const": "federation_forgetting_decision"
     },
     "id": {
       "type": "string",
@@ -62,24 +62,20 @@
     "payload": {
       "type": "object",
       "required": [
-        "allow",
-        "memory_kind",
-        "blockers"
+        "decision",
+        "reason",
+        "next_check"
       ],
       "additionalProperties": false,
       "properties": {
-        "allow": {
-          "type": "boolean"
-        },
-        "memory_kind": {
+        "decision": {
           "type": "string"
         },
-        "blockers": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "minLength": 1
-          }
+        "reason": {
+          "type": "string"
+        },
+        "next_check": {
+          "type": "string"
         }
       }
     }
