@@ -141,6 +141,10 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Changed
 
+- Move governance schemas, examples, and local regressions into nearest
+  functioning `parts/` homes, with federation, install/certification,
+  precedent, lineage, and cross-mechanic seed refs updated to the part-local
+  surfaces.
 - Move consumer-handoff schemas, examples, generated KAG export, generator,
   playbook regression, and downstream feed tests into nearest functioning
   `parts/` homes, with validators and generated references updated to the

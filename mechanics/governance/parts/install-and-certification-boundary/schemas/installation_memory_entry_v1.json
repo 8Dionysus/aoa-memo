@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://aoa.local/aoa-memo/mechanics/governance/schemas/installation_memory_entry_v1.json",
+  "$id": "https://aoa.local/aoa-memo/mechanics/governance/parts/install-and-certification-boundary/schemas/installation_memory_entry_v1.json",
   "title": "Installation Memory Entry V1",
   "type": "object",
   "additionalProperties": false,

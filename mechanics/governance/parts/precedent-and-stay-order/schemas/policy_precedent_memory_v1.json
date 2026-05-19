@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://aoa.local/aoa-memo/mechanics/governance/schemas/policy_precedent_memory_v1.json",
+  "$id": "https://aoa.local/aoa-memo/mechanics/governance/parts/precedent-and-stay-order/schemas/policy_precedent_memory_v1.json",
   "title": "Policy Precedent Memory V1",
   "type": "object",
   "additionalProperties": false,

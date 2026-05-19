@@ -11,10 +11,19 @@ Stronger claims route through `../../OWNER_MAP.md`. Source placement and legacy 
 - [POLICY_PRECEDENT_MEMORY](../../docs/POLICY_PRECEDENT_MEMORY.md)
 - [PRECEDENT_MEMORY_INDEX](../../docs/PRECEDENT_MEMORY_INDEX.md)
 - [STAY_ORDER_MEMORY](../../docs/STAY_ORDER_MEMORY.md)
+- `schemas/policy_precedent_memory_v1.json`
+- `examples/policy_precedent_memory.example.json`
 
 ## Contract
 
 recallable policy precedent and stay-order memory without forced adoption
+
+## Artifact Contract
+
+The part keeps policy precedent memory contracts beside the precedent and
+stay-order docs. A precedent remains recallable memory; it does not force
+owner-local adoption, council authority, release approval, or runtime policy
+execution.
 
 ## Stop-lines
 

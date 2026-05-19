@@ -11,6 +11,12 @@ This active part belongs to `mechanics/governance/` and materializes the matchin
 
 - [GOVERNANCE_MEMORY_BOUNDARIES](../../docs/GOVERNANCE_MEMORY_BOUNDARIES.md)
 - [GOVERNANCE_RUNTIME_MEMORY_BOUNDARIES](../../docs/GOVERNANCE_RUNTIME_MEMORY_BOUNDARIES.md)
+- `schemas/governance_decision_memory_v1.json`
+- `schemas/governance_memory_writeback_v1.json`
+- `examples/governance_decision_memory_v1.example.json`
+- `examples/governance_memory_writeback.example.json`
+- `tests/test_governance_mechanic.py`
+- `tests/test_experience_wave4_seed_contracts.py`
 
 ## Function
 

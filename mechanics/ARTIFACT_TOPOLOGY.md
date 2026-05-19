@@ -155,9 +155,11 @@ Examples:
   retention cross-repo/governance, retention office-marker, and retention
   post-release schemas, examples, and tests live under their nearest
   `mechanics/<slug>/parts/<part>/` homes.
-- governance, operational-gate, antifragility, checkpoint,
-  readiness-boundary, recurrence-support, lineage-harvest, shape-guard, and
-  consumer-handoff schemas/examples/tests live under their
+- governance authority-boundary, federation, installation/certification, and
+  precedent/stay-order schemas/examples/tests live under their nearest
+  `mechanics/governance/parts/<part>/` homes.
+- operational-gate, antifragility, readiness-boundary, recurrence-support,
+  lineage-harvest, and shape-guard schemas/examples/tests live under their
   package lanes when they serve that one mechanic and have not yet been
   split to a sharper functioning part.
 - writeback generated companions such as `runtime_writeback_targets`,

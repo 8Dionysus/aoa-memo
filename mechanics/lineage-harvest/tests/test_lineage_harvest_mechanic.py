@@ -58,7 +58,7 @@ class LineageHarvestMechanicTestCase(unittest.TestCase):
         for path in (
             "mechanics/lineage-harvest/schemas/pattern_lineage_memory_entry_v1.json",
             "mechanics/lineage-harvest/examples/pattern_lineage_memory_entry.example.json",
-            "mechanics/governance/examples/federation_memory_gate_decision.example.json",
+            "mechanics/governance/parts/federation-boundary/examples/federation_memory_gate_decision.example.json",
             "tests/test_experience_wave3_seed_contracts.py",
         ):
             self.assertIn(path, parts)

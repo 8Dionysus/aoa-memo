@@ -10,10 +10,21 @@ Stronger claims route through `../../OWNER_MAP.md`. Source placement and legacy 
 
 - [INSTALLATION_MEMORY_BOUNDARIES](../../docs/INSTALLATION_MEMORY_BOUNDARIES.md)
 - [CERTIFICATION_MEMORY_BOUNDARIES](../../docs/CERTIFICATION_MEMORY_BOUNDARIES.md)
+- `schemas/installation_memory_entry_v1.json`
+- `schemas/certification_memory_writeback_v1.json`
+- `examples/installation_memory_entry_v1.example.json`
+- `examples/certification_memory_writeback.example.json`
 
 ## Contract
 
 install/certification memory facts without release approval or proof
+
+## Artifact Contract
+
+The part keeps installation and certification memory contracts beside the
+install/certification boundary docs. The artifacts can be checked by
+cross-mechanic release/seed regressions, but they do not approve installs,
+certify agents, or replace release proof.
 
 ## Stop-lines
 
