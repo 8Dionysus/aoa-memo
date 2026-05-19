@@ -11,7 +11,10 @@ runtime remediation, rollback execution, current service health, or proof.
 
 An incident may enter durable memo recall when all of these are present:
 
+- `gate_id`: a stable memory-gate decision reference
 - `incident_id`: a stable incident or release-train reference
+- `decision`: the bounded admission outcome for durable memo recall
+- `reason`: the evidence-linked rationale for the admission outcome
 - `evidence_refs`: reviewable refs to logs, reports, PRs, CI runs, release
   notes, or owner receipts
 - `review_posture`: the verdict, evaluation result, or owner review posture

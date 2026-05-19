@@ -194,7 +194,10 @@ def validate() -> list[str]:
                 if not path.is_file():
                     continue
                 if path.suffix == ".yaml":
-                    validate_yaml(path, lane, state, problems)
+                    if lane == "agon":
+                        problems.append(f"{rel(path)}: agon quest sources must be Markdown, not YAML")
+                    else:
+                        validate_yaml(path, lane, state, problems)
                 elif path.suffix == ".md":
                     validate_markdown(path, lane, state, problems)
                 else:

@@ -934,6 +934,17 @@ class MemoValidatorTestCase(unittest.TestCase):
             with redirect_stdout(stdout), redirect_stderr(stderr):
                 validate_memo.validate_questbook_surface()
 
+    def test_questbook_surface_flags_duplicate_quest_ids(self) -> None:
+        paths = [
+            validate_memo.ROOT / "quests" / "memo" / "active" / "AOA-MEM-Q-9999.yaml",
+            validate_memo.ROOT / "quests" / "memo" / "done" / "AOA-MEM-Q-9999.yaml",
+        ]
+
+        issues = validate_memo.duplicate_questbook_file_issues(paths)
+
+        self.assertEqual(len(issues), 1)
+        self.assertIn("duplicate quest id AOA-MEM-Q-9999", issues[0])
+
     def test_quest_surface_builder_check_validates(self) -> None:
         argv = ["build_quest_surfaces.py", "--check"]
         with patch.object(sys, "argv", argv):
