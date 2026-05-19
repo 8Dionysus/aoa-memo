@@ -21,8 +21,8 @@ Tracking starts with the community-docs baseline for this repository.
 - Move antifragility failure-lesson, shared-lesson, recovery-pattern, native
   pattern, and local regression artifacts into their functioning `parts/`
   homes with part-local validation.
-- Move operational-gate deployment, office incident, service revision,
-  post-release, and Wave 5 seed artifacts into functioning `parts/` homes with
+- Move operational-gate deployment, office incident, service revision, and
+  post-release boundary artifacts into functioning `parts/` homes with
   part-local validation.
 - Move the remaining shape-guard, readiness-boundary, recurrence-support,
   lineage-harvest, and Questbook package-level artifacts into functioning
@@ -159,6 +159,12 @@ Tracking starts with the community-docs baseline for this repository.
 
 - Compact the root README Memo Mechanics section so detailed mechanic routing
   stays in AGENTS/mechanic atlas surfaces rather than root public overview.
+- Rename active root cross-mechanic contract families and part-local
+  governance/post-release regressions from migration-era staging labels to
+  current operation-owner language.
+- Normalize active root doctrine and roadmap wording toward baseline, pass,
+  slice, and stage language while leaving source-owned Agon and lineage refs
+  intact.
 - Upgrade the moved Spark lane from two guidance files into a functional
   one-scenario `done-or-handoff` fast loop for bounded memory-layer work.
 - Align root README, CHARTER, ROADMAP, docs map, design surfaces,
@@ -178,7 +184,7 @@ Tracking starts with the community-docs baseline for this repository.
   names for lineage-harvest, Questbook, recurrence-support, and Titan.
 - Move governance schemas, examples, and local regressions into nearest
   functioning `parts/` homes, with federation, install/certification,
-  precedent, lineage, and cross-mechanic seed refs updated to the part-local
+  precedent, lineage, and cross-mechanic contract refs updated to the part-local
   surfaces.
 - Move consumer-handoff schemas, examples, generated KAG export, generator,
   playbook regression, and downstream feed tests into nearest functioning
@@ -189,8 +195,9 @@ Tracking starts with the community-docs baseline for this repository.
   with recurrence, consumer-handoff, and writeback refs updated to the
   part-local checkpoint surfaces.
 - Move writeback schemas, examples, generated companions, scripts, tests, and
-  receipt fixtures into nearest functioning `parts/` homes, with the Wave 2
-  seed-contract regression registered as a root cross-mechanic test family.
+  receipt fixtures into nearest functioning `parts/` homes, with the
+  operational-contract regression registered as a root cross-mechanic test
+  family.
 - Move Titan runnable schemas, examples, and tests into nearest functioning
   `parts/` homes, split digest/closeout candidate coverage into a part-local
   regression test, and tighten readiness local-test-route detection around
@@ -202,7 +209,7 @@ Tracking starts with the community-docs baseline for this repository.
   the consumer-handoff mechanic regression lane, move the tracked writeback receipt
   fixture into `mechanics/writeback/parts/receipt-publication-regression/tests/fixtures/`,
   and narrow the remaining
-  root test-family contract to the cross-mechanic Wave 3 seed regression.
+  root test-family contract to the cross-mechanic candidate-contract regression.
 - Move self-agency continuity object examples from root `examples/` into
   `mechanics/writeback/parts/growth-and-continuity/examples/` while keeping
   them in the root object-surface manifest and generated object-facing family.
@@ -271,7 +278,7 @@ Tracking starts with the community-docs baseline for this repository.
 - Titan memory loom, remembrance provenance, and recall/source-anchor contracts
   land beside Experience memory readiness, release gates, adoption contracts,
   governance/runtime memory boundaries, revision ledgers, retention markers,
-  and wave5 datetime validation
+  and post-release datetime validation
 - `aoa-memo` remains the bounded recall and writeback layer; memory stays
   explicit, provenance-aware, and weaker than proof or source truth
 
@@ -290,7 +297,7 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Changed
 
-- memo review follow-ups, contract drift, wave2 and wave4 gates, remembrance
+- memo review follow-ups, contract drift, operational and governance-boundary gates, remembrance
   source anchors, post-merge contract guards, generated memo registry version,
   and RFC3339 datetime validation were tightened
 

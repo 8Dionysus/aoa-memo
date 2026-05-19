@@ -59,7 +59,7 @@ class LineageHarvestMechanicTestCase(unittest.TestCase):
             "mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/schemas/pattern_lineage_memory_entry_v1.json",
             "mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/examples/pattern_lineage_memory_entry.example.json",
             "mechanics/governance/parts/federation-boundary/examples/federation_memory_gate_decision.example.json",
-            "tests/test_experience_wave3_seed_contracts.py",
+            "tests/test_cross_mechanic_candidate_contracts.py",
         ):
             self.assertIn(path, parts)
             self.assertTrue((REPO_ROOT / path).is_file())

@@ -22,7 +22,7 @@ admits deployment incident memory only with evidence, owner route, review postur
 ## Artifact Contract
 
 The part keeps deployment incident gate decisions, deployment lesson
-candidates, and the package boundary regression together because both seed
+candidates, and the package boundary regression together because both contract
 objects answer whether deployment evidence deserves durable memo recall.
 
 ## Stop-lines

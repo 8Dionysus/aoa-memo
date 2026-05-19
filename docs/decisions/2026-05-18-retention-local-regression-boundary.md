@@ -11,8 +11,8 @@ package-local test was split into part-local routes.
 
 The retention mechanic already owned active docs, schemas, and examples under
 `mechanics/retention/`, but its package-local artifact inventory had zero
-tests. Its route card pointed to the cross-mechanic Wave 4 governance seed
-regression, which validates one retention-adjacent seed but does not protect
+tests. Its route card pointed to the governance-boundary contract
+regression, which validates one retention-adjacent contract but does not protect
 the retention package boundary itself.
 
 That left retention weaker than the other mechanic packages: ready in the
@@ -30,7 +30,7 @@ example validity, and required-field rejection.
 ## Consequences
 
 - Retention now has a local test lane for the surfaces it owns directly.
-- The cross-mechanic Wave 4 test remains useful but is no longer the only
+- The governance-boundary contract test remains useful but is no longer the only
   retention validation named by the package route card.
 - The mechanic artifact inventory and readiness surfaces must include the new
   retention test.

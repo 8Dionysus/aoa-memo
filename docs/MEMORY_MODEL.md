@@ -21,7 +21,7 @@ It should make it possible to answer:
 
 ## Core vs derived memory
 
-The first-wave rule is:
+The baseline rule is:
 
 **authored/core memory stays in `aoa-memo`; derived memory stays downstream**
 

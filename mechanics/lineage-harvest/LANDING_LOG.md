@@ -43,7 +43,7 @@ python scripts/build_agents_mesh_index.py --check
 python scripts/validate_agents_mesh_index.py
 python scripts/validate_memory_surfaces.py
 python scripts/validate_memo.py
-python -m pytest -q mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/tests/test_lineage_harvest_mechanic.py tests/test_memo_mechanics.py tests/test_agents_mesh.py mechanics/recurrence-support/parts/witness-trace-contract/tests/test_recurrence_support_mechanic.py tests/test_experience_wave3_seed_contracts.py
+python -m pytest -q mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/tests/test_lineage_harvest_mechanic.py tests/test_memo_mechanics.py tests/test_agents_mesh.py mechanics/recurrence-support/parts/witness-trace-contract/tests/test_recurrence_support_mechanic.py tests/test_cross_mechanic_candidate_contracts.py
 python scripts/release_check.py
 ```
 

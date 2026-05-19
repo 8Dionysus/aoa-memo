@@ -21,7 +21,7 @@ A root surface is allowed only when it serves at least one durable role:
 5. **Agent lane**: it belongs to the agent-facing lane and is governed by that
    lane.
 
-A surface that is merely historical, wave-local, generated, experimental,
+A surface that is merely historical, staging-local, generated, experimental,
 neighbor-owned, or future-looking must not sit in root by default.
 
 ## Docs-Root Principle
@@ -32,7 +32,7 @@ A file may remain flat under `docs/` only when it is current memory doctrine,
 current route law, current cross-repo boundary, or a compatibility route that
 protects a known public entrypoint.
 
-Wave receipts, candidate intake notes, historic landing notes, review traces,
+Staging receipts, candidate intake notes, historic landing notes, review traces,
 decision rationale, and future protocol placeholders need named homes once a
 safe district exists. Until that migration is validated, flat docs remain
 active surfaces and must not be moved casually.
@@ -53,7 +53,7 @@ active surfaces and must not be moved casually.
 | Surface kind | Better home | Reason |
 |---|---|---|
 | Maintained agent lane | `.agents/<lane>/` | agent lanes are not civic root law |
-| Wave landing note | themed docs district or legacy/provenance home after a validated migration | landing history should not become a root peer |
+| Historical landing note | themed docs district or legacy/provenance home after a validated migration | landing history should not become a root peer |
 | Generated artifact | `generated/` | generated surfaces must remain machine-facing and reproducible |
 | Raw audit or review evidence | future evidence/provenance district or owner repo | evidence explains movement, not active doctrine |
 | Runtime state or receipt stream | runtime owner or `.aoa/live_receipts/` when explicitly bounded | root docs must not become live state |

@@ -21,7 +21,7 @@ describes the source-owned tiny donor export for KAG readiness
 ## Artifact Contract
 
 The part keeps the memo-owned KAG donor export, its generator, and the
-`memo_to_kag_bridge_record` seed contract together. The generated export may
+`memo_to_kag_bridge_record` bridge contract together. The generated export may
 point toward KAG consumers, but it remains a source-owned memo donor capsule
 and not graph substrate truth or federation activation.
 

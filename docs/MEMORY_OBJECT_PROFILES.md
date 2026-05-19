@@ -26,7 +26,7 @@ Profiles make the current baseline more honest by saying:
 - which posture is expected for each kind
 - which fields are required for that kind to remain reviewable
 - which kinds are still working-state exports versus durable memory
-- where the next hardening wave should focus without moving policy into neighboring repos
+- where the next hardening pass should focus without moving policy into neighboring repos
 
 ## Profile entrypoint
 
@@ -131,7 +131,7 @@ Profile posture:
 
 ## Coverage matrix
 
-The current profile-hardening wave uses these canonical schema/example pairs:
+The current profile-hardening pass uses these canonical schema/example pairs:
 
 - `anchor` -> `schemas/anchor.schema.json` -> `examples/anchor.example.json`
 - `state_capsule` -> `schemas/state_capsule.schema.json` -> `examples/state_capsule.example.json`
@@ -148,8 +148,8 @@ Profile schemas do not assign role rights, routing behavior, runtime storage pol
 
 They only harden the memo-side shape of the current canon so neighboring repos can consume it without guessing.
 
-## Next hardening wave
+## Next hardening pass
 
-After the per-kind profile and trust/lifecycle layers are stable, the next contract-hardening wave should sharpen:
+After the per-kind profile and trust/lifecycle layers are stable, the next contract-hardening pass should sharpen:
 
 - object-facing generated recall surfaces built from the canon

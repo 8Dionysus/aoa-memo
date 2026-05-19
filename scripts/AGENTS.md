@@ -29,7 +29,7 @@ Keep the current split clear:
 - `validate_memory_object_surfaces.py` checks manifest coverage, determinism, lifecycle integrity, and object-facing recall contracts
 - `validate_lifecycle_audit_examples.py` checks lifecycle, provenance-thread, and audit-event example integrity
 - `validate_mechanic_artifact_topology.py` keeps single-mechanic schemas,
-  examples, config seeds, generated outputs, scripts, tests, and manifests out
+  examples, config inputs, generated outputs, scripts, tests, and manifests out
   of root technical districts, and checks that root `generated/` outputs belong
   to explicit generated-family contracts
 - `build_mechanic_artifact_inventory.py` and

@@ -141,7 +141,7 @@ Read, write, promotion, freeze, and handoff rights belong in `aoa-agents`.
 ### 10. Topology should reduce recall cost
 
 New docs, districts, schemas, and generated companions should make it easier to
-find the right memory surface. If a surface only preserves a session wave or
+find the right memory surface. If a surface only preserves a session interval or
 landing receipt, it needs a bounded home rather than a root-level spotlight.
 
 ## Good Design Feels Like

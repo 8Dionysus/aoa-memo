@@ -27,7 +27,7 @@ Move operational-gate technical artifacts to the nearest functioning part:
   `mechanics/operational-gate/parts/office-incident-gate/`
 - service revision ledger entry contracts under
   `mechanics/operational-gate/parts/service-revision-ledger/`
-- train release memory entry contracts and the Wave 5 seed regression under
+- train release memory entry contracts and the post-release-boundary contract regression under
   `mechanics/operational-gate/parts/post-release-boundaries/`
 
 Keep release revision ledger and rollback memory entry contracts in writeback,
@@ -52,7 +52,7 @@ The operational-gate artifact inventory should now report all operational-gate
 schemas, examples, and tests as `scope: part`. Package-level artifact homes are
 provenance only, not active routes.
 
-Cross-mechanic Wave 5 validation still covers retention, governance,
+Post-release boundary validation still covers retention, governance,
 writeback, rollback, and operational-gate contracts, but operational-gate
 contracts are now owned by their nearest parts.
 

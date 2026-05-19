@@ -9,7 +9,7 @@ from jsonschema import Draft202012Validator
 
 
 ROOT = Path(__file__).resolve().parents[1]
-WAVE3_STEMS = (
+CROSS_MECHANIC_CONTRACT_STEMS = (
     "adoption_duplicate_memory_cluster",
     "adoption_forgetting_decision",
     "adoption_memory_writeback",
@@ -60,7 +60,7 @@ GUARDRAIL_BOOLEAN_FIELDS = {
     "submit_only",
 }
 RATIO_FIELD_HINTS = ("rate", "threshold")
-ENUM_ESCAPE_VALUE = "__wave3_not_allowed__"
+ENUM_ESCAPE_VALUE = "__cross_mechanic_not_allowed__"
 
 
 def load_contract(stem: str) -> tuple[dict[str, object], dict[str, object]]:
@@ -136,32 +136,32 @@ def set_section_value(value: dict[str, object], section: str, key: str, replacem
     nested[key] = replacement
 
 
-class ExperienceWave3SeedContractTests(unittest.TestCase):
+class CrossMechanicCandidateContractTests(unittest.TestCase):
     def assert_invalid(self, schema: dict[str, object], value: dict[str, object], label: str) -> None:
         errors = validation_errors(schema, value)
         self.assertTrue(errors, f"{label} unexpectedly validated")
 
-    def test_experience_wave3_examples_match_schemas(self) -> None:
+    def test_cross_mechanic_examples_match_schemas(self) -> None:
         missing_pairs: list[str] = []
-        for stem in WAVE3_STEMS:
+        for stem in CROSS_MECHANIC_CONTRACT_STEMS:
             schema_path, example_path = contract_paths(stem)
             if not schema_path.exists():
                 missing_pairs.append(f"{example_path.relative_to(ROOT)} -> {schema_path.relative_to(ROOT)}")
             if not example_path.exists():
                 missing_pairs.append(f"{schema_path.relative_to(ROOT)} -> {example_path.relative_to(ROOT)}")
-        self.assertFalse(missing_pairs, "missing wave3 contract pair(s): " + ", ".join(missing_pairs))
+        self.assertFalse(missing_pairs, "missing cross-mechanic contract pair(s): " + ", ".join(missing_pairs))
 
-        self.assertTrue(WAVE3_STEMS)
-        for stem in WAVE3_STEMS:
+        self.assertTrue(CROSS_MECHANIC_CONTRACT_STEMS)
+        for stem in CROSS_MECHANIC_CONTRACT_STEMS:
             with self.subTest(stem=stem):
                 schema, example = load_contract(stem)
                 Draft202012Validator.check_schema(schema)
                 errors = validation_errors(schema, example)
                 self.assertFalse(errors, f"{stem}: {errors[0].message}" if errors else stem)
 
-    def test_experience_wave3_schemas_reject_escape_hatches(self) -> None:
-        self.assertTrue(WAVE3_STEMS)
-        for stem in WAVE3_STEMS:
+    def test_cross_mechanic_schemas_reject_escape_hatches(self) -> None:
+        self.assertTrue(CROSS_MECHANIC_CONTRACT_STEMS)
+        for stem in CROSS_MECHANIC_CONTRACT_STEMS:
             with self.subTest(stem=stem):
                 schema, example = load_contract(stem)
 
@@ -190,8 +190,8 @@ class ExperienceWave3SeedContractTests(unittest.TestCase):
                             with_wrong_payload_type["payload"][key] = wrong_type_value(value)
                             self.assert_invalid(schema, with_wrong_payload_type, f"{stem} wrong {key} type")
 
-    def test_experience_wave3_schemas_reject_guardrail_boolean_inversions(self) -> None:
-        for stem in WAVE3_STEMS:
+    def test_cross_mechanic_schemas_reject_guardrail_boolean_inversions(self) -> None:
+        for stem in CROSS_MECHANIC_CONTRACT_STEMS:
             schema, example = load_contract(stem)
             payload = example.get("payload")
             if not isinstance(payload, dict):
@@ -205,8 +205,8 @@ class ExperienceWave3SeedContractTests(unittest.TestCase):
                     mutated["payload"][key] = not value
                     self.assert_invalid(schema, mutated, f"{stem} inverted {key}")
 
-    def test_experience_wave3_schemas_reject_invalid_numeric_ranges(self) -> None:
-        for stem in WAVE3_STEMS:
+    def test_cross_mechanic_schemas_reject_invalid_numeric_ranges(self) -> None:
+        for stem in CROSS_MECHANIC_CONTRACT_STEMS:
             schema, example = load_contract(stem)
             payload = example.get("payload")
             if not isinstance(payload, dict):
@@ -232,9 +232,9 @@ class ExperienceWave3SeedContractTests(unittest.TestCase):
                         mutated["payload"][key] = 1.5
                         self.assert_invalid(schema, mutated, f"{stem} out-of-range {key}")
 
-    def test_experience_wave3_schemas_reject_non_string_array_items(self) -> None:
+    def test_cross_mechanic_schemas_reject_non_string_array_items(self) -> None:
         exercised = 0
-        for stem in WAVE3_STEMS:
+        for stem in CROSS_MECHANIC_CONTRACT_STEMS:
             schema, example = load_contract(stem)
             for section, key in array_field_targets(example):
                 exercised += 1
@@ -246,10 +246,10 @@ class ExperienceWave3SeedContractTests(unittest.TestCase):
                     mutated = copy.deepcopy(example)
                     set_section_value(mutated, section, key, [""])
                     self.assert_invalid(schema, mutated, f"{stem} empty {section}.{key} item")
-        self.assertGreater(exercised, 0, "no wave3 array fields were exercised")
+        self.assertGreater(exercised, 0, "no cross-mechanic array fields were exercised")
 
-    def test_experience_wave3_schemas_reject_payload_enum_escape_values(self) -> None:
-        for stem in WAVE3_STEMS:
+    def test_cross_mechanic_schemas_reject_payload_enum_escape_values(self) -> None:
+        for stem in CROSS_MECHANIC_CONTRACT_STEMS:
             schema, example = load_contract(stem)
             payload = example.get("payload")
             if not isinstance(payload, dict):

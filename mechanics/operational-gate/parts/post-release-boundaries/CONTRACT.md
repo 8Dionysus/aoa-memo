@@ -11,7 +11,7 @@ Stronger claims route through `../../OWNER_MAP.md`. Source placement and legacy 
 - [POST_RELEASE_MEMORY_BOUNDARIES](../../docs/POST_RELEASE_MEMORY_BOUNDARIES.md)
 - `schemas/train_release_memory_entry_v1.json`
 - `examples/train_release_memory_entry_v1.example.json`
-- `tests/test_experience_wave5_seed_contracts.py`
+- `tests/test_post_release_boundary_contracts.py`
 
 ## Contract
 
@@ -19,8 +19,8 @@ names what post-release material memo may preserve and what stays with release/r
 
 ## Artifact Contract
 
-The part keeps train release memory entry contracts and the Wave 5 seed
-regression with the post-release boundary because that regression checks the
+The part keeps train release memory entry contracts and the post-release
+boundary regression together because that regression checks the
 release-train, service incident, service revision, retention, governance, and
 writeback boundary bundle without making memo the release owner.
 

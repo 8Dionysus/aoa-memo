@@ -1,6 +1,6 @@
 # Narrative Core Contract
 
-This document records the first-wave contract between authored/core memory and derived memory surfaces.
+This document records the baseline contract between authored/core memory and derived memory surfaces.
 
 It exists to keep `aoa-memo` explicit, reviewable, and source-disciplined while still allowing downstream retrieval and KAG work.
 
@@ -50,7 +50,7 @@ The current public baseline now exposes two separate generated families inside `
 - an object family for compact inspect/expand over curated memory-object examples
 
 This split keeps layer meaning and object recall parallel rather than collapsed.
-`provenance_thread`, `witness_trace`, `inquiry_checkpoint`, and checkpoint contracts remain schema-backed support surfaces in this wave, not a third generated family.
+`provenance_thread`, `witness_trace`, `inquiry_checkpoint`, and checkpoint contracts remain schema-backed support surfaces in this baseline, not a third generated family.
 
 ## Derived memory surfaces
 

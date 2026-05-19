@@ -32,6 +32,7 @@ expectation.
 | Decision | Scope |
 |---|---|
 | [2026-05-19-spark-registry-backed-memo-lane](2026-05-19-spark-registry-backed-memo-lane.md) | add registry-backed Spark scenarios, packets, schemas, validator, tests, and release-gate wiring |
+| [2026-05-19-root-contract-family-naming](2026-05-19-root-contract-family-naming.md) | rename active root cross-mechanic contract regressions away from migration-era staging labels |
 | [2026-05-19-root-memory-index](2026-05-19-root-memory-index.md) | add a compact root memory-canon index and keep README/CONTRIBUTING map-oriented |
 | [2026-05-18-memory-topology-spine](2026-05-18-memory-topology-spine.md) | add topology-spine surfaces before moving flat docs |
 | [2026-05-18-spark-agent-lane-home](2026-05-18-spark-agent-lane-home.md) | move maintained Spark lane from root to `.agents/spark/` |
@@ -83,7 +84,7 @@ expectation.
 | [2026-05-18-mechanic-landing-log-index](2026-05-18-mechanic-landing-log-index.md) | add a generated landing receipt index for memo mechanic packages |
 | [2026-05-18-writeback-curated-object-examples](2026-05-18-writeback-curated-object-examples.md) | move writeback-owned curated memory-object examples under the writeback mechanic |
 | [2026-05-18-questbook-quest-read-model-projections-part](2026-05-18-questbook-quest-read-model-projections-part.md) | add a part-level contract for root-published Questbook generated read models |
-| [2026-05-18-downstream-feed-test-localization](2026-05-18-downstream-feed-test-localization.md) | move consumer-handoff and writeback test artifacts out of root while keeping the cross-mechanic seed regression rooted |
+| [2026-05-18-downstream-feed-test-localization](2026-05-18-downstream-feed-test-localization.md) | move consumer-handoff and writeback test artifacts out of root while keeping the cross-mechanic contract regression rooted |
 | [2026-05-18-retention-local-regression-boundary](2026-05-18-retention-local-regression-boundary.md) | add a package-local regression boundary for retention docs, schemas, examples, and stop-lines |
 
 ## Review Rule

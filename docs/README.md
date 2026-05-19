@@ -133,7 +133,7 @@ flat files remain active surfaces.
 | [generated](../generated/AGENTS.md) | compact generated companions |
 | [scripts](../scripts/AGENTS.md) | builders, validators, and publication helpers |
 | [tests](../tests/AGENTS.md) | regression surfaces |
-| [config](../config/AGENTS.md) | seed and build inputs |
+| [config](../config/AGENTS.md) | source-map and build inputs |
 | [mechanics/antifragility](../mechanics/antifragility/README.md) | Antifragility memo mechanic |
 | [mechanics/agon](../mechanics/agon/README.md) | Agon memo mechanic |
 | [mechanics/titan](../mechanics/titan/README.md) | Titan memo mechanic |
