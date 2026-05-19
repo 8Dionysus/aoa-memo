@@ -19,16 +19,22 @@ promotion, stats authority, or Tree-of-Sophia canon.
 
 Agon docs often pair with:
 
-- `config/agon_*.source.json`
-- `schemas/agon-*.schema.json`
-- `examples/agon_*.example.json`
-- `generated/agon_*.min.json`
-- `manifests/recurrence/component.agon.*.json`
-- `manifests/recurrence/hooks/component.agon.*.hooks.json`
+- `mechanics/agon/parts/prebinding-and-candidate-intake/config/`
+- `mechanics/agon/parts/prebinding-and-candidate-intake/schemas/`
+- `mechanics/agon/parts/prebinding-and-candidate-intake/examples/`
+- `mechanics/agon/parts/prebinding-and-candidate-intake/generated/`
+- `mechanics/agon/parts/prebinding-and-candidate-intake/scripts/`
+- `mechanics/agon/parts/prebinding-and-candidate-intake/tests/`
+- `mechanics/agon/parts/bridge-and-evidence-seams/config/`
+- `mechanics/agon/parts/bridge-and-evidence-seams/schemas/`
+- `mechanics/agon/parts/bridge-and-evidence-seams/examples/`
+- `mechanics/agon/parts/bridge-and-evidence-seams/generated/`
+- `mechanics/agon/parts/bridge-and-evidence-seams/scripts/`
+- `mechanics/agon/parts/bridge-and-evidence-seams/tests/`
+- `mechanics/agon/parts/stage-landing-and-stop-lines/manifests/`
+- `mechanics/agon/parts/stage-landing-and-stop-lines/tests/`
 - `quests/agon/<state>/AOM-Q-AGON-*.md`
 - `quests/agon/<state>/AOMEMO-Q-AGON-*.md`
-- `tests/test_agon_*.py`
-- `scripts/validate_agon_*.py`
 
 ## Stop-Lines
 

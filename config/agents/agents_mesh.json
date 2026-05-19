@@ -1070,6 +1070,68 @@
     ".pytest_cache",
     "__pycache__"
   ],
+  "neighbor_doc_boundaries": [
+    {
+      "path": "README.md",
+      "purpose": "public front door stays map-oriented; route-mode law lives in AGENTS.md",
+      "forbidden_snippets": [
+        "## Route Modes"
+      ],
+      "required_snippets": [
+        "Agent editing route",
+        "Executable validation routes live in [AGENTS](AGENTS.md#verify)"
+      ]
+    },
+    {
+      "path": "CHARTER.md",
+      "purpose": "charter names authority; operational editing routes live in AGENTS.md",
+      "forbidden_snippets": [
+        "## Editing posture",
+        "Before changing root posture"
+      ],
+      "required_snippets": [
+        "Operational editing routes live in [AGENTS](AGENTS.md)"
+      ]
+    },
+    {
+      "path": "DESIGN.AGENTS.md",
+      "purpose": "agent-surface design names form; executable validation commands live in route cards",
+      "forbidden_snippets": [
+        "The current broad validation path remains:",
+        "```bash\npython scripts/release/release_check.py\n```"
+      ],
+      "required_snippets": [
+        "Executable commands live in root `AGENTS.md` and nearest local `AGENTS.md`"
+      ]
+    },
+    {
+      "path": "mechanics/agon/docs/README.md",
+      "purpose": "Agon docs map stays part-local after artifact topology moved",
+      "forbidden_snippets": [
+        "`config/agon_*.source.json`",
+        "`schemas/agon-*.schema.json`",
+        "`examples/agon_*.example.json`",
+        "`generated/agon_*.min.json`",
+        "`tests/test_agon_*.py`",
+        "`scripts/validate_agon_*.py`"
+      ],
+      "required_snippets": [
+        "`mechanics/agon/parts/prebinding-and-candidate-intake/config/`",
+        "`mechanics/agon/parts/bridge-and-evidence-seams/config/`",
+        "`mechanics/agon/parts/stage-landing-and-stop-lines/manifests/`"
+      ]
+    },
+    {
+      "path": "mechanics/titan/docs/TITAN_MEMORY_POSTURE.md",
+      "purpose": "Titan memory posture keeps domain closeout wording distinct from route-card closeout",
+      "forbidden_snippets": [
+        "## Closeout\n"
+      ],
+      "required_snippets": [
+        "## Closeout receipt candidate"
+      ]
+    }
+  ],
   "validation_commands": [
     "python scripts/agents/validate_agents_mesh.py",
     "python scripts/agents/build_agents_mesh_index.py --check",

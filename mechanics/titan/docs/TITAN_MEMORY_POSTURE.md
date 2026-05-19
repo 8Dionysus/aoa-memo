@@ -40,6 +40,6 @@ risk if stored
 risk if not stored
 ```
 
-## Closeout
+## Closeout receipt candidate
 
 At session close, Mneme should produce a short receipt candidate and mark whether any memory writeback is proposed. A proposed writeback is not a writeback.

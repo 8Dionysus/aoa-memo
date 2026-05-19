@@ -188,11 +188,9 @@ docs.
 
 ## Validation Direction
 
-The current broad validation path remains:
-
-```bash
-python scripts/release/release_check.py
-```
+Executable commands live in root `AGENTS.md` and nearest local `AGENTS.md`
+cards. This design surface only names what agent-facing validation should
+prove.
 
 The AGENTS mesh generated companion checks:
 
