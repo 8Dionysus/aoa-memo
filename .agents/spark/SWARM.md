@@ -1,9 +1,15 @@
-# Spark Swarm Recipe — aoa-memo
+# Spark Swarm Recipe - aoa-memo
 
 Рекомендуемый путь назначения: `.agents/spark/SWARM.md`
 
 ## Для чего этот рой
-Используй Spark здесь для одного memory seam: memory object, registry, recall contract, provenance thread, lifecycle audit example или generated memory surfaces. Этот рой должен укреплять explicit and reviewable memory, не давая памяти тихо подменить proof.
+Используй Spark здесь для одного memory seam: memory object, registry, recall
+contract, provenance thread, lifecycle audit example, mechanic seam, or
+generated memory surface. Этот рой должен укреплять explicit and reviewable
+memory, не давая памяти тихо подменить proof.
+
+Ordinary Spark work starts from one scenario in `.agents/spark/registry.json`.
+Use this file only when the user explicitly asks for a swarm.
 
 ## Читать перед стартом
 - `README.md`
@@ -17,15 +23,18 @@
 
 ## Форма роя
 - **Coordinator**: выбирает один memory-layer surface
-- **Scout**: картографирует object/registry/surfaces/examples
+- **Scout**: картографирует object/registry/surfaces/examples and chooses one
+  registered scenario
 - **Builder**: делает минимальный diff
-- **Verifier**: запускает три memory validators
+- **Verifier**: запускает named scenario validation, then broader gates only
+  when requested
 - **Boundary Keeper**: следит за provenance, salience boundaries и anti-proof-replacement
 
 ## Параллельные дорожки
 - Lane A: memory object / registry / schema
 - Lane B: generated memory surfaces
 - Lane C: lifecycle / provenance-thread / audit examples
+- Lane D: mechanic seam / recall contract / release-prep
 - Не запускай больше одного пишущего агента на одну и ту же семью файлов.
 
 ## Allowed
@@ -43,19 +52,23 @@
 ## Launch packet для координатора
 ```text
 We are working in aoa-memo with a one-repo one-swarm setup.
-Pick exactly one memory-layer surface:
-- memory object
-- registry
+Pick exactly one registered scenario from .agents/spark/registry.json and one
+memory-layer surface:
+- memory object or doctrine surface
 - recall contract
 - provenance thread
 - lifecycle audit example
 - generated memory surface
+- mechanic seam
+- concrete diff or release-prep pass
 
 Return:
-1. chosen surface
-2. exact files to touch
-3. which validator(s) should catch regressions
-4. whether this change affects router-facing surfaces
+1. scenario id
+2. chosen surface
+3. exact files to touch
+4. which validator(s) should catch regressions
+5. whether this change affects router-facing surfaces
+6. handoff condition
 ```
 
 ## Промпт для Scout
@@ -96,12 +109,18 @@ Check:
 ```
 
 ## Verify
-Executable validation lives in [AGENTS](AGENTS.md#validation).
+Executable validation lives in [AGENTS](AGENTS.md#validation), and scenario
+shape is checked by:
+
+```bash
+python .agents/spark/scripts/validate_spark_lane.py
+python -m unittest discover -s .agents/spark/tests -p 'test*.py'
+```
 
 ## Done when
 - один memory-layer surface strengthened
 - provenance / audit / recall assumptions названы явно
-- все три validators реально прогнаны
+- named validators реально прогнаны or skipped checks are explicitly reported
 - память не подменила proof meaning
 
 ## Handoff

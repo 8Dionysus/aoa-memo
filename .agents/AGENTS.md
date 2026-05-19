@@ -39,6 +39,8 @@ and validators.
 For `.agents/` route changes, run:
 
 ```bash
+python .agents/spark/scripts/validate_spark_lane.py
+python -m unittest discover -s .agents/spark/tests -p 'test*.py'
 python -m pytest -q tests/test_topology_spine.py
 python scripts/release_check.py
 ```

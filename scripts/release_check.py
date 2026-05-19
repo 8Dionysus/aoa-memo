@@ -39,6 +39,8 @@ COMMANDS = [
     ("validate memory surfaces", [sys.executable, "scripts/validate_memory_surfaces.py"]),
     ("validate memory object surfaces", [sys.executable, "scripts/validate_memory_object_surfaces.py"]),
     ("validate lifecycle audit examples", [sys.executable, "scripts/validate_lifecycle_audit_examples.py"]),
+    ("validate Spark lane", [sys.executable, ".agents/spark/scripts/validate_spark_lane.py"]),
+    ("run Spark lane tests", [sys.executable, "-m", "unittest", "discover", "-s", ".agents/spark/tests", "-p", "test*.py"]),
     ("validate mechanic artifact topology", [sys.executable, "scripts/validate_mechanic_artifact_topology.py"]),
     ("check mechanic artifact inventory", [sys.executable, "scripts/build_mechanic_artifact_inventory.py", "--check"]),
     ("validate mechanic artifact inventory", [sys.executable, "scripts/validate_mechanic_artifact_inventory.py"]),

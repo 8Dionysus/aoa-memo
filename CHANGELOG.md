@@ -9,6 +9,9 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Added
 
+- Add a registry-backed `.agents/spark/` Codex Spark lane with memo-specific
+  scenarios, result and handoff packet homes, schemas, validator, tests,
+  release-gate wiring, and decision record.
 - Add `MEMORY_INDEX.md` as a compact root memory-canon map for object kinds,
   support objects, recall modes, temperature vocabulary, source families, and
   generated companions.
@@ -154,6 +157,8 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Changed
 
+- Upgrade the moved Spark lane from two guidance files into a functional
+  one-scenario `done-or-handoff` fast loop for bounded memory-layer work.
 - Align root README, CHARTER, ROADMAP, docs map, design surfaces,
   CONTRIBUTING, CODE_OF_CONDUCT, QUESTBOOK, and SECURITY around explicit
   root-doc authority, memory-canon routing, public-safety posture, and

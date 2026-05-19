@@ -53,11 +53,13 @@ class TopologySpineTestCase(unittest.TestCase):
                 "only governs work started from `.agents/spark/`",
                 "fast-loop lane",
                 "memory remains explicit and bounded",
+                "done-or-handoff",
             ),
             ".agents/spark/SWARM.md": (
                 ".agents/spark/SWARM.md",
                 "memory seam",
                 "memory did not become proof",
+                ".agents/spark/registry.json",
             ),
             "docs/decisions/AGENTS.md": (
                 "Decision records",
@@ -133,6 +135,8 @@ class TopologySpineTestCase(unittest.TestCase):
         self.assertTrue((REPO_ROOT / ".agents" / "AGENTS.md").is_file())
         self.assertTrue((REPO_ROOT / ".agents" / "spark" / "AGENTS.md").is_file())
         self.assertTrue((REPO_ROOT / ".agents" / "spark" / "SWARM.md").is_file())
+        self.assertTrue((REPO_ROOT / ".agents" / "spark" / "registry.json").is_file())
+        self.assertTrue((REPO_ROOT / ".agents" / "spark" / "scripts" / "validate_spark_lane.py").is_file())
 
 
 if __name__ == "__main__":
