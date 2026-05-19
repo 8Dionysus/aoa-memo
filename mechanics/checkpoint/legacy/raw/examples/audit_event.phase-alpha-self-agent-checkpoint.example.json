@@ -1,0 +1,78 @@
+{
+  "id": "memo.audit.2026-04-02.alpha-self-agent-checkpoint",
+  "kind": "audit_event",
+  "title": "Alpha Route 2 kept rollback and post-sync health review-visible",
+  "summary": "Captures the live checkpoint event in which rollback triggers, parity sync, exact reply, and autonomy closure all remained explicit after the bounded operator-surface refresh.",
+  "scope": [
+    "repo:aoa-playbooks",
+    "project:AoA"
+  ],
+  "owner_refs": [
+    "repo:aoa-memo"
+  ],
+  "payload_ref": "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.self-agent-checkpoint-rollout.md",
+  "tags": [
+    "phase-alpha",
+    "audit",
+    "checkpoint"
+  ],
+  "time": {
+    "created_at": "2026-04-03T03:09:00Z",
+    "observed_at": "2026-04-03T03:07:19Z",
+    "valid_from": "2026-04-03T03:09:00Z",
+    "valid_to": null
+  },
+  "provenance": {
+    "source_refs": [
+      "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.self-agent-checkpoint-rollout.md",
+      "repo:aoa-playbooks/docs/alpha-readiness/self-agent-checkpoint-rollout.md",
+      "repo:abyss-stack/Logs/phase-alpha/alpha-02-self-agent-checkpoint-rollout/rollback_marker.json",
+      "repo:abyss-stack/Logs/phase-alpha/alpha-02-self-agent-checkpoint-rollout/health_check.json"
+    ],
+    "episode_refs": [
+      "memo.decision.2026-04-02.alpha-self-agent-checkpoint"
+    ],
+    "provenance_thread_id": "prov.phase-alpha.curated.2026-04-02"
+  },
+  "trust": {
+    "temperature": "cool",
+    "confidence": 0.93,
+    "authority_kind": "human_reviewed",
+    "authority": "curated Alpha route-02 audit",
+    "freshness": 0.99,
+    "salience": 0.86
+  },
+  "lifecycle": {
+    "review_state": "confirmed",
+    "supersedes": [],
+    "superseded_by": null,
+    "retention_class": "audit-trace",
+    "current_recall": {
+      "status": "allowed",
+      "status_reason": "This audit event remains useful when checking whether Route 2 preserved rollback visibility and post-sync runtime closure before handoff to remediation."
+    }
+  },
+  "access": {
+    "access_class": "public",
+    "read_scopes": [
+      "public"
+    ],
+    "write_scopes": [
+      "maintainer"
+    ],
+    "promotion_scopes": [
+      "maintainer",
+      "human-review"
+    ]
+  },
+  "bridges": {
+    "tos_refs": [],
+    "skill_refs": [],
+    "eval_refs": [
+      "eval:aoa-approval-boundary-adherence",
+      "eval:aoa-bounded-change-quality"
+    ],
+    "kag_lift_status": "none",
+    "route_capsule_ref": "repo:aoa-playbooks/docs/alpha-reviewed-runs/2026-04-02.self-agent-checkpoint-rollout.md"
+  }
+}

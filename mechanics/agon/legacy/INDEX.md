@@ -1,31 +1,61 @@
-# Agon Legacy Index
+# Agon Memo Mechanic Legacy Index
 
-| Former Path | Active Path |
-|---|---|
-| `docs/AGON_DELTA_CHRONICLE_PREBINDING_MODEL.md`; `docs/agon/AGON_DELTA_CHRONICLE_PREBINDING_MODEL.md` | `mechanics/agon/docs/AGON_DELTA_CHRONICLE_PREBINDING_MODEL.md` |
-| `docs/AGON_EPISTEMIC_MEMORY_BOUNDARY.md`; `docs/agon/AGON_EPISTEMIC_MEMORY_BOUNDARY.md` | `mechanics/agon/docs/AGON_EPISTEMIC_MEMORY_BOUNDARY.md` |
-| `docs/AGON_EPISTEMIC_MEMORY_BRIDGE.md`; `docs/agon/AGON_EPISTEMIC_MEMORY_BRIDGE.md` | `mechanics/agon/docs/AGON_EPISTEMIC_MEMORY_BRIDGE.md` |
-| `docs/AGON_KAG_MEMO_BOUNDARY.md`; `docs/agon/AGON_KAG_MEMO_BOUNDARY.md` | `mechanics/agon/docs/AGON_KAG_MEMO_BOUNDARY.md` |
-| `docs/AGON_KAG_MEMO_EVIDENCE_PACKAGES.md`; `docs/agon/AGON_KAG_MEMO_EVIDENCE_PACKAGES.md` | `mechanics/agon/docs/AGON_KAG_MEMO_EVIDENCE_PACKAGES.md` |
-| `docs/AGON_MECHANICAL_TRIAL_MEMO_INTAKES.md`; `docs/agon/AGON_MECHANICAL_TRIAL_MEMO_INTAKES.md` | `mechanics/agon/docs/AGON_MECHANICAL_TRIAL_MEMO_INTAKES.md` |
-| `docs/AGON_MEMORY_PREBINDING.md`; `docs/agon/AGON_MEMORY_PREBINDING.md` | `mechanics/agon/docs/AGON_MEMORY_PREBINDING.md` |
-| `docs/AGON_MEMO_RECURRENCE_REVIEW_BOUNDARY.md`; `docs/agon/AGON_MEMO_RECURRENCE_REVIEW_BOUNDARY.md` | `mechanics/agon/docs/AGON_MEMO_RECURRENCE_REVIEW_BOUNDARY.md` |
-| `docs/AGON_RANK_MEMORY_BOUNDARY.md`; `docs/agon/AGON_RANK_MEMORY_BOUNDARY.md` | `mechanics/agon/docs/AGON_RANK_MEMORY_BOUNDARY.md` |
-| `docs/AGON_RETENTION_CANDIDATE_BOUNDARY.md`; `docs/agon/AGON_RETENTION_CANDIDATE_BOUNDARY.md` | `mechanics/agon/docs/AGON_RETENTION_CANDIDATE_BOUNDARY.md` |
-| `docs/AGON_RETENTION_CANDIDATE_INTAKE.md`; `docs/agon/AGON_RETENTION_CANDIDATE_INTAKE.md` | `mechanics/agon/docs/AGON_RETENTION_CANDIDATE_INTAKE.md` |
-| `docs/AGON_RETENTION_MEMORY_BRIDGE.md`; `docs/agon/AGON_RETENTION_MEMORY_BRIDGE.md` | `mechanics/agon/docs/AGON_RETENTION_MEMORY_BRIDGE.md` |
-| `docs/AGON_SCAR_CANDIDATE_INTAKE_MODEL.md`; `docs/agon/AGON_SCAR_CANDIDATE_INTAKE_MODEL.md` | `mechanics/agon/docs/AGON_SCAR_CANDIDATE_INTAKE_MODEL.md` |
-| `docs/AGON_SCAR_REQUEST_INTAKE_ALIGNMENT.md`; `docs/agon/AGON_SCAR_REQUEST_INTAKE_ALIGNMENT.md` | `mechanics/agon/docs/AGON_SCAR_REQUEST_INTAKE_ALIGNMENT.md` |
-| `docs/AGON_SLC_MEMORY_BOUNDARY.md`; `docs/agon/AGON_SLC_MEMORY_BOUNDARY.md` | `mechanics/agon/docs/AGON_SLC_MEMORY_BOUNDARY.md` |
-| `docs/AGON_SLC_MEMORY_BRIDGE.md`; `docs/agon/AGON_SLC_MEMORY_BRIDGE.md` | `mechanics/agon/docs/AGON_SLC_MEMORY_BRIDGE.md` |
-| `docs/AGON_SOPHIAN_MEMO_EVIDENCE.md`; `docs/agon/AGON_SOPHIAN_MEMO_EVIDENCE.md` | `mechanics/agon/docs/AGON_SOPHIAN_MEMO_EVIDENCE.md` |
-| `docs/AGON_VDS_MEMO_BRIDGE.md`; `docs/agon/AGON_VDS_MEMO_BRIDGE.md` | `mechanics/agon/docs/AGON_VDS_MEMO_BRIDGE.md` |
-| `docs/AGON_WAVE11_MEMO_LANDING.md`; `docs/agon/AGON_WAVE11_MEMO_LANDING.md` | `mechanics/agon/docs/AGON_WAVE11_MEMO_LANDING.md` |
-| `docs/AGON_WAVE13_MEMO_LANDING.md`; `docs/agon/AGON_WAVE13_MEMO_LANDING.md` | `mechanics/agon/docs/AGON_WAVE13_MEMO_LANDING.md` |
-| `docs/AGON_WAVE13_MEMO_STOP_LINES.md`; `docs/agon/AGON_WAVE13_MEMO_STOP_LINES.md` | `mechanics/agon/docs/AGON_WAVE13_MEMO_STOP_LINES.md` |
-| `docs/AGON_WAVE14_MEMO_LANDING.md`; `docs/agon/AGON_WAVE14_MEMO_LANDING.md` | `mechanics/agon/docs/AGON_WAVE14_MEMO_LANDING.md` |
-| `docs/AGON_WAVE15_MEMO_LANDING.md`; `docs/agon/AGON_WAVE15_MEMO_LANDING.md` | `mechanics/agon/docs/AGON_WAVE15_MEMO_LANDING.md` |
-| `docs/AGON_WAVE16_MEMO_LANDING.md`; `docs/agon/AGON_WAVE16_MEMO_LANDING.md` | `mechanics/agon/docs/AGON_WAVE16_MEMO_LANDING.md` |
-| `docs/AGON_WAVE17_MEMO_LANDING.md`; `docs/agon/AGON_WAVE17_MEMO_LANDING.md` | `mechanics/agon/docs/AGON_WAVE17_MEMO_LANDING.md` |
-| `docs/AGON_WAVE18_MEMO_LANDING.md`; `docs/agon/AGON_WAVE18_MEMO_LANDING.md` | `mechanics/agon/docs/AGON_WAVE18_MEMO_LANDING.md` |
-| `docs/AGON_WAVE7_MEMO_LANDING.md`; `docs/agon/AGON_WAVE7_MEMO_LANDING.md` | `mechanics/agon/docs/AGON_WAVE7_MEMO_LANDING.md` |
+This index maps former repo-relative placement to restored raw snapshots and current active routes.
+Use active routes for current work; use raw snapshots only for provenance audit.
+
+| Former Path | Raw Snapshot | Active Route | Source Revision | Note |
+|---|---|---|---|---|
+| `docs/AGON_DELTA_CHRONICLE_PREBINDING_MODEL.md` | [raw/docs/AGON_DELTA_CHRONICLE_PREBINDING_MODEL.md](raw/docs/AGON_DELTA_CHRONICLE_PREBINDING_MODEL.md) | `mechanics/agon/docs/AGON_DELTA_CHRONICLE_PREBINDING_MODEL.md` | `bd3979c341cd^` | restored from git history |
+| `docs/AGON_EPISTEMIC_MEMORY_BOUNDARY.md` | [raw/docs/AGON_EPISTEMIC_MEMORY_BOUNDARY.md](raw/docs/AGON_EPISTEMIC_MEMORY_BOUNDARY.md) | `mechanics/agon/docs/AGON_EPISTEMIC_MEMORY_BOUNDARY.md` | `bd3979c341cd^` | restored from git history |
+| `docs/AGON_EPISTEMIC_MEMORY_BRIDGE.md` | [raw/docs/AGON_EPISTEMIC_MEMORY_BRIDGE.md](raw/docs/AGON_EPISTEMIC_MEMORY_BRIDGE.md) | `mechanics/agon/docs/AGON_EPISTEMIC_MEMORY_BRIDGE.md` | `bd3979c341cd^` | restored from git history |
+| `docs/AGON_KAG_MEMO_BOUNDARY.md` | [raw/docs/AGON_KAG_MEMO_BOUNDARY.md](raw/docs/AGON_KAG_MEMO_BOUNDARY.md) | `mechanics/agon/docs/AGON_KAG_MEMO_BOUNDARY.md` | `bd3979c341cd^` | restored from git history |
+| `docs/AGON_KAG_MEMO_EVIDENCE_PACKAGES.md` | [raw/docs/AGON_KAG_MEMO_EVIDENCE_PACKAGES.md](raw/docs/AGON_KAG_MEMO_EVIDENCE_PACKAGES.md) | `mechanics/agon/docs/AGON_KAG_MEMO_EVIDENCE_PACKAGES.md` | `bd3979c341cd^` | restored from git history |
+| `docs/AGON_MECHANICAL_TRIAL_MEMO_INTAKES.md` | [raw/docs/AGON_MECHANICAL_TRIAL_MEMO_INTAKES.md](raw/docs/AGON_MECHANICAL_TRIAL_MEMO_INTAKES.md) | `mechanics/agon/docs/AGON_MECHANICAL_TRIAL_MEMO_INTAKES.md` | `bd3979c341cd^` | restored from git history |
+| `docs/AGON_MEMORY_PREBINDING.md` | [raw/docs/AGON_MEMORY_PREBINDING.md](raw/docs/AGON_MEMORY_PREBINDING.md) | `mechanics/agon/docs/AGON_MEMORY_PREBINDING.md` | `bd3979c341cd^` | restored from git history |
+| `docs/AGON_MEMO_RECURRENCE_REVIEW_BOUNDARY.md` | [raw/docs/AGON_MEMO_RECURRENCE_REVIEW_BOUNDARY.md](raw/docs/AGON_MEMO_RECURRENCE_REVIEW_BOUNDARY.md) | `mechanics/agon/docs/AGON_MEMO_RECURRENCE_REVIEW_BOUNDARY.md` | `bd3979c341cd^` | restored from git history |
+| `docs/AGON_RANK_MEMORY_BOUNDARY.md` | [raw/docs/AGON_RANK_MEMORY_BOUNDARY.md](raw/docs/AGON_RANK_MEMORY_BOUNDARY.md) | `mechanics/agon/docs/AGON_RANK_MEMORY_BOUNDARY.md` | `bd3979c341cd^` | restored from git history |
+| `docs/AGON_RETENTION_CANDIDATE_BOUNDARY.md` | [raw/docs/AGON_RETENTION_CANDIDATE_BOUNDARY.md](raw/docs/AGON_RETENTION_CANDIDATE_BOUNDARY.md) | `mechanics/agon/docs/AGON_RETENTION_CANDIDATE_BOUNDARY.md` | `bd3979c341cd^` | restored from git history |
+| `docs/AGON_RETENTION_CANDIDATE_INTAKE.md` | [raw/docs/AGON_RETENTION_CANDIDATE_INTAKE.md](raw/docs/AGON_RETENTION_CANDIDATE_INTAKE.md) | `mechanics/agon/docs/AGON_RETENTION_CANDIDATE_INTAKE.md` | `bd3979c341cd^` | restored from git history |
+| `docs/AGON_RETENTION_MEMORY_BRIDGE.md` | [raw/docs/AGON_RETENTION_MEMORY_BRIDGE.md](raw/docs/AGON_RETENTION_MEMORY_BRIDGE.md) | `mechanics/agon/docs/AGON_RETENTION_MEMORY_BRIDGE.md` | `bd3979c341cd^` | restored from git history |
+| `docs/AGON_SCAR_CANDIDATE_INTAKE_MODEL.md` | [raw/docs/AGON_SCAR_CANDIDATE_INTAKE_MODEL.md](raw/docs/AGON_SCAR_CANDIDATE_INTAKE_MODEL.md) | `mechanics/agon/docs/AGON_SCAR_CANDIDATE_INTAKE_MODEL.md` | `bd3979c341cd^` | restored from git history |
+| `docs/AGON_SCAR_REQUEST_INTAKE_ALIGNMENT.md` | [raw/docs/AGON_SCAR_REQUEST_INTAKE_ALIGNMENT.md](raw/docs/AGON_SCAR_REQUEST_INTAKE_ALIGNMENT.md) | `mechanics/agon/docs/AGON_SCAR_REQUEST_INTAKE_ALIGNMENT.md` | `bd3979c341cd^` | restored from git history |
+| `docs/AGON_SLC_MEMORY_BOUNDARY.md` | [raw/docs/AGON_SLC_MEMORY_BOUNDARY.md](raw/docs/AGON_SLC_MEMORY_BOUNDARY.md) | `mechanics/agon/docs/AGON_SLC_MEMORY_BOUNDARY.md` | `bd3979c341cd^` | restored from git history |
+| `docs/AGON_SLC_MEMORY_BRIDGE.md` | [raw/docs/AGON_SLC_MEMORY_BRIDGE.md](raw/docs/AGON_SLC_MEMORY_BRIDGE.md) | `mechanics/agon/docs/AGON_SLC_MEMORY_BRIDGE.md` | `bd3979c341cd^` | restored from git history |
+| `docs/AGON_SOPHIAN_MEMO_EVIDENCE.md` | [raw/docs/AGON_SOPHIAN_MEMO_EVIDENCE.md](raw/docs/AGON_SOPHIAN_MEMO_EVIDENCE.md) | `mechanics/agon/docs/AGON_SOPHIAN_MEMO_EVIDENCE.md` | `bd3979c341cd^` | restored from git history |
+| `docs/AGON_VDS_MEMO_BRIDGE.md` | [raw/docs/AGON_VDS_MEMO_BRIDGE.md](raw/docs/AGON_VDS_MEMO_BRIDGE.md) | `mechanics/agon/docs/AGON_VDS_MEMO_BRIDGE.md` | `bd3979c341cd^` | restored from git history |
+| `docs/AGON_WAVE11_MEMO_LANDING.md` | [raw/docs/AGON_WAVE11_MEMO_LANDING.md](raw/docs/AGON_WAVE11_MEMO_LANDING.md) | `mechanics/agon/docs/AGON_WAVE11_MEMO_LANDING.md` | `bd3979c341cd^` | restored from git history |
+| `docs/AGON_WAVE13_MEMO_LANDING.md` | [raw/docs/AGON_WAVE13_MEMO_LANDING.md](raw/docs/AGON_WAVE13_MEMO_LANDING.md) | `mechanics/agon/docs/AGON_WAVE13_MEMO_LANDING.md` | `bd3979c341cd^` | restored from git history |
+| `docs/AGON_WAVE13_MEMO_STOP_LINES.md` | [raw/docs/AGON_WAVE13_MEMO_STOP_LINES.md](raw/docs/AGON_WAVE13_MEMO_STOP_LINES.md) | `mechanics/agon/docs/AGON_WAVE13_MEMO_STOP_LINES.md` | `bd3979c341cd^` | restored from git history |
+| `docs/AGON_WAVE14_MEMO_LANDING.md` | [raw/docs/AGON_WAVE14_MEMO_LANDING.md](raw/docs/AGON_WAVE14_MEMO_LANDING.md) | `mechanics/agon/docs/AGON_WAVE14_MEMO_LANDING.md` | `bd3979c341cd^` | restored from git history |
+| `docs/AGON_WAVE15_MEMO_LANDING.md` | [raw/docs/AGON_WAVE15_MEMO_LANDING.md](raw/docs/AGON_WAVE15_MEMO_LANDING.md) | `mechanics/agon/docs/AGON_WAVE15_MEMO_LANDING.md` | `bd3979c341cd^` | restored from git history |
+| `docs/AGON_WAVE16_MEMO_LANDING.md` | [raw/docs/AGON_WAVE16_MEMO_LANDING.md](raw/docs/AGON_WAVE16_MEMO_LANDING.md) | `mechanics/agon/docs/AGON_WAVE16_MEMO_LANDING.md` | `bd3979c341cd^` | restored from git history |
+| `docs/AGON_WAVE17_MEMO_LANDING.md` | [raw/docs/AGON_WAVE17_MEMO_LANDING.md](raw/docs/AGON_WAVE17_MEMO_LANDING.md) | `mechanics/agon/docs/AGON_WAVE17_MEMO_LANDING.md` | `bd3979c341cd^` | restored from git history |
+| `docs/AGON_WAVE18_MEMO_LANDING.md` | [raw/docs/AGON_WAVE18_MEMO_LANDING.md](raw/docs/AGON_WAVE18_MEMO_LANDING.md) | `mechanics/agon/docs/AGON_WAVE18_MEMO_LANDING.md` | `bd3979c341cd^` | restored from git history |
+| `docs/AGON_WAVE7_MEMO_LANDING.md` | [raw/docs/AGON_WAVE7_MEMO_LANDING.md](raw/docs/AGON_WAVE7_MEMO_LANDING.md) | `mechanics/agon/docs/AGON_WAVE7_MEMO_LANDING.md` | `bd3979c341cd^` | restored from git history |
+| `docs/agon/AGON_DELTA_CHRONICLE_PREBINDING_MODEL.md` | [raw/docs/agon/AGON_DELTA_CHRONICLE_PREBINDING_MODEL.md](raw/docs/agon/AGON_DELTA_CHRONICLE_PREBINDING_MODEL.md) | `mechanics/agon/docs/AGON_DELTA_CHRONICLE_PREBINDING_MODEL.md` | `3e6194006995^` | restored from git history |
+| `docs/agon/AGON_EPISTEMIC_MEMORY_BOUNDARY.md` | [raw/docs/agon/AGON_EPISTEMIC_MEMORY_BOUNDARY.md](raw/docs/agon/AGON_EPISTEMIC_MEMORY_BOUNDARY.md) | `mechanics/agon/docs/AGON_EPISTEMIC_MEMORY_BOUNDARY.md` | `3e6194006995^` | restored from git history |
+| `docs/agon/AGON_EPISTEMIC_MEMORY_BRIDGE.md` | [raw/docs/agon/AGON_EPISTEMIC_MEMORY_BRIDGE.md](raw/docs/agon/AGON_EPISTEMIC_MEMORY_BRIDGE.md) | `mechanics/agon/docs/AGON_EPISTEMIC_MEMORY_BRIDGE.md` | `3e6194006995^` | restored from git history |
+| `docs/agon/AGON_KAG_MEMO_BOUNDARY.md` | [raw/docs/agon/AGON_KAG_MEMO_BOUNDARY.md](raw/docs/agon/AGON_KAG_MEMO_BOUNDARY.md) | `mechanics/agon/docs/AGON_KAG_MEMO_BOUNDARY.md` | `3e6194006995^` | restored from git history |
+| `docs/agon/AGON_KAG_MEMO_EVIDENCE_PACKAGES.md` | [raw/docs/agon/AGON_KAG_MEMO_EVIDENCE_PACKAGES.md](raw/docs/agon/AGON_KAG_MEMO_EVIDENCE_PACKAGES.md) | `mechanics/agon/docs/AGON_KAG_MEMO_EVIDENCE_PACKAGES.md` | `3e6194006995^` | restored from git history |
+| `docs/agon/AGON_MECHANICAL_TRIAL_MEMO_INTAKES.md` | [raw/docs/agon/AGON_MECHANICAL_TRIAL_MEMO_INTAKES.md](raw/docs/agon/AGON_MECHANICAL_TRIAL_MEMO_INTAKES.md) | `mechanics/agon/docs/AGON_MECHANICAL_TRIAL_MEMO_INTAKES.md` | `3e6194006995^` | restored from git history |
+| `docs/agon/AGON_MEMORY_PREBINDING.md` | [raw/docs/agon/AGON_MEMORY_PREBINDING.md](raw/docs/agon/AGON_MEMORY_PREBINDING.md) | `mechanics/agon/docs/AGON_MEMORY_PREBINDING.md` | `3e6194006995^` | restored from git history |
+| `docs/agon/AGON_MEMO_RECURRENCE_REVIEW_BOUNDARY.md` | [raw/docs/agon/AGON_MEMO_RECURRENCE_REVIEW_BOUNDARY.md](raw/docs/agon/AGON_MEMO_RECURRENCE_REVIEW_BOUNDARY.md) | `mechanics/agon/docs/AGON_MEMO_RECURRENCE_REVIEW_BOUNDARY.md` | `3e6194006995^` | restored from git history |
+| `docs/agon/AGON_RANK_MEMORY_BOUNDARY.md` | [raw/docs/agon/AGON_RANK_MEMORY_BOUNDARY.md](raw/docs/agon/AGON_RANK_MEMORY_BOUNDARY.md) | `mechanics/agon/docs/AGON_RANK_MEMORY_BOUNDARY.md` | `3e6194006995^` | restored from git history |
+| `docs/agon/AGON_RETENTION_CANDIDATE_BOUNDARY.md` | [raw/docs/agon/AGON_RETENTION_CANDIDATE_BOUNDARY.md](raw/docs/agon/AGON_RETENTION_CANDIDATE_BOUNDARY.md) | `mechanics/agon/docs/AGON_RETENTION_CANDIDATE_BOUNDARY.md` | `3e6194006995^` | restored from git history |
+| `docs/agon/AGON_RETENTION_CANDIDATE_INTAKE.md` | [raw/docs/agon/AGON_RETENTION_CANDIDATE_INTAKE.md](raw/docs/agon/AGON_RETENTION_CANDIDATE_INTAKE.md) | `mechanics/agon/docs/AGON_RETENTION_CANDIDATE_INTAKE.md` | `3e6194006995^` | restored from git history |
+| `docs/agon/AGON_RETENTION_MEMORY_BRIDGE.md` | [raw/docs/agon/AGON_RETENTION_MEMORY_BRIDGE.md](raw/docs/agon/AGON_RETENTION_MEMORY_BRIDGE.md) | `mechanics/agon/docs/AGON_RETENTION_MEMORY_BRIDGE.md` | `3e6194006995^` | restored from git history |
+| `docs/agon/AGON_SCAR_CANDIDATE_INTAKE_MODEL.md` | [raw/docs/agon/AGON_SCAR_CANDIDATE_INTAKE_MODEL.md](raw/docs/agon/AGON_SCAR_CANDIDATE_INTAKE_MODEL.md) | `mechanics/agon/docs/AGON_SCAR_CANDIDATE_INTAKE_MODEL.md` | `3e6194006995^` | restored from git history |
+| `docs/agon/AGON_SCAR_REQUEST_INTAKE_ALIGNMENT.md` | [raw/docs/agon/AGON_SCAR_REQUEST_INTAKE_ALIGNMENT.md](raw/docs/agon/AGON_SCAR_REQUEST_INTAKE_ALIGNMENT.md) | `mechanics/agon/docs/AGON_SCAR_REQUEST_INTAKE_ALIGNMENT.md` | `3e6194006995^` | restored from git history |
+| `docs/agon/AGON_SLC_MEMORY_BOUNDARY.md` | [raw/docs/agon/AGON_SLC_MEMORY_BOUNDARY.md](raw/docs/agon/AGON_SLC_MEMORY_BOUNDARY.md) | `mechanics/agon/docs/AGON_SLC_MEMORY_BOUNDARY.md` | `3e6194006995^` | restored from git history |
+| `docs/agon/AGON_SLC_MEMORY_BRIDGE.md` | [raw/docs/agon/AGON_SLC_MEMORY_BRIDGE.md](raw/docs/agon/AGON_SLC_MEMORY_BRIDGE.md) | `mechanics/agon/docs/AGON_SLC_MEMORY_BRIDGE.md` | `3e6194006995^` | restored from git history |
+| `docs/agon/AGON_SOPHIAN_MEMO_EVIDENCE.md` | [raw/docs/agon/AGON_SOPHIAN_MEMO_EVIDENCE.md](raw/docs/agon/AGON_SOPHIAN_MEMO_EVIDENCE.md) | `mechanics/agon/docs/AGON_SOPHIAN_MEMO_EVIDENCE.md` | `3e6194006995^` | restored from git history |
+| `docs/agon/AGON_VDS_MEMO_BRIDGE.md` | [raw/docs/agon/AGON_VDS_MEMO_BRIDGE.md](raw/docs/agon/AGON_VDS_MEMO_BRIDGE.md) | `mechanics/agon/docs/AGON_VDS_MEMO_BRIDGE.md` | `3e6194006995^` | restored from git history |
+| `docs/agon/AGON_WAVE11_MEMO_LANDING.md` | [raw/docs/agon/AGON_WAVE11_MEMO_LANDING.md](raw/docs/agon/AGON_WAVE11_MEMO_LANDING.md) | `mechanics/agon/docs/AGON_WAVE11_MEMO_LANDING.md` | `3e6194006995^` | restored from git history |
+| `docs/agon/AGON_WAVE13_MEMO_LANDING.md` | [raw/docs/agon/AGON_WAVE13_MEMO_LANDING.md](raw/docs/agon/AGON_WAVE13_MEMO_LANDING.md) | `mechanics/agon/docs/AGON_WAVE13_MEMO_LANDING.md` | `3e6194006995^` | restored from git history |
+| `docs/agon/AGON_WAVE13_MEMO_STOP_LINES.md` | [raw/docs/agon/AGON_WAVE13_MEMO_STOP_LINES.md](raw/docs/agon/AGON_WAVE13_MEMO_STOP_LINES.md) | `mechanics/agon/docs/AGON_WAVE13_MEMO_STOP_LINES.md` | `3e6194006995^` | restored from git history |
+| `docs/agon/AGON_WAVE14_MEMO_LANDING.md` | [raw/docs/agon/AGON_WAVE14_MEMO_LANDING.md](raw/docs/agon/AGON_WAVE14_MEMO_LANDING.md) | `mechanics/agon/docs/AGON_WAVE14_MEMO_LANDING.md` | `3e6194006995^` | restored from git history |
+| `docs/agon/AGON_WAVE15_MEMO_LANDING.md` | [raw/docs/agon/AGON_WAVE15_MEMO_LANDING.md](raw/docs/agon/AGON_WAVE15_MEMO_LANDING.md) | `mechanics/agon/docs/AGON_WAVE15_MEMO_LANDING.md` | `3e6194006995^` | restored from git history |
+| `docs/agon/AGON_WAVE16_MEMO_LANDING.md` | [raw/docs/agon/AGON_WAVE16_MEMO_LANDING.md](raw/docs/agon/AGON_WAVE16_MEMO_LANDING.md) | `mechanics/agon/docs/AGON_WAVE16_MEMO_LANDING.md` | `3e6194006995^` | restored from git history |
+| `docs/agon/AGON_WAVE17_MEMO_LANDING.md` | [raw/docs/agon/AGON_WAVE17_MEMO_LANDING.md](raw/docs/agon/AGON_WAVE17_MEMO_LANDING.md) | `mechanics/agon/docs/AGON_WAVE17_MEMO_LANDING.md` | `3e6194006995^` | restored from git history |
+| `docs/agon/AGON_WAVE18_MEMO_LANDING.md` | [raw/docs/agon/AGON_WAVE18_MEMO_LANDING.md](raw/docs/agon/AGON_WAVE18_MEMO_LANDING.md) | `mechanics/agon/docs/AGON_WAVE18_MEMO_LANDING.md` | `3e6194006995^` | restored from git history |
+| `docs/agon/AGON_WAVE7_MEMO_LANDING.md` | [raw/docs/agon/AGON_WAVE7_MEMO_LANDING.md](raw/docs/agon/AGON_WAVE7_MEMO_LANDING.md) | `mechanics/agon/docs/AGON_WAVE7_MEMO_LANDING.md` | `3e6194006995^` | restored from git history |
