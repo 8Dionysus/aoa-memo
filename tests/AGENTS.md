@@ -11,6 +11,10 @@ test file or public fixture must be listed in exactly one
 `config/root_technical_districts.json` `test_families` entry that names the
 owner surface and protected refs.
 
+`tests/test_root_technical_districts_index.py` protects the compact district
+atlas in `generated/root_technical_districts.min.json` so root folder routing
+can be inspected without opening the full allowlist first.
+
 ## Route Stack
 
 - Above: source docs, schemas, examples, scripts, generated companions, and
@@ -30,6 +34,7 @@ python -m pytest -q tests
 python scripts/validate_semantic_agents.py
 python scripts/validate_mechanic_artifact_topology.py
 python scripts/validate_mechanic_artifact_inventory.py
+python scripts/validate_root_technical_districts_index.py
 python scripts/validate_memo_mechanic_parts.py
 python scripts/validate_memo_mechanic_readiness.py
 python scripts/validate_agents_mesh.py

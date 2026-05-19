@@ -2,114 +2,64 @@
 
 ## Guidance for `config/`
 
-`config/` holds build, publication, retention-adjacent, or guardrail-support inputs for memo surfaces.
+`config/` holds repo-wide source maps for route cards, memo mechanics, and root
+technical districts. These files are guardrail-support inputs for builders and
+validators; they help the memory layer stay inspectable without becoming
+memory truth.
 
-Config can tune generated surfaces or validation, but it must not define memory truth by stealth. Memory truth belongs in docs, schemas, examples, and source-owned memory object surfaces.
+## District Card
 
-`config/agents_mesh.json` is the source-backed map for current route cards. It
-may require local card snippets and generated mesh parity, but it still routes
-to authored `AGENTS.md` cards rather than replacing them.
+| Surface | Use for | Companion |
+|---|---|---|
+| `agents_mesh.json` | current AGENTS route-card contracts | `generated/agents_mesh.min.json` |
+| `memo_mechanics.json` | current memo mechanic package contracts | `generated/memo_mechanics.min.json` |
+| `root_technical_districts.json` | exact root technical district allowlist and family contracts | `generated/root_technical_districts.min.json` |
 
-`config/memo_mechanics.json` is the source-backed map for current mechanic
-packages. It drives `generated/memo_mechanics.min.json`, but package cards and
-mechanic docs remain the active authored surfaces.
-
-`config/root_technical_districts.json` is the exact allowlist for files that
-may remain in root `schemas/`, `examples/`, `generated/`, `scripts/`, `tests/`,
-`manifests/`, and `config/`. Add to it only when
-`mechanics/ARTIFACT_TOPOLOGY.md` says the file is repo-wide or shared.
-
-Root `schemas/` files must belong to exactly one `schema_families` contract
-with a role, owner surface, schema list, source refs, and validators. Root
-schemas are for public memory-object canon, recall/posture contracts,
-support-object contracts, and generated-surface contracts; package-local
-mechanic schemas belong under the owning mechanic.
-
-Root `examples/` files must belong to exactly one `example_families` contract
-with a role, owner surface, example list, source refs, and validators. Root
-examples are for public shared memory objects, lifecycle/audit examples,
-recall contracts, support contracts, and generated-surface manifests;
-package-local mechanic examples belong under the owning mechanic.
-
-Root `config/` files must belong to exactly one `config_families` contract
-with a role, owner surface, config list, source refs, and validators. Root
-config remains for repo-wide source maps and control-plane contracts, not
-hidden memory truth.
-
-Root `manifests/` is governed by `manifest_policy`. The current policy is
-reserved-empty for future shared recurrence manifests; mechanic-local
-manifests belong under the owning mechanic.
-
-When root config allows a generated mechanic companion such as
-`generated/mechanic_artifacts.min.json`, keep the matching builder and
-validator listed in the same root technical-district contract. Root
-`generated/` outputs must belong to exactly one `generated_families` contract
-with owner surface, source refs, outputs, validator refs, and builders when the
-family is rebuilt by a script or projection.
-
-`generated/memo_mechanic_cards.min.json` is a root generated mechanic
-companion because it summarizes every package README route card into a compact
-OS Abyss inspection surface. It must be rebuilt from package cards, not
-hand-authored as doctrine.
-
-`generated/memo_mechanic_owner_routes.min.json` is a root generated mechanic
-companion because it summarizes every package owner map into a compact OS
-Abyss route inspection surface. It must not become an owner request queue or
-acceptance receipt.
-
-`generated/memo_mechanic_landing_logs.min.json` is a root generated mechanic
-companion because it summarizes every package landing receipt into a compact
-OS Abyss inspection surface. It checks receipt shape; it does not become proof,
-owner acceptance, runtime authority, or release authority.
-
-`generated/memo_mechanic_readiness.min.json` is also a root generated mechanic
-companion. It is allowed only because it summarizes every mechanic package for
-OS Abyss readiness; single-package readiness details still belong in the
-package card, owner map, parts map, and local artifacts.
-
-Root `scripts/` files must belong to exactly one `script_families` contract
-with a role, owner surface, script list, and coverage refs. This keeps release
-validators, builders, helpers, and orchestration scripts explicit rather than
-only file-allowlisted.
-
-Root `tests/` files and public fixtures must belong to exactly one
-`test_families` contract with a role, owner surface, test list, and protected
-refs. Root tests are for repo-wide or cross-mechanic invariants; package-local
-mechanic tests belong under the owning mechanic.
+Use `generated/root_technical_districts.min.json` for a fast map of root
+district purpose, route card, family ids, and local routing. Use
+`config/root_technical_districts.json` when you need the exact file list or
+family contract.
 
 ## Route Stack
 
-- Above: root `AGENTS.md` and `mechanics/ARTIFACT_TOPOLOGY.md` decide when a
-  config surface is repo-wide instead of mechanic-local.
-- Here: config files are source maps and validator inputs, not memory truth.
+- Above: root `AGENTS.md`, `DESIGN.AGENTS.md`, and
+  `mechanics/ARTIFACT_TOPOLOGY.md` decide why a config surface is repo-wide.
+- Here: config names the source map, family contracts, and validation refs.
 - Below: generated companions, scripts, tests, schemas, examples, manifests,
-  and mechanic packages must follow the owning family named in config.
+  and mechanic packages follow the owning family named here.
 
-Keep config explicit, public-safe, and reviewable. No private memories, personal data, hidden retention rules, secret tokens, or local-only paths.
+## Editing Route
 
-When config changes generated surfaces, regenerate only the touched family and inspect the diff for recall or provenance drift.
+When config changes:
 
-Verify with:
+1. identify the family being changed
+2. update the source owner named in that family
+3. rebuild the affected generated companion
+4. run the matching validator
+5. inspect the diff for recall or provenance drift
+
+Keep config public-safe, local-ref based, and reviewable. Secret tokens, private
+memories, local-only host paths, and hidden retention rules belong nowhere in
+this directory.
+
+## Validation
+
+For root technical district changes, run:
+
+```bash
+python scripts/validate_mechanic_artifact_topology.py
+python scripts/build_root_technical_districts_index.py --check
+python scripts/validate_root_technical_districts_index.py
+```
+
+For route-card or mechanic-map changes, add the matching checks:
 
 ```bash
 python scripts/validate_memo.py
-python scripts/validate_semantic_agents.py
-python scripts/validate_mechanic_artifact_topology.py
-python scripts/build_mechanic_artifact_inventory.py --check
-python scripts/validate_mechanic_artifact_inventory.py
-python scripts/validate_memo_mechanics.py
-python scripts/validate_memo_mechanic_parts.py
-python scripts/build_memo_mechanic_cards.py --check
-python scripts/validate_memo_mechanic_cards.py
-python scripts/build_memo_mechanic_owner_routes.py --check
-python scripts/validate_memo_mechanic_owner_routes.py
-python scripts/build_memo_mechanic_landing_logs.py --check
-python scripts/validate_memo_mechanic_landing_logs.py
-python scripts/build_memo_mechanic_readiness.py --check
-python scripts/validate_memo_mechanic_readiness.py
-python scripts/build_memo_mechanics_index.py --check
-python scripts/validate_memo_mechanics_index.py
 python scripts/validate_agents_mesh.py
 python scripts/build_agents_mesh_index.py --check
 python scripts/validate_agents_mesh_index.py
+python scripts/validate_memo_mechanics.py
+python scripts/build_memo_mechanics_index.py --check
+python scripts/validate_memo_mechanics_index.py
 ```

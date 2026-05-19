@@ -45,7 +45,7 @@ active surfaces and must not be moved casually.
 | Agent route law | `AGENTS.md`, `DESIGN.AGENTS.md`, `.agents/` | agent-facing work needs a stable local lane and a design form for that lane | must not replace source docs, schemas, examples, or validators |
 | Public governance and legal | `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `LICENSE` | GitHub and contributors expect them there | must not become memory doctrine catalogs |
 | Thin indexes | `MEMORY_INDEX.md`, `QUESTBOOK.md` | useful only while compact and route-oriented | must not become duplicate doctrine, a second roadmap, or a hidden ledger; generated companions must be builder-backed projections |
-| Tooling and machine districts | `.github/`, `config/`, `docs/`, `examples/`, `generated/`, `manifests/`, `mechanics/`, `quests/`, `schemas/`, `scripts/`, `tests/` | tooling and repo structure expect stable directories | each district needs local guidance before it becomes complex |
+| Tooling and machine districts | `.github/`, `config/`, `docs/`, `examples/`, `generated/`, `manifests/`, `mechanics/`, `quests/`, `schemas/`, `scripts/`, `tests/` | tooling and repo structure expect stable directories | each district needs local guidance plus the compact `generated/root_technical_districts.min.json` atlas once root technical routing changes |
 | Development requirements | `.gitignore`, `requirements-dev.txt` | development hygiene | must stay technical and small |
 
 ## Surfaces That Should Not Live In Root
@@ -143,6 +143,7 @@ route replaces their flat path.
 | flat adoption/writeback/retention docs-root surfaces | moved | `mechanics/adoption/docs/`, `mechanics/writeback/docs/`, `mechanics/retention/docs/` | these families are repeatable memo mechanics with owner maps and legacy bridges, not only documentation districts |
 | flat root quest source files | moved | `quests/<lane>/<state>/` | Questbook keeps public obligations in the root item store, with `mechanics/questbook/` owning source contract, validation, and generated projections |
 | mechanic-owned root technical artifacts | moved when single-mechanic-owned | `mechanics/<slug>/{schemas,examples,config,generated,scripts,tests,manifests}` | package-owned artifacts should sit with their mechanics; root technical districts keep only shared or cross-mechanic surfaces |
+| root technical district atlas | add | `generated/root_technical_districts.min.json` | root districts need a compact machine-readable map of role, route card, family ids, and local routing without making README or AGENTS cards carry the full allowlist |
 
 ## Final Rule
 

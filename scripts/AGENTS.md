@@ -36,6 +36,10 @@ Keep the current split clear:
   `validate_mechanic_artifact_inventory.py` keep
   `generated/mechanic_artifacts.min.json` aligned with package-local and
   part-local mechanic artifact homes
+- `build_root_technical_districts_index.py` and
+  `validate_root_technical_districts_index.py` keep
+  `generated/root_technical_districts.min.json` aligned with the root
+  technical district contract in `config/root_technical_districts.json`
 - quest projection building belongs to `mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py`
 - `validate_nested_agents.py` checks that local guidance files stay present and explicit
 - `validate_agents_mesh.py`, `build_agents_mesh_index.py`, and `validate_agents_mesh_index.py` keep the source-backed AGENTS mesh aligned with current route cards
@@ -95,6 +99,8 @@ python scripts/validate_lifecycle_audit_examples.py
 python scripts/validate_mechanic_artifact_topology.py
 python scripts/build_mechanic_artifact_inventory.py --check
 python scripts/validate_mechanic_artifact_inventory.py
+python scripts/build_root_technical_districts_index.py --check
+python scripts/validate_root_technical_districts_index.py
 python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py --check
 python scripts/validate_agents_mesh.py
 python scripts/build_agents_mesh_index.py --check

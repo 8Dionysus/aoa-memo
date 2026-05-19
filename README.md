@@ -161,6 +161,11 @@ duplicate the agent route matrix.
 
 ## Technical Districts
 
+For machine-readable orientation, use
+[root_technical_districts.min.json](generated/root_technical_districts.min.json).
+The exact allowlist and family contracts live in
+[config/root_technical_districts.json](config/root_technical_districts.json).
+
 | District | Use for |
 |---|---|
 | [docs](docs/README.md) | memory doctrine, route maps, boundary docs, release route, and [docs/decisions](docs/decisions/README.md) |
@@ -190,6 +195,7 @@ mechanic packages, validators, or sibling-owner repositories.
 | [memory_object_capsules.json](generated/memory_object_capsules.json) | object-facing capsule hydration surface |
 | [memory_object_sections.full.json](generated/memory_object_sections.full.json) | expanded object-facing sections |
 | [agents_mesh.min.json](generated/agents_mesh.min.json) | AGENTS mesh coverage companion |
+| [root_technical_districts.min.json](generated/root_technical_districts.min.json) | compact root technical district atlas |
 | [memo_mechanics.min.json](generated/memo_mechanics.min.json) | compact mechanic package index |
 | [memo_mechanic_readiness.min.json](generated/memo_mechanic_readiness.min.json) | OS Abyss readiness matrix for memo mechanics |
 | [mechanic_artifacts.min.json](generated/mechanic_artifacts.min.json) | mechanic-local artifact inventory |
