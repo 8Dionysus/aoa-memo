@@ -9,6 +9,9 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Added
 
+- Add a package-local retention regression boundary so retention docs,
+  schemas, examples, and stronger-owner stop-lines are tested inside
+  `mechanics/retention/`.
 - Add a source-authored topology spine with `DESIGN.md`, `DESIGN.AGENTS.md`,
   `docs/README.md`, `docs/ROOT_SURFACE_LAW.md`, and `docs/decisions/` so
   future docs, agent-lane, and placement cleanup can route through explicit

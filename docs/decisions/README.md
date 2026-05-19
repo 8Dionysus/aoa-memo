@@ -67,6 +67,7 @@ expectation.
 | [2026-05-18-writeback-curated-object-examples](2026-05-18-writeback-curated-object-examples.md) | move writeback-owned curated memory-object examples under the writeback mechanic |
 | [2026-05-18-questbook-generated-views-part](2026-05-18-questbook-generated-views-part.md) | add a part-level contract for root-published Questbook generated read models |
 | [2026-05-18-downstream-feed-test-localization](2026-05-18-downstream-feed-test-localization.md) | move consumer-handoff and writeback test artifacts out of root while keeping the cross-mechanic seed regression rooted |
+| [2026-05-18-retention-local-regression-boundary](2026-05-18-retention-local-regression-boundary.md) | add a package-local regression boundary for retention docs, schemas, examples, and stop-lines |
 
 ## Review Rule
 
