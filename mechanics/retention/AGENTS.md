@@ -39,6 +39,7 @@ Update only surfaces whose future-facing meaning changed.
 python scripts/validate_memo_mechanics.py
 python scripts/build_memo_mechanics_index.py --check
 python scripts/validate_memo_mechanics_index.py
+python -m pytest -q mechanics/retention/tests/test_retention_mechanic.py
 python -m pytest -q mechanics/governance/tests/test_experience_wave4_seed_contracts.py
 ```
 
