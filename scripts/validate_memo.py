@@ -72,7 +72,11 @@ MEMORY_READINESS_BOUNDARY_PRESSURE_REF = (
     "mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md#memory-pressure-map"
 )
 MEMORY_READINESS_BOUNDARY_CONTRACT_PATH = (
-    READINESS_BOUNDARY / "examples" / "memory_readiness_boundary_contract.example.json"
+    READINESS_BOUNDARY
+    / "parts"
+    / "memory-readiness-boundary"
+    / "examples"
+    / "memory_readiness_boundary_contract.example.json"
 )
 MEMORY_READINESS_BOUNDARY_CONTRACT_SCHEMA = "memory_readiness_boundary_contract.schema.json"
 QUESTBOOK_PATH = ROOT / "QUESTBOOK.md"
@@ -1385,8 +1389,8 @@ def validate_memory_readiness_boundary_contract() -> None:
     errors: list[str] = []
 
     for token in (
-        "mechanics/readiness-boundary/schemas/memory_readiness_boundary_contract.schema.json",
-        "mechanics/readiness-boundary/examples/memory_readiness_boundary_contract.example.json",
+        "mechanics/readiness-boundary/parts/memory-readiness-boundary/schemas/memory_readiness_boundary_contract.schema.json",
+        "mechanics/readiness-boundary/parts/memory-readiness-boundary/examples/memory_readiness_boundary_contract.example.json",
         "memory_gate",
         "retention_boundary",
         "writeback_boundary",
@@ -1756,8 +1760,8 @@ def validate_witness_trace_contract() -> None:
         errors.append("witness_trace must not appear in generated/memo_registry.min.json memory_object_kinds")
     if "witness_trace" in registry.get("supporting_objects", []):
         errors.append("witness_trace must not appear in generated/memo_registry.min.json supporting_objects")
-    if "mechanics/recurrence-support/schemas/witness-trace.schema.json" not in registry.get("schemas", []):
-        errors.append("generated/memo_registry.min.json must list mechanics/recurrence-support/schemas/witness-trace.schema.json")
+    if "mechanics/recurrence-support/parts/witness-trace-contract/schemas/witness-trace.schema.json" not in registry.get("schemas", []):
+        errors.append("generated/memo_registry.min.json must list mechanics/recurrence-support/parts/witness-trace-contract/schemas/witness-trace.schema.json")
     if "mechanics/recurrence-support/docs/WITNESS_TRACE_CONTRACT.md" not in registry.get("core_docs", []):
         errors.append("generated/memo_registry.min.json must list mechanics/recurrence-support/docs/WITNESS_TRACE_CONTRACT.md")
 

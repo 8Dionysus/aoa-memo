@@ -6,15 +6,15 @@
 |---|---|---|
 | Memory readiness boundary | [MEMORY_READINESS_BOUNDARY](./docs/MEMORY_READINESS_BOUNDARY.md) | maps high-pressure memory readiness into existing objects and stronger owner routes |
 
-## Mechanic-Local Technical Contracts
+## Part-Local Artifacts
 
-The readiness-boundary schema, example, and tests live with the package because
-they define this mechanic:
+The readiness-boundary schema, example, and tests live with the
+memory-readiness-boundary part because they define that operation:
 
 | Contract | Artifact Surface |
 |---|---|
-| Readiness boundary contract | `mechanics/readiness-boundary/schemas/memory_readiness_boundary_contract.schema.json`, `mechanics/readiness-boundary/examples/memory_readiness_boundary_contract.example.json` |
-| Readiness boundary tests | `mechanics/readiness-boundary/tests/test_readiness_boundary_mechanic.py` |
+| Readiness boundary contract | `mechanics/readiness-boundary/parts/memory-readiness-boundary/schemas/memory_readiness_boundary_contract.schema.json`, `mechanics/readiness-boundary/parts/memory-readiness-boundary/examples/memory_readiness_boundary_contract.example.json` |
+| Readiness boundary tests | `mechanics/readiness-boundary/parts/memory-readiness-boundary/tests/test_readiness_boundary_mechanic.py` |
 
 ## Interface
 

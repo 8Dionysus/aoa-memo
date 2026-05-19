@@ -8,10 +8,10 @@
 | Witness trace contract | [WITNESS_TRACE_CONTRACT](./docs/WITNESS_TRACE_CONTRACT.md) | keeps witness trace exports reviewable and maps later writeback into existing memo object kinds |
 | Reviewed closeout recall landing | [REVIEWED_CLOSEOUT_RECALL_LANDING](./docs/REVIEWED_CLOSEOUT_RECALL_LANDING.md) | preserves owner-local recall survivors without becoming proof, playbook authority, or a second route ledger |
 
-## Mechanic-Local Technical Contracts
+## Part-Local Artifacts
 
-Witness trace schemas and examples live with this package because they define
-route-return support. Checkpoint schemas and examples live with
+Witness trace schemas, examples, and tests live with the witness-trace-contract
+part because they define route-return support. Checkpoint schemas and examples live with
 `mechanics/checkpoint/` because checkpoint is the artifact owner. Shared recall
 contracts and reviewed closeout quest surfaces remain root-owned only when
 they serve more than this one mechanic:
@@ -20,7 +20,7 @@ they serve more than this one mechanic:
 |---|---|
 | Checkpoint artifact consumer refs | `mechanics/checkpoint/parts/checkpoint-carry-contract/schemas/inquiry_checkpoint.schema.json`, `mechanics/checkpoint/parts/checkpoint-carry-contract/examples/inquiry_checkpoint.example.json`, `mechanics/checkpoint/parts/checkpoint-carry-contract/examples/inquiry_checkpoint.return.example.json` |
 | Checkpoint to memory consumer refs | `mechanics/checkpoint/parts/checkpoint-to-memory-mapping/schemas/checkpoint-to-memory-contract.schema.json`, `mechanics/checkpoint/parts/checkpoint-to-memory-mapping/examples/checkpoint_to_memory_contract.example.json` |
-| Witness trace | `mechanics/recurrence-support/schemas/witness-trace.schema.json`, `mechanics/recurrence-support/examples/witness_trace.example.json` |
+| Witness trace | `mechanics/recurrence-support/parts/witness-trace-contract/schemas/witness-trace.schema.json`, `mechanics/recurrence-support/parts/witness-trace-contract/examples/witness_trace.example.json`, `mechanics/recurrence-support/parts/witness-trace-contract/tests/test_recurrence_support_mechanic.py` |
 | Working return recall | `examples/recall_contract.object.working.return.json`, `examples/recall_contract.object.working.phase-alpha.json` |
 | Witness trace quest closeout | `quests/memo/done/AOA-MEM-Q-0002.yaml`, `generated/quest_catalog.min.json`, `generated/quest_catalog.min.example.json` |
 | Reviewed closeout quest | `quests/memo/reanchor/AOA-MEM-Q-0009.yaml`, `generated/quest_catalog.min.json`, `generated/quest_catalog.min.example.json` |

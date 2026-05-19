@@ -42,7 +42,13 @@ generate_kag_export = load_script_module(
 )
 build_quest_surfaces = load_script_module(
     "build_quest_surfaces",
-    REPO_ROOT / "mechanics" / "questbook" / "scripts" / "build_quest_surfaces.py",
+    REPO_ROOT
+    / "mechanics"
+    / "questbook"
+    / "parts"
+    / "generated-views"
+    / "scripts"
+    / "build_quest_surfaces.py",
 )
 
 

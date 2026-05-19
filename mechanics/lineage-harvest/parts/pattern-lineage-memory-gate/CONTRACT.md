@@ -14,6 +14,12 @@ Stronger claims route through `../../OWNER_MAP.md`. Source placement and legacy 
 
 gates cross-repo recurring signals into reviewed pattern-lineage memory candidates without federation authority
 
+## Part-Local Artifacts
+
+- `schemas/pattern_lineage_memory_entry_v1.json`
+- `examples/pattern_lineage_memory_entry.example.json`
+- `tests/test_lineage_harvest_mechanic.py`
+
 ## Stop-lines
 
 This part inherits the package stop-lines from `../../README.md#must-not-claim` and `../../OWNER_MAP.md`.

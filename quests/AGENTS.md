@@ -40,8 +40,8 @@ When quests change, run:
 
 ```bash
 python scripts/validate_memo.py
-python mechanics/questbook/scripts/validate_quest_store.py
-python mechanics/questbook/scripts/build_quest_surfaces.py --check
+python mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py
+python mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py --check
 python scripts/release_check.py
 ```
 

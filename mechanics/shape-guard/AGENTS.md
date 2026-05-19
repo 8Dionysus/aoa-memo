@@ -44,7 +44,7 @@ Update only surfaces whose future-facing meaning changed.
 python scripts/validate_memo_mechanics.py
 python scripts/build_memo_mechanics_index.py --check
 python scripts/validate_memo_mechanics_index.py
-python -m pytest -q mechanics/shape-guard/tests/test_shape_guard_mechanic.py tests/test_memo_mechanics.py tests/test_agents_mesh.py
+python -m pytest -q mechanics/shape-guard/parts/via-negativa-checklist/tests/test_shape_guard_mechanic.py tests/test_memo_mechanics.py tests/test_agents_mesh.py
 ```
 
 Before landing, also run:

@@ -392,10 +392,10 @@
         "generated/quest_dispatch.min.json"
       ],
       "builders": [
-        "mechanics/questbook/scripts/build_quest_surfaces.py"
+        "mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py"
       ],
       "validators": [
-        "mechanics/questbook/scripts/validate_quest_store.py",
+        "mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py",
         "scripts/validate_memo.py"
       ]
     }
@@ -612,7 +612,7 @@
         "mechanics/antifragility/parts/failure-lesson-memory/schemas/shared_lesson_memory_v1.json",
         "mechanics/consumer-handoff/parts/kag-source-export/schemas/memo_to_kag_bridge_record_v1.json",
         "mechanics/governance/parts/federation-boundary/schemas/federation_memory_gate_decision_v1.json",
-        "mechanics/lineage-harvest/schemas/pattern_lineage_memory_entry_v1.json",
+        "mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/schemas/pattern_lineage_memory_entry_v1.json",
         "mechanics/retention/parts/cross-repo-and-governance-retention/schemas/cross_repo_retention_result_v1.json"
       ]
     },

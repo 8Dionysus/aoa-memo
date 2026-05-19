@@ -12,7 +12,7 @@ machine-readable mirrors of public quest sources.
 - [QUEST_SOURCE_CONTRACT](../../docs/QUEST_SOURCE_CONTRACT.md)
 - [root quest index](../../../../QUESTBOOK.md)
 - [quest item store](../../../../quests/README.md)
-- [builder](../../scripts/build_quest_surfaces.py)
+- builder at `mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py`
 - [root generated route](../../../../generated/AGENTS.md)
 
 ## Outputs
@@ -21,6 +21,10 @@ machine-readable mirrors of public quest sources.
 - `generated/quest_catalog.min.example.json`
 - `generated/quest_dispatch.min.json`
 - `generated/quest_dispatch.min.example.json`
+
+## Part-Local Artifacts
+
+- `mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py`
 
 ## Contract
 

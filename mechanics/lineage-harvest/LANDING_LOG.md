@@ -1,13 +1,27 @@
 # Lineage Harvest Landing Log
 
+## 2026-05-19
+
+- Moved the pattern-lineage schema, example, and regression into
+  `mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/`.
+- Removed the non-operational `mechanic-local-technical-contracts` active part;
+  the pattern-lineage memory gate now owns its technical contract directly.
+
+Validation route:
+
+```bash
+python -m pytest -q mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/tests
+python scripts/release_check.py
+```
+
 ## 2026-05-18
 
 - Landed `mechanics/lineage-harvest/` as the memo-side package for
   pattern-lineage memory candidates.
 - Moved the former flat docs-root `PATTERN_LINEAGE_MEMORY.md` into
   `mechanics/lineage-harvest/docs/PATTERN_LINEAGE_MEMORY.md`.
-- Routed `mechanics/lineage-harvest/schemas/pattern_lineage_memory_entry_v1.json` and
-  `mechanics/lineage-harvest/examples/pattern_lineage_memory_entry.example.json`
+- Routed `mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/schemas/pattern_lineage_memory_entry_v1.json` and
+  `mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/examples/pattern_lineage_memory_entry.example.json`
   through the lineage-harvest mechanic-local artifact lane.
 - Added mechanics index coverage, AGENTS mesh coverage, doctrine recall
   surfaces, tests, and decision rationale.
@@ -25,7 +39,7 @@ python scripts/build_agents_mesh_index.py --check
 python scripts/validate_agents_mesh_index.py
 python scripts/validate_memory_surfaces.py
 python scripts/validate_memo.py
-python -m pytest -q mechanics/lineage-harvest/tests/test_lineage_harvest_mechanic.py tests/test_memo_mechanics.py tests/test_agents_mesh.py mechanics/recurrence-support/tests/test_recurrence_support_mechanic.py tests/test_experience_wave3_seed_contracts.py
+python -m pytest -q mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/tests/test_lineage_harvest_mechanic.py tests/test_memo_mechanics.py tests/test_agents_mesh.py mechanics/recurrence-support/parts/witness-trace-contract/tests/test_recurrence_support_mechanic.py tests/test_experience_wave3_seed_contracts.py
 python scripts/release_check.py
 ```
 

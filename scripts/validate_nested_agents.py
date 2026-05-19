@@ -27,7 +27,7 @@ REQUIRED_NESTED_AGENTS = {
             "recall_contract.router.semantic.json",
             "recall_contract.object.working.json",
             "mechanics/writeback/parts/<part>/examples/",
-            "mechanics/recurrence-support/examples/",
+            "mechanics/recurrence-support/parts/witness-trace-contract/examples/",
             "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/",
             "sanitized",
             "public",

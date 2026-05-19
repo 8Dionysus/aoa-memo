@@ -3,6 +3,9 @@
 ## Active source
 
 - `mechanics/lineage-harvest/docs/PATTERN_LINEAGE_MEMORY.md`
+- `mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/schemas/pattern_lineage_memory_entry_v1.json`
+- `mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/examples/pattern_lineage_memory_entry.example.json`
+- `mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/tests/test_lineage_harvest_mechanic.py`
 
 ## Former flat source
 
@@ -36,3 +39,6 @@ keep stronger truth.
   `mechanics/lineage-harvest/docs/PATTERN_LINEAGE_MEMORY.md` and added package
   route law, owner map, provenance, generated coverage, tests, and decision
   rationale.
+- 2026-05-19: moved the schema, example, and regression into
+  `mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/` and removed
+  the non-operational `mechanic-local-technical-contracts` active part.

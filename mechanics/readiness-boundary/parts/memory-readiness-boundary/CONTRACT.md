@@ -14,6 +14,12 @@ Stronger claims route through `../../OWNER_MAP.md`. Source placement and legacy 
 
 maps high-pressure memory readiness into existing objects and stronger owner routes
 
+## Part-Local Artifacts
+
+- `mechanics/readiness-boundary/parts/memory-readiness-boundary/schemas/memory_readiness_boundary_contract.schema.json`
+- `mechanics/readiness-boundary/parts/memory-readiness-boundary/examples/memory_readiness_boundary_contract.example.json`
+- `mechanics/readiness-boundary/parts/memory-readiness-boundary/tests/test_readiness_boundary_mechanic.py`
+
 ## Stop-lines
 
 This part inherits the package stop-lines from `../../README.md#must-not-claim` and `../../OWNER_MAP.md`.

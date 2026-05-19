@@ -34,7 +34,7 @@ anchor_ref:
 handoff_role: memo-maintainer
 evidence:
   - mechanics/recurrence-support/docs/WITNESS_TRACE_CONTRACT.md defines witness trace as an export contract, not a new memory object.
-  - mechanics/recurrence-support/examples/witness_trace.example.json keeps the compact trace example package-local.
+  - mechanics/recurrence-support/parts/witness-trace-contract/examples/witness_trace.example.json keeps the compact trace example package-local.
 harvest:
   target: memo
 opened_at: '2026-04-01'

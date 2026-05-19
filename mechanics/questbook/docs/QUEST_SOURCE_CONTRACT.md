@@ -65,7 +65,7 @@ Generated quest surfaces are compact root-published read models:
 Rebuild them with:
 
 ```bash
-python mechanics/questbook/scripts/build_quest_surfaces.py
+python mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py
 ```
 
 Do not hand-edit generated quest surfaces.

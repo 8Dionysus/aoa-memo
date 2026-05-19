@@ -17,5 +17,9 @@ a repeatable memory-shape operation: it reviews whether new memo forms should
 exist before they create proof, health, trust, action, or owner-adoption
 claims.
 
+The active regression route is
+`mechanics/shape-guard/parts/via-negativa-checklist/tests/` because the
+via-negativa part owns the executable anti-inflation check.
+
 Use [legacy/INDEX](legacy/INDEX.md) only to audit former placement. Legacy
 paths are historical receipts, not active contracts.

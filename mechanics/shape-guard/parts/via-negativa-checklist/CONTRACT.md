@@ -14,6 +14,10 @@ Stronger claims route through `../../OWNER_MAP.md`. Source placement and legacy 
 
 asks whether new memory or mechanic forms should be kept, merged, moved, suppressed, quarantined, deprecated, or removed before they inflate authority
 
+## Part-Local Artifacts
+
+- `tests/test_shape_guard_mechanic.py`
+
 ## Stop-lines
 
 This part inherits the package stop-lines from `../../README.md#must-not-claim` and `../../OWNER_MAP.md`.

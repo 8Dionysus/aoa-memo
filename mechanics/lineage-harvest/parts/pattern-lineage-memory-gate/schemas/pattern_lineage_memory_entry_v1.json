@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://aoa.local/mechanics/lineage-harvest/schemas/pattern_lineage_memory_entry_v1.json",
+  "$id": "https://aoa.local/mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/schemas/pattern_lineage_memory_entry_v1.json",
   "title": "pattern_lineage_memory_entry_v1",
   "type": "object",
   "required": [

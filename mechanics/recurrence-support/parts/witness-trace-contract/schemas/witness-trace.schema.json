@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://aoa-memo/mechanics/recurrence-support/schemas/witness-trace.schema.json",
+  "$id": "https://aoa-memo/mechanics/recurrence-support/parts/witness-trace-contract/schemas/witness-trace.schema.json",
   "title": "Witness trace contract",
   "type": "object",
   "additionalProperties": false,

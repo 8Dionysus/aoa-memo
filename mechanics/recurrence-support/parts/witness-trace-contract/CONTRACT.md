@@ -14,6 +14,12 @@ Stronger claims route through `../../OWNER_MAP.md`. Source placement and legacy 
 
 keeps witness trace exports reviewable and maps later writeback into existing memo object kinds
 
+## Part-Local Artifacts
+
+- `schemas/witness-trace.schema.json`
+- `examples/witness_trace.example.json`
+- `tests/test_recurrence_support_mechanic.py`
+
 ## Stop-lines
 
 This part inherits the package stop-lines from `../../README.md#must-not-claim` and `../../OWNER_MAP.md`.

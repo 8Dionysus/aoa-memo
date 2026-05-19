@@ -25,8 +25,8 @@ def _env() -> dict[str, str]:
 
 
 COMMANDS = [
-    ("validate quest store", [sys.executable, "mechanics/questbook/scripts/validate_quest_store.py"]),
-    ("check generated quest surfaces", [sys.executable, "mechanics/questbook/scripts/build_quest_surfaces.py", "--check"]),
+    ("validate quest store", [sys.executable, "mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py"]),
+    ("check generated quest surfaces", [sys.executable, "mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py", "--check"]),
     ("validate memo", [sys.executable, "scripts/validate_memo.py"]),
     ("validate Agon memo prebindings", [sys.executable, "mechanics/agon/parts/prebinding-and-candidate-intake/scripts/validate_agon_memo_prebindings.py"]),
     ("validate Agon epistemic memo bridge", [sys.executable, "mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_epistemic_memo_bridge.py"]),

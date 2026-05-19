@@ -5,22 +5,21 @@
 | Part | Source Docs | Contract |
 |---|---|---|
 | Pattern-lineage memory gate | [PATTERN_LINEAGE_MEMORY](./docs/PATTERN_LINEAGE_MEMORY.md) | gates cross-repo recurring signals into reviewed pattern-lineage memory candidates without federation authority |
-| Mechanic-local technical contracts | `mechanics/lineage-harvest/schemas/pattern_lineage_memory_entry_v1.json`, `mechanics/lineage-harvest/examples/pattern_lineage_memory_entry.example.json`, `mechanics/lineage-harvest/tests/test_lineage_harvest_mechanic.py` | keeps the lineage-harvest schema, example, and regression boundary package-local |
 | Adjacent mechanic interfaces | [governance](../governance/README.md), [writeback](../writeback/README.md), [retention](../retention/README.md), [adoption](../adoption/README.md), [consumer-handoff](../consumer-handoff/README.md), [operational-gate](../operational-gate/README.md), [recurrence-support](../recurrence-support/README.md) | routes stronger adjacent memory operations without absorbing their authority |
 | Generated companions | `generated/memo_mechanics.min.json`, `generated/agents_mesh.min.json`, `generated/memo_registry.min.json`, `generated/memory_catalog*.json`, `generated/memory_capsules.json`, `generated/memory_sections.full.json` | exposes compact mirrors while keeping lineage-harvest source truth in package docs and artifacts |
 
-## Mechanic-Local Technical Contracts
+## Part-Local Artifacts
 
-These artifacts live with the lineage-harvest mechanic because they define the
-package's own public support contract and regression boundary.
+These artifacts live with the pattern-lineage-memory-gate part because they
+define that public support contract and regression boundary.
 
 | Artifact | Role |
 |---|---|
-| `mechanics/lineage-harvest/schemas/pattern_lineage_memory_entry_v1.json` | public schema for pattern-lineage memory entry examples |
-| `mechanics/lineage-harvest/examples/pattern_lineage_memory_entry.example.json` | public-safe example for the pattern-lineage memory entry contract |
+| `mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/schemas/pattern_lineage_memory_entry_v1.json` | public schema for pattern-lineage memory entry examples |
+| `mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/examples/pattern_lineage_memory_entry.example.json` | public-safe example for the pattern-lineage memory entry contract |
 | `mechanics/governance/parts/federation-boundary/examples/federation_memory_gate_decision.example.json` | adjacent governance gate example that names `pattern_lineage_memory` as a memory kind |
 | `tests/test_experience_wave3_seed_contracts.py` | validates the federation-harvest seed schemas and examples as public contracts |
-| `mechanics/lineage-harvest/tests/test_lineage_harvest_mechanic.py` | protects the package boundary, active path, mechanic-local artifact placement, and stronger-owner stop-lines |
+| `mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/tests/test_lineage_harvest_mechanic.py` | protects the package boundary, active path, mechanic-local artifact placement, and stronger-owner stop-lines |
 
 ## Adjacent mechanic interfaces
 

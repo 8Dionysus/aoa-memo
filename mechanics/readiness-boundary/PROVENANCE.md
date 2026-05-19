@@ -10,9 +10,12 @@ beside their operation owner.
 ## Active Placement
 
 - `mechanics/readiness-boundary/docs/` owns readiness-boundary doctrine.
-- `mechanics/readiness-boundary/schemas/` owns the boundary contract schema.
-- `mechanics/readiness-boundary/examples/` owns the boundary contract example.
-- `mechanics/readiness-boundary/tests/` owns readiness-boundary mechanic tests.
+- `mechanics/readiness-boundary/parts/memory-readiness-boundary/schemas/`
+  owns the boundary contract schema.
+- `mechanics/readiness-boundary/parts/memory-readiness-boundary/examples/`
+  owns the boundary contract example.
+- `mechanics/readiness-boundary/parts/memory-readiness-boundary/tests/`
+  owns readiness-boundary mechanic tests.
 
 ## Former Placement
 
@@ -22,6 +25,9 @@ Former active paths now route here:
 - `schemas/memory_readiness_boundary_contract.schema.json`
 - `examples/memory_readiness_boundary_contract.example.json`
 - `tests/test_wave1_boundary_contract.py`
+- `mechanics/readiness-boundary/schemas/memory_readiness_boundary_contract.schema.json`
+- `mechanics/readiness-boundary/examples/memory_readiness_boundary_contract.example.json`
+- `mechanics/readiness-boundary/tests/test_readiness_boundary_mechanic.py`
 
 ## Boundary Note
 

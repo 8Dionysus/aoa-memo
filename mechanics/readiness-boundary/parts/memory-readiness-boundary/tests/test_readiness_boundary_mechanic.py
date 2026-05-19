@@ -6,12 +6,14 @@ from pathlib import Path
 from jsonschema import Draft202012Validator
 
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
+REPO_ROOT = Path(__file__).resolve().parents[5]
 DOC_PATH = REPO_ROOT / "mechanics" / "readiness-boundary" / "docs" / "MEMORY_READINESS_BOUNDARY.md"
 SCHEMA_PATH = (
     REPO_ROOT
     / "mechanics"
     / "readiness-boundary"
+    / "parts"
+    / "memory-readiness-boundary"
     / "schemas"
     / "memory_readiness_boundary_contract.schema.json"
 )
@@ -19,6 +21,8 @@ EXAMPLE_PATH = (
     REPO_ROOT
     / "mechanics"
     / "readiness-boundary"
+    / "parts"
+    / "memory-readiness-boundary"
     / "examples"
     / "memory_readiness_boundary_contract.example.json"
 )
@@ -68,6 +72,6 @@ def test_registry_routes_readiness_boundary_docs_and_schema() -> None:
     assert isinstance(registry, dict)
     assert "mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md" in registry["core_docs"]
     assert (
-        "mechanics/readiness-boundary/schemas/memory_readiness_boundary_contract.schema.json"
+        "mechanics/readiness-boundary/parts/memory-readiness-boundary/schemas/memory_readiness_boundary_contract.schema.json"
         in registry["schemas"]
     )

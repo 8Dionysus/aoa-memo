@@ -14,6 +14,11 @@ Stronger claims route through `../../OWNER_MAP.md`. Source placement and legacy 
 
 reviewable YAML and Markdown source shape for memo quest objects
 
+## Part-Local Artifacts
+
+- `mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py`
+- `mechanics/questbook/parts/source-contract/tests/test_questbook_store.py`
+
 ## Stop-lines
 
 This part inherits the package stop-lines from `../../README.md#must-not-claim` and `../../OWNER_MAP.md`.

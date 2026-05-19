@@ -17,5 +17,11 @@ The current Questbook mechanic grew from the former flat root quest store:
 mechanic owns quest law and generated projections, while root `quests/` remains
 the public item store with lane-first lifecycle placement.
 
+Active part-local tool placement:
+
+- `mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py`
+- `mechanics/questbook/parts/source-contract/tests/test_questbook_store.py`
+- `mechanics/questbook/parts/generated-views/scripts/build_quest_surfaces.py`
+
 Use [legacy/INDEX](legacy/INDEX.md) only to audit former placement. Legacy
 paths are historical receipts, not active contracts.

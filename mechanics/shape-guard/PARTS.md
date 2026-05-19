@@ -6,6 +6,12 @@
 |---|---|---|
 | Via negativa checklist | [VIA_NEGATIVA_CHECKLIST](./docs/VIA_NEGATIVA_CHECKLIST.md) | asks whether new memory or mechanic forms should be kept, merged, moved, suppressed, quarantined, deprecated, or removed before they inflate authority |
 
+## Part-Local Artifacts
+
+| Part | Artifact Surface |
+|---|---|
+| Via negativa checklist | `mechanics/shape-guard/parts/via-negativa-checklist/tests/test_shape_guard_mechanic.py` |
+
 ## Interface
 
 Inputs are proposed memory objects, mechanic packages, trust fields, recall

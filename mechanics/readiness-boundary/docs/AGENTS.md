@@ -38,5 +38,5 @@ examples, generated outputs, scripts, tests, manifests, or config.
 ```bash
 python scripts/validate_memo_mechanics.py
 python scripts/validate_memo.py
-python -m pytest -q mechanics/readiness-boundary/tests/test_readiness_boundary_mechanic.py
+python -m pytest -q mechanics/readiness-boundary/parts/memory-readiness-boundary/tests/test_readiness_boundary_mechanic.py
 ```

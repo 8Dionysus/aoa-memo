@@ -2,6 +2,7 @@
 
 | Date | Change | Validation |
 |---|---|---|
+| 2026-05-19 | Moved witness trace schema, example, and regression into `mechanics/recurrence-support/parts/witness-trace-contract/` so the witness part owns its technical contract. | `python -m pytest -q mechanics/recurrence-support/parts/witness-trace-contract/tests`; `python scripts/release_check.py` |
 | 2026-05-18 | Moved recurrence support, witness trace contract, and reviewed closeout recall landing surfaces from flat `docs/` into `mechanics/recurrence-support/docs/`. | `python scripts/release_check.py` |
 
 ## Stop-Lines Preserved

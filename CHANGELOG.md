@@ -18,6 +18,10 @@ Tracking starts with the community-docs baseline for this repository.
 - Move operational-gate deployment, office incident, service revision,
   post-release, and Wave 5 seed artifacts into functioning `parts/` homes with
   part-local validation.
+- Move the remaining shape-guard, readiness-boundary, recurrence-support,
+  lineage-harvest, and Questbook package-level artifacts into functioning
+  `parts/` homes so the mechanic artifact inventory has no package-scope
+  residue.
 - Add part-local adoption and retention contract tests so those mechanics can
   validate boundary, revision/retention, scar/routing, office marker,
   cross-repo/governance, and post-release artifacts at their owning parts.
@@ -220,7 +224,7 @@ Tracking starts with the community-docs baseline for this repository.
   and tests to the new artifact owner path.
 - Move flat root quest sources into lane-first lifecycle directories under
   `quests/`, move the quest projection builder into
-  `mechanics/questbook/scripts/`, and give Agon follow-through Markdown notes
+  `mechanics/questbook/parts/generated-views/scripts/`, and give Agon follow-through Markdown notes
   an explicit memo quest source contract.
 - Close the compact witness trace quest through recurrence-support, route the
   chronicle quest to writeback, and require current quest `owner_surface` and
