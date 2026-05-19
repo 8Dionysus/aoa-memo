@@ -11,10 +11,25 @@ Stronger claims route through `../../OWNER_MAP.md`. Source placement and legacy 
 - [FAILURE_LESSON_MEMORY](../../docs/FAILURE_LESSON_MEMORY.md)
 - [FAILURE_LESSON_RECALL](../../docs/FAILURE_LESSON_RECALL.md)
 - [DRIFT_REVIEW_LESSON_MEMORY](../../docs/DRIFT_REVIEW_LESSON_MEMORY.md)
+- `schemas/failure_lesson_memory_v1.json`
+- `schemas/shared_lesson_memory_v1.json`
+- `examples/failure_lesson_memory.example.json`
+- `examples/failure_lesson_memory.lineage.example.json`
+- `examples/failure_lesson_memory.rollout.example.json`
+- `examples/failure_lesson_memory.drift_review.example.json`
+- `examples/shared_lesson_memory.example.json`
+- `tests/test_antifragility_failure_lessons.py`
 
 ## Contract
 
 keeps repeated failure lessons recallable without becoming proof
+
+## Artifact Contract
+
+The part keeps the failure lesson contract, shared lesson seed contract,
+failure lesson examples, drift-review example, and local regression together.
+`shared_lesson_memory` stays here because it is a lesson-memory support object
+used by antifragility recall, not a standalone operation or proof family.
 
 ## Stop-lines
 

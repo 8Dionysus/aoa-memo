@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://aoa.local/aoa-memo/mechanics/antifragility/schemas/failure_lesson_memory_v1.json",
+  "$id": "https://aoa.local/aoa-memo/mechanics/antifragility/parts/failure-lesson-memory/schemas/failure_lesson_memory_v1.json",
   "title": "failure_lesson_memory_v1",
   "type": "object",
   "additionalProperties": false,

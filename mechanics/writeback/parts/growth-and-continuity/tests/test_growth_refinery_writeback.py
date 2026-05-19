@@ -92,7 +92,7 @@ def test_growth_refinery_writeback_doc_maps_prune_cases_to_existing_memo_kinds()
 
 
 def test_failure_lesson_lineage_example_keeps_partial_chain_and_explanatory_note() -> None:
-    example = load_json("mechanics/antifragility/examples/failure_lesson_memory.lineage.example.json")
+    example = load_json("mechanics/antifragility/parts/failure-lesson-memory/examples/failure_lesson_memory.lineage.example.json")
 
     assert isinstance(example, dict)
     assert example["lineage_refs"] == {
@@ -107,7 +107,7 @@ def test_failure_lesson_lineage_example_keeps_partial_chain_and_explanatory_note
 
 
 def test_recovery_pattern_lineage_example_keeps_full_chain_and_review_first_recall() -> None:
-    example = load_json("mechanics/antifragility/examples/recovery_pattern_memory.lineage.example.json")
+    example = load_json("mechanics/antifragility/parts/recovery-pattern-memory/examples/recovery_pattern_memory.lineage.example.json")
 
     assert isinstance(example, dict)
     assert example["lineage_refs"] == {
@@ -138,4 +138,4 @@ def test_growth_refinery_writeback_lanes_surface_stays_generator_backed() -> Non
     assert "aoa-playbooks:review_note_v1#AOA-P-0025:owner-reanchor" in by_ref["growth_refinery_failure_lesson"]["required_evidence_refs"]
     assert by_ref["growth_refinery_recovery_pattern"]["target_kind"] == "recovery_pattern"
     assert "aoa-stats:candidate_lineage_summary_v1#summary:session-growth-cycle" in by_ref["growth_refinery_recovery_pattern"]["required_evidence_refs"]
-    assert "mechanics/antifragility/examples/pattern.antifragility-stress-recovery-window.example.json" in by_ref["growth_refinery_recovery_pattern"]["optional_evidence_refs"]
+    assert "mechanics/antifragility/parts/recovery-pattern-memory/examples/pattern.antifragility-stress-recovery-window.example.json" in by_ref["growth_refinery_recovery_pattern"]["optional_evidence_refs"]

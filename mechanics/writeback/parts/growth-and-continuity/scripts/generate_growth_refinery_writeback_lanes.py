@@ -8,8 +8,24 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[5]
 PART_ROOT = REPO_ROOT / "mechanics" / "writeback" / "parts" / "growth-and-continuity"
-FAILURE_EXAMPLE_PATH = REPO_ROOT / "mechanics" / "antifragility" / "examples" / "failure_lesson_memory.lineage.example.json"
-RECOVERY_EXAMPLE_PATH = REPO_ROOT / "mechanics" / "antifragility" / "examples" / "recovery_pattern_memory.lineage.example.json"
+FAILURE_EXAMPLE_PATH = (
+    REPO_ROOT
+    / "mechanics"
+    / "antifragility"
+    / "parts"
+    / "failure-lesson-memory"
+    / "examples"
+    / "failure_lesson_memory.lineage.example.json"
+)
+RECOVERY_EXAMPLE_PATH = (
+    REPO_ROOT
+    / "mechanics"
+    / "antifragility"
+    / "parts"
+    / "recovery-pattern-memory"
+    / "examples"
+    / "recovery_pattern_memory.lineage.example.json"
+)
 OUTPUT_PATH = PART_ROOT / "generated" / "growth_refinery_writeback_lanes.min.json"
 
 
@@ -58,8 +74,8 @@ def dedupe(values: list[str]) -> list[str]:
 def build_failure_lesson_lane() -> dict[str, object]:
     payload = read_json(FAILURE_EXAMPLE_PATH)
     if not isinstance(payload, dict):
-        raise SystemExit("[error] mechanics/antifragility/examples/failure_lesson_memory.lineage.example.json must contain an object")
-    context = "mechanics/antifragility/examples/failure_lesson_memory.lineage.example.json"
+        raise SystemExit("[error] mechanics/antifragility/parts/failure-lesson-memory/examples/failure_lesson_memory.lineage.example.json must contain an object")
+    context = "mechanics/antifragility/parts/failure-lesson-memory/examples/failure_lesson_memory.lineage.example.json"
     if require_string(payload, "schema_version", context=context) != "failure_lesson_memory_v1":
         raise SystemExit("[error] failure lesson lineage example must keep schema_version failure_lesson_memory_v1")
     if require_string(payload, "object_kind", context=context) != "failure_lesson":
@@ -78,8 +94,8 @@ def build_failure_lesson_lane() -> dict[str, object]:
         "writeback_class": "growth_refinery_memory",
         "review_status": require_string(payload, "review_status", context=context),
         "memory_id": require_string(payload, "memory_id", context=context),
-        "source_path": "mechanics/antifragility/examples/failure_lesson_memory.lineage.example.json",
-        "primary_ref": "repo:aoa-memo/mechanics/antifragility/examples/failure_lesson_memory.lineage.example.json",
+        "source_path": "mechanics/antifragility/parts/failure-lesson-memory/examples/failure_lesson_memory.lineage.example.json",
+        "primary_ref": "repo:aoa-memo/mechanics/antifragility/parts/failure-lesson-memory/examples/failure_lesson_memory.lineage.example.json",
         "required_evidence_refs": required_evidence_refs,
         "optional_evidence_refs": [],
     }
@@ -88,8 +104,8 @@ def build_failure_lesson_lane() -> dict[str, object]:
 def build_recovery_pattern_lane() -> dict[str, object]:
     payload = read_json(RECOVERY_EXAMPLE_PATH)
     if not isinstance(payload, dict):
-        raise SystemExit("[error] mechanics/antifragility/examples/recovery_pattern_memory.lineage.example.json must contain an object")
-    context = "mechanics/antifragility/examples/recovery_pattern_memory.lineage.example.json"
+        raise SystemExit("[error] mechanics/antifragility/parts/recovery-pattern-memory/examples/recovery_pattern_memory.lineage.example.json must contain an object")
+    context = "mechanics/antifragility/parts/recovery-pattern-memory/examples/recovery_pattern_memory.lineage.example.json"
     if require_string(payload, "schema_version", context=context) != "recovery_pattern_memory_v1":
         raise SystemExit("[error] recovery pattern lineage example must keep schema_version recovery_pattern_memory_v1")
     if require_string(payload, "object_kind", context=context) != "recovery_pattern":
@@ -116,8 +132,8 @@ def build_recovery_pattern_lane() -> dict[str, object]:
         "writeback_class": "growth_refinery_memory",
         "review_status": require_string(payload, "review_status", context=context),
         "memory_id": require_string(payload, "memory_id", context=context),
-        "source_path": "mechanics/antifragility/examples/recovery_pattern_memory.lineage.example.json",
-        "primary_ref": "repo:aoa-memo/mechanics/antifragility/examples/recovery_pattern_memory.lineage.example.json",
+        "source_path": "mechanics/antifragility/parts/recovery-pattern-memory/examples/recovery_pattern_memory.lineage.example.json",
+        "primary_ref": "repo:aoa-memo/mechanics/antifragility/parts/recovery-pattern-memory/examples/recovery_pattern_memory.lineage.example.json",
         "required_evidence_refs": required_evidence_refs,
         "optional_evidence_refs": dedupe(optional_evidence_refs),
     }
@@ -132,8 +148,8 @@ def build_growth_refinery_writeback_lanes_payload() -> dict[str, object]:
         "scope": "growth-refinery-writeback",
         "source_of_truth": {
             "growth_refinery_writeback": "mechanics/writeback/docs/GROWTH_REFINERY_WRITEBACK.md",
-            "failure_lesson_example": "mechanics/antifragility/examples/failure_lesson_memory.lineage.example.json",
-            "recovery_pattern_example": "mechanics/antifragility/examples/recovery_pattern_memory.lineage.example.json",
+            "failure_lesson_example": "mechanics/antifragility/parts/failure-lesson-memory/examples/failure_lesson_memory.lineage.example.json",
+            "recovery_pattern_example": "mechanics/antifragility/parts/recovery-pattern-memory/examples/recovery_pattern_memory.lineage.example.json",
         },
         "lanes": lanes,
     }

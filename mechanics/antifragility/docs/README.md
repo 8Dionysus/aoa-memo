@@ -18,14 +18,16 @@ route behavior, or repair runtime state.
 
 Antifragility docs currently pair with:
 
-- `mechanics/antifragility/schemas/failure_lesson_memory_v1.json`
-- `mechanics/antifragility/schemas/recovery_pattern_memory_v1.json`
-- `examples/failure_lesson_memory*.json`
-- `examples/recovery_pattern_memory*.json`
-- `mechanics/antifragility/examples/pattern.antifragility-stress-recovery-window.example.json`
+- `mechanics/antifragility/parts/failure-lesson-memory/schemas/failure_lesson_memory_v1.json`
+- `mechanics/antifragility/parts/failure-lesson-memory/schemas/shared_lesson_memory_v1.json`
+- `mechanics/antifragility/parts/recovery-pattern-memory/schemas/recovery_pattern_memory_v1.json`
+- `mechanics/antifragility/parts/failure-lesson-memory/examples/failure_lesson_memory*.json`
+- `mechanics/antifragility/parts/failure-lesson-memory/examples/shared_lesson_memory.example.json`
+- `mechanics/antifragility/parts/recovery-pattern-memory/examples/recovery_pattern_memory*.json`
+- `mechanics/antifragility/parts/recovery-pattern-memory/examples/pattern.antifragility-stress-recovery-window.example.json`
 - `generated/memory_object_*.json`
-- `mechanics/antifragility/tests/test_antifragility_failure_lessons.py`
-- `mechanics/antifragility/tests/test_antifragility_recovery_patterns.py`
+- `mechanics/antifragility/parts/failure-lesson-memory/tests/test_antifragility_failure_lessons.py`
+- `mechanics/antifragility/parts/recovery-pattern-memory/tests/test_antifragility_recovery_patterns.py`
 
 ## Stop-Lines
 

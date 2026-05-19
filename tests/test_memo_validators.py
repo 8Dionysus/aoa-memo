@@ -846,7 +846,7 @@ class MemoValidatorTestCase(unittest.TestCase):
                 "evidence_refs": [
                     {
                         "kind": "support_memory",
-                        "ref": "repo:aoa-memo/mechanics/antifragility/examples/failure_lesson_memory.lineage.example.json",
+                        "ref": "repo:aoa-memo/mechanics/antifragility/parts/failure-lesson-memory/examples/failure_lesson_memory.lineage.example.json",
                         "role": "primary",
                     },
                     {
@@ -882,7 +882,7 @@ class MemoValidatorTestCase(unittest.TestCase):
                 ],
                 "payload": {
                     "growth_lane_ref": lane_ref,
-                    "source_example_ref": "mechanics/antifragility/examples/failure_lesson_memory.lineage.example.json",
+                    "source_example_ref": "mechanics/antifragility/parts/failure-lesson-memory/examples/failure_lesson_memory.lineage.example.json",
                     "target_kind": "failure_lesson",
                     "review_status": "reviewed",
                     "writeback_class": "growth_refinery_memory",
@@ -914,7 +914,7 @@ class MemoValidatorTestCase(unittest.TestCase):
                 "evidence_refs": [
                     {
                         "kind": "support_memory",
-                        "ref": "repo:aoa-memo/mechanics/antifragility/examples/recovery_pattern_memory.lineage.example.json",
+                        "ref": "repo:aoa-memo/mechanics/antifragility/parts/recovery-pattern-memory/examples/recovery_pattern_memory.lineage.example.json",
                         "role": "primary",
                     },
                     {
@@ -924,7 +924,7 @@ class MemoValidatorTestCase(unittest.TestCase):
                     },
                 ],
                 "payload": {
-                    "source_example_ref": "mechanics/antifragility/examples/recovery_pattern_memory.lineage.example.json",
+                    "source_example_ref": "mechanics/antifragility/parts/recovery-pattern-memory/examples/recovery_pattern_memory.lineage.example.json",
                     "target_kind": "recovery_pattern",
                     "review_status": "reviewed",
                     "writeback_class": "growth_refinery_memory",

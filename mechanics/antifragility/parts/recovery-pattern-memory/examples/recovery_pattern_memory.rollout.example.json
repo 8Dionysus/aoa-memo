@@ -44,7 +44,7 @@
   "temperature": "cool",
   "salience": "high",
   "review_status": "reviewed",
-  "native_pattern_ref": "mechanics/antifragility/examples/pattern.antifragility-stress-recovery-window.example.json",
+  "native_pattern_ref": "mechanics/antifragility/parts/recovery-pattern-memory/examples/pattern.antifragility-stress-recovery-window.example.json",
   "recall_prompts": [
     "material startup drift after rollout",
     "revert to last stable render",

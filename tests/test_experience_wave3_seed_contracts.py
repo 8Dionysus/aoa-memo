@@ -35,7 +35,7 @@ CONTRACT_BASE_BY_STEM = {
     "federation_memory_gate_decision": "mechanics/governance/parts/federation-boundary",
     "memo_to_kag_bridge_record": "mechanics/consumer-handoff/parts/kag-source-export",
     "pattern_lineage_memory_entry": "mechanics/lineage-harvest",
-    "shared_lesson_memory": "mechanics/antifragility",
+    "shared_lesson_memory": "mechanics/antifragility/parts/failure-lesson-memory",
 }
 GUARDRAIL_BOOLEAN_FIELDS = {
     "authority_required",
