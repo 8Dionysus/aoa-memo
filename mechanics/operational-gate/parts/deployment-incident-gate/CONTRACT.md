@@ -9,10 +9,21 @@ Stronger claims route through `../../OWNER_MAP.md`. Source placement and legacy 
 ## Source Surfaces
 
 - [DEPLOYMENT_INCIDENT_MEMORY_GATE](../../docs/DEPLOYMENT_INCIDENT_MEMORY_GATE.md)
+- `schemas/deployment_incident_memory_gate_v1.json`
+- `schemas/deployment_lesson_candidate_v1.json`
+- `examples/deployment_incident_memory_gate.example.json`
+- `examples/deployment_lesson_candidate.example.json`
+- `tests/test_operational_gate_mechanic.py`
 
 ## Contract
 
 admits deployment incident memory only with evidence, owner route, review posture, and future effect
+
+## Artifact Contract
+
+The part keeps deployment incident gate decisions, deployment lesson
+candidates, and the package boundary regression together because both seed
+objects answer whether deployment evidence deserves durable memo recall.
 
 ## Stop-lines
 

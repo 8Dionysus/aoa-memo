@@ -53,7 +53,7 @@ After operational-gate changes, check whether these surfaces moved:
 - `LANDING_LOG.md`
 - `ROADMAP.md`
 - `legacy/INDEX.md`
-- mechanic-local contract refs in `mechanics/operational-gate/{schemas,examples,tests}/`
+- part-local contract refs in `mechanics/operational-gate/parts/*/{schemas,examples,tests}/`
   and adjacent writeback/retention package refs
 - generated mechanics or AGENTS mesh companions
 - docs-root maps, root route cards, decision records, changelog, or roadmap
@@ -70,7 +70,7 @@ python scripts/validate_agents_mesh.py
 python scripts/build_agents_mesh_index.py --check
 python scripts/validate_agents_mesh_index.py
 python scripts/validate_memo.py
-python -m pytest -q mechanics/operational-gate/tests/test_operational_gate_mechanic.py tests/test_memo_mechanics.py tests/test_agents_mesh.py mechanics/operational-gate/tests/test_experience_wave5_seed_contracts.py
+python -m pytest -q mechanics/operational-gate/parts/deployment-incident-gate/tests mechanics/operational-gate/parts/post-release-boundaries/tests tests/test_memo_mechanics.py tests/test_agents_mesh.py
 ```
 
 Before landing, also run:

@@ -87,10 +87,10 @@ If you are editing inside `schemas/`, `examples/`, `generated/`, or `scripts/`, 
 - bridge, export, and guardrail surfaces: `mechanics/consumer-handoff/parts/kag-source-export/generated/kag_export.min.json`, [consumer-handoff/KAG_SOURCE_EXPORT](mechanics/consumer-handoff/docs/KAG_SOURCE_EXPORT.md), [consumer-handoff/KAG_TOS_BRIDGE_CONTRACT](mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md), and [consumer-handoff/MEMORY_EVAL_GUARDRAILS](mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md)
 - operational incident, service revision, and post-release memory gates:
   [mechanics/operational-gate](mechanics/operational-gate/README.md),
-  `mechanics/operational-gate/schemas/deployment_incident_memory_gate_v1.json`,
-  `mechanics/operational-gate/schemas/service_revision_ledger_entry_v1.json`,
-  `mechanics/operational-gate/schemas/service_incident_memory_entry_v1.json`, and
-  `mechanics/operational-gate/examples/deployment_incident_memory_gate.example.json`
+  `mechanics/operational-gate/parts/deployment-incident-gate/schemas/deployment_incident_memory_gate_v1.json`,
+  `mechanics/operational-gate/parts/service-revision-ledger/schemas/service_revision_ledger_entry_v1.json`,
+  `mechanics/operational-gate/parts/office-incident-gate/schemas/service_incident_memory_entry_v1.json`, and
+  `mechanics/operational-gate/parts/deployment-incident-gate/examples/deployment_incident_memory_gate.example.json`
 - recurrence support, witness trace, and reviewed closeout recall landings:
   [mechanics/recurrence-support](mechanics/recurrence-support/README.md),
   [recurrence-support/RECURRENCE_MEMORY_SUPPORT_SURFACES](mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md),

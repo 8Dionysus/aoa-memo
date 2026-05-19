@@ -9,10 +9,18 @@ Stronger claims route through `../../OWNER_MAP.md`. Source placement and legacy 
 ## Source Surfaces
 
 - [SERVICE_REVISION_LEDGER](../../docs/SERVICE_REVISION_LEDGER.md)
+- `schemas/service_revision_ledger_entry_v1.json`
+- `examples/service_revision_ledger_entry_v1.example.json`
 
 ## Contract
 
 preserves service revision recall without becoming live service state or release approval
+
+## Artifact Contract
+
+The part keeps service revision ledger entry contracts with the ledger posture.
+It preserves reviewed service revision recall without becoming a live service
+ledger, release approval, or runtime storage.
 
 ## Stop-lines
 

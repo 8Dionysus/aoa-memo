@@ -594,7 +594,7 @@
       ],
       "protects": [
         "mechanics/governance/parts/install-and-certification-boundary/schemas/certification_memory_writeback_v1.json",
-        "mechanics/operational-gate/schemas/deployment_incident_memory_gate_v1.json",
+        "mechanics/operational-gate/parts/deployment-incident-gate/schemas/deployment_incident_memory_gate_v1.json",
         "mechanics/retention/parts/post-release-retention/schemas/post_release_retention_memory_v1.json",
         "mechanics/writeback/parts/revision-ledgers/schemas/assistant_revision_ledger_entry_v1.json",
         "mechanics/writeback/parts/rollback-and-recovery/schemas/rollback_memory_entry_v1.json"

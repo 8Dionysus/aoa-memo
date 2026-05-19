@@ -35,10 +35,10 @@ An office incident may become memory only when it has:
 
 Current public contracts live with the operational-gate mechanic:
 
-- `mechanics/operational-gate/schemas/service_incident_memory_entry_v1.json`
-- `mechanics/operational-gate/examples/service_incident_memory_entry_v1.example.json`
-- `mechanics/operational-gate/schemas/train_release_memory_entry_v1.json`
-- `mechanics/operational-gate/examples/train_release_memory_entry_v1.example.json`
+- `mechanics/operational-gate/parts/office-incident-gate/schemas/service_incident_memory_entry_v1.json`
+- `mechanics/operational-gate/parts/office-incident-gate/examples/service_incident_memory_entry_v1.example.json`
+- `mechanics/operational-gate/parts/post-release-boundaries/schemas/train_release_memory_entry_v1.json`
+- `mechanics/operational-gate/parts/post-release-boundaries/examples/train_release_memory_entry_v1.example.json`
 
 The contracts are memo recall shapes. They are not live office state and do
 not grant assistant rights.
