@@ -19,17 +19,27 @@ class TopologySpineTestCase(unittest.TestCase):
             "DESIGN.AGENTS.md": (
                 "agent-facing guidance",
                 "Generated companions",
+                "MEMORY_INDEX.md",
                 "Decision Review",
                 "memory became another layer",
             ),
+            "MEMORY_INDEX.md": (
+                "MEMORY_INDEX",
+                "Memory Object Kinds",
+                "Support Objects",
+                "Generated Companions",
+                "not proof",
+            ),
             "docs/README.md": (
                 "Documentation Map",
+                "MEMORY_INDEX",
                 "Current Surface Families",
                 "Thematic Migration Rule",
                 "decisions",
             ),
             "docs/ROOT_SURFACE_LAW.md": (
                 "Root Surface Law",
+                "MEMORY_INDEX.md",
                 "Docs-Root Principle",
                 "Migration Procedure Before Moving Flat Docs",
                 ".agents/spark/",
@@ -88,6 +98,7 @@ class TopologySpineTestCase(unittest.TestCase):
         for snippet in (
             "DESIGN.md",
             "DESIGN.AGENTS.md",
+            "MEMORY_INDEX.md",
             "docs/README.md",
             "docs/ROOT_SURFACE_LAW.md",
             "docs/decisions/",
@@ -97,6 +108,7 @@ class TopologySpineTestCase(unittest.TestCase):
         for snippet in (
             "DESIGN.md",
             "DESIGN.AGENTS.md",
+            "MEMORY_INDEX.md",
             "docs/README.md",
             "docs/ROOT_SURFACE_LAW.md",
             "docs/decisions",
@@ -106,12 +118,14 @@ class TopologySpineTestCase(unittest.TestCase):
         for snippet in (
             "DESIGN.md",
             "DESIGN.AGENTS.md",
+            "MEMORY_INDEX.md",
             "docs/ROOT_SURFACE_LAW.md",
             "docs/decisions/",
         ):
             self.assertIn(snippet, roadmap)
 
         self.assertIn("source-authored topology spine", changelog)
+        self.assertIn("MEMORY_INDEX.md", changelog)
         self.assertIn(".agents/spark/", changelog)
 
     def test_spark_lane_moved_out_of_root(self) -> None:

@@ -20,30 +20,22 @@ Bad contributions:
 
 ## Before opening a PR
 
-Please make sure:
-- the change keeps memory explicit and reviewable
-- memory remains distinct from proof, routing, and workflow execution
-- provenance stays visible
-- temporal posture and staleness risk stay explicit where they matter
-- generated surfaces remain aligned with their source objects
-- examples and docs stay public-safe
+Start from:
 
-Run the read-only validation battery before opening a PR:
+1. [CHARTER](CHARTER.md) for the authority boundary.
+2. [DESIGN](DESIGN.md) for system form.
+3. [MEMORY_INDEX](MEMORY_INDEX.md) for memory-canon routing.
+4. [AGENTS](AGENTS.md) and the nearest local `AGENTS.md` for executable checks.
 
-```bash
-python scripts/validate_memo.py
-python scripts/validate_memory_surfaces.py
-python scripts/validate_memory_object_surfaces.py
-python scripts/validate_lifecycle_audit_examples.py
-python scripts/validate_mechanic_artifact_topology.py
-python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py --check
-python scripts/validate_memo_mechanics.py
-python scripts/build_memo_mechanics_index.py --check
-python scripts/validate_memo_mechanics_index.py
-python -m pytest -q tests
-```
+Please make sure the change keeps memory explicit and reviewable, keeps proof,
+routing, runtime, role, and workflow authority outside this repository, keeps
+provenance visible, names temporal posture where it matters, and keeps examples
+and docs public-safe.
 
-If you changed generator-backed surfaces, regenerate only the touched families first, then rerun the read-only validation battery above and inspect `git status -sb`.
+Executable validation routes live in [AGENTS](AGENTS.md#verify) and the nearest
+local `AGENTS.md`. Do not duplicate the full command battery here; it drifts.
+If generator-backed surfaces changed, regenerate only the touched families
+first, then rerun the relevant AGENTS route and inspect `git status -sb`.
 
 ## Preferred PR scope
 

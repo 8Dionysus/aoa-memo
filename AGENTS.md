@@ -24,13 +24,14 @@ It does not own:
 1. `README.md`
 2. `CHARTER.md`
 3. `DESIGN.md`
-4. [`ROADMAP.md`](ROADMAP.md)
-5. `docs/README.md`
-6. `docs/BOUNDARIES.md`
-7. `docs/MEMORY_MODEL.md`
-8. `mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md` for readiness, retention, and memory-is-not-proof boundaries
-9. the target memory surface and affected generated outputs
-10. `docs/AGENTS_ROOT_REFERENCE.md` for preserved full root branches
+4. `MEMORY_INDEX.md`
+5. [`ROADMAP.md`](ROADMAP.md)
+6. `docs/README.md`
+7. `docs/BOUNDARIES.md`
+8. `docs/MEMORY_MODEL.md`
+9. `mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md` for readiness, retention, and memory-is-not-proof boundaries
+10. the target memory surface and affected generated outputs
+11. `docs/AGENTS_ROOT_REFERENCE.md` for preserved full root branches
 
 For agent-facing topology, also read `DESIGN.AGENTS.md`.
 For root or docs-root placement, read `docs/ROOT_SURFACE_LAW.md`.
@@ -43,6 +44,7 @@ lineage-harvest, writeback, or retention movement, read `mechanics/README.md`.
 | Route mode | Use when | First surface |
 |---|---|---|
 | `first-reading` | you need the shortest public overview | `README.md` |
+| `memory-canon` | memory object kinds, support objects, recall modes, temperature vocabulary, source families, or generated companions are being inspected | `MEMORY_INDEX.md` -> `docs/MEMORY_MODEL.md` -> target source |
 | `memory-doctrine` | memory meaning, object posture, trust, lifecycle, temperature, or provenance changes | `docs/MEMORY_MODEL.md` |
 | `root-editing` | a root or docs-root surface is added, moved, deleted, or rewritten | `docs/ROOT_SURFACE_LAW.md` |
 | `docs-placement` | a docs-root surface is classified, retired from flat placement, or checked for old district drift | `docs/README.md` -> `docs/ROOT_SURFACE_LAW.md` -> `scripts/validate_docs_districts.py` |
@@ -88,6 +90,8 @@ Update only the ones that moved; otherwise say no update was needed.
 - `DESIGN.md` when the memory-layer system form changed.
 - `DESIGN.AGENTS.md` when agent-facing form, local route cards, or future mesh
   posture changed.
+- `MEMORY_INDEX.md` when public memory object, support object, recall-mode,
+  source-family, or generated-companion routing changes.
 - `docs/ROOT_SURFACE_LAW.md` when root or docs-root placement changes.
 - `docs/decisions/` when future agents need rationale for a route, topology,
   validator, source-of-truth, or ownership choice.

@@ -58,6 +58,8 @@ Docs, schemas, examples, and scripts own memory-layer meaning within their
 domain:
 
 - docs own doctrine, boundary, lifecycle, bridge, writeback, and recall posture
+- `MEMORY_INDEX.md` owns the compact public memory-canon map and routes to
+  stronger doctrine instead of replacing it
 - schemas own machine-readable contracts
 - examples teach public-safe instance shape
 - scripts build and validate derived surfaces
@@ -76,6 +78,7 @@ find the source surface or generator that produced it.
 The long-term mesh should make these lanes explicit:
 
 - `.agents/` for agent-facing companion assets and future maintained lanes
+- `MEMORY_INDEX.md` for compact memory-canon routing before deeper doctrine
 - `docs/` for memory doctrine and route maps
 - `mechanics/` for repeatable adoption, consumer handoff, operational gate,
   recurrence support, lineage harvest, questbook, writeback, and retention
@@ -108,7 +111,7 @@ For agent editing, the intended order is:
 
 1. root `AGENTS.md`
 2. nearest nested `AGENTS.md` for every touched path
-3. route-mode or source surface named by the root card
+3. route-mode, `MEMORY_INDEX.md`, or source surface named by the root card
 4. nearest local README, docs map, schema, example, generator, or validator
 5. narrowest relevant check before broad release validation
 

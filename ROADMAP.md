@@ -1,4 +1,45 @@
-# ROADMAP
+# aoa-memo Roadmap
+
+This roadmap tracks current direction for `aoa-memo` as the public memory and
+recall layer of AoA.
+
+Use it when the question is "what repo-level direction should shape the next
+change?", not "which memory object, mechanic part, or generated companion
+should I open?"
+
+## Authority
+
+Root [ROADMAP](ROADMAP.md) owns repo-level direction, memory-layer horizons,
+current contract-hardening pressure, cross-repo handoff pressure, root
+source-of-truth pressure, and concrete future triggers that belong to this
+repository.
+
+It does not own memory object semantics by itself, generated registry truth,
+mechanic-local roadmaps, checked mechanic landings, release history, quest
+state, proof verdicts, runtime implementation, route dispatch, role policy, or
+sibling-repository implementation direction.
+
+Use the stronger surface when the change is narrower:
+
+- repository boundary: [CHARTER](CHARTER.md)
+- memory canon map: [MEMORY_INDEX](MEMORY_INDEX.md)
+- memory model: [MEMORY_MODEL](docs/MEMORY_MODEL.md)
+- root and docs placement: [ROOT_SURFACE_LAW](docs/ROOT_SURFACE_LAW.md)
+- mechanic-local future pressure: `mechanics/<slug>/ROADMAP.md`
+- checked mechanic landings: `mechanics/<slug>/LANDING_LOG.md`
+- durable obligations: [QUESTBOOK](QUESTBOOK.md) and [quests](quests/)
+- released repository history: [CHANGELOG](CHANGELOG.md)
+
+## Update Rule
+
+Update this roadmap only when a change moves repo-level direction, memory
+canon posture, root source-of-truth posture, cross-repo handoff posture,
+mechanics-to-memory interface, or a concrete future trigger for this
+repository.
+
+Do not update it for a local mechanic landing, generated refresh, release
+note, quest lifecycle move, package-local artifact relocation, or validator
+maintenance unless that local change alters repo-level direction.
 
 ## Direction
 
