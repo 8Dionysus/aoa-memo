@@ -58,18 +58,17 @@ next.
 
 Each package README must include these headings in order:
 
-| Heading | Purpose |
-|---|---|
-| `## Mechanic card` | compact status and entry point |
-| `### Operation` | the repeatable memory-layer operation this package owns |
-| `### Trigger` | when the mechanic applies |
-| `### Memo owns` | what `aoa-memo` may author here |
-| `### Stronger owner split` | repositories or districts that own stronger truth |
-| `### Inputs` | what may enter this mechanic |
-| `### Outputs` | what may leave this mechanic |
-| `### Must not claim` | package stop-lines |
-| `### Validation` | exact package validation route |
-| `### Next route` | where implementation, proof, memory, runtime, role, KAG, or source meaning goes next |
+- `## Mechanic card`: compact status and entry point.
+- `### Operation`: the repeatable memory-layer operation this package owns.
+- `### Trigger`: when the mechanic applies.
+- `### Memo owns`: what `aoa-memo` may author here.
+- `### Stronger owner split`: repositories or districts that own stronger truth.
+- `### Inputs`: what may enter this mechanic.
+- `### Outputs`: what may leave this mechanic.
+- `### Must not claim`: package stop-lines.
+- `### Validation`: exact package validation route.
+- `### Next route`: where implementation, proof, memory, runtime, role, KAG,
+  or source meaning goes next.
 
 After the card, package README files should stay lightweight and route to
 `DIRECTION.md`, `PARTS.md`, `parts/`, `OWNER_MAP.md`, `PROVENANCE.md`,
@@ -77,23 +76,111 @@ After the card, package README files should stay lightweight and route to
 
 ## Compass
 
-| Mechanic | Memo question | Status | Start here | Must not claim |
-|---|---|---|---|---|
-| [antifragility](antifragility/README.md) | How do reviewed failure lessons and recovery patterns stay recallable without becoming proof, route authority, stats truth, or runtime repair? | landed memo route | [PARTS](antifragility/PARTS.md), [OWNER_MAP](antifragility/OWNER_MAP.md), [PROVENANCE](antifragility/PROVENANCE.md) | proof verdict, current health, route sovereignty, rollback authorization, stats truth, or runtime repair |
-| [agon](agon/README.md) | How does Agon candidate memory, evidence, bridge, retention, rank, and landing posture stay reviewable without becoming the source Agon mechanic? | landed memo route | [PARTS](agon/PARTS.md), [OWNER_MAP](agon/OWNER_MAP.md), [PROVENANCE](agon/PROVENANCE.md) | trial execution, verdict proof, scar or rank mutation, KAG promotion, Sophian canon, or runtime retention |
-| [titan](titan/README.md) | How does Titan recall, remembrance, audit, digest, closeout, personality, and swarm memory posture stay source-linked without granting authority? | landed memo route | [PARTS](titan/PARTS.md), [OWNER_MAP](titan/OWNER_MAP.md), [PROVENANCE](titan/PROVENANCE.md) | durable write, role right, proof verdict, private retention, or owner-repo doctrine |
-| [adoption](adoption/README.md) | How does a memory candidate become reviewable for adoption without becoming proof or automatic promotion? | landed memo route | [PARTS](adoption/PARTS.md), [OWNER_MAP](adoption/OWNER_MAP.md), [PROVENANCE](adoption/PROVENANCE.md) | adopted truth, proof verdict, route sovereignty, or runtime write |
-| [governance](governance/README.md) | How do governance, federation, installation, certification, precedent, and stay-order authority boundaries stay recallable without making decisions? | landed memo route | [PARTS](governance/PARTS.md), [OWNER_MAP](governance/OWNER_MAP.md), [PROVENANCE](governance/PROVENANCE.md) | council authority, proof verdict, release approval, Tree-of-Sophia write, source-owner consent, or runtime governance |
-| [shape-guard](shape-guard/README.md) | How does memo prune memory-object and mechanic-shape inflation before new recall forms pretend to be proof, health, or action authority? | landed memo route | [PARTS](shape-guard/PARTS.md), [OWNER_MAP](shape-guard/OWNER_MAP.md), [PROVENANCE](shape-guard/PROVENANCE.md) | proof verdict, current health, deletion execution, role/action authority, KAG promotion, runtime cleanup, or owner adoption |
-| [checkpoint](checkpoint/README.md) | How does memo preserve checkpoint gates, carry packets, approval and health records, and checkpoint-to-memory mappings without becoming executor, runtime store, role authority, proof, or route ledger? | landed memo route | [PARTS](checkpoint/PARTS.md), [OWNER_MAP](checkpoint/OWNER_MAP.md), [PROVENANCE](checkpoint/PROVENANCE.md) | checkpoint execution, runtime state, role rights, route dispatch, proof verdict, scenario acceptance, source-owner acceptance, or checkpoint-only object family |
-| [readiness-boundary](readiness-boundary/README.md) | How does memo gate high-pressure memory readiness pressure into existing memory objects and owner routes without creating proof, runtime retention, graph substrate, route dispatch, role authority, live ledger, or a new object family? | landed memo route | [PARTS](readiness-boundary/PARTS.md), [OWNER_MAP](readiness-boundary/OWNER_MAP.md), [PROVENANCE](readiness-boundary/PROVENANCE.md) | proof verdict, runtime retention, graph substrate truth, route dispatch, role authority, live ledger, owner acceptance, or readiness-only object family |
-| [consumer-handoff](consumer-handoff/README.md) | How does memo publish bounded consumer handoff surfaces without absorbing role, playbook, proof, graph, source, routing, or runtime authority? | landed memo route | [PARTS](consumer-handoff/PARTS.md), [OWNER_MAP](consumer-handoff/OWNER_MAP.md), [PROVENANCE](consumer-handoff/PROVENANCE.md) | actor rights, scenario choreography, eval verdicts, graph truth, ToS source meaning, route sovereignty, or runtime execution |
-| [operational-gate](operational-gate/README.md) | How does memo admit operational incidents, service revisions, and post-release boundaries into recall without becoming release, runtime, proof, role, route, or stats authority? | landed memo route | [PARTS](operational-gate/PARTS.md), [OWNER_MAP](operational-gate/OWNER_MAP.md), [PROVENANCE](operational-gate/PROVENANCE.md) | release approval, current health, incident root cause, runtime remediation, eval proof, role rights, route dispatch, stats truth, or owner acceptance |
-| [recurrence-support](recurrence-support/README.md) | How does memo preserve relaunch anchors, witness trace exports, and reviewed closeout recall landings without becoming router, runtime, role policy, proof, or a second route ledger? | landed memo route | [PARTS](recurrence-support/PARTS.md), [OWNER_MAP](recurrence-support/OWNER_MAP.md), [PROVENANCE](recurrence-support/PROVENANCE.md) | dispatch authority, runtime retry, role rights, proof verdict, scenario choreography, `return_memory`, or owner acceptance |
-| [lineage-harvest](lineage-harvest/README.md) | How does memo gate cross-repo recurring signals into pattern-lineage candidates without becoming federation authority, proof, KAG promoter, ToS canon, stats judge, runtime watchtower, or source owner? | landed memo route | [PARTS](lineage-harvest/PARTS.md), [OWNER_MAP](lineage-harvest/OWNER_MAP.md), [PROVENANCE](lineage-harvest/PROVENANCE.md) | federation approval, proof verdict, KAG promotion, ToS canon, stats certification, runtime execution, assistant self-rewrite, or owner adoption |
-| [questbook](questbook/README.md) | How do memo-facing obligations stay public, lane-first, and generated from source without becoming roadmap, proof, runtime, route, playbook, role, or owner-acceptance authority? | landed memo route | [PARTS](questbook/PARTS.md), [OWNER_MAP](questbook/OWNER_MAP.md), [PROVENANCE](questbook/PROVENANCE.md) | source quest ownership, proof verdict, runtime state, route dispatch, playbook choreography, role authority, hidden memory, or owner acceptance |
-| [writeback](writeback/README.md) | How does a memory-layer writeback target, intake, chronicle, revision, rollback, or growth return stay source-linked and bounded? | landed memo route | [PARTS](writeback/PARTS.md), [OWNER_MAP](writeback/OWNER_MAP.md), [PROVENANCE](writeback/PROVENANCE.md) | live ledger, hidden worker, runtime storage, automatic promotion, or owner acceptance |
-| [retention](retention/README.md) | How does retention evidence, watch, marker, or outcome stay reviewable without executing retention? | landed memo route | [PARTS](retention/PARTS.md), [OWNER_MAP](retention/OWNER_MAP.md), [PROVENANCE](retention/PROVENANCE.md) | retention execution, private trace retention, scheduler authority, or runtime policy |
+- [antifragility](antifragility/README.md): reviewed failure lessons and
+  recovery patterns stay recallable without becoming proof, route authority,
+  stats truth, or runtime repair. Start with [PARTS](antifragility/PARTS.md),
+  [OWNER_MAP](antifragility/OWNER_MAP.md), and
+  [PROVENANCE](antifragility/PROVENANCE.md). Must not claim proof verdict,
+  current health, route sovereignty, rollback authorization, stats truth, or
+  runtime repair.
+- [agon](agon/README.md): Agon candidate memory, evidence, bridge, retention,
+  rank, and landing posture stay reviewable without becoming the source Agon
+  mechanic. Start with [PARTS](agon/PARTS.md), [OWNER_MAP](agon/OWNER_MAP.md),
+  and [PROVENANCE](agon/PROVENANCE.md). Must not claim trial execution, verdict
+  proof, scar or rank mutation, KAG promotion, Sophian canon, or runtime
+  retention.
+- [titan](titan/README.md): Titan recall, remembrance, audit, digest, closeout,
+  personality, and swarm memory posture stay source-linked without granting
+  authority. Start with [PARTS](titan/PARTS.md),
+  [OWNER_MAP](titan/OWNER_MAP.md), and [PROVENANCE](titan/PROVENANCE.md). Must
+  not claim durable write, role right, proof verdict, private retention, or
+  owner-repo doctrine.
+- [adoption](adoption/README.md): a memory candidate becomes reviewable for
+  adoption without becoming proof or automatic promotion. Start with
+  [PARTS](adoption/PARTS.md), [OWNER_MAP](adoption/OWNER_MAP.md), and
+  [PROVENANCE](adoption/PROVENANCE.md). Must not claim adopted truth, proof
+  verdict, route sovereignty, or runtime write.
+- [governance](governance/README.md): governance, federation, installation,
+  certification, precedent, and stay-order authority boundaries stay recallable
+  without making decisions. Start with [PARTS](governance/PARTS.md),
+  [OWNER_MAP](governance/OWNER_MAP.md), and
+  [PROVENANCE](governance/PROVENANCE.md). Must not claim council authority,
+  proof verdict, release approval, Tree-of-Sophia write, source-owner consent,
+  or runtime governance.
+- [shape-guard](shape-guard/README.md): memo prunes memory-object and
+  mechanic-shape inflation before new recall forms pretend to be proof, health,
+  or action authority. Start with [PARTS](shape-guard/PARTS.md),
+  [OWNER_MAP](shape-guard/OWNER_MAP.md), and
+  [PROVENANCE](shape-guard/PROVENANCE.md). Must not claim proof verdict,
+  current health, deletion execution, role/action authority, KAG promotion,
+  runtime cleanup, or owner adoption.
+- [checkpoint](checkpoint/README.md): memo preserves checkpoint gates, carry
+  packets, approval and health records, and checkpoint-to-memory mappings
+  without becoming executor, runtime store, role authority, proof, or route
+  ledger. Start with [PARTS](checkpoint/PARTS.md),
+  [OWNER_MAP](checkpoint/OWNER_MAP.md), and
+  [PROVENANCE](checkpoint/PROVENANCE.md). Must not claim checkpoint execution,
+  runtime state, role rights, route dispatch, proof verdict, scenario
+  acceptance, source-owner acceptance, or checkpoint-only object family.
+- [readiness-boundary](readiness-boundary/README.md): memo gates high-pressure
+  memory readiness pressure into existing memory objects and owner routes
+  without creating proof, runtime retention, graph substrate, route dispatch,
+  role authority, live ledger, or a new object family. Start with
+  [PARTS](readiness-boundary/PARTS.md),
+  [OWNER_MAP](readiness-boundary/OWNER_MAP.md), and
+  [PROVENANCE](readiness-boundary/PROVENANCE.md). Must not claim proof verdict,
+  runtime retention, graph substrate truth, route dispatch, role authority,
+  live ledger, owner acceptance, or readiness-only object family.
+- [consumer-handoff](consumer-handoff/README.md): memo publishes bounded
+  consumer handoff surfaces without absorbing role, playbook, proof, graph,
+  source, routing, or runtime authority. Start with
+  [PARTS](consumer-handoff/PARTS.md),
+  [OWNER_MAP](consumer-handoff/OWNER_MAP.md), and
+  [PROVENANCE](consumer-handoff/PROVENANCE.md). Must not claim actor rights,
+  scenario choreography, eval verdicts, graph truth, ToS source meaning, route
+  sovereignty, or runtime execution.
+- [operational-gate](operational-gate/README.md): memo admits operational
+  incidents, service revisions, and post-release boundaries into recall without
+  becoming release, runtime, proof, role, route, or stats authority. Start with
+  [PARTS](operational-gate/PARTS.md),
+  [OWNER_MAP](operational-gate/OWNER_MAP.md), and
+  [PROVENANCE](operational-gate/PROVENANCE.md). Must not claim release
+  approval, current health, incident root cause, runtime remediation, eval
+  proof, role rights, route dispatch, stats truth, or owner acceptance.
+- [recurrence-support](recurrence-support/README.md): memo preserves relaunch
+  anchors, witness trace exports, and reviewed closeout recall landings without
+  becoming router, runtime, role policy, proof, or a second route ledger. Start
+  with [PARTS](recurrence-support/PARTS.md),
+  [OWNER_MAP](recurrence-support/OWNER_MAP.md), and
+  [PROVENANCE](recurrence-support/PROVENANCE.md). Must not claim dispatch
+  authority, runtime retry, role rights, proof verdict, scenario choreography,
+  `return_memory`, or owner acceptance.
+- [lineage-harvest](lineage-harvest/README.md): memo gates cross-repo recurring
+  signals into pattern-lineage candidates without becoming federation
+  authority, proof, KAG promoter, ToS canon, stats judge, runtime watchtower,
+  or source owner. Start with [PARTS](lineage-harvest/PARTS.md),
+  [OWNER_MAP](lineage-harvest/OWNER_MAP.md), and
+  [PROVENANCE](lineage-harvest/PROVENANCE.md). Must not claim federation
+  approval, proof verdict, KAG promotion, ToS canon, stats certification,
+  runtime execution, assistant self-rewrite, or owner adoption.
+- [questbook](questbook/README.md): memo-facing obligations stay public,
+  lane-first, and generated from source without becoming roadmap, proof,
+  runtime, route, playbook, role, or owner-acceptance authority. Start with
+  [PARTS](questbook/PARTS.md), [OWNER_MAP](questbook/OWNER_MAP.md), and
+  [PROVENANCE](questbook/PROVENANCE.md). Must not claim source quest
+  ownership, proof verdict, runtime state, route dispatch, playbook
+  choreography, role authority, hidden memory, or owner acceptance.
+- [writeback](writeback/README.md): a memory-layer writeback target, intake,
+  chronicle, revision, rollback, or growth return stays source-linked and
+  bounded. Start with [PARTS](writeback/PARTS.md),
+  [OWNER_MAP](writeback/OWNER_MAP.md), and
+  [PROVENANCE](writeback/PROVENANCE.md). Must not claim live ledger, hidden
+  worker, runtime storage, automatic promotion, or owner acceptance.
+- [retention](retention/README.md): retention evidence, watch, marker, or
+  outcome stays reviewable without executing retention. Start with
+  [PARTS](retention/PARTS.md), [OWNER_MAP](retention/OWNER_MAP.md), and
+  [PROVENANCE](retention/PROVENANCE.md). Must not claim retention execution,
+  private trace retention, scheduler authority, or runtime policy.
 
 ## Package Route Standard
 
