@@ -37,12 +37,14 @@ TEST_FAMILY_ROLES = {
     "agent-companion-regression",
     "cross-mechanic-contract-regression",
     "downstream-contract-regression",
+    "local-memo-port-regression",
     "mechanic-contract-regression",
     "memory-object-regression",
     "route-and-topology-regression",
 }
 SCHEMA_FAMILY_ROLES = {
     "generated-surface-contract",
+    "local-memo-port-contract",
     "memory-object-contract",
     "recall-posture-contract",
     "support-object-contract",
@@ -51,12 +53,14 @@ EXAMPLE_FAMILY_ROLES = {
     "base-memory-object-example",
     "continuity-relay-example",
     "lifecycle-audit-example",
+    "local-memo-port-example",
     "phase-alpha-thread-example",
     "recall-contract-example",
     "support-contract-example",
     "surface-manifest-example",
 }
 CONFIG_FAMILY_ROLES = {
+    "local-memo-port-vocabulary",
     "mechanic-index-source-map",
     "route-card-source-map",
     "technical-district-source-map",

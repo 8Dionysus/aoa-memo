@@ -786,6 +786,15 @@
       ]
     },
     {
+      "path": "config/memory-ports/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "config/memory-ports/",
+        "indexing terms",
+        "build_memo_port_vocabulary.py"
+      ]
+    },
+    {
       "path": "config/root-topology/AGENTS.md",
       "min_lines": 15,
       "required_snippets": [
@@ -849,6 +858,15 @@
       ]
     },
     {
+      "path": "schemas/memory-ports/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "schemas/memory-ports/",
+        "local `memo/` port contracts",
+        "validate_local_memo_port.py"
+      ]
+    },
+    {
       "path": "schemas/support-objects/AGENTS.md",
       "min_lines": 15,
       "required_snippets": [
@@ -900,6 +918,15 @@
         "examples/recall/",
         "recall contract examples",
         "generated/memory/"
+      ]
+    },
+    {
+      "path": "examples/memory-ports/AGENTS.md",
+      "min_lines": 15,
+      "required_snippets": [
+        "examples/memory-ports/",
+        "example port",
+        "build_local_memo_port_index.py"
       ]
     },
     {

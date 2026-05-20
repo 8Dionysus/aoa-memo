@@ -21,7 +21,7 @@ the linked owner surface instead of expanding this page.
 | Agent-facing guidance form | [DESIGN.AGENTS](DESIGN.AGENTS.md) |
 | Public memory canon map | [MEMORY_INDEX](MEMORY_INDEX.md) |
 | Memory model, operation cycle, and object posture | [MEMORY_MODEL](docs/memory/MEMORY_MODEL.md), [MEMORY_OPERATION_CYCLE](docs/memory/MEMORY_OPERATION_CYCLE.md), [MEMORY_OBJECT_PROFILES](docs/memory/MEMORY_OBJECT_PROFILES.md) |
-| Living memory topology and local ports | [LIVING_MEMORY_TOPOLOGY](docs/memory/LIVING_MEMORY_TOPOLOGY.md), [LOCAL_MEMO_PORT_STANDARD](docs/memory/LOCAL_MEMO_PORT_STANDARD.md) |
+| Living memory topology and local ports | [LIVING_MEMORY_TOPOLOGY](docs/memory/LIVING_MEMORY_TOPOLOGY.md), [LOCAL_MEMO_PORT_STANDARD](docs/memory/LOCAL_MEMO_PORT_STANDARD.md), [MEMO_PORT_INDEXING_VOCABULARY](docs/memory/MEMO_PORT_INDEXING_VOCABULARY.md) |
 | Trust, temperature, lifecycle, operation modes, and provenance posture | [MEMORY_TRUST_POSTURE](docs/posture/MEMORY_TRUST_POSTURE.md), [MEMORY_TEMPERATURES](docs/posture/MEMORY_TEMPERATURES.md), [LIFECYCLE](docs/posture/LIFECYCLE.md), [MEMORY_OPERATION_MODES](docs/posture/MEMORY_OPERATION_MODES.md), [PROVENANCE_THREADS](docs/posture/PROVENANCE_THREADS.md) |
 | Root and docs placement law | [ROOT_SURFACE_LAW](docs/root/ROOT_SURFACE_LAW.md) |
 | Documentation map | [docs](docs/README.md) |
@@ -45,7 +45,7 @@ Read only the surface that matches the job.
 | Memory operation cycle | [MEMORY_OPERATION_CYCLE](docs/memory/MEMORY_OPERATION_CYCLE.md) |
 | Write-path safety | [MEMORY_WRITE_PATH_GUARDRAILS](docs/boundaries/MEMORY_WRITE_PATH_GUARDRAILS.md), then [operational gate guardrails](mechanics/operational-gate/docs/MEMORY_WRITE_PATH_GUARDRAILS.md) |
 | Operation modes | [MEMORY_OPERATION_MODES](docs/posture/MEMORY_OPERATION_MODES.md), then [operation mode example](examples/recall/memory_operation_modes.example.json) |
-| Local project memory ports | [LIVING_MEMORY_TOPOLOGY](docs/memory/LIVING_MEMORY_TOPOLOGY.md), then [LOCAL_MEMO_PORT_STANDARD](docs/memory/LOCAL_MEMO_PORT_STANDARD.md) |
+| Local project memory ports | [LIVING_MEMORY_TOPOLOGY](docs/memory/LIVING_MEMORY_TOPOLOGY.md), then [LOCAL_MEMO_PORT_STANDARD](docs/memory/LOCAL_MEMO_PORT_STANDARD.md) and [MEMO_PORT_INDEXING_VOCABULARY](docs/memory/MEMO_PORT_INDEXING_VOCABULARY.md) |
 | Memory readiness pressure | [MEMORY_READINESS_BOUNDARY](mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md) |
 | Memo mechanic work | [mechanics](mechanics/README.md), then the nearest mechanic `AGENTS.md` |
 | Consumer handoff | [consumer-handoff](mechanics/consumer-handoff/README.md), [PLAYBOOK_MEMORY_SCOPES](mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md), [KAG_SOURCE_EXPORT](mechanics/consumer-handoff/docs/KAG_SOURCE_EXPORT.md), or [MEMORY_EVAL_GUARDRAILS](mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md) |
@@ -96,6 +96,7 @@ The released `v0.2.3` contour is routed through these compact entrypoints:
   [operation cycle](docs/memory/MEMORY_OPERATION_CYCLE.md),
   [living memory topology](docs/memory/LIVING_MEMORY_TOPOLOGY.md),
   [local memo port standard](docs/memory/LOCAL_MEMO_PORT_STANDARD.md),
+  [memo port indexing vocabulary](docs/memory/MEMO_PORT_INDEXING_VOCABULARY.md),
   [write-path boundary](docs/boundaries/MEMORY_WRITE_PATH_GUARDRAILS.md),
   [write-path guard mechanic](mechanics/operational-gate/docs/MEMORY_WRITE_PATH_GUARDRAILS.md), and
   [consolidation/forgetting](mechanics/retention/docs/CONSOLIDATION_FORGETTING_OPERATION.md).

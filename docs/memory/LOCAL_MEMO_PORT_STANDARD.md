@@ -15,11 +15,22 @@ or durable memory moves to `aoa-memo` through reviewed intake.
 memo/
   AGENTS.md
   README.md
+  PORT.yaml
+  INDEX.md
+  index.min.json
   candidates/
   receipts/
   exports/
   local/
 ```
+
+`PORT.yaml` stores the local port contract: owner, stronger memory owner,
+default operation mode, allowed routes, directories, validators, and optional
+local vocabulary extensions.
+
+`INDEX.md` and `index.min.json` are generated read models over the local port.
+They summarize counts, open items, routes, review states, and vocabulary use.
+They are not authored memory.
 
 `candidates/` stores proposed memory claims or intake packets.
 `receipts/` stores validation, accept, reject, or forward traces.
@@ -42,6 +53,19 @@ Each local port should make these fields easy to find:
 - export or intake packet refs
 - target `aoa-memo` route when promotion is requested
 
+The schema-backed port surfaces are:
+
+- `schemas/memory-ports/local_memo_port.schema.json`
+- `schemas/memory-ports/local_memo_candidate.schema.json`
+- `schemas/memory-ports/local_memo_receipt.schema.json`
+- `schemas/memory-ports/local_memo_export.schema.json`
+- `schemas/memory-ports/local_memo_port_index.schema.json`
+
+The controlled indexing vocabulary is:
+
+- `docs/memory/MEMO_PORT_INDEXING_VOCABULARY.md`
+- `config/memory-ports/indexing_vocabulary.json`
+
 ## Bridge To `aoa-memo`
 
 Local memory enters `aoa-memo` as:
@@ -54,3 +78,25 @@ Local memory enters `aoa-memo` as:
 
 The port may keep local detail after promotion. `aoa-memo` keeps the durable
 cross-system object and its reviewable recall route.
+
+## Packet-First Rule
+
+Local port state should be packet-first. Markdown companions may explain a
+candidate for humans, but the reviewable state should live in JSON or YAML
+packets so validators and MCP tools can read it.
+
+Recommended file names:
+
+```text
+candidates/{stamp}.{slug}.candidate.json
+receipts/{stamp}.{slug}.validation-receipt.json
+receipts/{stamp}.{slug}.review-receipt.json
+exports/{stamp}.{slug}.aoa-memo-intake.json
+local/{stamp}.{slug}.local.json
+```
+
+The useful invariant is still the route:
+
+```text
+candidate -> receipt -> export -> reviewed aoa-memo route
+```

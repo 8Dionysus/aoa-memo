@@ -34,6 +34,8 @@ Keep the example families legible:
 - core memory-object examples such as `anchor.example.json`, `state_capsule.example.json`, `episode.example.json`, `claim.example.json`, and `pattern.example.json`
 - lifecycle and audit examples such as `claim.current-entrypoint.example.json`, `claim.superseded.example.json`, `claim.retracted.example.json`, `audit_event.supersession.example.json`, `audit_event.retraction.example.json`, and `provenance_thread.lifecycle.example.json`
 - recall contract examples such as `recall_contract.working.json`, `recall_contract.semantic.json`, `recall_contract.lineage.json`, `recall_contract.router.semantic.json`, `recall_contract.router.lineage.json`, `recall_contract.object.working.json`, `recall_contract.object.semantic.json`, and `recall_contract.object.lineage.json`
+- local memo port examples under `examples/memory-ports/` for packet-first
+  candidate, receipt, export, and generated local index contracts
 - the curated object-surface manifest `memory_object_surface_manifest.json`
 
 Not every file here is a memory object.
