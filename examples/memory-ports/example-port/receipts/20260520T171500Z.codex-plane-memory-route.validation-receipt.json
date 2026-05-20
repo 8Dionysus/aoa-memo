@@ -1,0 +1,19 @@
+{
+  "schema": "aoa_local_memo_receipt_v1",
+  "id": "receipt:example-repo:20260520T171500Z:codex-plane-memory-route",
+  "repo": "example-repo",
+  "candidate_ref": "candidates/20260520T171200Z.codex-plane-memory-route.candidate.json",
+  "result": "validated",
+  "route": "reviewed_intake",
+  "checks": [
+    "schema",
+    "source_refs",
+    "evidence_refs",
+    "guardrails",
+    "operation_mode"
+  ],
+  "errors": [],
+  "created_at": "2026-05-20T17:15:00Z",
+  "reviewed_by": "aoa-memo:local-port-example"
+}
+

@@ -12,8 +12,9 @@ narrative/core support-object contract.
 
 Source truth lives in `MEMORY_MODEL.md`, `MEMORY_OBJECT_PROFILES.md`,
 `MEMORY_OPERATION_CYCLE.md`, `LIVING_MEMORY_TOPOLOGY.md`,
-`LOCAL_MEMO_PORT_STANDARD.md`, and `NARRATIVE_CORE_CONTRACT.md`. Generated
-memory companions must route back here instead of authoring doctrine.
+`LOCAL_MEMO_PORT_STANDARD.md`, `MEMO_PORT_INDEXING_VOCABULARY.md`, and
+`NARRATIVE_CORE_CONTRACT.md`. Generated memory companions must route back here
+instead of authoring doctrine.
 
 ## Route
 
@@ -21,7 +22,8 @@ memory companions must route back here instead of authoring doctrine.
 - Across: `docs/posture/` for trust, lifecycle, temperature, operation modes,
   and provenance.
 - Downstream: `schemas/memory-objects/`, `schemas/support-objects/`,
-  `examples/memory-objects/`, `examples/recall/`, and `generated/memory/`.
+  `schemas/memory-ports/`, `examples/memory-objects/`,
+  `examples/memory-ports/`, `examples/recall/`, and `generated/memory/`.
 
 ## Validate
 
@@ -29,4 +31,5 @@ memory companions must route back here instead of authoring doctrine.
 python scripts/memory/validate_memo.py
 python scripts/memory/validate_memory_operations.py
 python scripts/memory/validate_memory_surfaces.py
+python scripts/memory/validate_local_memo_port.py --path examples/memory-ports/example-port
 ```

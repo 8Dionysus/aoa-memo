@@ -1,0 +1,24 @@
+{
+  "schema": "aoa_local_memo_export_v1",
+  "id": "export:example-repo:20260520T172000Z:codex-plane-memory-route",
+  "repo": "example-repo",
+  "target_owner": "aoa-memo",
+  "target_route": "reviewed_intake",
+  "candidate_refs": [
+    "candidates/20260520T171200Z.codex-plane-memory-route.candidate.json"
+  ],
+  "receipt_refs": [
+    "receipts/20260520T171500Z.codex-plane-memory-route.validation-receipt.json"
+  ],
+  "source_refs": [
+    "docs/memory/LOCAL_MEMO_PORT_STANDARD.md",
+    "docs/memory/MEMO_PORT_INDEXING_VOCABULARY.md"
+  ],
+  "evidence_refs": [
+    "examples/memory-ports/example-port/PORT.yaml"
+  ],
+  "allowed_result": "candidate_only",
+  "created_at": "2026-05-20T17:20:00Z",
+  "notes": "Example export shows reviewed-intake routing without durable landing."
+}
+

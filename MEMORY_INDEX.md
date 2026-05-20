@@ -30,6 +30,7 @@ Use the stronger surface when the question is narrower:
 - per-kind posture: [MEMORY_OBJECT_PROFILES](docs/memory/MEMORY_OBJECT_PROFILES.md)
 - living topology: [LIVING_MEMORY_TOPOLOGY](docs/memory/LIVING_MEMORY_TOPOLOGY.md)
 - local memo ports: [LOCAL_MEMO_PORT_STANDARD](docs/memory/LOCAL_MEMO_PORT_STANDARD.md)
+- memo port indexing vocabulary: [MEMO_PORT_INDEXING_VOCABULARY](docs/memory/MEMO_PORT_INDEXING_VOCABULARY.md)
 - trust posture: [MEMORY_TRUST_POSTURE](docs/posture/MEMORY_TRUST_POSTURE.md)
 - operation modes: [MEMORY_OPERATION_MODES](docs/posture/MEMORY_OPERATION_MODES.md)
 - temperature and freshness: [MEMORY_TEMPERATURES](docs/posture/MEMORY_TEMPERATURES.md)
@@ -114,7 +115,7 @@ freshness by itself.
 |---|---|
 | Repository authority and boundaries | [CHARTER](CHARTER.md), [BOUNDARIES](docs/boundaries/BOUNDARIES.md) |
 | Memory model, object canon, and operation cycle | [MEMORY_MODEL](docs/memory/MEMORY_MODEL.md), [MEMORY_OPERATION_CYCLE](docs/memory/MEMORY_OPERATION_CYCLE.md), [MEMORY_OBJECT_PROFILES](docs/memory/MEMORY_OBJECT_PROFILES.md) |
-| Living topology and local memo ports | [LIVING_MEMORY_TOPOLOGY](docs/memory/LIVING_MEMORY_TOPOLOGY.md), [LOCAL_MEMO_PORT_STANDARD](docs/memory/LOCAL_MEMO_PORT_STANDARD.md) |
+| Living topology and local memo ports | [LIVING_MEMORY_TOPOLOGY](docs/memory/LIVING_MEMORY_TOPOLOGY.md), [LOCAL_MEMO_PORT_STANDARD](docs/memory/LOCAL_MEMO_PORT_STANDARD.md), [MEMO_PORT_INDEXING_VOCABULARY](docs/memory/MEMO_PORT_INDEXING_VOCABULARY.md) |
 | Trust, lifecycle, temperature, operation modes, and provenance | [MEMORY_TRUST_POSTURE](docs/posture/MEMORY_TRUST_POSTURE.md), [LIFECYCLE](docs/posture/LIFECYCLE.md), [MEMORY_TEMPERATURES](docs/posture/MEMORY_TEMPERATURES.md), [MEMORY_OPERATION_MODES](docs/posture/MEMORY_OPERATION_MODES.md), [PROVENANCE_THREADS](docs/posture/PROVENANCE_THREADS.md) |
 | Operational boundary and write-path guardrails | [OPERATIONAL_BOUNDARY](docs/boundaries/OPERATIONAL_BOUNDARY.md), [MEMORY_WRITE_PATH_GUARDRAILS](docs/boundaries/MEMORY_WRITE_PATH_GUARDRAILS.md), [operational gate write path](mechanics/operational-gate/docs/MEMORY_WRITE_PATH_GUARDRAILS.md) |
 | Memo mechanics | [mechanics](mechanics/README.md) |
@@ -132,6 +133,7 @@ freshness by itself.
 | [memory_object_catalog.min.json](generated/memory-objects/memory_object_catalog.min.json) | compact object-facing inspect surface |
 | [memory_object_capsules.json](generated/memory-objects/memory_object_capsules.json) | capsule hydration surface for object recall |
 | [memory_object_sections.full.json](generated/memory-objects/memory_object_sections.full.json) | expanded object-facing sections |
+| [memo_port_vocabulary.min.json](generated/memory/memo_port_vocabulary.min.json) | compact vocabulary for local memo port packet indexing |
 | [memo_mechanics.min.json](generated/mechanics/memo_mechanics.min.json) | compact mechanic package index |
 | [memo_mechanic_readiness.min.json](generated/mechanics/memo_mechanic_readiness.min.json) | OS Abyss readiness matrix for memo mechanics |
 | [quest_catalog.min.json](generated/quests/quest_catalog.min.json) | generated quest catalog projection |

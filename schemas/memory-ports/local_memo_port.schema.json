@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://8dionysus.github.io/aoa-memo/schemas/memory-ports/local_memo_port.schema.json",
+  "title": "AoA local memo port",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "repo",
+    "owner",
+    "stronger_memory_owner",
+    "default_mode",
+    "port_scope",
+    "allowed_routes",
+    "candidate_dir",
+    "receipt_dir",
+    "export_dir",
+    "local_dir",
+    "validators",
+    "return_receipts"
+  ],
+  "properties": {
+    "schema": {
+      "const": "aoa_local_memo_port_v1"
+    },
+    "repo": {
+      "type": "string",
+      "minLength": 1
+    },
+    "owner": {
+      "type": "string",
+      "minLength": 1
+    },
+    "stronger_memory_owner": {
+      "const": "aoa-memo"
+    },
+    "default_mode": {
+      "enum": [
+        "read_only",
+        "write_candidate_only",
+        "generate_without_read",
+        "read_write_under_review",
+        "frozen_read_mostly"
+      ]
+    },
+    "port_scope": {
+      "enum": [
+        "session",
+        "repo",
+        "workspace",
+        "project",
+        "ecosystem",
+        "host",
+        "agent"
+      ]
+    },
+    "allowed_routes": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "local_only",
+          "reviewed_intake",
+          "owner_handoff",
+          "quarantine",
+          "archive"
+        ]
+      }
+    },
+    "candidate_dir": {
+      "const": "candidates"
+    },
+    "receipt_dir": {
+      "const": "receipts"
+    },
+    "export_dir": {
+      "const": "exports"
+    },
+    "local_dir": {
+      "const": "local"
+    },
+    "validators": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "return_receipts": {
+      "type": "boolean"
+    },
+    "bridge_targets": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "privacy_posture": {
+      "type": "string",
+      "minLength": 1
+    },
+    "local_terms": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}
+

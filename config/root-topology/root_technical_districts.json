@@ -7,6 +7,7 @@
       "root_role": "repo-wide source maps for validators and generated companions",
       "allowed_files": [
         "config/agents/agents_mesh.json",
+        "config/memory-ports/indexing_vocabulary.json",
         "config/mechanics/memo_mechanics.json",
         "config/root-topology/root_technical_districts.json"
       ]
@@ -43,6 +44,13 @@
         "examples/phase-alpha/episode.phase-alpha-validation-remediation-rerun.example.json",
         "examples/phase-alpha/episode.phase-alpha-validation-remediation.example.json",
         "examples/generated-surfaces/memory_object_surface_manifest.json",
+        "examples/memory-ports/example-port/INDEX.md",
+        "examples/memory-ports/example-port/PORT.yaml",
+        "examples/memory-ports/example-port/candidates/20260520T171200Z.codex-plane-memory-route.candidate.json",
+        "examples/memory-ports/example-port/exports/20260520T172000Z.codex-plane-memory-route.aoa-memo-intake.json",
+        "examples/memory-ports/example-port/index.min.json",
+        "examples/memory-ports/example-port/local/README.md",
+        "examples/memory-ports/example-port/receipts/20260520T171500Z.codex-plane-memory-route.validation-receipt.json",
         "examples/memory-objects/pattern.example.json",
         "examples/phase-alpha/pattern.phase-alpha-remediation-recurrence.example.json",
         "examples/support-objects/provenance_thread.example.json",
@@ -77,6 +85,7 @@
         "generated/mechanics/memo_mechanic_readiness.min.json",
         "generated/mechanics/memo_mechanics.min.json",
         "generated/memory/memo_registry.min.json",
+        "generated/memory/memo_port_vocabulary.min.json",
         "generated/memory/memory_capsules.json",
         "generated/memory/memory_catalog.json",
         "generated/memory/memory_catalog.min.json",
@@ -108,6 +117,11 @@
         "schemas/memory-objects/episode.schema.json",
         "schemas/recall-posture/lifecycle_posture.schema.json",
         "schemas/recall-posture/memory_operation_mode.schema.json",
+        "schemas/memory-ports/local_memo_candidate.schema.json",
+        "schemas/memory-ports/local_memo_export.schema.json",
+        "schemas/memory-ports/local_memo_port.schema.json",
+        "schemas/memory-ports/local_memo_port_index.schema.json",
+        "schemas/memory-ports/local_memo_receipt.schema.json",
         "schemas/memory-objects/memory_object.schema.json",
         "schemas/generated-surfaces/memory_object_capsules.schema.json",
         "schemas/generated-surfaces/memory_object_catalog.schema.json",
@@ -133,7 +147,10 @@
         "scripts/mechanics/build_memo_mechanic_readiness.py",
         "scripts/mechanics/build_memo_mechanics_index.py",
         "scripts/root-topology/build_root_technical_districts_index.py",
+        "scripts/memory/build_local_memo_port_index.py",
+        "scripts/memory/build_memo_port_vocabulary.py",
         "scripts/memory/generate_memory_object_surfaces.py",
+        "scripts/memory/local_memo_port_common.py",
         "scripts/mechanics/mechanic_artifact_inventory_common.py",
         "scripts/mechanics/memo_mechanic_cards_common.py",
         "scripts/mechanics/memo_mechanic_landing_logs_common.py",
@@ -146,6 +163,7 @@
         "scripts/agents/validate_agents_mesh_index.py",
         "scripts/root-topology/validate_docs_districts.py",
         "scripts/memory/validate_lifecycle_audit_examples.py",
+        "scripts/memory/validate_local_memo_port.py",
         "scripts/mechanics/validate_mechanic_artifact_inventory.py",
         "scripts/mechanics/validate_mechanic_artifact_topology.py",
         "scripts/memory/validate_memo.py",
@@ -181,6 +199,7 @@
         "tests/mechanics/test_memo_mechanic_parts.py",
         "tests/mechanics/test_memo_mechanic_readiness.py",
         "tests/mechanics/test_memo_mechanics.py",
+        "tests/memory/test_local_memo_port.py",
         "tests/memory/test_memo_validators.py",
         "tests/memory/test_memory_operations.py",
         "tests/memory/test_phase_alpha_provenance_thread.py",
@@ -204,6 +223,24 @@
       ],
       "validators": [
         "scripts/memory/validate_memo.py"
+      ]
+    },
+    {
+      "id": "memo_port_vocabulary",
+      "source_kind": "generator-backed",
+      "owner_surface": "docs/memory/MEMO_PORT_INDEXING_VOCABULARY.md",
+      "source_refs": [
+        "config/memory-ports/indexing_vocabulary.json",
+        "docs/memory/MEMO_PORT_INDEXING_VOCABULARY.md"
+      ],
+      "outputs": [
+        "generated/memory/memo_port_vocabulary.min.json"
+      ],
+      "builders": [
+        "scripts/memory/build_memo_port_vocabulary.py"
+      ],
+      "validators": [
+        "scripts/memory/build_memo_port_vocabulary.py"
       ]
     },
     {
@@ -447,8 +484,12 @@
       "owner_surface": "scripts/AGENTS.md",
       "scripts": [
         "scripts/memory/generate_memory_object_surfaces.py",
+        "scripts/memory/build_local_memo_port_index.py",
+        "scripts/memory/build_memo_port_vocabulary.py",
         "scripts/memory/validate_lifecycle_audit_examples.py",
+        "scripts/memory/local_memo_port_common.py",
         "scripts/memory/validate_memo.py",
+        "scripts/memory/validate_local_memo_port.py",
         "scripts/memory/validate_memory_operations.py",
         "scripts/memory/validate_memory_object_surfaces.py",
         "scripts/memory/validate_memory_surfaces.py",
@@ -456,6 +497,7 @@
       ],
       "covered_by": [
         "scripts/release/release_check.py",
+        "tests/memory/test_local_memo_port.py",
         "tests/memory/test_memo_validators.py",
         "tests/memory/test_memory_operations.py"
       ]
@@ -623,6 +665,21 @@
       ]
     },
     {
+      "id": "local_memo_port_contracts",
+      "role": "local-memo-port-regression",
+      "owner_surface": "docs/memory/LOCAL_MEMO_PORT_STANDARD.md",
+      "tests": [
+        "tests/memory/test_local_memo_port.py"
+      ],
+      "protects": [
+        "config/memory-ports/indexing_vocabulary.json",
+        "schemas/memory-ports/local_memo_port.schema.json",
+        "examples/memory-ports/example-port/PORT.yaml",
+        "scripts/memory/validate_local_memo_port.py",
+        "scripts/memory/build_local_memo_port_index.py"
+      ]
+    },
+    {
       "id": "cross_mechanic_operational_contracts",
       "role": "cross-mechanic-contract-regression",
       "owner_surface": "mechanics/ARTIFACT_TOPOLOGY.md",
@@ -720,6 +777,26 @@
         "scripts/memory/validate_memo.py",
         "scripts/memory/validate_memory_operations.py",
         "scripts/memory/validate_lifecycle_audit_examples.py"
+      ]
+    },
+    {
+      "id": "local_memo_port_contracts",
+      "role": "local-memo-port-contract",
+      "owner_surface": "docs/memory/LOCAL_MEMO_PORT_STANDARD.md",
+      "schemas": [
+        "schemas/memory-ports/local_memo_candidate.schema.json",
+        "schemas/memory-ports/local_memo_export.schema.json",
+        "schemas/memory-ports/local_memo_port.schema.json",
+        "schemas/memory-ports/local_memo_port_index.schema.json",
+        "schemas/memory-ports/local_memo_receipt.schema.json"
+      ],
+      "source_refs": [
+        "docs/memory/LOCAL_MEMO_PORT_STANDARD.md",
+        "docs/memory/MEMO_PORT_INDEXING_VOCABULARY.md",
+        "examples/memory-ports/example-port/PORT.yaml"
+      ],
+      "validators": [
+        "scripts/memory/validate_local_memo_port.py"
       ]
     },
     {
@@ -875,6 +952,29 @@
       ]
     },
     {
+      "id": "local_memo_port_examples",
+      "role": "local-memo-port-example",
+      "owner_surface": "docs/memory/LOCAL_MEMO_PORT_STANDARD.md",
+      "examples": [
+        "examples/memory-ports/example-port/INDEX.md",
+        "examples/memory-ports/example-port/PORT.yaml",
+        "examples/memory-ports/example-port/candidates/20260520T171200Z.codex-plane-memory-route.candidate.json",
+        "examples/memory-ports/example-port/exports/20260520T172000Z.codex-plane-memory-route.aoa-memo-intake.json",
+        "examples/memory-ports/example-port/index.min.json",
+        "examples/memory-ports/example-port/local/README.md",
+        "examples/memory-ports/example-port/receipts/20260520T171500Z.codex-plane-memory-route.validation-receipt.json"
+      ],
+      "source_refs": [
+        "docs/memory/LOCAL_MEMO_PORT_STANDARD.md",
+        "schemas/memory-ports/local_memo_port.schema.json",
+        "scripts/memory/validate_local_memo_port.py"
+      ],
+      "validators": [
+        "scripts/memory/validate_local_memo_port.py",
+        "scripts/memory/build_local_memo_port_index.py"
+      ]
+    },
+    {
       "id": "support_contract_examples",
       "role": "support-contract-example",
       "owner_surface": "docs/memory/NARRATIVE_CORE_CONTRACT.md",
@@ -924,6 +1024,22 @@
         "scripts/agents/validate_agents_mesh.py",
         "scripts/agents/build_agents_mesh_index.py",
         "scripts/agents/validate_agents_mesh_index.py"
+      ]
+    },
+    {
+      "id": "memory_port_vocabulary",
+      "role": "local-memo-port-vocabulary",
+      "owner_surface": "docs/memory/MEMO_PORT_INDEXING_VOCABULARY.md",
+      "configs": [
+        "config/memory-ports/indexing_vocabulary.json"
+      ],
+      "source_refs": [
+        "docs/memory/MEMO_PORT_INDEXING_VOCABULARY.md",
+        "docs/memory/LOCAL_MEMO_PORT_STANDARD.md"
+      ],
+      "validators": [
+        "scripts/memory/build_memo_port_vocabulary.py",
+        "scripts/memory/validate_local_memo_port.py"
       ]
     },
     {

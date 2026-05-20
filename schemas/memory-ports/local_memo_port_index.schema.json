@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://8dionysus.github.io/aoa-memo/schemas/memory-ports/local_memo_port_index.schema.json",
+  "title": "AoA local memo port index",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "repo",
+    "port",
+    "default_mode",
+    "counts",
+    "by_kind",
+    "by_family",
+    "by_route",
+    "open_items",
+    "generated_at",
+    "source_refs"
+  ],
+  "properties": {
+    "schema": {
+      "const": "aoa_local_memo_port_index_v1"
+    },
+    "repo": {
+      "type": "string",
+      "minLength": 1
+    },
+    "port": {
+      "type": "string",
+      "minLength": 1
+    },
+    "default_mode": {
+      "type": "string",
+      "minLength": 1
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidates",
+        "receipts",
+        "exports",
+        "local"
+      ],
+      "properties": {
+        "candidates": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "receipts": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "exports": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "local": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "by_kind": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "by_family": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "by_route": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "open_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "path",
+          "review_state",
+          "route"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "review_state": {
+            "type": "string",
+            "minLength": 1
+          },
+          "route": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}
+

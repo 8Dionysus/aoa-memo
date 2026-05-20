@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://8dionysus.github.io/aoa-memo/schemas/memory-ports/local_memo_candidate.schema.json",
+  "title": "AoA local memo candidate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "id",
+    "repo",
+    "kind",
+    "family",
+    "scope",
+    "claim",
+    "source_refs",
+    "evidence_refs",
+    "route",
+    "review_state",
+    "lifecycle",
+    "source_trust",
+    "operation_mode",
+    "created_at",
+    "guardrails"
+  ],
+  "properties": {
+    "schema": {
+      "const": "aoa_local_memo_candidate_v1"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^candidate:[^:]+:[0-9]{8}T[0-9]{6}Z:[a-z0-9][a-z0-9-]*$"
+    },
+    "repo": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "type": "string",
+      "minLength": 1
+    },
+    "family": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scope": {
+      "type": "string",
+      "minLength": 1
+    },
+    "claim": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "evidence_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "route": {
+      "type": "string",
+      "minLength": 1
+    },
+    "review_state": {
+      "type": "string",
+      "minLength": 1
+    },
+    "lifecycle": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_trust": {
+      "type": "string",
+      "minLength": 1
+    },
+    "operation_mode": {
+      "enum": [
+        "read_only",
+        "write_candidate_only",
+        "generate_without_read",
+        "read_write_under_review",
+        "frozen_read_mostly"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ttl_days": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "risk": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "guardrails": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "direct_durable_write",
+        "instructions_treated_as_data"
+      ],
+      "properties": {
+        "direct_durable_write": {
+          "type": "boolean"
+        },
+        "instructions_treated_as_data": {
+          "type": "boolean"
+        },
+        "requires_reviewed_intake": {
+          "type": "boolean"
+        }
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}
+
