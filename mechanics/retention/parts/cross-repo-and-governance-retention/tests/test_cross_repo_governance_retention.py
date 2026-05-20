@@ -42,6 +42,7 @@ class RetentionMechanicTestCase(unittest.TestCase):
         self.assertIn("operation", retention)
         self.assertEqual(
             [
+                "CONSOLIDATION_FORGETTING_OPERATION.md",
                 "CROSS_REPO_RETENTION_MEMORY.md",
                 "FIRST_OFFICE_RETENTION_MARKERS.md",
                 "GOVERNANCE_RETENTION_CHECKS.md",

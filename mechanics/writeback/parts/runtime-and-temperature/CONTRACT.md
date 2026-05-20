@@ -10,15 +10,18 @@ Stronger claims route through `../../OWNER_MAP.md`. Source placement and legacy 
 
 - [RUNTIME_WRITEBACK_SEAM](../../docs/RUNTIME_WRITEBACK_SEAM.md)
 - [WRITEBACK_TEMPERATURE_POLICY](../../docs/WRITEBACK_TEMPERATURE_POLICY.md)
+- `schemas/reviewed_memory_intake_packet_v1.json`
+- `examples/reviewed_memory_intake_packet.abyss-stack.example.json`
+- `examples/reviewed_memory_intake_packet.abyss-machine.example.json`
 
 ## Contract
 
 keeps runtime writeback mapped without runtime ownership
 
 The runtime target schema, generated runtime target/intake/governance surfaces,
-and their builders are part-local here. They may describe memo-side runtime
-writeback posture, but they must not become live runtime storage or worker
-scheduling.
+reviewed intake packet schema, packet examples, and their builders are
+part-local here. They may describe memo-side runtime writeback posture, but
+they must not become live runtime storage or worker scheduling.
 
 ## Stop-lines
 

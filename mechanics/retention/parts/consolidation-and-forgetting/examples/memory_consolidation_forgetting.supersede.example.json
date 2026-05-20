@@ -1,0 +1,35 @@
+{
+  "contract_type": "memory_consolidation_forgetting_operation_v1",
+  "operation_id": "consolidation-forgetting.supersede.v1",
+  "operation_type": "supersede",
+  "trigger": "owner_supersession",
+  "target_memory_ids": [
+    "claim:aoa-memo:old-runtime-boundary"
+  ],
+  "source_refs": [
+    "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
+    "docs/memory/MEMORY_OPERATION_CYCLE.md"
+  ],
+  "lifecycle_transition": {
+    "from": "current",
+    "to": "superseded",
+    "replacement_memory_id": "claim:aoa-memo:reviewed-runtime-boundary"
+  },
+  "retention_fields": {
+    "ttl_days": 180,
+    "half_life_days": 45,
+    "review_after": "2026-08-01"
+  },
+  "review_route": {
+    "owner_repo": "aoa-memo",
+    "reviewer_ref": "mechanics/retention/docs/CONSOLIDATION_FORGETTING_OPERATION.md",
+    "decision_ref": "docs/decisions/2026-05-19-memory-operations-calibration.md",
+    "decision_state": "approved"
+  },
+  "output_refs": [
+    "generated/memory/memory_catalog.min.json",
+    "generated/memory/memory_capsules.json"
+  ],
+  "audit_event_ref": "examples/lifecycle/audit_event.supersession.example.json",
+  "notes": "Superseded memory stays inspectable but no longer wins active recall."
+}

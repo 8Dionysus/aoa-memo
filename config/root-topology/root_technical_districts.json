@@ -58,6 +58,7 @@
         "examples/recall/recall_contract.router.semantic.json",
         "examples/recall/recall_contract.semantic.json",
         "examples/recall/recall_contract.working.json",
+        "examples/recall/memory_operation_modes.example.json",
         "examples/memory-objects/state_capsule.example.json",
         "examples/phase-alpha/state_capsule.phase-alpha-local-stack.example.json",
         "examples/phase-alpha/state_capsule.phase-alpha-long-horizon.example.json",
@@ -106,6 +107,7 @@
         "schemas/memory-objects/decision.schema.json",
         "schemas/memory-objects/episode.schema.json",
         "schemas/recall-posture/lifecycle_posture.schema.json",
+        "schemas/recall-posture/memory_operation_mode.schema.json",
         "schemas/memory-objects/memory_object.schema.json",
         "schemas/generated-surfaces/memory_object_capsules.schema.json",
         "schemas/generated-surfaces/memory_object_catalog.schema.json",
@@ -147,6 +149,7 @@
         "scripts/mechanics/validate_mechanic_artifact_inventory.py",
         "scripts/mechanics/validate_mechanic_artifact_topology.py",
         "scripts/memory/validate_memo.py",
+        "scripts/memory/validate_memory_operations.py",
         "scripts/mechanics/validate_memo_mechanic_cards.py",
         "scripts/mechanics/validate_memo_mechanic_landing_logs.py",
         "scripts/mechanics/validate_memo_mechanic_owner_routes.py",
@@ -179,6 +182,7 @@
         "tests/mechanics/test_memo_mechanic_readiness.py",
         "tests/mechanics/test_memo_mechanics.py",
         "tests/memory/test_memo_validators.py",
+        "tests/memory/test_memory_operations.py",
         "tests/memory/test_phase_alpha_provenance_thread.py",
         "tests/root-topology/test_roadmap_parity.py",
         "tests/root-topology/test_root_technical_districts_index.py",
@@ -445,13 +449,15 @@
         "scripts/memory/generate_memory_object_surfaces.py",
         "scripts/memory/validate_lifecycle_audit_examples.py",
         "scripts/memory/validate_memo.py",
+        "scripts/memory/validate_memory_operations.py",
         "scripts/memory/validate_memory_object_surfaces.py",
         "scripts/memory/validate_memory_surfaces.py",
         "scripts/memory/validate_nested_agents.py"
       ],
       "covered_by": [
         "scripts/release/release_check.py",
-        "tests/memory/test_memo_validators.py"
+        "tests/memory/test_memo_validators.py",
+        "tests/memory/test_memory_operations.py"
       ]
     },
     {
@@ -606,6 +612,7 @@
       "owner_surface": "docs/memory/MEMORY_MODEL.md",
       "tests": [
         "tests/memory/test_memo_validators.py",
+        "tests/memory/test_memory_operations.py",
         "tests/memory/test_phase_alpha_provenance_thread.py"
       ],
       "protects": [
@@ -698,17 +705,20 @@
       "schemas": [
         "schemas/recall-posture/decay_policy.schema.json",
         "schemas/recall-posture/lifecycle_posture.schema.json",
+        "schemas/recall-posture/memory_operation_mode.schema.json",
         "schemas/recall-posture/recall_contract.schema.json",
         "schemas/recall-posture/trust_posture.schema.json"
       ],
       "source_refs": [
         "docs/memory/MEMORY_MODEL.md",
+        "docs/posture/MEMORY_OPERATION_MODES.md",
         "docs/posture/MEMORY_TRUST_POSTURE.md",
         "docs/posture/LIFECYCLE.md",
         "examples/recall/recall_contract.semantic.json"
       ],
       "validators": [
         "scripts/memory/validate_memo.py",
+        "scripts/memory/validate_memory_operations.py",
         "scripts/memory/validate_lifecycle_audit_examples.py"
       ]
     },
@@ -845,16 +855,20 @@
         "examples/recall/recall_contract.router.lineage.json",
         "examples/recall/recall_contract.router.semantic.json",
         "examples/recall/recall_contract.semantic.json",
-        "examples/recall/recall_contract.working.json"
+        "examples/recall/recall_contract.working.json",
+        "examples/recall/memory_operation_modes.example.json"
       ],
       "source_refs": [
         "docs/memory/MEMORY_MODEL.md",
+        "docs/posture/MEMORY_OPERATION_MODES.md",
         "schemas/recall-posture/recall_contract.schema.json",
+        "schemas/recall-posture/memory_operation_mode.schema.json",
         "generated/memory/memory_catalog.min.json",
         "generated/memory-objects/memory_object_catalog.min.json"
       ],
       "validators": [
         "scripts/memory/validate_memo.py",
+        "scripts/memory/validate_memory_operations.py",
         "scripts/memory/validate_memory_surfaces.py",
         "scripts/memory/validate_memory_object_surfaces.py",
         "mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_downstream_feed_contracts.py"

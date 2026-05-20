@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/schemas/recall-posture/memory_operation_mode.schema.json",
+  "title": "aoa-memo memory operation mode",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "mode",
+    "purpose",
+    "read_policy",
+    "write_policy",
+    "review_required",
+    "allowed_sources",
+    "audit_required",
+    "owner_route"
+  ],
+  "properties": {
+    "mode": {
+      "type": "string",
+      "enum": [
+        "read_only",
+        "write_candidate_only",
+        "generate_without_read",
+        "read_write_under_review",
+        "frozen_read_mostly"
+      ]
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 1
+    },
+    "read_policy": {
+      "type": "string",
+      "enum": [
+        "none",
+        "generated_read_models",
+        "source_docs_and_generated",
+        "owner_approved_only"
+      ]
+    },
+    "write_policy": {
+      "type": "string",
+      "enum": [
+        "none",
+        "candidate_only",
+        "reviewed_candidate",
+        "owner_approved"
+      ]
+    },
+    "review_required": {
+      "type": "boolean"
+    },
+    "allowed_sources": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "source_owner",
+          "local_memo_port",
+          "runtime_export",
+          "agent_handoff",
+          "web_research_digest",
+          "generated_read_model"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "audit_required": {
+      "type": "boolean"
+    },
+    "owner_route": {
+      "type": "string",
+      "minLength": 1
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

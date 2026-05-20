@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/mechanics/writeback/parts/runtime-and-temperature/schemas/reviewed_memory_intake_packet_v1.json",
+  "title": "aoa-memo reviewed memory intake packet",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_type",
+    "packet_id",
+    "producer",
+    "candidate_refs",
+    "export_refs",
+    "operation_mode_ref",
+    "write_path_guard_ref",
+    "review_route",
+    "sanitization",
+    "allowed_result"
+  ],
+  "properties": {
+    "contract_type": {
+      "const": "reviewed_memory_intake_packet_v1"
+    },
+    "packet_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "producer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "repo",
+        "surface"
+      ],
+      "properties": {
+        "repo": {
+          "type": "string",
+          "enum": [
+            "abyss-stack",
+            "abyss-machine",
+            "Agents-of-Abyss",
+            "aoa-skills",
+            "aoa-techniques",
+            "other"
+          ]
+        },
+        "surface": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "candidate_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "export_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "operation_mode_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "write_path_guard_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "review_route": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "owner_repo",
+        "reviewer_ref",
+        "decision_ref"
+      ],
+      "properties": {
+        "owner_repo": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reviewer_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decision_ref": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "sanitization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "raw_runtime_stream_excluded",
+        "private_material_excluded",
+        "instructions_treated_as_data",
+        "evidence_refs_preserved"
+      ],
+      "properties": {
+        "raw_runtime_stream_excluded": {
+          "type": "boolean"
+        },
+        "private_material_excluded": {
+          "type": "boolean"
+        },
+        "instructions_treated_as_data": {
+          "type": "boolean"
+        },
+        "evidence_refs_preserved": {
+          "type": "boolean"
+        }
+      }
+    },
+    "allowed_result": {
+      "type": "string",
+      "enum": [
+        "candidate_only",
+        "reviewed_write",
+        "quarantine",
+        "reject"
+      ]
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

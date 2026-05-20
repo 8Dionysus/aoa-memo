@@ -41,7 +41,7 @@ class MemoMechanicsTestCase(unittest.TestCase):
         self.assertEqual("config/mechanics/memo_mechanics.json", payload["config_ref"])
         self.assertEqual("mechanics/README.md", payload["authority_ref"])
         self.assertEqual(15, payload["counts"]["packages"])
-        self.assertEqual(102, payload["counts"]["docs"])
+        self.assertEqual(104, payload["counts"]["docs"])
 
         packages = {package["slug"]: package for package in payload["packages"]}
         self.assertEqual(
@@ -73,12 +73,12 @@ class MemoMechanicsTestCase(unittest.TestCase):
         self.assertEqual(4, packages["checkpoint"]["doc_count"])
         self.assertEqual(1, packages["readiness-boundary"]["doc_count"])
         self.assertEqual(6, packages["consumer-handoff"]["doc_count"])
-        self.assertEqual(4, packages["operational-gate"]["doc_count"])
+        self.assertEqual(5, packages["operational-gate"]["doc_count"])
         self.assertEqual(3, packages["recurrence-support"]["doc_count"])
         self.assertEqual(1, packages["lineage-harvest"]["doc_count"])
         self.assertEqual(1, packages["questbook"]["doc_count"])
         self.assertEqual(17, packages["writeback"]["doc_count"])
-        self.assertEqual(6, packages["retention"]["doc_count"])
+        self.assertEqual(7, packages["retention"]["doc_count"])
         for package in packages.values():
             self.assertIn("operation", package)
             self.assertIn("os_abyss_role", package)

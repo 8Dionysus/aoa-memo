@@ -1,0 +1,37 @@
+{
+  "contract_type": "memory_write_path_guard_v1",
+  "guard_id": "write-path-guard.reviewed-owner-candidate.v1",
+  "source_kind": "trusted_owner_source",
+  "source_trust": "owner_authored",
+  "source_refs": [
+    "repo:Agents-of-Abyss/docs/decisions/example-owner-decision.md"
+  ],
+  "ingestion_risks": [],
+  "target_memory_kind": "decision",
+  "proposed_lifecycle": "confirmed",
+  "review_route": {
+    "owner_repo": "Agents-of-Abyss",
+    "reviewer_ref": "repo:Agents-of-Abyss/AGENTS.md",
+    "evidence_refs": [
+      "repo:Agents-of-Abyss/docs/decisions/example-owner-decision.md"
+    ],
+    "decision_state": "approved_write"
+  },
+  "derivation_lineage": {
+    "derived_from_refs": [
+      "repo:Agents-of-Abyss/docs/decisions/example-owner-decision.md"
+    ],
+    "method": "direct_owner_write",
+    "reviewed_by": "repo:Agents-of-Abyss"
+  },
+  "action_safety_separation": {
+    "action_text_is_data": true,
+    "execution_owner": "source_owner",
+    "action_refs": [
+      "repo:Agents-of-Abyss/docs/decisions/example-owner-decision.md#next-action"
+    ]
+  },
+  "allowed_write_result": "reviewed_write",
+  "next_route": "docs/memory/MEMORY_OPERATION_CYCLE.md#cycle",
+  "notes": "Owner-authored source can land as reviewed memory only because evidence and owner route stay visible."
+}

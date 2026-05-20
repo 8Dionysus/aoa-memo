@@ -7,6 +7,7 @@ Run from the repository root:
 ```bash
 python scripts/mechanics/validate_memo_mechanic_parts.py
 python scripts/memory/validate_memo.py
+python scripts/memory/validate_memory_operations.py
 python scripts/memory/validate_memory_object_surfaces.py
 ```
 

@@ -7,8 +7,8 @@ This card applies to `mechanics/operational-gate/`.
 ## Role
 
 The operational-gate mechanic owns memo-side memory admission for operational
-incidents, office/service events, service revisions, release-train memory, and
-post-release boundary surfaces.
+incidents, office/service events, untrusted or derived write attempts, service
+revisions, release-train memory, and post-release boundary surfaces.
 
 It decides how `aoa-memo` preserves operational memory as public, reviewable,
 source-linked recall. It does not decide releases, execute runtime changes,
@@ -81,7 +81,8 @@ python scripts/agents/validate_agents_mesh.py
 python scripts/agents/build_agents_mesh_index.py --check
 python scripts/agents/validate_agents_mesh_index.py
 python scripts/memory/validate_memo.py
-python -m pytest -q mechanics/operational-gate/parts/deployment-incident-gate/tests mechanics/operational-gate/parts/post-release-boundaries/tests tests/mechanics/test_memo_mechanics.py tests/agents/test_agents_mesh.py
+python scripts/memory/validate_memory_operations.py
+python -m pytest -q mechanics/operational-gate/parts/deployment-incident-gate/tests mechanics/operational-gate/parts/write-path-guardrails/tests mechanics/operational-gate/parts/post-release-boundaries/tests tests/mechanics/test_memo_mechanics.py tests/agents/test_agents_mesh.py
 ```
 
 Before landing, also run:

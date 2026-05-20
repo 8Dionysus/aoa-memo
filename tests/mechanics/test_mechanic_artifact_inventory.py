@@ -56,6 +56,7 @@ def test_mechanic_artifact_inventory_covers_package_local_artifacts() -> None:
         for artifact in retention["artifacts"]
         if artifact.get("scope") == "part"
     } == {
+        "consolidation-and-forgetting",
         "cross-repo-and-governance-retention",
         "office-markers",
         "post-release-retention",

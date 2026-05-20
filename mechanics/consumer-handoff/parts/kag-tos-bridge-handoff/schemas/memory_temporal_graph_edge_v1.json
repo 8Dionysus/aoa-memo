@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/schemas/memory_temporal_graph_edge_v1.json",
+  "title": "aoa-memo temporal graph bridge edge",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_type",
+    "edge_id",
+    "edge_kind",
+    "source_memory_object_id",
+    "source_refs",
+    "provenance_thread_refs",
+    "lifecycle_state",
+    "current_recall",
+    "derivation",
+    "graph_target",
+    "stronger_owner_route"
+  ],
+  "properties": {
+    "contract_type": {
+      "const": "memory_temporal_graph_edge_v1"
+    },
+    "edge_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "edge_kind": {
+      "type": "string",
+      "enum": [
+        "supports",
+        "contradicts",
+        "supersedes",
+        "derived_from",
+        "mentions",
+        "routes_to"
+      ]
+    },
+    "source_memory_object_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "provenance_thread_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "lifecycle_state": {
+      "type": "string",
+      "enum": [
+        "candidate",
+        "reviewed",
+        "current",
+        "superseded",
+        "retracted",
+        "archived",
+        "frozen"
+      ]
+    },
+    "current_recall": {
+      "type": "string",
+      "enum": [
+        "preferred",
+        "available",
+        "historical",
+        "withdrawn",
+        "blocked"
+      ]
+    },
+    "derivation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "method",
+        "generated_at",
+        "generated_from_ref",
+        "reviewer_ref"
+      ],
+      "properties": {
+        "method": {
+          "type": "string",
+          "enum": [
+            "manual_bridge",
+            "generated_candidate",
+            "kag_export",
+            "temporal_review"
+          ]
+        },
+        "generated_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "generated_from_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reviewer_ref": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "graph_target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "target_ref",
+        "target_kind"
+      ],
+      "properties": {
+        "target_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "target_kind": {
+          "type": "string",
+          "enum": [
+            "memory_object",
+            "tos_ref",
+            "kag_entity",
+            "repo_surface",
+            "owner_route"
+          ]
+        }
+      }
+    },
+    "stronger_owner_route": {
+      "type": "string",
+      "minLength": 1
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

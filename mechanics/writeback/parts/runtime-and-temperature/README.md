@@ -19,6 +19,9 @@ keeps runtime writeback mapped without runtime ownership
 ## Local Artifacts
 
 - `schemas/runtime-writeback-targets.schema.json`
+- `schemas/reviewed_memory_intake_packet_v1.json`
+- `examples/reviewed_memory_intake_packet.abyss-stack.example.json`
+- `examples/reviewed_memory_intake_packet.abyss-machine.example.json`
 - `generated/runtime_writeback_targets.min.json`
 - `generated/runtime_writeback_intake.min.json`
 - `generated/runtime_writeback_governance.min.json`

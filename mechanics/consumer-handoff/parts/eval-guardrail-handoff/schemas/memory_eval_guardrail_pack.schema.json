@@ -74,6 +74,11 @@
               "provenance_fidelity",
               "staleness",
               "contradiction_handling",
+              "temporal_reasoning",
+              "knowledge_update",
+              "abstention",
+              "selective_forgetting",
+              "poisoning",
               "permission_leakage",
               "over_promotion",
               "hallucinated_merge"

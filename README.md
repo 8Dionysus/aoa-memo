@@ -20,8 +20,9 @@ the linked owner surface instead of expanding this page.
 | Memory-layer system form | [DESIGN](DESIGN.md) |
 | Agent-facing guidance form | [DESIGN.AGENTS](DESIGN.AGENTS.md) |
 | Public memory canon map | [MEMORY_INDEX](MEMORY_INDEX.md) |
-| Memory model and object posture | [MEMORY_MODEL](docs/memory/MEMORY_MODEL.md), [MEMORY_OBJECT_PROFILES](docs/memory/MEMORY_OBJECT_PROFILES.md) |
-| Trust, temperature, lifecycle, and provenance posture | [MEMORY_TRUST_POSTURE](docs/posture/MEMORY_TRUST_POSTURE.md), [MEMORY_TEMPERATURES](docs/posture/MEMORY_TEMPERATURES.md), [LIFECYCLE](docs/posture/LIFECYCLE.md), [PROVENANCE_THREADS](docs/posture/PROVENANCE_THREADS.md) |
+| Memory model, operation cycle, and object posture | [MEMORY_MODEL](docs/memory/MEMORY_MODEL.md), [MEMORY_OPERATION_CYCLE](docs/memory/MEMORY_OPERATION_CYCLE.md), [MEMORY_OBJECT_PROFILES](docs/memory/MEMORY_OBJECT_PROFILES.md) |
+| Living memory topology and local ports | [LIVING_MEMORY_TOPOLOGY](docs/memory/LIVING_MEMORY_TOPOLOGY.md), [LOCAL_MEMO_PORT_STANDARD](docs/memory/LOCAL_MEMO_PORT_STANDARD.md) |
+| Trust, temperature, lifecycle, operation modes, and provenance posture | [MEMORY_TRUST_POSTURE](docs/posture/MEMORY_TRUST_POSTURE.md), [MEMORY_TEMPERATURES](docs/posture/MEMORY_TEMPERATURES.md), [LIFECYCLE](docs/posture/LIFECYCLE.md), [MEMORY_OPERATION_MODES](docs/posture/MEMORY_OPERATION_MODES.md), [PROVENANCE_THREADS](docs/posture/PROVENANCE_THREADS.md) |
 | Root and docs placement law | [ROOT_SURFACE_LAW](docs/root/ROOT_SURFACE_LAW.md) |
 | Documentation map | [docs](docs/README.md) |
 | Memo-side mechanics | [mechanics](mechanics/README.md) |
@@ -41,6 +42,10 @@ Read only the surface that matches the job.
 | Shortest honest overview | this README -> [CHARTER](CHARTER.md) -> [DESIGN](DESIGN.md) -> [MEMORY_INDEX](MEMORY_INDEX.md) |
 | Memory object canon | [MEMORY_INDEX](MEMORY_INDEX.md) -> [MEMORY_OBJECT_PROFILES](docs/memory/MEMORY_OBJECT_PROFILES.md) |
 | Memory doctrine | [MEMORY_MODEL](docs/memory/MEMORY_MODEL.md), [BOUNDARIES](docs/boundaries/BOUNDARIES.md), then the target doctrine file |
+| Memory operation cycle | [MEMORY_OPERATION_CYCLE](docs/memory/MEMORY_OPERATION_CYCLE.md) |
+| Write-path safety | [MEMORY_WRITE_PATH_GUARDRAILS](docs/boundaries/MEMORY_WRITE_PATH_GUARDRAILS.md), then [operational gate guardrails](mechanics/operational-gate/docs/MEMORY_WRITE_PATH_GUARDRAILS.md) |
+| Operation modes | [MEMORY_OPERATION_MODES](docs/posture/MEMORY_OPERATION_MODES.md), then [operation mode example](examples/recall/memory_operation_modes.example.json) |
+| Local project memory ports | [LIVING_MEMORY_TOPOLOGY](docs/memory/LIVING_MEMORY_TOPOLOGY.md), then [LOCAL_MEMO_PORT_STANDARD](docs/memory/LOCAL_MEMO_PORT_STANDARD.md) |
 | Memory readiness pressure | [MEMORY_READINESS_BOUNDARY](mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md) |
 | Memo mechanic work | [mechanics](mechanics/README.md), then the nearest mechanic `AGENTS.md` |
 | Consumer handoff | [consumer-handoff](mechanics/consumer-handoff/README.md), [PLAYBOOK_MEMORY_SCOPES](mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md), [KAG_SOURCE_EXPORT](mechanics/consumer-handoff/docs/KAG_SOURCE_EXPORT.md), or [MEMORY_EVAL_GUARDRAILS](mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md) |
@@ -57,13 +62,17 @@ Before adding, trusting, or publishing a memo claim, ask the narrowest owner.
 | Claim question | Check |
 |---|---|
 | May `aoa-memo` say this at all? | [CHARTER](CHARTER.md), then [BOUNDARIES](docs/boundaries/BOUNDARIES.md) |
+| May this source write into memory? | [MEMORY_WRITE_PATH_GUARDRAILS](docs/boundaries/MEMORY_WRITE_PATH_GUARDRAILS.md) and [MEMORY_WRITE_PATH_GUARDRAILS](mechanics/operational-gate/docs/MEMORY_WRITE_PATH_GUARDRAILS.md) |
 | What memory object kind is this? | [MEMORY_INDEX](MEMORY_INDEX.md), then [MEMORY_OBJECT_PROFILES](docs/memory/MEMORY_OBJECT_PROFILES.md) |
+| What part of the memory cycle is this? | [MEMORY_OPERATION_CYCLE](docs/memory/MEMORY_OPERATION_CYCLE.md) |
+| What read/write posture should this task use? | [MEMORY_OPERATION_MODES](docs/posture/MEMORY_OPERATION_MODES.md) |
 | Is this proof, verdict logic, or scoring? | [BOUNDARIES](docs/boundaries/BOUNDARIES.md), then route to `aoa-evals` |
 | Is this dispatch or route policy? | [ROUTING_MEMORY_ADOPTION](mechanics/adoption/docs/ROUTING_MEMORY_ADOPTION.md), then route to `aoa-routing` |
 | Is this role, persona, or handoff right? | [AGENT_MEMORY_POSTURE_SEAM](mechanics/consumer-handoff/docs/AGENT_MEMORY_POSTURE_SEAM.md), then route to `aoa-agents` |
 | Is this playbook memory scope? | [PLAYBOOK_MEMORY_SCOPES](mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md), then route choreography to `aoa-playbooks` |
 | Is this KAG or ToS handoff? | [KAG_SOURCE_EXPORT](mechanics/consumer-handoff/docs/KAG_SOURCE_EXPORT.md) and [KAG_TOS_BRIDGE_CONTRACT](mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md) |
 | Is this live runtime retention or storage? | [RUNTIME_WRITEBACK_SEAM](mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md), then route to `abyss-stack` |
+| Is this duplicate, superseded, stale, unsafe, or ready to archive? | [CONSOLIDATION_FORGETTING_OPERATION](mechanics/retention/docs/CONSOLIDATION_FORGETTING_OPERATION.md) |
 | Is this current enough to recall? | [MEMORY_TRUST_POSTURE](docs/posture/MEMORY_TRUST_POSTURE.md), [MEMORY_TEMPERATURES](docs/posture/MEMORY_TEMPERATURES.md), and [LIFECYCLE](docs/posture/LIFECYCLE.md) |
 
 ## Current Contour
@@ -80,8 +89,16 @@ The released `v0.2.3` contour is routed through these compact entrypoints:
   [trust posture](docs/posture/MEMORY_TRUST_POSTURE.md),
   [lifecycle](docs/posture/LIFECYCLE.md),
   [temperatures](docs/posture/MEMORY_TEMPERATURES.md),
+  [operation modes](docs/posture/MEMORY_OPERATION_MODES.md),
   [provenance threads](docs/posture/PROVENANCE_THREADS.md), and
   [operational boundary](docs/boundaries/OPERATIONAL_BOUNDARY.md).
+- Memory operations and local growth:
+  [operation cycle](docs/memory/MEMORY_OPERATION_CYCLE.md),
+  [living memory topology](docs/memory/LIVING_MEMORY_TOPOLOGY.md),
+  [local memo port standard](docs/memory/LOCAL_MEMO_PORT_STANDARD.md),
+  [write-path boundary](docs/boundaries/MEMORY_WRITE_PATH_GUARDRAILS.md),
+  [write-path guard mechanic](mechanics/operational-gate/docs/MEMORY_WRITE_PATH_GUARDRAILS.md), and
+  [consolidation/forgetting](mechanics/retention/docs/CONSOLIDATION_FORGETTING_OPERATION.md).
 - Checkpoint and return recall:
   [checkpoint boundary](mechanics/checkpoint/docs/CHECKPOINT_MEMORY_BOUNDARY.md),
   [recurrence support](mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md),

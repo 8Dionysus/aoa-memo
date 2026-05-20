@@ -1,0 +1,30 @@
+{
+  "contract_type": "reviewed_memory_intake_packet_v1",
+  "packet_id": "reviewed-memory-intake.abyss-machine.host-export.v1",
+  "producer": {
+    "repo": "abyss-machine",
+    "surface": "host nervous brief export"
+  },
+  "candidate_refs": [
+    "audit_event:abyss-machine:host-memory-pressure-note"
+  ],
+  "export_refs": [
+    "docs/memory/LOCAL_MEMO_PORT_STANDARD.md",
+    "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md"
+  ],
+  "operation_mode_ref": "examples/recall/memory_operation_modes.example.json#write_candidate_only",
+  "write_path_guard_ref": "mechanics/operational-gate/parts/write-path-guardrails/examples/memory_write_path_guard.untrusted_prompt_injection.example.json",
+  "review_route": {
+    "owner_repo": "abyss-machine",
+    "reviewer_ref": "abyss-machine:memo/AGENTS.md",
+    "decision_ref": "docs/memory/LIVING_MEMORY_TOPOLOGY.md"
+  },
+  "sanitization": {
+    "raw_runtime_stream_excluded": true,
+    "private_material_excluded": true,
+    "instructions_treated_as_data": true,
+    "evidence_refs_preserved": true
+  },
+  "allowed_result": "candidate_only",
+  "notes": "Host-layer notes enter as candidates with local owner review and no raw live stream."
+}

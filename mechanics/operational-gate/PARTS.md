@@ -5,6 +5,7 @@
 | Part | Source Docs | Contract |
 |---|---|---|
 | Deployment incident gate | [DEPLOYMENT_INCIDENT_MEMORY_GATE](./docs/DEPLOYMENT_INCIDENT_MEMORY_GATE.md) | admits deployment incident memory only with evidence, owner route, review posture, and future effect |
+| Write path guardrails | [MEMORY_WRITE_PATH_GUARDRAILS](./docs/MEMORY_WRITE_PATH_GUARDRAILS.md) | keeps untrusted or derived memory writes candidate-bound until provenance, review route, derivation lineage, and action-safety separation are explicit |
 | Office incident gate | [OFFICE_INCIDENT_MEMORY_GATE](./docs/OFFICE_INCIDENT_MEMORY_GATE.md) | keeps office/service incident memory governed by upstream office law and local memo admission |
 | Service revision ledger | [SERVICE_REVISION_LEDGER](./docs/SERVICE_REVISION_LEDGER.md) | preserves service revision recall without becoming live service state or release approval |
 | Post-release boundaries | [POST_RELEASE_MEMORY_BOUNDARIES](./docs/POST_RELEASE_MEMORY_BOUNDARIES.md) | names what post-release material memo may preserve and what stays with release/runtime owners |
@@ -17,6 +18,7 @@ functioning part. Writeback revision artifacts stay in the writeback package.
 | Part | Artifact Homes |
 |---|---|
 | Deployment incident gate | `parts/deployment-incident-gate/schemas/`, `parts/deployment-incident-gate/examples/`, `parts/deployment-incident-gate/tests/` |
+| Write path guardrails | `parts/write-path-guardrails/schemas/`, `parts/write-path-guardrails/examples/`, `parts/write-path-guardrails/tests/` |
 | Office incident gate | `parts/office-incident-gate/schemas/`, `parts/office-incident-gate/examples/` |
 | Service revision ledger | `parts/service-revision-ledger/schemas/`, `parts/service-revision-ledger/examples/` |
 | Post-release boundaries | `parts/post-release-boundaries/schemas/`, `parts/post-release-boundaries/examples/`, `parts/post-release-boundaries/tests/` |
@@ -30,6 +32,13 @@ Deployment incident gate:
 - `mechanics/operational-gate/parts/deployment-incident-gate/schemas/deployment_lesson_candidate_v1.json`
 - `mechanics/operational-gate/parts/deployment-incident-gate/examples/deployment_lesson_candidate.example.json`
 - `mechanics/operational-gate/parts/deployment-incident-gate/tests/test_operational_gate_mechanic.py`
+
+Write path guardrails:
+
+- `mechanics/operational-gate/parts/write-path-guardrails/schemas/memory_write_path_guard_v1.json`
+- `mechanics/operational-gate/parts/write-path-guardrails/examples/memory_write_path_guard.untrusted_prompt_injection.example.json`
+- `mechanics/operational-gate/parts/write-path-guardrails/examples/memory_write_path_guard.reviewed_owner_candidate.example.json`
+- `mechanics/operational-gate/parts/write-path-guardrails/tests/test_write_path_guardrails.py`
 
 Office incident gate:
 

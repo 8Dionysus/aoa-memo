@@ -21,6 +21,7 @@ This memo-side contract works beside:
 - `aoa-kag/schemas/bridge-envelope.schema.json` and `aoa-kag/examples/aoa_tos_bridge_envelope.example.json` for the shared cross-repo linkage object
 - `schemas/memory-objects/bridge.schema.json` for the memo-side bridge object
 - `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/schemas/memory_chunk_face.schema.json` and `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/schemas/memory_graph_face.schema.json` for downstream export faces
+- `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/schemas/memory_temporal_graph_edge_v1.json` for derived temporal graph edges that keep backward refs to authored memo objects
 
 ## Core Rule
 
@@ -72,6 +73,26 @@ The current schema-backed graph-face surface is:
 - `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/schemas/memory_graph_face.schema.json`
 - `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/memory_graph_face.bridge.example.json`
 
+## Temporal Graph Edge Contract
+
+Derived graph edges may help recall, but they must never replace authored
+memory objects.
+
+Every graph edge exported from memo posture should preserve:
+
+- source memory object id
+- source refs
+- provenance thread refs
+- lifecycle state
+- current recall posture
+- derivation method and generated-at time
+- stronger owner route
+
+The current schema-backed temporal graph edge surface is:
+
+- `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/schemas/memory_temporal_graph_edge_v1.json`
+- `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/memory_temporal_graph_edge.bridge.example.json`
+
 ## ToS Bridge Guidance
 
 When a memo object points toward Tree of Sophia, it should do so by reference rather than by replacement.
@@ -109,7 +130,8 @@ The current end-to-end flow is:
 3. a `bridge` connects the claim to ToS refs and KAG lift posture
 4. a chunk face exposes bounded inspection material
 5. a graph face exposes downstream relation candidates
-6. `aoa-kag` decides whether and how to normalize the lift downstream
+6. optional temporal graph edges preserve derived recall links with backward refs
+7. `aoa-kag` decides whether and how to normalize the lift downstream
 
 The current example bundle for this flow is:
 
@@ -119,6 +141,7 @@ The current example bundle for this flow is:
 - `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/provenance_thread.kag-lift.example.json`
 - `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/memory_chunk_face.bridge.example.json`
 - `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/memory_graph_face.bridge.example.json`
+- `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/memory_temporal_graph_edge.bridge.example.json`
 - `examples/recall/recall_contract.lineage.json`
 - `examples/recall/recall_contract.router.lineage.json`
 
@@ -134,5 +157,6 @@ This contract does not:
 - define the normalized KAG substrate
 - rewrite ToS node meaning inside memo
 - treat graph-facing candidates as proof
+- treat graph edges as replacements for authored memory objects
 - turn provenance threads into a graph database
 - authorize downstream lifts without explicit consumer review

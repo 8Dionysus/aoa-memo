@@ -28,6 +28,7 @@ COMMANDS = [
     ("validate quest store", [sys.executable, "mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py"]),
     ("check generated quest surfaces", [sys.executable, "mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py", "--check"]),
     ("validate memo", [sys.executable, "scripts/memory/validate_memo.py"]),
+    ("validate memory operations", [sys.executable, "scripts/memory/validate_memory_operations.py"]),
     ("validate Agon memo prebindings", [sys.executable, "mechanics/agon/parts/prebinding-and-candidate-intake/scripts/validate_agon_memo_prebindings.py"]),
     ("validate Agon epistemic memo bridge", [sys.executable, "mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_epistemic_memo_bridge.py"]),
     ("validate Agon KAG memo evidence package registry", [sys.executable, "mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_kag_memo_evidence_package_registry.py"]),

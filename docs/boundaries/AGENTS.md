@@ -4,14 +4,16 @@ Route card for `docs/boundaries/`.
 
 ## Purpose
 
-This district owns repository and operational boundary language for memo:
-what memory may claim, what must route to stronger owners, and where live
-operation remains outside memo.
+This district owns repository, operational, and write-path boundary language
+for memo: what memory may claim, what must route to stronger owners, and where
+live operation or untrusted source pressure remains outside memo.
 
 ## Source
 
 `BOUNDARIES.md` is the primary owner-boundary surface.
 `OPERATIONAL_BOUNDARY.md` narrows operational claims and runtime-facing limits.
+`MEMORY_WRITE_PATH_GUARDRAILS.md` names the untrusted-input and write-path
+boundary before mechanic-level admission.
 
 ## Route
 
@@ -24,5 +26,6 @@ operation remains outside memo.
 
 ```bash
 python scripts/memory/validate_memo.py
+python scripts/memory/validate_memory_operations.py
 python scripts/root-topology/validate_docs_districts.py
 ```

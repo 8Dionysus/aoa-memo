@@ -1,0 +1,229 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/mechanics/operational-gate/parts/write-path-guardrails/schemas/memory_write_path_guard_v1.json",
+  "title": "aoa-memo memory write path guard",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_type",
+    "guard_id",
+    "source_kind",
+    "source_trust",
+    "source_refs",
+    "ingestion_risks",
+    "target_memory_kind",
+    "proposed_lifecycle",
+    "review_route",
+    "derivation_lineage",
+    "action_safety_separation",
+    "allowed_write_result",
+    "next_route"
+  ],
+  "properties": {
+    "contract_type": {
+      "const": "memory_write_path_guard_v1"
+    },
+    "guard_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_kind": {
+      "type": "string",
+      "enum": [
+        "trusted_owner_source",
+        "untrusted_operator_input",
+        "untrusted_external_source",
+        "agent_experience",
+        "runtime_export",
+        "derived_summary",
+        "third_party_doc",
+        "web_source"
+      ]
+    },
+    "source_trust": {
+      "type": "string",
+      "enum": [
+        "owner_authored",
+        "reviewed_export",
+        "untrusted",
+        "unknown"
+      ]
+    },
+    "source_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "ingestion_risks": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "indirect_prompt_injection",
+          "sleeper_memory",
+          "poisoned_experience",
+          "source_spoofing",
+          "private_data_bleed",
+          "instruction_as_content",
+          "stale_without_lifecycle",
+          "derivation_gap"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "target_memory_kind": {
+      "type": "string",
+      "enum": [
+        "anchor",
+        "state_capsule",
+        "episode",
+        "claim",
+        "decision",
+        "pattern",
+        "bridge",
+        "audit_event",
+        "recall_contract",
+        "provenance_thread"
+      ]
+    },
+    "proposed_lifecycle": {
+      "type": "string",
+      "enum": [
+        "candidate",
+        "reviewed",
+        "confirmed",
+        "superseded",
+        "retracted",
+        "archived",
+        "frozen"
+      ]
+    },
+    "review_route": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "owner_repo",
+        "reviewer_ref",
+        "evidence_refs",
+        "decision_state"
+      ],
+      "properties": {
+        "owner_repo": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reviewer_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "decision_state": {
+          "type": "string",
+          "enum": [
+            "pending_review",
+            "approved_candidate",
+            "approved_write",
+            "rejected",
+            "quarantined"
+          ]
+        }
+      }
+    },
+    "derivation_lineage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "derived_from_refs",
+        "method",
+        "reviewed_by"
+      ],
+      "properties": {
+        "derived_from_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "method": {
+          "type": "string",
+          "enum": [
+            "direct_owner_write",
+            "human_summary",
+            "agent_summary",
+            "runtime_export",
+            "web_research_digest",
+            "none"
+          ]
+        },
+        "reviewed_by": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "action_safety_separation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action_text_is_data",
+        "execution_owner",
+        "action_refs"
+      ],
+      "properties": {
+        "action_text_is_data": {
+          "type": "boolean"
+        },
+        "execution_owner": {
+          "type": "string",
+          "enum": [
+            "none",
+            "source_owner",
+            "abyss-stack",
+            "aoa-agents",
+            "aoa-playbooks",
+            "human_operator"
+          ]
+        },
+        "action_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "allowed_write_result": {
+      "type": "string",
+      "enum": [
+        "reject",
+        "quarantine",
+        "candidate_only",
+        "reviewed_write",
+        "archive_only"
+      ]
+    },
+    "next_route": {
+      "type": "string",
+      "minLength": 1
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

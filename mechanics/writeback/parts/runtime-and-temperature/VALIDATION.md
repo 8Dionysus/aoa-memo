@@ -6,6 +6,7 @@ Run from the repository root:
 
 ```bash
 python scripts/mechanics/validate_memo_mechanic_parts.py
+python scripts/memory/validate_memory_operations.py
 python -m pytest -q mechanics/writeback/parts/runtime-and-temperature/tests
 ```
 

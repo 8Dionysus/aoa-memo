@@ -52,7 +52,7 @@ def test_memo_mechanic_readiness_covers_all_packages() -> None:
     assert "local-test-route" in payload["contract"]["readiness_checks"]
     assert payload["counts"]["packages"] == 15
     assert payload["counts"]["ready_packages"] == payload["counts"]["packages"]
-    assert payload["counts"]["docs"] == 102
+    assert payload["counts"]["docs"] == 104
     assert payload["counts"]["package_local_artifacts"] > 100
 
     packages = {package["slug"]: package for package in payload["packages"]}
@@ -110,6 +110,7 @@ def test_memo_mechanic_readiness_covers_all_packages() -> None:
     ]
     retention = packages["retention"]
     assert retention["artifacts"]["test_dirs"] == [
+        "mechanics/retention/parts/consolidation-and-forgetting/tests",
         "mechanics/retention/parts/cross-repo-and-governance-retention/tests",
         "mechanics/retention/parts/office-markers/tests",
         "mechanics/retention/parts/post-release-retention/tests",
