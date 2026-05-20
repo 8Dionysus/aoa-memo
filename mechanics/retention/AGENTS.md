@@ -7,8 +7,9 @@ This card applies to `mechanics/retention/`.
 ## Role
 
 The retention mechanic owns memo-side retention review posture: cross-repo
-retention memory, office markers, governance retention checks, and post-release
-watch or outcome surfaces.
+retention memory, office markers, governance retention checks,
+consolidation/forgetting operations, and post-release watch or outcome
+surfaces.
 
 It does not execute retention, schedule checks, store private traces, keep
 unreduced personal data, or own runtime retention policy.
@@ -50,7 +51,8 @@ Update only surfaces whose future-facing meaning changed.
 python scripts/mechanics/validate_memo_mechanics.py
 python scripts/mechanics/build_memo_mechanics_index.py --check
 python scripts/mechanics/validate_memo_mechanics_index.py
-python -m pytest -q mechanics/retention/parts/cross-repo-and-governance-retention/tests mechanics/retention/parts/office-markers/tests mechanics/retention/parts/post-release-retention/tests
+python scripts/memory/validate_memory_operations.py
+python -m pytest -q mechanics/retention/parts/consolidation-and-forgetting/tests mechanics/retention/parts/cross-repo-and-governance-retention/tests mechanics/retention/parts/office-markers/tests mechanics/retention/parts/post-release-retention/tests
 ```
 
 Before landing, also run:

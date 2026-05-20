@@ -5,6 +5,7 @@ Functioning Retention memo parts live here. Each part mirrors one active row in 
 ## Parts
 
 - [Cross-repo and governance retention](cross-repo-and-governance-retention/README.md) - keeps retention review owner-routed
+- [Consolidation and forgetting](consolidation-and-forgetting/README.md) - keeps demotion, deduplication, supersession, retraction, archive, and freeze as explicit reviewed memory operations
 - [Office markers](office-markers/README.md) - keeps office retention markers public-safe
 - [Post-release retention](post-release-retention/README.md) - keeps post-release retention visible without execution claims
 

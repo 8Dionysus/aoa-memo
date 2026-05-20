@@ -5,7 +5,8 @@ Route card for `tests/memory/`.
 ## Purpose
 
 This district owns regression tests for memory schemas, recall contracts,
-generated memory surfaces, and Phase Alpha object examples.
+operation-cycle contracts, generated memory surfaces, and Phase Alpha object
+examples.
 
 ## Source
 
@@ -22,4 +23,5 @@ Tests here protect source contracts in `docs/memory/`, `docs/posture/`,
 
 ```bash
 python -m pytest -q tests/memory
+python scripts/memory/validate_memory_operations.py
 ```

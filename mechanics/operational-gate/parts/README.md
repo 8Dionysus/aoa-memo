@@ -5,6 +5,7 @@ Functioning Operational Gate memo parts live here. Each part mirrors one active 
 ## Parts
 
 - [Deployment incident gate](deployment-incident-gate/README.md) - admits deployment incident memory only with evidence, owner route, review posture, and future effect
+- [Write path guardrails](write-path-guardrails/README.md) - keeps untrusted or derived memory writes candidate-bound until provenance, review route, derivation lineage, and action-safety separation are explicit
 - [Office incident gate](office-incident-gate/README.md) - keeps office/service incident memory governed by upstream office law and local memo admission
 - [Service revision ledger](service-revision-ledger/README.md) - preserves service revision recall without becoming live service state or release approval
 - [Post-release boundaries](post-release-boundaries/README.md) - names what post-release material memo may preserve and what stays with release/runtime owners

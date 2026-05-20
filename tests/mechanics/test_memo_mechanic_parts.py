@@ -42,7 +42,7 @@ def test_active_parts_have_physical_part_nodes() -> None:
             assert (part_root / "VALIDATION.md").is_file()
             total_parts += 1
 
-    assert total_parts == 52
+    assert total_parts == 54
 
 
 def test_source_links_allow_local_markdown_fragments() -> None:

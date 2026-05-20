@@ -4,6 +4,7 @@
 
 | Part | Source Docs | Contract |
 |---|---|---|
+| Consolidation and forgetting | [CONSOLIDATION_FORGETTING_OPERATION](./docs/CONSOLIDATION_FORGETTING_OPERATION.md) | keeps demotion, deduplication, supersession, retraction, archive, and freeze as explicit reviewed memory operations |
 | Cross-repo and governance retention | [CROSS_REPO_RETENTION_MEMORY](./docs/CROSS_REPO_RETENTION_MEMORY.md), [GOVERNANCE_RETENTION_CHECKS](./docs/GOVERNANCE_RETENTION_CHECKS.md) | keeps retention review owner-routed |
 | Office markers | [FIRST_OFFICE_RETENTION_MARKERS](./docs/FIRST_OFFICE_RETENTION_MARKERS.md), [MULTI_OFFICE_RETENTION_MARKERS](./docs/MULTI_OFFICE_RETENTION_MARKERS.md) | keeps office retention markers public-safe |
 | Post-release retention | [POST_RELEASE_RETENTION_WATCH](./docs/POST_RELEASE_RETENTION_WATCH.md), [POST_RELEASE_RETENTION_OUTCOME](./docs/POST_RELEASE_RETENTION_OUTCOME.md) | keeps post-release retention visible without execution claims |
@@ -16,6 +17,8 @@ claiming runtime execution.
 
 | Part | Contract | Artifact Surface |
 |---|---|---|
+| Consolidation and forgetting | Memory consolidation/forgetting operation | `mechanics/retention/parts/consolidation-and-forgetting/schemas/memory_consolidation_forgetting_operation_v1.json`, `mechanics/retention/parts/consolidation-and-forgetting/examples/memory_consolidation_forgetting.supersede.example.json`, `mechanics/retention/parts/consolidation-and-forgetting/examples/memory_consolidation_forgetting.archive.example.json` |
+| Consolidation and forgetting | Consolidation/forgetting tests | `mechanics/retention/parts/consolidation-and-forgetting/tests/test_consolidation_forgetting.py` |
 | Cross-repo and governance retention | Cross-repo retention result | `mechanics/retention/parts/cross-repo-and-governance-retention/schemas/cross_repo_retention_result_v1.json`, `mechanics/retention/parts/cross-repo-and-governance-retention/examples/cross_repo_retention_result.example.json` |
 | Cross-repo and governance retention | Governance retention check | `mechanics/retention/parts/cross-repo-and-governance-retention/schemas/governance_retention_check_v1.json`, `mechanics/retention/parts/cross-repo-and-governance-retention/examples/governance_retention_check.example.json` |
 | Cross-repo and governance retention | Cross-repo/governance tests | `mechanics/retention/parts/cross-repo-and-governance-retention/tests/test_cross_repo_governance_retention.py` |
@@ -28,5 +31,7 @@ claiming runtime execution.
 
 ## Interface
 
-Inputs are public-safe retention signals and owner confirmations. Outputs are
-bounded memo docs and owner handoff routes.
+Inputs are public-safe retention signals, lifecycle triggers, target memory
+ids, owner confirmations, and audit refs. Outputs are bounded memo docs,
+reviewed lifecycle operations, generated read-model updates, and owner handoff
+routes.

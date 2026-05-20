@@ -1,8 +1,8 @@
 # Retention Mechanic
 
 Retention is the memo-side mechanic for keeping retention evidence, watches,
-markers, checks, and outcomes reviewable without executing retention or
-claiming runtime authority.
+markers, checks, outcomes, consolidation, and forgetting operations reviewable
+without executing retention or claiming runtime authority.
 
 ## Mechanic card
 
@@ -15,13 +15,14 @@ preserve retention evidence, watches, markers, and outcomes as reviewable memory
 ### Trigger
 
 Use when cross-repo retention memory, office retention markers, governance
-retention checks, or post-release retention watch/outcome posture must become
-explicit and reviewable.
+retention checks, consolidation or forgetting operations, or post-release
+retention watch/outcome posture must become explicit and reviewable.
 
 ### Memo owns
 
-Memo owns retention review posture, source refs, markers, public-safe examples,
-and recall routes for retention evidence.
+Memo owns retention review posture, source refs, markers, lifecycle-changing
+operation records, public-safe examples, and recall routes for retention
+evidence.
 
 ### Stronger owner split
 
@@ -33,13 +34,13 @@ and recall routes for retention evidence.
 
 ### Inputs
 
-Retention signals, public-safe markers, post-release watch notes, owner
-confirmations, and governance check candidates.
+Retention signals, public-safe markers, lifecycle triggers, post-release watch
+notes, owner confirmations, and governance check candidates.
 
 ### Outputs
 
-Bounded retention docs, reviewable markers, source refs, and owner handoff
-notes.
+Bounded retention docs, reviewed consolidation/forgetting operations,
+reviewable markers, source refs, and owner handoff notes.
 
 ### Must not claim
 

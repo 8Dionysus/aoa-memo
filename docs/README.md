@@ -29,9 +29,9 @@ placement work, add [root/RELEASING](root/RELEASING.md) and
 
 | District | Owns | Validator |
 |---|---|---|
-| [memory](memory/AGENTS.md) | memory model, object profiles, and narrative/core memory split | `python scripts/memory/validate_memo.py` |
-| [boundaries](boundaries/AGENTS.md) | repository owner split and operational boundary posture | `python scripts/memory/validate_memo.py` |
-| [posture](posture/AGENTS.md) | trust, lifecycle, temperature, provenance, and audit-event posture | `python scripts/memory/validate_lifecycle_audit_examples.py` |
+| [memory](memory/AGENTS.md) | memory model, object profiles, operation cycle, living topology, local memo ports, and narrative/core memory split | `python scripts/memory/validate_memory_operations.py` |
+| [boundaries](boundaries/AGENTS.md) | repository owner split, operational boundary posture, and write-path guardrails | `python scripts/memory/validate_memory_operations.py` |
+| [posture](posture/AGENTS.md) | trust, lifecycle, temperature, provenance, operation modes, and audit-event posture | `python scripts/memory/validate_lifecycle_audit_examples.py` |
 | [root](root/AGENTS.md) | root placement law, release route, and preserved root reference | `python scripts/root-topology/validate_docs_districts.py` |
 | [decisions](decisions/AGENTS.md) | durable rationale for structural and route-law choices | decision-specific review plus release gate |
 
@@ -39,9 +39,10 @@ placement work, add [root/RELEASING](root/RELEASING.md) and
 
 | Family | Current home | First route |
 |---|---|---|
-| Memory canon and object canon | `docs/memory/` | [MEMORY_MODEL](memory/MEMORY_MODEL.md), then [MEMORY_OBJECT_PROFILES](memory/MEMORY_OBJECT_PROFILES.md) |
-| Boundary and operational posture | `docs/boundaries/` | [BOUNDARIES](boundaries/BOUNDARIES.md), then [OPERATIONAL_BOUNDARY](boundaries/OPERATIONAL_BOUNDARY.md) |
-| Lifecycle, trust, temperature, provenance | `docs/posture/` | [MEMORY_TRUST_POSTURE](posture/MEMORY_TRUST_POSTURE.md), [LIFECYCLE](posture/LIFECYCLE.md), [MEMORY_TEMPERATURES](posture/MEMORY_TEMPERATURES.md), [PROVENANCE_THREADS](posture/PROVENANCE_THREADS.md) |
+| Memory canon, object canon, and operation cycle | `docs/memory/` | [MEMORY_MODEL](memory/MEMORY_MODEL.md), [MEMORY_OPERATION_CYCLE](memory/MEMORY_OPERATION_CYCLE.md), then [MEMORY_OBJECT_PROFILES](memory/MEMORY_OBJECT_PROFILES.md) |
+| Living memory topology and local ports | `docs/memory/` | [LIVING_MEMORY_TOPOLOGY](memory/LIVING_MEMORY_TOPOLOGY.md), then [LOCAL_MEMO_PORT_STANDARD](memory/LOCAL_MEMO_PORT_STANDARD.md) |
+| Boundary and operational posture | `docs/boundaries/` | [BOUNDARIES](boundaries/BOUNDARIES.md), [OPERATIONAL_BOUNDARY](boundaries/OPERATIONAL_BOUNDARY.md), then [MEMORY_WRITE_PATH_GUARDRAILS](boundaries/MEMORY_WRITE_PATH_GUARDRAILS.md) |
+| Lifecycle, trust, temperature, provenance, operation modes | `docs/posture/` | [MEMORY_TRUST_POSTURE](posture/MEMORY_TRUST_POSTURE.md), [LIFECYCLE](posture/LIFECYCLE.md), [MEMORY_TEMPERATURES](posture/MEMORY_TEMPERATURES.md), [MEMORY_OPERATION_MODES](posture/MEMORY_OPERATION_MODES.md), [PROVENANCE_THREADS](posture/PROVENANCE_THREADS.md) |
 | Root law and release route | `docs/root/` | [ROOT_SURFACE_LAW](root/ROOT_SURFACE_LAW.md), [RELEASING](root/RELEASING.md), [AGENTS_ROOT_REFERENCE](root/AGENTS_ROOT_REFERENCE.md) |
 | Structural rationale | `docs/decisions/` | [decisions/README](decisions/README.md) |
 
@@ -67,13 +68,18 @@ Mechanic docs live with their mechanics, not in `docs/`:
 | Question | Route |
 |---|---|
 | Does this belong in memory at all? | [CHARTER](../CHARTER.md), then [BOUNDARIES](boundaries/BOUNDARIES.md) |
+| Is this safe to write into memory? | [MEMORY_WRITE_PATH_GUARDRAILS](boundaries/MEMORY_WRITE_PATH_GUARDRAILS.md), then [operational guard](../mechanics/operational-gate/docs/MEMORY_WRITE_PATH_GUARDRAILS.md) |
 | What kind of memory object is it? | [MEMORY_INDEX](../MEMORY_INDEX.md), then [MEMORY_MODEL](memory/MEMORY_MODEL.md) and [MEMORY_OBJECT_PROFILES](memory/MEMORY_OBJECT_PROFILES.md) |
+| What is the operational memory cycle? | [MEMORY_OPERATION_CYCLE](memory/MEMORY_OPERATION_CYCLE.md) |
+| Which read/write mode applies? | [MEMORY_OPERATION_MODES](posture/MEMORY_OPERATION_MODES.md), then [memory operation modes example](../examples/recall/memory_operation_modes.example.json) |
+| How does local project memory connect? | [LIVING_MEMORY_TOPOLOGY](memory/LIVING_MEMORY_TOPOLOGY.md), then [LOCAL_MEMO_PORT_STANDARD](memory/LOCAL_MEMO_PORT_STANDARD.md) |
 | Is this proof or verdict logic? | [BOUNDARIES](boundaries/BOUNDARIES.md), then route to `aoa-evals` |
 | Is this routing behavior? | [ROUTING_MEMORY_ADOPTION](../mechanics/adoption/docs/ROUTING_MEMORY_ADOPTION.md), then route to `aoa-routing` |
 | Is this a role right or actor policy? | [AGENT_MEMORY_POSTURE_SEAM](../mechanics/consumer-handoff/docs/AGENT_MEMORY_POSTURE_SEAM.md), then route to `aoa-agents` |
 | Is this a graph lift or retrieval substrate? | [KAG_SOURCE_EXPORT](../mechanics/consumer-handoff/docs/KAG_SOURCE_EXPORT.md), then route to `aoa-kag` |
 | Is this a recurring cross-repo pattern or federation harvest candidate? | [PATTERN_LINEAGE_MEMORY](../mechanics/lineage-harvest/docs/PATTERN_LINEAGE_MEMORY.md), then route stronger claims to source owners |
 | Is this live runtime storage or retention? | [RUNTIME_WRITEBACK_SEAM](../mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md), then route to `abyss-stack` |
+| Is this stale, duplicate, superseded, or ready to archive? | [CONSOLIDATION_FORGETTING_OPERATION](../mechanics/retention/docs/CONSOLIDATION_FORGETTING_OPERATION.md) |
 | Where should a new root or docs-root file live? | [ROOT_SURFACE_LAW](root/ROOT_SURFACE_LAW.md) |
 | Why was a structural route chosen? | [decisions](decisions/README.md) |
 
@@ -83,6 +89,9 @@ Mechanic docs live with their mechanics, not in `docs/`:
 |---|---|
 | Memory canon map | [MEMORY_INDEX](../MEMORY_INDEX.md), then the stronger source doc it points to |
 | Memory doctrine | [BOUNDARIES](boundaries/BOUNDARIES.md), [MEMORY_MODEL](memory/MEMORY_MODEL.md), and the target district `AGENTS.md` |
+| Memory operation cycle or local memo ports | [MEMORY_OPERATION_CYCLE](memory/MEMORY_OPERATION_CYCLE.md), [LIVING_MEMORY_TOPOLOGY](memory/LIVING_MEMORY_TOPOLOGY.md), [LOCAL_MEMO_PORT_STANDARD](memory/LOCAL_MEMO_PORT_STANDARD.md), then `python scripts/memory/validate_memory_operations.py` |
+| Write-path safety | [MEMORY_WRITE_PATH_GUARDRAILS](boundaries/MEMORY_WRITE_PATH_GUARDRAILS.md), [operational gate write path](../mechanics/operational-gate/docs/MEMORY_WRITE_PATH_GUARDRAILS.md), then `python scripts/memory/validate_memory_operations.py` |
+| Memory operation modes | [MEMORY_OPERATION_MODES](posture/MEMORY_OPERATION_MODES.md), [mode schema](../schemas/recall-posture/memory_operation_mode.schema.json), then `python scripts/memory/validate_memory_operations.py` |
 | Object canon or lifecycle | [MEMORY_OBJECT_PROFILES](memory/MEMORY_OBJECT_PROFILES.md), [MEMORY_TRUST_POSTURE](posture/MEMORY_TRUST_POSTURE.md), [LIFECYCLE](posture/LIFECYCLE.md) |
 | Generated parity | source doc or manifest, builder, generated output, validator, and test together |
 | Docs placement | [ROOT_SURFACE_LAW](root/ROOT_SURFACE_LAW.md) |

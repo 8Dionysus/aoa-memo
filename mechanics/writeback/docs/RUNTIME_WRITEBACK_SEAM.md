@@ -60,6 +60,32 @@ The governance surface is intentionally narrow.
 It checks only that the runtime writeback target map and the runtime writeback intake map remain aligned as one release-facing seam.
 It does not become a governance verdict over the whole memo corpus.
 
+## Reviewed Intake Packets
+
+Runtime and host producers should send reviewed intake packets, not raw live
+streams.
+
+The packet names:
+
+- producer repo and surface
+- candidate refs
+- export refs
+- operation mode
+- write-path guard ref
+- owner review route
+- sanitization posture
+- allowed result
+
+The current part-local packet surface is:
+
+- `mechanics/writeback/parts/runtime-and-temperature/schemas/reviewed_memory_intake_packet_v1.json`
+- `mechanics/writeback/parts/runtime-and-temperature/examples/reviewed_memory_intake_packet.abyss-stack.example.json`
+- `mechanics/writeback/parts/runtime-and-temperature/examples/reviewed_memory_intake_packet.abyss-machine.example.json`
+
+`abyss-stack` remains the runtime owner. `abyss-machine` remains host-layer
+operator machinery. `aoa-memo` receives only reviewed candidate packets with
+source refs and safety posture.
+
 Growth-refinery writeback remains a memo-side adjunct on top of this seam.
 When reviewed lineage evidence warrants a durable memory object, reuse existing
 `failure_lesson_memory_v1` and `recovery_pattern_memory_v1` surfaces rather

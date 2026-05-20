@@ -1,0 +1,27 @@
+{
+  "contract_type": "memory_temporal_graph_edge_v1",
+  "edge_id": "memory-temporal-graph-edge.kag-tos-bridge.v1",
+  "edge_kind": "routes_to",
+  "source_memory_object_id": "bridge:aoa-memo:kag-lift",
+  "source_refs": [
+    "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/bridge.kag-lift.example.json",
+    "mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md"
+  ],
+  "provenance_thread_refs": [
+    "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/provenance_thread.kag-lift.example.json"
+  ],
+  "lifecycle_state": "reviewed",
+  "current_recall": "available",
+  "derivation": {
+    "method": "manual_bridge",
+    "generated_at": "2026-05-19T12:00:00Z",
+    "generated_from_ref": "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/memory_graph_face.bridge.example.json",
+    "reviewer_ref": "mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md"
+  },
+  "graph_target": {
+    "target_ref": "aoa-kag:bridge-contracts#temporal-graph-candidate",
+    "target_kind": "owner_route"
+  },
+  "stronger_owner_route": "aoa-kag/docs/BRIDGE_CONTRACTS.md",
+  "notes": "The edge helps downstream graph recall but does not replace the authored bridge object."
+}

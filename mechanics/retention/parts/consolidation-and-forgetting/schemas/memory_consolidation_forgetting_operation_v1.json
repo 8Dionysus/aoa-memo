@@ -1,0 +1,183 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/mechanics/retention/parts/consolidation-and-forgetting/schemas/memory_consolidation_forgetting_operation_v1.json",
+  "title": "aoa-memo consolidation and forgetting operation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "contract_type",
+    "operation_id",
+    "operation_type",
+    "trigger",
+    "target_memory_ids",
+    "source_refs",
+    "lifecycle_transition",
+    "retention_fields",
+    "review_route",
+    "output_refs",
+    "audit_event_ref"
+  ],
+  "properties": {
+    "contract_type": {
+      "const": "memory_consolidation_forgetting_operation_v1"
+    },
+    "operation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "operation_type": {
+      "type": "string",
+      "enum": [
+        "demote",
+        "deduplicate",
+        "supersede",
+        "retract",
+        "archive",
+        "freeze",
+        "split",
+        "merge_review"
+      ]
+    },
+    "trigger": {
+      "type": "string",
+      "enum": [
+        "ttl_expired",
+        "half_life_elapsed",
+        "contradiction",
+        "owner_supersession",
+        "duplicate_cluster",
+        "safety_retraction",
+        "low_recall_value",
+        "source_withdrawal",
+        "manual_review"
+      ]
+    },
+    "target_memory_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "source_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "lifecycle_transition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "from",
+        "to"
+      ],
+      "properties": {
+        "from": {
+          "type": "string",
+          "enum": [
+            "captured",
+            "candidate",
+            "reviewed",
+            "current",
+            "superseded",
+            "retracted",
+            "archived",
+            "frozen"
+          ]
+        },
+        "to": {
+          "type": "string",
+          "enum": [
+            "candidate",
+            "reviewed",
+            "current",
+            "superseded",
+            "retracted",
+            "archived",
+            "frozen"
+          ]
+        },
+        "replacement_memory_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "retention_fields": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ttl_days": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "half_life_days": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "retire_after": {
+          "type": "string",
+          "minLength": 1
+        },
+        "review_after": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "review_route": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "owner_repo",
+        "reviewer_ref",
+        "decision_ref",
+        "decision_state"
+      ],
+      "properties": {
+        "owner_repo": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reviewer_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decision_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decision_state": {
+          "type": "string",
+          "enum": [
+            "pending",
+            "approved",
+            "rejected"
+          ]
+        }
+      }
+    },
+    "output_refs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "audit_event_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

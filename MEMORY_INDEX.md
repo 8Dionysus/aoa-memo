@@ -12,6 +12,7 @@ or generated companions exist here?" It is an index, not the full memory model.
 - memory object kinds
 - support objects
 - recall modes
+- memory operation modes
 - memory temperature vocabulary
 - source doctrine families
 - generated memory companions
@@ -25,8 +26,12 @@ Use the stronger surface when the question is narrower:
 - repository boundary: [CHARTER](CHARTER.md)
 - system form: [DESIGN](DESIGN.md)
 - memory model: [MEMORY_MODEL](docs/memory/MEMORY_MODEL.md)
+- operation cycle: [MEMORY_OPERATION_CYCLE](docs/memory/MEMORY_OPERATION_CYCLE.md)
 - per-kind posture: [MEMORY_OBJECT_PROFILES](docs/memory/MEMORY_OBJECT_PROFILES.md)
+- living topology: [LIVING_MEMORY_TOPOLOGY](docs/memory/LIVING_MEMORY_TOPOLOGY.md)
+- local memo ports: [LOCAL_MEMO_PORT_STANDARD](docs/memory/LOCAL_MEMO_PORT_STANDARD.md)
 - trust posture: [MEMORY_TRUST_POSTURE](docs/posture/MEMORY_TRUST_POSTURE.md)
+- operation modes: [MEMORY_OPERATION_MODES](docs/posture/MEMORY_OPERATION_MODES.md)
 - temperature and freshness: [MEMORY_TEMPERATURES](docs/posture/MEMORY_TEMPERATURES.md)
 - lifecycle: [LIFECYCLE](docs/posture/LIFECYCLE.md)
 - provenance thread shape: [PROVENANCE_THREADS](docs/posture/PROVENANCE_THREADS.md)
@@ -78,6 +83,18 @@ family unless the memory model, schema, examples, and validators say so.
 
 Recall defaults to inspect first, capsule second, expand only when needed.
 
+## Operation Modes
+
+| Mode | Use for | First source |
+|---|---|---|
+| `read_only` | inspect source docs and generated read models | [MEMORY_OPERATION_MODES](docs/posture/MEMORY_OPERATION_MODES.md) |
+| `write_candidate_only` | capture source-linked candidates for review | [MEMORY_WRITE_PATH_GUARDRAILS](docs/boundaries/MEMORY_WRITE_PATH_GUARDRAILS.md) |
+| `generate_without_read` | produce output without reading or mutating memory | [MEMORY_OPERATION_MODES](docs/posture/MEMORY_OPERATION_MODES.md) |
+| `read_write_under_review` | read memo and emit reviewed writeback candidates | [MEMORY_OPERATION_CYCLE](docs/memory/MEMORY_OPERATION_CYCLE.md) |
+| `frozen_read_mostly` | inspect stable surfaces and change only through owner approval | [MEMORY_OPERATION_MODES](docs/posture/MEMORY_OPERATION_MODES.md) |
+
+Operation modes describe task posture. They are not role rights.
+
 ## Temperature Scale
 
 | Temperature | Meaning | First source |
@@ -96,9 +113,10 @@ freshness by itself.
 | Family | First route |
 |---|---|
 | Repository authority and boundaries | [CHARTER](CHARTER.md), [BOUNDARIES](docs/boundaries/BOUNDARIES.md) |
-| Memory model and object canon | [MEMORY_MODEL](docs/memory/MEMORY_MODEL.md), [MEMORY_OBJECT_PROFILES](docs/memory/MEMORY_OBJECT_PROFILES.md) |
-| Trust, lifecycle, temperature, and provenance | [MEMORY_TRUST_POSTURE](docs/posture/MEMORY_TRUST_POSTURE.md), [LIFECYCLE](docs/posture/LIFECYCLE.md), [MEMORY_TEMPERATURES](docs/posture/MEMORY_TEMPERATURES.md), [PROVENANCE_THREADS](docs/posture/PROVENANCE_THREADS.md) |
-| Operational boundary | [OPERATIONAL_BOUNDARY](docs/boundaries/OPERATIONAL_BOUNDARY.md) |
+| Memory model, object canon, and operation cycle | [MEMORY_MODEL](docs/memory/MEMORY_MODEL.md), [MEMORY_OPERATION_CYCLE](docs/memory/MEMORY_OPERATION_CYCLE.md), [MEMORY_OBJECT_PROFILES](docs/memory/MEMORY_OBJECT_PROFILES.md) |
+| Living topology and local memo ports | [LIVING_MEMORY_TOPOLOGY](docs/memory/LIVING_MEMORY_TOPOLOGY.md), [LOCAL_MEMO_PORT_STANDARD](docs/memory/LOCAL_MEMO_PORT_STANDARD.md) |
+| Trust, lifecycle, temperature, operation modes, and provenance | [MEMORY_TRUST_POSTURE](docs/posture/MEMORY_TRUST_POSTURE.md), [LIFECYCLE](docs/posture/LIFECYCLE.md), [MEMORY_TEMPERATURES](docs/posture/MEMORY_TEMPERATURES.md), [MEMORY_OPERATION_MODES](docs/posture/MEMORY_OPERATION_MODES.md), [PROVENANCE_THREADS](docs/posture/PROVENANCE_THREADS.md) |
+| Operational boundary and write-path guardrails | [OPERATIONAL_BOUNDARY](docs/boundaries/OPERATIONAL_BOUNDARY.md), [MEMORY_WRITE_PATH_GUARDRAILS](docs/boundaries/MEMORY_WRITE_PATH_GUARDRAILS.md), [operational gate write path](mechanics/operational-gate/docs/MEMORY_WRITE_PATH_GUARDRAILS.md) |
 | Memo mechanics | [mechanics](mechanics/README.md) |
 | Root and docs placement | [ROOT_SURFACE_LAW](docs/root/ROOT_SURFACE_LAW.md) |
 | Public obligations | [QUESTBOOK](QUESTBOOK.md), [quests](quests/README.md), [questbook mechanic](mechanics/questbook/README.md) |

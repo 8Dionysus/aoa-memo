@@ -4,13 +4,14 @@ Route card for `docs/posture/`.
 
 ## Purpose
 
-This district owns trust, lifecycle, temperature, provenance, and audit-event
-posture for memo objects and recall surfaces.
+This district owns trust, lifecycle, temperature, provenance, operation modes,
+and audit-event posture for memo objects and recall surfaces.
 
 ## Source
 
 `MEMORY_TRUST_POSTURE.md`, `LIFECYCLE.md`, `MEMORY_TEMPERATURES.md`,
-`PROVENANCE_THREADS.md`, and `AUDIT_EVENTS.md` are source doctrine here.
+`PROVENANCE_THREADS.md`, `MEMORY_OPERATION_MODES.md`, and `AUDIT_EVENTS.md`
+are source doctrine here.
 
 ## Route
 
@@ -23,5 +24,6 @@ posture for memo objects and recall surfaces.
 
 ```bash
 python scripts/memory/validate_memo.py
+python scripts/memory/validate_memory_operations.py
 python scripts/memory/validate_lifecycle_audit_examples.py
 ```

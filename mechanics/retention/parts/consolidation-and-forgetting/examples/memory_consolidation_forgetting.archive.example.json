@@ -1,0 +1,33 @@
+{
+  "contract_type": "memory_consolidation_forgetting_operation_v1",
+  "operation_id": "consolidation-forgetting.archive.v1",
+  "operation_type": "archive",
+  "trigger": "ttl_expired",
+  "target_memory_ids": [
+    "episode:aoa-memo:temporary-web-research-note"
+  ],
+  "source_refs": [
+    "docs/posture/LIFECYCLE.md",
+    "docs/posture/MEMORY_TEMPERATURES.md"
+  ],
+  "lifecycle_transition": {
+    "from": "candidate",
+    "to": "archived"
+  },
+  "retention_fields": {
+    "ttl_days": 30,
+    "half_life_days": 7,
+    "retire_after": "2026-06-20"
+  },
+  "review_route": {
+    "owner_repo": "aoa-memo",
+    "reviewer_ref": "mechanics/retention/docs/CONSOLIDATION_FORGETTING_OPERATION.md",
+    "decision_ref": "examples/lifecycle/audit_event.memory-retention-check.example.json",
+    "decision_state": "approved"
+  },
+  "output_refs": [
+    "generated/memory/memory_sections.full.json"
+  ],
+  "audit_event_ref": "examples/lifecycle/audit_event.memory-retention-check.example.json",
+  "notes": "Archived memory remains historical evidence and leaves active recall."
+}

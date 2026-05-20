@@ -21,6 +21,7 @@ class OperationalGateMechanicTestCase(unittest.TestCase):
         self.assertEqual(
             [
                 "DEPLOYMENT_INCIDENT_MEMORY_GATE.md",
+                "MEMORY_WRITE_PATH_GUARDRAILS.md",
                 "OFFICE_INCIDENT_MEMORY_GATE.md",
                 "POST_RELEASE_MEMORY_BOUNDARIES.md",
                 "SERVICE_REVISION_LEDGER.md",
@@ -60,6 +61,8 @@ class OperationalGateMechanicTestCase(unittest.TestCase):
         for path in (
             "mechanics/operational-gate/parts/deployment-incident-gate/schemas/deployment_incident_memory_gate_v1.json",
             "mechanics/operational-gate/parts/deployment-incident-gate/examples/deployment_incident_memory_gate.example.json",
+            "mechanics/operational-gate/parts/write-path-guardrails/schemas/memory_write_path_guard_v1.json",
+            "mechanics/operational-gate/parts/write-path-guardrails/examples/memory_write_path_guard.untrusted_prompt_injection.example.json",
             "mechanics/operational-gate/parts/office-incident-gate/schemas/service_incident_memory_entry_v1.json",
             "mechanics/operational-gate/parts/office-incident-gate/examples/service_incident_memory_entry_v1.example.json",
             "mechanics/operational-gate/parts/service-revision-ledger/schemas/service_revision_ledger_entry_v1.json",
@@ -113,6 +116,7 @@ class OperationalGateMechanicTestCase(unittest.TestCase):
         docs_dir = REPO_ROOT / "mechanics" / "operational-gate" / "docs"
         for filename in (
             "DEPLOYMENT_INCIDENT_MEMORY_GATE.md",
+            "MEMORY_WRITE_PATH_GUARDRAILS.md",
             "OFFICE_INCIDENT_MEMORY_GATE.md",
             "POST_RELEASE_MEMORY_BOUNDARIES.md",
             "SERVICE_REVISION_LEDGER.md",

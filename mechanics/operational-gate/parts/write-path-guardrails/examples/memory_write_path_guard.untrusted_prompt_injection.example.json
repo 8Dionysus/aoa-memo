@@ -1,0 +1,41 @@
+{
+  "contract_type": "memory_write_path_guard_v1",
+  "guard_id": "write-path-guard.untrusted-prompt-injection.v1",
+  "source_kind": "untrusted_external_source",
+  "source_trust": "untrusted",
+  "source_refs": [
+    "web:https://example.invalid/research-note",
+    "operator:session-note#quoted-untrusted-text"
+  ],
+  "ingestion_risks": [
+    "indirect_prompt_injection",
+    "instruction_as_content",
+    "source_spoofing"
+  ],
+  "target_memory_kind": "claim",
+  "proposed_lifecycle": "candidate",
+  "review_route": {
+    "owner_repo": "aoa-memo",
+    "reviewer_ref": "mechanics/operational-gate/docs/MEMORY_WRITE_PATH_GUARDRAILS.md",
+    "evidence_refs": [
+      "docs/boundaries/MEMORY_WRITE_PATH_GUARDRAILS.md",
+      "mechanics/operational-gate/parts/write-path-guardrails/schemas/memory_write_path_guard_v1.json"
+    ],
+    "decision_state": "pending_review"
+  },
+  "derivation_lineage": {
+    "derived_from_refs": [
+      "web:https://example.invalid/research-note"
+    ],
+    "method": "web_research_digest",
+    "reviewed_by": "pending-owner-review"
+  },
+  "action_safety_separation": {
+    "action_text_is_data": true,
+    "execution_owner": "none",
+    "action_refs": []
+  },
+  "allowed_write_result": "candidate_only",
+  "next_route": "mechanics/operational-gate/docs/MEMORY_WRITE_PATH_GUARDRAILS.md#operation",
+  "notes": "The quoted instruction is preserved as source data and cannot execute through memory."
+}

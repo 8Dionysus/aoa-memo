@@ -11,12 +11,14 @@ Stronger claims route through `../../OWNER_MAP.md`. Source placement and legacy 
 - [KAG_TOS_BRIDGE_CONTRACT](../../docs/KAG_TOS_BRIDGE_CONTRACT.md)
 - `schemas/memory_chunk_face.schema.json`
 - `schemas/memory_graph_face.schema.json`
+- `schemas/memory_temporal_graph_edge_v1.json`
 - `examples/episode.tos-interpretation.example.json`
 - `examples/claim.tos-bridge-ready.example.json`
 - `examples/bridge.kag-lift.example.json`
 - `examples/provenance_thread.kag-lift.example.json`
 - `examples/memory_chunk_face.bridge.example.json`
 - `examples/memory_graph_face.bridge.example.json`
+- `examples/memory_temporal_graph_edge.bridge.example.json`
 
 ## Contract
 
@@ -24,10 +26,11 @@ defines chunk-face, graph-face, and ToS bridge posture without graph ownership
 
 ## Artifact Contract
 
-The part keeps the bridge-bearing memo object chain and its chunk/graph export
-faces together. These examples may be consumed by object-surface generators,
-writeback regression tests, and KAG export checks, but they remain memo-owned
-handoff faces rather than ToS source meaning or KAG graph truth.
+The part keeps the bridge-bearing memo object chain and its chunk, graph, and
+temporal-edge export faces together. These examples may be consumed by
+object-surface generators, writeback regression tests, and KAG export checks,
+but they remain memo-owned handoff faces rather than ToS source meaning or KAG
+graph truth.
 
 ## Stop-lines
 

@@ -1,0 +1,30 @@
+{
+  "contract_type": "reviewed_memory_intake_packet_v1",
+  "packet_id": "reviewed-memory-intake.abyss-stack.runtime-export.v1",
+  "producer": {
+    "repo": "abyss-stack",
+    "surface": "runtime checkpoint export"
+  },
+  "candidate_refs": [
+    "state_capsule:abyss-stack:checkpoint-summary"
+  ],
+  "export_refs": [
+    "mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md",
+    "mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_intake.min.json"
+  ],
+  "operation_mode_ref": "examples/recall/memory_operation_modes.example.json#read_write_under_review",
+  "write_path_guard_ref": "mechanics/operational-gate/parts/write-path-guardrails/examples/memory_write_path_guard.reviewed_owner_candidate.example.json",
+  "review_route": {
+    "owner_repo": "abyss-stack",
+    "reviewer_ref": "abyss-stack/AGENTS.md",
+    "decision_ref": "docs/memory/MEMORY_OPERATION_CYCLE.md"
+  },
+  "sanitization": {
+    "raw_runtime_stream_excluded": true,
+    "private_material_excluded": true,
+    "instructions_treated_as_data": true,
+    "evidence_refs_preserved": true
+  },
+  "allowed_result": "candidate_only",
+  "notes": "Runtime stays live in abyss-stack; aoa-memo receives only a reviewed candidate packet."
+}
