@@ -46,6 +46,10 @@ def test_local_memo_port_index_is_stable() -> None:
     index = validate_local_memo_port.build_index(EXAMPLE_PORT)
     index_path = EXAMPLE_PORT / "index.min.json"
     assert validate_local_memo_port.render_json(index) == index_path.read_text(encoding="utf-8")
+    markdown = build_local_memo_port_index.render_markdown(index)
+    assert markdown == (EXAMPLE_PORT / "INDEX.md").read_text(encoding="utf-8")
+    assert "## Agent Route" in markdown
+    assert "## Validate" not in markdown
 
 
 def test_memo_port_vocabulary_is_stable() -> None:
