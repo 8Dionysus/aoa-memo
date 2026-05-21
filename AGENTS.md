@@ -64,6 +64,18 @@ lineage-harvest, writeback, or retention movement, read `mechanics/README.md`.
 - Self-agency, recurrence, quest, progression, checkpoint, or growth language must stay bounded, reviewable, evidence-linked, and reversible.
 - Report what changed, what was verified, what was not verified, and where the next agent should resume.
 
+## Memory route
+
+`aoa-memo` is the reviewed memory owner for OS Abyss. Use this repository when
+local candidates, session evidence, or MCP recalls need durable memory objects,
+lifecycle, provenance, guardrails, consolidation, or reviewed handoff contracts.
+
+- Need session evidence: route to `.aoa` rehydrate, retrieve, or review packets.
+- Need local preservation before review: write through the owning place's
+  `repo/memo/` port when present.
+- Need live access: use `aoa_memo` MCP as an access plane while keeping reviewed
+  memory truth in this repository.
+
 ## Decision review
 
 After structural, ownership, workflow, route-law, validator-authority,
