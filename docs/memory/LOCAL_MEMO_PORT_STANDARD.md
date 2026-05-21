@@ -5,7 +5,7 @@
 This standard lets other repositories add a small `memo/` port without turning
 every repository into a second `aoa-memo`.
 
-The local port holds near-field memory: candidates, receipts, review notes,
+The local port holds near-field memory: candidates, receipts, check notes,
 handoff packets, and source refs that are useful to that project. Cross-project
 or durable memory moves to `aoa-memo` through reviewed intake.
 
@@ -90,7 +90,7 @@ Recommended file names:
 ```text
 candidates/{stamp}.{slug}.candidate.json
 receipts/{stamp}.{slug}.validation-receipt.json
-receipts/{stamp}.{slug}.review-receipt.json
+receipts/{stamp}.{slug}.forwarding-receipt.json
 exports/{stamp}.{slug}.aoa-memo-intake.json
 local/{stamp}.{slug}.local.json
 ```

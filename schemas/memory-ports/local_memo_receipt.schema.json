@@ -40,7 +40,6 @@
         "validated",
         "rejected",
         "forwarded",
-        "reviewed",
         "landed",
         "archived"
       ]
@@ -67,7 +66,7 @@
       "type": "string",
       "format": "date-time"
     },
-    "reviewed_by": {
+    "checked_by": {
       "type": "string",
       "minLength": 1
     },
@@ -76,4 +75,3 @@
     }
   }
 }
-
