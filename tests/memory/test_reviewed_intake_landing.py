@@ -36,6 +36,14 @@ EXPORT_REF = "exports/20260520T172000Z.codex-plane-memory-route.aoa-memo-intake.
 def copy_reviewed_write_port(tmp_path: Path) -> Path:
     port = tmp_path / "example-port"
     shutil.copytree(EXAMPLE_PORT, port)
+    repo_docs = tmp_path / "docs" / "memory"
+    repo_docs.mkdir(parents=True)
+    for name in ("LOCAL_MEMO_PORT_STANDARD.md", "MEMO_PORT_INDEXING_VOCABULARY.md"):
+        source = REPO_ROOT / "docs" / "memory" / name
+        (repo_docs / name).write_text(source.read_text(encoding="utf-8"), encoding="utf-8")
+    source_example_dir = tmp_path / "examples" / "memory-ports" / "example-port"
+    source_example_dir.mkdir(parents=True)
+    shutil.copy2(port / "PORT.yaml", source_example_dir / "PORT.yaml")
     export_path = port / EXPORT_REF
     payload = json.loads(export_path.read_text(encoding="utf-8"))
     payload["allowed_result"] = "reviewed_write"
@@ -86,6 +94,9 @@ def test_reviewed_write_export_lands_as_corpus_bundle(tmp_path: Path) -> None:
     assert receipt["result"] == "landed"
     assert receipt["object_ref"] == memory_object["id"]
     assert receipt["object_path"] == "memo/objects/decisions/2026/example-reviewed-intake/object.json"
+    assert "export_evidence_refs" in receipt["checks"]
+    assert "candidate_source_refs" in receipt["checks"]
+    assert "receipt_candidate_ref" in receipt["checks"]
 
     assert landing.object_schema_errors(memory_object, "memory_object.schema.json") == []
     assert landing.object_schema_errors(memory_object, "decision.schema.json") == []
@@ -115,3 +126,63 @@ def test_packet_refs_must_stay_inside_port(tmp_path: Path) -> None:
         assert "must stay under" in str(exc)
     else:
         raise AssertionError("outside packet ref unexpectedly accepted")
+
+
+def test_missing_export_evidence_blocks_corpus_landing(tmp_path: Path) -> None:
+    port = copy_reviewed_write_port(tmp_path)
+    export_path = port / EXPORT_REF
+    payload = json.loads(export_path.read_text(encoding="utf-8"))
+    payload["evidence_refs"] = ["docs/memory/MISSING_EVIDENCE.md"]
+    export_path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+
+    try:
+        landing.load_landing_inputs(port, EXPORT_REF)
+    except landing.LandingError as exc:
+        assert "evidence_refs[0] points to missing ref docs/memory/MISSING_EVIDENCE.md" in str(exc)
+    else:
+        raise AssertionError("export with missing evidence unexpectedly loaded as landable input")
+
+
+def test_missing_candidate_source_blocks_corpus_landing(tmp_path: Path) -> None:
+    port = copy_reviewed_write_port(tmp_path)
+    candidate_path = port / "candidates" / "20260520T171200Z.codex-plane-memory-route.candidate.json"
+    payload = json.loads(candidate_path.read_text(encoding="utf-8"))
+    payload["source_refs"] = ["docs/memory/MISSING_SOURCE.md"]
+    candidate_path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+
+    try:
+        landing.load_landing_inputs(port, EXPORT_REF)
+    except landing.LandingError as exc:
+        assert "source_refs[0] points to missing ref docs/memory/MISSING_SOURCE.md" in str(exc)
+    else:
+        raise AssertionError("candidate with missing source unexpectedly loaded as landable input")
+
+
+def test_untrusted_candidate_blocks_corpus_landing(tmp_path: Path) -> None:
+    port = copy_reviewed_write_port(tmp_path)
+    candidate_path = port / "candidates" / "20260520T171200Z.codex-plane-memory-route.candidate.json"
+    payload = json.loads(candidate_path.read_text(encoding="utf-8"))
+    payload["source_trust"] = "untrusted"
+    candidate_path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+
+    try:
+        landing.load_landing_inputs(port, EXPORT_REF)
+    except landing.LandingError as exc:
+        assert "source_trust 'untrusted' blocks corpus landing" in str(exc)
+    else:
+        raise AssertionError("untrusted candidate unexpectedly loaded as landable input")
+
+
+def test_reviewed_write_requires_receipt_ref(tmp_path: Path) -> None:
+    port = copy_reviewed_write_port(tmp_path)
+    export_path = port / EXPORT_REF
+    payload = json.loads(export_path.read_text(encoding="utf-8"))
+    payload["receipt_refs"] = []
+    export_path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+
+    try:
+        landing.load_landing_inputs(port, EXPORT_REF)
+    except landing.LandingError as exc:
+        assert "reviewed_write landing requires at least one receipt_ref" in str(exc)
+    else:
+        raise AssertionError("reviewed_write export without receipt unexpectedly loaded")
