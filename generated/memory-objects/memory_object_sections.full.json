@@ -1594,6 +1594,43 @@
       ]
     },
     {
+      "id": "memo.audit.2026-05-22.reviewed-intake-evidence-guard",
+      "kind": "audit_event",
+      "title": "Reviewed intake landing now rejects missing source and evidence refs",
+      "source_kind": "reviewed_corpus",
+      "source_path": "memo/objects/audit-events/2026/reviewed-intake-evidence-guard/object.json",
+      "sections": [
+        {
+          "section_id": "memo.audit.2026-05-22.reviewed-intake-evidence-guard#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the audit_event surface, its active recall modes, and its preferred current-recall posture.",
+          "body": "Reviewed intake landing now rejects missing source and evidence refs. Records the hardening pass that made reviewed intake landing check export, candidate, receipt, source refs, and evidence refs before a packet can become a durable corpus object. Scope: repo:aoa-memo, workspace:OS-Abyss. Scope classes: repo, workspace. Primary recall modes: episodic, lineage, source_route. Current recall status: preferred because Use this as the current audit memory for why missing evidence/source refs cannot enter reviewed corpus landing. Payload ref: docs/decisions/2026-05-22-reviewed-intake-landing.md."
+        },
+        {
+          "section_id": "memo.audit.2026-05-22.reviewed-intake-evidence-guard#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.aoa-memo.reviewed-intake-evidence-guard.2026-05-22. Source refs: docs/decisions/2026-05-22-reviewed-intake-landing.md, scripts/memory/land_reviewed_memo_intake.py, tests/memory/test_reviewed_intake_landing.py, commit:aoa-memo:4844182a46f37aeccb752d10cdf61b5322439792. Episode refs: none. Related curated object ids: none. Strongest next sources: docs/decisions/2026-05-22-reviewed-intake-landing.md, scripts/memory/land_reviewed_memo_intake.py, tests/memory/test_reviewed_intake_landing.py."
+        },
+        {
+          "section_id": "memo.audit.2026-05-22.reviewed-intake-evidence-guard#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: repo_maintained (aoa-memo reviewed intake landing gate). Temperature: cool; confidence 0.92; freshness 1.00; salience 0.90. Review state: confirmed. Retention class: write-path-guardrail. Promotion state: promoted. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.audit.2026-05-22.reviewed-intake-evidence-guard#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Scope classes: repo, workspace. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: docs/decisions/2026-05-22-reviewed-intake-landing.md. ToS refs: none. Skill refs: none. Eval refs: mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md. KAG lift status: blocked."
+        }
+      ]
+    },
+    {
       "id": "memo.decision.2026-05-22.abyss-stack-aoa-memo-mcp-access-plane",
       "kind": "decision",
       "title": "abyss-stack aoa-memo-mcp access plane route",
@@ -1631,6 +1668,43 @@
       ]
     },
     {
+      "id": "memo.decision.2026-05-22.corpus-backed-mcp-search",
+      "kind": "decision",
+      "title": "aoa_memo search starts from reviewed corpus read models",
+      "source_kind": "reviewed_corpus",
+      "source_path": "memo/objects/decisions/2026/corpus-backed-mcp-search/object.json",
+      "sections": [
+        {
+          "section_id": "memo.decision.2026-05-22.corpus-backed-mcp-search#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the decision surface, its active recall modes, and its preferred current-recall posture.",
+          "body": "aoa_memo search starts from reviewed corpus read models. Records the access-plane decision that aoa_memo search should read generated reviewed-corpus catalogs first and treat file snippets as supporting retrieval rather than memory authority. Scope: repo:abyss-stack, repo:aoa-memo, workspace:OS-Abyss. Scope classes: repo, workspace. Primary recall modes: semantic, source_route, lineage. Current recall status: preferred because Use this as the current recall rule for MCP search ordering: reviewed corpus read models first, file snippets second. Payload ref: repo:abyss-stack/mcp/services/aoa-memo-mcp/DESIGN.md."
+        },
+        {
+          "section_id": "memo.decision.2026-05-22.corpus-backed-mcp-search#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.abyss-stack.corpus-backed-mcp-search.2026-05-22. Source refs: repo:abyss-stack/mcp/services/aoa-memo-mcp/DESIGN.md, repo:abyss-stack/mcp/services/aoa-memo-mcp/README.md, repo:abyss-stack/mcp/services/aoa-memo-mcp/src/aoa_memo_mcp/core.py, repo:abyss-stack/mcp/services/aoa-memo-mcp/tests/test_memo_mcp.py, generated/memory-objects/memory_object_catalog.min.json, commit:abyss-stack:afbd28b6fd14d7e6aead78716ec1dc274f15aed0. Episode refs: none. Related curated object ids: none. Strongest next sources: repo:abyss-stack/mcp/services/aoa-memo-mcp/DESIGN.md, repo:abyss-stack/mcp/services/aoa-memo-mcp/README.md, repo:abyss-stack/mcp/services/aoa-memo-mcp/src/aoa_memo_mcp/core.py."
+        },
+        {
+          "section_id": "memo.decision.2026-05-22.corpus-backed-mcp-search#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: repo_maintained (abyss-stack MCP access plane plus aoa-memo reviewed catalog). Temperature: cool; confidence 0.90; freshness 1.00; salience 0.88. Review state: confirmed. Retention class: access-plane-search. Promotion state: promoted. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.decision.2026-05-22.corpus-backed-mcp-search#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Scope classes: repo, workspace. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: repo:abyss-stack/mcp/services/aoa-memo-mcp/DESIGN.md. ToS refs: none. Skill refs: none. Eval refs: mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md. KAG lift status: candidate."
+        }
+      ]
+    },
+    {
       "id": "memo.decision.2026-05-21.reviewed-corpus-district",
       "kind": "decision",
       "title": "aoa-memo keeps reviewed memory objects in a root memo corpus district",
@@ -1664,6 +1738,117 @@
           "ordinal": 4,
           "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
           "body": "Access class: public. Scope classes: repo, workspace, ecosystem. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: memo/README.md. ToS refs: none. Skill refs: none. Eval refs: none. KAG lift status: candidate."
+        }
+      ]
+    },
+    {
+      "id": "memo.decision.2026-05-22.reviewed-memory-consumer-handoff-spine",
+      "kind": "decision",
+      "title": "Reviewed memory objects feed consumers through bounded handoff surfaces",
+      "source_kind": "reviewed_corpus",
+      "source_path": "memo/objects/decisions/2026/reviewed-memory-consumer-handoff-spine/object.json",
+      "sections": [
+        {
+          "section_id": "memo.decision.2026-05-22.reviewed-memory-consumer-handoff-spine#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the decision surface, its active recall modes, and its preferred current-recall posture.",
+          "body": "Reviewed memory objects feed consumers through bounded handoff surfaces. Records the consumer-handoff decision that evals, KAG, stats, playbooks, agents, routing, runtime, and source owners consume reviewed objects and generated read models without becoming or replacing memo authority. Scope: repo:aoa-memo, repo:aoa-evals, repo:aoa-kag, repo:aoa-stats, repo:aoa-playbooks, repo:aoa-agents, workspace:OS-Abyss. Scope classes: repo, workspace. Primary recall modes: semantic, source_route, lineage. Current recall status: preferred because Use as the current memo-side consumer route: reviewed objects first, generated read models second, consumer authority outside aoa-memo. Payload ref: mechanics/consumer-handoff/README.md."
+        },
+        {
+          "section_id": "memo.decision.2026-05-22.reviewed-memory-consumer-handoff-spine#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.aoa-memo.consumer-handoff-spine.2026-05-22. Source refs: mechanics/consumer-handoff/README.md, mechanics/consumer-handoff/DIRECTION.md, mechanics/consumer-handoff/OWNER_MAP.md, mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md, mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md, mechanics/consumer-handoff/docs/KAG_SOURCE_EXPORT.md, mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md, mechanics/consumer-handoff/docs/AGENT_MEMORY_POSTURE_SEAM.md, docs/memory/MEMORY_OPERATION_CYCLE.md, generated/memory-objects/memory_object_catalog.min.json. Episode refs: none. Related curated object ids: none. Strongest next sources: mechanics/consumer-handoff/README.md, mechanics/consumer-handoff/DIRECTION.md, mechanics/consumer-handoff/OWNER_MAP.md."
+        },
+        {
+          "section_id": "memo.decision.2026-05-22.reviewed-memory-consumer-handoff-spine#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: repo_maintained (aoa-memo consumer-handoff mechanic). Temperature: cool; confidence 0.86; freshness 1.00; salience 0.90. Review state: confirmed. Retention class: consumer-handoff. Promotion state: promoted. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.decision.2026-05-22.reviewed-memory-consumer-handoff-spine#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Scope classes: repo, workspace. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: mechanics/consumer-handoff/README.md. ToS refs: repo:Tree-of-Sophia. Skill refs: repo:aoa-playbooks, repo:aoa-agents. Eval refs: mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md. KAG lift status: candidate."
+        }
+      ]
+    },
+    {
+      "id": "memo.pattern.2026-05-22.agents-route-cards-own-memory-operations",
+      "kind": "pattern",
+      "title": "AGENTS route cards own executable memory operations",
+      "source_kind": "reviewed_corpus",
+      "source_path": "memo/objects/patterns/2026/agents-route-cards-own-memory-operations/object.json",
+      "sections": [
+        {
+          "section_id": "memo.pattern.2026-05-22.agents-route-cards-own-memory-operations#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the pattern surface, its active recall modes, and its preferred current-recall posture.",
+          "body": "AGENTS route cards own executable memory operations. Observed across memo route-law cleanups: executable memory commands and local operating routes belong in the nearest AGENTS.md, while generated indexes and seam docs stay read-model or doctrine surfaces. Scope: repo:aoa-memo, repo:abyss-stack, workspace:OS-Abyss. Scope classes: repo, workspace. Primary recall modes: semantic, procedural, lineage. Current recall status: preferred because Use when deciding whether executable memory guidance belongs in AGENTS.md, generated read models, or doctrine docs. Payload ref: AGENTS.md."
+        },
+        {
+          "section_id": "memo.pattern.2026-05-22.agents-route-cards-own-memory-operations#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.os-abyss.agents-memory-route-cards.2026-05-22. Source refs: AGENTS.md, memo/AGENTS.md, generated/memory-objects/AGENTS.md, repo:abyss-stack/mcp/services/aoa-memo-mcp/AGENTS.md, repo:abyss-stack/mcp/services/aoa-memo-mcp/README.md, commit:aoa-memo:a786b58, commit:aoa-memo:2553225, commit:abyss-stack:3943a83. Episode refs: memo.decision.2026-05-21.reviewed-corpus-district, memo.decision.2026-05-22.abyss-stack-aoa-memo-mcp-access-plane, memo.decision.2026-05-22.reviewed-memory-consumer-handoff-spine. Related curated object ids: memo.decision.2026-05-21.reviewed-corpus-district, memo.decision.2026-05-22.abyss-stack-aoa-memo-mcp-access-plane, memo.decision.2026-05-22.reviewed-memory-consumer-handoff-spine. Strongest next sources: AGENTS.md, memo/AGENTS.md, generated/memory-objects/AGENTS.md."
+        },
+        {
+          "section_id": "memo.pattern.2026-05-22.agents-route-cards-own-memory-operations#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: operational_observation (repeated AGENTS route-law corrections). Temperature: cool; confidence 0.87; freshness 1.00; salience 0.84. Review state: confirmed. Retention class: route-law-pattern. Promotion state: promoted. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.pattern.2026-05-22.agents-route-cards-own-memory-operations#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Scope classes: repo, workspace. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: AGENTS.md. ToS refs: none. Skill refs: none. Eval refs: none. KAG lift status: blocked."
+        }
+      ]
+    },
+    {
+      "id": "memo.pattern.2026-05-22.portable-local-memo-refs",
+      "kind": "pattern",
+      "title": "Local memo ports use portable refs before reviewed intake",
+      "source_kind": "reviewed_corpus",
+      "source_path": "memo/objects/patterns/2026/portable-local-memo-refs/object.json",
+      "sections": [
+        {
+          "section_id": "memo.pattern.2026-05-22.portable-local-memo-refs#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the pattern surface, its active recall modes, and its preferred current-recall posture.",
+          "body": "Local memo ports use portable refs before reviewed intake. Observed across MCP landing readiness and stack memo evidence normalization: local memo candidates and exports remain portable when evidence uses repo-scoped refs instead of workstation absolute paths. Scope: repo:abyss-stack, repo:aoa-memo, workspace:OS-Abyss. Scope classes: repo, workspace. Primary recall modes: semantic, procedural, lineage. Current recall status: preferred because Use when creating or reviewing local memo candidates, exports, receipts, and MCP landing plans. Payload ref: docs/memory/LOCAL_MEMO_PORT_STANDARD.md."
+        },
+        {
+          "section_id": "memo.pattern.2026-05-22.portable-local-memo-refs#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.abyss-stack.portable-local-memo-refs.2026-05-22. Source refs: docs/memory/LOCAL_MEMO_PORT_STANDARD.md, repo:abyss-stack/memo/candidates/20260520T051034Z.aoa-memo-mcp-provides-the-first-stack-owned-mcp.candidate.json, repo:abyss-stack/memo/exports/20260520T051034Z.aoa-memo-mcp.reviewed-intake.json, repo:abyss-stack/mcp/services/aoa-memo-mcp/src/aoa_memo_mcp/core.py, repo:abyss-stack/mcp/services/aoa-memo-mcp/tests/test_memo_mcp.py, commit:abyss-stack:9fef703dc016f8e5c59a5d9625748174def6b809, commit:abyss-stack:4d4ddb003b362bcd37e2749ccc3cee27b88be998. Episode refs: memo.decision.2026-05-22.abyss-stack-aoa-memo-mcp-access-plane, memo.decision.2026-05-22.corpus-backed-mcp-search. Related curated object ids: memo.decision.2026-05-22.abyss-stack-aoa-memo-mcp-access-plane, memo.decision.2026-05-22.corpus-backed-mcp-search. Strongest next sources: docs/memory/LOCAL_MEMO_PORT_STANDARD.md, repo:abyss-stack/memo/candidates/20260520T051034Z.aoa-memo-mcp-provides-the-first-stack-owned-mcp.candidate.json, repo:abyss-stack/memo/exports/20260520T051034Z.aoa-memo-mcp.reviewed-intake.json."
+        },
+        {
+          "section_id": "memo.pattern.2026-05-22.portable-local-memo-refs#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: operational_observation (repeated abyss-stack local memo port corrections). Temperature: cool; confidence 0.88; freshness 1.00; salience 0.86. Review state: confirmed. Retention class: local-memo-port-pattern. Promotion state: promoted. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.pattern.2026-05-22.portable-local-memo-refs#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Scope classes: repo, workspace. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: docs/memory/LOCAL_MEMO_PORT_STANDARD.md. ToS refs: none. Skill refs: none. Eval refs: mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md. KAG lift status: blocked."
         }
       ]
     }

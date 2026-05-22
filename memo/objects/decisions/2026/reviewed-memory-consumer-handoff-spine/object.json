@@ -1,0 +1,104 @@
+{
+  "id": "memo.decision.2026-05-22.reviewed-memory-consumer-handoff-spine",
+  "kind": "decision",
+  "title": "Reviewed memory objects feed consumers through bounded handoff surfaces",
+  "summary": "Records the consumer-handoff decision that evals, KAG, stats, playbooks, agents, routing, runtime, and source owners consume reviewed objects and generated read models without becoming or replacing memo authority.",
+  "scope": [
+    "repo:aoa-memo",
+    "repo:aoa-evals",
+    "repo:aoa-kag",
+    "repo:aoa-stats",
+    "repo:aoa-playbooks",
+    "repo:aoa-agents",
+    "workspace:OS-Abyss"
+  ],
+  "owner_refs": [
+    "repo:aoa-memo",
+    "repo:aoa-evals",
+    "repo:aoa-kag",
+    "repo:aoa-stats",
+    "repo:aoa-playbooks",
+    "repo:aoa-agents"
+  ],
+  "payload_ref": "mechanics/consumer-handoff/README.md",
+  "tags": [
+    "consumer-handoff",
+    "eval",
+    "kag",
+    "stats",
+    "playbooks",
+    "agents",
+    "read-model"
+  ],
+  "time": {
+    "created_at": "2026-05-22T06:13:46Z",
+    "observed_at": "2026-05-22T06:13:46Z",
+    "valid_from": "2026-05-22T06:13:46Z",
+    "valid_to": null
+  },
+  "provenance": {
+    "source_refs": [
+      "mechanics/consumer-handoff/README.md",
+      "mechanics/consumer-handoff/DIRECTION.md",
+      "mechanics/consumer-handoff/OWNER_MAP.md",
+      "mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md",
+      "mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md",
+      "mechanics/consumer-handoff/docs/KAG_SOURCE_EXPORT.md",
+      "mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md",
+      "mechanics/consumer-handoff/docs/AGENT_MEMORY_POSTURE_SEAM.md",
+      "docs/memory/MEMORY_OPERATION_CYCLE.md",
+      "generated/memory-objects/memory_object_catalog.min.json"
+    ],
+    "episode_refs": [],
+    "provenance_thread_id": "prov.aoa-memo.consumer-handoff-spine.2026-05-22"
+  },
+  "trust": {
+    "temperature": "cool",
+    "confidence": 0.86,
+    "confidence_note": "Grounded in active consumer-handoff source docs and the memory operation cycle.",
+    "authority_kind": "repo_maintained",
+    "authority": "aoa-memo consumer-handoff mechanic",
+    "freshness": 1.0,
+    "freshness_note": "Fresh at the first reviewed-corpus consumer spine pass.",
+    "salience": 0.9,
+    "salience_note": "High because this is the route from reviewed corpus growth into the neighboring memory consumers."
+  },
+  "lifecycle": {
+    "review_state": "confirmed",
+    "supersedes": [],
+    "superseded_by": null,
+    "retention_class": "consumer-handoff",
+    "promotion_state": "promoted",
+    "current_recall": {
+      "status": "preferred",
+      "status_reason": "Use as the current memo-side consumer route: reviewed objects first, generated read models second, consumer authority outside aoa-memo."
+    }
+  },
+  "access": {
+    "access_class": "public",
+    "read_scopes": [
+      "public"
+    ],
+    "write_scopes": [
+      "maintainer"
+    ],
+    "promotion_scopes": [
+      "maintainer",
+      "human-review"
+    ]
+  },
+  "bridges": {
+    "tos_refs": [
+      "repo:Tree-of-Sophia"
+    ],
+    "skill_refs": [
+      "repo:aoa-playbooks",
+      "repo:aoa-agents"
+    ],
+    "eval_refs": [
+      "mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md"
+    ],
+    "kag_lift_status": "candidate",
+    "route_capsule_ref": "mechanics/consumer-handoff/README.md"
+  }
+}

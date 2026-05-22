@@ -1,0 +1,85 @@
+{
+  "id": "memo.decision.2026-05-22.corpus-backed-mcp-search",
+  "kind": "decision",
+  "title": "aoa_memo search starts from reviewed corpus read models",
+  "summary": "Records the access-plane decision that aoa_memo search should read generated reviewed-corpus catalogs first and treat file snippets as supporting retrieval rather than memory authority.",
+  "scope": [
+    "repo:abyss-stack",
+    "repo:aoa-memo",
+    "workspace:OS-Abyss"
+  ],
+  "owner_refs": [
+    "repo:abyss-stack",
+    "repo:aoa-memo"
+  ],
+  "payload_ref": "repo:abyss-stack/mcp/services/aoa-memo-mcp/DESIGN.md",
+  "tags": [
+    "mcp",
+    "search",
+    "read-model",
+    "reviewed-corpus",
+    "retrieval"
+  ],
+  "time": {
+    "created_at": "2026-05-22T06:13:46Z",
+    "observed_at": "2026-05-22T05:47:28Z",
+    "valid_from": "2026-05-22T05:47:28Z",
+    "valid_to": null
+  },
+  "provenance": {
+    "source_refs": [
+      "repo:abyss-stack/mcp/services/aoa-memo-mcp/DESIGN.md",
+      "repo:abyss-stack/mcp/services/aoa-memo-mcp/README.md",
+      "repo:abyss-stack/mcp/services/aoa-memo-mcp/src/aoa_memo_mcp/core.py",
+      "repo:abyss-stack/mcp/services/aoa-memo-mcp/tests/test_memo_mcp.py",
+      "generated/memory-objects/memory_object_catalog.min.json",
+      "commit:abyss-stack:afbd28b6fd14d7e6aead78716ec1dc274f15aed0"
+    ],
+    "episode_refs": [],
+    "provenance_thread_id": "prov.abyss-stack.corpus-backed-mcp-search.2026-05-22"
+  },
+  "trust": {
+    "temperature": "cool",
+    "confidence": 0.9,
+    "confidence_note": "Grounded in the merged abyss-stack MCP implementation and the generated aoa-memo corpus catalog.",
+    "authority_kind": "repo_maintained",
+    "authority": "abyss-stack MCP access plane plus aoa-memo reviewed catalog",
+    "freshness": 1.0,
+    "freshness_note": "Fresh at the corpus-backed search landing.",
+    "salience": 0.88,
+    "salience_note": "High because this keeps retrieval subordinate to reviewed memory objects."
+  },
+  "lifecycle": {
+    "review_state": "confirmed",
+    "supersedes": [],
+    "superseded_by": null,
+    "retention_class": "access-plane-search",
+    "promotion_state": "promoted",
+    "current_recall": {
+      "status": "preferred",
+      "status_reason": "Use this as the current recall rule for MCP search ordering: reviewed corpus read models first, file snippets second."
+    }
+  },
+  "access": {
+    "access_class": "public",
+    "read_scopes": [
+      "public"
+    ],
+    "write_scopes": [
+      "maintainer"
+    ],
+    "promotion_scopes": [
+      "maintainer",
+      "human-review"
+    ]
+  },
+  "bridges": {
+    "tos_refs": [],
+    "skill_refs": [],
+    "eval_refs": [
+      "mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md"
+    ],
+    "kag_lift_status": "candidate",
+    "route_capsule_ref": "repo:abyss-stack/mcp/services/aoa-memo-mcp/DESIGN.md"
+  }
+}

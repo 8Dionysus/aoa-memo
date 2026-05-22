@@ -562,6 +562,19 @@
       "source_path": "mechanics/antifragility/parts/recovery-pattern-memory/examples/pattern.antifragility-stress-recovery-window.example.json"
     },
     {
+      "id": "memo.audit.2026-05-22.reviewed-intake-evidence-guard",
+      "kind": "audit_event",
+      "title": "Reviewed intake landing now rejects missing source and evidence refs",
+      "summary": "Records the hardening pass that made reviewed intake landing check export, candidate, receipt, source refs, and evidence refs before a packet can become a durable corpus object.",
+      "source_kind": "reviewed_corpus",
+      "recall_posture_short": "preferred current recall; confirmed review state; Use this as the current audit memory for why missing evidence/source refs cannot enter reviewed corpus landing",
+      "trust_posture_short": "cool temperature; repo_maintained authority; confidence 0.92; freshness 1.00",
+      "use_when_short": "Use as the current audit_event surface for episodic, lineage, source_route recall.",
+      "do_not_use_short": "Do not treat this audit_event as proof or stronger than its cited sources.",
+      "strongest_next_source": "docs/decisions/2026-05-22-reviewed-intake-landing.md",
+      "source_path": "memo/objects/audit-events/2026/reviewed-intake-evidence-guard/object.json"
+    },
+    {
       "id": "memo.decision.2026-05-22.abyss-stack-aoa-memo-mcp-access-plane",
       "kind": "decision",
       "title": "abyss-stack aoa-memo-mcp access plane route",
@@ -575,6 +588,19 @@
       "source_path": "memo/objects/decisions/2026/abyss-stack-aoa-memo-mcp-access-plane/object.json"
     },
     {
+      "id": "memo.decision.2026-05-22.corpus-backed-mcp-search",
+      "kind": "decision",
+      "title": "aoa_memo search starts from reviewed corpus read models",
+      "summary": "Records the access-plane decision that aoa_memo search should read generated reviewed-corpus catalogs first and treat file snippets as supporting retrieval rather than memory authority.",
+      "source_kind": "reviewed_corpus",
+      "recall_posture_short": "preferred current recall; confirmed review state; Use this as the current recall rule for MCP search ordering: reviewed corpus read models first, file snippets second",
+      "trust_posture_short": "cool temperature; repo_maintained authority; confidence 0.90; freshness 1.00",
+      "use_when_short": "Use as the current decision surface for semantic, source_route, lineage recall.",
+      "do_not_use_short": "Do not treat this decision as proof or stronger than its cited sources.",
+      "strongest_next_source": "repo:abyss-stack/mcp/services/aoa-memo-mcp/DESIGN.md",
+      "source_path": "memo/objects/decisions/2026/corpus-backed-mcp-search/object.json"
+    },
+    {
       "id": "memo.decision.2026-05-21.reviewed-corpus-district",
       "kind": "decision",
       "title": "aoa-memo keeps reviewed memory objects in a root memo corpus district",
@@ -586,6 +612,45 @@
       "do_not_use_short": "Do not treat this decision as proof or stronger than its cited sources.",
       "strongest_next_source": "DESIGN.md",
       "source_path": "memo/objects/decisions/2026/reviewed-corpus-district/object.json"
+    },
+    {
+      "id": "memo.decision.2026-05-22.reviewed-memory-consumer-handoff-spine",
+      "kind": "decision",
+      "title": "Reviewed memory objects feed consumers through bounded handoff surfaces",
+      "summary": "Records the consumer-handoff decision that evals, KAG, stats, playbooks, agents, routing, runtime, and source owners consume reviewed objects and generated read models without becoming or replacing memo authority.",
+      "source_kind": "reviewed_corpus",
+      "recall_posture_short": "preferred current recall; confirmed review state; Use as the current memo-side consumer route: reviewed objects first, generated read models second, consumer authority outside aoa-memo",
+      "trust_posture_short": "cool temperature; repo_maintained authority; confidence 0.86; freshness 1.00",
+      "use_when_short": "Use as the current decision surface for semantic, source_route, lineage recall.",
+      "do_not_use_short": "Do not treat this decision as proof or stronger than its cited sources.",
+      "strongest_next_source": "mechanics/consumer-handoff/README.md",
+      "source_path": "memo/objects/decisions/2026/reviewed-memory-consumer-handoff-spine/object.json"
+    },
+    {
+      "id": "memo.pattern.2026-05-22.agents-route-cards-own-memory-operations",
+      "kind": "pattern",
+      "title": "AGENTS route cards own executable memory operations",
+      "summary": "Observed across memo route-law cleanups: executable memory commands and local operating routes belong in the nearest AGENTS.md, while generated indexes and seam docs stay read-model or doctrine surfaces.",
+      "source_kind": "reviewed_corpus",
+      "recall_posture_short": "preferred current recall; confirmed review state; Use when deciding whether executable memory guidance belongs in AGENTS.md, generated read models, or doctrine docs",
+      "trust_posture_short": "cool temperature; operational_observation authority; confidence 0.87; freshness 1.00",
+      "use_when_short": "Use as the current pattern surface for semantic, procedural, lineage recall.",
+      "do_not_use_short": "Do not treat this pattern as proof or stronger than its cited sources.",
+      "strongest_next_source": "AGENTS.md",
+      "source_path": "memo/objects/patterns/2026/agents-route-cards-own-memory-operations/object.json"
+    },
+    {
+      "id": "memo.pattern.2026-05-22.portable-local-memo-refs",
+      "kind": "pattern",
+      "title": "Local memo ports use portable refs before reviewed intake",
+      "summary": "Observed across MCP landing readiness and stack memo evidence normalization: local memo candidates and exports remain portable when evidence uses repo-scoped refs instead of workstation absolute paths.",
+      "source_kind": "reviewed_corpus",
+      "recall_posture_short": "preferred current recall; confirmed review state; Use when creating or reviewing local memo candidates, exports, receipts, and MCP landing plans",
+      "trust_posture_short": "cool temperature; operational_observation authority; confidence 0.88; freshness 1.00",
+      "use_when_short": "Use as the current pattern surface for semantic, procedural, lineage recall.",
+      "do_not_use_short": "Do not treat this pattern as proof or stronger than its cited sources.",
+      "strongest_next_source": "docs/memory/LOCAL_MEMO_PORT_STANDARD.md",
+      "source_path": "memo/objects/patterns/2026/portable-local-memo-refs/object.json"
     }
   ]
 }

@@ -44,6 +44,7 @@ class ConsumerHandoffMechanicTestCase(unittest.TestCase):
             "aoa-playbooks",
             "aoa-evals",
             "aoa-kag",
+            "aoa-stats",
             "Tree-of-Sophia",
             "aoa-routing",
             "abyss-stack",

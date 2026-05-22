@@ -1,0 +1,89 @@
+{
+  "id": "memo.pattern.2026-05-22.portable-local-memo-refs",
+  "kind": "pattern",
+  "title": "Local memo ports use portable refs before reviewed intake",
+  "summary": "Observed across MCP landing readiness and stack memo evidence normalization: local memo candidates and exports remain portable when evidence uses repo-scoped refs instead of workstation absolute paths.",
+  "scope": [
+    "repo:abyss-stack",
+    "repo:aoa-memo",
+    "workspace:OS-Abyss"
+  ],
+  "owner_refs": [
+    "repo:abyss-stack",
+    "repo:aoa-memo"
+  ],
+  "payload_ref": "docs/memory/LOCAL_MEMO_PORT_STANDARD.md",
+  "tags": [
+    "local-memo-port",
+    "portable-ref",
+    "reviewed-intake",
+    "evidence-route",
+    "mcp"
+  ],
+  "time": {
+    "created_at": "2026-05-22T06:13:46Z",
+    "observed_at": "2026-05-22T05:36:20Z",
+    "valid_from": "2026-05-22T05:36:20Z",
+    "valid_to": null
+  },
+  "provenance": {
+    "source_refs": [
+      "docs/memory/LOCAL_MEMO_PORT_STANDARD.md",
+      "repo:abyss-stack/memo/candidates/20260520T051034Z.aoa-memo-mcp-provides-the-first-stack-owned-mcp.candidate.json",
+      "repo:abyss-stack/memo/exports/20260520T051034Z.aoa-memo-mcp.reviewed-intake.json",
+      "repo:abyss-stack/mcp/services/aoa-memo-mcp/src/aoa_memo_mcp/core.py",
+      "repo:abyss-stack/mcp/services/aoa-memo-mcp/tests/test_memo_mcp.py",
+      "commit:abyss-stack:9fef703dc016f8e5c59a5d9625748174def6b809",
+      "commit:abyss-stack:4d4ddb003b362bcd37e2749ccc3cee27b88be998"
+    ],
+    "episode_refs": [
+      "memo.decision.2026-05-22.abyss-stack-aoa-memo-mcp-access-plane",
+      "memo.decision.2026-05-22.corpus-backed-mcp-search"
+    ],
+    "provenance_thread_id": "prov.abyss-stack.portable-local-memo-refs.2026-05-22"
+  },
+  "trust": {
+    "temperature": "cool",
+    "confidence": 0.88,
+    "confidence_note": "Supported by two consecutive stack landings: landing readiness hardening and evidence ref normalization.",
+    "authority_kind": "operational_observation",
+    "authority": "repeated abyss-stack local memo port corrections",
+    "freshness": 1.0,
+    "freshness_note": "Fresh at the May 22, 2026 port normalization pass.",
+    "salience": 0.86,
+    "salience_note": "High because portable refs decide whether reviewed intake remains usable across machines and agents."
+  },
+  "lifecycle": {
+    "review_state": "confirmed",
+    "supersedes": [],
+    "superseded_by": null,
+    "retention_class": "local-memo-port-pattern",
+    "promotion_state": "promoted",
+    "current_recall": {
+      "status": "preferred",
+      "status_reason": "Use when creating or reviewing local memo candidates, exports, receipts, and MCP landing plans."
+    }
+  },
+  "access": {
+    "access_class": "public",
+    "read_scopes": [
+      "public"
+    ],
+    "write_scopes": [
+      "maintainer"
+    ],
+    "promotion_scopes": [
+      "maintainer",
+      "human-review"
+    ]
+  },
+  "bridges": {
+    "tos_refs": [],
+    "skill_refs": [],
+    "eval_refs": [
+      "mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md"
+    ],
+    "kag_lift_status": "blocked",
+    "route_capsule_ref": "docs/memory/LOCAL_MEMO_PORT_STANDARD.md"
+  }
+}
