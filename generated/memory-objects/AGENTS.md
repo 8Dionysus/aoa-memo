@@ -9,14 +9,17 @@ surfaces.
 
 ## Source
 
-Source examples live under `examples/memory-objects/`, `examples/phase-alpha/`,
-`examples/lifecycle/`, and `examples/generated-surfaces/`.
+Reviewed corpus objects live under `memo/objects/**/object.json`.
+Teaching fixtures live under `examples/memory-objects/`, `examples/phase-alpha/`,
+`examples/lifecycle/`, mechanic example homes, and
+`examples/generated-surfaces/memory_object_surface_manifest.json`.
 
 ## Route
 
 - Up: `generated/AGENTS.md`, then `AGENTS.md`.
 - Across: `schemas/generated-surfaces/`.
-- Downstream: consumers inspect compact catalog first, then open source examples.
+- Downstream: consumers inspect compact catalog first, then open the source path.
+  Use `source_kind` to distinguish reviewed corpus from teaching fixtures.
 
 ## Validate
 

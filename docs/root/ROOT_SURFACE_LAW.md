@@ -20,6 +20,8 @@ A root surface is allowed only when it serves at least one durable role:
    expected by tooling.
 5. **Agent lane**: it belongs to the agent-facing lane and is governed by that
    lane.
+6. **Reviewed corpus district**: it holds source-owned reviewed memory objects
+   that need durable, addressable placement before generated read models.
 
 A surface that is merely historical, staging-local, generated, experimental,
 neighbor-owned, or future-looking must not sit in root by default.
@@ -45,6 +47,7 @@ shortcut.
 | Agent route law | `AGENTS.md`, `DESIGN.AGENTS.md`, `.agents/` | agent-facing work needs a stable local lane and a design form for that lane | must not replace source docs, schemas, examples, or validators |
 | Public governance and legal | `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `LICENSE` | GitHub and contributors expect them there | must not become memory doctrine catalogs |
 | Thin indexes | `MEMORY_INDEX.md`, `QUESTBOOK.md` | useful only while compact and route-oriented | must not become duplicate doctrine, a second roadmap, or a hidden ledger; generated companions must be builder-backed projections |
+| Reviewed memory corpus | `memo/` | `aoa-memo` needs a source-owned home for reviewed memory object bundles and corpus intake receipts | object bundles must validate through `scripts/memory/validate_memo_corpus.py` and remain distinct from local repo memo ports |
 | Tooling and machine districts | `.github/`, `config/`, `docs/`, `examples/`, `generated/`, `manifests/`, `mechanics/`, `quests/`, `schemas/`, `scripts/`, `tests/` | tooling and repo structure expect stable directories | each district needs local guidance plus the compact `generated/root-topology/root_technical_districts.min.json` atlas once root technical routing changes |
 | Development requirements | `.gitignore`, `requirements-dev.txt` | development hygiene | must stay technical and small |
 
@@ -131,6 +134,7 @@ together.
 | `Spark/` | moved | `.agents/spark/` | maintained agent lanes should live under `.agents/`, not as root civic surfaces |
 | `config/agents/agents_mesh.json` | add | config source for current route-card mesh | route cards need a machine-checkable source before docs districts move |
 | `generated/agents/agents_mesh.min.json` | add | generated companion mirror | the mesh is inspectable without treating generated output as authority |
+| `memo/` | add | reviewed memory corpus district | durable reviewed memory objects need a source-owned bundle home separate from local repo memo ports, examples, and generated read models |
 | `manifests/AGENTS.md` and `quests/AGENTS.md` | add | top-level district route cards | both directories already hold durable public surfaces and should not be AGENTS coverage gaps |
 | flat antifragility docs-root surfaces | moved | `mechanics/antifragility/docs/` | antifragility is an active memo mechanic with owner map, legacy bridge, schemas, examples, generated surfaces, tests, and validation |
 | flat governance docs-root surfaces | moved | `mechanics/governance/docs/` | governance is an active authority-boundary memo mechanic with owner map, legacy bridge, authority stop-lines, tests, and validation |

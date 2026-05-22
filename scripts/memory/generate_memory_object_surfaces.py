@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate object-facing aoa-memo surfaces from curated memory-object examples."""
+"""Generate object-facing aoa-memo surfaces from reviewed corpus objects and examples."""
 
 from __future__ import annotations
 
@@ -13,10 +13,14 @@ from validate_memo import local_ref_error, validator_for
 
 ROOT = Path(__file__).resolve().parents[2]
 EXAMPLES = ROOT / "examples"
+MEMO_OBJECTS = ROOT / "memo" / "objects"
 GENERATED = ROOT / "generated"
 SCHEMAS = ROOT / "schemas"
 
-SOURCE_OF_TRUTH = "aoa-memo-object-example-surfaces-v1"
+SOURCE_OF_TRUTH = "aoa-memo-object-read-models-v2"
+EXAMPLE_MANIFEST_SOURCE = "aoa-memo-object-example-surfaces-v1"
+SOURCE_KIND_REVIEWED_CORPUS = "reviewed_corpus"
+SOURCE_KIND_TEACHING_FIXTURE = "teaching_fixture"
 MANIFEST_PATH = EXAMPLES / "generated-surfaces" / "memory_object_surface_manifest.json"
 FULL_CATALOG_PATH = GENERATED / "memory-objects" / "memory_object_catalog.json"
 MIN_CATALOG_PATH = GENERATED / "memory-objects" / "memory_object_catalog.min.json"
@@ -31,6 +35,18 @@ SECTION_SPECS = [
 ]
 
 JsonDict = dict[str, Any]
+SourceObject = tuple[str, list[str], JsonDict, str]
+
+CORPUS_RECALL_MODES_BY_KIND = {
+    "anchor": ["semantic", "source_route", "lineage"],
+    "state_capsule": ["working", "episodic", "source_route"],
+    "episode": ["episodic", "working", "source_route"],
+    "claim": ["semantic", "source_route"],
+    "decision": ["semantic", "source_route", "lineage"],
+    "pattern": ["semantic", "procedural", "lineage"],
+    "bridge": ["lineage", "source_route"],
+    "audit_event": ["episodic", "lineage", "source_route"],
+}
 
 
 def load_json(path: Path) -> JsonDict:
@@ -151,6 +167,7 @@ def catalog_item(
     recall_modes: list[str],
     curated_ids: set[str],
     *,
+    source_kind: str,
     include_full: bool,
 ) -> JsonDict:
     trust = memory_object["trust"]
@@ -165,6 +182,7 @@ def catalog_item(
         "review_state": lifecycle["review_state"],
         "current_recall_status": lifecycle["current_recall"]["status"],
         "authority_kind": trust["authority_kind"],
+        "source_kind": source_kind,
         "primary_recall_modes": recall_modes,
         "source_path": source_path,
         "inspect_key": memory_object["id"],
@@ -226,12 +244,13 @@ def do_not_use_short(memory_object: JsonDict) -> str:
     return f"Do not treat this {kind} as proof or stronger than its cited sources."
 
 
-def capsules_item(memory_object: JsonDict, source_path: str, recall_modes: list[str]) -> JsonDict:
+def capsules_item(memory_object: JsonDict, source_path: str, recall_modes: list[str], source_kind: str) -> JsonDict:
     return {
         "id": memory_object["id"],
         "kind": memory_object["kind"],
         "title": memory_object["title"],
         "summary": memory_object["summary"],
+        "source_kind": source_kind,
         "recall_posture_short": recall_posture_short(memory_object),
         "trust_posture_short": trust_posture_short(memory_object),
         "use_when_short": use_when_short(memory_object, recall_modes),
@@ -322,7 +341,13 @@ def bridges_summary(memory_object: JsonDict, source_path: str) -> tuple[str, str
     return summary, body
 
 
-def sections_item(memory_object: JsonDict, source_path: str, recall_modes: list[str], curated_ids: set[str]) -> JsonDict:
+def sections_item(
+    memory_object: JsonDict,
+    source_path: str,
+    recall_modes: list[str],
+    curated_ids: set[str],
+    source_kind: str,
+) -> JsonDict:
     builders = [
         identity_summary(memory_object, recall_modes),
         provenance_summary(memory_object, curated_ids),
@@ -344,6 +369,7 @@ def sections_item(memory_object: JsonDict, source_path: str, recall_modes: list[
         "id": memory_object["id"],
         "kind": memory_object["kind"],
         "title": memory_object["title"],
+        "source_kind": source_kind,
         "source_path": source_path,
         "sections": sections,
     }
@@ -361,7 +387,7 @@ def validate_manifest() -> JsonDict:
     return manifest
 
 
-def validate_example_refs(memory_object: JsonDict, source_path: str) -> list[str]:
+def validate_local_refs(memory_object: JsonDict, source_path: str) -> list[str]:
     errors: list[str] = []
     ref_checks: list[tuple[str, object]] = [("payload_ref", memory_object.get("payload_ref"))]
     for index, value in enumerate(memory_object.get("provenance", {}).get("source_refs", [])):
@@ -374,13 +400,41 @@ def validate_example_refs(memory_object: JsonDict, source_path: str) -> list[str
     return errors
 
 
-def load_curated_objects(manifest: JsonDict) -> list[tuple[str, list[str], JsonDict]]:
+def validate_memory_object(
+    *,
+    memory_object: JsonDict,
+    source_path: str,
+    validator: Any,
+    allowed_kinds: set[str],
+    errors: list[str],
+) -> bool:
+    validation_errors = [
+        f"{source_path}:{'.'.join(str(part) for part in err.absolute_path) or '<root>'}: {err.message}"
+        for err in sorted(validator.iter_errors(memory_object), key=lambda err: list(err.absolute_path))
+    ]
+    if validation_errors:
+        errors.extend(validation_errors)
+        return False
+    if memory_object["kind"] not in allowed_kinds:
+        errors.append(f"{source_path}: object kind {memory_object['kind']} is outside the shipped canon")
+    try:
+        scope_classes_for(memory_object)
+    except ValueError as exc:
+        errors.append(f"{source_path}: {exc}")
+    errors.extend(validate_local_refs(memory_object, source_path))
+    return True
+
+
+def load_curated_objects(manifest: JsonDict) -> list[SourceObject]:
     validator = validator_for("memory_object.schema.json")
     allowed_kinds = shipped_kinds()
     seen_paths: set[str] = set()
     seen_ids: set[str] = set()
-    curated: list[tuple[str, list[str], JsonDict]] = []
+    curated: list[SourceObject] = []
     errors: list[str] = []
+
+    if manifest.get("source_of_truth") != EXAMPLE_MANIFEST_SOURCE:
+        errors.append(f"{MANIFEST_PATH.relative_to(ROOT)} must stay source_of_truth={EXAMPLE_MANIFEST_SOURCE}")
 
     for entry in manifest["entries"]:
         source_path = entry["example_path"]
@@ -393,37 +447,75 @@ def load_curated_objects(manifest: JsonDict) -> list[tuple[str, list[str], JsonD
             errors.append(f"manifest example_path does not exist: {source_path}")
             continue
         memory_object = load_json(example_path)
-        validation_errors = [
-            f"{source_path}:{'.'.join(str(part) for part in err.absolute_path) or '<root>'}: {err.message}"
-            for err in sorted(validator.iter_errors(memory_object), key=lambda err: list(err.absolute_path))
-        ]
-        if validation_errors:
-            errors.extend(validation_errors)
+        if not validate_memory_object(
+            memory_object=memory_object,
+            source_path=source_path,
+            validator=validator,
+            allowed_kinds=allowed_kinds,
+            errors=errors,
+        ):
             continue
         object_id = memory_object["id"]
         if object_id in seen_ids:
             errors.append(f"duplicate memory object id in manifest set: {object_id}")
             continue
         seen_ids.add(object_id)
-        if memory_object["kind"] not in allowed_kinds:
-            errors.append(f"{source_path}: object kind {memory_object['kind']} is outside the shipped canon")
-        try:
-            scope_classes_for(memory_object)
-        except ValueError as exc:
-            errors.append(f"{source_path}: {exc}")
-        errors.extend(validate_example_refs(memory_object, source_path))
-        curated.append((source_path, list(entry["recall_modes"]), memory_object))
+        curated.append((source_path, list(entry["recall_modes"]), memory_object, SOURCE_KIND_TEACHING_FIXTURE))
 
     if errors:
         fail("curated memory object manifest", errors)
     return curated
 
 
-def validate_internal_object_refs(curated: list[tuple[str, list[str], JsonDict]]) -> None:
-    curated_ids = {memory_object["id"] for _, _, memory_object in curated}
+def corpus_recall_modes(memory_object: JsonDict) -> list[str]:
+    return list(CORPUS_RECALL_MODES_BY_KIND[memory_object["kind"]])
+
+
+def load_corpus_objects(seen_paths: set[str], seen_ids: set[str]) -> list[SourceObject]:
+    validator = validator_for("memory_object.schema.json")
+    allowed_kinds = shipped_kinds()
+    corpus: list[SourceObject] = []
     errors: list[str] = []
 
-    for source_path, _, memory_object in curated:
+    for object_path in sorted(MEMO_OBJECTS.glob("*/*/*/object.json")):
+        source_path = object_path.relative_to(ROOT).as_posix()
+        if source_path in seen_paths:
+            errors.append(f"duplicate corpus source path: {source_path}")
+            continue
+        seen_paths.add(source_path)
+        memory_object = load_json(object_path)
+        if not validate_memory_object(
+            memory_object=memory_object,
+            source_path=source_path,
+            validator=validator,
+            allowed_kinds=allowed_kinds,
+            errors=errors,
+        ):
+            continue
+        object_id = memory_object["id"]
+        if object_id in seen_ids:
+            errors.append(f"duplicate memory object id across object read-model sources: {object_id}")
+            continue
+        seen_ids.add(object_id)
+        corpus.append((source_path, corpus_recall_modes(memory_object), memory_object, SOURCE_KIND_REVIEWED_CORPUS))
+
+    if errors:
+        fail("reviewed memory corpus objects", errors)
+    return corpus
+
+
+def load_source_objects(manifest: JsonDict) -> list[SourceObject]:
+    curated = load_curated_objects(manifest)
+    seen_paths = {source_path for source_path, _, _, _ in curated}
+    seen_ids = {memory_object["id"] for _, _, memory_object, _ in curated}
+    return curated + load_corpus_objects(seen_paths, seen_ids)
+
+
+def validate_internal_object_refs(curated: list[SourceObject]) -> None:
+    curated_ids = {memory_object["id"] for _, _, memory_object, _ in curated}
+    errors: list[str] = []
+
+    for source_path, _, memory_object, _ in curated:
         for label, refs in object_reference_fields(memory_object):
             for ref in refs:
                 if ref not in curated_ids:
@@ -435,26 +527,26 @@ def validate_internal_object_refs(curated: list[tuple[str, list[str], JsonDict]]
 
 def build_surface_family() -> dict[str, JsonDict]:
     manifest = validate_manifest()
-    curated = load_curated_objects(manifest)
+    curated = load_source_objects(manifest)
     validate_internal_object_refs(curated)
 
-    curated_ids = {memory_object["id"] for _, _, memory_object in curated}
+    curated_ids = {memory_object["id"] for _, _, memory_object, _ in curated}
     full_items = [
-        catalog_item(memory_object, source_path, recall_modes, curated_ids, include_full=True)
-        for source_path, recall_modes, memory_object in curated
+        catalog_item(memory_object, source_path, recall_modes, curated_ids, source_kind=source_kind, include_full=True)
+        for source_path, recall_modes, memory_object, source_kind in curated
     ]
     min_items = [
-        catalog_item(memory_object, source_path, recall_modes, curated_ids, include_full=False)
-        for source_path, recall_modes, memory_object in curated
+        catalog_item(memory_object, source_path, recall_modes, curated_ids, source_kind=source_kind, include_full=False)
+        for source_path, recall_modes, memory_object, source_kind in curated
         if memory_object["lifecycle"]["current_recall"]["status"] in EXPORTABLE_RECALL_STATUSES
     ]
     capsules = [
-        capsules_item(memory_object, source_path, recall_modes)
-        for source_path, recall_modes, memory_object in curated
+        capsules_item(memory_object, source_path, recall_modes, source_kind)
+        for source_path, recall_modes, memory_object, source_kind in curated
     ]
     sections = [
-        sections_item(memory_object, source_path, recall_modes, curated_ids)
-        for source_path, recall_modes, memory_object in curated
+        sections_item(memory_object, source_path, recall_modes, curated_ids, source_kind)
+        for source_path, recall_modes, memory_object, source_kind in curated
     ]
 
     return {

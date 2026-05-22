@@ -88,6 +88,16 @@
       ]
     },
     {
+      "path": "memo/AGENTS.md",
+      "min_lines": 45,
+      "required_snippets": [
+        "reviewed memory corpus",
+        "`object.json`",
+        "`MEMO.md`",
+        "validate_memo_corpus.py"
+      ]
+    },
+    {
       "path": "mechanics/AGENTS.md",
       "min_lines": 35,
       "required_snippets": [

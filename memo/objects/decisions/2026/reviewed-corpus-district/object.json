@@ -1,0 +1,78 @@
+{
+  "id": "memo.decision.2026-05-21.reviewed-corpus-district",
+  "kind": "decision",
+  "title": "aoa-memo keeps reviewed memory objects in a root memo corpus district",
+  "summary": "Adds root memo/ as the source-owned reviewed memory object corpus for OS Abyss, separate from local repo memo ports and downstream generated read models.",
+  "scope": [
+    "repo:aoa-memo",
+    "workspace:OS-Abyss",
+    "ecosystem:AoA"
+  ],
+  "owner_refs": [
+    "repo:aoa-memo"
+  ],
+  "payload_ref": "docs/decisions/2026-05-21-reviewed-memory-corpus-district.md",
+  "tags": [
+    "memory-corpus",
+    "topology",
+    "reviewed-memory",
+    "os-abyss"
+  ],
+  "time": {
+    "created_at": "2026-05-22T00:36:29Z",
+    "observed_at": "2026-05-21T18:36:29-06:00",
+    "valid_from": "2026-05-22T00:36:29Z",
+    "valid_to": null
+  },
+  "provenance": {
+    "source_refs": [
+      "DESIGN.md",
+      "MEMORY_INDEX.md",
+      "docs/memory/MEMORY_MODEL.md",
+      "docs/memory/LIVING_MEMORY_TOPOLOGY.md",
+      "docs/memory/LOCAL_MEMO_PORT_STANDARD.md",
+      "docs/decisions/2026-05-21-reviewed-memory-corpus-district.md"
+    ],
+    "episode_refs": [],
+    "provenance_thread_id": "prov.aoa-memo.reviewed-corpus.2026-05-21"
+  },
+  "trust": {
+    "temperature": "cool",
+    "confidence": 0.95,
+    "authority_kind": "repo_maintained",
+    "authority": "repo-reviewed topology decision",
+    "freshness": 1.0,
+    "salience": 0.95
+  },
+  "lifecycle": {
+    "review_state": "confirmed",
+    "supersedes": [],
+    "superseded_by": null,
+    "retention_class": "repo-topology",
+    "promotion_state": "promoted",
+    "current_recall": {
+      "status": "preferred",
+      "status_reason": "This is the current source-owned corpus placement for reviewed aoa-memo memory objects."
+    }
+  },
+  "access": {
+    "access_class": "public",
+    "read_scopes": [
+      "public"
+    ],
+    "write_scopes": [
+      "maintainer"
+    ],
+    "promotion_scopes": [
+      "maintainer",
+      "human-review"
+    ]
+  },
+  "bridges": {
+    "tos_refs": [],
+    "skill_refs": [],
+    "eval_refs": [],
+    "kag_lift_status": "candidate",
+    "route_capsule_ref": "memo/README.md"
+  }
+}

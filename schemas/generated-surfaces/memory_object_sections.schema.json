@@ -16,7 +16,7 @@
     },
     "source_of_truth": {
       "type": "string",
-      "const": "aoa-memo-object-example-surfaces-v1"
+      "const": "aoa-memo-object-read-models-v2"
     },
     "memory_objects": {
       "type": "array",
@@ -28,6 +28,7 @@
           "id",
           "kind",
           "title",
+          "source_kind",
           "source_path",
           "sections"
         ],
@@ -52,6 +53,13 @@
           "title": {
             "type": "string",
             "minLength": 1
+          },
+          "source_kind": {
+            "type": "string",
+            "enum": [
+              "reviewed_corpus",
+              "teaching_fixture"
+            ]
           },
           "source_path": {
             "type": "string",
