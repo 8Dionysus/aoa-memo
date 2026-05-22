@@ -1513,6 +1513,41 @@
       ]
     },
     {
+      "id": "memo.decision.2026-05-22.abyss-stack-aoa-memo-mcp-access-plane",
+      "kind": "decision",
+      "title": "abyss-stack aoa-memo-mcp access plane route",
+      "summary": "abyss-stack owns aoa-memo-mcp as the MCP access plane for OS Abyss memory briefs, local memo port indexing, and reviewed-intake forwarding while aoa-memo remains the durable reviewed memory authority.",
+      "scope_classes": [
+        "repo",
+        "workspace"
+      ],
+      "temperature": "cool",
+      "review_state": "confirmed",
+      "current_recall_status": "allowed",
+      "authority_kind": "human_reviewed",
+      "source_kind": "reviewed_corpus",
+      "primary_recall_modes": [
+        "semantic",
+        "source_route",
+        "lineage"
+      ],
+      "source_path": "memo/objects/decisions/2026/abyss-stack-aoa-memo-mcp-access-plane/object.json",
+      "inspect_key": "memo.decision.2026-05-22.abyss-stack-aoa-memo-mcp-access-plane",
+      "expand_key": "memo.decision.2026-05-22.abyss-stack-aoa-memo-mcp-access-plane",
+      "scope": [
+        "repo:abyss-stack",
+        "repo:aoa-memo",
+        "workspace:OS-Abyss"
+      ],
+      "provenance_thread_id": "prov.abyss-stack.abyss-stack-aoa-memo-mcp-access-plane.2026-05-22",
+      "related_object_ids": [],
+      "strongest_next_sources": [
+        "memo/intake/reviewed/abyss-stack.20260522T021004Z.aoa-memo-mcp-access-plane.reviewed-intake.json",
+        "repo:abyss-stack/memo/candidates/20260522T021004Z.aoa-memo-mcp-access-plane-reviewed-route.candidate.json",
+        "repo:abyss-stack/memo/receipts/20260522T021004Z.aoa-memo-mcp-access-plane.forwarding-receipt.json"
+      ]
+    },
+    {
       "id": "memo.decision.2026-05-21.reviewed-corpus-district",
       "kind": "decision",
       "title": "aoa-memo keeps reviewed memory objects in a root memo corpus district",
