@@ -1,0 +1,89 @@
+{
+  "id": "memo.pattern.2026-05-22.agents-route-cards-own-memory-operations",
+  "kind": "pattern",
+  "title": "AGENTS route cards own executable memory operations",
+  "summary": "Observed across memo route-law cleanups: executable memory commands and local operating routes belong in the nearest AGENTS.md, while generated indexes and seam docs stay read-model or doctrine surfaces.",
+  "scope": [
+    "repo:aoa-memo",
+    "repo:abyss-stack",
+    "workspace:OS-Abyss"
+  ],
+  "owner_refs": [
+    "repo:aoa-memo",
+    "repo:abyss-stack"
+  ],
+  "payload_ref": "AGENTS.md",
+  "tags": [
+    "agents",
+    "route-law",
+    "memory-route",
+    "generated-read-model",
+    "mcp"
+  ],
+  "time": {
+    "created_at": "2026-05-22T06:13:46Z",
+    "observed_at": "2026-05-22T05:09:02Z",
+    "valid_from": "2026-05-22T05:09:02Z",
+    "valid_to": null
+  },
+  "provenance": {
+    "source_refs": [
+      "AGENTS.md",
+      "memo/AGENTS.md",
+      "generated/memory-objects/AGENTS.md",
+      "repo:abyss-stack/mcp/services/aoa-memo-mcp/AGENTS.md",
+      "repo:abyss-stack/mcp/services/aoa-memo-mcp/README.md",
+      "commit:aoa-memo:a786b58",
+      "commit:aoa-memo:2553225",
+      "commit:abyss-stack:3943a83"
+    ],
+    "episode_refs": [
+      "memo.decision.2026-05-21.reviewed-corpus-district",
+      "memo.decision.2026-05-22.abyss-stack-aoa-memo-mcp-access-plane",
+      "memo.decision.2026-05-22.reviewed-memory-consumer-handoff-spine"
+    ],
+    "provenance_thread_id": "prov.os-abyss.agents-memory-route-cards.2026-05-22"
+  },
+  "trust": {
+    "temperature": "cool",
+    "confidence": 0.87,
+    "confidence_note": "Supported by repeated route-law fixes in aoa-memo and abyss-stack.",
+    "authority_kind": "operational_observation",
+    "authority": "repeated AGENTS route-law corrections",
+    "freshness": 1.0,
+    "freshness_note": "Fresh at the May 22, 2026 AGENTS mesh and MCP route-card work.",
+    "salience": 0.84,
+    "salience_note": "High because wrong command placement makes memory routes hard to execute after context compaction."
+  },
+  "lifecycle": {
+    "review_state": "confirmed",
+    "supersedes": [],
+    "superseded_by": null,
+    "retention_class": "route-law-pattern",
+    "promotion_state": "promoted",
+    "current_recall": {
+      "status": "preferred",
+      "status_reason": "Use when deciding whether executable memory guidance belongs in AGENTS.md, generated read models, or doctrine docs."
+    }
+  },
+  "access": {
+    "access_class": "public",
+    "read_scopes": [
+      "public"
+    ],
+    "write_scopes": [
+      "maintainer"
+    ],
+    "promotion_scopes": [
+      "maintainer",
+      "human-review"
+    ]
+  },
+  "bridges": {
+    "tos_refs": [],
+    "skill_refs": [],
+    "eval_refs": [],
+    "kag_lift_status": "blocked",
+    "route_capsule_ref": "AGENTS.md"
+  }
+}

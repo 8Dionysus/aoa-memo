@@ -15,10 +15,12 @@ faces, and guardrail cases.
 - keep KAG and ToS bridge exports source-linked and weaker than graph or source
   truth
 - hand memory-quality risks to `aoa-evals` as cases, not scores or verdicts
+- hand memory-movement counts and trend surfaces to `aoa-stats` as derived
+  summaries over reviewed objects, indexes, receipts, and landing records
 - update generated refs and validators when active handoff paths move
 
 ## Stop-Line
 
 If a change needs actor policy, scenario choreography, eval scoring, graph
-normalization, ToS source interpretation, routing behavior, or runtime storage,
-route away before expanding this mechanic.
+normalization, stats interpretation, ToS source interpretation, routing
+behavior, or runtime storage, route away before expanding this mechanic.

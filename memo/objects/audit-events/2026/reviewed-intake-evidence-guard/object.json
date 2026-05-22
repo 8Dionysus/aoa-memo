@@ -1,0 +1,81 @@
+{
+  "id": "memo.audit.2026-05-22.reviewed-intake-evidence-guard",
+  "kind": "audit_event",
+  "title": "Reviewed intake landing now rejects missing source and evidence refs",
+  "summary": "Records the hardening pass that made reviewed intake landing check export, candidate, receipt, source refs, and evidence refs before a packet can become a durable corpus object.",
+  "scope": [
+    "repo:aoa-memo",
+    "workspace:OS-Abyss"
+  ],
+  "owner_refs": [
+    "repo:aoa-memo"
+  ],
+  "payload_ref": "docs/decisions/2026-05-22-reviewed-intake-landing.md",
+  "tags": [
+    "reviewed-intake",
+    "write-path-guardrail",
+    "evidence-refs",
+    "poisoning-guard",
+    "landing"
+  ],
+  "time": {
+    "created_at": "2026-05-22T06:13:46Z",
+    "observed_at": "2026-05-22T05:19:10Z",
+    "valid_from": "2026-05-22T05:19:10Z",
+    "valid_to": null
+  },
+  "provenance": {
+    "source_refs": [
+      "docs/decisions/2026-05-22-reviewed-intake-landing.md",
+      "scripts/memory/land_reviewed_memo_intake.py",
+      "tests/memory/test_reviewed_intake_landing.py",
+      "commit:aoa-memo:4844182a46f37aeccb752d10cdf61b5322439792"
+    ],
+    "episode_refs": [],
+    "provenance_thread_id": "prov.aoa-memo.reviewed-intake-evidence-guard.2026-05-22"
+  },
+  "trust": {
+    "temperature": "cool",
+    "confidence": 0.92,
+    "confidence_note": "Grounded in the landed hardening commit, decision record, landing script, and negative tests.",
+    "authority_kind": "repo_maintained",
+    "authority": "aoa-memo reviewed intake landing gate",
+    "freshness": 1.0,
+    "freshness_note": "Fresh at the May 22, 2026 landing hardening pass.",
+    "salience": 0.9,
+    "salience_note": "High because every future durable import from local memo ports depends on this guard."
+  },
+  "lifecycle": {
+    "review_state": "confirmed",
+    "supersedes": [],
+    "superseded_by": null,
+    "retention_class": "write-path-guardrail",
+    "promotion_state": "promoted",
+    "current_recall": {
+      "status": "preferred",
+      "status_reason": "Use this as the current audit memory for why missing evidence/source refs cannot enter reviewed corpus landing."
+    }
+  },
+  "access": {
+    "access_class": "public",
+    "read_scopes": [
+      "public"
+    ],
+    "write_scopes": [
+      "maintainer"
+    ],
+    "promotion_scopes": [
+      "maintainer",
+      "human-review"
+    ]
+  },
+  "bridges": {
+    "tos_refs": [],
+    "skill_refs": [],
+    "eval_refs": [
+      "mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md"
+    ],
+    "kag_lift_status": "blocked",
+    "route_capsule_ref": "docs/decisions/2026-05-22-reviewed-intake-landing.md"
+  }
+}

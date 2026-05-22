@@ -16,9 +16,9 @@ publish memo-owned consumer handoff surfaces so stronger owner layers can inspec
 
 Use when a memo surface exists primarily so `aoa-agents`, `aoa-playbooks`,
 `aoa-evals`, `aoa-kag`, Tree of Sophia bridge work, routing/orchestrator
-families, or another consumer can use memory safely while keeping stronger
-policy, proof, graph, scenario, route, or source meaning outside this
-repository.
+families, stats summaries, or another consumer can use memory safely while
+keeping stronger policy, proof, graph, scenario, route, summary, or source
+meaning outside this repository.
 
 ### Memo owns
 
@@ -36,6 +36,8 @@ orchestrator-facing recall posture that consumers may cite.
   verdict language.
 - `aoa-kag` owns graph substrate normalization, federation-spine activation,
   and derived KAG semantics.
+- `aoa-stats` owns derived movement summaries, trend aggregation, and
+  observability posture over memory movement.
 - `Tree-of-Sophia` owns source-authored ToS meaning, nodes, fragments,
   concepts, and lineages.
 - `aoa-routing` owns dispatch behavior and route compression policy.
@@ -71,9 +73,10 @@ Use the validation lane in [AGENTS](AGENTS.md#validation).
 ### Next route
 
 Route role policy to `aoa-agents`, scenario composition to `aoa-playbooks`,
-proof to `aoa-evals`, graph substrate work to `aoa-kag`, source-authored ToS
-meaning to `Tree-of-Sophia`, dispatch behavior to `aoa-routing`, and runtime
-execution or storage to `abyss-stack`.
+proof to `aoa-evals`, graph substrate work to `aoa-kag`, derived memory
+movement summaries to `aoa-stats`, source-authored ToS meaning to
+`Tree-of-Sophia`, dispatch behavior to `aoa-routing`, and runtime execution or
+storage to `abyss-stack`.
 
 ## Active Route
 

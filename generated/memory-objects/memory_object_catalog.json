@@ -1513,6 +1513,40 @@
       ]
     },
     {
+      "id": "memo.audit.2026-05-22.reviewed-intake-evidence-guard",
+      "kind": "audit_event",
+      "title": "Reviewed intake landing now rejects missing source and evidence refs",
+      "summary": "Records the hardening pass that made reviewed intake landing check export, candidate, receipt, source refs, and evidence refs before a packet can become a durable corpus object.",
+      "scope_classes": [
+        "repo",
+        "workspace"
+      ],
+      "temperature": "cool",
+      "review_state": "confirmed",
+      "current_recall_status": "preferred",
+      "authority_kind": "repo_maintained",
+      "source_kind": "reviewed_corpus",
+      "primary_recall_modes": [
+        "episodic",
+        "lineage",
+        "source_route"
+      ],
+      "source_path": "memo/objects/audit-events/2026/reviewed-intake-evidence-guard/object.json",
+      "inspect_key": "memo.audit.2026-05-22.reviewed-intake-evidence-guard",
+      "expand_key": "memo.audit.2026-05-22.reviewed-intake-evidence-guard",
+      "scope": [
+        "repo:aoa-memo",
+        "workspace:OS-Abyss"
+      ],
+      "provenance_thread_id": "prov.aoa-memo.reviewed-intake-evidence-guard.2026-05-22",
+      "related_object_ids": [],
+      "strongest_next_sources": [
+        "docs/decisions/2026-05-22-reviewed-intake-landing.md",
+        "scripts/memory/land_reviewed_memo_intake.py",
+        "tests/memory/test_reviewed_intake_landing.py"
+      ]
+    },
+    {
       "id": "memo.decision.2026-05-22.abyss-stack-aoa-memo-mcp-access-plane",
       "kind": "decision",
       "title": "abyss-stack aoa-memo-mcp access plane route",
@@ -1545,6 +1579,41 @@
         "memo/intake/reviewed/abyss-stack.20260522T021004Z.aoa-memo-mcp-access-plane.reviewed-intake.json",
         "repo:abyss-stack/memo/candidates/20260522T021004Z.aoa-memo-mcp-access-plane-reviewed-route.candidate.json",
         "repo:abyss-stack/memo/receipts/20260522T021004Z.aoa-memo-mcp-access-plane.forwarding-receipt.json"
+      ]
+    },
+    {
+      "id": "memo.decision.2026-05-22.corpus-backed-mcp-search",
+      "kind": "decision",
+      "title": "aoa_memo search starts from reviewed corpus read models",
+      "summary": "Records the access-plane decision that aoa_memo search should read generated reviewed-corpus catalogs first and treat file snippets as supporting retrieval rather than memory authority.",
+      "scope_classes": [
+        "repo",
+        "workspace"
+      ],
+      "temperature": "cool",
+      "review_state": "confirmed",
+      "current_recall_status": "preferred",
+      "authority_kind": "repo_maintained",
+      "source_kind": "reviewed_corpus",
+      "primary_recall_modes": [
+        "semantic",
+        "source_route",
+        "lineage"
+      ],
+      "source_path": "memo/objects/decisions/2026/corpus-backed-mcp-search/object.json",
+      "inspect_key": "memo.decision.2026-05-22.corpus-backed-mcp-search",
+      "expand_key": "memo.decision.2026-05-22.corpus-backed-mcp-search",
+      "scope": [
+        "repo:abyss-stack",
+        "repo:aoa-memo",
+        "workspace:OS-Abyss"
+      ],
+      "provenance_thread_id": "prov.abyss-stack.corpus-backed-mcp-search.2026-05-22",
+      "related_object_ids": [],
+      "strongest_next_sources": [
+        "repo:abyss-stack/mcp/services/aoa-memo-mcp/DESIGN.md",
+        "repo:abyss-stack/mcp/services/aoa-memo-mcp/README.md",
+        "repo:abyss-stack/mcp/services/aoa-memo-mcp/src/aoa_memo_mcp/core.py"
       ]
     },
     {
@@ -1581,6 +1650,122 @@
         "DESIGN.md",
         "MEMORY_INDEX.md",
         "docs/memory/MEMORY_MODEL.md"
+      ]
+    },
+    {
+      "id": "memo.decision.2026-05-22.reviewed-memory-consumer-handoff-spine",
+      "kind": "decision",
+      "title": "Reviewed memory objects feed consumers through bounded handoff surfaces",
+      "summary": "Records the consumer-handoff decision that evals, KAG, stats, playbooks, agents, routing, runtime, and source owners consume reviewed objects and generated read models without becoming or replacing memo authority.",
+      "scope_classes": [
+        "repo",
+        "workspace"
+      ],
+      "temperature": "cool",
+      "review_state": "confirmed",
+      "current_recall_status": "preferred",
+      "authority_kind": "repo_maintained",
+      "source_kind": "reviewed_corpus",
+      "primary_recall_modes": [
+        "semantic",
+        "source_route",
+        "lineage"
+      ],
+      "source_path": "memo/objects/decisions/2026/reviewed-memory-consumer-handoff-spine/object.json",
+      "inspect_key": "memo.decision.2026-05-22.reviewed-memory-consumer-handoff-spine",
+      "expand_key": "memo.decision.2026-05-22.reviewed-memory-consumer-handoff-spine",
+      "scope": [
+        "repo:aoa-memo",
+        "repo:aoa-evals",
+        "repo:aoa-kag",
+        "repo:aoa-stats",
+        "repo:aoa-playbooks",
+        "repo:aoa-agents",
+        "workspace:OS-Abyss"
+      ],
+      "provenance_thread_id": "prov.aoa-memo.consumer-handoff-spine.2026-05-22",
+      "related_object_ids": [],
+      "strongest_next_sources": [
+        "mechanics/consumer-handoff/README.md",
+        "mechanics/consumer-handoff/DIRECTION.md",
+        "mechanics/consumer-handoff/OWNER_MAP.md"
+      ]
+    },
+    {
+      "id": "memo.pattern.2026-05-22.agents-route-cards-own-memory-operations",
+      "kind": "pattern",
+      "title": "AGENTS route cards own executable memory operations",
+      "summary": "Observed across memo route-law cleanups: executable memory commands and local operating routes belong in the nearest AGENTS.md, while generated indexes and seam docs stay read-model or doctrine surfaces.",
+      "scope_classes": [
+        "repo",
+        "workspace"
+      ],
+      "temperature": "cool",
+      "review_state": "confirmed",
+      "current_recall_status": "preferred",
+      "authority_kind": "operational_observation",
+      "source_kind": "reviewed_corpus",
+      "primary_recall_modes": [
+        "semantic",
+        "procedural",
+        "lineage"
+      ],
+      "source_path": "memo/objects/patterns/2026/agents-route-cards-own-memory-operations/object.json",
+      "inspect_key": "memo.pattern.2026-05-22.agents-route-cards-own-memory-operations",
+      "expand_key": "memo.pattern.2026-05-22.agents-route-cards-own-memory-operations",
+      "scope": [
+        "repo:aoa-memo",
+        "repo:abyss-stack",
+        "workspace:OS-Abyss"
+      ],
+      "provenance_thread_id": "prov.os-abyss.agents-memory-route-cards.2026-05-22",
+      "related_object_ids": [
+        "memo.decision.2026-05-21.reviewed-corpus-district",
+        "memo.decision.2026-05-22.abyss-stack-aoa-memo-mcp-access-plane",
+        "memo.decision.2026-05-22.reviewed-memory-consumer-handoff-spine"
+      ],
+      "strongest_next_sources": [
+        "AGENTS.md",
+        "memo/AGENTS.md",
+        "generated/memory-objects/AGENTS.md"
+      ]
+    },
+    {
+      "id": "memo.pattern.2026-05-22.portable-local-memo-refs",
+      "kind": "pattern",
+      "title": "Local memo ports use portable refs before reviewed intake",
+      "summary": "Observed across MCP landing readiness and stack memo evidence normalization: local memo candidates and exports remain portable when evidence uses repo-scoped refs instead of workstation absolute paths.",
+      "scope_classes": [
+        "repo",
+        "workspace"
+      ],
+      "temperature": "cool",
+      "review_state": "confirmed",
+      "current_recall_status": "preferred",
+      "authority_kind": "operational_observation",
+      "source_kind": "reviewed_corpus",
+      "primary_recall_modes": [
+        "semantic",
+        "procedural",
+        "lineage"
+      ],
+      "source_path": "memo/objects/patterns/2026/portable-local-memo-refs/object.json",
+      "inspect_key": "memo.pattern.2026-05-22.portable-local-memo-refs",
+      "expand_key": "memo.pattern.2026-05-22.portable-local-memo-refs",
+      "scope": [
+        "repo:abyss-stack",
+        "repo:aoa-memo",
+        "workspace:OS-Abyss"
+      ],
+      "provenance_thread_id": "prov.abyss-stack.portable-local-memo-refs.2026-05-22",
+      "related_object_ids": [
+        "memo.decision.2026-05-22.abyss-stack-aoa-memo-mcp-access-plane",
+        "memo.decision.2026-05-22.corpus-backed-mcp-search"
+      ],
+      "strongest_next_sources": [
+        "docs/memory/LOCAL_MEMO_PORT_STANDARD.md",
+        "repo:abyss-stack/memo/candidates/20260520T051034Z.aoa-memo-mcp-provides-the-first-stack-owned-mcp.candidate.json",
+        "repo:abyss-stack/memo/exports/20260520T051034Z.aoa-memo-mcp.reviewed-intake.json"
       ]
     }
   ]

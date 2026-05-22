@@ -22,8 +22,8 @@ path.
 5. Generated read models expose compact catalog, capsule, section, mechanic,
    and route-card surfaces. Object-facing read models are built from reviewed
    corpus bundles plus teaching fixtures and mark `source_kind` for consumers.
-6. Consumer handoff gives evals, KAG, agents, playbooks, routing, runtime, or
-   source owners bounded surfaces with provenance still visible.
+6. Consumer handoff gives evals, KAG, stats, agents, playbooks, routing,
+   runtime, or source owners bounded surfaces with provenance still visible.
 7. Recurrence and retention checks return cooled, stale, contradicted, or
    newly useful memory to review.
 
