@@ -21,10 +21,10 @@ landing route for `aoa-memo`.
 
 The script only lands exports whose `allowed_result` is `reviewed_write`. It
 loads candidate and receipt refs from inside the origin memo port, checks
-schemas and guardrails, copies the accepted export into
-`memo/intake/reviewed/`, creates a `memo/objects/<kind-dir>/<year>/<slug>/`
-bundle, and writes a corpus-local landing receipt under
-`memo/intake/receipts/`.
+schemas, guardrails, and local source/evidence refs, copies the accepted export
+into `memo/intake/reviewed/`, creates a
+`memo/objects/<kind-dir>/<year>/<slug>/` bundle, and writes a corpus-local
+landing receipt under `memo/intake/receipts/`.
 
 The landing receipt is schema-backed by
 `schemas/support-objects/reviewed_intake_landing_receipt.schema.json`.
@@ -32,6 +32,8 @@ The landing receipt is schema-backed by
 ## Consequences
 
 - `candidate_only` exports remain inspectable but cannot land as durable memory.
+- Missing export or candidate source/evidence refs block landing before a corpus
+  object is written.
 - Durable reviewed memory is created by an `aoa-memo` source change, not by MCP
   or by the origin port.
 - Each landed object has a copied intake packet, origin candidate refs, origin

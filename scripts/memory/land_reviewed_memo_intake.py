@@ -16,6 +16,7 @@ from typing import Any
 from local_memo_port_common import load_json, load_port, resolve_port_path
 from validate_memo import validator_for
 from validate_local_memo_port import (
+    check_refs,
     schema_errors as local_port_schema_errors,
     validate_candidate_semantics,
 )
@@ -241,6 +242,8 @@ def validate_inputs(
         errors.append(f"{export_path}: allowed_result must be 'reviewed_write' for corpus landing")
     if not receipt_payloads:
         errors.append(f"{export_path}: reviewed_write landing requires at least one receipt_ref")
+    check_refs(errors, port_path, export_path, "source_refs", export_payload.get("source_refs"))
+    check_refs(errors, port_path, export_path, "evidence_refs", export_payload.get("evidence_refs"))
 
     for candidate_path, candidate in zip(candidate_paths, candidate_payloads, strict=True):
         errors.extend(schema_errors("local_memo_candidate.schema.json", candidate, candidate_path))
@@ -252,6 +255,8 @@ def validate_inputs(
             errors.append(f"{candidate_path}: review_state blocks corpus landing")
         if candidate.get("source_trust") in {"untrusted", "unknown"}:
             errors.append(f"{candidate_path}: source_trust {candidate.get('source_trust')!r} blocks corpus landing")
+        check_refs(errors, port_path, candidate_path, "source_refs", candidate.get("source_refs"))
+        check_refs(errors, port_path, candidate_path, "evidence_refs", candidate.get("evidence_refs"))
         validate_candidate_semantics(errors, candidate_path, candidate)
 
     for receipt_path, receipt in zip(receipt_paths, receipt_payloads, strict=True):
@@ -264,6 +269,7 @@ def validate_inputs(
             errors.append(f"{receipt_path}: result must be validated, forwarded, or landed before corpus landing")
         if receipt.get("errors"):
             errors.append(f"{receipt_path}: receipt with errors cannot support corpus landing")
+        check_refs(errors, port_path, receipt_path, "candidate_ref", [receipt.get("candidate_ref")])
 
     if errors:
         rendered = "\n".join(f"- {error}" for error in errors)
@@ -527,10 +533,15 @@ def build_landing_plan(
         "result": "landed",
         "checks": [
             "export_schema",
+            "export_source_refs",
+            "export_evidence_refs",
             "allowed_result_reviewed_write",
             "candidate_schema",
+            "candidate_source_refs",
+            "candidate_evidence_refs",
             "candidate_guardrails",
             "receipt_schema",
+            "receipt_candidate_ref",
             "receipt_errors_empty",
             "memory_object_schema",
         ],
