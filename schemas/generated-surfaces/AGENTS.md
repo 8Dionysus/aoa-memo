@@ -9,8 +9,10 @@ This district owns schemas for generated memory-object companion surfaces.
 ## Source
 
 `memory_object_catalog.schema.json` anchors the generated object catalog shape.
-Schemas here validate generated mirrors. The source examples remain in
-`examples/generated-surfaces/` and `examples/memory-objects/`.
+Schemas here validate generated mirrors. Reviewed object sources live in
+`memo/objects/`; teaching fixtures remain in `examples/generated-surfaces/`,
+`examples/memory-objects/`, and mechanic example homes. Generated rows use
+`source_kind` to distinguish the source class.
 
 ## Route
 

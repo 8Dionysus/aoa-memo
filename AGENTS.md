@@ -25,13 +25,14 @@ It does not own:
 2. `CHARTER.md`
 3. `DESIGN.md`
 4. `MEMORY_INDEX.md`
-5. [`ROADMAP.md`](ROADMAP.md)
-6. `docs/README.md`
-7. `docs/boundaries/BOUNDARIES.md`
-8. `docs/memory/MEMORY_MODEL.md`
-9. `mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md` for readiness, retention, and memory-is-not-proof boundaries
-10. the target memory surface and affected generated outputs
-11. `docs/root/AGENTS_ROOT_REFERENCE.md` for preserved full root branches
+5. `memo/README.md` when reviewed memory objects or corpus intake are touched
+6. [`ROADMAP.md`](ROADMAP.md)
+7. `docs/README.md`
+8. `docs/boundaries/BOUNDARIES.md`
+9. `docs/memory/MEMORY_MODEL.md`
+10. `mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md` for readiness, retention, and memory-is-not-proof boundaries
+11. the target memory surface and affected generated outputs
+12. `docs/root/AGENTS_ROOT_REFERENCE.md` for preserved full root branches
 
 For agent-facing topology, also read `DESIGN.AGENTS.md`.
 For root or docs-root placement, read `docs/root/ROOT_SURFACE_LAW.md`.
@@ -45,6 +46,7 @@ lineage-harvest, writeback, or retention movement, read `mechanics/README.md`.
 |---|---|---|
 | `first-reading` | you need the shortest public overview | `README.md` |
 | `memory-canon` | memory object kinds, support objects, recall modes, temperature vocabulary, source families, or generated companions are being inspected | `MEMORY_INDEX.md` -> `docs/memory/MEMORY_MODEL.md` -> target source |
+| `memory-corpus` | reviewed durable memory object bundles, reviewed intake landing, landing receipts, or corpus support lanes change | `memo/AGENTS.md` -> `memo/OBJECT_SHAPE.md` -> target bundle |
 | `memory-doctrine` | memory meaning, object posture, trust, lifecycle, temperature, or provenance changes | `docs/memory/MEMORY_MODEL.md` |
 | `root-editing` | a root or docs-root surface is added, moved, deleted, or rewritten | `docs/root/ROOT_SURFACE_LAW.md` |
 | `docs-placement` | a docs-root surface is classified, retired from flat placement, or checked for old district drift | `docs/README.md` -> `docs/root/ROOT_SURFACE_LAW.md` -> `scripts/root-topology/validate_docs_districts.py` |
@@ -73,6 +75,10 @@ lifecycle, provenance, guardrails, consolidation, or reviewed handoff contracts.
 - Need session evidence: route to `.aoa` rehydrate, retrieve, or review packets.
 - Need local preservation before review: write through the owning place's
   `repo/memo/` port when present.
+- Need reviewed durable memory inside this repo: use `memo/` object bundles
+  with `object.json` plus `MEMO.md`; when coming from a local port export,
+  land only `reviewed_write` packets through
+  `scripts/memory/land_reviewed_memo_intake.py`, then validate the corpus.
 - Need live access: use `aoa_memo` MCP as an access plane while keeping reviewed
   memory truth in this repository.
 
@@ -134,6 +140,7 @@ Core validation set:
 
 ```bash
 python scripts/memory/validate_memo.py
+python scripts/memory/validate_memo_corpus.py
 python scripts/memory/validate_memory_surfaces.py
 python scripts/memory/validate_memory_object_surfaces.py
 python scripts/memory/validate_lifecycle_audit_examples.py

@@ -1,7 +1,7 @@
 {
   "catalog_version": 1,
   "catalog_kind": "full",
-  "source_of_truth": "aoa-memo-object-example-surfaces-v1",
+  "source_of_truth": "aoa-memo-object-read-models-v2",
   "memory_objects": [
     {
       "id": "memo.anchor.2026-03-23.charter-operating-axis",
@@ -16,6 +16,7 @@
       "review_state": "frozen",
       "current_recall_status": "preferred",
       "authority_kind": "human_reviewed",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "semantic",
         "source_route",
@@ -49,6 +50,7 @@
       "review_state": "captured",
       "current_recall_status": "preferred",
       "authority_kind": "operational_observation",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "working",
         "episodic"
@@ -83,6 +85,7 @@
       "review_state": "proposed",
       "current_recall_status": "allowed",
       "authority_kind": "operational_observation",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "episodic",
         "working"
@@ -115,6 +118,7 @@
       "review_state": "captured",
       "current_recall_status": "allowed",
       "authority_kind": "source_inspection",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "lineage",
         "episodic",
@@ -147,6 +151,7 @@
       "review_state": "confirmed",
       "current_recall_status": "preferred",
       "authority_kind": "repo_maintained",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "semantic",
         "source_route"
@@ -180,6 +185,7 @@
       "review_state": "confirmed",
       "current_recall_status": "preferred",
       "authority_kind": "repo_maintained",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "semantic",
         "source_route"
@@ -215,6 +221,7 @@
       "review_state": "superseded",
       "current_recall_status": "historical",
       "authority_kind": "repo_maintained",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "semantic",
         "lineage"
@@ -248,6 +255,7 @@
       "review_state": "retracted",
       "current_recall_status": "withdrawn",
       "authority_kind": "candidate_under_review",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "semantic",
         "lineage"
@@ -283,6 +291,7 @@
       "review_state": "confirmed",
       "current_recall_status": "allowed",
       "authority_kind": "source_inspection",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "semantic",
         "lineage",
@@ -318,6 +327,7 @@
       "review_state": "confirmed",
       "current_recall_status": "allowed",
       "authority_kind": "human_reviewed",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "working",
         "semantic",
@@ -350,6 +360,7 @@
       "review_state": "proposed",
       "current_recall_status": "allowed",
       "authority_kind": "operational_observation",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "working",
         "episodic",
@@ -382,6 +393,7 @@
       "review_state": "confirmed",
       "current_recall_status": "preferred",
       "authority_kind": "operational_observation",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "procedural",
         "semantic"
@@ -417,6 +429,7 @@
       "review_state": "proposed",
       "current_recall_status": "allowed",
       "authority_kind": "candidate_under_review",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "lineage",
         "source_route",
@@ -452,6 +465,7 @@
       "review_state": "confirmed",
       "current_recall_status": "historical",
       "authority_kind": "repo_maintained",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "episodic",
         "source_route"
@@ -487,6 +501,7 @@
       "review_state": "confirmed",
       "current_recall_status": "historical",
       "authority_kind": "repo_maintained",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "episodic",
         "source_route"
@@ -521,6 +536,7 @@
       "review_state": "confirmed",
       "current_recall_status": "preferred",
       "authority_kind": "human_reviewed",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "working",
         "episodic"
@@ -555,6 +571,7 @@
       "review_state": "confirmed",
       "current_recall_status": "allowed",
       "authority_kind": "human_reviewed",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "episodic",
         "working"
@@ -587,6 +604,7 @@
       "review_state": "confirmed",
       "current_recall_status": "allowed",
       "authority_kind": "human_reviewed",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "working",
         "semantic",
@@ -622,6 +640,7 @@
       "review_state": "confirmed",
       "current_recall_status": "allowed",
       "authority_kind": "human_reviewed",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "working",
         "semantic",
@@ -655,6 +674,7 @@
       "review_state": "confirmed",
       "current_recall_status": "allowed",
       "authority_kind": "human_reviewed",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "episodic",
         "source_route"
@@ -689,6 +709,7 @@
       "review_state": "confirmed",
       "current_recall_status": "allowed",
       "authority_kind": "human_reviewed",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "episodic",
         "working"
@@ -721,6 +742,7 @@
       "review_state": "confirmed",
       "current_recall_status": "preferred",
       "authority_kind": "human_reviewed",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "working",
         "semantic",
@@ -756,6 +778,7 @@
       "review_state": "confirmed",
       "current_recall_status": "allowed",
       "authority_kind": "human_reviewed",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "episodic",
         "source_route"
@@ -790,6 +813,7 @@
       "review_state": "confirmed",
       "current_recall_status": "allowed",
       "authority_kind": "human_reviewed",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "episodic",
         "working"
@@ -824,6 +848,7 @@
       "review_state": "confirmed",
       "current_recall_status": "preferred",
       "authority_kind": "human_reviewed",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "working",
         "semantic",
@@ -858,6 +883,7 @@
       "review_state": "confirmed",
       "current_recall_status": "allowed",
       "authority_kind": "human_reviewed",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "episodic",
         "source_route"
@@ -891,6 +917,7 @@
       "review_state": "confirmed",
       "current_recall_status": "allowed",
       "authority_kind": "human_reviewed",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "working",
         "episodic"
@@ -925,6 +952,7 @@
       "review_state": "confirmed",
       "current_recall_status": "allowed",
       "authority_kind": "human_reviewed",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "episodic",
         "working"
@@ -957,6 +985,7 @@
       "review_state": "confirmed",
       "current_recall_status": "preferred",
       "authority_kind": "human_reviewed",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "working",
         "semantic",
@@ -992,6 +1021,7 @@
       "review_state": "confirmed",
       "current_recall_status": "preferred",
       "authority_kind": "human_reviewed",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "working",
         "episodic"
@@ -1024,6 +1054,7 @@
       "review_state": "confirmed",
       "current_recall_status": "allowed",
       "authority_kind": "human_reviewed",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "working",
         "semantic",
@@ -1057,6 +1088,7 @@
       "review_state": "proposed",
       "current_recall_status": "allowed",
       "authority_kind": "candidate_under_review",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "working",
         "semantic",
@@ -1092,6 +1124,7 @@
       "review_state": "proposed",
       "current_recall_status": "allowed",
       "authority_kind": "candidate_under_review",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "working",
         "episodic"
@@ -1126,6 +1159,7 @@
       "review_state": "confirmed",
       "current_recall_status": "preferred",
       "authority_kind": "repo_maintained",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "semantic",
         "lineage",
@@ -1166,6 +1200,7 @@
       "review_state": "superseded",
       "current_recall_status": "historical",
       "authority_kind": "repo_maintained",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "semantic",
         "lineage",
@@ -1202,6 +1237,7 @@
       "review_state": "retracted",
       "current_recall_status": "withdrawn",
       "authority_kind": "candidate_under_review",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "semantic",
         "lineage"
@@ -1238,6 +1274,7 @@
       "review_state": "confirmed",
       "current_recall_status": "allowed",
       "authority_kind": "repo_maintained",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "semantic",
         "lineage",
@@ -1276,6 +1313,7 @@
       "review_state": "confirmed",
       "current_recall_status": "historical",
       "authority_kind": "repo_maintained",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "episodic",
         "source_route"
@@ -1311,6 +1349,7 @@
       "review_state": "confirmed",
       "current_recall_status": "historical",
       "authority_kind": "repo_maintained",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "episodic",
         "source_route"
@@ -1347,6 +1386,7 @@
       "review_state": "confirmed",
       "current_recall_status": "allowed",
       "authority_kind": "human_reviewed",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "episodic",
         "source_route"
@@ -1379,6 +1419,7 @@
       "review_state": "confirmed",
       "current_recall_status": "allowed",
       "authority_kind": "human_reviewed",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "episodic",
         "source_route"
@@ -1411,6 +1452,7 @@
       "review_state": "confirmed",
       "current_recall_status": "allowed",
       "authority_kind": "human_reviewed",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "procedural",
         "semantic"
@@ -1446,6 +1488,7 @@
       "review_state": "confirmed",
       "current_recall_status": "allowed",
       "authority_kind": "human_reviewed",
+      "source_kind": "teaching_fixture",
       "primary_recall_modes": [
         "procedural",
         "semantic",
@@ -1467,6 +1510,42 @@
         "repo:aoa-evals/bundles/aoa-stress-recovery-window/reports/example-report.json",
         "repo:aoa-stats/generated/stress_recovery_window_summary.min.json",
         "repo:aoa-routing/generated/composite_stress_route_hints.min.json"
+      ]
+    },
+    {
+      "id": "memo.decision.2026-05-21.reviewed-corpus-district",
+      "kind": "decision",
+      "title": "aoa-memo keeps reviewed memory objects in a root memo corpus district",
+      "summary": "Adds root memo/ as the source-owned reviewed memory object corpus for OS Abyss, separate from local repo memo ports and downstream generated read models.",
+      "scope_classes": [
+        "repo",
+        "workspace",
+        "ecosystem"
+      ],
+      "temperature": "cool",
+      "review_state": "confirmed",
+      "current_recall_status": "preferred",
+      "authority_kind": "repo_maintained",
+      "source_kind": "reviewed_corpus",
+      "primary_recall_modes": [
+        "semantic",
+        "source_route",
+        "lineage"
+      ],
+      "source_path": "memo/objects/decisions/2026/reviewed-corpus-district/object.json",
+      "inspect_key": "memo.decision.2026-05-21.reviewed-corpus-district",
+      "expand_key": "memo.decision.2026-05-21.reviewed-corpus-district",
+      "scope": [
+        "repo:aoa-memo",
+        "workspace:OS-Abyss",
+        "ecosystem:AoA"
+      ],
+      "provenance_thread_id": "prov.aoa-memo.reviewed-corpus.2026-05-21",
+      "related_object_ids": [],
+      "strongest_next_sources": [
+        "DESIGN.md",
+        "MEMORY_INDEX.md",
+        "docs/memory/MEMORY_MODEL.md"
       ]
     }
   ]

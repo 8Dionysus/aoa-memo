@@ -15,7 +15,10 @@ from generate_memory_object_surfaces import (
     MANIFEST_PATH,
     SECTION_SPECS,
     SHARED_SCOPE_CLASSES,
+    SOURCE_KIND_REVIEWED_CORPUS,
+    SOURCE_KIND_TEACHING_FIXTURE,
     build_surface_family,
+    load_source_objects,
     load_json,
     scope_classes_for,
 )
@@ -54,9 +57,12 @@ def validate_full_catalog(data: dict, curated_ids: set[str]) -> None:
         ensure_exists(item["source_path"], f"{FULL_CATALOG_PATH}:{item['id']}:source_path")
         if item["inspect_key"] != item["id"] or item["expand_key"] != item["id"]:
             raise SystemExit(f"{FULL_CATALOG_PATH}: {item['id']} inspect_key and expand_key must match the object id")
-        expected_scope_classes = scope_classes_for(load_json(ROOT / item["source_path"]))
+        source_object = load_json(ROOT / item["source_path"])
+        expected_scope_classes = scope_classes_for(source_object)
         if item.get("scope_classes") != expected_scope_classes:
             raise SystemExit(f"{FULL_CATALOG_PATH}: {item['id']} scope_classes must stay {expected_scope_classes}")
+        if item.get("source_kind") not in {SOURCE_KIND_REVIEWED_CORPUS, SOURCE_KIND_TEACHING_FIXTURE}:
+            raise SystemExit(f"{FULL_CATALOG_PATH}: {item['id']} source_kind must name corpus or teaching fixture")
         for ref in item.get("strongest_next_sources", []):
             error = local_ref_error(ref, f"{FULL_CATALOG_PATH}:{item['id']}:strongest_next_sources")
             if error:
@@ -78,9 +84,12 @@ def validate_min_catalog(data: dict, expected_ids: set[str]) -> None:
             raise SystemExit(f"{MIN_CATALOG_PATH}: duplicate id {item['id']}")
         seen_ids.add(item["id"])
         ensure_exists(item["source_path"], f"{MIN_CATALOG_PATH}:{item['id']}:source_path")
-        expected_scope_classes = scope_classes_for(load_json(ROOT / item["source_path"]))
+        source_object = load_json(ROOT / item["source_path"])
+        expected_scope_classes = scope_classes_for(source_object)
         if item.get("scope_classes") != expected_scope_classes:
             raise SystemExit(f"{MIN_CATALOG_PATH}: {item['id']} scope_classes must stay {expected_scope_classes}")
+        if item.get("source_kind") not in {SOURCE_KIND_REVIEWED_CORPUS, SOURCE_KIND_TEACHING_FIXTURE}:
+            raise SystemExit(f"{MIN_CATALOG_PATH}: {item['id']} source_kind must name corpus or teaching fixture")
         if item["current_recall_status"] not in EXPORTABLE_RECALL_STATUSES:
             raise SystemExit(f"{MIN_CATALOG_PATH}: {item['id']} must not appear with current_recall_status={item['current_recall_status']}")
     if seen_ids != expected_ids:
@@ -94,6 +103,8 @@ def validate_capsules(data: dict, curated_ids: set[str]) -> None:
     for item in data["memory_objects"]:
         ids.add(item["id"])
         ensure_exists(item["source_path"], f"{CAPSULES_PATH}:{item['id']}:source_path")
+        if item.get("source_kind") not in {SOURCE_KIND_REVIEWED_CORPUS, SOURCE_KIND_TEACHING_FIXTURE}:
+            raise SystemExit(f"{CAPSULES_PATH}: {item['id']} source_kind must name corpus or teaching fixture")
         error = local_ref_error(item["strongest_next_source"], f"{CAPSULES_PATH}:{item['id']}:strongest_next_source")
         if error:
             raise SystemExit(error)
@@ -110,6 +121,8 @@ def validate_sections(data: dict, curated_ids: set[str]) -> None:
     for item in data["memory_objects"]:
         ids.add(item["id"])
         ensure_exists(item["source_path"], f"{SECTIONS_PATH}:{item['id']}:source_path")
+        if item.get("source_kind") not in {SOURCE_KIND_REVIEWED_CORPUS, SOURCE_KIND_TEACHING_FIXTURE}:
+            raise SystemExit(f"{SECTIONS_PATH}: {item['id']} source_kind must name corpus or teaching fixture")
         section_ids = [section["section_id"] for section in item["sections"]]
         headings = [section["heading"] for section in item["sections"]]
         ordinals = [section["ordinal"] for section in item["sections"]]
@@ -126,21 +139,23 @@ def validate_sections(data: dict, curated_ids: set[str]) -> None:
         raise SystemExit(f"{SECTIONS_PATH}: curated set mismatch (missing={missing}, extra={extra})")
 
 
-def validate_contradictions_and_replacements(manifest_data: dict) -> tuple[set[str], set[str]]:
+def validate_contradictions_and_replacements(source_objects: list[tuple[str, list[str], dict, str]]) -> tuple[set[str], set[str]]:
     curated_ids: set[str] = set()
     current_ids: set[str] = set()
     contradiction_pairs: set[tuple[str, str]] = set()
     memory_validator = validator_for("memory_object.schema.json")
 
-    for entry in manifest_data["entries"]:
-        source_path = entry["example_path"]
-        data = load_json(ROOT / source_path)
+    for source_path, _, data, source_kind in source_objects:
         errors = [
             f"{'.'.join(str(part) for part in err.absolute_path) or '<root>'}: {err.message}"
             for err in sorted(memory_validator.iter_errors(data), key=lambda err: list(err.absolute_path))
         ]
         if errors:
             raise SystemExit(f"{source_path}: " + "; ".join(errors))
+        if source_kind == SOURCE_KIND_REVIEWED_CORPUS and not source_path.startswith("memo/objects/"):
+            raise SystemExit(f"{source_path}: reviewed_corpus sources must live under memo/objects/")
+        if source_kind == SOURCE_KIND_TEACHING_FIXTURE and not source_path.startswith(("examples/", "mechanics/")):
+            raise SystemExit(f"{source_path}: teaching_fixture sources must live under examples/ or mechanics/")
 
         curated_ids.add(data["id"])
         lifecycle = data["lifecycle"]
@@ -217,7 +232,8 @@ def validate_determinism() -> None:
 
 def main() -> int:
     manifest_data = validate_schema(MANIFEST_PATH, "memory_object_surface_manifest.schema.json")
-    curated_ids, current_ids = validate_contradictions_and_replacements(manifest_data)
+    source_objects = load_source_objects(manifest_data)
+    curated_ids, current_ids = validate_contradictions_and_replacements(source_objects)
 
     full_catalog = validate_schema(FULL_CATALOG_PATH, "memory_object_catalog.schema.json")
     min_catalog = validate_schema(MIN_CATALOG_PATH, "memory_object_catalog.schema.json")

@@ -6,12 +6,13 @@ Route card for `tests/memory/`.
 
 This district owns regression tests for memory schemas, recall contracts,
 operation-cycle contracts, generated memory surfaces, and Phase Alpha object
-examples.
+examples. It also protects the reviewed `memo/` corpus shape and reviewed
+intake landing route.
 
 ## Source
 
 Tests here protect source contracts in `docs/memory/`, `docs/posture/`,
-`schemas/`, and `examples/`.
+`schemas/`, `examples/`, and `memo/`.
 
 ## Route
 
@@ -23,5 +24,7 @@ Tests here protect source contracts in `docs/memory/`, `docs/posture/`,
 
 ```bash
 python -m pytest -q tests/memory
+python -m pytest -q tests/memory/test_reviewed_intake_landing.py
+python scripts/memory/validate_memo_corpus.py
 python scripts/memory/validate_memory_operations.py
 ```

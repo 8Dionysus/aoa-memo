@@ -1,0 +1,117 @@
+from __future__ import annotations
+
+import copy
+import importlib.util
+import json
+import shutil
+import sys
+from pathlib import Path
+
+
+REPO_ROOT = Path(__file__).resolve().parents[2]
+SCRIPTS_ROOT = REPO_ROOT / "scripts" / "memory"
+if str(SCRIPTS_ROOT) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS_ROOT))
+
+
+def load_script(name: str, path: Path):
+    spec = importlib.util.spec_from_file_location(name, path)
+    assert spec is not None and spec.loader is not None
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+landing = load_script(
+    "land_reviewed_memo_intake",
+    REPO_ROOT / "scripts" / "memory" / "land_reviewed_memo_intake.py",
+)
+
+
+EXAMPLE_PORT = REPO_ROOT / "examples" / "memory-ports" / "example-port"
+EXPORT_REF = "exports/20260520T172000Z.codex-plane-memory-route.aoa-memo-intake.json"
+
+
+def copy_reviewed_write_port(tmp_path: Path) -> Path:
+    port = tmp_path / "example-port"
+    shutil.copytree(EXAMPLE_PORT, port)
+    export_path = port / EXPORT_REF
+    payload = json.loads(export_path.read_text(encoding="utf-8"))
+    payload["allowed_result"] = "reviewed_write"
+    payload["notes"] = "Reviewed-write fixture for aoa-memo corpus landing tests."
+    export_path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+    return port
+
+
+def test_reviewed_write_export_lands_as_corpus_bundle(tmp_path: Path) -> None:
+    port = copy_reviewed_write_port(tmp_path)
+    output_root = tmp_path / "aoa-memo"
+
+    inputs = landing.load_landing_inputs(port, EXPORT_REF)
+    plan = landing.build_landing_plan(
+        inputs,
+        output_root=output_root,
+        object_kind="decision",
+        slug="example-reviewed-intake",
+        reviewed_at="2026-05-22T01:23:45Z",
+        reviewed_by="test-suite",
+    )
+    landing.write_landing_plan(plan, output_root=output_root)
+
+    object_path = output_root / "memo" / "objects" / "decisions" / "2026" / "example-reviewed-intake" / "object.json"
+    memo_path = object_path.with_name("MEMO.md")
+    receipt_path = output_root / "memo" / "intake" / "receipts" / "20260522T012345Z.example-repo.example-reviewed-intake.landing-receipt.json"
+    copied_intake_path = output_root / "memo" / "intake" / "reviewed" / "example-repo.20260520T172000Z.codex-plane-memory-route.aoa-memo-intake.json"
+
+    assert object_path.is_file()
+    assert memo_path.is_file()
+    assert receipt_path.is_file()
+    assert copied_intake_path.is_file()
+
+    memory_object = json.loads(object_path.read_text(encoding="utf-8"))
+    receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
+
+    assert memory_object["id"] == "memo.decision.2026-05-22.example-reviewed-intake"
+    assert memory_object["payload_ref"] == "memo/intake/reviewed/example-repo.20260520T172000Z.codex-plane-memory-route.aoa-memo-intake.json"
+    assert memory_object["lifecycle"]["review_state"] == "confirmed"
+    assert memory_object["lifecycle"]["current_recall"]["status"] == "allowed"
+    assert "repo:example-repo/memo/candidates/20260520T171200Z.codex-plane-memory-route.candidate.json" in memory_object["provenance"]["source_refs"]
+    assert all(
+        ref.startswith("repo:") or ref.startswith("memo/intake/")
+        for ref in memory_object["provenance"]["source_refs"]
+    )
+
+    assert receipt["schema"] == "aoa_memo_reviewed_intake_landing_receipt_v1"
+    assert receipt["result"] == "landed"
+    assert receipt["object_ref"] == memory_object["id"]
+    assert receipt["object_path"] == "memo/objects/decisions/2026/example-reviewed-intake/object.json"
+
+    assert landing.object_schema_errors(memory_object, "memory_object.schema.json") == []
+    assert landing.object_schema_errors(memory_object, "decision.schema.json") == []
+    assert landing.support_schema_errors(receipt, "reviewed_intake_landing_receipt.schema.json") == []
+
+
+def test_candidate_only_export_cannot_land() -> None:
+    try:
+        landing.load_landing_inputs(EXAMPLE_PORT, EXPORT_REF)
+    except landing.LandingError as exc:
+        assert "allowed_result must be 'reviewed_write'" in str(exc)
+    else:
+        raise AssertionError("candidate_only export unexpectedly loaded as landable input")
+
+
+def test_packet_refs_must_stay_inside_port(tmp_path: Path) -> None:
+    port = copy_reviewed_write_port(tmp_path)
+    export_path = port / EXPORT_REF
+    payload = json.loads(export_path.read_text(encoding="utf-8"))
+    payload = copy.deepcopy(payload)
+    payload["candidate_refs"] = ["../outside.candidate.json"]
+    export_path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+
+    try:
+        landing.load_landing_inputs(port, EXPORT_REF)
+    except landing.LandingError as exc:
+        assert "must stay under" in str(exc)
+    else:
+        raise AssertionError("outside packet ref unexpectedly accepted")

@@ -24,6 +24,8 @@ Do not turn them into hidden runtime infrastructure.
 Keep the current split clear:
 
 - `memory/validate_memo.py` is the canonical memory-layer validator and now also checks nested guidance surfaces
+- `memory/validate_memo_corpus.py` checks the reviewed `memo/` corpus shape,
+  object bundles, source refs, and local-port separation
 - `memory/validate_memory_surfaces.py` checks the doctrine family under `generated/memory/` plus router-facing recall contracts
 - `memory/generate_memory_object_surfaces.py` rebuilds the object-facing family from curated examples into `generated/memory-objects/`
 - `memory/validate_memory_object_surfaces.py` checks manifest coverage, determinism, lifecycle integrity, and object-facing recall contracts
@@ -93,6 +95,7 @@ After changing scripts, run the affected entrypoints directly. The common sequen
 
 ```bash
 python scripts/memory/validate_memo.py
+python scripts/memory/validate_memo_corpus.py
 python scripts/memory/validate_memory_surfaces.py
 python scripts/memory/validate_memory_object_surfaces.py
 python scripts/memory/validate_lifecycle_audit_examples.py

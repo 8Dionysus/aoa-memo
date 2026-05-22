@@ -51,6 +51,17 @@ Build `aoa-memo` as the explicit memory and recall layer of AoA: small, reviewab
 
 The repository has already named its role, object canon, schemas, doctrine-facing generated surfaces, object-facing generated surfaces, lifecycle posture, temperature posture, runtime writeback seam, and first bridge/export and guardrail handoff surfaces.
 Object canon, trust/lifecycle posture, and the separate object-facing generated family are now in place.
+The root `memo/` corpus district now gives reviewed memory objects a source-owned
+bundle home so future local ports, MCP access, and generated read models can
+route into durable objects without treating examples or generated projections as
+the corpus itself.
+The object-facing generated read models now consume that corpus alongside
+teaching fixtures and mark `source_kind`, giving downstream recall a clean
+filter between reviewed memory truth and examples.
+Reviewed intake now has a checked landing route: local memo port exports must
+request `reviewed_write`, then `aoa-memo` copies the packet into
+`memo/intake/reviewed/`, writes a landing receipt, and creates the
+`memo/objects/` bundle as a source-owned change.
 The active next slice is neighbor adoption so adjacent repos can consume the sharpened memo contracts without moving routing, role policy, graph normalization, or verdict logic into this repository.
 The first router-first adoption package formalizes additive inspect -> capsule -> expand consumption across the doctrine and object-facing recall families without changing memo ownership.
 The first checkpoint mechanic landing makes checkpoint relaunch anchors,

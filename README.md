@@ -20,6 +20,7 @@ the linked owner surface instead of expanding this page.
 | Memory-layer system form | [DESIGN](DESIGN.md) |
 | Agent-facing guidance form | [DESIGN.AGENTS](DESIGN.AGENTS.md) |
 | Public memory canon map | [MEMORY_INDEX](MEMORY_INDEX.md) |
+| Reviewed memory object corpus | [memo](memo/README.md) |
 | Memory model, operation cycle, and object posture | [MEMORY_MODEL](docs/memory/MEMORY_MODEL.md), [MEMORY_OPERATION_CYCLE](docs/memory/MEMORY_OPERATION_CYCLE.md), [MEMORY_OBJECT_PROFILES](docs/memory/MEMORY_OBJECT_PROFILES.md) |
 | Living memory topology and local ports | [LIVING_MEMORY_TOPOLOGY](docs/memory/LIVING_MEMORY_TOPOLOGY.md), [LOCAL_MEMO_PORT_STANDARD](docs/memory/LOCAL_MEMO_PORT_STANDARD.md), [MEMO_PORT_INDEXING_VOCABULARY](docs/memory/MEMO_PORT_INDEXING_VOCABULARY.md) |
 | Trust, temperature, lifecycle, operation modes, and provenance posture | [MEMORY_TRUST_POSTURE](docs/posture/MEMORY_TRUST_POSTURE.md), [MEMORY_TEMPERATURES](docs/posture/MEMORY_TEMPERATURES.md), [LIFECYCLE](docs/posture/LIFECYCLE.md), [MEMORY_OPERATION_MODES](docs/posture/MEMORY_OPERATION_MODES.md), [PROVENANCE_THREADS](docs/posture/PROVENANCE_THREADS.md) |
@@ -41,6 +42,8 @@ Read only the surface that matches the job.
 |---|---|
 | Shortest honest overview | this README -> [CHARTER](CHARTER.md) -> [DESIGN](DESIGN.md) -> [MEMORY_INDEX](MEMORY_INDEX.md) |
 | Memory object canon | [MEMORY_INDEX](MEMORY_INDEX.md) -> [MEMORY_OBJECT_PROFILES](docs/memory/MEMORY_OBJECT_PROFILES.md) |
+| Reviewed memory object corpus | [memo](memo/README.md) -> [OBJECT_SHAPE](memo/OBJECT_SHAPE.md) |
+| Reviewed intake landing | [memo](memo/README.md) -> [memo AGENTS](memo/AGENTS.md) -> [land_reviewed_memo_intake](scripts/memory/land_reviewed_memo_intake.py) |
 | Memory doctrine | [MEMORY_MODEL](docs/memory/MEMORY_MODEL.md), [BOUNDARIES](docs/boundaries/BOUNDARIES.md), then the target doctrine file |
 | Memory operation cycle | [MEMORY_OPERATION_CYCLE](docs/memory/MEMORY_OPERATION_CYCLE.md) |
 | Write-path safety | [MEMORY_WRITE_PATH_GUARDRAILS](docs/boundaries/MEMORY_WRITE_PATH_GUARDRAILS.md), then [operational gate guardrails](mechanics/operational-gate/docs/MEMORY_WRITE_PATH_GUARDRAILS.md) |
@@ -85,6 +88,12 @@ The released `v0.2.3` contour is routed through these compact entrypoints:
   [charter](CHARTER.md), [design](DESIGN.md), [memory index](MEMORY_INDEX.md),
   [memory model](docs/memory/MEMORY_MODEL.md), and
   [object profiles](docs/memory/MEMORY_OBJECT_PROFILES.md).
+- Reviewed memory corpus:
+  [memo](memo/README.md), [object shape](memo/OBJECT_SHAPE.md), and the first
+  reviewed corpus decision bundle under
+  [memo/objects/decisions/2026/reviewed-corpus-district](memo/objects/decisions/2026/reviewed-corpus-district/MEMO.md).
+  Reviewed local-port exports with `allowed_result: reviewed_write` land
+  through `scripts/memory/land_reviewed_memo_intake.py`.
 - Trust, lifecycle, temperature, provenance, and operational boundary:
   [trust posture](docs/posture/MEMORY_TRUST_POSTURE.md),
   [lifecycle](docs/posture/LIFECYCLE.md),
@@ -174,6 +183,7 @@ The exact allowlist and family contracts live in
 | District | Use for |
 |---|---|
 | [docs](docs/README.md) | memory doctrine, route maps, boundary docs, release route, and [docs/decisions](docs/decisions/README.md) |
+| [memo](memo/README.md) | reviewed memory object corpus, support lanes, and reviewed intake receipts |
 | [mechanics](mechanics/README.md) | repeatable memo operations and package-local artifacts |
 | [schemas](schemas/AGENTS.md) | memory and support-object contracts |
 | [examples](examples/AGENTS.md) | public-safe memory examples and recall contracts |
@@ -196,9 +206,9 @@ mechanic packages, validators, or sibling-owner repositories.
 | [memory_catalog.min.json](generated/memory/memory_catalog.min.json) | doctrine inspect surface |
 | [memory_capsules.json](generated/memory/memory_capsules.json) | doctrine capsule hydration surface |
 | [memory_sections.full.json](generated/memory/memory_sections.full.json) | expanded doctrine sections |
-| [memory_object_catalog.min.json](generated/memory-objects/memory_object_catalog.min.json) | object-facing inspect surface |
-| [memory_object_capsules.json](generated/memory-objects/memory_object_capsules.json) | object-facing capsule hydration surface |
-| [memory_object_sections.full.json](generated/memory-objects/memory_object_sections.full.json) | expanded object-facing sections |
+| [memory_object_catalog.min.json](generated/memory-objects/memory_object_catalog.min.json) | object-facing inspect surface over reviewed corpus objects and teaching fixtures |
+| [memory_object_capsules.json](generated/memory-objects/memory_object_capsules.json) | object-facing capsule hydration surface with `source_kind` |
+| [memory_object_sections.full.json](generated/memory-objects/memory_object_sections.full.json) | expanded object-facing sections with source paths back to corpus or fixtures |
 | [agents_mesh.min.json](generated/agents/agents_mesh.min.json) | AGENTS mesh coverage companion |
 | [root_technical_districts.min.json](generated/root-topology/root_technical_districts.min.json) | compact root technical district atlas |
 | [memo_mechanics.min.json](generated/mechanics/memo_mechanics.min.json) | compact mechanic package index |

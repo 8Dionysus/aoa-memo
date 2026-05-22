@@ -80,7 +80,11 @@ exactly one `generated_families` entry with its owner surface, source refs,
 outputs, validators, and builders when the output is generator-backed or a
 projection.
 
-The object family is derived from curated examples in `examples/generated-surfaces/memory_object_surface_manifest.json` and the referenced memory-object examples.
+The object family is derived from reviewed corpus bundles under `memo/objects/`
+plus curated teaching fixtures in
+`examples/generated-surfaces/memory_object_surface_manifest.json` and the
+referenced memory-object examples. Generated rows use `source_kind` to keep
+reviewed corpus objects distinct from teaching fixtures.
 
 ## Editing posture
 
@@ -98,7 +102,9 @@ For the doctrine family:
 For the object family:
 
 - Do not hand-edit `memory_object_catalog.json`, `memory_object_catalog.min.json`, `memory_object_capsules.json`, or `memory_object_sections.full.json`
-- regenerate the family from curated examples
+- regenerate the family from reviewed corpus bundles plus curated examples
+- keep `source_kind` visible so generated read models do not confuse fixtures
+  with reviewed memory truth
 - keep object-facing exports deterministic and reviewable
 
 For mechanic-owned generated outputs:

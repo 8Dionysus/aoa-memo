@@ -45,6 +45,8 @@ and which neighboring owner takes the next stronger claim?
 `aoa-memo` is composed of different source classes:
 
 - root public entry and authority surfaces
+- reviewed memory corpus under `memo/`
+- reviewed intake landing from local memo exports into corpus bundles
 - doctrine docs under `docs/`
 - memo-side mechanics under `mechanics/`
 - schema-backed memory and support contracts under `schemas/`
@@ -65,6 +67,7 @@ A good memory-layer operation has:
 - one bounded memory question
 - visible provenance or source refs
 - explicit temporal and lifecycle posture
+- a checked crossing when local memory becomes reviewed corpus memory
 - a validation path
 - a return route to stronger neighboring owners when memory is not enough
 
@@ -149,6 +152,7 @@ landing receipt, it needs a bounded home rather than a root-level spotlight.
 - a public reader can distinguish memory from proof
 - an agent can find the nearest route card
 - a memory object can find its provenance
+- a reviewed memory object can find its corpus bundle
 - a generated file can find its source
 - a stale object can find its current recall posture
 - a bridge can find its downstream owner
@@ -165,6 +169,8 @@ landing receipt, it needs a bounded home rather than a root-level spotlight.
 - flat docs sprawl with no route map
 - repeatable mechanics hidden as ordinary docs folders
 - memory objects that read like workflows or verdicts
+- durable memory objects stranded only as examples, generated rows, or local
+  port packets
 - generated files cited as source truth
 - writeback surfaces pretending to be live ledgers
 - Antifragility, Agon, Titan, adoption, governance, shape-guard, checkpoint,
@@ -179,6 +185,8 @@ landing receipt, it needs a bounded home rather than a root-level spotlight.
 [README](README.md) introduces. [CHARTER](CHARTER.md) authorizes.
 [ROADMAP](ROADMAP.md) points direction. [MEMORY_INDEX](MEMORY_INDEX.md) maps
 the public memory canon without replacing stronger doctrine.
+[memo](memo/README.md) holds reviewed memory object bundles and corpus support
+lanes.
 [BOUNDARIES](docs/boundaries/BOUNDARIES.md) separates owner truth.
 [MEMORY_MODEL](docs/memory/MEMORY_MODEL.md) defines the memory conceptual model.
 [ROOT_SURFACE_LAW](docs/root/ROOT_SURFACE_LAW.md) governs root and docs-root
@@ -192,6 +200,7 @@ Agents should consult this file when a change alters:
 
 - repository shape
 - root surfaces
+- reviewed memory corpus shape
 - docs topology
 - public memory-canon index shape
 - source versus generated authority

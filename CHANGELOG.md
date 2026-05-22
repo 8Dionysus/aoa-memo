@@ -9,6 +9,15 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Added
 
+- Add root `memo/` as the reviewed memory corpus district with object bundles,
+  corpus support and intake lanes, a validator, tests, AGENTS mesh coverage,
+  root-surface law, decision record, and release-gate wiring.
+- Add reviewed intake landing so `reviewed_write` exports from local memo ports
+  can become checked `memo/objects/` bundles with copied intake packets,
+  schema-backed landing receipts, validator coverage, and regression tests.
+- Back object-facing generated read models with reviewed corpus objects while
+  preserving teaching fixtures and marking each generated row with
+  `source_kind`.
 - Add semantic root districts for docs, config, schemas, examples, generated,
   scripts, and tests, with nearest `AGENTS.md` cards so each source family has
   a readable home, route, and validator.

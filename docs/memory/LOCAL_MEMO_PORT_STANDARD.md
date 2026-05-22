@@ -79,6 +79,15 @@ Local memory enters `aoa-memo` as:
 The port may keep local detail after promotion. `aoa-memo` keeps the durable
 cross-system object and its reviewable recall route.
 
+`allowed_result` in the export packet controls the next route:
+
+- `candidate_only` means the packet may be forwarded or inspected, but must
+  not land as durable corpus memory.
+- `reviewed_write` means review has accepted that this packet may be converted
+  into a `memo/objects/` bundle by the source-owned `aoa-memo` landing route.
+- `quarantine`, `archive_only`, and `reject` keep the packet out of durable
+  active memory.
+
 ## Packet-First Rule
 
 Local port state should be packet-first. Markdown companions may explain a
@@ -100,3 +109,8 @@ The useful invariant is still the route:
 ```text
 candidate -> receipt -> export -> reviewed aoa-memo route
 ```
+
+The reviewed landing route copies accepted export packets into
+`aoa-memo/memo/intake/reviewed/`, writes a landing receipt under
+`aoa-memo/memo/intake/receipts/`, and creates the reviewed object bundle under
+`aoa-memo/memo/objects/`.

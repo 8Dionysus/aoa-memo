@@ -24,7 +24,7 @@
     },
     "source_of_truth": {
       "type": "string",
-      "const": "aoa-memo-object-example-surfaces-v1"
+      "const": "aoa-memo-object-read-models-v2"
     },
     "memory_objects": {
       "type": "array",
@@ -42,6 +42,7 @@
           "review_state",
           "current_recall_status",
           "authority_kind",
+          "source_kind",
           "primary_recall_modes",
           "source_path",
           "inspect_key",
@@ -137,6 +138,13 @@
               "source_inspection",
               "operational_observation",
               "candidate_under_review"
+            ]
+          },
+          "source_kind": {
+            "type": "string",
+            "enum": [
+              "reviewed_corpus",
+              "teaching_fixture"
             ]
           },
           "source_path": {

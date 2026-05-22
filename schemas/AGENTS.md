@@ -34,7 +34,9 @@ Keep these groups distinct:
 
 - core memory object schemas such as `memory_object.schema.json`, `anchor.schema.json`, `state_capsule.schema.json`, `episode.schema.json`, `claim.schema.json`, `decision.schema.json`, `pattern.schema.json`, `bridge.schema.json`, and `audit_event.schema.json`
 - recall and posture schemas such as `recall_contract.schema.json`, `trust_posture.schema.json`, `lifecycle_posture.schema.json`, and `decay_policy.schema.json`
-- shared support-object schemas such as `provenance_thread.schema.json` and `core-memory-contract.schema.json`
+- shared support-object schemas such as `provenance_thread.schema.json`,
+  `core-memory-contract.schema.json`, and
+  `reviewed_intake_landing_receipt.schema.json`
 - local memo port schemas under `schemas/memory-ports/` for `PORT.yaml`,
   candidate, receipt, export, and generated local port index contracts
 - generated object-surface schemas such as `memory_object_catalog.schema.json`, `memory_object_capsules.schema.json`, `memory_object_sections.schema.json`, and `memory_object_surface_manifest.schema.json`

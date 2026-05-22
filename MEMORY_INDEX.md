@@ -15,6 +15,7 @@ or generated companions exist here?" It is an index, not the full memory model.
 - memory operation modes
 - memory temperature vocabulary
 - source doctrine families
+- reviewed memory corpus route
 - generated memory companions
 
 It does not own object semantics, schema fields, lifecycle policy, generated
@@ -31,6 +32,7 @@ Use the stronger surface when the question is narrower:
 - living topology: [LIVING_MEMORY_TOPOLOGY](docs/memory/LIVING_MEMORY_TOPOLOGY.md)
 - local memo ports: [LOCAL_MEMO_PORT_STANDARD](docs/memory/LOCAL_MEMO_PORT_STANDARD.md)
 - memo port indexing vocabulary: [MEMO_PORT_INDEXING_VOCABULARY](docs/memory/MEMO_PORT_INDEXING_VOCABULARY.md)
+- reviewed corpus: [memo](memo/README.md), [OBJECT_SHAPE](memo/OBJECT_SHAPE.md)
 - trust posture: [MEMORY_TRUST_POSTURE](docs/posture/MEMORY_TRUST_POSTURE.md)
 - operation modes: [MEMORY_OPERATION_MODES](docs/posture/MEMORY_OPERATION_MODES.md)
 - temperature and freshness: [MEMORY_TEMPERATURES](docs/posture/MEMORY_TEMPERATURES.md)
@@ -64,6 +66,7 @@ authority, runtime state, role rights, or source-authored knowledge.
 |---|---|---|
 | `provenance_thread` | walk-back paths, source refs, and lineage support | [PROVENANCE_THREADS](docs/posture/PROVENANCE_THREADS.md) |
 | `recall_contract` | inspect, capsule, expand, and mode/scoping expectations | [MEMORY_MODEL](docs/memory/MEMORY_MODEL.md) and [examples](examples/AGENTS.md) |
+| `reviewed_intake_landing_receipt` | receipt that links accepted local-port export to copied intake packet and landed object bundle | [OBJECT_SHAPE](memo/OBJECT_SHAPE.md) |
 | `inquiry_checkpoint` | checkpoint carry memory at the memo boundary | [checkpoint mechanic](mechanics/checkpoint/README.md) |
 | `witness_trace` | reviewed route-return and closeout recall support | [recurrence-support mechanic](mechanics/recurrence-support/README.md) |
 | `quest_chronicle` | quest witness and writeback support | [writeback mechanic](mechanics/writeback/README.md) |
@@ -114,6 +117,7 @@ freshness by itself.
 | Family | First route |
 |---|---|
 | Repository authority and boundaries | [CHARTER](CHARTER.md), [BOUNDARIES](docs/boundaries/BOUNDARIES.md) |
+| Reviewed memory corpus | [memo](memo/README.md), [OBJECT_SHAPE](memo/OBJECT_SHAPE.md) |
 | Memory model, object canon, and operation cycle | [MEMORY_MODEL](docs/memory/MEMORY_MODEL.md), [MEMORY_OPERATION_CYCLE](docs/memory/MEMORY_OPERATION_CYCLE.md), [MEMORY_OBJECT_PROFILES](docs/memory/MEMORY_OBJECT_PROFILES.md) |
 | Living topology and local memo ports | [LIVING_MEMORY_TOPOLOGY](docs/memory/LIVING_MEMORY_TOPOLOGY.md), [LOCAL_MEMO_PORT_STANDARD](docs/memory/LOCAL_MEMO_PORT_STANDARD.md), [MEMO_PORT_INDEXING_VOCABULARY](docs/memory/MEMO_PORT_INDEXING_VOCABULARY.md) |
 | Trust, lifecycle, temperature, operation modes, and provenance | [MEMORY_TRUST_POSTURE](docs/posture/MEMORY_TRUST_POSTURE.md), [LIFECYCLE](docs/posture/LIFECYCLE.md), [MEMORY_TEMPERATURES](docs/posture/MEMORY_TEMPERATURES.md), [MEMORY_OPERATION_MODES](docs/posture/MEMORY_OPERATION_MODES.md), [PROVENANCE_THREADS](docs/posture/PROVENANCE_THREADS.md) |
@@ -130,9 +134,9 @@ freshness by itself.
 | [memory_catalog.min.json](generated/memory/memory_catalog.min.json) | compact doctrine inspect surface |
 | [memory_capsules.json](generated/memory/memory_capsules.json) | capsule hydration surface for doctrine recall |
 | [memory_sections.full.json](generated/memory/memory_sections.full.json) | expanded doctrine sections |
-| [memory_object_catalog.min.json](generated/memory-objects/memory_object_catalog.min.json) | compact object-facing inspect surface |
-| [memory_object_capsules.json](generated/memory-objects/memory_object_capsules.json) | capsule hydration surface for object recall |
-| [memory_object_sections.full.json](generated/memory-objects/memory_object_sections.full.json) | expanded object-facing sections |
+| [memory_object_catalog.min.json](generated/memory-objects/memory_object_catalog.min.json) | compact object-facing inspect surface over reviewed corpus objects and teaching fixtures |
+| [memory_object_capsules.json](generated/memory-objects/memory_object_capsules.json) | capsule hydration surface for object recall, with `source_kind` |
+| [memory_object_sections.full.json](generated/memory-objects/memory_object_sections.full.json) | expanded object-facing sections with source paths back to corpus or fixtures |
 | [memo_port_vocabulary.min.json](generated/memory/memo_port_vocabulary.min.json) | compact vocabulary for local memo port packet indexing |
 | [memo_mechanics.min.json](generated/mechanics/memo_mechanics.min.json) | compact mechanic package index |
 | [memo_mechanic_readiness.min.json](generated/mechanics/memo_mechanic_readiness.min.json) | OS Abyss readiness matrix for memo mechanics |

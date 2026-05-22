@@ -31,6 +31,9 @@ expectation.
 
 | Decision | Scope |
 |---|---|
+| [2026-05-22-reviewed-intake-landing](2026-05-22-reviewed-intake-landing.md) | make reviewed local-port exports land as checked `memo/objects/` bundles through an aoa-memo source-owned route |
+| [2026-05-21-corpus-backed-memory-read-models](2026-05-21-corpus-backed-memory-read-models.md) | build object-facing read models from reviewed corpus objects plus teaching fixtures with `source_kind` |
+| [2026-05-21-reviewed-memory-corpus-district](2026-05-21-reviewed-memory-corpus-district.md) | add root `memo/` as reviewed memory object corpus rather than copying local memo port topology |
 | [2026-05-19-agents-authority-boundary-audit](2026-05-19-agents-authority-boundary-audit.md) | keep AGENTS-owned route modes, executable validation commands, and stale topology maps out of neighboring docs |
 | [2026-05-19-root-semantic-topology](2026-05-19-root-semantic-topology.md) | split active root districts into semantic families with nearest AGENTS cards and machine-checkable topology |
 | [2026-05-19-root-technical-district-atlas](2026-05-19-root-technical-district-atlas.md) | add a compact generated atlas for root technical district role, route cards, family ids, and local routing |

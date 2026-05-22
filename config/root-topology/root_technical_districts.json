@@ -112,6 +112,7 @@
         "schemas/memory-objects/bridge.schema.json",
         "schemas/memory-objects/claim.schema.json",
         "schemas/support-objects/core-memory-contract.schema.json",
+        "schemas/support-objects/reviewed_intake_landing_receipt.schema.json",
         "schemas/recall-posture/decay_policy.schema.json",
         "schemas/memory-objects/decision.schema.json",
         "schemas/memory-objects/episode.schema.json",
@@ -150,6 +151,7 @@
         "scripts/memory/build_local_memo_port_index.py",
         "scripts/memory/build_memo_port_vocabulary.py",
         "scripts/memory/generate_memory_object_surfaces.py",
+        "scripts/memory/land_reviewed_memo_intake.py",
         "scripts/memory/local_memo_port_common.py",
         "scripts/mechanics/mechanic_artifact_inventory_common.py",
         "scripts/mechanics/memo_mechanic_cards_common.py",
@@ -167,6 +169,7 @@
         "scripts/mechanics/validate_mechanic_artifact_inventory.py",
         "scripts/mechanics/validate_mechanic_artifact_topology.py",
         "scripts/memory/validate_memo.py",
+        "scripts/memory/validate_memo_corpus.py",
         "scripts/memory/validate_memory_operations.py",
         "scripts/mechanics/validate_memo_mechanic_cards.py",
         "scripts/mechanics/validate_memo_mechanic_landing_logs.py",
@@ -200,9 +203,11 @@
         "tests/mechanics/test_memo_mechanic_readiness.py",
         "tests/mechanics/test_memo_mechanics.py",
         "tests/memory/test_local_memo_port.py",
+        "tests/memory/test_memo_corpus.py",
         "tests/memory/test_memo_validators.py",
         "tests/memory/test_memory_operations.py",
         "tests/memory/test_phase_alpha_provenance_thread.py",
+        "tests/memory/test_reviewed_intake_landing.py",
         "tests/root-topology/test_roadmap_parity.py",
         "tests/root-topology/test_root_technical_districts_index.py",
         "tests/root-topology/test_topology_spine.py",
@@ -486,9 +491,11 @@
         "scripts/memory/generate_memory_object_surfaces.py",
         "scripts/memory/build_local_memo_port_index.py",
         "scripts/memory/build_memo_port_vocabulary.py",
+        "scripts/memory/land_reviewed_memo_intake.py",
         "scripts/memory/validate_lifecycle_audit_examples.py",
         "scripts/memory/local_memo_port_common.py",
         "scripts/memory/validate_memo.py",
+        "scripts/memory/validate_memo_corpus.py",
         "scripts/memory/validate_local_memo_port.py",
         "scripts/memory/validate_memory_operations.py",
         "scripts/memory/validate_memory_object_surfaces.py",
@@ -498,8 +505,10 @@
       "covered_by": [
         "scripts/release/release_check.py",
         "tests/memory/test_local_memo_port.py",
+        "tests/memory/test_memo_corpus.py",
         "tests/memory/test_memo_validators.py",
-        "tests/memory/test_memory_operations.py"
+        "tests/memory/test_memory_operations.py",
+        "tests/memory/test_reviewed_intake_landing.py"
       ]
     },
     {
@@ -653,12 +662,18 @@
       "role": "memory-object-regression",
       "owner_surface": "docs/memory/MEMORY_MODEL.md",
       "tests": [
+        "tests/memory/test_memo_corpus.py",
         "tests/memory/test_memo_validators.py",
         "tests/memory/test_memory_operations.py",
-        "tests/memory/test_phase_alpha_provenance_thread.py"
+        "tests/memory/test_phase_alpha_provenance_thread.py",
+        "tests/memory/test_reviewed_intake_landing.py"
       ],
       "protects": [
         "schemas/memory-objects/memory_object.schema.json",
+        "schemas/support-objects/reviewed_intake_landing_receipt.schema.json",
+        "memo/objects/",
+        "memo/intake/",
+        "scripts/memory/land_reviewed_memo_intake.py",
         "examples/phase-alpha/provenance_thread.phase-alpha-curated.example.json",
         "examples/generated-surfaces/memory_object_surface_manifest.json",
         "generated/memory-objects/memory_object_catalog.min.json"
@@ -805,12 +820,15 @@
       "owner_surface": "docs/memory/NARRATIVE_CORE_CONTRACT.md",
       "schemas": [
         "schemas/support-objects/core-memory-contract.schema.json",
-        "schemas/support-objects/provenance_thread.schema.json"
+        "schemas/support-objects/provenance_thread.schema.json",
+        "schemas/support-objects/reviewed_intake_landing_receipt.schema.json"
       ],
       "source_refs": [
         "docs/memory/NARRATIVE_CORE_CONTRACT.md",
+        "memo/OBJECT_SHAPE.md",
         "examples/support-objects/core_memory_contract.example.json",
-        "examples/support-objects/provenance_thread.example.json"
+        "examples/support-objects/provenance_thread.example.json",
+        "scripts/memory/land_reviewed_memo_intake.py"
       ],
       "validators": [
         "scripts/memory/validate_memo.py"
