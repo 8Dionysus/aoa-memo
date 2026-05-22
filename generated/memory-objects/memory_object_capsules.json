@@ -562,6 +562,19 @@
       "source_path": "mechanics/antifragility/parts/recovery-pattern-memory/examples/pattern.antifragility-stress-recovery-window.example.json"
     },
     {
+      "id": "memo.decision.2026-05-22.abyss-stack-aoa-memo-mcp-access-plane",
+      "kind": "decision",
+      "title": "abyss-stack aoa-memo-mcp access plane route",
+      "summary": "abyss-stack owns aoa-memo-mcp as the MCP access plane for OS Abyss memory briefs, local memo port indexing, and reviewed-intake forwarding while aoa-memo remains the durable reviewed memory authority.",
+      "source_kind": "reviewed_corpus",
+      "recall_posture_short": "allowed current recall; confirmed review state; Landed through reviewed intake; use as reviewed recall, not proof or stronger owner truth",
+      "trust_posture_short": "cool temperature; human_reviewed authority; confidence 0.90; freshness 1.00",
+      "use_when_short": "Use when decision-level recall is needed and this object remains allowed for semantic, source_route, lineage.",
+      "do_not_use_short": "Do not treat this decision as proof or stronger than its cited sources.",
+      "strongest_next_source": "memo/intake/reviewed/abyss-stack.20260522T021004Z.aoa-memo-mcp-access-plane.reviewed-intake.json",
+      "source_path": "memo/objects/decisions/2026/abyss-stack-aoa-memo-mcp-access-plane/object.json"
+    },
+    {
       "id": "memo.decision.2026-05-21.reviewed-corpus-district",
       "kind": "decision",
       "title": "aoa-memo keeps reviewed memory objects in a root memo corpus district",
