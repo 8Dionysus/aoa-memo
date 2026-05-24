@@ -159,19 +159,6 @@
       "source_path": "examples/memory-objects/pattern.example.json"
     },
     {
-      "id": "memo.bridge.2026-03-23.tos-lineage-kag-candidate",
-      "kind": "bridge",
-      "title": "Bridge candidate linking memo claim to ToS lineage and KAG lift posture",
-      "summary": "Connects a reviewed memo claim to Tree of Sophia lineage references while preserving provenance and candidate-only KAG lift posture.",
-      "source_kind": "teaching_fixture",
-      "recall_posture_short": "allowed current recall; proposed review state; This bridge candidate should remain visible for lineage and KAG-oriented inspection without being treated as a finalized lift",
-      "trust_posture_short": "cool temperature; candidate_under_review authority; confidence 0.86; freshness 0.89",
-      "use_when_short": "Use when bridge-level recall is needed and this object remains allowed for lineage, source_route, semantic.",
-      "do_not_use_short": "Do not treat this bridge as proof or stronger than its cited sources.",
-      "strongest_next_source": "mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow",
-      "source_path": "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/bridge.kag-lift.example.json"
-    },
-    {
       "id": "memo.audit.2026-03-21.router-entrypoint-supersession",
       "kind": "audit_event",
       "title": "Superseded registry-only inspect entrypoint with dedicated memo catalog surface",
@@ -575,6 +562,19 @@
       "source_path": "memo/objects/audit-events/2026/reviewed-intake-evidence-guard/object.json"
     },
     {
+      "id": "memo.bridge.2026-03-23.tos-lineage-kag-candidate",
+      "kind": "bridge",
+      "title": "Reviewed corpus bridge for the ToS lineage KAG donor",
+      "summary": "Promotes the KAG/ToS bridge candidate into the reviewed memo corpus so aoa-kag can consume it through object-facing read models with source_kind reviewed_corpus instead of relying on a teaching fixture.",
+      "source_kind": "reviewed_corpus",
+      "recall_posture_short": "allowed current recall; confirmed review state; Use when KAG needs the reviewed memo donor object; do not treat it as normalized KAG lift, routing activation, proof, or Tree-of-Sophia source truth",
+      "trust_posture_short": "cool temperature; repo_maintained authority; confidence 0.88; freshness 0.96",
+      "use_when_short": "Use when bridge-level recall is needed and this object remains allowed for lineage, source_route.",
+      "do_not_use_short": "Do not treat this bridge as proof or stronger than its cited sources.",
+      "strongest_next_source": "mechanics/consumer-handoff/docs/KAG_SOURCE_EXPORT.md",
+      "source_path": "memo/objects/bridges/2026/tos-lineage-kag-candidate/object.json"
+    },
+    {
       "id": "memo.decision.2026-05-22.abyss-stack-aoa-memo-mcp-access-plane",
       "kind": "decision",
       "title": "abyss-stack aoa-memo-mcp access plane route",
@@ -617,9 +617,9 @@
       "id": "memo.decision.2026-05-22.reviewed-memory-consumer-handoff-spine",
       "kind": "decision",
       "title": "Reviewed memory objects feed consumers through bounded handoff surfaces",
-      "summary": "Records the consumer-handoff decision that evals, KAG, stats, playbooks, agents, routing, runtime, and source owners consume reviewed objects and generated read models without becoming or replacing memo authority.",
+      "summary": "Records the consumer-handoff decision that evals, KAG, stats, playbooks, agents, routing, runtime, and source owners consume reviewed objects and generated read models while local ports, session evidence, and MCP dry runs stay outside durable memo authority.",
       "source_kind": "reviewed_corpus",
-      "recall_posture_short": "preferred current recall; confirmed review state; Use as the current memo-side consumer route: reviewed objects first, generated read models second, consumer authority outside aoa-memo",
+      "recall_posture_short": "preferred current recall; confirmed review state; Use as the current memo-side consumer route: reviewed objects and generated read models are retrieved from aoa-memo, local candidates and exports stay in repo-local memo ports, session evidence stays in .aoa until reviewed intake, and MCP landing plans remain dry-run access-plane evidence",
       "trust_posture_short": "cool temperature; repo_maintained authority; confidence 0.86; freshness 1.00",
       "use_when_short": "Use as the current decision surface for semantic, source_route, lineage recall.",
       "do_not_use_short": "Do not treat this decision as proof or stronger than its cited sources.",

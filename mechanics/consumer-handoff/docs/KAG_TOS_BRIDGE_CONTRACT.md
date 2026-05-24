@@ -20,6 +20,7 @@ This memo-side contract works beside:
   narrower than the current bridge faces
 - `aoa-kag/schemas/bridge-envelope.schema.json` and `aoa-kag/examples/aoa_tos_bridge_envelope.example.json` for the shared cross-repo linkage object
 - `schemas/memory-objects/bridge.schema.json` for the memo-side bridge object
+- `memo/objects/bridges/2026/tos-lineage-kag-candidate/object.json` for the reviewed corpus donor bridge
 - `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/schemas/memory_chunk_face.schema.json` and `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/schemas/memory_graph_face.schema.json` for downstream export faces
 - `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/schemas/memory_temporal_graph_edge_v1.json` for derived temporal graph edges that keep backward refs to authored memo objects
 
@@ -135,6 +136,7 @@ The current end-to-end flow is:
 
 The current example bundle for this flow is:
 
+- `memo/objects/bridges/2026/tos-lineage-kag-candidate/object.json`
 - `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/episode.tos-interpretation.example.json`
 - `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/claim.tos-bridge-ready.example.json`
 - `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/bridge.kag-lift.example.json`
@@ -145,10 +147,11 @@ The current example bundle for this flow is:
 - `examples/recall/recall_contract.lineage.json`
 - `examples/recall/recall_contract.router.lineage.json`
 
-The bridge example keeps an explicit `shared_envelope_ref` back to the KAG-owned linkage surface.
-The current source-owned memo export points at the same donor bridge object, but
-it remains publish-only until a later federation activation package widens the
-live spine deliberately.
+The reviewed corpus bridge and bridge example keep an explicit
+`shared_envelope_ref` back to the KAG-owned linkage surface. The current
+source-owned memo export points at the reviewed corpus donor bridge, while the
+example remains a teaching fixture. The export remains publish-only until a
+later federation activation package widens the live spine deliberately.
 
 ## What This Contract Does Not Do
 

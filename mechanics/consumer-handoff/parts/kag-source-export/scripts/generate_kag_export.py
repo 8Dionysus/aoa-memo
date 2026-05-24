@@ -17,6 +17,8 @@ EXAMPLES = (
     / "kag-tos-bridge-handoff"
     / "examples"
 )
+BRIDGE_OBJECT_REF = "memo/objects/bridges/2026/tos-lineage-kag-candidate/object.json"
+BRIDGE_OBJECT_PATH = ROOT / BRIDGE_OBJECT_REF
 GENERATED = ROOT / "generated"
 
 KAG_EXPORT_PATH = (
@@ -66,7 +68,7 @@ NON_IDENTITY_BOUNDARY = (
 DIRECT_RELATIONS = [
     {
         "relation_type": "source_memory_object",
-        "target_ref": BRIDGE_EXAMPLE_REF,
+        "target_ref": BRIDGE_OBJECT_REF,
     },
     {
         "relation_type": "supported_by_claim",
@@ -139,7 +141,7 @@ def validate_bridge_sections(section_payload: JsonDict) -> None:
 
 
 def build_kag_export_payload() -> JsonDict:
-    bridge_example = load_json(EXAMPLES / "bridge.kag-lift.example.json")
+    bridge_object = load_json(BRIDGE_OBJECT_PATH)
     provenance_thread = load_json(EXAMPLES / "provenance_thread.kag-lift.example.json")
     bridge_capsules = load_json(OBJECT_CAPSULES_PATH)
     bridge_sections = load_json(OBJECT_SECTIONS_PATH)
@@ -152,17 +154,19 @@ def build_kag_export_payload() -> JsonDict:
     )
     validate_bridge_sections(bridge_sections)
 
-    if bridge_example.get("id") != BRIDGE_ID:
-        fail("bridge example id must stay aligned with the KAG export donor id")
-    if bridge_example.get("kind") != "bridge":
-        fail("bridge example kind must stay 'bridge'")
+    if bridge_object.get("id") != BRIDGE_ID:
+        fail("reviewed bridge object id must stay aligned with the KAG export donor id")
+    if bridge_object.get("kind") != "bridge":
+        fail("reviewed bridge object kind must stay 'bridge'")
     if bridge_capsule.get("id") != BRIDGE_ID:
         fail("bridge capsule id must stay aligned with the KAG export donor id")
-    bridge_provenance = bridge_example.get("provenance")
+    if bridge_capsule.get("source_kind") != "reviewed_corpus":
+        fail("bridge capsule must come from reviewed_corpus, not a teaching fixture")
+    bridge_provenance = bridge_object.get("provenance")
     if not isinstance(bridge_provenance, dict):
-        fail("bridge example provenance must stay available for KAG export donor trace")
+        fail("reviewed bridge object provenance must stay available for KAG export donor trace")
     if bridge_provenance.get("provenance_thread_id") != provenance_thread.get("id"):
-        fail("bridge example provenance_thread_id must stay aligned with KAG export donor thread")
+        fail("reviewed bridge object provenance_thread_id must stay aligned with KAG export donor thread")
     if BRIDGE_ID not in provenance_thread.get("memory_object_ids", []):
         fail("KAG export donor provenance thread must include the bridge object id")
 

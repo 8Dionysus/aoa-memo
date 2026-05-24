@@ -447,43 +447,6 @@
       ]
     },
     {
-      "id": "memo.bridge.2026-03-23.tos-lineage-kag-candidate",
-      "kind": "bridge",
-      "title": "Bridge candidate linking memo claim to ToS lineage and KAG lift posture",
-      "source_kind": "teaching_fixture",
-      "source_path": "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/bridge.kag-lift.example.json",
-      "sections": [
-        {
-          "section_id": "memo.bridge.2026-03-23.tos-lineage-kag-candidate#identity-and-recall",
-          "heading": "Identity and Recall",
-          "ordinal": 1,
-          "summary": "Names the bridge surface, its active recall modes, and its allowed current-recall posture.",
-          "body": "Bridge candidate linking memo claim to ToS lineage and KAG lift posture. Connects a reviewed memo claim to Tree of Sophia lineage references while preserving provenance and candidate-only KAG lift posture. Scope: repo:aoa-memo, project:AoA, repo:Tree-of-Sophia. Scope classes: repo, project. Primary recall modes: lineage, source_route, semantic. Current recall status: allowed because This bridge candidate should remain visible for lineage and KAG-oriented inspection without being treated as a finalized lift. Payload ref: mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow."
-        },
-        {
-          "section_id": "memo.bridge.2026-03-23.tos-lineage-kag-candidate#provenance-and-evidence",
-          "heading": "Provenance and Evidence",
-          "ordinal": 2,
-          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
-          "body": "Provenance thread: prov.tos-bridge-kag-lift.2026-03-23. Source refs: mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow, repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md. Episode refs: memo.ep.2026-03-23.tos-interpretation-bridge-source. Related curated object ids: memo.ep.2026-03-23.tos-interpretation-bridge-source. Strongest next sources: mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow, repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md."
-        },
-        {
-          "section_id": "memo.bridge.2026-03-23.tos-lineage-kag-candidate#trust-and-lifecycle",
-          "heading": "Trust and Lifecycle",
-          "ordinal": 3,
-          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
-          "body": "Authority kind: candidate_under_review (reviewed-bridge-candidate). Temperature: cool; confidence 0.86; freshness 0.89; salience 0.90. Review state: proposed. Retention class: bridge-candidate. Promotion state: candidate. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
-        },
-        {
-          "section_id": "memo.bridge.2026-03-23.tos-lineage-kag-candidate#bridges-and-access",
-          "heading": "Bridges and Access",
-          "ordinal": 4,
-          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
-          "body": "Access class: public. Scope classes: repo, project. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memory/memory_catalog.min.json. ToS refs: repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md#memory-bridge-fragment. Skill refs: none. Eval refs: none. KAG lift status: candidate."
-        }
-      ]
-    },
-    {
       "id": "memo.audit.2026-03-21.router-entrypoint-supersession",
       "kind": "audit_event",
       "title": "Superseded registry-only inspect entrypoint with dedicated memo catalog surface",
@@ -1631,6 +1594,43 @@
       ]
     },
     {
+      "id": "memo.bridge.2026-03-23.tos-lineage-kag-candidate",
+      "kind": "bridge",
+      "title": "Reviewed corpus bridge for the ToS lineage KAG donor",
+      "source_kind": "reviewed_corpus",
+      "source_path": "memo/objects/bridges/2026/tos-lineage-kag-candidate/object.json",
+      "sections": [
+        {
+          "section_id": "memo.bridge.2026-03-23.tos-lineage-kag-candidate#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the bridge surface, its active recall modes, and its allowed current-recall posture.",
+          "body": "Reviewed corpus bridge for the ToS lineage KAG donor. Promotes the KAG/ToS bridge candidate into the reviewed memo corpus so aoa-kag can consume it through object-facing read models with source_kind reviewed_corpus instead of relying on a teaching fixture. Scope: repo:aoa-memo, repo:aoa-kag, repo:Tree-of-Sophia, workspace:OS-Abyss. Scope classes: repo, workspace. Primary recall modes: lineage, source_route. Current recall status: allowed because Use when KAG needs the reviewed memo donor object; do not treat it as normalized KAG lift, routing activation, proof, or Tree-of-Sophia source truth. Payload ref: mechanics/consumer-handoff/docs/KAG_SOURCE_EXPORT.md."
+        },
+        {
+          "section_id": "memo.bridge.2026-03-23.tos-lineage-kag-candidate#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.tos-bridge-kag-lift.2026-03-23. Source refs: mechanics/consumer-handoff/docs/KAG_SOURCE_EXPORT.md, mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow, mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/bridge.kag-lift.example.json, mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/claim.tos-bridge-ready.example.json, mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/episode.tos-interpretation.example.json, mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/provenance_thread.kag-lift.example.json, repo:aoa-kag/docs/decisions/2026-05-22-owner-route-catalog-refresh.md, repo:aoa-kag/generated/federation_export_registry.min.json. Episode refs: memo.ep.2026-03-23.tos-interpretation-bridge-source. Related curated object ids: memo.ep.2026-03-23.tos-interpretation-bridge-source. Strongest next sources: mechanics/consumer-handoff/docs/KAG_SOURCE_EXPORT.md, mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow, mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/bridge.kag-lift.example.json."
+        },
+        {
+          "section_id": "memo.bridge.2026-03-23.tos-lineage-kag-candidate#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: repo_maintained (aoa-memo reviewed corpus bridge over the KAG/ToS handoff). Temperature: cool; confidence 0.88; freshness 0.96; salience 0.92. Review state: confirmed. Retention class: source-owned-kag-donor. Promotion state: promoted. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.bridge.2026-03-23.tos-lineage-kag-candidate#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Scope classes: repo, workspace. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memory-objects/memory_object_capsules.json. ToS refs: repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md#memory-bridge-fragment. Skill refs: none. Eval refs: mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md. KAG lift status: candidate."
+        }
+      ]
+    },
+    {
       "id": "memo.decision.2026-05-22.abyss-stack-aoa-memo-mcp-access-plane",
       "kind": "decision",
       "title": "abyss-stack aoa-memo-mcp access plane route",
@@ -1753,14 +1753,14 @@
           "heading": "Identity and Recall",
           "ordinal": 1,
           "summary": "Names the decision surface, its active recall modes, and its preferred current-recall posture.",
-          "body": "Reviewed memory objects feed consumers through bounded handoff surfaces. Records the consumer-handoff decision that evals, KAG, stats, playbooks, agents, routing, runtime, and source owners consume reviewed objects and generated read models without becoming or replacing memo authority. Scope: repo:aoa-memo, repo:aoa-evals, repo:aoa-kag, repo:aoa-stats, repo:aoa-playbooks, repo:aoa-agents, workspace:OS-Abyss. Scope classes: repo, workspace. Primary recall modes: semantic, source_route, lineage. Current recall status: preferred because Use as the current memo-side consumer route: reviewed objects first, generated read models second, consumer authority outside aoa-memo. Payload ref: mechanics/consumer-handoff/README.md."
+          "body": "Reviewed memory objects feed consumers through bounded handoff surfaces. Records the consumer-handoff decision that evals, KAG, stats, playbooks, agents, routing, runtime, and source owners consume reviewed objects and generated read models while local ports, session evidence, and MCP dry runs stay outside durable memo authority. Scope: repo:aoa-memo, repo:aoa-evals, repo:aoa-kag, repo:aoa-stats, repo:aoa-playbooks, repo:aoa-agents, workspace:OS-Abyss. Scope classes: repo, workspace. Primary recall modes: semantic, source_route, lineage. Current recall status: preferred because Use as the current memo-side consumer route: reviewed objects and generated read models are retrieved from aoa-memo, local candidates and exports stay in repo-local memo ports, session evidence stays in .aoa until reviewed intake, and MCP landing plans remain dry-run access-plane evidence. Payload ref: mechanics/consumer-handoff/README.md."
         },
         {
           "section_id": "memo.decision.2026-05-22.reviewed-memory-consumer-handoff-spine#provenance-and-evidence",
           "heading": "Provenance and Evidence",
           "ordinal": 2,
           "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
-          "body": "Provenance thread: prov.aoa-memo.consumer-handoff-spine.2026-05-22. Source refs: mechanics/consumer-handoff/README.md, mechanics/consumer-handoff/DIRECTION.md, mechanics/consumer-handoff/OWNER_MAP.md, mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md, mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md, mechanics/consumer-handoff/docs/KAG_SOURCE_EXPORT.md, mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md, mechanics/consumer-handoff/docs/AGENT_MEMORY_POSTURE_SEAM.md, docs/memory/MEMORY_OPERATION_CYCLE.md, generated/memory-objects/memory_object_catalog.min.json. Episode refs: none. Related curated object ids: none. Strongest next sources: mechanics/consumer-handoff/README.md, mechanics/consumer-handoff/DIRECTION.md, mechanics/consumer-handoff/OWNER_MAP.md."
+          "body": "Provenance thread: prov.aoa-memo.consumer-handoff-spine.2026-05-22. Source refs: mechanics/consumer-handoff/README.md, mechanics/consumer-handoff/DIRECTION.md, mechanics/consumer-handoff/OWNER_MAP.md, mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md, mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md, mechanics/consumer-handoff/docs/KAG_SOURCE_EXPORT.md, mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md, mechanics/consumer-handoff/docs/AGENT_MEMORY_POSTURE_SEAM.md, docs/memory/MEMORY_OPERATION_CYCLE.md, docs/memory/LOCAL_MEMO_PORT_STANDARD.md, generated/memory-objects/memory_object_catalog.min.json. Episode refs: none. Related curated object ids: none. Strongest next sources: mechanics/consumer-handoff/README.md, mechanics/consumer-handoff/DIRECTION.md, mechanics/consumer-handoff/OWNER_MAP.md."
         },
         {
           "section_id": "memo.decision.2026-05-22.reviewed-memory-consumer-handoff-spine#trust-and-lifecycle",

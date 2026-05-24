@@ -78,9 +78,9 @@ REVIEWED_CANDIDATE_CASES = {
     },
     "distillation_bridge_candidate": {
         "object_id": "memo.bridge.2026-03-23.tos-lineage-kag-candidate",
-        "source_path": "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/bridge.kag-lift.example.json",
+        "source_path": "memo/objects/bridges/2026/tos-lineage-kag-candidate/object.json",
         "target_kind": "bridge",
-        "review_state": "proposed",
+        "review_state": "confirmed",
         "writeback_anchor_ref": "repo:aoa-memo/mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow",
         "candidate_source_ref": "repo:aoa-memo/mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/claim.tos-bridge-ready.example.json",
     },

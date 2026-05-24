@@ -139,7 +139,7 @@ The current profile-hardening pass uses these canonical schema/example pairs:
 - `claim` -> `schemas/memory-objects/claim.schema.json` -> `examples/memory-objects/claim.example.json`
 - `decision` -> `schemas/memory-objects/decision.schema.json` -> `mechanics/checkpoint/parts/approval-and-health-records/examples/checkpoint_approval_record.example.json`
 - `pattern` -> `schemas/memory-objects/pattern.schema.json` -> `examples/memory-objects/pattern.example.json`
-- `bridge` -> `schemas/memory-objects/bridge.schema.json` -> `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/bridge.kag-lift.example.json`
+- `bridge` -> `schemas/memory-objects/bridge.schema.json` -> `memo/objects/bridges/2026/tos-lineage-kag-candidate/object.json` with `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/bridge.kag-lift.example.json` retained as a teaching fixture
 - `audit_event` -> `schemas/memory-objects/audit_event.schema.json` -> `examples/lifecycle/audit_event.supersession.example.json`
 
 ## Boundary note

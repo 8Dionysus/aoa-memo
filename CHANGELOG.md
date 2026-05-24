@@ -18,6 +18,12 @@ Tracking starts with the community-docs baseline for this repository.
 - Back object-facing generated read models with reviewed corpus objects while
   preserving teaching fixtures and marking each generated row with
   `source_kind`.
+- Promote the KAG donor bridge into the reviewed corpus so the source-owned
+  memo export and object-facing read models route `aoa-kag` to
+  `source_kind: reviewed_corpus` rather than a teaching fixture row.
+- Clarify the `aoa_memo` MCP access plane as brief/search/status/validation,
+  local packet preparation, and dry-run landing-plan support rather than
+  durable reviewed memory authority.
 - Add semantic root districts for docs, config, schemas, examples, generated,
   scripts, and tests, with nearest `AGENTS.md` cards so each source family has
   a readable home, route, and validator.
@@ -172,6 +178,10 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Changed
 
+- Tighten the reviewed memory consumer-handoff spine so downstream consumers
+  retrieve reviewed object/read-model context while local memo ports, `.aoa`
+  session evidence, reviewed intake, and `aoa_memo` MCP landing-plan dry runs
+  keep separate authority boundaries.
 - Audit root AGENTS authority boundaries by keeping root route modes and
   executable validation commands in `AGENTS.md`, trimming adjacent README,
   CHARTER, and `DESIGN.AGENTS.md` duplicates, repairing stale legacy

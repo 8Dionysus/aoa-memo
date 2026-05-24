@@ -2,7 +2,7 @@
   "id": "memo.decision.2026-05-22.reviewed-memory-consumer-handoff-spine",
   "kind": "decision",
   "title": "Reviewed memory objects feed consumers through bounded handoff surfaces",
-  "summary": "Records the consumer-handoff decision that evals, KAG, stats, playbooks, agents, routing, runtime, and source owners consume reviewed objects and generated read models without becoming or replacing memo authority.",
+  "summary": "Records the consumer-handoff decision that evals, KAG, stats, playbooks, agents, routing, runtime, and source owners consume reviewed objects and generated read models while local ports, session evidence, and MCP dry runs stay outside durable memo authority.",
   "scope": [
     "repo:aoa-memo",
     "repo:aoa-evals",
@@ -28,7 +28,11 @@
     "stats",
     "playbooks",
     "agents",
-    "read-model"
+    "read-model",
+    "local-memo-port",
+    "session-evidence",
+    "mcp-access-plane",
+    "reviewed-intake"
   ],
   "time": {
     "created_at": "2026-05-22T06:13:46Z",
@@ -47,6 +51,7 @@
       "mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md",
       "mechanics/consumer-handoff/docs/AGENT_MEMORY_POSTURE_SEAM.md",
       "docs/memory/MEMORY_OPERATION_CYCLE.md",
+      "docs/memory/LOCAL_MEMO_PORT_STANDARD.md",
       "generated/memory-objects/memory_object_catalog.min.json"
     ],
     "episode_refs": [],
@@ -71,7 +76,7 @@
     "promotion_state": "promoted",
     "current_recall": {
       "status": "preferred",
-      "status_reason": "Use as the current memo-side consumer route: reviewed objects first, generated read models second, consumer authority outside aoa-memo."
+      "status_reason": "Use as the current memo-side consumer route: reviewed objects and generated read models are retrieved from aoa-memo, local candidates and exports stay in repo-local memo ports, session evidence stays in .aoa until reviewed intake, and MCP landing plans remain dry-run access-plane evidence."
     }
   },
   "access": {

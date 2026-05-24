@@ -2695,6 +2695,40 @@ def validate_live_receipt_log() -> None:
     catalog_ids = set(catalog_entries_by_id)
     errors: list[str] = []
     seen_event_ids: set[str] = set()
+    reviewed_object_cache: dict[str, dict] = {}
+
+    def reviewed_corpus_object(catalog_entry: dict) -> dict | None:
+        source_path = catalog_entry.get("source_path")
+        if catalog_entry.get("source_kind") != "reviewed_corpus" or not isinstance(source_path, str):
+            return None
+        if source_path in reviewed_object_cache:
+            return reviewed_object_cache[source_path]
+        object_path = ROOT / source_path
+        if not object_path.exists():
+            return None
+        data = load_json(object_path)
+        if not isinstance(data, dict):
+            return None
+        reviewed_object_cache[source_path] = data
+        return data
+
+    def source_ref_payload(ref: str) -> dict | None:
+        ref_path = ref.removeprefix("repo:aoa-memo/") if ref.startswith("repo:aoa-memo/") else ref
+        ref_path, _, _ = ref_path.partition("#")
+        target = ROOT / ref_path
+        if not target.exists() or target.suffix.lower() != ".json":
+            return None
+        data = load_json(target)
+        return data if isinstance(data, dict) else None
+
+    def is_reviewed_corpus_source_ref(catalog_entry: dict, ref: object) -> bool:
+        if not isinstance(ref, str) or not ref:
+            return False
+        reviewed_object = reviewed_corpus_object(catalog_entry)
+        if reviewed_object is None:
+            return False
+        source_refs = reviewed_object.get("provenance", {}).get("source_refs", [])
+        return isinstance(source_refs, list) and ref in source_refs
 
     for line_number, raw_line in enumerate(
         LIVE_RECEIPT_LOG_PATH.read_text(encoding="utf-8").splitlines(),
@@ -2826,18 +2860,32 @@ def validate_live_receipt_log() -> None:
                             f"{catalog_entry.get('kind')!r}"
                         )
                     if payload.get("review_state") != catalog_entry.get("review_state"):
-                        errors.append(
-                            f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: payload.review_state "
-                            f"{payload.get('review_state')!r} must match catalog review_state "
-                            f"{catalog_entry.get('review_state')!r}"
+                        memory_object_ref = payload.get("memory_object_ref")
+                        ref_payload = source_ref_payload(memory_object_ref) if isinstance(memory_object_ref, str) else None
+                        ref_review_state = (
+                            ref_payload.get("lifecycle", {}).get("review_state")
+                            if isinstance(ref_payload, dict)
+                            else None
                         )
+                        if not (
+                            is_reviewed_corpus_source_ref(catalog_entry, memory_object_ref)
+                            and payload.get("review_state") == ref_review_state
+                        ):
+                            errors.append(
+                                f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: payload.review_state "
+                                f"{payload.get('review_state')!r} must match catalog review_state "
+                                f"{catalog_entry.get('review_state')!r}"
+                            )
                     memory_object_ref = payload.get("memory_object_ref")
                     if memory_object_ref is not None:
                         if not isinstance(memory_object_ref, str) or not memory_object_ref:
                             errors.append(
                                 f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: payload.memory_object_ref must be a non-empty string"
                             )
-                        elif memory_object_ref != catalog_entry.get("source_path"):
+                        elif (
+                            memory_object_ref != catalog_entry.get("source_path")
+                            and not is_reviewed_corpus_source_ref(catalog_entry, memory_object_ref)
+                        ):
                             errors.append(
                                 f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: payload.memory_object_ref "
                                 f"{memory_object_ref!r} must match catalog source_path "

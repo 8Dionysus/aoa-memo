@@ -417,42 +417,6 @@
       ]
     },
     {
-      "id": "memo.bridge.2026-03-23.tos-lineage-kag-candidate",
-      "kind": "bridge",
-      "title": "Bridge candidate linking memo claim to ToS lineage and KAG lift posture",
-      "summary": "Connects a reviewed memo claim to Tree of Sophia lineage references while preserving provenance and candidate-only KAG lift posture.",
-      "scope_classes": [
-        "repo",
-        "project"
-      ],
-      "temperature": "cool",
-      "review_state": "proposed",
-      "current_recall_status": "allowed",
-      "authority_kind": "candidate_under_review",
-      "source_kind": "teaching_fixture",
-      "primary_recall_modes": [
-        "lineage",
-        "source_route",
-        "semantic"
-      ],
-      "source_path": "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/bridge.kag-lift.example.json",
-      "inspect_key": "memo.bridge.2026-03-23.tos-lineage-kag-candidate",
-      "expand_key": "memo.bridge.2026-03-23.tos-lineage-kag-candidate",
-      "scope": [
-        "repo:aoa-memo",
-        "project:AoA",
-        "repo:Tree-of-Sophia"
-      ],
-      "provenance_thread_id": "prov.tos-bridge-kag-lift.2026-03-23",
-      "related_object_ids": [
-        "memo.ep.2026-03-23.tos-interpretation-bridge-source"
-      ],
-      "strongest_next_sources": [
-        "mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow",
-        "repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md"
-      ]
-    },
-    {
       "id": "memo.audit.2026-03-21.router-entrypoint-supersession",
       "kind": "audit_event",
       "title": "Superseded registry-only inspect entrypoint with dedicated memo catalog surface",
@@ -1547,6 +1511,43 @@
       ]
     },
     {
+      "id": "memo.bridge.2026-03-23.tos-lineage-kag-candidate",
+      "kind": "bridge",
+      "title": "Reviewed corpus bridge for the ToS lineage KAG donor",
+      "summary": "Promotes the KAG/ToS bridge candidate into the reviewed memo corpus so aoa-kag can consume it through object-facing read models with source_kind reviewed_corpus instead of relying on a teaching fixture.",
+      "scope_classes": [
+        "repo",
+        "workspace"
+      ],
+      "temperature": "cool",
+      "review_state": "confirmed",
+      "current_recall_status": "allowed",
+      "authority_kind": "repo_maintained",
+      "source_kind": "reviewed_corpus",
+      "primary_recall_modes": [
+        "lineage",
+        "source_route"
+      ],
+      "source_path": "memo/objects/bridges/2026/tos-lineage-kag-candidate/object.json",
+      "inspect_key": "memo.bridge.2026-03-23.tos-lineage-kag-candidate",
+      "expand_key": "memo.bridge.2026-03-23.tos-lineage-kag-candidate",
+      "scope": [
+        "repo:aoa-memo",
+        "repo:aoa-kag",
+        "repo:Tree-of-Sophia",
+        "workspace:OS-Abyss"
+      ],
+      "provenance_thread_id": "prov.tos-bridge-kag-lift.2026-03-23",
+      "related_object_ids": [
+        "memo.ep.2026-03-23.tos-interpretation-bridge-source"
+      ],
+      "strongest_next_sources": [
+        "mechanics/consumer-handoff/docs/KAG_SOURCE_EXPORT.md",
+        "mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md#end-to-end-flow",
+        "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/bridge.kag-lift.example.json"
+      ]
+    },
+    {
       "id": "memo.decision.2026-05-22.abyss-stack-aoa-memo-mcp-access-plane",
       "kind": "decision",
       "title": "abyss-stack aoa-memo-mcp access plane route",
@@ -1656,7 +1657,7 @@
       "id": "memo.decision.2026-05-22.reviewed-memory-consumer-handoff-spine",
       "kind": "decision",
       "title": "Reviewed memory objects feed consumers through bounded handoff surfaces",
-      "summary": "Records the consumer-handoff decision that evals, KAG, stats, playbooks, agents, routing, runtime, and source owners consume reviewed objects and generated read models without becoming or replacing memo authority.",
+      "summary": "Records the consumer-handoff decision that evals, KAG, stats, playbooks, agents, routing, runtime, and source owners consume reviewed objects and generated read models while local ports, session evidence, and MCP dry runs stay outside durable memo authority.",
       "scope_classes": [
         "repo",
         "workspace"
