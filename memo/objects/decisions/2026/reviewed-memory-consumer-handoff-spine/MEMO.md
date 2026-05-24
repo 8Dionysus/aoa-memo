@@ -3,6 +3,8 @@
 ## Memory
 Reviewed memory should reach neighboring organs through bounded consumer handoff surfaces. Evals, KAG, stats, playbooks, agents, routing, runtime, and source owners may consume object ids, provenance, lifecycle posture, and generated read models without becoming memo authority.
 
+Consumer-local `memo/` ports may hold candidates, receipts, exports, and local records. `.aoa` session evidence remains evidence until reviewed intake lands. The `aoa_memo` MCP plane may brief, search, validate, prepare local packets, inspect reviewed intake, and dry-run landing plans, but durable reviewed memory still lands as source-owned `aoa-memo/memo/objects/` changes.
+
 ## Source Route
 - `mechanics/consumer-handoff/README.md`
 - `mechanics/consumer-handoff/DIRECTION.md`
@@ -12,6 +14,7 @@ Reviewed memory should reach neighboring organs through bounded consumer handoff
 - `mechanics/consumer-handoff/docs/PLAYBOOK_MEMORY_SCOPES.md`
 - `mechanics/consumer-handoff/docs/AGENT_MEMORY_POSTURE_SEAM.md`
 - `docs/memory/MEMORY_OPERATION_CYCLE.md`
+- `docs/memory/LOCAL_MEMO_PORT_STANDARD.md`
 - `generated/memory-objects/memory_object_catalog.min.json`
 
 ## Review Posture

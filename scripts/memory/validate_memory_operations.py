@@ -108,6 +108,11 @@ def validate_required_text() -> list[str]:
             "Consolidation",
             "Generated read models",
             "Consumer handoff",
+            "MCP Access Plane",
+            "`aoa_memo_brief`",
+            "`aoa_memo_landing_plan`",
+            "`run_dry_run: true`",
+            "not memory truth",
         ],
         "mechanics/retention/docs/CONSOLIDATION_FORGETTING_OPERATION.md": [
             "demotion",
@@ -134,6 +139,12 @@ def validate_required_text() -> list[str]:
             "candidates/",
             "receipts/",
             "handoffs/",
+            "MCP Support Boundary",
+            "`aoa_memo_pending_exports`",
+            "`aoa_memo_prepare_intake_packet`",
+            "`aoa_memo_landing_plan`",
+            "`run_dry_run: true`",
+            "not central durable memory",
         ],
     }
     errors: list[str] = []

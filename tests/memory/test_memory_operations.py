@@ -63,3 +63,22 @@ def test_operation_modes_require_complete_mode_set() -> None:
         validate_memory_operations.load_json = original_load_json
 
     assert any("must expose modes" in error for error in errors)
+
+
+def test_mcp_access_plane_boundary_is_required() -> None:
+    cycle_path = REPO_ROOT / "docs" / "memory" / "MEMORY_OPERATION_CYCLE.md"
+    original_load_text = validate_memory_operations.load_text
+
+    def fake_load_text(path: Path) -> str:
+        text = original_load_text(path)
+        if Path(path) == cycle_path:
+            return text.replace("MCP Access Plane", "MCP Route", 1)
+        return text
+
+    validate_memory_operations.load_text = fake_load_text
+    try:
+        errors = validate_memory_operations.validate_required_text()
+    finally:
+        validate_memory_operations.load_text = original_load_text
+
+    assert any("MCP Access Plane" in error for error in errors)

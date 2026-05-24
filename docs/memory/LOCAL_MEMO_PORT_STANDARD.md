@@ -114,3 +114,22 @@ The reviewed landing route copies accepted export packets into
 `aoa-memo/memo/intake/reviewed/`, writes a landing receipt under
 `aoa-memo/memo/intake/receipts/`, and creates the reviewed object bundle under
 `aoa-memo/memo/objects/`.
+
+## MCP Support Boundary
+
+The `aoa_memo` MCP access plane may help operate a local port, but it does not
+replace the local port or the reviewed `aoa-memo` landing route.
+
+- Use `aoa_memo_brief`, `aoa_memo_search`, and `aoa_memo_pending_exports` to
+  inspect reviewed memory, local-port status, and pending export pressure.
+- Use `aoa_memo_validate_port`, `aoa_memo_build_port_index`, and
+  `aoa_memo_validate_candidate` to check packet shape and generated local
+  indexes.
+- Use `aoa_memo_create_candidate`, `aoa_memo_prepare_intake_packet`, and
+  `aoa_memo_review_intake` only for local-port packets and forwarding receipts.
+- Use `aoa_memo_landing_plan` as a dry-run source patch plan before durable
+  landing; the normal MCP posture is `run_dry_run: true`.
+
+MCP-created candidates, reviews, and landing plans are evidence for owner
+review. They are not central durable memory until a reviewed `aoa-memo` source
+patch lands the object bundle and the corpus validators pass.

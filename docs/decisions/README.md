@@ -31,7 +31,8 @@ expectation.
 
 | Decision | Scope |
 |---|---|
-| [2026-05-22-reviewed-memory-consumer-handoff-spine](2026-05-22-reviewed-memory-consumer-handoff-spine.md) | feed eval/KAG/stats/playbooks/agents from reviewed memory objects and generated read models without moving memory authority into consumers |
+| [2026-05-24-kag-donor-reviewed-corpus-bridge](2026-05-24-kag-donor-reviewed-corpus-bridge.md) | make the KAG source-owned memo donor use a reviewed corpus bridge object rather than a teaching fixture row |
+| [2026-05-22-reviewed-memory-consumer-handoff-spine](2026-05-22-reviewed-memory-consumer-handoff-spine.md) | feed eval/KAG/stats/playbooks/agents from reviewed memory objects and generated read models while local ports, session evidence, and MCP dry runs stay outside durable authority |
 | [2026-05-22-reviewed-intake-landing](2026-05-22-reviewed-intake-landing.md) | make reviewed local-port exports land as checked `memo/objects/` bundles through an aoa-memo source-owned route |
 | [2026-05-21-corpus-backed-memory-read-models](2026-05-21-corpus-backed-memory-read-models.md) | build object-facing read models from reviewed corpus objects plus teaching fixtures with `source_kind` |
 | [2026-05-21-reviewed-memory-corpus-district](2026-05-21-reviewed-memory-corpus-district.md) | add root `memo/` as reviewed memory object corpus rather than copying local memo port topology |

@@ -23,8 +23,10 @@ meaning outside this repository.
 ### Memo owns
 
 Memo owns the public memory descriptors, scope grammar, recall-mode guidance,
-source refs, bridge/export faces, guardrail case descriptions, and
-orchestrator-facing recall posture that consumers may cite.
+source refs, bridge/export faces, guardrail case descriptions,
+orchestrator-facing recall posture, and the handoff contract for how local
+memo-port exports reach reviewed intake. It does not own the consumer port
+contents.
 
 ### Stronger owner split
 
@@ -48,13 +50,17 @@ orchestrator-facing recall posture that consumers may cite.
 Consumer-facing memo contracts, role-posture field lists, playbook recall
 scope guidance, guardrail case packs, KAG/ToS bridge docs, source-owned donor
 export notes, orchestrator quest alignment notes, and consumer feedback that a
-memo surface is ambiguous or overclaims.
+memo surface is ambiguous or overclaims. Local memo-port exports, `.aoa`
+session evidence refs, MCP brief/search/status evidence, validation results,
+and landing-plan dry runs may be used as evidence for handoff repair, but they
+do not become durable memory by themselves.
 
 ### Outputs
 
 Bounded handoff surfaces, source refs, consumer field lists, scope and recall
 mode notes, bridge/export contract notes, guardrail handoff cases, owner-route
-stop-lines, generated or example ref updates, and validator requirements.
+stop-lines, reviewed-intake route notes, generated or example ref updates, and
+validator requirements.
 
 ### Must not claim
 
@@ -65,6 +71,8 @@ stop-lines, generated or example ref updates, and validator requirements.
 - Tree-of-Sophia source meaning by rewrite
 - routing sovereignty or orchestrator class identity
 - runtime storage, workers, or live operational state
+- durable memory writes through MCP, hidden consumer-local write paths, or
+  reviewed memory promotion outside `aoa-memo/memo/objects/`
 
 ### Validation
 

@@ -92,14 +92,6 @@
       ]
     },
     {
-      "example_path": "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/bridge.kag-lift.example.json",
-      "recall_modes": [
-        "lineage",
-        "source_route",
-        "semantic"
-      ]
-    },
-    {
       "example_path": "examples/lifecycle/audit_event.supersession.example.json",
       "recall_modes": [
         "episodic",
