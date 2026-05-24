@@ -7,6 +7,23 @@ Tracking starts with the community-docs baseline for this repository.
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-05-24
+
+### Summary
+
+- this release promotes `aoa-memo` from a broad memory-document surface into a
+  contract-hardened memory organ with reviewed corpus bundles, reviewed intake
+  landing, corpus-backed object read models, local memo-port contracts, and
+  consumer-handoff/MCP access boundaries
+- memo mechanics are reorganized into operation-shaped packages and physical
+  `parts/` lanes, with generated mechanic indexes, readiness matrices,
+  landing logs, root technical districts, AGENTS mesh coverage, validators, and
+  tests keeping the topology inspectable
+- portable skill/session-growth support, Titan/Agon follow-through, workspace
+  retargeting, dry-run and self-repair guards, and release-compatible anchors
+  are included while memory remains weaker than proof, routing, runtime state,
+  role authority, and source-authored knowledge
+
 ### Added
 
 - Add root `memo/` as the reviewed memory corpus district with object bundles,
@@ -24,9 +41,17 @@ Tracking starts with the community-docs baseline for this repository.
 - Clarify the `aoa_memo` MCP access plane as brief/search/status/validation,
   local packet preparation, and dry-run landing-plan support rather than
   durable reviewed memory authority.
+- Add portable AoA skill foundation and session-growth support in the memo
+  repo, including GitHub landing posture, traceability metadata, readiness
+  guard refreshes, dry-run preview validation, malformed-shape preservation,
+  and refreshed `aoa-summon`, self-diagnose, and automation-opportunity skill
+  exports.
 - Add semantic root districts for docs, config, schemas, examples, generated,
   scripts, and tests, with nearest `AGENTS.md` cards so each source family has
   a readable home, route, and validator.
+- Add release-compatible public entrypoints for the workspace release auditor
+  while keeping the active release procedure routed through `docs/root/` and
+  the release gate through `scripts/release/`.
 - Add `generated/root-topology/root_technical_districts.min.json` with builder, validator,
   release-gate coverage, and tests so root technical districts have a compact
   machine-readable atlas of role, route card, family ids, and local routing.
@@ -182,6 +207,14 @@ Tracking starts with the community-docs baseline for this repository.
   retrieve reviewed object/read-model context while local memo ports, `.aoa`
   session evidence, reviewed intake, and `aoa_memo` MCP landing-plan dry runs
   keep separate authority boundaries.
+- Retarget memo workspace paths to `/srv/AbyssOS`, land AoA v0.4.0 closeout
+  follow-through, and preserve that route through the release-visible memory
+  surfaces.
+- Plant the Titan sixteenth-stage memory seed, require Titan audit owner-route
+  hints, and align Titan audit examples with the route-hint schema.
+- Harden portable skill exports, dry-run helper step shapes, malformed preview
+  handling, donor-harvest self-repair handoff, and current audit follow-ups so
+  agent-facing support remains bounded and traceable.
 - Audit root AGENTS authority boundaries by keeping root route modes and
   executable validation commands in `AGENTS.md`, trimming adjacent README,
   CHARTER, and `DESIGN.AGENTS.md` duplicates, repairing stale legacy
@@ -300,6 +333,125 @@ Tracking starts with the community-docs baseline for this repository.
   subroutes.
 - Normalize governance and lineage-harvest `PARTS.md` into the shared Active
   Parts plus Interface shape.
+
+### Validation
+
+- `python scripts/release/release_check.py`
+- `python scripts/release_check.py`
+- `aoa release audit /srv/AbyssOS --phase preflight --repo aoa-memo --strict --json`
+
+### Notes
+
+- the release body intentionally stays large: it preserves the accumulated
+  `Unreleased` detail and adds a commit-by-commit reconciliation for the
+  feature/history span through `b3e334e`
+- the v0.4.0 release-preparation change itself is represented above by the
+  release-compatible entrypoint, version, validation, and changelog bullets
+- this release publishes memory, recall, writeback, topology, and release-gate
+  contracts only; proof remains in `aoa-evals`, routing in `aoa-routing`, live
+  runtime/storage in `abyss-stack`, role authority in `aoa-agents`, playbook
+  choreography in `aoa-playbooks`, and source-authored meaning in its owning
+  repositories
+
+### Included in this release
+
+- `6841ed8` - [codex] Plant Titan sixteenth wave seed
+- `6de9427` - Add semantic AGENTS validation
+- `fde9ff5` - Slim root AGENTS route card (#125)
+- `625565b` - chore: retarget memo workspace paths to AbyssOS
+- `2864e18` - Land AoA v0.4.0 memo closeout follow-through (#127)
+- `6e808da` - Install portable AoA skill foundation
+- `d771198` - Roll out session-growth skills and GitHub landing (#129)
+- `6949078` - [codex] harden portable skills and traceability (#130)
+- `50723dd` - Refresh session growth refs and readiness guard (#131)
+- `1868baa` - Guard dry run preview step shape (#132)
+- `e4c84b4` - Preserve dry run helper malformed shapes (#133)
+- `e30542b` - Refresh shared AoA skill pack (#134)
+- `75f49ec` - Require titan audit owner route hint (#135)
+- `38bdb9c` - Address current aoa-memo audit findings
+- `4d30734` - Refresh shared AoA skill pack (#137)
+- `da316da` - Align Titan audit memory example with route hint schema
+- `9680414` - Refresh aoa-summon skill export (#139)
+- `63d41fa` - Refresh self-diagnose skill export
+- `07f041d` - Add memo topology spine and move Spark lane
+- `c258b09` - Add source-backed AGENTS mesh
+- `bd3979c` - Move Agon docs into district
+- `d7cbb21` - Move Titan docs into district
+- `6cba5c6` - Move adoption writeback retention into memo mechanics
+- `2aea796` - Add memo mechanics subroutes and artifact topology
+- `3e61940` - Land Agon and Titan memo mechanics (#147)
+- `32d1e9c` - Land antifragility memo mechanic (#148)
+- `85921ae` - Land governance memo mechanic (#149)
+- `9965c60` - Gate donor harvest self-repair handoff (#150)
+- `f525232` - Add operation-first memo shape guard
+- `c544ef6` - Add consumer handoff memo mechanic
+- `4df2de7` - Add operational gate memo mechanic
+- `eaed3d4` - Add recurrence support memo mechanic (#154)
+- `34c7fdf` - Add lineage harvest memo mechanic
+- `2bcd5d1` - Refresh automation opportunity skill contracts (#156)
+- `25be2df` - Refactor mechanic artifact topology (#157)
+- `4fec12f` - Add checkpoint memo mechanic (#158)
+- `a0f6127` - Add readiness boundary memo mechanic (#159)
+- `56303e8` - Add quest owner route projections (#160)
+- `29f0d7d` - Add questbook lane-first mechanic
+- `03b0be3` - Add root technical district allowlist
+- `404a402` - Add mechanic artifact inventory
+- `6af3ffd` - Validate memo mechanic parts shape
+- `e5d4e6e` - Add root generated family contracts
+- `132177a` - Add root script family contracts
+- `a0fb807` - Add root test family contracts
+- `e7371a2` - Add root schema family contracts
+- `cd252d9` - Add root example family contracts
+- `676d2b2` - Add root config manifest contracts
+- `caca2d9` - Add mechanic readiness matrix
+- `5133513` - Add mechanic route card index (#172)
+- `2a1ebbb` - Add mechanic owner route matrix (#173)
+- `68e34c9` - Add mechanic landing log index (#174)
+- `e9dd653` - Move writeback self-agency examples (#175)
+- `d638096` - Add questbook generated views part (#176)
+- `bf0eacd` - Localize downstream feed tests (#177)
+- `ce1d493` - Add retention local regression boundary (#178)
+- `79dfec0` - Add mechanic readiness artifact test coverage (#179)
+- `b79e03b` - Require local test routes for mechanics (#180)
+- `2d536e3` - Materialize functional memo mechanic parts
+- `27a2431` - Fix memo Codex review followups
+- `00b86c0` - Move Agon artifacts into mechanic parts
+- `15b5104` - Require runnable readiness test routes
+- `d98d4c8` - Move Titan artifacts into mechanic parts
+- `497c8ba` - Move adoption and retention artifacts into parts (#186)
+- `51a8516` - Require runnable test modules for readiness
+- `a84798d` - Move writeback artifacts into mechanic parts (#188)
+- `1b9ebb8` - Move checkpoint artifacts into mechanic parts (#189)
+- `eced8f2` - Move consumer handoff artifacts into parts (#190)
+- `c7617e1` - Move governance artifacts into parts (#191)
+- `f4998c5` - Move antifragility artifacts into parts (#192)
+- `644271b` - Move operational gate artifacts into parts (#193)
+- `6c9c07d` - Move remaining mechanic artifacts into parts (#194)
+- `97217d3` - Restore mechanic legacy raw snapshots (#195)
+- `e310e29` - Harden memo mechanic part naming (#196)
+- `91d7214` - Fix mechanics atlas rendering (#197)
+- `3f949fa` - Move mechanics runbook into AGENTS (#198)
+- `fc2ea31` - Make AGENTS route cards functional (#199)
+- `8f9041a` - Align root documents with memory index (#200)
+- `d420146` - Compact README current contour (#201)
+- `9d1232f` - Build registry-backed memo Spark lane (#202)
+- `7d1df9c` - Compact root memo mechanics README
+- `79bf26a` - Harden root contract family naming
+- `e704b66` - Rename active memo stage source surfaces (#205)
+- `b8c1f75` - Add root technical district atlas (#206)
+- `1ab6ea2` - Refactor root semantic topology (#207)
+- `97f1969` - Harden AGENTS authority boundaries (#208)
+- `4d01950` - Calibrate memory operations plane
+- `93cfc22` - Align local memo port standard (#210)
+- `647e88a` - Add memo port v2 contracts (#211)
+- `a786b58` - Route memo port index commands to AGENTS (#212)
+- `b3ca1f4` - Harden local memo receipt checks (#213)
+- `2553225` - Refresh memory route AGENTS mesh (#214)
+- `1e78f42` - Add reviewed intake landing layer (#215)
+- `ecc1a55` - Land abyss-stack memory pilot
+- `4844182` - Harden reviewed intake landing refs (#217)
+- `d3883e4` - Grow reviewed memory consumer spine (#218)
+- `b3e334e` - Land reviewed memory consumer handoff spine
 
 ## [0.2.3] - 2026-04-23
 

@@ -23,7 +23,8 @@ For the shortest repo overview, read:
 
 For current direction, add [ROADMAP](../ROADMAP.md). For release and root
 placement work, add [root/RELEASING](root/RELEASING.md) and
-[root/ROOT_SURFACE_LAW](root/ROOT_SURFACE_LAW.md).
+[root/ROOT_SURFACE_LAW](root/ROOT_SURFACE_LAW.md). Workspace release tooling
+may enter through the thin [RELEASING](RELEASING.md) compatibility pointer.
 
 ## Districts
 
@@ -43,7 +44,7 @@ placement work, add [root/RELEASING](root/RELEASING.md) and
 | Living memory topology and local ports | `docs/memory/` | [LIVING_MEMORY_TOPOLOGY](memory/LIVING_MEMORY_TOPOLOGY.md), then [LOCAL_MEMO_PORT_STANDARD](memory/LOCAL_MEMO_PORT_STANDARD.md) and [MEMO_PORT_INDEXING_VOCABULARY](memory/MEMO_PORT_INDEXING_VOCABULARY.md) |
 | Boundary and operational posture | `docs/boundaries/` | [BOUNDARIES](boundaries/BOUNDARIES.md), [OPERATIONAL_BOUNDARY](boundaries/OPERATIONAL_BOUNDARY.md), then [MEMORY_WRITE_PATH_GUARDRAILS](boundaries/MEMORY_WRITE_PATH_GUARDRAILS.md) |
 | Lifecycle, trust, temperature, provenance, operation modes | `docs/posture/` | [MEMORY_TRUST_POSTURE](posture/MEMORY_TRUST_POSTURE.md), [LIFECYCLE](posture/LIFECYCLE.md), [MEMORY_TEMPERATURES](posture/MEMORY_TEMPERATURES.md), [MEMORY_OPERATION_MODES](posture/MEMORY_OPERATION_MODES.md), [PROVENANCE_THREADS](posture/PROVENANCE_THREADS.md) |
-| Root law and release route | `docs/root/` | [ROOT_SURFACE_LAW](root/ROOT_SURFACE_LAW.md), [RELEASING](root/RELEASING.md), [AGENTS_ROOT_REFERENCE](root/AGENTS_ROOT_REFERENCE.md) |
+| Root law and release route | `docs/root/` plus thin `docs/RELEASING.md` compatibility pointer | [ROOT_SURFACE_LAW](root/ROOT_SURFACE_LAW.md), [RELEASING](root/RELEASING.md), [AGENTS_ROOT_REFERENCE](root/AGENTS_ROOT_REFERENCE.md) |
 | Structural rationale | `docs/decisions/` | [decisions/README](decisions/README.md) |
 
 Mechanic docs live with their mechanics, not in `docs/`:

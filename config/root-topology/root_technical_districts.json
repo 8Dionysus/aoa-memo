@@ -161,6 +161,7 @@
         "scripts/mechanics/memo_mechanics_common.py",
         "scripts/root-topology/root_technical_districts_common.py",
         "scripts/release/release_check.py",
+        "scripts/release_check.py",
         "scripts/agents/validate_agents_mesh.py",
         "scripts/agents/validate_agents_mesh_index.py",
         "scripts/root-topology/validate_docs_districts.py",
@@ -476,7 +477,8 @@
       "role": "orchestrator",
       "owner_surface": "scripts/AGENTS.md",
       "scripts": [
-        "scripts/release/release_check.py"
+        "scripts/release/release_check.py",
+        "scripts/release_check.py"
       ],
       "covered_by": [
         "AGENTS.md",

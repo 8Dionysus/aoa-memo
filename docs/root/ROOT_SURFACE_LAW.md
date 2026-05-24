@@ -30,9 +30,10 @@ neighbor-owned, or future-looking must not sit in root by default.
 
 `docs/` root has its own smaller version of the same law.
 
-A file may remain flat under `docs/` only when it is the docs route card or the
-docs map itself. Current doctrine belongs in a named docs district; mechanic
-docs belong in the owning mechanic package.
+A file may remain flat under `docs/` only when it is the docs route card, the
+docs map itself, or a thin release-tool compatibility pointer that redirects to
+the active `docs/root/` procedure. Current doctrine belongs in a named docs
+district; mechanic docs belong in the owning mechanic package.
 
 Staging receipts, candidate intake notes, historic landing notes, review
 traces, decision rationale, and future protocol placeholders need named homes
@@ -72,7 +73,7 @@ Current docs surfaces should be read through these districts:
 | Memory canon and object canon | `docs/memory/` | active memory doctrine |
 | Boundary and operational posture | `docs/boundaries/` | active owner-boundary doctrine |
 | Trust, lifecycle, temperature, provenance, and audit posture | `docs/posture/` | active temporal and evidence posture |
-| Root law, release route, and preserved reference | `docs/root/` | active route law plus reference |
+| Root law, release route, and preserved reference | `docs/root/` plus thin `docs/RELEASING.md` compatibility pointer | active route law plus reference; the flat release pointer must not carry independent policy |
 | Writeback, checkpoint, readiness-boundary, and recurrence support mechanics | `mechanics/writeback/docs/*`, `mechanics/checkpoint/docs/*`, `mechanics/readiness-boundary/docs/*`, `mechanics/recurrence-support/docs/*` | active memo mechanic packages; do not turn them into runtime ledgers, dispatch, retry, proof, graph substrate, route dispatch, or role policy |
 | Antifragility mechanic docs | `mechanics/antifragility/docs/*` | active antifragility memo mechanic; keep package map and validator aligned |
 | Agon mechanic docs | `mechanics/agon/docs/AGON_*` | active Agon memo mechanic; keep package map and validator aligned |
@@ -151,6 +152,7 @@ together.
 | flat root quest source files | moved | `quests/<lane>/<state>/` | Questbook keeps public obligations in the root item store, with `mechanics/questbook/` owning source contract, validation, and generated projections |
 | mechanic-owned root technical artifacts | moved when single-mechanic-owned | `mechanics/<slug>/{schemas,examples,config,generated,scripts,tests,manifests}` | package-owned artifacts should sit with their mechanics; root technical districts keep only shared or cross-mechanic surfaces |
 | root technical district atlas | add | `generated/root-topology/root_technical_districts.min.json` | root districts need a compact machine-readable map of role, route card, family ids, and local routing without making README or AGENTS cards carry the full allowlist |
+| release-tool compatibility entrypoints | add | `docs/RELEASING.md`, `scripts/release_check.py` | workspace release tooling probes these legacy paths; they remain thin pointers to `docs/root/RELEASING.md` and `scripts/release/release_check.py` |
 
 ## Final Rule
 

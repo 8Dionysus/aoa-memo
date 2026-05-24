@@ -32,6 +32,7 @@ RETIRED_README_SNIPPETS = (
 ALLOWED_DOCS_ROOT_FILES = {
     "AGENTS.md",
     "README.md",
+    "RELEASING.md",
 }
 ALLOWED_DOCS_SUBDIRS = {
     "boundaries",

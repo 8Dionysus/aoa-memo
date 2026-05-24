@@ -31,6 +31,7 @@ expectation.
 
 | Decision | Scope |
 |---|---|
+| [2026-05-24-release-tool-compatibility-entrypoints](2026-05-24-release-tool-compatibility-entrypoints.md) | keep workspace release preflight compatible with legacy `docs/RELEASING.md` and `scripts/release_check.py` probes while active release authority stays in `docs/root/` and `scripts/release/` |
 | [2026-05-24-kag-donor-reviewed-corpus-bridge](2026-05-24-kag-donor-reviewed-corpus-bridge.md) | make the KAG source-owned memo donor use a reviewed corpus bridge object rather than a teaching fixture row |
 | [2026-05-22-reviewed-memory-consumer-handoff-spine](2026-05-22-reviewed-memory-consumer-handoff-spine.md) | feed eval/KAG/stats/playbooks/agents from reviewed memory objects and generated read models while local ports, session evidence, and MCP dry runs stay outside durable authority |
 | [2026-05-22-reviewed-intake-landing](2026-05-22-reviewed-intake-landing.md) | make reviewed local-port exports land as checked `memo/objects/` bundles through an aoa-memo source-owned route |
