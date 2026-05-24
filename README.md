@@ -10,7 +10,7 @@ Use this README as the public front door. When work becomes doctrinal,
 mechanic-local, generated, schema-backed, quest-bound, or agent-facing, follow
 the linked owner surface instead of expanding this page.
 
-> Current release: `v0.2.3`. See [CHANGELOG](CHANGELOG.md) for release notes.
+> Current release: `v0.4.0`. See [CHANGELOG](CHANGELOG.md) for release notes.
 
 ## What This Repository Does
 
@@ -82,7 +82,7 @@ Before adding, trusting, or publishing a memo claim, ask the narrowest owner.
 
 `aoa-memo` is in contract hardening.
 
-The released `v0.2.3` contour is routed through these compact entrypoints:
+The released `v0.4.0` contour is routed through these compact entrypoints:
 
 - Authority and canon:
   [charter](CHARTER.md), [design](DESIGN.md), [memory index](MEMORY_INDEX.md),

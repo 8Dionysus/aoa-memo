@@ -25,7 +25,7 @@ class RoadmapParityTestCase(unittest.TestCase):
         self.assertIn("`mechanics/consumer-handoff/parts/kag-source-export/generated/kag_export.min.json`", roadmap)
         self.assertNotIn("The next KAG-facing adoption slice publishes", roadmap)
 
-    def test_roadmap_matches_current_v0_2_1_writeback_surfaces(self) -> None:
+    def test_roadmap_matches_current_release_writeback_surfaces(self) -> None:
         readme = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
         changelog = (REPO_ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
         roadmap = (REPO_ROOT / "ROADMAP.md").read_text(encoding="utf-8")
@@ -34,7 +34,7 @@ class RoadmapParityTestCase(unittest.TestCase):
         )
 
         registry_version = memo_registry["version"]
-        self.assertEqual("0.2.3", registry_version)
+        self.assertEqual("0.4.0", registry_version)
         self.assertIn(f"v{registry_version}", readme)
         self.assertIn(f"[{registry_version}]", changelog)
         self.assertIn(f"v{registry_version}", roadmap)

@@ -87,7 +87,8 @@ existing memo objects without planting a future protocol, creating a live
 ledger, changing schemas, or moving proof, graph lift, navigation, role
 authority, or runtime retention into `aoa-memo`.
 
-The current `v0.2.3` release line also already carries:
+The current `v0.4.0` release line carries the earlier memory surface set plus
+the contract-hardening additions above:
 - checkpoint recall follow-through and lineage-aware growth-refinery writeback surfaces through `mechanics/checkpoint/docs/CHECKPOINT_MEMORY_BOUNDARY.md`, `mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md`, `mechanics/writeback/docs/GROWTH_REFINERY_WRITEBACK.md`, and `mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md`
 - pattern-lineage harvest memory through `mechanics/lineage-harvest/docs/PATTERN_LINEAGE_MEMORY.md`, `mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/schemas/pattern_lineage_memory_entry_v1.json`, and `mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/examples/pattern_lineage_memory_entry.example.json`
 - runtime writeback landing, intake, and governance surfaces through `mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_targets.min.json`, `mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_intake.min.json`, `mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_governance.min.json`, and `mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md`
