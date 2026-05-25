@@ -206,6 +206,9 @@ mechanic packages, validators, or sibling-owner repositories.
 | [memory_catalog.min.json](generated/memory/memory_catalog.min.json) | doctrine inspect surface |
 | [memory_capsules.json](generated/memory/memory_capsules.json) | doctrine capsule hydration surface |
 | [memory_sections.full.json](generated/memory/memory_sections.full.json) | expanded doctrine sections |
+| [access_plane_currentness.min.json](generated/memory/access_plane_currentness.min.json) | MCP access-plane currentness readout |
+| [source_intake_wave.min.json](generated/memory/source_intake_wave.min.json) | first source-lane intake wave readout |
+| [workspace_memo_port_status.min.json](generated/memory/workspace_memo_port_status.min.json) | memo-side workspace port status readout from `8Dionysus` |
 | [memory_object_catalog.min.json](generated/memory-objects/memory_object_catalog.min.json) | object-facing inspect surface over reviewed corpus objects and teaching fixtures |
 | [memory_object_capsules.json](generated/memory-objects/memory_object_capsules.json) | object-facing capsule hydration surface with `source_kind` |
 | [memory_object_sections.full.json](generated/memory-objects/memory_object_sections.full.json) | expanded object-facing sections with source paths back to corpus or fixtures |

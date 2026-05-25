@@ -86,6 +86,7 @@
         "generated/mechanics/memo_mechanics.min.json",
         "generated/memory/memo_registry.min.json",
         "generated/memory/memo_port_vocabulary.min.json",
+        "generated/memory/access_plane_currentness.min.json",
         "generated/memory/memory_capsules.json",
         "generated/memory/memory_catalog.json",
         "generated/memory/memory_catalog.min.json",
@@ -94,6 +95,8 @@
         "generated/memory-objects/memory_object_catalog.min.json",
         "generated/memory-objects/memory_object_sections.full.json",
         "generated/memory/memory_sections.full.json",
+        "generated/memory/source_intake_wave.min.json",
+        "generated/memory/workspace_memo_port_status.min.json",
         "generated/quests/quest_catalog.min.example.json",
         "generated/quests/quest_catalog.min.json",
         "generated/quests/quest_dispatch.min.example.json",
@@ -150,6 +153,7 @@
         "scripts/root-topology/build_root_technical_districts_index.py",
         "scripts/memory/build_local_memo_port_index.py",
         "scripts/memory/build_memo_port_vocabulary.py",
+        "scripts/memory/build_memory_operational_readouts.py",
         "scripts/memory/generate_memory_object_surfaces.py",
         "scripts/memory/land_reviewed_memo_intake.py",
         "scripts/memory/local_memo_port_common.py",
@@ -247,6 +251,30 @@
       ],
       "validators": [
         "scripts/memory/build_memo_port_vocabulary.py"
+      ]
+    },
+    {
+      "id": "memory_operational_readouts",
+      "source_kind": "generator-backed",
+      "owner_surface": "docs/memory/MEMORY_OPERATION_CYCLE.md",
+      "source_refs": [
+        "docs/memory/MEMORY_OPERATION_CYCLE.md",
+        "docs/memory/LIVING_MEMORY_TOPOLOGY.md",
+        "generated/memory-objects/memory_object_catalog.min.json",
+        "generated/quests/quest_catalog.min.json",
+        "docs/decisions/2026-05-25-memory-operational-readouts.md"
+      ],
+      "outputs": [
+        "generated/memory/access_plane_currentness.min.json",
+        "generated/memory/source_intake_wave.min.json",
+        "generated/memory/workspace_memo_port_status.min.json"
+      ],
+      "builders": [
+        "scripts/memory/build_memory_operational_readouts.py"
+      ],
+      "validators": [
+        "scripts/memory/build_memory_operational_readouts.py",
+        "scripts/memory/validate_memo.py"
       ]
     },
     {
@@ -493,6 +521,7 @@
         "scripts/memory/generate_memory_object_surfaces.py",
         "scripts/memory/build_local_memo_port_index.py",
         "scripts/memory/build_memo_port_vocabulary.py",
+        "scripts/memory/build_memory_operational_readouts.py",
         "scripts/memory/land_reviewed_memo_intake.py",
         "scripts/memory/validate_lifecycle_audit_examples.py",
         "scripts/memory/local_memo_port_common.py",

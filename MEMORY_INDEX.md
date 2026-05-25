@@ -134,6 +134,9 @@ freshness by itself.
 | [memory_catalog.min.json](generated/memory/memory_catalog.min.json) | compact doctrine inspect surface |
 | [memory_capsules.json](generated/memory/memory_capsules.json) | capsule hydration surface for doctrine recall |
 | [memory_sections.full.json](generated/memory/memory_sections.full.json) | expanded doctrine sections |
+| [access_plane_currentness.min.json](generated/memory/access_plane_currentness.min.json) | operational currentness readout for the `aoa_memo` access plane |
+| [source_intake_wave.min.json](generated/memory/source_intake_wave.min.json) | first source-lane intake wave readout across real reviewed/export pressure |
+| [workspace_memo_port_status.min.json](generated/memory/workspace_memo_port_status.min.json) | memo-side projection of workspace memo-port status from the `8Dionysus` map |
 | [memory_object_catalog.min.json](generated/memory-objects/memory_object_catalog.min.json) | compact object-facing inspect surface over reviewed corpus objects and teaching fixtures |
 | [memory_object_capsules.json](generated/memory-objects/memory_object_capsules.json) | capsule hydration surface for object recall, with `source_kind` |
 | [memory_object_sections.full.json](generated/memory-objects/memory_object_sections.full.json) | expanded object-facing sections with source paths back to corpus or fixtures |

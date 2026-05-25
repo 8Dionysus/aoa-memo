@@ -8,6 +8,9 @@ This file applies to checked-in artifacts under `generated/`.
 
 - `memory/memo_registry.min.json` is the compact machine-readable registry surface for the layer
 - the doctrine family lives under `memory/` as `memory_catalog.json`, `memory_catalog.min.json`, `memory_capsules.json`, and `memory_sections.full.json`
+- the operational readout family lives under `memory/` as
+  `access_plane_currentness.min.json`, `source_intake_wave.min.json`, and
+  `workspace_memo_port_status.min.json`
 - the object family lives under `memory-objects/` as `memory_object_catalog.json`, `memory_object_catalog.min.json`, `memory_object_capsules.json`, and `memory_object_sections.full.json`
 - `agents/agents_mesh.min.json` is the compact companion mirror for current AGENTS route-card coverage
 - `root-topology/root_technical_districts.min.json` is the compact atlas for root technical
@@ -47,6 +50,10 @@ Keep this split explicit:
 
 - `generated/memory/memo_registry.min.json` is a source-authored registry contract validated by `scripts/memory/validate_memo.py`
 - the doctrine family is a checked-in router-facing memo surface family validated by `scripts/memory/validate_memory_surfaces.py`
+- the operational readout family is rebuilt by
+  `scripts/memory/build_memory_operational_readouts.py` from memo generated
+  surfaces plus read-only `8Dionysus` workspace-map and `abyss-stack` MCP
+  inputs, and checked by the same builder in `--check` mode
 - the object family is generator-backed and is rebuilt by `scripts/memory/generate_memory_object_surfaces.py` and checked by `scripts/memory/validate_memory_object_surfaces.py`
 - the quest projection family is rebuilt by `mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py` from lane-first quest sources, governed by `mechanics/questbook/parts/quest-read-model-projections/`, and checked by `scripts/memory/validate_memo.py`
 - `mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_governance.min.json` is rebuilt by `mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_governance.py` and checked by `scripts/memory/validate_memo.py`
@@ -99,6 +106,14 @@ For the doctrine family:
 - preserve stable surface ids and source paths unless the underlying doctrine changed
 - do not turn router-facing surfaces into workflow policy or proof verdicts
 
+For the operational readout family:
+
+- Do not hand-edit `access_plane_currentness.min.json`,
+  `source_intake_wave.min.json`, or `workspace_memo_port_status.min.json`
+- regenerate them with `python scripts/memory/build_memory_operational_readouts.py --write --live` in the workspace
+- keep `8Dionysus` as workspace-map owner and `abyss-stack` as MCP runtime owner
+- keep known gaps routed instead of inflating MCP output into memory truth
+
 For the object family:
 
 - Do not hand-edit `memory_object_catalog.json`, `memory_object_catalog.min.json`, `memory_object_capsules.json`, or `memory_object_sections.full.json`
@@ -145,6 +160,7 @@ When this directory changes, run the matching checks:
 python scripts/memory/validate_memo.py
 python scripts/memory/validate_memory_surfaces.py
 python scripts/memory/validate_memory_object_surfaces.py
+python scripts/memory/build_memory_operational_readouts.py --check
 python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py --check
 python scripts/agents/validate_agents_mesh_index.py
 python scripts/root-topology/build_root_technical_districts_index.py --check

@@ -5,7 +5,7 @@ summary: Make current port levels, pending exports, landed exports, stale or bro
 repo: aoa-memo
 owner_surface: docs/memory/LIVING_MEMORY_TOPOLOGY.md
 kind: memory
-state: captured
+state: done
 band: frontier
 difficulty: d2_slice
 risk: r1_repo_local
@@ -45,5 +45,7 @@ tags:
   - workspace-status
   - pending-exports
 notes: >
-  The first readout may be narrow, but it must be reproducible from current
-  owner surfaces.
+  Closed by generated/memory/workspace_memo_port_status.min.json. The readout
+  imports the 8Dionysus workspace memory map as source-owned input and exposes
+  current port levels, export counts, issues, and next routes without making
+  aoa-memo the workspace topology owner.

@@ -5,12 +5,17 @@ Route card for `generated/memory/`.
 ## Purpose
 
 This district holds generated doctrine and registry companions for memory
-recall.
+recall, plus operational readouts for memory-organ access and port status.
 
 ## Source
 
 Files here are checked-in companions. Source truth routes to `docs/memory/`,
 `docs/boundaries/`, and `docs/posture/`.
+
+Operational readouts additionally import read-only evidence from stronger
+owners: `8Dionysus` owns the workspace memory map and `abyss-stack` owns the
+`aoa_memo` MCP runtime. `aoa-memo` owns only the memory interpretation and
+reviewed-memory route posture.
 
 ## Route
 
@@ -23,4 +28,5 @@ Files here are checked-in companions. Source truth routes to `docs/memory/`,
 ```bash
 python scripts/memory/validate_memo.py
 python scripts/memory/validate_memory_surfaces.py
+python scripts/memory/build_memory_operational_readouts.py --check
 ```
