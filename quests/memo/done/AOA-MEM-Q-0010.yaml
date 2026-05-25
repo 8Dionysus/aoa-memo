@@ -5,7 +5,7 @@ summary: Check the aoa_memo access plane against current generated memory and ob
 repo: aoa-memo
 owner_surface: docs/memory/MEMORY_OPERATION_CYCLE.md
 kind: memory
-state: captured
+state: done
 band: frontier
 difficulty: d2_slice
 risk: r1_repo_local
@@ -44,4 +44,7 @@ tags:
   - access-plane
   - generated-surfaces
 notes: >
-  The close condition is a currentness slice, not a runtime implementation move.
+  Closed by generated/memory/access_plane_currentness.min.json. The slice ran
+  live MCP brief/search/status/port probes against current generated memory
+  surfaces, recorded a known search-index gap for fresh foundation terms, and
+  kept runtime implementation authority with abyss-stack.

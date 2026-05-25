@@ -14,6 +14,10 @@ Tracking starts with the community-docs baseline for this repository.
   Questbook surfaces so future memory events have stable intake lanes, object
   slots, recall-pack grammar, lifecycle pressures, quality lenses, port-status
   fields, and activation quests without adding a separate foundation document.
+- Add operational readouts for access-plane currentness, source-lane intake
+  wave coverage, and workspace memo-port status so distant agents can inspect
+  the memo route while `abyss-stack` and `8Dionysus` keep their stronger owner
+  boundaries.
 
 ## [0.4.0] - 2026-05-24
 

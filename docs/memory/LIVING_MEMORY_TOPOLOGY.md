@@ -103,3 +103,16 @@ future generated companion may render it, but it should expose the same fields:
 The first authoritative inputs are local `memo/index.min.json` files,
 workspace memory-map projections, and `aoa_memo` MCP brief or pending-export
 outputs. None of them replaces reviewed memory objects.
+
+## Operational Readouts
+
+`aoa-memo` publishes memo-owned readouts over stronger owner surfaces:
+
+| Readout | Source owner | Memo role | Validation |
+|---|---|---|---|
+| `generated/memory/source_intake_wave.min.json` | source repositories plus reviewed corpus objects | shows the first real source-lane intake wave across runtime access, graph-memory handoff, consumer recall, and local port evidence | `python scripts/memory/build_memory_operational_readouts.py --check` |
+| `generated/memory/workspace_memo_port_status.min.json` | `8Dionysus` workspace memory map | imports current port levels, export counts, issues, and next routes for memo-side recall | `python scripts/memory/build_memory_operational_readouts.py --check` |
+
+These readouts do not replace the workspace map, MCP runtime, local memo ports,
+or reviewed object corpus. They make the current route easier for a distant
+agent to inspect from `aoa-memo`.

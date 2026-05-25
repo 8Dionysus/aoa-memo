@@ -30,6 +30,7 @@ COMMANDS = [
     ("validate memo", [sys.executable, "scripts/memory/validate_memo.py"]),
     ("validate memo corpus", [sys.executable, "scripts/memory/validate_memo_corpus.py"]),
     ("validate memory operations", [sys.executable, "scripts/memory/validate_memory_operations.py"]),
+    ("check memory operational readouts", [sys.executable, "scripts/memory/build_memory_operational_readouts.py", "--check"]),
     ("check memo port vocabulary", [sys.executable, "scripts/memory/build_memo_port_vocabulary.py", "--check"]),
     ("validate local memo port example", [sys.executable, "scripts/memory/validate_local_memo_port.py", "--path", "examples/memory-ports/example-port"]),
     ("check local memo port example index", [sys.executable, "scripts/memory/build_local_memo_port_index.py", "--path", "examples/memory-ports/example-port", "--check"]),

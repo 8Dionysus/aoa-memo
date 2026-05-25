@@ -105,6 +105,24 @@ Use these cards before a live memory landing, export, or recall handoff.
   bundles or `scripts/memory/land_reviewed_memo_intake.py`; MCP output is
   evidence or a plan, not memory truth.
 
+## Access-Plane Currentness Readout
+
+`generated/memory/access_plane_currentness.min.json` records the memo-owned
+currentness slice for the `aoa_memo` access plane.
+
+The readout compares live MCP brief/search/status/port probes against current
+generated memory-object, quest, and workspace-memory-map surfaces. It names
+known gaps as routed gaps rather than treating MCP search coverage as durable
+truth. `abyss-stack` remains the runtime owner for MCP implementation, and
+`8Dionysus` remains the owner for workspace overlay map generation.
+
+Regenerate or check it with:
+
+```bash
+python scripts/memory/build_memory_operational_readouts.py --write --live
+python scripts/memory/build_memory_operational_readouts.py --check --live
+```
+
 ## Calibration
 
 Good memory operations are boringly inspectable. A later agent should be able to

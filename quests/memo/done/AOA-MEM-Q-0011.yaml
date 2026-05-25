@@ -5,7 +5,7 @@ summary: Route the first reviewed candidate wave through the stable source intak
 repo: aoa-memo
 owner_surface: docs/memory/LIVING_MEMORY_TOPOLOGY.md
 kind: memory
-state: captured
+state: done
 band: frontier
 difficulty: d3_seam
 risk: r1_repo_local
@@ -44,5 +44,7 @@ tags:
   - owner-route
   - memory-lanes
 notes: >
-  This wave should prefer real candidates from existing owner surfaces over
-  fixture-only examples.
+  Closed by generated/memory/source_intake_wave.min.json. The first wave names
+  real reviewed or exported pressure across runtime access memory, graph-memory
+  handoff, consumer recall handoff, and local memo port evidence while keeping
+  raw truth with stronger owners.

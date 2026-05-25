@@ -30,6 +30,9 @@ Keep the current split clear:
 - `memory/generate_memory_object_surfaces.py` rebuilds the object-facing family from curated examples into `generated/memory-objects/`
 - `memory/validate_memory_object_surfaces.py` checks manifest coverage, determinism, lifecycle integrity, and object-facing recall contracts
 - `memory/validate_lifecycle_audit_examples.py` checks lifecycle, provenance-thread, and audit-event example integrity
+- `memory/build_memory_operational_readouts.py` rebuilds access-plane
+  currentness, source-lane intake wave, and workspace memo-port status readouts
+  while keeping `abyss-stack` and `8Dionysus` as stronger owners
 - `mechanics/validate_mechanic_artifact_topology.py` keeps single-mechanic schemas,
   examples, config inputs, generated outputs, scripts, tests, and manifests out
   of root technical districts, and checks that root `generated/` outputs belong
@@ -99,6 +102,7 @@ python scripts/memory/validate_memo_corpus.py
 python scripts/memory/validate_memory_surfaces.py
 python scripts/memory/validate_memory_object_surfaces.py
 python scripts/memory/validate_lifecycle_audit_examples.py
+python scripts/memory/build_memory_operational_readouts.py --check
 python scripts/mechanics/validate_mechanic_artifact_topology.py
 python scripts/mechanics/build_mechanic_artifact_inventory.py --check
 python scripts/mechanics/validate_mechanic_artifact_inventory.py
