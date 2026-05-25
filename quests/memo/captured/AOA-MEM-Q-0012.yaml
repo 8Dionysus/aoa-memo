@@ -1,0 +1,48 @@
+schema_version: work_quest_v1
+id: AOA-MEM-Q-0012
+title: Land the first object-population wave across stable object slots
+summary: Fill the first real reviewed object slots for episodes, audit events, state capsules, decisions, anchors, claims, patterns, and bridges.
+repo: aoa-memo
+owner_surface: docs/memory/MEMORY_OBJECT_PROFILES.md
+kind: memory
+state: captured
+band: frontier
+difficulty: d3_seam
+risk: r1_repo_local
+control_mode: human_codex_copilot
+delegate_tier: archivist
+fallback_tier: verifier
+wrapper_class: local_builder
+write_scope: repo_local
+split_required: true
+public_safe: true
+complexity_basis:
+  scope: 2
+  ambiguity: 2
+  boundary: 2
+  verification: 2
+parent: null
+depends_on:
+  - AOA-MEM-Q-0011
+activation:
+  mode: manual
+  note: open after a source-lane wave exposes reviewed candidates for more than one object kind
+anchor_ref:
+  artifact: memory_object_profiles
+  ref: docs/memory/MEMORY_OBJECT_PROFILES.md
+  note: events and audit events should lead claims and patterns
+handoff_role: memo-maintainer
+evidence:
+  - object kind is chosen from the stable population plan
+  - reviewed object has source refs and lifecycle posture
+  - generated object surfaces expose the new reviewed object distinctly from fixtures
+harvest:
+  target: memo
+opened_at: '2026-05-25'
+touched_at: '2026-05-25'
+tags:
+  - corpus
+  - object-slots
+  - reviewed-memory
+notes: >
+  Do not count teaching fixtures as closing this wave.

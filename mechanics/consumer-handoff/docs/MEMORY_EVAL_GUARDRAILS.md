@@ -28,21 +28,39 @@ The current guardrail set keeps these risks explicit:
 - permission leakage
 - over-promotion
 - hallucinated memory merges
+- temporal reasoning
+- knowledge update
+- abstention
+- selective forgetting
+- poisoning
 
 These are memory quality risks, not verdicts by themselves.
 
-## First Downstream Pilot
+## Quality Harness Plan
 
-The first downstream pilot in `aoa-evals` should stay intentionally narrow.
+`aoa-memo` should hand off cases by lens. `aoa-evals` decides scoring,
+thresholds, reports, and verdict language.
 
-It covers only:
+| Lens | Stable question | Required evidence | Failure signal | Downstream owner |
+|---|---|---|---|---|
+| recall precision | did the consumer get the smallest relevant surface first? | inspect row, capsule, optional expand trace | full expansion or irrelevant object becomes default | `aoa-evals`, `aoa-routing` |
+| provenance fidelity | did source refs survive capture, review, corpus, and recall? | candidate refs, intake packet, object refs, generated row | compact recall hides source or stronger owner | `aoa-evals`, source repo |
+| staleness handling | did cooled, superseded, retracted, or archived posture remain visible? | lifecycle fields, current recall status, audit event | old memory reads as current | `aoa-evals`, retention mechanic |
+| contradiction handling | did unresolved tension remain explicit? | contradiction refs, replacement refs, audit walkback | summary invents a clean resolution | `aoa-evals`, source owners |
+| permission leakage | did access or memory posture get misread as role rights? | access fields, agent boundary refs | memo grants or implies actor rights | `aoa-agents`, `aoa-evals` |
+| over-promotion | did candidate, allowed, or bridge-ready memory become settled truth? | review state, promotion state, KAG lift status | candidate is treated as confirmed or lifted | `aoa-evals`, `aoa-kag`, source owner |
+| hallucinated merge | did separate traces get fused without review? | provenance threads, merge-review records | consumer narrates one object from separate evidence | `aoa-evals`, memo review |
+| abstention | did the consumer route outward when memo was not enough? | stronger owner stop-line and escalation note | memo answer replaces source truth | source owner, router, review |
+| selective forgetting | did archive or retirement affect active recall without erasing history? | archive operation, audit event, historical recall path | archived memory keeps winning active recall | `aoa-evals`, retention mechanic |
+| poisoning | did untrusted or injected experience stay candidate/quarantine until review? | write-path guard record, candidate state, review receipt | action-bearing text becomes durable memory | operational gate, `aoa-evals` |
 
-- recall precision
-- provenance fidelity
-- staleness
+The stable harness order is:
 
-That pilot is a bounded adoption stage, not the whole guardrail program.
-It does not yet absorb contradiction handling, permission leakage, over-promotion, or hallucinated memory merge checks into the first proof bundle.
+1. select one real object or candidate from each active source lane;
+2. read inspect, capsule, and expand surfaces separately;
+3. check the lenses above without producing a universal memory score;
+4. write bounded eval reports in `aoa-evals`;
+5. turn only review-accepted findings into memo candidates or lifecycle changes.
 
 ## Machine-readable Handoff Surface
 

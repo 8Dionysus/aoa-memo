@@ -193,6 +193,22 @@ That gives the memory layer a second face:
 - the object's current state
 - the audit trail that explains how it reached that state
 
+## Lifecycle Pressure Map
+
+These pressures should be expected during normal memory-organ operation. They
+are not exceptional cleanup.
+
+| Pressure | Recurring source | Typical objects | Required memo posture | Audit requirement | Stronger owner |
+|---|---|---|---|---|---|
+| supersede | newer route decision, stronger source correction, currentness drift | `claim`, `decision`, `state_capsule`, `pattern` | old object becomes historical, new object becomes preferred or allowed | audit event for important current-recall changes | source owner that produced replacement |
+| retract | source withdrawal, malformed memory, unsafe overread, poisoned or private material | `claim`, `bridge`, `pattern`, `episode` | object becomes withdrawn for normal current recall | audit event plus provenance walkback | source, security/privacy owner, or human review |
+| archive | cooled but useful history, completed run, replaced state snapshot | `episode`, `state_capsule`, `audit_event`, `decision` | retained for history, not normal active recall | audit event when active recall changes | memo retention plus source owner |
+| freeze | stable doctrine, reviewed authority boundary, durable route law | `anchor`, `decision`, `claim` | high-stability recall with explicit freeze basis | decision or audit event when freeze creates future dependence | charter or source owner |
+| demote | salience drops, recall pressure weakens, object remains true enough but less useful | any object | lower temperature or current recall from preferred to allowed/historical | audit optional unless current recall changes | memo retention |
+| deduplicate | repeated candidates point to the same memory question | `episode`, `claim`, `pattern` | keep provenance refs, choose one preferred surface | audit optional unless one object is retired | memo review |
+| split | one object carries multiple memory questions | `claim`, `pattern`, `bridge` | create narrower objects and reduce over-broad recall | audit event when original remains public | memo review plus stronger owners |
+| merge-review | several traces may describe one memory, but merge is uncertain | `episode`, `claim`, `pattern` | keep merge candidate under review, do not hallucinate one story | audit event if merge lands or is rejected | source owners and `aoa-evals` when proof is involved |
+
 ## Anti-patterns
 
 Treat these as warnings:

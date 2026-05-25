@@ -1,0 +1,49 @@
+schema_version: work_quest_v1
+id: AOA-MEM-Q-0015
+title: Publish a reproducible workspace memo-port status readout
+summary: Make current port levels, pending exports, landed exports, stale or broken state, and next routes inspectable without guessing.
+repo: aoa-memo
+owner_surface: docs/memory/LIVING_MEMORY_TOPOLOGY.md
+kind: memory
+state: captured
+band: frontier
+difficulty: d2_slice
+risk: r1_repo_local
+control_mode: codex_supervised
+delegate_tier: archivist
+fallback_tier: verifier
+wrapper_class: local_builder
+write_scope: repo_local
+split_required: false
+public_safe: true
+complexity_basis:
+  scope: 1
+  ambiguity: 2
+  boundary: 2
+  verification: 2
+parent: null
+depends_on:
+  - AOA-MEM-Q-0011
+activation:
+  mode: manual
+  note: open when workspace map, local port indexes, and aoa_memo pending-export surfaces can be compared
+anchor_ref:
+  artifact: living_memory_topology
+  ref: docs/memory/LIVING_MEMORY_TOPOLOGY.md
+  note: port status is a readout over owner surfaces, not reviewed memory truth
+handoff_role: memo-maintainer
+evidence:
+  - each port or route-only place has a level and owner
+  - pending, ready, landed, blocked, stale, or broken exports are explicit
+  - next route is machine-readable or documented from source surfaces
+harvest:
+  target: memo
+opened_at: '2026-05-25'
+touched_at: '2026-05-25'
+tags:
+  - memo-port
+  - workspace-status
+  - pending-exports
+notes: >
+  The first readout may be narrow, but it must be reproducible from current
+  owner surfaces.

@@ -142,6 +142,22 @@ The current profile-hardening pass uses these canonical schema/example pairs:
 - `bridge` -> `schemas/memory-objects/bridge.schema.json` -> `memo/objects/bridges/2026/tos-lineage-kag-candidate/object.json` with `mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/bridge.kag-lift.example.json` retained as a teaching fixture
 - `audit_event` -> `schemas/memory-objects/audit_event.schema.json` -> `examples/lifecycle/audit_event.supersession.example.json`
 
+## Object Population Plan
+
+Future corpus growth should fill real reviewed objects in this order so memory
+does not become a fluent claim layer without events, audit, and route anchors.
+
+| Object kind | First stable slots to fill | Why first | Usual source lanes |
+|---|---|---|---|
+| `episode` | first live end-to-end intake; first reviewed `.aoa` distillation; first host-memory export; first consumer recall run | events come before claims and give later memory evidence | local ports, `.aoa`, runtime, playbooks |
+| `audit_event` | reviewed intake landing; lifecycle transition; access-plane drift; generated read-model drift; candidate rejection or quarantine | audit events let memory admit review, correction, and time | every lane |
+| `state_capsule` | current `aoa-memo` organ readiness; port status snapshot; MCP/read-model currentness; host runtime health; consumer drift snapshot | state capsules make a moment inspectable without pretending to be timeless truth | memo, `abyss-stack`, host, SDK, routing |
+| `decision` | foundation route placement; access-plane currentness route; consumer path alignment; lifecycle wave choice | decisions preserve why a route was chosen and what it rejected | memo, stack, agents, routing |
+| `anchor` | memory organ boundary; reviewed corpus authority; access-plane boundary; center-route memory | anchors reduce repeated re-argument when later events need the same boundary | center route, memo doctrine, MCP boundary |
+| `claim` | corpus density claim; recall currentness claim; port maturity claim; lifecycle readiness claim | claims consolidate repeated episodes while staying provenance-linked | stats, review, evals, memo doctrine |
+| `pattern` | local port flow recurrence; stale path recurrence; consumer overread recurrence; reviewed closeout recurrence | patterns catch stable repetition without becoming proof or policy | playbooks, evals, `.aoa`, stats |
+| `bridge` | ToS lineage to KAG candidate; MCP to reviewed corpus; agent posture to memory object; playbook run to recall object | bridges keep downstream handoff source-linked and weaker than downstream owner truth | ToS, KAG, stack, agents, playbooks |
+
 ## Boundary note
 
 Profile schemas do not assign role rights, routing behavior, runtime storage policy, or eval verdict logic.

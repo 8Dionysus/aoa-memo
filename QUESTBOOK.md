@@ -19,6 +19,12 @@ quest ledger.
 - `AOA-MEM-Q-0004` - align router orchestrator quests to inspect-first and capsule-second memo recall
 - `AOA-MEM-Q-0005` - align review orchestrator quests to closure, residual-risk, and recurrence memo notes
 - `AOA-MEM-Q-0006` - align bounded-execution orchestrator quests to step-local recall and handoff continuity
+- `AOA-MEM-Q-0010` - run the access-plane currentness slice against generated memory surfaces
+- `AOA-MEM-Q-0011` - populate the first source-lane intake wave across regular memory producers
+- `AOA-MEM-Q-0012` - land the first object-population wave across stable object slots
+- `AOA-MEM-Q-0013` - apply the first real lifecycle pressure transition on reviewed corpus
+- `AOA-MEM-Q-0014` - hand off the first full memo-quality lens pack to `aoa-evals`
+- `AOA-MEM-Q-0015` - publish a reproducible workspace memo-port status readout
 
 ## Blocked / reanchor
 

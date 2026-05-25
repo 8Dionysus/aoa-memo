@@ -1,0 +1,48 @@
+schema_version: work_quest_v1
+id: AOA-MEM-Q-0011
+title: Populate the first source-lane intake wave across regular memory producers
+summary: Route the first reviewed candidate wave through the stable source intake lanes so future memory events know which owner keeps raw truth.
+repo: aoa-memo
+owner_surface: docs/memory/LIVING_MEMORY_TOPOLOGY.md
+kind: memory
+state: captured
+band: frontier
+difficulty: d3_seam
+risk: r1_repo_local
+control_mode: human_codex_copilot
+delegate_tier: archivist
+fallback_tier: verifier
+wrapper_class: local_builder
+write_scope: repo_local
+split_required: true
+public_safe: true
+complexity_basis:
+  scope: 2
+  ambiguity: 2
+  boundary: 2
+  verification: 1
+parent: null
+depends_on: []
+activation:
+  mode: manual
+  note: open when at least three source lanes have real candidate or export pressure
+anchor_ref:
+  artifact: living_memory_topology
+  ref: docs/memory/LIVING_MEMORY_TOPOLOGY.md
+  note: each lane must keep raw truth with its stronger owner
+handoff_role: memo-maintainer
+evidence:
+  - source lane is named before candidate shaping
+  - raw evidence owner remains outside aoa-memo
+  - reviewed intake or rejection route is explicit
+harvest:
+  target: memo
+opened_at: '2026-05-25'
+touched_at: '2026-05-25'
+tags:
+  - source-intake
+  - owner-route
+  - memory-lanes
+notes: >
+  This wave should prefer real candidates from existing owner surfaces over
+  fixture-only examples.
