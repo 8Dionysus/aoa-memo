@@ -31,6 +31,7 @@ expectation.
 
 | Decision | Scope |
 |---|---|
+| [2026-05-24-distributed-memory-organ-foundation](2026-05-24-distributed-memory-organ-foundation.md) | land the memory-organ foundation across existing owner surfaces instead of creating a new central foundation document |
 | [2026-05-24-release-tool-compatibility-entrypoints](2026-05-24-release-tool-compatibility-entrypoints.md) | keep workspace release preflight compatible with legacy `docs/RELEASING.md` and `scripts/release_check.py` probes while active release authority stays in `docs/root/` and `scripts/release/` |
 | [2026-05-24-kag-donor-reviewed-corpus-bridge](2026-05-24-kag-donor-reviewed-corpus-bridge.md) | make the KAG source-owned memo donor use a reviewed corpus bridge object rather than a teaching fixture row |
 | [2026-05-22-reviewed-memory-consumer-handoff-spine](2026-05-22-reviewed-memory-consumer-handoff-spine.md) | feed eval/KAG/stats/playbooks/agents from reviewed memory objects and generated read models while local ports, session evidence, and MCP dry runs stay outside durable authority |

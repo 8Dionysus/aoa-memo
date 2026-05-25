@@ -1,0 +1,48 @@
+schema_version: work_quest_v1
+id: AOA-MEM-Q-0013
+title: Apply the first real lifecycle pressure transition on reviewed corpus
+summary: Move one real reviewed object through supersede, retract, archive, freeze, demote, split, or merge-review with an audit-visible path.
+repo: aoa-memo
+owner_surface: mechanics/retention/docs/CONSOLIDATION_FORGETTING_OPERATION.md
+kind: memory
+state: captured
+band: frontier
+difficulty: d2_slice
+risk: r1_repo_local
+control_mode: codex_supervised
+delegate_tier: archivist
+fallback_tier: verifier
+wrapper_class: local_builder
+write_scope: repo_local
+split_required: false
+public_safe: true
+complexity_basis:
+  scope: 1
+  ambiguity: 2
+  boundary: 2
+  verification: 2
+parent: null
+depends_on:
+  - AOA-MEM-Q-0012
+activation:
+  mode: manual
+  note: open when a reviewed corpus object has real stale, contradiction, duplicate, withdrawal, or freeze pressure
+anchor_ref:
+  artifact: consolidation_forgetting_operation
+  ref: mechanics/retention/docs/CONSOLIDATION_FORGETTING_OPERATION.md
+  note: lifecycle movement must be visible, not a silent object edit
+handoff_role: memo-maintainer
+evidence:
+  - lifecycle pressure is named
+  - object current_recall posture changes only through reviewable evidence
+  - audit_event or retention operation explains the transition
+harvest:
+  target: memo
+opened_at: '2026-05-25'
+touched_at: '2026-05-25'
+tags:
+  - lifecycle
+  - retention
+  - audit-event
+notes: >
+  This quest closes only on a real reviewed corpus object, not on lifecycle fixtures.

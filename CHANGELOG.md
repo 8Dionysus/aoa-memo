@@ -7,6 +7,14 @@ Tracking starts with the community-docs baseline for this repository.
 
 ## [Unreleased]
 
+### Added
+
+- Distribute the memory-organ foundation layout across existing memory,
+  topology, object-profile, lifecycle, retention, consumer-handoff, and
+  Questbook surfaces so future memory events have stable intake lanes, object
+  slots, recall-pack grammar, lifecycle pressures, quality lenses, port-status
+  fields, and activation quests without adding a separate foundation document.
+
 ## [0.4.0] - 2026-05-24
 
 ### Summary

@@ -27,6 +27,24 @@ path.
 7. Recurrence and retention checks return cooled, stale, contradicted, or
    newly useful memory to review.
 
+## Memory Organ Map
+
+The stable organ map is the route a future memory event should be able to walk
+without inventing a new path.
+
+| Contour | Role | Owner | Input | Output | Next route | Check |
+|---|---|---|---|---|---|---|
+| capture | preserve source-backed material before interpretation | source repo, host, `.aoa`, or local port | source docs, run logs, session segments, host receipts, reviewed-run notes | source refs, raw evidence refs, candidate seed | candidate shaping or stronger owner review | source evidence remains reachable |
+| candidate | shape one bounded memory question without claiming current truth | local `memo/` port owner | captured refs, candidate text, trust and risk markers | local candidate packet | validation receipt, export, quarantine, or owner handoff | candidate names source refs and review route |
+| review | decide whether a candidate may become durable memo memory | origin owner plus `aoa-memo` reviewer | candidate, receipts, export packet, source refs | accepted, rejected, quarantined, archive-only, or owner-handoff result | reviewed corpus landing or local retention | reviewed result is explicit |
+| corpus | store durable reviewed memory objects | `aoa-memo/memo/` | accepted `reviewed_write` export or source-owned reviewed object patch | object bundle plus landing receipt | generated read models and consumer handoff | corpus validator passes |
+| read model | expose compact inspect, capsule, and expand surfaces | `aoa-memo` generated district | reviewed corpus objects, teaching fixtures, doctrine surfaces | generated catalogs, capsules, sections, route-card companions | access plane, consumers, eval packs | source refs and `source_kind` stay visible |
+| access plane | retrieve and operate local memory without becoming authority | runtime owner, currently `abyss-stack` MCP service | read models, local port indexes, pending exports | brief, search hits, status, dry-run landing plan | source owner, local port, reviewed landing | MCP output remains evidence or plan |
+| consumer recall | let downstream organs use bounded memory | downstream owner repo | object ids, catalog rows, capsules, recall contracts | owner-local route hints, quest refs, eval cases, KAG donor refs, stats summaries | stronger owner action or memo writeback candidate | consumer stop-lines stay visible |
+| lifecycle | keep time visible after memory changes | `aoa-memo` lifecycle posture plus stronger owner evidence | stale objects, duplicates, contradictions, supersession, source withdrawal | superseded, retracted, archived, frozen, demoted, split, or merge-review posture | audit event and regenerated read model | current recall posture changes visibly |
+| quality | make memory behavior testable without moving proof into memo | `aoa-memo` for cases, `aoa-evals` for verdicts | recall packs, object refs, stale or contradiction cases | guardrail case pack or bounded eval report | consumer hardening or reviewed memory update | scoring remains outside memo |
+| consolidation | return cooled, contradicted, duplicate, or newly useful memory to review | retention mechanic with stronger owners | lifecycle pressure, usage evidence, conflict refs, source feedback | consolidation operation, audit event, revised recall posture | corpus update, archive, or stronger owner | retention operation preserves provenance |
+
 ## Minimal State Machine
 
 | State | Meaning | Next route |
@@ -52,6 +70,22 @@ path.
 | How do KAG or graph consumers preserve truth? | `mechanics/consumer-handoff/docs/KAG_TOS_BRIDGE_CONTRACT.md` |
 | How do runtime or host exports enter? | `mechanics/writeback/docs/RUNTIME_WRITEBACK_SEAM.md` |
 | Which MCP route may an agent use? | the MCP access plane below, then the source route named by the returned evidence |
+
+## Operational Cards
+
+Use these cards before a live memory landing, export, or recall handoff.
+
+| Card | Role | Input | Output | Owner | Next route | Consumer |
+|---|---|---|---|---|---|---|
+| capture | preserve source evidence | source refs, raw refs, local notes | captured refs and candidate seed | source owner | candidate | reviewer |
+| candidate | shape one memory question | captured refs, risk markers | local candidate packet | local port owner | review | MCP and reviewer |
+| review | accept, reject, quarantine, or route outward | candidate, export, receipts | reviewed result | origin owner plus memo reviewer | corpus | memo corpus |
+| corpus | store durable object | reviewed result | object bundle and landing receipt | `aoa-memo` | read model | generated consumers |
+| read model | expose compact recall | corpus object or doctrine source | catalog, capsule, section row | `aoa-memo` | access or consumer | tools and agents |
+| access | retrieve without authority inflation | read models, port indexes | brief, search, status, dry-run plan | runtime MCP owner | owner route | agents |
+| consumer | use memory inside owner bounds | object ids, capsules, contracts | owner-local recall or handoff | consumer repo | stronger owner or writeback | router, review, execution |
+| lifecycle | update temporal posture | stale, conflict, or withdrawal evidence | lifecycle change and audit event | `aoa-memo` plus source owner | read-model refresh | all consumers |
+| quality | test memory behavior | recall cases and object refs | bounded eval report | `aoa-evals` | candidate or lifecycle card | reviewer |
 
 ## MCP Access Plane
 

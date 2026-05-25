@@ -1,0 +1,47 @@
+schema_version: work_quest_v1
+id: AOA-MEM-Q-0010
+title: Run the access-plane currentness slice against generated memory surfaces
+summary: Check the aoa_memo access plane against current generated memory and object surfaces without moving MCP runtime authority into aoa-memo.
+repo: aoa-memo
+owner_surface: docs/memory/MEMORY_OPERATION_CYCLE.md
+kind: memory
+state: captured
+band: frontier
+difficulty: d2_slice
+risk: r1_repo_local
+control_mode: codex_supervised
+delegate_tier: archivist
+fallback_tier: verifier
+wrapper_class: local_builder
+write_scope: repo_local
+split_required: false
+public_safe: true
+complexity_basis:
+  scope: 1
+  ambiguity: 1
+  boundary: 2
+  verification: 1
+parent: null
+depends_on: []
+activation:
+  mode: manual
+  note: open when the next aoa_memo MCP brief/search/status path can be compared to current generated surfaces
+anchor_ref:
+  artifact: memory_operation_cycle
+  ref: docs/memory/MEMORY_OPERATION_CYCLE.md
+  note: access-plane output is evidence or plan, not durable memory authority
+handoff_role: memo-maintainer
+evidence:
+  - generated memory and object surfaces are named as the access-plane source
+  - MCP output is checked for currentness against those surfaces
+  - drift is routed to source owner or reviewed memory candidate
+harvest:
+  target: memo
+opened_at: '2026-05-25'
+touched_at: '2026-05-25'
+tags:
+  - mcp
+  - access-plane
+  - generated-surfaces
+notes: >
+  The close condition is a currentness slice, not a runtime implementation move.
