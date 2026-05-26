@@ -1705,6 +1705,80 @@
       ]
     },
     {
+      "id": "memo.decision.2026-05-25.distributed-memory-organ-foundation",
+      "kind": "decision",
+      "title": "Memory-organ foundation lands across owner surfaces",
+      "source_kind": "reviewed_corpus",
+      "source_path": "memo/objects/decisions/2026/distributed-memory-organ-foundation/object.json",
+      "sections": [
+        {
+          "section_id": "memo.decision.2026-05-25.distributed-memory-organ-foundation#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the decision surface, its active recall modes, and its preferred current-recall posture.",
+          "body": "Memory-organ foundation lands across owner surfaces. Records the decision to harden aoa-memo as a working memory organ by distributing the foundation across existing operation, topology, object-profile, consumer-handoff, lifecycle, retention, quest, and generated surfaces instead of creating one central foundation document. Scope: repo:aoa-memo, repo:aoa-evals, repo:8Dionysus, workspace:OS-Abyss. Scope classes: repo, workspace. Primary recall modes: semantic, source_route, lineage. Current recall status: preferred because Use this as the reviewed recall object for why the foundation is distributed across existing owner surfaces. It is not proof that every operational loop is already closed. Payload ref: docs/decisions/2026-05-24-distributed-memory-organ-foundation.md."
+        },
+        {
+          "section_id": "memo.decision.2026-05-25.distributed-memory-organ-foundation#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.aoa-memo.distributed-memory-organ-foundation.2026-05-25. Source refs: docs/decisions/2026-05-24-distributed-memory-organ-foundation.md, docs/memory/MEMORY_OPERATION_CYCLE.md, docs/memory/LIVING_MEMORY_TOPOLOGY.md, docs/memory/MEMORY_OBJECT_PROFILES.md, mechanics/consumer-handoff/docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md, mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md, docs/posture/LIFECYCLE.md, mechanics/retention/docs/CONSOLIDATION_FORGETTING_OPERATION.md, QUESTBOOK.md, generated/quests/quest_catalog.min.json, generated/quests/quest_dispatch.min.json. Episode refs: none. Related curated object ids: none. Strongest next sources: docs/decisions/2026-05-24-distributed-memory-organ-foundation.md, docs/memory/MEMORY_OPERATION_CYCLE.md, docs/memory/LIVING_MEMORY_TOPOLOGY.md."
+        },
+        {
+          "section_id": "memo.decision.2026-05-25.distributed-memory-organ-foundation#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: repo_maintained (aoa-memo reviewed corpus and decision lane). Temperature: cool; confidence 0.88; freshness 0.95; salience 0.92. Review state: confirmed. Retention class: memory-organ-foundation. Promotion state: promoted. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.decision.2026-05-25.distributed-memory-organ-foundation#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Scope classes: repo, workspace. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: docs/decisions/2026-05-24-distributed-memory-organ-foundation.md. ToS refs: none. Skill refs: repo:aoa-skills. Eval refs: mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md, repo:aoa-evals. KAG lift status: candidate."
+        }
+      ]
+    },
+    {
+      "id": "memo.decision.2026-05-25.memory-operational-readouts",
+      "kind": "decision",
+      "title": "Memory operational readouts stay memo-owned and source-owner bounded",
+      "source_kind": "reviewed_corpus",
+      "source_path": "memo/objects/decisions/2026/memory-operational-readouts/object.json",
+      "sections": [
+        {
+          "section_id": "memo.decision.2026-05-25.memory-operational-readouts#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the decision surface, its active recall modes, and its preferred current-recall posture.",
+          "body": "Memory operational readouts stay memo-owned and source-owner bounded. Records the decision to add generated memo-side readouts for access-plane currentness, source-intake wave coverage, and workspace memo-port status while preserving abyss-stack as MCP runtime owner and 8Dionysus as workspace memory map owner. Scope: repo:aoa-memo, repo:abyss-stack, repo:8Dionysus, workspace:OS-Abyss. Scope classes: repo, workspace. Primary recall modes: semantic, source_route, lineage. Current recall status: preferred because Use this as the reviewed recall object for the memo-side operational readout family. It is a route and currentness surface, not MCP runtime authority or workspace topology authority. Payload ref: docs/decisions/2026-05-25-memory-operational-readouts.md."
+        },
+        {
+          "section_id": "memo.decision.2026-05-25.memory-operational-readouts#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.aoa-memo.memory-operational-readouts.2026-05-25. Source refs: docs/decisions/2026-05-25-memory-operational-readouts.md, generated/memory/access_plane_currentness.min.json, generated/memory/source_intake_wave.min.json, generated/memory/workspace_memo_port_status.min.json, scripts/memory/build_memory_operational_readouts.py, docs/memory/MEMORY_OPERATION_CYCLE.md, docs/memory/LIVING_MEMORY_TOPOLOGY.md, repo:abyss-stack/mcp/services/aoa-memo-mcp, repo:8Dionysus/generated/workspace_memory_map.min.json. Episode refs: none. Related curated object ids: none. Strongest next sources: docs/decisions/2026-05-25-memory-operational-readouts.md, generated/memory/access_plane_currentness.min.json, generated/memory/source_intake_wave.min.json."
+        },
+        {
+          "section_id": "memo.decision.2026-05-25.memory-operational-readouts#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: repo_maintained (aoa-memo generated memory readouts and decision lane). Temperature: cool; confidence 0.87; freshness 0.95; salience 0.90. Review state: confirmed. Retention class: operational-readout. Promotion state: promoted. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.decision.2026-05-25.memory-operational-readouts#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Scope classes: repo, workspace. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: docs/decisions/2026-05-25-memory-operational-readouts.md. ToS refs: none. Skill refs: none. Eval refs: repo:aoa-evals. KAG lift status: candidate."
+        }
+      ]
+    },
+    {
       "id": "memo.decision.2026-05-21.reviewed-corpus-district",
       "kind": "decision",
       "title": "aoa-memo keeps reviewed memory objects in a root memo corpus district",
