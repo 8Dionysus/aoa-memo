@@ -1,11 +1,21 @@
 # Retention Local Regression Boundary
 
+- Decision ID: AOA-MEM-D-0030
+
 ## Status
 
 Accepted on 2026-05-18.
 
 Amended on 2026-05-19 by the retention part-local artifact move. The original
 package-local test was split into part-local routes.
+
+## Index Metadata
+
+- Surface classes: lifecycle/retention, mechanic package, boundary/runtime/sibling
+- Mechanic parents: retention
+- Guard families: lifecycle/retention, sibling and boundary
+- Memory object classes: none
+- Posture: active rationale
 
 ## Context
 

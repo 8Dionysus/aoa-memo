@@ -1,8 +1,18 @@
 # Root Semantic Topology
 
+- Decision ID: AOA-MEM-D-0057
+
 ## Status
 
 Accepted on 2026-05-19.
+
+## Index Metadata
+
+- Surface classes: root/topology
+- Mechanic parents: none
+- Guard families: root technical district
+- Memory object classes: none
+- Posture: active rationale
 
 ## Context
 

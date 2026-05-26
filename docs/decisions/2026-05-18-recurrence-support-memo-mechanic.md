@@ -1,5 +1,7 @@
 # Recurrence Support Memo Mechanic
 
+- Decision ID: AOA-MEM-D-0029
+
 ## Status
 
 Accepted on 2026-05-18.
@@ -13,6 +15,14 @@ Superseded in part again on 2026-05-18 by
 [2026-05-18-checkpoint-memo-mechanic](2026-05-18-checkpoint-memo-mechanic.md):
 checkpoint artifacts moved into `mechanics/checkpoint/`, while
 recurrence-support remains the route-return consumer.
+
+## Index Metadata
+
+- Surface classes: local port/writeback, mechanic package
+- Mechanic parents: recurrence-support
+- Guard families: mechanic topology
+- Memory object classes: none
+- Posture: active rationale
 
 ## Context
 

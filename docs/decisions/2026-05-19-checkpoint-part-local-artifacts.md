@@ -1,8 +1,18 @@
 # Checkpoint Part-Local Artifacts
 
+- Decision ID: AOA-MEM-D-0047
+
 ## Status
 
 Accepted on 2026-05-19.
+
+## Index Metadata
+
+- Surface classes: mechanic package, mechanic part
+- Mechanic parents: checkpoint
+- Guard families: mechanic topology, part and payload
+- Memory object classes: none
+- Posture: active rationale
 
 ## Context
 

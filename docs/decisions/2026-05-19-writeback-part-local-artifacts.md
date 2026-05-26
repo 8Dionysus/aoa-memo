@@ -1,8 +1,18 @@
 # Writeback Part-Local Artifacts
 
+- Decision ID: AOA-MEM-D-0061
+
 ## Status
 
 Accepted on 2026-05-19.
+
+## Index Metadata
+
+- Surface classes: local port/writeback, mechanic package, mechanic part
+- Mechanic parents: writeback
+- Guard families: mechanic topology, part and payload, local port/writeback
+- Memory object classes: local_candidate
+- Posture: active rationale
 
 ## Context
 

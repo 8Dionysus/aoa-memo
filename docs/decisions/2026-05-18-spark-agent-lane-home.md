@@ -1,10 +1,20 @@
 # Decision: Move Spark Agent Lane Under `.agents`
 
+- Decision ID: AOA-MEM-D-0039
+
 Date: 2026-05-18
 
 ## Status
 
 Accepted.
+
+## Index Metadata
+
+- Surface classes: agents/mesh
+- Mechanic parents: none
+- Guard families: AGENTS/mesh
+- Memory object classes: none
+- Posture: active rationale
 
 ## Context
 

@@ -1,8 +1,18 @@
 # AGENTS Authority Boundary Audit
 
+- Decision ID: AOA-MEM-D-0044
+
 ## Status
 
 Accepted on 2026-05-19.
+
+## Index Metadata
+
+- Surface classes: agents/mesh, boundary/runtime/sibling
+- Mechanic parents: none
+- Guard families: docs route, AGENTS/mesh, sibling and boundary
+- Memory object classes: audit_event
+- Posture: active rationale
 
 ## Context
 

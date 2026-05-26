@@ -1,5 +1,15 @@
 # 2026-05-18: Add Consumer Handoff as an Operation-First Memo Mechanic
 
+- Decision ID: AOA-MEM-D-0007
+
+## Index Metadata
+
+- Surface classes: consumer handoff, mechanic package
+- Mechanic parents: consumer-handoff
+- Guard families: mechanic topology
+- Memory object classes: none
+- Posture: active rationale
+
 ## Context
 
 After Agon, Titan, adoption, governance, shape-guard, writeback, and retention

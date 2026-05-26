@@ -1,8 +1,18 @@
 # Decision: Reviewed Memory Corpus District
 
+- Decision ID: AOA-MEM-D-0063
+
 ## Status
 
 Accepted.
+
+## Index Metadata
+
+- Surface classes: reviewed corpus
+- Mechanic parents: none
+- Guard families: reviewed corpus/intake
+- Memory object classes: decision
+- Posture: active rationale
 
 ## Context
 

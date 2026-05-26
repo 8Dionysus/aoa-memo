@@ -1,5 +1,15 @@
 # 2026-05-18: Land Antifragility as a Memo Mechanic
 
+- Decision ID: AOA-MEM-D-0005
+
+## Index Metadata
+
+- Surface classes: mechanic package
+- Mechanic parents: antifragility
+- Guard families: mechanic topology
+- Memory object classes: none
+- Posture: active rationale
+
 ## Context
 
 Failure lesson and recovery pattern docs were still flat under `docs/` even

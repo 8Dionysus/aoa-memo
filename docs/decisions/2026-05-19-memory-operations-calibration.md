@@ -1,8 +1,18 @@
 # Memory Operations Calibration
 
+- Decision ID: AOA-MEM-D-0053
+
 ## Status
 
 Accepted on 2026-05-19.
+
+## Index Metadata
+
+- Surface classes: memory doctrine
+- Mechanic parents: none
+- Guard families: memory surface
+- Memory object classes: none
+- Posture: active rationale
 
 ## Context
 

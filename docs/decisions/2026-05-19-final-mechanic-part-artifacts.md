@@ -1,8 +1,18 @@
 # Final Mechanic Part-Local Artifacts
 
+- Decision ID: AOA-MEM-D-0049
+
 ## Status
 
 Accepted on 2026-05-19.
+
+## Index Metadata
+
+- Surface classes: mechanic package, mechanic part
+- Mechanic parents: none
+- Guard families: mechanic topology, part and payload
+- Memory object classes: none
+- Posture: active rationale
 
 ## Context
 

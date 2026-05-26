@@ -1,8 +1,18 @@
 # Adoption And Retention Part-Local Artifacts
 
+- Decision ID: AOA-MEM-D-0043
+
 ## Status
 
 Accepted on 2026-05-19.
+
+## Index Metadata
+
+- Surface classes: lifecycle/retention, mechanic package, mechanic part
+- Mechanic parents: adoption, retention
+- Guard families: mechanic topology, part and payload, lifecycle/retention
+- Memory object classes: none
+- Posture: active rationale
 
 ## Context
 

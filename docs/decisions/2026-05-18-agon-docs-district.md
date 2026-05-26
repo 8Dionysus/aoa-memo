@@ -1,6 +1,16 @@
 # Move Agon Memo Docs Into `docs/agon/`
 
+- Decision ID: AOA-MEM-D-0003
+
 Date: 2026-05-18
+
+## Index Metadata
+
+- Surface classes: root/topology, mechanic package
+- Mechanic parents: agon
+- Guard families: docs route
+- Memory object classes: none
+- Posture: active rationale
 
 ## Context
 

@@ -1,5 +1,15 @@
 # Governance Part-Local Artifacts
 
+- Decision ID: AOA-MEM-D-0051
+
+## Index Metadata
+
+- Surface classes: mechanic package, mechanic part
+- Mechanic parents: governance
+- Guard families: mechanic topology, part and payload
+- Memory object classes: none
+- Posture: active rationale
+
 ## Context
 
 Governance already had functioning parts for governance boundaries,

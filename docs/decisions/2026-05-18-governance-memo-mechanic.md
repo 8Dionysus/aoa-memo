@@ -1,9 +1,19 @@
 # 2026-05-18: Land Governance as a Memo Mechanic
 
+- Decision ID: AOA-MEM-D-0009
+
 Correction: `VIA_NEGATIVA_CHECKLIST.md` was later moved to
 `mechanics/shape-guard/docs/` by
 [2026-05-18-shape-guard-memo-mechanic](2026-05-18-shape-guard-memo-mechanic.md).
 Governance remains the active authority-boundary memory mechanic.
+
+## Index Metadata
+
+- Surface classes: mechanic package
+- Mechanic parents: governance
+- Guard families: mechanic topology
+- Memory object classes: none
+- Posture: active rationale
 
 ## Context
 

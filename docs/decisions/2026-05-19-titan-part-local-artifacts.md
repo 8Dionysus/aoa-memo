@@ -1,5 +1,15 @@
 # Titan Part-Local Artifacts
 
+- Decision ID: AOA-MEM-D-0060
+
+## Index Metadata
+
+- Surface classes: mechanic package, mechanic part
+- Mechanic parents: titan
+- Guard families: mechanic topology, part and payload
+- Memory object classes: none
+- Posture: active rationale
+
 ## Context
 
 Titan was already a memo mechanic with functioning parts, but its runnable

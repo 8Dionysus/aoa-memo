@@ -1,5 +1,15 @@
 # 2026-05-18: Add Operational Gate as an Operation-First Memo Mechanic
 
+- Decision ID: AOA-MEM-D-0024
+
+## Index Metadata
+
+- Surface classes: mechanic package
+- Mechanic parents: operational-gate
+- Guard families: mechanic topology
+- Memory object classes: none
+- Posture: active rationale
+
 ## Context
 
 After consumer handoff landed, the remaining flat docs still included an

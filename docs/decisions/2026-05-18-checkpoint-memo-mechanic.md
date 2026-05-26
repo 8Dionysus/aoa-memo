@@ -1,8 +1,18 @@
 # 2026-05-18 Checkpoint Memo Mechanic
 
+- Decision ID: AOA-MEM-D-0006
+
 ## Status
 
 Accepted.
+
+## Index Metadata
+
+- Surface classes: mechanic package
+- Mechanic parents: checkpoint
+- Guard families: mechanic topology
+- Memory object classes: none
+- Posture: active rationale
 
 ## Context
 

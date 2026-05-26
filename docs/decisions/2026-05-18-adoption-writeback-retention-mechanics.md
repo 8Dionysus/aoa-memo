@@ -1,8 +1,18 @@
 # Adoption, Writeback, and Retention Move to Memo Mechanics
 
+- Decision ID: AOA-MEM-D-0001
+
 ## Status
 
 Accepted.
+
+## Index Metadata
+
+- Surface classes: local port/writeback, lifecycle/retention, mechanic package
+- Mechanic parents: adoption, retention, writeback
+- Guard families: mechanic topology, local port/writeback, lifecycle/retention
+- Memory object classes: local_candidate
+- Posture: active rationale
 
 ## Context
 

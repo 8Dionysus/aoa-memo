@@ -1,8 +1,18 @@
 # Lineage Harvest Memo Mechanic
 
+- Decision ID: AOA-MEM-D-0010
+
 ## Status
 
 Accepted on 2026-05-18.
+
+## Index Metadata
+
+- Surface classes: mechanic package
+- Mechanic parents: lineage-harvest
+- Guard families: mechanic topology
+- Memory object classes: none
+- Posture: active rationale
 
 ## Context
 

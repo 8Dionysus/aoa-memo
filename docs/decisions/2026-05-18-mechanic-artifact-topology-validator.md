@@ -1,8 +1,18 @@
 # Decision: Mechanic Artifact Topology Gets A Release Gate
 
+- Decision ID: AOA-MEM-D-0013
+
 ## Status
 
 Accepted on 2026-05-18.
+
+## Index Metadata
+
+- Surface classes: mechanic package, validation guard
+- Mechanic parents: none
+- Guard families: mechanic topology
+- Memory object classes: none
+- Posture: active rationale
 
 ## Context
 

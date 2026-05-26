@@ -1,104 +1,82 @@
-# Decisions
+# Decision Records Index
 
-This directory holds durable decision records for `aoa-memo`.
+This directory is the durable decision surface for `aoa-memo`.
 
-Use it when a future contributor will need the rationale for a route,
-topology, source-of-truth split, validator, public contract, or workflow
-expectation.
+Use it when a future contributor needs the rationale for a route, topology,
+source-of-truth split, validator, public contract, memory-object lane, or
+workflow expectation.
 
-## What Belongs Here
+## Operating Card
 
-- structural placement decisions
-- root or docs-root route-law decisions
-- AGENTS mesh or agent-lane decisions
-- validator-authority decisions
-- public-contract and source-of-truth split decisions
-- cross-repo boundary decisions that need local rationale
+| Field | Route |
+| --- | --- |
+| role | durable decision rationale entrypoint and agent-facing index chooser |
+| entry | use when a structural, topology, validation, public-contract, lifecycle, reviewed-corpus, generated-index, or agent-route change needs recoverable rationale |
+| input | changed source surface, owner boundary, rejected option, validation guard, or cross-surface route pressure |
+| output | canonical decision note, metadata-backed lookup index, and route back to the source surface |
+| owner | `docs/decisions/AGENTS.md` for lane law; decision notes for rationale; generated indexes for lookup only |
+| next route | source surface first, then nearest route card, `MEMORY_INDEX.md`, `docs/memory/MEMORY_MODEL.md`, generated lookup indexes, or the affected reviewed-corpus/mechanic owner |
+| validation | `python scripts/root-topology/build_decision_indexes.py --check`, repo tests, and `python scripts/release/release_check.py` |
 
-## What Stays Elsewhere
+## Authority
 
-| Material | Home |
-|---|---|
-| active memory doctrine | current docs such as `MEMORY_MODEL`, `BOUNDARIES`, and `OPERATIONAL_BOUNDARY` |
-| schemas and machine contracts | `schemas/` |
-| public-safe examples | `examples/` |
-| generated companions | `generated/` |
-| release history | `CHANGELOG.md` |
-| future work | `ROADMAP.md` or `QUESTBOOK.md` |
-| raw evidence or private traces | not in this public repo unless sanitized and routed |
+Decision notes explain why a path was chosen.
 
-## Index
+They are weaker than the source surface they describe:
 
-| Decision | Scope |
-|---|---|
-| [2026-05-25-writeback-debt-catchup-reviewed-objects](2026-05-25-writeback-debt-catchup-reviewed-objects.md) | close aoa-memo writeback debt by landing reviewed decision objects for the memory-organ foundation and operational readout slices |
-| [2026-05-25-memory-operational-readouts](2026-05-25-memory-operational-readouts.md) | keep access-plane currentness and workspace port-status readouts in aoa-memo while preserving 8Dionysus and abyss-stack source-owner boundaries |
-| [2026-05-24-distributed-memory-organ-foundation](2026-05-24-distributed-memory-organ-foundation.md) | land the memory-organ foundation across existing owner surfaces instead of creating a new central foundation document |
-| [2026-05-24-release-tool-compatibility-entrypoints](2026-05-24-release-tool-compatibility-entrypoints.md) | keep workspace release preflight compatible with legacy `docs/RELEASING.md` and `scripts/release_check.py` probes while active release authority stays in `docs/root/` and `scripts/release/` |
-| [2026-05-24-kag-donor-reviewed-corpus-bridge](2026-05-24-kag-donor-reviewed-corpus-bridge.md) | make the KAG source-owned memo donor use a reviewed corpus bridge object rather than a teaching fixture row |
-| [2026-05-22-reviewed-memory-consumer-handoff-spine](2026-05-22-reviewed-memory-consumer-handoff-spine.md) | feed eval/KAG/stats/playbooks/agents from reviewed memory objects and generated read models while local ports, session evidence, and MCP dry runs stay outside durable authority |
-| [2026-05-22-reviewed-intake-landing](2026-05-22-reviewed-intake-landing.md) | make reviewed local-port exports land as checked `memo/objects/` bundles through an aoa-memo source-owned route |
-| [2026-05-21-corpus-backed-memory-read-models](2026-05-21-corpus-backed-memory-read-models.md) | build object-facing read models from reviewed corpus objects plus teaching fixtures with `source_kind` |
-| [2026-05-21-reviewed-memory-corpus-district](2026-05-21-reviewed-memory-corpus-district.md) | add root `memo/` as reviewed memory object corpus rather than copying local memo port topology |
-| [2026-05-19-agents-authority-boundary-audit](2026-05-19-agents-authority-boundary-audit.md) | keep AGENTS-owned route modes, executable validation commands, and stale topology maps out of neighboring docs |
-| [2026-05-19-root-semantic-topology](2026-05-19-root-semantic-topology.md) | split active root districts into semantic families with nearest AGENTS cards and machine-checkable topology |
-| [2026-05-19-root-technical-district-atlas](2026-05-19-root-technical-district-atlas.md) | add a compact generated atlas for root technical district role, route cards, family ids, and local routing |
-| [2026-05-19-active-stage-source-naming](2026-05-19-active-stage-source-naming.md) | rename active wave/seed memo surfaces to stage/source while preserving legacy and source-owned refs |
-| [2026-05-19-spark-registry-backed-memo-lane](2026-05-19-spark-registry-backed-memo-lane.md) | add registry-backed Spark scenarios, packets, schemas, validator, tests, and release-gate wiring |
-| [2026-05-19-root-contract-family-naming](2026-05-19-root-contract-family-naming.md) | rename active root cross-mechanic contract regressions away from migration-era staging labels |
-| [2026-05-19-root-memory-index](2026-05-19-root-memory-index.md) | add a compact root memory-canon index and keep README/CONTRIBUTING map-oriented |
-| [2026-05-18-memory-topology-spine](2026-05-18-memory-topology-spine.md) | add topology-spine surfaces before moving flat docs |
-| [2026-05-18-spark-agent-lane-home](2026-05-18-spark-agent-lane-home.md) | move maintained Spark lane from root to `.agents/spark/` |
-| [2026-05-18-agents-mesh-source-backed-route-cards](2026-05-18-agents-mesh-source-backed-route-cards.md) | add source-backed AGENTS mesh for current route cards |
-| [2026-05-18-agon-docs-district](2026-05-18-agon-docs-district.md) | move flat Agon memo docs into `docs/agon/` |
-| [2026-05-18-titan-docs-district](2026-05-18-titan-docs-district.md) | move flat Titan memo docs into `docs/titan/` |
-| [2026-05-18-adoption-writeback-retention-mechanics](2026-05-18-adoption-writeback-retention-mechanics.md) | move adoption, writeback, and retention docs-root surfaces into memo mechanics |
-| [2026-05-18-mechanics-subroutes-artifact-topology](2026-05-18-mechanics-subroutes-artifact-topology.md) | add docs/legacy mechanic subroutes and artifact placement law |
-| [2026-05-18-agon-titan-memo-mechanics](2026-05-18-agon-titan-memo-mechanics.md) | supersede Agon/Titan docs districts with memo mechanic packages |
-| [2026-05-18-antifragility-memo-mechanic](2026-05-18-antifragility-memo-mechanic.md) | move failure-lesson and recovery-pattern docs into an antifragility memo mechanic |
-| [2026-05-18-governance-memo-mechanic](2026-05-18-governance-memo-mechanic.md) | move governance, federation, installation, certification, precedent, and stay-order docs into a governance authority-boundary memo mechanic |
-| [2026-05-18-shape-guard-memo-mechanic](2026-05-18-shape-guard-memo-mechanic.md) | add shape-guard as the via-negativa operation-first memo mechanic |
-| [2026-05-18-consumer-handoff-memo-mechanic](2026-05-18-consumer-handoff-memo-mechanic.md) | move agent, playbook, eval, KAG/ToS, KAG export, and orchestrator alignment docs into a consumer-handoff memo mechanic |
-| [2026-05-18-operational-gate-memo-mechanic](2026-05-18-operational-gate-memo-mechanic.md) | move deployment, office/service, service revision, and post-release boundary docs into an operational-gate memo mechanic |
-| [2026-05-18-recurrence-support-memo-mechanic](2026-05-18-recurrence-support-memo-mechanic.md) | move recurrence support, witness trace, and reviewed closeout landing docs into a recurrence-support memo mechanic |
-| [2026-05-18-lineage-harvest-memo-mechanic](2026-05-18-lineage-harvest-memo-mechanic.md) | move pattern-lineage memory into a lineage-harvest memo mechanic |
-| [2026-05-18-checkpoint-memo-mechanic](2026-05-18-checkpoint-memo-mechanic.md) | add checkpoint as the memo mechanic for checkpoint gates, carry, approval, health, improvement, and checkpoint-to-memory artifacts |
-| [2026-05-18-readiness-boundary-memo-mechanic](2026-05-18-readiness-boundary-memo-mechanic.md) | move readiness boundary doctrine, schema, example, and regression test into a readiness-boundary memo mechanic |
-| [2026-05-18-quest-generated-owner-routes](2026-05-18-quest-generated-owner-routes.md) | keep root quest generated companions builder-backed and mechanic-routed |
-| [2026-05-18-questbook-lane-first-store](2026-05-18-questbook-lane-first-store.md) | add Questbook mechanic and move quest sources into lane-first root store |
-| [2026-05-18-mechanic-artifact-topology-validator](2026-05-18-mechanic-artifact-topology-validator.md) | add a release-gate validator for mechanic-owned root artifact drift |
-| [2026-05-18-root-technical-district-allowlist](2026-05-18-root-technical-district-allowlist.md) | make remaining root technical artifacts exact and machine-auditable |
-| [2026-05-18-root-schema-family-contracts](2026-05-18-root-schema-family-contracts.md) | make root schemas family-owned and release-checkable |
-| [2026-05-18-root-example-family-contracts](2026-05-18-root-example-family-contracts.md) | make root examples family-owned and release-checkable |
-| [2026-05-18-root-config-manifest-control-plane](2026-05-18-root-config-manifest-control-plane.md) | make root config family-owned and root manifests policy-owned |
-| [2026-05-18-root-generated-family-contracts](2026-05-18-root-generated-family-contracts.md) | make root generated outputs family-owned and release-checkable |
-| [2026-05-18-root-script-family-contracts](2026-05-18-root-script-family-contracts.md) | make root scripts family-owned and release/test covered |
-| [2026-05-18-root-test-family-contracts](2026-05-18-root-test-family-contracts.md) | make root tests and public fixtures family-owned and release-checkable |
-| [2026-05-18-mechanic-artifact-inventory](2026-05-18-mechanic-artifact-inventory.md) | add a generated inventory for package-local mechanic artifacts |
-| [2026-05-18-mechanic-parts-shape-validator](2026-05-18-mechanic-parts-shape-validator.md) | make functioning mechanic parts shape release-checkable |
-| [2026-05-18-mechanic-physical-parts](2026-05-18-mechanic-physical-parts.md) | materialize each active mechanic part as a physical contract and validation node |
-| [2026-05-19-agon-part-local-artifacts](2026-05-19-agon-part-local-artifacts.md) | move Agon runnable artifacts into the nearest functioning part-local homes |
-| [2026-05-19-titan-part-local-artifacts](2026-05-19-titan-part-local-artifacts.md) | move Titan runnable artifacts into functioning part-local homes |
-| [2026-05-19-adoption-retention-part-local-artifacts](2026-05-19-adoption-retention-part-local-artifacts.md) | move adoption and retention schemas, examples, and tests into functioning part-local homes |
-| [2026-05-19-writeback-part-local-artifacts](2026-05-19-writeback-part-local-artifacts.md) | move writeback schemas, examples, generated companions, scripts, tests, and receipt fixtures into functioning part-local homes |
-| [2026-05-19-checkpoint-part-local-artifacts](2026-05-19-checkpoint-part-local-artifacts.md) | move checkpoint schemas, examples, tests, and consumer refs into functioning part-local homes |
-| [2026-05-19-consumer-handoff-part-local-artifacts](2026-05-19-consumer-handoff-part-local-artifacts.md) | move consumer-handoff schemas, examples, generated export, generator, and tests into functioning part-local homes |
-| [2026-05-19-governance-part-local-artifacts](2026-05-19-governance-part-local-artifacts.md) | move governance schemas, examples, and regressions into functioning part-local homes |
-| [2026-05-19-antifragility-part-local-artifacts](2026-05-19-antifragility-part-local-artifacts.md) | move antifragility schemas, examples, native pattern source, and regressions into functioning part-local homes |
-| [2026-05-19-operational-gate-part-local-artifacts](2026-05-19-operational-gate-part-local-artifacts.md) | move operational-gate schemas, examples, and regressions into functioning part-local homes |
-| [2026-05-19-final-mechanic-part-artifacts](2026-05-19-final-mechanic-part-artifacts.md) | move remaining package-level mechanic artifacts into functioning part-local homes |
-| [2026-05-19-mechanic-part-naming-hardening](2026-05-19-mechanic-part-naming-hardening.md) | rename weak surface-family part slugs into operation/read-model part names |
-| [2026-05-19-functional-agents-route-cards](2026-05-19-functional-agents-route-cards.md) | keep README/index files as maps and move operational route stacks into nearest AGENTS cards |
-| [2026-05-18-mechanic-readiness-matrix](2026-05-18-mechanic-readiness-matrix.md) | add a generated readiness matrix for all memo mechanic packages |
-| [2026-05-18-mechanic-readiness-artifact-test-coverage](2026-05-18-mechanic-readiness-artifact-test-coverage.md) | require package-local tests for mechanics with package-local non-test artifacts |
-| [2026-05-18-mechanic-readiness-local-test-routes](2026-05-18-mechanic-readiness-local-test-routes.md) | require route-card visibility for package-local mechanic test commands |
-| [2026-05-18-mechanic-route-card-index](2026-05-18-mechanic-route-card-index.md) | add a generated route-card index for memo mechanic packages |
-| [2026-05-18-mechanic-owner-route-matrix](2026-05-18-mechanic-owner-route-matrix.md) | add a generated owner-route matrix without claiming owner acceptance |
-| [2026-05-18-mechanic-landing-log-index](2026-05-18-mechanic-landing-log-index.md) | add a generated landing receipt index for memo mechanic packages |
-| [2026-05-18-writeback-curated-object-examples](2026-05-18-writeback-curated-object-examples.md) | move writeback-owned curated memory-object examples under the writeback mechanic |
-| [2026-05-18-questbook-quest-read-model-projections-part](2026-05-18-questbook-quest-read-model-projections-part.md) | add a part-level contract for root-published Questbook generated read models |
-| [2026-05-18-downstream-feed-test-localization](2026-05-18-downstream-feed-test-localization.md) | move consumer-handoff and writeback test artifacts out of root while keeping the cross-mechanic contract regression rooted |
-| [2026-05-18-retention-local-regression-boundary](2026-05-18-retention-local-regression-boundary.md) | add a package-local regression boundary for retention docs, schemas, examples, and stop-lines |
+- memory doctrine stays in `docs/memory/`, `docs/boundaries/`, and
+  `MEMORY_INDEX.md`;
+- reviewed durable memory truth stays in `memo/`;
+- mechanic shape stays in `mechanics/`, local route cards, and generated
+  mechanic read models;
+- generated readers stay derived from their builders;
+- runtime, proof, routing, playbook, KAG, and role-contract owners keep their
+  own stronger truth.
+
+Generated decision indexes are weaker than the decision notes. They exist to
+make lookup cheaper for agents, not to carry decision rationale.
+
+## Index Shape
+
+Each decision owns:
+
+- a canonical `Decision ID: AOA-MEM-D-####`;
+- an `## Index Metadata` block naming surface classes, mechanic parents, guard
+  families, memory object classes, and posture.
+
+The lookup indexes under [indexes](indexes/README.md) are generated from that
+metadata:
+
+- [Decisions by canonical ID and number](indexes/by-number.md)
+- [Decisions by date](indexes/by-date.md)
+- [Decisions by surface class](indexes/by-surface.md)
+- [Decisions by mechanic parent](indexes/by-mechanic.md)
+- [Decisions by validation or guard family](indexes/by-guard.md)
+- [Decisions by memory-object class](indexes/by-memory-object-class.md)
+- [Decision alias map](indexes/alias-map.md)
+
+Use them in both directions:
+
+- top down: repo route -> authority class -> operation -> mechanic parent ->
+  guard family -> decision rationale;
+- bottom up: changed source surface -> local route card or generated read model
+  -> validator guard -> decision rationale -> stronger owner surface.
+
+Regenerate the read models after decision metadata changes:
+
+```bash
+python scripts/root-topology/build_decision_indexes.py
+```
+
+## Dual Addressing
+
+Current date-named decision paths remain live.
+
+Canonical IDs are the stable handles. The alias map bridges old/current paths
+to canonical IDs and reserves planned numbered paths for a later migration.
+
+Do not rename decision files until a dedicated rename slice verifies the alias
+and generated index layer protects all refs.
 
 ## Review Rule
 

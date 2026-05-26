@@ -1,5 +1,7 @@
 # Mechanics Subroutes and Artifact Topology
 
+- Decision ID: AOA-MEM-D-0022
+
 ## Status
 
 Accepted.
@@ -8,6 +10,14 @@ Superseded in part by
 [2026-05-18-mechanic-artifact-lanes](2026-05-18-mechanic-artifact-lanes.md)
 for active mechanic-owned schemas, examples, config, generated companions,
 scripts, tests, manifests, and hook bindings.
+
+## Index Metadata
+
+- Surface classes: mechanic package
+- Mechanic parents: none
+- Guard families: mechanic topology
+- Memory object classes: none
+- Posture: active rationale
 
 ## Context
 

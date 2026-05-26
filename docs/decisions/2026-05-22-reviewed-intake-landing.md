@@ -1,8 +1,18 @@
 # Decision: Reviewed Intake Landing
 
+- Decision ID: AOA-MEM-D-0064
+
 ## Status
 
 Accepted.
+
+## Index Metadata
+
+- Surface classes: reviewed corpus, local port/writeback
+- Mechanic parents: none
+- Guard families: reviewed corpus/intake
+- Memory object classes: reviewed_intake
+- Posture: active rationale
 
 ## Context
 

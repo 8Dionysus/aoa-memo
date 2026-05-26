@@ -1,8 +1,18 @@
 # Quest Generated Owner Routes
 
+- Decision ID: AOA-MEM-D-0025
+
 ## Status
 
 Accepted on 2026-05-18.
+
+## Index Metadata
+
+- Surface classes: generated/readout, quest/lane
+- Mechanic parents: none
+- Guard families: mechanic topology, generated/read-model, quest/read-model
+- Memory object classes: none
+- Posture: active rationale
 
 ## Context
 

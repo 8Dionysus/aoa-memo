@@ -1,5 +1,15 @@
 # Mechanic Owner Route Matrix
 
+- Decision ID: AOA-MEM-D-0015
+
+## Index Metadata
+
+- Surface classes: generated/readout, mechanic package
+- Mechanic parents: none
+- Guard families: mechanic topology, generated/read-model
+- Memory object classes: none
+- Posture: active rationale
+
 ## Context
 
 The memo mechanics tree now has package cards, readiness checks, artifact

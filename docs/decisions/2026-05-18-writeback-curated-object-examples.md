@@ -1,5 +1,15 @@
 # Writeback Curated Object Examples
 
+- Decision ID: AOA-MEM-D-0041
+
+## Index Metadata
+
+- Surface classes: local port/writeback, mechanic package
+- Mechanic parents: writeback
+- Guard families: local port/writeback
+- Memory object classes: local_candidate
+- Posture: active rationale
+
 ## Context
 
 The root `examples/` lane now has positive family contracts for shared memory

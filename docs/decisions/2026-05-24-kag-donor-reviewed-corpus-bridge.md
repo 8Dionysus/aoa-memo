@@ -1,8 +1,18 @@
 # Decision: KAG donor bridge uses reviewed corpus object
 
+- Decision ID: AOA-MEM-D-0067
+
 ## Status
 
 Accepted.
+
+## Index Metadata
+
+- Surface classes: reviewed corpus, consumer handoff, boundary/runtime/sibling
+- Mechanic parents: none
+- Guard families: reviewed corpus/intake, sibling and boundary
+- Memory object classes: decision
+- Posture: active rationale
 
 ## Context
 

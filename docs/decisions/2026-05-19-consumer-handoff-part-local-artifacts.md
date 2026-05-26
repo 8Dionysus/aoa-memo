@@ -1,5 +1,15 @@
 # Consumer Handoff Part-Local Artifacts
 
+- Decision ID: AOA-MEM-D-0048
+
+## Index Metadata
+
+- Surface classes: consumer handoff, mechanic part
+- Mechanic parents: consumer-handoff
+- Guard families: mechanic topology, part and payload
+- Memory object classes: none
+- Posture: active rationale
+
 ## Context
 
 Consumer-handoff already had functioning parts, but its active schemas,

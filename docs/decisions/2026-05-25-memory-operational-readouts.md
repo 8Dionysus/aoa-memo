@@ -1,8 +1,18 @@
 # Decision: Memory operational readouts stay memo-owned and source-owner bounded
 
+- Decision ID: AOA-MEM-D-0069
+
 ## Status
 
 Accepted.
+
+## Index Metadata
+
+- Surface classes: memory doctrine, generated/readout
+- Mechanic parents: none
+- Guard families: generated/read-model, memory surface
+- Memory object classes: decision
+- Posture: active rationale
 
 ## Context
 

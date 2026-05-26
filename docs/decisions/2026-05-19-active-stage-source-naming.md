@@ -1,8 +1,18 @@
 # Active Stage and Source Naming
 
+- Decision ID: AOA-MEM-D-0042
+
 ## Status
 
 Accepted.
+
+## Index Metadata
+
+- Surface classes: memory doctrine, legacy/provenance
+- Mechanic parents: none
+- Guard families: docs route, memory surface
+- Memory object classes: none
+- Posture: active rationale
 
 ## Context
 

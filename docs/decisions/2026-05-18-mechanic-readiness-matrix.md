@@ -1,5 +1,15 @@
 # Mechanic Readiness Matrix
 
+- Decision ID: AOA-MEM-D-0020
+
+## Index Metadata
+
+- Surface classes: generated/readout, mechanic package, validation guard
+- Mechanic parents: none
+- Guard families: mechanic topology, generated/read-model
+- Memory object classes: none
+- Posture: active rationale
+
 ## Context
 
 The mechanics tree now holds memo-side operations for antifragility, Agon,
