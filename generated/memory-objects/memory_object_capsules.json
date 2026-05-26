@@ -588,6 +588,19 @@
       "source_path": "memo/objects/decisions/2026/abyss-stack-aoa-memo-mcp-access-plane/object.json"
     },
     {
+      "id": "memo.decision.2026-05-26.abyss-stack-os-access-plane-mcp-services",
+      "kind": "decision",
+      "title": "abyss-stack OS access-plane MCP services",
+      "summary": "abyss-stack extended MCP access-plane services for memory, eval, and machine context while preserving sibling owner authority.",
+      "source_kind": "reviewed_corpus",
+      "recall_posture_short": "preferred current recall; confirmed review state; Landed through reviewed intake; use as reviewed recall, not proof or stronger owner truth",
+      "trust_posture_short": "cool temperature; human_reviewed authority; confidence 0.89; freshness 1.00",
+      "use_when_short": "Use as the current decision surface for semantic, source_route, lineage recall.",
+      "do_not_use_short": "Do not treat this decision as proof or stronger than its cited sources.",
+      "strongest_next_source": "memo/intake/reviewed/abyss-stack.20260526T003500Z.os-access-plane-mcp-services.reviewed-intake.json",
+      "source_path": "memo/objects/decisions/2026/abyss-stack-os-access-plane-mcp-services/object.json"
+    },
+    {
       "id": "memo.decision.2026-05-22.corpus-backed-mcp-search",
       "kind": "decision",
       "title": "aoa_memo search starts from reviewed corpus read models",

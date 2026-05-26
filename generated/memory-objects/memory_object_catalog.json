@@ -1583,6 +1583,43 @@
       ]
     },
     {
+      "id": "memo.decision.2026-05-26.abyss-stack-os-access-plane-mcp-services",
+      "kind": "decision",
+      "title": "abyss-stack OS access-plane MCP services",
+      "summary": "abyss-stack extended MCP access-plane services for memory, eval, and machine context while preserving sibling owner authority.",
+      "scope_classes": [
+        "repo",
+        "workspace"
+      ],
+      "temperature": "cool",
+      "review_state": "confirmed",
+      "current_recall_status": "preferred",
+      "authority_kind": "human_reviewed",
+      "source_kind": "reviewed_corpus",
+      "primary_recall_modes": [
+        "semantic",
+        "source_route",
+        "lineage"
+      ],
+      "source_path": "memo/objects/decisions/2026/abyss-stack-os-access-plane-mcp-services/object.json",
+      "inspect_key": "memo.decision.2026-05-26.abyss-stack-os-access-plane-mcp-services",
+      "expand_key": "memo.decision.2026-05-26.abyss-stack-os-access-plane-mcp-services",
+      "scope": [
+        "repo:abyss-stack",
+        "repo:aoa-evals",
+        "repo:abyss-machine",
+        "repo:aoa-memo",
+        "workspace:OS-Abyss"
+      ],
+      "provenance_thread_id": "prov.abyss-stack.abyss-stack-os-access-plane-mcp-services.2026-05-26",
+      "related_object_ids": [],
+      "strongest_next_sources": [
+        "memo/intake/reviewed/abyss-stack.20260526T003500Z.os-access-plane-mcp-services.reviewed-intake.json",
+        "repo:abyss-stack/memo/candidates/20260526T003500Z.os-access-plane-mcp-services-owner-split.candidate.json",
+        "repo:abyss-stack/memo/receipts/20260526T003500Z.os-access-plane-mcp-services.forwarding-receipt.json"
+      ]
+    },
+    {
       "id": "memo.decision.2026-05-22.corpus-backed-mcp-search",
       "kind": "decision",
       "title": "aoa_memo search starts from reviewed corpus read models",
