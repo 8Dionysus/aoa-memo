@@ -11,7 +11,7 @@
   "owner_refs": [
     "repo:aoa-memo"
   ],
-  "payload_ref": "docs/decisions/0063-reviewed-memory-corpus-district.md",
+  "payload_ref": "docs/decisions/AOA-MEM-D-0063-reviewed-memory-corpus-district.md",
   "tags": [
     "memory-corpus",
     "topology",
@@ -31,7 +31,7 @@
       "docs/memory/MEMORY_MODEL.md",
       "docs/memory/LIVING_MEMORY_TOPOLOGY.md",
       "docs/memory/LOCAL_MEMO_PORT_STANDARD.md",
-      "docs/decisions/0063-reviewed-memory-corpus-district.md"
+      "docs/decisions/AOA-MEM-D-0063-reviewed-memory-corpus-district.md"
     ],
     "episode_refs": [],
     "provenance_thread_id": "prov.aoa-memo.reviewed-corpus.2026-05-21"

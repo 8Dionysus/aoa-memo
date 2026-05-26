@@ -7,11 +7,11 @@
 Accepted.
 
 Superseded in part on 2026-05-26 by
-[AOA-MEM-D-0072 Numbered Decision Paths](0072-numbered-decision-paths.md):
+[AOA-MEM-D-0072 Numbered Decision Paths](AOA-MEM-D-0072-numbered-decision-paths.md):
 active decision source files now use numbered paths.
 
 Superseded in part again on 2026-05-26 by
-[AOA-MEM-D-0073 Numbered Decision Route Completion](0073-numbered-decision-route-completion.md):
+[AOA-MEM-D-0073 Numbered Decision Route Completion](AOA-MEM-D-0073-numbered-decision-route-completion.md):
 the previous date-path compatibility metadata and generated read models are
 retired from the active repository surface.
 

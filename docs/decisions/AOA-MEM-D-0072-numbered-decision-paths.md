@@ -7,9 +7,14 @@
 Accepted on 2026-05-26.
 
 Superseded in part on 2026-05-26 by
-[AOA-MEM-D-0073 Numbered Decision Route Completion](0073-numbered-decision-route-completion.md):
+[AOA-MEM-D-0073 Numbered Decision Route Completion](AOA-MEM-D-0073-numbered-decision-route-completion.md):
 the transitional date-path compatibility metadata and generated read models are
 retired from the active repository surface.
+
+Superseded in path format on 2026-05-26 by
+[AOA-MEM-D-0074 Full Canonical ID Decision Filenames](AOA-MEM-D-0074-full-canonical-id-decision-filenames.md):
+source filenames now carry the complete `AOA-MEM-D-####` prefix, not only the
+numeric portion.
 
 ## Index Metadata
 
@@ -33,11 +38,9 @@ surface would still teach date paths as the active route.
 
 ## Decision
 
-Make numbered decision paths the active source format:
-
-- `docs/decisions/0001-*.md`
-- `docs/decisions/0002-*.md`
-- `docs/decisions/####-*.md`
+Make short numbered decision paths the active source format for this migration
+slice. A later decision replaces that transitional path format with full
+canonical-ID filenames.
 
 Each existing decision note now carries:
 
@@ -58,8 +61,8 @@ file.
 Agents should route by canonical decision ID or numbered path first. Old
 date-path references are historical references, not repository lookup routes.
 
-The builder now validates numbered filename prefixes against `Decision ID`
-numbers and can require numbered-only mode from the index contract.
+For this slice, the builder validated filename prefixes against `Decision ID`
+numbers and could require the then-current path mode from the index contract.
 
 ## Affected Surfaces
 

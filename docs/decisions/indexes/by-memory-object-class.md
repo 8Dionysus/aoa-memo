@@ -4,26 +4,27 @@
 
 ## decision
 
-- [AOA-MEM-D-0062 Decision: Corpus-Backed Memory Read Models](../0062-corpus-backed-memory-read-models.md) (`docs/decisions/0062-corpus-backed-memory-read-models.md`)
-- [AOA-MEM-D-0063 Decision: Reviewed Memory Corpus District](../0063-reviewed-memory-corpus-district.md) (`docs/decisions/0063-reviewed-memory-corpus-district.md`)
-- [AOA-MEM-D-0066 Decision: Memory-organ foundation lands in owner surfaces](../0066-distributed-memory-organ-foundation.md) (`docs/decisions/0066-distributed-memory-organ-foundation.md`)
-- [AOA-MEM-D-0067 Decision: KAG donor bridge uses reviewed corpus object](../0067-kag-donor-reviewed-corpus-bridge.md) (`docs/decisions/0067-kag-donor-reviewed-corpus-bridge.md`)
-- [AOA-MEM-D-0069 Decision: Memory operational readouts stay memo-owned and source-owner bounded](../0069-memory-operational-readouts.md) (`docs/decisions/0069-memory-operational-readouts.md`)
-- [AOA-MEM-D-0071 Canonical Decision IDs and Generated Indexes](../0071-canonical-decision-ids-and-indexes.md) (`docs/decisions/0071-canonical-decision-ids-and-indexes.md`)
-- [AOA-MEM-D-0072 Numbered Decision Paths](../0072-numbered-decision-paths.md) (`docs/decisions/0072-numbered-decision-paths.md`)
-- [AOA-MEM-D-0073 Numbered Decision Route Completion](../0073-numbered-decision-route-completion.md) (`docs/decisions/0073-numbered-decision-route-completion.md`)
+- [AOA-MEM-D-0062 Decision: Corpus-Backed Memory Read Models](../AOA-MEM-D-0062-corpus-backed-memory-read-models.md) (`docs/decisions/AOA-MEM-D-0062-corpus-backed-memory-read-models.md`)
+- [AOA-MEM-D-0063 Decision: Reviewed Memory Corpus District](../AOA-MEM-D-0063-reviewed-memory-corpus-district.md) (`docs/decisions/AOA-MEM-D-0063-reviewed-memory-corpus-district.md`)
+- [AOA-MEM-D-0066 Decision: Memory-organ foundation lands in owner surfaces](../AOA-MEM-D-0066-distributed-memory-organ-foundation.md) (`docs/decisions/AOA-MEM-D-0066-distributed-memory-organ-foundation.md`)
+- [AOA-MEM-D-0067 Decision: KAG donor bridge uses reviewed corpus object](../AOA-MEM-D-0067-kag-donor-reviewed-corpus-bridge.md) (`docs/decisions/AOA-MEM-D-0067-kag-donor-reviewed-corpus-bridge.md`)
+- [AOA-MEM-D-0069 Decision: Memory operational readouts stay memo-owned and source-owner bounded](../AOA-MEM-D-0069-memory-operational-readouts.md) (`docs/decisions/AOA-MEM-D-0069-memory-operational-readouts.md`)
+- [AOA-MEM-D-0071 Canonical Decision IDs and Generated Indexes](../AOA-MEM-D-0071-canonical-decision-ids-and-indexes.md) (`docs/decisions/AOA-MEM-D-0071-canonical-decision-ids-and-indexes.md`)
+- [AOA-MEM-D-0072 Numbered Decision Paths](../AOA-MEM-D-0072-numbered-decision-paths.md) (`docs/decisions/AOA-MEM-D-0072-numbered-decision-paths.md`)
+- [AOA-MEM-D-0073 Numbered Decision Route Completion](../AOA-MEM-D-0073-numbered-decision-route-completion.md) (`docs/decisions/AOA-MEM-D-0073-numbered-decision-route-completion.md`)
+- [AOA-MEM-D-0074 Full Canonical ID Decision Filenames](../AOA-MEM-D-0074-full-canonical-id-decision-filenames.md) (`docs/decisions/AOA-MEM-D-0074-full-canonical-id-decision-filenames.md`)
 
 ## audit_event
 
-- [AOA-MEM-D-0044 AGENTS Authority Boundary Audit](../0044-agents-authority-boundary-audit.md) (`docs/decisions/0044-agents-authority-boundary-audit.md`)
+- [AOA-MEM-D-0044 AGENTS Authority Boundary Audit](../AOA-MEM-D-0044-agents-authority-boundary-audit.md) (`docs/decisions/AOA-MEM-D-0044-agents-authority-boundary-audit.md`)
 
 ## reviewed_intake
 
-- [AOA-MEM-D-0064 Decision: Reviewed Intake Landing](../0064-reviewed-intake-landing.md) (`docs/decisions/0064-reviewed-intake-landing.md`)
+- [AOA-MEM-D-0064 Decision: Reviewed Intake Landing](../AOA-MEM-D-0064-reviewed-intake-landing.md) (`docs/decisions/AOA-MEM-D-0064-reviewed-intake-landing.md`)
 
 ## local_candidate
 
-- [AOA-MEM-D-0001 Adoption, Writeback, and Retention Move to Memo Mechanics](../0001-adoption-writeback-retention-mechanics.md) (`docs/decisions/0001-adoption-writeback-retention-mechanics.md`)
-- [AOA-MEM-D-0041 Writeback Curated Object Examples](../0041-writeback-curated-object-examples.md) (`docs/decisions/0041-writeback-curated-object-examples.md`)
-- [AOA-MEM-D-0061 Writeback Part-Local Artifacts](../0061-writeback-part-local-artifacts.md) (`docs/decisions/0061-writeback-part-local-artifacts.md`)
-- [AOA-MEM-D-0070 Decision: Writeback debt catchup lands reviewed objects](../0070-writeback-debt-catchup-reviewed-objects.md) (`docs/decisions/0070-writeback-debt-catchup-reviewed-objects.md`)
+- [AOA-MEM-D-0001 Adoption, Writeback, and Retention Move to Memo Mechanics](../AOA-MEM-D-0001-adoption-writeback-retention-mechanics.md) (`docs/decisions/AOA-MEM-D-0001-adoption-writeback-retention-mechanics.md`)
+- [AOA-MEM-D-0041 Writeback Curated Object Examples](../AOA-MEM-D-0041-writeback-curated-object-examples.md) (`docs/decisions/AOA-MEM-D-0041-writeback-curated-object-examples.md`)
+- [AOA-MEM-D-0061 Writeback Part-Local Artifacts](../AOA-MEM-D-0061-writeback-part-local-artifacts.md) (`docs/decisions/AOA-MEM-D-0061-writeback-part-local-artifacts.md`)
+- [AOA-MEM-D-0070 Decision: Writeback debt catchup lands reviewed objects](../AOA-MEM-D-0070-writeback-debt-catchup-reviewed-objects.md) (`docs/decisions/AOA-MEM-D-0070-writeback-debt-catchup-reviewed-objects.md`)

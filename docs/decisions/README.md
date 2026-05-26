@@ -69,18 +69,19 @@ python scripts/root-topology/build_decision_indexes.py
 
 ## Addressing
 
-Numbered decision paths are the active source files:
+Full canonical-ID decision paths are the active source files:
 
-- `docs/decisions/0001-*.md`
-- `docs/decisions/0002-*.md`
-- `docs/decisions/####-*.md`
+- `docs/decisions/AOA-MEM-D-0001-*.md`
+- `docs/decisions/AOA-MEM-D-0002-*.md`
+- `docs/decisions/AOA-MEM-D-####-*.md`
 
 Canonical IDs remain the stable handles. Previous date-prefixed paths are not
-live files and are not preserved as a repository lookup layer.
+live files. Short numbered paths are also retired. Neither is preserved as a
+repository lookup layer.
 
-Do not recreate date-named decision files or generated compatibility maps for
-them. Use git history, PRs, or release notes when old path archaeology is
-actually needed.
+Do not recreate date-named files, short numbered files, or generated
+compatibility maps for them. Use git history, PRs, or release notes when old
+path archaeology is actually needed.
 
 ## Review Rule
 

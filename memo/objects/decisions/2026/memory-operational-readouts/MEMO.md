@@ -12,7 +12,7 @@ do not move workspace topology ownership out of `8Dionysus`.
 
 ## Source Route
 
-- `docs/decisions/0069-memory-operational-readouts.md`
+- `docs/decisions/AOA-MEM-D-0069-memory-operational-readouts.md`
 - `generated/memory/access_plane_currentness.min.json`
 - `generated/memory/source_intake_wave.min.json`
 - `generated/memory/workspace_memo_port_status.min.json`

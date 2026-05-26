@@ -4,77 +4,77 @@
 
 ## adoption
 
-- [AOA-MEM-D-0001 Adoption, Writeback, and Retention Move to Memo Mechanics](../0001-adoption-writeback-retention-mechanics.md) (`docs/decisions/0001-adoption-writeback-retention-mechanics.md`)
-- [AOA-MEM-D-0043 Adoption And Retention Part-Local Artifacts](../0043-adoption-retention-part-local-artifacts.md) (`docs/decisions/0043-adoption-retention-part-local-artifacts.md`)
+- [AOA-MEM-D-0001 Adoption, Writeback, and Retention Move to Memo Mechanics](../AOA-MEM-D-0001-adoption-writeback-retention-mechanics.md) (`docs/decisions/AOA-MEM-D-0001-adoption-writeback-retention-mechanics.md`)
+- [AOA-MEM-D-0043 Adoption And Retention Part-Local Artifacts](../AOA-MEM-D-0043-adoption-retention-part-local-artifacts.md) (`docs/decisions/AOA-MEM-D-0043-adoption-retention-part-local-artifacts.md`)
 
 ## agon
 
-- [AOA-MEM-D-0003 Move Agon Memo Docs Into `docs/agon/`](../0003-agon-docs-district.md) (`docs/decisions/0003-agon-docs-district.md`)
-- [AOA-MEM-D-0004 2026-05-18: Land Agon and Titan as Memo Mechanics](../0004-agon-titan-memo-mechanics.md) (`docs/decisions/0004-agon-titan-memo-mechanics.md`)
-- [AOA-MEM-D-0045 Agon Part-Local Artifacts](../0045-agon-part-local-artifacts.md) (`docs/decisions/0045-agon-part-local-artifacts.md`)
+- [AOA-MEM-D-0003 Move Agon Memo Docs Into `docs/agon/`](../AOA-MEM-D-0003-agon-docs-district.md) (`docs/decisions/AOA-MEM-D-0003-agon-docs-district.md`)
+- [AOA-MEM-D-0004 2026-05-18: Land Agon and Titan as Memo Mechanics](../AOA-MEM-D-0004-agon-titan-memo-mechanics.md) (`docs/decisions/AOA-MEM-D-0004-agon-titan-memo-mechanics.md`)
+- [AOA-MEM-D-0045 Agon Part-Local Artifacts](../AOA-MEM-D-0045-agon-part-local-artifacts.md) (`docs/decisions/AOA-MEM-D-0045-agon-part-local-artifacts.md`)
 
 ## antifragility
 
-- [AOA-MEM-D-0005 2026-05-18: Land Antifragility as a Memo Mechanic](../0005-antifragility-memo-mechanic.md) (`docs/decisions/0005-antifragility-memo-mechanic.md`)
-- [AOA-MEM-D-0046 Antifragility Part-Local Artifacts](../0046-antifragility-part-local-artifacts.md) (`docs/decisions/0046-antifragility-part-local-artifacts.md`)
+- [AOA-MEM-D-0005 2026-05-18: Land Antifragility as a Memo Mechanic](../AOA-MEM-D-0005-antifragility-memo-mechanic.md) (`docs/decisions/AOA-MEM-D-0005-antifragility-memo-mechanic.md`)
+- [AOA-MEM-D-0046 Antifragility Part-Local Artifacts](../AOA-MEM-D-0046-antifragility-part-local-artifacts.md) (`docs/decisions/AOA-MEM-D-0046-antifragility-part-local-artifacts.md`)
 
 ## checkpoint
 
-- [AOA-MEM-D-0006 2026-05-18 Checkpoint Memo Mechanic](../0006-checkpoint-memo-mechanic.md) (`docs/decisions/0006-checkpoint-memo-mechanic.md`)
-- [AOA-MEM-D-0047 Checkpoint Part-Local Artifacts](../0047-checkpoint-part-local-artifacts.md) (`docs/decisions/0047-checkpoint-part-local-artifacts.md`)
+- [AOA-MEM-D-0006 2026-05-18 Checkpoint Memo Mechanic](../AOA-MEM-D-0006-checkpoint-memo-mechanic.md) (`docs/decisions/AOA-MEM-D-0006-checkpoint-memo-mechanic.md`)
+- [AOA-MEM-D-0047 Checkpoint Part-Local Artifacts](../AOA-MEM-D-0047-checkpoint-part-local-artifacts.md) (`docs/decisions/AOA-MEM-D-0047-checkpoint-part-local-artifacts.md`)
 
 ## consumer-handoff
 
-- [AOA-MEM-D-0007 2026-05-18: Add Consumer Handoff as an Operation-First Memo Mechanic](../0007-consumer-handoff-memo-mechanic.md) (`docs/decisions/0007-consumer-handoff-memo-mechanic.md`)
-- [AOA-MEM-D-0048 Consumer Handoff Part-Local Artifacts](../0048-consumer-handoff-part-local-artifacts.md) (`docs/decisions/0048-consumer-handoff-part-local-artifacts.md`)
-- [AOA-MEM-D-0065 Reviewed Memory Consumer Handoff Spine](../0065-reviewed-memory-consumer-handoff-spine.md) (`docs/decisions/0065-reviewed-memory-consumer-handoff-spine.md`)
+- [AOA-MEM-D-0007 2026-05-18: Add Consumer Handoff as an Operation-First Memo Mechanic](../AOA-MEM-D-0007-consumer-handoff-memo-mechanic.md) (`docs/decisions/AOA-MEM-D-0007-consumer-handoff-memo-mechanic.md`)
+- [AOA-MEM-D-0048 Consumer Handoff Part-Local Artifacts](../AOA-MEM-D-0048-consumer-handoff-part-local-artifacts.md) (`docs/decisions/AOA-MEM-D-0048-consumer-handoff-part-local-artifacts.md`)
+- [AOA-MEM-D-0065 Reviewed Memory Consumer Handoff Spine](../AOA-MEM-D-0065-reviewed-memory-consumer-handoff-spine.md) (`docs/decisions/AOA-MEM-D-0065-reviewed-memory-consumer-handoff-spine.md`)
 
 ## governance
 
-- [AOA-MEM-D-0009 2026-05-18: Land Governance as a Memo Mechanic](../0009-governance-memo-mechanic.md) (`docs/decisions/0009-governance-memo-mechanic.md`)
-- [AOA-MEM-D-0051 Governance Part-Local Artifacts](../0051-governance-part-local-artifacts.md) (`docs/decisions/0051-governance-part-local-artifacts.md`)
+- [AOA-MEM-D-0009 2026-05-18: Land Governance as a Memo Mechanic](../AOA-MEM-D-0009-governance-memo-mechanic.md) (`docs/decisions/AOA-MEM-D-0009-governance-memo-mechanic.md`)
+- [AOA-MEM-D-0051 Governance Part-Local Artifacts](../AOA-MEM-D-0051-governance-part-local-artifacts.md) (`docs/decisions/AOA-MEM-D-0051-governance-part-local-artifacts.md`)
 
 ## lineage-harvest
 
-- [AOA-MEM-D-0010 Lineage Harvest Memo Mechanic](../0010-lineage-harvest-memo-mechanic.md) (`docs/decisions/0010-lineage-harvest-memo-mechanic.md`)
+- [AOA-MEM-D-0010 Lineage Harvest Memo Mechanic](../AOA-MEM-D-0010-lineage-harvest-memo-mechanic.md) (`docs/decisions/AOA-MEM-D-0010-lineage-harvest-memo-mechanic.md`)
 
 ## operational-gate
 
-- [AOA-MEM-D-0024 2026-05-18: Add Operational Gate as an Operation-First Memo Mechanic](../0024-operational-gate-memo-mechanic.md) (`docs/decisions/0024-operational-gate-memo-mechanic.md`)
-- [AOA-MEM-D-0054 Operational Gate Part-Local Artifacts](../0054-operational-gate-part-local-artifacts.md) (`docs/decisions/0054-operational-gate-part-local-artifacts.md`)
+- [AOA-MEM-D-0024 2026-05-18: Add Operational Gate as an Operation-First Memo Mechanic](../AOA-MEM-D-0024-operational-gate-memo-mechanic.md) (`docs/decisions/AOA-MEM-D-0024-operational-gate-memo-mechanic.md`)
+- [AOA-MEM-D-0054 Operational Gate Part-Local Artifacts](../AOA-MEM-D-0054-operational-gate-part-local-artifacts.md) (`docs/decisions/AOA-MEM-D-0054-operational-gate-part-local-artifacts.md`)
 
 ## questbook
 
-- [AOA-MEM-D-0026 Decision: Questbook Uses A Lane-First Root Store](../0026-questbook-lane-first-store.md) (`docs/decisions/0026-questbook-lane-first-store.md`)
-- [AOA-MEM-D-0027 Questbook Read-Model Projections Part](../0027-questbook-quest-read-model-projections-part.md) (`docs/decisions/0027-questbook-quest-read-model-projections-part.md`)
+- [AOA-MEM-D-0026 Decision: Questbook Uses A Lane-First Root Store](../AOA-MEM-D-0026-questbook-lane-first-store.md) (`docs/decisions/AOA-MEM-D-0026-questbook-lane-first-store.md`)
+- [AOA-MEM-D-0027 Questbook Read-Model Projections Part](../AOA-MEM-D-0027-questbook-quest-read-model-projections-part.md) (`docs/decisions/AOA-MEM-D-0027-questbook-quest-read-model-projections-part.md`)
 
 ## readiness-boundary
 
-- [AOA-MEM-D-0028 2026-05-18 Readiness Boundary Memo Mechanic](../0028-readiness-boundary-memo-mechanic.md) (`docs/decisions/0028-readiness-boundary-memo-mechanic.md`)
+- [AOA-MEM-D-0028 2026-05-18 Readiness Boundary Memo Mechanic](../AOA-MEM-D-0028-readiness-boundary-memo-mechanic.md) (`docs/decisions/AOA-MEM-D-0028-readiness-boundary-memo-mechanic.md`)
 
 ## recurrence-support
 
-- [AOA-MEM-D-0029 Recurrence Support Memo Mechanic](../0029-recurrence-support-memo-mechanic.md) (`docs/decisions/0029-recurrence-support-memo-mechanic.md`)
+- [AOA-MEM-D-0029 Recurrence Support Memo Mechanic](../AOA-MEM-D-0029-recurrence-support-memo-mechanic.md) (`docs/decisions/AOA-MEM-D-0029-recurrence-support-memo-mechanic.md`)
 
 ## retention
 
-- [AOA-MEM-D-0001 Adoption, Writeback, and Retention Move to Memo Mechanics](../0001-adoption-writeback-retention-mechanics.md) (`docs/decisions/0001-adoption-writeback-retention-mechanics.md`)
-- [AOA-MEM-D-0030 Retention Local Regression Boundary](../0030-retention-local-regression-boundary.md) (`docs/decisions/0030-retention-local-regression-boundary.md`)
-- [AOA-MEM-D-0043 Adoption And Retention Part-Local Artifacts](../0043-adoption-retention-part-local-artifacts.md) (`docs/decisions/0043-adoption-retention-part-local-artifacts.md`)
+- [AOA-MEM-D-0001 Adoption, Writeback, and Retention Move to Memo Mechanics](../AOA-MEM-D-0001-adoption-writeback-retention-mechanics.md) (`docs/decisions/AOA-MEM-D-0001-adoption-writeback-retention-mechanics.md`)
+- [AOA-MEM-D-0030 Retention Local Regression Boundary](../AOA-MEM-D-0030-retention-local-regression-boundary.md) (`docs/decisions/AOA-MEM-D-0030-retention-local-regression-boundary.md`)
+- [AOA-MEM-D-0043 Adoption And Retention Part-Local Artifacts](../AOA-MEM-D-0043-adoption-retention-part-local-artifacts.md) (`docs/decisions/AOA-MEM-D-0043-adoption-retention-part-local-artifacts.md`)
 
 ## shape-guard
 
-- [AOA-MEM-D-0038 2026-05-18: Add Shape Guard as an Operation-First Memo Mechanic](../0038-shape-guard-memo-mechanic.md) (`docs/decisions/0038-shape-guard-memo-mechanic.md`)
+- [AOA-MEM-D-0038 2026-05-18: Add Shape Guard as an Operation-First Memo Mechanic](../AOA-MEM-D-0038-shape-guard-memo-mechanic.md) (`docs/decisions/AOA-MEM-D-0038-shape-guard-memo-mechanic.md`)
 
 ## titan
 
-- [AOA-MEM-D-0004 2026-05-18: Land Agon and Titan as Memo Mechanics](../0004-agon-titan-memo-mechanics.md) (`docs/decisions/0004-agon-titan-memo-mechanics.md`)
-- [AOA-MEM-D-0040 Move Titan Memo Docs Into `docs/titan/`](../0040-titan-docs-district.md) (`docs/decisions/0040-titan-docs-district.md`)
-- [AOA-MEM-D-0060 Titan Part-Local Artifacts](../0060-titan-part-local-artifacts.md) (`docs/decisions/0060-titan-part-local-artifacts.md`)
+- [AOA-MEM-D-0004 2026-05-18: Land Agon and Titan as Memo Mechanics](../AOA-MEM-D-0004-agon-titan-memo-mechanics.md) (`docs/decisions/AOA-MEM-D-0004-agon-titan-memo-mechanics.md`)
+- [AOA-MEM-D-0040 Move Titan Memo Docs Into `docs/titan/`](../AOA-MEM-D-0040-titan-docs-district.md) (`docs/decisions/AOA-MEM-D-0040-titan-docs-district.md`)
+- [AOA-MEM-D-0060 Titan Part-Local Artifacts](../AOA-MEM-D-0060-titan-part-local-artifacts.md) (`docs/decisions/AOA-MEM-D-0060-titan-part-local-artifacts.md`)
 
 ## writeback
 
-- [AOA-MEM-D-0001 Adoption, Writeback, and Retention Move to Memo Mechanics](../0001-adoption-writeback-retention-mechanics.md) (`docs/decisions/0001-adoption-writeback-retention-mechanics.md`)
-- [AOA-MEM-D-0041 Writeback Curated Object Examples](../0041-writeback-curated-object-examples.md) (`docs/decisions/0041-writeback-curated-object-examples.md`)
-- [AOA-MEM-D-0061 Writeback Part-Local Artifacts](../0061-writeback-part-local-artifacts.md) (`docs/decisions/0061-writeback-part-local-artifacts.md`)
-- [AOA-MEM-D-0070 Decision: Writeback debt catchup lands reviewed objects](../0070-writeback-debt-catchup-reviewed-objects.md) (`docs/decisions/0070-writeback-debt-catchup-reviewed-objects.md`)
+- [AOA-MEM-D-0001 Adoption, Writeback, and Retention Move to Memo Mechanics](../AOA-MEM-D-0001-adoption-writeback-retention-mechanics.md) (`docs/decisions/AOA-MEM-D-0001-adoption-writeback-retention-mechanics.md`)
+- [AOA-MEM-D-0041 Writeback Curated Object Examples](../AOA-MEM-D-0041-writeback-curated-object-examples.md) (`docs/decisions/AOA-MEM-D-0041-writeback-curated-object-examples.md`)
+- [AOA-MEM-D-0061 Writeback Part-Local Artifacts](../AOA-MEM-D-0061-writeback-part-local-artifacts.md) (`docs/decisions/AOA-MEM-D-0061-writeback-part-local-artifacts.md`)
+- [AOA-MEM-D-0070 Decision: Writeback debt catchup lands reviewed objects](../AOA-MEM-D-0070-writeback-debt-catchup-reviewed-objects.md) (`docs/decisions/AOA-MEM-D-0070-writeback-debt-catchup-reviewed-objects.md`)

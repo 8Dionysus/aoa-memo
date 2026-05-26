@@ -14,7 +14,7 @@ INDEXES_DIR = DECISIONS_DIR / "indexes"
 INDEX_CONTRACT_PATH = INDEXES_DIR / "index_contract.yaml"
 DECISION_ID_RE = re.compile(r"^- Decision ID: (AOA-MEM-D-(\d{4}))$", re.MULTILINE)
 DATE_VALUE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
-NUMBERED_RE = re.compile(r"^(\d{4})-.+\.md$")
+FULL_ID_FILENAME_RE = re.compile(r"^(AOA-MEM-D-(\d{4}))-.+\.md$")
 
 SURFACE_CLASS_ORDER = (
     "root/topology",
@@ -226,19 +226,19 @@ def collect_decision_records(repo_root: Path) -> tuple[list[DecisionRecord], lis
         except ValueError as exc:
             issues.append((path.relative_to(repo_root).as_posix(), str(exc)))
             continue
-        numbered_match = NUMBERED_RE.match(record.path.name)
-        if not numbered_match:
+        filename_match = FULL_ID_FILENAME_RE.match(record.path.name)
+        if not filename_match:
             issues.append(
                 (
                     record.repo_path,
-                    "decision path must use the numbered canonical filename format",
+                    "decision path must use the full canonical ID filename format",
                 )
             )
-        elif int(numbered_match.group(1)) != record.number:
+        elif filename_match.group(1) != record.decision_id:
             issues.append(
                 (
                     record.repo_path,
-                    "numbered decision path prefix must match the Decision ID number",
+                    "decision path prefix must match the full Decision ID",
                 )
             )
         issues.extend(
@@ -438,13 +438,17 @@ def validate_decision_index_surfaces(repo_root: Path) -> list[tuple[str, str]]:
         if not isinstance(fields, dict) or "decision_id" not in fields:
             issues.append((INDEX_CONTRACT_PATH.as_posix(), "fields must name decision_id"))
         path_policy = contract.get("path_policy")
-        if isinstance(path_policy, dict) and path_policy.get("path_mode") == "numbered_only":
+        if (
+            isinstance(path_policy, dict)
+            and path_policy.get("path_mode") == "full_canonical_id_filename"
+        ):
             for record in records:
-                if not NUMBERED_RE.match(record.path.name):
+                filename_match = FULL_ID_FILENAME_RE.match(record.path.name)
+                if not filename_match or filename_match.group(1) != record.decision_id:
                     issues.append(
                         (
                             record.repo_path,
-                            "decision path must use the numbered canonical filename format",
+                            "decision path must use the full canonical ID filename format",
                         )
                     )
     if issues:

@@ -45,10 +45,11 @@ Generated lookup indexes under `docs/decisions/indexes/` are read models from
 that metadata. They make lookup cheaper for agents; they do not replace the
 decision note or the stronger source surfaces the decision describes.
 
-Use numbered decision paths as the active source files. Use the canonical
-decision ID as the stable handle. Do not recreate date-named decision files or
-generated compatibility maps for them. Previous date-path names belong to git
-and PR history, not to the active decision lookup surface.
+Use full canonical-ID decision paths as the active source files:
+`AOA-MEM-D-####-*.md`. Use the canonical decision ID as the stable handle.
+Do not recreate date-named files, short numbered files, or generated
+compatibility maps for them. Previous path names belong to git and PR history,
+not to the active decision lookup surface.
 
 Keep the record public-safe. Do not include private traces, secrets, local-only
 host details, or unreduced personal data.

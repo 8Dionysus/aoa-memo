@@ -23,7 +23,7 @@
   "review_route": {
     "owner_repo": "aoa-memo",
     "reviewer_ref": "mechanics/retention/docs/CONSOLIDATION_FORGETTING_OPERATION.md",
-    "decision_ref": "docs/decisions/0053-memory-operations-calibration.md",
+    "decision_ref": "docs/decisions/AOA-MEM-D-0053-memory-operations-calibration.md",
     "decision_state": "approved"
   },
   "output_refs": [

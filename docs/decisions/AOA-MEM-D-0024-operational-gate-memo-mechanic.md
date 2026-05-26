@@ -46,7 +46,7 @@ record, and `mechanics/operational-gate/legacy/INDEX.md` as provenance.
 
 The related schemas, examples, and tests were later moved into part-local
 artifact lanes by
-[2026-05-19-operational-gate-part-local-artifacts](0054-operational-gate-part-local-artifacts.md).
+[2026-05-19-operational-gate-part-local-artifacts](AOA-MEM-D-0054-operational-gate-part-local-artifacts.md).
 
 ## Alternatives
 

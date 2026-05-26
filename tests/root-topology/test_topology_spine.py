@@ -71,13 +71,13 @@ class TopologySpineTestCase(unittest.TestCase):
                 "Addressing",
                 "Review Rule",
             ),
-            "docs/decisions/0023-memory-topology-spine.md": (
+            "docs/decisions/AOA-MEM-D-0023-memory-topology-spine.md": (
                 "Add Memory Topology Spine Before Moving Flat Docs",
                 "Do not move flat docs in this change",
                 "Do not move root `Spark/` as part of this topology-spine decision",
                 "Memory remains weaker than proof",
             ),
-            "docs/decisions/0039-spark-agent-lane-home.md": (
+            "docs/decisions/AOA-MEM-D-0039-spark-agent-lane-home.md": (
                 "Move Spark Agent Lane Under `.agents`",
                 "Move root `Spark/` to `.agents/spark/`",
                 "This change does not move flat `docs/` surfaces",
@@ -152,10 +152,14 @@ class TopologySpineTestCase(unittest.TestCase):
         self.assertIn("AOA-MEM-D-0071", by_number)
         self.assertIn("AOA-MEM-D-0072", by_number)
         self.assertIn("AOA-MEM-D-0073", by_number)
+        self.assertIn("AOA-MEM-D-0074", by_number)
         self.assertIn("Canonical path", by_number)
+        self.assertIn("docs/decisions/AOA-MEM-D-0001-adoption-writeback-retention-mechanics.md", by_number)
         retired_header = "Legacy" + " path"
         retired_index_name = "alias" + "-map"
+        short_path = "docs/decisions/" + "0001-adoption-writeback-retention-mechanics.md"
         self.assertNotIn(retired_header, by_number)
+        self.assertNotIn(short_path, by_number)
         self.assertFalse(
             (REPO_ROOT / "docs" / "decisions" / "indexes" / f"{retired_index_name}.md").exists()
         )

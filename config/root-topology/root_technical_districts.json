@@ -264,7 +264,7 @@
         "docs/memory/LIVING_MEMORY_TOPOLOGY.md",
         "generated/memory-objects/memory_object_catalog.min.json",
         "generated/quests/quest_catalog.min.json",
-        "docs/decisions/0069-memory-operational-readouts.md"
+        "docs/decisions/AOA-MEM-D-0069-memory-operational-readouts.md"
       ],
       "outputs": [
         "generated/memory/access_plane_currentness.min.json",

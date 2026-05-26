@@ -13,7 +13,7 @@ district. The district is the repo's own memory body: object bundles live under
 - Memory model: `docs/memory/MEMORY_MODEL.md`
 - Living topology: `docs/memory/LIVING_MEMORY_TOPOLOGY.md`
 - Local port contrast: `docs/memory/LOCAL_MEMO_PORT_STANDARD.md`
-- Decision rationale: `docs/decisions/0063-reviewed-memory-corpus-district.md`
+- Decision rationale: `docs/decisions/AOA-MEM-D-0063-reviewed-memory-corpus-district.md`
 
 ## Review Posture
 
