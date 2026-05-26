@@ -41,8 +41,9 @@ make lookup cheaper for agents, not to carry decision rationale.
 Each decision owns:
 
 - a canonical `Decision ID: AOA-MEM-D-####`;
-- an `## Index Metadata` block naming surface classes, mechanic parents, guard
-  families, memory object classes, and posture.
+- an `## Index Metadata` block naming original date, legacy path if one exists,
+  surface classes, mechanic parents, guard families, memory object classes, and
+  posture.
 
 The lookup indexes under [indexes](indexes/README.md) are generated from that
 metadata:
@@ -68,15 +69,20 @@ Regenerate the read models after decision metadata changes:
 python scripts/root-topology/build_decision_indexes.py
 ```
 
-## Dual Addressing
+## Addressing
 
-Current date-named decision paths remain live.
+Numbered decision paths are the active source files:
 
-Canonical IDs are the stable handles. The alias map bridges old/current paths
-to canonical IDs and reserves planned numbered paths for a later migration.
+- `docs/decisions/0001-*.md`
+- `docs/decisions/0002-*.md`
+- `docs/decisions/####-*.md`
 
-Do not rename decision files until a dedicated rename slice verifies the alias
-and generated index layer protects all refs.
+Canonical IDs remain the stable handles. Legacy date-named paths are not live
+files; they are preserved in each decision note's `Legacy path` metadata and in
+the generated alias map so old refs can route to the current numbered file.
+
+Do not recreate date-named decision files. If a future decision never had a
+date-named path, use `Legacy path: none`.
 
 ## Review Rule
 

@@ -70,16 +70,16 @@ class TopologySpineTestCase(unittest.TestCase):
             "docs/decisions/README.md": (
                 "Decision Records Index",
                 "indexes/by-number.md",
-                "Dual Addressing",
+                "Addressing",
                 "Review Rule",
             ),
-            "docs/decisions/2026-05-18-memory-topology-spine.md": (
+            "docs/decisions/0023-memory-topology-spine.md": (
                 "Add Memory Topology Spine Before Moving Flat Docs",
                 "Do not move flat docs in this change",
                 "Do not move root `Spark/` as part of this topology-spine decision",
                 "Memory remains weaker than proof",
             ),
-            "docs/decisions/2026-05-18-spark-agent-lane-home.md": (
+            "docs/decisions/0039-spark-agent-lane-home.md": (
                 "Move Spark Agent Lane Under `.agents`",
                 "Move root `Spark/` to `.agents/spark/`",
                 "This change does not move flat `docs/` surfaces",
@@ -152,13 +152,22 @@ class TopologySpineTestCase(unittest.TestCase):
 
         self.assertIn("AOA-MEM-D-0001", by_number)
         self.assertIn("AOA-MEM-D-0071", by_number)
-        self.assertIn("Planned numbered path", by_number)
-        self.assertEqual(alias_map["schema_version"], "aoa_memo_decision_alias_map_v1")
-        self.assertEqual(len(alias_map["entries"]), 71)
+        self.assertIn("AOA-MEM-D-0072", by_number)
+        self.assertIn("Numbered path", by_number)
+        self.assertEqual(alias_map["schema_version"], "aoa_memo_decision_alias_map_v2")
+        self.assertEqual(len(alias_map["entries"]), 72)
         self.assertEqual(alias_map["entries"][0]["decision_id"], "AOA-MEM-D-0001")
         self.assertEqual(
+            alias_map["entries"][0]["legacy_path"],
+            "docs/decisions/2026-05-18-adoption-writeback-retention-mechanics.md",
+        )
+        self.assertEqual(
+            alias_map["entries"][0]["current_path"],
+            "docs/decisions/0001-adoption-writeback-retention-mechanics.md",
+        )
+        self.assertEqual(
             alias_map["entries"][0]["canonical_path_status"],
-            "dual_addressing_not_renamed",
+            "canonical_numbered_path_active",
         )
 
 

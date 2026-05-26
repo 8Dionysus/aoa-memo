@@ -1505,7 +1505,7 @@
       "provenance_thread_id": "prov.aoa-memo.reviewed-intake-evidence-guard.2026-05-22",
       "related_object_ids": [],
       "strongest_next_sources": [
-        "docs/decisions/2026-05-22-reviewed-intake-landing.md",
+        "docs/decisions/0064-reviewed-intake-landing.md",
         "scripts/memory/land_reviewed_memo_intake.py",
         "tests/memory/test_reviewed_intake_landing.py"
       ]
@@ -1720,7 +1720,7 @@
       "provenance_thread_id": "prov.aoa-memo.distributed-memory-organ-foundation.2026-05-25",
       "related_object_ids": [],
       "strongest_next_sources": [
-        "docs/decisions/2026-05-24-distributed-memory-organ-foundation.md",
+        "docs/decisions/0066-distributed-memory-organ-foundation.md",
         "docs/memory/MEMORY_OPERATION_CYCLE.md",
         "docs/memory/LIVING_MEMORY_TOPOLOGY.md"
       ]
@@ -1756,7 +1756,7 @@
       "provenance_thread_id": "prov.aoa-memo.memory-operational-readouts.2026-05-25",
       "related_object_ids": [],
       "strongest_next_sources": [
-        "docs/decisions/2026-05-25-memory-operational-readouts.md",
+        "docs/decisions/0069-memory-operational-readouts.md",
         "generated/memory/access_plane_currentness.min.json",
         "generated/memory/source_intake_wave.min.json"
       ]

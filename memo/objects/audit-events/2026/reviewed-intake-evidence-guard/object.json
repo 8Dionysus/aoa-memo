@@ -10,7 +10,7 @@
   "owner_refs": [
     "repo:aoa-memo"
   ],
-  "payload_ref": "docs/decisions/2026-05-22-reviewed-intake-landing.md",
+  "payload_ref": "docs/decisions/0064-reviewed-intake-landing.md",
   "tags": [
     "reviewed-intake",
     "write-path-guardrail",
@@ -26,7 +26,7 @@
   },
   "provenance": {
     "source_refs": [
-      "docs/decisions/2026-05-22-reviewed-intake-landing.md",
+      "docs/decisions/0064-reviewed-intake-landing.md",
       "scripts/memory/land_reviewed_memo_intake.py",
       "tests/memory/test_reviewed_intake_landing.py",
       "commit:aoa-memo:4844182a46f37aeccb752d10cdf61b5322439792"
@@ -76,6 +76,6 @@
       "mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md"
     ],
     "kag_lift_status": "blocked",
-    "route_capsule_ref": "docs/decisions/2026-05-22-reviewed-intake-landing.md"
+    "route_capsule_ref": "docs/decisions/0064-reviewed-intake-landing.md"
   }
 }

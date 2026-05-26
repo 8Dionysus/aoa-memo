@@ -149,7 +149,7 @@ def build_source_intake_wave() -> dict[str, Any]:
         },
         "source_refs": [
             "docs/memory/LIVING_MEMORY_TOPOLOGY.md#source-intake-matrix",
-            "docs/decisions/2026-05-24-distributed-memory-organ-foundation.md",
+            "docs/decisions/0066-distributed-memory-organ-foundation.md",
             "generated/memory-objects/memory_object_catalog.min.json",
             "memo/intake/reviewed/abyss-stack.20260522T021004Z.aoa-memo-mcp-access-plane.reviewed-intake.json",
         ],
@@ -466,7 +466,7 @@ def build_access_plane_currentness(*, live: bool) -> dict[str, Any]:
         },
         "source_refs": [
             "docs/memory/MEMORY_OPERATION_CYCLE.md#mcp-access-plane",
-            "docs/decisions/2026-05-22-reviewed-memory-consumer-handoff-spine.md",
+            "docs/decisions/0065-reviewed-memory-consumer-handoff-spine.md",
             "generated/memory-objects/memory_object_catalog.min.json",
             "generated/memory-objects/memory_object_capsules.json",
             "generated/quests/quest_catalog.min.json",

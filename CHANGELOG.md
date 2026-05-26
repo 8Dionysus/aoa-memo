@@ -32,6 +32,9 @@ Tracking starts with the community-docs baseline for this repository.
   decision lookup indexes, and a dual-addressing alias map so agents can find
   decision rationale without reading a hand-maintained omnibus index or
   renaming date-path files prematurely.
+- Promote decision notes to active numbered paths with metadata-backed legacy
+  date-path aliases so agents can route by canonical ID without losing old ref
+  recoverability.
 
 ## [0.4.0] - 2026-05-24
 

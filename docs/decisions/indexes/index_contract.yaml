@@ -16,6 +16,12 @@ fields:
   decision_id:
     required: true
     pattern: AOA-MEM-D-####
+  original_date:
+    required: true
+    pattern: YYYY-MM-DD
+  legacy_path:
+    required: true
+    pattern: none or docs/decisions/YYYY-MM-DD-*.md
   surface_classes:
     required: true
   mechanic_parents:
@@ -27,6 +33,8 @@ fields:
   posture:
     required: true
 dual_addressing:
-  current_path_authority: date-named decision files remain active
+  path_mode: numbered_canonical
+  current_path_authority: numbered decision files are active source files
   canonical_handle: Decision ID
-  rename_policy: future numbered-path rename only after alias/read-model protection
+  legacy_path_policy: date-named paths are generated aliases, not live files
+  rename_policy: complete; preserve old refs through metadata-backed alias/read-model rows

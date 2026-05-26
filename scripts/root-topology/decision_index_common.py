@@ -15,6 +15,9 @@ INDEXES_DIR = DECISIONS_DIR / "indexes"
 INDEX_CONTRACT_PATH = INDEXES_DIR / "index_contract.yaml"
 DECISION_ID_RE = re.compile(r"^- Decision ID: (AOA-MEM-D-(\d{4}))$", re.MULTILINE)
 DATE_RE = re.compile(r"^(\d{4}-\d{2}-\d{2})-")
+DATE_VALUE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+NUMBERED_RE = re.compile(r"^(\d{4})-.+\.md$")
+LEGACY_DECISION_PATH_RE = re.compile(r"^docs/decisions/\d{4}-\d{2}-\d{2}-.+\.md$")
 
 SURFACE_CLASS_ORDER = (
     "root/topology",
@@ -101,6 +104,7 @@ class DecisionRecord:
     title: str
     path: Path
     date: str
+    legacy_path: str | None
     surface_classes: tuple[str, ...]
     mechanic_parents: tuple[str, ...]
     guard_families: tuple[str, ...]
@@ -118,9 +122,17 @@ class DecisionRecord:
     @property
     def planned_numbered_path(self) -> str:
         name = self.path.name
+        if NUMBERED_RE.match(name):
+            return self.repo_path
         date_match = DATE_RE.match(name)
         slug = name[11:] if date_match else name
         return f"{DECISIONS_DIR.as_posix()}/{self.number:04d}-{slug}"
+
+    @property
+    def canonical_path_status(self) -> str:
+        if self.repo_path == self.planned_numbered_path and NUMBERED_RE.match(self.path.name):
+            return "canonical_numbered_path_active"
+        return "dual_addressing_not_renamed"
 
 
 def split_metadata_value(value: str) -> tuple[str, ...]:
@@ -144,9 +156,22 @@ def parse_decision_id(text: str, *, path: Path) -> tuple[str, int]:
     return match.group(1), int(match.group(2))
 
 
-def parse_date(path: Path) -> str:
-    match = DATE_RE.match(path.name)
-    return match.group(1) if match else "undated"
+def parse_original_date(metadata: dict[str, str], *, path: Path) -> str:
+    value = metadata["original date"].strip()
+    if not DATE_VALUE_RE.match(value):
+        raise ValueError(f"{path.as_posix()} original date must use YYYY-MM-DD")
+    return value
+
+
+def parse_legacy_path(metadata: dict[str, str], *, path: Path) -> str | None:
+    value = metadata["legacy path"].strip()
+    if not value or value == "none":
+        return None
+    if not LEGACY_DECISION_PATH_RE.match(value):
+        raise ValueError(
+            f"{path.as_posix()} legacy path must be none or docs/decisions/YYYY-MM-DD-*.md"
+        )
+    return value
 
 
 def parse_index_metadata(text: str, *, path: Path) -> dict[str, str]:
@@ -165,6 +190,8 @@ def parse_index_metadata(text: str, *, path: Path) -> dict[str, str]:
         key, value = line[2:].split(":", 1)
         metadata[key.strip().lower()] = value.strip()
     required = {
+        "original date",
+        "legacy path",
         "surface classes",
         "mechanic parents",
         "guard families",
@@ -200,12 +227,14 @@ def load_decision_record(path: Path, *, repo_root: Path) -> DecisionRecord:
     decision_id, number = parse_decision_id(text, path=relative_path)
     title = parse_title(text, path=relative_path)
     metadata = parse_index_metadata(text, path=relative_path)
+    date = parse_original_date(metadata, path=relative_path)
     return DecisionRecord(
         decision_id=decision_id,
         number=number,
         title=title,
         path=relative_path,
-        date=parse_date(relative_path),
+        date=date,
+        legacy_path=parse_legacy_path(metadata, path=relative_path),
         surface_classes=split_metadata_value(metadata["surface classes"]),
         mechanic_parents=split_metadata_value(metadata["mechanic parents"]),
         guard_families=split_metadata_value(metadata["guard families"]),
@@ -231,6 +260,14 @@ def collect_decision_records(repo_root: Path) -> tuple[list[DecisionRecord], lis
         except ValueError as exc:
             issues.append((path.relative_to(repo_root).as_posix(), str(exc)))
             continue
+        numbered_match = NUMBERED_RE.match(record.path.name)
+        if numbered_match and int(numbered_match.group(1)) != record.number:
+            issues.append(
+                (
+                    record.repo_path,
+                    "numbered decision path prefix must match the Decision ID number",
+                )
+            )
         issues.extend(
             validate_values(
                 record.surface_classes,
@@ -329,18 +366,19 @@ def render_by_number(records: Sequence[DecisionRecord]) -> str:
         "",
         render_generated_notice().rstrip(),
         "",
-        "| ID | Date | Decision | Current path | Planned numbered path | Surface classes | Mechanic parents | Guard families | Memory object classes | Posture |",
-        "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
+        "| ID | Date | Decision | Current path | Numbered path | Legacy path | Surface classes | Mechanic parents | Guard families | Memory object classes | Posture |",
+        "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
     ]
     for record in records:
         lines.append(
-            "| {id} | {date} | [{title}]({link}) | `{path}` | `{planned}` | {surfaces} | {parents} | {guards} | {classes} | {posture} |".format(
+            "| {id} | {date} | [{title}]({link}) | `{path}` | `{numbered}` | {legacy} | {surfaces} | {parents} | {guards} | {classes} | {posture} |".format(
                 id=record.decision_id,
                 date=record.date,
                 title=display_title(record),
                 link=record.index_link,
                 path=record.repo_path,
-                planned=record.planned_numbered_path,
+                numbered=record.planned_numbered_path,
+                legacy=f"`{record.legacy_path}`" if record.legacy_path else "none",
                 surfaces=", ".join(record.surface_classes) or "none",
                 parents=", ".join(record.mechanic_parents) or "none",
                 guards=", ".join(record.guard_families) or "none",
@@ -387,10 +425,12 @@ def alias_entries(records: Sequence[DecisionRecord]) -> list[dict[str, object]]:
         {
             "decision_id": record.decision_id,
             "date": record.date,
-            "old_path": record.repo_path,
+            "old_path": record.legacy_path,
+            "legacy_path": record.legacy_path,
             "current_path": record.repo_path,
+            "numbered_path": record.planned_numbered_path,
             "planned_numbered_path": record.planned_numbered_path,
-            "canonical_path_status": "dual_addressing_not_renamed",
+            "canonical_path_status": record.canonical_path_status,
         }
         for record in records
     ]
@@ -402,15 +442,19 @@ def render_alias_map(records: Sequence[DecisionRecord]) -> str:
         "",
         render_generated_notice().rstrip(),
         "",
-        "The current date-named paths remain live during dual-addressing. The planned numbered paths are reserved handles for a later rename slice, not active files yet.",
+        "Numbered decision paths are the active source files. Legacy date-named paths are preserved here as aliases to canonical IDs and current files.",
         "",
-        "| Decision ID | Old/current path | Planned numbered path | Status |",
-        "| --- | --- | --- | --- |",
+        "| Decision ID | Legacy path | Current path | Numbered path | Status |",
+        "| --- | --- | --- | --- | --- |",
     ]
     for entry in alias_entries(records):
         lines.append(
-            "| {decision_id} | `{current_path}` | `{planned_numbered_path}` | `{canonical_path_status}` |".format(
-                **entry
+            "| {decision_id} | {legacy_path} | `{current_path}` | `{numbered_path}` | {canonical_path_status} |".format(
+                decision_id=entry["decision_id"],
+                legacy_path=f"`{entry['legacy_path']}`" if entry["legacy_path"] else "none",
+                current_path=entry["current_path"],
+                numbered_path=entry["numbered_path"],
+                canonical_path_status=entry["canonical_path_status"],
             )
         )
     return "\n".join(lines) + "\n"
@@ -418,9 +462,9 @@ def render_alias_map(records: Sequence[DecisionRecord]) -> str:
 
 def render_alias_json(records: Sequence[DecisionRecord]) -> str:
     payload = {
-        "schema_version": "aoa_memo_decision_alias_map_v1",
+        "schema_version": "aoa_memo_decision_alias_map_v2",
         "generated_by": "scripts/root-topology/build_decision_indexes.py",
-        "authority": "decision notes own rationale; this alias map only bridges old date paths to canonical IDs",
+        "authority": "decision notes own rationale; this alias map only bridges legacy date paths to canonical IDs and current numbered files",
         "entries": alias_entries(records),
     }
     return json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n"
@@ -476,6 +520,18 @@ def validate_decision_index_surfaces(repo_root: Path) -> list[tuple[str, str]]:
         fields = contract.get("fields")
         if not isinstance(fields, dict) or "decision_id" not in fields:
             issues.append((INDEX_CONTRACT_PATH.as_posix(), "fields must name decision_id"))
+        dual_addressing = contract.get("dual_addressing")
+        if isinstance(dual_addressing, dict):
+            path_mode = dual_addressing.get("path_mode")
+            if path_mode == "numbered_canonical":
+                for record in records:
+                    if record.canonical_path_status != "canonical_numbered_path_active":
+                        issues.append(
+                            (
+                                record.repo_path,
+                                "decision path must be an active numbered canonical path",
+                            )
+                        )
     if issues:
         return issues
 
