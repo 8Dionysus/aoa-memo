@@ -1668,6 +1668,43 @@
       ]
     },
     {
+      "id": "memo.decision.2026-05-26.abyss-stack-os-access-plane-mcp-services",
+      "kind": "decision",
+      "title": "abyss-stack OS access-plane MCP services",
+      "source_kind": "reviewed_corpus",
+      "source_path": "memo/objects/decisions/2026/abyss-stack-os-access-plane-mcp-services/object.json",
+      "sections": [
+        {
+          "section_id": "memo.decision.2026-05-26.abyss-stack-os-access-plane-mcp-services#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the decision surface, its active recall modes, and its preferred current-recall posture.",
+          "body": "abyss-stack OS access-plane MCP services. abyss-stack extended MCP access-plane services for memory, eval, and machine context while preserving sibling owner authority. Scope: repo:abyss-stack, repo:aoa-evals, repo:abyss-machine, repo:aoa-memo, workspace:OS-Abyss. Scope classes: repo, workspace. Primary recall modes: semantic, source_route, lineage. Current recall status: preferred because Landed through reviewed intake; use as reviewed recall, not proof or stronger owner truth. Payload ref: memo/intake/reviewed/abyss-stack.20260526T003500Z.os-access-plane-mcp-services.reviewed-intake.json."
+        },
+        {
+          "section_id": "memo.decision.2026-05-26.abyss-stack-os-access-plane-mcp-services#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.abyss-stack.abyss-stack-os-access-plane-mcp-services.2026-05-26. Source refs: memo/intake/reviewed/abyss-stack.20260526T003500Z.os-access-plane-mcp-services.reviewed-intake.json, repo:abyss-stack/memo/candidates/20260526T003500Z.os-access-plane-mcp-services-owner-split.candidate.json, repo:abyss-stack/memo/receipts/20260526T003500Z.os-access-plane-mcp-services.forwarding-receipt.json, repo:abyss-stack/memo/receipts/20260526T003646Z.export-abyss-stack-20260526t003500z-os-access-pl.forwarding-receipt.json, repo:abyss-stack/mcp/AGENTS.md, repo:abyss-stack/mcp/services/AGENTS.md, repo:abyss-stack/docs/decisions/2026-05-25-aoa-evals-mcp-access-plane.md, repo:abyss-stack/docs/decisions/2026-05-25-abyss-machine-mcp-access-plane.md, repo:abyss-stack/mcp/services/aoa-evals-mcp/AGENTS.md, repo:abyss-stack/mcp/services/abyss-machine-mcp/AGENTS.md, repo:abyss-stack/memo/receipts/20260522T021004Z.aoa-memo-mcp-access-plane.forwarding-receipt.json, repo:abyss-stack/docs/decisions/2026-05-22-aoa-memo-mcp-landing-plan-boundary.md, repo:abyss-stack/mcp/services/aoa-evals-mcp/README.md, repo:abyss-stack/mcp/services/abyss-machine-mcp/README.md, repo:abyss-stack/mcp/services/aoa-evals-mcp/src/aoa_evals_mcp/core.py, repo:abyss-stack/mcp/services/aoa-evals-mcp/tests/test_evals_mcp.py, repo:abyss-stack/commit/44026d5-add-os-access-plane-mcp-services, repo:abyss-stack/commit/3cd7b47-fix-aoa-evals-mcp-runtime-export-routing. Episode refs: none. Related curated object ids: none. Strongest next sources: memo/intake/reviewed/abyss-stack.20260526T003500Z.os-access-plane-mcp-services.reviewed-intake.json, repo:abyss-stack/memo/candidates/20260526T003500Z.os-access-plane-mcp-services-owner-split.candidate.json, repo:abyss-stack/memo/receipts/20260526T003500Z.os-access-plane-mcp-services.forwarding-receipt.json."
+        },
+        {
+          "section_id": "memo.decision.2026-05-26.abyss-stack-os-access-plane-mcp-services#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: human_reviewed (reviewed intake landing from abyss-stack). Temperature: cool; confidence 0.89; freshness 1.00; salience 0.80. Review state: confirmed. Retention class: reviewed-intake. Promotion state: promoted. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.decision.2026-05-26.abyss-stack-os-access-plane-mcp-services#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Scope classes: repo, workspace. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: memo/intake/reviewed/abyss-stack.20260526T003500Z.os-access-plane-mcp-services.reviewed-intake.json. ToS refs: none. Skill refs: none. Eval refs: repo:aoa-evals. KAG lift status: candidate."
+        }
+      ]
+    },
+    {
       "id": "memo.decision.2026-05-22.corpus-backed-mcp-search",
       "kind": "decision",
       "title": "aoa_memo search starts from reviewed corpus read models",

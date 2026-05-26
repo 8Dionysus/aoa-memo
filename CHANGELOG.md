@@ -22,6 +22,9 @@ Tracking starts with the community-docs baseline for this repository.
   operational readout slices, with an explicit writeback debt catchup marker so
   these landed changes become recallable corpus memory rather than only PR or
   decision-doc history.
+- Land the `abyss-stack` OS access-plane MCP services reviewed-intake packet as
+  a reviewed decision object so the memory corpus records the memory/eval/host
+  MCP owner split without moving runtime, proof, or host authority into memo.
 
 ## [0.4.0] - 2026-05-24
 
