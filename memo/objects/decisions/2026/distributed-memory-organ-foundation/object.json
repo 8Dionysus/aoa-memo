@@ -14,7 +14,7 @@
     "repo:aoa-evals",
     "repo:8Dionysus"
   ],
-  "payload_ref": "docs/decisions/0066-distributed-memory-organ-foundation.md",
+  "payload_ref": "docs/decisions/AOA-MEM-D-0066-distributed-memory-organ-foundation.md",
   "tags": [
     "memory-organ",
     "contract-hardening",
@@ -33,7 +33,7 @@
   },
   "provenance": {
     "source_refs": [
-      "docs/decisions/0066-distributed-memory-organ-foundation.md",
+      "docs/decisions/AOA-MEM-D-0066-distributed-memory-organ-foundation.md",
       "docs/memory/MEMORY_OPERATION_CYCLE.md",
       "docs/memory/LIVING_MEMORY_TOPOLOGY.md",
       "docs/memory/MEMORY_OBJECT_PROFILES.md",
@@ -93,6 +93,6 @@
       "repo:aoa-evals"
     ],
     "kag_lift_status": "candidate",
-    "route_capsule_ref": "docs/decisions/0066-distributed-memory-organ-foundation.md"
+    "route_capsule_ref": "docs/decisions/AOA-MEM-D-0066-distributed-memory-organ-foundation.md"
   }
 }

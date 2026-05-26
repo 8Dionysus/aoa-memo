@@ -42,7 +42,7 @@ class MemoCorpusTestCase(unittest.TestCase):
         self.assertEqual("decision", data["kind"])
         self.assertEqual("memo.decision.2026-05-21.reviewed-corpus-district", data["id"])
         self.assertEqual(
-            "docs/decisions/0063-reviewed-memory-corpus-district.md",
+            "docs/decisions/AOA-MEM-D-0063-reviewed-memory-corpus-district.md",
             data["payload_ref"],
         )
         self.assertIn("repo:aoa-memo", data["scope"])

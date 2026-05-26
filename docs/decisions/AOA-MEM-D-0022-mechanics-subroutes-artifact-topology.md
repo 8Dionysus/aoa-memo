@@ -7,7 +7,7 @@
 Accepted.
 
 Superseded in part by
-[2026-05-18-mechanic-artifact-lanes](0012-mechanic-artifact-lanes.md)
+[2026-05-18-mechanic-artifact-lanes](AOA-MEM-D-0012-mechanic-artifact-lanes.md)
 for active mechanic-owned schemas, examples, config, generated companions,
 scripts, tests, manifests, and hook bindings.
 

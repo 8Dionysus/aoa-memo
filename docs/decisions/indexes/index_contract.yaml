@@ -28,8 +28,8 @@ fields:
   posture:
     required: true
 path_policy:
-  path_mode: numbered_only
-  current_path_authority: numbered decision files are active source files
-  canonical_handle: Decision ID
+  path_mode: full_canonical_id_filename
+  current_path_authority: full canonical-ID decision files are active source files
+  canonical_handle: Decision ID and matching filename prefix
   historical_path_policy: previous date-path names live in git and PR history only
-  compatibility_policy: no repository lookup layer is generated for previous paths
+  compatibility_policy: no repository lookup layer is generated for previous paths or short numbered paths

@@ -40,7 +40,7 @@
       "repo:abyss-stack/memo/receipts/20260520T051034Z.aoa-memo-mcp.validation-receipt.json",
       "repo:abyss-stack/mcp/services/aoa-memo-mcp/README.md",
       "repo:abyss-stack/mcp/services/aoa-memo-mcp/docs/THREAT_MODEL.md",
-      "repo:aoa-memo/docs/decisions/0064-reviewed-intake-landing.md"
+      "repo:aoa-memo/docs/decisions/AOA-MEM-D-0064-reviewed-intake-landing.md"
     ],
     "episode_refs": [],
     "provenance_thread_id": "prov.abyss-stack.abyss-stack-aoa-memo-mcp-access-plane.2026-05-22"

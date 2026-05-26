@@ -86,10 +86,10 @@ maps future durable-consequence, delta, retention, and recall pressure back to
 existing memo objects without planting a future protocol, creating a live
 ledger, changing schemas, or moving proof, graph lift, navigation, role
 authority, or runtime retention into `aoa-memo`.
-The decision lane now uses canonical `AOA-MEM-D-####` handles, numbered source
-paths, source-owned `Index Metadata`, and generated lookup indexes so agents
-can inspect rationale by number, date, surface, mechanic, guard, or
-memory-object class without a second active path route.
+The decision lane now uses canonical `AOA-MEM-D-####` handles, full
+canonical-ID source filenames, source-owned `Index Metadata`, and generated
+lookup indexes so agents can inspect rationale by number, date, surface,
+mechanic, guard, or memory-object class without a second active path route.
 
 The current `v0.4.0` release line carries the earlier memory surface set plus
 the contract-hardening additions above:

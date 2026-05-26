@@ -4,7 +4,7 @@
 
 Correction: `VIA_NEGATIVA_CHECKLIST.md` was later moved to
 `mechanics/shape-guard/docs/` by
-[2026-05-18-shape-guard-memo-mechanic](0038-shape-guard-memo-mechanic.md).
+[2026-05-18-shape-guard-memo-mechanic](AOA-MEM-D-0038-shape-guard-memo-mechanic.md).
 Governance remains the active authority-boundary memory mechanic.
 
 ## Index Metadata

@@ -14,7 +14,7 @@
     "repo:abyss-stack",
     "repo:8Dionysus"
   ],
-  "payload_ref": "docs/decisions/0069-memory-operational-readouts.md",
+  "payload_ref": "docs/decisions/AOA-MEM-D-0069-memory-operational-readouts.md",
   "tags": [
     "operational-readout",
     "access-plane-currentness",
@@ -32,7 +32,7 @@
   },
   "provenance": {
     "source_refs": [
-      "docs/decisions/0069-memory-operational-readouts.md",
+      "docs/decisions/AOA-MEM-D-0069-memory-operational-readouts.md",
       "generated/memory/access_plane_currentness.min.json",
       "generated/memory/source_intake_wave.min.json",
       "generated/memory/workspace_memo_port_status.min.json",
@@ -87,6 +87,6 @@
       "repo:aoa-evals"
     ],
     "kag_lift_status": "candidate",
-    "route_capsule_ref": "docs/decisions/0069-memory-operational-readouts.md"
+    "route_capsule_ref": "docs/decisions/AOA-MEM-D-0069-memory-operational-readouts.md"
   }
 }

@@ -6,6 +6,10 @@
 
 Accepted on 2026-05-26.
 
+Superseded in path format on 2026-05-26 by
+[AOA-MEM-D-0074 Full Canonical ID Decision Filenames](AOA-MEM-D-0074-full-canonical-id-decision-filenames.md):
+the active source filename now carries the full canonical decision ID prefix.
+
 ## Index Metadata
 
 - Original date: 2026-05-26
@@ -24,15 +28,14 @@ scaffold into a second active route.
 
 For `aoa-memo` as a memory organ, that is the wrong signal. A distant agent
 should see one current decision route: canonical `AOA-MEM-D-####` handle plus
-the numbered source file. Historical path archaeology belongs to git history,
-PRs, and release notes rather than a live repository lookup surface.
+the source file. Historical path archaeology belongs to git history, PRs, and
+release notes rather than a live repository lookup surface.
 
 ## Decision
 
-Complete the decision-lane migration by keeping only the numbered canonical
-route:
+Complete the decision-lane migration by keeping only one canonical route:
 
-- source files are `docs/decisions/####-*.md`;
+- source files use the active canonical filename format;
 - `Decision ID: AOA-MEM-D-####` is the stable handle;
 - `Original date` stays as semantic metadata for `by-date` lookup;
 - generated indexes cover number, date, surface, mechanic, guard, and memory
@@ -46,14 +49,14 @@ Keeping the compatibility layer would make old references easier to follow, but
 it would also teach agents that the migration is still incomplete.
 
 Creating stub files for previous names would make duplicate edit targets and
-weaken the numbered source route.
+weaken the source route.
 
 Keeping a central historical path table would be cheaper than stubs, but it
 would still be a second lookup route for a lane that now has a canonical handle.
 
 ## Consequences
 
-Decision lookup is simpler: agents use `AOA-MEM-D-####`, numbered filenames,
+Decision lookup is simpler: agents use `AOA-MEM-D-####`, canonical filenames,
 and generated classification indexes.
 
 Old date-prefixed references are not active repository affordances. If they
@@ -61,7 +64,7 @@ need to be investigated, use git history, PRs, release notes, or the decision ID
 visible in surrounding text.
 
 The builder, index contract, lane route card, README, template, generated
-indexes, and topology tests now enforce the numbered-only route.
+indexes, and topology tests enforce one active source route.
 
 ## Affected Surfaces
 
