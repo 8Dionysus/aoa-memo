@@ -588,6 +588,19 @@
       "source_path": "memo/objects/decisions/2026/abyss-stack-aoa-memo-mcp-access-plane/object.json"
     },
     {
+      "id": "memo.decision.2026-05-26.abyss-stack-aoa-memo-mcp-workspace-port-discovery",
+      "kind": "decision",
+      "title": "aoa-memo-mcp workspace memo port discovery",
+      "summary": "aoa-memo-mcp now derives known local memo ports from the 8Dionysus workspace memory map so newly activated full-port repositories can validate candidates and participate in intake review without editing a hardcoded pilot-root list.",
+      "source_kind": "reviewed_corpus",
+      "recall_posture_short": "allowed current recall; confirmed review state; Landed through reviewed intake; use as reviewed recall, not proof or stronger owner truth",
+      "trust_posture_short": "cool temperature; human_reviewed authority; confidence 0.85; freshness 1.00",
+      "use_when_short": "Use when decision-level recall is needed and this object remains allowed for semantic, source_route, lineage.",
+      "do_not_use_short": "Do not treat this decision as proof or stronger than its cited sources.",
+      "strongest_next_source": "memo/intake/reviewed/abyss-stack.20260526T021621Z.aoa-memo-mcp-derives-known-local-memo-ports-from.aoa-memo-intake.json",
+      "source_path": "memo/objects/decisions/2026/abyss-stack-aoa-memo-mcp-workspace-port-discovery/object.json"
+    },
+    {
       "id": "memo.decision.2026-05-26.abyss-stack-os-access-plane-mcp-services",
       "kind": "decision",
       "title": "abyss-stack OS access-plane MCP services",

@@ -25,6 +25,9 @@ Tracking starts with the community-docs baseline for this repository.
 - Land the `abyss-stack` OS access-plane MCP services reviewed-intake packet as
   a reviewed decision object so the memory corpus records the memory/eval/host
   MCP owner split without moving runtime, proof, or host authority into memo.
+- Land the `abyss-stack` `aoa-memo-mcp` workspace-port-discovery intake packet
+  as a reviewed decision object so map-discovered full ports become recallable
+  corpus memory rather than only access-plane implementation detail.
 
 ## [0.4.0] - 2026-05-24
 
