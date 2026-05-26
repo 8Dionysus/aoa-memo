@@ -1583,6 +1583,41 @@
       ]
     },
     {
+      "id": "memo.decision.2026-05-26.abyss-stack-aoa-memo-mcp-workspace-port-discovery",
+      "kind": "decision",
+      "title": "aoa-memo-mcp workspace memo port discovery",
+      "summary": "aoa-memo-mcp now derives known local memo ports from the 8Dionysus workspace memory map so newly activated full-port repositories can validate candidates and participate in intake review without editing a hardcoded pilot-root list.",
+      "scope_classes": [
+        "repo",
+        "workspace"
+      ],
+      "temperature": "cool",
+      "review_state": "confirmed",
+      "current_recall_status": "allowed",
+      "authority_kind": "human_reviewed",
+      "source_kind": "reviewed_corpus",
+      "primary_recall_modes": [
+        "semantic",
+        "source_route",
+        "lineage"
+      ],
+      "source_path": "memo/objects/decisions/2026/abyss-stack-aoa-memo-mcp-workspace-port-discovery/object.json",
+      "inspect_key": "memo.decision.2026-05-26.abyss-stack-aoa-memo-mcp-workspace-port-discovery",
+      "expand_key": "memo.decision.2026-05-26.abyss-stack-aoa-memo-mcp-workspace-port-discovery",
+      "scope": [
+        "repo:abyss-stack",
+        "repo:aoa-memo",
+        "workspace:OS-Abyss"
+      ],
+      "provenance_thread_id": "prov.abyss-stack.abyss-stack-aoa-memo-mcp-workspace-port-discovery.2026-05-26",
+      "related_object_ids": [],
+      "strongest_next_sources": [
+        "memo/intake/reviewed/abyss-stack.20260526T021621Z.aoa-memo-mcp-derives-known-local-memo-ports-from.aoa-memo-intake.json",
+        "repo:abyss-stack/memo/candidates/20260526T021616Z.b4df4c0f.aoa-memo-mcp-derives-known-local-memo-ports-from.candidate.json",
+        "repo:abyss-stack/memo/receipts/20260526T021627Z.export-abyss-stack-20260526t021621z-aoa-memo-mcp.forwarding-receipt.json"
+      ]
+    },
+    {
       "id": "memo.decision.2026-05-26.abyss-stack-os-access-plane-mcp-services",
       "kind": "decision",
       "title": "abyss-stack OS access-plane MCP services",

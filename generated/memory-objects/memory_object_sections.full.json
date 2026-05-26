@@ -1668,6 +1668,43 @@
       ]
     },
     {
+      "id": "memo.decision.2026-05-26.abyss-stack-aoa-memo-mcp-workspace-port-discovery",
+      "kind": "decision",
+      "title": "aoa-memo-mcp workspace memo port discovery",
+      "source_kind": "reviewed_corpus",
+      "source_path": "memo/objects/decisions/2026/abyss-stack-aoa-memo-mcp-workspace-port-discovery/object.json",
+      "sections": [
+        {
+          "section_id": "memo.decision.2026-05-26.abyss-stack-aoa-memo-mcp-workspace-port-discovery#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the decision surface, its active recall modes, and its allowed current-recall posture.",
+          "body": "aoa-memo-mcp workspace memo port discovery. aoa-memo-mcp now derives known local memo ports from the 8Dionysus workspace memory map so newly activated full-port repositories can validate candidates and participate in intake review without editing a hardcoded pilot-root list. Scope: repo:abyss-stack, repo:aoa-memo, workspace:OS-Abyss. Scope classes: repo, workspace. Primary recall modes: semantic, source_route, lineage. Current recall status: allowed because Landed through reviewed intake; use as reviewed recall, not proof or stronger owner truth. Payload ref: memo/intake/reviewed/abyss-stack.20260526T021621Z.aoa-memo-mcp-derives-known-local-memo-ports-from.aoa-memo-intake.json."
+        },
+        {
+          "section_id": "memo.decision.2026-05-26.abyss-stack-aoa-memo-mcp-workspace-port-discovery#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.abyss-stack.abyss-stack-aoa-memo-mcp-workspace-port-discovery.2026-05-26. Source refs: memo/intake/reviewed/abyss-stack.20260526T021621Z.aoa-memo-mcp-derives-known-local-memo-ports-from.aoa-memo-intake.json, repo:abyss-stack/memo/candidates/20260526T021616Z.b4df4c0f.aoa-memo-mcp-derives-known-local-memo-ports-from.candidate.json, repo:abyss-stack/memo/receipts/20260526T021627Z.export-abyss-stack-20260526t021621z-aoa-memo-mcp.forwarding-receipt.json, repo:abyss-stack/mcp/services/aoa-memo-mcp/DESIGN.md, repo:abyss-stack/mcp/services/aoa-memo-mcp/docs/BOUNDARIES.md, repo:abyss-stack/mcp/services/aoa-memo-mcp/src/aoa_memo_mcp/core.py, repo:abyss-stack/mcp/services/aoa-memo-mcp/tests/test_memo_mcp.py. Episode refs: none. Related curated object ids: none. Strongest next sources: memo/intake/reviewed/abyss-stack.20260526T021621Z.aoa-memo-mcp-derives-known-local-memo-ports-from.aoa-memo-intake.json, repo:abyss-stack/memo/candidates/20260526T021616Z.b4df4c0f.aoa-memo-mcp-derives-known-local-memo-ports-from.candidate.json, repo:abyss-stack/memo/receipts/20260526T021627Z.export-abyss-stack-20260526t021621z-aoa-memo-mcp.forwarding-receipt.json."
+        },
+        {
+          "section_id": "memo.decision.2026-05-26.abyss-stack-aoa-memo-mcp-workspace-port-discovery#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: human_reviewed (reviewed intake landing from abyss-stack). Temperature: cool; confidence 0.85; freshness 1.00; salience 0.80. Review state: confirmed. Retention class: reviewed-intake. Promotion state: promoted. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.decision.2026-05-26.abyss-stack-aoa-memo-mcp-workspace-port-discovery#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Scope classes: repo, workspace. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: memo/intake/reviewed/abyss-stack.20260526T021621Z.aoa-memo-mcp-derives-known-local-memo-ports-from.aoa-memo-intake.json. ToS refs: none. Skill refs: none. Eval refs: none. KAG lift status: candidate."
+        }
+      ]
+    },
+    {
       "id": "memo.decision.2026-05-26.abyss-stack-os-access-plane-mcp-services",
       "kind": "decision",
       "title": "abyss-stack OS access-plane MCP services",

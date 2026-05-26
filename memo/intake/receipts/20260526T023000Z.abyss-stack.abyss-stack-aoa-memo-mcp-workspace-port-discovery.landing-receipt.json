@@ -1,0 +1,33 @@
+{
+  "schema": "aoa_memo_reviewed_intake_landing_receipt_v1",
+  "id": "landing-receipt:abyss-stack:20260526T023000Z:abyss-stack-abyss-stack-aoa-memo-mcp-workspace-port-discovery",
+  "repo": "abyss-stack",
+  "source_export_ref": "repo:abyss-stack/memo/exports/20260526T021621Z.aoa-memo-mcp-derives-known-local-memo-ports-from.aoa-memo-intake.json",
+  "copied_intake_ref": "memo/intake/reviewed/abyss-stack.20260526T021621Z.aoa-memo-mcp-derives-known-local-memo-ports-from.aoa-memo-intake.json",
+  "candidate_refs": [
+    "repo:abyss-stack/memo/candidates/20260526T021616Z.b4df4c0f.aoa-memo-mcp-derives-known-local-memo-ports-from.candidate.json"
+  ],
+  "receipt_refs": [
+    "repo:abyss-stack/memo/receipts/20260526T021627Z.export-abyss-stack-20260526t021621z-aoa-memo-mcp.forwarding-receipt.json"
+  ],
+  "object_ref": "memo.decision.2026-05-26.abyss-stack-aoa-memo-mcp-workspace-port-discovery",
+  "object_path": "memo/objects/decisions/2026/abyss-stack-aoa-memo-mcp-workspace-port-discovery/object.json",
+  "result": "landed",
+  "checks": [
+    "export_schema",
+    "export_source_refs",
+    "export_evidence_refs",
+    "allowed_result_reviewed_write",
+    "candidate_schema",
+    "candidate_source_refs",
+    "candidate_evidence_refs",
+    "candidate_guardrails",
+    "receipt_schema",
+    "receipt_candidate_ref",
+    "receipt_errors_empty",
+    "memory_object_schema"
+  ],
+  "errors": [],
+  "landed_at": "2026-05-26T02:30:00Z",
+  "landed_by": "aoa-memo:reviewed-intake-landing"
+}
