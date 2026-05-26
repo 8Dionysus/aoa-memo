@@ -18,6 +18,10 @@ Tracking starts with the community-docs baseline for this repository.
   wave coverage, and workspace memo-port status so distant agents can inspect
   the memo route while `abyss-stack` and `8Dionysus` keep their stronger owner
   boundaries.
+- Add reviewed decision objects for the distributed memory-organ foundation and
+  operational readout slices, with an explicit writeback debt catchup marker so
+  these landed changes become recallable corpus memory rather than only PR or
+  decision-doc history.
 
 ## [0.4.0] - 2026-05-24
 

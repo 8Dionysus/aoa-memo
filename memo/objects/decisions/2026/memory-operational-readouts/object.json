@@ -1,0 +1,92 @@
+{
+  "id": "memo.decision.2026-05-25.memory-operational-readouts",
+  "kind": "decision",
+  "title": "Memory operational readouts stay memo-owned and source-owner bounded",
+  "summary": "Records the decision to add generated memo-side readouts for access-plane currentness, source-intake wave coverage, and workspace memo-port status while preserving abyss-stack as MCP runtime owner and 8Dionysus as workspace memory map owner.",
+  "scope": [
+    "repo:aoa-memo",
+    "repo:abyss-stack",
+    "repo:8Dionysus",
+    "workspace:OS-Abyss"
+  ],
+  "owner_refs": [
+    "repo:aoa-memo",
+    "repo:abyss-stack",
+    "repo:8Dionysus"
+  ],
+  "payload_ref": "docs/decisions/2026-05-25-memory-operational-readouts.md",
+  "tags": [
+    "operational-readout",
+    "access-plane-currentness",
+    "workspace-memo-port-status",
+    "source-intake-wave",
+    "mcp-access-plane",
+    "owner-boundary",
+    "writeback"
+  ],
+  "time": {
+    "created_at": "2026-05-25T17:15:35Z",
+    "observed_at": "2026-05-25T17:15:35Z",
+    "valid_from": "2026-05-25T17:15:35Z",
+    "valid_to": null
+  },
+  "provenance": {
+    "source_refs": [
+      "docs/decisions/2026-05-25-memory-operational-readouts.md",
+      "generated/memory/access_plane_currentness.min.json",
+      "generated/memory/source_intake_wave.min.json",
+      "generated/memory/workspace_memo_port_status.min.json",
+      "scripts/memory/build_memory_operational_readouts.py",
+      "docs/memory/MEMORY_OPERATION_CYCLE.md",
+      "docs/memory/LIVING_MEMORY_TOPOLOGY.md",
+      "repo:abyss-stack/mcp/services/aoa-memo-mcp",
+      "repo:8Dionysus/generated/workspace_memory_map.min.json"
+    ],
+    "episode_refs": [],
+    "provenance_thread_id": "prov.aoa-memo.memory-operational-readouts.2026-05-25"
+  },
+  "trust": {
+    "temperature": "cool",
+    "confidence": 0.87,
+    "confidence_note": "Grounded in generated readouts, their builder, and the accepted operational-readout decision.",
+    "authority_kind": "repo_maintained",
+    "authority": "aoa-memo generated memory readouts and decision lane",
+    "freshness": 0.95,
+    "freshness_note": "Fresh at the operational-readout landing; live MCP currentness still requires the live check path.",
+    "salience": 0.9,
+    "salience_note": "High because distant agents need a compact way to inspect MCP compatibility, source intake wave coverage, and workspace memo-port status without confusing owner authority."
+  },
+  "lifecycle": {
+    "review_state": "confirmed",
+    "supersedes": [],
+    "superseded_by": null,
+    "retention_class": "operational-readout",
+    "promotion_state": "promoted",
+    "current_recall": {
+      "status": "preferred",
+      "status_reason": "Use this as the reviewed recall object for the memo-side operational readout family. It is a route and currentness surface, not MCP runtime authority or workspace topology authority."
+    }
+  },
+  "access": {
+    "access_class": "public",
+    "read_scopes": [
+      "public"
+    ],
+    "write_scopes": [
+      "maintainer"
+    ],
+    "promotion_scopes": [
+      "maintainer",
+      "human-review"
+    ]
+  },
+  "bridges": {
+    "tos_refs": [],
+    "skill_refs": [],
+    "eval_refs": [
+      "repo:aoa-evals"
+    ],
+    "kag_lift_status": "candidate",
+    "route_capsule_ref": "docs/decisions/2026-05-25-memory-operational-readouts.md"
+  }
+}

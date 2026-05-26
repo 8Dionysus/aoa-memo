@@ -601,6 +601,32 @@
       "source_path": "memo/objects/decisions/2026/corpus-backed-mcp-search/object.json"
     },
     {
+      "id": "memo.decision.2026-05-25.distributed-memory-organ-foundation",
+      "kind": "decision",
+      "title": "Memory-organ foundation lands across owner surfaces",
+      "summary": "Records the decision to harden aoa-memo as a working memory organ by distributing the foundation across existing operation, topology, object-profile, consumer-handoff, lifecycle, retention, quest, and generated surfaces instead of creating one central foundation document.",
+      "source_kind": "reviewed_corpus",
+      "recall_posture_short": "preferred current recall; confirmed review state; Use this as the reviewed recall object for why the foundation is distributed across existing owner surfaces. It is not proof that every operational loop is already closed",
+      "trust_posture_short": "cool temperature; repo_maintained authority; confidence 0.88; freshness 0.95",
+      "use_when_short": "Use as the current decision surface for semantic, source_route, lineage recall.",
+      "do_not_use_short": "Do not treat this decision as proof or stronger than its cited sources.",
+      "strongest_next_source": "docs/decisions/2026-05-24-distributed-memory-organ-foundation.md",
+      "source_path": "memo/objects/decisions/2026/distributed-memory-organ-foundation/object.json"
+    },
+    {
+      "id": "memo.decision.2026-05-25.memory-operational-readouts",
+      "kind": "decision",
+      "title": "Memory operational readouts stay memo-owned and source-owner bounded",
+      "summary": "Records the decision to add generated memo-side readouts for access-plane currentness, source-intake wave coverage, and workspace memo-port status while preserving abyss-stack as MCP runtime owner and 8Dionysus as workspace memory map owner.",
+      "source_kind": "reviewed_corpus",
+      "recall_posture_short": "preferred current recall; confirmed review state; Use this as the reviewed recall object for the memo-side operational readout family. It is a route and currentness surface, not MCP runtime authority or workspace topology authority",
+      "trust_posture_short": "cool temperature; repo_maintained authority; confidence 0.87; freshness 0.95",
+      "use_when_short": "Use as the current decision surface for semantic, source_route, lineage recall.",
+      "do_not_use_short": "Do not treat this decision as proof or stronger than its cited sources.",
+      "strongest_next_source": "docs/decisions/2026-05-25-memory-operational-readouts.md",
+      "source_path": "memo/objects/decisions/2026/memory-operational-readouts/object.json"
+    },
+    {
       "id": "memo.decision.2026-05-21.reviewed-corpus-district",
       "kind": "decision",
       "title": "aoa-memo keeps reviewed memory objects in a root memo corpus district",

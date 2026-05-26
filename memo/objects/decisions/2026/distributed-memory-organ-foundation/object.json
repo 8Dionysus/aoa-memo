@@ -1,0 +1,98 @@
+{
+  "id": "memo.decision.2026-05-25.distributed-memory-organ-foundation",
+  "kind": "decision",
+  "title": "Memory-organ foundation lands across owner surfaces",
+  "summary": "Records the decision to harden aoa-memo as a working memory organ by distributing the foundation across existing operation, topology, object-profile, consumer-handoff, lifecycle, retention, quest, and generated surfaces instead of creating one central foundation document.",
+  "scope": [
+    "repo:aoa-memo",
+    "repo:aoa-evals",
+    "repo:8Dionysus",
+    "workspace:OS-Abyss"
+  ],
+  "owner_refs": [
+    "repo:aoa-memo",
+    "repo:aoa-evals",
+    "repo:8Dionysus"
+  ],
+  "payload_ref": "docs/decisions/2026-05-24-distributed-memory-organ-foundation.md",
+  "tags": [
+    "memory-organ",
+    "contract-hardening",
+    "owner-boundary",
+    "consumer-handoff",
+    "lifecycle",
+    "quality-harness",
+    "questbook",
+    "writeback"
+  ],
+  "time": {
+    "created_at": "2026-05-25T05:38:27Z",
+    "observed_at": "2026-05-25T05:38:27Z",
+    "valid_from": "2026-05-25T05:38:27Z",
+    "valid_to": null
+  },
+  "provenance": {
+    "source_refs": [
+      "docs/decisions/2026-05-24-distributed-memory-organ-foundation.md",
+      "docs/memory/MEMORY_OPERATION_CYCLE.md",
+      "docs/memory/LIVING_MEMORY_TOPOLOGY.md",
+      "docs/memory/MEMORY_OBJECT_PROFILES.md",
+      "mechanics/consumer-handoff/docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md",
+      "mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md",
+      "docs/posture/LIFECYCLE.md",
+      "mechanics/retention/docs/CONSOLIDATION_FORGETTING_OPERATION.md",
+      "QUESTBOOK.md",
+      "generated/quests/quest_catalog.min.json",
+      "generated/quests/quest_dispatch.min.json"
+    ],
+    "episode_refs": [],
+    "provenance_thread_id": "prov.aoa-memo.distributed-memory-organ-foundation.2026-05-25"
+  },
+  "trust": {
+    "temperature": "cool",
+    "confidence": 0.88,
+    "confidence_note": "Grounded in a reviewed repository decision and source-owned surfaces touched by the foundation landing.",
+    "authority_kind": "repo_maintained",
+    "authority": "aoa-memo reviewed corpus and decision lane",
+    "freshness": 0.95,
+    "freshness_note": "Fresh at the memory-organ foundation landing; future activation still depends on follow-up writeback, lifecycle, and eval slices.",
+    "salience": 0.92,
+    "salience_note": "High because this decision defines where agents should inspect and update the memory organ without creating a competing central doctrine hub."
+  },
+  "lifecycle": {
+    "review_state": "confirmed",
+    "supersedes": [],
+    "superseded_by": null,
+    "retention_class": "memory-organ-foundation",
+    "promotion_state": "promoted",
+    "current_recall": {
+      "status": "preferred",
+      "status_reason": "Use this as the reviewed recall object for why the foundation is distributed across existing owner surfaces. It is not proof that every operational loop is already closed."
+    }
+  },
+  "access": {
+    "access_class": "public",
+    "read_scopes": [
+      "public"
+    ],
+    "write_scopes": [
+      "maintainer"
+    ],
+    "promotion_scopes": [
+      "maintainer",
+      "human-review"
+    ]
+  },
+  "bridges": {
+    "tos_refs": [],
+    "skill_refs": [
+      "repo:aoa-skills"
+    ],
+    "eval_refs": [
+      "mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md",
+      "repo:aoa-evals"
+    ],
+    "kag_lift_status": "candidate",
+    "route_capsule_ref": "docs/decisions/2026-05-24-distributed-memory-organ-foundation.md"
+  }
+}
