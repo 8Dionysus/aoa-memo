@@ -13,7 +13,7 @@ authority into `aoa-memo`.
 
 ## Source Route
 
-- `docs/decisions/2026-05-24-distributed-memory-organ-foundation.md`
+- `docs/decisions/0066-distributed-memory-organ-foundation.md`
 - `docs/memory/MEMORY_OPERATION_CYCLE.md`
 - `docs/memory/LIVING_MEMORY_TOPOLOGY.md`
 - `docs/memory/MEMORY_OBJECT_PROFILES.md`

@@ -89,4 +89,4 @@ The first object records this placement decision:
 `memo/objects/decisions/2026/reviewed-corpus-district/`
 
 Its decision rationale also lives in
-`docs/decisions/2026-05-21-reviewed-memory-corpus-district.md`.
+`docs/decisions/0063-reviewed-memory-corpus-district.md`.

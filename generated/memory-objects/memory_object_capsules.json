@@ -558,7 +558,7 @@
       "trust_posture_short": "cool temperature; repo_maintained authority; confidence 0.92; freshness 1.00",
       "use_when_short": "Use as the current audit_event surface for episodic, lineage, source_route recall.",
       "do_not_use_short": "Do not treat this audit_event as proof or stronger than its cited sources.",
-      "strongest_next_source": "docs/decisions/2026-05-22-reviewed-intake-landing.md",
+      "strongest_next_source": "docs/decisions/0064-reviewed-intake-landing.md",
       "source_path": "memo/objects/audit-events/2026/reviewed-intake-evidence-guard/object.json"
     },
     {
@@ -636,7 +636,7 @@
       "trust_posture_short": "cool temperature; repo_maintained authority; confidence 0.88; freshness 0.95",
       "use_when_short": "Use as the current decision surface for semantic, source_route, lineage recall.",
       "do_not_use_short": "Do not treat this decision as proof or stronger than its cited sources.",
-      "strongest_next_source": "docs/decisions/2026-05-24-distributed-memory-organ-foundation.md",
+      "strongest_next_source": "docs/decisions/0066-distributed-memory-organ-foundation.md",
       "source_path": "memo/objects/decisions/2026/distributed-memory-organ-foundation/object.json"
     },
     {
@@ -649,7 +649,7 @@
       "trust_posture_short": "cool temperature; repo_maintained authority; confidence 0.87; freshness 0.95",
       "use_when_short": "Use as the current decision surface for semantic, source_route, lineage recall.",
       "do_not_use_short": "Do not treat this decision as proof or stronger than its cited sources.",
-      "strongest_next_source": "docs/decisions/2026-05-25-memory-operational-readouts.md",
+      "strongest_next_source": "docs/decisions/0069-memory-operational-readouts.md",
       "source_path": "memo/objects/decisions/2026/memory-operational-readouts/object.json"
     },
     {

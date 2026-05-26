@@ -34,6 +34,8 @@ Decision records should name:
 
 Each decision record must carry an `## Index Metadata` block with:
 
+- original date
+- legacy path
 - surface classes
 - mechanic parents
 - guard families
@@ -44,9 +46,10 @@ Generated lookup indexes under `docs/decisions/indexes/` are read models from
 that metadata. They make lookup cheaper for agents; they do not replace the
 decision note or the stronger source surfaces the decision describes.
 
-Keep the current date-named decision paths live during dual-addressing. Use the
-canonical decision ID as the stable handle. A future numbered-path rename is a
-separate migration and must be protected by the alias/read-model layer first.
+Use numbered decision paths as the active source files. Use the canonical
+decision ID as the stable handle. Keep old date-named paths only as `Legacy
+path` metadata and generated alias-map rows; do not recreate date-named
+decision files.
 
 Keep the record public-safe. Do not include private traces, secrets, local-only
 host details, or unreduced personal data.

@@ -45,7 +45,7 @@ Local constraints:
 - `docs/memory/MEMORY_MODEL.md`
 - `docs/root/ROOT_SURFACE_LAW.md`
 - `mechanics/README.md`
-- `docs/decisions/2026-05-18-spark-agent-lane-home.md`
+- `docs/decisions/0039-spark-agent-lane-home.md`
 
 ## Pattern Preserved
 
