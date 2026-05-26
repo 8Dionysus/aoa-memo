@@ -1,8 +1,18 @@
 # Root Memory Index
 
+- Decision ID: AOA-MEM-D-0056
+
 ## Status
 
 Accepted.
+
+## Index Metadata
+
+- Surface classes: root/topology, memory doctrine, generated/readout
+- Mechanic parents: none
+- Guard families: docs route, generated/read-model, memory surface
+- Memory object classes: none
+- Posture: active rationale
 
 ## Context
 

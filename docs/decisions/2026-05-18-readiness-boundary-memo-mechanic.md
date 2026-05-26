@@ -1,8 +1,18 @@
 # 2026-05-18 Readiness Boundary Memo Mechanic
 
+- Decision ID: AOA-MEM-D-0028
+
 ## Status
 
 Accepted.
+
+## Index Metadata
+
+- Surface classes: mechanic package, validation guard, boundary/runtime/sibling
+- Mechanic parents: readiness-boundary
+- Guard families: mechanic topology, sibling and boundary
+- Memory object classes: none
+- Posture: active rationale
 
 ## Context
 

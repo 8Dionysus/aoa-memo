@@ -1,6 +1,16 @@
 # Move Titan Memo Docs Into `docs/titan/`
 
+- Decision ID: AOA-MEM-D-0040
+
 Date: 2026-05-18
+
+## Index Metadata
+
+- Surface classes: root/topology, mechanic package
+- Mechanic parents: titan
+- Guard families: docs route
+- Memory object classes: none
+- Posture: active rationale
 
 ## Context
 

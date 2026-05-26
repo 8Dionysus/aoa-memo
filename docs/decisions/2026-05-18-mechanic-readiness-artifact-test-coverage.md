@@ -1,5 +1,15 @@
 # Mechanic Readiness Artifact Test Coverage
 
+- Decision ID: AOA-MEM-D-0018
+
+## Index Metadata
+
+- Surface classes: mechanic package, validation guard
+- Mechanic parents: none
+- Guard families: mechanic topology
+- Memory object classes: none
+- Posture: active rationale
+
 ## Context
 
 Memo mechanics now own package-local schemas, examples, generated companions,

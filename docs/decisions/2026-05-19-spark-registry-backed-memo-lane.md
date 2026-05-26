@@ -1,10 +1,20 @@
 # Decision: Spark Registry-Backed Memo Lane
 
+- Decision ID: AOA-MEM-D-0059
+
 Date: 2026-05-19
 
 ## Status
 
 Accepted.
+
+## Index Metadata
+
+- Surface classes: generated/readout, agents/mesh
+- Mechanic parents: none
+- Guard families: AGENTS/mesh
+- Memory object classes: none
+- Posture: active rationale
 
 ## Context
 

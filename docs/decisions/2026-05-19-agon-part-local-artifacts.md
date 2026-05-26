@@ -1,8 +1,18 @@
 # Agon Part-Local Artifacts
 
+- Decision ID: AOA-MEM-D-0045
+
 ## Status
 
 Accepted.
+
+## Index Metadata
+
+- Surface classes: mechanic package, mechanic part
+- Mechanic parents: agon
+- Guard families: mechanic topology, part and payload
+- Memory object classes: none
+- Posture: active rationale
 
 ## Context
 

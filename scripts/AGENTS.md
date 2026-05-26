@@ -45,6 +45,9 @@ Keep the current split clear:
   `root-topology/validate_root_technical_districts_index.py` keep
   `generated/root-topology/root_technical_districts.min.json` aligned with the root
   technical district contract in `config/root-topology/root_technical_districts.json`
+- `root-topology/build_decision_indexes.py` keeps
+  `docs/decisions/indexes/` aligned with canonical decision IDs and decision
+  `Index Metadata`
 - quest projection building belongs to `mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py`
 - `memory/validate_nested_agents.py` checks that local guidance files stay present and explicit
 - `agents/validate_agents_mesh.py`, `agents/build_agents_mesh_index.py`, and `agents/validate_agents_mesh_index.py` keep the source-backed AGENTS mesh aligned with current route cards
@@ -108,6 +111,7 @@ python scripts/mechanics/build_mechanic_artifact_inventory.py --check
 python scripts/mechanics/validate_mechanic_artifact_inventory.py
 python scripts/root-topology/build_root_technical_districts_index.py --check
 python scripts/root-topology/validate_root_technical_districts_index.py
+python scripts/root-topology/build_decision_indexes.py --check
 python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py --check
 python scripts/agents/validate_agents_mesh.py
 python scripts/agents/build_agents_mesh_index.py --check

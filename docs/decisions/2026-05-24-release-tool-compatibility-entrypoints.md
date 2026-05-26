@@ -1,8 +1,18 @@
 # Release Tool Compatibility Entrypoints
 
+- Decision ID: AOA-MEM-D-0068
+
 ## Status
 
 Accepted on 2026-05-24.
+
+## Index Metadata
+
+- Surface classes: validation guard, release/tooling
+- Mechanic parents: none
+- Guard families: release/tooling
+- Memory object classes: none
+- Posture: active rationale
 
 ## Context
 

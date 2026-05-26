@@ -58,6 +58,7 @@ COMMANDS = [
     ("validate AGENTS mesh index", [sys.executable, "scripts/agents/validate_agents_mesh_index.py"]),
     ("validate semantic AGENTS docs", [sys.executable, "scripts/agents/validate_semantic_agents.py"]),
     ("validate docs districts", [sys.executable, "scripts/root-topology/validate_docs_districts.py"]),
+    ("check decision indexes", [sys.executable, "scripts/root-topology/build_decision_indexes.py", "--check"]),
     ("validate memo mechanics", [sys.executable, "scripts/mechanics/validate_memo_mechanics.py"]),
     ("validate memo mechanic parts", [sys.executable, "scripts/mechanics/validate_memo_mechanic_parts.py"]),
     ("check memo mechanics index", [sys.executable, "scripts/mechanics/build_memo_mechanics_index.py", "--check"]),

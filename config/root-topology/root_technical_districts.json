@@ -144,6 +144,7 @@
       "allowed_files": [
         "scripts/agents/agents_mesh_common.py",
         "scripts/agents/build_agents_mesh_index.py",
+        "scripts/root-topology/build_decision_indexes.py",
         "scripts/mechanics/build_mechanic_artifact_inventory.py",
         "scripts/mechanics/build_memo_mechanic_cards.py",
         "scripts/mechanics/build_memo_mechanic_landing_logs.py",
@@ -163,6 +164,7 @@
         "scripts/mechanics/memo_mechanic_owner_routes_common.py",
         "scripts/mechanics/mechanic_readiness_common.py",
         "scripts/mechanics/memo_mechanics_common.py",
+        "scripts/root-topology/decision_index_common.py",
         "scripts/root-topology/root_technical_districts_common.py",
         "scripts/release/release_check.py",
         "scripts/release_check.py",
@@ -622,6 +624,19 @@
         "scripts/release/release_check.py",
         "tests/root-topology/test_docs_districts.py",
         "tests/agents/test_validate_semantic_agents.py"
+      ]
+    },
+    {
+      "id": "decision_indexes",
+      "role": "validator-and-generator",
+      "owner_surface": "docs/decisions/AGENTS.md",
+      "scripts": [
+        "scripts/root-topology/build_decision_indexes.py",
+        "scripts/root-topology/decision_index_common.py"
+      ],
+      "covered_by": [
+        "scripts/release/release_check.py",
+        "tests/root-topology/test_topology_spine.py"
       ]
     }
   ],

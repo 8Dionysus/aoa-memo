@@ -1,8 +1,18 @@
 # Decision: Memory-organ foundation lands in owner surfaces
 
+- Decision ID: AOA-MEM-D-0066
+
 ## Status
 
 Accepted.
+
+## Index Metadata
+
+- Surface classes: root/topology
+- Mechanic parents: none
+- Guard families: docs route
+- Memory object classes: decision
+- Posture: active rationale
 
 ## Context
 

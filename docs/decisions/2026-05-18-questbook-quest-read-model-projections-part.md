@@ -1,5 +1,15 @@
 # Questbook Read-Model Projections Part
 
+- Decision ID: AOA-MEM-D-0027
+
+## Index Metadata
+
+- Surface classes: generated/readout, mechanic package, mechanic part, quest/lane
+- Mechanic parents: questbook
+- Guard families: part and payload, generated/read-model, quest/read-model
+- Memory object classes: none
+- Posture: active rationale
+
 ## Context
 
 Questbook projections are built by the Questbook mechanic but published under

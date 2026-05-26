@@ -1,8 +1,18 @@
 # Root Contract Family Naming
 
+- Decision ID: AOA-MEM-D-0055
+
 ## Status
 
 Accepted on 2026-05-19.
+
+## Index Metadata
+
+- Surface classes: root/topology, validation guard
+- Mechanic parents: none
+- Guard families: root technical district
+- Memory object classes: none
+- Posture: active rationale
 
 ## Context
 

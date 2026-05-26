@@ -1,5 +1,15 @@
 # Mechanic Physical Parts
 
+- Decision ID: AOA-MEM-D-0017
+
+## Index Metadata
+
+- Surface classes: mechanic package, mechanic part
+- Mechanic parents: none
+- Guard families: mechanic topology, part and payload
+- Memory object classes: none
+- Posture: active rationale
+
 ## Context
 
 Memo mechanics already had `PARTS.md` files, but for most packages those parts

@@ -1,5 +1,15 @@
 # Reviewed Memory Consumer Handoff Spine
 
+- Decision ID: AOA-MEM-D-0065
+
+## Index Metadata
+
+- Surface classes: reviewed corpus, consumer handoff
+- Mechanic parents: consumer-handoff
+- Guard families: reviewed corpus/intake
+- Memory object classes: none
+- Posture: active rationale
+
 ## Context
 
 `aoa-memo` now has a reviewed `memo/objects/` corpus and generated

@@ -28,6 +28,10 @@ Tracking starts with the community-docs baseline for this repository.
 - Land the `abyss-stack` `aoa-memo-mcp` workspace-port-discovery intake packet
   as a reviewed decision object so map-discovered full ports become recallable
   corpus memory rather than only access-plane implementation detail.
+- Add canonical `AOA-MEM-D-####` IDs, decision-note index metadata, generated
+  decision lookup indexes, and a dual-addressing alias map so agents can find
+  decision rationale without reading a hand-maintained omnibus index or
+  renaming date-path files prematurely.
 
 ## [0.4.0] - 2026-05-24
 

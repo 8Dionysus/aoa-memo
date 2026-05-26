@@ -1,5 +1,15 @@
 # Mechanic Readiness Local Test Routes
 
+- Decision ID: AOA-MEM-D-0019
+
+## Index Metadata
+
+- Surface classes: mechanic package, validation guard
+- Mechanic parents: none
+- Guard families: mechanic topology
+- Memory object classes: none
+- Posture: active rationale
+
 ## Context
 
 Package-local mechanic tests are now part of the OS Abyss readiness story for

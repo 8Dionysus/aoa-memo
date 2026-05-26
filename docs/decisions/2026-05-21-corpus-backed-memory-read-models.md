@@ -1,8 +1,18 @@
 # Decision: Corpus-Backed Memory Read Models
 
+- Decision ID: AOA-MEM-D-0062
+
 ## Status
 
 Accepted.
+
+## Index Metadata
+
+- Surface classes: reviewed corpus, generated/readout
+- Mechanic parents: none
+- Guard families: generated/read-model, reviewed corpus/intake
+- Memory object classes: decision
+- Posture: active rationale
 
 ## Context
 

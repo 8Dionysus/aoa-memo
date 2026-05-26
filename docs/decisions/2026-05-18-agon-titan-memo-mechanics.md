@@ -1,5 +1,15 @@
 # 2026-05-18: Land Agon and Titan as Memo Mechanics
 
+- Decision ID: AOA-MEM-D-0004
+
+## Index Metadata
+
+- Surface classes: mechanic package
+- Mechanic parents: agon, titan
+- Guard families: mechanic topology
+- Memory object classes: none
+- Posture: active rationale
+
 ## Context
 
 Agon and Titan were first moved out of flat docs-root placement into local

@@ -1,6 +1,16 @@
 # Add Source-Backed AGENTS Mesh for Route Cards
 
+- Decision ID: AOA-MEM-D-0002
+
 Date: 2026-05-18
+
+## Index Metadata
+
+- Surface classes: generated/readout, agents/mesh
+- Mechanic parents: none
+- Guard families: mechanic topology, generated/read-model, AGENTS/mesh
+- Memory object classes: none
+- Posture: active rationale
 
 ## Context
 

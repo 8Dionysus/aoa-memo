@@ -1,8 +1,18 @@
 # Functional AGENTS Route Cards
 
+- Decision ID: AOA-MEM-D-0050
+
 ## Status
 
 Accepted.
+
+## Index Metadata
+
+- Surface classes: generated/readout, agents/mesh
+- Mechanic parents: none
+- Guard families: docs route, mechanic topology, generated/read-model, AGENTS/mesh
+- Memory object classes: none
+- Posture: active rationale
 
 ## Context
 

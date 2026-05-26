@@ -1,8 +1,18 @@
 # Downstream Feed Test Localization
 
+- Decision ID: AOA-MEM-D-0008
+
 ## Status
 
 Accepted on 2026-05-18.
+
+## Index Metadata
+
+- Surface classes: consumer handoff, validation guard
+- Mechanic parents: none
+- Guard families: docs route
+- Memory object classes: none
+- Posture: active rationale
 
 ## Context
 

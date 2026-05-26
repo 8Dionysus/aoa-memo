@@ -24,6 +24,7 @@ Do not use this lane for:
 
 Decision records should name:
 
+- canonical `Decision ID: AOA-MEM-D-####`
 - context
 - decision
 - alternatives or tradeoffs
@@ -31,12 +32,29 @@ Decision records should name:
 - affected surfaces
 - verification route
 
+Each decision record must carry an `## Index Metadata` block with:
+
+- surface classes
+- mechanic parents
+- guard families
+- memory object classes
+- posture
+
+Generated lookup indexes under `docs/decisions/indexes/` are read models from
+that metadata. They make lookup cheaper for agents; they do not replace the
+decision note or the stronger source surfaces the decision describes.
+
+Keep the current date-named decision paths live during dual-addressing. Use the
+canonical decision ID as the stable handle. A future numbered-path rename is a
+separate migration and must be protected by the alias/read-model layer first.
+
 Keep the record public-safe. Do not include private traces, secrets, local-only
 host details, or unreduced personal data.
 
 Verify decision-lane changes with:
 
 ```bash
+python scripts/root-topology/build_decision_indexes.py --check
 python -m pytest -q tests
 python scripts/release/release_check.py
 ```

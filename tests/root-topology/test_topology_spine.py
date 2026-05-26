@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import unittest
 from pathlib import Path
 
@@ -67,8 +68,9 @@ class TopologySpineTestCase(unittest.TestCase):
                 "python scripts/release/release_check.py",
             ),
             "docs/decisions/README.md": (
-                "2026-05-18-memory-topology-spine",
-                "2026-05-18-spark-agent-lane-home",
+                "Decision Records Index",
+                "indexes/by-number.md",
+                "Dual Addressing",
                 "Review Rule",
             ),
             "docs/decisions/2026-05-18-memory-topology-spine.md": (
@@ -137,6 +139,27 @@ class TopologySpineTestCase(unittest.TestCase):
         self.assertTrue((REPO_ROOT / ".agents" / "spark" / "SWARM.md").is_file())
         self.assertTrue((REPO_ROOT / ".agents" / "spark" / "registry.json").is_file())
         self.assertTrue((REPO_ROOT / ".agents" / "spark" / "scripts" / "validate_spark_lane.py").is_file())
+
+    def test_decision_indexes_are_generated_from_canonical_ids(self) -> None:
+        by_number = (REPO_ROOT / "docs" / "decisions" / "indexes" / "by-number.md").read_text(
+            encoding="utf-8"
+        )
+        alias_map = json.loads(
+            (REPO_ROOT / "docs" / "decisions" / "indexes" / "alias-map.min.json").read_text(
+                encoding="utf-8"
+            )
+        )
+
+        self.assertIn("AOA-MEM-D-0001", by_number)
+        self.assertIn("AOA-MEM-D-0071", by_number)
+        self.assertIn("Planned numbered path", by_number)
+        self.assertEqual(alias_map["schema_version"], "aoa_memo_decision_alias_map_v1")
+        self.assertEqual(len(alias_map["entries"]), 71)
+        self.assertEqual(alias_map["entries"][0]["decision_id"], "AOA-MEM-D-0001")
+        self.assertEqual(
+            alias_map["entries"][0]["canonical_path_status"],
+            "dual_addressing_not_renamed",
+        )
 
 
 if __name__ == "__main__":

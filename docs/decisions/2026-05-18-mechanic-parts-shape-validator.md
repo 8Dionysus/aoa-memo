@@ -1,8 +1,18 @@
 # Mechanic Parts Shape Validator
 
+- Decision ID: AOA-MEM-D-0016
+
 ## Status
 
 Accepted.
+
+## Index Metadata
+
+- Surface classes: mechanic package, mechanic part, validation guard
+- Mechanic parents: none
+- Guard families: mechanic topology, part and payload
+- Memory object classes: none
+- Posture: active rationale
 
 ## Context
 

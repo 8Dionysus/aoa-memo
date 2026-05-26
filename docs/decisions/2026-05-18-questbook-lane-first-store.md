@@ -1,5 +1,15 @@
 # Decision: Questbook Uses A Lane-First Root Store
 
+- Decision ID: AOA-MEM-D-0026
+
+## Index Metadata
+
+- Surface classes: mechanic package, quest/lane
+- Mechanic parents: questbook
+- Guard families: quest/read-model
+- Memory object classes: none
+- Posture: active rationale
+
 ## Context
 
 `aoa-memo` already had root `QUESTBOOK.md`, flat `quests/AOA-MEM-Q-*.yaml`

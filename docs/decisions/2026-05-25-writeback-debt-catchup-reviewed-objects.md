@@ -1,8 +1,18 @@
 # Decision: Writeback debt catchup lands reviewed objects
 
+- Decision ID: AOA-MEM-D-0070
+
 ## Status
 
 Accepted.
+
+## Index Metadata
+
+- Surface classes: reviewed corpus, local port/writeback, mechanic package
+- Mechanic parents: writeback
+- Guard families: reviewed corpus/intake, local port/writeback
+- Memory object classes: local_candidate
+- Posture: active rationale
 
 ## Context
 

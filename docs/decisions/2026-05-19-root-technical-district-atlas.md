@@ -1,8 +1,18 @@
 # Root Technical District Atlas
 
+- Decision ID: AOA-MEM-D-0058
+
 ## Status
 
 Accepted.
+
+## Index Metadata
+
+- Surface classes: root/topology, generated/readout
+- Mechanic parents: none
+- Guard families: root technical district, generated/read-model
+- Memory object classes: none
+- Posture: active rationale
 
 ## Context
 

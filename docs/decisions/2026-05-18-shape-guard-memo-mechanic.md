@@ -1,5 +1,15 @@
 # 2026-05-18: Add Shape Guard as an Operation-First Memo Mechanic
 
+- Decision ID: AOA-MEM-D-0038
+
+## Index Metadata
+
+- Surface classes: mechanic package, validation guard
+- Mechanic parents: shape-guard
+- Guard families: mechanic topology
+- Memory object classes: none
+- Posture: active rationale
+
 ## Context
 
 The governance mechanic landing moved `VIA_NEGATIVA_CHECKLIST.md` into

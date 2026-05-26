@@ -1,8 +1,18 @@
 # Mechanic Artifact Lanes
 
+- Decision ID: AOA-MEM-D-0012
+
 ## Status
 
 Accepted.
+
+## Index Metadata
+
+- Surface classes: mechanic package
+- Mechanic parents: none
+- Guard families: mechanic topology
+- Memory object classes: none
+- Posture: active rationale
 
 ## Context
 

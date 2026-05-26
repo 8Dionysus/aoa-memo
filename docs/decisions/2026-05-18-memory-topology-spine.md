@@ -1,10 +1,20 @@
 # Decision: Add Memory Topology Spine Before Moving Flat Docs
 
+- Decision ID: AOA-MEM-D-0023
+
 Date: 2026-05-18
 
 ## Status
 
 Accepted.
+
+## Index Metadata
+
+- Surface classes: root/topology, memory doctrine
+- Mechanic parents: none
+- Guard families: docs route, memory surface
+- Memory object classes: none
+- Posture: active rationale
 
 ## Context
 
