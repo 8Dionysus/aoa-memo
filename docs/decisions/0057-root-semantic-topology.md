@@ -9,7 +9,6 @@ Accepted on 2026-05-19.
 ## Index Metadata
 
 - Original date: 2026-05-19
-- Legacy path: docs/decisions/2026-05-19-root-semantic-topology.md
 - Surface classes: root/topology
 - Mechanic parents: none
 - Guard families: root technical district

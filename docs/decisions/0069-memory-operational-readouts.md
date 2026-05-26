@@ -9,7 +9,6 @@ Accepted.
 ## Index Metadata
 
 - Original date: 2026-05-25
-- Legacy path: docs/decisions/2026-05-25-memory-operational-readouts.md
 - Surface classes: memory doctrine, generated/readout
 - Mechanic parents: none
 - Guard families: generated/read-model, memory surface

@@ -7,7 +7,6 @@ Date: 2026-05-18
 ## Index Metadata
 
 - Original date: 2026-05-18
-- Legacy path: docs/decisions/2026-05-18-agents-mesh-source-backed-route-cards.md
 - Surface classes: generated/readout, agents/mesh
 - Mechanic parents: none
 - Guard families: mechanic topology, generated/read-model, AGENTS/mesh

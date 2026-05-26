@@ -11,6 +11,7 @@
 - [AOA-MEM-D-0069 Decision: Memory operational readouts stay memo-owned and source-owner bounded](../0069-memory-operational-readouts.md) (`docs/decisions/0069-memory-operational-readouts.md`)
 - [AOA-MEM-D-0071 Canonical Decision IDs and Generated Indexes](../0071-canonical-decision-ids-and-indexes.md) (`docs/decisions/0071-canonical-decision-ids-and-indexes.md`)
 - [AOA-MEM-D-0072 Numbered Decision Paths](../0072-numbered-decision-paths.md) (`docs/decisions/0072-numbered-decision-paths.md`)
+- [AOA-MEM-D-0073 Numbered Decision Route Completion](../0073-numbered-decision-route-completion.md) (`docs/decisions/0073-numbered-decision-route-completion.md`)
 
 ## audit_event
 

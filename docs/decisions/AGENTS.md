@@ -35,7 +35,6 @@ Decision records should name:
 Each decision record must carry an `## Index Metadata` block with:
 
 - original date
-- legacy path
 - surface classes
 - mechanic parents
 - guard families
@@ -47,9 +46,9 @@ that metadata. They make lookup cheaper for agents; they do not replace the
 decision note or the stronger source surfaces the decision describes.
 
 Use numbered decision paths as the active source files. Use the canonical
-decision ID as the stable handle. Keep old date-named paths only as `Legacy
-path` metadata and generated alias-map rows; do not recreate date-named
-decision files.
+decision ID as the stable handle. Do not recreate date-named decision files or
+generated compatibility maps for them. Previous date-path names belong to git
+and PR history, not to the active decision lookup surface.
 
 Keep the record public-safe. Do not include private traces, secrets, local-only
 host details, or unreduced personal data.

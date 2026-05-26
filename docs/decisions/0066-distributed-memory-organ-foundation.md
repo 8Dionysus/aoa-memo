@@ -9,7 +9,6 @@ Accepted.
 ## Index Metadata
 
 - Original date: 2026-05-24
-- Legacy path: docs/decisions/2026-05-24-distributed-memory-organ-foundation.md
 - Surface classes: root/topology
 - Mechanic parents: none
 - Guard families: docs route

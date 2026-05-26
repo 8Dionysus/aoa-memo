@@ -11,7 +11,6 @@ Accepted.
 ## Index Metadata
 
 - Original date: 2026-05-19
-- Legacy path: docs/decisions/2026-05-19-spark-registry-backed-memo-lane.md
 - Surface classes: generated/readout, agents/mesh
 - Mechanic parents: none
 - Guard families: AGENTS/mesh

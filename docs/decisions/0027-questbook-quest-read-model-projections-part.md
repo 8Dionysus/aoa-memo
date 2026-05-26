@@ -5,7 +5,6 @@
 ## Index Metadata
 
 - Original date: 2026-05-18
-- Legacy path: docs/decisions/2026-05-18-questbook-quest-read-model-projections-part.md
 - Surface classes: generated/readout, mechanic package, mechanic part, quest/lane
 - Mechanic parents: questbook
 - Guard families: part and payload, generated/read-model, quest/read-model

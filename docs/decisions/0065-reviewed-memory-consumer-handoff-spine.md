@@ -5,7 +5,6 @@
 ## Index Metadata
 
 - Original date: 2026-05-22
-- Legacy path: docs/decisions/2026-05-22-reviewed-memory-consumer-handoff-spine.md
 - Surface classes: reviewed corpus, consumer handoff
 - Mechanic parents: consumer-handoff
 - Guard families: reviewed corpus/intake

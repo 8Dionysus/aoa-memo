@@ -9,7 +9,6 @@ Accepted.
 ## Index Metadata
 
 - Original date: 2026-05-18
-- Legacy path: docs/decisions/2026-05-18-mechanic-parts-shape-validator.md
 - Surface classes: mechanic package, mechanic part, validation guard
 - Mechanic parents: none
 - Guard families: mechanic topology, part and payload

@@ -9,7 +9,6 @@ Proposed.
 ## Index Metadata
 
 - Original date: YYYY-MM-DD
-- Legacy path: none
 - Surface classes: none
 - Mechanic parents: none
 - Guard families: none

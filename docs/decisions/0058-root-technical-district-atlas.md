@@ -9,7 +9,6 @@ Accepted.
 ## Index Metadata
 
 - Original date: 2026-05-19
-- Legacy path: docs/decisions/2026-05-19-root-technical-district-atlas.md
 - Surface classes: root/topology, generated/readout
 - Mechanic parents: none
 - Guard families: root technical district, generated/read-model

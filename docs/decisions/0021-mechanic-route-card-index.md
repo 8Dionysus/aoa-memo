@@ -5,7 +5,6 @@
 ## Index Metadata
 
 - Original date: 2026-05-18
-- Legacy path: docs/decisions/2026-05-18-mechanic-route-card-index.md
 - Surface classes: generated/readout, mechanic package
 - Mechanic parents: none
 - Guard families: mechanic topology, generated/read-model

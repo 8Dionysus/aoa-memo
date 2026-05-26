@@ -9,7 +9,6 @@ Accepted.
 ## Index Metadata
 
 - Original date: 2026-05-18
-- Legacy path: docs/decisions/2026-05-18-checkpoint-memo-mechanic.md
 - Surface classes: mechanic package
 - Mechanic parents: checkpoint
 - Guard families: mechanic topology

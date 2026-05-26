@@ -5,7 +5,6 @@
 ## Index Metadata
 
 - Original date: 2026-05-19
-- Legacy path: docs/decisions/2026-05-19-governance-part-local-artifacts.md
 - Surface classes: mechanic package, mechanic part
 - Mechanic parents: governance
 - Guard families: mechanic topology, part and payload

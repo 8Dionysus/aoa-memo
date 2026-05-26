@@ -9,7 +9,6 @@ Accepted.
 ## Index Metadata
 
 - Original date: 2026-05-19
-- Legacy path: docs/decisions/2026-05-19-root-memory-index.md
 - Surface classes: root/topology, memory doctrine, generated/readout
 - Mechanic parents: none
 - Guard families: docs route, generated/read-model, memory surface

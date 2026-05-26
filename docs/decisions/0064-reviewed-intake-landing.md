@@ -9,7 +9,6 @@ Accepted.
 ## Index Metadata
 
 - Original date: 2026-05-22
-- Legacy path: docs/decisions/2026-05-22-reviewed-intake-landing.md
 - Surface classes: reviewed corpus, local port/writeback
 - Mechanic parents: none
 - Guard families: reviewed corpus/intake

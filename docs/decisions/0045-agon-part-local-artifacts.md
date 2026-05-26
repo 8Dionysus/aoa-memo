@@ -9,7 +9,6 @@ Accepted.
 ## Index Metadata
 
 - Original date: 2026-05-19
-- Legacy path: docs/decisions/2026-05-19-agon-part-local-artifacts.md
 - Surface classes: mechanic package, mechanic part
 - Mechanic parents: agon
 - Guard families: mechanic topology, part and payload

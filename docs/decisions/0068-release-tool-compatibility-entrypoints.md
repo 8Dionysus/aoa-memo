@@ -9,7 +9,6 @@ Accepted on 2026-05-24.
 ## Index Metadata
 
 - Original date: 2026-05-24
-- Legacy path: docs/decisions/2026-05-24-release-tool-compatibility-entrypoints.md
 - Surface classes: validation guard, release/tooling
 - Mechanic parents: none
 - Guard families: release/tooling

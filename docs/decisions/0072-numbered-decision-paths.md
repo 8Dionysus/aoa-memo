@@ -6,10 +6,14 @@
 
 Accepted on 2026-05-26.
 
+Superseded in part on 2026-05-26 by
+[AOA-MEM-D-0073 Numbered Decision Route Completion](0073-numbered-decision-route-completion.md):
+the transitional date-path compatibility metadata and generated read models are
+retired from the active repository surface.
+
 ## Index Metadata
 
 - Original date: 2026-05-26
-- Legacy path: none
 - Surface classes: root/topology, generated/readout, validation guard, legacy/provenance
 - Mechanic parents: none
 - Guard families: decision index/read-model, docs route, generated/read-model, release/tooling
@@ -19,8 +23,9 @@ Accepted on 2026-05-26.
 ## Context
 
 AOA-MEM-D-0071 introduced canonical decision IDs, source-owned index metadata,
-generated lookup indexes, and a dual-addressing alias map. That made the
-decision lane ready for a path migration without losing date-path provenance.
+generated lookup indexes, and a temporary compatibility bridge. That made the
+decision lane ready for a path migration without renaming files before the
+lookup contract existed.
 
 Keeping the date-named files live after that hardening would make the canonical
 ID lane weaker than intended: agents could inspect by number, but the source
@@ -37,12 +42,7 @@ Make numbered decision paths the active source format:
 Each existing decision note now carries:
 
 - `Original date`, used by generated date indexes after the filename no longer
-  starts with a date;
-- `Legacy path`, used by the generated alias map to route old date-path refs to
-  the current numbered file.
-
-The generated alias map now treats date-named paths as legacy aliases, not live
-files. New decisions that never had a date-named path use `Legacy path: none`.
+  starts with a date.
 
 ## Alternatives
 
@@ -56,11 +56,10 @@ file.
 ## Consequences
 
 Agents should route by canonical decision ID or numbered path first. Old
-date-path references remain recoverable through generated alias/read-model
-surfaces.
+date-path references are historical references, not repository lookup routes.
 
 The builder now validates numbered filename prefixes against `Decision ID`
-numbers and can require `numbered_canonical` mode from the index contract.
+numbers and can require numbered-only mode from the index contract.
 
 ## Affected Surfaces
 

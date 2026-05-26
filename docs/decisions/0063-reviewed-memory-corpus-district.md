@@ -9,7 +9,6 @@ Accepted.
 ## Index Metadata
 
 - Original date: 2026-05-21
-- Legacy path: docs/decisions/2026-05-21-reviewed-memory-corpus-district.md
 - Surface classes: reviewed corpus
 - Mechanic parents: none
 - Guard families: reviewed corpus/intake

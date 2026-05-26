@@ -41,9 +41,8 @@ make lookup cheaper for agents, not to carry decision rationale.
 Each decision owns:
 
 - a canonical `Decision ID: AOA-MEM-D-####`;
-- an `## Index Metadata` block naming original date, legacy path if one exists,
-  surface classes, mechanic parents, guard families, memory object classes, and
-  posture.
+- an `## Index Metadata` block naming original date, surface classes, mechanic
+  parents, guard families, memory object classes, and posture.
 
 The lookup indexes under [indexes](indexes/README.md) are generated from that
 metadata:
@@ -54,7 +53,6 @@ metadata:
 - [Decisions by mechanic parent](indexes/by-mechanic.md)
 - [Decisions by validation or guard family](indexes/by-guard.md)
 - [Decisions by memory-object class](indexes/by-memory-object-class.md)
-- [Decision alias map](indexes/alias-map.md)
 
 Use them in both directions:
 
@@ -77,12 +75,12 @@ Numbered decision paths are the active source files:
 - `docs/decisions/0002-*.md`
 - `docs/decisions/####-*.md`
 
-Canonical IDs remain the stable handles. Legacy date-named paths are not live
-files; they are preserved in each decision note's `Legacy path` metadata and in
-the generated alias map so old refs can route to the current numbered file.
+Canonical IDs remain the stable handles. Previous date-prefixed paths are not
+live files and are not preserved as a repository lookup layer.
 
-Do not recreate date-named decision files. If a future decision never had a
-date-named path, use `Legacy path: none`.
+Do not recreate date-named decision files or generated compatibility maps for
+them. Use git history, PRs, or release notes when old path archaeology is
+actually needed.
 
 ## Review Rule
 

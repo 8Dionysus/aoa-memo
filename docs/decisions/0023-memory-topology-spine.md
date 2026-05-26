@@ -11,7 +11,6 @@ Accepted.
 ## Index Metadata
 
 - Original date: 2026-05-18
-- Legacy path: docs/decisions/2026-05-18-memory-topology-spine.md
 - Surface classes: root/topology, memory doctrine
 - Mechanic parents: none
 - Guard families: docs route, memory surface

@@ -9,7 +9,6 @@ Accepted on 2026-05-18.
 ## Index Metadata
 
 - Original date: 2026-05-18
-- Legacy path: docs/decisions/2026-05-18-quest-generated-owner-routes.md
 - Surface classes: generated/readout, quest/lane
 - Mechanic parents: none
 - Guard families: mechanic topology, generated/read-model, quest/read-model

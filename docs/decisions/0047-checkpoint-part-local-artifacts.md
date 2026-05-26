@@ -9,7 +9,6 @@ Accepted on 2026-05-19.
 ## Index Metadata
 
 - Original date: 2026-05-19
-- Legacy path: docs/decisions/2026-05-19-checkpoint-part-local-artifacts.md
 - Surface classes: mechanic package, mechanic part
 - Mechanic parents: checkpoint
 - Guard families: mechanic topology, part and payload

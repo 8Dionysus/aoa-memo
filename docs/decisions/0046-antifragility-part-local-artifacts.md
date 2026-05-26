@@ -9,7 +9,6 @@ Accepted on 2026-05-19.
 ## Index Metadata
 
 - Original date: 2026-05-19
-- Legacy path: docs/decisions/2026-05-19-antifragility-part-local-artifacts.md
 - Surface classes: mechanic package, mechanic part
 - Mechanic parents: antifragility
 - Guard families: mechanic topology, part and payload

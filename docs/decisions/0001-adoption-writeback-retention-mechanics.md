@@ -9,7 +9,6 @@ Accepted.
 ## Index Metadata
 
 - Original date: 2026-05-18
-- Legacy path: docs/decisions/2026-05-18-adoption-writeback-retention-mechanics.md
 - Surface classes: local port/writeback, lifecycle/retention, mechanic package
 - Mechanic parents: adoption, retention, writeback
 - Guard families: mechanic topology, local port/writeback, lifecycle/retention

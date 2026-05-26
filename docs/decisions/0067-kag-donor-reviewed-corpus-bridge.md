@@ -9,7 +9,6 @@ Accepted.
 ## Index Metadata
 
 - Original date: 2026-05-24
-- Legacy path: docs/decisions/2026-05-24-kag-donor-reviewed-corpus-bridge.md
 - Surface classes: reviewed corpus, consumer handoff, boundary/runtime/sibling
 - Mechanic parents: none
 - Guard families: reviewed corpus/intake, sibling and boundary

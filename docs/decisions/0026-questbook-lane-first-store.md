@@ -5,7 +5,6 @@
 ## Index Metadata
 
 - Original date: 2026-05-18
-- Legacy path: docs/decisions/2026-05-18-questbook-lane-first-store.md
 - Surface classes: mechanic package, quest/lane
 - Mechanic parents: questbook
 - Guard families: quest/read-model
