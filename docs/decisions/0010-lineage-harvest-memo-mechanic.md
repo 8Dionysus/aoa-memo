@@ -9,7 +9,6 @@ Accepted on 2026-05-18.
 ## Index Metadata
 
 - Original date: 2026-05-18
-- Legacy path: docs/decisions/2026-05-18-lineage-harvest-memo-mechanic.md
 - Surface classes: mechanic package
 - Mechanic parents: lineage-harvest
 - Guard families: mechanic topology

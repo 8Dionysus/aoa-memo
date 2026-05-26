@@ -9,7 +9,6 @@ Accepted on 2026-05-18.
 ## Index Metadata
 
 - Original date: 2026-05-18
-- Legacy path: docs/decisions/2026-05-18-root-config-manifest-control-plane.md
 - Surface classes: root/topology
 - Mechanic parents: none
 - Guard families: root technical district

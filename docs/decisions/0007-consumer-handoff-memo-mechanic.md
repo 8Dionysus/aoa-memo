@@ -5,7 +5,6 @@
 ## Index Metadata
 
 - Original date: 2026-05-18
-- Legacy path: docs/decisions/2026-05-18-consumer-handoff-memo-mechanic.md
 - Surface classes: consumer handoff, mechanic package
 - Mechanic parents: consumer-handoff
 - Guard families: mechanic topology

@@ -14,7 +14,6 @@ scripts, tests, manifests, and hook bindings.
 ## Index Metadata
 
 - Original date: 2026-05-18
-- Legacy path: docs/decisions/2026-05-18-mechanics-subroutes-artifact-topology.md
 - Surface classes: mechanic package
 - Mechanic parents: none
 - Guard families: mechanic topology

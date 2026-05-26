@@ -9,7 +9,6 @@ Accepted.
 ## Index Metadata
 
 - Original date: 2026-05-19
-- Legacy path: docs/decisions/2026-05-19-functional-agents-route-cards.md
 - Surface classes: generated/readout, agents/mesh
 - Mechanic parents: none
 - Guard families: docs route, mechanic topology, generated/read-model, AGENTS/mesh

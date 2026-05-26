@@ -11,7 +11,6 @@ Accepted.
 ## Index Metadata
 
 - Original date: 2026-05-18
-- Legacy path: docs/decisions/2026-05-18-spark-agent-lane-home.md
 - Surface classes: agents/mesh
 - Mechanic parents: none
 - Guard families: AGENTS/mesh

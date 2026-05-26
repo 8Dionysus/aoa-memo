@@ -19,7 +19,6 @@ recurrence-support remains the route-return consumer.
 ## Index Metadata
 
 - Original date: 2026-05-18
-- Legacy path: docs/decisions/2026-05-18-recurrence-support-memo-mechanic.md
 - Surface classes: local port/writeback, mechanic package
 - Mechanic parents: recurrence-support
 - Guard families: mechanic topology

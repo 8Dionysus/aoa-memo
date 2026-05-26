@@ -5,7 +5,6 @@
 ## Index Metadata
 
 - Original date: 2026-05-18
-- Legacy path: docs/decisions/2026-05-18-operational-gate-memo-mechanic.md
 - Surface classes: mechanic package
 - Mechanic parents: operational-gate
 - Guard families: mechanic topology

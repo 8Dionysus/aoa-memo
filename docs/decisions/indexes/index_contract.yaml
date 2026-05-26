@@ -10,8 +10,6 @@ generated_indexes:
   - docs/decisions/indexes/by-mechanic.md
   - docs/decisions/indexes/by-guard.md
   - docs/decisions/indexes/by-memory-object-class.md
-  - docs/decisions/indexes/alias-map.md
-  - docs/decisions/indexes/alias-map.min.json
 fields:
   decision_id:
     required: true
@@ -19,9 +17,6 @@ fields:
   original_date:
     required: true
     pattern: YYYY-MM-DD
-  legacy_path:
-    required: true
-    pattern: none or docs/decisions/YYYY-MM-DD-*.md
   surface_classes:
     required: true
   mechanic_parents:
@@ -32,9 +27,9 @@ fields:
     required: true
   posture:
     required: true
-dual_addressing:
-  path_mode: numbered_canonical
+path_policy:
+  path_mode: numbered_only
   current_path_authority: numbered decision files are active source files
   canonical_handle: Decision ID
-  legacy_path_policy: date-named paths are generated aliases, not live files
-  rename_policy: complete; preserve old refs through metadata-backed alias/read-model rows
+  historical_path_policy: previous date-path names live in git and PR history only
+  compatibility_policy: no repository lookup layer is generated for previous paths

@@ -9,7 +9,6 @@ Accepted on 2026-05-19.
 ## Index Metadata
 
 - Original date: 2026-05-19
-- Legacy path: docs/decisions/2026-05-19-agents-authority-boundary-audit.md
 - Surface classes: agents/mesh, boundary/runtime/sibling
 - Mechanic parents: none
 - Guard families: docs route, AGENTS/mesh, sibling and boundary

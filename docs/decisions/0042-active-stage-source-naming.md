@@ -9,7 +9,6 @@ Accepted.
 ## Index Metadata
 
 - Original date: 2026-05-19
-- Legacy path: docs/decisions/2026-05-19-active-stage-source-naming.md
 - Surface classes: memory doctrine, legacy/provenance
 - Mechanic parents: none
 - Guard families: docs route, memory surface

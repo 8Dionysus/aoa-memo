@@ -12,7 +12,6 @@ package-local test was split into part-local routes.
 ## Index Metadata
 
 - Original date: 2026-05-18
-- Legacy path: docs/decisions/2026-05-18-retention-local-regression-boundary.md
 - Surface classes: lifecycle/retention, mechanic package, boundary/runtime/sibling
 - Mechanic parents: retention
 - Guard families: lifecycle/retention, sibling and boundary

@@ -9,7 +9,6 @@ Accepted.
 ## Index Metadata
 
 - Original date: 2026-05-21
-- Legacy path: docs/decisions/2026-05-21-corpus-backed-memory-read-models.md
 - Surface classes: reviewed corpus, generated/readout
 - Mechanic parents: none
 - Guard families: generated/read-model, reviewed corpus/intake

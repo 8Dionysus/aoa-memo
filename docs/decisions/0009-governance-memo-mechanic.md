@@ -10,7 +10,6 @@ Governance remains the active authority-boundary memory mechanic.
 ## Index Metadata
 
 - Original date: 2026-05-18
-- Legacy path: docs/decisions/2026-05-18-governance-memo-mechanic.md
 - Surface classes: mechanic package
 - Mechanic parents: governance
 - Guard families: mechanic topology

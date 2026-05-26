@@ -9,7 +9,6 @@ Accepted on 2026-05-19.
 ## Index Metadata
 
 - Original date: 2026-05-19
-- Legacy path: docs/decisions/2026-05-19-mechanic-part-naming-hardening.md
 - Surface classes: mechanic package, mechanic part, validation guard
 - Mechanic parents: none
 - Guard families: mechanic topology, part and payload

@@ -9,7 +9,6 @@ Accepted.
 ## Index Metadata
 
 - Original date: 2026-05-25
-- Legacy path: docs/decisions/2026-05-25-writeback-debt-catchup-reviewed-objects.md
 - Surface classes: reviewed corpus, local port/writeback, mechanic package
 - Mechanic parents: writeback
 - Guard families: reviewed corpus/intake, local port/writeback

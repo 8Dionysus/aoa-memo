@@ -5,7 +5,6 @@
 ## Index Metadata
 
 - Original date: 2026-05-18
-- Legacy path: docs/decisions/2026-05-18-agon-titan-memo-mechanics.md
 - Surface classes: mechanic package
 - Mechanic parents: agon, titan
 - Guard families: mechanic topology

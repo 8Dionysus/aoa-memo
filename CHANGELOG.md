@@ -29,12 +29,11 @@ Tracking starts with the community-docs baseline for this repository.
   as a reviewed decision object so map-discovered full ports become recallable
   corpus memory rather than only access-plane implementation detail.
 - Add canonical `AOA-MEM-D-####` IDs, decision-note index metadata, generated
-  decision lookup indexes, and a dual-addressing alias map so agents can find
-  decision rationale without reading a hand-maintained omnibus index or
-  renaming date-path files prematurely.
-- Promote decision notes to active numbered paths with metadata-backed legacy
-  date-path aliases so agents can route by canonical ID without losing old ref
-  recoverability.
+  decision lookup indexes, and numbered decision paths so agents can find
+  decision rationale without reading a hand-maintained omnibus index.
+- Complete the decision-lane path migration by retiring date-path compatibility
+  metadata and generated compatibility read models; canonical IDs plus numbered
+  files are now the only active decision route.
 
 ## [0.4.0] - 2026-05-24
 

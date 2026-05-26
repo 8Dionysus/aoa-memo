@@ -21,6 +21,7 @@
 - [AOA-MEM-D-0066 Decision: Memory-organ foundation lands in owner surfaces](../0066-distributed-memory-organ-foundation.md) (`docs/decisions/0066-distributed-memory-organ-foundation.md`)
 - [AOA-MEM-D-0071 Canonical Decision IDs and Generated Indexes](../0071-canonical-decision-ids-and-indexes.md) (`docs/decisions/0071-canonical-decision-ids-and-indexes.md`)
 - [AOA-MEM-D-0072 Numbered Decision Paths](../0072-numbered-decision-paths.md) (`docs/decisions/0072-numbered-decision-paths.md`)
+- [AOA-MEM-D-0073 Numbered Decision Route Completion](../0073-numbered-decision-route-completion.md) (`docs/decisions/0073-numbered-decision-route-completion.md`)
 
 ## memory doctrine
 
@@ -57,6 +58,7 @@
 - [AOA-MEM-D-0069 Decision: Memory operational readouts stay memo-owned and source-owner bounded](../0069-memory-operational-readouts.md) (`docs/decisions/0069-memory-operational-readouts.md`)
 - [AOA-MEM-D-0071 Canonical Decision IDs and Generated Indexes](../0071-canonical-decision-ids-and-indexes.md) (`docs/decisions/0071-canonical-decision-ids-and-indexes.md`)
 - [AOA-MEM-D-0072 Numbered Decision Paths](../0072-numbered-decision-paths.md) (`docs/decisions/0072-numbered-decision-paths.md`)
+- [AOA-MEM-D-0073 Numbered Decision Route Completion](../0073-numbered-decision-route-completion.md) (`docs/decisions/0073-numbered-decision-route-completion.md`)
 
 ## local port/writeback
 
@@ -162,6 +164,7 @@
 - [AOA-MEM-D-0068 Release Tool Compatibility Entrypoints](../0068-release-tool-compatibility-entrypoints.md) (`docs/decisions/0068-release-tool-compatibility-entrypoints.md`)
 - [AOA-MEM-D-0071 Canonical Decision IDs and Generated Indexes](../0071-canonical-decision-ids-and-indexes.md) (`docs/decisions/0071-canonical-decision-ids-and-indexes.md`)
 - [AOA-MEM-D-0072 Numbered Decision Paths](../0072-numbered-decision-paths.md) (`docs/decisions/0072-numbered-decision-paths.md`)
+- [AOA-MEM-D-0073 Numbered Decision Route Completion](../0073-numbered-decision-route-completion.md) (`docs/decisions/0073-numbered-decision-route-completion.md`)
 
 ## agents/mesh
 

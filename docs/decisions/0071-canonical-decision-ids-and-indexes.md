@@ -8,13 +8,16 @@ Accepted.
 
 Superseded in part on 2026-05-26 by
 [AOA-MEM-D-0072 Numbered Decision Paths](0072-numbered-decision-paths.md):
-the alias/read-model layer now protects active numbered paths, and date-named
-paths are legacy aliases rather than live files.
+active decision source files now use numbered paths.
+
+Superseded in part again on 2026-05-26 by
+[AOA-MEM-D-0073 Numbered Decision Route Completion](0073-numbered-decision-route-completion.md):
+the previous date-path compatibility metadata and generated read models are
+retired from the active repository surface.
 
 ## Index Metadata
 
 - Original date: 2026-05-26
-- Legacy path: docs/decisions/2026-05-26-canonical-decision-ids-and-indexes.md
 - Surface classes: root/topology, generated/readout, validation guard
 - Mechanic parents: none
 - Guard families: decision index/read-model, root technical district, release/tooling
@@ -52,13 +55,10 @@ under `docs/decisions/indexes/` are built from that metadata:
 - `by-mechanic.md`
 - `by-guard.md`
 - `by-memory-object-class.md`
-- `alias-map.md`
-- `alias-map.min.json`
 
-The current date-named files remain the live file paths for this migration
-slice. The alias map bridges old/current paths to canonical IDs and reserves a
-planned numbered path. A future rename may happen only after the alias/read
-model layer protects dual-addressing.
+For this migration slice, the date-prefixed files remained the live paths while
+the generated lookup indexes made future numbered paths possible. Later
+decisions completed the migration and removed the compatibility layer.
 
 ## Alternatives
 
@@ -75,7 +75,6 @@ model layer protects dual-addressing.
   rationale authority.
 - Future decisions must include a canonical ID and index metadata.
 - The release gate can check generated index parity and missing metadata.
-- Existing date-path refs remain valid during dual-addressing.
 - A future numbered-file rename becomes a separate, lower-risk migration.
 
 ## Affected Surfaces

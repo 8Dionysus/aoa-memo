@@ -9,7 +9,6 @@ Accepted on 2026-05-19.
 ## Index Metadata
 
 - Original date: 2026-05-19
-- Legacy path: docs/decisions/2026-05-19-root-contract-family-naming.md
 - Surface classes: root/topology, validation guard
 - Mechanic parents: none
 - Guard families: root technical district

@@ -5,7 +5,6 @@
 ## Index Metadata
 
 - Original date: 2026-05-18
-- Legacy path: docs/decisions/2026-05-18-writeback-curated-object-examples.md
 - Surface classes: local port/writeback, mechanic package
 - Mechanic parents: writeback
 - Guard families: local port/writeback

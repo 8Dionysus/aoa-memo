@@ -5,7 +5,6 @@
 ## Index Metadata
 
 - Original date: 2026-05-18
-- Legacy path: docs/decisions/2026-05-18-shape-guard-memo-mechanic.md
 - Surface classes: mechanic package, validation guard
 - Mechanic parents: shape-guard
 - Guard families: mechanic topology

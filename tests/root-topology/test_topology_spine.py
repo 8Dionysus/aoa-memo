@@ -1,6 +1,4 @@
 from __future__ import annotations
-
-import json
 import unittest
 from pathlib import Path
 
@@ -144,31 +142,33 @@ class TopologySpineTestCase(unittest.TestCase):
         by_number = (REPO_ROOT / "docs" / "decisions" / "indexes" / "by-number.md").read_text(
             encoding="utf-8"
         )
-        alias_map = json.loads(
-            (REPO_ROOT / "docs" / "decisions" / "indexes" / "alias-map.min.json").read_text(
-                encoding="utf-8"
-            )
+        indexes_readme = (
+            REPO_ROOT / "docs" / "decisions" / "indexes" / "README.md"
+        ).read_text(
+            encoding="utf-8"
         )
 
         self.assertIn("AOA-MEM-D-0001", by_number)
         self.assertIn("AOA-MEM-D-0071", by_number)
         self.assertIn("AOA-MEM-D-0072", by_number)
-        self.assertIn("Numbered path", by_number)
-        self.assertEqual(alias_map["schema_version"], "aoa_memo_decision_alias_map_v2")
-        self.assertEqual(len(alias_map["entries"]), 72)
-        self.assertEqual(alias_map["entries"][0]["decision_id"], "AOA-MEM-D-0001")
-        self.assertEqual(
-            alias_map["entries"][0]["legacy_path"],
-            "docs/decisions/2026-05-18-adoption-writeback-retention-mechanics.md",
+        self.assertIn("AOA-MEM-D-0073", by_number)
+        self.assertIn("Canonical path", by_number)
+        retired_header = "Legacy" + " path"
+        retired_index_name = "alias" + "-map"
+        self.assertNotIn(retired_header, by_number)
+        self.assertFalse(
+            (REPO_ROOT / "docs" / "decisions" / "indexes" / f"{retired_index_name}.md").exists()
         )
-        self.assertEqual(
-            alias_map["entries"][0]["current_path"],
-            "docs/decisions/0001-adoption-writeback-retention-mechanics.md",
+        self.assertFalse(
+            (
+                REPO_ROOT
+                / "docs"
+                / "decisions"
+                / "indexes"
+                / f"{retired_index_name}.min.json"
+            ).exists()
         )
-        self.assertEqual(
-            alias_map["entries"][0]["canonical_path_status"],
-            "canonical_numbered_path_active",
-        )
+        self.assertNotIn(retired_index_name, indexes_readme)
 
 
 if __name__ == "__main__":

@@ -7,7 +7,6 @@ Date: 2026-05-18
 ## Index Metadata
 
 - Original date: 2026-05-18
-- Legacy path: docs/decisions/2026-05-18-agon-docs-district.md
 - Surface classes: root/topology, mechanic package
 - Mechanic parents: agon
 - Guard families: docs route

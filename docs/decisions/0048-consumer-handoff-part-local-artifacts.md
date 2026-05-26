@@ -5,7 +5,6 @@
 ## Index Metadata
 
 - Original date: 2026-05-19
-- Legacy path: docs/decisions/2026-05-19-consumer-handoff-part-local-artifacts.md
 - Surface classes: consumer handoff, mechanic part
 - Mechanic parents: consumer-handoff
 - Guard families: mechanic topology, part and payload

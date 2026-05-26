@@ -13,5 +13,3 @@ Decision notes own rationale; these indexes only make lookup cheaper for agents.
 - [By mechanic parent](by-mechanic.md)
 - [By validation or guard family](by-guard.md)
 - [By memory-object class](by-memory-object-class.md)
-- [Alias map](alias-map.md)
-- [Machine alias map](alias-map.min.json)

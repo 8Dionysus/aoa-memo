@@ -9,7 +9,6 @@ Accepted on 2026-05-19.
 ## Index Metadata
 
 - Original date: 2026-05-19
-- Legacy path: docs/decisions/2026-05-19-memory-operations-calibration.md
 - Surface classes: memory doctrine
 - Mechanic parents: none
 - Guard families: memory surface

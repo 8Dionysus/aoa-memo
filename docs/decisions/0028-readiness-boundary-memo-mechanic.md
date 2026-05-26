@@ -9,7 +9,6 @@ Accepted.
 ## Index Metadata
 
 - Original date: 2026-05-18
-- Legacy path: docs/decisions/2026-05-18-readiness-boundary-memo-mechanic.md
 - Surface classes: mechanic package, validation guard, boundary/runtime/sibling
 - Mechanic parents: readiness-boundary
 - Guard families: mechanic topology, sibling and boundary
