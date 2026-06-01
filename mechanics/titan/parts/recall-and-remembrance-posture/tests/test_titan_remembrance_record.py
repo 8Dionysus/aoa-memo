@@ -49,32 +49,27 @@ def test_titan_remembrance_candidate_requires_provenance_anchor() -> None:
     assert errors
 
 
-def test_legacy_titan_remembrance_record_shape_still_validates() -> None:
+def test_retired_single_source_ref_shape_is_rejected() -> None:
     payload = {
-        "record_id": "remember:titan:atlas:legacy-example",
+        "record_id": "remember:titan:atlas:retired-example",
         "titan_name": "Atlas",
         "bearer_id": "titan:atlas:founder",
         "role_key": "architect",
         "memory_kind": "remembrance",
         "source_ref": "mechanics/titan/docs/TITAN_MEMORY_LOOM_POSTURE.md",
-        "summary": "Legacy remembrance records remain source-anchored memory.",
+        "summary": "Retired remembrance records remain source-anchored memory.",
         "confidence": 0.75,
         "redaction_state": "clear",
     }
 
-    assert list(validator().iter_errors(payload)) == []
+    assert list(validator().iter_errors(payload))
 
 
-def test_legacy_titan_remembrance_record_rejects_escape_hatches() -> None:
-    payload = {
-        "record_id": "remember:titan:atlas:legacy-example",
-        "titan_name": "Atlas",
-        "bearer_id": "titan:atlas:founder",
-        "role_key": "architect",
-        "memory_kind": "remembrance",
-        "source_ref": "mechanics/titan/docs/TITAN_MEMORY_LOOM_POSTURE.md",
-        "summary": "Legacy remembrance records remain source-anchored memory.",
-    }
+def test_titan_remembrance_record_rejects_escape_hatches() -> None:
+    payload = load_json(
+        "mechanics/titan/parts/recall-and-remembrance-posture/examples/"
+        "titan_remembrance_record.example.json"
+    )
     mutated = copy.deepcopy(payload)
     mutated["runtime_authority"] = True
 

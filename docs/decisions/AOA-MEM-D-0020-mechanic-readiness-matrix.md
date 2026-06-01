@@ -21,7 +21,7 @@ Questbook, writeback, and retention.
 Existing validators proved package shape, docs placement, parts-table shape,
 and artifact ownership. They did not expose one compact machine surface that
 answered whether every package was ready for OS Abyss use as a mechanic:
-package card, owner split, stop-lines, validation route, legacy bridge, and
+package card, owner split, stop-lines, validation route, provenance posture, and
 package-local artifacts together.
 
 ## Decision

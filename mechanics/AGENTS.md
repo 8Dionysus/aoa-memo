@@ -9,7 +9,7 @@ This card applies to `mechanics/` and every nested path until a nearer
 
 `mechanics/` is the home for memo-side mechanics: repeatable memory-layer
 operations that have inputs, outputs, owner splits, stop-lines, validation, and
-legacy bridges.
+provenance.
 
 It is not the home for constitutional law, proof verdicts, runtime workers,
 role rights, routing implementation, KAG substrate truth, or private memory.
@@ -22,8 +22,8 @@ role rights, routing implementation, KAG substrate truth, or private memory.
   `mechanics/ARTIFACT_TOPOLOGY.md` owns root-to-mechanic artifact placement
   law. This file owns shared package law and executable mechanics validators.
 - Below: each `mechanics/<slug>/AGENTS.md` narrows the operation; its `docs/`,
-  `parts/`, and `legacy/` cards narrow active doctrine, functioning parts, and
-  historical provenance.
+  and `parts/` cards narrow active doctrine and functioning parts. Historical
+  `legacy/` material is provenance only and is outside the active AGENTS mesh.
 
 ## Read Before Editing
 
@@ -57,9 +57,6 @@ Every memo mechanic package must contain:
 - `parts/README.md`
 - `docs/AGENTS.md`
 - `docs/`
-- `legacy/AGENTS.md`
-- `legacy/README.md`
-- `legacy/INDEX.md`
 
 The package `README.md` is the mechanic card. It must include:
 
@@ -184,5 +181,5 @@ python scripts/release/release_check.py
 ## Closeout
 
 Report changed mechanic packages, whether active docs, owner maps, provenance,
-legacy bridges, generated companions, and validators changed, and whether any
-old flat docs-root reference remains.
+generated companions, and validators changed, and whether any old flat
+docs-root reference remains.

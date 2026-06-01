@@ -100,6 +100,7 @@ class MemoMechanicsTestCase(unittest.TestCase):
         for package in packages.values():
             self.assertIn("operation", package)
             self.assertIn("os_abyss_role", package)
+            self.assertNotIn("legacy_path", package)
 
     def test_mechanic_docs_live_under_mechanics_not_docs_root(self) -> None:
         config = json.loads((REPO_ROOT / "config" / "mechanics" / "memo_mechanics.json").read_text())

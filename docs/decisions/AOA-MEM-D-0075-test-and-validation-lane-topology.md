@@ -159,11 +159,26 @@ and `tests/root-topology/test_test_topology.py` keep that split explicit so
 tests do not become a second hidden architecture.
 
 Historical test files preserved under `mechanics/*/legacy/raw/tests/` are
-provenance snapshots, not current hard gates. The test inventory must keep them
-separate from active `parts/*/tests/` replacements and mark them advisory so a
-raw snapshot cannot silently re-enter release as a blocking test. Active test
-files also carry a 300-line compactness guard to prevent the split suites from
-regrowing into bulky hidden architecture.
+provenance snapshots, not current tests. The test inventory must exclude them
+entirely, root pytest collection must skip `legacy/`, and legacy-local pytest
+activation files are not allowed. Legacy snapshots also must not remain named
+`test*.py`, so an explicit pytest path cannot accidentally reactivate them.
+Active test files also carry a 300-line compactness guard to prevent the split
+suites from regrowing into bulky hidden architecture.
+
+Legacy mechanics are also excluded from active route/readiness projections.
+`legacy/` is ignored by the AGENTS mesh, `legacy/AGENTS.md`,
+`legacy/README.md`, and `legacy/INDEX.md` are not required package surfaces,
+and the mechanic readiness contract has no `legacy-bridge` check. Legacy may
+remain as historical evidence, but it must not be a canonical route card,
+readiness dependency, advisory check, or blocking gate.
+
+The same rule applies to active schema compatibility branches discovered by
+test topology review: retired shapes may be preserved as inert legacy
+snapshots, but active schemas and tests must validate the current source shape.
+The Titan remembrance record therefore keeps only the current provenance-anchor
+contract in its active schema, while the old v0 single-`source_ref` example
+moves to `mechanics/titan/legacy/raw/` as evidence.
 
 The mechanic artifact topology validator is also split after follow-up review:
 `validate_mechanic_artifact_topology.py` remains the CLI and district

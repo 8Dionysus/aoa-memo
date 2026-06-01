@@ -249,19 +249,6 @@
       "failure_route": "Fix mechanics/readiness-boundary owner maps, part contracts, schemas, examples, or local validators before widening the lane."
     },
     {
-      "family": "mechanics/readiness-boundary-legacy",
-      "paths": [
-        "mechanics/readiness-boundary/legacy/raw/tests/test_wave1_boundary_contract.py"
-      ],
-      "protects": "readiness-boundary legacy snapshot provenance only",
-      "owner_surface": "mechanics/readiness-boundary/legacy/INDEX.md",
-      "lane": "mechanics",
-      "mode": "advisory",
-      "runtime_cost": "fast",
-      "focused_target": "mechanics/readiness-boundary/legacy",
-      "failure_route": "Fix the legacy index or active readiness-boundary route; do not promote raw snapshots into a blocking gate."
-    },
-    {
       "family": "mechanics/recurrence-support",
       "paths": [
         "mechanics/recurrence-support/parts/witness-trace-contract/tests/test_recurrence_support_mechanic.py"

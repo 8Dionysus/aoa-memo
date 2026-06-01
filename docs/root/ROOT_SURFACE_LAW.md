@@ -50,7 +50,7 @@ shortcut.
 | Thin indexes | `MEMORY_INDEX.md`, `QUESTBOOK.md` | useful only while compact and route-oriented | must not become duplicate doctrine, a second roadmap, or a hidden ledger; generated companions must be builder-backed projections |
 | Reviewed memory corpus | `memo/` | `aoa-memo` needs a source-owned home for reviewed memory object bundles and corpus intake receipts | object bundles must validate through `scripts/memory/validate_memo_corpus.py` and remain distinct from local repo memo ports |
 | Tooling and machine districts | `.github/`, `config/`, `docs/`, `examples/`, `generated/`, `manifests/`, `mechanics/`, `quests/`, `schemas/`, `scripts/`, `tests/` | tooling and repo structure expect stable directories | each district needs local guidance plus the compact `generated/root-topology/root_technical_districts.min.json` atlas once root technical routing changes |
-| Development requirements | `.gitignore`, `requirements-dev.txt` | development hygiene | must stay technical and small |
+| Development requirements | `.gitignore`, `pytest.ini`, `requirements-dev.txt` | development hygiene | must stay technical and small |
 
 ## Surfaces That Should Not Live In Root
 
@@ -80,7 +80,7 @@ Current docs surfaces should be read through these districts:
 | Antifragility mechanic docs | `mechanics/antifragility/docs/*` | active antifragility memo mechanic; keep package map and validator aligned |
 | Agon mechanic docs | `mechanics/agon/docs/AGON_*` | active Agon memo mechanic; keep package map and validator aligned |
 | Titan mechanic docs | `mechanics/titan/docs/TITAN_*` | active Titan memo mechanic; keep package map and validator aligned |
-| Adoption, writeback, and retention mechanics | `mechanics/adoption/docs/*`, `mechanics/writeback/docs/*`, `mechanics/retention/docs/*` | active memo mechanic packages; keep owner maps, legacy bridges, generated index, and validator aligned |
+| Adoption, writeback, and retention mechanics | `mechanics/adoption/docs/*`, `mechanics/writeback/docs/*`, `mechanics/retention/docs/*` | active memo mechanic packages; keep owner maps, provenance records, generated index, and validator aligned |
 | Governance mechanic docs | `mechanics/governance/docs/*` | active governance authority-boundary memo mechanic; keep package map and validator aligned |
 | Shape-guard mechanic docs | `mechanics/shape-guard/docs/*` | active shape/pruning memo mechanic; keep operation-first package map and validator aligned |
 | Checkpoint mechanic docs | `mechanics/checkpoint/docs/*` | active checkpoint memory mechanic; keep package map, mechanic-local artifacts, generated companions, consumer refs, and validators aligned |
@@ -139,8 +139,8 @@ together.
 | `generated/agents/agents_mesh.min.json` | add | generated companion mirror | the mesh is inspectable without treating generated output as authority |
 | `memo/` | add | reviewed memory corpus district | durable reviewed memory objects need a source-owned bundle home separate from local repo memo ports, examples, and generated read models |
 | `manifests/AGENTS.md` and `quests/AGENTS.md` | add | top-level district route cards | both directories already hold durable public surfaces and should not be AGENTS coverage gaps |
-| flat antifragility docs-root surfaces | moved | `mechanics/antifragility/docs/` | antifragility is an active memo mechanic with owner map, legacy bridge, schemas, examples, generated surfaces, tests, and validation |
-| flat governance docs-root surfaces | moved | `mechanics/governance/docs/` | governance is an active authority-boundary memo mechanic with owner map, legacy bridge, authority stop-lines, tests, and validation |
+| flat antifragility docs-root surfaces | moved | `mechanics/antifragility/docs/` | antifragility is an active memo mechanic with owner map, provenance evidence, schemas, examples, generated surfaces, tests, and validation |
+| flat governance docs-root surfaces | moved | `mechanics/governance/docs/` | governance is an active authority-boundary memo mechanic with owner map, provenance evidence, authority stop-lines, tests, and validation |
 | flat via-negativa checklist | moved | `mechanics/shape-guard/docs/VIA_NEGATIVA_CHECKLIST.md` | via-negativa is a general memory-shape guard, not governance authority memory |
 | flat consumer handoff docs-root surfaces | moved | `mechanics/consumer-handoff/docs/` | agent, playbook, eval, KAG/ToS, KAG export, and orchestrator alignment surfaces are one repeatable handoff operation with stronger owner stop-lines |
 | flat operational gate docs-root surfaces | moved | `mechanics/operational-gate/docs/` | deployment incident, office incident, service revision, and post-release boundary surfaces are one repeatable memory admission operation with release/runtime/proof stop-lines |
@@ -148,9 +148,9 @@ together.
 | checkpoint support artifacts | moved | `mechanics/checkpoint/` | checkpoint gates, carry packets, approval/health records, improvement threads, and checkpoint-to-memory mappings are one repeatable memory operation with execution/runtime/role/route/proof stop-lines |
 | flat readiness-boundary docs-root surface and artifacts | moved | `mechanics/readiness-boundary/` | memory readiness pressure, its contract schema/example, and its regression test are one repeatable admission-boundary operation with proof/runtime/KAG/route/role/live-ledger/object-family stop-lines |
 | flat pattern-lineage docs-root surface | moved | `mechanics/lineage-harvest/docs/` | pattern-lineage memory is one repeatable lineage-harvest operation with federation/proof/KAG/ToS/stats/runtime/source-owner stop-lines |
-| flat and transitional Agon surfaces | moved | `mechanics/agon/docs/AGON_*.md` | Agon is an active memo mechanic with owner map, legacy bridge, and validation |
-| flat and transitional Titan surfaces | moved | `mechanics/titan/docs/TITAN_*.md` | Titan is an active memo mechanic with owner map, legacy bridge, and validation |
-| flat adoption/writeback/retention docs-root surfaces | moved | `mechanics/adoption/docs/`, `mechanics/writeback/docs/`, `mechanics/retention/docs/` | these families are repeatable memo mechanics with owner maps and legacy bridges, not only documentation districts |
+| flat and transitional Agon surfaces | moved | `mechanics/agon/docs/AGON_*.md` | Agon is an active memo mechanic with owner map, provenance evidence, and validation |
+| flat and transitional Titan surfaces | moved | `mechanics/titan/docs/TITAN_*.md` | Titan is an active memo mechanic with owner map, provenance evidence, and validation |
+| flat adoption/writeback/retention docs-root surfaces | moved | `mechanics/adoption/docs/`, `mechanics/writeback/docs/`, `mechanics/retention/docs/` | these families are repeatable memo mechanics with owner maps and provenance evidence, not only documentation districts |
 | flat root quest source files | moved | `quests/<lane>/<state>/` | Questbook keeps public obligations in the root item store, with `mechanics/questbook/` owning source contract, validation, and generated projections |
 | mechanic-owned root technical artifacts | moved when single-mechanic-owned | `mechanics/<slug>/{schemas,examples,config,generated,scripts,tests,manifests}` | package-owned artifacts should sit with their mechanics; root technical districts keep only shared or cross-mechanic surfaces |
 | root technical district atlas | add | `generated/root-topology/root_technical_districts.min.json` | root districts need a compact machine-readable map of role, route card, family ids, and local routing without making README or AGENTS cards carry the full allowlist |

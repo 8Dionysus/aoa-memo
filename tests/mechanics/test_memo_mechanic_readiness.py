@@ -50,6 +50,8 @@ def test_memo_mechanic_readiness_covers_all_packages() -> None:
     assert payload["landing_log_index_ref"] == "generated/mechanics/memo_mechanic_landing_logs.min.json"
     assert "artifact-test-coverage" in payload["contract"]["readiness_checks"]
     assert "local-test-route" in payload["contract"]["readiness_checks"]
+    assert "legacy-bridge" not in payload["contract"]["readiness_checks"]
+    assert all("legacy/" not in surface for surface in payload["contract"]["package_surfaces"])
     assert payload["counts"]["packages"] == 15
     assert payload["counts"]["ready_packages"] == payload["counts"]["packages"]
     assert payload["counts"]["docs"] == 104
@@ -76,6 +78,8 @@ def test_memo_mechanic_readiness_covers_all_packages() -> None:
     for package in packages.values():
         assert package["ready"] is True
         assert all(package["checks"].values())
+        assert "legacy-bridge" not in package["checks"]
+        assert all("legacy/" not in path for path in package["package_files"])
         artifact_counts = package["artifacts"]["counts"]
         assert package["artifacts"]["count"] == sum(artifact_counts.values())
         assert package["artifacts"]["non_test_count"] == sum(

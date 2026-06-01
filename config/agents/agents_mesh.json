@@ -103,7 +103,6 @@
       "required_snippets": [
         "memo-side mechanics",
         "mechanics/<slug>/docs/",
-        "legacy/",
         "validate_memo_mechanics.py"
       ]
     },
@@ -138,16 +137,6 @@
       ]
     },
     {
-      "path": "mechanics/antifragility/legacy/AGENTS.md",
-      "min_lines": 25,
-      "required_snippets": [
-        "mechanics/antifragility/legacy/",
-        "placement provenance",
-        "not the active route",
-        "legacy/INDEX.md"
-      ]
-    },
-    {
       "path": "mechanics/agon/AGENTS.md",
       "min_lines": 35,
       "required_snippets": [
@@ -175,16 +164,6 @@
         "active mechanic-owned doctrine",
         "ARTIFACT_TOPOLOGY.md",
         "validate_memo_mechanics.py"
-      ]
-    },
-    {
-      "path": "mechanics/agon/legacy/AGENTS.md",
-      "min_lines": 25,
-      "required_snippets": [
-        "mechanics/agon/legacy/",
-        "placement provenance",
-        "not the active route",
-        "legacy/INDEX.md"
       ]
     },
     {
@@ -218,16 +197,6 @@
       ]
     },
     {
-      "path": "mechanics/adoption/legacy/AGENTS.md",
-      "min_lines": 25,
-      "required_snippets": [
-        "mechanics/adoption/legacy/",
-        "placement provenance",
-        "not the active route",
-        "legacy/INDEX.md"
-      ]
-    },
-    {
       "path": "mechanics/governance/AGENTS.md",
       "min_lines": 35,
       "required_snippets": [
@@ -255,16 +224,6 @@
         "active mechanic-owned doctrine",
         "ARTIFACT_TOPOLOGY.md",
         "validate_memo_mechanics.py"
-      ]
-    },
-    {
-      "path": "mechanics/governance/legacy/AGENTS.md",
-      "min_lines": 25,
-      "required_snippets": [
-        "mechanics/governance/legacy/",
-        "placement provenance",
-        "not the active route",
-        "legacy/INDEX.md"
       ]
     },
     {
@@ -298,16 +257,6 @@
       ]
     },
     {
-      "path": "mechanics/shape-guard/legacy/AGENTS.md",
-      "min_lines": 25,
-      "required_snippets": [
-        "mechanics/shape-guard/legacy/",
-        "placement provenance",
-        "not the active route",
-        "legacy/INDEX.md"
-      ]
-    },
-    {
       "path": "mechanics/checkpoint/AGENTS.md",
       "min_lines": 35,
       "required_snippets": [
@@ -335,16 +284,6 @@
         "active mechanic-owned doctrine",
         "ARTIFACT_TOPOLOGY.md",
         "validate_memo_mechanics.py"
-      ]
-    },
-    {
-      "path": "mechanics/checkpoint/legacy/AGENTS.md",
-      "min_lines": 25,
-      "required_snippets": [
-        "mechanics/checkpoint/legacy/",
-        "placement provenance",
-        "not the active route",
-        "legacy/INDEX.md"
       ]
     },
     {
@@ -378,16 +317,6 @@
       ]
     },
     {
-      "path": "mechanics/readiness-boundary/legacy/AGENTS.md",
-      "min_lines": 25,
-      "required_snippets": [
-        "mechanics/readiness-boundary/legacy/",
-        "placement provenance",
-        "not the active route",
-        "legacy/INDEX.md"
-      ]
-    },
-    {
       "path": "mechanics/consumer-handoff/AGENTS.md",
       "min_lines": 35,
       "required_snippets": [
@@ -415,16 +344,6 @@
         "active mechanic-owned doctrine",
         "ARTIFACT_TOPOLOGY.md",
         "validate_memo_mechanics.py"
-      ]
-    },
-    {
-      "path": "mechanics/consumer-handoff/legacy/AGENTS.md",
-      "min_lines": 25,
-      "required_snippets": [
-        "mechanics/consumer-handoff/legacy/",
-        "placement provenance",
-        "not the active route",
-        "legacy/INDEX.md"
       ]
     },
     {
@@ -458,16 +377,6 @@
       ]
     },
     {
-      "path": "mechanics/operational-gate/legacy/AGENTS.md",
-      "min_lines": 25,
-      "required_snippets": [
-        "mechanics/operational-gate/legacy/",
-        "placement provenance",
-        "not the active route",
-        "legacy/INDEX.md"
-      ]
-    },
-    {
       "path": "mechanics/recurrence-support/AGENTS.md",
       "min_lines": 35,
       "required_snippets": [
@@ -495,16 +404,6 @@
         "active mechanic-owned doctrine",
         "ARTIFACT_TOPOLOGY.md",
         "validate_memo_mechanics.py"
-      ]
-    },
-    {
-      "path": "mechanics/recurrence-support/legacy/AGENTS.md",
-      "min_lines": 25,
-      "required_snippets": [
-        "mechanics/recurrence-support/legacy/",
-        "placement provenance",
-        "not the active route",
-        "legacy/INDEX.md"
       ]
     },
     {
@@ -538,16 +437,6 @@
       ]
     },
     {
-      "path": "mechanics/lineage-harvest/legacy/AGENTS.md",
-      "min_lines": 25,
-      "required_snippets": [
-        "mechanics/lineage-harvest/legacy/",
-        "placement provenance",
-        "not the active route",
-        "legacy/INDEX.md"
-      ]
-    },
-    {
       "path": "mechanics/questbook/AGENTS.md",
       "min_lines": 35,
       "required_snippets": [
@@ -575,16 +464,6 @@
         "active Questbook",
         "QUEST_SOURCE_CONTRACT",
         "validate_quest_store.py"
-      ]
-    },
-    {
-      "path": "mechanics/questbook/legacy/AGENTS.md",
-      "min_lines": 25,
-      "required_snippets": [
-        "mechanics/questbook/legacy/",
-        "placement provenance",
-        "not the active route",
-        "legacy/INDEX.md"
       ]
     },
     {
@@ -618,16 +497,6 @@
       ]
     },
     {
-      "path": "mechanics/titan/legacy/AGENTS.md",
-      "min_lines": 25,
-      "required_snippets": [
-        "mechanics/titan/legacy/",
-        "placement provenance",
-        "not the active route",
-        "legacy/INDEX.md"
-      ]
-    },
-    {
       "path": "mechanics/writeback/AGENTS.md",
       "min_lines": 35,
       "required_snippets": [
@@ -658,16 +527,6 @@
       ]
     },
     {
-      "path": "mechanics/writeback/legacy/AGENTS.md",
-      "min_lines": 25,
-      "required_snippets": [
-        "mechanics/writeback/legacy/",
-        "placement provenance",
-        "not the active route",
-        "legacy/INDEX.md"
-      ]
-    },
-    {
       "path": "mechanics/retention/AGENTS.md",
       "min_lines": 35,
       "required_snippets": [
@@ -695,16 +554,6 @@
         "active mechanic-owned doctrine",
         "ARTIFACT_TOPOLOGY.md",
         "validate_memo_mechanics.py"
-      ]
-    },
-    {
-      "path": "mechanics/retention/legacy/AGENTS.md",
-      "min_lines": 25,
-      "required_snippets": [
-        "mechanics/retention/legacy/",
-        "placement provenance",
-        "not the active route",
-        "legacy/INDEX.md"
       ]
     },
     {
@@ -1136,7 +985,8 @@
     ".deps",
     ".git",
     ".pytest_cache",
-    "__pycache__"
+    "__pycache__",
+    "legacy"
   ],
   "neighbor_doc_boundaries": [
     {
