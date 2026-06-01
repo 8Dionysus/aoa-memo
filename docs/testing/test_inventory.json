@@ -458,7 +458,7 @@
         "tests/root-topology/test_validation_lanes.py",
         "tests/root-topology/test_validator_topology.py"
       ],
-      "protects": "validator topology, validation lanes, release gate composition, and test inventory",
+      "protects": "validator topology, validation lanes, release gate composition, memo validator module split, and test inventory",
       "owner_surface": "docs/validation/VALIDATOR_TOPOLOGY.md",
       "lane": "topology",
       "mode": "blocking",

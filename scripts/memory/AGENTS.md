@@ -6,7 +6,8 @@ Route card for `scripts/memory/`.
 
 This district owns memory-object, recall, lifecycle, operation-cycle, local
 memo port, reviewed corpus, and generated memory surface validators and
-builders.
+builders. The broad memo validator CLI is a compatibility router; boundary
+logic lives under `scripts/memory/validators/`.
 
 ## Source
 
@@ -31,7 +32,11 @@ receipts, but only after an export packet explicitly allows `reviewed_write`.
 ## Validate
 
 ```bash
-python scripts/memory/validate_memo.py
+python scripts/memory/validate_memo.py --profile schema
+python scripts/memory/validate_memo.py --profile memory-context
+python scripts/memory/validate_memo.py --profile runtime-boundary
+python scripts/memory/validate_memo.py --profile handoff-boundary
+python scripts/memory/validate_memo.py --profile eval-boundary
 python scripts/memory/validate_memo_corpus.py
 python scripts/memory/validate_memory_operations.py
 python scripts/memory/validate_local_memo_port.py --path examples/memory-ports/example-port

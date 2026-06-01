@@ -17,6 +17,23 @@ import validation_lanes
 REPO_ROOT = Path(__file__).resolve().parents[2]
 MANIFEST_PATH = REPO_ROOT / "config" / "validation_lanes.json"
 TOPOLOGY_PATH = REPO_ROOT / "docs" / "validation" / "VALIDATOR_TOPOLOGY.md"
+MEMO_VALIDATOR_CLI = REPO_ROOT / "scripts" / "memory" / "validate_memo.py"
+MEMO_VALIDATOR_MODULE_DIR = REPO_ROOT / "scripts" / "memory" / "validators"
+MEMO_VALIDATOR_CLI_MAX_LINES = 120
+MEMO_VALIDATOR_MODULE_MAX_LINES = 750
+REQUIRED_MEMO_VALIDATOR_MODULES = {
+    "__init__.py",
+    "_shared.py",
+    "eval_boundary.py",
+    "handoff_boundary.py",
+    "memory_context.py",
+    "profiles.py",
+    "questbook.py",
+    "runtime_boundary.py",
+    "runtime_receipts.py",
+    "runtime_writeback.py",
+    "schema.py",
+}
 
 REQUIRED_LAYERS = {
     "source_topology",
@@ -78,6 +95,7 @@ TOPOLOGY_REQUIRED_SNIPPETS = (
     "Generated validators do not own source meaning.",
     "Prompt-only guardrails are not a security boundary.",
     "Do not add a single `validate_everything.py`.",
+    "The profile implementations live under `scripts/memory/validators/`",
 )
 
 
@@ -256,12 +274,53 @@ def validate_sequences(manifest: dict[str, Any], *, scope: str) -> list[str]:
     return issues
 
 
+def _line_count(path: Path) -> int:
+    return len(path.read_text(encoding="utf-8").splitlines())
+
+
+def validate_memo_validator_module_split() -> list[str]:
+    issues: list[str] = []
+    if not MEMO_VALIDATOR_CLI.is_file():
+        return ["scripts/memory/validate_memo.py is missing"]
+    if not (MEMO_VALIDATOR_MODULE_DIR / "AGENTS.md").is_file():
+        issues.append("scripts/memory/validators/AGENTS.md is missing")
+    if not MEMO_VALIDATOR_MODULE_DIR.is_dir():
+        return issues + ["scripts/memory/validators/ directory is missing"]
+
+    cli_lines = _line_count(MEMO_VALIDATOR_CLI)
+    if cli_lines > MEMO_VALIDATOR_CLI_MAX_LINES:
+        issues.append(
+            f"scripts/memory/validate_memo.py must stay a thin CLI "
+            f"({cli_lines} lines > {MEMO_VALIDATOR_CLI_MAX_LINES})"
+        )
+    cli_text = MEMO_VALIDATOR_CLI.read_text(encoding="utf-8")
+    if "profiles.run_profile" not in cli_text:
+        issues.append("scripts/memory/validate_memo.py must dispatch through validators.profiles")
+    if "Draft202012Validator" in cli_text or "def validate_schema_profile" in cli_text:
+        issues.append("scripts/memory/validate_memo.py must not own schema implementation logic")
+
+    actual_modules = {path.name for path in MEMO_VALIDATOR_MODULE_DIR.glob("*.py")}
+    missing_modules = sorted(REQUIRED_MEMO_VALIDATOR_MODULES - actual_modules)
+    if missing_modules:
+        issues.append("scripts/memory/validators missing modules: " + ", ".join(missing_modules))
+    for module_name in sorted(REQUIRED_MEMO_VALIDATOR_MODULES & actual_modules):
+        module_path = MEMO_VALIDATOR_MODULE_DIR / module_name
+        module_lines = _line_count(module_path)
+        if module_lines > MEMO_VALIDATOR_MODULE_MAX_LINES:
+            issues.append(
+                f"scripts/memory/validators/{module_name} is too large for a layer module "
+                f"({module_lines} lines > {MEMO_VALIDATOR_MODULE_MAX_LINES})"
+            )
+    return issues
+
+
 def validate(scope: str = "all") -> list[str]:
     manifest = _load_manifest()
     issues = []
     issues.extend(validate_topology_doc())
     issues.extend(validate_manifest_shape(manifest))
     issues.extend(validate_sequences(manifest, scope=scope))
+    issues.extend(validate_memo_validator_module_split())
     return issues
 
 

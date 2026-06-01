@@ -73,6 +73,10 @@ Keep Python entrypoints as orchestration only:
   release lanes call focused profiles instead of the unprofiled broad gate:
   `schema`, `memory-context`, `runtime-boundary`, `handoff-boundary`, and
   `eval-boundary`.
+- The focused profile implementations live under `scripts/memory/validators/`.
+  `scripts/memory/validate_memo.py` must stay a thin CLI/facade and must not
+  regain schema, runtime, handoff, eval, or memory-context implementation
+  ownership.
 
 Add `docs/validation/` as the current docs district for validator topology:
 
@@ -123,6 +127,13 @@ are still available through the compatibility `all` profile, but release uses
 profiled commands so each lane fails against the owner layer it is actually
 testing.
 
+The memory-validator implementation is now physically split by boundary layer:
+shared schema/ref helpers, schema checks, memory-context checks, Questbook
+projection checks, runtime writeback checks, live receipt checks, handoff
+checks, and eval guardrail checks. Validator topology tests enforce the thin
+entrypoint and per-module size budget so future growth lands in the owner
+module rather than recreating a monolith.
+
 ## Affected Surfaces
 
 - `docs/validation/`
@@ -135,6 +146,7 @@ testing.
 - `scripts/root-topology/validate_docs_districts.py`
 - `config/root-topology/root_technical_districts.json`
 - `config/agents/agents_mesh.json`
+- `scripts/memory/validators/`
 - `tests/root-topology/test_validation_lanes.py`
 - `tests/root-topology/test_ci_gate.py`
 - `tests/root-topology/test_release_check.py`

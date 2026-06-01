@@ -46,6 +46,9 @@ Tracking starts with the community-docs baseline for this repository.
   focused profiles for schema, memory context, runtime boundary, handoff
   boundary, and eval boundary checks, so release lanes no longer run one
   unprofiled memory validator across multiple authority layers.
+- Move those profile implementations into `scripts/memory/validators/` modules
+  and keep `validate_memo.py` as a thin compatibility CLI, with topology tests
+  preventing the memo validator from growing back into a monolith.
 
 ## [0.4.0] - 2026-05-24
 

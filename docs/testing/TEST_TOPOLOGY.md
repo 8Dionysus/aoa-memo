@@ -34,6 +34,8 @@ Validator layer meaning lives in
 [`../validation/VALIDATOR_TOPOLOGY.md`](../validation/VALIDATOR_TOPOLOGY.md).
 `scripts/validation_lanes.py` is only the loader/API. `scripts/ci_gate.py` and
 `scripts/release/release_check.py` are orchestrators.
+`scripts/memory/validate_memo.py` is likewise only a compatibility CLI; tests
+must keep the implementation in `scripts/memory/validators/` layer modules.
 
 ## Families
 

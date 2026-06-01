@@ -47,6 +47,21 @@ REQUIRED_NESTED_AGENTS = {
             "hidden runtime infrastructure",
         ),
     },
+    REPO_ROOT / "scripts" / "memory" / "validators" / "AGENTS.md": {
+        "min_lines": 20,
+        "required_tokens": (
+            "scripts/memory/validate_memo.py",
+            "scripts/memory/validators/",
+            "docs/validation/VALIDATOR_TOPOLOGY.md",
+            "config/validation_lanes.json",
+            "schema",
+            "memory-context",
+            "runtime",
+            "handoff",
+            "eval",
+            "hidden source of memory meaning",
+        ),
+    },
     REPO_ROOT / "generated" / "AGENTS.md": {
         "min_lines": 20,
         "required_tokens": (

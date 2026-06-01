@@ -1041,6 +1041,16 @@
       ]
     },
     {
+      "path": "scripts/memory/validators/AGENTS.md",
+      "min_lines": 20,
+      "required_snippets": [
+        "scripts/memory/validators/",
+        "docs/validation/VALIDATOR_TOPOLOGY.md",
+        "config/validation_lanes.json",
+        "hidden source of memory meaning"
+      ]
+    },
+    {
       "path": "scripts/agents/AGENTS.md",
       "min_lines": 15,
       "required_snippets": [

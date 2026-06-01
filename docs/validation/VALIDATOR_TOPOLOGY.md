@@ -52,6 +52,9 @@ state, role authority, KAG truth, and source-authored knowledge.
 The historical broad `validate_memo.py` entrypoint remains for compatibility,
 but release lanes must call its focused profiles rather than the unprofiled
 `all` gate.
+The profile implementations live under `scripts/memory/validators/`; the
+entrypoint must stay a thin compatibility CLI instead of collecting new
+boundary logic.
 
 `handoff` checks memo-side bridge and handoff contracts. It does not authorize
 downstream agents by itself.
@@ -81,6 +84,8 @@ merge without pretending to be release packaging or nightly drift analysis.
 - Do not let generated validators define source meaning.
 - Do not let a builder with `--check` become an unlabeled release validator.
 - Do not claim live runtime or eval enforcement from static repo checks.
+- Do not grow `scripts/memory/validate_memo.py` back into the implementation
+  owner; new checks route to the layer module that owns their boundary.
 
 ## Promotion Rule
 
