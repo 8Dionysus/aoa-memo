@@ -73,6 +73,8 @@ Tracking starts with the community-docs baseline for this repository.
 - Retire the old Titan remembrance single-`source_ref` schema branch from the
   active recall/remembrance part, preserving its v0 example only as an inert
   legacy snapshot.
+- Tighten the root README into a compact front door and route detailed memory,
+  mechanics, generated, and technical inventories to their owning surfaces.
 
 ## [0.4.0] - 2026-05-24
 
