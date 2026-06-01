@@ -167,7 +167,9 @@
       "family": "mechanics/consumer-handoff",
       "paths": [
         "mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_consumer_handoff_mechanic.py",
-        "mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_downstream_feed_contracts.py",
+        "mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_downstream_feed_docs_routes.py",
+        "mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_downstream_feed_generated_contracts.py",
+        "mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_downstream_feed_runtime_writeback_contracts.py",
         "mechanics/consumer-handoff/parts/playbook-scope-handoff/tests/test_playbook_memory_scopes.py"
       ],
       "protects": "consumer-handoff mechanic part contracts",
@@ -312,7 +314,9 @@
         "mechanics/writeback/parts/growth-and-continuity/tests/test_growth_refinery_writeback.py",
         "mechanics/writeback/parts/growth-and-continuity/tests/test_self_agency_continuity_writeback.py",
         "mechanics/writeback/parts/quest-and-chronicle/tests/test_quest_chronicle_writeback.py",
-        "mechanics/writeback/parts/receipt-publication-regression/tests/test_publish_live_receipts.py",
+        "mechanics/writeback/parts/receipt-publication-regression/tests/test_publish_live_receipts_boundaries.py",
+        "mechanics/writeback/parts/receipt-publication-regression/tests/test_publish_live_receipts_core.py",
+        "mechanics/writeback/parts/receipt-publication-regression/tests/test_publish_live_receipts_growth.py",
         "mechanics/writeback/parts/revision-ledgers/tests/test_revision_ledger_contracts.py",
         "mechanics/writeback/parts/rollback-and-recovery/tests/test_rollback_recovery_contracts.py",
         "mechanics/writeback/parts/runtime-and-temperature/tests/test_runtime_writeback_part.py"

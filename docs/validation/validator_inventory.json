@@ -1,0 +1,228 @@
+{
+  "schema_version": 1,
+  "owner": "docs/validation/VALIDATOR_TOPOLOGY.md",
+  "command_authority": "config/validation_lanes.json",
+  "required_fields": [
+    "family",
+    "paths",
+    "protects",
+    "owner_surface",
+    "layer",
+    "lane",
+    "mode",
+    "callers",
+    "failure_route",
+    "status"
+  ],
+  "entries": [
+    {
+      "family": "release/command-authority",
+      "paths": [
+        "config/validation_lanes.json",
+        "scripts/validation_lanes.py",
+        "scripts/ci_gate.py",
+        "scripts/release/release_check.py",
+        "scripts/release_check.py"
+      ],
+      "protects": "canonical validation lane command storage and release orchestration wrappers",
+      "owner_surface": "docs/validation/COMMAND_AUTHORITY.md",
+      "layer": "release_operations",
+      "lane": "source-fast/generated/export/runtime/memory/handoff/eval/audit/security/release/nightly/post-merge",
+      "mode": "blocking-orchestrator",
+      "callers": [
+        ".github/workflows/repo-validation.yml",
+        "scripts/ci_gate.py",
+        "scripts/release/release_check.py"
+      ],
+      "failure_route": "Fix command authority, lane manifest shape, or the failing lane owner before editing workflow YAML.",
+      "status": "active"
+    },
+    {
+      "family": "source/topology",
+      "paths": [
+        "scripts/root-topology/validate_validator_topology.py",
+        "scripts/root-topology/validate_docs_districts.py",
+        "scripts/agents/validate_agents_mesh.py",
+        "scripts/agents/validate_semantic_agents.py",
+        "scripts/mechanics/validate_mechanic_artifact_topology.py",
+        "scripts/mechanics/validate_memo_mechanics.py",
+        "scripts/mechanics/validate_memo_mechanic_parts.py",
+        "scripts/memory/validate_nested_agents.py"
+      ],
+      "protects": "authored docs districts, AGENTS route law, mechanic source topology, and validator topology",
+      "owner_surface": "docs/validation/VALIDATOR_TOPOLOGY.md",
+      "layer": "source_topology",
+      "lane": "source-fast/manual",
+      "mode": "blocking",
+      "callers": [
+        "config/validation_lanes.json",
+        "nearest AGENTS.md focused checks"
+      ],
+      "failure_route": "Fix authored source, route law, owner topology, or local AGENTS cards before rebuilding projections.",
+      "status": "active"
+    },
+    {
+      "family": "generated/read-model",
+      "paths": [
+        "mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py",
+        "scripts/memory/build_memory_operational_readouts.py",
+        "scripts/memory/build_memo_port_vocabulary.py",
+        "scripts/memory/build_local_memo_port_index.py",
+        "scripts/memory/generate_memory_object_surfaces.py",
+        "scripts/memory/validate_memory_surfaces.py",
+        "scripts/memory/validate_memory_object_surfaces.py",
+        "scripts/mechanics/build_mechanic_artifact_inventory.py",
+        "scripts/mechanics/validate_mechanic_artifact_inventory.py",
+        "scripts/root-topology/build_root_technical_districts_index.py",
+        "scripts/root-topology/validate_root_technical_districts_index.py",
+        "scripts/agents/build_agents_mesh_index.py",
+        "scripts/agents/validate_agents_mesh_index.py",
+        "scripts/root-topology/build_decision_indexes.py",
+        "scripts/mechanics/build_memo_mechanics_index.py",
+        "scripts/mechanics/validate_memo_mechanics_index.py",
+        "scripts/mechanics/build_memo_mechanic_cards.py",
+        "scripts/mechanics/validate_memo_mechanic_cards.py",
+        "scripts/mechanics/build_memo_mechanic_owner_routes.py",
+        "scripts/mechanics/validate_memo_mechanic_owner_routes.py",
+        "scripts/mechanics/build_memo_mechanic_readiness.py",
+        "scripts/mechanics/validate_memo_mechanic_readiness.py"
+      ],
+      "protects": "generated projections, compact indexes, read models, and inventory parity",
+      "owner_surface": "config/root-topology/root_technical_districts.json",
+      "layer": "projection_generated",
+      "lane": "generated/release/post-merge/nightly",
+      "mode": "blocking-with-check",
+      "callers": [
+        "config/validation_lanes.json"
+      ],
+      "failure_route": "Rebuild from source, then fix the source owner or generator if parity still fails.",
+      "status": "active"
+    },
+    {
+      "family": "capability/export-runtime",
+      "paths": [
+        "scripts/memory/validate_local_memo_port.py"
+      ],
+      "protects": "memo-side local port and export support-resource boundary",
+      "owner_surface": "docs/memory/LOCAL_MEMO_PORT_STANDARD.md",
+      "layer": "capability_permission",
+      "lane": "export/runtime",
+      "mode": "boundary-only",
+      "callers": [
+        "config/validation_lanes.json"
+      ],
+      "failure_route": "Fix memo-side export support contracts; live tool permission enforcement routes to runtime owners.",
+      "status": "active"
+    },
+    {
+      "family": "memory/profiled-compatibility-cli",
+      "paths": [
+        "scripts/memory/validate_memo.py"
+      ],
+      "protects": "profiled memory schema, context, runtime, handoff, and eval boundary checks",
+      "owner_surface": "scripts/memory/validators/AGENTS.md",
+      "layer": "runtime_policy/memory_context/inter_agent_handoff/trace_eval",
+      "lane": "runtime/memory/handoff/eval/compatibility",
+      "mode": "blocking-when-called",
+      "callers": [
+        "config/validation_lanes.json",
+        "manual compatibility callers"
+      ],
+      "failure_route": "Fix the profile implementation under scripts/memory/validators/ rather than growing the compatibility CLI.",
+      "status": "active"
+    },
+    {
+      "family": "runtime/security-boundary",
+      "paths": [
+        "scripts/memory/validate_memory_operations.py"
+      ],
+      "protects": "memory operation modes, write-path posture, and memo-side security boundary declarations",
+      "owner_surface": "docs/posture/MEMORY_OPERATION_MODES.md",
+      "layer": "runtime_policy/security_adversarial",
+      "lane": "runtime/security/nightly",
+      "mode": "boundary-only",
+      "callers": [
+        "config/validation_lanes.json",
+        "nearest docs AGENTS.md focused checks"
+      ],
+      "failure_route": "Fix memory operation mode source and write-path guardrail language; live enforcement routes to runtime and security owners.",
+      "status": "active"
+    },
+    {
+      "family": "memory/context",
+      "paths": [
+        "mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py",
+        "scripts/memory/validate_memo_corpus.py"
+      ],
+      "protects": "quest source contracts, reviewed memo corpus, provenance, and source/local-port separation",
+      "owner_surface": "docs/memory/MEMORY_MODEL.md",
+      "layer": "memory_context",
+      "lane": "memory/release",
+      "mode": "blocking",
+      "callers": [
+        "config/validation_lanes.json"
+      ],
+      "failure_route": "Fix memo corpus, quest source, schema, provenance, or source contract before accepting context readouts.",
+      "status": "active"
+    },
+    {
+      "family": "inter-agent/handoff",
+      "paths": [
+        "mechanics/agon/parts/prebinding-and-candidate-intake/scripts/validate_agon_memo_prebindings.py",
+        "mechanics/agon/parts/prebinding-and-candidate-intake/scripts/validate_agon_retention_rank_memo_bridge.py",
+        "mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_epistemic_memo_bridge.py",
+        "mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_kag_memo_evidence_package_registry.py",
+        "mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_mechanical_trial_memo_intakes.py",
+        "mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_slc_memo_bridge_registry.py",
+        "mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_sophian_memo_evidence_registry.py",
+        "mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_vds_memo_bridge.py"
+      ],
+      "protects": "memo-side Agon bridge registries, prebindings, evidence packages, and allowed handoff contracts",
+      "owner_surface": "mechanics/agon/AGENTS.md",
+      "layer": "inter_agent_handoff",
+      "lane": "handoff/release",
+      "mode": "blocking",
+      "callers": [
+        "config/validation_lanes.json",
+        "mechanic-local AGENTS.md focused checks"
+      ],
+      "failure_route": "Fix mechanic-local bridge source or downstream owner contract before widening inter-agent handoffs.",
+      "status": "active"
+    },
+    {
+      "family": "trace/eval",
+      "paths": [
+        ".agents/spark/scripts/validate_spark_lane.py"
+      ],
+      "protects": "repo-local Spark lane scenario registry, stop-lines, and release route participation",
+      "owner_surface": ".agents/spark/AGENTS.md",
+      "layer": "trace_eval",
+      "lane": "eval/release",
+      "mode": "blocking",
+      "callers": [
+        "config/validation_lanes.json",
+        ".agents/AGENTS.md"
+      ],
+      "failure_route": "Fix the Spark lane registry, scenario, or local tests; full trajectory grading routes to aoa-evals.",
+      "status": "active"
+    },
+    {
+      "family": "observability/audit",
+      "paths": [
+        "scripts/memory/validate_lifecycle_audit_examples.py",
+        "scripts/mechanics/build_memo_mechanic_landing_logs.py",
+        "scripts/mechanics/validate_memo_mechanic_landing_logs.py"
+      ],
+      "protects": "lifecycle audit examples and mechanic landing-log read-model evidence",
+      "owner_surface": "docs/posture/AUDIT_EVENTS.md",
+      "layer": "observability_audit",
+      "lane": "audit/release/nightly",
+      "mode": "blocking-in-release",
+      "callers": [
+        "config/validation_lanes.json"
+      ],
+      "failure_route": "Fix audit event source, landing-log projection, or explicit promotion before treating an audit as a hard gate.",
+      "status": "active"
+    }
+  ]
+}

@@ -1,10 +1,12 @@
 {
   "schema_version": 2,
   "owner": "docs/validation/VALIDATOR_TOPOLOGY.md",
+  "validator_inventory_ref": "docs/validation/validator_inventory.json",
   "testing_inventory_ref": "docs/testing/test_inventory.json",
   "command_authority": "config/validation_lanes.json",
   "notes": [
     "This manifest is the canonical storage location for repo-local validation lane command sequences and their boundary roles.",
+    "docs/validation/validator_inventory.json records validation-like entrypoints and lane-backed generated checks.",
     "scripts/validation_lanes.py is a loader/API for Python callers; do not duplicate full sequences in release_check.py, AGENTS.md, or workflow YAML.",
     "Generated validators check projection parity only; they must not define source meaning.",
     "Runtime, security, and eval layers are boundary-only here unless a repo-local owner surface explicitly promotes a check into release."

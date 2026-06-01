@@ -54,7 +54,7 @@
         "explicit memory and recall layer",
         "Route modes",
         "GitHub landing workflow",
-        "Core validation set"
+        "focused lanes"
       ]
     },
     {
@@ -855,6 +855,7 @@
       "required_snippets": [
         "docs/validation/",
         "VALIDATOR_TOPOLOGY.md",
+        "validator_inventory.json",
         "config/validation_lanes.json",
         "validate_validator_topology.py"
       ]

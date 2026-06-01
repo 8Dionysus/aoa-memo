@@ -7,6 +7,7 @@ from pathlib import Path
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
+VALIDATOR_INVENTORY_PATH = REPO_ROOT / "docs" / "validation" / "validator_inventory.json"
 SCRIPTS_DIR = REPO_ROOT / "scripts"
 if str(SCRIPTS_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPTS_DIR))
@@ -55,6 +56,22 @@ def test_validator_topology_layers_are_named_in_manifest() -> None:
     assert payload["validator_layers"]["projection_generated"]["must_not"]
     assert "source meaning" in " ".join(payload["validator_layers"]["projection_generated"]["must_not"])
     assert payload["validator_layers"]["security_adversarial"]["gate_role"] == "boundary"
+
+
+def test_validator_inventory_records_entrypoint_authority() -> None:
+    payload = json.loads(VALIDATOR_INVENTORY_PATH.read_text(encoding="utf-8"))
+    paths = {
+        path
+        for entry in payload["entries"]
+        for path in entry["paths"]
+    }
+
+    assert payload["owner"] == "docs/validation/VALIDATOR_TOPOLOGY.md"
+    assert payload["command_authority"] == "config/validation_lanes.json"
+    assert "scripts/memory/validate_memo.py" in paths
+    assert "scripts/ci_gate.py" in paths
+    assert "scripts/release/release_check.py" in paths
+    assert "scripts/memory/validators/schema.py" not in paths
 
 
 def test_source_fast_and_generated_lanes_keep_their_boundaries() -> None:

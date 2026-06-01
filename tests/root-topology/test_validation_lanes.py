@@ -21,6 +21,7 @@ def test_validation_lanes_manifest_loads_and_names_owner() -> None:
 
     assert payload["schema_version"] == 2
     assert payload["owner"] == "docs/validation/VALIDATOR_TOPOLOGY.md"
+    assert payload["validator_inventory_ref"] == "docs/validation/validator_inventory.json"
     assert payload["testing_inventory_ref"] == "docs/testing/test_inventory.json"
     assert payload["command_authority"] == "config/validation_lanes.json"
     assert payload["ci_modes"]["release"] == "release_check"

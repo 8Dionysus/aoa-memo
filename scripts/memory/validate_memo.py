@@ -12,30 +12,9 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 if str(SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPT_DIR))
 
-from validators import (  # noqa: E402
-    _shared,
-    eval_boundary,
-    handoff_boundary,
-    memory_context,
-    profiles,
-    questbook,
-    runtime_boundary,
-    runtime_receipts,
-    runtime_writeback,
-    schema,
-)
+from validators import profile_modules, profiles  # noqa: E402
 
-_PROFILE_MODULES = (
-    _shared,
-    schema,
-    questbook,
-    memory_context,
-    runtime_writeback,
-    runtime_receipts,
-    runtime_boundary,
-    handoff_boundary,
-    eval_boundary,
-)
+_PROFILE_MODULES = profile_modules.PROFILE_MODULES
 
 
 def _export_public_names() -> None:

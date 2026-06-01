@@ -85,6 +85,9 @@ Keep the current split clear:
 - `config/validation_lanes.json`, `validation_lanes.py`, `ci_gate.py`, and
   `release/release_check.py` keep validation command authority in one manifest
   while Python remains orchestration, not doctrine
+- `docs/validation/validator_inventory.json` records validation-like
+  entrypoints, lane-backed generated checks, compatibility wrappers, and manual
+  validators so root scripts do not become unlabeled historical gates
 
 Mechanic-owned generators and validators live under the owning package, for
 example `mechanics/consumer-handoff/parts/kag-source-export/scripts/generate_kag_export.py`,
@@ -110,41 +113,16 @@ confirm family alignment without turning capsules into routing policy.
 
 ## Validation
 
-After changing scripts, run the affected entrypoints directly. The common sequence is:
+After changing scripts, run the affected entrypoints directly. For broad script
+verification, use lane ids rather than copying the full lane sequence into this
+route card:
 
 ```bash
-python scripts/memory/validate_memo.py --profile schema
-python scripts/memory/validate_memo.py --profile memory-context
-python scripts/memory/validate_memo.py --profile runtime-boundary
-python scripts/memory/validate_memo.py --profile handoff-boundary
-python scripts/memory/validate_memo.py --profile eval-boundary
-python scripts/memory/validate_memo_corpus.py
-python scripts/memory/validate_memory_surfaces.py
-python scripts/memory/validate_memory_object_surfaces.py
-python scripts/memory/validate_lifecycle_audit_examples.py
-python scripts/memory/build_memory_operational_readouts.py --check
-python scripts/mechanics/validate_mechanic_artifact_topology.py
-python scripts/mechanics/build_mechanic_artifact_inventory.py --check
-python scripts/mechanics/validate_mechanic_artifact_inventory.py
-python scripts/root-topology/build_root_technical_districts_index.py --check
-python scripts/root-topology/validate_root_technical_districts_index.py
-python scripts/root-topology/build_decision_indexes.py --check
-python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py --check
-python scripts/agents/validate_agents_mesh.py
-python scripts/agents/build_agents_mesh_index.py --check
-python scripts/agents/validate_agents_mesh_index.py
-python scripts/agents/validate_semantic_agents.py
-python scripts/root-topology/validate_docs_districts.py
 python scripts/root-topology/validate_validator_topology.py
-python scripts/mechanics/validate_memo_mechanic_parts.py
-python scripts/mechanics/build_memo_mechanic_cards.py --check
-python scripts/mechanics/validate_memo_mechanic_cards.py
-python scripts/mechanics/build_memo_mechanic_owner_routes.py --check
-python scripts/mechanics/validate_memo_mechanic_owner_routes.py
-python scripts/mechanics/build_memo_mechanic_landing_logs.py --check
-python scripts/mechanics/validate_memo_mechanic_landing_logs.py
-python scripts/mechanics/build_memo_mechanic_readiness.py --check
-python scripts/mechanics/validate_memo_mechanic_readiness.py
+python scripts/ci_gate.py --mode source-fast
+python scripts/ci_gate.py --mode generated
+python scripts/ci_gate.py --mode memory
+python scripts/ci_gate.py --mode tests
 ```
 
 For validation lane orchestration changes, also run:

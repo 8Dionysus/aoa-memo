@@ -9,7 +9,9 @@ This active part belongs to `mechanics/consumer-handoff/` and materializes the m
 
 ## Source Surfaces
 
-- `mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_downstream_feed_contracts.py`
+- `mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_downstream_feed_generated_contracts.py`
+- `mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_downstream_feed_runtime_writeback_contracts.py`
+- `mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_downstream_feed_docs_routes.py`
 - `mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_consumer_handoff_mechanic.py`
 
 ## Function

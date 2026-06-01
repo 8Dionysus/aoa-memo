@@ -5,10 +5,29 @@ parity, runtime declarations, memory context, handoffs, traces, auditability,
 security posture, and release composition. They are not a pile of historical
 scripts where each wave leaves a standalone gate.
 
-The machine-readable lane map is
+The machine-readable validator inventory is
+[`validator_inventory.json`](validator_inventory.json)
+(`docs/validation/validator_inventory.json`). It records validation-like
+entrypoints, lane-backed generated checks, compatibility wrappers, manual
+validators, owner surfaces, lane posture, callers, and failure routes.
+
+Command authority is split between
+[`COMMAND_AUTHORITY.md`](COMMAND_AUTHORITY.md)
+(`docs/validation/COMMAND_AUTHORITY.md`) and
 [`../../config/validation_lanes.json`](../../config/validation_lanes.json).
-This document owns the meaning of the layers; the manifest owns executable
+This document owns the meaning of the layers; the lane manifest owns executable
 commands and their effective layer, mode, owner surface, and failure route.
+
+## Operating Shape
+
+Use the compact route shape: family -> paths -> protects -> owner surface ->
+layer -> lane -> mode -> callers -> failure route.
+
+`AGENTS.md` cards should name focused local checks and lane ids. Full repeated
+command sequences belong in `config/validation_lanes.json`; active docs should
+not copy them as a second release validator. Generated builders with `--check`
+are validators only when the lane manifest and validator inventory name their
+projection owner and failure route.
 
 ## Boundary Classes
 

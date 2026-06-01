@@ -32,6 +32,8 @@ from validator_topology_common import (
     line_count,
     load_manifest,
     local_ref_exists,
+    validate_command_authority_doc,
+    validate_inventory_shape,
 )
 
 
@@ -52,6 +54,8 @@ def validate_manifest_shape(manifest: dict[str, Any]) -> list[str]:
         issues.append("config/validation_lanes.json schema_version must be 2")
     if manifest.get("owner") != "docs/validation/VALIDATOR_TOPOLOGY.md":
         issues.append("config/validation_lanes.json owner must be docs/validation/VALIDATOR_TOPOLOGY.md")
+    if manifest.get("validator_inventory_ref") != "docs/validation/validator_inventory.json":
+        issues.append("config/validation_lanes.json must route validator inventory to docs/validation/validator_inventory.json")
     if manifest.get("testing_inventory_ref") != "docs/testing/test_inventory.json":
         issues.append("config/validation_lanes.json must route test inventory to docs/testing/test_inventory.json")
 
@@ -216,7 +220,9 @@ def validate(scope: str = "all") -> list[str]:
     manifest = load_manifest()
     issues = []
     issues.extend(validate_topology_doc())
+    issues.extend(validate_command_authority_doc())
     issues.extend(validate_manifest_shape(manifest))
+    issues.extend(validate_inventory_shape(manifest))
     issues.extend(validate_sequences(manifest, scope=scope))
     issues.extend(validate_memo_validator_module_split())
     return issues

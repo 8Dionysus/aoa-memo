@@ -136,35 +136,19 @@ If GitHub status or merge permissions cannot be observed, stop the landing route
 
 ## Verify
 
-Core validation set:
+Use focused lanes for broad verification; the full command sequences live in
+`config/validation_lanes.json`, with the route policy in
+`docs/validation/COMMAND_AUTHORITY.md` and the validator map in
+`docs/validation/validator_inventory.json`.
 
 ```bash
-python scripts/memory/validate_memo.py
-python scripts/memory/validate_memo_corpus.py
-python scripts/memory/validate_memory_surfaces.py
-python scripts/memory/validate_memory_object_surfaces.py
-python scripts/memory/validate_lifecycle_audit_examples.py
-python scripts/agents/validate_agents_mesh.py
-python scripts/agents/build_agents_mesh_index.py --check
-python scripts/agents/validate_agents_mesh_index.py
-python scripts/agents/validate_semantic_agents.py
-python scripts/root-topology/validate_docs_districts.py
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/mechanics/validate_memo_mechanic_parts.py
-python scripts/mechanics/build_memo_mechanics_index.py --check
-python scripts/mechanics/validate_memo_mechanics_index.py
-python scripts/mechanics/build_memo_mechanic_cards.py --check
-python scripts/mechanics/validate_memo_mechanic_cards.py
-python scripts/mechanics/build_memo_mechanic_owner_routes.py --check
-python scripts/mechanics/validate_memo_mechanic_owner_routes.py
-python scripts/mechanics/build_memo_mechanic_landing_logs.py --check
-python scripts/mechanics/validate_memo_mechanic_landing_logs.py
-python scripts/mechanics/build_memo_mechanic_readiness.py --check
-python scripts/mechanics/validate_memo_mechanic_readiness.py
-python scripts/mechanics/build_mechanic_artifact_inventory.py --check
-python scripts/mechanics/validate_mechanic_artifact_inventory.py
-python -m pytest -q tests
+python scripts/ci_gate.py --mode source-fast
+python scripts/ci_gate.py --mode generated
+python scripts/ci_gate.py --mode memory
+python scripts/ci_gate.py --mode tests
 ```
+
+Use `python scripts/release/release_check.py` for the frozen release gate.
 
 Use branch docs in `docs/root/AGENTS_ROOT_REFERENCE.md` for object canon, trust posture, lifecycle, writeback, bridge, and guardrail work.
 
