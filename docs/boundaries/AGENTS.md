@@ -25,7 +25,8 @@ boundary before mechanic-level admission.
 ## Validate
 
 ```bash
-python scripts/memory/validate_memo.py
+python scripts/memory/validate_memo.py --profile schema
+python scripts/memory/validate_memo.py --profile runtime-boundary
 python scripts/memory/validate_memory_operations.py
 python scripts/root-topology/validate_docs_districts.py
 ```

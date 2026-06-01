@@ -42,7 +42,7 @@ DISTRICT_GUIDE = {
     "examples": {
         "use_for": "public-safe shared memory examples, recall contracts, and generated-surface manifests",
         "route_local_to": "mechanics/<slug>/parts/<part>/examples/ when the example teaches one mechanic contract",
-        "check": "python scripts/memory/validate_memo.py",
+        "check": "python scripts/memory/validate_memo.py --profile schema",
     },
     "generated": {
         "use_for": "compact companions consumed outside one package",
@@ -57,7 +57,7 @@ DISTRICT_GUIDE = {
     "schemas": {
         "use_for": "public memory-object, recall, provenance, support-object, and generated-surface contracts",
         "route_local_to": "mechanics/<slug>/parts/<part>/schemas/ when the schema governs one mechanic operation",
-        "check": "python scripts/memory/validate_memo.py",
+        "check": "python scripts/memory/validate_memo.py --profile schema",
     },
     "scripts": {
         "use_for": "repo-wide validators, builders, release gates, and shared helper modules",

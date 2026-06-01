@@ -8,6 +8,13 @@ from pathlib import Path
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(REPO_ROOT / "scripts"))
+
+import validation_lanes  # noqa: E402
+
+
+def release_command_text() -> str:
+    return "\n".join(" ".join(step.command) for step in validation_lanes.RELEASE_CHECK_COMMAND_SEQUENCE)
 
 
 class AgentsMeshTestCase(unittest.TestCase):
@@ -40,7 +47,7 @@ class AgentsMeshTestCase(unittest.TestCase):
         self.assertEqual("agents-md-mesh-v1", payload["source_of_truth"])
         self.assertEqual("config/agents/agents_mesh.json", payload["config_ref"])
         self.assertEqual("DESIGN.AGENTS.md", payload["authority_ref"])
-        self.assertEqual(112, payload["counts"]["canonical"])
+        self.assertEqual(114, payload["counts"]["canonical"])
         self.assertEqual(0, payload["counts"]["migration"])
 
         paths = {card["path"] for card in payload["cards"]}
@@ -53,6 +60,8 @@ class AgentsMeshTestCase(unittest.TestCase):
                 ".github/AGENTS.md",
                 "AGENTS.md",
                 "docs/decisions/AGENTS.md",
+                "docs/testing/AGENTS.md",
+                "docs/validation/AGENTS.md",
                 "manifests/AGENTS.md",
                 "memo/AGENTS.md",
                 "mechanics/writeback/legacy/AGENTS.md",
@@ -100,7 +109,7 @@ class AgentsMeshTestCase(unittest.TestCase):
         )
 
     def test_release_check_runs_agents_mesh_gate(self) -> None:
-        text = (REPO_ROOT / "scripts" / "release" / "release_check.py").read_text(encoding="utf-8")
+        text = release_command_text()
         for snippet in (
             "scripts/agents/validate_agents_mesh.py",
             "scripts/agents/build_agents_mesh_index.py",
@@ -110,7 +119,7 @@ class AgentsMeshTestCase(unittest.TestCase):
             self.assertIn(snippet, text)
 
     def test_release_check_runs_spark_lane_gate(self) -> None:
-        text = (REPO_ROOT / "scripts" / "release" / "release_check.py").read_text(encoding="utf-8")
+        text = release_command_text()
         for snippet in (
             ".agents/spark/scripts/validate_spark_lane.py",
             ".agents/spark/tests",
@@ -154,7 +163,7 @@ class AgentsMeshTestCase(unittest.TestCase):
             text = path.read_text(encoding="utf-8")
             self.assertNotRegex(
                 text,
-                r"python scripts/(?!memory/|agents/|mechanics/|root-topology/|release/)",
+                r"python scripts/(?!(ci_gate\.py|release_check\.py|validation_lanes\.py|memory/|agents/|mechanics/|root-topology/|release/))",
                 msg=f"{rel_path} contains a stale flat root script route",
             )
 

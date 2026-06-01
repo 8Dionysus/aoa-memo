@@ -7,6 +7,7 @@
       "root_role": "repo-wide source maps for validators and generated companions",
       "allowed_files": [
         "config/agents/agents_mesh.json",
+        "config/validation_lanes.json",
         "config/memory-ports/indexing_vocabulary.json",
         "config/mechanics/memo_mechanics.json",
         "config/root-topology/root_technical_districts.json"
@@ -166,11 +167,14 @@
         "scripts/mechanics/memo_mechanics_common.py",
         "scripts/root-topology/decision_index_common.py",
         "scripts/root-topology/root_technical_districts_common.py",
+        "scripts/ci_gate.py",
         "scripts/release/release_check.py",
         "scripts/release_check.py",
+        "scripts/validation_lanes.py",
         "scripts/agents/validate_agents_mesh.py",
         "scripts/agents/validate_agents_mesh_index.py",
         "scripts/root-topology/validate_docs_districts.py",
+        "scripts/root-topology/validate_validator_topology.py",
         "scripts/memory/validate_lifecycle_audit_examples.py",
         "scripts/memory/validate_local_memo_port.py",
         "scripts/mechanics/validate_mechanic_artifact_inventory.py",
@@ -198,6 +202,7 @@
         "tests/agents/test_agents_mesh.py",
         "tests/agents/test_companion_skill_scripts.py",
         "tests/root-topology/test_current_direction_routes.py",
+        "tests/root-topology/test_ci_gate.py",
         "tests/root-topology/test_docs_districts.py",
         "tests/mechanics/test_cross_mechanic_operational_contracts.py",
         "tests/mechanics/test_cross_mechanic_candidate_contracts.py",
@@ -216,8 +221,12 @@
         "tests/memory/test_phase_alpha_provenance_thread.py",
         "tests/memory/test_reviewed_intake_landing.py",
         "tests/root-topology/test_roadmap_parity.py",
+        "tests/root-topology/test_release_check.py",
         "tests/root-topology/test_root_technical_districts_index.py",
+        "tests/root-topology/test_test_topology.py",
         "tests/root-topology/test_topology_spine.py",
+        "tests/root-topology/test_validation_lanes.py",
+        "tests/root-topology/test_validator_topology.py",
         "tests/agents/test_validate_semantic_agents.py"
       ]
     }
@@ -507,12 +516,19 @@
       "role": "orchestrator",
       "owner_surface": "scripts/AGENTS.md",
       "scripts": [
+        "scripts/ci_gate.py",
         "scripts/release/release_check.py",
-        "scripts/release_check.py"
+        "scripts/release_check.py",
+        "scripts/validation_lanes.py"
       ],
       "covered_by": [
         "AGENTS.md",
-        "scripts/release/release_check.py"
+        "config/validation_lanes.json",
+        "docs/testing/TEST_TOPOLOGY.md",
+        "scripts/release/release_check.py",
+        "tests/root-topology/test_ci_gate.py",
+        "tests/root-topology/test_release_check.py",
+        "tests/root-topology/test_validation_lanes.py"
       ]
     },
     {
@@ -618,11 +634,14 @@
       "owner_surface": "docs/AGENTS.md",
       "scripts": [
         "scripts/root-topology/validate_docs_districts.py",
+        "scripts/root-topology/validate_validator_topology.py",
         "scripts/agents/validate_semantic_agents.py"
       ],
       "covered_by": [
         "scripts/release/release_check.py",
+        "docs/validation/VALIDATOR_TOPOLOGY.md",
         "tests/root-topology/test_docs_districts.py",
+        "tests/root-topology/test_validator_topology.py",
         "tests/agents/test_validate_semantic_agents.py"
       ]
     },
@@ -664,14 +683,38 @@
         "tests/root-topology/test_current_direction_routes.py",
         "tests/root-topology/test_docs_districts.py",
         "tests/root-topology/test_roadmap_parity.py",
-        "tests/root-topology/test_topology_spine.py"
+        "tests/root-topology/test_topology_spine.py",
+        "tests/root-topology/test_test_topology.py"
       ],
       "protects": [
         "README.md",
         "ROADMAP.md",
         "docs/README.md",
         "docs/root/ROOT_SURFACE_LAW.md",
+        "docs/testing/TEST_TOPOLOGY.md",
+        "docs/testing/test_inventory.json",
         "docs/decisions/README.md"
+      ]
+    },
+    {
+      "id": "validation_lane_contracts",
+      "role": "route-and-topology-regression",
+      "owner_surface": "docs/validation/VALIDATOR_TOPOLOGY.md",
+      "tests": [
+        "tests/root-topology/test_ci_gate.py",
+        "tests/root-topology/test_release_check.py",
+        "tests/root-topology/test_validation_lanes.py",
+        "tests/root-topology/test_validator_topology.py"
+      ],
+      "protects": [
+        "config/validation_lanes.json",
+        "docs/validation/VALIDATOR_TOPOLOGY.md",
+        "docs/testing/TEST_TOPOLOGY.md",
+        "docs/testing/test_inventory.json",
+        "scripts/ci_gate.py",
+        "scripts/release/release_check.py",
+        "scripts/validation_lanes.py",
+        "scripts/root-topology/validate_validator_topology.py"
       ]
     },
     {
@@ -1104,6 +1147,28 @@
       "validators": [
         "scripts/memory/build_memo_port_vocabulary.py",
         "scripts/memory/validate_local_memo_port.py"
+      ]
+    },
+    {
+      "id": "validation_lane_source_map",
+      "role": "validation-lane-source-map",
+      "owner_surface": "docs/validation/VALIDATOR_TOPOLOGY.md",
+      "configs": [
+        "config/validation_lanes.json"
+      ],
+      "source_refs": [
+        "docs/testing/TEST_TOPOLOGY.md",
+        "docs/testing/test_inventory.json",
+        "docs/validation/VALIDATOR_TOPOLOGY.md",
+        "scripts/AGENTS.md",
+        "scripts/release/AGENTS.md"
+      ],
+      "validators": [
+        "tests/root-topology/test_validation_lanes.py",
+        "scripts/root-topology/validate_validator_topology.py",
+        "tests/root-topology/test_validator_topology.py",
+        "tests/root-topology/test_release_check.py",
+        "tests/root-topology/test_ci_gate.py"
       ]
     },
     {

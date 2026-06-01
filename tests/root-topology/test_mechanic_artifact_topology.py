@@ -6,7 +6,7 @@ from pathlib import Path
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(REPO_ROOT / "scripts" / "root-topology"))
+sys.path.insert(0, str(REPO_ROOT / "scripts" / "mechanics"))
 
 from validate_mechanic_artifact_topology import validate  # noqa: E402
 

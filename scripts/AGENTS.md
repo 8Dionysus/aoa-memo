@@ -23,7 +23,10 @@ Do not turn them into hidden runtime infrastructure.
 
 Keep the current split clear:
 
-- `memory/validate_memo.py` is the canonical memory-layer validator and now also checks nested guidance surfaces
+- `memory/validate_memo.py` is a profiled memory-contract validator; release
+  lanes call `--profile schema`, `--profile memory-context`,
+  `--profile runtime-boundary`, `--profile handoff-boundary`, or
+  `--profile eval-boundary` instead of the historical broad gate
 - `memory/validate_memo_corpus.py` checks the reviewed `memo/` corpus shape,
   object bundles, source refs, and local-port separation
 - `memory/validate_memory_surfaces.py` checks the doctrine family under `generated/memory/` plus router-facing recall contracts
@@ -53,6 +56,9 @@ Keep the current split clear:
 - `agents/validate_agents_mesh.py`, `agents/build_agents_mesh_index.py`, and `agents/validate_agents_mesh_index.py` keep the source-backed AGENTS mesh aligned with current route cards
 - `root-topology/validate_docs_districts.py` keeps retired docs districts and moved flat docs
   from drifting back into active docs-root sprawl
+- `root-topology/validate_validator_topology.py` keeps validator layers,
+  command lane metadata, source-fast boundaries, release composition, and
+  route-away declarations aligned with `docs/validation/VALIDATOR_TOPOLOGY.md`
 - `mechanics/validate_memo_mechanic_parts.py` keeps package `PARTS.md` files in the
   operation-first Active Parts plus Interface shape and requires physical
   `parts/<part>/README.md`, `CONTRACT.md`, and `VALIDATION.md` nodes
@@ -72,6 +78,9 @@ Keep the current split clear:
 - `config/root-topology/root_technical_districts.json` groups every root script into a
   `script_families` contract so root scripts stay release-oriented, covered,
   and owned rather than merely allowed by path
+- `config/validation_lanes.json`, `validation_lanes.py`, `ci_gate.py`, and
+  `release/release_check.py` keep validation command authority in one manifest
+  while Python remains orchestration, not doctrine
 
 Mechanic-owned generators and validators live under the owning package, for
 example `mechanics/consumer-handoff/parts/kag-source-export/scripts/generate_kag_export.py`,
@@ -100,7 +109,11 @@ confirm family alignment without turning capsules into routing policy.
 After changing scripts, run the affected entrypoints directly. The common sequence is:
 
 ```bash
-python scripts/memory/validate_memo.py
+python scripts/memory/validate_memo.py --profile schema
+python scripts/memory/validate_memo.py --profile memory-context
+python scripts/memory/validate_memo.py --profile runtime-boundary
+python scripts/memory/validate_memo.py --profile handoff-boundary
+python scripts/memory/validate_memo.py --profile eval-boundary
 python scripts/memory/validate_memo_corpus.py
 python scripts/memory/validate_memory_surfaces.py
 python scripts/memory/validate_memory_object_surfaces.py
@@ -118,6 +131,7 @@ python scripts/agents/build_agents_mesh_index.py --check
 python scripts/agents/validate_agents_mesh_index.py
 python scripts/agents/validate_semantic_agents.py
 python scripts/root-topology/validate_docs_districts.py
+python scripts/root-topology/validate_validator_topology.py
 python scripts/mechanics/validate_memo_mechanic_parts.py
 python scripts/mechanics/build_memo_mechanic_cards.py --check
 python scripts/mechanics/validate_memo_mechanic_cards.py
@@ -127,6 +141,12 @@ python scripts/mechanics/build_memo_mechanic_landing_logs.py --check
 python scripts/mechanics/validate_memo_mechanic_landing_logs.py
 python scripts/mechanics/build_memo_mechanic_readiness.py --check
 python scripts/mechanics/validate_memo_mechanic_readiness.py
+```
+
+For validation lane orchestration changes, also run:
+
+```bash
+python -m pytest -q tests/root-topology/test_validation_lanes.py tests/root-topology/test_validator_topology.py tests/root-topology/test_ci_gate.py tests/root-topology/test_release_check.py
 ```
 
 If generator logic changed, also run:

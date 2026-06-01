@@ -7,9 +7,15 @@ from pathlib import Path
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(REPO_ROOT / "scripts"))
 sys.path.insert(0, str(REPO_ROOT / "scripts" / "mechanics"))
 
+import validation_lanes  # noqa: E402
 from memo_mechanic_landing_logs_common import build_landing_logs, validate_payload  # noqa: E402
+
+
+def release_command_text() -> str:
+    return "\n".join(" ".join(step.command) for step in validation_lanes.RELEASE_CHECK_COMMAND_SEQUENCE)
 
 
 def run_script(*args: str) -> None:
@@ -80,7 +86,7 @@ def test_memo_mechanic_landing_logs_cover_every_package_receipt() -> None:
 
 
 def test_release_check_runs_memo_mechanic_landing_log_gate() -> None:
-    text = (REPO_ROOT / "scripts" / "release" / "release_check.py").read_text(encoding="utf-8")
+    text = release_command_text()
     for snippet in (
         "scripts/mechanics/build_memo_mechanic_landing_logs.py",
         "scripts/mechanics/validate_memo_mechanic_landing_logs.py",

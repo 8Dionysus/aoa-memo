@@ -1,0 +1,155 @@
+# Test And Validation Lane Topology
+
+- Decision ID: AOA-MEM-D-0075
+
+## Status
+
+Accepted on 2026-06-01.
+
+## Index Metadata
+
+- Original date: 2026-06-01
+- Surface classes: root/topology, validation guard, agents/mesh, release/tooling
+- Mechanic parents: none
+- Guard families: root technical district, docs route, generated/read-model, AGENTS/mesh, release/tooling
+- Memory object classes: decision
+- Posture: accepted validation topology
+
+## Context
+
+The release gate in `aoa-memo` had a long command list embedded directly in
+`scripts/release/release_check.py`. Tests were already split across `tests/`,
+mechanic-local part tests, and the Spark lane, but there was no single map that
+named what each test family protected or which validation lane owned the
+command sequence.
+
+That made the validator surface harder to evolve: release orchestration,
+focused CI commands, docs, and tests could drift independently even when they
+were describing the same gate.
+
+The deeper pressure is that agentic OS validators should protect boundaries,
+not become historical script sediment. `aoa-memo` must distinguish source
+topology, generated projection parity, capability/export boundaries, runtime
+policy declarations, trace/eval routing, memory context authority, inter-agent
+handoffs, auditability, adversarial memory posture, and release/nightly
+composition.
+
+## Decision
+
+Make `docs/validation/VALIDATOR_TOPOLOGY.md` the source-authored validator
+topology owner and `config/validation_lanes.json` the source-authored command
+authority for validation lanes.
+
+Each command step now carries effective metadata:
+
+- validator layer
+- mode (`blocking`, `blocking-in-release`, `boundary-only`, or `advisory`)
+- owner surface
+- failure route
+
+The required validator layers are:
+
+- Source/Topology Validators
+- Projection/Generated Validators
+- Capability/Permission Validators
+- Runtime Policy Validators
+- Trace/Eval Validators
+- Memory/RAG/Context Validators
+- Inter-Agent/Handoff Validators
+- Observability/Audit Validators
+- Security/Adversarial Validators
+- Release/Nightly/Post-Merge Validators
+
+Keep Python entrypoints as orchestration only:
+
+- `scripts/validation_lanes.py` loads and validates the lane manifest.
+- `scripts/ci_gate.py` runs named focused lanes from the manifest.
+- `scripts/release/release_check.py` preserves the broad release gate by
+  executing the manifest-composed `release_check` sequence.
+- `scripts/root-topology/validate_validator_topology.py` validates that the
+  topology, lane manifest, source-fast boundary, generated lane, audit
+  promotion, and release/nightly split stay aligned.
+- `scripts/memory/validate_memo.py` remains a compatibility entrypoint, but
+  release lanes call focused profiles instead of the unprofiled broad gate:
+  `schema`, `memory-context`, `runtime-boundary`, `handoff-boundary`, and
+  `eval-boundary`.
+
+Add `docs/validation/` as the current docs district for validator topology:
+
+- `docs/validation/VALIDATOR_TOPOLOGY.md`
+- `docs/validation/AGENTS.md`
+
+Keep `docs/testing/` as the current docs district for human test topology and
+machine inventory:
+
+- `docs/testing/TEST_TOPOLOGY.md`
+- `docs/testing/test_inventory.json`
+- `docs/testing/AGENTS.md`
+
+## Alternatives
+
+Keeping the command list only in `release_check.py` would preserve the old
+entrypoint, but focused lanes and test topology would still need to duplicate
+or infer release behavior.
+
+Moving command authority into GitHub workflow YAML would make CI explicit, but
+it would turn platform automation into source doctrine and hide local
+validation composition from agents.
+
+Using only `AGENTS.md` prose for validation lanes would be readable, but not
+machine-checkable enough for release-gate regressions.
+
+## Consequences
+
+The broad release gate remains available through the compatibility entrypoints,
+but command composition is now inspectable and testable as data.
+
+Future test additions must update the testing inventory and root technical
+district contracts. Future validation-lane changes must update validator
+topology, the lane manifest, and focused regression tests instead of editing
+hidden command lists.
+
+`docs/validation/` becomes an allowed docs district because validator meaning
+needs an explicit source owner. `docs/testing/` remains allowed because it owns
+test-family topology, not memory doctrine or a mechanic-owned doc package.
+
+`source-fast` is now constrained to Source/Topology Validators. Generated
+parity checks move to the `generated` lane. Runtime, capability, security, and
+full trace/eval checks are explicitly boundary-only or routed to stronger
+owners unless a local owner surface promotes a command into release.
+
+The old memory-validator monolith is no longer a release command. Its checks
+are still available through the compatibility `all` profile, but release uses
+profiled commands so each lane fails against the owner layer it is actually
+testing.
+
+## Affected Surfaces
+
+- `docs/validation/`
+- `docs/testing/`
+- `config/validation_lanes.json`
+- `scripts/validation_lanes.py`
+- `scripts/ci_gate.py`
+- `scripts/release/release_check.py`
+- `scripts/root-topology/validate_validator_topology.py`
+- `scripts/root-topology/validate_docs_districts.py`
+- `config/root-topology/root_technical_districts.json`
+- `config/agents/agents_mesh.json`
+- `tests/root-topology/test_validation_lanes.py`
+- `tests/root-topology/test_ci_gate.py`
+- `tests/root-topology/test_release_check.py`
+- `tests/root-topology/test_test_topology.py`
+- `tests/root-topology/test_validator_topology.py`
+
+## Verification
+
+Use:
+
+```bash
+python scripts/root-topology/validate_validator_topology.py
+python -m pytest -q tests/root-topology/test_validation_lanes.py tests/root-topology/test_validator_topology.py tests/root-topology/test_ci_gate.py tests/root-topology/test_release_check.py tests/root-topology/test_test_topology.py
+python scripts/root-topology/build_decision_indexes.py --check
+python scripts/agents/build_agents_mesh_index.py --check
+python scripts/root-topology/build_root_technical_districts_index.py --check
+python scripts/release/release_check.py
+```

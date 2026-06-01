@@ -16,8 +16,10 @@ When docs change proof, routing, KAG, role, or playbook seams, name the downstre
   docs district.
 - Here: root docs own memory doctrine, boundaries, lifecycle, trust,
   temperature, provenance, and root-surface placement.
-- Below: `docs/decisions/` owns decision rationale. Mechanic doctrine lives
-  under `mechanics/<slug>/docs/` once a mechanic owns the surface.
+- Below: `docs/decisions/` owns decision rationale, `docs/validation/` owns
+  validator topology and lane hardness, and `docs/testing/` owns test topology
+  plus test inventory. Mechanic doctrine lives under `mechanics/<slug>/docs/`
+  once a mechanic owns the surface.
 
 ## Migration Posture
 
@@ -29,6 +31,9 @@ When docs change proof, routing, KAG, role, or playbook seams, name the downstre
   root or docs-root surface.
 - When a mechanic owns the surface, route to the nearest
   `mechanics/<slug>/AGENTS.md` before changing active docs.
+- When validation layers, lane ownership, or release/nightly composition change,
+  route to `docs/validation/AGENTS.md` and `config/validation_lanes.json`.
+- When test inventory changes, route to `docs/testing/AGENTS.md`.
 
 Verify with:
 

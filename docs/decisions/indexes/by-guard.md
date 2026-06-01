@@ -22,6 +22,7 @@
 - [AOA-MEM-D-0057 Root Semantic Topology](../AOA-MEM-D-0057-root-semantic-topology.md) (`docs/decisions/AOA-MEM-D-0057-root-semantic-topology.md`)
 - [AOA-MEM-D-0058 Root Technical District Atlas](../AOA-MEM-D-0058-root-technical-district-atlas.md) (`docs/decisions/AOA-MEM-D-0058-root-technical-district-atlas.md`)
 - [AOA-MEM-D-0071 Canonical Decision IDs and Generated Indexes](../AOA-MEM-D-0071-canonical-decision-ids-and-indexes.md) (`docs/decisions/AOA-MEM-D-0071-canonical-decision-ids-and-indexes.md`)
+- [AOA-MEM-D-0075 Test And Validation Lane Topology](../AOA-MEM-D-0075-test-and-validation-lane-topology.md) (`docs/decisions/AOA-MEM-D-0075-test-and-validation-lane-topology.md`)
 
 ## docs route
 
@@ -37,6 +38,7 @@
 - [AOA-MEM-D-0072 Numbered Decision Paths](../AOA-MEM-D-0072-numbered-decision-paths.md) (`docs/decisions/AOA-MEM-D-0072-numbered-decision-paths.md`)
 - [AOA-MEM-D-0073 Numbered Decision Route Completion](../AOA-MEM-D-0073-numbered-decision-route-completion.md) (`docs/decisions/AOA-MEM-D-0073-numbered-decision-route-completion.md`)
 - [AOA-MEM-D-0074 Full Canonical ID Decision Filenames](../AOA-MEM-D-0074-full-canonical-id-decision-filenames.md) (`docs/decisions/AOA-MEM-D-0074-full-canonical-id-decision-filenames.md`)
+- [AOA-MEM-D-0075 Test And Validation Lane Topology](../AOA-MEM-D-0075-test-and-validation-lane-topology.md) (`docs/decisions/AOA-MEM-D-0075-test-and-validation-lane-topology.md`)
 
 ## mechanic topology
 
@@ -113,6 +115,7 @@
 - [AOA-MEM-D-0072 Numbered Decision Paths](../AOA-MEM-D-0072-numbered-decision-paths.md) (`docs/decisions/AOA-MEM-D-0072-numbered-decision-paths.md`)
 - [AOA-MEM-D-0073 Numbered Decision Route Completion](../AOA-MEM-D-0073-numbered-decision-route-completion.md) (`docs/decisions/AOA-MEM-D-0073-numbered-decision-route-completion.md`)
 - [AOA-MEM-D-0074 Full Canonical ID Decision Filenames](../AOA-MEM-D-0074-full-canonical-id-decision-filenames.md) (`docs/decisions/AOA-MEM-D-0074-full-canonical-id-decision-filenames.md`)
+- [AOA-MEM-D-0075 Test And Validation Lane Topology](../AOA-MEM-D-0075-test-and-validation-lane-topology.md) (`docs/decisions/AOA-MEM-D-0075-test-and-validation-lane-topology.md`)
 
 ## reviewed corpus/intake
 
@@ -152,6 +155,7 @@
 - [AOA-MEM-D-0050 Functional AGENTS Route Cards](../AOA-MEM-D-0050-functional-agents-route-cards.md) (`docs/decisions/AOA-MEM-D-0050-functional-agents-route-cards.md`)
 - [AOA-MEM-D-0059 Decision: Spark Registry-Backed Memo Lane](../AOA-MEM-D-0059-spark-registry-backed-memo-lane.md) (`docs/decisions/AOA-MEM-D-0059-spark-registry-backed-memo-lane.md`)
 - [AOA-MEM-D-0074 Full Canonical ID Decision Filenames](../AOA-MEM-D-0074-full-canonical-id-decision-filenames.md) (`docs/decisions/AOA-MEM-D-0074-full-canonical-id-decision-filenames.md`)
+- [AOA-MEM-D-0075 Test And Validation Lane Topology](../AOA-MEM-D-0075-test-and-validation-lane-topology.md) (`docs/decisions/AOA-MEM-D-0075-test-and-validation-lane-topology.md`)
 
 ## quest/read-model
 
@@ -166,6 +170,7 @@
 - [AOA-MEM-D-0072 Numbered Decision Paths](../AOA-MEM-D-0072-numbered-decision-paths.md) (`docs/decisions/AOA-MEM-D-0072-numbered-decision-paths.md`)
 - [AOA-MEM-D-0073 Numbered Decision Route Completion](../AOA-MEM-D-0073-numbered-decision-route-completion.md) (`docs/decisions/AOA-MEM-D-0073-numbered-decision-route-completion.md`)
 - [AOA-MEM-D-0074 Full Canonical ID Decision Filenames](../AOA-MEM-D-0074-full-canonical-id-decision-filenames.md) (`docs/decisions/AOA-MEM-D-0074-full-canonical-id-decision-filenames.md`)
+- [AOA-MEM-D-0075 Test And Validation Lane Topology](../AOA-MEM-D-0075-test-and-validation-lane-topology.md) (`docs/decisions/AOA-MEM-D-0075-test-and-validation-lane-topology.md`)
 
 ## sibling and boundary
 

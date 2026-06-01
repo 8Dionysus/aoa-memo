@@ -2,14 +2,18 @@
 
 ## Guidance for `tests/`
 
-`tests/` protects memory schemas, examples, generated catalogs, recall contracts, lifecycle audit examples, retired docs district checks, memo mechanics, and writeback boundaries.
+`tests/` protects memory schemas, examples, generated catalogs, recall
+contracts, lifecycle audit examples, retired docs district checks, memo
+mechanics, validator topology, validation lanes, test topology, and writeback boundaries. The
+phrase recall contracts is intentional route-law vocabulary here.
 
 Tests should expose provenance loss, recall overreach, stale context, schema mismatch, AGENTS mesh drift, and generated/source drift.
 
 Root tests are part of the root technical-district contract. Each non-route
 test file or public fixture must be listed in exactly one
-`config/root-topology/root_technical_districts.json` `test_families` entry that names the
-owner surface and protected refs.
+`config/root-topology/root_technical_districts.json` `test_families` entry that
+names the owner surface and protected refs. The broader test-family map lives
+in `docs/testing/test_inventory.json`.
 
 `tests/root-topology/test_root_technical_districts_index.py` protects the compact district
 atlas in `generated/root-topology/root_technical_districts.min.json` so root folder routing
@@ -40,4 +44,6 @@ python scripts/mechanics/validate_memo_mechanic_readiness.py
 python scripts/agents/validate_agents_mesh.py
 python scripts/agents/validate_agents_mesh_index.py
 python scripts/root-topology/validate_docs_districts.py
+python scripts/root-topology/validate_validator_topology.py
+python -m pytest -q tests/root-topology/test_test_topology.py tests/root-topology/test_validation_lanes.py tests/root-topology/test_validator_topology.py
 ```

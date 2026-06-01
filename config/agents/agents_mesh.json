@@ -850,6 +850,26 @@
       ]
     },
     {
+      "path": "docs/validation/AGENTS.md",
+      "min_lines": 20,
+      "required_snippets": [
+        "docs/validation/",
+        "VALIDATOR_TOPOLOGY.md",
+        "config/validation_lanes.json",
+        "validate_validator_topology.py"
+      ]
+    },
+    {
+      "path": "docs/testing/AGENTS.md",
+      "min_lines": 20,
+      "required_snippets": [
+        "docs/testing/",
+        "config/validation_lanes.json",
+        "test_inventory.json",
+        "scripts/ci_gate.py"
+      ]
+    },
+    {
       "path": "schemas/memory-objects/AGENTS.md",
       "min_lines": 15,
       "required_snippets": [

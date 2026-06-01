@@ -34,6 +34,18 @@ Tracking starts with the community-docs baseline for this repository.
 - Complete the decision-lane path migration by retiring date-path compatibility
   metadata, short numbered filenames, and generated compatibility read models;
   full `AOA-MEM-D-####` filenames are now the only active decision source route.
+- Add validator topology and lane metadata with
+  `docs/validation/VALIDATOR_TOPOLOGY.md`, `config/validation_lanes.json`,
+  `scripts/validation_lanes.py`, `scripts/ci_gate.py`, and
+  `scripts/root-topology/validate_validator_topology.py` so validators are
+  grouped by boundary layer instead of accumulating as historical release
+  scripts.
+- Add `docs/testing/` and focused regressions so test inventory, release-check
+  command authority, CI lane selection, and validator topology stay aligned.
+- Split the historical broad `scripts/memory/validate_memo.py` release use into
+  focused profiles for schema, memory context, runtime boundary, handoff
+  boundary, and eval boundary checks, so release lanes no longer run one
+  unprofiled memory validator across multiple authority layers.
 
 ## [0.4.0] - 2026-05-24
 

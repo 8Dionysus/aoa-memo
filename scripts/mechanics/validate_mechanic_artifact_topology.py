@@ -64,6 +64,7 @@ CONFIG_FAMILY_ROLES = {
     "mechanic-index-source-map",
     "route-card-source-map",
     "technical-district-source-map",
+    "validation-lane-source-map",
 }
 MANIFEST_POLICY_ROLE = "reserved-shared-recurrence-manifest-home"
 
