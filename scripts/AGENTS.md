@@ -30,12 +30,17 @@ Keep the current split clear:
 - `memory/validate_memo_corpus.py` checks the reviewed `memo/` corpus shape,
   object bundles, source refs, and local-port separation
 - `memory/validate_memory_surfaces.py` checks the doctrine family under `generated/memory/` plus router-facing recall contracts
-- `memory/generate_memory_object_surfaces.py` rebuilds the object-facing family from curated examples into `generated/memory-objects/`
+- `memory/generate_memory_object_surfaces.py` rebuilds the object-facing family
+  from curated examples into `generated/memory-objects/`; source loading,
+  shared projection helpers, and item rendering live in separate
+  `memory_object_surface_*` modules
 - `memory/validate_memory_object_surfaces.py` checks manifest coverage, determinism, lifecycle integrity, and object-facing recall contracts
 - `memory/validate_lifecycle_audit_examples.py` checks lifecycle, provenance-thread, and audit-event example integrity
 - `memory/build_memory_operational_readouts.py` rebuilds access-plane
   currentness, source-lane intake wave, and workspace memo-port status readouts
-  while keeping `abyss-stack` and `8Dionysus` as stronger owners
+  while keeping `abyss-stack` and `8Dionysus` as stronger owners; live access
+  probes, source-wave projection, and workspace-port projection live in
+  separate `memory_operational_*` modules
 - `mechanics/validate_mechanic_artifact_topology.py` keeps single-mechanic schemas,
   examples, config inputs, generated outputs, scripts, tests, and manifests out
   of root technical districts, and checks that root `generated/` outputs belong
@@ -52,7 +57,8 @@ Keep the current split clear:
   technical district contract in `config/root-topology/root_technical_districts.json`
 - `root-topology/build_decision_indexes.py` keeps
   `docs/decisions/indexes/` aligned with canonical decision IDs and decision
-  `Index Metadata`
+  `Index Metadata`; parsing, rendering, and contract validation are split into
+  `decision_index_*` helpers
 - quest projection building belongs to `mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py`
 - `memory/validate_nested_agents.py` checks that local guidance files stay present and explicit
 - `agents/validate_agents_mesh.py`, `agents/build_agents_mesh_index.py`, and `agents/validate_agents_mesh_index.py` keep the source-backed AGENTS mesh aligned with current route cards
@@ -78,7 +84,8 @@ Keep the current split clear:
 - `mechanics/build_memo_mechanic_readiness.py` and
   `mechanics/validate_memo_mechanic_readiness.py` keep a compact readiness matrix for
   every mechanic package, tying package cards, owner maps, stop-lines,
-  validation routes, and package-local or part-local artifacts together
+  validation routes, and package-local or part-local artifacts together; the
+  readiness helper stack is split into constants, build, and validation modules
 - `config/root-topology/root_technical_districts.json` groups every root script into a
   `script_families` contract so root scripts stay release-oriented, covered,
   and owned rather than merely allowed by path
