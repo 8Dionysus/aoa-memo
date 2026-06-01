@@ -62,6 +62,9 @@ Tracking starts with the community-docs baseline for this repository.
 - Split validator-topology helper constants and path checks out of
   `validate_validator_topology.py` so the validator topology gate also stays
   below the repo's bulky-file threshold.
+- Mark legacy raw test snapshots as advisory provenance in the test inventory
+  and cap active test files at 300 lines so historical tests cannot silently
+  re-enter blocking gates or grow back into bulky hidden architecture.
 
 ## [0.4.0] - 2026-05-24
 

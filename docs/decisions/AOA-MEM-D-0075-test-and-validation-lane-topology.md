@@ -158,6 +158,13 @@ The memory-validator regression tests are likewise split by boundary:
 and `tests/root-topology/test_test_topology.py` keep that split explicit so
 tests do not become a second hidden architecture.
 
+Historical test files preserved under `mechanics/*/legacy/raw/tests/` are
+provenance snapshots, not current hard gates. The test inventory must keep them
+separate from active `parts/*/tests/` replacements and mark them advisory so a
+raw snapshot cannot silently re-enter release as a blocking test. Active test
+files also carry a 300-line compactness guard to prevent the split suites from
+regrowing into bulky hidden architecture.
+
 The mechanic artifact topology validator is also split after follow-up review:
 `validate_mechanic_artifact_topology.py` remains the CLI and district
 allowlist orchestrator, `mechanic_artifact_topology_common.py` owns shared root

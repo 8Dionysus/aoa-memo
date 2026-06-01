@@ -95,6 +95,9 @@ belongs to runtime and eval owners.
   `test_memo_validators.py` under a new name.
 - Mechanic-local tests belong under `mechanics/<slug>/parts/<part>/tests/`
   when they protect one repeatable operation.
+- Historical tests preserved under `mechanics/*/legacy/raw/tests/` are
+  provenance snapshots only. They must not share a blocking inventory entry
+  with the active part test that replaced them.
 - Advisory or live checks must be visibly named before they can enter a
   default lane. Memory remains weaker than proof, routing, runtime state, role
   authority, KAG truth, playbook choreography, and source-authored knowledge.

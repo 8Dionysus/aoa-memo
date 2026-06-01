@@ -31,19 +31,25 @@ Do not update expected outputs without checking the source-owned memory docs, sc
 
 Keep fixtures public-safe. No private memories, secrets, hidden telemetry, or unreduced personal data.
 
-Verify with:
+## Validation
+
+Full lane command sequences live in `config/validation_lanes.json`; this card
+names only focused owner checks and lane ids.
+
+Run the focused test for the changed surface first. For broad test health use:
 
 ```bash
-python -m pytest -q tests
-python scripts/agents/validate_semantic_agents.py
-python scripts/mechanics/validate_mechanic_artifact_topology.py
-python scripts/mechanics/validate_mechanic_artifact_inventory.py
-python scripts/root-topology/validate_root_technical_districts_index.py
-python scripts/mechanics/validate_memo_mechanic_parts.py
-python scripts/mechanics/validate_memo_mechanic_readiness.py
-python scripts/agents/validate_agents_mesh.py
-python scripts/agents/validate_agents_mesh_index.py
-python scripts/root-topology/validate_docs_districts.py
-python scripts/root-topology/validate_validator_topology.py
+python scripts/ci_gate.py --mode tests
+```
+
+For test-topology, lane, or validator-authority changes, run:
+
+```bash
 python -m pytest -q tests/root-topology/test_test_topology.py tests/root-topology/test_validation_lanes.py tests/root-topology/test_validator_topology.py
+```
+
+For release-facing changes, use the composed gate:
+
+```bash
+python scripts/release/release_check.py
 ```
