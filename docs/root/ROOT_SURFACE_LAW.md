@@ -74,6 +74,8 @@ Current docs surfaces should be read through these districts:
 | Boundary and operational posture | `docs/boundaries/` | active owner-boundary doctrine |
 | Trust, lifecycle, temperature, provenance, and audit posture | `docs/posture/` | active temporal and evidence posture |
 | Root law, release route, and preserved reference | `docs/root/` plus thin `docs/RELEASING.md` compatibility pointer | active route law plus reference; the flat release pointer must not carry independent policy |
+| Validator topology | `docs/validation/` | active validator boundary-layer law; command authority still lives in `config/validation_lanes.json` |
+| Test topology | `docs/testing/` | active test-family map and test inventory; validator meaning lives in `docs/validation/` |
 | Writeback, checkpoint, readiness-boundary, and recurrence support mechanics | `mechanics/writeback/docs/*`, `mechanics/checkpoint/docs/*`, `mechanics/readiness-boundary/docs/*`, `mechanics/recurrence-support/docs/*` | active memo mechanic packages; do not turn them into runtime ledgers, dispatch, retry, proof, graph substrate, route dispatch, or role policy |
 | Antifragility mechanic docs | `mechanics/antifragility/docs/*` | active antifragility memo mechanic; keep package map and validator aligned |
 | Agon mechanic docs | `mechanics/agon/docs/AGON_*` | active Agon memo mechanic; keep package map and validator aligned |
@@ -153,6 +155,7 @@ together.
 | mechanic-owned root technical artifacts | moved when single-mechanic-owned | `mechanics/<slug>/{schemas,examples,config,generated,scripts,tests,manifests}` | package-owned artifacts should sit with their mechanics; root technical districts keep only shared or cross-mechanic surfaces |
 | root technical district atlas | add | `generated/root-topology/root_technical_districts.min.json` | root districts need a compact machine-readable map of role, route card, family ids, and local routing without making README or AGENTS cards carry the full allowlist |
 | release-tool compatibility entrypoints | add | `docs/RELEASING.md`, `scripts/release_check.py` | workspace release tooling probes these legacy paths; they remain thin pointers to `docs/root/RELEASING.md` and `scripts/release/release_check.py` |
+| validation topology districts | add | `docs/validation/`, `docs/testing/`, `config/validation_lanes.json`, `scripts/validation_lanes.py`, `scripts/ci_gate.py` | validators need explicit boundary-layer law, command authority, and test-family map instead of repeated release command lists or unlabeled historical gates |
 
 ## Final Rule
 

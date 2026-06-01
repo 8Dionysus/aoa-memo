@@ -1,0 +1,758 @@
+{
+  "schema_version": 2,
+  "owner": "docs/validation/VALIDATOR_TOPOLOGY.md",
+  "testing_inventory_ref": "docs/testing/test_inventory.json",
+  "command_authority": "config/validation_lanes.json",
+  "notes": [
+    "This manifest is the canonical storage location for repo-local validation lane command sequences and their boundary roles.",
+    "scripts/validation_lanes.py is a loader/API for Python callers; do not duplicate full sequences in release_check.py, AGENTS.md, or workflow YAML.",
+    "Generated validators check projection parity only; they must not define source meaning.",
+    "Runtime, security, and eval layers are boundary-only here unless a repo-local owner surface explicitly promotes a check into release."
+  ],
+  "validator_layers": {
+    "source_topology": {
+      "title": "Source/Topology Validators",
+      "ownership": "owned",
+      "gate_role": "hard",
+      "owner_surface": "docs/validation/VALIDATOR_TOPOLOGY.md",
+      "purpose": "Validate authored source, route law, AGENTS mesh, package topology, owner maps, and source contracts.",
+      "checks": [
+        "docs districts and root placement law",
+        "AGENTS mesh and semantic route cards",
+        "mechanic package topology and source maps",
+        "validator topology itself"
+      ],
+      "must_not": [
+        "check generated freshness",
+        "perform release packaging smoke",
+        "pretend runtime policy is enforced by static docs"
+      ],
+      "route": "Fix authored source or owner topology before rebuilding projections."
+    },
+    "projection_generated": {
+      "title": "Projection/Generated Validators",
+      "ownership": "owned",
+      "gate_role": "hard",
+      "owner_surface": "config/root-topology/root_technical_districts.json",
+      "purpose": "Validate that generated, compact, read-model, and inventory surfaces are exact projections of source/build process.",
+      "checks": [
+        "builder --check parity",
+        "generated schema shape",
+        "digest and inventory drift",
+        "route-card and decision index freshness"
+      ],
+      "must_not": [
+        "define source meaning",
+        "replace owner docs or configs",
+        "become a hidden release validator without owner boundary"
+      ],
+      "route": "Rebuild from source, then fix the owning source or generator if parity still fails."
+    },
+    "capability_permission": {
+      "title": "Capability/Permission Validators",
+      "ownership": "boundary-only",
+      "gate_role": "boundary",
+      "owner_surface": "docs/memory/LOCAL_MEMO_PORT_STANDARD.md",
+      "purpose": "Validate memo-side export, local port, and support-resource boundaries without claiming runtime tool enforcement ownership.",
+      "checks": [
+        "local memo port shape",
+        "allowed result and review route boundaries",
+        "repo-local reference safety for exported memory packets"
+      ],
+      "must_not": [
+        "treat prompt text as a security boundary",
+        "define MCP/tool allowlists for another runtime owner",
+        "expand privilege scope from memo docs alone"
+      ],
+      "route": "Runtime allowlists and tool scopes route to the agent/runtime owner; aoa-memo validates memo-side support contracts only."
+    },
+    "runtime_policy": {
+      "title": "Runtime Policy Validators",
+      "ownership": "boundary-only",
+      "gate_role": "boundary",
+      "owner_surface": "docs/posture/MEMORY_OPERATION_MODES.md",
+      "purpose": "Validate repo-local memory operation modes, write-path guardrail source, and runtime-boundary declarations.",
+      "checks": [
+        "memory operation modes",
+        "write-path risk markers",
+        "review-required write modes",
+        "runtime support boundaries"
+      ],
+      "must_not": [
+        "claim live approval gates or circuit breakers are enforced by CI",
+        "replace runtime policy engine checks",
+        "hide fallback-state obligations in prose only"
+      ],
+      "route": "Live guardrails, cost caps, approvals, rollback, and circuit breakers route to the runtime policy owner."
+    },
+    "trace_eval": {
+      "title": "Trace/Eval Validators",
+      "ownership": "boundary-only",
+      "gate_role": "regression",
+      "owner_surface": ".agents/spark/AGENTS.md",
+      "purpose": "Validate repo-local agent-lane scenarios and regression harnesses while routing full trajectory grading to aoa-evals.",
+      "checks": [
+        "Spark lane registry and scenarios",
+        "agent-lane tests",
+        "repo test suite outcome"
+      ],
+      "must_not": [
+        "score final text only when trace behavior matters",
+        "claim environment outcome grading without an eval harness",
+        "hide grader datasets inside release orchestration"
+      ],
+      "route": "Full multi-turn trace, tool-call, environment-outcome, and grader suites route to aoa-evals."
+    },
+    "memory_context": {
+      "title": "Memory/RAG/Context Validators",
+      "ownership": "owned",
+      "gate_role": "hard",
+      "owner_surface": "docs/memory/MEMORY_MODEL.md",
+      "purpose": "Validate memory provenance, freshness, retention posture, corpus shape, poisoning boundaries, and allowed context influence.",
+      "checks": [
+        "reviewed memory corpus",
+        "memory object schemas and refs",
+        "quest source contracts",
+        "currentness and provenance boundaries"
+      ],
+      "must_not": [
+        "make memory a hidden authority source",
+        "let untrusted context become instruction",
+        "collapse evidence, routing, runtime state, and memory into one proof layer"
+      ],
+      "route": "Fix memo corpus, memory schema, provenance, or source contract before accepting generated context readouts."
+    },
+    "inter_agent_handoff": {
+      "title": "Inter-Agent/Handoff Validators",
+      "ownership": "owned",
+      "gate_role": "hard",
+      "owner_surface": "mechanics/consumer-handoff/docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md",
+      "purpose": "Validate memo-side handoff envelopes, bridge registries, allowed delegation, and escalation boundaries.",
+      "checks": [
+        "Agon memo bridges",
+        "prebinding and retention-rank bridge routes",
+        "orchestrator memory alignment surfaces"
+      ],
+      "must_not": [
+        "authorize downstream agents from memo alone",
+        "erase replay/idempotency obligations",
+        "treat a bridge registry as live runtime auth"
+      ],
+      "route": "Fix mechanic-local bridge source or downstream owner contract before widening inter-agent behavior."
+    },
+    "observability_audit": {
+      "title": "Observability/Audit Validators",
+      "ownership": "owned",
+      "gate_role": "promoted-audit",
+      "owner_surface": "docs/posture/AUDIT_EVENTS.md",
+      "purpose": "Validate that memo actions leave enough public audit evidence for decisions, approvals, outputs, policy decisions, and landing logs.",
+      "checks": [
+        "lifecycle audit examples",
+        "mechanic landing-log read models",
+        "traceable validation receipts where memo owns them"
+      ],
+      "must_not": [
+        "present advisory reports as hard blockers unless promoted",
+        "confuse an audit report with source truth",
+        "hide missing trace evidence behind passing tests"
+      ],
+      "route": "Advisory audit signals stay soft unless this manifest marks the command blocking-in-release."
+    },
+    "security_adversarial": {
+      "title": "Security/Adversarial Validators",
+      "ownership": "boundary-only",
+      "gate_role": "boundary",
+      "owner_surface": "docs/boundaries/MEMORY_WRITE_PATH_GUARDRAILS.md",
+      "purpose": "Validate memo-side adversarial memory boundaries such as injection-as-data, source spoofing, poisoning risk, and unsafe write handling.",
+      "checks": [
+        "write-path guardrail source language",
+        "high-risk memory markers",
+        "review-required writes for risky inputs"
+      ],
+      "must_not": [
+        "treat prompt-only guardrails as a security boundary",
+        "replace red-team/eval/runtime enforcement",
+        "claim complete tool-misuse coverage from memo-local schemas"
+      ],
+      "route": "Security findings, red-team suites, tool misuse, and runtime enforcement route to the security/eval/runtime owner surfaces."
+    },
+    "release_operations": {
+      "title": "Release/Nightly/Post-Merge Validators",
+      "ownership": "owned",
+      "gate_role": "release",
+      "owner_surface": "docs/root/RELEASING.md",
+      "purpose": "Compose frozen-artifact release gates and softer drift lanes without becoming the source of individual validator meaning.",
+      "checks": [
+        "release composition",
+        "nightly drift lane",
+        "post-merge rerun route",
+        "compatibility entrypoint behavior"
+      ],
+      "must_not": [
+        "become validate_everything.py",
+        "duplicate rules owned by source/generated/runtime/eval layers",
+        "turn builders with --check into unlabeled release validators"
+      ],
+      "route": "Release orchestration composes named lanes; fix the failing lane owner instead of editing release glue first."
+    }
+  },
+  "sequence_defaults": {
+    "source_fast": {
+      "layer": "source_topology",
+      "mode": "blocking",
+      "owner_surface": "docs/validation/VALIDATOR_TOPOLOGY.md",
+      "failure_route": "Fix authored route law, owner source, package topology, or validator topology before projection checks."
+    },
+    "generated": {
+      "layer": "projection_generated",
+      "mode": "blocking",
+      "owner_surface": "config/root-topology/root_technical_districts.json",
+      "failure_route": "Rebuild generated projections from source, then fix source or generator if parity still fails."
+    },
+    "export_runtime": {
+      "layer": "capability_permission",
+      "mode": "boundary-only",
+      "owner_surface": "docs/memory/LOCAL_MEMO_PORT_STANDARD.md",
+      "failure_route": "Fix memo-side export support contracts; live tool permission enforcement routes to runtime owners."
+    },
+    "runtime": {
+      "layer": "runtime_policy",
+      "mode": "boundary-only",
+      "owner_surface": "docs/posture/MEMORY_OPERATION_MODES.md",
+      "failure_route": "Fix memory operation mode source; live runtime enforcement routes to the runtime policy owner."
+    },
+    "memory_context": {
+      "layer": "memory_context",
+      "mode": "blocking",
+      "owner_surface": "docs/memory/MEMORY_MODEL.md",
+      "failure_route": "Fix memo corpus, memory schema, provenance, or source contract before widening context readouts."
+    },
+    "inter_agent_handoff": {
+      "layer": "inter_agent_handoff",
+      "mode": "blocking",
+      "owner_surface": "mechanics/consumer-handoff/docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md",
+      "failure_route": "Fix mechanic-local bridge source or downstream owner contract before widening inter-agent handoffs."
+    },
+    "eval": {
+      "layer": "trace_eval",
+      "mode": "blocking",
+      "owner_surface": ".agents/spark/AGENTS.md",
+      "failure_route": "Fix agent-lane registry, scenario, or test harness; full trajectory grading routes to aoa-evals."
+    },
+    "audit": {
+      "layer": "observability_audit",
+      "mode": "blocking-in-release",
+      "owner_surface": "docs/posture/AUDIT_EVENTS.md",
+      "failure_route": "Fix audit event source, landing-log projection, or explicit promotion before treating an audit as a hard gate."
+    },
+    "security": {
+      "layer": "security_adversarial",
+      "mode": "boundary-only",
+      "owner_surface": "docs/boundaries/MEMORY_WRITE_PATH_GUARDRAILS.md",
+      "failure_route": "Fix memo-side injection/poisoning guard source; red-team and runtime enforcement route to security/eval/runtime owners."
+    },
+    "tests": {
+      "layer": "trace_eval",
+      "mode": "blocking",
+      "owner_surface": "docs/testing/TEST_TOPOLOGY.md",
+      "failure_route": "Fix the failing test owner surface before widening release validation."
+    },
+    "release_ops": {
+      "layer": "release_operations",
+      "mode": "blocking",
+      "owner_surface": "docs/root/RELEASING.md",
+      "failure_route": "Fix release, nightly, or post-merge composition in validator topology before changing release glue."
+    }
+  },
+  "command_sequences": {
+    "source_fast": [
+      {
+        "label": "validate validator topology",
+        "command": [
+          "python",
+          "scripts/root-topology/validate_validator_topology.py",
+          "--scope",
+          "source-fast"
+        ]
+      },
+      {
+        "label": "validate docs districts",
+        "command": [
+          "python",
+          "scripts/root-topology/validate_docs_districts.py"
+        ]
+      },
+      {
+        "label": "validate AGENTS mesh",
+        "command": [
+          "python",
+          "scripts/agents/validate_agents_mesh.py"
+        ]
+      },
+      {
+        "label": "validate semantic AGENTS docs",
+        "command": [
+          "python",
+          "scripts/agents/validate_semantic_agents.py"
+        ]
+      },
+      {
+        "label": "validate mechanic artifact topology",
+        "command": [
+          "python",
+          "scripts/mechanics/validate_mechanic_artifact_topology.py"
+        ]
+      },
+      {
+        "label": "validate memo mechanics",
+        "command": [
+          "python",
+          "scripts/mechanics/validate_memo_mechanics.py"
+        ]
+      },
+      {
+        "label": "validate memo mechanic parts",
+        "command": [
+          "python",
+          "scripts/mechanics/validate_memo_mechanic_parts.py"
+        ]
+      }
+    ],
+    "generated": [
+      {
+        "label": "check generated quest surfaces",
+        "command": [
+          "python",
+          "mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py",
+          "--check"
+        ]
+      },
+      {
+        "label": "check memory operational readouts",
+        "command": [
+          "python",
+          "scripts/memory/build_memory_operational_readouts.py",
+          "--check"
+        ]
+      },
+      {
+        "label": "check memo port vocabulary",
+        "command": [
+          "python",
+          "scripts/memory/build_memo_port_vocabulary.py",
+          "--check"
+        ]
+      },
+      {
+        "label": "check local memo port example index",
+        "command": [
+          "python",
+          "scripts/memory/build_local_memo_port_index.py",
+          "--path",
+          "examples/memory-ports/example-port",
+          "--check"
+        ]
+      },
+      {
+        "label": "check generated memory-object surfaces",
+        "command": [
+          "python",
+          "scripts/memory/generate_memory_object_surfaces.py",
+          "--check"
+        ]
+      },
+      {
+        "label": "validate memory surfaces",
+        "command": [
+          "python",
+          "scripts/memory/validate_memory_surfaces.py"
+        ]
+      },
+      {
+        "label": "validate memory object surfaces",
+        "command": [
+          "python",
+          "scripts/memory/validate_memory_object_surfaces.py"
+        ]
+      },
+      {
+        "label": "check mechanic artifact inventory",
+        "command": [
+          "python",
+          "scripts/mechanics/build_mechanic_artifact_inventory.py",
+          "--check"
+        ]
+      },
+      {
+        "label": "validate mechanic artifact inventory",
+        "command": [
+          "python",
+          "scripts/mechanics/validate_mechanic_artifact_inventory.py"
+        ]
+      },
+      {
+        "label": "check root technical districts index",
+        "command": [
+          "python",
+          "scripts/root-topology/build_root_technical_districts_index.py",
+          "--check"
+        ]
+      },
+      {
+        "label": "validate root technical districts index",
+        "command": [
+          "python",
+          "scripts/root-topology/validate_root_technical_districts_index.py"
+        ]
+      },
+      {
+        "label": "check AGENTS mesh index",
+        "command": [
+          "python",
+          "scripts/agents/build_agents_mesh_index.py",
+          "--check"
+        ]
+      },
+      {
+        "label": "validate AGENTS mesh index",
+        "command": [
+          "python",
+          "scripts/agents/validate_agents_mesh_index.py"
+        ]
+      },
+      {
+        "label": "check decision indexes",
+        "command": [
+          "python",
+          "scripts/root-topology/build_decision_indexes.py",
+          "--check"
+        ]
+      },
+      {
+        "label": "check memo mechanics index",
+        "command": [
+          "python",
+          "scripts/mechanics/build_memo_mechanics_index.py",
+          "--check"
+        ]
+      },
+      {
+        "label": "validate memo mechanics index",
+        "command": [
+          "python",
+          "scripts/mechanics/validate_memo_mechanics_index.py"
+        ]
+      },
+      {
+        "label": "check memo mechanic cards",
+        "command": [
+          "python",
+          "scripts/mechanics/build_memo_mechanic_cards.py",
+          "--check"
+        ]
+      },
+      {
+        "label": "validate memo mechanic cards",
+        "command": [
+          "python",
+          "scripts/mechanics/validate_memo_mechanic_cards.py"
+        ]
+      },
+      {
+        "label": "check memo mechanic owner routes",
+        "command": [
+          "python",
+          "scripts/mechanics/build_memo_mechanic_owner_routes.py",
+          "--check"
+        ]
+      },
+      {
+        "label": "validate memo mechanic owner routes",
+        "command": [
+          "python",
+          "scripts/mechanics/validate_memo_mechanic_owner_routes.py"
+        ]
+      },
+      {
+        "label": "check memo mechanic readiness",
+        "command": [
+          "python",
+          "scripts/mechanics/build_memo_mechanic_readiness.py",
+          "--check"
+        ]
+      },
+      {
+        "label": "validate memo mechanic readiness",
+        "command": [
+          "python",
+          "scripts/mechanics/validate_memo_mechanic_readiness.py"
+        ]
+      }
+    ],
+    "export_runtime": [
+      {
+        "label": "validate local memo port example",
+        "command": [
+          "python",
+          "scripts/memory/validate_local_memo_port.py",
+          "--path",
+          "examples/memory-ports/example-port"
+        ]
+      }
+    ],
+    "runtime": [
+      {
+        "label": "validate memory operation modes and write guards",
+        "command": [
+          "python",
+          "scripts/memory/validate_memory_operations.py"
+        ]
+      },
+      {
+        "label": "validate memo runtime boundary contracts",
+        "command": [
+          "python",
+          "scripts/memory/validate_memo.py",
+          "--profile",
+          "runtime-boundary"
+        ]
+      }
+    ],
+    "memory_context": [
+      {
+        "label": "validate quest store",
+        "command": [
+          "python",
+          "mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py"
+        ]
+      },
+      {
+        "label": "validate memo schema contracts",
+        "command": [
+          "python",
+          "scripts/memory/validate_memo.py",
+          "--profile",
+          "schema"
+        ]
+      },
+      {
+        "label": "validate memo context contracts",
+        "command": [
+          "python",
+          "scripts/memory/validate_memo.py",
+          "--profile",
+          "memory-context"
+        ]
+      },
+      {
+        "label": "validate memo corpus",
+        "command": [
+          "python",
+          "scripts/memory/validate_memo_corpus.py"
+        ]
+      }
+    ],
+    "inter_agent_handoff": [
+      {
+        "label": "validate memo handoff boundary contracts",
+        "command": [
+          "python",
+          "scripts/memory/validate_memo.py",
+          "--profile",
+          "handoff-boundary"
+        ]
+      },
+      {
+        "label": "validate Agon memo prebindings",
+        "command": [
+          "python",
+          "mechanics/agon/parts/prebinding-and-candidate-intake/scripts/validate_agon_memo_prebindings.py"
+        ]
+      },
+      {
+        "label": "validate Agon epistemic memo bridge",
+        "command": [
+          "python",
+          "mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_epistemic_memo_bridge.py"
+        ]
+      },
+      {
+        "label": "validate Agon KAG memo evidence package registry",
+        "command": [
+          "python",
+          "mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_kag_memo_evidence_package_registry.py"
+        ]
+      },
+      {
+        "label": "validate Agon mechanical trial memo intakes",
+        "command": [
+          "python",
+          "mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_mechanical_trial_memo_intakes.py"
+        ]
+      },
+      {
+        "label": "validate Agon retention-rank memo bridge",
+        "command": [
+          "python",
+          "mechanics/agon/parts/prebinding-and-candidate-intake/scripts/validate_agon_retention_rank_memo_bridge.py"
+        ]
+      },
+      {
+        "label": "validate Agon SLC memo bridge registry",
+        "command": [
+          "python",
+          "mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_slc_memo_bridge_registry.py"
+        ]
+      },
+      {
+        "label": "validate Agon Sophian memo evidence registry",
+        "command": [
+          "python",
+          "mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_sophian_memo_evidence_registry.py"
+        ]
+      },
+      {
+        "label": "validate Agon VDS memo bridge",
+        "command": [
+          "python",
+          "mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_vds_memo_bridge.py"
+        ]
+      }
+    ],
+    "eval": [
+      {
+        "label": "validate memo eval boundary pack",
+        "command": [
+          "python",
+          "scripts/memory/validate_memo.py",
+          "--profile",
+          "eval-boundary"
+        ]
+      },
+      {
+        "label": "validate Spark lane",
+        "command": [
+          "python",
+          ".agents/spark/scripts/validate_spark_lane.py"
+        ]
+      },
+      {
+        "label": "run Spark lane tests",
+        "command": [
+          "python",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          ".agents/spark/tests",
+          "-p",
+          "test*.py"
+        ]
+      }
+    ],
+    "audit": [
+      {
+        "label": "validate lifecycle audit examples",
+        "command": [
+          "python",
+          "scripts/memory/validate_lifecycle_audit_examples.py"
+        ]
+      },
+      {
+        "label": "check memo mechanic landing logs",
+        "command": [
+          "python",
+          "scripts/mechanics/build_memo_mechanic_landing_logs.py",
+          "--check"
+        ]
+      },
+      {
+        "label": "validate memo mechanic landing logs",
+        "command": [
+          "python",
+          "scripts/mechanics/validate_memo_mechanic_landing_logs.py"
+        ]
+      }
+    ],
+    "security": [
+      {
+        "label": "validate memory operations security boundary",
+        "command": [
+          "python",
+          "scripts/memory/validate_memory_operations.py"
+        ]
+      }
+    ],
+    "tests": [
+      {
+        "label": "run tests",
+        "command": [
+          "python",
+          "-m",
+          "pytest",
+          "-q"
+        ]
+      }
+    ],
+    "release_ops": [
+      {
+        "label": "validate release, nightly, and post-merge composition",
+        "command": [
+          "python",
+          "scripts/root-topology/validate_validator_topology.py",
+          "--scope",
+          "release-ops"
+        ]
+      }
+    ]
+  },
+  "sequence_compositions": {
+    "mechanics": [
+      "source_fast",
+      "generated",
+      "audit"
+    ],
+    "nightly": [
+      "release_ops",
+      "source_fast",
+      "generated",
+      "runtime",
+      "security",
+      "audit"
+    ],
+    "release_check": [
+      "release_ops",
+      "source_fast",
+      "memory_context",
+      "runtime",
+      "export_runtime",
+      "inter_agent_handoff",
+      "eval",
+      "generated",
+      "audit",
+      "tests"
+    ],
+    "post_merge": [
+      "release_ops",
+      "source_fast",
+      "generated",
+      "tests"
+    ]
+  },
+  "ci_modes": {
+    "source-fast": "source_fast",
+    "generated": "generated",
+    "export/runtime": "export_runtime",
+    "runtime": "runtime",
+    "security": "security",
+    "memory": "memory_context",
+    "handoff": "inter_agent_handoff",
+    "eval": "eval",
+    "audit": "audit",
+    "nightly": "nightly",
+    "mechanics": "mechanics",
+    "tests": "tests",
+    "release": "release_check",
+    "post-merge": "post_merge"
+  }
+}

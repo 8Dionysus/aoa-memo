@@ -5,12 +5,15 @@ Route card for `tests/root-topology/`.
 ## Purpose
 
 This district owns regression tests for root topology, docs placement, roadmap
-parity, and current direction routes.
+parity, validator topology, validation lanes, test topology, and current
+direction routes.
 
 ## Source
 
-Tests here protect `docs/root/`, `config/root-topology/`,
-`scripts/root-topology/`, and `generated/root-topology/`.
+Tests here protect `docs/root/`, `docs/validation/`, `docs/testing/`,
+`config/root-topology/`, `config/validation_lanes.json`,
+`scripts/root-topology/`, `scripts/validation_lanes.py`, `scripts/ci_gate.py`,
+release orchestration, and `generated/root-topology/`.
 
 ## Route
 

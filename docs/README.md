@@ -35,6 +35,8 @@ may enter through the thin [RELEASING](RELEASING.md) compatibility pointer.
 | [posture](posture/AGENTS.md) | trust, lifecycle, temperature, provenance, operation modes, and audit-event posture | `python scripts/memory/validate_lifecycle_audit_examples.py` |
 | [root](root/AGENTS.md) | root placement law, release route, and preserved root reference | `python scripts/root-topology/validate_docs_districts.py` |
 | [decisions](decisions/AGENTS.md) | durable rationale for structural and route-law choices | decision-specific review plus release gate |
+| [validation](validation/AGENTS.md) | validator boundary layers, lane hardness, route-away declarations, and release/nightly composition law | `python scripts/root-topology/validate_validator_topology.py` |
+| [testing](testing/AGENTS.md) | test topology, test inventory, and release-gate regression map | `python -m pytest -q tests/root-topology/test_test_topology.py tests/root-topology/test_validation_lanes.py tests/root-topology/test_validator_topology.py` |
 
 ## Source Families
 
@@ -46,6 +48,8 @@ may enter through the thin [RELEASING](RELEASING.md) compatibility pointer.
 | Lifecycle, trust, temperature, provenance, operation modes | `docs/posture/` | [MEMORY_TRUST_POSTURE](posture/MEMORY_TRUST_POSTURE.md), [LIFECYCLE](posture/LIFECYCLE.md), [MEMORY_TEMPERATURES](posture/MEMORY_TEMPERATURES.md), [MEMORY_OPERATION_MODES](posture/MEMORY_OPERATION_MODES.md), [PROVENANCE_THREADS](posture/PROVENANCE_THREADS.md) |
 | Root law and release route | `docs/root/` plus thin `docs/RELEASING.md` compatibility pointer | [ROOT_SURFACE_LAW](root/ROOT_SURFACE_LAW.md), [RELEASING](root/RELEASING.md), [AGENTS_ROOT_REFERENCE](root/AGENTS_ROOT_REFERENCE.md) |
 | Structural rationale | `docs/decisions/` | [decisions/README](decisions/README.md) |
+| Validator topology | `docs/validation/` | [VALIDATOR_TOPOLOGY](validation/VALIDATOR_TOPOLOGY.md), then [validation_lanes](../config/validation_lanes.json) |
+| Test topology | `docs/testing/` | [TEST_TOPOLOGY](testing/TEST_TOPOLOGY.md), then [test_inventory](testing/test_inventory.json) |
 
 Mechanic docs live with their mechanics, not in `docs/`:
 [mechanics/agon](../mechanics/agon/README.md),
@@ -96,6 +100,8 @@ Mechanic docs live with their mechanics, not in `docs/`:
 | Object canon or lifecycle | [MEMORY_OBJECT_PROFILES](memory/MEMORY_OBJECT_PROFILES.md), [MEMORY_TRUST_POSTURE](posture/MEMORY_TRUST_POSTURE.md), [LIFECYCLE](posture/LIFECYCLE.md) |
 | Generated parity | source doc or manifest, builder, generated output, validator, and test together |
 | Docs placement | [ROOT_SURFACE_LAW](root/ROOT_SURFACE_LAW.md) |
+| Validation layers, lane hardness, or release/nightly composition | [validation/VALIDATOR_TOPOLOGY](validation/VALIDATOR_TOPOLOGY.md), then [validation_lanes](../config/validation_lanes.json) |
+| Test inventory or test topology | [testing/TEST_TOPOLOGY](testing/TEST_TOPOLOGY.md), then [test_inventory](testing/test_inventory.json) |
 | Mechanic docs | [mechanics](../mechanics/README.md), then the target mechanic `AGENTS.md` |
 | Mechanic artifact placement | [mechanics/ARTIFACT_TOPOLOGY](../mechanics/ARTIFACT_TOPOLOGY.md) |
 | Agent-facing shape | [DESIGN.AGENTS](../DESIGN.AGENTS.md), root [AGENTS](../AGENTS.md), and nearest local `AGENTS.md` |

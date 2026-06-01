@@ -8,6 +8,13 @@ from pathlib import Path
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(REPO_ROOT / "scripts"))
+
+import validation_lanes  # noqa: E402
+
+
+def release_command_text() -> str:
+    return "\n".join(" ".join(step.command) for step in validation_lanes.RELEASE_CHECK_COMMAND_SEQUENCE)
 
 
 class MemoMechanicsTestCase(unittest.TestCase):
@@ -92,7 +99,7 @@ class MemoMechanicsTestCase(unittest.TestCase):
                 self.assertTrue((REPO_ROOT / "mechanics" / slug / "docs" / filename).is_file())
 
     def test_release_check_runs_memo_mechanics_gate(self) -> None:
-        text = (REPO_ROOT / "scripts" / "release" / "release_check.py").read_text(encoding="utf-8")
+        text = release_command_text()
         for snippet in (
             "scripts/mechanics/validate_memo_mechanics.py",
             "scripts/mechanics/build_memo_mechanics_index.py",

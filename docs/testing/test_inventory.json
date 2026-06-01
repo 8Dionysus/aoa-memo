@@ -1,0 +1,470 @@
+{
+  "schema_version": 1,
+  "owner": "docs/testing/TEST_TOPOLOGY.md",
+  "baseline": {
+    "captured_on": "2026-05-31",
+    "worktree": "main...origin/main",
+    "green_result": "184 passed, 196 subtests passed in 11.06s for python -m pytest -q tests; 367 passed, 815 subtests passed in 19.89s inside python scripts/release_check.py.",
+    "green_lane": "release_check sequence from config/validation_lanes.json after refactor must preserve the same broad gate shape."
+  },
+  "required_fields": [
+    "family",
+    "paths",
+    "protects",
+    "owner_surface",
+    "lane",
+    "mode",
+    "runtime_cost",
+    "focused_target",
+    "failure_route"
+  ],
+  "entries": [
+    {
+      "family": "agent-lane/spark",
+      "paths": [
+        ".agents/spark/tests/test_spark_lane.py"
+      ],
+      "protects": "Spark lane route contract and scenario registry",
+      "owner_surface": ".agents/spark/AGENTS.md",
+      "lane": "agents",
+      "mode": "blocking",
+      "runtime_cost": "fast",
+      "focused_target": ".agents/spark/tests",
+      "failure_route": "Fix .agents/spark/AGENTS.md before widening the lane."
+    },
+    {
+      "family": "mechanics/adoption",
+      "paths": [
+        "mechanics/adoption/parts/adoption-boundary/tests/test_adoption_boundary_contracts.py",
+        "mechanics/adoption/parts/revision-and-retention-pressure/tests/test_revision_retention_contracts.py",
+        "mechanics/adoption/parts/scar-and-routing-adoption/tests/test_routing_memory_adoption.py"
+      ],
+      "protects": "adoption mechanic part contracts",
+      "owner_surface": "mechanics/adoption/AGENTS.md",
+      "lane": "mechanics",
+      "mode": "blocking",
+      "runtime_cost": "fast",
+      "focused_target": "mechanics/adoption",
+      "failure_route": "Fix mechanics/adoption owner maps, part contracts, schemas, examples, or local validators before widening the lane."
+    },
+    {
+      "family": "mechanics/agon",
+      "paths": [
+        "mechanics/agon/parts/bridge-and-evidence-seams/tests/test_agon_epistemic_memo_bridge.py",
+        "mechanics/agon/parts/bridge-and-evidence-seams/tests/test_agon_kag_memo_evidence_package_registry.py",
+        "mechanics/agon/parts/bridge-and-evidence-seams/tests/test_agon_mechanical_trial_memo_intakes.py",
+        "mechanics/agon/parts/bridge-and-evidence-seams/tests/test_agon_slc_memo_bridge_registry.py",
+        "mechanics/agon/parts/bridge-and-evidence-seams/tests/test_agon_sophian_memo_evidence_registry.py",
+        "mechanics/agon/parts/bridge-and-evidence-seams/tests/test_agon_vds_memo_bridge.py",
+        "mechanics/agon/parts/prebinding-and-candidate-intake/tests/test_agon_memo_prebindings.py",
+        "mechanics/agon/parts/prebinding-and-candidate-intake/tests/test_agon_retention_rank_memo_bridge.py",
+        "mechanics/agon/parts/stage-landing-and-stop-lines/tests/test_agon_part_manifests.py"
+      ],
+      "protects": "agon mechanic part contracts",
+      "owner_surface": "mechanics/agon/AGENTS.md",
+      "lane": "mechanics",
+      "mode": "blocking",
+      "runtime_cost": "fast",
+      "focused_target": "mechanics/agon",
+      "failure_route": "Fix mechanics/agon owner maps, part contracts, schemas, examples, or local validators before widening the lane."
+    },
+    {
+      "family": "mechanics/antifragility",
+      "paths": [
+        "mechanics/antifragility/parts/failure-lesson-memory/tests/test_antifragility_failure_lessons.py",
+        "mechanics/antifragility/parts/recovery-pattern-memory/tests/test_antifragility_recovery_patterns.py"
+      ],
+      "protects": "antifragility mechanic part contracts",
+      "owner_surface": "mechanics/antifragility/AGENTS.md",
+      "lane": "mechanics",
+      "mode": "blocking",
+      "runtime_cost": "fast",
+      "focused_target": "mechanics/antifragility",
+      "failure_route": "Fix mechanics/antifragility owner maps, part contracts, schemas, examples, or local validators before widening the lane."
+    },
+    {
+      "family": "mechanics/checkpoint",
+      "paths": [
+        "mechanics/checkpoint/parts/checkpoint-memory-boundary/tests/test_checkpoint_mechanic.py"
+      ],
+      "protects": "checkpoint mechanic part contracts",
+      "owner_surface": "mechanics/checkpoint/AGENTS.md",
+      "lane": "mechanics",
+      "mode": "blocking",
+      "runtime_cost": "fast",
+      "focused_target": "mechanics/checkpoint",
+      "failure_route": "Fix mechanics/checkpoint owner maps, part contracts, schemas, examples, or local validators before widening the lane."
+    },
+    {
+      "family": "mechanics/consumer-handoff",
+      "paths": [
+        "mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_consumer_handoff_mechanic.py",
+        "mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_downstream_feed_contracts.py",
+        "mechanics/consumer-handoff/parts/playbook-scope-handoff/tests/test_playbook_memory_scopes.py"
+      ],
+      "protects": "consumer-handoff mechanic part contracts",
+      "owner_surface": "mechanics/consumer-handoff/AGENTS.md",
+      "lane": "mechanics",
+      "mode": "blocking",
+      "runtime_cost": "fast",
+      "focused_target": "mechanics/consumer-handoff",
+      "failure_route": "Fix mechanics/consumer-handoff owner maps, part contracts, schemas, examples, or local validators before widening the lane."
+    },
+    {
+      "family": "mechanics/governance",
+      "paths": [
+        "mechanics/governance/parts/governance-boundary/tests/test_governance_boundary_contracts.py",
+        "mechanics/governance/parts/governance-boundary/tests/test_governance_mechanic.py"
+      ],
+      "protects": "governance mechanic part contracts",
+      "owner_surface": "mechanics/governance/AGENTS.md",
+      "lane": "mechanics",
+      "mode": "blocking",
+      "runtime_cost": "fast",
+      "focused_target": "mechanics/governance",
+      "failure_route": "Fix mechanics/governance owner maps, part contracts, schemas, examples, or local validators before widening the lane."
+    },
+    {
+      "family": "mechanics/lineage-harvest",
+      "paths": [
+        "mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/tests/test_lineage_harvest_mechanic.py"
+      ],
+      "protects": "lineage-harvest mechanic part contracts",
+      "owner_surface": "mechanics/lineage-harvest/AGENTS.md",
+      "lane": "mechanics",
+      "mode": "blocking",
+      "runtime_cost": "fast",
+      "focused_target": "mechanics/lineage-harvest",
+      "failure_route": "Fix mechanics/lineage-harvest owner maps, part contracts, schemas, examples, or local validators before widening the lane."
+    },
+    {
+      "family": "mechanics/operational-gate",
+      "paths": [
+        "mechanics/operational-gate/parts/deployment-incident-gate/tests/test_operational_gate_mechanic.py",
+        "mechanics/operational-gate/parts/post-release-boundaries/tests/test_post_release_boundary_contracts.py",
+        "mechanics/operational-gate/parts/write-path-guardrails/tests/test_write_path_guardrails.py"
+      ],
+      "protects": "operational-gate mechanic part contracts",
+      "owner_surface": "mechanics/operational-gate/AGENTS.md",
+      "lane": "mechanics",
+      "mode": "blocking",
+      "runtime_cost": "fast",
+      "focused_target": "mechanics/operational-gate",
+      "failure_route": "Fix mechanics/operational-gate owner maps, part contracts, schemas, examples, or local validators before widening the lane."
+    },
+    {
+      "family": "mechanics/questbook",
+      "paths": [
+        "mechanics/questbook/parts/source-contract/tests/test_questbook_store.py"
+      ],
+      "protects": "questbook mechanic part contracts",
+      "owner_surface": "mechanics/questbook/AGENTS.md",
+      "lane": "mechanics",
+      "mode": "blocking",
+      "runtime_cost": "fast",
+      "focused_target": "mechanics/questbook",
+      "failure_route": "Fix mechanics/questbook owner maps, part contracts, schemas, examples, or local validators before widening the lane."
+    },
+    {
+      "family": "mechanics/readiness-boundary",
+      "paths": [
+        "mechanics/readiness-boundary/legacy/raw/tests/test_wave1_boundary_contract.py",
+        "mechanics/readiness-boundary/parts/memory-readiness-boundary/tests/test_readiness_boundary_mechanic.py"
+      ],
+      "protects": "readiness-boundary mechanic part contracts",
+      "owner_surface": "mechanics/readiness-boundary/AGENTS.md",
+      "lane": "mechanics",
+      "mode": "blocking",
+      "runtime_cost": "fast",
+      "focused_target": "mechanics/readiness-boundary",
+      "failure_route": "Fix mechanics/readiness-boundary owner maps, part contracts, schemas, examples, or local validators before widening the lane."
+    },
+    {
+      "family": "mechanics/recurrence-support",
+      "paths": [
+        "mechanics/recurrence-support/parts/witness-trace-contract/tests/test_recurrence_support_mechanic.py"
+      ],
+      "protects": "recurrence-support mechanic part contracts",
+      "owner_surface": "mechanics/recurrence-support/AGENTS.md",
+      "lane": "mechanics",
+      "mode": "blocking",
+      "runtime_cost": "fast",
+      "focused_target": "mechanics/recurrence-support",
+      "failure_route": "Fix mechanics/recurrence-support owner maps, part contracts, schemas, examples, or local validators before widening the lane."
+    },
+    {
+      "family": "mechanics/retention",
+      "paths": [
+        "mechanics/retention/parts/consolidation-and-forgetting/tests/test_consolidation_forgetting.py",
+        "mechanics/retention/parts/cross-repo-and-governance-retention/tests/test_cross_repo_governance_retention.py",
+        "mechanics/retention/parts/office-markers/tests/test_office_marker_contracts.py",
+        "mechanics/retention/parts/post-release-retention/tests/test_post_release_retention_contracts.py"
+      ],
+      "protects": "retention mechanic part contracts",
+      "owner_surface": "mechanics/retention/AGENTS.md",
+      "lane": "mechanics",
+      "mode": "blocking",
+      "runtime_cost": "fast",
+      "focused_target": "mechanics/retention",
+      "failure_route": "Fix mechanics/retention owner maps, part contracts, schemas, examples, or local validators before widening the lane."
+    },
+    {
+      "family": "mechanics/shape-guard",
+      "paths": [
+        "mechanics/shape-guard/parts/via-negativa-checklist/tests/test_shape_guard_mechanic.py"
+      ],
+      "protects": "shape-guard mechanic part contracts",
+      "owner_surface": "mechanics/shape-guard/AGENTS.md",
+      "lane": "mechanics",
+      "mode": "blocking",
+      "runtime_cost": "fast",
+      "focused_target": "mechanics/shape-guard",
+      "failure_route": "Fix mechanics/shape-guard owner maps, part contracts, schemas, examples, or local validators before widening the lane."
+    },
+    {
+      "family": "mechanics/titan",
+      "paths": [
+        "mechanics/titan/parts/audit-personality-and-swarm-policy/tests/test_titan_audit_memory_candidate.py",
+        "mechanics/titan/parts/closeout-and-digest-posture/tests/test_titan_digest_candidate_schemas.py",
+        "mechanics/titan/parts/recall-and-remembrance-posture/tests/test_titan_candidate_schemas.py",
+        "mechanics/titan/parts/recall-and-remembrance-posture/tests/test_titan_remembrance_record.py"
+      ],
+      "protects": "titan mechanic part contracts",
+      "owner_surface": "mechanics/titan/AGENTS.md",
+      "lane": "mechanics",
+      "mode": "blocking",
+      "runtime_cost": "fast",
+      "focused_target": "mechanics/titan",
+      "failure_route": "Fix mechanics/titan owner maps, part contracts, schemas, examples, or local validators before widening the lane."
+    },
+    {
+      "family": "mechanics/writeback",
+      "paths": [
+        "mechanics/writeback/parts/growth-and-continuity/tests/test_a2a_child_return_writeback.py",
+        "mechanics/writeback/parts/growth-and-continuity/tests/test_growth_refinery_writeback.py",
+        "mechanics/writeback/parts/growth-and-continuity/tests/test_self_agency_continuity_writeback.py",
+        "mechanics/writeback/parts/quest-and-chronicle/tests/test_quest_chronicle_writeback.py",
+        "mechanics/writeback/parts/receipt-publication-regression/tests/test_publish_live_receipts.py",
+        "mechanics/writeback/parts/revision-ledgers/tests/test_revision_ledger_contracts.py",
+        "mechanics/writeback/parts/rollback-and-recovery/tests/test_rollback_recovery_contracts.py",
+        "mechanics/writeback/parts/runtime-and-temperature/tests/test_runtime_writeback_part.py"
+      ],
+      "protects": "writeback mechanic part contracts",
+      "owner_surface": "mechanics/writeback/AGENTS.md",
+      "lane": "mechanics",
+      "mode": "blocking",
+      "runtime_cost": "fast",
+      "focused_target": "mechanics/writeback",
+      "failure_route": "Fix mechanics/writeback owner maps, part contracts, schemas, examples, or local validators before widening the lane."
+    },
+    {
+      "family": "agents/mesh",
+      "paths": [
+        "tests/agents/test_agents_mesh.py",
+        "tests/agents/test_validate_semantic_agents.py"
+      ],
+      "protects": "AGENTS mesh and semantic route cards",
+      "owner_surface": "DESIGN.AGENTS.md",
+      "lane": "topology",
+      "mode": "blocking",
+      "runtime_cost": "fast",
+      "focused_target": "tests/agents",
+      "failure_route": "Fix DESIGN.AGENTS.md before widening the lane."
+    },
+    {
+      "family": "agents/companion-skill",
+      "paths": [
+        "tests/agents/test_companion_skill_scripts.py"
+      ],
+      "protects": "agent companion skill scripts",
+      "owner_surface": ".agents/skills/AGENTS.md",
+      "lane": "topology",
+      "mode": "blocking",
+      "runtime_cost": "fast",
+      "focused_target": "tests/agents/test_companion_skill_scripts.py",
+      "failure_route": "Fix .agents/skills/AGENTS.md before widening the lane."
+    },
+    {
+      "family": "mechanics/indexes",
+      "paths": [
+        "tests/mechanics/test_memo_mechanic_cards.py",
+        "tests/mechanics/test_memo_mechanic_landing_logs.py",
+        "tests/mechanics/test_memo_mechanic_owner_routes.py",
+        "tests/mechanics/test_memo_mechanic_parts.py",
+        "tests/mechanics/test_memo_mechanic_readiness.py",
+        "tests/mechanics/test_memo_mechanics.py"
+      ],
+      "protects": "memo mechanic generated indexes and readiness surfaces",
+      "owner_surface": "mechanics/README.md",
+      "lane": "mechanics",
+      "mode": "blocking",
+      "runtime_cost": "fast",
+      "focused_target": "tests/mechanics",
+      "failure_route": "Fix mechanics/README.md before widening the lane."
+    },
+    {
+      "family": "mechanics/artifact-inventory",
+      "paths": [
+        "tests/mechanics/test_mechanic_artifact_inventory.py"
+      ],
+      "protects": "mechanic artifact inventory and topology",
+      "owner_surface": "mechanics/ARTIFACT_TOPOLOGY.md",
+      "lane": "mechanics",
+      "mode": "blocking",
+      "runtime_cost": "fast",
+      "focused_target": "tests/mechanics/test_mechanic_artifact_inventory.py",
+      "failure_route": "Fix mechanics/ARTIFACT_TOPOLOGY.md before widening the lane."
+    },
+    {
+      "family": "mechanics/candidate-contracts",
+      "paths": [
+        "tests/mechanics/test_cross_mechanic_candidate_contracts.py"
+      ],
+      "protects": "cross-mechanic candidate boundaries",
+      "owner_surface": "mechanics/lineage-harvest/PARTS.md",
+      "lane": "mechanics",
+      "mode": "blocking",
+      "runtime_cost": "fast",
+      "focused_target": "tests/mechanics/test_cross_mechanic_candidate_contracts.py",
+      "failure_route": "Fix mechanics/lineage-harvest/PARTS.md before widening the lane."
+    },
+    {
+      "family": "mechanics/operational-contracts",
+      "paths": [
+        "tests/mechanics/test_cross_mechanic_operational_contracts.py"
+      ],
+      "protects": "cross-mechanic operational boundaries",
+      "owner_surface": "mechanics/ARTIFACT_TOPOLOGY.md",
+      "lane": "mechanics",
+      "mode": "blocking",
+      "runtime_cost": "fast",
+      "focused_target": "tests/mechanics/test_cross_mechanic_operational_contracts.py",
+      "failure_route": "Fix mechanics/ARTIFACT_TOPOLOGY.md before widening the lane."
+    },
+    {
+      "family": "memory/corpus",
+      "paths": [
+        "tests/memory/test_memo_corpus.py",
+        "tests/memory/test_reviewed_intake_landing.py"
+      ],
+      "protects": "reviewed memo corpus and intake landing",
+      "owner_surface": "memo/AGENTS.md",
+      "lane": "memory",
+      "mode": "blocking",
+      "runtime_cost": "medium",
+      "focused_target": "tests/memory",
+      "failure_route": "Fix memo/AGENTS.md before widening the lane."
+    },
+    {
+      "family": "memory/local-port",
+      "paths": [
+        "tests/memory/test_local_memo_port.py"
+      ],
+      "protects": "local memo port contract",
+      "owner_surface": "docs/memory/LOCAL_MEMO_PORT_STANDARD.md",
+      "lane": "memory",
+      "mode": "blocking",
+      "runtime_cost": "medium",
+      "focused_target": "tests/memory/test_local_memo_port.py",
+      "failure_route": "Fix docs/memory/LOCAL_MEMO_PORT_STANDARD.md before widening the lane."
+    },
+    {
+      "family": "memory/operations",
+      "paths": [
+        "tests/memory/test_memory_operations.py"
+      ],
+      "protects": "memory operation cycle and modes",
+      "owner_surface": "docs/memory/MEMORY_OPERATION_CYCLE.md",
+      "lane": "memory",
+      "mode": "blocking",
+      "runtime_cost": "medium",
+      "focused_target": "tests/memory/test_memory_operations.py",
+      "failure_route": "Fix docs/memory/MEMORY_OPERATION_CYCLE.md before widening the lane."
+    },
+    {
+      "family": "memory/object-contract",
+      "paths": [
+        "tests/memory/test_memo_validators.py",
+        "tests/memory/test_phase_alpha_provenance_thread.py"
+      ],
+      "protects": "memory schemas, examples, provenance, and generated object contracts",
+      "owner_surface": "docs/memory/MEMORY_MODEL.md",
+      "lane": "memory",
+      "mode": "blocking",
+      "runtime_cost": "medium",
+      "focused_target": "tests/memory",
+      "failure_route": "Fix docs/memory/MEMORY_MODEL.md before widening the lane."
+    },
+    {
+      "family": "root/direction",
+      "paths": [
+        "tests/root-topology/test_current_direction_routes.py",
+        "tests/root-topology/test_roadmap_parity.py"
+      ],
+      "protects": "current direction and roadmap parity",
+      "owner_surface": "ROADMAP.md",
+      "lane": "topology",
+      "mode": "blocking",
+      "runtime_cost": "fast",
+      "focused_target": "tests/root-topology",
+      "failure_route": "Fix ROADMAP.md before widening the lane."
+    },
+    {
+      "family": "root/docs-districts",
+      "paths": [
+        "tests/root-topology/test_docs_districts.py"
+      ],
+      "protects": "docs placement law",
+      "owner_surface": "docs/root/ROOT_SURFACE_LAW.md",
+      "lane": "topology",
+      "mode": "blocking",
+      "runtime_cost": "fast",
+      "focused_target": "tests/root-topology/test_docs_districts.py",
+      "failure_route": "Fix docs/root/ROOT_SURFACE_LAW.md before widening the lane."
+    },
+    {
+      "family": "root/artifact-topology",
+      "paths": [
+        "tests/root-topology/test_mechanic_artifact_topology.py"
+      ],
+      "protects": "mechanic artifact topology",
+      "owner_surface": "mechanics/ARTIFACT_TOPOLOGY.md",
+      "lane": "topology",
+      "mode": "blocking",
+      "runtime_cost": "fast",
+      "focused_target": "tests/root-topology/test_mechanic_artifact_topology.py",
+      "failure_route": "Fix mechanics/ARTIFACT_TOPOLOGY.md before widening the lane."
+    },
+    {
+      "family": "root/topology",
+      "paths": [
+        "tests/root-topology/test_root_technical_districts_index.py",
+        "tests/root-topology/test_topology_spine.py"
+      ],
+      "protects": "root technical district atlas and topology spine",
+      "owner_surface": "config/root-topology/root_technical_districts.json",
+      "lane": "topology",
+      "mode": "blocking",
+      "runtime_cost": "fast",
+      "focused_target": "tests/root-topology",
+      "failure_route": "Fix config/root-topology/root_technical_districts.json before widening the lane."
+    },
+    {
+      "family": "validation/test-topology",
+      "paths": [
+        "tests/root-topology/test_ci_gate.py",
+        "tests/root-topology/test_release_check.py",
+        "tests/root-topology/test_test_topology.py",
+        "tests/root-topology/test_validation_lanes.py",
+        "tests/root-topology/test_validator_topology.py"
+      ],
+      "protects": "validator topology, validation lanes, release gate composition, and test inventory",
+      "owner_surface": "docs/validation/VALIDATOR_TOPOLOGY.md",
+      "lane": "topology",
+      "mode": "blocking",
+      "runtime_cost": "fast",
+      "focused_target": "tests/root-topology",
+      "failure_route": "Fix docs/validation/VALIDATOR_TOPOLOGY.md or docs/testing/TEST_TOPOLOGY.md before widening the lane."
+    }
+  ]
+}

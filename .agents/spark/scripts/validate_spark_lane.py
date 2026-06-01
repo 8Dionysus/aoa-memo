@@ -60,6 +60,16 @@ def load_json(path: Path) -> Any:
         return json.load(handle)
 
 
+def validation_command_text(root: Path) -> str:
+    lanes = root / "config" / "validation_lanes.json"
+    if lanes.exists():
+        return json.dumps(load_json(lanes), sort_keys=True)
+    release_check = root / "scripts/release/release_check.py"
+    if release_check.exists():
+        return release_check.read_text(encoding="utf-8")
+    return ""
+
+
 def require_string(problems: list[str], where: str, value: object) -> None:
     if not isinstance(value, str) or not value.strip():
         problems.append(f"{where} must be a non-empty string")
@@ -312,11 +322,9 @@ def validate(root: Path) -> list[str]:
     if swarm.exists() and ".agents/spark/registry.json" not in swarm.read_text(encoding="utf-8"):
         problems.append(".agents/spark/SWARM.md does not mention .agents/spark/registry.json")
 
-    release_check = root / "scripts/release/release_check.py"
-    if release_check.exists():
-        release_text = release_check.read_text(encoding="utf-8")
-        if ".agents/spark/scripts/validate_spark_lane.py" not in release_text:
-            problems.append("release_check.py does not run .agents/spark/scripts/validate_spark_lane.py")
+    commands_text = validation_command_text(root)
+    if ".agents/spark/scripts/validate_spark_lane.py" not in commands_text:
+        problems.append("validation lanes do not run .agents/spark/scripts/validate_spark_lane.py")
 
     problems.extend(
         validate_packet_dir(root, root / ".agents/spark/results", REQUIRED_RESULT_MARKERS, seen_ids)

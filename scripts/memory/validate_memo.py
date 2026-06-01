@@ -1,14 +1,13 @@
 #!/usr/bin/env python3
-"""Validate bootstrap aoa-memo artifacts.
+"""Validate aoa-memo memory contracts.
 
-This script is intentionally small and honest. It validates the current example
-objects against the local JSON schemas, checks the local artifact refs they
-expose, validates the compact questbook writeback surface, and performs a light
-structural check on `generated/memory/memo_registry.min.json`.
+The default profile preserves the historical broad gate, but release lanes use
+narrow profiles so one command no longer pretends to own every memory boundary.
 """
 
 from __future__ import annotations
 
+import argparse
 import importlib.util
 import json
 from datetime import datetime, timedelta
@@ -1675,8 +1674,11 @@ def validate_registry() -> None:
         errors.append("kag_export generated_surface_families entry must list mechanics/consumer-handoff/parts/kag-source-export/generated/kag_export.min.json")
     if kag_export.get("generator_command") != "python mechanics/consumer-handoff/parts/kag-source-export/scripts/generate_kag_export.py":
         errors.append("kag_export generated_surface_families entry must keep generator_command python mechanics/consumer-handoff/parts/kag-source-export/scripts/generate_kag_export.py")
-    if kag_export.get("validator_command") != "python scripts/memory/validate_memo.py":
-        errors.append("kag_export generated_surface_families entry must keep validator_command python scripts/memory/validate_memo.py")
+    if kag_export.get("validator_command") != "python scripts/memory/validate_memo.py --profile handoff-boundary":
+        errors.append(
+            "kag_export generated_surface_families entry must keep validator_command "
+            "python scripts/memory/validate_memo.py --profile handoff-boundary"
+        )
 
     for family_name, family in families.items():
         manifest = family.get("manifest")
@@ -1690,7 +1692,11 @@ def validate_registry() -> None:
                 errors.append(error)
 
     required_validation_commands = {
-        "python scripts/memory/validate_memo.py",
+        "python scripts/memory/validate_memo.py --profile schema",
+        "python scripts/memory/validate_memo.py --profile memory-context",
+        "python scripts/memory/validate_memo.py --profile runtime-boundary",
+        "python scripts/memory/validate_memo.py --profile handoff-boundary",
+        "python scripts/memory/validate_memo.py --profile eval-boundary",
         "python scripts/memory/validate_memory_surfaces.py",
         "python scripts/memory/validate_memory_object_surfaces.py",
         "python scripts/memory/validate_lifecycle_audit_examples.py",
@@ -3677,60 +3683,89 @@ def validate_memory_eval_guardrail_pack() -> None:
     print("[OK]   memory_eval_guardrail_pack.example.json")
 
 
-def main() -> int:
+SUPPORT_SCHEMA_NAMES = (
+    "memory_object_profile.schema.json",
+    "trust_posture.schema.json",
+    "lifecycle_posture.schema.json",
+    "anchor.schema.json",
+    "state_capsule.schema.json",
+    "episode.schema.json",
+    "claim.schema.json",
+    "decision.schema.json",
+    "pattern.schema.json",
+    "bridge.schema.json",
+    "audit_event.schema.json",
+    "failure_lesson_memory_v1.json",
+    "recovery_pattern_memory_v1.json",
+    "memory_object_surface_manifest.schema.json",
+    "memory_object_catalog.schema.json",
+    "memory_object_capsules.schema.json",
+    "memory_object_sections.schema.json",
+    "decay_policy.schema.json",
+    "inquiry_checkpoint.schema.json",
+    "checkpoint-to-memory-contract.schema.json",
+    "memory_chunk_face.schema.json",
+    "memory_graph_face.schema.json",
+    "quest_chronicle.schema.json",
+    "memory_eval_guardrail_pack.schema.json",
+)
+
+MEMORY_OBJECT_EXAMPLE_NAMES = (
+    "episode.example.json",
+    "claim.example.json",
+    "checkpoint_approval_record.example.json",
+    "checkpoint_health_check.example.json",
+    "episode.tos-interpretation.example.json",
+    "claim.tos-bridge-ready.example.json",
+    "bridge.kag-lift.example.json",
+)
+
+PROVENANCE_THREAD_EXAMPLE_NAMES = (
+    "provenance_thread.example.json",
+    "checkpoint_improvement_thread.example.json",
+    "provenance_thread.kag-lift.example.json",
+    "provenance_thread.self-agency-continuity.example.json",
+    PHASE_ALPHA_PROVENANCE_THREAD_EXAMPLE,
+)
+
+FAILURE_LESSON_EXAMPLE_NAMES = (
+    "failure_lesson_memory.example.json",
+    "failure_lesson_memory.lineage.example.json",
+    "failure_lesson_memory.rollout.example.json",
+)
+
+RECOVERY_PATTERN_EXAMPLE_NAMES = (
+    "recovery_pattern_memory.example.json",
+    "recovery_pattern_memory.lineage.example.json",
+    "recovery_pattern_memory.rollout.example.json",
+    "recovery_pattern_memory.component_refresh.example.json",
+)
+
+PROFILE_NAMES = (
+    "all",
+    "schema",
+    "memory-context",
+    "runtime-boundary",
+    "handoff-boundary",
+    "eval-boundary",
+)
+
+
+def validate_schema_profile() -> None:
     validate_nested_agents_surface()
-    validate_support_schema("memory_object_profile.schema.json")
-    validate_support_schema("trust_posture.schema.json")
-    validate_support_schema("lifecycle_posture.schema.json")
-    validate_support_schema("anchor.schema.json")
-    validate_support_schema("state_capsule.schema.json")
-    validate_support_schema("episode.schema.json")
-    validate_support_schema("claim.schema.json")
-    validate_support_schema("decision.schema.json")
-    validate_support_schema("pattern.schema.json")
-    validate_support_schema("bridge.schema.json")
-    validate_support_schema("audit_event.schema.json")
-    validate_support_schema("failure_lesson_memory_v1.json")
-    validate_support_schema("recovery_pattern_memory_v1.json")
-    validate_support_schema("memory_object_surface_manifest.schema.json")
-    validate_support_schema("memory_object_catalog.schema.json")
-    validate_support_schema("memory_object_capsules.schema.json")
-    validate_support_schema("memory_object_sections.schema.json")
-    validate_support_schema("decay_policy.schema.json")
-    validate_support_schema("inquiry_checkpoint.schema.json")
-    validate_support_schema("checkpoint-to-memory-contract.schema.json")
-    validate_support_schema("memory_chunk_face.schema.json")
-    validate_support_schema("memory_graph_face.schema.json")
-    validate_support_schema("quest_chronicle.schema.json")
-    validate_support_schema("memory_eval_guardrail_pack.schema.json")
+    for schema_name in SUPPORT_SCHEMA_NAMES:
+        validate_support_schema(schema_name)
     validate_memory_object_surface_manifest()
-    validate_example(validator_for("memory_object.schema.json"), "episode.example.json")
-    validate_example(validator_for("memory_object.schema.json"), "claim.example.json")
-    validate_example(validator_for("memory_object.schema.json"), "checkpoint_approval_record.example.json")
-    validate_example(validator_for("memory_object.schema.json"), "checkpoint_health_check.example.json")
-    validate_example(validator_for("memory_object.schema.json"), "episode.tos-interpretation.example.json")
-    validate_example(validator_for("memory_object.schema.json"), "claim.tos-bridge-ready.example.json")
-    validate_example(validator_for("memory_object.schema.json"), "bridge.kag-lift.example.json")
+    for example_name in MEMORY_OBJECT_EXAMPLE_NAMES:
+        validate_example(validator_for("memory_object.schema.json"), example_name)
     validate_example(validator_for("inquiry_checkpoint.schema.json"), "inquiry_checkpoint.example.json")
     validate_example(validator_for("inquiry_checkpoint.schema.json"), "inquiry_checkpoint.return.example.json")
-    validate_example(validator_for("provenance_thread.schema.json"), "provenance_thread.example.json")
-    validate_example(validator_for("provenance_thread.schema.json"), "checkpoint_improvement_thread.example.json")
-    validate_example(validator_for("provenance_thread.schema.json"), "provenance_thread.kag-lift.example.json")
-    validate_example(
-        validator_for("provenance_thread.schema.json"),
-        "provenance_thread.self-agency-continuity.example.json",
-    )
-    validate_example(validator_for("provenance_thread.schema.json"), PHASE_ALPHA_PROVENANCE_THREAD_EXAMPLE)
-    validate_example(validator_for("failure_lesson_memory_v1.json"), "failure_lesson_memory.example.json")
-    validate_example(validator_for("failure_lesson_memory_v1.json"), "failure_lesson_memory.lineage.example.json")
-    validate_example(validator_for("failure_lesson_memory_v1.json"), "failure_lesson_memory.rollout.example.json")
-    validate_example(validator_for("recovery_pattern_memory_v1.json"), "recovery_pattern_memory.example.json")
-    validate_example(validator_for("recovery_pattern_memory_v1.json"), "recovery_pattern_memory.lineage.example.json")
-    validate_example(validator_for("recovery_pattern_memory_v1.json"), "recovery_pattern_memory.rollout.example.json")
-    validate_example(
-        validator_for("recovery_pattern_memory_v1.json"),
-        "recovery_pattern_memory.component_refresh.example.json",
-    )
+    for example_name in PROVENANCE_THREAD_EXAMPLE_NAMES:
+        validate_example(validator_for("provenance_thread.schema.json"), example_name)
+    for example_name in FAILURE_LESSON_EXAMPLE_NAMES:
+        validate_example(validator_for("failure_lesson_memory_v1.json"), example_name)
+    for example_name in RECOVERY_PATTERN_EXAMPLE_NAMES:
+        validate_example(validator_for("recovery_pattern_memory_v1.json"), example_name)
     validate_recall_contract_example(
         "recall_contract.semantic.json",
         expected_mode="semantic",
@@ -3855,6 +3890,9 @@ def main() -> int:
         expected_expand_surface="generated/memory-objects/memory_object_sections.full.json",
         expected_source_route_required=True,
     )
+
+
+def validate_memory_context_profile() -> None:
     validate_memory_object_profiles()
     validate_trust_lifecycle_contracts()
     validate_memory_readiness_boundary_materialization()
@@ -3862,24 +3900,68 @@ def main() -> int:
     validate_registry()
     validate_core_memory_contract()
     validate_checkpoint_to_memory_contract()
+    validate_witness_trace_contract()
+    validate_quest_chronicle_surface()
+    validate_questbook_surface()
+
+
+def validate_runtime_boundary_profile() -> None:
     validate_runtime_writeback_targets()
     validate_runtime_writeback_intake()
     validate_runtime_writeback_governance()
     validate_growth_refinery_writeback_lanes()
     validate_live_receipt_log()
     validate_phase_alpha_writeback_map()
-    validate_witness_trace_contract()
-    validate_quest_chronicle_surface()
+    validate_self_agency_continuity_writeback_surface()
+
+
+def validate_handoff_boundary_profile() -> None:
     validate_routing_memory_adoption_surface()
     validate_playbook_memory_scope_surface()
-    validate_self_agency_continuity_writeback_surface()
     validate_bridge_export_contracts()
     validate_kag_source_export()
+
+
+def validate_eval_boundary_profile() -> None:
     validate_memory_eval_guardrail_pack()
-    validate_questbook_surface()
-    print("\nValidation completed successfully.")
+
+
+def run_profile(profile: str) -> None:
+    if profile == "schema":
+        validate_schema_profile()
+    elif profile == "memory-context":
+        validate_memory_context_profile()
+    elif profile == "runtime-boundary":
+        validate_runtime_boundary_profile()
+    elif profile == "handoff-boundary":
+        validate_handoff_boundary_profile()
+    elif profile == "eval-boundary":
+        validate_eval_boundary_profile()
+    elif profile == "all":
+        for child_profile in PROFILE_NAMES:
+            if child_profile != "all":
+                run_profile(child_profile)
+    else:
+        raise ValueError(f"unknown validation profile: {profile}")
+
+
+def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Validate aoa-memo memory contracts.")
+    parser.add_argument(
+        "--profile",
+        choices=PROFILE_NAMES,
+        default="all",
+        help="Run one boundary profile instead of the historical broad gate.",
+    )
+    return parser.parse_args(argv)
+
+
+def main(argv: list[str] | None = None) -> int:
+    args = parse_args(argv)
+    run_profile(args.profile)
+    print(f"\nValidation profile {args.profile!r} completed successfully.")
     return 0
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    sys.exit(main(sys.argv[1:]))

@@ -23,7 +23,8 @@ are source doctrine here.
 ## Validate
 
 ```bash
-python scripts/memory/validate_memo.py
+python scripts/memory/validate_memo.py --profile schema
+python scripts/memory/validate_memo.py --profile memory-context
 python scripts/memory/validate_memory_operations.py
 python scripts/memory/validate_lifecycle_audit_examples.py
 ```

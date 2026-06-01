@@ -27,7 +27,7 @@ REQUIRED_CONFIG_REFS = (
     "generated_ref",
 )
 STALE_ROOT_SCRIPT_COMMAND_RE = re.compile(
-    r"python scripts/(?!memory/|agents/|mechanics/|root-topology/|release/)"
+    r"python scripts/(?!(ci_gate\.py|release_check\.py|validation_lanes\.py|memory/|agents/|mechanics/|root-topology/|release/))"
 )
 
 

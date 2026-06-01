@@ -28,7 +28,8 @@ instead of authoring doctrine.
 ## Validate
 
 ```bash
-python scripts/memory/validate_memo.py
+python scripts/memory/validate_memo.py --profile schema
+python scripts/memory/validate_memo.py --profile memory-context
 python scripts/memory/validate_memory_operations.py
 python scripts/memory/validate_memory_surfaces.py
 python scripts/memory/validate_local_memo_port.py --path examples/memory-ports/example-port

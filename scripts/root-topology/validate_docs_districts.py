@@ -40,6 +40,8 @@ ALLOWED_DOCS_SUBDIRS = {
     "memory",
     "posture",
     "root",
+    "testing",
+    "validation",
 }
 REQUIRED_DOCS_DISTRICT_FILES = {
     "boundaries": {
@@ -66,6 +68,15 @@ REQUIRED_DOCS_DISTRICT_FILES = {
         "AGENTS_ROOT_REFERENCE.md",
         "RELEASING.md",
         "ROOT_SURFACE_LAW.md",
+    },
+    "testing": {
+        "AGENTS.md",
+        "TEST_TOPOLOGY.md",
+        "test_inventory.json",
+    },
+    "validation": {
+        "AGENTS.md",
+        "VALIDATOR_TOPOLOGY.md",
     },
 }
 
