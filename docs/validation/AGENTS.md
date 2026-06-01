@@ -15,6 +15,8 @@ truth, runtime policy engine, grader datasets, or tool permission enforcement.
 ## Source
 
 Validator topology lives in `VALIDATOR_TOPOLOGY.md`.
+Command-authority balance lives in `COMMAND_AUTHORITY.md`.
+Validation entrypoint inventory lives in `validator_inventory.json`.
 Executable lane data lives in `config/validation_lanes.json`.
 Test file inventory lives in `docs/testing/test_inventory.json`.
 

@@ -59,7 +59,7 @@ python mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtim
 python mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_governance.py --check
 python mechanics/writeback/parts/growth-and-continuity/scripts/generate_growth_refinery_writeback_lanes.py --check
 python mechanics/writeback/parts/growth-and-continuity/scripts/generate_phase_alpha_writeback_map.py --check
-python -m pytest -q mechanics/writeback/parts/runtime-and-temperature/tests mechanics/writeback/parts/quest-and-chronicle/tests mechanics/writeback/parts/revision-ledgers/tests mechanics/writeback/parts/rollback-and-recovery/tests mechanics/writeback/parts/growth-and-continuity/tests mechanics/writeback/parts/receipt-publication-regression/tests mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_downstream_feed_contracts.py tests/mechanics/test_cross_mechanic_operational_contracts.py
+python -m pytest -q mechanics/writeback/parts/runtime-and-temperature/tests mechanics/writeback/parts/quest-and-chronicle/tests mechanics/writeback/parts/revision-ledgers/tests mechanics/writeback/parts/rollback-and-recovery/tests mechanics/writeback/parts/growth-and-continuity/tests mechanics/writeback/parts/receipt-publication-regression/tests mechanics/consumer-handoff/parts/downstream-feed-regression/tests tests/mechanics/test_cross_mechanic_operational_contracts.py
 ```
 
 Before landing, also run:

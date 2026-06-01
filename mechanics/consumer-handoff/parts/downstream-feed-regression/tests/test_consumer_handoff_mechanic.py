@@ -73,17 +73,21 @@ class ConsumerHandoffMechanicTestCase(unittest.TestCase):
             )
 
     def test_downstream_feed_regression_is_part_local(self) -> None:
-        part_test = (
+        part_tests = (
             REPO_ROOT
             / "mechanics"
             / "consumer-handoff"
             / "parts"
             / "downstream-feed-regression"
             / "tests"
-            / "test_downstream_feed_contracts.py"
         )
 
-        self.assertTrue(part_test.is_file())
+        for test_name in (
+            "test_downstream_feed_docs_routes.py",
+            "test_downstream_feed_generated_contracts.py",
+            "test_downstream_feed_runtime_writeback_contracts.py",
+        ):
+            self.assertTrue((part_tests / test_name).is_file())
         self.assertFalse(
             (
                 REPO_ROOT

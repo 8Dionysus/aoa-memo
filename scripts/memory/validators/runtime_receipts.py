@@ -3,79 +3,33 @@
 from __future__ import annotations
 
 from ._shared import *  # noqa: F403
+from .runtime_receipt_evidence import validate_evidence_refs
+from .runtime_receipt_support import (
+    is_reviewed_corpus_source_ref,
+    load_receipt_context,
+    source_ref_payload,
+)
 
 def validate_live_receipt_log() -> None:
     if not LIVE_RECEIPT_LOG_PATH.exists():
         print("[OK]   live receipt log absent")
         return
 
-    catalog = load_json(GENERATED / "memory-objects" / "memory_object_catalog.min.json")
-    capsules = load_json(GENERATED / "memory-objects" / "memory_object_capsules.json")
-    sections = load_json(GENERATED / "memory-objects" / "memory_object_sections.full.json")
-    runtime_targets = load_json(RUNTIME_WRITEBACK_TARGETS_PATH)
-    growth_lanes = load_json(GROWTH_REFINERY_WRITEBACK_LANES_PATH)
-    catalog_entries_by_id = {
-        item["id"]: item
-        for item in catalog.get("memory_objects", [])
-        if isinstance(item, dict) and isinstance(item.get("id"), str)
-    }
-    capsule_entries_by_id = {
-        item["id"]: item
-        for item in capsules.get("memory_objects", [])
-        if isinstance(item, dict) and isinstance(item.get("id"), str)
-    }
-    section_entries_by_id = {
-        item["id"]: item
-        for item in sections.get("memory_objects", [])
-        if isinstance(item, dict) and isinstance(item.get("id"), str)
-    }
-    runtime_targets_by_surface = {
-        item["runtime_surface"]: item
-        for item in runtime_targets.get("targets", [])
-        if isinstance(item, dict) and isinstance(item.get("runtime_surface"), str)
-    }
-    growth_lanes_by_ref = {
-        item["lane_ref"]: item
-        for item in growth_lanes.get("lanes", [])
-        if isinstance(item, dict) and isinstance(item.get("lane_ref"), str)
-    }
-    catalog_ids = set(catalog_entries_by_id)
+    context = load_receipt_context()
+    catalog_entries_by_id = context["catalog_entries_by_id"]
+    capsule_entries_by_id = context["capsule_entries_by_id"]
+    section_entries_by_id = context["section_entries_by_id"]
+    runtime_targets_by_surface = context["runtime_targets_by_surface"]
+    growth_lanes_by_ref = context["growth_lanes_by_ref"]
+    catalog_ids = context["catalog_ids"]
+    assert isinstance(catalog_entries_by_id, dict)
+    assert isinstance(capsule_entries_by_id, dict)
+    assert isinstance(section_entries_by_id, dict)
+    assert isinstance(runtime_targets_by_surface, dict)
+    assert isinstance(growth_lanes_by_ref, dict)
+    assert isinstance(catalog_ids, set)
     errors: list[str] = []
     seen_event_ids: set[str] = set()
-    reviewed_object_cache: dict[str, dict] = {}
-
-    def reviewed_corpus_object(catalog_entry: dict) -> dict | None:
-        source_path = catalog_entry.get("source_path")
-        if catalog_entry.get("source_kind") != "reviewed_corpus" or not isinstance(source_path, str):
-            return None
-        if source_path in reviewed_object_cache:
-            return reviewed_object_cache[source_path]
-        object_path = ROOT / source_path
-        if not object_path.exists():
-            return None
-        data = load_json(object_path)
-        if not isinstance(data, dict):
-            return None
-        reviewed_object_cache[source_path] = data
-        return data
-
-    def source_ref_payload(ref: str) -> dict | None:
-        ref_path = ref.removeprefix("repo:aoa-memo/") if ref.startswith("repo:aoa-memo/") else ref
-        ref_path, _, _ = ref_path.partition("#")
-        target = ROOT / ref_path
-        if not target.exists() or target.suffix.lower() != ".json":
-            return None
-        data = load_json(target)
-        return data if isinstance(data, dict) else None
-
-    def is_reviewed_corpus_source_ref(catalog_entry: dict, ref: object) -> bool:
-        if not isinstance(ref, str) or not ref:
-            return False
-        reviewed_object = reviewed_corpus_object(catalog_entry)
-        if reviewed_object is None:
-            return False
-        source_refs = reviewed_object.get("provenance", {}).get("source_refs", [])
-        return isinstance(source_refs, list) and ref in source_refs
 
     for line_number, raw_line in enumerate(
         LIVE_RECEIPT_LOG_PATH.read_text(encoding="utf-8").splitlines(),
@@ -215,7 +169,7 @@ def validate_live_receipt_log() -> None:
                             else None
                         )
                         if not (
-                            is_reviewed_corpus_source_ref(catalog_entry, memory_object_ref)
+                            is_reviewed_corpus_source_ref(context, catalog_entry, memory_object_ref)
                             and payload.get("review_state") == ref_review_state
                         ):
                             errors.append(
@@ -231,7 +185,7 @@ def validate_live_receipt_log() -> None:
                             )
                         elif (
                             memory_object_ref != catalog_entry.get("source_path")
-                            and not is_reviewed_corpus_source_ref(catalog_entry, memory_object_ref)
+                            and not is_reviewed_corpus_source_ref(context, catalog_entry, memory_object_ref)
                         ):
                             errors.append(
                                 f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: payload.memory_object_ref "
@@ -315,114 +269,17 @@ def validate_live_receipt_log() -> None:
                             f"must match lane memory_id {growth_lane.get('memory_id')!r}"
                         )
 
-        evidence_refs = receipt.get("evidence_refs")
-        if not isinstance(evidence_refs, list):
-            errors.append(f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: evidence_refs must be a list")
-            continue
-        evidence_ref_values: list[str] = []
-        for evidence_index, evidence in enumerate(evidence_refs):
-            if not isinstance(evidence, dict):
-                errors.append(
-                    f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: evidence_refs[{evidence_index}] must be an object"
-                )
-                continue
-            ref = evidence.get("ref")
-            if not isinstance(ref, str) or not ref:
-                errors.append(
-                    f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: evidence_refs[{evidence_index}].ref must be a non-empty string"
-                )
-                continue
-            evidence_ref_values.append(ref)
-            if not ref.startswith("repo:aoa-memo/"):
-                continue
-            path_text, _, anchor = ref.removeprefix("repo:aoa-memo/").partition("#")
-            if any(part in {"", ".", ".."} for part in path_text.split("/")):
-                errors.append(
-                    f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: evidence_refs[{evidence_index}].ref "
-                    f"must use a normalized repo-relative path: {path_text!r}"
-                )
-                continue
-            local_path = (ROOT / path_text).resolve()
-            try:
-                local_path.relative_to(ROOT_RESOLVED)
-            except ValueError:
-                errors.append(
-                    f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: evidence_refs[{evidence_index}].ref "
-                    f"escapes the repository root: {path_text!r}"
-                )
-                continue
-            if not local_path.exists():
-                errors.append(
-                    f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: evidence_refs[{evidence_index}].ref "
-                    f"points to missing local path {path_text!r}"
-                )
-                continue
-            if path_text == "generated/memory-objects/memory_object_catalog.min.json":
-                if not anchor:
-                    errors.append(
-                        f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: catalog evidence ref must include a memory object id anchor"
-                    )
-                elif anchor not in catalog_ids:
-                    errors.append(
-                        f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: catalog evidence ref points to uncataloged id {anchor!r}"
-                    )
-                elif isinstance(object_id, str) and anchor != object_id:
-                    errors.append(
-                        f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: catalog evidence id {anchor!r} "
-                        f"must match object_ref.id {object_id!r}"
-                    )
-            if path_text == "mechanics/writeback/parts/growth-and-continuity/generated/growth_refinery_writeback_lanes.min.json":
-                if not anchor:
-                    errors.append(
-                        f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: growth lane evidence ref must include a lane anchor"
-                    )
-                elif anchor not in growth_lanes_by_ref:
-                    errors.append(
-                        f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: growth lane evidence ref points to unknown lane {anchor!r}"
-                    )
-                elif growth_lane_ref is not None and anchor != growth_lane_ref:
-                    errors.append(
-                        f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: growth lane evidence ref {anchor!r} "
-                        f"must match payload.growth_lane_ref {growth_lane_ref!r}"
-                    )
-        if event_kind == "memo_writeback_receipt" and isinstance(object_id, str) and object_id in catalog_ids:
-            expected_recall_ref = f"{RECALL_SURFACE_PREFIX}{object_id}"
-            if expected_recall_ref not in evidence_ref_values:
-                errors.append(
-                    f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: evidence_refs must include adopted recall surface ref "
-                    f"{expected_recall_ref!r}"
-                )
-            if (
-                isinstance(payload, dict)
-                and payload.get("writeback_class") == "reviewed_candidate"
-                and isinstance(payload.get("writeback_anchor_ref"), str)
-                and payload["writeback_anchor_ref"] not in evidence_ref_values
-            ):
-                errors.append(
-                    f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: reviewed_candidate receipts must include writeback anchor ref "
-                    f"{payload['writeback_anchor_ref']!r} in evidence_refs"
-                )
-        if event_kind == "memo_growth_writeback_receipt" and isinstance(growth_lane, dict) and growth_lane_ref is not None:
-            primary_ref = growth_lane.get("primary_ref")
-            if isinstance(primary_ref, str) and primary_ref not in evidence_ref_values:
-                errors.append(
-                    f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: growth receipts must include primary support ref "
-                    f"{primary_ref!r}"
-                )
-            expected_lane_ref = f"{GROWTH_LANE_REF_PREFIX}{growth_lane_ref}"
-            if expected_lane_ref not in evidence_ref_values:
-                errors.append(
-                    f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: growth receipts must include lane ref "
-                    f"{expected_lane_ref!r}"
-                )
-            required_refs = growth_lane.get("required_evidence_refs")
-            if isinstance(required_refs, list):
-                for required_ref in required_refs:
-                    if required_ref not in evidence_ref_values:
-                        errors.append(
-                            f"{LIVE_RECEIPT_LOG_PATH}:{line_number}: growth receipts must include required evidence ref "
-                            f"{required_ref!r}"
-                        )
+        validate_evidence_refs(
+            receipt=receipt,
+            line_number=line_number,
+            event_kind=event_kind,
+            object_id=object_id,
+            payload=payload,
+            growth_lane_ref=growth_lane_ref,
+            growth_lane=growth_lane,
+            context=context,
+            errors=errors,
+        )
 
     if errors:
         print("[FAIL] live receipt log")

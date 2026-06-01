@@ -9,7 +9,9 @@ Stronger claims route through `../../OWNER_MAP.md`. Source placement and legacy 
 ## Source Surfaces
 
 - `mechanics/writeback/parts/receipt-publication-regression/tests/fixtures/memo_writeback_receipts.example.jsonl`
-- `mechanics/writeback/parts/receipt-publication-regression/tests/test_publish_live_receipts.py`
+- `mechanics/writeback/parts/receipt-publication-regression/tests/test_publish_live_receipts_core.py`
+- `mechanics/writeback/parts/receipt-publication-regression/tests/test_publish_live_receipts_boundaries.py`
+- `mechanics/writeback/parts/receipt-publication-regression/tests/test_publish_live_receipts_growth.py`
 
 ## Contract
 

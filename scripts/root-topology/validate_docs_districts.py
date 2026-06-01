@@ -76,7 +76,9 @@ REQUIRED_DOCS_DISTRICT_FILES = {
     },
     "validation": {
         "AGENTS.md",
+        "COMMAND_AUTHORITY.md",
         "VALIDATOR_TOPOLOGY.md",
+        "validator_inventory.json",
     },
 }
 

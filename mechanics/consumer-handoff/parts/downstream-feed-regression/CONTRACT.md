@@ -8,7 +8,9 @@ Stronger claims route through `../../OWNER_MAP.md`. Source placement and legacy 
 
 ## Source Surfaces
 
-- `mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_downstream_feed_contracts.py`
+- `mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_downstream_feed_generated_contracts.py`
+- `mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_downstream_feed_runtime_writeback_contracts.py`
+- `mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_downstream_feed_docs_routes.py`
 - `mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_consumer_handoff_mechanic.py`
 
 ## Contract

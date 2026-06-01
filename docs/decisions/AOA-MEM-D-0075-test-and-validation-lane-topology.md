@@ -40,6 +40,13 @@ Make `docs/validation/VALIDATOR_TOPOLOGY.md` the source-authored validator
 topology owner and `config/validation_lanes.json` the source-authored command
 authority for validation lanes.
 
+Follow-up hardening adds `docs/validation/COMMAND_AUTHORITY.md` and
+`docs/validation/validator_inventory.json`, matching the sibling `aoa-skills`
+lesson that command storage, human topology, validator inventory, and test
+inventory are separate surfaces. The lane manifest owns executable sequences;
+the validator inventory owns validation-like entrypoint coverage and prevents
+manual or compatibility validators from becoming unlabeled historical gates.
+
 Each command step now carries effective metadata:
 
 - validator layer
@@ -81,6 +88,8 @@ Keep Python entrypoints as orchestration only:
 Add `docs/validation/` as the current docs district for validator topology:
 
 - `docs/validation/VALIDATOR_TOPOLOGY.md`
+- `docs/validation/COMMAND_AUTHORITY.md`
+- `docs/validation/validator_inventory.json`
 - `docs/validation/AGENTS.md`
 
 Keep `docs/testing/` as the current docs district for human test topology and
@@ -116,8 +125,8 @@ but command composition is now inspectable and testable as data.
 
 Future test additions must update the testing inventory and root technical
 district contracts. Future validation-lane changes must update validator
-topology, the lane manifest, and focused regression tests instead of editing
-hidden command lists.
+topology, command authority, validator inventory, the lane manifest, and focused
+regression tests instead of editing hidden command lists.
 
 `docs/validation/` becomes an allowed docs district because validator meaning
 needs an explicit source owner. `docs/testing/` remains allowed because it owns
@@ -160,7 +169,11 @@ validator.
 
 The validator-topology gate follows the same rule: `validate_validator_topology.py`
 keeps the checks and CLI, while `validator_topology_common.py` owns shared
-constants, path refs, and helper routines.
+constants, path refs, inventory discovery, and helper routines.
+
+Active route cards no longer carry broad repeated validation command blocks as
+their default proof. They name lane ids and focused owner checks; the full
+sequences remain in `config/validation_lanes.json`.
 
 ## Affected Surfaces
 

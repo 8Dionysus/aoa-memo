@@ -30,7 +30,7 @@ python scripts/release/release_check.py
 Validation route:
 
 ```bash
-python -m pytest -q mechanics/writeback/parts/receipt-publication-regression/tests/test_publish_live_receipts.py
+python -m pytest -q mechanics/writeback/parts/receipt-publication-regression/tests
 python scripts/release/release_check.py
 ```
 
