@@ -4,7 +4,7 @@
   "baseline": {
     "captured_on": "2026-05-31",
     "worktree": "main...origin/main",
-    "green_result": "208 passed, 196 subtests passed in 9.45s for python -m pytest -q tests; 391 passed, 815 subtests passed in 23.88s inside python scripts/release_check.py.",
+    "green_result": "210 passed, 196 subtests passed in 9.08s for python -m pytest -q tests; 393 passed, 815 subtests passed in 21.39s inside python scripts/release_check.py.",
     "green_lane": "release_check sequence from config/validation_lanes.json after refactor must preserve the same broad gate shape."
   },
   "agentic_test_layers": {
@@ -478,14 +478,15 @@
     {
       "family": "memory/runtime-boundaries",
       "paths": [
-        "tests/memory/test_memo_runtime_boundaries.py"
+        "tests/memory/test_memo_runtime_writeback_boundaries.py",
+        "tests/memory/test_memo_live_receipt_boundaries.py"
       ],
       "protects": "runtime writeback targets, intake, live receipt replay, growth receipts, and self-agency continuity degradation behavior",
       "owner_surface": "docs/posture/MEMORY_OPERATION_MODES.md",
       "lane": "memory",
       "mode": "blocking",
       "runtime_cost": "medium",
-      "focused_target": "tests/memory/test_memo_runtime_boundaries.py",
+      "focused_target": "tests/memory/test_memo_runtime_writeback_boundaries.py tests/memory/test_memo_live_receipt_boundaries.py",
       "failure_route": "Fix runtime-boundary source or live receipt semantics before changing memo writeback behavior."
     },
     {

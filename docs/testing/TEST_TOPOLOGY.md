@@ -39,6 +39,18 @@ must keep the implementation in `scripts/memory/validators/` layer modules.
 Memory validator regressions should stay split by boundary: schema contracts,
 memory-context boundaries, runtime degradation, Questbook projections,
 handoffs, eval guardrails, and generated read-model contracts.
+Mechanic artifact topology regressions should keep the CLI thin: district
+allowlist orchestration stays in `validate_mechanic_artifact_topology.py`,
+shared root topology helpers stay in `mechanic_artifact_topology_common.py`,
+and repeated family-contract rules stay in
+`mechanic_artifact_family_contracts.py`.
+Runtime-boundary memory regressions should also stay split: writeback target,
+intake, and continuity contracts belong in `test_memo_runtime_writeback_boundaries.py`;
+receipt replay and degradation cases belong in
+`test_memo_live_receipt_boundaries.py`.
+Validator topology regressions should keep shared constants and path helpers
+in `validator_topology_common.py` so `validate_validator_topology.py` remains a
+readable gate rather than an omnibus rules file.
 
 ## Families
 

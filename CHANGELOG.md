@@ -53,6 +53,15 @@ Tracking starts with the community-docs baseline for this repository.
   tests for schema contracts, memory-context boundaries, runtime degradation,
   Questbook projections, handoffs, eval guardrails, and generated read-model
   contracts, with test topology enforcing the split.
+- Split the runtime degradation regression surface again into runtime
+  writeback contracts and live receipt degradation tests so runtime writeback
+  semantics and receipt replay/fault cases stay separately reviewable.
+- Split the mechanic artifact topology validator into a thin CLI, shared
+  topology helpers, and a reusable family-contract engine so root technical
+  district checks no longer live in one bulky validator file.
+- Split validator-topology helper constants and path checks out of
+  `validate_validator_topology.py` so the validator topology gate also stays
+  below the repo's bulky-file threshold.
 
 ## [0.4.0] - 2026-05-24
 
