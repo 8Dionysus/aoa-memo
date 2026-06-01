@@ -991,13 +991,14 @@
   "neighbor_doc_boundaries": [
     {
       "path": "README.md",
-      "purpose": "public front door stays map-oriented; route-mode law lives in AGENTS.md",
+      "purpose": "public front door stays map-oriented; route-mode law and commands live in AGENTS.md",
       "forbidden_snippets": [
         "## Route Modes"
       ],
       "required_snippets": [
         "Agent editing route",
-        "Executable validation routes live in [AGENTS](AGENTS.md#verify)"
+        "Validation starts at [AGENTS](AGENTS.md#verify)",
+        "docs/root/RELEASING"
       ]
     },
     {
