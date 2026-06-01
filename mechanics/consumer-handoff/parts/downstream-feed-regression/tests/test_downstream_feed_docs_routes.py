@@ -24,16 +24,20 @@ class MemoDownstreamFeedDocsRouteTests(unittest.TestCase):
         root_agents = (REPO_ROOT / "AGENTS.md").read_text(encoding="utf-8")
         scripts_agents = (REPO_ROOT / "scripts" / "AGENTS.md").read_text(encoding="utf-8")
 
-        self.assertIn("Executable validation routes live in [AGENTS](AGENTS.md#verify)", readme)
+        self.assertIn("Validation starts at [AGENTS](AGENTS.md#verify)", readme)
         self.assertIn("nearest `AGENTS.md`", readme)
+        self.assertIn("docs/validation", readme)
+        self.assertIn("docs/root/RELEASING", readme)
 
-        for command in (
+        root_validation_commands = (
             "python scripts/ci_gate.py --mode source-fast",
             "python scripts/ci_gate.py --mode generated",
             "python scripts/ci_gate.py --mode memory",
             "python scripts/ci_gate.py --mode tests",
             "python scripts/release/release_check.py",
-        ):
+        )
+        for command in root_validation_commands:
+            self.assertNotIn(command, readme)
             self.assertIn(command, root_agents)
         self.assertIn("docs/validation/COMMAND_AUTHORITY.md", root_agents)
         self.assertIn("docs/validation/validator_inventory.json", root_agents)

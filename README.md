@@ -116,15 +116,9 @@ owner repositories keep meaning.
 
 ## Validate
 
-Executable validation routes live in [AGENTS](AGENTS.md#verify) and the nearest
-`AGENTS.md`. Use [docs/validation](docs/validation/VALIDATOR_TOPOLOGY.md)
-for lane meaning and command authority.
-
-For the frozen release gate, run:
-
-```bash
-python scripts/release/release_check.py
-```
+Validation starts at [AGENTS](AGENTS.md#verify), then the nearest `AGENTS.md`.
+Lane meaning lives in [docs/validation](docs/validation/VALIDATOR_TOPOLOGY.md);
+release procedure lives in [docs/root/RELEASING](docs/root/RELEASING.md).
 
 ## Working Rule
 
