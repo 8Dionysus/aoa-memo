@@ -17,6 +17,14 @@ Reviewed corpus checks route to `memo/`.
 Reviewed intake landing from a local memo port route uses
 `land_reviewed_memo_intake.py`; the script prepares object bundles and landing
 receipts, but only after an export packet explicitly allows `reviewed_write`.
+Its implementation is split into path/schema input checks, landing-plan
+synthesis, and write/summary helpers so the CLI remains an entrypoint rather
+than a hidden policy body.
+
+Object-surface and operational-readout builders follow the same boundary:
+source loading, projection rendering, live probing, and CLI check/write
+orchestration stay in separate helper modules. Generated builders may check
+projection parity, but they must not become the source of memory meaning.
 
 ## Route
 
