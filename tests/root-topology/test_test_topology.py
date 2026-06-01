@@ -114,7 +114,8 @@ def test_memory_validator_regressions_stay_split_by_boundary() -> None:
     required_split_files = {
         "test_memo_schema_contracts.py",
         "test_memo_memory_context_boundaries.py",
-        "test_memo_runtime_boundaries.py",
+        "test_memo_runtime_writeback_boundaries.py",
+        "test_memo_live_receipt_boundaries.py",
         "test_memo_questbook_boundaries.py",
         "test_memo_handoff_boundaries.py",
         "test_memo_eval_guardrails.py",

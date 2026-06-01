@@ -40,6 +40,14 @@ def test_validator_topology_validator_passes() -> None:
     assert completed.returncode == 0, completed.stderr
 
 
+def test_validator_topology_entrypoint_stays_split() -> None:
+    entrypoint = REPO_ROOT / "scripts" / "root-topology" / "validate_validator_topology.py"
+    common = REPO_ROOT / "scripts" / "root-topology" / "validator_topology_common.py"
+
+    assert common.is_file()
+    assert len(entrypoint.read_text(encoding="utf-8").splitlines()) <= 300
+
+
 def test_validator_topology_layers_are_named_in_manifest() -> None:
     payload = json.loads((REPO_ROOT / "config" / "validation_lanes.json").read_text(encoding="utf-8"))
 

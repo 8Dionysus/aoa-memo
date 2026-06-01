@@ -142,11 +142,25 @@ module rather than recreating a monolith.
 
 The memory-validator regression tests are likewise split by boundary:
 `test_memo_schema_contracts.py`, `test_memo_memory_context_boundaries.py`,
-`test_memo_runtime_boundaries.py`, `test_memo_questbook_boundaries.py`,
+`test_memo_runtime_writeback_boundaries.py`,
+`test_memo_live_receipt_boundaries.py`, `test_memo_questbook_boundaries.py`,
 `test_memo_handoff_boundaries.py`, `test_memo_eval_guardrails.py`, and
 `test_memo_generated_surface_contracts.py`. `docs/testing/test_inventory.json`
 and `tests/root-topology/test_test_topology.py` keep that split explicit so
 tests do not become a second hidden architecture.
+
+The mechanic artifact topology validator is also split after follow-up review:
+`validate_mechanic_artifact_topology.py` remains the CLI and district
+allowlist orchestrator, `mechanic_artifact_topology_common.py` owns shared root
+topology constants/helpers, and `mechanic_artifact_family_contracts.py` owns
+the repeated generated/script/test/schema/example/config family-contract
+checks. `tests/root-topology/test_mechanic_artifact_topology.py` keeps the
+entrypoint thin so future family additions do not recreate another bulky
+validator.
+
+The validator-topology gate follows the same rule: `validate_validator_topology.py`
+keeps the checks and CLI, while `validator_topology_common.py` owns shared
+constants, path refs, and helper routines.
 
 ## Affected Surfaces
 
@@ -157,7 +171,11 @@ tests do not become a second hidden architecture.
 - `scripts/ci_gate.py`
 - `scripts/release/release_check.py`
 - `scripts/root-topology/validate_validator_topology.py`
+- `scripts/root-topology/validator_topology_common.py`
 - `scripts/root-topology/validate_docs_districts.py`
+- `scripts/mechanics/mechanic_artifact_family_contracts.py`
+- `scripts/mechanics/mechanic_artifact_topology_common.py`
+- `scripts/mechanics/validate_mechanic_artifact_topology.py`
 - `config/root-topology/root_technical_districts.json`
 - `config/agents/agents_mesh.json`
 - `scripts/memory/validators/`

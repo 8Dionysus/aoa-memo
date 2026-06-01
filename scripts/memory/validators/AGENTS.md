@@ -29,5 +29,5 @@ owned by their local source surfaces; these modules must not become a hidden sou
 ```bash
 python scripts/memory/validate_memo.py --profile all
 python scripts/root-topology/validate_validator_topology.py
-python -m pytest -q tests/memory/test_memo_schema_contracts.py tests/memory/test_memo_runtime_boundaries.py tests/root-topology/test_validator_topology.py
+python -m pytest -q tests/memory/test_memo_schema_contracts.py tests/memory/test_memo_runtime_writeback_boundaries.py tests/memory/test_memo_live_receipt_boundaries.py tests/root-topology/test_validator_topology.py
 ```

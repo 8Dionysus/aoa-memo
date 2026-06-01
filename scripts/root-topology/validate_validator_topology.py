@@ -2,7 +2,6 @@
 from __future__ import annotations
 
 import argparse
-import json
 import sys
 from pathlib import Path
 from typing import Any
@@ -12,125 +11,28 @@ if str(SCRIPTS_ROOT) not in sys.path:
     sys.path.insert(0, str(SCRIPTS_ROOT))
 
 import validation_lanes
-
-
-REPO_ROOT = Path(__file__).resolve().parents[2]
-MANIFEST_PATH = REPO_ROOT / "config" / "validation_lanes.json"
-TOPOLOGY_PATH = REPO_ROOT / "docs" / "validation" / "VALIDATOR_TOPOLOGY.md"
-MEMO_VALIDATOR_CLI = REPO_ROOT / "scripts" / "memory" / "validate_memo.py"
-MEMO_VALIDATOR_MODULE_DIR = REPO_ROOT / "scripts" / "memory" / "validators"
-MEMO_VALIDATOR_CLI_MAX_LINES = 120
-MEMO_VALIDATOR_MODULE_MAX_LINES = 750
-REQUIRED_MEMO_VALIDATOR_MODULES = {
-    "__init__.py",
-    "_shared.py",
-    "eval_boundary.py",
-    "handoff_boundary.py",
-    "memory_context.py",
-    "profiles.py",
-    "questbook.py",
-    "runtime_boundary.py",
-    "runtime_receipts.py",
-    "runtime_writeback.py",
-    "schema.py",
-}
-
-REQUIRED_LAYERS = {
-    "source_topology",
-    "projection_generated",
-    "capability_permission",
-    "runtime_policy",
-    "trace_eval",
-    "memory_context",
-    "inter_agent_handoff",
-    "observability_audit",
-    "security_adversarial",
-    "release_operations",
-}
-REQUIRED_CI_MODES = {
-    "source-fast",
-    "generated",
-    "export/runtime",
-    "runtime",
-    "memory",
-    "handoff",
-    "eval",
-    "audit",
-    "release",
-    "nightly",
-    "post-merge",
-}
-ALLOWED_OWNERSHIP = {"owned", "boundary-only", "routed"}
-ALLOWED_GATE_ROLES = {
-    "hard",
-    "boundary",
-    "regression",
-    "promoted-audit",
-    "release",
-}
-ALLOWED_STEP_MODES = {"blocking", "blocking-in-release", "boundary-only", "advisory"}
-SOURCE_FAST_ALLOWED_LAYERS = {"source_topology"}
-RELEASE_REQUIRED_LAYERS = {
-    "source_topology",
-    "projection_generated",
-    "capability_permission",
-    "runtime_policy",
-    "trace_eval",
-    "memory_context",
-    "inter_agent_handoff",
-    "observability_audit",
-    "release_operations",
-}
-TOPOLOGY_REQUIRED_SNIPPETS = (
-    "Source/Topology Validators",
-    "Projection/Generated Validators",
-    "Capability/Permission Validators",
-    "Runtime Policy Validators",
-    "Trace/Eval Validators",
-    "Memory/RAG/Context Validators",
-    "Inter-Agent/Handoff Validators",
-    "Observability/Audit Validators",
-    "Security/Adversarial Validators",
-    "Release/Nightly/Post-Merge Validators",
-    "Generated validators do not own source meaning.",
-    "Prompt-only guardrails are not a security boundary.",
-    "Do not add a single `validate_everything.py`.",
-    "The profile implementations live under `scripts/memory/validators/`",
+from validator_topology_common import (
+    ALLOWED_GATE_ROLES,
+    ALLOWED_OWNERSHIP,
+    ALLOWED_STEP_MODES,
+    MEMO_VALIDATOR_CLI,
+    MEMO_VALIDATOR_CLI_MAX_LINES,
+    MEMO_VALIDATOR_MODULE_DIR,
+    MEMO_VALIDATOR_MODULE_MAX_LINES,
+    RELEASE_REQUIRED_LAYERS,
+    REPO_ROOT,
+    REQUIRED_CI_MODES,
+    REQUIRED_LAYERS,
+    REQUIRED_MEMO_VALIDATOR_MODULES,
+    SOURCE_FAST_ALLOWED_LAYERS,
+    TOPOLOGY_PATH,
+    TOPOLOGY_REQUIRED_SNIPPETS,
+    append_string_list_errors,
+    expanded_layers,
+    line_count,
+    load_manifest,
+    local_ref_exists,
 )
-
-
-def _load_manifest() -> dict[str, Any]:
-    return json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
-
-
-def _local_ref_exists(ref: object) -> bool:
-    if not isinstance(ref, str) or not ref:
-        return False
-    if ":" in ref.split("/", 1)[0]:
-        return True
-    path_text = ref.split("#", 1)[0]
-    path = Path(path_text)
-    if path.is_absolute() or ".." in path.parts:
-        return False
-    return (REPO_ROOT / path).exists()
-
-
-def _append_string_list_errors(
-    issues: list[str],
-    *,
-    value: object,
-    where: str,
-) -> None:
-    if not isinstance(value, list) or not value:
-        issues.append(f"{where} must be a non-empty list")
-        return
-    for index, item in enumerate(value):
-        if not isinstance(item, str) or not item:
-            issues.append(f"{where}[{index}] must be a non-empty string")
-
-
-def _expanded_layers(sequence_name: str) -> set[str]:
-    return {step.layer for step in validation_lanes.command_sequence(sequence_name)}
 
 
 def validate_topology_doc() -> list[str]:
@@ -174,10 +76,10 @@ def validate_manifest_shape(manifest: dict[str, Any]) -> list[str]:
             issues.append(f"validator_layers.{layer_id}.ownership has unsupported value")
         if layer.get("gate_role") not in ALLOWED_GATE_ROLES:
             issues.append(f"validator_layers.{layer_id}.gate_role has unsupported value")
-        if not _local_ref_exists(layer.get("owner_surface")):
+        if not local_ref_exists(layer.get("owner_surface")):
             issues.append(f"validator_layers.{layer_id}.owner_surface points to a missing local surface")
-        _append_string_list_errors(issues, value=layer.get("checks"), where=f"validator_layers.{layer_id}.checks")
-        _append_string_list_errors(issues, value=layer.get("must_not"), where=f"validator_layers.{layer_id}.must_not")
+        append_string_list_errors(issues, value=layer.get("checks"), where=f"validator_layers.{layer_id}.checks")
+        append_string_list_errors(issues, value=layer.get("must_not"), where=f"validator_layers.{layer_id}.must_not")
 
     return issues
 
@@ -206,7 +108,7 @@ def validate_sequences(manifest: dict[str, Any], *, scope: str) -> list[str]:
             issues.append(f"sequence_defaults.{sequence_name}.layer must name a validator layer")
         if default.get("mode") not in ALLOWED_STEP_MODES:
             issues.append(f"sequence_defaults.{sequence_name}.mode has unsupported value")
-        if not _local_ref_exists(default.get("owner_surface")):
+        if not local_ref_exists(default.get("owner_surface")):
             issues.append(f"sequence_defaults.{sequence_name}.owner_surface points to a missing local surface")
         if not isinstance(default.get("failure_route"), str) or not default["failure_route"]:
             issues.append(f"sequence_defaults.{sequence_name}.failure_route must be a non-empty string")
@@ -240,15 +142,15 @@ def validate_sequences(manifest: dict[str, Any], *, scope: str) -> list[str]:
                     issues.append(f"{where}.command points to a missing repo-local script")
 
     if scope in {"all", "source-fast"}:
-        source_fast_layers = _expanded_layers("source_fast")
+        source_fast_layers = expanded_layers("source_fast")
         if not source_fast_layers <= SOURCE_FAST_ALLOWED_LAYERS:
             issues.append("source_fast may only contain source_topology commands")
-        generated_layers = _expanded_layers("generated")
+        generated_layers = expanded_layers("generated")
         if generated_layers != {"projection_generated"}:
             issues.append("generated sequence may only contain projection_generated commands")
 
     if scope in {"all", "release-ops"}:
-        release_layers = _expanded_layers("release_check")
+        release_layers = expanded_layers("release_check")
         missing_release_layers = sorted(RELEASE_REQUIRED_LAYERS - release_layers)
         if missing_release_layers:
             issues.append("release_check missing required layer coverage: " + ", ".join(missing_release_layers))
@@ -274,10 +176,6 @@ def validate_sequences(manifest: dict[str, Any], *, scope: str) -> list[str]:
     return issues
 
 
-def _line_count(path: Path) -> int:
-    return len(path.read_text(encoding="utf-8").splitlines())
-
-
 def validate_memo_validator_module_split() -> list[str]:
     issues: list[str] = []
     if not MEMO_VALIDATOR_CLI.is_file():
@@ -287,7 +185,7 @@ def validate_memo_validator_module_split() -> list[str]:
     if not MEMO_VALIDATOR_MODULE_DIR.is_dir():
         return issues + ["scripts/memory/validators/ directory is missing"]
 
-    cli_lines = _line_count(MEMO_VALIDATOR_CLI)
+    cli_lines = line_count(MEMO_VALIDATOR_CLI)
     if cli_lines > MEMO_VALIDATOR_CLI_MAX_LINES:
         issues.append(
             f"scripts/memory/validate_memo.py must stay a thin CLI "
@@ -305,7 +203,7 @@ def validate_memo_validator_module_split() -> list[str]:
         issues.append("scripts/memory/validators missing modules: " + ", ".join(missing_modules))
     for module_name in sorted(REQUIRED_MEMO_VALIDATOR_MODULES & actual_modules):
         module_path = MEMO_VALIDATOR_MODULE_DIR / module_name
-        module_lines = _line_count(module_path)
+        module_lines = line_count(module_path)
         if module_lines > MEMO_VALIDATOR_MODULE_MAX_LINES:
             issues.append(
                 f"scripts/memory/validators/{module_name} is too large for a layer module "
@@ -315,7 +213,7 @@ def validate_memo_validator_module_split() -> list[str]:
 
 
 def validate(scope: str = "all") -> list[str]:
-    manifest = _load_manifest()
+    manifest = load_manifest()
     issues = []
     issues.extend(validate_topology_doc())
     issues.extend(validate_manifest_shape(manifest))

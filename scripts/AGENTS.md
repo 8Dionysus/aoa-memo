@@ -39,7 +39,9 @@ Keep the current split clear:
 - `mechanics/validate_mechanic_artifact_topology.py` keeps single-mechanic schemas,
   examples, config inputs, generated outputs, scripts, tests, and manifests out
   of root technical districts, and checks that root `generated/` outputs belong
-  to explicit generated-family contracts
+  to explicit generated-family contracts; its family-contract implementation
+  lives in `mechanics/mechanic_artifact_family_contracts.py` and shared root
+  topology helpers live in `mechanics/mechanic_artifact_topology_common.py`
 - `mechanics/build_mechanic_artifact_inventory.py` and
   `mechanics/validate_mechanic_artifact_inventory.py` keep
   `generated/mechanics/mechanic_artifacts.min.json` aligned with package-local and
@@ -58,7 +60,9 @@ Keep the current split clear:
   from drifting back into active docs-root sprawl
 - `root-topology/validate_validator_topology.py` keeps validator layers,
   command lane metadata, source-fast boundaries, release composition, and
-  route-away declarations aligned with `docs/validation/VALIDATOR_TOPOLOGY.md`
+  route-away declarations aligned with `docs/validation/VALIDATOR_TOPOLOGY.md`;
+  shared constants, path refs, and helper checks live in
+  `root-topology/validator_topology_common.py`
 - `mechanics/validate_memo_mechanic_parts.py` keeps package `PARTS.md` files in the
   operation-first Active Parts plus Interface shape and requires physical
   `parts/<part>/README.md`, `CONTRACT.md`, and `VALIDATION.md` nodes

@@ -11,8 +11,24 @@ sys.path.insert(0, str(REPO_ROOT / "scripts" / "mechanics"))
 from validate_mechanic_artifact_topology import validate  # noqa: E402
 
 
+MAX_MECHANIC_ARTIFACT_TOPOLOGY_ENTRYPOINT_LINES = 180
+REQUIRED_MECHANIC_ARTIFACT_TOPOLOGY_MODULES = {
+    "scripts/mechanics/mechanic_artifact_family_contracts.py",
+    "scripts/mechanics/mechanic_artifact_topology_common.py",
+    "scripts/mechanics/validate_mechanic_artifact_topology.py",
+}
+
+
 def test_single_mechanic_artifacts_do_not_return_to_root_technical_dirs() -> None:
     assert validate() == []
+
+
+def test_mechanic_artifact_topology_validator_stays_split() -> None:
+    entrypoint = REPO_ROOT / "scripts" / "mechanics" / "validate_mechanic_artifact_topology.py"
+    assert len(entrypoint.read_text(encoding="utf-8").splitlines()) <= MAX_MECHANIC_ARTIFACT_TOPOLOGY_ENTRYPOINT_LINES
+
+    for relative in REQUIRED_MECHANIC_ARTIFACT_TOPOLOGY_MODULES:
+        assert (REPO_ROOT / relative).is_file()
 
 
 def test_root_generated_outputs_have_family_contracts() -> None:
