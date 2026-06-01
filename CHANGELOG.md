@@ -62,9 +62,17 @@ Tracking starts with the community-docs baseline for this repository.
 - Split validator-topology helper constants and path checks out of
   `validate_validator_topology.py` so the validator topology gate also stays
   below the repo's bulky-file threshold.
-- Mark legacy raw test snapshots as advisory provenance in the test inventory
-  and cap active test files at 300 lines so historical tests cannot silently
-  re-enter blocking gates or grow back into bulky hidden architecture.
+- Exclude legacy raw test snapshots from active test inventory and pytest
+  collection, rename preserved legacy `test*.py` snapshots into inert
+  `.snapshot` files, and cap active test files at 300 lines so historical
+  tests cannot silently re-enter gates or grow back into bulky hidden
+  architecture.
+- Remove legacy mechanic folders from active AGENTS mesh and mechanic readiness
+  package-surface checks so legacy stays provenance only, not a required route
+  card or readiness bridge.
+- Retire the old Titan remembrance single-`source_ref` schema branch from the
+  active recall/remembrance part, preserving its v0 example only as an inert
+  legacy snapshot.
 
 ## [0.4.0] - 2026-05-24
 

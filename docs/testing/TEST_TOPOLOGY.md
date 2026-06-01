@@ -96,8 +96,13 @@ belongs to runtime and eval owners.
 - Mechanic-local tests belong under `mechanics/<slug>/parts/<part>/tests/`
   when they protect one repeatable operation.
 - Historical tests preserved under `mechanics/*/legacy/raw/tests/` are
-  provenance snapshots only. They must not share a blocking inventory entry
-  with the active part test that replaced them.
+  provenance snapshots only, not active tests. They must not appear in
+  `docs/testing/test_inventory.json`, must not carry local pytest activation,
+  must not remain named `test*.py`, and must not be counted as advisory,
+  soft-live, or blocking checks.
+- Legacy mechanic folders must also stay outside active route/readiness
+  projections: no canonical AGENTS mesh cards, no package-surface readiness
+  requirement, and no `legacy-bridge` check.
 - Advisory or live checks must be visibly named before they can enter a
   default lane. Memory remains weaker than proof, routing, runtime state, role
   authority, KAG truth, playbook choreography, and source-authored knowledge.

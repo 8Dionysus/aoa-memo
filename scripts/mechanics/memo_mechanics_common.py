@@ -20,9 +20,6 @@ PACKAGE_REQUIRED_FILES = (
     "LANDING_LOG.md",
     "ROADMAP.md",
     "docs/AGENTS.md",
-    "legacy/AGENTS.md",
-    "legacy/README.md",
-    "legacy/INDEX.md",
 )
 
 README_HEADINGS = (
@@ -58,7 +55,6 @@ def build_index() -> dict[str, Any]:
                 "os_abyss_role": package["os_abyss_role"],
                 "path": f"mechanics/{slug}/README.md",
                 "docs_path": f"mechanics/{slug}/docs",
-                "legacy_path": f"mechanics/{slug}/legacy/INDEX.md",
                 "doc_count": len(docs),
                 "docs": [f"mechanics/{slug}/docs/{doc}" for doc in docs],
             }

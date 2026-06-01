@@ -97,7 +97,6 @@ def build_package_readiness(package: dict[str, Any], artifacts: dict[str, Any]) 
     parts = _read(f"{package_root}/PARTS.md")
     provenance = _read(f"{package_root}/PROVENANCE.md")
     landing_log = _read(f"{package_root}/LANDING_LOG.md")
-    legacy_index = _read(f"{package_root}/legacy/INDEX.md")
 
     expected_docs = sorted(package["docs"])
     present_docs = _present_docs(slug)
@@ -155,19 +154,10 @@ def build_package_readiness(package: dict[str, Any], artifacts: dict[str, Any]) 
             and all(doc in parts for doc in expected_docs)
         ),
         "owner-map": "aoa-memo" in owner_map and all(ref in route_text for ref in CORE_OWNER_REFS),
-        "legacy-bridge": all(f"{package_root}/docs/{doc}" in legacy_index for doc in expected_docs),
         "provenance": (
-            (
-                "Use active surfaces first" in provenance
-                or "## Active Placement" in provenance
-                or "## Active source" in provenance
-            )
-            and (
-                "legacy/INDEX.md" in provenance
-                or "Former Placement" in provenance
-                or "Former flat source" in provenance
-                or "Former active paths" in provenance
-            )
+            "Use active surfaces first" in provenance
+            or "## Active Placement" in provenance
+            or "## Active source" in provenance
         ),
         "landing-log": "python scripts/release/release_check.py" in landing_log or "python scripts/release/release_check.py" in agents,
         "validation-route": all(ref in validation_refs for ref in REQUIRED_VALIDATION_REFS),

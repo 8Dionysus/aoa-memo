@@ -97,13 +97,9 @@ def validate() -> list[str]:
                 issues.append(f"mechanics/{slug}/docs has unregistered docs: " + ", ".join(extra))
 
         parts_text = (package_root / "PARTS.md").read_text(encoding="utf-8") if (package_root / "PARTS.md").is_file() else ""
-        legacy_text = (package_root / "legacy" / "INDEX.md").read_text(encoding="utf-8") if (package_root / "legacy" / "INDEX.md").is_file() else ""
         for filename in sorted(expected_docs):
             if filename not in parts_text:
                 issues.append(f"mechanics/{slug}/PARTS.md must list {filename}")
-            active_path = f"mechanics/{slug}/docs/{filename}"
-            if active_path not in legacy_text:
-                issues.append(f"mechanics/{slug}/legacy/INDEX.md must map {active_path}")
 
         all_former_flat_paths.extend(package["former_flat_paths"])
         for former_path in package["former_flat_paths"]:

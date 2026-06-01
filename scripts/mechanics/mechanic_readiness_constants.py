@@ -22,7 +22,6 @@ READINESS_CHECKS = (
     "docs-index",
     "parts-interface",
     "owner-map",
-    "legacy-bridge",
     "provenance",
     "landing-log",
     "validation-route",
