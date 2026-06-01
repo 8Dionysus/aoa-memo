@@ -4,8 +4,76 @@
   "baseline": {
     "captured_on": "2026-05-31",
     "worktree": "main...origin/main",
-    "green_result": "184 passed, 196 subtests passed in 11.06s for python -m pytest -q tests; 367 passed, 815 subtests passed in 19.89s inside python scripts/release_check.py.",
+    "green_result": "208 passed, 196 subtests passed in 9.45s for python -m pytest -q tests; 391 passed, 815 subtests passed in 23.88s inside python scripts/release_check.py.",
     "green_lane": "release_check sequence from config/validation_lanes.json after refactor must preserve the same broad gate shape."
+  },
+  "agentic_test_layers": {
+    "contract_core": {
+      "status": "implemented",
+      "repo_role": "schemas, owner surfaces, AGENTS mesh, root topology, generated parity, and validation lane contracts",
+      "primary_entries": [
+        "validation/test-topology",
+        "root/topology",
+        "memory/schema-contracts"
+      ]
+    },
+    "tool_boundary": {
+      "status": "implemented",
+      "repo_role": "memo-side export, handoff, local port, and argument-boundary regressions",
+      "primary_entries": [
+        "memory/handoff-boundaries",
+        "memory/local-port"
+      ]
+    },
+    "scenario_replay": {
+      "status": "implemented",
+      "repo_role": "deterministic fixture replay for Questbook projections, live receipts, guardrail packs, and reviewed intake",
+      "primary_entries": [
+        "memory/questbook-boundaries",
+        "memory/runtime-boundaries",
+        "memory/eval-guardrails"
+      ]
+    },
+    "trace_eval": {
+      "status": "routed",
+      "repo_role": "Spark lane and guardrail fixtures stay local; full multi-turn trajectory grading routes to aoa-evals",
+      "primary_entries": [
+        "agent-lane/spark",
+        "memory/eval-guardrails"
+      ]
+    },
+    "state_memory_session": {
+      "status": "implemented",
+      "repo_role": "reviewed corpus, memory context boundaries, generated memory read models, local memo-port state, and provenance fixtures",
+      "primary_entries": [
+        "memory/corpus",
+        "memory/context-boundaries",
+        "memory/generated-surface-contracts"
+      ]
+    },
+    "fault_safety": {
+      "status": "implemented",
+      "repo_role": "missing external schemas, stale refs, permission drift, contradiction fixtures, path escape, malformed IDs, and unhydrated object refs",
+      "primary_entries": [
+        "memory/runtime-boundaries",
+        "memory/eval-guardrails",
+        "memory/questbook-boundaries"
+      ]
+    },
+    "offline_online_loop": {
+      "status": "routed",
+      "repo_role": "offline deterministic gates live here; live canaries and production trace sampling route to runtime/eval owners",
+      "primary_entries": [
+        "validation/test-topology"
+      ]
+    },
+    "performance_budget": {
+      "status": "partial",
+      "repo_role": "file-size and deterministic release-loop budgets are local; token/cost/latency budgets route to eval/runtime telemetry",
+      "primary_entries": [
+        "validation/test-topology"
+      ]
+    }
   },
   "required_fields": [
     "family",
@@ -382,18 +450,108 @@
       "failure_route": "Fix docs/memory/MEMORY_OPERATION_CYCLE.md before widening the lane."
     },
     {
-      "family": "memory/object-contract",
+      "family": "memory/schema-contracts",
       "paths": [
-        "tests/memory/test_memo_validators.py",
-        "tests/memory/test_phase_alpha_provenance_thread.py"
+        "tests/memory/test_memo_schema_contracts.py"
       ],
-      "protects": "memory schemas, examples, provenance, and generated object contracts",
+      "protects": "schema examples, datetime formats, checkpoint mappings, bridge envelopes, and recall-contract shape",
       "owner_surface": "docs/memory/MEMORY_MODEL.md",
       "lane": "memory",
       "mode": "blocking",
+      "runtime_cost": "fast",
+      "focused_target": "tests/memory/test_memo_schema_contracts.py",
+      "failure_route": "Fix memory schemas, examples, or recall contract source before changing generated readers."
+    },
+    {
+      "family": "memory/context-boundaries",
+      "paths": [
+        "tests/memory/test_memo_memory_context_boundaries.py"
+      ],
+      "protects": "memory readiness, registry, checkpoint-to-memory, witness trace, and quest chronicle context boundaries",
+      "owner_surface": "docs/memory/MEMORY_MODEL.md",
+      "lane": "memory",
+      "mode": "blocking",
+      "runtime_cost": "fast",
+      "focused_target": "tests/memory/test_memo_memory_context_boundaries.py",
+      "failure_route": "Fix memory context owner surfaces before widening runtime or handoff behavior."
+    },
+    {
+      "family": "memory/runtime-boundaries",
+      "paths": [
+        "tests/memory/test_memo_runtime_boundaries.py"
+      ],
+      "protects": "runtime writeback targets, intake, live receipt replay, growth receipts, and self-agency continuity degradation behavior",
+      "owner_surface": "docs/posture/MEMORY_OPERATION_MODES.md",
+      "lane": "memory",
+      "mode": "blocking",
       "runtime_cost": "medium",
-      "focused_target": "tests/memory",
-      "failure_route": "Fix docs/memory/MEMORY_MODEL.md before widening the lane."
+      "focused_target": "tests/memory/test_memo_runtime_boundaries.py",
+      "failure_route": "Fix runtime-boundary source or live receipt semantics before changing memo writeback behavior."
+    },
+    {
+      "family": "memory/questbook-boundaries",
+      "paths": [
+        "tests/memory/test_memo_questbook_boundaries.py"
+      ],
+      "protects": "Questbook source routing, generated quest projections, external schema fallback, and additive quest owner boundaries",
+      "owner_surface": "mechanics/questbook/README.md",
+      "lane": "memory",
+      "mode": "blocking",
+      "runtime_cost": "fast",
+      "focused_target": "tests/memory/test_memo_questbook_boundaries.py",
+      "failure_route": "Fix Questbook source-contract surfaces before accepting projection drift."
+    },
+    {
+      "family": "memory/handoff-boundaries",
+      "paths": [
+        "tests/memory/test_memo_handoff_boundaries.py"
+      ],
+      "protects": "router recall handoff, playbook scope handoff, bridge export, and KAG source export argument boundaries",
+      "owner_surface": "mechanics/consumer-handoff/docs/ORCHESTRATOR_MEMORY_ALIGNMENT.md",
+      "lane": "memory",
+      "mode": "blocking",
+      "runtime_cost": "fast",
+      "focused_target": "tests/memory/test_memo_handoff_boundaries.py",
+      "failure_route": "Fix consumer-handoff owner surfaces before changing downstream export semantics."
+    },
+    {
+      "family": "memory/eval-guardrails",
+      "paths": [
+        "tests/memory/test_memo_eval_guardrails.py"
+      ],
+      "protects": "memory eval guardrail fixtures for precision, provenance, staleness, contradiction, permission, promotion, and merge cases",
+      "owner_surface": "docs/validation/VALIDATOR_TOPOLOGY.md",
+      "lane": "memory",
+      "mode": "blocking",
+      "runtime_cost": "fast",
+      "focused_target": "tests/memory/test_memo_eval_guardrails.py",
+      "failure_route": "Fix guardrail fixture source or eval-boundary semantics before adding agent replay coverage."
+    },
+    {
+      "family": "memory/generated-surface-contracts",
+      "paths": [
+        "tests/memory/test_memo_generated_surface_contracts.py"
+      ],
+      "protects": "generated memory and memory-object reader surfaces, capsule refs, duplicate IDs, and scope-class drift",
+      "owner_surface": "generated/AGENTS.md",
+      "lane": "memory",
+      "mode": "blocking",
+      "runtime_cost": "fast",
+      "focused_target": "tests/memory/test_memo_generated_surface_contracts.py",
+      "failure_route": "Fix generated surface builders or source manifests before changing tests."
+    },
+    {
+      "family": "memory/object-contract",
+      "paths": [
+        "tests/memory/test_phase_alpha_provenance_thread.py"
+      ],
+      "protects": "Phase Alpha provenance thread object contract",
+      "owner_surface": "docs/memory/MEMORY_MODEL.md",
+      "lane": "memory",
+      "mode": "blocking",
+      "runtime_cost": "fast",
+      "focused_target": "tests/memory/test_phase_alpha_provenance_thread.py",
+      "failure_route": "Fix Phase Alpha memory source examples before changing object read models."
     },
     {
       "family": "root/direction",

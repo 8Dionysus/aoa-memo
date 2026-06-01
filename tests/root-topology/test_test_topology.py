@@ -19,6 +19,17 @@ REQUIRED_INVENTORY_FIELDS = {
     "focused_target",
     "failure_route",
 }
+MAX_ROOT_MEMORY_TEST_LINES = 700
+REQUIRED_AGENTIC_TEST_LAYERS = {
+    "contract_core",
+    "tool_boundary",
+    "scenario_replay",
+    "trace_eval",
+    "state_memory_session",
+    "fault_safety",
+    "offline_online_loop",
+    "performance_budget",
+}
 
 
 def discovered_test_files() -> set[str]:
@@ -46,6 +57,10 @@ def test_topology_doc_names_memo_route_shape() -> None:
         "Memory remains weaker than proof",
         "config/validation_lanes.json",
         "docs/validation/VALIDATOR_TOPOLOGY.md",
+        "Agentic Test Layers",
+        "Scenario replay",
+        "Trace eval",
+        "Fault/safety",
     ):
         assert required in text
 
@@ -75,6 +90,44 @@ def test_inventory_covers_all_test_files() -> None:
 
     assert len(inventory_paths) == len(set(inventory_paths))
     assert discovered_test_files() == set(inventory_paths)
+
+
+def test_agentic_test_layers_are_explicitly_routed() -> None:
+    inventory = load_inventory()
+    layers = inventory["agentic_test_layers"]
+
+    assert set(layers) == REQUIRED_AGENTIC_TEST_LAYERS
+    for layer_id, layer in layers.items():
+        assert layer["status"] in {"implemented", "partial", "routed"}, layer_id
+        assert layer["repo_role"]
+        assert isinstance(layer["primary_entries"], list) and layer["primary_entries"]
+
+    assert layers["trace_eval"]["status"] == "routed"
+    assert "aoa-evals" in layers["trace_eval"]["repo_role"]
+    assert layers["fault_safety"]["status"] == "implemented"
+    assert layers["scenario_replay"]["status"] == "implemented"
+
+
+def test_memory_validator_regressions_stay_split_by_boundary() -> None:
+    assert not (REPO_ROOT / "tests" / "memory" / "test_memo_validators.py").exists()
+
+    required_split_files = {
+        "test_memo_schema_contracts.py",
+        "test_memo_memory_context_boundaries.py",
+        "test_memo_runtime_boundaries.py",
+        "test_memo_questbook_boundaries.py",
+        "test_memo_handoff_boundaries.py",
+        "test_memo_eval_guardrails.py",
+        "test_memo_generated_surface_contracts.py",
+    }
+    actual_split_files = {
+        path.name
+        for path in (REPO_ROOT / "tests" / "memory").glob("test_memo_*.py")
+    }
+    assert required_split_files <= actual_split_files
+
+    for path in (REPO_ROOT / "tests" / "memory").glob("test_memo_*.py"):
+        assert len(path.read_text(encoding="utf-8").splitlines()) <= MAX_ROOT_MEMORY_TEST_LINES, path
 
 
 def test_inventory_and_lane_manifest_cross_reference_each_other() -> None:

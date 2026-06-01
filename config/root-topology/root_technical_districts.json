@@ -212,33 +212,40 @@
       "allowed_files": [
         "tests/agents/test_agents_mesh.py",
         "tests/agents/test_companion_skill_scripts.py",
-        "tests/root-topology/test_current_direction_routes.py",
-        "tests/root-topology/test_ci_gate.py",
-        "tests/root-topology/test_docs_districts.py",
-        "tests/mechanics/test_cross_mechanic_operational_contracts.py",
+        "tests/agents/test_validate_semantic_agents.py",
         "tests/mechanics/test_cross_mechanic_candidate_contracts.py",
+        "tests/mechanics/test_cross_mechanic_operational_contracts.py",
         "tests/mechanics/test_mechanic_artifact_inventory.py",
-        "tests/root-topology/test_mechanic_artifact_topology.py",
         "tests/mechanics/test_memo_mechanic_cards.py",
         "tests/mechanics/test_memo_mechanic_landing_logs.py",
         "tests/mechanics/test_memo_mechanic_owner_routes.py",
         "tests/mechanics/test_memo_mechanic_parts.py",
         "tests/mechanics/test_memo_mechanic_readiness.py",
         "tests/mechanics/test_memo_mechanics.py",
+        "tests/memory/memo_validator_test_support.py",
         "tests/memory/test_local_memo_port.py",
         "tests/memory/test_memo_corpus.py",
-        "tests/memory/test_memo_validators.py",
+        "tests/memory/test_memo_eval_guardrails.py",
+        "tests/memory/test_memo_generated_surface_contracts.py",
+        "tests/memory/test_memo_handoff_boundaries.py",
+        "tests/memory/test_memo_memory_context_boundaries.py",
+        "tests/memory/test_memo_questbook_boundaries.py",
+        "tests/memory/test_memo_runtime_boundaries.py",
+        "tests/memory/test_memo_schema_contracts.py",
         "tests/memory/test_memory_operations.py",
         "tests/memory/test_phase_alpha_provenance_thread.py",
         "tests/memory/test_reviewed_intake_landing.py",
-        "tests/root-topology/test_roadmap_parity.py",
+        "tests/root-topology/test_ci_gate.py",
+        "tests/root-topology/test_current_direction_routes.py",
+        "tests/root-topology/test_docs_districts.py",
+        "tests/root-topology/test_mechanic_artifact_topology.py",
         "tests/root-topology/test_release_check.py",
+        "tests/root-topology/test_roadmap_parity.py",
         "tests/root-topology/test_root_technical_districts_index.py",
         "tests/root-topology/test_test_topology.py",
         "tests/root-topology/test_topology_spine.py",
         "tests/root-topology/test_validation_lanes.py",
-        "tests/root-topology/test_validator_topology.py",
-        "tests/agents/test_validate_semantic_agents.py"
+        "tests/root-topology/test_validator_topology.py"
       ]
     }
   },
@@ -566,9 +573,15 @@
         "scripts/release/release_check.py",
         "tests/memory/test_local_memo_port.py",
         "tests/memory/test_memo_corpus.py",
-        "tests/memory/test_memo_validators.py",
         "tests/memory/test_memory_operations.py",
-        "tests/memory/test_reviewed_intake_landing.py"
+        "tests/memory/test_reviewed_intake_landing.py",
+        "tests/memory/test_memo_eval_guardrails.py",
+        "tests/memory/test_memo_generated_surface_contracts.py",
+        "tests/memory/test_memo_handoff_boundaries.py",
+        "tests/memory/test_memo_memory_context_boundaries.py",
+        "tests/memory/test_memo_questbook_boundaries.py",
+        "tests/memory/test_memo_runtime_boundaries.py",
+        "tests/memory/test_memo_schema_contracts.py"
       ]
     },
     {
@@ -591,8 +604,14 @@
       "covered_by": [
         "scripts/memory/validate_memo.py",
         "scripts/root-topology/validate_validator_topology.py",
-        "tests/memory/test_memo_validators.py",
-        "tests/root-topology/test_validator_topology.py"
+        "tests/root-topology/test_validator_topology.py",
+        "tests/memory/test_memo_eval_guardrails.py",
+        "tests/memory/test_memo_generated_surface_contracts.py",
+        "tests/memory/test_memo_handoff_boundaries.py",
+        "tests/memory/test_memo_memory_context_boundaries.py",
+        "tests/memory/test_memo_questbook_boundaries.py",
+        "tests/memory/test_memo_runtime_boundaries.py",
+        "tests/memory/test_memo_schema_contracts.py"
       ]
     },
     {
@@ -787,7 +806,14 @@
       "owner_surface": "docs/memory/MEMORY_MODEL.md",
       "tests": [
         "tests/memory/test_memo_corpus.py",
-        "tests/memory/test_memo_validators.py",
+        "tests/memory/memo_validator_test_support.py",
+        "tests/memory/test_memo_eval_guardrails.py",
+        "tests/memory/test_memo_generated_surface_contracts.py",
+        "tests/memory/test_memo_handoff_boundaries.py",
+        "tests/memory/test_memo_memory_context_boundaries.py",
+        "tests/memory/test_memo_questbook_boundaries.py",
+        "tests/memory/test_memo_runtime_boundaries.py",
+        "tests/memory/test_memo_schema_contracts.py",
         "tests/memory/test_memory_operations.py",
         "tests/memory/test_phase_alpha_provenance_thread.py",
         "tests/memory/test_reviewed_intake_landing.py"
@@ -797,6 +823,7 @@
         "schemas/support-objects/reviewed_intake_landing_receipt.schema.json",
         "memo/objects/",
         "memo/intake/",
+        "scripts/memory/validators/",
         "scripts/memory/land_reviewed_memo_intake.py",
         "examples/phase-alpha/provenance_thread.phase-alpha-curated.example.json",
         "examples/generated-surfaces/memory_object_surface_manifest.json",

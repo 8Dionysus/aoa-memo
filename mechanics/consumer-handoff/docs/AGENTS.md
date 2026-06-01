@@ -55,7 +55,7 @@ python scripts/mechanics/build_memo_mechanics_index.py --check
 python scripts/mechanics/validate_memo_mechanics_index.py
 python scripts/memory/validate_memo.py
 python scripts/memory/validate_memory_surfaces.py
-python -m pytest -q mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_consumer_handoff_mechanic.py mechanics/consumer-handoff/parts/playbook-scope-handoff/tests/test_playbook_memory_scopes.py mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_downstream_feed_contracts.py tests/memory/test_memo_validators.py
+python -m pytest -q mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_consumer_handoff_mechanic.py mechanics/consumer-handoff/parts/playbook-scope-handoff/tests/test_playbook_memory_scopes.py mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_downstream_feed_contracts.py tests/memory/test_memo_handoff_boundaries.py
 ```
 
 ## Closeout

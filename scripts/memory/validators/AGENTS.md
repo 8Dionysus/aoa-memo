@@ -18,7 +18,8 @@ owned by their local source surfaces; these modules must not become a hidden sou
 ## Route
 
 - Up: `scripts/memory/AGENTS.md`, then `scripts/AGENTS.md`.
-- Across: `tests/memory/test_memo_validators.py` and
+- Across: `tests/memory/test_memo_*_*.py`,
+  `tests/memory/test_memo_schema_contracts.py`, and
   `tests/root-topology/test_validator_topology.py`.
 - Downstream: `scripts/memory/validate_memo.py` compatibility CLI and release
   lanes in `config/validation_lanes.json`.
@@ -28,5 +29,5 @@ owned by their local source surfaces; these modules must not become a hidden sou
 ```bash
 python scripts/memory/validate_memo.py --profile all
 python scripts/root-topology/validate_validator_topology.py
-python -m pytest -q tests/memory/test_memo_validators.py tests/root-topology/test_validator_topology.py
+python -m pytest -q tests/memory/test_memo_schema_contracts.py tests/memory/test_memo_runtime_boundaries.py tests/root-topology/test_validator_topology.py
 ```

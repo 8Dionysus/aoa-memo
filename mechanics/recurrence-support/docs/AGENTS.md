@@ -55,7 +55,7 @@ python scripts/mechanics/validate_memo_mechanics.py
 python scripts/mechanics/build_memo_mechanics_index.py --check
 python scripts/mechanics/validate_memo_mechanics_index.py
 python scripts/memory/validate_memo.py
-python -m pytest -q mechanics/recurrence-support/parts/witness-trace-contract/tests/test_recurrence_support_mechanic.py tests/memory/test_memo_validators.py mechanics/consumer-handoff/parts/playbook-scope-handoff/tests/test_playbook_memory_scopes.py tests/root-topology/test_roadmap_parity.py
+python -m pytest -q mechanics/recurrence-support/parts/witness-trace-contract/tests/test_recurrence_support_mechanic.py tests/memory/test_memo_memory_context_boundaries.py mechanics/consumer-handoff/parts/playbook-scope-handoff/tests/test_playbook_memory_scopes.py tests/root-topology/test_roadmap_parity.py
 ```
 
 ## Closeout

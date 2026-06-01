@@ -90,6 +90,12 @@ machine inventory:
 - `docs/testing/test_inventory.json`
 - `docs/testing/AGENTS.md`
 
+The testing topology also names the agentic test layers that `aoa-memo` can
+legitimately own: contract core, tool boundary, deterministic scenario replay,
+state/memory/session checks, fault/safety fixtures, and generated-surface
+parity. Full multi-turn trace grading, online canaries, and cost/token/latency
+telemetry stay routed to stronger eval/runtime owners.
+
 ## Alternatives
 
 Keeping the command list only in `release_check.py` would preserve the old
@@ -133,6 +139,14 @@ projection checks, runtime writeback checks, live receipt checks, handoff
 checks, and eval guardrail checks. Validator topology tests enforce the thin
 entrypoint and per-module size budget so future growth lands in the owner
 module rather than recreating a monolith.
+
+The memory-validator regression tests are likewise split by boundary:
+`test_memo_schema_contracts.py`, `test_memo_memory_context_boundaries.py`,
+`test_memo_runtime_boundaries.py`, `test_memo_questbook_boundaries.py`,
+`test_memo_handoff_boundaries.py`, `test_memo_eval_guardrails.py`, and
+`test_memo_generated_surface_contracts.py`. `docs/testing/test_inventory.json`
+and `tests/root-topology/test_test_topology.py` keep that split explicit so
+tests do not become a second hidden architecture.
 
 ## Affected Surfaces
 

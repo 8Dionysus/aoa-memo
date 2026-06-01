@@ -147,6 +147,8 @@ def validate() -> list[str]:
     for path in tracked_files():
         if not is_text_candidate(path):
             continue
+        if not path.exists():
+            continue
         rel = path.relative_to(REPO_ROOT).as_posix()
         text = path.read_text(encoding="utf-8", errors="ignore")
         for former_path, pattern in stale_patterns.items():

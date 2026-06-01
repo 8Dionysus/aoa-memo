@@ -49,6 +49,10 @@ Tracking starts with the community-docs baseline for this repository.
 - Move those profile implementations into `scripts/memory/validators/` modules
   and keep `validate_memo.py` as a thin compatibility CLI, with topology tests
   preventing the memo validator from growing back into a monolith.
+- Split the former broad memory validator regression file into layer-owned
+  tests for schema contracts, memory-context boundaries, runtime degradation,
+  Questbook projections, handoffs, eval guardrails, and generated read-model
+  contracts, with test topology enforcing the split.
 
 ## [0.4.0] - 2026-05-24
 

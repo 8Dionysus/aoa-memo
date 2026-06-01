@@ -55,7 +55,7 @@ python scripts/mechanics/validate_memo_mechanics.py
 python scripts/mechanics/build_memo_mechanics_index.py --check
 python scripts/mechanics/validate_memo_mechanics_index.py
 python scripts/memory/validate_memo.py
-python -m pytest -q mechanics/checkpoint/parts/checkpoint-memory-boundary/tests/test_checkpoint_mechanic.py tests/memory/test_memo_validators.py
+python -m pytest -q mechanics/checkpoint/parts/checkpoint-memory-boundary/tests/test_checkpoint_mechanic.py tests/memory/test_memo_schema_contracts.py tests/memory/test_memo_memory_context_boundaries.py
 ```
 
 Before landing, also run:
