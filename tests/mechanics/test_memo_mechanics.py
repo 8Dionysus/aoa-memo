@@ -4,13 +4,16 @@ import json
 import subprocess
 import sys
 import unittest
+from unittest import mock
 from pathlib import Path
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO_ROOT / "scripts"))
+sys.path.insert(0, str(REPO_ROOT / "scripts" / "mechanics"))
 
 import validation_lanes  # noqa: E402
+import validate_memo_mechanics as memo_mechanics_validator  # noqa: E402
 
 
 def release_command_text() -> str:
@@ -39,6 +42,14 @@ class MemoMechanicsTestCase(unittest.TestCase):
         ):
             with self.subTest(script=args):
                 self.run_script(*args)
+
+    def test_memo_mechanics_validator_tolerates_deleted_tracked_paths(self) -> None:
+        deleted_path = REPO_ROOT / "tests" / "memory" / "test_memo_validators.py"
+
+        with mock.patch.object(memo_mechanics_validator, "tracked_files", return_value=[deleted_path]):
+            issues = memo_mechanics_validator.validate()
+
+        self.assertNotIn(str(deleted_path), "\n".join(issues))
 
     def test_memo_mechanics_index_names_packages(self) -> None:
         payload = json.loads((REPO_ROOT / "generated" / "mechanics" / "memo_mechanics.min.json").read_text())

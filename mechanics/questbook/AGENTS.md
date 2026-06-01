@@ -66,7 +66,7 @@ Before closeout, review the changed route rather than only the changed file:
 python mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py
 python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py --check
 python scripts/memory/validate_memo.py
-python -m pytest -q mechanics/questbook/parts/source-contract/tests tests/memory/test_memo_validators.py
+python -m pytest -q mechanics/questbook/parts/source-contract/tests tests/memory/test_memo_questbook_boundaries.py
 ```
 
 Before landing, also run:

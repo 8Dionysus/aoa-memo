@@ -78,7 +78,7 @@ python scripts/agents/validate_agents_mesh.py
 python scripts/agents/build_agents_mesh_index.py --check
 python scripts/agents/validate_agents_mesh_index.py
 python scripts/memory/validate_memo.py
-python -m pytest -q mechanics/readiness-boundary/parts/memory-readiness-boundary/tests/test_readiness_boundary_mechanic.py tests/memory/test_memo_validators.py tests/root-topology/test_current_direction_routes.py tests/root-topology/test_mechanic_artifact_topology.py tests/mechanics/test_memo_mechanics.py
+python -m pytest -q mechanics/readiness-boundary/parts/memory-readiness-boundary/tests/test_readiness_boundary_mechanic.py tests/memory/test_memo_memory_context_boundaries.py tests/root-topology/test_current_direction_routes.py tests/root-topology/test_mechanic_artifact_topology.py tests/mechanics/test_memo_mechanics.py
 ```
 
 Before landing, also run:

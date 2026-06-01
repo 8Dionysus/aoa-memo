@@ -36,6 +36,9 @@ Validator layer meaning lives in
 `scripts/release/release_check.py` are orchestrators.
 `scripts/memory/validate_memo.py` is likewise only a compatibility CLI; tests
 must keep the implementation in `scripts/memory/validators/` layer modules.
+Memory validator regressions should stay split by boundary: schema contracts,
+memory-context boundaries, runtime degradation, Questbook projections,
+handoffs, eval guardrails, and generated read-model contracts.
 
 ## Families
 
@@ -48,6 +51,23 @@ must keep the implementation in `scripts/memory/validators/` layer modules.
 | `validation/test-topology` | validator topology, validation lane manifest, release gate composition, CI lane selection, and test inventory coverage | `docs/validation/VALIDATOR_TOPOLOGY.md`, `docs/testing/TEST_TOPOLOGY.md`, `config/validation_lanes.json` | `topology` | Fix validator topology, lane manifest, loader, or inventory before changing workflow YAML. |
 | `agent-lane/spark` | Spark lane registry, scenarios, templates, stop-lines, and lane validator | `.agents/spark/AGENTS.md` | `agents` | Fix the Spark lane source, registry, scenario files, or validator before release. |
 
+## Agentic Test Layers
+
+`aoa-memo` tests the repo/memory-organ part of an agentic OS. It should not
+claim live execution, production monitoring, or full trajectory grading that
+belongs to runtime and eval owners.
+
+| Layer | Local Role | Status |
+|---|---|---|
+| Contract core | schemas, owner surfaces, AGENTS mesh, root topology, generated parity, and validation lane contracts | implemented |
+| Tool boundary | memo-side export, handoff, local port, and argument-boundary regressions | implemented |
+| Scenario replay | deterministic fixture replay for Questbook projections, live receipts, guardrail packs, and reviewed intake | implemented |
+| Trace eval | Spark lane and guardrail fixtures stay local; full multi-turn trajectory grading routes to `aoa-evals` | routed |
+| State/memory/session | reviewed corpus, memory context boundaries, generated memory read models, local memo-port state, and provenance fixtures | implemented |
+| Fault/safety | missing external schemas, stale refs, permission drift, contradiction fixtures, path escape, malformed IDs, and unhydrated object refs | implemented |
+| Offline/online loop | offline deterministic gates live here; live canaries and production trace sampling route to runtime/eval owners | routed |
+| Performance budget | file-size and deterministic release-loop budgets are local; token/cost/latency budgets route to eval/runtime telemetry | partial |
+
 ## Lane Rules
 
 - `source-fast`, `generated`, `memory`, `handoff`, `eval`, `audit`, `runtime`,
@@ -58,6 +78,9 @@ must keep the implementation in `scripts/memory/validators/` layer modules.
 - Tests may assert that lane composition is correct, but broad validators
   should live in `config/validation_lanes.json` with layer meaning in
   `docs/validation/VALIDATOR_TOPOLOGY.md`.
+- Root memory regression files must not become hidden architecture. Split
+  large suites by the boundary they protect instead of recreating
+  `test_memo_validators.py` under a new name.
 - Mechanic-local tests belong under `mechanics/<slug>/parts/<part>/tests/`
   when they protect one repeatable operation.
 - Advisory or live checks must be visibly named before they can enter a
