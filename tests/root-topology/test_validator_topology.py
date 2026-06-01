@@ -71,6 +71,28 @@ def test_release_uses_profiled_memory_validator_instead_of_monolith() -> None:
         assert step.command[step.command.index("--profile") + 1] != "all", step
 
 
+def test_memo_validator_entrypoint_stays_thin_and_layer_owned() -> None:
+    entrypoint = REPO_ROOT / "scripts" / "memory" / "validate_memo.py"
+    module_dir = REPO_ROOT / "scripts" / "memory" / "validators"
+
+    assert len(entrypoint.read_text(encoding="utf-8").splitlines()) <= 120
+    assert (module_dir / "AGENTS.md").is_file()
+    assert {path.name for path in module_dir.glob("*.py")} >= {
+        "_shared.py",
+        "schema.py",
+        "memory_context.py",
+        "questbook.py",
+        "runtime_boundary.py",
+        "runtime_receipts.py",
+        "runtime_writeback.py",
+        "handoff_boundary.py",
+        "eval_boundary.py",
+        "profiles.py",
+    }
+    for path in module_dir.glob("*.py"):
+        assert len(path.read_text(encoding="utf-8").splitlines()) <= 750, path
+
+
 def test_release_and_nightly_are_distinct_compositions() -> None:
     release_labels = [step.label for step in validation_lanes.RELEASE_CHECK_COMMAND_SEQUENCE]
     nightly_labels = [step.label for step in validation_lanes.NIGHTLY_COMMAND_SEQUENCE]
