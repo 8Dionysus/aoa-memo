@@ -44,6 +44,9 @@ Each decision record must carry an `## Index Metadata` block with:
 Generated lookup indexes under `docs/decisions/indexes/` are read models from
 that metadata. They make lookup cheaper for agents; they do not replace the
 decision note or the stronger source surfaces the decision describes.
+Keep `modeled_surfaces` in `docs/decisions/indexes/index_contract.yaml` as a
+top-level list of normalized repo-relative paths under `docs/decisions/`; do
+not use it for root non-record Markdown.
 
 Use full canonical-ID decision paths as the active source files:
 `AOA-MEM-D-####-*.md`. Use the canonical decision ID as the stable handle.
