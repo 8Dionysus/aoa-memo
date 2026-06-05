@@ -11,6 +11,7 @@ from decision_index_common import (
     collect_decision_records,
     load_index_contract,
     render_index_files,
+    validate_decision_lane_surfaces,
     validate_decision_index_surfaces,
 )
 
@@ -40,6 +41,7 @@ def main() -> int:
         return 0
 
     records, issues = collect_decision_records(repo_root)
+    issues.extend(validate_decision_lane_surfaces(repo_root))
     issues.extend(load_index_contract(repo_root)[1])
     if issues:
         for location, message in issues:

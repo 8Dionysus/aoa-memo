@@ -13,7 +13,11 @@ from decision_index_constants import (
 )
 from decision_index_records import DecisionRecord, collect_decision_records
 from decision_index_render import render_index_files
-from decision_index_validation import load_index_contract, validate_decision_index_surfaces
+from decision_index_validation import (
+    load_index_contract,
+    validate_decision_index_surfaces,
+    validate_decision_lane_surfaces,
+)
 
 
 __all__ = [
@@ -31,4 +35,5 @@ __all__ = [
     "load_index_contract",
     "render_index_files",
     "validate_decision_index_surfaces",
+    "validate_decision_lane_surfaces",
 ]
