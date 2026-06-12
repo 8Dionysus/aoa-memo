@@ -13,6 +13,17 @@
         "config/root-topology/root_technical_districts.json"
       ]
     },
+    "evals": {
+      "root_role": "memo-local eval pressure port for intake, suites, reports, and guardrail evidence shape below aoa-evals proof authority",
+      "allowed_files": [
+        "evals/PORT.yaml",
+        "evals/README.md",
+        "evals/intake/README.md",
+        "evals/intake/aoa-memo-eval-guardrail-handoff.eval_need.json",
+        "evals/reports/README.md",
+        "evals/suites/README.md"
+      ]
+    },
     "examples": {
       "root_role": "public shared memory-object, lifecycle, provenance, and recall examples",
       "allowed_files": [
