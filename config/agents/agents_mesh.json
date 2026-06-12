@@ -88,6 +88,15 @@
       ]
     },
     {
+      "path": "evals/AGENTS.md",
+      "min_lines": 20,
+      "required_snippets": [
+        "aoa-evals",
+        "proof doctrine",
+        "validate_local_eval_port.py"
+      ]
+    },
+    {
       "path": "memo/AGENTS.md",
       "min_lines": 45,
       "required_snippets": [

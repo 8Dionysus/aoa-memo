@@ -9,6 +9,7 @@ ROOT_DISTRICTS_CONFIG = REPO_ROOT / "config" / "root-topology" / "root_technical
 ROOT_DISTRICTS_SCHEMA_VERSION = "aoa_memo_root_technical_districts_v10"
 ROOT_TECHNICAL_DISTRICTS = (
     "config",
+    "evals",
     "examples",
     "generated",
     "manifests",

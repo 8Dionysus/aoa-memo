@@ -1,0 +1,39 @@
+{
+  "schema_version": "eval_need_v1",
+  "name": "aoa-memo-eval-guardrail-handoff",
+  "proof_question": "Does memo-side guardrail handoff pressure preserve memory truth without becoming proof authority?",
+  "origin_need": "The existing eval-guardrail-handoff part names memory quality risk cases for downstream proof owners, but the local pressure needs an inspectable intake route before central proof adoption.",
+  "summary": "Routes memo-side guardrail handoff pressure into a local eval intake packet while keeping verdict, scoring, regression, and proof doctrine authority in aoa-evals.",
+  "object_under_evaluation": "memo-side eval guardrail handoff",
+  "category": "boundary",
+  "claim_type": "bounded",
+  "baseline_mode": "none",
+  "report_format": "summary-with-breakdown",
+  "verdict_shape": "categorical",
+  "authoring_route": "candidate_evidence_packet",
+  "expected_use_when": [
+    "memory quality risk cases are being prepared for downstream proof owners",
+    "memo-local guardrail evidence needs to stay inspectable before aoa-evals adoption"
+  ],
+  "blind_spot_notes": [
+    "does not prove memory behavior or agent trajectory quality",
+    "does not accept the handoff pack as a central eval bundle",
+    "does not move memory-object truth out of aoa-memo"
+  ],
+  "related_eval_refs": [
+    "aoa-memo-write-path-guardrails",
+    "aoa-memo-writeback-decision-quality"
+  ],
+  "candidate_evidence_refs": [
+    "mechanics/consumer-handoff/parts/eval-guardrail-handoff/README.md",
+    "mechanics/consumer-handoff/parts/eval-guardrail-handoff/CONTRACT.md",
+    "mechanics/consumer-handoff/parts/eval-guardrail-handoff/examples/memory_eval_guardrail_pack.example.json"
+  ],
+  "source_refs": [
+    "docs/validation/VALIDATOR_TOPOLOGY.md",
+    "docs/testing/TEST_TOPOLOGY.md",
+    "mechanics/consumer-handoff/parts/eval-guardrail-handoff/"
+  ],
+  "technique_dependencies": [],
+  "skill_dependencies": []
+}

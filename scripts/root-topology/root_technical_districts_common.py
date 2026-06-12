@@ -16,6 +16,7 @@ GENERATED_BY = "scripts/root-topology/build_root_technical_districts_index.py"
 
 DISTRICT_ORDER = (
     "config",
+    "evals",
     "examples",
     "generated",
     "manifests",
@@ -38,6 +39,11 @@ DISTRICT_GUIDE = {
         "use_for": "repo-wide source maps that drive builders, validators, and route-card companions",
         "route_local_to": "mechanics/<slug>/parts/<part>/config/ when the input belongs to one mechanic operation",
         "check": "python scripts/mechanics/validate_mechanic_artifact_topology.py",
+    },
+    "evals": {
+        "use_for": "repo-local eval pressure, intake packets, suites, reports, and memory guardrail evidence shape",
+        "route_local_to": "aoa-evals when the pressure becomes proof doctrine, verdict, scoring, or regression authority",
+        "check": "python ../aoa-evals/scripts/validate_local_eval_port.py --target-root .",
     },
     "examples": {
         "use_for": "public-safe shared memory examples, recall contracts, and generated-surface manifests",
@@ -81,6 +87,8 @@ def _family_ids(payload: dict[str, Any], district: str) -> list[str]:
         policy = payload.get("manifest_policy", {})
         policy_id = policy.get("id") if isinstance(policy, dict) else None
         return [policy_id] if isinstance(policy_id, str) and policy_id else []
+    if district not in FAMILY_FIELDS:
+        return []
 
     family_key, path_key = FAMILY_FIELDS[district]
     allowed = set(payload["districts"][district]["allowed_files"])
