@@ -38,7 +38,10 @@ BRIDGE_EXAMPLE_REF = "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/ex
 CLAIM_EXAMPLE_REF = "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/claim.tos-bridge-ready.example.json"
 EPISODE_EXAMPLE_REF = "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/episode.tos-interpretation.example.json"
 PROVENANCE_THREAD_EXAMPLE_REF = "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/provenance_thread.kag-lift.example.json"
-TOS_FRAGMENT_REF = "repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md#memory-bridge-fragment"
+TOS_FRAGMENT_REF = (
+    "repo:Tree-of-Sophia/mechanics/distillation/parts/source-compost/"
+    "docs/CONTEXT_COMPOST.md#memory-bridge-fragment"
+)
 SECTION_HANDLES = [
     "identity-and-recall",
     "provenance-and-evidence",
