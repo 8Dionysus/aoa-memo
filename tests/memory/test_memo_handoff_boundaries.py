@@ -66,6 +66,16 @@ class MemoHandoffBoundaryTestCase(MemoValidatorTestCase):
             "bridges-and-access",
         ]
         self.assert_kag_export_payload_fails(payload)
+    def test_kag_export_tos_relation_matches_donor_object(self) -> None:
+        payload = self.kag_export_payload()
+        donor = load_json(generate_kag_export.BRIDGE_OBJECT_PATH)
+        assert isinstance(donor, dict)
+        export_tos_refs = [
+            relation["target_ref"]
+            for relation in payload["direct_relations"]
+            if relation["relation_type"] == "points_to_tos_fragment"
+        ]
+        self.assertEqual(export_tos_refs, donor["bridges"]["tos_refs"])
     def test_kag_export_validator_rejects_missing_required_direct_relation(self) -> None:
         payload = self.kag_export_payload()
         payload["direct_relations"] = payload["direct_relations"][:-1]

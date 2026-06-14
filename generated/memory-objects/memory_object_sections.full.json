@@ -1626,7 +1626,7 @@
           "heading": "Bridges and Access",
           "ordinal": 4,
           "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
-          "body": "Access class: public. Scope classes: repo, workspace. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memory-objects/memory_object_capsules.json. ToS refs: repo:Tree-of-Sophia/docs/CONTEXT_COMPOST.md#memory-bridge-fragment. Skill refs: none. Eval refs: mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md. KAG lift status: candidate."
+          "body": "Access class: public. Scope classes: repo, workspace. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: generated/memory-objects/memory_object_capsules.json. ToS refs: repo:Tree-of-Sophia/mechanics/distillation/parts/source-compost/docs/CONTEXT_COMPOST.md#memory-bridge-fragment. Skill refs: none. Eval refs: mechanics/consumer-handoff/docs/MEMORY_EVAL_GUARDRAILS.md. KAG lift status: candidate."
         }
       ]
     },
