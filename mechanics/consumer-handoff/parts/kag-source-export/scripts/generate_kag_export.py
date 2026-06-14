@@ -38,10 +38,6 @@ BRIDGE_EXAMPLE_REF = "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/ex
 CLAIM_EXAMPLE_REF = "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/claim.tos-bridge-ready.example.json"
 EPISODE_EXAMPLE_REF = "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/episode.tos-interpretation.example.json"
 PROVENANCE_THREAD_EXAMPLE_REF = "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/provenance_thread.kag-lift.example.json"
-TOS_FRAGMENT_REF = (
-    "repo:Tree-of-Sophia/mechanics/distillation/parts/source-compost/"
-    "docs/CONTEXT_COMPOST.md#memory-bridge-fragment"
-)
 SECTION_HANDLES = [
     "identity-and-recall",
     "provenance-and-evidence",
@@ -68,29 +64,6 @@ NON_IDENTITY_BOUNDARY = (
     "treat this bridge capsule as normalized graph truth, routing authority, "
     "or replacement for Tree-of-Sophia-authored meaning."
 )
-DIRECT_RELATIONS = [
-    {
-        "relation_type": "source_memory_object",
-        "target_ref": BRIDGE_OBJECT_REF,
-    },
-    {
-        "relation_type": "supported_by_claim",
-        "target_ref": CLAIM_EXAMPLE_REF,
-    },
-    {
-        "relation_type": "drafted_by_episode",
-        "target_ref": EPISODE_EXAMPLE_REF,
-    },
-    {
-        "relation_type": "points_to_tos_fragment",
-        "target_ref": TOS_FRAGMENT_REF,
-    },
-    {
-        "relation_type": "provenance_thread",
-        "target_ref": PROVENANCE_THREAD_EXAMPLE_REF,
-    },
-]
-
 JsonDict = dict[str, Any]
 
 
@@ -143,6 +116,44 @@ def validate_bridge_sections(section_payload: JsonDict) -> None:
         )
 
 
+def donor_tos_fragment_ref(bridge_object: JsonDict) -> str:
+    bridges = bridge_object.get("bridges")
+    if not isinstance(bridges, dict):
+        fail("reviewed bridge object must keep bridges metadata for KAG export")
+    tos_refs = bridges.get("tos_refs")
+    if not isinstance(tos_refs, list) or len(tos_refs) != 1:
+        fail("reviewed bridge object must keep exactly one ToS fragment ref for KAG export")
+    tos_ref = tos_refs[0]
+    if not isinstance(tos_ref, str) or not tos_ref:
+        fail("reviewed bridge object ToS fragment ref must be a non-empty string")
+    return tos_ref
+
+
+def direct_relations_for(tos_fragment_ref: str) -> list[JsonDict]:
+    return [
+        {
+            "relation_type": "source_memory_object",
+            "target_ref": BRIDGE_OBJECT_REF,
+        },
+        {
+            "relation_type": "supported_by_claim",
+            "target_ref": CLAIM_EXAMPLE_REF,
+        },
+        {
+            "relation_type": "drafted_by_episode",
+            "target_ref": EPISODE_EXAMPLE_REF,
+        },
+        {
+            "relation_type": "points_to_tos_fragment",
+            "target_ref": tos_fragment_ref,
+        },
+        {
+            "relation_type": "provenance_thread",
+            "target_ref": PROVENANCE_THREAD_EXAMPLE_REF,
+        },
+    ]
+
+
 def build_kag_export_payload() -> JsonDict:
     bridge_object = load_json(BRIDGE_OBJECT_PATH)
     provenance_thread = load_json(EXAMPLES / "provenance_thread.kag-lift.example.json")
@@ -173,6 +184,8 @@ def build_kag_export_payload() -> JsonDict:
     if BRIDGE_ID not in provenance_thread.get("memory_object_ids", []):
         fail("KAG export donor provenance thread must include the bridge object id")
 
+    tos_fragment_ref = donor_tos_fragment_ref(bridge_object)
+
     return {
         "owner_repo": "aoa-memo",
         "kind": "bridge",
@@ -199,7 +212,7 @@ def build_kag_export_payload() -> JsonDict:
             "match_value": BRIDGE_ID,
         },
         "section_handles": list(SECTION_HANDLES),
-        "direct_relations": [dict(relation) for relation in DIRECT_RELATIONS],
+        "direct_relations": direct_relations_for(tos_fragment_ref),
         "provenance_note": PROVENANCE_NOTE,
         "non_identity_boundary": NON_IDENTITY_BOUNDARY,
     }
