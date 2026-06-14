@@ -83,6 +83,20 @@ class SparkLaneTestCase(unittest.TestCase):
         self.assertIn("Spark scenarios missing from registry", result.stdout)
         self.assertIn(".agents/spark/scenarios/unregistered", result.stdout)
 
+    def test_registry_schema_rejects_extra_scenario_fields(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            temp_root = Path(temp)
+            self.copy_spark_lane(temp_root)
+            registry = temp_root / ".agents/spark/registry.json"
+            payload = load_json(registry)
+            payload["scenarios"][0]["unexpected"] = "schema drift"
+            registry.write_text(json.dumps(payload), encoding="utf-8")
+            result = self.run_validator(temp_root)
+
+        self.assertNotEqual(result.returncode, 0, result.stdout)
+        self.assertIn(".agents/spark/registry.json:scenarios.0", result.stdout)
+        self.assertIn("Additional properties are not allowed", result.stdout)
+
     def test_prompt_without_done_or_handoff_is_rejected(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             temp_root = Path(temp)
