@@ -17,19 +17,39 @@ from memory_operational_readout_common import (
 )
 
 
+MCP_UNAVAILABLE_ERROR = (
+    "MCP checkout unavailable; set AOA_MEMO_MCP_ROOT to a readable "
+    "aoa-memo-mcp checkout"
+)
+
+
 def run_mcp_cli(args: list[str], timeout: int = 20) -> dict[str, Any]:
     env = os.environ.copy()
     env["PYTHONPATH"] = str(MCP_ROOT / "src")
-    completed = subprocess.run(
-        [sys.executable, "-m", "aoa_memo_mcp.cli", "--workspace-root", str(WORKSPACE_ROOT), *args],
-        check=False,
-        cwd=str(MCP_ROOT),
-        env=env,
-        text=True,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        timeout=timeout,
-    )
+    try:
+        if not MCP_ROOT.is_dir():
+            return {"ok": False, "error": MCP_UNAVAILABLE_ERROR}
+        completed = subprocess.run(
+            [
+                sys.executable,
+                "-m",
+                "aoa_memo_mcp.cli",
+                "--workspace-root",
+                str(WORKSPACE_ROOT),
+                *args,
+            ],
+            check=False,
+            cwd=str(MCP_ROOT),
+            env=env,
+            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            timeout=timeout,
+        )
+    except subprocess.TimeoutExpired:
+        return {"ok": False, "error": f"MCP probe timed out after {timeout}s"}
+    except OSError:
+        return {"ok": False, "error": MCP_UNAVAILABLE_ERROR}
     if completed.returncode != 0:
         return {
             "ok": False,
@@ -79,6 +99,21 @@ def compact_hit_ref(item: dict[str, Any]) -> str:
         return "external-source"
 
 
+def payload_dict(result: dict[str, Any]) -> dict[str, Any]:
+    payload = result.get("payload") if result.get("ok") else {}
+    return payload if isinstance(payload, dict) else {}
+
+
+def dict_field(payload: dict[str, Any], key: str) -> dict[str, Any]:
+    value = payload.get(key)
+    return value if isinstance(value, dict) else {}
+
+
+def list_field(payload: dict[str, Any], key: str) -> list[Any]:
+    value = payload.get(key)
+    return value if isinstance(value, list) else []
+
+
 def live_access_probes() -> list[dict[str, Any]]:
     probes: list[dict[str, Any]] = []
 
@@ -87,15 +122,16 @@ def live_access_probes() -> list[dict[str, Any]]:
         ("aoa-routing", "router recall pack needs memo context"),
     ):
         result = run_mcp_cli(["brief", "--repo", repo, "--intent", intent])
-        payload = result.get("payload", {}) if result.get("ok") else {}
-        reviewed = payload.get("reviewed_memory") if isinstance(payload, dict) else []
-        workspace_map = payload.get("workspace_memory_map") if isinstance(payload, dict) else {}
+        payload = payload_dict(result)
+        reviewed = list_field(payload, "reviewed_memory")
+        workspace_map = dict_field(payload, "workspace_memory_map")
+        memory_route = dict_field(payload, "memory_route")
         checks = {
             "schema": payload.get("schema") == "aoa_memo_brief_v1",
             "workspace_map_found": bool(workspace_map.get("found")),
             "route_only_or_port_visible": bool(workspace_map.get("current_port_level")),
-            "reviewed_memory_refs_visible": isinstance(reviewed, list) and bool(reviewed),
-            "durable_landing_not_mcp": payload.get("memory_route", {}).get("durable_landing")
+            "reviewed_memory_refs_visible": bool(reviewed),
+            "durable_landing_not_mcp": memory_route.get("durable_landing")
             == "reviewed source patch in aoa-memo, not MCP direct write",
         }
         probe = probe_status(f"brief:{repo}", "brief", result, checks)
@@ -111,8 +147,8 @@ def live_access_probes() -> list[dict[str, Any]]:
         probes.append(probe)
 
     pending = run_mcp_cli(["pending-exports", "--repo", "abyss-stack"])
-    payload = pending.get("payload", {}) if pending.get("ok") else {}
-    counts = payload.get("counts") if isinstance(payload, dict) else {}
+    payload = payload_dict(pending)
+    counts = dict_field(payload, "counts")
     checks = {
         "schema": payload.get("schema") == "aoa_local_memo_pending_exports_v1",
         "ok": payload.get("ok") is True,
@@ -126,7 +162,7 @@ def live_access_probes() -> list[dict[str, Any]]:
     probes.append(probe)
 
     validate_port = run_mcp_cli(["validate-port", "--repo", "Agents-of-Abyss"])
-    payload = validate_port.get("payload", {}) if validate_port.get("ok") else {}
+    payload = payload_dict(validate_port)
     checks = {
         "schema": payload.get("schema") == "aoa_local_memo_port_validation_v1",
         "ok": payload.get("ok") is True,
@@ -139,12 +175,12 @@ def live_access_probes() -> list[dict[str, Any]]:
         ("search:consumer-handoff-spine", "reviewed memory consumer handoff spine"),
     ):
         result = run_mcp_cli(["search", query, "--scope", "all", "--mode", "all"])
-        payload = result.get("payload", {}) if result.get("ok") else {}
-        hits = payload.get("hits") if isinstance(payload, dict) else []
+        payload = payload_dict(result)
+        hits = list_field(payload, "hits")
         checks = {
             "schema": payload.get("schema") == "aoa_memo_search_v1",
             "not_low_confidence": payload.get("low_confidence") is False,
-            "has_hits": isinstance(hits, list) and bool(hits),
+            "has_hits": bool(hits),
             "authority_note_visible": "authority_note" in payload,
         }
         probe = probe_status(name, "search", result, checks)
@@ -168,9 +204,9 @@ def live_access_probes() -> list[dict[str, Any]]:
             "contracts",
         ]
     )
-    payload = foundation.get("payload", {}) if foundation.get("ok") else {}
-    hits = payload.get("hits") if isinstance(payload, dict) else []
-    status = "passed" if isinstance(hits, list) and hits else "known_gap"
+    payload = payload_dict(foundation)
+    hits = list_field(payload, "hits")
+    status = "passed" if hits else "known_gap"
     probes.append(
         {
             "name": "search:fresh-foundation-terms",
@@ -178,7 +214,7 @@ def live_access_probes() -> list[dict[str, Any]]:
             "status": status,
             "checks": {
                 "schema": payload.get("schema") == "aoa_memo_search_v1",
-                "has_hits": isinstance(hits, list) and bool(hits),
+                "has_hits": bool(hits),
                 "gap_routed": status == "known_gap",
             },
             "details": {

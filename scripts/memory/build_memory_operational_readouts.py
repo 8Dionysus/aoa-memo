@@ -61,8 +61,6 @@ def check_outputs(outputs: dict[Path, dict[str, Any] | None], *, live: bool) -> 
         errors.extend(validate_readout(path, payload))
         expected = outputs.get(path)
         if expected is not None:
-            if path == ACCESS_OUTPUT and not live:
-                continue
             if render_json(payload) != render_json(expected):
                 errors.append(
                     f"{path.relative_to(REPO_ROOT)} is stale; run "
