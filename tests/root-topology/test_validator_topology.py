@@ -1,8 +1,10 @@
 from __future__ import annotations
 
+import importlib.util
 import json
 import subprocess
 import sys
+import types
 from pathlib import Path
 
 
@@ -116,6 +118,23 @@ def test_memo_validator_entrypoint_stays_thin_and_layer_owned() -> None:
     }
     for path in module_dir.glob("*.py"):
         assert len(path.read_text(encoding="utf-8").splitlines()) <= 750, path
+
+
+def test_memo_validator_entrypoint_ignores_preloaded_top_level_validators(
+    monkeypatch,
+) -> None:
+    entrypoint = REPO_ROOT / "scripts" / "memory" / "validate_memo.py"
+    module_name = "_validate_memo_import_probe"
+    spec = importlib.util.spec_from_file_location(module_name, entrypoint)
+    assert spec is not None
+    assert spec.loader is not None
+    module = importlib.util.module_from_spec(spec)
+    monkeypatch.setitem(sys.modules, "validators", types.ModuleType("validators"))
+    monkeypatch.setitem(sys.modules, module_name, module)
+
+    spec.loader.exec_module(module)
+
+    assert "schema" in module.PROFILE_NAMES
 
 
 def test_release_and_nightly_are_distinct_compositions() -> None:
