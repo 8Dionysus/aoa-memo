@@ -9,6 +9,9 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Added
 
+- Add an explicit `aoa_local_memo_receipt_v2` branch for local memo receipts
+  using `checked_by`, while keeping legacy `aoa_local_memo_receipt_v1`
+  `reviewed_by` receipts readable under the same schema file.
 - Distribute the memory-organ foundation layout across existing memory,
   topology, object-profile, lifecycle, retention, consumer-handoff, and
   Questbook surfaces so future memory events have stable intake lanes, object

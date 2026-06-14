@@ -297,6 +297,7 @@
         "tests/memory/test_memo_questbook_boundaries.py",
         "tests/memory/test_memo_runtime_writeback_boundaries.py",
         "tests/memory/test_memo_schema_contracts.py",
+        "tests/memory/test_memo_local_port_schema_contracts.py",
         "tests/memory/test_memory_operations.py",
         "tests/memory/test_memory_operational_readouts.py",
         "tests/memory/test_phase_alpha_provenance_thread.py",
@@ -660,7 +661,8 @@
         "tests/memory/test_memo_memory_context_boundaries.py",
         "tests/memory/test_memo_questbook_boundaries.py",
         "tests/memory/test_memo_runtime_writeback_boundaries.py",
-        "tests/memory/test_memo_schema_contracts.py"
+        "tests/memory/test_memo_schema_contracts.py",
+        "tests/memory/test_memo_local_port_schema_contracts.py"
       ]
     },
     {
@@ -723,7 +725,8 @@
         "tests/memory/test_memo_memory_context_boundaries.py",
         "tests/memory/test_memo_questbook_boundaries.py",
         "tests/memory/test_memo_runtime_writeback_boundaries.py",
-        "tests/memory/test_memo_schema_contracts.py"
+        "tests/memory/test_memo_schema_contracts.py",
+        "tests/memory/test_memo_local_port_schema_contracts.py"
       ]
     },
     {
@@ -937,6 +940,7 @@
         "tests/memory/test_memo_questbook_boundaries.py",
         "tests/memory/test_memo_runtime_writeback_boundaries.py",
         "tests/memory/test_memo_schema_contracts.py",
+        "tests/memory/test_memo_local_port_schema_contracts.py",
         "tests/memory/test_memory_operations.py",
         "tests/memory/test_memory_operational_readouts.py",
         "tests/memory/test_phase_alpha_provenance_thread.py",
