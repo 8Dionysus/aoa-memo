@@ -4,6 +4,8 @@ import json
 from pathlib import Path
 from typing import Any
 
+from jsonschema import Draft202012Validator
+
 from spark_lane_contracts import (
     REQUIRED_HANDOFF_MARKERS,
     REQUIRED_RESULT_MARKERS,
@@ -19,6 +21,22 @@ from spark_lane_contracts import (
 
 
 REGISTRY_PATH = Path(".agents/spark/registry.json")
+REGISTRY_SCHEMA_PATH = Path(".agents/spark/schemas/spark-registry.schema.json")
+
+
+def _registry_schema_errors(root: Path, registry: dict[str, Any]) -> list[str]:
+    schema_path = root / REGISTRY_SCHEMA_PATH
+    if not schema_path.exists():
+        return [f"missing Spark registry schema: {REGISTRY_SCHEMA_PATH}"]
+    try:
+        schema = load_json(schema_path)
+    except json.JSONDecodeError as exc:
+        return [f"{REGISTRY_SCHEMA_PATH} is not valid JSON: {exc}"]
+    validator = Draft202012Validator(schema)
+    return [
+        f"{REGISTRY_PATH}:{'.'.join(str(part) for part in error.absolute_path) or '<root>'}: {error.message}"
+        for error in sorted(validator.iter_errors(registry), key=lambda error: list(error.absolute_path))
+    ]
 
 
 def validate(root: Path) -> list[str]:
@@ -34,6 +52,8 @@ def validate(root: Path) -> list[str]:
 
     if not isinstance(registry, dict):
         return [f"{REGISTRY_PATH} must be a JSON object"]
+
+    problems.extend(_registry_schema_errors(root, registry))
 
     if registry.get("schema_version") != SCHEMA_VERSION:
         problems.append(f"schema_version must be {SCHEMA_VERSION}")
