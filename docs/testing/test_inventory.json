@@ -453,6 +453,19 @@
       "failure_route": "Fix docs/memory/MEMORY_OPERATION_CYCLE.md before widening the lane."
     },
     {
+      "family": "memory/operational-readouts",
+      "paths": [
+        "tests/memory/test_memory_operational_readouts.py"
+      ],
+      "protects": "memory operational readout parity and live MCP probe failure handling",
+      "owner_surface": "docs/memory/MEMORY_OPERATION_CYCLE.md",
+      "lane": "memory",
+      "mode": "blocking",
+      "runtime_cost": "fast",
+      "focused_target": "tests/memory/test_memory_operational_readouts.py",
+      "failure_route": "Fix scripts/memory/build_memory_operational_readouts.py and docs/memory/MEMORY_OPERATION_CYCLE.md before widening the lane."
+    },
+    {
       "family": "memory/schema-contracts",
       "paths": [
         "tests/memory/test_memo_schema_contracts.py"

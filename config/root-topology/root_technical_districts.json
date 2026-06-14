@@ -298,6 +298,7 @@
         "tests/memory/test_memo_runtime_writeback_boundaries.py",
         "tests/memory/test_memo_schema_contracts.py",
         "tests/memory/test_memory_operations.py",
+        "tests/memory/test_memory_operational_readouts.py",
         "tests/memory/test_phase_alpha_provenance_thread.py",
         "tests/memory/test_reviewed_intake_landing.py",
         "tests/root-topology/test_ci_gate.py",
@@ -650,6 +651,7 @@
         "tests/memory/test_local_memo_port.py",
         "tests/memory/test_memo_corpus.py",
         "tests/memory/test_memory_operations.py",
+        "tests/memory/test_memory_operational_readouts.py",
         "tests/memory/test_reviewed_intake_landing.py",
         "tests/memory/test_memo_eval_guardrails.py",
         "tests/memory/test_memo_generated_surface_contracts.py",
@@ -936,6 +938,7 @@
         "tests/memory/test_memo_runtime_writeback_boundaries.py",
         "tests/memory/test_memo_schema_contracts.py",
         "tests/memory/test_memory_operations.py",
+        "tests/memory/test_memory_operational_readouts.py",
         "tests/memory/test_phase_alpha_provenance_thread.py",
         "tests/memory/test_reviewed_intake_landing.py"
       ],
