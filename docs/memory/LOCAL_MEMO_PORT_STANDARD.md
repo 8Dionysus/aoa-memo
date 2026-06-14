@@ -61,6 +61,11 @@ The schema-backed port surfaces are:
 - `schemas/memory-ports/local_memo_export.schema.json`
 - `schemas/memory-ports/local_memo_port_index.schema.json`
 
+New local receipt packets use `aoa_local_memo_receipt_v2` with `checked_by`.
+The receipt schema still accepts legacy `aoa_local_memo_receipt_v1` packets with
+`reviewed_by` and `result: "reviewed"` so old local-port evidence remains
+readable under an explicit migration boundary.
+
 The controlled indexing vocabulary is:
 
 - `docs/memory/MEMO_PORT_INDEXING_VOCABULARY.md`

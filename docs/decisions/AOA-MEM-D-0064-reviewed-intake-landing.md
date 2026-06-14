@@ -40,6 +40,13 @@ landing receipt under `memo/intake/receipts/`.
 The landing receipt is schema-backed by
 `schemas/support-objects/reviewed_intake_landing_receipt.schema.json`.
 
+Local port receipt packets use
+`schemas/memory-ports/local_memo_receipt.schema.json`. New producers emit
+`aoa_local_memo_receipt_v2` with `checked_by`. The schema keeps the original
+`aoa_local_memo_receipt_v1` shape with `reviewed_by` and `result: "reviewed"`
+only as a legacy branch, so contract-breaking receipt field changes do not stay
+hidden under the same schema token.
+
 ## Consequences
 
 - `candidate_only` exports remain inspectable but cannot land as durable memory.
@@ -49,6 +56,9 @@ The landing receipt is schema-backed by
   or by the origin port.
 - Each landed object has a copied intake packet, origin candidate refs, origin
   receipt refs, object id, object path, and validation receipt.
+- Local receipt schema migration is explicit: old `reviewed_by` receipts remain
+  readable as v1, while new `checked_by` receipts must identify themselves as
+  v2.
 - Generated object read models can consume the landed object through the normal
   corpus-backed builder.
 
