@@ -148,13 +148,14 @@ class TopologySpineTestCase(unittest.TestCase):
             encoding="utf-8"
         )
 
-        self.assertIn("AOA-MEM-D-0001", by_number)
-        self.assertIn("AOA-MEM-D-0071", by_number)
-        self.assertIn("AOA-MEM-D-0072", by_number)
-        self.assertIn("AOA-MEM-D-0073", by_number)
-        self.assertIn("AOA-MEM-D-0074", by_number)
         self.assertIn("Canonical path", by_number)
-        self.assertIn("docs/decisions/AOA-MEM-D-0001-adoption-writeback-retention-mechanics.md", by_number)
+        decision_paths = sorted((REPO_ROOT / "docs" / "decisions").glob("AOA-MEM-D-*.md"))
+        self.assertGreater(len(decision_paths), 0)
+        for decision_path in decision_paths:
+            decision_id = "-".join(decision_path.stem.split("-")[:4])
+            with self.subTest(decision=decision_id):
+                self.assertIn(decision_id, by_number)
+                self.assertIn(f"docs/decisions/{decision_path.name}", by_number)
         retired_header = "Legacy" + " path"
         retired_index_name = "alias" + "-map"
         short_path = "docs/decisions/" + "0001-adoption-writeback-retention-mechanics.md"
