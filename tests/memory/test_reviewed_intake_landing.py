@@ -52,6 +52,18 @@ def copy_reviewed_write_port(tmp_path: Path) -> Path:
     return port
 
 
+def add_second_candidate(port: Path) -> str:
+    candidate_name = "20260520T171201Z.codex-plane-memory-route-extra.candidate.json"
+    original_path = port / "candidates" / "20260520T171200Z.codex-plane-memory-route.candidate.json"
+    candidate_path = port / "candidates" / candidate_name
+    payload = json.loads(original_path.read_text(encoding="utf-8"))
+    payload["id"] = "candidate:example-repo:20260520T171201Z:codex-plane-memory-route-extra"
+    payload["claim"] = "A second reviewed-intake candidate must be covered by its own successful receipt."
+    payload["created_at"] = "2026-05-20T17:12:01Z"
+    candidate_path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+    return f"candidates/{candidate_name}"
+
+
 def test_reviewed_write_export_lands_as_corpus_bundle(tmp_path: Path) -> None:
     port = copy_reviewed_write_port(tmp_path)
     output_root = tmp_path / "aoa-memo"
@@ -220,3 +232,37 @@ def test_reviewed_write_requires_receipt_ref(tmp_path: Path) -> None:
         assert "reviewed_write landing requires at least one receipt_ref" in str(exc)
     else:
         raise AssertionError("reviewed_write export without receipt unexpectedly loaded")
+
+
+def test_reviewed_write_requires_receipt_for_each_candidate(tmp_path: Path) -> None:
+    port = copy_reviewed_write_port(tmp_path)
+    second_ref = add_second_candidate(port)
+    export_path = port / EXPORT_REF
+    payload = json.loads(export_path.read_text(encoding="utf-8"))
+    payload["candidate_refs"].append(second_ref)
+    export_path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+
+    try:
+        landing.load_landing_inputs(port, EXPORT_REF)
+    except landing.LandingError as exc:
+        assert f"missing successful receipt for candidate_ref {second_ref}" in str(exc)
+    else:
+        raise AssertionError("multi-candidate export with missing receipt unexpectedly loaded")
+
+
+def test_reviewed_write_rejects_receipt_for_unexported_candidate(tmp_path: Path) -> None:
+    port = copy_reviewed_write_port(tmp_path)
+    second_ref = add_second_candidate(port)
+    receipt_path = port / "receipts" / "20260520T171500Z.codex-plane-memory-route.validation-receipt.json"
+    receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
+    receipt["candidate_ref"] = second_ref
+    receipt_path.write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8")
+
+    try:
+        landing.load_landing_inputs(port, EXPORT_REF)
+    except landing.LandingError as exc:
+        message = str(exc)
+        assert f"{receipt_path}: candidate_ref {second_ref} is not listed in export candidate_refs" in message
+        assert "missing successful receipt for candidate_ref candidates/20260520T171200Z.codex-plane-memory-route.candidate.json" in message
+    else:
+        raise AssertionError("receipt for unexported candidate unexpectedly authorized landing")

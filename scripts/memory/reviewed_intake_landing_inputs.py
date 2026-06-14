@@ -36,6 +36,17 @@ def validate_inputs(
         errors.append(f"{export_path}: reviewed_write landing requires at least one receipt_ref")
     check_refs(errors, port_path, export_path, "source_refs", export_payload.get("source_refs"))
     check_refs(errors, port_path, export_path, "evidence_refs", export_payload.get("evidence_refs"))
+    candidate_refs = [
+        ref
+        for ref in export_payload.get("candidate_refs", [])
+        if isinstance(ref, str)
+    ]
+    candidate_ref_by_path = {
+        candidate_path.resolve(): candidate_ref
+        for candidate_path, candidate_ref in zip(candidate_paths, candidate_refs, strict=False)
+    }
+    exported_candidate_paths = set(candidate_ref_by_path)
+    successful_receipts_by_candidate: dict[Path, list[Path]] = {}
 
     for candidate_path, candidate in zip(candidate_paths, candidate_payloads, strict=True):
         errors.extend(schema_errors("local_memo_candidate.schema.json", candidate, candidate_path))
@@ -62,6 +73,32 @@ def validate_inputs(
         if receipt.get("errors"):
             errors.append(f"{receipt_path}: receipt with errors cannot support corpus landing")
         check_refs(errors, port_path, receipt_path, "candidate_ref", [receipt.get("candidate_ref")])
+        receipt_candidate_ref = receipt.get("candidate_ref")
+        receipt_candidate_path = None
+        if isinstance(receipt_candidate_ref, str) and receipt_candidate_ref:
+            try:
+                receipt_candidate_path = packet_ref_path(port_path, receipt_candidate_ref, "receipt candidate_ref")
+            except LandingError:
+                receipt_candidate_path = None
+        if receipt_candidate_path is None:
+            continue
+        receipt_candidate_path = receipt_candidate_path.resolve()
+        if receipt_candidate_path not in exported_candidate_paths:
+            errors.append(f"{receipt_path}: candidate_ref {receipt_candidate_ref} is not listed in export candidate_refs")
+            continue
+        if (
+            receipt.get("repo") == repo
+            and receipt.get("route") == "reviewed_intake"
+            and receipt.get("result") in {"validated", "forwarded", "landed"}
+            and not receipt.get("errors")
+        ):
+            successful_receipts_by_candidate.setdefault(receipt_candidate_path, []).append(receipt_path)
+
+    for candidate_path in candidate_paths:
+        candidate_key = candidate_path.resolve()
+        if candidate_key not in successful_receipts_by_candidate:
+            candidate_ref = candidate_ref_by_path.get(candidate_key, candidate_path.relative_to(port_path).as_posix())
+            errors.append(f"{export_path}: missing successful receipt for candidate_ref {candidate_ref}")
 
     if errors:
         rendered = "\n".join(f"- {error}" for error in errors)
