@@ -65,6 +65,34 @@ def test_operation_modes_require_complete_mode_set() -> None:
     assert any("must expose modes" in error for error in errors)
 
 
+def test_reviewed_intake_packets_validate_operation_mode_ref() -> None:
+    example = (
+        REPO_ROOT
+        / "mechanics"
+        / "writeback"
+        / "parts"
+        / "runtime-and-temperature"
+        / "examples"
+        / "reviewed_memory_intake_packet.abyss-stack.example.json"
+    )
+    payload = copy.deepcopy(validate_memory_operations.load_json(example))
+    payload["operation_mode_ref"] = "examples/recall/memory_operation_modes.example.json#missing_mode"
+    original_load_json = validate_memory_operations.load_json
+
+    def fake_load_json(path: Path):
+        if Path(path) == example:
+            return copy.deepcopy(payload)
+        return original_load_json(path)
+
+    validate_memory_operations.load_json = fake_load_json
+    try:
+        errors = validate_memory_operations.validate_reviewed_intake_packets()
+    finally:
+        validate_memory_operations.load_json = original_load_json
+
+    assert any("operation_mode_ref uses unknown mode missing_mode" in error for error in errors)
+
+
 def test_mcp_access_plane_boundary_is_required() -> None:
     cycle_path = REPO_ROOT / "docs" / "memory" / "MEMORY_OPERATION_CYCLE.md"
     original_load_text = validate_memory_operations.load_text

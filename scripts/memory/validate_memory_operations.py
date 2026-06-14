@@ -89,6 +89,33 @@ def append_missing_local_refs(errors: list[str], label: str, refs: object) -> No
                 errors.append(f"{label}[{index}] points to missing local ref {ref}")
 
 
+def append_operation_mode_ref_error(errors: list[str], label: str, ref: object) -> None:
+    if not isinstance(ref, str) or not ref:
+        errors.append(f"{label} must be a non-empty string")
+        return
+    path_text, separator, mode = ref.partition("#")
+    path = Path(path_text)
+    if path.is_absolute() or ".." in path.parts or not path_text:
+        errors.append(f"{label} must be a local operation mode ref")
+        return
+    target = ROOT / path_text
+    if not target.exists():
+        errors.append(f"{label} points to missing local ref {ref}")
+        return
+    if not separator or not mode:
+        errors.append(f"{label} must include a #mode fragment")
+        return
+    payload = load_json(target)
+    modes = payload.get("modes") if isinstance(payload, dict) else None
+    known_modes = {
+        item.get("mode")
+        for item in modes
+        if isinstance(item, dict) and isinstance(item.get("mode"), str)
+    } if isinstance(modes, list) else set()
+    if mode not in known_modes:
+        errors.append(f"{label} uses unknown mode {mode}")
+
+
 def validate_required_text() -> list[str]:
     required_tokens = {
         "docs/boundaries/MEMORY_WRITE_PATH_GUARDRAILS.md": [
@@ -261,6 +288,7 @@ def validate_reviewed_intake_packets() -> list[str]:
         if isinstance(producer, dict) and isinstance(producer.get("repo"), str):
             producers.add(producer["repo"])
         append_missing_local_refs(errors, f"{rel(example)}.export_refs", payload.get("export_refs"))
+        append_operation_mode_ref_error(errors, f"{rel(example)}.operation_mode_ref", payload.get("operation_mode_ref"))
         for key, value in payload.get("sanitization", {}).items():
             if value is not True:
                 errors.append(f"{rel(example)} sanitization.{key} must be true")
