@@ -4,15 +4,37 @@
 from __future__ import annotations
 
 import argparse
+import importlib
+import importlib.util
 from pathlib import Path
 import sys
 import types
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-if str(SCRIPT_DIR) not in sys.path:
-    sys.path.insert(0, str(SCRIPT_DIR))
+VALIDATORS_DIR = SCRIPT_DIR / "validators"
+VALIDATORS_PACKAGE_NAME = "_aoa_memo_memory_validators"
 
-from validators import profile_modules, profiles  # noqa: E402
+
+def _load_validators_package() -> types.ModuleType:
+    existing = sys.modules.get(VALIDATORS_PACKAGE_NAME)
+    if existing is not None:
+        return existing
+    spec = importlib.util.spec_from_file_location(
+        VALIDATORS_PACKAGE_NAME,
+        VALIDATORS_DIR / "__init__.py",
+        submodule_search_locations=[str(VALIDATORS_DIR)],
+    )
+    if spec is None or spec.loader is None:
+        raise ImportError(f"cannot load validator package from {VALIDATORS_DIR}")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[VALIDATORS_PACKAGE_NAME] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+_load_validators_package()
+profile_modules = importlib.import_module(f"{VALIDATORS_PACKAGE_NAME}.profile_modules")
+profiles = importlib.import_module(f"{VALIDATORS_PACKAGE_NAME}.profiles")
 
 _PROFILE_MODULES = profile_modules.PROFILE_MODULES
 
