@@ -128,6 +128,40 @@ def test_packet_refs_must_stay_inside_port(tmp_path: Path) -> None:
         raise AssertionError("outside packet ref unexpectedly accepted")
 
 
+def test_export_source_ref_rejects_absolute_path(tmp_path: Path) -> None:
+    port = copy_reviewed_write_port(tmp_path)
+    outside = tmp_path / "outside-source.md"
+    outside.write_text("# Outside\n", encoding="utf-8")
+    export_path = port / EXPORT_REF
+    payload = json.loads(export_path.read_text(encoding="utf-8"))
+    payload["source_refs"] = [str(outside)]
+    export_path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+
+    try:
+        landing.load_landing_inputs(port, EXPORT_REF)
+    except landing.LandingError as exc:
+        assert "source_refs[0] local refs must be relative or symbolic" in str(exc)
+    else:
+        raise AssertionError("absolute source ref unexpectedly accepted")
+
+
+def test_export_evidence_ref_rejects_parent_traversal(tmp_path: Path) -> None:
+    port = copy_reviewed_write_port(tmp_path)
+    outside = tmp_path / "outside-evidence.md"
+    outside.write_text("# Outside\n", encoding="utf-8")
+    export_path = port / EXPORT_REF
+    payload = json.loads(export_path.read_text(encoding="utf-8"))
+    payload["evidence_refs"] = ["../outside-evidence.md"]
+    export_path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+
+    try:
+        landing.load_landing_inputs(port, EXPORT_REF)
+    except landing.LandingError as exc:
+        assert "evidence_refs[0] local refs must not use '..' traversal" in str(exc)
+    else:
+        raise AssertionError("traversing evidence ref unexpectedly accepted")
+
+
 def test_missing_export_evidence_blocks_corpus_landing(tmp_path: Path) -> None:
     port = copy_reviewed_write_port(tmp_path)
     export_path = port / EXPORT_REF

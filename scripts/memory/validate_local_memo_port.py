@@ -73,20 +73,29 @@ def schema_errors(schema_name: str, payload: Any, path: Path) -> list[str]:
 
 
 def resolve_ref(port_path: Path, ref: str) -> Path | None:
+    ref = ref.strip()
+    if not ref:
+        return None
     if ref.startswith(SYMBOLIC_REF_PREFIXES):
         return None
-    text = ref.split("#", 1)[0]
-    if not text:
-        return None
+    text = ref.split("#", 1)[0].strip()
     path = Path(text)
     if path.is_absolute():
-        return path
+        raise ValueError("local refs must be relative or symbolic")
+    if ".." in path.parts:
+        raise ValueError("local refs must not use '..' traversal")
+    repo_root = repo_root_for_port(port_path).resolve()
     if text.startswith("memo/"):
-        return repo_root_for_port(port_path) / text
-    candidate = port_path / text
-    if candidate.exists():
-        return candidate
-    return repo_root_for_port(port_path) / text
+        target = repo_root / path
+    else:
+        candidate = port_path / path
+        target = candidate if candidate.exists() else repo_root / path
+    resolved = target.resolve()
+    try:
+        resolved.relative_to(repo_root)
+    except ValueError as exc:
+        raise ValueError("local refs must stay under the repo owning the memo port") from exc
+    return resolved
 
 
 def check_refs(errors: list[str], port_path: Path, path: Path, label: str, refs: Any) -> None:
@@ -97,7 +106,11 @@ def check_refs(errors: list[str], port_path: Path, path: Path, label: str, refs:
         if not isinstance(ref, str) or not ref:
             errors.append(f"{path}:{label}[{index}] must be a non-empty string")
             continue
-        target = resolve_ref(port_path, ref)
+        try:
+            target = resolve_ref(port_path, ref)
+        except ValueError as exc:
+            errors.append(f"{path}:{label}[{index}] {exc}")
+            continue
         if target is not None and not target.exists():
             errors.append(f"{path}:{label}[{index}] points to missing ref {ref}")
 
@@ -217,4 +230,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
