@@ -199,11 +199,12 @@ The lineage-harvest migration now owns pattern-lineage memory as one
 cross-repo recurring-signal gate. The pattern-lineage schema, example, and test
 now live under `mechanics/lineage-harvest/`.
 
-The current mechanics hardening layer adds `docs/AGENTS.md` and
-`legacy/AGENTS.md` subroutes for each memo mechanic plus
-`mechanics/ARTIFACT_TOPOLOGY.md`. This keeps active docs, legacy provenance,
-and mechanic-local artifacts separate after the schema, example, generated,
-script, test, manifest, questbook, and hook relocation.
+The current mechanics hardening layer keeps active doctrine in each mechanic's
+`docs/AGENTS.md`, keeps historical `legacy/` material as indexed provenance
+outside the active AGENTS mesh, and uses `mechanics/ARTIFACT_TOPOLOGY.md` for
+artifact placement law. This keeps active docs, legacy provenance, and
+mechanic-local artifacts separate after the schema, example, generated, script,
+test, manifest, questbook, and hook relocation.
 The readiness matrix closes the next layer by proving every current package is
 not only present but structurally ready for OS Abyss consumption.
 
