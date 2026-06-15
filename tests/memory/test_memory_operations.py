@@ -93,6 +93,35 @@ def test_reviewed_intake_packets_validate_operation_mode_ref() -> None:
     assert any("operation_mode_ref uses unknown mode missing_mode" in error for error in errors)
 
 
+def test_operation_mode_ref_rejects_non_file_target() -> None:
+    errors: list[str] = []
+
+    validate_memory_operations.append_operation_mode_ref_error(
+        errors,
+        "operation_mode_ref",
+        "examples/recall#read_only",
+    )
+
+    assert errors == [
+        "operation_mode_ref points to non-file local ref examples/recall#read_only"
+    ]
+
+
+def test_operation_mode_ref_rejects_non_json_file_target() -> None:
+    errors: list[str] = []
+
+    validate_memory_operations.append_operation_mode_ref_error(
+        errors,
+        "operation_mode_ref",
+        "docs/posture/MEMORY_OPERATION_MODES.md#read_only",
+    )
+
+    assert errors == [
+        "operation_mode_ref must point to a JSON operation mode catalog "
+        "docs/posture/MEMORY_OPERATION_MODES.md#read_only"
+    ]
+
+
 def test_mcp_access_plane_boundary_is_required() -> None:
     cycle_path = REPO_ROOT / "docs" / "memory" / "MEMORY_OPERATION_CYCLE.md"
     original_load_text = validate_memory_operations.load_text
