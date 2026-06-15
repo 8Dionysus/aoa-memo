@@ -87,6 +87,8 @@ Tracking starts with the community-docs baseline for this repository.
   validator problem list instead of allowing schema drift to raise a traceback.
 - Report non-file and non-JSON operation mode refs as memory-operation
   validation errors instead of letting JSON loading raise a traceback.
+- Require `checked_by` on `aoa_local_memo_receipt_v2` packets so reviewed
+  intake cannot rely on v2 receipts without checker provenance.
 
 ## [0.4.0] - 2026-05-24
 
