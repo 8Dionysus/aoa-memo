@@ -102,16 +102,29 @@ def append_operation_mode_ref_error(errors: list[str], label: str, ref: object) 
     if not target.exists():
         errors.append(f"{label} points to missing local ref {ref}")
         return
+    if not target.is_file():
+        errors.append(f"{label} points to non-file local ref {ref}")
+        return
     if not separator or not mode:
         errors.append(f"{label} must include a #mode fragment")
         return
-    payload = load_json(target)
+    if target.suffix.lower() != ".json":
+        errors.append(f"{label} must point to a JSON operation mode catalog {ref}")
+        return
+    try:
+        payload = load_json(target)
+    except json.JSONDecodeError as exc:
+        errors.append(f"{label} points to invalid JSON operation mode catalog {ref}: {exc.msg}")
+        return
     modes = payload.get("modes") if isinstance(payload, dict) else None
+    if not isinstance(modes, list):
+        errors.append(f"{label} must point to an operation mode catalog with modes")
+        return
     known_modes = {
         item.get("mode")
         for item in modes
         if isinstance(item, dict) and isinstance(item.get("mode"), str)
-    } if isinstance(modes, list) else set()
+    }
     if mode not in known_modes:
         errors.append(f"{label} uses unknown mode {mode}")
 

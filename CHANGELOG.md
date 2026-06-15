@@ -85,6 +85,8 @@ Tracking starts with the community-docs baseline for this repository.
 
 - Report invalid Draft 2020-12 Spark registry schemas through the Spark lane
   validator problem list instead of allowing schema drift to raise a traceback.
+- Report non-file and non-JSON operation mode refs as memory-operation
+  validation errors instead of letting JSON loading raise a traceback.
 
 ## [0.4.0] - 2026-05-24
 
