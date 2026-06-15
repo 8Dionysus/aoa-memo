@@ -92,7 +92,8 @@
         "route",
         "checks",
         "errors",
-        "created_at"
+        "created_at",
+        "checked_by"
       ],
       "properties": {
         "schema": {

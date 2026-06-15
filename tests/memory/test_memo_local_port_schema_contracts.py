@@ -50,6 +50,17 @@ def test_local_memo_receipt_schema_accepts_v2_checked_by() -> None:
     assert receipt_schema_errors(payload) == []
 
 
+def test_local_memo_receipt_schema_requires_v2_checked_by() -> None:
+    payload = receipt_payload(
+        schema="aoa_local_memo_receipt_v2",
+        result="forwarded",
+        checker_field="checked_by",
+    )
+    del payload["checked_by"]
+
+    assert receipt_schema_errors(payload)
+
+
 def test_local_memo_receipt_schema_rejects_v1_checked_by_mix() -> None:
     payload = receipt_payload(
         schema="aoa_local_memo_receipt_v1",
