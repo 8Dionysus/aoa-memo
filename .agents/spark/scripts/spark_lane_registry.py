@@ -5,6 +5,7 @@ from pathlib import Path
 from typing import Any
 
 from jsonschema import Draft202012Validator
+from jsonschema.exceptions import SchemaError
 
 from spark_lane_contracts import (
     REQUIRED_HANDOFF_MARKERS,
@@ -32,6 +33,10 @@ def _registry_schema_errors(root: Path, registry: dict[str, Any]) -> list[str]:
         schema = load_json(schema_path)
     except json.JSONDecodeError as exc:
         return [f"{REGISTRY_SCHEMA_PATH} is not valid JSON: {exc}"]
+    try:
+        Draft202012Validator.check_schema(schema)
+    except SchemaError as exc:
+        return [f"{REGISTRY_SCHEMA_PATH} is not a valid Draft 2020-12 schema: {exc.message}"]
     validator = Draft202012Validator(schema)
     return [
         f"{REGISTRY_PATH}:{'.'.join(str(part) for part in error.absolute_path) or '<root>'}: {error.message}"
