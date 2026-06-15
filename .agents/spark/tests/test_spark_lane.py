@@ -97,6 +97,23 @@ class SparkLaneTestCase(unittest.TestCase):
         self.assertIn(".agents/spark/registry.json:scenarios.0", result.stdout)
         self.assertIn("Additional properties are not allowed", result.stdout)
 
+    def test_invalid_registry_schema_reports_schema_problem(self) -> None:
+        with tempfile.TemporaryDirectory() as temp:
+            temp_root = Path(temp)
+            self.copy_spark_lane(temp_root)
+            schema_path = temp_root / ".agents/spark/schemas/spark-registry.schema.json"
+            schema = load_json(schema_path)
+            schema["properties"]["scenarios"]["type"] = 7
+            schema_path.write_text(json.dumps(schema), encoding="utf-8")
+            result = self.run_validator(temp_root)
+
+        self.assertNotEqual(result.returncode, 0, result.stdout)
+        self.assertIn(
+            ".agents/spark/schemas/spark-registry.schema.json is not a valid Draft 2020-12 schema",
+            result.stdout,
+        )
+        self.assertNotIn("Traceback", result.stdout)
+
     def test_prompt_without_done_or_handoff_is_rejected(self) -> None:
         with tempfile.TemporaryDirectory() as temp:
             temp_root = Path(temp)

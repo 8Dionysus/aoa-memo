@@ -81,6 +81,11 @@ Tracking starts with the community-docs baseline for this repository.
 - Align root surface law with the memo-local `evals/` technical district while
   keeping proof doctrine and verdict authority in `aoa-evals`.
 
+### Fixed
+
+- Report invalid Draft 2020-12 Spark registry schemas through the Spark lane
+  validator problem list instead of allowing schema drift to raise a traceback.
+
 ## [0.4.0] - 2026-05-24
 
 ### Summary
