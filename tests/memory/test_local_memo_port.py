@@ -91,3 +91,21 @@ def test_unknown_vocabulary_term_is_rejected(monkeypatch) -> None:
 
     errors = validate_local_memo_port.validate_port(EXAMPLE_PORT)
     assert any("unknown vocabulary term" in error for error in errors)
+
+
+def test_blank_ref_after_trimming_is_rejected(monkeypatch) -> None:
+    export = EXAMPLE_PORT / "exports" / "20260520T172000Z.codex-plane-memory-route.aoa-memo-intake.json"
+    payload = json.loads(export.read_text(encoding="utf-8"))
+    payload = copy.deepcopy(payload)
+    payload["source_refs"] = ["   "]
+    original_load_json = validate_local_memo_port.load_json
+
+    def fake_load_json(path: Path):
+        if Path(path) == export:
+            return copy.deepcopy(payload)
+        return original_load_json(path)
+
+    monkeypatch.setattr(validate_local_memo_port, "load_json", fake_load_json)
+
+    errors = validate_local_memo_port.validate_port(EXAMPLE_PORT)
+    assert any("source_refs[0] must be a non-empty string" in error for error in errors)

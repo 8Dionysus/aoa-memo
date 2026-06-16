@@ -103,7 +103,7 @@ def check_refs(errors: list[str], port_path: Path, path: Path, label: str, refs:
         errors.append(f"{path}:{label} must be a list")
         return
     for index, ref in enumerate(refs):
-        if not isinstance(ref, str) or not ref:
+        if not isinstance(ref, str) or not ref.strip():
             errors.append(f"{path}:{label}[{index}] must be a non-empty string")
             continue
         try:

@@ -83,6 +83,8 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Fixed
 
+- Reject local memo source/evidence refs that become blank after trimming so
+  reviewed intake cannot preserve whitespace-only provenance.
 - Reject symbolic or otherwise invalid reviewed-intake receipt `candidate_ref`
   values during corpus landing input validation, and refresh the imported
   workspace memo-port status so `aoa-memo` remains a route-only reviewed corpus
