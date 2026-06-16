@@ -83,6 +83,10 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Fixed
 
+- Reject symbolic or otherwise invalid reviewed-intake receipt `candidate_ref`
+  values during corpus landing input validation, and refresh the imported
+  workspace memo-port status so `aoa-memo` remains a route-only reviewed corpus
+  owner instead of a broken local port.
 - Report invalid Draft 2020-12 Spark registry schemas through the Spark lane
   validator problem list instead of allowing schema drift to raise a traceback.
 - Report non-file and non-JSON operation mode refs as memory-operation
