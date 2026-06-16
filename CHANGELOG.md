@@ -95,6 +95,8 @@ Tracking starts with the community-docs baseline for this repository.
   validation errors instead of letting JSON loading raise a traceback.
 - Require `checked_by` on `aoa_local_memo_receipt_v2` packets so reviewed
   intake cannot rely on v2 receipts without checker provenance.
+- Preserve sibling script imports when `validate_memo.py` is imported by file
+  location, so the schema profile can still load `validate_nested_agents.py`.
 
 ## [0.4.0] - 2026-05-24
 

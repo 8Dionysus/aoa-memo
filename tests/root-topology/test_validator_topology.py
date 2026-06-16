@@ -137,6 +137,28 @@ def test_memo_validator_entrypoint_ignores_preloaded_top_level_validators(
     assert "schema" in module.PROFILE_NAMES
 
 
+def test_memo_schema_profile_import_by_file_location_keeps_sibling_imports(
+    monkeypatch,
+) -> None:
+    entrypoint = REPO_ROOT / "scripts" / "memory" / "validate_memo.py"
+    module_name = "_validate_memo_schema_profile_probe"
+    spec = importlib.util.spec_from_file_location(module_name, entrypoint)
+    assert spec is not None
+    assert spec.loader is not None
+    module = importlib.util.module_from_spec(spec)
+    monkeypatch.setattr(
+        sys,
+        "path",
+        [path for path in sys.path if path != str(entrypoint.parent)],
+    )
+    monkeypatch.delitem(sys.modules, "validate_nested_agents", raising=False)
+    monkeypatch.setitem(sys.modules, module_name, module)
+
+    spec.loader.exec_module(module)
+
+    module.validate_nested_agents_surface()
+
+
 def test_release_and_nightly_are_distinct_compositions() -> None:
     release_labels = [step.label for step in validation_lanes.RELEASE_CHECK_COMMAND_SEQUENCE]
     nightly_labels = [step.label for step in validation_lanes.NIGHTLY_COMMAND_SEQUENCE]

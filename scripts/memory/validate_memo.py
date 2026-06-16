@@ -15,6 +15,12 @@ VALIDATORS_DIR = SCRIPT_DIR / "validators"
 VALIDATORS_PACKAGE_NAME = "_aoa_memo_memory_validators"
 
 
+def _ensure_script_dir_importable() -> None:
+    script_dir = str(SCRIPT_DIR)
+    if script_dir not in sys.path:
+        sys.path.insert(0, script_dir)
+
+
 def _load_validators_package() -> types.ModuleType:
     existing = sys.modules.get(VALIDATORS_PACKAGE_NAME)
     if existing is not None:
@@ -32,6 +38,7 @@ def _load_validators_package() -> types.ModuleType:
     return module
 
 
+_ensure_script_dir_importable()
 _load_validators_package()
 profile_modules = importlib.import_module(f"{VALIDATORS_PACKAGE_NAME}.profile_modules")
 profiles = importlib.import_module(f"{VALIDATORS_PACKAGE_NAME}.profiles")
