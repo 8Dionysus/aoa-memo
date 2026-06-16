@@ -83,6 +83,9 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Fixed
 
+- Record the roadmap alignment that keeps mechanic `legacy/` material as
+  indexed provenance outside the active AGENTS mesh while active mechanic
+  doctrine stays in `docs/AGENTS.md`.
 - Reject local memo source/evidence refs that become blank after trimming so
   reviewed intake cannot preserve whitespace-only provenance.
 - Reject symbolic or otherwise invalid reviewed-intake receipt `candidate_ref`
