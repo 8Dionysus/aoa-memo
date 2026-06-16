@@ -266,3 +266,27 @@ def test_reviewed_write_rejects_receipt_for_unexported_candidate(tmp_path: Path)
         assert "missing successful receipt for candidate_ref candidates/20260520T171200Z.codex-plane-memory-route.candidate.json" in message
     else:
         raise AssertionError("receipt for unexported candidate unexpectedly authorized landing")
+
+
+def test_reviewed_write_rejects_symbolic_receipt_candidate_ref(tmp_path: Path) -> None:
+    port = copy_reviewed_write_port(tmp_path)
+    receipt_name = "20260520T171501Z.codex-plane-memory-route.symbolic-receipt.json"
+    original_path = port / "receipts" / "20260520T171500Z.codex-plane-memory-route.validation-receipt.json"
+    receipt_path = port / "receipts" / receipt_name
+    receipt = json.loads(original_path.read_text(encoding="utf-8"))
+    receipt["id"] = "receipt:example-repo:20260520T171501Z:codex-plane-memory-route-symbolic"
+    receipt["candidate_ref"] = "candidate:example-repo:20260520T171200Z:codex-plane-memory-route"
+    receipt_path.write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8")
+
+    export_path = port / EXPORT_REF
+    payload = json.loads(export_path.read_text(encoding="utf-8"))
+    payload["receipt_refs"].append(f"receipts/{receipt_name}")
+    export_path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+
+    try:
+        landing.load_landing_inputs(port, EXPORT_REF)
+    except landing.LandingError as exc:
+        message = str(exc)
+        assert f"{receipt_path}: receipt candidate_ref must be a local packet ref" in message
+    else:
+        raise AssertionError("symbolic receipt candidate_ref was silently ignored")

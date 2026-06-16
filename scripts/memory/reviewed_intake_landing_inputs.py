@@ -78,8 +78,9 @@ def validate_inputs(
         if isinstance(receipt_candidate_ref, str) and receipt_candidate_ref:
             try:
                 receipt_candidate_path = packet_ref_path(port_path, receipt_candidate_ref, "receipt candidate_ref")
-            except LandingError:
-                receipt_candidate_path = None
+            except LandingError as exc:
+                errors.append(f"{receipt_path}: {exc}")
+                continue
         if receipt_candidate_path is None:
             continue
         receipt_candidate_path = receipt_candidate_path.resolve()
