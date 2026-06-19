@@ -79,6 +79,10 @@ class MemoCorpusTestCase(unittest.TestCase):
         objects = {item["id"]: item for item in payload["memory_objects"]}
 
         self.assertEqual("aoa-memo-object-read-models-v2", payload["source_of_truth"])
+        self.assertEqual(
+            "derived_memory_object_readmodel_family",
+            payload["artifact_identity"]["artifact_class"],
+        )
         self.assertEqual("teaching_fixture", objects["memo.anchor.2026-03-23.charter-operating-axis"]["source_kind"])
 
     def test_kag_donor_bridge_is_reviewed_corpus_object(self) -> None:

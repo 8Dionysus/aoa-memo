@@ -7,6 +7,7 @@ from pathlib import Path
 import sys
 
 from generate_memory_object_surfaces import (
+    ARTIFACT_IDENTITY,
     EXPORTABLE_RECALL_STATUSES,
     FULL_CATALOG_PATH,
     MIN_CATALOG_PATH,
@@ -48,7 +49,13 @@ def ensure_exists(path_text: str, label: str) -> None:
         raise SystemExit(f"{label}: missing path {path_text}")
 
 
+def validate_artifact_identity(data: dict, path: Path) -> None:
+    if data.get("artifact_identity") != ARTIFACT_IDENTITY:
+        raise SystemExit(f"{path}: artifact_identity must stay stable")
+
+
 def validate_full_catalog(data: dict, curated_ids: set[str]) -> None:
+    validate_artifact_identity(data, FULL_CATALOG_PATH)
     seen_ids: set[str] = set()
     for item in data["memory_objects"]:
         if item["id"] in seen_ids:
@@ -78,6 +85,7 @@ def validate_full_catalog(data: dict, curated_ids: set[str]) -> None:
 
 
 def validate_min_catalog(data: dict, expected_ids: set[str]) -> None:
+    validate_artifact_identity(data, MIN_CATALOG_PATH)
     seen_ids: set[str] = set()
     for item in data["memory_objects"]:
         if item["id"] in seen_ids:
@@ -99,6 +107,7 @@ def validate_min_catalog(data: dict, expected_ids: set[str]) -> None:
 
 
 def validate_capsules(data: dict, curated_ids: set[str]) -> None:
+    validate_artifact_identity(data, CAPSULES_PATH)
     ids = set()
     for item in data["memory_objects"]:
         ids.add(item["id"])
@@ -115,6 +124,7 @@ def validate_capsules(data: dict, curated_ids: set[str]) -> None:
 
 
 def validate_sections(data: dict, curated_ids: set[str]) -> None:
+    validate_artifact_identity(data, SECTIONS_PATH)
     ids = set()
     expected_section_keys = [key for key, _ in SECTION_SPECS]
     expected_headings = [heading for _, heading in SECTION_SPECS]

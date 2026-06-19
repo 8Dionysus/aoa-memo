@@ -8,6 +8,7 @@ import json
 import sys
 
 from memory_object_surface_common import (
+    ARTIFACT_IDENTITY,
     CAPSULES_PATH,
     EXPORTABLE_RECALL_STATUSES,
     FULL_CATALOG_PATH,
@@ -62,22 +63,26 @@ def build_surface_family() -> dict[str, JsonDict]:
             "catalog_version": 1,
             "catalog_kind": "full",
             "source_of_truth": SOURCE_OF_TRUTH,
+            "artifact_identity": ARTIFACT_IDENTITY,
             "memory_objects": full_items,
         },
         "memory_object_catalog.min.json": {
             "catalog_version": 1,
             "catalog_kind": "min",
             "source_of_truth": SOURCE_OF_TRUTH,
+            "artifact_identity": ARTIFACT_IDENTITY,
             "memory_objects": min_items,
         },
         "memory_object_capsules.json": {
             "capsule_version": 1,
             "source_of_truth": SOURCE_OF_TRUTH,
+            "artifact_identity": ARTIFACT_IDENTITY,
             "memory_objects": capsules,
         },
         "memory_object_sections.full.json": {
             "sections_version": 1,
             "source_of_truth": SOURCE_OF_TRUTH,
+            "artifact_identity": ARTIFACT_IDENTITY,
             "memory_objects": sections,
         },
     }

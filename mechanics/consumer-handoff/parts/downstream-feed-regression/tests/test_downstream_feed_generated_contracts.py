@@ -52,16 +52,19 @@ class MemoDownstreamFeedGeneratedContractTests(unittest.TestCase):
 
         self.assertEqual(
             set(min_catalog.keys()),
-            {"catalog_kind", "catalog_version", "memory_objects", "source_of_truth"},
+            {"catalog_kind", "catalog_version", "artifact_identity", "memory_objects", "source_of_truth"},
         )
         self.assertEqual(
             set(capsules.keys()),
-            {"capsule_version", "memory_objects", "source_of_truth"},
+            {"capsule_version", "artifact_identity", "memory_objects", "source_of_truth"},
         )
         self.assertEqual(
             set(sections.keys()),
-            {"memory_objects", "sections_version", "source_of_truth"},
+            {"artifact_identity", "memory_objects", "sections_version", "source_of_truth"},
         )
+        self.assertEqual(min_catalog["artifact_identity"], generate_memory_object_surfaces.ARTIFACT_IDENTITY)
+        self.assertEqual(capsules["artifact_identity"], generate_memory_object_surfaces.ARTIFACT_IDENTITY)
+        self.assertEqual(sections["artifact_identity"], generate_memory_object_surfaces.ARTIFACT_IDENTITY)
         self.assertEqual(min_catalog["catalog_kind"], "min")
         self.assertEqual(min_catalog["catalog_version"], 1)
         self.assertEqual(capsules["capsule_version"], 1)

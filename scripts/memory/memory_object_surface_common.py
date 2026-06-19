@@ -12,6 +12,42 @@ GENERATED = ROOT / "generated"
 SCHEMAS = ROOT / "schemas"
 
 SOURCE_OF_TRUTH = "aoa-memo-object-read-models-v2"
+ARTIFACT_IDENTITY = {
+    "artifact_class": "derived_memory_object_readmodel_family",
+    "surface_state": "public_generated_memory_object_surfaces",
+    "owner_repo": "aoa-memo",
+    "authority_ref": "MEMORY_INDEX.md#generated-companions",
+    "producer": (
+        "scripts/memory/generate_memory_object_surfaces.py from memo/objects/**/object.json "
+        "and examples/generated-surfaces/memory_object_surface_manifest.json"
+    ),
+    "consumer_expectation": (
+        "consumers verify source_of_truth, artifact_identity, source_kind, source_path, recall keys, "
+        "schemas, and generate_memory_object_surfaces --check plus validate_memory_object_surfaces "
+        "before using these surfaces for recall"
+    ),
+    "privacy_boundary": (
+        "public reviewed corpus and teaching fixture refs only; no private session payloads, "
+        "unreviewed local-port candidates, secrets, or live access-plane state"
+    ),
+    "content_identity": (
+        "generated/memory-objects object catalog, min catalog, capsules, and sections rebuilt from "
+        "reviewed corpus plus curated examples and compared by generate_memory_object_surfaces --check"
+    ),
+    "abi_epoch": "aoa_memo_memory_object_surfaces_v2",
+    "contract_version": (
+        "schemas/generated-surfaces/memory_object_catalog.schema.json+"
+        "memory_object_capsules.schema.json+memory_object_sections.schema.json@"
+        "aoa_memo_memory_object_surfaces_v2#artifact_identity"
+    ),
+    "trust_layer": ["abi_contract_signature", "w3c_prov_lineage"],
+    "verification": [
+        "python scripts/memory/generate_memory_object_surfaces.py --check",
+        "python scripts/memory/validate_memory_object_surfaces.py",
+        "python scripts/ci_gate.py --mode memory",
+    ],
+    "action": "ADD_CONSUMER_EXPECTATION",
+}
 EXAMPLE_MANIFEST_SOURCE = "aoa-memo-object-example-surfaces-v1"
 SOURCE_KIND_REVIEWED_CORPUS = "reviewed_corpus"
 SOURCE_KIND_TEACHING_FIXTURE = "teaching_fixture"
