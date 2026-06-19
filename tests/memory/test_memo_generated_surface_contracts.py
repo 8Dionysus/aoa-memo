@@ -93,3 +93,18 @@ class MemoGeneratedSurfaceContractTestCase(MemoValidatorTestCase):
             )
 
         self.assertIn("scope_classes", str(context))
+
+    def test_object_surface_validator_rejects_artifact_identity_drift(self) -> None:
+        full_catalog_path = validate_memory_object_surfaces.FULL_CATALOG_PATH
+        full_catalog = load_json(full_catalog_path)
+        assert isinstance(full_catalog, dict)
+        full_catalog = copy.deepcopy(full_catalog)
+        full_catalog["artifact_identity"] = {"artifact_class": "memory_truth"}
+
+        context = self.assert_system_exit_quietly(
+            validate_memory_object_surfaces.validate_full_catalog,
+            full_catalog,
+            {item["id"] for item in full_catalog["memory_objects"]},
+        )
+
+        self.assertIn("artifact_identity must stay stable", str(context))

@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/schemas/generated-surfaces/artifact_identity.schema.json",
+  "title": "aoa-memo generated surface artifact identity",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "artifact_class",
+    "surface_state",
+    "owner_repo",
+    "authority_ref",
+    "producer",
+    "consumer_expectation",
+    "privacy_boundary",
+    "content_identity",
+    "abi_epoch",
+    "contract_version",
+    "trust_layer",
+    "verification",
+    "action"
+  ],
+  "properties": {
+    "artifact_class": {
+      "type": "string",
+      "const": "derived_memory_object_readmodel_family"
+    },
+    "surface_state": {
+      "type": "string",
+      "const": "public_generated_memory_object_surfaces"
+    },
+    "owner_repo": {
+      "type": "string",
+      "const": "aoa-memo"
+    },
+    "authority_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "producer": {
+      "type": "string",
+      "minLength": 1
+    },
+    "consumer_expectation": {
+      "type": "string",
+      "minLength": 1
+    },
+    "privacy_boundary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "content_identity": {
+      "type": "string",
+      "minLength": 1
+    },
+    "abi_epoch": {
+      "type": "string",
+      "const": "aoa_memo_memory_object_surfaces_v2"
+    },
+    "contract_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "trust_layer": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "abi_contract_signature",
+          "w3c_prov_lineage"
+        ]
+      }
+    },
+    "verification": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "action": {
+      "type": "string",
+      "const": "ADD_CONSUMER_EXPECTATION"
+    }
+  }
+}

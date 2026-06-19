@@ -7,6 +7,7 @@
   "required": [
     "sections_version",
     "source_of_truth",
+    "artifact_identity",
     "memory_objects"
   ],
   "properties": {
@@ -17,6 +18,9 @@
     "source_of_truth": {
       "type": "string",
       "const": "aoa-memo-object-read-models-v2"
+    },
+    "artifact_identity": {
+      "$ref": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/schemas/generated-surfaces/artifact_identity.schema.json"
     },
     "memory_objects": {
       "type": "array",

@@ -139,6 +139,7 @@
         "schemas/memory-ports/local_memo_port_index.schema.json",
         "schemas/memory-ports/local_memo_receipt.schema.json",
         "schemas/memory-objects/memory_object.schema.json",
+        "schemas/generated-surfaces/artifact_identity.schema.json",
         "schemas/generated-surfaces/memory_object_capsules.schema.json",
         "schemas/generated-surfaces/memory_object_catalog.schema.json",
         "schemas/memory-objects/memory_object_profile.schema.json",
@@ -1118,6 +1119,7 @@
       "role": "generated-surface-contract",
       "owner_surface": "examples/generated-surfaces/memory_object_surface_manifest.json",
       "schemas": [
+        "schemas/generated-surfaces/artifact_identity.schema.json",
         "schemas/generated-surfaces/memory_object_capsules.schema.json",
         "schemas/generated-surfaces/memory_object_catalog.schema.json",
         "schemas/generated-surfaces/memory_object_sections.schema.json",
