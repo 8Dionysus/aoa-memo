@@ -61,6 +61,7 @@ def validate_registry() -> None:
 
     expected_schemas = {
         "mechanics/antifragility/parts/failure-lesson-memory/schemas/failure_lesson_memory_v1.json",
+        "schemas/generated-surfaces/artifact_identity.schema.json",
         "schemas/generated-surfaces/memory_object_surface_manifest.schema.json",
         "schemas/generated-surfaces/memory_object_catalog.schema.json",
         "schemas/generated-surfaces/memory_object_capsules.schema.json",
