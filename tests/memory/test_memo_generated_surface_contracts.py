@@ -124,8 +124,17 @@ class MemoGeneratedSurfaceContractTestCase(MemoValidatorTestCase):
             manifest["consumer_contract"]["consumer_expectation"],
         )
         self.assertIn(
+            "durable evidence promotion",
+            manifest["consumer_contract"]["consumer_expectation"],
+        )
+        self.assertIn(
             "not proof or current truth authority",
             manifest["consumer_contract"]["consumer_expectation"],
+        )
+        self.assertTrue(manifest["consumer_contract"]["subject_store_required"])
+        self.assertEqual(
+            manifest["consumer_contract"]["admission_gate"],
+            "fail_closed_consumer_admission",
         )
         self.assertEqual(
             manifest["artifact_identity"],
@@ -162,4 +171,5 @@ class MemoGeneratedSurfaceContractTestCase(MemoValidatorTestCase):
         self.assertIn("registry-latest", commands)
         self.assertIn("--consumer-intent agent", commands)
         self.assertIn("--source-repo aoa-memo", commands)
+        self.assertIn("--store-root SUBJECT_STORE_ROOT", commands)
         self.assertIn("--trust-root-mode host_managed", commands)
