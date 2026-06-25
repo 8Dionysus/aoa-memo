@@ -1,0 +1,118 @@
+{
+  "schema": "abyss_machine_artifact_bundle_manifest_v1",
+  "id": "aoa-memo-memory-object-readmodel-family",
+  "artifact_class": "derived_memory_object_readmodel_family",
+  "owner_repo": "aoa-memo",
+  "policy_ref": "repo:abyss-machine/manifests/artifact_signature_policy.manifest.json",
+  "mode": "os_abyss_local",
+  "public_safe": true,
+  "purpose": "Repo-local OS Abyss artifact bundle input for generated/memory-objects readmodel family.",
+  "subject_repo_root": "../../..",
+  "artifact_source": {
+    "kind": "generated_memory_object_readmodel_family",
+    "content_identity_ref": "generated/memory-objects/memory_object_catalog.min.json",
+    "artifact_identity_ref": "generated/memory-objects/memory_object_catalog.min.json#/artifact_identity"
+  },
+  "artifact_identity": {
+    "artifact_class": "derived_memory_object_readmodel_family",
+    "abi_epoch": "aoa_memo_memory_object_surfaces_v2"
+  },
+  "abi_subject": {
+    "path": "generated/memory-objects/memory_object_catalog.min.json",
+    "artifact_identity_pointer": "/artifact_identity"
+  },
+  "artifact_subjects": [
+    {
+      "path": "generated/memory-objects/memory_object_catalog.min.json",
+      "role": "memory_object_catalog_min"
+    },
+    {
+      "path": "generated/memory-objects/memory_object_catalog.json",
+      "role": "memory_object_catalog_full"
+    },
+    {
+      "path": "generated/memory-objects/memory_object_capsules.json",
+      "role": "memory_object_capsules"
+    },
+    {
+      "path": "generated/memory-objects/memory_object_sections.full.json",
+      "role": "memory_object_sections"
+    },
+    {
+      "path": "schemas/generated-surfaces/memory_object_catalog.schema.json",
+      "role": "schema"
+    },
+    {
+      "path": "schemas/generated-surfaces/memory_object_capsules.schema.json",
+      "role": "schema"
+    },
+    {
+      "path": "schemas/generated-surfaces/memory_object_sections.schema.json",
+      "role": "schema"
+    },
+    {
+      "path": "schemas/generated-surfaces/memory_object_surface_manifest.schema.json",
+      "role": "schema"
+    },
+    {
+      "path": "examples/generated-surfaces/memory_object_surface_manifest.json",
+      "role": "source_manifest"
+    },
+    {
+      "path": "scripts/memory/generate_memory_object_surfaces.py",
+      "role": "builder"
+    },
+    {
+      "path": "scripts/memory/validate_memory_object_surfaces.py",
+      "role": "validator"
+    },
+    {
+      "path": "MEMORY_INDEX.md",
+      "role": "authority_doc"
+    },
+    {
+      "path": "docs/memory/MEMORY_OBJECT_PROFILES.md",
+      "role": "authority_doc"
+    }
+  ],
+  "build_type": "urn:abyssos:buildtype:aoa-memo-memory-object-readmodels:v1",
+  "package": {
+    "ecosystem": "generated-readmodel",
+    "name": "aoa-memo-memory-object-readmodels",
+    "purl": "pkg:generic/aoa-memo-memory-object-readmodels@0"
+  },
+  "lifecycle": {
+    "initial_state": "candidate",
+    "promotion_path": [
+      "candidate",
+      "built-local",
+      "manually-verified",
+      "release-ready",
+      "published",
+      "superseded",
+      "revoked"
+    ],
+    "latest_eligible_states": [
+      "manually-verified",
+      "release-ready",
+      "published"
+    ]
+  },
+  "consumer_contract": {
+    "stable_interface": "python scripts/memory/validate_abyss_machine_memory_object_bundle.py --json and abyss-machine artifacts trust-gate --artifact-class derived_memory_object_readmodel_family --consumer-intent agent --json",
+    "consumer_expectation": "Memory consumers select a derived_memory_object_readmodel_family bundle from the registry latest read-model only after ABI verification, SLSA/in-toto generation provenance, materialized subject-store verification, generate_memory_object_surfaces --check, validate_memory_object_surfaces, and memory-is-not-proof boundary checks pass; the readmodel remains recall support, not proof or current truth authority.",
+    "registry_required": true
+  },
+  "consumer_command": [
+    "abyss-machine artifacts build-sidecars --manifest docs/memory/artifact-bundles/memory_object_readmodels.bundle.json --bundle-dir BUNDLE_DIR",
+    "abyss-machine artifacts sign BUNDLE_DIR",
+    "abyss-machine artifacts verify BUNDLE_DIR",
+    "abyss-machine artifacts release-check BUNDLE_DIR",
+    "abyss-machine artifacts evidence-promote BUNDLE_DIR --registry-dir REGISTRY_DIR --lifecycle-state release-ready --consumer-ref aoa-memo:memory-object-readmodels --evidence-ref BUNDLE_DIR/artifact.verify.json --source-repo aoa-memo --source-ref docs/memory/artifact-bundles/memory_object_readmodels.bundle.json --producer aoa-memo-memory-object-surface-generator --trust-root-mode host_managed --json",
+    "abyss-machine artifacts materialize-subjects BUNDLE_DIR --registry-dir REGISTRY_DIR --manifest docs/memory/artifact-bundles/memory_object_readmodels.bundle.json --consumer-intent agent --source-repo aoa-memo --trust-root-mode host_managed --json",
+    "abyss-machine artifacts trust-gate --registry-dir REGISTRY_DIR --artifact-class derived_memory_object_readmodel_family --consumer-intent agent --source-repo aoa-memo --trust-root-mode host_managed --json",
+    "abyss-machine artifacts registry-latest --registry-dir REGISTRY_DIR --artifact-class derived_memory_object_readmodel_family --consumer-intent agent --source-repo aoa-memo --trust-root-mode host_managed --json",
+    "python scripts/memory/validate_abyss_machine_memory_object_bundle.py --json",
+    "abyss-machine artifacts bundle-registry --registry-dir dist/abyss-artifact-registry/aoa-memo-memory-object-readmodels --artifact-class derived_memory_object_readmodel_family --json"
+  ]
+}

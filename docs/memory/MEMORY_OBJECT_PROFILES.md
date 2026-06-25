@@ -16,6 +16,16 @@ Use the schemas in two layers:
 
 This keeps the canon small while making each first-class kind explicit enough for downstream consumers to rely on.
 
+## Artifact envelope
+
+The public `generated/memory-objects/` readmodel family is covered by
+`docs/memory/artifact-bundles/memory_object_readmodels.bundle.json`.
+
+That envelope signs ABI and SLSA/in-toto provenance for the generated readmodel
+family, promotes durable evidence, and requires a materialized subject-store
+consumer trust gate. It does not turn memory into proof; consumers still route
+proof to `aoa-evals` and runtime retention to `abyss-stack`.
+
 ## Why profiles exist
 
 Without profiles, the repo can only say that a memory object exists.

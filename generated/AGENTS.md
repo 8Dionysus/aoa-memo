@@ -54,7 +54,7 @@ Keep this split explicit:
   `scripts/memory/build_memory_operational_readouts.py` from memo generated
   surfaces plus read-only `8Dionysus` workspace-map and `abyss-stack` MCP
   inputs, and checked by the same builder in `--check` mode
-- the object family is generator-backed and is rebuilt by `scripts/memory/generate_memory_object_surfaces.py` and checked by `scripts/memory/validate_memory_object_surfaces.py`
+- the object family is generator-backed and is rebuilt by `scripts/memory/generate_memory_object_surfaces.py`, checked by `scripts/memory/validate_memory_object_surfaces.py`, and wrapped for OS Abyss ABI/provenance plus durable subject-store trust gating by `docs/memory/artifact-bundles/memory_object_readmodels.bundle.json`
 - the quest projection family is rebuilt by `mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py` from lane-first quest sources, governed by `mechanics/questbook/parts/quest-read-model-projections/`, and checked by `scripts/memory/validate_memo.py`
 - `mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_governance.min.json` is rebuilt by `mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_governance.py` and checked by `scripts/memory/validate_memo.py`
 - `mechanics/consumer-handoff/parts/kag-source-export/generated/kag_export.min.json` is generator-backed, rebuilt by `mechanics/consumer-handoff/parts/kag-source-export/scripts/generate_kag_export.py`, and checked by `scripts/memory/validate_memo.py`
@@ -121,6 +121,11 @@ For the object family:
 - keep `source_kind` visible so generated read models do not confuse fixtures
   with reviewed memory truth
 - keep object-facing exports deterministic and reviewable
+- keep `docs/memory/artifact-bundles/memory_object_readmodels.bundle.json`
+  aligned when the public subject set, `artifact_identity`, or consumer
+  expectation changes; release/export consumers must use the durable registry,
+  materialized subject-store, and trust-gate path before treating the family as
+  recall support
 
 For mechanic-owned generated outputs:
 
@@ -160,6 +165,7 @@ When this directory changes, run the matching checks:
 python scripts/memory/validate_memo.py
 python scripts/memory/validate_memory_surfaces.py
 python scripts/memory/validate_memory_object_surfaces.py
+python scripts/memory/validate_abyss_machine_memory_object_bundle.py
 python scripts/memory/build_memory_operational_readouts.py --check
 python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py --check
 python scripts/agents/validate_agents_mesh_index.py

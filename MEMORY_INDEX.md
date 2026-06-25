@@ -155,6 +155,9 @@ freshness by itself.
   object shape concrete.
 - [scripts](scripts/AGENTS.md) and [tests](tests/AGENTS.md) keep generated
   companions and examples honest.
+- [memory_object_readmodels.bundle.json](docs/memory/artifact-bundles/memory_object_readmodels.bundle.json)
+  is the OS Abyss ABI/provenance and consumer trust-gate envelope for the
+  public memory-object readmodel family.
 - When memory needs proof, route to `aoa-evals`.
 - When memory needs runtime retention, route to `abyss-stack`.
 - When memory needs role rights, route to `aoa-agents`.
