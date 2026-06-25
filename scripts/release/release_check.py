@@ -18,7 +18,11 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 
 def _env() -> dict[str, str]:
     env = os.environ.copy()
-    for env_var, repo_name in (("AOA_AGENTS_ROOT", "aoa-agents"), ("AOA_EVALS_ROOT", "aoa-evals")):
+    for env_var, repo_name in (
+        ("AOA_AGENTS_ROOT", "aoa-agents"),
+        ("AOA_EVALS_ROOT", "aoa-evals"),
+        ("ABYSS_MACHINE_REPO_ROOT", "abyss-machine"),
+    ):
         candidates = [
             env.get(env_var),
             str((REPO_ROOT / ".deps" / repo_name).resolve()),

@@ -1,5 +1,6 @@
 __pycache__/
 *.py[cod]
+dist/
 
 # Owner-local live receipt logs stay out of git.
 .aoa/live_receipts/

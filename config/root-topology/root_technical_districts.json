@@ -204,6 +204,7 @@
         "scripts/memory/reviewed_intake_landing_inputs.py",
         "scripts/memory/reviewed_intake_landing_io.py",
         "scripts/memory/reviewed_intake_landing_plan.py",
+        "scripts/memory/validate_abyss_machine_memory_object_bundle.py",
         "scripts/memory/validate_lifecycle_audit_examples.py",
         "scripts/memory/validate_local_memo_port.py",
         "scripts/memory/validate_memo.py",
@@ -413,6 +414,7 @@
       ],
       "validators": [
         "scripts/memory/validate_memo.py",
+        "scripts/memory/validate_abyss_machine_memory_object_bundle.py",
         "scripts/memory/validate_memory_object_surfaces.py"
       ]
     },
@@ -640,6 +642,7 @@
         "scripts/memory/reviewed_intake_landing_inputs.py",
         "scripts/memory/reviewed_intake_landing_io.py",
         "scripts/memory/reviewed_intake_landing_plan.py",
+        "scripts/memory/validate_abyss_machine_memory_object_bundle.py",
         "scripts/memory/validate_memo.py",
         "scripts/memory/validate_memo_corpus.py",
         "scripts/memory/validate_local_memo_port.py",
@@ -955,6 +958,7 @@
         "scripts/memory/validators/",
         "scripts/memory/land_reviewed_memo_intake.py",
         "examples/phase-alpha/provenance_thread.phase-alpha-curated.example.json",
+        "docs/memory/artifact-bundles/memory_object_readmodels.bundle.json",
         "examples/generated-surfaces/memory_object_surface_manifest.json",
         "generated/memory-objects/memory_object_catalog.min.json"
       ]

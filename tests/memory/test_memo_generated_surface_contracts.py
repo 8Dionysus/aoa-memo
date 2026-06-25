@@ -108,3 +108,58 @@ class MemoGeneratedSurfaceContractTestCase(MemoValidatorTestCase):
         )
 
         self.assertIn("artifact_identity must stay stable", str(context))
+
+    def test_memory_object_readmodel_bundle_declares_os_abyss_abi_and_slsa_route(self) -> None:
+        manifest = load_json(REPO_ROOT / "docs" / "memory" / "artifact-bundles" / "memory_object_readmodels.bundle.json")
+        assert isinstance(manifest, dict)
+
+        self.assertEqual(manifest["artifact_class"], "derived_memory_object_readmodel_family")
+        self.assertEqual(manifest["owner_repo"], "aoa-memo")
+        self.assertEqual(
+            manifest["consumer_contract"]["stable_interface"],
+            "python scripts/memory/validate_abyss_machine_memory_object_bundle.py --json and abyss-machine artifacts trust-gate --artifact-class derived_memory_object_readmodel_family --consumer-intent agent --json",
+        )
+        self.assertIn(
+            "materialized subject-store verification",
+            manifest["consumer_contract"]["consumer_expectation"],
+        )
+        self.assertIn(
+            "not proof or current truth authority",
+            manifest["consumer_contract"]["consumer_expectation"],
+        )
+        self.assertEqual(
+            manifest["artifact_identity"],
+            {
+                "artifact_class": "derived_memory_object_readmodel_family",
+                "abi_epoch": "aoa_memo_memory_object_surfaces_v2",
+            },
+        )
+
+        subject_paths = {
+            item["path"]
+            for item in manifest["artifact_subjects"]
+        }
+        self.assertGreaterEqual(
+            subject_paths,
+            {
+                "generated/memory-objects/memory_object_catalog.min.json",
+                "generated/memory-objects/memory_object_catalog.json",
+                "generated/memory-objects/memory_object_capsules.json",
+                "generated/memory-objects/memory_object_sections.full.json",
+                "schemas/generated-surfaces/memory_object_catalog.schema.json",
+                "examples/generated-surfaces/memory_object_surface_manifest.json",
+                "scripts/memory/generate_memory_object_surfaces.py",
+                "scripts/memory/validate_memory_object_surfaces.py",
+                "MEMORY_INDEX.md",
+                "docs/memory/MEMORY_OBJECT_PROFILES.md",
+            },
+        )
+        commands = "\n".join(manifest["consumer_command"])
+        self.assertIn("artifact-class derived_memory_object_readmodel_family", commands.replace("--", ""))
+        self.assertIn("evidence-promote", commands)
+        self.assertIn("materialize-subjects", commands)
+        self.assertIn("trust-gate", commands)
+        self.assertIn("registry-latest", commands)
+        self.assertIn("--consumer-intent agent", commands)
+        self.assertIn("--source-repo aoa-memo", commands)
+        self.assertIn("--trust-root-mode host_managed", commands)

@@ -166,6 +166,23 @@
       "status": "active"
     },
     {
+      "family": "memory/object-readmodel-artifact-bundle",
+      "paths": [
+        "scripts/memory/validate_abyss_machine_memory_object_bundle.py"
+      ],
+      "protects": "OS Abyss ABI, SLSA/in-toto, durable evidence, materialized subject-store, and consumer trust-gate path for generated memory-object readmodels",
+      "owner_surface": "docs/memory/artifact-bundles/README.md",
+      "layer": "memory_context",
+      "lane": "memory/release/manual",
+      "mode": "blocking",
+      "callers": [
+        "config/validation_lanes.json",
+        "manual OS Abyss artifact-bundle checks"
+      ],
+      "failure_route": "Fix memory-object generated surfaces, bundle manifest, durable registry evidence, materialized subject-store, consumer trust-gate, or abyss-machine artifact policy before publishing readmodel latest.",
+      "status": "active"
+    },
+    {
       "family": "inter-agent/handoff",
       "paths": [
         "mechanics/agon/parts/prebinding-and-candidate-intake/scripts/validate_agon_memo_prebindings.py",

@@ -19,6 +19,10 @@ See also:
    - `aoa release audit /srv/AbyssOS --phase preflight --repo aoa-memo --strict --json`
 6. Publish only through `aoa release publish`.
 
+The repo-level verifier includes the OS Abyss ABI/provenance bundle and
+consumer trust-gate check for `generated/memory-objects/`; keep
+`abyss-machine` available when exercising the full release lane.
+
 Workspace release tooling also probes `docs/RELEASING.md` and
 `scripts/release_check.py`. Those files are compatibility entrypoints; this
 file and `scripts/release/release_check.py` remain the active procedure and

@@ -552,6 +552,15 @@
           "python",
           "scripts/memory/validate_memo_corpus.py"
         ]
+      },
+      {
+        "label": "validate memory-object OS Abyss artifact bundle",
+        "command": [
+          "python",
+          "scripts/memory/validate_abyss_machine_memory_object_bundle.py"
+        ],
+        "owner_surface": "docs/memory/artifact-bundles/README.md",
+        "failure_route": "Fix memory-object generated surfaces, bundle manifest, durable registry evidence, materialized subject-store, consumer trust-gate, or abyss-machine artifact policy before publishing readmodel latest."
       }
     ],
     "inter_agent_handoff": [
