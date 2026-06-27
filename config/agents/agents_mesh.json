@@ -586,6 +586,16 @@
       ]
     },
     {
+      "path": "kag/AGENTS.md",
+      "min_lines": 25,
+      "required_snippets": [
+        "local KAG provider home",
+        "kag/manifest.json",
+        "aoa-kag",
+        "MCP consumers"
+      ]
+    },
+    {
       "path": "manifests/AGENTS.md",
       "min_lines": 20,
       "required_snippets": [
