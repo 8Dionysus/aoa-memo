@@ -1,0 +1,58 @@
+{
+  "schema_version": "aoa-local-kag-manifest-v1",
+  "repo": "aoa-memo",
+  "owner_surface": "kag/AGENTS.md",
+  "source_surfaces": [
+    {
+      "repo": "aoa-memo",
+      "path": "generated/memory/memo_registry.min.json",
+      "source_class": "memo_source",
+      "role": "primary",
+      "authority": "derived_readmodel"
+    },
+    {
+      "repo": "aoa-memo",
+      "path": "memo/README.md",
+      "source_class": "memo_source",
+      "role": "owner_route",
+      "authority": "authored_source"
+    },
+    {
+      "repo": "aoa-memo",
+      "path": "generated/memory-objects/memory_object_catalog.min.json",
+      "source_class": "memo_source",
+      "role": "supporting",
+      "authority": "derived_readmodel"
+    }
+  ],
+  "record_classes": [
+    "node",
+    "edge",
+    "index",
+    "projection",
+    "receipt"
+  ],
+  "storage_posture": {
+    "git_surface": "portable_records",
+    "payload_class": "manifest",
+    "runtime_route": "source-repo"
+  },
+  "validation_routes": [
+    {
+      "route": "scripts/ci_gate.py --mode source-fast",
+      "lane": "source-fast"
+    }
+  ],
+  "consumer_routes": [
+    "aoa-kag registry",
+    "abyss-stack federation mirror",
+    "aoa-kag-mcp resource"
+  ],
+  "owner_return_routes": [
+    {
+      "repo": "aoa-memo",
+      "surface": "memo/README.md",
+      "route_kind": "memory"
+    }
+  ]
+}
