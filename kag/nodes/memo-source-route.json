@@ -1,0 +1,46 @@
+{
+  "schema_version": "aoa-local-kag-record-v1",
+  "repo": "aoa-memo",
+  "local_id": "node:memo:memo-source-route",
+  "record_class": "node",
+  "source_refs": [
+    {
+      "repo": "aoa-memo",
+      "path": "memo/README.md",
+      "source_class": "memo_source",
+      "role": "owner_route",
+      "authority": "authored_source"
+    }
+  ],
+  "source_owner": "aoa-memo",
+  "provenance_mode": "strict_source_linked",
+  "derived_method": "source-linked local KAG node over memory registry and reviewed memory corpus route",
+  "generated_or_authored": "authored_control",
+  "status": "active",
+  "owner_return_route": {
+    "repo": "aoa-memo",
+    "surface": "memo/README.md",
+    "route_kind": "memory"
+  },
+  "freshness": {
+    "mode": "source_snapshot",
+    "state": "current",
+    "checked_ref": "memo/README.md"
+  },
+  "builder": {
+    "route": "memory surface builders",
+    "surface": "scripts/memory/validate_memo.py"
+  },
+  "validator": {
+    "route": "scripts/ci_gate.py --mode source-fast",
+    "lane": "source-fast"
+  },
+  "storage_posture": {
+    "git_surface": "portable_records",
+    "payload_class": "node",
+    "runtime_route": "source-repo"
+  },
+  "consumer_route": "aoa-kag registry",
+  "node_kind": "route_surface",
+  "label": "reviewed memory corpus route"
+}
