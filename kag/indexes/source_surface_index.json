@@ -88,7 +88,7 @@
   },
   "index_identity": {
     "artifact_kind": "source_surface_index",
-    "content_digest": "0ba625812b1a687ccb896271c1fa80971c38636730f8c45af7b7431f68b9e74c",
+    "content_digest": "0eacd6c75bb460f30f0671c7135bfabdba26fea2851005b4ac38ee6dda4f6d5f",
     "local_id": "index:repo-local:source-surfaces",
     "schema_ref": "aoa-kag:schemas/repo-local-kag-index.schema.json"
   },
@@ -30299,7 +30299,7 @@
         "content_hash": "b822160ebf915e2a8e6ccc75bcb50bd0a943030ed7c68db16d53cceeedd77eb5",
         "git_ref": "git-index-source-tree",
         "id": "file:.github/codeowners:3d36a1bf06",
-        "mime": "application/octet-stream",
+        "mime": "text/plain",
         "path": ".github/CODEOWNERS",
         "repo": "aoa-memo",
         "size_bytes": 209
@@ -30506,7 +30506,7 @@
         "state": "current"
       },
       "identity": {
-        "content_hash": "d4d4735fc77151584f3bce3d7e5a962f255f0879ab3ea652ca277fec7f24d234",
+        "content_hash": "4e9390f69b24a4aa675214e85ae6b26147ed85dcca899ca298c811a12f4055b0",
         "git_ref": "git-index-source-tree",
         "id": "file:.github/workflows/repo-validation.yml:3affb923d0",
         "mime": "application/yaml",
@@ -30545,7 +30545,7 @@
       },
       "signs": {
         "attestation_ref": "",
-        "digest": "d4d4735fc77151584f3bce3d7e5a962f255f0879ab3ea652ca277fec7f24d234",
+        "digest": "4e9390f69b24a4aa675214e85ae6b26147ed85dcca899ca298c811a12f4055b0",
         "signature_ref": "",
         "verification_state": "digest-only"
       },
@@ -30598,7 +30598,7 @@
         "content_hash": "1bbf19ec1a9a23dd8e36ed0f9f9214ff7448207adf2b5653f6b7e166f8ccb4d4",
         "git_ref": "git-index-source-tree",
         "id": "file:.gitignore:bc37d034ba",
-        "mime": "application/octet-stream",
+        "mime": "text/plain",
         "path": ".gitignore",
         "repo": "aoa-memo",
         "size_bytes": 99
@@ -30868,13 +30868,13 @@
         "state": "current"
       },
       "identity": {
-        "content_hash": "b5880c48b8903816fc51691890db3d2c7c8f6b5977a33888abb74004929b67f1",
+        "content_hash": "91f0db4427d7b2462d76706e3cc538e14199b4ec0640c8829bb3616351918314",
         "git_ref": "git-index-source-tree",
         "id": "file:changelog.md:06572a96a5",
         "mime": "text/markdown",
         "path": "CHANGELOG.md",
         "repo": "aoa-memo",
-        "size_bytes": 41924
+        "size_bytes": 42078
       },
       "mechanics_role": "none",
       "observed_form": "file",
@@ -30931,273 +30931,273 @@
           {
             "anchor": "040-2026-05-24",
             "level": 2,
-            "line": 104,
+            "line": 106,
             "ref": "CHANGELOG.md#040-2026-05-24",
             "title": "[0.4.0] - 2026-05-24"
           },
           {
             "anchor": "summary",
             "level": 3,
-            "line": 106,
+            "line": 108,
             "ref": "CHANGELOG.md#summary",
             "title": "Summary"
           },
           {
             "anchor": "added-1",
             "level": 3,
-            "line": 121,
+            "line": 123,
             "ref": "CHANGELOG.md#added-1",
             "title": "Added"
           },
           {
             "anchor": "changed",
             "level": 3,
-            "line": 298,
+            "line": 300,
             "ref": "CHANGELOG.md#changed",
             "title": "Changed"
           },
           {
             "anchor": "validation",
             "level": 3,
-            "line": 431,
+            "line": 433,
             "ref": "CHANGELOG.md#validation",
             "title": "Validation"
           },
           {
             "anchor": "notes",
             "level": 3,
-            "line": 437,
+            "line": 439,
             "ref": "CHANGELOG.md#notes",
             "title": "Notes"
           },
           {
             "anchor": "included-in-this-release",
             "level": 3,
-            "line": 450,
+            "line": 452,
             "ref": "CHANGELOG.md#included-in-this-release",
             "title": "Included in this release"
           },
           {
             "anchor": "023-2026-04-23",
             "level": 2,
-            "line": 550,
+            "line": 552,
             "ref": "CHANGELOG.md#023-2026-04-23",
             "title": "[0.2.3] - 2026-04-23"
           },
           {
             "anchor": "summary-1",
             "level": 3,
-            "line": 552,
+            "line": 554,
             "ref": "CHANGELOG.md#summary-1",
             "title": "Summary"
           },
           {
             "anchor": "added-2",
             "level": 3,
-            "line": 564,
+            "line": 566,
             "ref": "CHANGELOG.md#added-2",
             "title": "Added"
           },
           {
             "anchor": "changed-1",
             "level": 3,
-            "line": 577,
+            "line": 579,
             "ref": "CHANGELOG.md#changed-1",
             "title": "Changed"
           },
           {
             "anchor": "validation-1",
             "level": 3,
-            "line": 583,
+            "line": 585,
             "ref": "CHANGELOG.md#validation-1",
             "title": "Validation"
           },
           {
             "anchor": "notes-1",
             "level": 3,
-            "line": 587,
+            "line": 589,
             "ref": "CHANGELOG.md#notes-1",
             "title": "Notes"
           },
           {
             "anchor": "022-2026-04-19",
             "level": 2,
-            "line": 593,
+            "line": 595,
             "ref": "CHANGELOG.md#022-2026-04-19",
             "title": "[0.2.2] - 2026-04-19"
           },
           {
             "anchor": "summary-2",
             "level": 3,
-            "line": 595,
+            "line": 597,
             "ref": "CHANGELOG.md#summary-2",
             "title": "Summary"
           },
           {
             "anchor": "added-3",
             "level": 3,
-            "line": 604,
+            "line": 606,
             "ref": "CHANGELOG.md#added-3",
             "title": "Added"
           },
           {
             "anchor": "changed-2",
             "level": 3,
-            "line": 612,
+            "line": 614,
             "ref": "CHANGELOG.md#changed-2",
             "title": "Changed"
           },
           {
             "anchor": "validation-2",
             "level": 3,
-            "line": 618,
+            "line": 620,
             "ref": "CHANGELOG.md#validation-2",
             "title": "Validation"
           },
           {
             "anchor": "notes-2",
             "level": 3,
-            "line": 622,
+            "line": 624,
             "ref": "CHANGELOG.md#notes-2",
             "title": "Notes"
           },
           {
             "anchor": "021-2026-04-12",
             "level": 2,
-            "line": 627,
+            "line": 629,
             "ref": "CHANGELOG.md#021-2026-04-12",
             "title": "[0.2.1] - 2026-04-12"
           },
           {
             "anchor": "summary-3",
             "level": 3,
-            "line": 629,
+            "line": 631,
             "ref": "CHANGELOG.md#summary-3",
             "title": "Summary"
           },
           {
             "anchor": "added-4",
             "level": 3,
-            "line": 637,
+            "line": 639,
             "ref": "CHANGELOG.md#added-4",
             "title": "Added"
           },
           {
             "anchor": "changed-3",
             "level": 3,
-            "line": 644,
+            "line": 646,
             "ref": "CHANGELOG.md#changed-3",
             "title": "Changed"
           },
           {
             "anchor": "validation-3",
             "level": 3,
-            "line": 649,
+            "line": 651,
             "ref": "CHANGELOG.md#validation-3",
             "title": "Validation"
           },
           {
             "anchor": "notes-3",
             "level": 3,
-            "line": 653,
+            "line": 655,
             "ref": "CHANGELOG.md#notes-3",
             "title": "Notes"
           },
           {
             "anchor": "020-2026-04-10",
             "level": 2,
-            "line": 658,
+            "line": 660,
             "ref": "CHANGELOG.md#020-2026-04-10",
             "title": "[0.2.0] - 2026-04-10"
           },
           {
             "anchor": "summary-4",
             "level": 3,
-            "line": 660,
+            "line": 662,
             "ref": "CHANGELOG.md#summary-4",
             "title": "Summary"
           },
           {
             "anchor": "validation-4",
             "level": 3,
-            "line": 666,
+            "line": 668,
             "ref": "CHANGELOG.md#validation-4",
             "title": "Validation"
           },
           {
             "anchor": "notes-4",
             "level": 3,
-            "line": 670,
+            "line": 672,
             "ref": "CHANGELOG.md#notes-4",
             "title": "Notes"
           },
           {
             "anchor": "added-5",
             "level": 3,
-            "line": 674,
+            "line": 676,
             "ref": "CHANGELOG.md#added-5",
             "title": "Added"
           },
           {
             "anchor": "changed-4",
             "level": 3,
-            "line": 684,
+            "line": 686,
             "ref": "CHANGELOG.md#changed-4",
             "title": "Changed"
           },
           {
             "anchor": "included-in-this-release-1",
             "level": 3,
-            "line": 691,
+            "line": 693,
             "ref": "CHANGELOG.md#included-in-this-release-1",
             "title": "Included in this release"
           },
           {
             "anchor": "010-2026-04-01",
             "level": 2,
-            "line": 702,
+            "line": 704,
             "ref": "CHANGELOG.md#010-2026-04-01",
             "title": "[0.1.0] - 2026-04-01"
           },
           {
             "anchor": "summary-5",
             "level": 3,
-            "line": 708,
+            "line": 710,
             "ref": "CHANGELOG.md#summary-5",
             "title": "Summary"
           },
           {
             "anchor": "added-6",
             "level": 3,
-            "line": 714,
+            "line": 716,
             "ref": "CHANGELOG.md#added-6",
             "title": "Added"
           },
           {
             "anchor": "changed-5",
             "level": 3,
-            "line": 723,
+            "line": 725,
             "ref": "CHANGELOG.md#changed-5",
             "title": "Changed"
           },
           {
             "anchor": "included-in-this-release-2",
             "level": 3,
-            "line": 728,
+            "line": 730,
             "ref": "CHANGELOG.md#included-in-this-release-2",
             "title": "Included in this release"
           },
           {
             "anchor": "validation-5",
             "level": 3,
-            "line": 734,
+            "line": 736,
             "ref": "CHANGELOG.md#validation-5",
             "title": "Validation"
           },
           {
             "anchor": "notes-5",
             "level": 3,
-            "line": 743,
+            "line": 745,
             "ref": "CHANGELOG.md#notes-5",
             "title": "Notes"
           }
@@ -31209,7 +31209,7 @@
       },
       "signs": {
         "attestation_ref": "",
-        "digest": "b5880c48b8903816fc51691890db3d2c7c8f6b5977a33888abb74004929b67f1",
+        "digest": "91f0db4427d7b2462d76706e3cc538e14199b4ec0640c8829bb3616351918314",
         "signature_ref": "",
         "verification_state": "digest-only"
       },
@@ -32120,7 +32120,7 @@
         "content_hash": "0b81e2ea9cf9c447b3317b84e5bbaca9f3cf98a5d08ef8d754a3286f21c3392a",
         "git_ref": "git-index-source-tree",
         "id": "file:license:c693279643",
-        "mime": "application/octet-stream",
+        "mime": "text/plain",
         "path": "LICENSE",
         "repo": "aoa-memo",
         "size_bytes": 10775
@@ -46351,7 +46351,7 @@
         "surface": "docs/decisions/indexes/README.md"
       },
       "provenance": {
-        "generated_by": "scripts/generate_decision_indexes.py",
+        "generated_by": "scripts/root-topology/build_decision_indexes.py",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -46453,7 +46453,7 @@
         "surface": "docs/decisions/indexes/by-date.md"
       },
       "provenance": {
-        "generated_by": "scripts/generate_decision_indexes.py",
+        "generated_by": "scripts/root-topology/build_decision_indexes.py",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -46604,7 +46604,7 @@
         "surface": "docs/decisions/indexes/by-guard.md"
       },
       "provenance": {
-        "generated_by": "scripts/generate_decision_indexes.py",
+        "generated_by": "scripts/root-topology/build_decision_indexes.py",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -46797,7 +46797,7 @@
         "surface": "docs/decisions/indexes/by-mechanic.md"
       },
       "provenance": {
-        "generated_by": "scripts/generate_decision_indexes.py",
+        "generated_by": "scripts/root-topology/build_decision_indexes.py",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -46997,7 +46997,7 @@
         "surface": "docs/decisions/indexes/by-memory-object-class.md"
       },
       "provenance": {
-        "generated_by": "scripts/generate_decision_indexes.py",
+        "generated_by": "scripts/root-topology/build_decision_indexes.py",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -47120,7 +47120,7 @@
         "surface": "docs/decisions/indexes/by-number.md"
       },
       "provenance": {
-        "generated_by": "scripts/generate_decision_indexes.py",
+        "generated_by": "scripts/root-topology/build_decision_indexes.py",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -47215,7 +47215,7 @@
         "surface": "docs/decisions/indexes/by-surface.md"
       },
       "provenance": {
-        "generated_by": "scripts/generate_decision_indexes.py",
+        "generated_by": "scripts/root-topology/build_decision_indexes.py",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -47415,7 +47415,7 @@
         "surface": "docs/decisions/indexes/index_contract.yaml"
       },
       "provenance": {
-        "generated_by": "scripts/generate_decision_indexes.py",
+        "generated_by": "scripts/root-topology/build_decision_indexes.py",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -58887,7 +58887,7 @@
         "surface": "generated/agents/agents_mesh.min.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "scripts/agents/build_agents_mesh_index.py",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -59099,7 +59099,7 @@
         "surface": "generated/mechanics/mechanic_artifacts.min.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "scripts/mechanics/build_mechanic_artifact_inventory.py",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -59188,7 +59188,7 @@
         "surface": "generated/mechanics/memo_mechanic_cards.min.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "scripts/mechanics/build_memo_mechanic_cards.py",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -59277,7 +59277,7 @@
         "surface": "generated/mechanics/memo_mechanic_landing_logs.min.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "scripts/mechanics/build_memo_mechanic_landing_logs.py",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -59366,7 +59366,7 @@
         "surface": "generated/mechanics/memo_mechanic_owner_routes.min.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "scripts/mechanics/build_memo_mechanic_owner_routes.py",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -59455,7 +59455,7 @@
         "surface": "generated/mechanics/memo_mechanic_readiness.min.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "scripts/mechanics/build_memo_mechanic_readiness.py",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -59544,7 +59544,7 @@
         "surface": "generated/mechanics/memo_mechanics.min.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "scripts/mechanics/build_memo_mechanics_index.py",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -59756,7 +59756,7 @@
         "surface": "generated/memory-objects/memory_object_capsules.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -59845,7 +59845,7 @@
         "surface": "generated/memory-objects/memory_object_catalog.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -59934,7 +59934,7 @@
         "surface": "generated/memory-objects/memory_object_catalog.min.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -60023,7 +60023,7 @@
         "surface": "generated/memory-objects/memory_object_sections.full.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -60235,7 +60235,7 @@
         "surface": "generated/memory/access_plane_currentness.min.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -60324,7 +60324,7 @@
         "surface": "generated/memory/memo_port_vocabulary.min.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -60413,7 +60413,7 @@
         "surface": "generated/memory/memo_registry.min.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -60502,7 +60502,7 @@
         "surface": "generated/memory/memory_capsules.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -60591,7 +60591,7 @@
         "surface": "generated/memory/memory_catalog.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -60680,7 +60680,7 @@
         "surface": "generated/memory/memory_catalog.min.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -60769,7 +60769,7 @@
         "surface": "generated/memory/memory_sections.full.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -60858,7 +60858,7 @@
         "surface": "generated/memory/source_intake_wave.min.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -60947,7 +60947,7 @@
         "surface": "generated/memory/workspace_memo_port_status.min.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -61159,7 +61159,7 @@
         "surface": "generated/quests/quest_catalog.min.example.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -61248,7 +61248,7 @@
         "surface": "generated/quests/quest_catalog.min.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -61337,7 +61337,7 @@
         "surface": "generated/quests/quest_dispatch.min.example.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -61426,7 +61426,7 @@
         "surface": "generated/quests/quest_dispatch.min.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -61638,7 +61638,7 @@
         "surface": "generated/root-topology/root_technical_districts.min.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "scripts/root-topology/build_root_technical_districts_index.py",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -80441,7 +80441,7 @@
         "surface": "mechanics/agon/parts/bridge-and-evidence-seams/generated/agon_epistemic_memo_bridge_registry.min.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -80530,7 +80530,7 @@
         "surface": "mechanics/agon/parts/bridge-and-evidence-seams/generated/agon_kag_memo_evidence_package_registry.min.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -80619,7 +80619,7 @@
         "surface": "mechanics/agon/parts/bridge-and-evidence-seams/generated/agon_mechanical_trial_memo_intake_registry.min.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -80708,7 +80708,7 @@
         "surface": "mechanics/agon/parts/bridge-and-evidence-seams/generated/agon_slc_memo_bridge_registry.min.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -80797,7 +80797,7 @@
         "surface": "mechanics/agon/parts/bridge-and-evidence-seams/generated/agon_sophian_memo_evidence_registry.min.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -80886,7 +80886,7 @@
         "surface": "mechanics/agon/parts/bridge-and-evidence-seams/generated/agon_vds_memo_bridge_registry.min.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -85097,7 +85097,7 @@
         "surface": "mechanics/agon/parts/prebinding-and-candidate-intake/generated/agon_memo_prebinding_registry.min.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -85186,7 +85186,7 @@
         "surface": "mechanics/agon/parts/prebinding-and-candidate-intake/generated/agon_retention_rank_memo_bridge_registry.min.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -105046,7 +105046,7 @@
         "surface": "mechanics/consumer-handoff/parts/kag-source-export/generated/kag_export.min.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -132465,7 +132465,7 @@
         "content_hash": "de5873877d1e87e3bfcdb056f61f3bbf4aa0f290ef182180751edf7045144ab0",
         "git_ref": "git-index-source-tree",
         "id": "file:mechanics/readiness-boundary/legacy/raw/tests/test_wave1_boundary_contract.py.snapshot:c5870a726b",
-        "mime": "application/octet-stream",
+        "mime": "text/plain",
         "path": "mechanics/readiness-boundary/legacy/raw/tests/test_wave1_boundary_contract.py.snapshot",
         "repo": "aoa-memo",
         "size_bytes": 993
@@ -152264,7 +152264,7 @@
         "content_hash": "a9940184325c921ced706db84aaf000ff4d34551dd27aa9fe1bbd4939cb114cf",
         "git_ref": "git-index-source-tree",
         "id": "file:mechanics/titan/legacy/raw/examples/titan_remembrance_record.v0.json.snapshot:33558dc211",
-        "mime": "application/octet-stream",
+        "mime": "text/plain",
         "path": "mechanics/titan/legacy/raw/examples/titan_remembrance_record.v0.json.snapshot",
         "repo": "aoa-memo",
         "size_bytes": 390
@@ -162771,7 +162771,7 @@
         "surface": "mechanics/writeback/parts/growth-and-continuity/generated/growth_refinery_writeback_lanes.min.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -162860,7 +162860,7 @@
         "surface": "mechanics/writeback/parts/growth-and-continuity/generated/phase_alpha_writeback_map.min.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -164713,7 +164713,7 @@
         "content_hash": "5a088d3b68789115b508f8543846a4292edeb91da634e2ad8a041265fe5c3b71",
         "git_ref": "git-index-source-tree",
         "id": "file:mechanics/writeback/parts/receipt-publication-regression/tests/fixtures/memo_writeback_receipts.example.jsonl:ecdb588eae",
-        "mime": "application/octet-stream",
+        "mime": "application/x-ndjson",
         "path": "mechanics/writeback/parts/receipt-publication-regression/tests/fixtures/memo_writeback_receipts.example.jsonl",
         "repo": "aoa-memo",
         "size_bytes": 9372
@@ -167468,7 +167468,7 @@
         "surface": "mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_governance.min.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -167557,7 +167557,7 @@
         "surface": "mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_intake.min.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -167646,7 +167646,7 @@
         "surface": "mechanics/writeback/parts/runtime-and-temperature/generated/runtime_writeback_targets.min.json"
       },
       "provenance": {
-        "generated_by": "scripts/generate_kag.py",
+        "generated_by": "",
         "materials": [],
         "observed_by": "aoa-kag:scripts/generate_repo_local_kag_index.py",
         "source_refs": [
@@ -168813,7 +168813,7 @@
         "content_hash": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
         "git_ref": "git-index-source-tree",
         "id": "file:memo/intake/quarantine/.gitkeep:db180d106f",
-        "mime": "application/octet-stream",
+        "mime": "text/plain",
         "path": "memo/intake/quarantine/.gitkeep",
         "repo": "aoa-memo",
         "size_bytes": 1
@@ -168900,7 +168900,7 @@
         "content_hash": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
         "git_ref": "git-index-source-tree",
         "id": "file:memo/intake/receipts/.gitkeep:abb64e9011",
-        "mime": "application/octet-stream",
+        "mime": "text/plain",
         "path": "memo/intake/receipts/.gitkeep",
         "repo": "aoa-memo",
         "size_bytes": 1
@@ -169254,7 +169254,7 @@
         "content_hash": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
         "git_ref": "git-index-source-tree",
         "id": "file:memo/intake/reviewed/.gitkeep:26397780fa",
-        "mime": "application/octet-stream",
+        "mime": "text/plain",
         "path": "memo/intake/reviewed/.gitkeep",
         "repo": "aoa-memo",
         "size_bytes": 1
@@ -169703,7 +169703,7 @@
         "content_hash": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
         "git_ref": "git-index-source-tree",
         "id": "file:memo/objects/anchors/.gitkeep:ffa745370e",
-        "mime": "application/octet-stream",
+        "mime": "text/plain",
         "path": "memo/objects/anchors/.gitkeep",
         "repo": "aoa-memo",
         "size_bytes": 1
@@ -169790,7 +169790,7 @@
         "content_hash": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
         "git_ref": "git-index-source-tree",
         "id": "file:memo/objects/audit-events/.gitkeep:ce58dd0718",
-        "mime": "application/octet-stream",
+        "mime": "text/plain",
         "path": "memo/objects/audit-events/.gitkeep",
         "repo": "aoa-memo",
         "size_bytes": 1
@@ -170089,7 +170089,7 @@
         "content_hash": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
         "git_ref": "git-index-source-tree",
         "id": "file:memo/objects/bridges/.gitkeep:998a379157",
-        "mime": "application/octet-stream",
+        "mime": "text/plain",
         "path": "memo/objects/bridges/.gitkeep",
         "repo": "aoa-memo",
         "size_bytes": 1
@@ -170388,7 +170388,7 @@
         "content_hash": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
         "git_ref": "git-index-source-tree",
         "id": "file:memo/objects/claims/.gitkeep:4fb0146ace",
-        "mime": "application/octet-stream",
+        "mime": "text/plain",
         "path": "memo/objects/claims/.gitkeep",
         "repo": "aoa-memo",
         "size_bytes": 1
@@ -172192,7 +172192,7 @@
         "content_hash": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
         "git_ref": "git-index-source-tree",
         "id": "file:memo/objects/episodes/.gitkeep:5698cb65a4",
-        "mime": "application/octet-stream",
+        "mime": "text/plain",
         "path": "memo/objects/episodes/.gitkeep",
         "repo": "aoa-memo",
         "size_bytes": 1
@@ -172279,7 +172279,7 @@
         "content_hash": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
         "git_ref": "git-index-source-tree",
         "id": "file:memo/objects/patterns/.gitkeep:259e317f98",
-        "mime": "application/octet-stream",
+        "mime": "text/plain",
         "path": "memo/objects/patterns/.gitkeep",
         "repo": "aoa-memo",
         "size_bytes": 1
@@ -172790,7 +172790,7 @@
         "content_hash": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
         "git_ref": "git-index-source-tree",
         "id": "file:memo/objects/state-capsules/.gitkeep:e1bb401962",
-        "mime": "application/octet-stream",
+        "mime": "text/plain",
         "path": "memo/objects/state-capsules/.gitkeep",
         "repo": "aoa-memo",
         "size_bytes": 1
@@ -172972,7 +172972,7 @@
         "content_hash": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
         "git_ref": "git-index-source-tree",
         "id": "file:memo/support/provenance-threads/.gitkeep:4204103b8c",
-        "mime": "application/octet-stream",
+        "mime": "text/plain",
         "path": "memo/support/provenance-threads/.gitkeep",
         "repo": "aoa-memo",
         "size_bytes": 1
@@ -173059,7 +173059,7 @@
         "content_hash": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
         "git_ref": "git-index-source-tree",
         "id": "file:memo/support/recall-contracts/.gitkeep:f3f5f05a12",
-        "mime": "application/octet-stream",
+        "mime": "text/plain",
         "path": "memo/support/recall-contracts/.gitkeep",
         "repo": "aoa-memo",
         "size_bytes": 1
@@ -173146,7 +173146,7 @@
         "content_hash": "ebc7f084f5d497b66fc00cbfcab4ed621d595aee5eaf78fea31dc19e703e14e0",
         "git_ref": "git-index-source-tree",
         "id": "file:pytest.ini:fb6a686182",
-        "mime": "application/octet-stream",
+        "mime": "text/plain",
         "path": "pytest.ini",
         "repo": "aoa-memo",
         "size_bytes": 98
