@@ -83,6 +83,8 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Fixed
 
+- Pin repo-local KAG source-index validation to the portable shared generator
+  and refresh the repository-owned index from the current memo source tree.
 - Record the roadmap alignment that keeps mechanic `legacy/` material as
   indexed provenance outside the active AGENTS mesh while active mechanic
   doctrine stays in `docs/AGENTS.md`.
