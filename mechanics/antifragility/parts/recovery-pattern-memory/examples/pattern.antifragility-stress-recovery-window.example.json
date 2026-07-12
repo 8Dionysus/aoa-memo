@@ -25,7 +25,7 @@
   },
   "provenance": {
     "source_refs": [
-      "repo:aoa-evals/bundles/aoa-stress-recovery-window/reports/example-report.json",
+      "repo:aoa-evals/evals/comparison/longitudinal-window/aoa-stress-recovery-window/reports/example-report.json",
       "repo:aoa-stats/generated/stress_recovery_window_summary.min.json",
       "repo:aoa-routing/generated/composite_stress_route_hints.min.json",
       "mechanics/antifragility/docs/RECOVERY_PATTERN_MEMORY.md#what-it-should-carry"

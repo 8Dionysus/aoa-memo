@@ -2250,7 +2250,7 @@
     },
     {
       "artifact_kind": "document",
-      "content_hash": "91f0db4427d7b2462d76706e3cc538e14199b4ec0640c8829bb3616351918314",
+      "content_hash": "57d20bbd6baa41a862e6fe8b341afd8a85b7f9501eebca8810e4c42f388fcd21",
       "id": "artifact:file:changelog.md:06572a96a5",
       "path": "CHANGELOG.md",
       "source_record_id": "file:changelog.md:06572a96a5",
@@ -4050,7 +4050,7 @@
     },
     {
       "artifact_kind": "generated_readmodel",
-      "content_hash": "51b572c2cbf24aeaf91e74b6da931473a6781621a8a5fa610a66082821ed8147",
+      "content_hash": "147881b413bfc46666cd6745b8ababc811ab29291e92d1661eefb145187ccf74",
       "id": "artifact:file:generated/memory-objects/memory_object_capsules.json:d12a8af05e",
       "path": "generated/memory-objects/memory_object_capsules.json",
       "source_record_id": "file:generated/memory-objects/memory_object_capsules.json:d12a8af05e",
@@ -4058,7 +4058,7 @@
     },
     {
       "artifact_kind": "generated_readmodel",
-      "content_hash": "fc2979c439879a6134cba9eb82720826b2a1e19e785e22ab7843bcffed4833b0",
+      "content_hash": "40e4b5d4bd71dbce74f986e9c629b8bff34aa5ed7df586685bf692933504135f",
       "id": "artifact:file:generated/memory-objects/memory_object_catalog.json:66d8bbea4e",
       "path": "generated/memory-objects/memory_object_catalog.json",
       "source_record_id": "file:generated/memory-objects/memory_object_catalog.json:66d8bbea4e",
@@ -4074,7 +4074,7 @@
     },
     {
       "artifact_kind": "generated_readmodel",
-      "content_hash": "15356d3114d4a1d8ad302b471f546b5f845762198ef1f06392eff9d679b5464e",
+      "content_hash": "e2767dd46e5a0a22854c297ea533dff8850087acf432014fc32ec66791e9cc17",
       "id": "artifact:file:generated/memory-objects/memory_object_sections.full.json:29d3a0a267",
       "path": "generated/memory-objects/memory_object_sections.full.json",
       "source_record_id": "file:generated/memory-objects/memory_object_sections.full.json:29d3a0a267",
@@ -6610,7 +6610,7 @@
     },
     {
       "artifact_kind": "config",
-      "content_hash": "8f0d0635b6ec11b90dd3cb9199ff4877124fc51efe4edcc6eb4bd52451f16924",
+      "content_hash": "974262bd638cb29f6986c3226de4928a68f8b919e916b5d467200461ed468c91",
       "id": "artifact:file:mechanics/antifragility/parts/recovery-pattern-memory/examples/pattern.antifragility-stress-recovery-window.example.json:db89963949",
       "path": "mechanics/antifragility/parts/recovery-pattern-memory/examples/pattern.antifragility-stress-recovery-window.example.json",
       "source_record_id": "file:mechanics/antifragility/parts/recovery-pattern-memory/examples/pattern.antifragility-stress-recovery-window.example.json:db89963949",
@@ -6666,7 +6666,7 @@
     },
     {
       "artifact_kind": "test",
-      "content_hash": "da4ad38b4d4996ecee0fedc8e0c71653606d4c431297f55ac99fd3c8a2c412c0",
+      "content_hash": "71121464ccb9778a4b89d571a145810f2123b0b53fcb8bb6f933e621c4f79e0b",
       "id": "artifact:file:mechanics/antifragility/parts/recovery-pattern-memory/tests/test_antifragility_recovery_patterns.py:3638f79680",
       "path": "mechanics/antifragility/parts/recovery-pattern-memory/tests/test_antifragility_recovery_patterns.py",
       "source_record_id": "file:mechanics/antifragility/parts/recovery-pattern-memory/tests/test_antifragility_recovery_patterns.py:3638f79680",
@@ -14267,7 +14267,7 @@
   ],
   "index_identity": {
     "artifact_kind": "repository_artifact_index",
-    "content_digest": "c8f883a8b95c96464343277e42305cf5d449740707d3568aa482bb671a367e3a",
+    "content_digest": "0bd172aa4a55c42361bed07c9baf6308e51c01577f8d9028777ed2b587a6c04e",
     "index_kind": "artifact",
     "local_id": "index:repo-local:artifacts",
     "schema_ref": "aoa-kag:schemas/repo-local-kag-repository-index.schema.json"
@@ -14291,7 +14291,7 @@
   },
   "schema_version": "aoa-repo-local-kag-repository-index-v1",
   "source_index": {
-    "content_digest": "5f2d435b2b9b0f1b070318d08293f40764fe33864aa6da8f6f96d6a5b4993073",
+    "content_digest": "a8f5b68c964e5366c6b03abc5b2d7f1cb3577d0d084ed8a2587fd5a9199fc672",
     "local_id": "index:repo-local:source-surfaces",
     "path": "kag/indexes/source_surface_index.json"
   },

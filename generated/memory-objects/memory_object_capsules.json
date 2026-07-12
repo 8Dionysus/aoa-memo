@@ -567,7 +567,7 @@
       "trust_posture_short": "cool temperature; human_reviewed authority; confidence 0.92; freshness 0.98",
       "use_when_short": "Use when pattern-level recall is needed and this object remains allowed for procedural, semantic, lineage.",
       "do_not_use_short": "Do not treat this pattern as proof or stronger than its cited sources.",
-      "strongest_next_source": "repo:aoa-evals/bundles/aoa-stress-recovery-window/reports/example-report.json",
+      "strongest_next_source": "repo:aoa-evals/evals/comparison/longitudinal-window/aoa-stress-recovery-window/reports/example-report.json",
       "source_path": "mechanics/antifragility/parts/recovery-pattern-memory/examples/pattern.antifragility-stress-recovery-window.example.json"
     },
     {
