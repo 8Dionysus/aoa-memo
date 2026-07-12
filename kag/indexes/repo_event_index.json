@@ -87,7 +87,7 @@
       "heading_ref": {
         "anchor": "022-2026-04-19",
         "level": 2,
-        "line": 595,
+        "line": 598,
         "ref": "CHANGELOG.md#022-2026-04-19",
         "title": "[0.2.2] - 2026-04-19"
       },
@@ -117,7 +117,7 @@
       "heading_ref": {
         "anchor": "021-2026-04-12",
         "level": 2,
-        "line": 629,
+        "line": 632,
         "ref": "CHANGELOG.md#021-2026-04-12",
         "title": "[0.2.1] - 2026-04-12"
       },
@@ -132,7 +132,7 @@
       "heading_ref": {
         "anchor": "023-2026-04-23",
         "level": 2,
-        "line": 552,
+        "line": 555,
         "ref": "CHANGELOG.md#023-2026-04-23",
         "title": "[0.2.3] - 2026-04-23"
       },
@@ -147,7 +147,7 @@
       "heading_ref": {
         "anchor": "010-2026-04-01",
         "level": 2,
-        "line": 704,
+        "line": 707,
         "ref": "CHANGELOG.md#010-2026-04-01",
         "title": "[0.1.0] - 2026-04-01"
       },
@@ -162,7 +162,7 @@
       "heading_ref": {
         "anchor": "020-2026-04-10",
         "level": 2,
-        "line": 660,
+        "line": 663,
         "ref": "CHANGELOG.md#020-2026-04-10",
         "title": "[0.2.0] - 2026-04-10"
       },
@@ -2430,7 +2430,7 @@
   ],
   "index_identity": {
     "artifact_kind": "repository_event_index",
-    "content_digest": "38f18fb349a06875d85161c89bd209c109c3c7990cc25567027c427028c944d5",
+    "content_digest": "5af27547cd7e024d2b4ac931f29c8028ba2ccfd0515c2307cf72b0987503cea5",
     "index_kind": "event",
     "local_id": "index:repo-local:events",
     "schema_ref": "aoa-kag:schemas/repo-local-kag-repository-index.schema.json"
@@ -2455,7 +2455,7 @@
   },
   "schema_version": "aoa-repo-local-kag-repository-index-v1",
   "source_index": {
-    "content_digest": "5f2d435b2b9b0f1b070318d08293f40764fe33864aa6da8f6f96d6a5b4993073",
+    "content_digest": "a8f5b68c964e5366c6b03abc5b2d7f1cb3577d0d084ed8a2587fd5a9199fc672",
     "local_id": "index:repo-local:source-surfaces",
     "path": "kag/indexes/source_surface_index.json"
   },

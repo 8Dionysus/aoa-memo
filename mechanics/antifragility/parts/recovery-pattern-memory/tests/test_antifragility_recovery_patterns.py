@@ -72,6 +72,17 @@ def test_native_recovery_pattern_integrates_into_object_family() -> None:
 
     expected_id = "memo.pattern.2026-04-07.antifragility-stress-recovery-window"
     expected_source_path = "mechanics/antifragility/parts/recovery-pattern-memory/examples/pattern.antifragility-stress-recovery-window.example.json"
+    current_eval_ref = (
+        "repo:aoa-evals/evals/comparison/longitudinal-window/"
+        "aoa-stress-recovery-window/reports/example-report.json"
+    )
+    legacy_eval_ref = (
+        "repo:aoa-evals/bundles/aoa-stress-recovery-window/"
+        "reports/example-report.json"
+    )
+
+    assert current_eval_ref in pattern_example["provenance"]["source_refs"]
+    assert legacy_eval_ref not in pattern_example["provenance"]["source_refs"]
 
     full_catalog = load_json("generated/memory-objects/memory_object_catalog.json")
     min_catalog = load_json("generated/memory-objects/memory_object_catalog.min.json")
@@ -96,6 +107,24 @@ def test_native_recovery_pattern_integrates_into_object_family() -> None:
         item["id"] == expected_id and item["source_path"] == expected_source_path
         for item in sections["memory_objects"]
     )
+    generated_items = {}
+    for name, surface in (
+        ("full", full_catalog),
+        ("min", min_catalog),
+        ("capsules", capsules),
+        ("sections", sections),
+    ):
+        item = next(
+            candidate
+            for candidate in surface["memory_objects"]
+            if candidate["id"] == expected_id
+        )
+        generated_items[name] = json.dumps(item, sort_keys=True)
+
+    for serialized in generated_items.values():
+        assert legacy_eval_ref not in serialized
+    for name in ("full", "capsules", "sections"):
+        assert current_eval_ref in generated_items[name]
 
 
 def test_recovery_pattern_surfaces_stay_discoverable_and_non_proof() -> None:

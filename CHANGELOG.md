@@ -299,6 +299,9 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Changed
 
+- Re-ground the reviewed stress-recovery memory pattern on the current
+  `aoa-evals/evals/comparison/longitudinal-window/` report path and rebuild its
+  generated memory-object projections without changing recall authority.
 - Tighten the reviewed memory consumer-handoff spine so downstream consumers
   retrieve reviewed object/read-model context while local memo ports, `.aoa`
   session evidence, reviewed intake, and `aoa_memo` MCP landing-plan dry runs
