@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import subprocess
 import sys
+import tempfile
 import unittest
 from unittest import mock
 from pathlib import Path
@@ -50,6 +51,29 @@ class MemoMechanicsTestCase(unittest.TestCase):
             issues = memo_mechanics_validator.validate()
 
         self.assertNotIn(str(deleted_path), "\n".join(issues))
+
+    def test_repo_self_indexes_are_outside_authored_mechanics_text(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            repo_root = Path(tmpdir) / "aoa-memo"
+            indexes = repo_root / "kag" / "indexes"
+            indexes.mkdir(parents=True)
+            repository_index = indexes / "repo_event_index.json"
+            owner_index = indexes / "provider_readiness_index.json"
+            repository_index.write_text(
+                '{"schema_version":"aoa-repo-local-kag-repository-index-v2"}\n',
+                encoding="utf-8",
+            )
+            owner_index.write_text(
+                '{"schema_version":"aoa-local-kag-record-v1"}\n',
+                encoding="utf-8",
+            )
+
+            self.assertFalse(
+                memo_mechanics_validator.is_text_candidate(repository_index, root=repo_root)
+            )
+            self.assertTrue(
+                memo_mechanics_validator.is_text_candidate(owner_index, root=repo_root)
+            )
 
     def test_memo_mechanics_index_names_packages(self) -> None:
         payload = json.loads((REPO_ROOT / "generated" / "mechanics" / "memo_mechanics.min.json").read_text())

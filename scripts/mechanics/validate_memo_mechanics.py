@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import json
+import re
 import subprocess
 import sys
-import re
 from pathlib import Path
 
 from memo_mechanics_common import (
@@ -16,6 +17,10 @@ from memo_mechanics_common import (
 
 SKIP_SUFFIXES = (".pyc",)
 SKIP_PATH_PARTS = {".git", ".pytest_cache", "__pycache__"}
+REPO_SELF_INDEX_SCHEMA_VERSIONS = {
+    "aoa-repo-local-kag-index-v2",
+    "aoa-repo-local-kag-repository-index-v2",
+}
 
 
 def tracked_files() -> list[Path]:
@@ -30,11 +35,28 @@ def tracked_files() -> list[Path]:
     return [REPO_ROOT / raw for raw in result.stdout.split("\0") if raw]
 
 
-def is_text_candidate(path: Path) -> bool:
-    relative_parts = set(path.relative_to(REPO_ROOT).parts)
+def is_repo_self_index(path: Path, *, root: Path = REPO_ROOT) -> bool:
+    try:
+        relative_path = path.relative_to(root)
+    except ValueError:
+        return False
+    if relative_path.parts[:2] != ("kag", "indexes") or path.suffix.lower() != ".json":
+        return False
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError):
+        return False
+    return (
+        isinstance(payload, dict)
+        and payload.get("schema_version") in REPO_SELF_INDEX_SCHEMA_VERSIONS
+    )
+
+
+def is_text_candidate(path: Path, *, root: Path = REPO_ROOT) -> bool:
+    relative_parts = set(path.relative_to(root).parts)
     if relative_parts & SKIP_PATH_PARTS:
         return False
-    return not path.name.endswith(SKIP_SUFFIXES)
+    return not path.name.endswith(SKIP_SUFFIXES) and not is_repo_self_index(path, root=root)
 
 
 def validate() -> list[str]:
