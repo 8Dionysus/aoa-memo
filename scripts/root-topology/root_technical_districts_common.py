@@ -19,6 +19,7 @@ DISTRICT_ORDER = (
     "evals",
     "examples",
     "generated",
+    "kag",
     "manifests",
     "schemas",
     "scripts",
@@ -54,6 +55,11 @@ DISTRICT_GUIDE = {
         "use_for": "compact companions consumed outside one package",
         "route_local_to": "mechanics/<slug>/parts/<part>/generated/ when the output mirrors one mechanic operation",
         "check": "python scripts/root-topology/validate_root_technical_districts_index.py",
+    },
+    "kag": {
+        "use_for": "compact local KAG provider records for memo registry and reviewed memory corpus routes",
+        "route_local_to": "aoa-kag when the change affects shared KAG schema, registry, composition, or provider validation",
+        "check": "python ../aoa-kag/scripts/validate_kag.py",
     },
     "manifests": {
         "use_for": "future shared recurrence manifests",

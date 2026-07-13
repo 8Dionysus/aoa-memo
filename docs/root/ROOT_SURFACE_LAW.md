@@ -49,7 +49,7 @@ shortcut.
 | Public governance and legal | `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `LICENSE` | GitHub and contributors expect them there | must not become memory doctrine catalogs |
 | Thin indexes | `MEMORY_INDEX.md`, `QUESTBOOK.md` | useful only while compact and route-oriented | must not become duplicate doctrine, a second roadmap, or a hidden ledger; generated companions must be builder-backed projections |
 | Reviewed memory corpus | `memo/` | `aoa-memo` needs a source-owned home for reviewed memory object bundles and corpus intake receipts | object bundles must validate through `scripts/memory/validate_memo_corpus.py` and remain distinct from local repo memo ports |
-| Tooling and machine districts | `.github/`, `config/`, `docs/`, `evals/`, `examples/`, `generated/`, `manifests/`, `mechanics/`, `quests/`, `schemas/`, `scripts/`, `tests/` | tooling and repo structure expect stable directories | each district needs local guidance plus the compact `generated/root-topology/root_technical_districts.min.json` atlas once root technical routing changes |
+| Tooling and machine districts | `.github/`, `config/`, `docs/`, `evals/`, `examples/`, `generated/`, `kag/`, `manifests/`, `mechanics/`, `quests/`, `schemas/`, `scripts/`, `tests/` | tooling and repo structure expect stable directories | each district needs local guidance plus the compact `generated/root-topology/root_technical_districts.min.json` atlas once root technical routing changes |
 | Development requirements | `.gitignore`, `pytest.ini`, `requirements-dev.txt` | development hygiene | must stay technical and small |
 
 ## Surfaces That Should Not Live In Root
