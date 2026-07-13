@@ -80,11 +80,5 @@ README, AGENTS mesh readout, and topology tests now enforce
 
 ## Verification
 
-Use:
-
-```bash
-python scripts/root-topology/build_decision_indexes.py --check
-python scripts/agents/build_agents_mesh_index.py --check
-python -m pytest -q tests/root-topology/test_topology_spine.py
-python scripts/release/release_check.py
-```
+Current executable checks are owned by `config/validation_lanes.json`;
+focused owner routes live in the nearest `AGENTS.md` or `VALIDATION.md`.

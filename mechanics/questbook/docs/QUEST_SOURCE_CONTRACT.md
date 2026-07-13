@@ -62,11 +62,8 @@ Generated quest surfaces are compact root-published read models:
 - `generated/quests/quest_catalog.min.example.json`
 - `generated/quests/quest_dispatch.min.example.json`
 
-Rebuild them with:
-
-```bash
-python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py
-```
+Rebuild them through the generated-projection route in the parent
+[AGENTS](../AGENTS.md#validation) card or the part-local `VALIDATION.md`.
 
 Do not hand-edit generated quest surfaces.
 

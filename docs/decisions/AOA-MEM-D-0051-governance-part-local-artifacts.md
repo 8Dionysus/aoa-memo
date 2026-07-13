@@ -73,11 +73,5 @@ dispatch, role authority, source-owner consent, or runtime governance.
 
 ## Verification Route
 
-Expected verification:
-
-- `python -m pytest -q mechanics/governance/parts/governance-boundary/tests tests/test_cross_mechanic_operational_contracts.py tests/test_cross_mechanic_candidate_contracts.py mechanics/operational-gate/parts/post-release-boundaries/tests/test_post_release_boundary_contracts.py mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/tests/test_lineage_harvest_mechanic.py`
-- `python scripts/build_mechanic_artifact_inventory.py --check`
-- `python scripts/validate_mechanic_artifact_inventory.py`
-- `python scripts/build_memo_mechanic_readiness.py --check`
-- `python scripts/validate_memo_mechanic_readiness.py`
-- `python scripts/release_check.py`
+Current executable checks are owned by `config/validation_lanes.json`;
+focused owner routes live in the nearest `AGENTS.md` or `VALIDATION.md`.

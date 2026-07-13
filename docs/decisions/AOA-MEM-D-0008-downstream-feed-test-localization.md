@@ -57,10 +57,5 @@ to `cross_mechanic_candidate_contracts`.
 
 ## Verification
 
-Expected verification:
-
-- `python scripts/validate_mechanic_artifact_topology.py`
-- `python scripts/build_mechanic_artifact_inventory.py --check`
-- `python scripts/validate_mechanic_artifact_inventory.py`
-- `python -m pytest -q mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_downstream_feed_contracts.py mechanics/writeback/parts/receipt-publication-regression/tests/test_publish_live_receipts.py tests/test_cross_mechanic_candidate_contracts.py tests/test_mechanic_artifact_topology.py tests/test_mechanic_artifact_inventory.py`
-- `python scripts/release_check.py`
+Current executable checks are owned by `config/validation_lanes.json`;
+focused owner routes live in the nearest `AGENTS.md` or `VALIDATION.md`.

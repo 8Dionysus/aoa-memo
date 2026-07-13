@@ -13,8 +13,12 @@ Validation commands use a split authority model:
   should execute named lanes; they should not rebuild lane meaning inline.
 - Nearest `AGENTS.md` cards may name focused owner checks, lane ids, and local
   next routes for the changed surface.
-- Historical decisions, release notes, audit receipts, and preserved reference
-  docs may keep command evidence, but they are not active command authority.
+- The active release procedure in `docs/root/RELEASING.md` may name its narrow
+  operator flow. Spark scenario payloads under `.agents/spark/scenarios/` may
+  name the scenario-local checks they execute.
+- Decisions, changelogs, landing logs, reviewed memory objects, audit receipts,
+  generated Markdown, and preserved reference docs keep outcomes and owner
+  routes, not copied runnable command catalogs.
 
 Use this balance when adding or moving validation:
 

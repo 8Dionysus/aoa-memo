@@ -14,9 +14,9 @@ test file.
 The pre-refactor green baseline was captured on 2026-05-31 from a clean
 `main...origin/main` worktree:
 
-- `python -m pytest -q tests`: `184 passed`, `196 subtests passed` in `11.06s`.
-- `python scripts/release_check.py`: release-gate final pytest reported
-  `367 passed`, `815 subtests passed` in `19.89s`.
+- Focused test lane: `184 passed`, `196 subtests passed` in `11.06s`.
+- Frozen release lane: its final test phase reported `367 passed`,
+  `815 subtests passed` in `19.89s`.
 
 The refactor preserves the broad release gate by moving command authority into
 `config/validation_lanes.json`; Python entrypoints now load and execute that

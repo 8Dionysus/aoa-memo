@@ -22,8 +22,5 @@ validators as the source route.
 - Sigstore/Cosign: deferred until signed release assets exist.
 - C2PA: not applicable unless a public media/export pipeline appears.
 
-Run:
-
-```bash
-python scripts/memory/validate_abyss_machine_memory_object_bundle.py
-```
+Use the artifact-bundle check in the parent [AGENTS](../AGENTS.md#validate)
+route.

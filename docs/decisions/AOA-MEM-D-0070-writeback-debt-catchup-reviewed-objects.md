@@ -52,11 +52,5 @@ models remain derived companions.
 
 ## Verification
 
-Use:
-
-```bash
-python scripts/memory/validate_memo_corpus.py
-python scripts/memory/generate_memory_object_surfaces.py --check
-python scripts/memory/validate_memory_object_surfaces.py
-python scripts/release/release_check.py
-```
+Current executable checks are owned by `config/validation_lanes.json`;
+focused owner routes live in the nearest `AGENTS.md` or `VALIDATION.md`.

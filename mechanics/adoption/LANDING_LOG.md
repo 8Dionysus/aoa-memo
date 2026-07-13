@@ -11,10 +11,9 @@
 
 Validation route:
 
-```bash
-python -m pytest -q mechanics/adoption/parts/adoption-boundary/tests mechanics/adoption/parts/revision-and-retention-pressure/tests mechanics/adoption/parts/scar-and-routing-adoption/tests
-python scripts/release/release_check.py
-```
+Current executable routes live in the nearest `AGENTS.md` or `VALIDATION.md`
+and in `config/validation_lanes.json`; historical run evidence remains in
+Git and CI history.
 
 ## Stop-lines preserved
 
@@ -30,10 +29,9 @@ python scripts/release/release_check.py
 
 Validation route:
 
-```bash
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/release/release_check.py
-```
+Current executable routes live in the nearest `AGENTS.md` or `VALIDATION.md`
+and in `config/validation_lanes.json`; historical run evidence remains in
+Git and CI history.
 
 ## Stop-lines preserved
 

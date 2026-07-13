@@ -16,7 +16,7 @@ workflow expectation.
 | output | canonical decision note, metadata-backed lookup index, and route back to the source surface |
 | owner | `docs/decisions/AGENTS.md` for lane law; decision notes for rationale; generated indexes for lookup only |
 | next route | source surface first, then nearest route card, `MEMORY_INDEX.md`, `docs/memory/MEMORY_MODEL.md`, generated lookup indexes, or the affected reviewed-corpus/mechanic owner |
-| validation | `python scripts/root-topology/build_decision_indexes.py --check`, repo tests, and `python scripts/release/release_check.py` |
+| validation | decision-lane checks in `AGENTS.md` and the frozen lane in `config/validation_lanes.json` |
 
 ## Authority
 
@@ -61,11 +61,8 @@ Use them in both directions:
 - bottom up: changed source surface -> local route card or generated read model
   -> validator guard -> decision rationale -> stronger owner surface.
 
-Regenerate the read models after decision metadata changes:
-
-```bash
-python scripts/root-topology/build_decision_indexes.py
-```
+Regenerate the read models after decision metadata changes through the
+decision-lane route in [AGENTS](AGENTS.md).
 
 ## Addressing
 

@@ -2,8 +2,8 @@
 
 | Date | Change | Validation |
 |---|---|---|
-| 2026-05-19 | Moved operational-gate schemas, examples, and local regressions into functioning part-local homes. | `python scripts/release/release_check.py` |
-| 2026-05-18 | Moved deployment incident gate, office incident gate, service revision ledger, and post-release memory boundary surfaces from flat `docs/` into `mechanics/operational-gate/docs/`. | `python scripts/release/release_check.py` |
+| 2026-05-19 | Moved operational-gate schemas, examples, and local regressions into functioning part-local homes. | `config/validation_lanes.json`; nearest `AGENTS.md` or `VALIDATION.md` |
+| 2026-05-18 | Moved deployment incident gate, office incident gate, service revision ledger, and post-release memory boundary surfaces from flat `docs/` into `mechanics/operational-gate/docs/`. | `config/validation_lanes.json`; nearest `AGENTS.md` or `VALIDATION.md` |
 
 ## Stop-Lines Preserved
 

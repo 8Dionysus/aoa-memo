@@ -35,7 +35,7 @@ and docs public-safe.
 Executable validation routes live in [AGENTS](AGENTS.md#verify) and the nearest
 local `AGENTS.md`. Do not duplicate the full command battery here; it drifts.
 If generator-backed surfaces changed, regenerate only the touched families
-first, then rerun the relevant AGENTS route and inspect `git status -sb`.
+first, then rerun the relevant AGENTS route and inspect the worktree state.
 
 ## Preferred PR scope
 

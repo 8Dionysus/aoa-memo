@@ -69,13 +69,5 @@ route dispatch, or runtime execution.
 
 ## Verification Route
 
-Expected verification:
-
-- `python mechanics/consumer-handoff/parts/kag-source-export/scripts/generate_kag_export.py`
-- `python scripts/generate_memory_object_surfaces.py`
-- `python scripts/build_mechanic_artifact_inventory.py`
-- `python scripts/build_memo_mechanic_landing_logs.py`
-- `python scripts/build_memo_mechanic_readiness.py`
-- `python scripts/build_agents_mesh_index.py`
-- `python -m pytest -q mechanics/consumer-handoff/parts/downstream-feed-regression/tests mechanics/consumer-handoff/parts/playbook-scope-handoff/tests tests/test_memo_validators.py tests/test_cross_mechanic_candidate_contracts.py tests/test_roadmap_parity.py`
-- `python scripts/release_check.py`
+Current executable checks are owned by `config/validation_lanes.json`;
+focused owner routes live in the nearest `AGENTS.md` or `VALIDATION.md`.

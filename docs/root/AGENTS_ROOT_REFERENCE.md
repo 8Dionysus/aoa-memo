@@ -159,15 +159,9 @@ repository integrity.
 
 Run the validation commands documented in `README.md`.
 
-Use the core validation set when source or generated surfaces change:
-
-```bash
-python scripts/memory/validate_memo.py
-python scripts/memory/validate_memory_surfaces.py
-python scripts/memory/validate_memory_object_surfaces.py
-python scripts/memory/validate_lifecycle_audit_examples.py
-python -m pytest -q tests
-```
+When source or generated surfaces change, use the current route in root
+`AGENTS.md` and the nearest owner card. This preserved reference does not own
+an executable command copy.
 
 Confirm that:
 

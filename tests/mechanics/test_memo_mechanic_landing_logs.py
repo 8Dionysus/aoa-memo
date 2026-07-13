@@ -41,7 +41,7 @@ def test_memo_mechanic_landing_logs_are_current_and_valid() -> None:
 
 def test_memo_mechanic_landing_logs_cover_every_package_receipt() -> None:
     payload = json.loads((REPO_ROOT / "generated" / "mechanics" / "memo_mechanic_landing_logs.min.json").read_text())
-    assert payload["schema_version"] == "aoa_memo_mechanic_landing_logs_v1"
+    assert payload["schema_version"] == "aoa_memo_mechanic_landing_logs_v2"
     assert payload["source_of_truth"] == "mechanics package LANDING_LOG.md receipts"
     assert payload["config_ref"] == "config/mechanics/memo_mechanics.json"
     assert payload["card_index_ref"] == "generated/mechanics/memo_mechanic_cards.min.json"
@@ -49,7 +49,7 @@ def test_memo_mechanic_landing_logs_cover_every_package_receipt() -> None:
     assert payload["counts"]["packages"] == 15
     assert payload["counts"]["ready_logs"] == payload["counts"]["packages"]
     assert payload["counts"]["dated_logs"] == payload["counts"]["packages"]
-    assert payload["counts"]["release_check_logs"] == payload["counts"]["packages"]
+    assert payload["counts"]["routed_validation_logs"] == payload["counts"]["packages"]
     assert payload["counts"]["stop_line_logs"] == payload["counts"]["packages"]
 
     packages = {package["slug"]: package for package in payload["packages"]}
@@ -77,7 +77,10 @@ def test_memo_mechanic_landing_logs_cover_every_package_receipt() -> None:
         assert package["ready"] is True
         assert all(package["checks"].values())
         assert "2026-05-18" in package["dates"]
-        assert "python scripts/release/release_check.py" in package["validation_refs"]
+        assert "config/validation_lanes.json" in package["validation_route_refs"]
+        assert {"AGENTS.md", "VALIDATION.md"} & set(package["validation_route_refs"])
+        assert "validation_refs" not in package
+        assert "python_commands" not in package
         assert package["landing_terms"]
         assert {"proof", "runtime"}.issubset(set(package["stop_line_terms"]))
         assert {"role", "route", "source owner", "authority", "owner acceptance"} & set(

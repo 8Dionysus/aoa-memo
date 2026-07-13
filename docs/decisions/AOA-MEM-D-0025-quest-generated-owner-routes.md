@@ -56,7 +56,5 @@ or mechanic docs. Q2 closes through
 
 ## Validation
 
-- `python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py --check`
-- `python scripts/validate_memo.py`
-- `python -m pytest -q tests/test_memo_validators.py`
-- `python scripts/release_check.py`
+Current executable checks are owned by `config/validation_lanes.json`;
+focused owner routes live in the nearest `AGENTS.md` or `VALIDATION.md`.

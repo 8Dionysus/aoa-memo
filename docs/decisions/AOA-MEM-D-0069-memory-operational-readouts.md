@@ -64,9 +64,8 @@ not as authority over MCP runtime or workspace topology.
   coverage, and workspace memo-port status from `aoa-memo`.
 - The release gate can protect the shape and owner-boundary contract without
   requiring live workspace services in CI.
-- A live workspace should run
-  `python scripts/memory/build_memory_operational_readouts.py --check --live`
-  when MCP currentness is the question.
+- A live workspace should use the live operational-readout route in
+  `docs/memory/AGENTS.md` when MCP currentness is the question.
 - Known gaps, such as fresh source-doc terms not yet appearing in reviewed
   corpus search, are routed as gaps rather than hidden or treated as proof.
 - `AOA-MEM-Q-0010`, `AOA-MEM-Q-0011`, and `AOA-MEM-Q-0015` close as
@@ -89,14 +88,5 @@ not as authority over MCP runtime or workspace topology.
 
 ## Verification
 
-Use:
-
-```bash
-python scripts/memory/build_memory_operational_readouts.py --check --live
-python scripts/memory/build_memory_operational_readouts.py --check
-python mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py
-python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py --check
-python scripts/root-topology/build_root_technical_districts_index.py --check
-python scripts/root-topology/validate_root_technical_districts_index.py
-python scripts/release/release_check.py
-```
+Current executable checks are owned by `config/validation_lanes.json`;
+focused owner routes live in the nearest `AGENTS.md` or `VALIDATION.md`.

@@ -109,13 +109,8 @@ Check:
 ```
 
 ## Verify
-Executable validation lives in [AGENTS](AGENTS.md#validation), and scenario
-shape is checked by:
-
-```bash
-python .agents/spark/scripts/validate_spark_lane.py
-python -m unittest discover -s .agents/spark/tests -p 'test*.py'
-```
+Executable validation and scenario-shape checks live in
+[AGENTS](AGENTS.md#validation).
 
 ## Done when
 - один memory-layer surface strengthened

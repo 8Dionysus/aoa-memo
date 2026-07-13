@@ -79,8 +79,5 @@ each root generated output stays owned, sourced, rebuilt, or validated.
 
 ## Validation
 
-```bash
-python scripts/validate_mechanic_artifact_topology.py
-python -m pytest -q tests/test_mechanic_artifact_topology.py
-python scripts/release_check.py
-```
+Current executable checks are owned by `config/validation_lanes.json`;
+focused owner routes live in the nearest `AGENTS.md` or `VALIDATION.md`.

@@ -71,9 +71,5 @@ behavior, private retention, or source-owner doctrine into `aoa-memo`.
 
 ## Verification Route
 
-```bash
-python -m pytest -q mechanics/titan/parts/recall-and-remembrance-posture/tests mechanics/titan/parts/closeout-and-digest-posture/tests mechanics/titan/parts/audit-personality-and-swarm-policy/tests
-python scripts/validate_mechanic_artifact_inventory.py
-python scripts/validate_memo_mechanic_readiness.py
-python scripts/release_check.py
-```
+Current executable checks are owned by `config/validation_lanes.json`;
+focused owner routes live in the nearest `AGENTS.md` or `VALIDATION.md`.

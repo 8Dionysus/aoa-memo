@@ -222,13 +222,5 @@ sequences remain in `config/validation_lanes.json`.
 
 ## Verification
 
-Use:
-
-```bash
-python scripts/root-topology/validate_validator_topology.py
-python -m pytest -q tests/root-topology/test_validation_lanes.py tests/root-topology/test_validator_topology.py tests/root-topology/test_ci_gate.py tests/root-topology/test_release_check.py tests/root-topology/test_test_topology.py
-python scripts/root-topology/build_decision_indexes.py --check
-python scripts/agents/build_agents_mesh_index.py --check
-python scripts/root-topology/build_root_technical_districts_index.py --check
-python scripts/release/release_check.py
-```
+Current executable checks are owned by `config/validation_lanes.json`;
+focused owner routes live in the nearest `AGENTS.md` or `VALIDATION.md`.

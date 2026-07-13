@@ -62,11 +62,5 @@ local operation surface, such as a validator or shape-guard regression.
 
 ## Verification Route
 
-Run:
-
-```bash
-python scripts/build_memo_mechanic_readiness.py --check
-python scripts/validate_memo_mechanic_readiness.py
-python -m pytest -q tests/test_memo_mechanic_readiness.py
-python scripts/release_check.py
-```
+Current executable checks are owned by `config/validation_lanes.json`;
+focused owner routes live in the nearest `AGENTS.md` or `VALIDATION.md`.

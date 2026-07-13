@@ -85,6 +85,13 @@ Tracking starts with the community-docs baseline for this repository.
 - Align root surface law with the memo-local `evals/` technical district while
   keeping proof doctrine and verdict authority in `aoa-evals`.
 
+### Changed
+
+- Centralize runnable validation commands in the lane manifest, nearest
+  `AGENTS.md` or `VALIDATION.md`, and the active release procedure; decisions,
+  changelog history, landing logs, reviewed memory objects, and route maps now
+  retain owner routes and outcomes instead of copied command catalogs.
+
 ### Fixed
 
 - Pin repo-local KAG source-index validation to the portable shared generator
@@ -439,9 +446,9 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Validation
 
-- `python scripts/release/release_check.py`
-- `python scripts/release_check.py`
-- `aoa release audit /srv/AbyssOS --phase preflight --repo aoa-memo --strict --json`
+- Historical run evidence remains in Git and CI history. Current executable
+  routes live in `config/validation_lanes.json`, the nearest `AGENTS.md`, and
+  the active release procedure.
 
 ### Notes
 
@@ -591,7 +598,9 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Validation
 
-- `python scripts/release_check.py`
+- Historical run evidence remains in Git and CI history. Current executable
+  routes live in `config/validation_lanes.json`, the nearest `AGENTS.md`, and
+  the active release procedure.
 
 ### Notes
 
@@ -626,7 +635,9 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Validation
 
-- `python scripts/release_check.py`
+- Historical run evidence remains in Git and CI history. Current executable
+  routes live in `config/validation_lanes.json`, the nearest `AGENTS.md`, and
+  the active release procedure.
 
 ### Notes
 
@@ -657,7 +668,9 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Validation
 
-- `python scripts/release_check.py`
+- Historical run evidence remains in Git and CI history. Current executable
+  routes live in `config/validation_lanes.json`, the nearest `AGENTS.md`, and
+  the active release procedure.
 
 ### Notes
 
@@ -674,7 +687,9 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Validation
 
-- `python scripts/release_check.py`
+- Historical run evidence remains in Git and CI history. Current executable
+  routes live in `config/validation_lanes.json`, the nearest `AGENTS.md`, and
+  the active release procedure.
 
 ### Notes
 
@@ -742,12 +757,9 @@ This changelog entry uses the release-prep merge date.
 
 ### Validation
 
-- `python scripts/generate_memory_object_surfaces.py`
-- `python mechanics/consumer-handoff/parts/kag-source-export/scripts/generate_kag_export.py`
-- `python scripts/validate_memo.py`
-- `python scripts/validate_memory_surfaces.py`
-- `python scripts/validate_memory_object_surfaces.py`
-- `python scripts/validate_lifecycle_audit_examples.py`
+- Historical run evidence remains in Git and CI history. Current executable
+  routes live in `config/validation_lanes.json`, the nearest `AGENTS.md`, and
+  the active release procedure.
 
 ### Notes
 

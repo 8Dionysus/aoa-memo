@@ -28,8 +28,7 @@ from `abyss-stack`.
 
 ## Next Routes
 
-- Use `python scripts/memory/build_memory_operational_readouts.py --check` for
+- Use the checked-in operational-readout route in `docs/memory/AGENTS.md` for
   checked-in shape.
-- Use `python scripts/memory/build_memory_operational_readouts.py --check --live`
-  when live MCP currentness is the question.
+- Use its live route when live MCP currentness is the question.
 - Use `8Dionysus` workspace memory map for source workspace topology.

@@ -231,8 +231,8 @@ stats truth, or source doctrine.
 
 `generated/mechanics/memo_mechanic_landing_logs.min.json` is the compact generated
 landing receipt index for package-local `LANDING_LOG.md` files. It exists
-because OS Abyss needs one inspection surface for what was landed, which
-release validation was named, and which stop-lines were preserved. It is not
+because OS Abyss needs one inspection surface for what was landed, where
+executable validation is owned, and which stop-lines were preserved. It is not
 proof, owner acceptance, runtime authority, release authority, route dispatch,
 role authority, KAG truth, playbook choreography, stats truth, or source
 doctrine.

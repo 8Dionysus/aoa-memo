@@ -94,12 +94,5 @@ state, and source-authored ToS meaning.
 
 ## Verification Route
 
-Use:
-
-```bash
-python -m pytest -q tests
-python scripts/release_check.py
-```
-
-The first command should include the topology-spine test. The second command
-remains the broad release gate for the repository.
+Current executable checks are owned by `config/validation_lanes.json`;
+focused owner routes live in the nearest `AGENTS.md` or `VALIDATION.md`.

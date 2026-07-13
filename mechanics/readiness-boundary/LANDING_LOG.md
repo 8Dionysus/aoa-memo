@@ -13,10 +13,9 @@ Landed shape:
 
 Validation route:
 
-```bash
-python -m pytest -q mechanics/readiness-boundary/parts/memory-readiness-boundary/tests
-python scripts/release/release_check.py
-```
+Current executable routes live in the nearest `AGENTS.md` or `VALIDATION.md`
+and in `config/validation_lanes.json`; historical run evidence remains in
+Git and CI history.
 
 ## 2026-05-18
 
@@ -32,10 +31,9 @@ Landed shape:
 
 Validation route:
 
-```bash
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/release/release_check.py
-```
+Current executable routes live in the nearest `AGENTS.md` or `VALIDATION.md`
+and in `config/validation_lanes.json`; historical run evidence remains in
+Git and CI history.
 
 Stop-line retained:
 

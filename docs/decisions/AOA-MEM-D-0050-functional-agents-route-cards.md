@@ -56,13 +56,5 @@ home.
 
 ## Validation
 
-This decision is validated through:
-
-```bash
-python scripts/validate_agents_mesh.py
-python scripts/build_agents_mesh_index.py --check
-python scripts/validate_agents_mesh_index.py
-python scripts/validate_memo_mechanics.py
-python scripts/validate_memo_mechanic_parts.py
-python scripts/release_check.py
-```
+Current executable checks are owned by `config/validation_lanes.json`;
+focused owner routes live in the nearest `AGENTS.md` or `VALIDATION.md`.

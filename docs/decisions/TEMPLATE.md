@@ -37,9 +37,5 @@ What becomes easier, harder, or constrained?
 
 ## Verification
 
-Use:
-
-```bash
-python scripts/root-topology/build_decision_indexes.py --check
-python scripts/release/release_check.py
-```
+Current executable checks are owned by `config/validation_lanes.json`;
+focused owner routes live in the nearest `AGENTS.md` or `VALIDATION.md`.

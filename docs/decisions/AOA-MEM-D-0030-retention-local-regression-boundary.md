@@ -50,11 +50,5 @@ example validity, and required-field rejection.
 
 ## Verification
 
-Expected verification:
-
-- `python -m pytest -q mechanics/retention/parts/cross-repo-and-governance-retention/tests mechanics/retention/parts/office-markers/tests mechanics/retention/parts/post-release-retention/tests`
-- `python scripts/build_mechanic_artifact_inventory.py --check`
-- `python scripts/validate_mechanic_artifact_inventory.py`
-- `python scripts/build_memo_mechanic_readiness.py --check`
-- `python scripts/validate_memo_mechanic_readiness.py`
-- `python scripts/release_check.py`
+Current executable checks are owned by `config/validation_lanes.json`;
+focused owner routes live in the nearest `AGENTS.md` or `VALIDATION.md`.

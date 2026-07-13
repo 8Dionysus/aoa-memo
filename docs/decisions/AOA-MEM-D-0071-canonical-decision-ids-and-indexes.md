@@ -89,11 +89,5 @@ decisions completed the migration and removed the compatibility layer.
 
 ## Verification
 
-Use:
-
-```bash
-python scripts/root-topology/build_decision_indexes.py --check
-python scripts/root-topology/build_root_technical_districts_index.py --check
-python scripts/root-topology/validate_root_technical_districts_index.py
-python scripts/release/release_check.py
-```
+Current executable checks are owned by `config/validation_lanes.json`;
+focused owner routes live in the nearest `AGENTS.md` or `VALIDATION.md`.

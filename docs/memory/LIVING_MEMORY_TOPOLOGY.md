@@ -110,8 +110,8 @@ outputs. None of them replaces reviewed memory objects.
 
 | Readout | Source owner | Memo role | Validation |
 |---|---|---|---|
-| `generated/memory/source_intake_wave.min.json` | source repositories plus reviewed corpus objects | shows the first real source-lane intake wave across runtime access, graph-memory handoff, consumer recall, and local port evidence | `python scripts/memory/build_memory_operational_readouts.py --check` |
-| `generated/memory/workspace_memo_port_status.min.json` | `8Dionysus` workspace memory map | imports current port levels, export counts, issues, and next routes for memo-side recall | `python scripts/memory/build_memory_operational_readouts.py --check` |
+| `generated/memory/source_intake_wave.min.json` | source repositories plus reviewed corpus objects | shows the first real source-lane intake wave across runtime access, graph-memory handoff, consumer recall, and local port evidence | operational-readout route in `docs/memory/AGENTS.md` |
+| `generated/memory/workspace_memo_port_status.min.json` | `8Dionysus` workspace memory map | imports current port levels, export counts, issues, and next routes for memo-side recall | operational-readout route in `docs/memory/AGENTS.md` |
 
 These readouts do not replace the workspace map, MCP runtime, local memo ports,
 or reviewed object corpus. They make the current route easier for a distant
