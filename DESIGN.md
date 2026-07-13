@@ -46,6 +46,7 @@ and which neighboring owner takes the next stronger claim?
 
 - root public entry and authority surfaces
 - reviewed memory corpus under `memo/`
+- owner-local statistical questions, measurement contracts, and reference packets under `stats/`
 - reviewed intake landing from local memo exports into corpus bundles
 - doctrine docs under `docs/`
 - memo-side mechanics under `mechanics/`
@@ -187,6 +188,9 @@ landing receipt, it needs a bounded home rather than a root-level spotlight.
 the public memory canon without replacing stronger doctrine.
 [memo](memo/README.md) holds reviewed memory object bundles and corpus support
 lanes.
+[stats](stats/README.md) holds memo-owned statistical meaning and reference
+measurements while `aoa-stats` owns the shared grammar and cross-owner
+composition.
 [BOUNDARIES](docs/boundaries/BOUNDARIES.md) separates owner truth.
 [MEMORY_MODEL](docs/memory/MEMORY_MODEL.md) defines the memory conceptual model.
 [ROOT_SURFACE_LAW](docs/root/ROOT_SURFACE_LAW.md) governs root and docs-root
@@ -201,6 +205,7 @@ Agents should consult this file when a change alters:
 - repository shape
 - root surfaces
 - reviewed memory corpus shape
+- owner-local stats-port shape
 - docs topology
 - public memory-canon index shape
 - source versus generated authority

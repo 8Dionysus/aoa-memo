@@ -62,6 +62,22 @@
       "status": "active"
     },
     {
+      "family": "stats/local-port",
+      "paths": [
+        "scripts/release/validate_local_stats_port.py"
+      ],
+      "protects": "memo-local stats question, measurement contract, and referenced packet compatibility with the central stats grammar",
+      "owner_surface": "stats/AGENTS.md",
+      "layer": "source_topology",
+      "lane": "source-fast/release/post-merge/nightly",
+      "mode": "blocking",
+      "callers": [
+        "config/validation_lanes.json"
+      ],
+      "failure_route": "Fix the memo-local stats port or the pinned aoa-stats contract; do not copy central statistical semantics into aoa-memo.",
+      "status": "active"
+    },
+    {
       "family": "generated/read-model",
       "paths": [
         "mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py",

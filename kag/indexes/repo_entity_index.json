@@ -24138,6 +24138,20 @@
     },
     {
       "coordinates": {
+        "artifact_kind": "validator",
+        "code_role": "validator",
+        "command_role": "validator",
+        "document_role": "none",
+        "mechanics_role": "none",
+        "surface_state": "authored_source"
+      },
+      "entity_kind": "command",
+      "id": "entity:file:scripts/release/validate_local_stats_port.py:cf0f45442f",
+      "label": "scripts/release/validate_local_stats_port.py",
+      "source_record_id": "file:scripts/release/validate_local_stats_port.py:cf0f45442f"
+    },
+    {
+      "coordinates": {
         "artifact_kind": "script",
         "code_role": "entrypoint",
         "command_role": "lane_entrypoint",
@@ -24345,6 +24359,62 @@
       "id": "entity:file:scripts/validation_lanes.py:dda053a98d",
       "label": "scripts/validation_lanes.py",
       "source_record_id": "file:scripts/validation_lanes.py:dda053a98d"
+    },
+    {
+      "coordinates": {
+        "artifact_kind": "document",
+        "code_role": "none",
+        "command_role": "none",
+        "document_role": "agents",
+        "mechanics_role": "none",
+        "surface_state": "authored_source"
+      },
+      "entity_kind": "agent_route",
+      "id": "entity:file:stats/agents.md:3f9a778b41",
+      "label": "stats/AGENTS.md",
+      "source_record_id": "file:stats/agents.md:3f9a778b41"
+    },
+    {
+      "coordinates": {
+        "artifact_kind": "document",
+        "code_role": "none",
+        "command_role": "none",
+        "document_role": "readme",
+        "mechanics_role": "none",
+        "surface_state": "authored_source"
+      },
+      "entity_kind": "document",
+      "id": "entity:file:stats/readme.md:6bac6d2ff5",
+      "label": "stats/README.md",
+      "source_record_id": "file:stats/readme.md:6bac6d2ff5"
+    },
+    {
+      "coordinates": {
+        "artifact_kind": "config",
+        "code_role": "none",
+        "command_role": "none",
+        "document_role": "none",
+        "mechanics_role": "none",
+        "surface_state": "authored_source"
+      },
+      "entity_kind": "artifact",
+      "id": "entity:file:stats/packets/reviewed-memory-object-count.reference.json:a45ea0d788",
+      "label": "stats/packets/reviewed-memory-object-count.reference.json",
+      "source_record_id": "file:stats/packets/reviewed-memory-object-count.reference.json:a45ea0d788"
+    },
+    {
+      "coordinates": {
+        "artifact_kind": "config",
+        "code_role": "none",
+        "command_role": "none",
+        "document_role": "none",
+        "mechanics_role": "none",
+        "surface_state": "authored_source"
+      },
+      "entity_kind": "artifact",
+      "id": "entity:file:stats/port.manifest.json:98b9bdeccf",
+      "label": "stats/port.manifest.json",
+      "source_record_id": "file:stats/port.manifest.json:98b9bdeccf"
     },
     {
       "coordinates": {
@@ -24965,7 +25035,7 @@
   ],
   "index_identity": {
     "artifact_kind": "repository_entity_index",
-    "content_digest": "b4572cc4bb561953b51a54a2ee0f3a733d1a140d429b46a185c6b8ebfa1edab6",
+    "content_digest": "753a2c6db078261c8d583dc93edf0176cf581ba21f69aa2c376b0c807507fa45",
     "index_kind": "entity",
     "local_id": "index:repo-local:entities",
     "schema_ref": "aoa-kag:schemas/repo-local-kag-repository-index.schema.json"
@@ -24988,20 +25058,20 @@
   },
   "schema_version": "aoa-repo-local-kag-repository-index-v1",
   "source_index": {
-    "content_digest": "a8f5b68c964e5366c6b03abc5b2d7f1cb3577d0d084ed8a2587fd5a9199fc672",
+    "content_digest": "9fc3cb83b33b405e727db2011d8dccb8548b1e5022eeb53f552c514df51209aa",
     "local_id": "index:repo-local:source-surfaces",
     "path": "kag/indexes/source_surface_index.json"
   },
   "summary": {
-    "entry_count": 1783,
+    "entry_count": 1788,
     "kind_counts": {
-      "agent_route": 52,
-      "artifact": 212,
+      "agent_route": 53,
+      "artifact": 214,
       "code": 67,
-      "command": 63,
+      "command": 64,
       "contract": 36,
       "decision": 90,
-      "document": 223,
+      "document": 224,
       "mechanic_package": 300,
       "mechanic_part": 713,
       "owner_surface": 2,

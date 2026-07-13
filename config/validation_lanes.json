@@ -318,6 +318,13 @@
           "python",
           "scripts/mechanics/validate_memo_mechanic_parts.py"
         ]
+      },
+      {
+        "label": "validate owner-local stats port",
+        "command": [
+          "python",
+          "scripts/release/validate_local_stats_port.py"
+        ]
       }
     ],
     "generated": [

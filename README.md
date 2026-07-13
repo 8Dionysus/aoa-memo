@@ -20,6 +20,7 @@ agent-facing, follow the linked owner surface instead of expanding this page.
 | Agent-facing guidance form | [DESIGN.AGENTS](DESIGN.AGENTS.md) |
 | Public memory canon map | [MEMORY_INDEX](MEMORY_INDEX.md) |
 | Reviewed memory object corpus | [memo](memo/README.md) |
+| Memo-owned statistical questions and reference measurements | [stats](stats/README.md) |
 | Documentation and boundary map | [docs](docs/README.md), [BOUNDARIES](docs/boundaries/BOUNDARIES.md) |
 | Memo-side mechanics | [mechanics](mechanics/README.md) |
 | Direction and obligations | [ROADMAP](ROADMAP.md), [QUESTBOOK](QUESTBOOK.md), [quests](quests/README.md) |
@@ -88,6 +89,7 @@ The root README should not become that inventory.
 |---|---|
 | [docs](docs/README.md) | memory doctrine, boundaries, posture, validation topology, test topology, decisions, and root law |
 | [memo](memo/README.md) | reviewed memory object corpus, support lanes, and intake receipts |
+| [stats](stats/README.md) | owner-local statistical questions, measurement contracts, and evidence-linked reference packets |
 | [mechanics](mechanics/README.md) | repeatable memo operations and package-local artifacts |
 | [schemas](schemas/AGENTS.md) | memory and support-object contracts |
 | [examples](examples/AGENTS.md) | public-safe memory examples and recall contracts |

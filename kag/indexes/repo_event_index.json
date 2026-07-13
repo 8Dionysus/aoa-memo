@@ -87,7 +87,7 @@
       "heading_ref": {
         "anchor": "022-2026-04-19",
         "level": 2,
-        "line": 598,
+        "line": 602,
         "ref": "CHANGELOG.md#022-2026-04-19",
         "title": "[0.2.2] - 2026-04-19"
       },
@@ -102,7 +102,7 @@
       "heading_ref": {
         "anchor": "040-2026-05-24",
         "level": 2,
-        "line": 106,
+        "line": 110,
         "ref": "CHANGELOG.md#040-2026-05-24",
         "title": "[0.4.0] - 2026-05-24"
       },
@@ -117,7 +117,7 @@
       "heading_ref": {
         "anchor": "021-2026-04-12",
         "level": 2,
-        "line": 632,
+        "line": 636,
         "ref": "CHANGELOG.md#021-2026-04-12",
         "title": "[0.2.1] - 2026-04-12"
       },
@@ -132,7 +132,7 @@
       "heading_ref": {
         "anchor": "023-2026-04-23",
         "level": 2,
-        "line": 555,
+        "line": 559,
         "ref": "CHANGELOG.md#023-2026-04-23",
         "title": "[0.2.3] - 2026-04-23"
       },
@@ -147,7 +147,7 @@
       "heading_ref": {
         "anchor": "010-2026-04-01",
         "level": 2,
-        "line": 707,
+        "line": 711,
         "ref": "CHANGELOG.md#010-2026-04-01",
         "title": "[0.1.0] - 2026-04-01"
       },
@@ -162,7 +162,7 @@
       "heading_ref": {
         "anchor": "020-2026-04-10",
         "level": 2,
-        "line": 663,
+        "line": 667,
         "ref": "CHANGELOG.md#020-2026-04-10",
         "title": "[0.2.0] - 2026-04-10"
       },
@@ -2032,6 +2032,15 @@
       "source_record_id": "file:scripts/release/release_check.py:129cec7f82"
     },
     {
+      "event_kind": "validation_run",
+      "event_role": "producer",
+      "heading_ref": null,
+      "id": "event:repo:993bfe14db10f19c4d05",
+      "observation_state": "declared",
+      "path": "scripts/release/validate_local_stats_port.py",
+      "source_record_id": "file:scripts/release/validate_local_stats_port.py:cf0f45442f"
+    },
+    {
       "event_kind": "validation_lane_run",
       "event_role": "producer",
       "heading_ref": null,
@@ -2430,7 +2439,7 @@
   ],
   "index_identity": {
     "artifact_kind": "repository_event_index",
-    "content_digest": "5af27547cd7e024d2b4ac931f29c8028ba2ccfd0515c2307cf72b0987503cea5",
+    "content_digest": "5ff338f9861f5547a74d756c16681ca5983573fc6b896411e0f5a082494f679b",
     "index_kind": "event",
     "local_id": "index:repo-local:events",
     "schema_ref": "aoa-kag:schemas/repo-local-kag-repository-index.schema.json"
@@ -2455,12 +2464,12 @@
   },
   "schema_version": "aoa-repo-local-kag-repository-index-v1",
   "source_index": {
-    "content_digest": "a8f5b68c964e5366c6b03abc5b2d7f1cb3577d0d084ed8a2587fd5a9199fc672",
+    "content_digest": "9fc3cb83b33b405e727db2011d8dccb8548b1e5022eeb53f552c514df51209aa",
     "local_id": "index:repo-local:source-surfaces",
     "path": "kag/indexes/source_surface_index.json"
   },
   "summary": {
-    "entry_count": 265,
+    "entry_count": 266,
     "kind_counts": {
       "command_run": 8,
       "decision_record": 90,
@@ -2470,7 +2479,7 @@
       "test_run": 87,
       "validation_lane_run": 3,
       "validation_receipt": 6,
-      "validation_run": 34,
+      "validation_run": 35,
       "workflow_run": 1
     }
   }

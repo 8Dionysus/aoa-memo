@@ -9,6 +9,10 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Added
 
+- Add the owner-local `stats/` port with a source-backed reviewed-memory-object
+  count contract and reference packet; memo corpus meaning remains here while
+  `aoa-stats` owns the shared statistical grammar, cross-owner composition,
+  and the validator delegated to by the release lane.
 - Add an explicit `aoa_local_memo_receipt_v2` branch for local memo receipts
   using `checked_by`, while keeping legacy `aoa_local_memo_receipt_v1`
   `reviewed_by` receipts readable under the same schema file.
