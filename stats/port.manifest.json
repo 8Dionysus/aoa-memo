@@ -1,0 +1,109 @@
+{
+  "schema_version": "aoa_stats_local_port_v1",
+  "contract_version": "1.0.0",
+  "owner_repo": "aoa-memo",
+  "status": "active",
+  "owner_boundary_ref": "docs/boundaries/BOUNDARIES.md",
+  "central_contract_refs": [
+    "aoa-stats:stats/measurement-contract/measurement-contract.schema.json",
+    "aoa-stats:stats/measurement-contract/measurement-packet.schema.json"
+  ],
+  "evidence_posture": {
+    "live_state": "reference_only",
+    "privacy": "public",
+    "raw_content_allowed": false
+  },
+  "questions": [
+    {
+      "id": "question:reviewed-memory-object-count",
+      "question": "How many reviewed durable memory object bundles are present in the authored memo corpus at this source revision?",
+      "consumer_refs": [
+        "stats/README.md",
+        "memo/README.md"
+      ]
+    }
+  ],
+  "measurements": [
+    {
+      "schema_version": "aoa_stats_measurement_contract_v1",
+      "measurement_id": "aoa-memo/reviewed-memory-object-count",
+      "contract_version": "1.0.0",
+      "owner_repo": "aoa-memo",
+      "question_ref": "question:reviewed-memory-object-count",
+      "semantic_class": "measure",
+      "statistic": "count",
+      "object_kind": "reviewed-memory-object-bundle",
+      "unit": {
+        "symbol": "object",
+        "quantity": "count"
+      },
+      "population": {
+        "subject": "reviewed durable memory object bundles",
+        "definition": "one validated corpus bundle represented by memo/objects/**/object.json",
+        "inclusion_rule": "the reviewed corpus bundle contains its authored object.json metadata",
+        "exclusion_rule": "local port candidates, support lanes, generated companions, and incomplete bundles",
+        "sampling": "census"
+      },
+      "window": {
+        "temporality": "instant",
+        "clock": "owner_defined"
+      },
+      "dimensions": {
+        "allowed": [],
+        "prohibited": [
+          "memory_content",
+          "object_id"
+        ]
+      },
+      "aggregation": {
+        "operator": "none",
+        "across": []
+      },
+      "missingness": {
+        "states": [
+          "missing",
+          "unknown",
+          "stale"
+        ],
+        "zero_is_observation": true
+      },
+      "uncertainty": {
+        "required": false,
+        "methods": [
+          "not_applicable"
+        ]
+      },
+      "provenance": {
+        "evidence_refs_required": true,
+        "source_revision_required": true
+      },
+      "lifecycle": {
+        "status": "active",
+        "compatible_with": []
+      },
+      "privacy": {
+        "classification": "public",
+        "raw_content_allowed": false,
+        "sensitive_dimensions_allowed": false
+      },
+      "live_state": {
+        "capability": "reference_only"
+      },
+      "authority_ceiling": "Counts reviewed corpus bundle metadata only; it does not establish recall quality, truth, proof strength, freshness, or runtime availability."
+    }
+  ],
+  "exports": [
+    {
+      "measurement_id": "aoa-memo/reviewed-memory-object-count",
+      "posture": "reference",
+      "packet_refs": [
+        "stats/packets/reviewed-memory-object-count.reference.json"
+      ],
+      "evidence_refs": [
+        "memo/README.md",
+        "memo/OBJECT_SHAPE.md",
+        "memo/objects/**/object.json"
+      ]
+    }
+  ]
+}

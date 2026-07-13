@@ -256,8 +256,8 @@
         "scripts/memory/validators/schema_recall_contracts.py",
         "scripts/memory/validators/schema_surfaces.py",
         "scripts/memory/validators/schema.py",
-        "scripts/release/release_check.py",
-        "scripts/release_check.py",
+    "scripts/release/release_check.py",
+    "scripts/release_check.py",
         "scripts/root-topology/build_decision_indexes.py",
         "scripts/root-topology/build_root_technical_districts_index.py",
         "scripts/root-topology/decision_index_common.py",
@@ -270,7 +270,8 @@
         "scripts/root-topology/validate_docs_districts.py",
         "scripts/root-topology/validate_root_technical_districts_index.py",
         "scripts/root-topology/validate_validator_topology.py",
-        "scripts/validation_lanes.py"
+    "scripts/release/validate_local_stats_port.py",
+    "scripts/validation_lanes.py"
       ]
     },
     "tests": {
@@ -604,10 +605,11 @@
       "role": "orchestrator",
       "owner_surface": "scripts/AGENTS.md",
       "scripts": [
-        "scripts/ci_gate.py",
-        "scripts/release/release_check.py",
-        "scripts/release_check.py",
-        "scripts/validation_lanes.py"
+      "scripts/ci_gate.py",
+      "scripts/release/release_check.py",
+      "scripts/release_check.py",
+      "scripts/release/validate_local_stats_port.py",
+      "scripts/validation_lanes.py"
       ],
       "covered_by": [
         "AGENTS.md",

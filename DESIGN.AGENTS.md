@@ -82,6 +82,8 @@ The long-term mesh should make these lanes explicit:
   validation, and scenario packets; it is a fast lane, not memory doctrine or
   mechanic law
 - `MEMORY_INDEX.md` for compact memory-canon routing before deeper doctrine
+- `stats/` for memo-owned statistical questions, contracts, and reference
+  packets governed by the shared `aoa-stats` grammar
 - `docs/` for memory doctrine and route maps
 - `mechanics/` for repeatable adoption, consumer handoff, operational gate,
   recurrence support, lineage harvest, questbook, writeback, and retention

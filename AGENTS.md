@@ -14,10 +14,11 @@ This repository owns:
 
 - memory-object structure, memory class distinctions, recall posture, salience, temporal relevance, and memory-temperature language
 - memory-layer metadata, generated memory surfaces, witness trace, writeback, chronicle, recurrence-support, and lineage-harvest seams when defined here
+- owner-local statistical questions and source-backed measurement declarations about memo-owned surfaces under `stats/`
 
 It does not own:
 
-- techniques, skills, eval proof, routing, role contracts, playbook scenario meaning, KAG substrate semantics, stats summaries, or live quest sovereignty
+- techniques, skills, eval proof, routing, role contracts, playbook scenario meaning, KAG substrate semantics, cross-owner statistical composition, or live quest sovereignty
 
 ## Start here
 
@@ -26,13 +27,14 @@ It does not own:
 3. `DESIGN.md`
 4. `MEMORY_INDEX.md`
 5. `memo/README.md` when reviewed memory objects or corpus intake are touched
-6. [`ROADMAP.md`](ROADMAP.md)
-7. `docs/README.md`
-8. `docs/boundaries/BOUNDARIES.md`
-9. `docs/memory/MEMORY_MODEL.md`
-10. `mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md` for readiness, retention, and memory-is-not-proof boundaries
-11. the target memory surface and affected generated outputs
-12. `docs/root/AGENTS_ROOT_REFERENCE.md` for preserved full root branches
+6. `stats/README.md` when memo-owned statistical questions, contracts, or reference packets are touched
+7. [`ROADMAP.md`](ROADMAP.md)
+8. `docs/README.md`
+9. `docs/boundaries/BOUNDARIES.md`
+10. `docs/memory/MEMORY_MODEL.md`
+11. `mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md` for readiness, retention, and memory-is-not-proof boundaries
+12. the target memory surface and affected generated outputs
+13. `docs/root/AGENTS_ROOT_REFERENCE.md` for preserved full root branches
 
 For agent-facing topology, also read `DESIGN.AGENTS.md`.
 For root or docs-root placement, read `docs/root/ROOT_SURFACE_LAW.md`.
@@ -47,6 +49,7 @@ lineage-harvest, writeback, or retention movement, read `mechanics/README.md`.
 | `first-reading` | you need the shortest public overview | `README.md` |
 | `memory-canon` | memory object kinds, support objects, recall modes, temperature vocabulary, source families, or generated companions are being inspected | `MEMORY_INDEX.md` -> `docs/memory/MEMORY_MODEL.md` -> target source |
 | `memory-corpus` | reviewed durable memory object bundles, reviewed intake landing, landing receipts, or corpus support lanes change | `memo/AGENTS.md` -> `memo/OBJECT_SHAPE.md` -> target bundle |
+| `local-stats` | a memo-owned statistical question, measurement contract, or reference packet changes | `stats/AGENTS.md` -> `stats/README.md` -> `stats/port.manifest.json` |
 | `memory-doctrine` | memory meaning, object posture, trust, lifecycle, temperature, or provenance changes | `docs/memory/MEMORY_MODEL.md` |
 | `root-editing` | a root or docs-root surface is added, moved, deleted, or rewritten | `docs/root/ROOT_SURFACE_LAW.md` |
 | `docs-placement` | a docs-root surface is classified, retired from flat placement, or checked for old district drift | `docs/README.md` -> `docs/root/ROOT_SURFACE_LAW.md` -> `scripts/root-topology/validate_docs_districts.py` |
@@ -110,6 +113,8 @@ Update only the ones that moved; otherwise say no update was needed.
   posture changed.
 - `MEMORY_INDEX.md` when public memory object, support object, recall-mode,
   source-family, or generated-companion routing changes.
+- `stats/` when the owner-local statistical question, evidence route,
+  measurement contract, or exported reference packet changes.
 - `docs/root/ROOT_SURFACE_LAW.md` when root or docs-root placement changes.
 - `docs/decisions/` when future agents need rationale for a route, topology,
   validator, source-of-truth, or ownership choice.
@@ -141,6 +146,11 @@ Use focused lanes for broad verification; the full command sequences live in
 `docs/validation/COMMAND_AUTHORITY.md` and the validator map in
 `docs/validation/validator_inventory.json`.
 
+The `source-fast` lane includes central stats-contract validation. Provide a
+compatible `aoa-stats` checkout through `AOA_STATS_ROOT`, `.deps/aoa-stats`, or
+the sibling `../aoa-stats` path; CI supplies its pinned checkout explicitly.
+An unavailable central validator is a failed check, not a skipped one.
+
 ```bash
 python scripts/ci_gate.py --mode source-fast
 python scripts/ci_gate.py --mode generated
@@ -154,7 +164,7 @@ Use branch docs in `docs/root/AGENTS_ROOT_REFERENCE.md` for object canon, trust 
 
 ## Report
 
-State which memory surface and class changed, whether provenance, temporal posture, writeback, chronicle, or recurrence seams changed, and what validation ran.
+State which memory surface and class changed, whether provenance, temporal posture, writeback, chronicle, recurrence, or owner-local stats seams changed, and what validation ran.
 
 ## Full reference
 

@@ -92,6 +92,8 @@ Keep the current split clear:
 - `config/validation_lanes.json`, `validation_lanes.py`, `ci_gate.py`, and
   `release/release_check.py` keep validation command authority in one manifest
   while Python remains orchestration, not doctrine
+- `release/validate_local_stats_port.py` is a thin boundary adapter to the pinned
+  `aoa-stats` validator; memo-local statistical meaning stays under `stats/`
 - `docs/validation/validator_inventory.json` records validation-like
   entrypoints, lane-backed generated checks, compatibility wrappers, and manual
   validators so root scripts do not become unlabeled historical gates

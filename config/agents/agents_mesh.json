@@ -107,6 +107,16 @@
       ]
     },
     {
+      "path": "stats/AGENTS.md",
+      "min_lines": 40,
+      "required_snippets": [
+        "memo-local statistical questions",
+        "port.manifest.json",
+        "reference packets",
+        "release/validate_local_stats_port.py"
+      ]
+    },
+    {
       "path": "mechanics/AGENTS.md",
       "min_lines": 35,
       "required_snippets": [
