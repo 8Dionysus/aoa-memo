@@ -64,11 +64,5 @@ outside `aoa-memo`.
 
 ## Validation
 
-```bash
-python scripts/memory/generate_memory_object_surfaces.py --check
-python mechanics/consumer-handoff/parts/kag-source-export/scripts/generate_kag_export.py
-python scripts/memory/validate_memo_corpus.py
-python scripts/memory/validate_memory_object_surfaces.py
-python scripts/memory/validate_memo.py
-python -m pytest -q tests/memory/test_memo_corpus.py tests/memory/test_memo_validators.py
-```
+Current executable checks are owned by `config/validation_lanes.json`;
+focused owner routes live in the nearest `AGENTS.md` or `VALIDATION.md`.

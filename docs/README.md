@@ -28,15 +28,15 @@ may enter through the thin [RELEASING](RELEASING.md) compatibility pointer.
 
 ## Districts
 
-| District | Owns | Validator |
+| District | Owns | Validation owner |
 |---|---|---|
-| [memory](memory/AGENTS.md) | memory model, object profiles, operation cycle, living topology, local memo ports, and narrative/core memory split | `python scripts/memory/validate_memory_operations.py` |
-| [boundaries](boundaries/AGENTS.md) | repository owner split, operational boundary posture, and write-path guardrails | `python scripts/memory/validate_memory_operations.py` |
-| [posture](posture/AGENTS.md) | trust, lifecycle, temperature, provenance, operation modes, and audit-event posture | `python scripts/memory/validate_lifecycle_audit_examples.py` |
-| [root](root/AGENTS.md) | root placement law, release route, and preserved root reference | `python scripts/root-topology/validate_docs_districts.py` |
+| [memory](memory/AGENTS.md) | memory model, object profiles, operation cycle, living topology, local memo ports, and narrative/core memory split | `memory/AGENTS.md` |
+| [boundaries](boundaries/AGENTS.md) | repository owner split, operational boundary posture, and write-path guardrails | `boundaries/AGENTS.md` |
+| [posture](posture/AGENTS.md) | trust, lifecycle, temperature, provenance, operation modes, and audit-event posture | `posture/AGENTS.md` |
+| [root](root/AGENTS.md) | root placement law, release route, and preserved root reference | `root/AGENTS.md` |
 | [decisions](decisions/AGENTS.md) | durable rationale for structural and route-law choices | decision-specific review plus release gate |
-| [validation](validation/AGENTS.md) | validator boundary layers, command authority, validator inventory, route-away declarations, and release/nightly composition law | `python scripts/root-topology/validate_validator_topology.py` |
-| [testing](testing/AGENTS.md) | test topology, test inventory, and release-gate regression map | `python -m pytest -q tests/root-topology/test_test_topology.py tests/root-topology/test_validation_lanes.py tests/root-topology/test_validator_topology.py` |
+| [validation](validation/AGENTS.md) | validator boundary layers, command authority, validator inventory, route-away declarations, and release/nightly composition law | `validation/AGENTS.md` and `config/validation_lanes.json` |
+| [testing](testing/AGENTS.md) | test topology, test inventory, and release-gate regression map | `testing/AGENTS.md` |
 
 ## Source Families
 
@@ -94,9 +94,9 @@ Mechanic docs live with their mechanics, not in `docs/`:
 |---|---|
 | Memory canon map | [MEMORY_INDEX](../MEMORY_INDEX.md), then the stronger source doc it points to |
 | Memory doctrine | [BOUNDARIES](boundaries/BOUNDARIES.md), [MEMORY_MODEL](memory/MEMORY_MODEL.md), and the target district `AGENTS.md` |
-| Memory operation cycle or local memo ports | [MEMORY_OPERATION_CYCLE](memory/MEMORY_OPERATION_CYCLE.md), [LIVING_MEMORY_TOPOLOGY](memory/LIVING_MEMORY_TOPOLOGY.md), [LOCAL_MEMO_PORT_STANDARD](memory/LOCAL_MEMO_PORT_STANDARD.md), [MEMO_PORT_INDEXING_VOCABULARY](memory/MEMO_PORT_INDEXING_VOCABULARY.md), then `python scripts/memory/validate_memory_operations.py` |
-| Write-path safety | [MEMORY_WRITE_PATH_GUARDRAILS](boundaries/MEMORY_WRITE_PATH_GUARDRAILS.md), [operational gate write path](../mechanics/operational-gate/docs/MEMORY_WRITE_PATH_GUARDRAILS.md), then `python scripts/memory/validate_memory_operations.py` |
-| Memory operation modes | [MEMORY_OPERATION_MODES](posture/MEMORY_OPERATION_MODES.md), [mode schema](../schemas/recall-posture/memory_operation_mode.schema.json), then `python scripts/memory/validate_memory_operations.py` |
+| Memory operation cycle or local memo ports | [MEMORY_OPERATION_CYCLE](memory/MEMORY_OPERATION_CYCLE.md), [LIVING_MEMORY_TOPOLOGY](memory/LIVING_MEMORY_TOPOLOGY.md), [LOCAL_MEMO_PORT_STANDARD](memory/LOCAL_MEMO_PORT_STANDARD.md), [MEMO_PORT_INDEXING_VOCABULARY](memory/MEMO_PORT_INDEXING_VOCABULARY.md), then [memory/AGENTS](memory/AGENTS.md) |
+| Write-path safety | [MEMORY_WRITE_PATH_GUARDRAILS](boundaries/MEMORY_WRITE_PATH_GUARDRAILS.md), [operational gate write path](../mechanics/operational-gate/docs/MEMORY_WRITE_PATH_GUARDRAILS.md), then [boundaries/AGENTS](boundaries/AGENTS.md) |
+| Memory operation modes | [MEMORY_OPERATION_MODES](posture/MEMORY_OPERATION_MODES.md), [mode schema](../schemas/recall-posture/memory_operation_mode.schema.json), then [posture/AGENTS](posture/AGENTS.md) |
 | Object canon or lifecycle | [MEMORY_OBJECT_PROFILES](memory/MEMORY_OBJECT_PROFILES.md), [MEMORY_TRUST_POSTURE](posture/MEMORY_TRUST_POSTURE.md), [LIFECYCLE](posture/LIFECYCLE.md) |
 | Generated parity | source doc or manifest, builder, generated output, validator, and test together |
 | Docs placement | [ROOT_SURFACE_LAW](root/ROOT_SURFACE_LAW.md) |

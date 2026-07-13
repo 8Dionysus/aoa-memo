@@ -37,14 +37,9 @@ The inventory is generated from the current package list in
 `config/memo_mechanics.json` and the tracked files under
 `mechanics/<slug>/{config,examples,generated,manifests,schemas,scripts,tests}/`.
 
-It is checked by:
-
-```bash
-python scripts/build_mechanic_artifact_inventory.py --check
-python scripts/validate_mechanic_artifact_inventory.py
-```
-
-The release gate runs both commands.
+The inventory is checked through the mechanics owner route and the frozen
+release lane. Current executable checks live in `mechanics/AGENTS.md` and
+`config/validation_lanes.json`.
 
 ## Consequences
 

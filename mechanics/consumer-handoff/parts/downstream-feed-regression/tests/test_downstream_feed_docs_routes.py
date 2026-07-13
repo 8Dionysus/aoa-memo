@@ -51,7 +51,7 @@ class MemoDownstreamFeedDocsRouteTests(unittest.TestCase):
         ):
             self.assertIn(command, scripts_agents)
 
-    def test_contributing_surfaces_current_validation_battery(self) -> None:
+    def test_contributing_routes_validation_to_command_owners(self) -> None:
         contributing = (REPO_ROOT / "CONTRIBUTING.md").read_text(encoding="utf-8")
         root_agents = (REPO_ROOT / "AGENTS.md").read_text(encoding="utf-8")
 
@@ -68,7 +68,8 @@ class MemoDownstreamFeedDocsRouteTests(unittest.TestCase):
         ):
             self.assertIn(command, root_agents)
 
-        self.assertIn("git status -sb", contributing)
+        self.assertIn("inspect the worktree state", contributing)
+        self.assertNotIn("git status -sb", contributing)
 
 
 

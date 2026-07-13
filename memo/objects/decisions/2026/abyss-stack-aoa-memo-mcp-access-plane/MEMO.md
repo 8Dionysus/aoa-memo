@@ -21,6 +21,6 @@ This bundle landed from `abyss-stack` through the reviewed intake route. The loc
 - abyss-stack owns aoa-memo-mcp as the MCP access plane for OS Abyss memory briefs, local memo port indexing, and reviewed-intake forwarding while aoa-memo remains the durable reviewed memory authority.
 
 ## Next Routes
-- Validate with `python scripts/memory/validate_memo_corpus.py`.
-- Refresh object read models with `python scripts/memory/generate_memory_object_surfaces.py`.
+- Validate corpus and refresh read models through `memo/AGENTS.md` and the
+  generated-memory owner route.
 - Keep durable edits in `memo/objects/`; keep origin packet history in the source repo memo port.

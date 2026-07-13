@@ -71,6 +71,7 @@ python scripts/agents/validate_agents_mesh.py
 python scripts/agents/build_agents_mesh_index.py --check
 python scripts/agents/validate_agents_mesh_index.py
 python scripts/memory/validate_memo.py
+python -m pytest -q mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/tests
 ```
 
 For release-bound work, also run:

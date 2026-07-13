@@ -14,13 +14,9 @@
 
 Validation route:
 
-```bash
-python -m pytest -q mechanics/antifragility/parts/failure-lesson-memory/tests mechanics/antifragility/parts/recovery-pattern-memory/tests
-python scripts/mechanics/validate_memo_mechanic_parts.py
-python scripts/mechanics/validate_mechanic_artifact_inventory.py
-python scripts/mechanics/validate_memo_mechanic_readiness.py
-python scripts/release/release_check.py
-```
+Current executable routes live in the nearest `AGENTS.md` or `VALIDATION.md`
+and in `config/validation_lanes.json`; historical run evidence remains in
+Git and CI history.
 
 ## 2026-05-18
 
@@ -33,10 +29,9 @@ python scripts/release/release_check.py
 
 Validation route:
 
-```bash
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/release/release_check.py
-```
+Current executable routes live in the nearest `AGENTS.md` or `VALIDATION.md`
+and in `config/validation_lanes.json`; historical run evidence remains in
+Git and CI history.
 
 ## Stop-lines preserved
 

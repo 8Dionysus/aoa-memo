@@ -46,7 +46,7 @@ Updating only the workspace release tool was rejected for this release because
 `aoa-memo` still needs to be publishable from the current shared release plane.
 
 Publishing manually through GitHub was rejected because the repository release
-procedure says to publish through `aoa release publish`.
+procedure names the shared AoA release publisher as the owner route.
 
 Duplicating the full release procedure into `docs/RELEASING.md` was rejected
 because it would create two release-policy surfaces.
@@ -75,13 +75,5 @@ because it would create two release-policy surfaces.
 
 ## Verification
 
-Use:
-
-```bash
-python scripts/release/release_check.py
-python scripts/release_check.py
-python scripts/root-topology/validate_docs_districts.py
-python scripts/root-topology/build_root_technical_districts_index.py --check
-python scripts/root-topology/validate_root_technical_districts_index.py
-aoa release audit /srv/AbyssOS --phase preflight --repo aoa-memo --strict --json
-```
+Current executable checks are owned by `config/validation_lanes.json`;
+focused owner routes live in the nearest `AGENTS.md` or `VALIDATION.md`.

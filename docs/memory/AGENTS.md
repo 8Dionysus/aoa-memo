@@ -33,4 +33,7 @@ python scripts/memory/validate_memo.py --profile memory-context
 python scripts/memory/validate_memory_operations.py
 python scripts/memory/validate_memory_surfaces.py
 python scripts/memory/validate_local_memo_port.py --path examples/memory-ports/example-port
+python scripts/memory/build_memory_operational_readouts.py --write --live
+python scripts/memory/build_memory_operational_readouts.py --check --live
+python scripts/memory/validate_abyss_machine_memory_object_bundle.py
 ```

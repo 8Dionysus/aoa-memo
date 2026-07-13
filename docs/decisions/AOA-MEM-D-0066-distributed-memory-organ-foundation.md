@@ -91,17 +91,5 @@ runtime authority, proof authority, routing authority, or eval ownership into
 
 ## Verification
 
-Use:
-
-```bash
-python mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py
-python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py --check
-python scripts/memory/validate_memory_operations.py
-python scripts/memory/validate_memo.py
-python scripts/memory/validate_memory_surfaces.py
-python scripts/memory/validate_memory_object_surfaces.py
-python scripts/memory/validate_lifecycle_audit_examples.py
-python scripts/root-topology/validate_docs_districts.py
-python -m pytest -q tests/memory tests/root-topology/test_docs_districts.py
-python scripts/release_check.py
-```
+Current executable checks are owned by `config/validation_lanes.json`;
+focused owner routes live in the nearest `AGENTS.md` or `VALIDATION.md`.

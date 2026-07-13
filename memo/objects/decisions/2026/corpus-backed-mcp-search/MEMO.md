@@ -15,6 +15,7 @@
 This is a confirmed access-plane memory. `abyss-stack` owns the MCP implementation, while `aoa-memo` owns the reviewed corpus and generated read models.
 
 ## Next Routes
-- Validate corpus/read-model parity with `python scripts/memory/generate_memory_object_surfaces.py --check`.
+- Validate corpus/read-model parity through `memo/AGENTS.md` and the
+  generated-memory owner route.
 - Validate MCP search behavior in `abyss-stack` with the service tests.
 - Keep future RAG/KAG/vector layers weaker than the reviewed object catalog.

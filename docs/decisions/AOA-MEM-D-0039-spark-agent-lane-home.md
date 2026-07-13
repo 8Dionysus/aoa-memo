@@ -73,9 +73,5 @@ role policy, KAG substrate, or runtime state.
 
 ## Verification Route
 
-Use:
-
-```bash
-python -m pytest -q tests/test_topology_spine.py
-python scripts/release_check.py
-```
+Current executable checks are owned by `config/validation_lanes.json`;
+focused owner routes live in the nearest `AGENTS.md` or `VALIDATION.md`.

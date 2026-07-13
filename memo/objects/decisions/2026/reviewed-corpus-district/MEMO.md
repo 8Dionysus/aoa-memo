@@ -23,7 +23,7 @@ landing corpus inside `aoa-memo`.
 
 ## Next Routes
 
-- Validate with `python scripts/memory/validate_memo_corpus.py`.
+- Validate through the reviewed-corpus route in `memo/AGENTS.md`.
 - Keep generated read models under `generated/`.
 - Keep MCP access in `abyss-stack/mcp/services/aoa-memo-mcp`.
 - Route future graph lift through object ids, source refs, lifecycle posture,

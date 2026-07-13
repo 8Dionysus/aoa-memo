@@ -30,6 +30,6 @@ This bundle landed from `abyss-stack` through the reviewed intake route. The loc
 - abyss-stack extended the stack-owned MCP access-plane pattern from aoa-memo-mcp to aoa-evals and abyss-machine while keeping proof authority in aoa-evals, host authority in abyss-machine, and durable memory authority in aoa-memo.
 
 ## Next Routes
-- Validate with `python scripts/memory/validate_memo_corpus.py`.
-- Refresh object read models with `python scripts/memory/generate_memory_object_surfaces.py`.
+- Validate corpus and refresh read models through `memo/AGENTS.md` and the
+  generated-memory owner route.
 - Keep durable edits in `memo/objects/`; keep origin packet history in the source repo memo port.

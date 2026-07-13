@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import importlib.util
 import json
+import re
 import subprocess
 import sys
 import types
@@ -13,6 +14,29 @@ VALIDATOR_INVENTORY_PATH = REPO_ROOT / "docs" / "validation" / "validator_invent
 SCRIPTS_DIR = REPO_ROOT / "scripts"
 if str(SCRIPTS_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPTS_DIR))
+
+PRIMARY_COMMAND_DOCS = frozenset({"docs/root/RELEASING.md"})
+EXECUTABLE_MARKDOWN_PREFIXES = (
+    ".agents/skills/",
+    ".agents/spark/scenarios/",
+)
+SHELL_FENCE_PATTERN = re.compile(
+    r"^ {0,3}```(?:bash|console|sh|shell|zsh)(?:\s+.*)?$",
+    re.IGNORECASE | re.MULTILINE,
+)
+REPO_COMMAND_LINE_PATTERN = re.compile(
+    r"^[ \t]*(?:[-*][ \t]+)?`?(?:"
+    r"python3?(?:[ \t]+-m)?[ \t]+|pytest(?=[ \t])|"
+    r"uv[ \t]+run[ \t]+pytest\b|git[ \t]+(?:status|diff)\b|"
+    r"aoa[ \t]+release\b)",
+    re.IGNORECASE | re.MULTILINE,
+)
+INLINE_REPO_COMMAND_PATTERN = re.compile(
+    r"`(?:python3?(?:\s+-m)?\s+|pytest(?=\s)|"
+    r"uv\s+run\s+pytest\b|git\s+(?:status|diff)\b|"
+    r"aoa\s+release\b)[^`]+`",
+    re.IGNORECASE,
+)
 
 import validation_lanes  # noqa: E402
 
@@ -31,6 +55,28 @@ REQUIRED_LAYERS = {
 }
 
 
+def tracked_markdown_paths() -> tuple[Path, ...]:
+    completed = subprocess.run(
+        ("git", "ls-files", "--", "*.md"),
+        cwd=REPO_ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    return tuple(Path(line) for line in completed.stdout.splitlines() if line)
+
+
+def markdown_command_violations(content: str) -> set[str]:
+    violations: set[str] = set()
+    if SHELL_FENCE_PATTERN.search(content):
+        violations.add("shell command block")
+    if REPO_COMMAND_LINE_PATTERN.search(content):
+        violations.add("repo command line")
+    if INLINE_REPO_COMMAND_PATTERN.search(content):
+        violations.add("inline repo command")
+    return violations
+
+
 def test_validator_topology_validator_passes() -> None:
     completed = subprocess.run(
         (sys.executable, "scripts/root-topology/validate_validator_topology.py"),
@@ -41,6 +87,41 @@ def test_validator_topology_validator_passes() -> None:
     )
 
     assert completed.returncode == 0, completed.stderr
+
+
+def test_non_owner_markdown_routes_runnable_commands_to_command_owners() -> None:
+    offenders: list[str] = []
+    for relative_path in tracked_markdown_paths():
+        route = relative_path.as_posix()
+        if route.startswith(EXECUTABLE_MARKDOWN_PREFIXES):
+            continue
+        if relative_path.name in {"AGENTS.md", "VALIDATION.md"}:
+            continue
+        if route in PRIMARY_COMMAND_DOCS:
+            continue
+        content = (REPO_ROOT / relative_path).read_text(encoding="utf-8")
+        for violation in sorted(markdown_command_violations(content)):
+            offenders.append(f"{route}: {violation}")
+
+    assert offenders == []
+
+
+def test_markdown_command_guard_rejects_scattered_command_forms() -> None:
+    content = """# Drift
+
+```bash
+python scripts/memory/validate_memo.py
+```
+
+- `python -m pytest -q`
+- aoa release audit /workspace --strict
+"""
+
+    assert markdown_command_violations(content) == {
+        "inline repo command",
+        "repo command line",
+        "shell command block",
+    }
 
 
 def test_validator_topology_entrypoint_stays_split() -> None:

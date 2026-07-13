@@ -64,8 +64,5 @@ hidden under the same schema token.
 
 ## Validation
 
-```bash
-python scripts/memory/validate_memo_corpus.py
-python -m pytest -q tests/memory/test_reviewed_intake_landing.py
-python scripts/memory/generate_memory_object_surfaces.py --check
-```
+Current executable checks are owned by `config/validation_lanes.json`;
+focused owner routes live in the nearest `AGENTS.md` or `VALIDATION.md`.

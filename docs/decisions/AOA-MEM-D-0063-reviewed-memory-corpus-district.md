@@ -69,12 +69,5 @@ reviewed object bundles after landing.
 
 ## Validation
 
-The corpus must pass:
-
-```bash
-python scripts/memory/validate_memo_corpus.py
-python -m pytest -q tests/memory/test_memo_corpus.py
-```
-
-Route-card and root topology changes must also pass the AGENTS mesh and root
-technical district checks.
+Current executable checks are owned by `config/validation_lanes.json`;
+focused owner routes live in the nearest `AGENTS.md` or `VALIDATION.md`.

@@ -27,19 +27,16 @@ same command shape.
 `generated/memo_mechanic_readiness.min.json` now includes a `local-test-route`
 check.
 
-When a mechanic package has package-local tests, its validation text must name:
-
-```bash
-python -m pytest -q mechanics/<slug>/tests
-```
-
-Agon's route card and landing log now name the local pytest command.
+When a mechanic package has package-local tests, the nearest `AGENTS.md` or
+`VALIDATION.md` must name the package-local test route. Agon's route card now
+does so; its landing log preserves the landing outcome rather than a second
+copy of the command.
 
 ## Alternatives Considered
 
-- Keep relying on `python scripts/release_check.py`. Rejected because release
-  validation is broad and does not help a future agent run a package-local
-  regression while editing one mechanic.
+- Keep relying only on the broad release lane. Rejected because it does not
+  help a future agent run a package-local regression while editing one
+  mechanic.
 - Infer local test commands from the artifact inventory only. Rejected because
   inference helps machines, but route cards should still carry the shortest
   human and agent validation path.
@@ -67,12 +64,5 @@ Agon's route card and landing log now name the local pytest command.
 
 ## Verification Route
 
-Run:
-
-```bash
-python scripts/build_memo_mechanic_readiness.py --check
-python scripts/validate_memo_mechanic_readiness.py
-python -m pytest -q mechanics/agon/parts/prebinding-and-candidate-intake/tests mechanics/agon/parts/bridge-and-evidence-seams/tests
-python -m pytest -q tests/test_memo_mechanic_readiness.py
-python scripts/release_check.py
-```
+Current executable checks are owned by `config/validation_lanes.json`;
+focused owner routes live in the nearest `AGENTS.md` or `VALIDATION.md`.

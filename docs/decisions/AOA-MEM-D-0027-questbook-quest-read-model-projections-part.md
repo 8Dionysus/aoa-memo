@@ -54,12 +54,5 @@ and the `questbook_projections` family in
 
 ## Verification
 
-Use:
-
-```bash
-python mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py
-python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py --check
-python scripts/validate_memo_mechanic_parts.py
-python -m pytest -q mechanics/questbook/parts/source-contract/tests/test_questbook_store.py tests/test_memo_mechanic_parts.py
-python scripts/release_check.py
-```
+Current executable checks are owned by `config/validation_lanes.json`;
+focused owner routes live in the nearest `AGENTS.md` or `VALIDATION.md`.

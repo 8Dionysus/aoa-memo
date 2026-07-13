@@ -29,8 +29,8 @@ Add `generated/memo_mechanic_landing_logs.min.json` as a generated landing
 receipt index built from package `LANDING_LOG.md` files.
 
 The index checks that each package has a dated receipt, landing evidence, a
-release validation route, and stop-lines naming proof, runtime, and an
-authority boundary. It is a receipt and validation companion only. It is not
+route to the executable validation owner, and stop-lines naming proof, runtime,
+and an authority boundary. It is a receipt and validation companion only. It is not
 proof, owner acceptance, runtime authority, release authority, route dispatch,
 role authority, KAG truth, playbook choreography, stats truth, or source
 doctrine.
@@ -50,7 +50,7 @@ doctrine.
 - OS Abyss can inspect every mechanic landing receipt from one compact
   generated surface.
 - Release validation fails when a mechanic has no dated landing evidence,
-  release validation route, or stop-line receipt.
+  executable-owner route, or stop-line receipt.
 - Package `LANDING_LOG.md` files remain the authored receipt source.
 - The readiness matrix can reference the landing-log index without becoming
   the landing receipt authority.
@@ -73,14 +73,5 @@ doctrine.
 
 ## Verification
 
-Use:
-
-```bash
-python scripts/build_memo_mechanic_landing_logs.py --check
-python scripts/validate_memo_mechanic_landing_logs.py
-python scripts/build_memo_mechanic_readiness.py --check
-python scripts/validate_memo_mechanic_readiness.py
-python scripts/validate_mechanic_artifact_topology.py
-python -m pytest -q tests/test_memo_mechanic_landing_logs.py tests/test_memo_mechanic_readiness.py
-python scripts/release_check.py
-```
+Current executable checks are owned by `config/validation_lanes.json`;
+focused owner routes live in the nearest `AGENTS.md` or `VALIDATION.md`.

@@ -17,11 +17,9 @@
 
 Validation route:
 
-```bash
-python scripts/mechanics/validate_mechanic_artifact_inventory.py
-python -m pytest -q mechanics/agon/parts/prebinding-and-candidate-intake/tests mechanics/agon/parts/bridge-and-evidence-seams/tests mechanics/agon/parts/stage-landing-and-stop-lines/tests
-python scripts/release/release_check.py
-```
+Current executable routes live in the nearest `AGENTS.md` or `VALIDATION.md`
+and in `config/validation_lanes.json`; historical run evidence remains in
+Git and CI history.
 
 ## 2026-05-18
 
@@ -37,12 +35,9 @@ python scripts/release/release_check.py
 
 Validation route:
 
-```bash
-python mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py
-python scripts/mechanics/validate_memo_mechanics.py
-python -m pytest -q mechanics/agon/parts/prebinding-and-candidate-intake/tests mechanics/agon/parts/bridge-and-evidence-seams/tests mechanics/agon/parts/stage-landing-and-stop-lines/tests
-python scripts/release/release_check.py
-```
+Current executable routes live in the nearest `AGENTS.md` or `VALIDATION.md`
+and in `config/validation_lanes.json`; historical run evidence remains in
+Git and CI history.
 
 ## Stop-lines preserved
 

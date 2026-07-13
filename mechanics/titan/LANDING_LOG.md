@@ -11,10 +11,9 @@
 
 Validation route:
 
-```bash
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/release/release_check.py
-```
+Current executable routes live in the nearest `AGENTS.md` or `VALIDATION.md`
+and in `config/validation_lanes.json`; historical run evidence remains in
+Git and CI history.
 
 ## 2026-05-19
 
@@ -30,10 +29,9 @@ python scripts/release/release_check.py
 
 Validation route:
 
-```bash
-python -m pytest -q mechanics/titan/parts/recall-and-remembrance-posture/tests mechanics/titan/parts/closeout-and-digest-posture/tests mechanics/titan/parts/audit-personality-and-swarm-policy/tests
-python scripts/release/release_check.py
-```
+Current executable routes live in the nearest `AGENTS.md` or `VALIDATION.md`
+and in `config/validation_lanes.json`; historical run evidence remains in
+Git and CI history.
 
 ## Stop-lines preserved
 

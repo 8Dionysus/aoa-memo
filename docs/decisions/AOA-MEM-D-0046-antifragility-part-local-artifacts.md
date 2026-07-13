@@ -92,15 +92,5 @@ runtime repair.
 
 ## Verification
 
-Expected verification:
-
-- `python -m pytest -q mechanics/antifragility/parts/failure-lesson-memory/tests mechanics/antifragility/parts/recovery-pattern-memory/tests tests/test_cross_mechanic_candidate_contracts.py tests/test_memo_validators.py tests/test_roadmap_parity.py mechanics/writeback/parts/growth-and-continuity/tests/test_growth_refinery_writeback.py mechanics/writeback/parts/receipt-publication-regression/tests/test_publish_live_receipts.py`
-- `python mechanics/writeback/parts/growth-and-continuity/scripts/generate_growth_refinery_writeback_lanes.py --check`
-- `python scripts/generate_memory_object_surfaces.py`
-- `python scripts/build_mechanic_artifact_inventory.py --check`
-- `python scripts/validate_mechanic_artifact_inventory.py`
-- `python scripts/build_memo_mechanic_readiness.py --check`
-- `python scripts/validate_memo_mechanic_readiness.py`
-- `python scripts/validate_memo_mechanic_parts.py`
-- `python scripts/validate_memo.py`
-- `python scripts/release_check.py`
+Current executable checks are owned by `config/validation_lanes.json`;
+focused owner routes live in the nearest `AGENTS.md` or `VALIDATION.md`.

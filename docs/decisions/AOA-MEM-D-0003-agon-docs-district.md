@@ -67,10 +67,5 @@ Update recurrence manifests and hook manifests from their old flat Agon refs to
 
 ## Verification
 
-```bash
-python scripts/validate_docs_districts.py
-python scripts/validate_agents_mesh.py
-python scripts/build_agents_mesh_index.py --check
-python scripts/validate_agents_mesh_index.py
-python scripts/release_check.py
-```
+Current executable checks are owned by `config/validation_lanes.json`;
+focused owner routes live in the nearest `AGENTS.md` or `VALIDATION.md`.

@@ -78,15 +78,5 @@ single-package artifacts.
 
 ## Verification
 
-Use:
-
-```bash
-python scripts/generate_memory_object_surfaces.py
-python scripts/validate_memo.py
-python scripts/validate_memory_object_surfaces.py
-python scripts/validate_mechanic_artifact_topology.py
-python scripts/build_mechanic_artifact_inventory.py --check
-python scripts/validate_mechanic_artifact_inventory.py
-python -m pytest -q mechanics/writeback/parts/growth-and-continuity/tests/test_self_agency_continuity_writeback.py tests/test_mechanic_artifact_topology.py tests/test_mechanic_artifact_inventory.py
-python scripts/release_check.py
-```
+Current executable checks are owned by `config/validation_lanes.json`;
+focused owner routes live in the nearest `AGENTS.md` or `VALIDATION.md`.

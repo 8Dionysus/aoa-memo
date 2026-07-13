@@ -86,21 +86,5 @@ Land memory operations as bounded, validated surfaces:
 
 ## Verification
 
-Use:
-
-```bash
-python scripts/memory/validate_memory_operations.py
-python scripts/memory/validate_memo.py
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/mechanics/validate_memo_mechanic_parts.py
-python scripts/mechanics/build_memo_mechanics_index.py --check
-python scripts/mechanics/build_memo_mechanic_cards.py --check
-python scripts/mechanics/build_memo_mechanic_owner_routes.py --check
-python scripts/mechanics/build_memo_mechanic_landing_logs.py --check
-python scripts/mechanics/build_memo_mechanic_readiness.py --check
-python scripts/mechanics/build_mechanic_artifact_inventory.py --check
-python scripts/root-topology/build_root_technical_districts_index.py --check
-python scripts/agents/build_agents_mesh_index.py --check
-python -m pytest -q
-python scripts/release/release_check.py
-```
+Current executable checks are owned by `config/validation_lanes.json`;
+focused owner routes live in the nearest `AGENTS.md` or `VALIDATION.md`.

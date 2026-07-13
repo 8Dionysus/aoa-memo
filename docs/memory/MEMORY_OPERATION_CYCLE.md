@@ -116,12 +116,8 @@ known gaps as routed gaps rather than treating MCP search coverage as durable
 truth. `abyss-stack` remains the runtime owner for MCP implementation, and
 `8Dionysus` remains the owner for workspace overlay map generation.
 
-Regenerate or check it with:
-
-```bash
-python scripts/memory/build_memory_operational_readouts.py --write --live
-python scripts/memory/build_memory_operational_readouts.py --check --live
-```
+Regenerate or check it through the operational-readout route in
+[AGENTS](AGENTS.md#validate).
 
 ## Calibration
 

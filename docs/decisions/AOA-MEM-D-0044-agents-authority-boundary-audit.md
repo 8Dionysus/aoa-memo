@@ -69,12 +69,5 @@ districts.
 
 ## Verification
 
-Use:
-
-```bash
-python scripts/agents/validate_agents_mesh.py
-python scripts/agents/build_agents_mesh_index.py --check
-python scripts/agents/validate_agents_mesh_index.py
-python -m pytest -q tests/agents
-python scripts/release/release_check.py
-```
+Current executable checks are owned by `config/validation_lanes.json`;
+focused owner routes live in the nearest `AGENTS.md` or `VALIDATION.md`.

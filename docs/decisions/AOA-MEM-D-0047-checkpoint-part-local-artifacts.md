@@ -63,15 +63,5 @@ the source owner for the checkpoint artifact and mapping.
 
 ## Verification
 
-Expected verification:
-
-- `python -m pytest -q mechanics/checkpoint/parts/checkpoint-memory-boundary/tests tests/test_memo_validators.py mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_downstream_feed_contracts.py mechanics/consumer-handoff/parts/playbook-scope-handoff/tests/test_playbook_memory_scopes.py mechanics/recurrence-support/parts/witness-trace-contract/tests/test_recurrence_support_mechanic.py mechanics/writeback/parts/runtime-and-temperature/tests/test_runtime_writeback_part.py`
-- `python mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_targets.py --check`
-- `python mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_intake.py --check`
-- `python mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_governance.py --check`
-- `python scripts/validate_memo_mechanics.py`
-- `python scripts/validate_memo_mechanic_parts.py`
-- `python scripts/validate_mechanic_artifact_topology.py`
-- `python scripts/validate_memory_object_surfaces.py`
-- `python scripts/validate_memo.py`
-- `python scripts/release_check.py`
+Current executable checks are owned by `config/validation_lanes.json`;
+focused owner routes live in the nearest `AGENTS.md` or `VALIDATION.md`.

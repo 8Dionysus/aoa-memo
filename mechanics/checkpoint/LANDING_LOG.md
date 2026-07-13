@@ -17,11 +17,9 @@ Landed shape:
 
 Validation route:
 
-```bash
-python -m pytest -q mechanics/checkpoint/parts/checkpoint-memory-boundary/tests tests/memory/test_memo_schema_contracts.py tests/memory/test_memo_memory_context_boundaries.py mechanics/consumer-handoff/parts/downstream-feed-regression/tests mechanics/consumer-handoff/parts/playbook-scope-handoff/tests/test_playbook_memory_scopes.py mechanics/recurrence-support/parts/witness-trace-contract/tests/test_recurrence_support_mechanic.py mechanics/writeback/parts/runtime-and-temperature/tests/test_runtime_writeback_part.py
-python scripts/memory/validate_memo.py
-python scripts/release/release_check.py
-```
+Current executable routes live in the nearest `AGENTS.md` or `VALIDATION.md`
+and in `config/validation_lanes.json`; historical run evidence remains in
+Git and CI history.
 
 Stop-lines preserved:
 
@@ -46,10 +44,9 @@ Landed shape:
 
 Validation route:
 
-```bash
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/release/release_check.py
-```
+Current executable routes live in the nearest `AGENTS.md` or `VALIDATION.md`
+and in `config/validation_lanes.json`; historical run evidence remains in
+Git and CI history.
 
 Stop-lines preserved:
 

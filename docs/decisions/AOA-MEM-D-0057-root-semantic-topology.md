@@ -97,21 +97,5 @@ explained in prose.
 
 ## Verification
 
-Use:
-
-```bash
-python scripts/root-topology/validate_docs_districts.py
-python scripts/mechanics/validate_mechanic_artifact_topology.py
-python scripts/root-topology/build_root_technical_districts_index.py --check
-python scripts/root-topology/validate_root_technical_districts_index.py
-python scripts/agents/validate_agents_mesh.py
-python scripts/agents/build_agents_mesh_index.py --check
-python scripts/agents/validate_agents_mesh_index.py
-python scripts/agents/validate_semantic_agents.py
-python scripts/memory/validate_memo.py
-python scripts/memory/validate_memory_surfaces.py
-python scripts/memory/generate_memory_object_surfaces.py --check
-python scripts/memory/validate_memory_object_surfaces.py
-python -m pytest -q
-python scripts/release/release_check.py
-```
+Current executable checks are owned by `config/validation_lanes.json`;
+focused owner routes live in the nearest `AGENTS.md` or `VALIDATION.md`.
