@@ -82,6 +82,9 @@ Tracking starts with the community-docs baseline for this repository.
   legacy snapshot.
 - Tighten the root README into a compact front door and route detailed memory,
   mechanics, generated, and technical inventories to their owning surfaces.
+- Add the OS Abyss memory-object artifact bundle trust gate to the public
+  validation lane, including subject-store materialization and fail-closed
+  consumer verdict coverage for generated memo surfaces.
 - Align root surface law with the memo-local `evals/` technical district while
   keeping proof doctrine and verdict authority in `aoa-evals`.
 

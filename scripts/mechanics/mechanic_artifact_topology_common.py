@@ -12,6 +12,7 @@ ROOT_TECHNICAL_DISTRICTS = (
     "evals",
     "examples",
     "generated",
+    "kag",
     "manifests",
     "schemas",
     "scripts",

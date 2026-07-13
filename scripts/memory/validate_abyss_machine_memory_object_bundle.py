@@ -94,6 +94,32 @@ def _portable_ref(path: Path) -> str:
         return resolved.name
 
 
+def _abyss_machine_roots_for_sanitizer() -> list[Path]:
+    roots: list[Path] = []
+    for raw in (
+        os.environ.get("ABYSS_MACHINE_REPO_ROOT"),
+        os.environ.get("ABYSS_MACHINE_PACKAGE_ROOT"),
+        "/srv/AbyssOS/abyss-machine",
+    ):
+        if not raw:
+            continue
+        root = Path(raw).expanduser().resolve()
+        if root not in roots:
+            roots.append(root)
+    return roots
+
+
+def _tmp_roots_for_sanitizer() -> list[Path]:
+    roots: list[Path] = []
+    for raw in (os.environ.get("ABYSS_MACHINE_TMP_ROOT"), "/srv/abyss-machine/tmp"):
+        if not raw:
+            continue
+        root = Path(raw).expanduser().resolve()
+        if root not in roots:
+            roots.append(root)
+    return roots
+
+
 def _sanitize_public_payload(payload: Any) -> Any:
     local_root = str(REPO_ROOT.resolve())
     if isinstance(payload, dict):
@@ -103,12 +129,20 @@ def _sanitize_public_payload(payload: Any) -> Any:
     if isinstance(payload, str):
         if payload == local_root or payload.startswith(local_root + os.sep):
             return _portable_ref(Path(payload))
-        tmp_root = "/srv/abyss-machine/tmp"
-        if payload == tmp_root:
-            return "host-tmp:abyss-machine"
-        if payload.startswith(tmp_root + os.sep):
-            suffix = Path(payload).resolve().relative_to(Path(tmp_root)).as_posix()
-            return f"host-tmp:abyss-machine/{suffix}"
+        for abyss_root in _abyss_machine_roots_for_sanitizer():
+            abyss_root_text = str(abyss_root)
+            if payload == abyss_root_text:
+                return "abyss-machine-root-redacted"
+            if payload.startswith(abyss_root_text + os.sep):
+                suffix = Path(payload).resolve().relative_to(abyss_root).as_posix()
+                return f"abyss-machine-root-redacted/{suffix}"
+        for tmp_root in _tmp_roots_for_sanitizer():
+            tmp_root_text = str(tmp_root)
+            if payload == tmp_root_text:
+                return "host-tmp:abyss-machine"
+            if payload.startswith(tmp_root_text + os.sep):
+                suffix = Path(payload).resolve().relative_to(tmp_root).as_posix()
+                return f"host-tmp:abyss-machine/{suffix}"
         home = Path.home().resolve()
         if payload == str(home) or payload.startswith(str(home) + os.sep):
             return "host-home-redacted"
@@ -172,6 +206,8 @@ def _assert_manifest_matches_subject(manifest: Path, subject: Path) -> None:
         raise ValueError("manifest consumer_contract.subject_store_required must be true")
     if contract.get("admission_gate") != "fail_closed_consumer_admission":
         raise ValueError("manifest consumer_contract.admission_gate must be fail_closed_consumer_admission")
+    if contract.get("consumer_verdict") != "allow_or_deny_required_before_use":
+        raise ValueError("manifest consumer_contract.consumer_verdict must be allow_or_deny_required_before_use")
     commands = "\n".join(str(item) for item in payload.get("consumer_command") or [])
     for token in (
         "artifacts evidence-promote",
@@ -344,20 +380,48 @@ def _trust_gate_allow_latest(
         expected_trust_root_mode=TRUST_ROOT_MODE,
     )
     inspected_claims = trust_gate.get("inspected_claims", {})
+    decision = trust_gate.get("decision", {}) if isinstance(trust_gate.get("decision"), dict) else {}
+    subject_store = inspected_claims.get("artifact_subject_store", {})
+    if not require_subject_store:
+        # Before materialization the consumer gate must remain fail-closed.
+        # Accept this phase only when the verified latest record is denied for
+        # the one expected reason: its required subject store is not ready yet.
+        blockers = [str(item) for item in trust_gate.get("blockers", [])]
+        subject_store_blocker = str(
+            getattr(
+                artifact_bundles,
+                "REQUIRED_SUBJECT_STORE_BLOCKER",
+                "required_artifact_subject_store_not_verified",
+            )
+        )
+        return {
+            "ok": bool(
+                trust_gate.get("verdict") == "deny"
+                and decision.get("model") == "fail_closed_consumer_admission"
+                and decision.get("allow") is False
+                and blockers == [subject_store_blocker]
+                and inspected_claims.get("registry_latest", {}).get("selected_record_is_latest") is True
+                and inspected_claims.get("controls", {}).get("required_controls_missing") == []
+                and inspected_claims.get("source", {}).get("source_repo_matched") is True
+                and inspected_claims.get("trust_root", {}).get("trust_root_mode_matched") is True
+                and isinstance(subject_store, dict)
+                and subject_store.get("ok") is False
+                and subject_store.get("required") is True
+            ),
+            "trust_gate": trust_gate,
+        }
     return {
         "ok": bool(
             trust_gate.get("ok")
             and trust_gate.get("verdict") in {"allow", "warn"}
-            and trust_gate.get("decision", {}).get("model") == "fail_closed_consumer_admission"
-            and trust_gate.get("decision", {}).get("allow") is True
+            and decision.get("model") == "fail_closed_consumer_admission"
+            and decision.get("allow") is True
             and inspected_claims.get("registry_latest", {}).get("selected_record_is_latest") is True
             and inspected_claims.get("controls", {}).get("required_controls_missing") == []
             and inspected_claims.get("source", {}).get("source_repo_matched") is True
             and inspected_claims.get("trust_root", {}).get("trust_root_mode_matched") is True
-            and (
-                not require_subject_store
-                or inspected_claims.get("artifact_subject_store", {}).get("ok") is True
-            )
+            and isinstance(subject_store, dict)
+            and subject_store.get("ok") is True
         ),
         "trust_gate": trust_gate,
     }

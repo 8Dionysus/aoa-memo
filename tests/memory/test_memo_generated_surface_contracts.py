@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 import sys
 from pathlib import Path
 
@@ -8,6 +9,11 @@ if str(TEST_DIR) not in sys.path:
     sys.path.insert(0, str(TEST_DIR))
 
 from memo_validator_test_support import *  # noqa: F403
+
+memory_bundle_validator = load_script_module(  # noqa: F405
+    "validate_abyss_machine_memory_object_bundle",
+    REPO_ROOT / "scripts" / "memory" / "validate_abyss_machine_memory_object_bundle.py",  # noqa: F405
+)
 
 
 class MemoGeneratedSurfaceContractTestCase(MemoValidatorTestCase):
@@ -137,6 +143,10 @@ class MemoGeneratedSurfaceContractTestCase(MemoValidatorTestCase):
             "fail_closed_consumer_admission",
         )
         self.assertEqual(
+            manifest["consumer_contract"]["consumer_verdict"],
+            "allow_or_deny_required_before_use",
+        )
+        self.assertEqual(
             manifest["artifact_identity"],
             {
                 "artifact_class": "derived_memory_object_readmodel_family",
@@ -173,3 +183,85 @@ class MemoGeneratedSurfaceContractTestCase(MemoValidatorTestCase):
         self.assertIn("--source-repo aoa-memo", commands)
         self.assertIn("--store-root SUBJECT_STORE_ROOT", commands)
         self.assertIn("--trust-root-mode host_managed", commands)
+
+    def test_memory_object_bundle_validator_requires_consumer_verdict(self) -> None:
+        manifest = load_json(  # noqa: F405
+            REPO_ROOT / "docs" / "memory" / "artifact-bundles" / "memory_object_readmodels.bundle.json"  # noqa: F405
+        )
+        assert isinstance(manifest, dict)
+        manifest = copy.deepcopy(manifest)  # noqa: F405
+        manifest["consumer_contract"].pop("consumer_verdict")
+        with tempfile.TemporaryDirectory() as tmp:  # noqa: F405
+            root = Path(tmp)
+            manifest_path = root / "docs" / "memory" / "artifact-bundles" / "memory_object_readmodels.bundle.json"
+            subject_path = root / "generated" / "memory-objects" / "memory_object_catalog.min.json"
+            manifest_path.parent.mkdir(parents=True)
+            subject_path.parent.mkdir(parents=True)
+            manifest_path.write_text(json.dumps(manifest), encoding="utf-8")  # noqa: F405
+            subject_path.write_text("{}", encoding="utf-8")
+
+            with self.assertRaisesRegex(ValueError, "consumer_verdict"):
+                memory_bundle_validator._assert_manifest_matches_subject(manifest_path, subject_path)
+
+    def test_memory_object_bundle_sanitizer_redacts_imported_abyss_machine_roots(self) -> None:
+        old_repo_root = os.environ.get("ABYSS_MACHINE_REPO_ROOT")
+        try:
+            os.environ["ABYSS_MACHINE_REPO_ROOT"] = "/opt/abyss-machine"
+            sanitized = memory_bundle_validator._sanitize_public_payload(
+                {
+                    "root": "/opt/abyss-machine",
+                    "nested": "/opt/abyss-machine/src/abyss_machine/artifact_bundles.py",
+                }
+            )
+        finally:
+            if old_repo_root is None:
+                os.environ.pop("ABYSS_MACHINE_REPO_ROOT", None)
+            else:
+                os.environ["ABYSS_MACHINE_REPO_ROOT"] = old_repo_root
+
+        self.assertEqual(sanitized["root"], "abyss-machine-root-redacted")
+        self.assertEqual(
+            sanitized["nested"],
+            "abyss-machine-root-redacted/src/abyss_machine/artifact_bundles.py",
+        )
+
+    def test_pre_materialization_gate_accepts_only_expected_fail_closed_denial(self) -> None:
+        class FakeArtifactBundles:
+            REQUIRED_SUBJECT_STORE_BLOCKER = "required_artifact_subject_store_not_verified"
+            blockers = [REQUIRED_SUBJECT_STORE_BLOCKER]
+
+            @staticmethod
+            def trust_gate(*_args, **_kwargs):
+                return {
+                    "ok": False,
+                    "verdict": "deny",
+                    "blockers": list(FakeArtifactBundles.blockers),
+                    "decision": {
+                        "model": "fail_closed_consumer_admission",
+                        "allow": False,
+                    },
+                    "inspected_claims": {
+                        "registry_latest": {"selected_record_is_latest": True},
+                        "controls": {"required_controls_missing": []},
+                        "source": {"source_repo_matched": True},
+                        "trust_root": {"trust_root_mode_matched": True},
+                        "artifact_subject_store": {"ok": False, "required": True},
+                    },
+                }
+
+        result = memory_bundle_validator._trust_gate_allow_latest(
+            FakeArtifactBundles,
+            Path("registry"),
+            {"promoted": {"record": {"subject_digest": "sha256:test"}}},
+            require_subject_store=False,
+        )
+        self.assertTrue(result["ok"])
+
+        FakeArtifactBundles.blockers.append("unexpected_blocker")
+        result = memory_bundle_validator._trust_gate_allow_latest(
+            FakeArtifactBundles,
+            Path("registry"),
+            {"promoted": {"record": {"subject_digest": "sha256:test"}}},
+            require_subject_store=False,
+        )
+        self.assertFalse(result["ok"])
