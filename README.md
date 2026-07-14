@@ -9,7 +9,7 @@ Use this README as the public front door. When work becomes doctrinal,
 mechanic-local, corpus-backed, generated, schema-backed, quest-bound, or
 agent-facing, follow the linked owner surface instead of expanding this page.
 
-> Current release: `v0.4.0`. See [CHANGELOG](CHANGELOG.md) for release notes.
+> Current release: `v0.5.0`. See [CHANGELOG](CHANGELOG.md) for release notes.
 
 ## What This Repository Does
 

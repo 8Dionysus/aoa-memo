@@ -91,7 +91,7 @@ canonical-ID source filenames, source-owned `Index Metadata`, and generated
 lookup indexes so agents can inspect rationale by number, date, surface,
 mechanic, guard, or memory-object class without a second active path route.
 
-The current `v0.4.0` release line carries the earlier memory surface set plus
+The current `v0.5.0` release line carries the earlier memory surface set plus
 the contract-hardening additions above:
 - checkpoint recall follow-through and lineage-aware growth-refinery writeback surfaces through `mechanics/checkpoint/docs/CHECKPOINT_MEMORY_BOUNDARY.md`, `mechanics/recurrence-support/docs/RECURRENCE_MEMORY_SUPPORT_SURFACES.md`, `mechanics/writeback/docs/GROWTH_REFINERY_WRITEBACK.md`, and `mechanics/writeback/docs/QUEST_CHRONICLE_WRITEBACK.md`
 - pattern-lineage harvest memory through `mechanics/lineage-harvest/docs/PATTERN_LINEAGE_MEMORY.md`, `mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/schemas/pattern_lineage_memory_entry_v1.json`, and `mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/examples/pattern_lineage_memory_entry.example.json`
