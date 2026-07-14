@@ -116,6 +116,9 @@ Tracking starts with the community-docs baseline for this repository.
   `AGENTS.md` or `VALIDATION.md`, and the active release procedure; decisions,
   changelog history, landing logs, reviewed memory objects, and route maps now
   retain owner routes and outcomes instead of copied command catalogs.
+- Refresh the release-closeout workspace memo-port readout from the landed
+  owner map so publication carries current route evidence instead of the
+  pre-merge workspace snapshot.
 
 ### Fixed
 
@@ -147,6 +150,11 @@ Tracking starts with the community-docs baseline for this repository.
 - federation preflight completed through the workspace release owner using the
   dependency revisions pinned by this repository's validation workflow
 - GitHub `Repo Validation` completed successfully on the landed release commit
+- a landed-main live access-plane verification recorded six passing probes,
+  one explicitly routed known gap, and no failed probes; the checked-in
+  access-plane readout remains the contract-only release artifact, while the
+  imported workspace map separately preserves the current Tree-of-Sophia
+  memory-route issue instead of flattening it into a green memo claim
 
 ### Notes
 
