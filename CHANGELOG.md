@@ -7,6 +7,28 @@ Tracking starts with the community-docs baseline for this repository.
 
 ## [Unreleased]
 
+## [0.5.0] - 2026-07-13
+
+### Summary
+
+- establish the distributed memory-organ foundation and its operational
+  readouts, reviewed writeback objects, access-plane intake, and reproducible
+  workspace memo-port status without moving runtime or proof authority into
+  `aoa-memo`
+- complete the canonical `AOA-MEM-D-####` decision lane with full-ID source
+  filenames and generated lookup indexes, retiring the numbered compatibility
+  paths from the active surface
+- refactor validation, builder, and test topology into explicit owner lanes,
+  focused validator profiles, bounded test homes, and command-authority
+  manifests while deactivating legacy validation surfaces
+- add the memo-local eval port, artifact identities, OS Abyss and subject-store
+  trust gates, the local KAG provider/index family, and the owner-local stats
+  port so downstream consumers receive fail-closed, provenance-bearing memory
+  read models
+- harden reviewed intake, operation-mode, Spark-schema, decision-surface, and
+  generated-route handling so malformed or nonlocal evidence fails as a
+  reported contract error rather than becoming accepted memory or a traceback
+
 ### Added
 
 - Add the owner-local `stats/` port with a source-backed reviewed-memory-object
@@ -116,6 +138,93 @@ Tracking starts with the community-docs baseline for this repository.
   intake cannot rely on v2 receipts without checker provenance.
 - Preserve sibling script imports when `validate_memo.py` is imported by file
   location, so the schema profile can still load `validate_nested_agents.py`.
+
+### Validation
+
+- the active repo-level release gate and its workspace-compatibility wrapper
+  completed successfully through the release routes owned by
+  `docs/root/RELEASING.md` and `scripts/release/`
+- federation preflight completed through the workspace release owner using the
+  dependency revisions pinned by this repository's validation workflow
+- GitHub `Repo Validation` completed successfully on the landed release commit
+
+### Notes
+
+- this release was reconstructed from the complete first-parent history and
+  tree diff from `v0.4.0` through `698d823`, not from the previous
+  `[Unreleased]` prose alone: the reconciled span contains 61 first-parent
+  changes across 404 paths, with 60,928 insertions and 11,985 deletions
+- every first-parent change in that span is listed below; the release-prep
+  change itself is represented by this dated section, the `v0.5.0` version
+  alignment, validation evidence, and publication metadata
+- this release changes the reviewed memory owner only; evaluation truth stays
+  in `aoa-evals`, routing in `aoa-routing`, shared KAG and statistical grammar
+  in `aoa-kag` and `aoa-stats`, runtime/storage in `abyss-stack`, and role or
+  playbook authority in their owning repositories
+
+### Included in this release
+
+- `ca456e8` - Land memory organ foundation routes
+- `b8eea5c` - Land memory operational readouts (#222)
+- `c90c605` - Land memo writeback catchup objects (#223)
+- `81cb36f` - Land abyss-stack access-plane memory intake (#224)
+- `d315627` - Land memo MCP workspace port discovery intake (#225)
+- `be3e7a5` - Refresh workspace memo port status readout (#226)
+- `4d7e843` - Sync workspace memo port status after aoa-agents marker (#227)
+- `ae5e4e6` - Sync workspace memo port status after aoa-agents formation marker (#228)
+- `38f8d8f` - Sync workspace memo port status after aoa-agents assistant civil marker (#229)
+- `c7cb869` - Sync workspace memo port status after aoa-agents Codex refresh marker (#230)
+- `7b7efa4` - Sync workspace memo port status after aoa-agents adoption boundary marker (#231)
+- `2544a49` - Add canonical decision indexes (#232)
+- `0a83502` - Use numbered decision paths (#233)
+- `36fe6e5` - Complete numbered decision route migration (#234)
+- `f4a822e` - Use full decision IDs in memo decision filenames (#235)
+- `0a1dc6e` - Refactor memo validation topology
+- `ffaf5f8` - Split memo validator profiles into modules
+- `660ff56` - Split memo validator tests by boundary (#238)
+- `d2aa7da` - Split remaining bulky validation surfaces (#239)
+- `147a224` - Refine memo validator and test topology (#240)
+- `acdef7d` - Refactor memo builder topology (#241)
+- `895a9db` - Tighten memo test topology gates (#242)
+- `5c53b7e` - Deactivate legacy validation surfaces (#243)
+- `477c251` - Slim root README route surface (#244)
+- `fdce572` - Keep README validation route command-free (#245)
+- `efb7e0d` - Detect unmodeled decision lane surfaces (#246)
+- `6b85a83` - Validate modeled decision surface contract entries (#247)
+- `8055b6c` - Add local eval port (#248)
+- `5f87c4f` - Refresh KAG source export route (#249)
+- `e3f39a4` - Align KAG export ToS donor ref
+- `82823cb` - Align evals root surface law (#251)
+- `bd5b017` - Align roadmap with legacy deactivation (#252)
+- `e3f1283` - Load memo validators through private package (#253)
+- `74ac0bc` - Derive memo decision index test expectations (#254)
+- `845c227` - Harden memory operational readouts
+- `bc3771d` - Reject nonlocal reviewed intake refs (#256)
+- `b7bdedb` - Require reviewed intake receipt coverage (#257)
+- `7677032` - Version local memo receipt checked-by contract (#258)
+- `bb169ea` - Validate memory intake operation mode refs
+- `fdb157c` - Validate Spark registry against schema
+- `f2ae15a` - Cover operational contract part paths
+- `3139924` - Handle invalid Spark registry schemas (#262)
+- `ec5993b` - Handle non-JSON operation mode refs (#263)
+- `f69ca51` - Require checked_by on v2 receipts (#264)
+- `ff22991` - Guard reviewed intake receipt candidate refs (#265)
+- `568b73e` - Reject blank trimmed memo refs (#266)
+- `13ba7b6` - Preserve validate_memo sibling imports (#267)
+- `9747615` - Add roadmap legacy changelog note
+- `dc1530d` - [codex] Add artifact identity to memory object surfaces (#269)
+- `04c1b66` - Add OS Abyss trust gate for memory readmodels (#270)
+- `8b2fc02` - Require subject-store trust gate for memory readmodels (#271)
+- `79951a2` - Add memo KAG provider home (#272)
+- `19b1e26` - Add repo-local KAG indexes (#274)
+- `e11bc3b` - Enforce repo-local KAG index parity (#275)
+- `d317041` - Pin deterministic repo-local KAG index gate (#276)
+- `5e2104b` - Add repository KAG index family (#277)
+- `166c8a7` - Reground stress recovery eval provenance (#279)
+- `6eacb49` - Add the owner-local stats port (#280)
+- `cfd98d6` - Publish canonical repository KAG indexes (#278)
+- `40565fd` - Centralize validation command ownership (#281)
+- `698d823` - Align memo KAG topology and artifact admission (#282)
 
 ## [0.4.0] - 2026-05-24
 
