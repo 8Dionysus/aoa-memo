@@ -100,7 +100,8 @@ source owner or captured evidence
 Classify each node as captured evidence, owner source, candidate packet,
 review decision, durable corpus source, deterministic projection, runtime
 observation, or consumer view. A later node cannot repair or strengthen an
-earlier one.
+earlier one. Stop when the selected disposition and output ABI are directly
+supported; do not traverse downstream nodes that cannot change the result.
 
 When the request begins with `.aoa`, session memory, or a transcript, compose
 with the session-memory route first. Begin this bundle at the returned raw,
@@ -136,6 +137,9 @@ unless the evidence route says the packet is incomplete.
    evidence ref, its validation or forwarding receipts, and the export. Keep
    `candidate_only`, `reviewed_write`, `quarantine`, `archive_only`, and
    `reject` distinct.
+   If the question is route-only and gives no concrete candidate, inspect the
+   owner contract and executable gate only; do not enumerate unrelated packets
+   or landed objects.
 4. Check derivation lineage, source trust, privacy, poisoning, action-safety,
    duplicates, contradictions, lifecycle, current-recall posture, and whether
    the proposed object kind is narrower than the evidence.
@@ -191,8 +195,10 @@ unless the evidence route says the packet is incomplete.
 ## Manual Verification
 
 - trace each material claim backward to the strongest reachable source;
-- inspect at least one actual object, packet, receipt, or projection rather
-  than trusting an index or exit code;
+- when a concrete artifact is part of the request, inspect that actual object,
+  packet, receipt, or projection rather than trusting an index or exit code;
+- for a route-only question, inspect the source contract and one executable
+  gate, then stop instead of sampling an unrelated artifact;
 - for recall drift, disconfirm at least one adjacent layer;
 - for review, replay the strongest non-admission or quarantine case;
 - for evolution, replay the motivating case and confirm the generated output
