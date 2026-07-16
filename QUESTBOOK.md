@@ -35,7 +35,11 @@ quest ledger.
 
 ## Quest-harvest posture
 
-`aoa-quest-harvest` may be installed at `.agents/skills/aoa-quest-harvest` as a post-session aid for memo-facing recall and writeback triage.
+The old `aoa-quest-harvest` name is a migration-only shared `aoa-skills` alias
+for the classify mode of `aoa-session-harvest`. If the active shared profile
+exposes that family, it may support post-session memo-facing recall and
+writeback triage after closure. It is not an `aoa-memo` home bundle and must
+not be copied under this repository's `.agents/skills/` projection.
 
 - use it only after a reviewed run, closure, or pause
 - do not use it inside an active route

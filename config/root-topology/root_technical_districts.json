@@ -1,5 +1,5 @@
 {
-  "schema_version": "aoa_memo_root_technical_districts_v10",
+  "schema_version": "aoa_memo_root_technical_districts_v11",
   "source_of_truth": "mechanics/ARTIFACT_TOPOLOGY.md",
   "route_card_exception": "AGENTS.md",
   "districts": {
@@ -172,6 +172,14 @@
         "schemas/recall-posture/trust_posture.schema.json"
       ]
     },
+    "skills": {
+      "root_role": "canonical home for admitted aoa-memo-specific callable procedures and their owner projection manifest",
+      "allowed_files": [
+        "skills/README.md",
+        "skills/aoa-memo/SKILL.md",
+        "skills/port.manifest.json"
+      ]
+    },
     "scripts": {
       "root_role": "repo-wide validators, index builders, and shared memory-object generators",
       "allowed_files": [
@@ -298,7 +306,6 @@
       "root_role": "repo-wide regression coverage for shared surfaces, generated parity, route maps, and cross-mechanic contracts",
       "allowed_files": [
         "tests/agents/test_agents_mesh.py",
-        "tests/agents/test_companion_skill_scripts.py",
         "tests/agents/test_validate_semantic_agents.py",
         "tests/mechanics/test_cross_mechanic_candidate_contracts.py",
         "tests/mechanics/test_cross_mechanic_operational_contracts.py",
@@ -1029,18 +1036,6 @@
         "mechanics/governance/parts/federation-boundary/schemas/federation_memory_gate_decision_v1.json",
         "mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/schemas/pattern_lineage_memory_entry_v1.json",
         "mechanics/retention/parts/cross-repo-and-governance-retention/schemas/cross_repo_retention_result_v1.json"
-      ]
-    },
-    {
-      "id": "agent_companion_skill_contracts",
-      "role": "agent-companion-regression",
-      "owner_surface": ".agents/AGENTS.md",
-      "tests": [
-        "tests/agents/test_companion_skill_scripts.py"
-      ],
-      "protects": [
-        ".agents/skills/aoa-safe-infra-change/scripts/infra_change_contract.py",
-        ".agents/skills/AGENTS.md"
       ]
     }
   ],

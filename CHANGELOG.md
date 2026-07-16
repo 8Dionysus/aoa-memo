@@ -7,6 +7,17 @@ Tracking starts with the community-docs baseline for this repository.
 
 ## [Unreleased]
 
+### Added
+
+- Add one manually admitted `aoa-memo` owner bundle with internal `recall`,
+  `review`, and `evolve` modes under the canonical `skills/` home.
+
+### Changed
+
+- Replace 25 copied shared skill projections with one exact generated
+  `.agents/skills/aoa-memo` projection and remove the foreign companion-script
+  regression that treated a copied workflow helper as memo-owned truth.
+
 ## [0.5.0] - 2026-07-13
 
 ### Summary

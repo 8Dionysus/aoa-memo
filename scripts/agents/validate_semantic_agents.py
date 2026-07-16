@@ -17,13 +17,13 @@ class AgentsDocSpec:
 
 REQUIRED_DOCS: tuple[AgentsDocSpec, ...] = (
     AgentsDocSpec(
-        Path('.agents/skills/AGENTS.md'),
+        Path('skills/AGENTS.md'),
         (
-            'memory-layer maintenance',
-            'recall contracts',
-            'Memory is valuable. It is not proof',
-            'public-safe',
-            'validate_memo.py',
+            'canonical `aoa-memo/skills/` home',
+            'generated Codex projection',
+            'Manual isolated',
+            'green output makes no outcome claim',
+            'skills-ref validate',
         ),
     ),
     AgentsDocSpec(

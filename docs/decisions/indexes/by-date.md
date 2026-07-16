@@ -100,3 +100,7 @@
 ## 2026-06-01
 
 - [AOA-MEM-D-0075 Test And Validation Lane Topology](../AOA-MEM-D-0075-test-and-validation-lane-topology.md) (`docs/decisions/AOA-MEM-D-0075-test-and-validation-lane-topology.md`)
+
+## 2026-07-16
+
+- [AOA-MEM-D-0076 aoa-memo Owner Skill Bundle](../AOA-MEM-D-0076-aoa-memo-owner-skill-bundle.md) (`docs/decisions/AOA-MEM-D-0076-aoa-memo-owner-skill-bundle.md`)

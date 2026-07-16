@@ -334,26 +334,13 @@
         "tests/agents/test_agents_mesh.py",
         "tests/agents/test_validate_semantic_agents.py"
       ],
-      "protects": "AGENTS mesh and semantic route cards",
+      "protects": "AGENTS mesh, owner-skill route cards, and derived agent lanes",
       "owner_surface": "DESIGN.AGENTS.md",
       "lane": "topology",
       "mode": "blocking",
       "runtime_cost": "fast",
       "focused_target": "tests/agents",
       "failure_route": "Fix DESIGN.AGENTS.md before widening the lane."
-    },
-    {
-      "family": "agents/companion-skill",
-      "paths": [
-        "tests/agents/test_companion_skill_scripts.py"
-      ],
-      "protects": "agent companion skill scripts",
-      "owner_surface": ".agents/skills/AGENTS.md",
-      "lane": "topology",
-      "mode": "blocking",
-      "runtime_cost": "fast",
-      "focused_target": "tests/agents/test_companion_skill_scripts.py",
-      "failure_route": "Fix .agents/skills/AGENTS.md before widening the lane."
     },
     {
       "family": "mechanics/indexes",

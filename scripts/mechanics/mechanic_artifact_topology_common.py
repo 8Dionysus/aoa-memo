@@ -6,7 +6,7 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 ROOT_DISTRICTS_CONFIG = REPO_ROOT / "config" / "root-topology" / "root_technical_districts.json"
-ROOT_DISTRICTS_SCHEMA_VERSION = "aoa_memo_root_technical_districts_v10"
+ROOT_DISTRICTS_SCHEMA_VERSION = "aoa_memo_root_technical_districts_v11"
 ROOT_TECHNICAL_DISTRICTS = (
     "config",
     "evals",
@@ -15,6 +15,7 @@ ROOT_TECHNICAL_DISTRICTS = (
     "kag",
     "manifests",
     "schemas",
+    "skills",
     "scripts",
     "tests",
 )
@@ -34,7 +35,6 @@ SCRIPT_FAMILY_ROLES = {
     "validator-and-generator",
 }
 TEST_FAMILY_ROLES = {
-    "agent-companion-regression",
     "cross-mechanic-contract-regression",
     "downstream-contract-regression",
     "local-memo-port-regression",

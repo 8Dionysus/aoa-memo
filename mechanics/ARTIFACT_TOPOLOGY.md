@@ -26,6 +26,7 @@ The exact file allowlist stays in `config/root-topology/root_technical_districts
 | `examples/` | the example teaches public-safe object shape across more than one mechanic |
 | `config/` | the input config drives repo-wide builders or validators |
 | `generated/` | the output is a compact public companion consumed outside one package |
+| `skills/` | the admitted callable procedure is specific to `aoa-memo` and its projection manifest names the exact derived agent copy |
 | `scripts/` | the builder or validator is part of the release gate or shared contract lane |
 | `tests/` | the regression protects repo-wide behavior or cross-district references |
 | `manifests/` | the recurrence manifest is shared across mechanics rather than package-local |
@@ -144,6 +145,11 @@ that names its role, owner surface, and protected refs. Root tests remain only
 when they protect repo-wide behavior, cross-district references, shared memory
 contracts, route-card surfaces, or cross-mechanic regressions; package-local
 mechanic tests belong under the owning mechanic.
+
+Root `skills/` is narrower than the other technical districts. It contains
+only admitted owner-specific callable source plus its home-port manifest.
+Shared bundles remain owned by `aoa-skills`, and `.agents/skills/` remains a
+derived runtime projection rather than a second source district.
 
 Single-mechanic artifacts live in the owning package with their local docs and
 route card. When a functioning part exists, use the nearest part-local home.

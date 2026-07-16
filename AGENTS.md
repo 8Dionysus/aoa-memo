@@ -15,10 +15,11 @@ This repository owns:
 - memory-object structure, memory class distinctions, recall posture, salience, temporal relevance, and memory-temperature language
 - memory-layer metadata, generated memory surfaces, witness trace, writeback, chronicle, recurrence-support, and lineage-harvest seams when defined here
 - owner-local statistical questions and source-backed measurement declarations about memo-owned surfaces under `stats/`
+- repository-specific callable procedures for bounded memory-owner work under `skills/`
 
 It does not own:
 
-- techniques, skills, eval proof, routing, role contracts, playbook scenario meaning, KAG substrate semantics, cross-owner statistical composition, or live quest sovereignty
+- techniques, shared or cross-repository skills, eval proof, routing, role contracts, playbook scenario meaning, KAG substrate semantics, cross-owner statistical composition, or live quest sovereignty
 
 ## Start here
 
@@ -28,13 +29,14 @@ It does not own:
 4. `MEMORY_INDEX.md`
 5. `memo/README.md` when reviewed memory objects or corpus intake are touched
 6. `stats/README.md` when memo-owned statistical questions, contracts, or reference packets are touched
-7. [`ROADMAP.md`](ROADMAP.md)
-8. `docs/README.md`
-9. `docs/boundaries/BOUNDARIES.md`
-10. `docs/memory/MEMORY_MODEL.md`
-11. `mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md` for readiness, retention, and memory-is-not-proof boundaries
-12. the target memory surface and affected generated outputs
-13. `docs/root/AGENTS_ROOT_REFERENCE.md` for preserved full root branches
+7. `skills/README.md` when the admitted owner bundle, its projection, or its applicability changes
+8. [`ROADMAP.md`](ROADMAP.md)
+9. `docs/README.md`
+10. `docs/boundaries/BOUNDARIES.md`
+11. `docs/memory/MEMORY_MODEL.md`
+12. `mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md` for readiness, retention, and memory-is-not-proof boundaries
+13. the target memory surface and affected generated outputs
+14. `docs/root/AGENTS_ROOT_REFERENCE.md` for preserved full root branches
 
 For agent-facing topology, also read `DESIGN.AGENTS.md`.
 For root or docs-root placement, read `docs/root/ROOT_SURFACE_LAW.md`.
@@ -50,6 +52,7 @@ lineage-harvest, writeback, or retention movement, read `mechanics/README.md`.
 | `memory-canon` | memory object kinds, support objects, recall modes, temperature vocabulary, source families, or generated companions are being inspected | `MEMORY_INDEX.md` -> `docs/memory/MEMORY_MODEL.md` -> target source |
 | `memory-corpus` | reviewed durable memory object bundles, reviewed intake landing, landing receipts, or corpus support lanes change | `memo/AGENTS.md` -> `memo/OBJECT_SHAPE.md` -> target bundle |
 | `local-stats` | a memo-owned statistical question, measurement contract, or reference packet changes | `stats/AGENTS.md` -> `stats/README.md` -> `stats/port.manifest.json` |
+| `owner-skill` | the admitted `aoa-memo` procedure, its applicability, ABI, lifecycle, or exact repository projection changes | `skills/AGENTS.md` -> `skills/README.md` -> `skills/port.manifest.json` -> target `SKILL.md` |
 | `memory-doctrine` | memory meaning, object posture, trust, lifecycle, temperature, or provenance changes | `docs/memory/MEMORY_MODEL.md` |
 | `root-editing` | a root or docs-root surface is added, moved, deleted, or rewritten | `docs/root/ROOT_SURFACE_LAW.md` |
 | `docs-placement` | a docs-root surface is classified, retired from flat placement, or checked for old district drift | `docs/README.md` -> `docs/root/ROOT_SURFACE_LAW.md` -> `scripts/root-topology/validate_docs_districts.py` |
@@ -115,6 +118,8 @@ Update only the ones that moved; otherwise say no update was needed.
   source-family, or generated-companion routing changes.
 - `stats/` when the owner-local statistical question, evidence route,
   measurement contract, or exported reference packet changes.
+- `skills/` when the admitted owner procedure, lifecycle, portability, or exact
+  repository projection changes.
 - `docs/root/ROOT_SURFACE_LAW.md` when root or docs-root placement changes.
 - `docs/decisions/` when future agents need rationale for a route, topology,
   validator, source-of-truth, or ownership choice.

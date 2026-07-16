@@ -2,31 +2,34 @@
 
 ## Guidance for `.agents/`
 
-`.agents/` is the agent-facing companion district for `aoa-memo`.
+`.agents/` is the agent-facing derived district for `aoa-memo`.
 
-It may hold maintained agent lanes, exported skills, and local guidance that
-helps agents work with memory-layer surfaces. It does not own memory truth.
-Memory truth stays in source docs, schemas, examples, generated-source maps,
-and validators.
+It holds maintained agent lanes and the exact generated projection of admitted
+owner skills. It does not own memory or skill truth. Memory truth stays in
+source docs, schemas, examples, generated-source maps, and validators; skill
+truth stays under top-level `skills/`.
 
 ## Route Stack
 
 - Above: root `AGENTS.md` owns repository identity, owner boundaries, and
   release route.
-- Here: `.agents/` owns agent-facing companion lanes only.
-- Below: `skills/` holds exported skill companions and `spark/` narrows the
-  fast-loop lane. Neither lane owns memory doctrine.
+- Here: `.agents/` owns derived agent-facing lanes only.
+- Below: `skills/aoa-memo/` is the generated Codex projection declared by
+  `skills/port.manifest.json`; `spark/` narrows the fast-loop lane. Neither
+  lane owns memory doctrine.
 
 ## Current Lanes
 
 | Lane | Use |
 |---|---|
-| `skills/` | exported skill companions used by agents working in this repository |
+| `skills/aoa-memo/` | exact generated projection of canonical `skills/aoa-memo/` |
 | `spark/` | fast-loop Spark lane for one bounded memory-layer surface at a time |
 
 ## Boundaries
 
 - Do not treat agent companion files as source memory doctrine.
+- Do not edit the generated owner skill projection directly or copy the shared
+  skill catalog into this repository.
 - Do not store private traces, secrets, hidden telemetry, or unreduced personal
   data here.
 - Do not let agent lane language make memory look like proof, routing logic,

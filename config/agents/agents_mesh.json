@@ -11,20 +11,21 @@
       "path": ".agents/AGENTS.md",
       "min_lines": 20,
       "required_snippets": [
-        "agent-facing companion district",
+        "agent-facing derived district",
         ".agents/<lane>/",
-        "memory truth",
+        "exact generated projection",
+        "Do not edit the generated owner skill projection directly",
         "python scripts/release/release_check.py"
       ]
     },
     {
-      "path": ".agents/skills/AGENTS.md",
-      "min_lines": 15,
+      "path": "skills/AGENTS.md",
+      "min_lines": 25,
       "required_snippets": [
-        "memory-layer maintenance",
-        "recall contracts",
-        "Memory is valuable. It is not proof",
-        "public-safe"
+        "canonical `aoa-memo/skills/` home",
+        "generated Codex projection",
+        "Manual isolated",
+        "green output makes no outcome claim"
       ]
     },
     {
