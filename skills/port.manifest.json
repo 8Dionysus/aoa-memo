@@ -1,0 +1,25 @@
+{
+  "schema_version": "aoa_skill_home_port_v1",
+  "contract_ref": "aoa-skills:schemas/skill-home-port.schema.json",
+  "owner_repo": "aoa-memo",
+  "owner_ref": "AGENTS.md",
+  "bundles": [
+    {
+      "name": "aoa-memo",
+      "path": "skills/aoa-memo",
+      "version": "0.1.0",
+      "lifecycle": "admitted",
+      "visibility": "advertised",
+      "admission_ref": "docs/decisions/AOA-MEM-D-0076-aoa-memo-owner-skill-bundle.md"
+    }
+  ],
+  "projection": {
+    "runtime": "codex",
+    "scope": "repo",
+    "root": ".agents/skills",
+    "mode": "generated-copy",
+    "skills": [
+      "aoa-memo"
+    ]
+  }
+}

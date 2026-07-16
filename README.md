@@ -21,6 +21,7 @@ agent-facing, follow the linked owner surface instead of expanding this page.
 | Public memory canon map | [MEMORY_INDEX](MEMORY_INDEX.md) |
 | Reviewed memory object corpus | [memo](memo/README.md) |
 | Memo-owned statistical questions and reference measurements | [stats](stats/README.md) |
+| Repository-specific callable procedure | [skills](skills/README.md) |
 | Documentation and boundary map | [docs](docs/README.md), [BOUNDARIES](docs/boundaries/BOUNDARIES.md) |
 | Memo-side mechanics | [mechanics](mechanics/README.md) |
 | Direction and obligations | [ROADMAP](ROADMAP.md), [QUESTBOOK](QUESTBOOK.md), [quests](quests/README.md) |
@@ -42,6 +43,7 @@ Read only what matches the job.
 | Reviewed durable memory | [memo](memo/README.md) -> [OBJECT_SHAPE](memo/OBJECT_SHAPE.md) |
 | Memory doctrine or operation posture | [docs](docs/README.md), then the owning `docs/<district>/AGENTS.md` |
 | Local memo ports and intake | [LIVING_MEMORY_TOPOLOGY](docs/memory/LIVING_MEMORY_TOPOLOGY.md) -> [LOCAL_MEMO_PORT_STANDARD](docs/memory/LOCAL_MEMO_PORT_STANDARD.md) |
+| `aoa-memo` callable procedure or projection | [skills](skills/README.md) -> [skills route card](skills/AGENTS.md) |
 | Root or docs-root placement | [ROOT_SURFACE_LAW](docs/root/ROOT_SURFACE_LAW.md) |
 | Generated companions | [MEMORY_INDEX](MEMORY_INDEX.md#generated-companions), source surface, builder, generated output, validator |
 | Memo mechanic work | [mechanics](mechanics/README.md), then the owning mechanic `AGENTS.md` and `PARTS.md` |
@@ -77,7 +79,9 @@ Required public handoff anchors:
 `aoa-memo` currently carries reviewed memory-object bundles under `memo/`,
 memory doctrine under `docs/`, repeatable memo operations under `mechanics/`,
 schemas and examples for public memory contracts, generated read models, and
-quest records for durable memory-layer obligations.
+quest records for durable memory-layer obligations. One admitted owner bundle
+under `skills/` provides a callable recall, review, and evolve route without
+copying the shared skill catalog into the repository.
 
 The detailed surface map lives in [MEMORY_INDEX](MEMORY_INDEX.md),
 [docs](docs/README.md), [mechanics](mechanics/README.md), and generated indexes.
@@ -90,6 +94,7 @@ The root README should not become that inventory.
 | [docs](docs/README.md) | memory doctrine, boundaries, posture, validation topology, test topology, decisions, and root law |
 | [memo](memo/README.md) | reviewed memory object corpus, support lanes, and intake receipts |
 | [stats](stats/README.md) | owner-local statistical questions, measurement contracts, and evidence-linked reference packets |
+| [skills](skills/README.md) | admitted repository-specific callable procedures and their projection manifest |
 | [mechanics](mechanics/README.md) | repeatable memo operations and package-local artifacts |
 | [schemas](schemas/AGENTS.md) | memory and support-object contracts |
 | [examples](examples/AGENTS.md) | public-safe memory examples and recall contracts |

@@ -24,6 +24,7 @@
 - [AOA-MEM-D-0073 Numbered Decision Route Completion](../AOA-MEM-D-0073-numbered-decision-route-completion.md) (`docs/decisions/AOA-MEM-D-0073-numbered-decision-route-completion.md`)
 - [AOA-MEM-D-0074 Full Canonical ID Decision Filenames](../AOA-MEM-D-0074-full-canonical-id-decision-filenames.md) (`docs/decisions/AOA-MEM-D-0074-full-canonical-id-decision-filenames.md`)
 - [AOA-MEM-D-0075 Test And Validation Lane Topology](../AOA-MEM-D-0075-test-and-validation-lane-topology.md) (`docs/decisions/AOA-MEM-D-0075-test-and-validation-lane-topology.md`)
+- [AOA-MEM-D-0076 aoa-memo Owner Skill Bundle](../AOA-MEM-D-0076-aoa-memo-owner-skill-bundle.md) (`docs/decisions/AOA-MEM-D-0076-aoa-memo-owner-skill-bundle.md`)
 
 ## memory doctrine
 
@@ -180,6 +181,11 @@
 - [AOA-MEM-D-0059 Decision: Spark Registry-Backed Memo Lane](../AOA-MEM-D-0059-spark-registry-backed-memo-lane.md) (`docs/decisions/AOA-MEM-D-0059-spark-registry-backed-memo-lane.md`)
 - [AOA-MEM-D-0074 Full Canonical ID Decision Filenames](../AOA-MEM-D-0074-full-canonical-id-decision-filenames.md) (`docs/decisions/AOA-MEM-D-0074-full-canonical-id-decision-filenames.md`)
 - [AOA-MEM-D-0075 Test And Validation Lane Topology](../AOA-MEM-D-0075-test-and-validation-lane-topology.md) (`docs/decisions/AOA-MEM-D-0075-test-and-validation-lane-topology.md`)
+- [AOA-MEM-D-0076 aoa-memo Owner Skill Bundle](../AOA-MEM-D-0076-aoa-memo-owner-skill-bundle.md) (`docs/decisions/AOA-MEM-D-0076-aoa-memo-owner-skill-bundle.md`)
+
+## skills/home
+
+- [AOA-MEM-D-0076 aoa-memo Owner Skill Bundle](../AOA-MEM-D-0076-aoa-memo-owner-skill-bundle.md) (`docs/decisions/AOA-MEM-D-0076-aoa-memo-owner-skill-bundle.md`)
 
 ## quest/lane
 
@@ -193,6 +199,7 @@
 - [AOA-MEM-D-0030 Retention Local Regression Boundary](../AOA-MEM-D-0030-retention-local-regression-boundary.md) (`docs/decisions/AOA-MEM-D-0030-retention-local-regression-boundary.md`)
 - [AOA-MEM-D-0044 AGENTS Authority Boundary Audit](../AOA-MEM-D-0044-agents-authority-boundary-audit.md) (`docs/decisions/AOA-MEM-D-0044-agents-authority-boundary-audit.md`)
 - [AOA-MEM-D-0067 Decision: KAG donor bridge uses reviewed corpus object](../AOA-MEM-D-0067-kag-donor-reviewed-corpus-bridge.md) (`docs/decisions/AOA-MEM-D-0067-kag-donor-reviewed-corpus-bridge.md`)
+- [AOA-MEM-D-0076 aoa-memo Owner Skill Bundle](../AOA-MEM-D-0076-aoa-memo-owner-skill-bundle.md) (`docs/decisions/AOA-MEM-D-0076-aoa-memo-owner-skill-bundle.md`)
 
 ## release/tooling
 

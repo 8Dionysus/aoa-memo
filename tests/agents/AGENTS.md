@@ -4,13 +4,13 @@ Route card for `tests/agents/`.
 
 ## Purpose
 
-This district owns regression tests for AGENTS mesh and agent-facing lane
-contracts.
+This district owns regression tests for AGENTS mesh, owner-skill route cards,
+and agent-facing lane contracts.
 
 ## Source
 
-Tests here protect `config/agents/agents_mesh.json`, route cards, and Spark
-lane contracts.
+Tests here protect `config/agents/agents_mesh.json`, canonical `skills/` route
+cards, derived `.agents/` route cards, and Spark lane contracts.
 
 ## Route
 

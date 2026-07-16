@@ -17,6 +17,7 @@ if str(SCRIPTS_DIR) not in sys.path:
 
 PRIMARY_COMMAND_DOCS = frozenset({"docs/root/RELEASING.md"})
 EXECUTABLE_MARKDOWN_PREFIXES = (
+    "skills/",
     ".agents/skills/",
     ".agents/spark/scenarios/",
 )

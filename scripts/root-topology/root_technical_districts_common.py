@@ -22,6 +22,7 @@ DISTRICT_ORDER = (
     "kag",
     "manifests",
     "schemas",
+    "skills",
     "scripts",
     "tests",
 )
@@ -70,6 +71,11 @@ DISTRICT_GUIDE = {
         "use_for": "public memory-object, recall, provenance, support-object, and generated-surface contracts",
         "route_local_to": "mechanics/<slug>/parts/<part>/schemas/ when the schema governs one mechanic operation",
         "check": "python scripts/memory/validate_memo.py --profile schema",
+    },
+    "skills": {
+        "use_for": "admitted aoa-memo-specific callable procedures and their owner projection manifest",
+        "route_local_to": "aoa-skills when the procedure is shared, cross-repository, or changes common portability and projection grammar",
+        "check": "python ../aoa-skills/scripts/validate_home_skill_port.py --owner-root .",
     },
     "scripts": {
         "use_for": "repo-wide validators, builders, release gates, and shared helper modules",

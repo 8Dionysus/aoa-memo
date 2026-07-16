@@ -140,6 +140,15 @@
 - [AOA-MEM-D-0053 Memory Operations Calibration](../AOA-MEM-D-0053-memory-operations-calibration.md) (`docs/decisions/AOA-MEM-D-0053-memory-operations-calibration.md`)
 - [AOA-MEM-D-0056 Root Memory Index](../AOA-MEM-D-0056-root-memory-index.md) (`docs/decisions/AOA-MEM-D-0056-root-memory-index.md`)
 - [AOA-MEM-D-0069 Decision: Memory operational readouts stay memo-owned and source-owner bounded](../AOA-MEM-D-0069-memory-operational-readouts.md) (`docs/decisions/AOA-MEM-D-0069-memory-operational-readouts.md`)
+- [AOA-MEM-D-0076 aoa-memo Owner Skill Bundle](../AOA-MEM-D-0076-aoa-memo-owner-skill-bundle.md) (`docs/decisions/AOA-MEM-D-0076-aoa-memo-owner-skill-bundle.md`)
+
+## skill admission
+
+- [AOA-MEM-D-0076 aoa-memo Owner Skill Bundle](../AOA-MEM-D-0076-aoa-memo-owner-skill-bundle.md) (`docs/decisions/AOA-MEM-D-0076-aoa-memo-owner-skill-bundle.md`)
+
+## source/projection parity
+
+- [AOA-MEM-D-0076 aoa-memo Owner Skill Bundle](../AOA-MEM-D-0076-aoa-memo-owner-skill-bundle.md) (`docs/decisions/AOA-MEM-D-0076-aoa-memo-owner-skill-bundle.md`)
 
 ## lifecycle/retention
 
@@ -156,6 +165,7 @@
 - [AOA-MEM-D-0059 Decision: Spark Registry-Backed Memo Lane](../AOA-MEM-D-0059-spark-registry-backed-memo-lane.md) (`docs/decisions/AOA-MEM-D-0059-spark-registry-backed-memo-lane.md`)
 - [AOA-MEM-D-0074 Full Canonical ID Decision Filenames](../AOA-MEM-D-0074-full-canonical-id-decision-filenames.md) (`docs/decisions/AOA-MEM-D-0074-full-canonical-id-decision-filenames.md`)
 - [AOA-MEM-D-0075 Test And Validation Lane Topology](../AOA-MEM-D-0075-test-and-validation-lane-topology.md) (`docs/decisions/AOA-MEM-D-0075-test-and-validation-lane-topology.md`)
+- [AOA-MEM-D-0076 aoa-memo Owner Skill Bundle](../AOA-MEM-D-0076-aoa-memo-owner-skill-bundle.md) (`docs/decisions/AOA-MEM-D-0076-aoa-memo-owner-skill-bundle.md`)
 
 ## quest/read-model
 

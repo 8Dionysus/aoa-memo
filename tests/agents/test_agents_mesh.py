@@ -55,7 +55,6 @@ class AgentsMeshTestCase(unittest.TestCase):
         self.assertTrue(
             {
                 ".agents/AGENTS.md",
-                ".agents/skills/AGENTS.md",
                 ".agents/spark/AGENTS.md",
                 ".github/AGENTS.md",
                 "AGENTS.md",
@@ -67,6 +66,7 @@ class AgentsMeshTestCase(unittest.TestCase):
                 "memo/AGENTS.md",
                 "quests/AGENTS.md",
                 "stats/AGENTS.md",
+                "skills/AGENTS.md",
             }.issubset(paths)
         )
         self.assertTrue(

@@ -53,6 +53,7 @@ and which neighboring owner takes the next stronger claim?
 - schema-backed memory and support contracts under `schemas/`
 - public-safe examples under `examples/`
 - generated memory companions under `generated/`
+- admitted repository-specific callable procedures under `skills/`
 - builder, validator, and publication helpers under `scripts/`
 - recurrence manifests, quests, and agent-facing companion surfaces
 

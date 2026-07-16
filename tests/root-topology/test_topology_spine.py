@@ -44,7 +44,7 @@ class TopologySpineTestCase(unittest.TestCase):
                 ".agents/spark/",
             ),
             ".agents/AGENTS.md": (
-                "agent-facing companion district",
+                "agent-facing derived district",
                 ".agents/<lane>/",
                 "tests/root-topology/test_topology_spine.py",
             ),

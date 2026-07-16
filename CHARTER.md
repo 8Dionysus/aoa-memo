@@ -58,13 +58,15 @@ AoA and ToS need a memory layer that is:
 - schemas, validation rules, and examples for explicit memory objects
 - memo-side mechanics that preserve repeatable memory movement without taking
   stronger owner authority
+- repository-specific callable procedures that route bounded work through
+  these owner surfaces without replacing them
 
 ## What this repository does not own
 
 `aoa-memo` should not become the primary home for:
 
 - reusable techniques
-- bounded execution workflows
+- shared or cross-repository bounded execution workflows
 - proof doctrine or verdict logic
 - routing logic as such
 - agent role contracts and persona boundaries
@@ -92,7 +94,8 @@ KAG substrate, playbook choreography, source-owner consent, or current truth.
 - **`Agents-of-Abyss`** names the ecosystem, layer map, and federation rules.
 - **`Tree-of-Sophia`** owns the living knowledge architecture and source-authored knowledge world.
 - **`aoa-techniques`** owns reusable practice.
-- **`aoa-skills`** owns bounded execution workflows.
+- **`aoa-skills`** owns shared bounded execution workflows and the common
+  skill portability and projection grammar.
 - **`aoa-evals`** owns portable proof surfaces for bounded claims.
 - **`aoa-routing`** owns navigation and dispatch.
 - **`aoa-agents`** owns role contracts, handoff posture, and memory posture rights.
