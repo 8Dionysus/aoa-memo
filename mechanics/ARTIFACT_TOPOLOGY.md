@@ -18,7 +18,8 @@ contract-shaped, or shared across multiple memory families:
 
 For quick inspection, `generated/root-topology/root_technical_districts.min.json` is the
 compact atlas of district roles, route cards, family ids, and local routing.
-The exact file allowlist stays in `config/root-topology/root_technical_districts.json`.
+The exact file allowlist and bounded generated-prefix allowlist stay in
+`config/root-topology/root_technical_districts.json`.
 
 | District | Root-owned when |
 |---|---|
@@ -105,10 +106,12 @@ part-local artifacts are added.
 Root technical districts now keep only shared, repo-wide, or cross-mechanic
 surfaces.
 
-`config/root-topology/root_technical_districts.json` is the exact current allowlist for root
-technical artifacts. If a file is not a route card and is not listed there, it
-must either be added with a repo-wide/shared reason or moved under its owning
-mechanic.
+`config/root-topology/root_technical_districts.json` is the exact current
+allowlist for root technical artifacts. Content-addressed generated families
+may use an explicit bounded prefix when stable filenames cannot be known before
+generation. If a file is not a route card, an exact allowed file, or below one
+of those bounded prefixes, it must either be added with a repo-wide/shared
+reason or moved under its owning mechanic.
 
 `generated/root-topology/root_technical_districts.min.json` is rebuilt from that config so
 agents can inspect the root district topology before opening the full contract.

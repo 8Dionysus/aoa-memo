@@ -52,17 +52,25 @@ class MemoMechanicsTestCase(unittest.TestCase):
 
         self.assertNotIn(str(deleted_path), "\n".join(issues))
 
-    def test_repo_self_indexes_are_outside_authored_mechanics_text(self) -> None:
+    def test_repo_self_index_families_are_outside_authored_mechanics_text(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:
             repo_root = Path(tmpdir) / "aoa-memo"
             indexes = repo_root / "kag" / "indexes"
             indexes.mkdir(parents=True)
             repository_index = indexes / "repo_event_index.json"
+            family_manifest = indexes / "index_family.manifest.json"
+            source_shard = indexes / "shards" / "source" / "00.jsonl"
             owner_index = indexes / "provider_readiness_index.json"
             repository_index.write_text(
                 '{"schema_version":"aoa-repo-local-kag-repository-index-v2"}\n',
                 encoding="utf-8",
             )
+            family_manifest.write_text(
+                '{"schema_version":"aoa-repo-local-kag-family-manifest-v3"}\n',
+                encoding="utf-8",
+            )
+            source_shard.parent.mkdir(parents=True)
+            source_shard.write_text('{"_kind":"source"}\n', encoding="utf-8")
             owner_index.write_text(
                 '{"schema_version":"aoa-local-kag-record-v1"}\n',
                 encoding="utf-8",
@@ -70,6 +78,12 @@ class MemoMechanicsTestCase(unittest.TestCase):
 
             self.assertFalse(
                 memo_mechanics_validator.is_text_candidate(repository_index, root=repo_root)
+            )
+            self.assertFalse(
+                memo_mechanics_validator.is_text_candidate(family_manifest, root=repo_root)
+            )
+            self.assertFalse(
+                memo_mechanics_validator.is_text_candidate(source_shard, root=repo_root)
             )
             self.assertTrue(
                 memo_mechanics_validator.is_text_candidate(owner_index, root=repo_root)

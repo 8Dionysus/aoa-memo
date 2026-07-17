@@ -1,5 +1,5 @@
 {
-  "schema_version": "aoa_memo_root_technical_districts_v11",
+  "schema_version": "aoa_memo_root_technical_districts_v12",
   "source_of_truth": "mechanics/ARTIFACT_TOPOLOGY.md",
   "route_card_exception": "AGENTS.md",
   "districts": {
@@ -116,23 +116,21 @@
       ]
     },
     "kag": {
-      "root_role": "local KAG provider packet for memo registry and reviewed memory corpus source-return routes",
+      "root_role": "local KAG provider packet with bounded content-addressed shards for memo registry and reviewed memory corpus source-return routes",
       "allowed_files": [
         "kag/README.md",
         "kag/manifest.json",
         "kag/edges/source_returns_to_owner.json",
+        "kag/indexes/index_family.manifest.json",
         "kag/indexes/provider_readiness_index.json",
-        "kag/indexes/repo_anchor_index.json",
-        "kag/indexes/repo_artifact_index.json",
-        "kag/indexes/repo_assertion_index.json",
-        "kag/indexes/repo_entity_index.json",
-        "kag/indexes/repo_event_index.json",
-        "kag/indexes/repo_relation_index.json",
-        "kag/indexes/source_surface_index.json",
         "kag/nodes/memo-registry.json",
         "kag/nodes/memo-source-route.json",
         "kag/projections/mcp_source_return.json",
         "kag/receipts/validation_receipt.json"
+      ],
+      "allowed_prefixes": [
+        "kag/indexes/shards/",
+        "kag/receipts/index_family_budget/"
       ]
     },
     "manifests": {

@@ -21,6 +21,8 @@ REPO_SELF_INDEX_SCHEMA_VERSIONS = {
     "aoa-repo-local-kag-index-v2",
     "aoa-repo-local-kag-repository-index-v2",
 }
+PORTABLE_INDEX_FAMILY_MANIFEST = Path("kag/indexes/index_family.manifest.json")
+PORTABLE_INDEX_FAMILY_SHARDS = ("kag", "indexes", "shards")
 
 
 def tracked_files() -> list[Path]:
@@ -40,8 +42,15 @@ def is_repo_self_index(path: Path, *, root: Path = REPO_ROOT) -> bool:
         relative_path = path.relative_to(root)
     except ValueError:
         return False
+    if (
+        relative_path.parts[:3] == PORTABLE_INDEX_FAMILY_SHARDS
+        and path.suffix.lower() == ".jsonl"
+    ):
+        return True
     if relative_path.parts[:2] != ("kag", "indexes") or path.suffix.lower() != ".json":
         return False
+    if relative_path == PORTABLE_INDEX_FAMILY_MANIFEST:
+        return True
     try:
         payload = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, UnicodeDecodeError, json.JSONDecodeError):

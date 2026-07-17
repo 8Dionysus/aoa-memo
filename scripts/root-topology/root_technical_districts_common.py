@@ -120,13 +120,16 @@ def build_index() -> dict[str, Any]:
     districts_config = payload["districts"]
     districts: dict[str, Any] = {}
     total_allowed = 0
+    total_allowed_prefixes = 0
     total_families = 0
 
     for district in DISTRICT_ORDER:
         config = districts_config[district]
         allowed_count = len(config["allowed_files"])
+        allowed_prefix_count = len(config.get("allowed_prefixes", []))
         family_ids = _family_ids(payload, district)
         total_allowed += allowed_count
+        total_allowed_prefixes += allowed_prefix_count
         total_families += len(family_ids)
         districts[district] = {
             "path": f"{district}/",
@@ -136,6 +139,7 @@ def build_index() -> dict[str, Any]:
             "route_local_to": DISTRICT_GUIDE[district]["route_local_to"],
             "check": DISTRICT_GUIDE[district]["check"],
             "allowed_count": allowed_count,
+            "allowed_prefix_count": allowed_prefix_count,
             "family_ids": family_ids,
         }
 
@@ -149,11 +153,12 @@ def build_index() -> dict[str, Any]:
         "placement_rule": {
             "root": "shared, repo-wide, public contract, generated companion, or cross-mechanic artifact",
             "mechanic_local": "mechanics/<slug>/parts/<part>/",
-            "exact_allowlist": CONFIG_REF,
+            "bounded_allowlist": CONFIG_REF,
         },
         "counts": {
             "districts": len(DISTRICT_ORDER),
             "allowed_files": total_allowed,
+            "allowed_prefixes": total_allowed_prefixes,
             "families": total_families,
         },
         "districts": districts,

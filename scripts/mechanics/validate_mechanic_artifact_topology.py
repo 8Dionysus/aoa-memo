@@ -35,6 +35,24 @@ def _validate_district_config(district: str, config: dict[str, object], issues: 
     for duplicate_path in duplicate_paths:
         issues.append(f"config/root-topology/root_technical_districts.json: duplicate allowed path {duplicate_path}")
 
+    allowed_prefixes = config.get("allowed_prefixes", [])
+    if not isinstance(allowed_prefixes, list) or not all(
+        isinstance(item, str) for item in allowed_prefixes
+    ):
+        issues.append(
+            f"config/root-topology/root_technical_districts.json: "
+            f"{district}.allowed_prefixes must be a string array"
+        )
+        return
+    duplicate_prefixes = sorted(
+        {item for item in allowed_prefixes if allowed_prefixes.count(item) > 1}
+    )
+    for duplicate_prefix in duplicate_prefixes:
+        issues.append(
+            f"config/root-topology/root_technical_districts.json: "
+            f"duplicate allowed prefix {duplicate_prefix}"
+        )
+
     allowed = set(allowed_files)
     for allowed_path in allowed:
         parts = Path(allowed_path).parts
@@ -43,10 +61,30 @@ def _validate_district_config(district: str, config: dict[str, object], issues: 
         if Path(allowed_path).name == "AGENTS.md":
             issues.append(f"config/root-topology/root_technical_districts.json: {allowed_path} should rely on the route-card exception, not allowed_files")
 
+    for allowed_prefix in allowed_prefixes:
+        prefix_path = Path(allowed_prefix)
+        if (
+            not allowed_prefix.endswith("/")
+            or not prefix_path.parts
+            or prefix_path.parts[0] != district
+            or ".." in prefix_path.parts
+        ):
+            issues.append(
+                f"config/root-topology/root_technical_districts.json: "
+                f"{allowed_prefix} must be a bounded prefix inside district {district}"
+            )
+
     actual = {path.relative_to(REPO_ROOT).as_posix() for path in root_files(district)}
     for missing in sorted(allowed - actual):
         issues.append(f"{missing}: allowed root technical artifact is missing")
-    for unexpected in sorted(actual - allowed):
+    for allowed_prefix in allowed_prefixes:
+        if not any(path.startswith(allowed_prefix) for path in actual):
+            issues.append(f"{allowed_prefix}: allowed root technical prefix is empty")
+    for unexpected in sorted(
+        path
+        for path in actual - allowed
+        if not any(path.startswith(prefix) for prefix in allowed_prefixes)
+    ):
         issues.append(
             f"{unexpected}: root technical artifact must be listed in config/root-topology/root_technical_districts.json or moved under mechanics/<slug>/"
         )

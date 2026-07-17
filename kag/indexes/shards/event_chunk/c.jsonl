@@ -1,0 +1,1 @@
+{"_key":"event:aoa:aoa-memo:event:55a264a4007ec5916d944411:evidence_refs:0","_kind":"event_chunk","field":"evidence_refs","parent":"event:aoa:aoa-memo:event:55a264a4007ec5916d944411","position":0,"values":[{"kind":"git_commit","ref":"1ab6ea264a2c4c6edd1a2c98674ab7ef6e534ad0"}]}

@@ -44,7 +44,14 @@ def test_root_technical_districts_index_preserves_compact_counts() -> None:
     assert payload["counts"]["allowed_files"] == sum(
         len(config["districts"][district]["allowed_files"]) for district in DISTRICT_ORDER
     )
+    assert payload["counts"]["allowed_prefixes"] == sum(
+        len(config["districts"][district].get("allowed_prefixes", []))
+        for district in DISTRICT_ORDER
+    )
     for district in DISTRICT_ORDER:
         assert payload["districts"][district]["allowed_count"] == len(
             config["districts"][district]["allowed_files"]
+        )
+        assert payload["districts"][district]["allowed_prefix_count"] == len(
+            config["districts"][district].get("allowed_prefixes", [])
         )
