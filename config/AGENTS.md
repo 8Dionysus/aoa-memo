@@ -14,12 +14,12 @@ layer stay inspectable without becoming memory truth.
 | `agents/agents_mesh.json` | current AGENTS route-card contracts | `generated/agents/agents_mesh.min.json` |
 | `validation_lanes.json` | current validation and release command lanes, with effective validator layer metadata | `docs/validation/COMMAND_AUTHORITY.md`, `docs/validation/validator_inventory.json`, `scripts/validation_lanes.py` |
 | `mechanics/memo_mechanics.json` | current memo mechanic package contracts | `generated/mechanics/memo_mechanics.min.json` |
-| `root-topology/root_technical_districts.json` | exact root technical district allowlist and family contracts | `generated/root-topology/root_technical_districts.min.json` |
+| `root-topology/root_technical_districts.json` | exact root files, bounded generated prefixes, and family contracts | `generated/root-topology/root_technical_districts.min.json` |
 
 Use `generated/root-topology/root_technical_districts.min.json` for a fast map of root
 district purpose, route card, family ids, and local routing. Use
-`config/root-topology/root_technical_districts.json` when you need the exact file list or
-family contract.
+`config/root-topology/root_technical_districts.json` when you need the exact file list,
+bounded generated-prefix list, or family contract.
 
 ## Route Stack
 
