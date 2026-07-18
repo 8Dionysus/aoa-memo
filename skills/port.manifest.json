@@ -7,7 +7,7 @@
     {
       "name": "aoa-memo",
       "path": "skills/aoa-memo",
-      "version": "0.1.16",
+      "version": "0.1.17",
       "lifecycle": "admitted",
       "visibility": "advertised",
       "admission_ref": "docs/decisions/AOA-MEM-D-0076-aoa-memo-owner-skill-bundle.md"

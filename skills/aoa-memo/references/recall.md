@@ -11,7 +11,7 @@ to the owner corpus or one of its declared recall projections.
 2. After source return, choose one bounded navigation route:
    - when the request supplies an exact memory-object ID but not its path,
      query only that ID in
-     `generated/memory-objects/memory_object_catalog.min.json`. Its envelope
+     `generated/memory-objects/memory_object_catalog.json`. Its envelope
      stores rows under `memory_objects`; use an equivalent of:
 
      ```text
@@ -20,7 +20,7 @@ to the owner corpus or one of its declared recall projections.
         | if length == 1 then .[0]
           else error("expected exactly one memory object")
           end' \
-       <owner_root>/generated/memory-objects/memory_object_catalog.min.json
+       <owner_root>/generated/memory-objects/memory_object_catalog.json
      ```
 
      Require the returned `source_path` to be safe and owner-relative.
@@ -29,7 +29,7 @@ to the owner corpus or one of its declared recall projections.
    - otherwise read the nearest owner route and use `MEMORY_INDEX.md` only
      when its vocabulary or inventory is material
 
-   The compact catalog or an exact MCP search result may locate source; neither
+   The full catalog or an exact MCP search result may locate source; neither
    establishes meaning or currentness. Do not use `find`, repository-wide
    `rg`, `rg --files`, directory listings, envelope-shape probes,
    generated-section scanning, or guessed path probes to resolve an exact ID.
@@ -58,7 +58,7 @@ to the owner corpus or one of its declared recall projections.
    read an entire projection, or query the same row twice.
 
    For an exact-ID corpus-object-versus-capsule question, the normal complete
-   owner read set is: the exact compact-catalog row, `memo/AGENTS.md`, the
+   owner read set is: the exact catalog row, `memo/AGENTS.md`, the
    returned `object.json`, its sibling `MEMO.md`, and the exact capsule row.
    Any additional owner read must name the material evidence still missing.
    Disconfirm one adjacent layer only when it could plausibly explain the

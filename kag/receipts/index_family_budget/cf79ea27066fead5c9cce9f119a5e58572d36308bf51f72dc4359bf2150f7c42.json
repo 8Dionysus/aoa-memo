@@ -1,0 +1,17 @@
+{
+  "allowed_bytes": 6015798,
+  "allowed_tracked_bytes": 16631829,
+  "approved_by": "repository-owner",
+  "base_ref": "d5f813c5eea2f430f59c0aad291315ca6c66b0f0",
+  "changed_generated_bytes": 6015798,
+  "changed_generated_files": 162,
+  "decision_ref": "aoa-kag:docs/decisions/AOA-KAG-D-0017-portable-content-addressed-repository-family.md",
+  "default_limit_bytes": 1048576,
+  "head_family_digest": "cf79ea27066fead5c9cce9f119a5e58572d36308bf51f72dc4359bf2150f7c42",
+  "reason": "Refresh the deterministic source-linked family after moving the admitted aoa-memo owner procedure from the retired repo projection to skills/aoa-memo and correcting exact recall across lifecycle states.",
+  "repo": "aoa-memo",
+  "schema_version": "aoa-repo-local-kag-budget-receipt-v1",
+  "scope": "generated_delta",
+  "tracked_bytes": 16631829,
+  "tracked_bytes_max": 18874368
+}

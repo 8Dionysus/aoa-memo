@@ -115,7 +115,7 @@ As of 2026-07-16:
 
 - Still valid: `skills/aoa-memo/` is the canonical one-bundle owner home, and
   its three internal modes retain the admitted trigger and result contract.
-  Version `0.1.16` is the current owner package.
+  Version `0.1.17` is the current owner package.
 - Changed: `skills/port.manifest.json` now admits the bundle to the single
   OS-level `os-user-default` profile; no repository `.agents/skills` copy is
   part of the active architecture.
@@ -123,6 +123,25 @@ As of 2026-07-16:
   by the v2 owner-home exposure contract. Manual admission evidence remains.
 
 ## Review Log
+
+### 2026-07-18 - Preserve exact recall across lifecycle states
+
+- Observed failure: exact-ID recall used the compact current-recall catalog,
+  which intentionally omits historical and withdrawn objects. Eight owner
+  objects therefore failed to resolve before the procedure could preserve
+  their superseded or retracted posture.
+- Manual reproduction: the exact selectors for
+  `memo.claim.2026-03-21.memo-entrypoint-old` and
+  `memo.claim.2026-03-21.memo-entrypoint-bad-claim` failed against the compact
+  catalog and returned exactly one owner-relative source row from the full
+  catalog.
+- Correction: version `0.1.17` uses the full generated object catalog for an
+  exact-ID lookup while still returning only one bounded row. The catalog
+  remains navigation evidence; the returned authored object retains meaning
+  and lifecycle authority.
+- Claim limit: this proves the observed historical and withdrawn lookup gap is
+  closed for the current owner catalog. It does not prove fuzzy recall,
+  deployed MCP freshness, cross-host behavior, or general outcome superiority.
 
 ### 2026-07-17 - Keep existing artifacts direct and make evolve target-first
 
