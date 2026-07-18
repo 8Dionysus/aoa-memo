@@ -23,7 +23,7 @@ A root surface is allowed only when it serves at least one durable role:
 6. **Reviewed corpus district**: it holds source-owned reviewed memory objects
    that need durable, addressable placement before generated read models.
 7. **Owner skill home**: it holds an admitted repository-specific callable
-   procedure and the manifest for its exact derived agent projection.
+   procedure and the manifest for its OS user-profile exposure.
 
 A surface that is merely historical, staging-local, generated, experimental,
 neighbor-owned, or future-looking must not sit in root by default.
@@ -51,7 +51,7 @@ shortcut.
 | Public governance and legal | `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `LICENSE` | GitHub and contributors expect them there | must not become memory doctrine catalogs |
 | Thin indexes | `MEMORY_INDEX.md`, `QUESTBOOK.md` | useful only while compact and route-oriented | must not become duplicate doctrine, a second roadmap, or a hidden ledger; generated companions must be builder-backed projections |
 | Reviewed memory corpus | `memo/` | `aoa-memo` needs a source-owned home for reviewed memory object bundles and corpus intake receipts | object bundles must validate through `scripts/memory/validate_memo_corpus.py` and remain distinct from local repo memo ports |
-| Owner callable skill home | `skills/` | an admitted `aoa-memo` procedure needs canonical source separate from shared catalogs and runtime projections | manual admission evidence precedes lifecycle promotion; `.agents/skills/aoa-memo/` remains an exact generated copy |
+| Owner callable skill home | `skills/` | an admitted `aoa-memo` procedure needs canonical source separate from shared catalogs and runtime projections | manual admission evidence precedes lifecycle promotion; one OS-managed user copy provides discovery |
 | Tooling and machine districts | `.github/`, `config/`, `docs/`, `evals/`, `examples/`, `generated/`, `kag/`, `manifests/`, `mechanics/`, `quests/`, `schemas/`, `scripts/`, `skills/`, `tests/` | tooling and repo structure expect stable directories | each district needs local guidance plus the compact `generated/root-topology/root_technical_districts.min.json` atlas once root technical routing changes |
 | Development requirements | `.gitignore`, `pytest.ini`, `requirements-dev.txt` | development hygiene | must stay technical and small |
 
@@ -157,7 +157,7 @@ together.
 | flat root quest source files | moved | `quests/<lane>/<state>/` | Questbook keeps public obligations in the root item store, with `mechanics/questbook/` owning source contract, validation, and generated projections |
 | mechanic-owned root technical artifacts | moved when single-mechanic-owned | `mechanics/<slug>/{schemas,examples,config,generated,scripts,tests,manifests}` | package-owned artifacts should sit with their mechanics; root technical districts keep only shared or cross-mechanic surfaces |
 | local eval pressure port | add | `evals/` | memo-local eval intake, suites, reports, and guardrail evidence shape need a reviewable source home while proof doctrine, verdict, scoring, and regression authority stay in `aoa-evals` |
-| repository owner skill home | add | `skills/` with exact `.agents/skills/aoa-memo/` projection | one manually admitted memo-specific procedure replaces copied shared bundles without turning the projection into source truth |
+| repository owner skill home | add | `skills/` with `os-user-default` exposure | one manually admitted memo-specific procedure replaces copied shared bundles while remaining globally discoverable from one managed user copy |
 | root technical district atlas | add | `generated/root-topology/root_technical_districts.min.json` | root districts need a compact machine-readable map of role, route card, family ids, and local routing without making README or AGENTS cards carry the full allowlist |
 | release-tool compatibility entrypoints | add | `docs/RELEASING.md`, `scripts/release_check.py` | workspace release tooling probes these legacy paths; they remain thin pointers to `docs/root/RELEASING.md` and `scripts/release/release_check.py` |
 | validation topology districts | add | `docs/validation/`, `docs/testing/`, `config/validation_lanes.json`, `scripts/validation_lanes.py`, `scripts/ci_gate.py` | validators need explicit boundary-layer law, command-authority balance, validator inventory, and test-family map instead of repeated release command lists or unlabeled historical gates |

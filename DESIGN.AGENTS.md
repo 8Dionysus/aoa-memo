@@ -79,8 +79,8 @@ The long-term mesh should make these lanes explicit:
 
 - `skills/` for canonical admitted procedures owned specifically by
   `aoa-memo`, with usefulness established manually before durable automation
-- `.agents/skills/aoa-memo/` for the exact generated repo projection of that
-  owner bundle, never for copied shared catalogs or source edits
+- the OS-level `os-user-default` profile for one managed Codex exposure of the
+  owner bundle, never for a second owner or copied shared catalog
 - `.agents/` for agent-facing derived companions and maintained lanes
 - `.agents/spark/` for registry-backed Codex Spark launch, result, handoff,
   validation, and scenario packets; it is a fast lane, not memory doctrine or
@@ -114,11 +114,10 @@ The current repository now has a source-backed AGENTS mesh mirror:
 The mesh validates the current `aoa-memo` card form rather than importing a
 sibling repository's heading template.
 
-The owner skill home and the agent projection are deliberately asymmetric:
-`skills/aoa-memo/` is canonical source, while `.agents/skills/aoa-memo/` is a
-byte- and mode-exact generated copy declared by `skills/port.manifest.json`.
-Shared bundles stay in their shared installation profile and must not be
-vendored into either lane.
+The owner skill home and runtime exposure are deliberately asymmetric:
+`skills/aoa-memo/` is canonical source, while `skills/port.manifest.json`
+admits it to one OS-managed user copy. Shared or owner bundles must not be
+vendored into `.agents/`.
 
 The Spark lane has its own registry-backed machine shape:
 
