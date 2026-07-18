@@ -1,0 +1,121 @@
+schema_version: aoa_owner_skill_contract_v1
+
+identity:
+  name: aoa-memo
+  owner: aoa-memo
+  canonical_source: skills/aoa-memo
+  version: 0.1.17
+  lifecycle: admitted
+
+purpose: Route one explicit existing-memory recall, review, or evolution through aoa-memo without promoting memory into proof, current source truth, route authority, role permission, runtime state, or KAG substrate.
+
+authority:
+  procedure_owner: skills/aoa-memo
+  memory_meaning: [memo/objects/**/object.json, memo/objects/**/MEMO.md, reviewed corpus support and intake sources]
+  stronger_sources: [origin-owner authored sources, accepted origin-owner review, bounded proof owned by aoa-evals]
+  weaker_surfaces: [local candidates, unaccepted exports, receipts, generated memory readers, MCP results, KAG nodes, consumer caches, green commands]
+  trust_rule: A later, generated, access, or retrieval surface cannot strengthen its owner source, provenance, temporal posture, or review state.
+  proof_owner_rule: aoa-evals is stronger only for proof claims; ordinary memory-candidate review neither requires nor can infer proof-owner acceptance.
+
+applicability:
+  use_when:
+    - Existing owner memory, provenance, lifecycle, current recall, temporal posture, contradiction, concrete intake artifact, or memory read-model drift is material.
+  do_not_use_when:
+    - The task is first writeback without a concrete memo artifact, raw session retrieval, proof interpretation, routing, roles, workflows, KAG substrate, runtime storage or repair, generic note taking, or only an already named validator invocation.
+  first_writeback_owner: aoa-memo-writeback
+  raw_session_owner: aoa-session-memory-global-route
+
+freedom:
+  recall: bounded-judgment-read-only
+  review: bounded-judgment-read-only
+  evolve: owner-gated-source-change
+
+modes:
+  recall:
+    input:
+      - one bounded existing-memory question or drift symptom
+      - owner or memory contour when known
+      - relevant temporal, provenance, trust, and consumer posture
+    output:
+      type: bounded-memory-recall
+      dispositions: [verified_bounded, owner_handoff, no_change, blocked, not_applicable]
+    effects: none
+    procedure: references/recall.md
+  review:
+    input:
+      - one concrete candidate, export, quarantine packet, contradiction, object, or lifecycle target
+      - origin or stronger owner and material source or evidence refs
+      - relevant privacy, poisoning, action-safety, provenance, and review posture
+    output:
+      type: bounded-memory-review
+      dispositions: [candidate_only, needs_owner_review, quarantine, reviewed_write_accepted, owner_handoff, no_change, blocked, not_applicable]
+      missing_input_rule: For candidate_only, list only absent prerequisites that can raise the candidate disposition; never list future landing outputs, proof-owner acceptance, or an intentionally absent validator.
+    effects: none
+    procedure: references/review.md
+  evolve:
+    input:
+      - accepted review or explicit source-owned review
+      - resolved owner and bounded target
+      - explicit effect authority and required human confirmation
+    output:
+      type: memory-owner-evolution
+      dispositions: [verified_bounded, no_change, needs_owner_review, owner_handoff, blocked]
+      missing_input_rule: For a named pre-review candidate, stop from the target itself and list only accepted reviewed-write export, origin-owner durable-intake acceptance, aoa-memo acceptance, effect authority, and required human confirmation; never list future landing outputs.
+    effects: [authorized owner source change, declared generated rebuild after source change]
+    procedure: references/evolve.md
+
+common_output_abi:
+  required:
+    - selected mode and memory contours traversed
+    - object or candidate identity, kind, scope, and stronger owner
+    - strongest source refs and weaker projections inspected
+    - relevant provenance, authority, freshness, lifecycle, current-recall, uncertainty, and risk posture
+    - one allowed disposition
+    - actual effects and verification
+    - skipped checks and remaining uncertainty
+    - next owner route
+    - exact proof or authority limit and stop line
+  review_field_order:
+    - mode
+    - source_return
+    - target
+    - disposition
+    - missing_inputs
+    - actual_effects
+    - skipped_checks
+    - proof_limit
+    - next_owner_route
+    - stop_line
+
+relations:
+  primary-capability-parent: aoa-memo reviewed-memory owner
+  composes-with: [aoa-memo-writeback, aoa-session-memory-global-route, aoa-evals, aoa-decision]
+  hands-off-to: [origin owner, aoa-evals, aoa-kag, runtime owner, inspected stronger owner]
+  conflicts-with: [raw-transcript-promotion, generated-as-source, memory-as-proof, MCP-as-writer, hidden-role-rights, missing-owner-review]
+
+tool_requirements:
+  fixed_tool_dependency: false
+  techniques_runtime_dependency: false
+  owner_reads: required for every owner-dependent mode
+  owner_write: evolve only after accepted review and explicit authority
+
+failure_modes:
+  - Loading aoa-memo-writeback before aoa-memo when the request already names a concrete memo artifact.
+  - Reading the selected mode before the contract or source-return procedure, or combining package-gate reads.
+  - Searching for another checkout after the same-bundle source route fails.
+  - Treating the first local candidate or schema-valid export as reviewed memory.
+  - Listing future corpus outputs, proof-owner acceptance, or a deliberately absent validator as candidate review prerequisites.
+  - Reading origin refs or a port before a named evolve target, or expanding after that target already proves the durable-review gate missing.
+  - Listing a future dry-run plan, corpus object, copied intake, receipt, or generated companion as a missing evolve entry input.
+  - Copying raw session evidence into the durable corpus.
+  - Treating a generated reader, MCP response, KAG node, receipt, or green command as owner acceptance.
+  - Collapsing temporal, lifecycle, trust, or current-recall states.
+  - Mutating corpus source inside review or without accepted review in evolve.
+
+termination:
+  success: One typed bounded result with sources, temporal and authority posture, actual effects, verification, skipped checks, handoff, and stop line.
+  blocked: Owner source, concrete target, evidence, ownership, accepted review, effect authority, or required confirmation is unavailable.
+
+health:
+  recheck_after: [material model change, host or workflow change, corpus or intake contract change, skill or source-return change]
+  manual_cases: [recall, review, evolve, first-writeback handoff, raw-session handoff, negative trigger, coexistence, bounded write]

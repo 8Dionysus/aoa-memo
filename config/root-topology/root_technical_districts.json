@@ -171,10 +171,16 @@
       ]
     },
     "skills": {
-      "root_role": "canonical home for admitted aoa-memo-specific callable procedures and their owner projection manifest",
+      "root_role": "canonical home for admitted aoa-memo-specific callable procedures and their OS user-profile admission manifest",
       "allowed_files": [
         "skills/README.md",
         "skills/aoa-memo/SKILL.md",
+        "skills/aoa-memo/agents/openai.yaml",
+        "skills/aoa-memo/references/contract.yaml",
+        "skills/aoa-memo/references/evolve.md",
+        "skills/aoa-memo/references/recall.md",
+        "skills/aoa-memo/references/review.md",
+        "skills/aoa-memo/references/source-return.md",
         "skills/port.manifest.json"
       ]
     },

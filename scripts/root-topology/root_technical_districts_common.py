@@ -73,7 +73,7 @@ DISTRICT_GUIDE = {
         "check": "python scripts/memory/validate_memo.py --profile schema",
     },
     "skills": {
-        "use_for": "admitted aoa-memo-specific callable procedures and their owner projection manifest",
+        "use_for": "admitted aoa-memo-specific callable procedures and their OS user-profile admission manifest",
         "route_local_to": "aoa-skills when the procedure is shared, cross-repository, or changes common portability and projection grammar",
         "check": "python ../aoa-skills/scripts/validate_home_skill_port.py --owner-root .",
     },

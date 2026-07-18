@@ -20,9 +20,10 @@ REQUIRED_DOCS: tuple[AgentsDocSpec, ...] = (
         Path('skills/AGENTS.md'),
         (
             'canonical `aoa-memo/skills/` home',
-            'generated Codex projection',
+            'managed OS user-profile copy',
             'Manual isolated',
-            'green output makes no outcome claim',
+            'Green output',
+            'makes no outcome claim.',
             'skills-ref validate',
         ),
     ),

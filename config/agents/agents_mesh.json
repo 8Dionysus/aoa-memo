@@ -13,8 +13,8 @@
       "required_snippets": [
         "agent-facing derived district",
         ".agents/<lane>/",
-        "exact generated projection",
-        "Do not edit the generated owner skill projection directly",
+        "OS user profile",
+        "Do not recreate owner or shared skill copies",
         "python scripts/release/release_check.py"
       ]
     },
@@ -23,9 +23,10 @@
       "min_lines": 25,
       "required_snippets": [
         "canonical `aoa-memo/skills/` home",
-        "generated Codex projection",
+        "managed OS user-profile copy",
         "Manual isolated",
-        "green output makes no outcome claim"
+        "Green output",
+        "makes no outcome claim."
       ]
     },
     {
