@@ -21,11 +21,16 @@ prove current memory meaning, installed parity, or a disposition.
 3. If that path is a regular file:
 
    - set `<source_route>` to `source-handle`
-   - require schema `aoa_skill_source_receipt_v1`
+   - require schema `aoa_skill_source_receipt_v1` or
+     `aoa_skill_source_receipt_v2`
    - require bundle `aoa-memo` and owner `aoa-memo`
+   - require version `0.1.18`
    - require an existing absolute `owner_root`
    - require a safe relative `source_path`
    - require `<owner_root>/<source_path>/SKILL.md`
+   - for v2, require non-empty `digest`, `source_fingerprint`,
+     `source_fingerprint_scope`, and `prompt_description_sha256`; preserve
+     `capability_graph_hash` when present
 
    If the path exists but is invalid, mismatched, or not a regular file, return
    `blocked_missing_owner_source`. Do not try another route.
@@ -61,9 +66,10 @@ conventions, temporary fixtures, `.system`, or another skill directory to
 discover a substitute owner. Do not retry the unused branch after a later
 owner read fails.
 
-Resolve every owner-relative path beneath the returned root. Treat handle ref,
-owner ref, dirty posture, and digest as install provenance rather than
-authority or current-parity proof.
+Resolve every owner-relative path beneath the returned root. Treat handle
+schema, owner ref, dirty posture, digest, source fingerprint, capability graph
+hash, and prompt-description hash as install provenance rather than authority
+or current-parity proof.
 
 ## Receipt
 
@@ -71,7 +77,7 @@ Report:
 
 - `<source_route>`
 - `<owner_root>`
-- handle or git action ref
+- handle schema and identity dimensions, or git action ref
 - manifest action ref
 - first later owner-read path and action ref
 
