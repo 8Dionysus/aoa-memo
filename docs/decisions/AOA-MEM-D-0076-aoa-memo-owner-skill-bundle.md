@@ -111,11 +111,13 @@ remain the semantic admission evidence; green checks do not replace them.
 
 ## Current Applicability
 
-As of 2026-07-16:
+As of 2026-07-23:
 
 - Still valid: `skills/aoa-memo/` is the canonical one-bundle owner home, and
   its three internal modes retain the admitted trigger and result contract.
-  Version `0.1.17` is the current owner package.
+  Version `0.1.18` is the current owner package. It adds verifiable v2
+  installed-copy source identity while retaining bounded v1 source-return
+  compatibility.
 - Changed: `skills/port.manifest.json` now admits the bundle to the single
   OS-level `os-user-default` profile; no repository `.agents/skills` copy is
   part of the active architecture.
@@ -123,6 +125,23 @@ As of 2026-07-16:
   by the v2 owner-home exposure contract. Manual admission evidence remains.
 
 ## Review Log
+
+### 2026-07-23 - Preserve owner return across the profile receipt transition
+
+- Integration pressure: the OS profile assembler now emits
+  `aoa_skill_source_receipt_v2`, while the admitted bundle accepted only v1.
+  A green installation therefore could not return to this canonical owner
+  source.
+- Correction: version `0.1.18` accepts v1 or v2 identity. V2 additionally
+  requires package digest, source fingerprint and scope, and prompt-description
+  hash; the capability-graph hash remains optional but must be non-empty when
+  present.
+- Manual result: a real managed v2 package and the retained v1 shape both
+  returned to the exact owner root. A v2 shape missing one required identity
+  field stopped before owner use.
+- Claim limit: this proves only the exercised installed-copy source return and
+  fail-closed identity checks. It does not re-prove memo routing, all three
+  mode outcomes, cross-host parity, or general skill benefit.
 
 ### 2026-07-18 - Preserve exact recall across lifecycle states
 
