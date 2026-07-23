@@ -137,8 +137,9 @@ As of 2026-07-23:
   hash; the capability-graph hash remains optional but must be non-empty when
   present.
 - Manual result: a real managed v2 package and the retained v1 shape both
-  returned to the exact owner root. A v2 shape missing one required identity
-  field stopped before owner use.
+  returned to the exact owner root. V2 shapes missing a required identity
+  field or carrying an empty optional `capability_graph_hash` stopped before
+  owner use.
 - Claim limit: this proves only the exercised installed-copy source return and
   fail-closed identity checks. It does not re-prove memo routing, all three
   mode outcomes, cross-host parity, or general skill benefit.

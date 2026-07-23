@@ -29,8 +29,9 @@ prove current memory meaning, installed parity, or a disposition.
    - require a safe relative `source_path`
    - require `<owner_root>/<source_path>/SKILL.md`
    - for v2, require non-empty `digest`, `source_fingerprint`,
-     `source_fingerprint_scope`, and `prompt_description_sha256`; preserve
-     `capability_graph_hash` when present
+     `source_fingerprint_scope`, and `prompt_description_sha256`; when
+     `capability_graph_hash` is present, require it to be a non-empty string
+     and preserve it
 
    If the path exists but is invalid, mismatched, or not a regular file, return
    `blocked_missing_owner_source`. Do not try another route.
