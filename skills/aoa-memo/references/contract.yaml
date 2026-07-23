@@ -4,7 +4,7 @@ identity:
   name: aoa-memo
   owner: aoa-memo
   canonical_source: skills/aoa-memo
-  version: 0.1.17
+  version: 0.1.18
   lifecycle: admitted
 
 purpose: Route one explicit existing-memory recall, review, or evolution through aoa-memo without promoting memory into proof, current source truth, route authority, role permission, runtime state, or KAG substrate.
