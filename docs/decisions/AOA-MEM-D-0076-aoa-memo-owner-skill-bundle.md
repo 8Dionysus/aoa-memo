@@ -115,9 +115,9 @@ As of 2026-07-23:
 
 - Still valid: `skills/aoa-memo/` is the canonical one-bundle owner home, and
   its three internal modes retain the admitted trigger and result contract.
-  Version `0.1.18` is the current owner package. It adds verifiable v2
-  installed-copy source identity while retaining bounded v1 source-return
-  compatibility.
+  Version `0.1.19` is the current owner package. It retains verifiable v2
+  installed-copy source identity and bounded v1 source return while keeping
+  existing-artifact applicability visible in a shortened host catalog.
 - Changed: `skills/port.manifest.json` now admits the bundle to the single
   OS-level `os-user-default` profile; no repository `.agents/skills` copy is
   part of the active architecture.
@@ -125,6 +125,19 @@ As of 2026-07-23:
   by the v2 owner-home exposure contract. Manual admission evidence remains.
 
 ## Review Log
+
+### 2026-07-25 - Keep existing-artifact routing in the shortened prefix
+
+- Observed defect: the active Codex host shortened the prompt-visible
+  description after the selection warning. The prefix distinguished
+  `aoa-memo` from first writeback, but hid recall, review, and evolution, so it
+  did not carry enough functional routing signal on its own.
+- Correction: version `0.1.19` starts with the existing-artifact condition and
+  the three owner operations, then keeps the package-first and
+  `aoa-memo-writeback` coexistence gates.
+- Claim limit: this repairs the observed catalog representation. It does not
+  by itself prove implicit selection, outcome improvement, cross-host parity,
+  or every memo/writeback wording.
 
 ### 2026-07-23 - Preserve owner return across the profile receipt transition
 
