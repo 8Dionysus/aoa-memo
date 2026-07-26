@@ -14,6 +14,8 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Changed
 
+- Compact the owner skill's global description while retaining existing-artifact
+  selection and the first-writeback coexistence boundary.
 - Replace 25 copied shared skill projections with one exact generated
   `.agents/skills/aoa-memo` projection and remove the foreign companion-script
   regression that treated a copied workflow helper as memo-owned truth.
