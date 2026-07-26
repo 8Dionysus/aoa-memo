@@ -115,7 +115,7 @@ As of 2026-07-23:
 
 - Still valid: `skills/aoa-memo/` is the canonical one-bundle owner home, and
   its three internal modes retain the admitted trigger and result contract.
-  Version `0.1.20` is the current owner package. It retains verifiable v2
+  Version `0.1.21` is the current owner package. It retains verifiable v2
   installed-copy source identity and bounded v1 source return while keeping
   existing-artifact applicability and the first-writeback boundary visible in
   the host catalog; package sequencing remains in the activated body.
