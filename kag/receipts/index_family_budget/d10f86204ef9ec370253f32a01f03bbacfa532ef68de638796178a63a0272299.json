@@ -1,0 +1,17 @@
+{
+  "allowed_bytes": 2080168,
+  "allowed_tracked_bytes": 16641374,
+  "approved_by": "repository-owner",
+  "base_ref": "551b15f371a6a3c59db055e37aa23221d69ab47c",
+  "changed_generated_bytes": 2080168,
+  "changed_generated_files": 54,
+  "decision_ref": "aoa-kag:docs/decisions/AOA-KAG-D-0017-portable-content-addressed-repository-family.md",
+  "default_limit_bytes": 1048576,
+  "head_family_digest": "d10f86204ef9ec370253f32a01f03bbacfa532ef68de638796178a63a0272299",
+  "reason": "PR-base projection delta after reviewer-corrected skill contract",
+  "repo": "aoa-memo",
+  "schema_version": "aoa-repo-local-kag-budget-receipt-v1",
+  "scope": "generated_delta",
+  "tracked_bytes": 16641374,
+  "tracked_bytes_max": 18874368
+}
