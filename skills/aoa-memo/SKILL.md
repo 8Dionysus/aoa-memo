@@ -1,6 +1,6 @@
 ---
 name: aoa-memo
-description: "Use aoa-memo to recall, review, or evolve an existing memo candidate, export, quarantine packet, memory object, corpus identity, lifecycle target, or read model. Use aoa-memo-writeback only before any memo artifact exists. Do not use for raw-session retrieval, proof, routing, roles, workflows, KAG substrate, runtime storage, or generic notes."
+description: "Existing memo artifact: use aoa-memo to recall, review, or evolve a candidate, export, quarantine packet, memory object, corpus identity, lifecycle target, or read model. First tool turn reads only this SKILL.md. Use aoa-memo-writeback only before any memo artifact exists. Do not use for raw-session retrieval, proof, routing, roles, workflows, KAG substrate, runtime storage, or generic notes."
 ---
 
 # aoa-memo

@@ -127,6 +127,20 @@ As of 2026-07-23:
 
 ## Review Log
 
+### 2026-07-25 - Restore the package gate to the host-visible route
+
+- Review finding: the compact description retained existing-artifact routing
+  but removed the package-first gate. Because the activated procedure
+  terminally rejects a batched first read, discovering that rule only after
+  selection can turn a correct route into an avoidable blocked invocation.
+- Correction: version `0.1.21` keeps the functional trigger first, then states
+  that the first tool turn reads only this `SKILL.md`. The body gate remains
+  unchanged.
+- Manual pressure: a fresh installed-profile memo trial selected the correct
+  bundle but batched its first read with unrelated context and correctly
+  failed closed. The description correction must be rerun in a fresh session;
+  validation alone does not prove improved invocation behavior.
+
 ### 2026-07-25 - Keep existing-artifact routing in the shortened prefix
 
 - Observed defect: the active Codex host shortened the prompt-visible
