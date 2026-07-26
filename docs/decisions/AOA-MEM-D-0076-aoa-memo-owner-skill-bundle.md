@@ -111,7 +111,7 @@ remain the semantic admission evidence; green checks do not replace them.
 
 ## Current Applicability
 
-As of 2026-07-23:
+As of 2026-07-25:
 
 - Still valid: `skills/aoa-memo/` is the canonical one-bundle owner home, and
   its three internal modes retain the admitted trigger and result contract.
