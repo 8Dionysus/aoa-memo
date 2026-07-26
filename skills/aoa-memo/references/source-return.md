@@ -24,7 +24,7 @@ prove current memory meaning, installed parity, or a disposition.
    - require schema `aoa_skill_source_receipt_v1` or
      `aoa_skill_source_receipt_v2`
    - require bundle `aoa-memo` and owner `aoa-memo`
-   - require version `0.1.19`
+   - require version `0.1.21`
    - require an existing absolute `owner_root`
    - require a safe relative `source_path`
    - require `<owner_root>/<source_path>/SKILL.md`

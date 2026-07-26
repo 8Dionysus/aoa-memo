@@ -111,13 +111,14 @@ remain the semantic admission evidence; green checks do not replace them.
 
 ## Current Applicability
 
-As of 2026-07-23:
+As of 2026-07-25:
 
 - Still valid: `skills/aoa-memo/` is the canonical one-bundle owner home, and
   its three internal modes retain the admitted trigger and result contract.
-  Version `0.1.19` is the current owner package. It retains verifiable v2
+  Version `0.1.21` is the current owner package. It retains verifiable v2
   installed-copy source identity and bounded v1 source return while keeping
-  existing-artifact applicability visible in a shortened host catalog.
+  existing-artifact applicability and the first-writeback boundary visible in
+  the host catalog; package sequencing remains in the activated body.
 - Changed: `skills/port.manifest.json` now admits the bundle to the single
   OS-level `os-user-default` profile; no repository `.agents/skills` copy is
   part of the active architecture.
@@ -125,6 +126,20 @@ As of 2026-07-23:
   by the v2 owner-home exposure contract. Manual admission evidence remains.
 
 ## Review Log
+
+### 2026-07-25 - Restore the package gate to the host-visible route
+
+- Review finding: the compact description retained existing-artifact routing
+  but removed the package-first gate. Because the activated procedure
+  terminally rejects a batched first read, discovering that rule only after
+  selection can turn a correct route into an avoidable blocked invocation.
+- Correction: version `0.1.21` keeps the functional trigger first, then states
+  that the first tool turn reads only this `SKILL.md`. The body gate remains
+  unchanged.
+- Manual pressure: a fresh installed-profile memo trial selected the correct
+  bundle but batched its first read with unrelated context and correctly
+  failed closed. The description correction must be rerun in a fresh session;
+  validation alone does not prove improved invocation behavior.
 
 ### 2026-07-25 - Keep existing-artifact routing in the shortened prefix
 

@@ -1,0 +1,17 @@
+{
+  "allowed_bytes": 2077874,
+  "allowed_tracked_bytes": 16641681,
+  "approved_by": "repository-owner",
+  "base_ref": "551b15f371a6a3c59db055e37aa23221d69ab47c",
+  "changed_generated_bytes": 2077874,
+  "changed_generated_files": 55,
+  "decision_ref": "aoa-kag:docs/decisions/AOA-KAG-D-0017-portable-content-addressed-repository-family.md",
+  "default_limit_bytes": 1048576,
+  "head_family_digest": "649b6aae18c9f2cdda09652b7ffec3a33e1c14469e51df1edf7973dc4daa2b4d",
+  "reason": "PR #290 keeps the host-visible memo package gate and existing-artifact routing, corrects the current-package chronology, and refreshes the deterministic owner projection.",
+  "repo": "aoa-memo",
+  "schema_version": "aoa-repo-local-kag-budget-receipt-v1",
+  "scope": "generated_delta",
+  "tracked_bytes": 16641681,
+  "tracked_bytes_max": 18874368
+}
