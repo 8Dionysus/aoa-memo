@@ -7,7 +7,7 @@
 | Actor rights and handoff authority | `aoa-agents` |
 | Quest, campaign, and recurring scenario choreography | `aoa-playbooks` |
 | Proof, regression, and validation verdicts | `aoa-evals` |
-| Dispatch behavior and route implementation | `aoa-routing` |
+| Dispatch behavior and route implementation | `aoa-sdk` |
 | Authored source meaning | source owner repository |
 
 `aoa-memo` may preserve writeback candidates and maps. It must not claim live

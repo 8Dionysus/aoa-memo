@@ -34,7 +34,7 @@ owner-routed handoff language.
 - `Tree-of-Sophia` owns authored meaning and never receives direct runtime or
   assistant writes from this mechanic.
 - `aoa-evals` owns proof and bounded verdicts.
-- `aoa-routing` owns dispatch behavior.
+- `aoa-sdk` owns dispatch behavior.
 - `aoa-agents` owns role rights and assistant authority.
 - `aoa-playbooks` owns scenario choreography and campaign cadence.
 - `abyss-stack` owns runtime governance, live storage, and execution.
@@ -66,7 +66,7 @@ Use the validation lane in [AGENTS](AGENTS.md#validation).
 ### Next route
 
 Route center governance to `Agents-of-Abyss`, authored meaning to
-`Tree-of-Sophia`, proof to `aoa-evals`, dispatch behavior to `aoa-routing`,
+`Tree-of-Sophia`, proof to `aoa-evals`, dispatch behavior to `aoa-sdk`,
 role authority to `aoa-agents`, scenario choreography to `aoa-playbooks`, and
 runtime governance or execution to `abyss-stack`.
 

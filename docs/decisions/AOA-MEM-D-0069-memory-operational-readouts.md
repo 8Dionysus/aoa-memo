@@ -72,6 +72,29 @@ not as authority over MCP runtime or workspace topology.
   operational readout slices, not as claims that all future object population,
   lifecycle, or eval loops are done.
 
+## Currentness Review
+
+### 2026-07-28 - Preserve source-owned port lifecycle
+
+The checked-in parent readout is not a baseline that later regeneration must
+preserve. The current `8Dionysus` map remains the stronger workspace source,
+and each repository remains the stronger source for whether its local memo
+port still exists.
+
+The current decrease from ten to eight full ports is source-backed rather than
+an effect of routing succession:
+
+- `Dionysus` removed its local memo port while archiving the seed garden in
+  `209cc4888be3896d5da6db1d25ca0ac42bb45786`.
+- `aoa-skills` removed its former local memo port during the semantic
+  capability ecosystem refactor in
+  `034ba98a7c75451a8791adba8835b89674986ecf`.
+
+Operational regeneration therefore keeps those places at their currently
+observed `route_only` and `none` postures. Restoring the older full-port rows
+from the parent readout would turn a derived snapshot into authority over its
+source owners.
+
 ## Affected Surfaces
 
 - `generated/memory/access_plane_currentness.min.json`

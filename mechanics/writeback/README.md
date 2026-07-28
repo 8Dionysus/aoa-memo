@@ -31,7 +31,7 @@ writeback contracts.
 - `aoa-agents` owns actor rights and handoff authority.
 - `aoa-playbooks` owns recurring scenario choreography and quest execution.
 - `aoa-evals` owns proof and regression verdicts.
-- `aoa-routing` owns dispatch behavior.
+- `aoa-sdk` owns dispatch behavior.
 - Source repositories own authored meaning and operational truth.
 
 ### Inputs
@@ -59,7 +59,7 @@ Use the validation lane in [AGENTS](AGENTS.md#validation).
 
 Route runtime work to `abyss-stack`, role rights to `aoa-agents`, recurring
 scenario work to `aoa-playbooks`, proof to `aoa-evals`, and dispatch behavior
-to `aoa-routing`.
+to `aoa-sdk`.
 
 ## Active Route
 

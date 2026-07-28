@@ -30,7 +30,7 @@ and stop-lines for later review.
   current health.
 - `aoa-evals` owns proof that a recovery or failure claim holds.
 - `aoa-stats` owns derived summaries over repeated windows.
-- `aoa-routing` owns route behavior and dispatch.
+- `aoa-sdk` owns route behavior and dispatch.
 - `aoa-playbooks` owns scenario choreography and campaign cadence.
 - `abyss-stack` owns runtime repair, live storage, and operational execution.
 
@@ -61,7 +61,7 @@ Use the validation lane in [AGENTS](AGENTS.md#validation).
 ### Next route
 
 Route source receipts to the owner repository, proof to `aoa-evals`, repeated
-window summaries to `aoa-stats`, dispatch behavior to `aoa-routing`, scenario
+window summaries to `aoa-stats`, dispatch behavior to `aoa-sdk`, scenario
 composition to `aoa-playbooks`, and runtime repair to `abyss-stack`.
 
 ## Active Route

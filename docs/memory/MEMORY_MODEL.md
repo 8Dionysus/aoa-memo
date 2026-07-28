@@ -485,7 +485,7 @@ Owns who can read, write, promote, freeze, or hand off memory.
 
 See [AGENT_MEMORY_POSTURE_SEAM](../mechanics/consumer-handoff/docs/AGENT_MEMORY_POSTURE_SEAM.md) for the memo-side fields that those rights may apply to without moving rights policy into `aoa-memo`.
 
-### `aoa-routing`
+### `aoa-sdk`
 
 Owns how a model or human is routed toward the smallest next source surface.
 

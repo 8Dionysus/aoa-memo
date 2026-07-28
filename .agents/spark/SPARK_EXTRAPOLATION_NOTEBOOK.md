@@ -119,7 +119,7 @@ Spark must not:
 - move mechanic law into the agent lane;
 - invent validation commands not named by the owner surface;
 - absorb neighboring owner meaning from `aoa-techniques`, `aoa-skills`,
-  `aoa-evals`, `aoa-routing`, `aoa-agents`, `aoa-kag`, `aoa-playbooks`,
+  `aoa-evals`, `aoa-sdk`, `aoa-agents`, `aoa-kag`, `aoa-playbooks`,
   `Tree-of-Sophia`, or `abyss-stack`.
 
 ## Local Shape

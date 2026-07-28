@@ -24,7 +24,7 @@
       ],
       "strongest_next_sources": [
         "repo:Agents-of-Abyss",
-        "repo:aoa-routing",
+        "repo:aoa-sdk",
         "repo:Tree-of-Sophia"
       ],
       "focus_tags": [
@@ -89,7 +89,7 @@
         "AOA-M-0004"
       ],
       "strongest_next_sources": [
-        "repo:aoa-routing",
+        "repo:aoa-sdk",
         "repo:aoa-agents",
         "repo:aoa-kag",
         "repo:Tree-of-Sophia"
@@ -122,7 +122,7 @@
         "AOA-M-0003"
       ],
       "strongest_next_sources": [
-        "repo:aoa-routing",
+        "repo:aoa-sdk",
         "repo:aoa-agents",
         "repo:aoa-kag",
         "repo:abyss-stack"
@@ -291,7 +291,7 @@
       "strongest_next_sources": [
         "repo:aoa-kag",
         "repo:Tree-of-Sophia",
-        "repo:aoa-routing"
+        "repo:aoa-sdk"
       ],
       "focus_tags": [
         "chunk-face",
@@ -323,7 +323,7 @@
       "strongest_next_sources": [
         "repo:aoa-evals",
         "repo:aoa-agents",
-        "repo:aoa-routing"
+        "repo:aoa-sdk"
       ],
       "focus_tags": [
         "eval-handoff",
@@ -354,7 +354,7 @@
         "AOA-M-0009"
       ],
       "strongest_next_sources": [
-        "repo:aoa-routing",
+        "repo:aoa-sdk",
         "repo:aoa-agents",
         "repo:aoa-kag",
         "repo:abyss-stack"
@@ -388,7 +388,7 @@
         "AOA-M-0011"
       ],
       "strongest_next_sources": [
-        "repo:aoa-routing",
+        "repo:aoa-sdk",
         "docs/boundaries/OPERATIONAL_BOUNDARY.md#consumer-contracts",
         "generated/memory-objects/memory_object_capsules.json"
       ],
@@ -426,7 +426,7 @@
         "repo:aoa-evals",
         "repo:aoa-agents",
         "repo:aoa-playbooks",
-        "repo:aoa-routing",
+        "repo:aoa-sdk",
         "repo:aoa-stats"
       ],
       "focus_tags": [
@@ -462,7 +462,7 @@
         "repo:Agents-of-Abyss",
         "repo:aoa-agents",
         "repo:aoa-playbooks",
-        "repo:aoa-routing",
+        "repo:aoa-sdk",
         "repo:abyss-stack",
         "repo:aoa-evals"
       ],
@@ -502,7 +502,7 @@
         "repo:aoa-stats",
         "repo:aoa-kag",
         "repo:Tree-of-Sophia",
-        "repo:aoa-routing",
+        "repo:aoa-sdk",
         "repo:aoa-agents",
         "repo:aoa-playbooks",
         "repo:abyss-stack",

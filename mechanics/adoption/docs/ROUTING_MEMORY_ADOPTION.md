@@ -5,7 +5,7 @@
 This document defines the first router-facing neighbor-adoption package for
 `aoa-memo`.
 
-It makes the memo-side consumption flow explicit for `aoa-routing` without
+It makes the memo-side consumption flow explicit for `aoa-sdk` without
 moving dispatch logic, ranking policy, or truth authority into this repository.
 
 ## Core Rule
@@ -96,7 +96,7 @@ proof, rights, or current truth from memo fields alone.
 Typical stronger-source escalation points include:
 
 - cited docs in `aoa-memo`
-- outward refs such as `repo:aoa-routing`, `repo:aoa-agents`, `repo:aoa-kag`, or `repo:Tree-of-Sophia`
+- outward refs such as `repo:aoa-sdk`, `repo:aoa-agents`, `repo:aoa-kag`, or `repo:Tree-of-Sophia`
 - object-level `strongest_next_source` or section-level strongest source refs
 
 ## What This Adoption Package Does Not Do

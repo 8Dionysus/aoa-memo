@@ -49,7 +49,7 @@
       "name": "roadmap",
       "summary": "Milestones for turning aoa-memo from bootstrap doctrine into a routeable, provenance-aware memory layer.",
       "one_line_intent": "Translate the memory doctrine into a staged build path that stays small, explicit, and integrable.",
-      "use_when_short": "Use when selecting the next PR slice or sequencing work across aoa-memo, aoa-routing, aoa-kag, and aoa-agents.",
+      "use_when_short": "Use when selecting the next PR slice or sequencing work across aoa-memo, aoa-sdk, aoa-kag, and aoa-agents.",
       "do_not_use_short": "Avoid when the need is a present-tense object definition rather than milestone planning.",
       "inputs_short": "Needs a question about implementation order, missing surfaces, or integration stages.",
       "outputs_short": "Produces milestone order, exit criteria, and cross-repo dependency hints.",

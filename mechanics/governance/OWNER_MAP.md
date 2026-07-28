@@ -7,7 +7,7 @@
 | Authored meaning and Tree-of-Sophia intake law | `Tree-of-Sophia` |
 | Source receipts, owner consent, incident truth, and local adoption | source owner repository |
 | Proof and bounded verdicts | `aoa-evals` |
-| Dispatch behavior and route hints | `aoa-routing` |
+| Dispatch behavior and route hints | `aoa-sdk` |
 | Role rights and assistant authority | `aoa-agents` |
 | Scenario choreography and campaign cadence | `aoa-playbooks` |
 | Runtime governance, live storage, and operational execution | `abyss-stack` |

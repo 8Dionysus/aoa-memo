@@ -42,7 +42,7 @@ truth, or canon.
   after memo, evidence, retention, and owner gates.
 - `Tree-of-Sophia` owns authored meaning and canon intake; this mechanic never
   grants direct writes.
-- `aoa-routing` owns dispatch behavior and owner-landing policy.
+- `aoa-sdk` owns dispatch behavior and owner-landing policy.
 - `aoa-agents` owns role rights, assistant adoption posture, and self-rewrite
   stop-lines.
 - `aoa-playbooks` owns owner-local adoption quests and campaign choreography.
@@ -84,7 +84,7 @@ Use the validation lane in [AGENTS](AGENTS.md#validation).
 Route federation program law to `Agents-of-Abyss`, source truth and adoption
 consent to source repositories, proof to `aoa-evals`, recurrence summaries to
 `aoa-stats`, derived graph promotion to `aoa-kag`, authored meaning to
-`Tree-of-Sophia`, dispatch to `aoa-routing`, rights and assistant adoption
+`Tree-of-Sophia`, dispatch to `aoa-sdk`, rights and assistant adoption
 policy to `aoa-agents`, scenario/adoption choreography to `aoa-playbooks`, and
 runtime watchtower execution to `abyss-stack`.
 

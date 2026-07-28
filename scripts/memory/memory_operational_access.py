@@ -119,7 +119,7 @@ def live_access_probes() -> list[dict[str, Any]]:
 
     for repo, intent in (
         ("aoa-evals", "memory quality harness handoff from aoa-memo"),
-        ("aoa-routing", "router recall pack needs memo context"),
+        ("aoa-sdk", "router recall pack needs memo context"),
     ):
         result = run_mcp_cli(["brief", "--repo", repo, "--intent", intent])
         payload = payload_dict(result)

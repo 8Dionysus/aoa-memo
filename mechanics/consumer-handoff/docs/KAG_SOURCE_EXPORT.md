@@ -68,7 +68,7 @@ donor export should point at the reviewed corpus bundle.
 Publishing the export does not yet mean:
 
 - `aoa-kag` consumes it inside the live `federation_spine`
-- `aoa-routing` gets a new live `kag_view`
+- `aoa-sdk` gets a new live `kag_view`
 - memo becomes graph truth
 - bridge candidates become normalized substrate facts
 

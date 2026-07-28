@@ -32,7 +32,7 @@ memory questions bounded to existing memory objects.
 - `abyss-stack` owns live stores, runtime retention jobs, backups, and local
   execution plumbing.
 - `aoa-kag` owns downstream substrate lifts and graph normalization.
-- `aoa-routing` owns route dispatch, navigation hints, and return policy.
+- `aoa-sdk` owns route dispatch, navigation hints, and return policy.
 - `aoa-agents` owns actor rights, role authority, and service contract meaning.
 - `aoa-playbooks` owns scenario choreography and campaign-shaped routes.
 - Source owner repositories own acceptance of durable consequences.
@@ -66,7 +66,7 @@ Use the validation lane in [AGENTS](AGENTS.md#validation).
 ### Next route
 
 Route proof to `aoa-evals`, runtime retention to `abyss-stack`, graph lift to
-`aoa-kag`, routing behavior to `aoa-routing`, actor/service rights to
+`aoa-kag`, routing behavior to `aoa-sdk`, actor/service rights to
 `aoa-agents`, scenario meaning to `aoa-playbooks`, center doctrine to
 `Agents-of-Abyss`, and source acceptance to the owning repository.
 

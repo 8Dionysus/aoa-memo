@@ -14,7 +14,7 @@
 ## Not Yet
 
 - Do not turn consumer handoff into a mirror of `aoa-agents`,
-  `aoa-playbooks`, `aoa-evals`, `aoa-kag`, `aoa-routing`, `Tree-of-Sophia`, or
+  `aoa-playbooks`, `aoa-evals`, `aoa-kag`, `aoa-sdk`, `Tree-of-Sophia`, or
   `abyss-stack`.
 - Do not add a generic neighbor-seams bucket; every added doc must name the
   consumer operation and stronger owner split.

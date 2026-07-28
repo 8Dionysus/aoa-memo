@@ -33,7 +33,7 @@ closeout memory proposals, and stop-lines.
 - `abyss-stack` owns runtime storage, private retention, and live memory
   machinery.
 - Source repositories own authored source truth and owner-repo Titan doctrine.
-- `aoa-routing` owns dispatch behavior when Titan memory becomes route input.
+- `aoa-sdk` owns dispatch behavior when Titan memory becomes route input.
 
 ### Inputs
 
@@ -61,7 +61,7 @@ Use the validation lane in [AGENTS](AGENTS.md#validation).
 ### Next route
 
 Route role authority to `aoa-agents`, proof to `aoa-evals`, runtime storage to
-`abyss-stack`, route behavior to `aoa-routing`, and authored source doctrine
+`abyss-stack`, route behavior to `aoa-sdk`, and authored source doctrine
 to the owning source repository.
 
 ## Active Route

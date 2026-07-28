@@ -42,7 +42,7 @@ class CurrentDirectionRoutesTestCase(unittest.TestCase):
             "memory is not proof",
             "aoa-evals",
             "aoa-kag",
-            "aoa-routing",
+            "aoa-sdk",
         ):
             self.assertIn(phrase, doc)
 

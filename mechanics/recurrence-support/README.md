@@ -34,7 +34,7 @@ refs, provenance links, and stop-lines that keep recurrence support bounded.
   authority.
 - `aoa-playbooks` owns scenario choreography, campaign return posture, and
   reviewed closeout play.
-- `aoa-routing` owns dispatch behavior, tier escalation, route compression, and
+- `aoa-sdk` owns dispatch behavior, tier escalation, route compression, and
   return navigation policy.
 - `abyss-stack` owns live stores, runtime rebuild policy, retry loops,
   checkpoint workers, and return-event logging.
@@ -74,7 +74,7 @@ Use the validation lane in [AGENTS](AGENTS.md#validation).
 
 Route recurrence doctrine to `Agents-of-Abyss`, rights and handoff policy to
 `aoa-agents`, scenario return play to `aoa-playbooks`, dispatch behavior to
-`aoa-routing`, runtime stores and retry loops to `abyss-stack`, proof to
+`aoa-sdk`, runtime stores and retry loops to `abyss-stack`, proof to
 `aoa-evals`, and source acceptance to the owning repository.
 
 ## Active Route

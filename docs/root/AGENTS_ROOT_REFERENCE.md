@@ -47,7 +47,7 @@ Do not treat this repository as the source of truth for:
 - reusable engineering practice in `aoa-techniques`
 - bounded execution workflows in `aoa-skills`
 - proof doctrine or verdict logic in `aoa-evals`
-- routing and dispatch logic in `aoa-routing`
+- routing and dispatch logic in `aoa-sdk`
 - role contracts, progression doctrine, or self-agent checkpoint policy in `aoa-agents`
 - scenario composition or questline sovereignty in `aoa-playbooks`
 - derived substrate semantics in `aoa-kag`

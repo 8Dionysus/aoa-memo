@@ -6,7 +6,7 @@
 | Center questbook doctrine and cross-repo quest model precedent | `Agents-of-Abyss` |
 | Scenario, campaign, questline choreography | `aoa-playbooks` |
 | Proof and closure-quality verdicts | `aoa-evals` |
-| Route dispatch and navigation behavior | `aoa-routing` |
+| Route dispatch and navigation behavior | `aoa-sdk` |
 | Role rights and agent authority | `aoa-agents` |
 | Runtime scheduling, storage, and live retention | `abyss-stack` |
 | Owner acceptance and implementation truth | source owner repository |

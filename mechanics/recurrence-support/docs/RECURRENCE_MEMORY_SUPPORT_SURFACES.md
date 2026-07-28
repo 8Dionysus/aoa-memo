@@ -12,7 +12,7 @@ It cannot decide whether return is permitted, which tier owns the next move, or 
 Mechanic route: [recurrence-support](../README.md) owns this memo-side support
 posture. [checkpoint](../../checkpoint/README.md) owns checkpoint artifacts
 that recurrence-support consumes. `Agents-of-Abyss`, `aoa-agents`,
-`aoa-playbooks`, `aoa-routing`, `abyss-stack`, and `aoa-evals` keep the
+`aoa-playbooks`, `aoa-sdk`, `abyss-stack`, and `aoa-evals` keep the
 stronger recurrence, handoff, scenario, dispatch, runtime, and proof
 decisions.
 
@@ -147,7 +147,7 @@ May export bounded runtime state into the current memo canon through the writeba
 May consume checkpoint and anchor refs as relaunch aids.
 Must keep live stores, retry loops, and rebuild mechanics outside `aoa-memo`.
 
-### `aoa-routing`
+### `aoa-sdk`
 
 May point back to memo contracts and public object surfaces.
 Must not reinterpret memo truth or checkpoint semantics.

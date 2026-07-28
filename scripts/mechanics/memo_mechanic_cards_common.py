@@ -33,7 +33,7 @@ KNOWN_STRONGER_OWNER_REFS = (
     "aoa-evals",
     "aoa-kag",
     "aoa-playbooks",
-    "aoa-routing",
+    "aoa-sdk",
     "aoa-stats",
     "abyss-stack",
     "source owner",

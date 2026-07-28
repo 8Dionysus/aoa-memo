@@ -126,7 +126,7 @@ become verdict logic. Proof belongs in `aoa-evals`.
 ### 6. Recall is not routing sovereignty
 
 `aoa-memo` may expose routeable recall surfaces. Dispatch logic and route
-compression policy belong in `aoa-routing`.
+compression policy belong in `aoa-sdk`.
 
 ### 7. Graph faces are not graph ownership
 

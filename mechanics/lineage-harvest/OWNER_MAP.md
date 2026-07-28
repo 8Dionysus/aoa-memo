@@ -9,7 +9,7 @@
 | Recurrence summaries and movement reporting | `aoa-stats` |
 | Derived graph substrate and KAG promotion intake | `aoa-kag` |
 | Authored meaning, ToS candidate review, and canon | `Tree-of-Sophia` |
-| Dispatch behavior and owner-landing route policy | `aoa-routing` |
+| Dispatch behavior and owner-landing route policy | `aoa-sdk` |
 | Role rights, assistant adoption policy, and self-rewrite boundaries | `aoa-agents` |
 | Adoption quest and campaign choreography | `aoa-playbooks` |
 | Runtime watchtower incidents, live stores, and execution | `abyss-stack` |

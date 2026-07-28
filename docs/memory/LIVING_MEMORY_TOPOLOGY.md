@@ -52,10 +52,9 @@ durable reviewed memory after a reviewed handoff.
 | `aoa-agents` | role posture, memory rights pressure, orchestrator recall needs | local port when present | `aoa-memo` for memory objects only | router, review, bounded execution | role rights, identity, handoff authority |
 | `aoa-playbooks` | reviewed runs, scenario handoffs, recurrence closeout | local port when present | `aoa-memo` for recalled traces | review, bounded execution, recurrence | scenario choreography |
 | `aoa-evals` | proof reports, guardrail outcomes, bounded quality findings | route-only unless a port is added | `aoa-memo` for memory of proof outcomes only | review, quality harness, stats | verdict logic and scoring |
-| `aoa-routing` | return hints, dispatch entrypoints, route compression pressure | route-only unless a port is added | `aoa-memo` for route-memory evidence only | router, SDK, agents | dispatch behavior and navigation policy |
+| `aoa-sdk` | return hints, dispatch entrypoints, route compression pressure, typed workspace discovery, and compatibility drift evidence | route-only unless a port is added | `aoa-memo` for route and compatibility memory evidence only | router, SDK, tools, MCP, agents | dispatch behavior, navigation policy, and typed SDK behavior |
 | `aoa-kag` | derived substrate readiness, graph-lift pressure, projection health | route-only unless a port is added | `aoa-memo` bridge memory only | KAG consumers, ToS bridge review | normalized graph substrate |
 | `aoa-stats` | derived memory movement summaries, trend views, corpus counts | route-only unless a port is added | `aoa-memo` for source events, not stats truth | review, roadmap, activation backlog | observability interpretation |
-| `aoa-sdk` | typed workspace discovery and compatibility drift evidence | route-only unless a port is added | `aoa-memo` for compatibility memory only | tools, MCP, agents | typed SDK behavior |
 
 ## Naming Topology
 

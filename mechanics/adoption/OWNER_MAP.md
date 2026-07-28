@@ -3,7 +3,7 @@
 | Concern | Owner |
 |---|---|
 | Adoption memory posture and source refs | `aoa-memo` |
-| Router behavior and dispatch implementation | `aoa-routing` |
+| Router behavior and dispatch implementation | `aoa-sdk` |
 | Adoption proof and regression evidence | `aoa-evals` |
 | Role rights and actor write authority | `aoa-agents` |
 | Recurring adoption choreography | `aoa-playbooks` |

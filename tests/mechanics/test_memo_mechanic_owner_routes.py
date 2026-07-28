@@ -57,7 +57,7 @@ def test_memo_mechanic_owner_routes_cover_cards_and_owner_maps() -> None:
         assert any(route["route_kind"] == "memo-owner" for route in package["owner_routes"])
         assert sum(1 for route in package["owner_routes"] if route["route_kind"] == "stronger-owner") >= 3
 
-    for owner_ref in ("aoa-evals", "abyss-stack", "aoa-agents", "aoa-routing"):
+    for owner_ref in ("aoa-evals", "abyss-stack", "aoa-agents", "aoa-sdk"):
         assert owner_ref in payload["owners"]
 
 

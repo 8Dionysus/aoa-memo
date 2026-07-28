@@ -34,7 +34,7 @@ class GovernanceMechanicTestCase(unittest.TestCase):
             "Agents-of-Abyss",
             "Tree-of-Sophia",
             "aoa-evals",
-            "aoa-routing",
+            "aoa-sdk",
             "aoa-agents",
             "aoa-playbooks",
             "abyss-stack",

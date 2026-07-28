@@ -24,7 +24,7 @@ forgetting and revision language, and candidate writeback framing.
 
 ### Stronger owner split
 
-- `aoa-routing` owns dispatch behavior and router implementation.
+- `aoa-sdk` owns dispatch behavior and router implementation.
 - `aoa-evals` owns proof and adoption-quality verdicts.
 - `aoa-agents` owns role rights and actor write authority.
 - `aoa-playbooks` owns recurring adoption choreography.
@@ -54,7 +54,7 @@ Use the validation lane in [AGENTS](AGENTS.md#validation).
 
 ### Next route
 
-Route proof to `aoa-evals`, dispatch implementation to `aoa-routing`, role
+Route proof to `aoa-evals`, dispatch implementation to `aoa-sdk`, role
 rights to `aoa-agents`, runtime behavior to `abyss-stack`, and recurring
 adoption choreography to `aoa-playbooks`.
 

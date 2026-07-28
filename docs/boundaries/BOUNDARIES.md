@@ -71,7 +71,7 @@ Keep portable proof surfaces there:
 
 Memory may preserve an eval outcome. That does not make the memory object the proof surface itself.
 
-### `aoa-routing`
+### `aoa-sdk`
 
 Keep dispatch logic there:
 
