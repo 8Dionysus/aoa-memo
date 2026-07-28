@@ -73,7 +73,7 @@ federation harvest stop-lines explicit without granting memo proof, KAG
 promotion, ToS canon, stats certification, runtime truth, or source-owner
 consent.
 The first downstream eval adoption pass is now explicitly narrowed to recall precision, provenance fidelity, and staleness so `aoa-evals` can pilot memo proof without pretending to cover every guardrail focus at once.
-The current KAG-facing adoption slice now publishes `mechanics/consumer-handoff/parts/kag-source-export/generated/kag_export.min.json` as one source-owned memo export for `aoa-kag` readiness without widening the live federation spine or `aoa-routing` ABI.
+The current KAG-facing adoption slice now publishes `mechanics/consumer-handoff/parts/kag-source-export/generated/kag_export.min.json` as one source-owned memo export for `aoa-kag` readiness without widening the live federation spine or `aoa-sdk` ABI.
 Governance authority-boundary artifacts now live at their owning parts:
 `mechanics/governance/parts/governance-boundary/`,
 `mechanics/governance/parts/federation-boundary/`,
@@ -219,7 +219,7 @@ Within the current contract-hardening stage, the cleanest slice order is:
 3. **Object-facing generated surfaces**
    Publish a separate generated family for actual memory objects and profile-backed example bundles without breaking doctrine-first catalogs.
 4. **Neighbor adoption**
-   Let `aoa-routing`, `aoa-agents`, `aoa-kag`, and `aoa-evals` consume the sharpened memo contracts without moving their logic into this repository.
+   Let `aoa-sdk`, `aoa-agents`, `aoa-kag`, and `aoa-evals` consume the sharpened memo contracts without moving their logic into this repository.
 
 ## North star
 
@@ -229,7 +229,7 @@ By `v1.0`, `aoa-memo` should make it possible to say:
 - episodes, claims, patterns, anchors, and audit events are distinguished clearly
 - provenance and temporal posture survive recall
 - temperature, salience, confidence, and authority are not collapsed into one foggy signal
-- `aoa-routing` can route into memo surfaces without copying their meaning
+- `aoa-sdk` can route into memo surfaces without copying their meaning
 - `aoa-kag` can lift memory surfaces downstream without treating `aoa-memo` as a graph engine
 - `aoa-agents` can govern memory rights without those rights being hidden inside the memory layer
 - live storage and lifecycle machinery remain outside this repository
@@ -464,11 +464,11 @@ The cleanest first pull request sequence is:
 
 ## Cross-repo dependencies
 
-### `aoa-routing`
+### `aoa-sdk`
 
 Already consumes the live `memo` kind, compact memo catalogs, router-ready doctrine recall contracts, and the current parallel object-facing recall family.
 
-Future routing work should keep those memo-facing hints additive, source-owned, and bounded rather than turning `aoa-routing` into memo authority.
+Future routing work should keep those memo-facing hints additive, source-owned, and bounded rather than turning `aoa-sdk` into memo authority.
 The current memo-side adoption package now makes the capsule step explicit between inspect and full expansion for both doctrine and object-facing semantic or lineage recall.
 
 ### `aoa-agents`

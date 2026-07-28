@@ -20,7 +20,7 @@
 | `aoa-evals` | proof, score, verdict meaning, and promotion evidence |
 | `abyss-stack` | live stores, runtime retention jobs, backups, and local execution plumbing |
 | `aoa-kag` | graph-ready substrate lifts and normalization |
-| `aoa-routing` | route dispatch, navigation hints, and return policy |
+| `aoa-sdk` | route dispatch, navigation hints, and return policy |
 | `aoa-agents` | actor rights, role authority, and service contract meaning |
 | `aoa-playbooks` | scenario choreography and campaign-shaped routes |
 | source owner repositories | acceptance of durable consequences or current truth |

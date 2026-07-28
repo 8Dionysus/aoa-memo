@@ -60,7 +60,7 @@ That split is the current safe posture.
   evidence.
 - `aoa-kag` owns downstream derived substrate lifts and graph-facing
   normalization.
-- `aoa-routing` owns navigation hints and return hops.
+- `aoa-sdk` owns navigation hints and return hops.
 - `aoa-memo` owns memory objects, provenance, lifecycle posture, temporal
   relevance, recall contracts, and memo-side writeback doctrine.
 
@@ -91,7 +91,7 @@ Now, without starting any future protocol, `aoa-memo` may:
 - keep provenance and lifecycle posture visible
 - hand recall and contradiction guardrails to `aoa-evals` for bounded proof
 - hand bridge candidates to `aoa-kag` only as source-owned memo exports
-- let `aoa-routing` point back to memo recall contracts without copying memo
+- let `aoa-sdk` point back to memo recall contracts without copying memo
   meaning
 
 ## What Must Wait

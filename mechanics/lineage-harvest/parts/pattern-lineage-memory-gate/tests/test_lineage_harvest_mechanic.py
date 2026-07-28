@@ -40,7 +40,7 @@ class LineageHarvestMechanicTestCase(unittest.TestCase):
             "aoa-stats",
             "aoa-kag",
             "Tree-of-Sophia",
-            "aoa-routing",
+            "aoa-sdk",
             "aoa-agents",
             "aoa-playbooks",
             "abyss-stack",

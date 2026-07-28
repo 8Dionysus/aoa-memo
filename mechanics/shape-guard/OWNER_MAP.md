@@ -5,7 +5,7 @@
 | Shape review questions and via-negativa pruning posture | `aoa-memo` |
 | Memory object canon and trust/lifecycle doctrine | `aoa-memo` root doctrine surfaces |
 | Proof and verdict requirements | `aoa-evals` |
-| Dispatch behavior and route compression | `aoa-routing` |
+| Dispatch behavior and route compression | `aoa-sdk` |
 | Role rights and action authority | `aoa-agents` |
 | Graph substrate promotion | `aoa-kag` |
 | Runtime storage, deletion, retention, and execution | `abyss-stack` or runtime owner |

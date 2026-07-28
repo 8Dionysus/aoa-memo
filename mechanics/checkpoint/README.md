@@ -31,7 +31,7 @@ that keep checkpoint recall bounded.
 - `Agents-of-Abyss` owns checkpoint doctrine, program law, and center meaning.
 - `aoa-agents` owns actor rights, checkpoint authority, and handoff policy.
 - `aoa-playbooks` owns scenario choreography and checkpoint play.
-- `aoa-routing` owns dispatch, route compression, and return navigation.
+- `aoa-sdk` owns dispatch, route compression, and return navigation.
 - `abyss-stack` owns live checkpoint workers, runtime stores, retry loops, and
   checkpoint logs.
 - `aoa-evals` owns proof, score, and quality verdicts.
@@ -67,7 +67,7 @@ Use the validation lane in [AGENTS](AGENTS.md#validation).
 ### Next route
 
 Route checkpoint doctrine to `Agents-of-Abyss`, actor rights to `aoa-agents`,
-checkpoint play to `aoa-playbooks`, route behavior to `aoa-routing`, runtime
+checkpoint play to `aoa-playbooks`, route behavior to `aoa-sdk`, runtime
 checkpoint work to `abyss-stack`, proof to `aoa-evals`, and source acceptance
 to the owning repository.
 

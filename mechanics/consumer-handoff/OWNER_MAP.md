@@ -9,7 +9,7 @@
 | Graph substrate normalization, federation activation, and derived KAG semantics | `aoa-kag` |
 | Derived memory movement summaries, trend aggregation, and observability posture | `aoa-stats` |
 | Authored ToS meaning, fragments, concepts, nodes, and lineages | `Tree-of-Sophia` |
-| Dispatch behavior and route compression | `aoa-routing` |
+| Dispatch behavior and route compression | `aoa-sdk` |
 | Runtime stores, workers, receipts, and operational execution | `abyss-stack` or runtime owner |
 
 `aoa-memo` may publish a safe consumer handoff surface. It must not claim that

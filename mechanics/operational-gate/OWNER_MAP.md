@@ -8,7 +8,7 @@
 | Proof, smoke, regression, quality gates, and verdict language | `aoa-evals` |
 | Assistant/service identity, rights, approvals, and handoff policy | `aoa-agents` |
 | Release, rollback, campaign, and incident choreography | `aoa-playbooks` |
-| Dispatch behavior and route compression | `aoa-routing` |
+| Dispatch behavior and route compression | `aoa-sdk` |
 | Derived operational observability and movement summaries | `aoa-stats` |
 | Tree-of-Sophia source meaning and ToS write stop-lines | `Tree-of-Sophia` |
 | Source-owner acceptance of the operational lesson or release consequence | the owning repository or service owner |

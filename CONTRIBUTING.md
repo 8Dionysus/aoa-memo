@@ -15,7 +15,7 @@ Bad contributions:
 - reusable techniques that belong in `aoa-techniques`
 - execution workflows that belong in `aoa-skills`
 - bounded proof claims that belong in `aoa-evals`
-- routing logic that belongs in `aoa-routing`
+- routing logic that belongs in `aoa-sdk`
 - secret notes, private traces, or vague memory prose with no reviewable contract
 
 ## Before opening a PR

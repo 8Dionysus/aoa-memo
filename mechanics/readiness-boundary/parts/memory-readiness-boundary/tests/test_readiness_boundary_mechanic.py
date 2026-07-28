@@ -61,7 +61,7 @@ def test_memory_readiness_boundary_routes_to_existing_objects_and_stronger_owner
         "civil/service assistant trace",
         "aoa-evals",
         "aoa-kag",
-        "aoa-routing",
+        "aoa-sdk",
         "abyss-stack",
     ):
         assert phrase in doc

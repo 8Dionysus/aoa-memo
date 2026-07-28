@@ -43,7 +43,7 @@ thresholds, reports, and verdict language.
 
 | Lens | Stable question | Required evidence | Failure signal | Downstream owner |
 |---|---|---|---|---|
-| recall precision | did the consumer get the smallest relevant surface first? | inspect row, capsule, optional expand trace | full expansion or irrelevant object becomes default | `aoa-evals`, `aoa-routing` |
+| recall precision | did the consumer get the smallest relevant surface first? | inspect row, capsule, optional expand trace | full expansion or irrelevant object becomes default | `aoa-evals`, `aoa-sdk` |
 | provenance fidelity | did source refs survive capture, review, corpus, and recall? | candidate refs, intake packet, object refs, generated row | compact recall hides source or stronger owner | `aoa-evals`, source repo |
 | staleness handling | did cooled, superseded, retracted, or archived posture remain visible? | lifecycle fields, current recall status, audit event | old memory reads as current | `aoa-evals`, retention mechanic |
 | contradiction handling | did unresolved tension remain explicit? | contradiction refs, replacement refs, audit walkback | summary invents a clean resolution | `aoa-evals`, source owners |

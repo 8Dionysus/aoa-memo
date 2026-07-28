@@ -19,7 +19,7 @@
 | `Agents-of-Abyss` | checkpoint doctrine, center law, and program meaning |
 | `aoa-agents` | actor rights, checkpoint authority, handoff permission, and role policy |
 | `aoa-playbooks` | checkpoint play, scenario choreography, and reviewed run meaning |
-| `aoa-routing` | dispatch, route compression, return navigation, and tier policy |
+| `aoa-sdk` | dispatch, route compression, return navigation, and tier policy |
 | `abyss-stack` | live checkpoint workers, runtime stores, retry loops, and checkpoint logs |
 | `aoa-evals` | proof, score, quality verdicts, and regression gates |
 | source owner repositories | acceptance of the checkpoint consequence |

@@ -32,7 +32,7 @@ memory or mechanic forms.
   object canon.
 - Mechanic package cards own package-local operation, owner split, and docs.
 - `aoa-evals` owns proof and bounded verdicts.
-- `aoa-routing` owns dispatch behavior.
+- `aoa-sdk` owns dispatch behavior.
 - `aoa-agents` owns role rights and action authority.
 - `aoa-kag` owns graph substrate promotion.
 - `abyss-stack` owns live runtime storage and execution.
@@ -66,7 +66,7 @@ Use the validation lane in [AGENTS](AGENTS.md#validation).
 ### Next route
 
 Route object-canon changes to the root memory doctrine surfaces, proof to
-`aoa-evals`, dispatch behavior to `aoa-routing`, role or action authority to
+`aoa-evals`, dispatch behavior to `aoa-sdk`, role or action authority to
 `aoa-agents`, graph promotion to `aoa-kag`, runtime execution to `abyss-stack`,
 and source adoption to the source owner repository.
 

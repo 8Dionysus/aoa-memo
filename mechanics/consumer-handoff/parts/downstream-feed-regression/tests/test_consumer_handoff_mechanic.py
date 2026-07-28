@@ -46,7 +46,7 @@ class ConsumerHandoffMechanicTestCase(unittest.TestCase):
             "aoa-kag",
             "aoa-stats",
             "Tree-of-Sophia",
-            "aoa-routing",
+            "aoa-sdk",
             "abyss-stack",
             "without absorbing memo authority",
         ):

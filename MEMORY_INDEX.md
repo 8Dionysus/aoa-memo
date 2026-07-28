@@ -161,6 +161,6 @@ freshness by itself.
 - When memory needs proof, route to `aoa-evals`.
 - When memory needs runtime retention, route to `abyss-stack`.
 - When memory needs role rights, route to `aoa-agents`.
-- When memory needs dispatch, route to `aoa-routing`.
+- When memory needs dispatch, route to `aoa-sdk`.
 - When memory needs graph substrate meaning, route to `aoa-kag` and stronger
   source owners.

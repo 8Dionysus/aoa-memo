@@ -42,7 +42,7 @@ AoA and ToS need a memory layer that is:
 6. **Graph lifts are downstream.** `aoa-memo` may define graph-ready faces and bridges, but `aoa-kag` owns normalized derived substrate work.
 7. **Live runtime state belongs outside this repository.** Runtime stores, consolidation workers, storage layout, backup, and lifecycle jobs belong in `abyss-stack` and adjacent runtime systems.
 8. **Role rights belong outside this repository.** Read, write, promotion, freeze, and handoff rights belong in `aoa-agents`.
-9. **Routing belongs outside this repository.** `aoa-memo` may expose routeable surfaces, but `aoa-routing` owns dispatch logic.
+9. **Routing belongs outside this repository.** `aoa-memo` may expose routeable surfaces, but `aoa-sdk` owns dispatch logic.
 10. **Source-authored knowledge world material belongs outside this repository.** `Tree-of-Sophia` owns source-authored texts, concepts, and lineage architecture.
 
 ## What this repository owns
@@ -97,7 +97,7 @@ KAG substrate, playbook choreography, source-owner consent, or current truth.
 - **`aoa-skills`** owns shared bounded execution workflows and the common
   skill portability and projection grammar.
 - **`aoa-evals`** owns portable proof surfaces for bounded claims.
-- **`aoa-routing`** owns navigation and dispatch.
+- **`aoa-sdk`** owns navigation and dispatch.
 - **`aoa-agents`** owns role contracts, handoff posture, and memory posture rights.
 - **`aoa-playbooks`** owns recurring scenario composition.
 - **`aoa-kag`** owns derived knowledge substrate and normalized graph-ready lifts.

@@ -27,7 +27,7 @@ Router recall packs use this route:
 | inspect | `generated/memory-objects/memory_object_catalog.min.json` filtered by repo, kind, `source_kind`, and recall posture | bounded object ids and owner refs |
 | capsule | `generated/memory-objects/memory_object_capsules.json` for matched ids | short source-linked memory context |
 | expand | object section or source doc only when route ambiguity remains | route evidence, not dispatch policy |
-| stronger owner | `aoa-routing` for dispatch and the source repo for meaning | next owner route |
+| stronger owner | `aoa-sdk` for dispatch and the source repo for meaning | next owner route |
 
 ## Review
 

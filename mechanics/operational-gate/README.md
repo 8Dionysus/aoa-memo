@@ -39,7 +39,7 @@ and schemas that teach those shapes.
 - `aoa-evals` owns proof, smoke, regression, verdict, and quality gates.
 - `aoa-agents` owns assistant identity, rights, approvals, and handoff policy.
 - `aoa-playbooks` owns release, rollback, campaign, and incident choreography.
-- `aoa-routing` owns dispatch behavior and route compression.
+- `aoa-sdk` owns dispatch behavior and route compression.
 - `aoa-stats` owns derived operational observability and movement summaries.
 - `Tree-of-Sophia` owns source-authored meaning and ToS write stop-lines.
 
@@ -78,7 +78,7 @@ Use the validation lane in [AGENTS](AGENTS.md#validation).
 
 Route program law to `Agents-of-Abyss`, runtime action to `abyss-stack` or the
 runtime owner, proof to `aoa-evals`, role rights to `aoa-agents`, release and
-rollback choreography to `aoa-playbooks`, dispatch behavior to `aoa-routing`,
+rollback choreography to `aoa-playbooks`, dispatch behavior to `aoa-sdk`,
 derived operational summaries to `aoa-stats`, and source meaning to
 `Tree-of-Sophia`.
 

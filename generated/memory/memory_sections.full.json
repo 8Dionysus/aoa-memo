@@ -109,8 +109,8 @@
           "section_id": "AOA-M-0004#cross-repo-dependencies",
           "heading": "Cross-repo dependencies",
           "ordinal": 3,
-          "summary": "Shows what aoa-routing, aoa-agents, aoa-kag, aoa-evals, abyss-stack, and ToS need from memo.",
-          "body": "`aoa-routing` now consumes the live memo kind, compact memo catalogs, router-ready doctrine recall contracts, and the current parallel object-facing recall family. `aoa-agents` needs explicit memory posture fields. `aoa-kag` needs graph-ready exports. `aoa-evals` needs bounded checks. `abyss-stack` needs to own live stores and jobs. ToS needs bridge contracts rather than duplication."
+          "summary": "Shows what aoa-sdk, aoa-agents, aoa-kag, aoa-evals, abyss-stack, and ToS need from memo.",
+          "body": "`aoa-sdk` now consumes the live memo kind, compact memo catalogs, router-ready doctrine recall contracts, and the current parallel object-facing recall family. `aoa-agents` needs explicit memory posture fields. `aoa-kag` needs graph-ready exports. `aoa-evals` needs bounded checks. `abyss-stack` needs to own live stores and jobs. ToS needs bridge contracts rather than duplication."
         }
       ]
     },
@@ -313,7 +313,7 @@
           "heading": "Consumer contracts",
           "ordinal": 2,
           "summary": "Names how routing, agents, KAG, and runtime consumers should touch aoa-memo.",
-          "body": "`aoa-routing` consumes compact recall surfaces, `aoa-agents` consumes posture descriptors, `aoa-kag` consumes bridge and export faces, and `abyss-stack` consumes writeback seams and export contracts. Each consumer keeps its own policy or runtime implementation outside `aoa-memo`."
+          "body": "`aoa-sdk` consumes compact recall surfaces, `aoa-agents` consumes posture descriptors, `aoa-kag` consumes bridge and export faces, and `abyss-stack` consumes writeback seams and export contracts. Each consumer keeps its own policy or runtime implementation outside `aoa-memo`."
         },
         {
           "section_id": "AOA-M-0011#runtime-split",
@@ -369,7 +369,7 @@
           "heading": "Owner split",
           "ordinal": 2,
           "summary": "Keeps release, runtime, proof, role, route, stats, and source authority outside aoa-memo.",
-          "body": "`aoa-memo` owns memory admission and recall posture. Agents-of-Abyss owns program law, runtime owners own live state and remediation, `aoa-evals` owns proof, `aoa-agents` owns rights, `aoa-playbooks` owns choreography, `aoa-routing` owns dispatch, and `aoa-stats` owns derived operational summaries."
+          "body": "`aoa-memo` owns memory admission and recall posture. Agents-of-Abyss owns program law, runtime owners own live state and remediation, `aoa-evals` owns proof, `aoa-agents` owns rights, `aoa-playbooks` owns choreography, `aoa-sdk` owns dispatch, and `aoa-stats` owns derived operational summaries."
         },
         {
           "section_id": "AOA-M-0013#technical-contracts",
@@ -397,7 +397,7 @@
           "heading": "Owner split",
           "ordinal": 2,
           "summary": "Keeps recurrence doctrine, dispatch, retry policy, rights, scenario choreography, and proof outside aoa-memo.",
-          "body": "`aoa-memo` owns memo-side support posture. Agents-of-Abyss owns recurrence doctrine, `aoa-routing` owns dispatch, runtime owners own retry and live stores, `aoa-agents` owns rights, `aoa-playbooks` owns scenario return, and `aoa-evals` owns proof."
+          "body": "`aoa-memo` owns memo-side support posture. Agents-of-Abyss owns recurrence doctrine, `aoa-sdk` owns dispatch, runtime owners own retry and live stores, `aoa-agents` owns rights, `aoa-playbooks` owns scenario return, and `aoa-evals` owns proof."
         },
         {
           "section_id": "AOA-M-0014#technical-contracts",
@@ -425,7 +425,7 @@
           "heading": "Owner split",
           "ordinal": 2,
           "summary": "Keeps federation law, source consent, proof, stats, KAG promotion, ToS canon, routing, role rights, playbooks, and runtime outside memo.",
-          "body": "`aoa-memo` owns the candidate memory and gate visibility. Agents-of-Abyss owns federation program law, source repositories own consent and source truth, `aoa-evals` owns proof, `aoa-stats` owns summaries, `aoa-kag` owns promotion intake, Tree-of-Sophia owns canon, `aoa-routing` owns dispatch, `aoa-agents` owns role rights, `aoa-playbooks` owns adoption choreography, and `abyss-stack` owns runtime watchtower execution."
+          "body": "`aoa-memo` owns the candidate memory and gate visibility. Agents-of-Abyss owns federation program law, source repositories own consent and source truth, `aoa-evals` owns proof, `aoa-stats` owns summaries, `aoa-kag` owns promotion intake, Tree-of-Sophia owns canon, `aoa-sdk` owns dispatch, `aoa-agents` owns role rights, `aoa-playbooks` owns adoption choreography, and `abyss-stack` owns runtime watchtower execution."
         },
         {
           "section_id": "AOA-M-0015#technical-contracts",

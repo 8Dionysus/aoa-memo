@@ -42,7 +42,7 @@ contents.
   observability posture over memory movement.
 - `Tree-of-Sophia` owns source-authored ToS meaning, nodes, fragments,
   concepts, and lineages.
-- `aoa-routing` owns dispatch behavior and route compression policy.
+- `aoa-sdk` owns dispatch behavior and route compression policy.
 - `abyss-stack` owns runtime stores, workers, and operational execution.
 
 ### Inputs
@@ -83,7 +83,7 @@ Use the validation lane in [AGENTS](AGENTS.md#validation).
 Route role policy to `aoa-agents`, scenario composition to `aoa-playbooks`,
 proof to `aoa-evals`, graph substrate work to `aoa-kag`, derived memory
 movement summaries to `aoa-stats`, source-authored ToS meaning to
-`Tree-of-Sophia`, dispatch behavior to `aoa-routing`, and runtime execution or
+`Tree-of-Sophia`, dispatch behavior to `aoa-sdk`, and runtime execution or
 storage to `abyss-stack`.
 
 ## Active Route

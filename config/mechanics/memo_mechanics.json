@@ -232,7 +232,7 @@
       "title": "Checkpoint Memo Mechanic",
       "status": "landed",
       "operation": "preserve checkpoint gates, carry packets, approval and health records, and checkpoint-to-memory mappings as reviewable memory without becoming checkpoint executor, runtime store, role authority, proof layer, or route ledger",
-      "os_abyss_role": "keeps OS Abyss checkpoint carry memory reviewable while Agents-of-Abyss, aoa-agents, aoa-playbooks, aoa-routing, aoa-evals, abyss-stack, and source owners keep stronger doctrine, rights, scenario, routing, proof, runtime, and acceptance authority",
+      "os_abyss_role": "keeps OS Abyss checkpoint carry memory reviewable while Agents-of-Abyss, aoa-agents, aoa-playbooks, aoa-sdk, aoa-evals, abyss-stack, and source owners keep stronger doctrine, rights, scenario, routing, proof, runtime, and acceptance authority",
       "docs": [
         "CHECKPOINT_APPROVAL_HEALTH_MEMORY.md",
         "CHECKPOINT_CARRY_CONTRACT.md",
@@ -257,7 +257,7 @@
       "title": "Readiness Boundary Memo Mechanic",
       "status": "landed",
       "operation": "gate high-pressure memory readiness pressure into existing memory objects and owner routes without becoming proof, runtime retention, graph substrate, route dispatch, role authority, live ledger, or new object-family author",
-      "os_abyss_role": "keeps OS Abyss readiness pressure reviewable while Agents-of-Abyss, aoa-evals, abyss-stack, aoa-kag, aoa-routing, aoa-agents, aoa-playbooks, and source owners keep stronger doctrine, proof, runtime, graph, route, role, scenario, and acceptance authority",
+      "os_abyss_role": "keeps OS Abyss readiness pressure reviewable while Agents-of-Abyss, aoa-evals, abyss-stack, aoa-kag, aoa-sdk, aoa-agents, aoa-playbooks, and source owners keep stronger doctrine, proof, runtime, graph, route, role, scenario, and acceptance authority",
       "docs": [
         "MEMORY_READINESS_BOUNDARY.md"
       ],
@@ -316,7 +316,7 @@
       "title": "Recurrence Support Memo Mechanic",
       "status": "landed",
       "operation": "preserve bounded relaunch anchors, witness trace exports, and reviewed closeout recall landings so routes can return without memo becoming router, runtime, role policy, proof, or a second route ledger",
-      "os_abyss_role": "keeps OS Abyss route return memory reviewable while Agents-of-Abyss, aoa-agents, aoa-playbooks, aoa-routing, aoa-evals, and abyss-stack keep stronger recurrence, rights, scenario, routing, proof, and runtime authority",
+      "os_abyss_role": "keeps OS Abyss route return memory reviewable while Agents-of-Abyss, aoa-agents, aoa-playbooks, aoa-sdk, aoa-evals, and abyss-stack keep stronger recurrence, rights, scenario, routing, proof, and runtime authority",
       "docs": [
         "RECURRENCE_MEMORY_SUPPORT_SURFACES.md",
         "REVIEWED_CLOSEOUT_RECALL_LANDING.md",
@@ -333,7 +333,7 @@
       "title": "Lineage Harvest Memo Mechanic",
       "status": "landed",
       "operation": "gate cross-repo recurring owner-local signals into reviewed pattern-lineage memory candidates and downstream dossier boundaries without making memo the federation authority, proof layer, KAG promoter, ToS canon, stats judge, runtime watchtower, or source owner",
-      "os_abyss_role": "keeps OS Abyss pattern lineage recallable while Agents-of-Abyss, source owners, aoa-evals, aoa-stats, aoa-kag, Tree-of-Sophia, aoa-routing, aoa-agents, aoa-playbooks, and abyss-stack keep stronger federation, ownership, proof, summary, graph, canon, route, role, scenario, and runtime authority",
+      "os_abyss_role": "keeps OS Abyss pattern lineage recallable while Agents-of-Abyss, source owners, aoa-evals, aoa-stats, aoa-kag, Tree-of-Sophia, aoa-sdk, aoa-agents, aoa-playbooks, and abyss-stack keep stronger federation, ownership, proof, summary, graph, canon, route, role, scenario, and runtime authority",
       "docs": [
         "PATTERN_LINEAGE_MEMORY.md"
       ],

@@ -22,7 +22,7 @@ These are the public review surfaces a consumer should rely on.
 
 ## Consumer Contracts
 
-### `aoa-routing`
+### `aoa-sdk`
 
 Consume compact generated surfaces and recall contracts.
 Use the doctrine family for layer meaning and the object family for object-first lookup.

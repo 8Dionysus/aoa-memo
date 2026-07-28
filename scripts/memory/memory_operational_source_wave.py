@@ -33,7 +33,7 @@ def build_source_intake_wave() -> dict[str, Any]:
         },
         {
             "lane": "consumer recall handoff",
-            "raw_truth_owner": "aoa-agents, aoa-playbooks, aoa-evals, aoa-routing, and source owners",
+            "raw_truth_owner": "aoa-agents, aoa-playbooks, aoa-evals, aoa-sdk, and source owners",
             "candidate_or_review_pressure": "reviewed consumer-handoff decision names bounded downstream use",
             "review_route": "reviewed memory objects and generated read models; consumers keep stronger authority",
             "evidence_refs": [

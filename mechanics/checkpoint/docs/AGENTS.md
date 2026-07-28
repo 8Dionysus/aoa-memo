@@ -44,7 +44,7 @@ examples, generated outputs, scripts, or tests.
 - Route checkpoint execution and runtime state to `abyss-stack`.
 - Route actor rights to `aoa-agents`.
 - Route checkpoint play to `aoa-playbooks`.
-- Route dispatch and return navigation to `aoa-routing`.
+- Route dispatch and return navigation to `aoa-sdk`.
 - Route proof to `aoa-evals`.
 - Route center doctrine to `Agents-of-Abyss`.
 

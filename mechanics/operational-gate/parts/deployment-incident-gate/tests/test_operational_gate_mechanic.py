@@ -46,7 +46,7 @@ class OperationalGateMechanicTestCase(unittest.TestCase):
             "aoa-evals",
             "aoa-agents",
             "aoa-playbooks",
-            "aoa-routing",
+            "aoa-sdk",
             "aoa-stats",
             "Tree-of-Sophia",
             "without turning `aoa-memo` into",

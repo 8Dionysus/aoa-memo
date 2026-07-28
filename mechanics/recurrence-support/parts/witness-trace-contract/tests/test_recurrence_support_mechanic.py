@@ -40,7 +40,7 @@ class RecurrenceSupportMechanicTestCase(unittest.TestCase):
             "Agents-of-Abyss",
             "aoa-agents",
             "aoa-playbooks",
-            "aoa-routing",
+            "aoa-sdk",
             "abyss-stack",
             "aoa-evals",
             "without turning `aoa-memo` into",

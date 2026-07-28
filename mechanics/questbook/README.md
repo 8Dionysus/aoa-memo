@@ -29,7 +29,7 @@ memo-side owner-routing stop-lines.
 - `Agents-of-Abyss` owns center questbook doctrine and source Agon meaning.
 - `aoa-playbooks` owns scenario, campaign, and questline choreography.
 - `aoa-evals` owns proof and closure-quality verdicts.
-- `aoa-routing` owns dispatch and navigation behavior.
+- `aoa-sdk` owns dispatch and navigation behavior.
 - `aoa-agents` owns role rights and agent authority.
 - `abyss-stack` owns runtime scheduling, storage, and live state.
 - Source owner repositories own acceptance, closure, and implementation truth.
@@ -64,7 +64,7 @@ Use the validation lane in [AGENTS](AGENTS.md#validation).
 ### Next route
 
 Route source quest doctrine to `Agents-of-Abyss`, scenarios to
-`aoa-playbooks`, proof to `aoa-evals`, dispatch to `aoa-routing`, role rights
+`aoa-playbooks`, proof to `aoa-evals`, dispatch to `aoa-sdk`, role rights
 to `aoa-agents`, runtime to `abyss-stack`, and owner-local acceptance to the
 owning repository.
 

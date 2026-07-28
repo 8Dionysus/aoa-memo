@@ -14,6 +14,9 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Changed
 
+- Route current dispatch boundaries, mechanic owner maps, operational readouts,
+  and memo consumer guidance through the canonical `aoa-sdk` control plane
+  while preserving dated `aoa-routing` provenance and release history.
 - Compact the owner skill's global description while retaining existing-artifact
   selection, the package-first gate, and the first-writeback coexistence
   boundary.

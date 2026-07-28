@@ -79,7 +79,7 @@ Mechanic docs live with their mechanics, not in `docs/`:
 | Which read/write mode applies? | [MEMORY_OPERATION_MODES](posture/MEMORY_OPERATION_MODES.md), then [memory operation modes example](../examples/recall/memory_operation_modes.example.json) |
 | How does local project memory connect? | [LIVING_MEMORY_TOPOLOGY](memory/LIVING_MEMORY_TOPOLOGY.md), then [LOCAL_MEMO_PORT_STANDARD](memory/LOCAL_MEMO_PORT_STANDARD.md) and [MEMO_PORT_INDEXING_VOCABULARY](memory/MEMO_PORT_INDEXING_VOCABULARY.md) |
 | Is this proof or verdict logic? | [BOUNDARIES](boundaries/BOUNDARIES.md), then route to `aoa-evals` |
-| Is this routing behavior? | [ROUTING_MEMORY_ADOPTION](../mechanics/adoption/docs/ROUTING_MEMORY_ADOPTION.md), then route to `aoa-routing` |
+| Is this routing behavior? | [ROUTING_MEMORY_ADOPTION](../mechanics/adoption/docs/ROUTING_MEMORY_ADOPTION.md), then route to `aoa-sdk` |
 | Is this a role right or actor policy? | [AGENT_MEMORY_POSTURE_SEAM](../mechanics/consumer-handoff/docs/AGENT_MEMORY_POSTURE_SEAM.md), then route to `aoa-agents` |
 | Is this a graph lift or retrieval substrate? | [KAG_SOURCE_EXPORT](../mechanics/consumer-handoff/docs/KAG_SOURCE_EXPORT.md), then route to `aoa-kag` |
 | Is this a recurring cross-repo pattern or federation harvest candidate? | [PATTERN_LINEAGE_MEMORY](../mechanics/lineage-harvest/docs/PATTERN_LINEAGE_MEMORY.md), then route stronger claims to source owners |
