@@ -21,6 +21,8 @@ This bundle landed from `abyss-stack` through the reviewed intake route. The loc
 - At the pinned source revisions, abyss-stack handed one grounded and source-exact aoa-kag result through the explicit aoa-sdk orchestration contract into an aoa-memo candidate without hidden owner invocation, durable memory write, or inferred acceptance.
 
 ## Next Routes
-- Validate with `python scripts/memory/validate_memo_corpus.py`.
-- Refresh object read models with `python scripts/memory/generate_memory_object_surfaces.py`.
+- Validate through the corpus lane owned by the
+  [memo route card](../../../../AGENTS.md).
+- Refresh object read models through that same command owner after an authored
+  object change.
 - Keep durable edits in `memo/objects/`; keep origin packet history in the source repo memo port.

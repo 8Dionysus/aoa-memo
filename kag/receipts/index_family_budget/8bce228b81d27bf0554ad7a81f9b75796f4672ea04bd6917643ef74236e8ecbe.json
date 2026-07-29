@@ -1,0 +1,17 @@
+{
+  "allowed_bytes": 3352523,
+  "allowed_tracked_bytes": 16737160,
+  "approved_by": "repository-owner",
+  "base_ref": "bcda57fe47d5e3daaee8258cc4428dc6315ae239",
+  "changed_generated_bytes": 3352523,
+  "changed_generated_files": 92,
+  "decision_ref": "aoa-kag:docs/decisions/AOA-KAG-D-0017-portable-content-addressed-repository-family.md",
+  "default_limit_bytes": 1048576,
+  "head_family_digest": "8bce228b81d27bf0554ad7a81f9b75796f4672ea04bd6917643ef74236e8ecbe",
+  "reason": "Route landed memory-object validation through the memo command owner",
+  "repo": "aoa-memo",
+  "schema_version": "aoa-repo-local-kag-budget-receipt-v1",
+  "scope": "generated_delta",
+  "tracked_bytes": 16737160,
+  "tracked_bytes_max": 18874368
+}
