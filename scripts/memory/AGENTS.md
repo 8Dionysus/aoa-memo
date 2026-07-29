@@ -20,6 +20,10 @@ receipts, but only after an export packet explicitly allows `reviewed_write`.
 Its implementation is split into path/schema input checks, landing-plan
 synthesis, and write/summary helpers so the CLI remains an entrypoint rather
 than a hidden policy body.
+`reject_reviewed_intake_candidate.py` owns the complementary explicit
+non-landing route. It may issue schema-valid local and landing rejection
+receipts from an owner-reviewed candidate and evaluation result, but it must
+not copy intake or create a durable memory object.
 
 Object-surface and operational-readout builders follow the same boundary:
 source loading, projection rendering, live probing, and CLI check/write
@@ -36,6 +40,10 @@ projection parity, but they must not become the source of memory meaning.
   --port <repo>/memo --export <packet>.aoa-memo-intake.json --object-kind
   <kind>` first as a dry-run plan; add `--write` only after review accepts the
   target object id, kind, title, and lifecycle posture.
+- Rejection usage: run `python
+  scripts/memory/reject_reviewed_intake_candidate.py` with explicit candidate,
+  evaluation, receipt references, and reason codes. The outputs are receipts
+  only; rejection never creates corpus state.
 
 ## Validate
 

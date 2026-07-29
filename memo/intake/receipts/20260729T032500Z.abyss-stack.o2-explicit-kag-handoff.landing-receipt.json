@@ -1,0 +1,33 @@
+{
+  "schema": "aoa_memo_reviewed_intake_landing_receipt_v1",
+  "id": "landing-receipt:abyss-stack:20260729T032500Z:abyss-stack-o2-explicit-kag-handoff",
+  "repo": "abyss-stack",
+  "source_export_ref": "repo:abyss-stack/memo/exports/20260729T032300Z.o2-explicit-kag-handoff.aoa-memo-intake.json",
+  "copied_intake_ref": "memo/intake/reviewed/abyss-stack.20260729T032300Z.o2-explicit-kag-handoff.aoa-memo-intake.json",
+  "candidate_refs": [
+    "repo:abyss-stack/memo/candidates/20260729T032050Z.o2-explicit-kag-handoff.candidate.json"
+  ],
+  "receipt_refs": [
+    "repo:abyss-stack/memo/receipts/20260729T032050Z.o2-explicit-kag-handoff.validation-receipt.json"
+  ],
+  "object_ref": "memo.audit.2026-07-29.o2-explicit-kag-handoff",
+  "object_path": "memo/objects/audit-events/2026/o2-explicit-kag-handoff/object.json",
+  "result": "landed",
+  "checks": [
+    "export_schema",
+    "export_source_refs",
+    "export_evidence_refs",
+    "allowed_result_reviewed_write",
+    "candidate_schema",
+    "candidate_source_refs",
+    "candidate_evidence_refs",
+    "candidate_guardrails",
+    "receipt_schema",
+    "receipt_candidate_ref",
+    "receipt_errors_empty",
+    "memory_object_schema"
+  ],
+  "errors": [],
+  "landed_at": "2026-07-29T03:25:00Z",
+  "landed_by": "aoa-memo:operator-authorized-o2-review"
+}

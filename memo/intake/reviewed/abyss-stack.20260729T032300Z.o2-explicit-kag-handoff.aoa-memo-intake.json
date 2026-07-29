@@ -1,0 +1,28 @@
+{
+  "schema": "aoa_local_memo_export_v1",
+  "id": "export:abyss-stack:20260729T032300Z:o2-explicit-kag-handoff",
+  "repo": "abyss-stack",
+  "target_owner": "aoa-memo",
+  "target_route": "reviewed_intake",
+  "candidate_refs": [
+    "candidates/20260729T032050Z.o2-explicit-kag-handoff.candidate.json"
+  ],
+  "receipt_refs": [
+    "receipts/20260729T032050Z.o2-explicit-kag-handoff.validation-receipt.json"
+  ],
+  "source_refs": [
+    "repo:aoa-sdk/decisions/AOA-SDK-D-0080",
+    "repo:aoa-memo/docs/memory/MEMORY_WRITE_PATH_GUARDRAILS.md",
+    "repo:aoa-memo/docs/memory/LOCAL_MEMO_PORT_STANDARD.md"
+  ],
+  "evidence_refs": [
+    "kag-review/aoa-kag.owner-review.json",
+    "kag-stage.packet.json",
+    "memo-stage.packet.json",
+    "eval/eval-need.json",
+    "runs/current.json"
+  ],
+  "allowed_result": "reviewed_write",
+  "created_at": "2026-07-29T03:23:00Z",
+  "notes": "Proposed reviewed-write export for bounded central guardrail evaluation and a separate explicit aoa-memo owner decision. This packet does not itself land memory."
+}

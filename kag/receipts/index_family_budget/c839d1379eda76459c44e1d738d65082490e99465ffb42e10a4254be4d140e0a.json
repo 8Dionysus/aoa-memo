@@ -1,0 +1,17 @@
+{
+  "allowed_bytes": 3351849,
+  "allowed_tracked_bytes": 16736486,
+  "approved_by": "repository-owner",
+  "base_ref": "bcda57fe47d5e3daaee8258cc4428dc6315ae239",
+  "changed_generated_bytes": 3351849,
+  "changed_generated_files": 92,
+  "decision_ref": "aoa-kag:docs/decisions/AOA-KAG-D-0017-portable-content-addressed-repository-family.md",
+  "default_limit_bytes": 1048576,
+  "head_family_digest": "c839d1379eda76459c44e1d738d65082490e99465ffb42e10a4254be4d140e0a",
+  "reason": "Reviewed organ-access intake object, rejection route, tests, and generated projections",
+  "repo": "aoa-memo",
+  "schema_version": "aoa-repo-local-kag-budget-receipt-v1",
+  "scope": "generated_delta",
+  "tracked_bytes": 16736486,
+  "tracked_bytes_max": 18874368
+}

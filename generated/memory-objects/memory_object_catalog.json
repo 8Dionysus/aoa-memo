@@ -1499,6 +1499,41 @@
       ]
     },
     {
+      "id": "memo.audit.2026-07-29.o2-explicit-kag-handoff",
+      "kind": "audit_event",
+      "title": "Explicit O2 KAG-to-memo owner handoff",
+      "summary": "At pinned source revisions, an exact grounded KAG result crossed explicit typed candidate and central-eval stages before aoa-memo independently accepted one bounded durable audit event; the record grants no runtime authority and does not make the expired capture current truth.",
+      "scope_classes": [
+        "repo",
+        "workspace"
+      ],
+      "temperature": "cool",
+      "review_state": "confirmed",
+      "current_recall_status": "allowed",
+      "authority_kind": "human_reviewed",
+      "source_kind": "reviewed_corpus",
+      "primary_recall_modes": [
+        "episodic",
+        "lineage",
+        "source_route"
+      ],
+      "source_path": "memo/objects/audit-events/2026/o2-explicit-kag-handoff/object.json",
+      "inspect_key": "memo.audit.2026-07-29.o2-explicit-kag-handoff",
+      "expand_key": "memo.audit.2026-07-29.o2-explicit-kag-handoff",
+      "scope": [
+        "repo:abyss-stack",
+        "repo:aoa-memo",
+        "workspace:OS-Abyss"
+      ],
+      "provenance_thread_id": "prov.abyss-stack.o2-explicit-kag-handoff.2026-07-29",
+      "related_object_ids": [],
+      "strongest_next_sources": [
+        "memo/intake/reviewed/abyss-stack.20260729T032300Z.o2-explicit-kag-handoff.aoa-memo-intake.json",
+        "repo:abyss-stack/memo/candidates/20260729T032050Z.o2-explicit-kag-handoff.candidate.json",
+        "repo:abyss-stack/memo/receipts/20260729T032050Z.o2-explicit-kag-handoff.validation-receipt.json"
+      ]
+    },
+    {
       "id": "memo.audit.2026-05-22.reviewed-intake-evidence-guard",
       "kind": "audit_event",
       "title": "Reviewed intake landing now rejects missing source and evidence refs",
