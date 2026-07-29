@@ -571,6 +571,19 @@
       "source_path": "mechanics/antifragility/parts/recovery-pattern-memory/examples/pattern.antifragility-stress-recovery-window.example.json"
     },
     {
+      "id": "memo.audit.2026-07-29.o2-explicit-kag-handoff",
+      "kind": "audit_event",
+      "title": "Explicit O2 KAG-to-memo owner handoff",
+      "summary": "At pinned source revisions, an exact grounded KAG result crossed explicit typed candidate and central-eval stages before aoa-memo independently accepted one bounded durable audit event; the record grants no runtime authority and does not make the expired capture current truth.",
+      "source_kind": "reviewed_corpus",
+      "recall_posture_short": "allowed current recall; confirmed review state; Landed through reviewed intake; use as reviewed recall, not proof or stronger owner truth",
+      "trust_posture_short": "cool temperature; human_reviewed authority; confidence 0.82; freshness 1.00",
+      "use_when_short": "Use when audit_event-level recall is needed and this object remains allowed for episodic, lineage, source_route.",
+      "do_not_use_short": "Do not treat this audit_event as proof or stronger than its cited sources.",
+      "strongest_next_source": "memo/intake/reviewed/abyss-stack.20260729T032300Z.o2-explicit-kag-handoff.aoa-memo-intake.json",
+      "source_path": "memo/objects/audit-events/2026/o2-explicit-kag-handoff/object.json"
+    },
+    {
       "id": "memo.audit.2026-05-22.reviewed-intake-evidence-guard",
       "kind": "audit_event",
       "title": "Reviewed intake landing now rejects missing source and evidence refs",

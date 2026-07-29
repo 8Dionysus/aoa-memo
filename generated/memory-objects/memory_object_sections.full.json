@@ -1579,6 +1579,43 @@
       ]
     },
     {
+      "id": "memo.audit.2026-07-29.o2-explicit-kag-handoff",
+      "kind": "audit_event",
+      "title": "Explicit O2 KAG-to-memo owner handoff",
+      "source_kind": "reviewed_corpus",
+      "source_path": "memo/objects/audit-events/2026/o2-explicit-kag-handoff/object.json",
+      "sections": [
+        {
+          "section_id": "memo.audit.2026-07-29.o2-explicit-kag-handoff#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the audit_event surface, its active recall modes, and its allowed current-recall posture.",
+          "body": "Explicit O2 KAG-to-memo owner handoff. At pinned source revisions, an exact grounded KAG result crossed explicit typed candidate and central-eval stages before aoa-memo independently accepted one bounded durable audit event; the record grants no runtime authority and does not make the expired capture current truth. Scope: repo:abyss-stack, repo:aoa-memo, workspace:OS-Abyss. Scope classes: repo, workspace. Primary recall modes: episodic, lineage, source_route. Current recall status: allowed because Landed through reviewed intake; use as reviewed recall, not proof or stronger owner truth. Payload ref: memo/intake/reviewed/abyss-stack.20260729T032300Z.o2-explicit-kag-handoff.aoa-memo-intake.json."
+        },
+        {
+          "section_id": "memo.audit.2026-07-29.o2-explicit-kag-handoff#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.abyss-stack.o2-explicit-kag-handoff.2026-07-29. Source refs: memo/intake/reviewed/abyss-stack.20260729T032300Z.o2-explicit-kag-handoff.aoa-memo-intake.json, repo:abyss-stack/memo/candidates/20260729T032050Z.o2-explicit-kag-handoff.candidate.json, repo:abyss-stack/memo/receipts/20260729T032050Z.o2-explicit-kag-handoff.validation-receipt.json, repo:aoa-sdk/decisions/AOA-SDK-D-0080, repo:aoa-memo/docs/memory/MEMORY_WRITE_PATH_GUARDRAILS.md, repo:aoa-memo/docs/memory/LOCAL_MEMO_PORT_STANDARD.md, repo:abyss-stack/kag-review/aoa-kag.owner-review.json, repo:abyss-stack/kag-stage.packet.json, repo:abyss-stack/memo-stage.packet.json, repo:abyss-stack/eval/eval-need.json, repo:abyss-stack/runs/current.json. Episode refs: none. Related curated object ids: none. Strongest next sources: memo/intake/reviewed/abyss-stack.20260729T032300Z.o2-explicit-kag-handoff.aoa-memo-intake.json, repo:abyss-stack/memo/candidates/20260729T032050Z.o2-explicit-kag-handoff.candidate.json, repo:abyss-stack/memo/receipts/20260729T032050Z.o2-explicit-kag-handoff.validation-receipt.json."
+        },
+        {
+          "section_id": "memo.audit.2026-07-29.o2-explicit-kag-handoff#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: human_reviewed (reviewed intake landing from abyss-stack). Temperature: cool; confidence 0.82; freshness 1.00; salience 0.80. Review state: confirmed. Retention class: reviewed-intake. Promotion state: promoted. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.audit.2026-07-29.o2-explicit-kag-handoff#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Scope classes: repo, workspace. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: memo/intake/reviewed/abyss-stack.20260729T032300Z.o2-explicit-kag-handoff.aoa-memo-intake.json. ToS refs: none. Skill refs: none. Eval refs: none. KAG lift status: candidate."
+        }
+      ]
+    },
+    {
       "id": "memo.audit.2026-05-22.reviewed-intake-evidence-guard",
       "kind": "audit_event",
       "title": "Reviewed intake landing now rejects missing source and evidence refs",

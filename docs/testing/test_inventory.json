@@ -403,7 +403,8 @@
       "family": "memory/corpus",
       "paths": [
         "tests/memory/test_memo_corpus.py",
-        "tests/memory/test_reviewed_intake_landing.py"
+        "tests/memory/test_reviewed_intake_landing.py",
+        "tests/memory/test_reviewed_intake_rejection.py"
       ],
       "protects": "reviewed memo corpus and intake landing",
       "owner_surface": "memo/AGENTS.md",
