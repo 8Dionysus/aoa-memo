@@ -1,0 +1,25 @@
+{
+  "schema_version": "agent_local_promotion_admission_receipt_v0",
+  "receipt_id": "promotion-receipt:coder-alpha-retry",
+  "proposal_ref": "promotion-candidate:coder-alpha-retry",
+  "proposal_digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+  "operator_decision": {
+    "decision": "approve",
+    "decision_ref": "operator-decision:phase12/retry-001",
+    "decision_digest": "sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+  },
+  "duplicate_status": "none",
+  "duplicate_refs": [],
+  "conflict_status": "none",
+  "conflict_refs": [],
+  "result": "memo_candidate",
+  "memo_candidate_ref": "candidate:aoa-memo/retry-001",
+  "shared_ledger_state": "unchanged",
+  "semantic_transition": "not_performed",
+  "promotion_burden": {
+    "review_minutes": 1.5,
+    "evidence_items": 2,
+    "duplicate_checks": 1,
+    "conflict_checks": 1
+  }
+}

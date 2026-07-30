@@ -66,6 +66,7 @@ authority, runtime state, role rights, or source-authored knowledge.
 |---|---|---|
 | `provenance_thread` | walk-back paths, source refs, and lineage support | [PROVENANCE_THREADS](docs/posture/PROVENANCE_THREADS.md) |
 | `recall_contract` | inspect, capsule, expand, and mode/scoping expectations | [MEMORY_MODEL](docs/memory/MEMORY_MODEL.md) and [examples](examples/AGENTS.md) |
+| `active_organ_memo_contracts_v1` | strict evidence, reviewed-memory, bounded recall, lifecycle, and distributed-erasure ABI owned by memo | [MEMORY_MODEL](docs/memory/MEMORY_MODEL.md), [schema](schemas/support-objects/active_organ_memo_contracts_v1.schema.json), and [examples](examples/support-objects/active_organ_memo_contracts_v1.examples.json) |
 | `reviewed_intake_landing_receipt` | receipt that links accepted local-port export to copied intake packet and landed object bundle | [OBJECT_SHAPE](memo/OBJECT_SHAPE.md) |
 | `inquiry_checkpoint` | checkpoint carry memory at the memo boundary | [checkpoint mechanic](mechanics/checkpoint/README.md) |
 | `witness_trace` | reviewed route-return and closeout recall support | [recurrence-support mechanic](mechanics/recurrence-support/README.md) |
@@ -119,6 +120,7 @@ freshness by itself.
 | Repository authority and boundaries | [CHARTER](CHARTER.md), [BOUNDARIES](docs/boundaries/BOUNDARIES.md) |
 | Reviewed memory corpus | [memo](memo/README.md), [OBJECT_SHAPE](memo/OBJECT_SHAPE.md) |
 | Memory model, object canon, and operation cycle | [MEMORY_MODEL](docs/memory/MEMORY_MODEL.md), [MEMORY_OPERATION_CYCLE](docs/memory/MEMORY_OPERATION_CYCLE.md), [MEMORY_OBJECT_PROFILES](docs/memory/MEMORY_OBJECT_PROFILES.md) |
+| Active-organ evidence, recall, lifecycle, and erase contracts | [MEMORY_MODEL](docs/memory/MEMORY_MODEL.md), [active-organ schema](schemas/support-objects/active_organ_memo_contracts_v1.schema.json), [executable examples](examples/support-objects/active_organ_memo_contracts_v1.examples.json) |
 | Living topology and local memo ports | [LIVING_MEMORY_TOPOLOGY](docs/memory/LIVING_MEMORY_TOPOLOGY.md), [LOCAL_MEMO_PORT_STANDARD](docs/memory/LOCAL_MEMO_PORT_STANDARD.md), [MEMO_PORT_INDEXING_VOCABULARY](docs/memory/MEMO_PORT_INDEXING_VOCABULARY.md) |
 | Trust, lifecycle, temperature, operation modes, and provenance | [MEMORY_TRUST_POSTURE](docs/posture/MEMORY_TRUST_POSTURE.md), [LIFECYCLE](docs/posture/LIFECYCLE.md), [MEMORY_TEMPERATURES](docs/posture/MEMORY_TEMPERATURES.md), [MEMORY_OPERATION_MODES](docs/posture/MEMORY_OPERATION_MODES.md), [PROVENANCE_THREADS](docs/posture/PROVENANCE_THREADS.md) |
 | Operational boundary and write-path guardrails | [OPERATIONAL_BOUNDARY](docs/boundaries/OPERATIONAL_BOUNDARY.md), [MEMORY_WRITE_PATH_GUARDRAILS](docs/boundaries/MEMORY_WRITE_PATH_GUARDRAILS.md), [operational gate write path](mechanics/operational-gate/docs/MEMORY_WRITE_PATH_GUARDRAILS.md) |

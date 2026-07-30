@@ -14,7 +14,8 @@
       "primary_entries": [
         "validation/test-topology",
         "root/topology",
-        "memory/schema-contracts"
+        "memory/schema-contracts",
+        "memory/active-organ-contracts"
       ]
     },
     "tool_boundary": {
@@ -57,7 +58,8 @@
       "primary_entries": [
         "memory/runtime-boundaries",
         "memory/eval-guardrails",
-        "memory/questbook-boundaries"
+        "memory/questbook-boundaries",
+        "memory/active-organ-contracts"
       ]
     },
     "offline_online_loop": {
@@ -170,6 +172,13 @@
         "mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_downstream_feed_docs_routes.py",
         "mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_downstream_feed_generated_contracts.py",
         "mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_downstream_feed_runtime_writeback_contracts.py",
+        "mechanics/consumer-handoff/parts/orchestrator-recall-alignment/tests/test_agent_local_promotion.py",
+        "mechanics/consumer-handoff/parts/orchestrator-recall-alignment/tests/test_aoa_memo_participation_contract.py",
+        "mechanics/consumer-handoff/parts/orchestrator-recall-alignment/tests/test_aoa_memo_participation_hook.py",
+        "mechanics/consumer-handoff/parts/orchestrator-recall-alignment/tests/test_aoa_memo_participation_retention.py",
+        "mechanics/consumer-handoff/parts/orchestrator-recall-alignment/tests/test_codex_owner_orientation_canary_profile.py",
+        "mechanics/consumer-handoff/parts/orchestrator-recall-alignment/tests/test_codex_owner_orientation_profile.py",
+        "mechanics/consumer-handoff/parts/orchestrator-recall-alignment/tests/test_episodic_utility_policy_proposal.py",
         "mechanics/consumer-handoff/parts/playbook-scope-handoff/tests/test_playbook_memory_scopes.py"
       ],
       "protects": "consumer-handoff mechanic part contracts",
@@ -264,7 +273,10 @@
     {
       "family": "mechanics/retention",
       "paths": [
+        "mechanics/retention/parts/consolidation-and-forgetting/tests/test_active_organ_lifecycle.py",
+        "mechanics/retention/parts/consolidation-and-forgetting/tests/test_active_organ_lifecycle_receipts.py",
         "mechanics/retention/parts/consolidation-and-forgetting/tests/test_consolidation_forgetting.py",
+        "mechanics/retention/parts/consolidation-and-forgetting/tests/test_distributed_erasure.py",
         "mechanics/retention/parts/cross-repo-and-governance-retention/tests/test_cross_repo_governance_retention.py",
         "mechanics/retention/parts/office-markers/tests/test_office_marker_contracts.py",
         "mechanics/retention/parts/post-release-retention/tests/test_post_release_retention_contracts.py"
@@ -466,6 +478,19 @@
       "runtime_cost": "fast",
       "focused_target": "tests/memory/test_memo_schema_contracts.py tests/memory/test_memo_local_port_schema_contracts.py",
       "failure_route": "Fix memory schemas, examples, or recall contract source before changing generated readers."
+    },
+    {
+      "family": "memory/active-organ-contracts",
+      "paths": [
+        "tests/memory/test_active_organ_memo_contracts.py"
+      ],
+      "protects": "strict memo-owned active-organ evidence, recall, lifecycle, and distributed-erasure contracts",
+      "owner_surface": "docs/memory/MEMORY_MODEL.md",
+      "lane": "memory",
+      "mode": "blocking",
+      "runtime_cost": "fast",
+      "focused_target": "tests/memory/test_active_organ_memo_contracts.py",
+      "failure_route": "Fix the active-organ memo schema, executable examples, or owner doctrine before changing consumers."
     },
     {
       "family": "memory/context-boundaries",

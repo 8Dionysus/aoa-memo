@@ -1,0 +1,271 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aoa.local/aoa-memo/schemas/codex_owner_orientation_shadow_bundle_v0.schema.json",
+  "title": "aoa-memo consumer-invisible shadow orientation bundle",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "semantic_owner",
+    "control_plane_owner",
+    "runtime_owner",
+    "host_owner",
+    "outcome_owner",
+    "proof_owner",
+    "plan_ref",
+    "plan_digest",
+    "pressure_ingress",
+    "recall_packet",
+    "intervention_decision",
+    "metabolism",
+    "host_disposition",
+    "consumer_visible",
+    "delivery_eligible",
+    "runtime_delivery_requested",
+    "content_persisted",
+    "candidate_persisted",
+    "memory_write_performed",
+    "semantic_transition_performed",
+    "policy_promotion_performed",
+    "effect_authority",
+    "action_use",
+    "bundle_digest"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "codex_owner_orientation_shadow_bundle_v0"
+    },
+    "semantic_owner": {
+      "const": "aoa-memo"
+    },
+    "control_plane_owner": {
+      "const": "aoa-sdk"
+    },
+    "runtime_owner": {
+      "const": "abyss-stack"
+    },
+    "host_owner": {
+      "const": "abyss-machine"
+    },
+    "outcome_owner": {
+      "const": "aoa-stats"
+    },
+    "proof_owner": {
+      "const": "aoa-evals"
+    },
+    "plan_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "plan_digest": {
+      "$ref": "#/$defs/sha256"
+    },
+    "pressure_ingress": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_envelope",
+        "candidate_packet",
+        "quarantine_packet",
+        "workspace_persisted",
+        "candidate_persisted",
+        "semantic_promotion"
+      ],
+      "properties": {
+        "evidence_envelope": {
+          "$ref": "#/$defs/owner_contract"
+        },
+        "candidate_packet": {
+          "$ref": "#/$defs/owner_contract"
+        },
+        "quarantine_packet": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/owner_contract"
+            }
+          ]
+        },
+        "workspace_persisted": {
+          "const": false
+        },
+        "candidate_persisted": {
+          "const": false
+        },
+        "semantic_promotion": {
+          "const": "forbidden"
+        }
+      }
+    },
+    "recall_packet": {
+      "$ref": "#/$defs/owner_contract"
+    },
+    "intervention_decision": {
+      "$ref": "#/$defs/owner_contract"
+    },
+    "metabolism": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "currentness_probe_ref",
+        "currentness_state",
+        "outcome_refs",
+        "eval_status",
+        "policy_posture",
+        "retention_proposal",
+        "policy_proposal",
+        "erase_reconciliation_ref",
+        "erase_residue_present",
+        "semantic_transition_performed",
+        "proposal_accepted",
+        "content_persisted"
+      ],
+      "properties": {
+        "currentness_probe_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "currentness_state": {
+          "enum": [
+            "current",
+            "stale",
+            "unknown"
+          ]
+        },
+        "outcome_refs": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "eval_status": {
+          "enum": [
+            "available",
+            "unavailable",
+            "degraded"
+          ]
+        },
+        "policy_posture": {
+          "enum": [
+            "proposal_only",
+            "frozen"
+          ]
+        },
+        "retention_proposal": {
+          "enum": [
+            "observe_only",
+            "no_change",
+            "blocked"
+          ]
+        },
+        "policy_proposal": {
+          "enum": [
+            "observe_only",
+            "no_change",
+            "frozen"
+          ]
+        },
+        "erase_reconciliation_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "erase_residue_present": {
+          "type": "boolean"
+        },
+        "semantic_transition_performed": {
+          "const": false
+        },
+        "proposal_accepted": {
+          "const": false
+        },
+        "content_persisted": {
+          "const": false
+        }
+      }
+    },
+    "host_disposition": {
+      "enum": [
+        "start",
+        "soften",
+        "defer",
+        "deny"
+      ]
+    },
+    "consumer_visible": {
+      "const": false
+    },
+    "delivery_eligible": {
+      "const": false
+    },
+    "runtime_delivery_requested": {
+      "const": false
+    },
+    "content_persisted": {
+      "const": false
+    },
+    "candidate_persisted": {
+      "const": false
+    },
+    "memory_write_performed": {
+      "const": false
+    },
+    "semantic_transition_performed": {
+      "const": false
+    },
+    "policy_promotion_performed": {
+      "const": false
+    },
+    "effect_authority": {
+      "const": "none"
+    },
+    "action_use": {
+      "const": "forbidden"
+    },
+    "bundle_digest": {
+      "$ref": "#/$defs/sha256"
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "owner_contract": {
+      "type": "object",
+      "required": [
+        "contract_id",
+        "instance_id",
+        "owner",
+        "validation_status",
+        "content_digest"
+      ],
+      "properties": {
+        "contract_id": {
+          "type": "string",
+          "pattern": "^C[0-9]{2}$"
+        },
+        "instance_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "owner": {
+          "const": "aoa-memo"
+        },
+        "validation_status": {
+          "enum": [
+            "valid",
+            "partial"
+          ]
+        },
+        "content_digest": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    }
+  }
+}

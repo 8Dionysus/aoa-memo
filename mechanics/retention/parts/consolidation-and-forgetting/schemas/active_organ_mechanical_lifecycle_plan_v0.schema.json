@@ -1,0 +1,409 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/mechanics/retention/parts/consolidation-and-forgetting/schemas/active_organ_mechanical_lifecycle_plan_v0.schema.json",
+  "title": "aoa-memo active-organ mechanical lifecycle plan v0",
+  "description": "Strict C06-compatible reference-lab plan for one pre-authorized mechanical lifecycle class. It grants no live runtime or semantic authority.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "contract_id",
+    "contract_subtype",
+    "plan_id",
+    "idempotency_key",
+    "owner",
+    "decision_ref",
+    "base_schema_id",
+    "base_schema_digest",
+    "operation_class",
+    "forgetting_class",
+    "subject_pin",
+    "policy_pin",
+    "preconditions",
+    "effect_scope",
+    "transaction",
+    "compensation",
+    "receipt_contract",
+    "generated_at",
+    "content_digest",
+    "execution_posture",
+    "live_runtime_authority",
+    "semantic_authority"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "aoa_memo_mechanical_lifecycle_plan_v0"
+    },
+    "contract_id": {
+      "const": "C06"
+    },
+    "contract_subtype": {
+      "const": "MechanicalLifecyclePlanExtension"
+    },
+    "plan_id": {
+      "$ref": "#/$defs/ref"
+    },
+    "idempotency_key": {
+      "$ref": "#/$defs/ref"
+    },
+    "owner": {
+      "const": "aoa-memo"
+    },
+    "decision_ref": {
+      "const": "docs/decisions/AOA-MEM-D-0079-mechanical-lifecycle-is-allowlisted-and-recoverable.md"
+    },
+    "base_schema_id": {
+      "const": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/schemas/support-objects/active_organ_memo_contracts_v1.schema.json"
+    },
+    "base_schema_digest": {
+      "const": "sha256:ecb9b6fb8abe8633d1505b12c396d8e4cfaee6d560ec20617268ce02574ff99d"
+    },
+    "operation_class": {
+      "enum": [
+        "projection_invalidation",
+        "projection_rebuild",
+        "compaction",
+        "explicit_ephemeral_ttl",
+        "queue_cancellation",
+        "owner_approved_archive_deadline",
+        "cache_expiry",
+        "generation_rollover",
+        "obsolete_derived_artifact_removal"
+      ]
+    },
+    "forgetting_class": {
+      "enum": [
+        "not_forgetting",
+        "compression",
+        "expiry",
+        "archive",
+        "ordinary_deletion"
+      ]
+    },
+    "subject_pin": {
+      "$ref": "#/$defs/subject_pin"
+    },
+    "policy_pin": {
+      "$ref": "#/$defs/policy_pin"
+    },
+    "preconditions": {
+      "$ref": "#/$defs/preconditions"
+    },
+    "effect_scope": {
+      "$ref": "#/$defs/effect_scope"
+    },
+    "transaction": {
+      "$ref": "#/$defs/transaction"
+    },
+    "compensation": {
+      "$ref": "#/$defs/compensation"
+    },
+    "receipt_contract": {
+      "$ref": "#/$defs/receipt_contract"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "content_digest": {
+      "$ref": "#/$defs/sha256"
+    },
+    "execution_posture": {
+      "const": "reference_lab_only"
+    },
+    "live_runtime_authority": {
+      "const": false
+    },
+    "semantic_authority": {
+      "const": "none"
+    }
+  },
+  "$defs": {
+    "ref": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1024
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "string_array": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/ref"
+      }
+    },
+    "subject_pin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "owner_repo",
+        "object_ref",
+        "object_version",
+        "lifecycle_state",
+        "semantic_digest",
+        "tenant_id",
+        "namespace_id",
+        "source_generation",
+        "explicit_ephemeral",
+        "disposable"
+      ],
+      "properties": {
+        "owner_repo": {
+          "$ref": "#/$defs/ref"
+        },
+        "object_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "object_version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "lifecycle_state": {
+          "$ref": "#/$defs/ref"
+        },
+        "semantic_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "tenant_id": {
+          "$ref": "#/$defs/ref"
+        },
+        "namespace_id": {
+          "$ref": "#/$defs/ref"
+        },
+        "source_generation": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "explicit_ephemeral": {
+          "type": "boolean"
+        },
+        "disposable": {
+          "type": "boolean"
+        }
+      }
+    },
+    "policy_pin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "policy_id",
+        "policy_version",
+        "policy_digest",
+        "decision_ref",
+        "status",
+        "approved_operation_classes"
+      ],
+      "properties": {
+        "policy_id": {
+          "$ref": "#/$defs/ref"
+        },
+        "policy_version": {
+          "$ref": "#/$defs/ref"
+        },
+        "policy_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "decision_ref": {
+          "const": "docs/decisions/AOA-MEM-D-0079-mechanical-lifecycle-is-allowlisted-and-recoverable.md"
+        },
+        "status": {
+          "const": "accepted"
+        },
+        "approved_operation_classes": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "projection_invalidation",
+              "projection_rebuild",
+              "compaction",
+              "explicit_ephemeral_ttl",
+              "queue_cancellation",
+              "owner_approved_archive_deadline",
+              "cache_expiry",
+              "generation_rollover",
+              "obsolete_derived_artifact_removal"
+            ]
+          }
+        }
+      }
+    },
+    "preconditions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "expected_prior_version",
+        "expected_state",
+        "expected_source_generation",
+        "eligible_at",
+        "owner_approval_ref"
+      ],
+      "properties": {
+        "expected_prior_version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "expected_state": {
+          "$ref": "#/$defs/ref"
+        },
+        "expected_source_generation": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "eligible_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "owner_approval_ref": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        }
+      }
+    },
+    "effect_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "owner_repo",
+        "surface_class",
+        "target_refs",
+        "canonical_semantic_mutation",
+        "physical_erasure",
+        "cross_tenant",
+        "permission_change"
+      ],
+      "properties": {
+        "owner_repo": {
+          "$ref": "#/$defs/ref"
+        },
+        "surface_class": {
+          "enum": [
+            "projection",
+            "derived_artifact",
+            "ephemeral_object",
+            "queue_item",
+            "canonical_lifecycle",
+            "cache"
+          ]
+        },
+        "target_refs": {
+          "$ref": "#/$defs/string_array"
+        },
+        "canonical_semantic_mutation": {
+          "const": false
+        },
+        "physical_erasure": {
+          "const": false
+        },
+        "cross_tenant": {
+          "const": false
+        },
+        "permission_change": {
+          "const": false
+        }
+      }
+    },
+    "transaction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "next_version",
+        "commit_mode",
+        "deadline_at",
+        "max_attempts",
+        "backoff_seconds",
+        "cancellation_token"
+      ],
+      "properties": {
+        "next_version": {
+          "type": "integer",
+          "minimum": 2
+        },
+        "commit_mode": {
+          "const": "recoverable"
+        },
+        "deadline_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "max_attempts": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "backoff_seconds": {
+          "type": "array",
+          "maxItems": 4,
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "cancellation_token": {
+          "$ref": "#/$defs/ref"
+        }
+      }
+    },
+    "compensation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "strategy",
+        "target_version",
+        "target_semantic_digest",
+        "action_class"
+      ],
+      "properties": {
+        "strategy": {
+          "enum": [
+            "rollback",
+            "forward_repair",
+            "rollback_or_forward_repair"
+          ]
+        },
+        "target_version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "target_semantic_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "action_class": {
+          "$ref": "#/$defs/ref"
+        }
+      }
+    },
+    "receipt_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "commit_receipt_ref",
+        "audit_receipt_ref",
+        "partial_status",
+        "success_requires_audit"
+      ],
+      "properties": {
+        "commit_receipt_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "audit_receipt_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "partial_status": {
+          "const": "partial_pending_repair"
+        },
+        "success_requires_audit": {
+          "const": true
+        }
+      }
+    }
+  }
+}

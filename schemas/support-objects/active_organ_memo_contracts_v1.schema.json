@@ -1,0 +1,2097 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/schemas/support-objects/active_organ_memo_contracts_v1.schema.json",
+  "title": "aoa-memo active-organ owner contracts v1",
+  "description": "Strict memo-owned contracts for evidence, reviewed memory, bounded recall, lifecycle, and distributed erasure. These contracts carry memory evidence and policy posture; they never grant routing or effect authority.",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/memory_evidence_envelope"
+    },
+    {
+      "$ref": "#/$defs/memory_candidate_packet"
+    },
+    {
+      "$ref": "#/$defs/memory_quarantine_packet"
+    },
+    {
+      "$ref": "#/$defs/reviewed_memory_object"
+    },
+    {
+      "$ref": "#/$defs/provenance_thread"
+    },
+    {
+      "$ref": "#/$defs/memory_lifecycle_transition"
+    },
+    {
+      "$ref": "#/$defs/recall_packet"
+    },
+    {
+      "$ref": "#/$defs/intervention_decision"
+    },
+    {
+      "$ref": "#/$defs/memory_influence_policy_envelope"
+    },
+    {
+      "$ref": "#/$defs/memory_projection_manifest"
+    },
+    {
+      "$ref": "#/$defs/memory_erase_request"
+    },
+    {
+      "$ref": "#/$defs/distributed_memory_erase_manifest"
+    },
+    {
+      "$ref": "#/$defs/per_owner_erase_work_item"
+    },
+    {
+      "$ref": "#/$defs/erase_completion_or_residue_receipt"
+    }
+  ],
+  "$defs": {
+    "non_empty_string": {
+      "type": "string",
+      "minLength": 1
+    },
+    "ref": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 1024
+    },
+    "ref_list": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ref"
+      },
+      "uniqueItems": true
+    },
+    "non_empty_ref_list": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/ref"
+      },
+      "uniqueItems": true
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "owner_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{1,127}$"
+    },
+    "source_pin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_ref",
+        "source_owner",
+        "source_version",
+        "content_digest"
+      ],
+      "properties": {
+        "source_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "source_owner": {
+          "$ref": "#/$defs/owner_id"
+        },
+        "source_version": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "content_digest": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "generation_pin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "generator_id",
+        "generator_version",
+        "generated_at"
+      ],
+      "properties": {
+        "generator_id": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "generator_version": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "generated_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "policy_pin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "policy_id",
+        "policy_version",
+        "decision_ref"
+      ],
+      "properties": {
+        "policy_id": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "policy_version": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "decision_ref": {
+          "$ref": "#/$defs/ref"
+        }
+      }
+    },
+    "freshness_pin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "observed_at",
+        "freshness_class"
+      ],
+      "properties": {
+        "observed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "valid_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "expires_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "freshness_class": {
+          "enum": [
+            "current",
+            "stale",
+            "unknown"
+          ]
+        }
+      }
+    },
+    "taint_posture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tainted",
+        "labels",
+        "policy_version",
+        "sanitizer_receipt_ref",
+        "quarantine_required"
+      ],
+      "properties": {
+        "tainted": {
+          "type": "boolean"
+        },
+        "labels": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/non_empty_string"
+          },
+          "uniqueItems": true
+        },
+        "policy_version": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "sanitizer_receipt_ref": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 3
+        },
+        "quarantine_required": {
+          "type": "boolean"
+        }
+      }
+    },
+    "trust_posture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "authority_kind",
+        "confidence"
+      ],
+      "properties": {
+        "authority_kind": {
+          "enum": [
+            "operator",
+            "owner_source",
+            "direct_observation",
+            "agent_derived",
+            "unknown"
+          ]
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "proposed_belief": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "statement",
+        "confidence"
+      ],
+      "properties": {
+        "statement": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "proposed_applicability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scopes",
+        "conditions"
+      ],
+      "properties": {
+        "scopes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "enum": [
+              "thread",
+              "session",
+              "user",
+              "agent",
+              "project",
+              "workspace",
+              "ecosystem",
+              "tos_lineage"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "conditions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/non_empty_string"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "common_header": {
+      "type": "object",
+      "required": [
+        "contract_type",
+        "schema_version",
+        "contract_id",
+        "contract_name",
+        "instance_id",
+        "object_version",
+        "idempotency_key",
+        "produced_at",
+        "owner",
+        "validation_status",
+        "source_refs",
+        "generation_pin",
+        "policy_pin",
+        "content_digest"
+      ],
+      "properties": {
+        "contract_type": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "schema_version": {
+          "const": "1.0.0"
+        },
+        "contract_id": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "contract_name": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "instance_id": {
+          "$ref": "#/$defs/ref"
+        },
+        "object_version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "idempotency_key": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{7,255}$"
+        },
+        "produced_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "owner": {
+          "const": "aoa-memo"
+        },
+        "validation_status": {
+          "enum": [
+            "valid",
+            "partial",
+            "failed",
+            "invalid"
+          ]
+        },
+        "source_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/source_pin"
+          },
+          "uniqueItems": true
+        },
+        "generation_pin": {
+          "$ref": "#/$defs/generation_pin"
+        },
+        "policy_pin": {
+          "$ref": "#/$defs/policy_pin"
+        },
+        "content_digest": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "memory_evidence_envelope": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/$defs/common_header"
+        }
+      ],
+      "unevaluatedProperties": false,
+      "required": [
+        "observation_id",
+        "evidence_kind",
+        "subject_ref",
+        "capture_ref",
+        "evidence_refs",
+        "freshness",
+        "trust",
+        "taint"
+      ],
+      "properties": {
+        "contract_type": {
+          "const": "memory_evidence_envelope"
+        },
+        "contract_id": {
+          "const": "C01"
+        },
+        "contract_name": {
+          "const": "MemoryEvidenceEnvelope"
+        },
+        "observation_id": {
+          "$ref": "#/$defs/ref"
+        },
+        "evidence_kind": {
+          "enum": [
+            "owner_source",
+            "runtime_observation",
+            "eval_receipt",
+            "operator_decision"
+          ]
+        },
+        "subject_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "capture_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "evidence_refs": {
+          "$ref": "#/$defs/non_empty_ref_list"
+        },
+        "freshness": {
+          "$ref": "#/$defs/freshness_pin"
+        },
+        "trust": {
+          "$ref": "#/$defs/trust_posture"
+        },
+        "taint": {
+          "$ref": "#/$defs/taint_posture"
+        }
+      }
+    },
+    "memory_candidate_packet": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/$defs/common_header"
+        }
+      ],
+      "unevaluatedProperties": false,
+      "required": [
+        "candidate_id",
+        "evidence_envelope_ref",
+        "target_kind",
+        "candidate_payload_ref",
+        "derivation_lineage_refs",
+        "risk_class",
+        "data_class",
+        "tenant_id",
+        "expires_at",
+        "taint",
+        "proposed_belief",
+        "proposed_applicability",
+        "expected_stronger_owner",
+        "allowed_result",
+        "review_state"
+      ],
+      "properties": {
+        "contract_type": {
+          "const": "memory_candidate_packet"
+        },
+        "contract_id": {
+          "const": "C02"
+        },
+        "contract_name": {
+          "const": "MemoryCandidatePacket"
+        },
+        "candidate_id": {
+          "$ref": "#/$defs/ref"
+        },
+        "evidence_envelope_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "target_kind": {
+          "enum": [
+            "anchor",
+            "state_capsule",
+            "episode",
+            "claim",
+            "decision",
+            "pattern",
+            "bridge",
+            "audit_event"
+          ]
+        },
+        "candidate_payload_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "derivation_lineage_refs": {
+          "$ref": "#/$defs/non_empty_ref_list"
+        },
+        "risk_class": {
+          "enum": [
+            "R0",
+            "R1",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6"
+          ]
+        },
+        "data_class": {
+          "enum": [
+            "D0",
+            "D1",
+            "D2",
+            "D3",
+            "D4"
+          ]
+        },
+        "tenant_id": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "taint": {
+          "$ref": "#/$defs/taint_posture"
+        },
+        "proposed_belief": {
+          "$ref": "#/$defs/proposed_belief"
+        },
+        "proposed_applicability": {
+          "$ref": "#/$defs/proposed_applicability"
+        },
+        "expected_stronger_owner": {
+          "$ref": "#/$defs/owner_id"
+        },
+        "allowed_result": {
+          "enum": [
+            "operator_review",
+            "quarantine",
+            "reject"
+          ]
+        },
+        "review_state": {
+          "const": "proposed"
+        }
+      }
+    },
+    "memory_quarantine_packet": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/$defs/common_header"
+        }
+      ],
+      "unevaluatedProperties": false,
+      "required": [
+        "quarantine_id",
+        "candidate_ref",
+        "reason_codes",
+        "release_conditions",
+        "quarantined_at",
+        "expires_at",
+        "taint",
+        "expected_stronger_owner",
+        "allowed_result",
+        "semantic_promotion",
+        "normal_recall",
+        "proactive_delivery",
+        "export_use",
+        "training_use"
+      ],
+      "properties": {
+        "contract_type": {
+          "const": "memory_quarantine_packet"
+        },
+        "contract_id": {
+          "const": "C03"
+        },
+        "contract_name": {
+          "const": "MemoryQuarantinePacket"
+        },
+        "quarantine_id": {
+          "$ref": "#/$defs/ref"
+        },
+        "candidate_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "reason_codes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/non_empty_string"
+          },
+          "uniqueItems": true
+        },
+        "release_conditions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/non_empty_string"
+          },
+          "uniqueItems": true
+        },
+        "quarantined_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "taint": {
+          "$ref": "#/$defs/taint_posture"
+        },
+        "expected_stronger_owner": {
+          "$ref": "#/$defs/owner_id"
+        },
+        "allowed_result": {
+          "enum": [
+            "remain_quarantined",
+            "operator_review",
+            "purge"
+          ]
+        },
+        "semantic_promotion": {
+          "const": "forbidden"
+        },
+        "normal_recall": {
+          "const": "forbidden"
+        },
+        "proactive_delivery": {
+          "const": "forbidden"
+        },
+        "export_use": {
+          "const": "forbidden"
+        },
+        "training_use": {
+          "const": "forbidden"
+        }
+      }
+    },
+    "reviewed_memory_object": {
+      "type": "object",
+      "unevaluatedProperties": false,
+      "required": [
+        "memory_object_ref",
+        "memory_object_schema_ref",
+        "accepted_transition_ref",
+        "review_state",
+        "access_class",
+        "private_corpus_decision_refs"
+      ],
+      "properties": {
+        "contract_type": {
+          "const": "reviewed_memory_object"
+        },
+        "contract_id": {
+          "const": "C04"
+        },
+        "contract_name": {
+          "const": "ReviewedMemoryObject"
+        },
+        "memory_object_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "memory_object_schema_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "accepted_transition_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "review_state": {
+          "enum": [
+            "confirmed",
+            "frozen",
+            "superseded",
+            "retracted",
+            "archived"
+          ]
+        },
+        "access_class": {
+          "enum": [
+            "public",
+            "private"
+          ]
+        },
+        "private_corpus_decision_refs": {
+          "$ref": "#/$defs/ref_list"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/$defs/common_header"
+        },
+        {
+          "if": {
+            "properties": {
+              "access_class": {
+                "const": "private"
+              }
+            },
+            "required": [
+              "access_class"
+            ]
+          },
+          "then": {
+            "properties": {
+              "private_corpus_decision_refs": {
+                "minItems": 1
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "private_corpus_decision_refs": {
+                "maxItems": 0
+              }
+            }
+          }
+        }
+      ]
+    },
+    "provenance_event": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sequence",
+        "event_ref",
+        "event_digest"
+      ],
+      "properties": {
+        "sequence": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "event_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "event_digest": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "provenance_thread": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/$defs/common_header"
+        }
+      ],
+      "unevaluatedProperties": false,
+      "required": [
+        "thread_id",
+        "subject_refs",
+        "evidence_envelope_refs",
+        "transition_refs",
+        "ordered_events",
+        "lineage_digest",
+        "content_minimized",
+        "deleted_content_retained",
+        "embedding_retained",
+        "reversible_hash_retained"
+      ],
+      "properties": {
+        "contract_type": {
+          "const": "provenance_thread"
+        },
+        "contract_id": {
+          "const": "C05"
+        },
+        "contract_name": {
+          "const": "ProvenanceThread"
+        },
+        "thread_id": {
+          "$ref": "#/$defs/ref"
+        },
+        "subject_refs": {
+          "$ref": "#/$defs/non_empty_ref_list"
+        },
+        "evidence_envelope_refs": {
+          "$ref": "#/$defs/non_empty_ref_list"
+        },
+        "transition_refs": {
+          "$ref": "#/$defs/ref_list"
+        },
+        "ordered_events": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/provenance_event"
+          }
+        },
+        "lineage_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "content_minimized": {
+          "const": true
+        },
+        "deleted_content_retained": {
+          "const": false
+        },
+        "embedding_retained": {
+          "const": false
+        },
+        "reversible_hash_retained": {
+          "const": false
+        }
+      }
+    },
+    "memory_lifecycle_transition": {
+      "type": "object",
+      "unevaluatedProperties": false,
+      "required": [
+        "transition_id",
+        "subject_ref",
+        "transition_kind",
+        "from_state",
+        "to_state",
+        "expected_prior_version",
+        "next_version",
+        "operator_decision_ref",
+        "accepted_policy_ref",
+        "belief_commit_id",
+        "accepted_transition_ref",
+        "commit_mode",
+        "source_generation",
+        "projection_states",
+        "projection_invalidation_refs",
+        "commit_receipt_ref",
+        "audit_event_ref"
+      ],
+      "properties": {
+        "contract_type": {
+          "const": "memory_lifecycle_transition"
+        },
+        "contract_id": {
+          "const": "C06"
+        },
+        "contract_name": {
+          "const": "MemoryLifecycleTransition"
+        },
+        "transition_id": {
+          "$ref": "#/$defs/ref"
+        },
+        "subject_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "transition_kind": {
+          "enum": [
+            "mechanical",
+            "semantic"
+          ]
+        },
+        "from_state": {
+          "enum": [
+            "captured",
+            "proposed",
+            "confirmed",
+            "frozen",
+            "superseded",
+            "retracted",
+            "archived"
+          ]
+        },
+        "to_state": {
+          "enum": [
+            "proposed",
+            "confirmed",
+            "frozen",
+            "superseded",
+            "retracted",
+            "archived"
+          ]
+        },
+        "expected_prior_version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "next_version": {
+          "type": "integer",
+          "minimum": 2
+        },
+        "operator_decision_ref": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 3
+        },
+        "accepted_policy_ref": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 3
+        },
+        "belief_commit_id": {
+          "$ref": "#/$defs/ref"
+        },
+        "accepted_transition_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "commit_mode": {
+          "enum": [
+            "atomic",
+            "recoverable"
+          ]
+        },
+        "source_generation": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "projection_states": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/projection_state"
+          }
+        },
+        "projection_invalidation_refs": {
+          "$ref": "#/$defs/ref_list"
+        },
+        "commit_receipt_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "audit_event_ref": {
+          "$ref": "#/$defs/ref"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/$defs/common_header"
+        },
+        {
+          "if": {
+            "properties": {
+              "transition_kind": {
+                "const": "semantic"
+              }
+            },
+            "required": [
+              "transition_kind"
+            ]
+          },
+          "then": {
+            "properties": {
+              "operator_decision_ref": {
+                "type": "string",
+                "minLength": 3
+              },
+              "accepted_policy_ref": {
+                "type": "null"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "operator_decision_ref": {
+                "type": "null"
+              },
+              "accepted_policy_ref": {
+                "type": "string",
+                "minLength": 3
+              }
+            }
+          }
+        }
+      ]
+    },
+    "projection_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "projection_ref",
+        "state",
+        "source_generation",
+        "invalidation_receipt_ref"
+      ],
+      "properties": {
+        "projection_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "state": {
+          "enum": [
+            "active",
+            "stale",
+            "pending_rebuild",
+            "invalidated"
+          ]
+        },
+        "source_generation": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "invalidation_receipt_ref": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 3
+        }
+      }
+    },
+    "object_pin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "object_ref",
+        "object_version",
+        "lifecycle_state",
+        "content_digest"
+      ],
+      "properties": {
+        "object_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "object_version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "lifecycle_state": {
+          "enum": [
+            "proposed",
+            "confirmed",
+            "frozen",
+            "superseded",
+            "retracted",
+            "archived"
+          ]
+        },
+        "content_digest": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "projection_pin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "projection_id",
+        "projection_version",
+        "built_from_digest"
+      ],
+      "properties": {
+        "projection_id": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "projection_version": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "built_from_digest": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "model_pin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "provider",
+        "model_id",
+        "model_version"
+      ],
+      "properties": {
+        "provider": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "model_id": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "model_version": {
+          "$ref": "#/$defs/non_empty_string"
+        }
+      }
+    },
+    "recall_packet": {
+      "type": "object",
+      "unevaluatedProperties": false,
+      "required": [
+        "request_ref",
+        "recall_intent_ref",
+        "trigger_ref",
+        "anchor_ref",
+        "query_digest",
+        "scope",
+        "object_pins",
+        "freshness",
+        "taint",
+        "projection_pin",
+        "model_pin",
+        "tenant_id",
+        "result_mode",
+        "result_refs",
+        "abstention_reason",
+        "action_use"
+      ],
+      "properties": {
+        "contract_type": {
+          "const": "recall_packet"
+        },
+        "contract_id": {
+          "const": "C08"
+        },
+        "contract_name": {
+          "const": "RecallPacket"
+        },
+        "request_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "recall_intent_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "trigger_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "anchor_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "query_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "scope": {
+          "enum": [
+            "thread",
+            "session",
+            "user",
+            "agent",
+            "project",
+            "workspace",
+            "ecosystem",
+            "tos_lineage"
+          ]
+        },
+        "object_pins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/object_pin"
+          },
+          "uniqueItems": true
+        },
+        "freshness": {
+          "$ref": "#/$defs/freshness_pin"
+        },
+        "taint": {
+          "$ref": "#/$defs/taint_posture"
+        },
+        "projection_pin": {
+          "$ref": "#/$defs/projection_pin"
+        },
+        "model_pin": {
+          "$ref": "#/$defs/model_pin"
+        },
+        "tenant_id": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "result_mode": {
+          "enum": [
+            "silence",
+            "bounded_memory"
+          ]
+        },
+        "result_refs": {
+          "$ref": "#/$defs/ref_list"
+        },
+        "abstention_reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "action_use": {
+          "const": "forbidden"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/$defs/common_header"
+        },
+        {
+          "if": {
+            "properties": {
+              "result_mode": {
+                "const": "silence"
+              }
+            },
+            "required": [
+              "result_mode"
+            ]
+          },
+          "then": {
+            "properties": {
+              "result_refs": {
+                "maxItems": 0
+              },
+              "abstention_reason": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "result_refs": {
+                "minItems": 1
+              },
+              "abstention_reason": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "intervention_decision": {
+      "type": "object",
+      "unevaluatedProperties": false,
+      "required": [
+        "decision_id",
+        "recall_packet_ref",
+        "trigger_ref",
+        "anchor_ref",
+        "taint_ref",
+        "influence_policy_ref",
+        "decision",
+        "rationale_codes",
+        "effect_authority",
+        "observation_refs"
+      ],
+      "properties": {
+        "contract_type": {
+          "const": "intervention_decision"
+        },
+        "contract_id": {
+          "const": "C09"
+        },
+        "contract_name": {
+          "const": "InterventionDecision"
+        },
+        "decision_id": {
+          "$ref": "#/$defs/ref"
+        },
+        "recall_packet_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "trigger_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "anchor_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "taint_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "influence_policy_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "decision": {
+          "enum": [
+            "silence",
+            "bounded_observation"
+          ]
+        },
+        "rationale_codes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/non_empty_string"
+          },
+          "uniqueItems": true
+        },
+        "effect_authority": {
+          "const": "none"
+        },
+        "observation_refs": {
+          "$ref": "#/$defs/ref_list"
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/$defs/common_header"
+        },
+        {
+          "if": {
+            "properties": {
+              "decision": {
+                "const": "silence"
+              }
+            },
+            "required": [
+              "decision"
+            ]
+          },
+          "then": {
+            "properties": {
+              "observation_refs": {
+                "maxItems": 0
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "observation_refs": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "memory_influence_policy_envelope": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/$defs/common_header"
+        }
+      ],
+      "unevaluatedProperties": false,
+      "required": [
+        "influence_policy_id",
+        "consumer_id",
+        "tenant_id",
+        "trigger_id",
+        "anchor_ref",
+        "model_pin",
+        "data_class",
+        "data_policy_ref",
+        "risk_class",
+        "risk_tier",
+        "transition_policy_ref",
+        "permitted_outputs",
+        "effect_ceiling",
+        "external_effects"
+      ],
+      "properties": {
+        "contract_type": {
+          "const": "memory_influence_policy_envelope"
+        },
+        "contract_id": {
+          "const": "C11"
+        },
+        "contract_name": {
+          "const": "MemoryInfluencePolicyEnvelope"
+        },
+        "influence_policy_id": {
+          "$ref": "#/$defs/ref"
+        },
+        "consumer_id": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "tenant_id": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "trigger_id": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "anchor_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "model_pin": {
+          "$ref": "#/$defs/model_pin"
+        },
+        "data_class": {
+          "enum": [
+            "D0",
+            "D1",
+            "D2",
+            "D3",
+            "D4"
+          ]
+        },
+        "data_policy_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "risk_class": {
+          "enum": [
+            "R0",
+            "R1",
+            "R2",
+            "R3",
+            "R4",
+            "R5",
+            "R6"
+          ]
+        },
+        "risk_tier": {
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "critical"
+          ]
+        },
+        "transition_policy_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "permitted_outputs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "enum": [
+              "silence",
+              "bounded_observation"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "effect_ceiling": {
+          "const": "none"
+        },
+        "external_effects": {
+          "const": "forbidden"
+        }
+      }
+    },
+    "memory_projection_manifest": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/$defs/common_header"
+        }
+      ],
+      "unevaluatedProperties": false,
+      "required": [
+        "projection_id",
+        "canonical_owner",
+        "projection_owner",
+        "projection_kind",
+        "projection_schema_ref",
+        "projection_schema_digest",
+        "source_generation",
+        "projected_generation",
+        "source_object_refs",
+        "builder_ref",
+        "built_artifact_refs",
+        "projection_state",
+        "recall_eligible",
+        "rebuild_required",
+        "invalidation_receipt_ref",
+        "owner_extension",
+        "disposable",
+        "source_replacement",
+        "memory_acceptance",
+        "semantic_authority",
+        "effect_authority"
+      ],
+      "properties": {
+        "contract_type": {
+          "const": "memory_projection_manifest"
+        },
+        "contract_id": {
+          "const": "C12"
+        },
+        "contract_name": {
+          "const": "MemoryProjectionManifest"
+        },
+        "projection_id": {
+          "$ref": "#/$defs/ref"
+        },
+        "canonical_owner": {
+          "const": "aoa-memo"
+        },
+        "projection_owner": {
+          "$ref": "#/$defs/owner_id"
+        },
+        "projection_kind": {
+          "enum": [
+            "lexical",
+            "dense",
+            "graph",
+            "kag",
+            "summary",
+            "cache",
+            "other"
+          ]
+        },
+        "projection_schema_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "projection_schema_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "source_generation": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "projected_generation": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "source_object_refs": {
+          "$ref": "#/$defs/non_empty_ref_list"
+        },
+        "builder_ref": {
+          "$ref": "#/$defs/source_pin"
+        },
+        "built_artifact_refs": {
+          "$ref": "#/$defs/ref_list"
+        },
+        "projection_state": {
+          "enum": [
+            "building",
+            "active",
+            "stale",
+            "pending_rebuild",
+            "quarantined",
+            "invalidated",
+            "erased",
+            "failed"
+          ]
+        },
+        "recall_eligible": {
+          "type": "boolean"
+        },
+        "rebuild_required": {
+          "type": "boolean"
+        },
+        "invalidation_receipt_ref": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 3
+        },
+        "owner_extension": {
+          "$ref": "#/$defs/owner_extension_pin"
+        },
+        "disposable": {
+          "const": true
+        },
+        "source_replacement": {
+          "const": "forbidden"
+        },
+        "memory_acceptance": {
+          "const": "forbidden"
+        },
+        "semantic_authority": {
+          "const": "none"
+        },
+        "effect_authority": {
+          "const": "none"
+        }
+      }
+    },
+    "retention_exception": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "exception_ref",
+        "operator_decision_ref",
+        "expires_at",
+        "restore_probe_ref"
+      ],
+      "properties": {
+        "exception_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "operator_decision_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "expires_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "restore_probe_ref": {
+          "$ref": "#/$defs/ref"
+        }
+      }
+    },
+    "owner_extension_pin": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "schema_ref",
+            "schema_version",
+            "payload_ref",
+            "payload_digest"
+          ],
+          "properties": {
+            "schema_ref": {
+              "$ref": "#/$defs/ref"
+            },
+            "schema_version": {
+              "$ref": "#/$defs/non_empty_string"
+            },
+            "payload_ref": {
+              "$ref": "#/$defs/ref"
+            },
+            "payload_digest": {
+              "$ref": "#/$defs/sha256"
+            }
+          }
+        }
+      ]
+    },
+    "erase_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "owner_set",
+        "subject_refs",
+        "corpus_refs",
+        "erase_surface_ids",
+        "descendant_refs",
+        "retention_exceptions"
+      ],
+      "properties": {
+        "owner_set": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/owner_id"
+          },
+          "uniqueItems": true
+        },
+        "subject_refs": {
+          "$ref": "#/$defs/non_empty_ref_list"
+        },
+        "corpus_refs": {
+          "$ref": "#/$defs/ref_list"
+        },
+        "erase_surface_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "enum": [
+              "ER0",
+              "ER1",
+              "ER2",
+              "ER3",
+              "ER4",
+              "ER5",
+              "ER6",
+              "ER7",
+              "ER8",
+              "ER9"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "descendant_refs": {
+          "$ref": "#/$defs/ref_list"
+        },
+        "retention_exceptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/retention_exception"
+          }
+        }
+      }
+    },
+    "memory_erase_request": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/$defs/common_header"
+        }
+      ],
+      "unevaluatedProperties": false,
+      "required": [
+        "erase_request_id",
+        "operator_decision_ref",
+        "scope",
+        "reason",
+        "requested_at",
+        "recovery_probe_required"
+      ],
+      "properties": {
+        "contract_type": {
+          "const": "memory_erase_request"
+        },
+        "contract_id": {
+          "const": "C14"
+        },
+        "contract_name": {
+          "const": "MemoryEraseRequest"
+        },
+        "erase_request_id": {
+          "$ref": "#/$defs/ref"
+        },
+        "operator_decision_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "scope": {
+          "$ref": "#/$defs/erase_scope"
+        },
+        "reason": {
+          "$ref": "#/$defs/non_empty_string"
+        },
+        "requested_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "recovery_probe_required": {
+          "const": true
+        }
+      }
+    },
+    "erase_owner_result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "owner",
+        "work_item_ref",
+        "erase_receipt_ref",
+        "recovery_probe_ref",
+        "result"
+      ],
+      "properties": {
+        "owner": {
+          "$ref": "#/$defs/owner_id"
+        },
+        "work_item_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "erase_receipt_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "recovery_probe_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "result": {
+          "enum": [
+            "erased",
+            "residue",
+            "partial",
+            "failed"
+          ]
+        }
+      }
+    },
+    "erase_surface_item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "surface_id",
+        "surface_class",
+        "owner",
+        "work_item_ref",
+        "descendant_refs",
+        "retention_exceptions",
+        "surface_state"
+      ],
+      "properties": {
+        "surface_id": {
+          "enum": [
+            "ER0",
+            "ER1",
+            "ER2",
+            "ER3",
+            "ER4",
+            "ER5",
+            "ER6",
+            "ER7",
+            "ER8",
+            "ER9"
+          ]
+        },
+        "surface_class": {
+          "enum": [
+            "canonical_object",
+            "raw_session_attachment",
+            "local_memo_port",
+            "projection",
+            "runtime",
+            "backup_restore",
+            "host_local",
+            "experiment_replay",
+            "training_unlearning",
+            "audit_receipt"
+          ]
+        },
+        "owner": {
+          "$ref": "#/$defs/owner_id"
+        },
+        "work_item_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "descendant_refs": {
+          "$ref": "#/$defs/ref_list"
+        },
+        "retention_exceptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/retention_exception"
+          }
+        },
+        "surface_state": {
+          "enum": [
+            "pending",
+            "erased",
+            "residue",
+            "failed",
+            "blocked"
+          ]
+        }
+      }
+    },
+    "distributed_memory_erase_manifest": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/$defs/common_header"
+        }
+      ],
+      "unevaluatedProperties": false,
+      "required": [
+        "manifest_id",
+        "erase_request_ref",
+        "owner_set",
+        "work_item_refs",
+        "erase_receipt_refs",
+        "recovery_probe_refs",
+        "residue_refs",
+        "erase_surfaces",
+        "owner_results",
+        "completion_state"
+      ],
+      "properties": {
+        "contract_type": {
+          "const": "distributed_memory_erase_manifest"
+        },
+        "contract_id": {
+          "const": "C15"
+        },
+        "contract_name": {
+          "const": "DistributedMemoryEraseManifest"
+        },
+        "manifest_id": {
+          "$ref": "#/$defs/ref"
+        },
+        "erase_request_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "owner_set": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/owner_id"
+          },
+          "uniqueItems": true
+        },
+        "work_item_refs": {
+          "$ref": "#/$defs/non_empty_ref_list"
+        },
+        "erase_receipt_refs": {
+          "$ref": "#/$defs/ref_list"
+        },
+        "recovery_probe_refs": {
+          "$ref": "#/$defs/ref_list"
+        },
+        "residue_refs": {
+          "$ref": "#/$defs/ref_list"
+        },
+        "erase_surfaces": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/erase_surface_item"
+          }
+        },
+        "owner_results": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/erase_owner_result"
+          }
+        },
+        "completion_state": {
+          "enum": [
+            "pending",
+            "partial",
+            "complete",
+            "complete_with_approved_exceptions",
+            "failed"
+          ]
+        }
+      }
+    },
+    "per_owner_erase_work_item": {
+      "type": "object",
+      "unevaluatedProperties": false,
+      "required": [
+        "work_item_id",
+        "manifest_ref",
+        "target_owner",
+        "target_class",
+        "target_root",
+        "target_refs",
+        "erase_surface_id",
+        "descendant_refs",
+        "retention_exceptions",
+        "owner_extension",
+        "work_state"
+      ],
+      "properties": {
+        "contract_type": {
+          "const": "per_owner_erase_work_item"
+        },
+        "contract_id": {
+          "const": "C16"
+        },
+        "contract_name": {
+          "const": "PerOwnerEraseWorkItem"
+        },
+        "work_item_id": {
+          "$ref": "#/$defs/ref"
+        },
+        "manifest_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "target_owner": {
+          "$ref": "#/$defs/owner_id"
+        },
+        "target_class": {
+          "enum": [
+            "source",
+            "derived",
+            "runtime",
+            "host"
+          ]
+        },
+        "target_root": {
+          "$ref": "#/$defs/ref"
+        },
+        "target_refs": {
+          "$ref": "#/$defs/non_empty_ref_list"
+        },
+        "erase_surface_id": {
+          "enum": [
+            "ER0",
+            "ER1",
+            "ER2",
+            "ER3",
+            "ER4",
+            "ER5",
+            "ER6",
+            "ER7",
+            "ER8",
+            "ER9"
+          ]
+        },
+        "descendant_refs": {
+          "$ref": "#/$defs/ref_list"
+        },
+        "retention_exceptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/retention_exception"
+          }
+        },
+        "owner_extension": {
+          "$ref": "#/$defs/owner_extension_pin"
+        },
+        "work_state": {
+          "enum": [
+            "pending",
+            "running",
+            "erased",
+            "residue",
+            "failed"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "$ref": "#/$defs/common_header"
+        },
+        {
+          "if": {
+            "properties": {
+              "target_owner": {
+                "const": "abyss-machine"
+              }
+            },
+            "required": [
+              "target_owner"
+            ]
+          },
+          "then": {
+            "properties": {
+              "target_class": {
+                "const": "host"
+              },
+              "target_root": {
+                "pattern": "^(host:|/etc/abyss-machine(?:/|$)|/srv/abyss-machine(?:/|$))"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "target_class": {
+                "not": {
+                  "const": "host"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "erase_completion_or_residue_receipt": {
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/$defs/common_header"
+        }
+      ],
+      "unevaluatedProperties": false,
+      "required": [
+        "receipt_id",
+        "manifest_ref",
+        "receipt_owner",
+        "work_item_ref",
+        "erase_surface_id",
+        "result",
+        "erased_count",
+        "residue_count",
+        "residue_refs",
+        "recovery_probe_refs",
+        "retention_exceptions",
+        "owner_extension",
+        "global_completion_authority",
+        "content_minimized"
+      ],
+      "properties": {
+        "contract_type": {
+          "const": "erase_completion_or_residue_receipt"
+        },
+        "contract_id": {
+          "const": "C17"
+        },
+        "contract_name": {
+          "const": "EraseCompletionOrResidueReceipt"
+        },
+        "receipt_id": {
+          "$ref": "#/$defs/ref"
+        },
+        "manifest_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "receipt_owner": {
+          "$ref": "#/$defs/owner_id"
+        },
+        "work_item_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "erase_surface_id": {
+          "enum": [
+            "ER0",
+            "ER1",
+            "ER2",
+            "ER3",
+            "ER4",
+            "ER5",
+            "ER6",
+            "ER7",
+            "ER8",
+            "ER9"
+          ]
+        },
+        "result": {
+          "enum": [
+            "erased",
+            "residue",
+            "partial",
+            "failed"
+          ]
+        },
+        "erased_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "residue_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "residue_refs": {
+          "$ref": "#/$defs/ref_list"
+        },
+        "recovery_probe_refs": {
+          "$ref": "#/$defs/ref_list"
+        },
+        "retention_exceptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/retention_exception"
+          }
+        },
+        "owner_extension": {
+          "$ref": "#/$defs/owner_extension_pin"
+        },
+        "global_completion_authority": {
+          "const": false
+        },
+        "content_minimized": {
+          "const": true
+        }
+      }
+    }
+  }
+}

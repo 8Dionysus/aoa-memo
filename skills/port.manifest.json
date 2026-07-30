@@ -7,10 +7,10 @@
     {
       "name": "aoa-memo",
       "path": "skills/aoa-memo",
-      "version": "0.1.21",
+      "version": "0.1.22",
       "lifecycle": "admitted",
       "visibility": "advertised",
-      "admission_ref": "docs/decisions/AOA-MEM-D-0076-aoa-memo-owner-skill-bundle.md"
+      "admission_ref": "docs/decisions/AOA-MEM-D-0083-two-speed-participation-spine.md"
     }
   ],
   "exposure": {

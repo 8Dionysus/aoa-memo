@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aoa.local/aoa-memo/schemas/codex_owner_orientation_canary_profile_v0.schema.json",
+  "title": "codex_owner_orientation_canary_v0 exact owner profile",
+  "description": "The memo-owned, operator-approved, D0/R2 profile for one bounded source-visible observation canary. This v0 profile is intentionally exact.",
+  "const": {
+    "schema_version": "codex_owner_orientation_canary_profile_v0",
+    "profile_id": "codex_owner_orientation_canary_v0",
+    "consumer_id": "codex_owner_orientation_canary_v0",
+    "owners": {
+      "semantic": "aoa-memo",
+      "control_plane": "aoa-sdk",
+      "runtime_delivery": "abyss-stack",
+      "host_admission": "abyss-machine",
+      "outcome": "aoa-stats",
+      "proof": "aoa-evals"
+    },
+    "decision_ref": "decision:AOA-MEM-D-0077",
+    "influence_policy": {
+      "ref": "examples/codex_owner_orientation_canary_v0.influence-policy.json",
+      "sha256": "sha256:d0ba7078a7dcc2d4bdaa3c90a59ec371bddce967cdf14abb8c23ab012ecaac7e",
+      "policy_id": "policy:aoa-memo:codex-owner-orientation-canary:v0",
+      "policy_version": "0"
+    },
+    "model_prompt_provider_pin": {
+      "provider": "none",
+      "model_id": "deterministic-lexical",
+      "model_version": "1",
+      "prompt_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "admission": {
+      "source_shadow_consumer_id": "codex_owner_orientation_shadow_v0",
+      "source_shadow_mode": "selective",
+      "source_selective_min_score": 1000,
+      "data_class": "D0",
+      "risk_class": "R2",
+      "tenant_id": "owner-local",
+      "allowlisted_consumer_id": "codex_owner_orientation_canary_v0",
+      "no_secrets": true,
+      "currentness_required": true,
+      "sdk_route_required": true,
+      "hidden_fallback": "forbidden"
+    },
+    "selection": {
+      "allowed_source_kinds": [
+        "reviewed_corpus"
+      ],
+      "allowed_review_states": [
+        "confirmed"
+      ],
+      "allowed_current_recall_states": [
+        "preferred",
+        "allowed"
+      ],
+      "inspect_surface": "generated/memory-objects/memory_object_catalog.min.json",
+      "capsule_surface": "generated/memory-objects/memory_object_capsules.json",
+      "expand_surface": "generated/memory-objects/memory_object_sections.full.json",
+      "source_route_wins": true,
+      "conflicts_visible": true,
+      "omissions_visible": true
+    },
+    "delivery": {
+      "runtime_contract": "C20",
+      "recall_packet_contract": "C08",
+      "intervention_contract": "C09",
+      "output_kind": "bounded_observation",
+      "directive_authority": false,
+      "max_reminders_per_window": 1,
+      "policy_window_seconds": 3600,
+      "cooldown_seconds": 3600,
+      "source_visible": true,
+      "currentness_visible": true,
+      "content_persistence": "forbidden",
+      "effect_ceiling": "none",
+      "action_use": "forbidden"
+    },
+    "experiment": {
+      "randomized_holdout_required": true,
+      "always_shadow_counterfactual_required": true,
+      "access_count_used_as_utility": false,
+      "independent_evaluator_required": true,
+      "unavailable_eval_posture": "silence_and_freeze"
+    },
+    "rollback": {
+      "target_consumer_id": "codex_owner_orientation_v0",
+      "instant_disable": true,
+      "operation": "disable-canary-return-to-explicit-pull",
+      "memory_dependency_after_rollback": false,
+      "write_reversal_required": false
+    },
+    "stop_lines": [
+      "one-allowlisted-consumer",
+      "one-owner-local-tenant",
+      "d0-public-reviewed-only",
+      "one-reminder-per-window",
+      "observation-not-directive",
+      "source-and-currentness-visible",
+      "no-secrets",
+      "no-private-ledger",
+      "no-raw-aoa",
+      "no-exact-tool-parameters",
+      "no-role-or-permission-change",
+      "no-irreversible-or-high-risk-action",
+      "no-memory-write",
+      "no-semantic-transition",
+      "no-policy-self-approval",
+      "no-access-count-utility",
+      "no-hidden-sdk-fallback",
+      "instant-disable-to-explicit-pull"
+    ],
+    "authority": {
+      "memory_write": false,
+      "semantic_transition": false,
+      "policy_self_approval": false,
+      "external_effect": false,
+      "exact_tool_parameters": false,
+      "role_or_permission_change": false,
+      "tenant_expansion": false,
+      "training": false,
+      "runtime_deployment": false,
+      "landing": false
+    }
+  }
+}

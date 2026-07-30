@@ -34,7 +34,9 @@ KNOWN_STRONGER_OWNER_REFS = (
     "aoa-kag",
     "aoa-playbooks",
     "aoa-sdk",
+    "aoa-session-memory",
     "aoa-stats",
+    "abyss-machine",
     "abyss-stack",
     "source owner",
 )

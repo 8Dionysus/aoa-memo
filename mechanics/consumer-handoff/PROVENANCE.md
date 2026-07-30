@@ -31,6 +31,9 @@ The active technical artifacts now live under the nearest functioning part:
 - Eval guardrail pack: `parts/eval-guardrail-handoff/{schemas,examples}/`
 - Playbook scope regression: `parts/playbook-scope-handoff/tests/`
 - Consumer feed regression: `parts/downstream-feed-regression/tests/`
+- Codex owner-orientation profile, C11 policy, SDK compatibility pin, C08/C09
+  bundle builder, schemas, and checks:
+  `parts/orchestrator-recall-alignment/{schemas,examples,scripts,tests}/`
 
 Former package-level `schemas/`, `examples/`, `generated/`, `scripts/`, and
 `tests/` homes are placement history only after the 2026-05-19 part-local

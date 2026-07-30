@@ -30,6 +30,128 @@ Chunk-facing views, graph-facing views, embedding indexes, and other retrieval-o
 
 See [NARRATIVE_CORE_CONTRACT](NARRATIVE_CORE_CONTRACT.md) for the compact ownership split and required handoff fields.
 
+## Active-organ contract spine
+
+An active memory organ participates in agent life by carrying bounded evidence,
+recall, lifecycle, and erasure posture. Participation does not make memory an
+action authority. `aoa-memo` may produce a silence decision or a bounded
+observation; routing, tool selection, and external effects remain outside this
+owner.
+
+The strict memo-owned v1 ABI lives in
+`schemas/support-objects/active_organ_memo_contracts_v1.schema.json`. It owns:
+
+- evidence envelopes, candidate packets, and quarantine packets
+- reviewed-memory wrappers, provenance threads, and lifecycle transitions
+- recall packets, intervention decisions, and memory-influence policy envelopes
+- disposable memory-projection manifests with exact source-generation posture
+- erase requests, distributed erase manifests, per-owner work items, and
+  completion-or-residue receipts
+
+The stable IDs and local dependency direction are:
+
+| ID | Contract | Requires | Produces |
+|---|---|---|---|
+| `C01` | `MemoryEvidenceEnvelope` | stronger owner source or bounded observation | evidence for intake |
+| `C02` | `MemoryCandidatePacket` | `C01` plus derivation, risk, tenant, expiry, and taint posture | proposal only |
+| `C03` | `MemoryQuarantinePacket` | candidate or guarded intake plus monotonic taint | isolated, non-recallable packet |
+| `C04` | `ReviewedMemoryObject` | accepted `C06` transition | versioned reviewed-memory reference |
+| `C05` | `ProvenanceThread` | evidence and transition refs | content-minimized lineage |
+| `C06` | `MemoryLifecycleTransition` | expected version plus operator decision or accepted mechanical policy | belief commit and audit refs |
+| `C08` | `RecallPacket` | SDK-owned `C07` intent plus reviewed object and projection pins | silence or cited bounded memory |
+| `C09` | `InterventionDecision` | `C08`, exact trigger/anchor/taint refs, and `C11` | silence or bounded observation |
+| `C11` | `MemoryInfluencePolicyEnvelope` | operator-approved policy tuple | effect ceiling for SDK and stack |
+| `C12` | `MemoryProjectionManifest` | canonical objects, exact source generation, builder and optional owner-extension pins | disposable recall-eligibility posture only |
+| `C14` | `MemoryEraseRequest` | exact operator decision and ER0-ER9 scope | approved work request |
+| `C15` | `DistributedMemoryEraseManifest` | `C14`, owner set, surfaces, descendants, and exceptions | global pending or closure posture |
+| `C16` | `PerOwnerEraseWorkItem` | `C15` | owner-bounded physical work request |
+| `C17` | `EraseCompletionOrResidueReceipt` | completed `C16` attempt and recovery probe | owner-local result, never global completion |
+
+Every object in this family pins its schema, source, generation, policy,
+version, idempotency key, and content digest. Unknown fields and versions fail
+closed. The public example suite includes one accepted payload and one
+executable rejection case for every contract type.
+
+Version `1.0.0` is immutable after landing. A semantic field change, relaxed
+enum, authority change, or new effect class requires a new schema file and an
+explicit migration; consumers must continue to pin the old `$id` and digest
+until their owner-local conformance tests accept the new version. Additive
+owner-local fields do not travel as unvalidated inline data: `C16` and `C17`
+carry a pinned `owner_extension` schema, payload reference, version, and
+digest; C12 uses the same pin for graph or runtime projection extensions. A
+generated mirror is compatibility evidence, never semantic
+authority.
+
+The family preserves five hard boundaries:
+
+1. A candidate is not reviewed memory. Promotion requires an accepted,
+   version-advancing lifecycle transition.
+2. Semantic transitions require the operator decision; mechanical transitions
+   require an accepted policy. Both emit commit and audit receipt references.
+3. Recall is evidence for a consumer decision, never permission to act.
+   `action_use` stays `forbidden`, and silence is a valid result.
+4. Private-corpus admission remains disabled unless an explicit private-corpus
+   decision reference is present.
+5. A projection is disposable and has no acceptance authority. Only an exact
+   current source generation may be recall-eligible; stale, pending, and
+   invalidated projections fail closed until an owner receipt and rebuild.
+6. Erasure is distributed work, not a local delete claim. Global completion
+   requires ER0-ER9 exactly once, per-surface owner work and receipts,
+   schema-pinned owner extensions, positive controls, content-minimized
+   negative recovery, required race/rebuild probes, and no unreported residue.
+   Recovery covers exact, lexical, dense, graph, paraphrase, restore, and
+   owner-native routes. An approved retention exception stays visible but
+   blocks plain-complete private-memory deployment. `abyss-machine` work items
+   may target only host-owned roots and never stack or project roots.
+
+This schema family is a source contract, not a live memory store. Runtime
+storage, lifecycle jobs, backup, and restore stay with `abyss-stack`;
+host-local resources stay with `abyss-machine`; consumer dispatch and
+control-plane policy stay with `aoa-sdk`; derived retrieval and graph
+projections stay with `aoa-kag`; measurement and verdict authority stay with
+`aoa-stats` and `aoa-evals`.
+
+Outcome-qualified episodic utility remains outside reviewed semantic state.
+`aoa-stats` may aggregate compatible C10 facts, `aoa-evals` owns the evidence
+verdict, and `aoa-memo` may emit only a bounded policy proposal. Pending
+delayed outcomes freeze positive adjustment; access count is not an input;
+rare critical evidence keeps an explicit preservation floor. No score may
+promote, delete, retract, change ownership, expand a tenant or permission, or
+approve its own policy.
+
+Agent-local episodic and procedural memory is an optional leaf below this
+shared model. `aoa-agents` owns the exact agent/tenant namespace posture;
+`aoa-memo` accepts only a content-minimized reviewed-promotion nomination.
+Duplicate or subsumed material yields no write, unresolved conflict stays
+quarantined, and even an approved admission produces only a proposed memo
+candidate. Shared truth still requires the ordinary C02 review and C06
+lifecycle path. Local expiry, rollback, or namespace disable cannot mutate an
+already reviewed shared object.
+
+Mechanical lifecycle work is narrower than semantic forgetting. The
+Phase 10 C06 extension admits exactly projection invalidation, projection
+rebuild, compaction, explicit ephemeral TTL, queue cancellation, an
+owner-approved archive deadline, cache expiry, generation rollover, and
+obsolete derived-artifact removal. Each plan pins accepted policy, expected
+version, source generation, owner and scope, deadline, bounded retry,
+cancellation, compensation, and distinct commit and audit receipts. Exact
+replay creates no second effect; stale, conflicting, reordered, expired, or
+cancelled work fails closed.
+
+Conflict, merge or split, narrowed applicability, supersession, retraction,
+archive without an exact prior approval, temperature or salience change, and
+retention change remain proposal-only for the sole operator. Overflow beyond
+the review budget is explicitly deferred. A projection failure after canonical
+commit leaves that commit valid but affected recall invalidated and the result
+`partial_pending_repair`; it cannot be reported as success.
+
+Decay, demotion, compression, merge, supersession, retraction, quarantine,
+expiry, ordinary deletion, privacy erasure, and model unlearning remain
+different operations. Projection maintenance, queue cancellation, and
+generation rollover are not forgetting. Privacy erasure and model unlearning
+are outside the Phase 10 mechanical extension and require their stronger
+owners and closure evidence.
+
 ## Why this model is layered
 
 The old split between short-term and long-term memory is too coarse for AoA.

@@ -1,0 +1,52 @@
+{
+  "contract_type": "memory_influence_policy_envelope",
+  "schema_version": "1.0.0",
+  "contract_id": "C11",
+  "contract_name": "MemoryInfluencePolicyEnvelope",
+  "instance_id": "policy:aoa-memo:codex-owner-orientation-shadow:v0",
+  "object_version": 1,
+  "idempotency_key": "aoa-memo:codex-owner-orientation-shadow:v0",
+  "produced_at": "2026-07-29T12:00:00Z",
+  "owner": "aoa-memo",
+  "validation_status": "valid",
+  "source_refs": [
+    {
+      "source_ref": "research:ACTIVE_ORGAN_RFC_PHASE1_V1_20260728",
+      "source_owner": "Center",
+      "source_version": "phase1-v1",
+      "content_digest": "sha256:fdcadf2a5d0a3cdc1af8f63dc533187f851fa25581c6a749d1b3e6be71a7e21a"
+    }
+  ],
+  "generation_pin": {
+    "generator_id": "aoa-memo.consumer-handoff-shadow-profile",
+    "generator_version": "codex_owner_orientation_shadow_v0",
+    "generated_at": "2026-07-29T12:00:00Z"
+  },
+  "policy_pin": {
+    "policy_id": "aoa-memo.codex-owner-orientation-shadow",
+    "policy_version": "0",
+    "decision_ref": "decision:aoa-memo-active-organ-phase1-v1"
+  },
+  "content_digest": "sha256:e97e2012934b44ae56d3476e8d85cda9d0866ca9eb5171440db62e72f83fe237",
+  "influence_policy_id": "policy:aoa-memo:codex-owner-orientation-shadow:v0",
+  "consumer_id": "codex_owner_orientation_shadow_v0",
+  "tenant_id": "owner-local",
+  "trigger_id": "owner-task-pressure-shadow",
+  "anchor_ref": "consumer:codex-owner-orientation-shadow-v0",
+  "model_pin": {
+    "provider": "none",
+    "model_id": "deterministic-lexical",
+    "model_version": "1"
+  },
+  "data_class": "D0",
+  "data_policy_ref": "policy:aoa-memo:public-reviewed-only:v0",
+  "risk_class": "R4",
+  "risk_tier": "high",
+  "transition_policy_ref": "policy:aoa-memo:proposal-only-no-semantic-transition:v0",
+  "permitted_outputs": [
+    "silence",
+    "bounded_observation"
+  ],
+  "effect_ceiling": "none",
+  "external_effects": "forbidden"
+}

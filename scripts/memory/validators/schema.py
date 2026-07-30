@@ -9,6 +9,7 @@ def run() -> None:
     validate_nested_agents_surface()
     for schema_name in SUPPORT_SCHEMA_NAMES:
         validate_support_schema(schema_name)
+    validate_active_organ_contract_suite()
     validate_memory_object_surface_manifest()
     for example_name in MEMORY_OBJECT_EXAMPLE_NAMES:
         validate_example(validator_for("memory_object.schema.json"), example_name)

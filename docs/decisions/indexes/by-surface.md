@@ -33,6 +33,7 @@
 - [AOA-MEM-D-0053 Memory Operations Calibration](../AOA-MEM-D-0053-memory-operations-calibration.md) (`docs/decisions/AOA-MEM-D-0053-memory-operations-calibration.md`)
 - [AOA-MEM-D-0056 Root Memory Index](../AOA-MEM-D-0056-root-memory-index.md) (`docs/decisions/AOA-MEM-D-0056-root-memory-index.md`)
 - [AOA-MEM-D-0069 Decision: Memory operational readouts stay memo-owned and source-owner bounded](../AOA-MEM-D-0069-memory-operational-readouts.md) (`docs/decisions/AOA-MEM-D-0069-memory-operational-readouts.md`)
+- [AOA-MEM-D-0082 Decision: Reviewed pull is the R1 admitted core](../AOA-MEM-D-0082-reviewed-pull-is-the-r1-admitted-core.md) (`docs/decisions/AOA-MEM-D-0082-reviewed-pull-is-the-r1-admitted-core.md`)
 
 ## reviewed corpus
 
@@ -72,12 +73,16 @@
 - [AOA-MEM-D-0061 Writeback Part-Local Artifacts](../AOA-MEM-D-0061-writeback-part-local-artifacts.md) (`docs/decisions/AOA-MEM-D-0061-writeback-part-local-artifacts.md`)
 - [AOA-MEM-D-0064 Decision: Reviewed Intake Landing](../AOA-MEM-D-0064-reviewed-intake-landing.md) (`docs/decisions/AOA-MEM-D-0064-reviewed-intake-landing.md`)
 - [AOA-MEM-D-0070 Decision: Writeback debt catchup lands reviewed objects](../AOA-MEM-D-0070-writeback-debt-catchup-reviewed-objects.md) (`docs/decisions/AOA-MEM-D-0070-writeback-debt-catchup-reviewed-objects.md`)
+- [AOA-MEM-D-0081 Decision: Agent-local promotion is not shared truth](../AOA-MEM-D-0081-agent-local-promotion-is-not-shared-truth.md) (`docs/decisions/AOA-MEM-D-0081-agent-local-promotion-is-not-shared-truth.md`)
 
 ## lifecycle/retention
 
 - [AOA-MEM-D-0001 Adoption, Writeback, and Retention Move to Memo Mechanics](../AOA-MEM-D-0001-adoption-writeback-retention-mechanics.md) (`docs/decisions/AOA-MEM-D-0001-adoption-writeback-retention-mechanics.md`)
 - [AOA-MEM-D-0030 Retention Local Regression Boundary](../AOA-MEM-D-0030-retention-local-regression-boundary.md) (`docs/decisions/AOA-MEM-D-0030-retention-local-regression-boundary.md`)
 - [AOA-MEM-D-0043 Adoption And Retention Part-Local Artifacts](../AOA-MEM-D-0043-adoption-retention-part-local-artifacts.md) (`docs/decisions/AOA-MEM-D-0043-adoption-retention-part-local-artifacts.md`)
+- [AOA-MEM-D-0079 Decision: Keep mechanical lifecycle allowlisted and recoverable](../AOA-MEM-D-0079-mechanical-lifecycle-is-allowlisted-and-recoverable.md) (`docs/decisions/AOA-MEM-D-0079-mechanical-lifecycle-is-allowlisted-and-recoverable.md`)
+- [AOA-MEM-D-0080 Decision: Distributed erasure requires walkable owner closure](../AOA-MEM-D-0080-distributed-erasure-requires-walkable-owner-closure.md) (`docs/decisions/AOA-MEM-D-0080-distributed-erasure-requires-walkable-owner-closure.md`)
+- [AOA-MEM-D-0082 Decision: Reviewed pull is the R1 admitted core](../AOA-MEM-D-0082-reviewed-pull-is-the-r1-admitted-core.md) (`docs/decisions/AOA-MEM-D-0082-reviewed-pull-is-the-r1-admitted-core.md`)
 
 ## consumer handoff
 
@@ -86,6 +91,11 @@
 - [AOA-MEM-D-0048 Consumer Handoff Part-Local Artifacts](../AOA-MEM-D-0048-consumer-handoff-part-local-artifacts.md) (`docs/decisions/AOA-MEM-D-0048-consumer-handoff-part-local-artifacts.md`)
 - [AOA-MEM-D-0065 Reviewed Memory Consumer Handoff Spine](../AOA-MEM-D-0065-reviewed-memory-consumer-handoff-spine.md) (`docs/decisions/AOA-MEM-D-0065-reviewed-memory-consumer-handoff-spine.md`)
 - [AOA-MEM-D-0067 Decision: KAG donor bridge uses reviewed corpus object](../AOA-MEM-D-0067-kag-donor-reviewed-corpus-bridge.md) (`docs/decisions/AOA-MEM-D-0067-kag-donor-reviewed-corpus-bridge.md`)
+- [AOA-MEM-D-0077 Decision: Admit a separate selective owner-orientation canary contour](../AOA-MEM-D-0077-selective-owner-orientation-canary.md) (`docs/decisions/AOA-MEM-D-0077-selective-owner-orientation-canary.md`)
+- [AOA-MEM-D-0078 Decision: Keep outcome-qualified episodic utility proposal-only](../AOA-MEM-D-0078-outcome-qualified-utility-stays-proposal-only.md) (`docs/decisions/AOA-MEM-D-0078-outcome-qualified-utility-stays-proposal-only.md`)
+- [AOA-MEM-D-0081 Decision: Agent-local promotion is not shared truth](../AOA-MEM-D-0081-agent-local-promotion-is-not-shared-truth.md) (`docs/decisions/AOA-MEM-D-0081-agent-local-promotion-is-not-shared-truth.md`)
+- [AOA-MEM-D-0082 Decision: Reviewed pull is the R1 admitted core](../AOA-MEM-D-0082-reviewed-pull-is-the-r1-admitted-core.md) (`docs/decisions/AOA-MEM-D-0082-reviewed-pull-is-the-r1-admitted-core.md`)
+- [AOA-MEM-D-0083 Decision: Keep memory participation inside one two-speed owner family](../AOA-MEM-D-0083-two-speed-participation-spine.md) (`docs/decisions/AOA-MEM-D-0083-two-speed-participation-spine.md`)
 
 ## mechanic package
 
@@ -186,6 +196,7 @@
 ## skills/home
 
 - [AOA-MEM-D-0076 aoa-memo Owner Skill Bundle](../AOA-MEM-D-0076-aoa-memo-owner-skill-bundle.md) (`docs/decisions/AOA-MEM-D-0076-aoa-memo-owner-skill-bundle.md`)
+- [AOA-MEM-D-0083 Decision: Keep memory participation inside one two-speed owner family](../AOA-MEM-D-0083-two-speed-participation-spine.md) (`docs/decisions/AOA-MEM-D-0083-two-speed-participation-spine.md`)
 
 ## quest/lane
 
@@ -200,6 +211,11 @@
 - [AOA-MEM-D-0044 AGENTS Authority Boundary Audit](../AOA-MEM-D-0044-agents-authority-boundary-audit.md) (`docs/decisions/AOA-MEM-D-0044-agents-authority-boundary-audit.md`)
 - [AOA-MEM-D-0067 Decision: KAG donor bridge uses reviewed corpus object](../AOA-MEM-D-0067-kag-donor-reviewed-corpus-bridge.md) (`docs/decisions/AOA-MEM-D-0067-kag-donor-reviewed-corpus-bridge.md`)
 - [AOA-MEM-D-0076 aoa-memo Owner Skill Bundle](../AOA-MEM-D-0076-aoa-memo-owner-skill-bundle.md) (`docs/decisions/AOA-MEM-D-0076-aoa-memo-owner-skill-bundle.md`)
+- [AOA-MEM-D-0077 Decision: Admit a separate selective owner-orientation canary contour](../AOA-MEM-D-0077-selective-owner-orientation-canary.md) (`docs/decisions/AOA-MEM-D-0077-selective-owner-orientation-canary.md`)
+- [AOA-MEM-D-0078 Decision: Keep outcome-qualified episodic utility proposal-only](../AOA-MEM-D-0078-outcome-qualified-utility-stays-proposal-only.md) (`docs/decisions/AOA-MEM-D-0078-outcome-qualified-utility-stays-proposal-only.md`)
+- [AOA-MEM-D-0079 Decision: Keep mechanical lifecycle allowlisted and recoverable](../AOA-MEM-D-0079-mechanical-lifecycle-is-allowlisted-and-recoverable.md) (`docs/decisions/AOA-MEM-D-0079-mechanical-lifecycle-is-allowlisted-and-recoverable.md`)
+- [AOA-MEM-D-0080 Decision: Distributed erasure requires walkable owner closure](../AOA-MEM-D-0080-distributed-erasure-requires-walkable-owner-closure.md) (`docs/decisions/AOA-MEM-D-0080-distributed-erasure-requires-walkable-owner-closure.md`)
+- [AOA-MEM-D-0083 Decision: Keep memory participation inside one two-speed owner family](../AOA-MEM-D-0083-two-speed-participation-spine.md) (`docs/decisions/AOA-MEM-D-0083-two-speed-participation-spine.md`)
 
 ## release/tooling
 

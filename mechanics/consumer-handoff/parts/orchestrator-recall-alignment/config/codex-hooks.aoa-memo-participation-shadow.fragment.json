@@ -1,0 +1,91 @@
+{
+  "schema_version": "abyss_codex_hooks_fragment_v0",
+  "fragment_id": "aoa-memo:participation-shadow:v0",
+  "owner": "aoa-memo",
+  "mode": "shadow",
+  "description": "Content-minimized aoa-memo participation observation; no context, blocking, continuation, writeback, or effects.",
+  "bindings": [
+    "AOA_MEMO_HOOK_SCRIPT",
+    "AOA_MEMO_STATE_ROOT"
+  ],
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/usr/bin/python3 \"{{AOA_MEMO_HOOK_SCRIPT}}\" observe --state-root \"{{AOA_MEMO_STATE_ROOT}}\"",
+            "timeout": 2
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/usr/bin/python3 \"{{AOA_MEMO_HOOK_SCRIPT}}\" observe --state-root \"{{AOA_MEMO_STATE_ROOT}}\"",
+            "timeout": 2
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "^mcp__aoa_memo__.*$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/usr/bin/python3 \"{{AOA_MEMO_HOOK_SCRIPT}}\" observe --state-root \"{{AOA_MEMO_STATE_ROOT}}\"",
+            "timeout": 2
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/usr/bin/python3 \"{{AOA_MEMO_HOOK_SCRIPT}}\" observe --state-root \"{{AOA_MEMO_STATE_ROOT}}\"",
+            "timeout": 2
+          }
+        ]
+      }
+    ],
+    "PostCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/usr/bin/python3 \"{{AOA_MEMO_HOOK_SCRIPT}}\" observe --state-root \"{{AOA_MEMO_STATE_ROOT}}\"",
+            "timeout": 2
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/usr/bin/python3 \"{{AOA_MEMO_HOOK_SCRIPT}}\" observe --state-root \"{{AOA_MEMO_STATE_ROOT}}\"",
+            "timeout": 2
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/usr/bin/python3 \"{{AOA_MEMO_HOOK_SCRIPT}}\" observe --state-root \"{{AOA_MEMO_STATE_ROOT}}\"",
+            "timeout": 2
+          }
+        ]
+      }
+    ]
+  }
+}

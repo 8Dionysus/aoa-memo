@@ -7,11 +7,16 @@ by `aoa-memo`. It is not a mirror of the shared AoA catalog.
 
 | Bundle | Internal modes | Visibility | Admission |
 | --- | --- | --- | --- |
-| `aoa-memo` | `recall`, `review`, `evolve` | OS-user-advertised | `docs/decisions/AOA-MEM-D-0076-aoa-memo-owner-skill-bundle.md` |
+| `aoa-memo` | fast `orient`; deep `recall`, `review`, `evolve` | OS-user-advertised | `docs/decisions/AOA-MEM-D-0083-two-speed-participation-spine.md` |
 
-The three modes share one trigger family, authority ladder, result ABI, and
-coexistence boundary. They remain one bundle until held-out manual work proves
-that separate prompt-visible procedures improve outcomes.
+Fast orientation and the three deep modes share one trigger family, authority
+ladder, and coexistence boundary. They remain one bundle until held-out manual
+work proves that separate prompt-visible procedures improve outcomes.
+
+Fast orientation exists so an ordinary persistent Codex session can notice
+reviewed context without paying the full owner-package cost on every task. It
+uses the existing read-only MCP brief as a locator, accepts silence, and
+escalates to the strict deep route only when exact memory meaning is material.
 
 `port.manifest.json` declares admitted source and selection by the single
 OS-level `os-user-default` profile. Canonical files live under

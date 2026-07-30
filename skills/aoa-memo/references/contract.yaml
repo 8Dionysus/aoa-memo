@@ -4,10 +4,10 @@ identity:
   name: aoa-memo
   owner: aoa-memo
   canonical_source: skills/aoa-memo
-  version: 0.1.21
+  version: 0.1.22
   lifecycle: admitted
 
-purpose: Route one explicit existing-memory recall, review, or evolution through aoa-memo without promoting memory into proof, current source truth, route authority, role permission, runtime state, or KAG substrate.
+purpose: Give ordinary AoA/Abyss work one bounded fast orientation chance before routing exact existing-memory recall, review, or evolution through aoa-memo, without promoting memory into proof, current source truth, route authority, role permission, runtime state, or KAG substrate.
 
 authority:
   procedure_owner: skills/aoa-memo
@@ -19,6 +19,7 @@ authority:
 
 applicability:
   use_when:
+    - Ongoing AoA/Abyss work may materially depend on a reviewed prior decision, durable lesson, provenance constraint, lifecycle fact, or owner-memory route even when no exact artifact is named.
     - Existing owner memory, provenance, lifecycle, current recall, temporal posture, contradiction, concrete intake artifact, or memory read-model drift is material.
   do_not_use_when:
     - The task is first writeback without a concrete memo artifact, raw session retrieval, proof interpretation, routing, roles, workflows, KAG substrate, runtime storage or repair, generic note taking, or only an already named validator invocation.
@@ -26,9 +27,22 @@ applicability:
   raw_session_owner: aoa-session-memory-global-route
 
 freedom:
+  orient: bounded-navigation-read-only
   recall: bounded-judgment-read-only
   review: bounded-judgment-read-only
   evolve: owner-gated-source-change
+
+participation_fast_lane:
+  mode: orient
+  trigger: ongoing AoA/Abyss work where prior reviewed context could materially change the owner route or method
+  access_plane: aoa_memo_brief
+  optional_expansion: one bounded aoa_memo_search over reviewed scope
+  source_rule: MCP results are locators; current owner source must be verified before memory changes an answer or action
+  silence_rule: no material hit, current source already sufficient, stale or ambiguous memory, or sibling-owner task resolves to silence or owner handoff
+  escalation: exact memory meaning, provenance, temporal posture, contradiction, lifecycle, or read-model drift escalates to deep recall
+  effects: none
+  fixed_model_dependency: false
+  session_memory_dependency: false
 
 modes:
   recall:
@@ -118,4 +132,4 @@ termination:
 
 health:
   recheck_after: [material model change, host or workflow change, corpus or intake contract change, skill or source-return change]
-  manual_cases: [recall, review, evolve, first-writeback handoff, raw-session handoff, negative trigger, coexistence, bounded write]
+  manual_cases: [fast orientation hit, fast orientation silence, recall, review, evolve, first-writeback handoff, raw-session handoff, negative trigger, coexistence, bounded write]

@@ -104,3 +104,16 @@
 ## 2026-07-16
 
 - [AOA-MEM-D-0076 aoa-memo Owner Skill Bundle](../AOA-MEM-D-0076-aoa-memo-owner-skill-bundle.md) (`docs/decisions/AOA-MEM-D-0076-aoa-memo-owner-skill-bundle.md`)
+
+## 2026-07-29
+
+- [AOA-MEM-D-0077 Decision: Admit a separate selective owner-orientation canary contour](../AOA-MEM-D-0077-selective-owner-orientation-canary.md) (`docs/decisions/AOA-MEM-D-0077-selective-owner-orientation-canary.md`)
+- [AOA-MEM-D-0078 Decision: Keep outcome-qualified episodic utility proposal-only](../AOA-MEM-D-0078-outcome-qualified-utility-stays-proposal-only.md) (`docs/decisions/AOA-MEM-D-0078-outcome-qualified-utility-stays-proposal-only.md`)
+- [AOA-MEM-D-0079 Decision: Keep mechanical lifecycle allowlisted and recoverable](../AOA-MEM-D-0079-mechanical-lifecycle-is-allowlisted-and-recoverable.md) (`docs/decisions/AOA-MEM-D-0079-mechanical-lifecycle-is-allowlisted-and-recoverable.md`)
+- [AOA-MEM-D-0080 Decision: Distributed erasure requires walkable owner closure](../AOA-MEM-D-0080-distributed-erasure-requires-walkable-owner-closure.md) (`docs/decisions/AOA-MEM-D-0080-distributed-erasure-requires-walkable-owner-closure.md`)
+- [AOA-MEM-D-0081 Decision: Agent-local promotion is not shared truth](../AOA-MEM-D-0081-agent-local-promotion-is-not-shared-truth.md) (`docs/decisions/AOA-MEM-D-0081-agent-local-promotion-is-not-shared-truth.md`)
+- [AOA-MEM-D-0082 Decision: Reviewed pull is the R1 admitted core](../AOA-MEM-D-0082-reviewed-pull-is-the-r1-admitted-core.md) (`docs/decisions/AOA-MEM-D-0082-reviewed-pull-is-the-r1-admitted-core.md`)
+
+## 2026-07-30
+
+- [AOA-MEM-D-0083 Decision: Keep memory participation inside one two-speed owner family](../AOA-MEM-D-0083-two-speed-participation-spine.md) (`docs/decisions/AOA-MEM-D-0083-two-speed-participation-spine.md`)

@@ -1,0 +1,52 @@
+{
+  "schema_version": "agent_local_shared_promotion_candidate_v0",
+  "proposal_id": "promotion-candidate:coder-alpha-retry",
+  "source_namespace": {
+    "namespace_id": "namespace:coder-alpha",
+    "namespace_generation": 3,
+    "agent_id": "AOA-A-0002",
+    "tenant_id": "tenant:operator",
+    "owner": "aoa-agents",
+    "contract_ref": "schemas/active-organ-agent-local-namespace-v0.schema.json",
+    "contract_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "source_case": {
+    "case_ref": "local-case:coder-alpha/retry-001",
+    "case_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "case_class": "procedural",
+    "data_class": "D0",
+    "raw_payload_included": false
+  },
+  "target": {
+    "owner": "aoa-memo",
+    "tenant_id": "tenant:operator",
+    "candidate_kind": "pattern",
+    "shared_scope": "project"
+  },
+  "evidence_refs": [
+    "evidence:run/retry-001"
+  ],
+  "outcome_refs": [
+    "outcome:run/retry-001"
+  ],
+  "duplicate_check_refs": [
+    "memo-query:duplicate/retry-001"
+  ],
+  "conflict_check_refs": [
+    "memo-query:conflict/retry-001"
+  ],
+  "review_posture": {
+    "state": "proposed",
+    "operator_review_required": true,
+    "allowed_result": "promotion_admission_receipt",
+    "direct_shared_write": "forbidden"
+  },
+  "authority": {
+    "shared_truth": "forbidden",
+    "semantic_transition": "forbidden",
+    "policy_change": "forbidden",
+    "role_or_permission_change": "forbidden",
+    "external_effects": "forbidden",
+    "training_use": "forbidden"
+  }
+}

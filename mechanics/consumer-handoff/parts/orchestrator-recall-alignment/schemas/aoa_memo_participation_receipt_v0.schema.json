@@ -1,0 +1,311 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agents-of-abyss.dev/schemas/aoa-memo/aoa_memo_participation_receipt_v0.schema.json",
+  "title": "AoA memo participation shadow receipt v0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "classifier_version",
+    "observed_at",
+    "sequence",
+    "event_name",
+    "event_detail",
+    "session_ref",
+    "turn_ref",
+    "tool_use_ref",
+    "workspace_class",
+    "model",
+    "permission_mode",
+    "observation",
+    "evidence_ladder",
+    "authority",
+    "previous_receipt_digest",
+    "receipt_digest"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "aoa_memo_participation_receipt_v0"
+    },
+    "classifier_version": {
+      "const": "aoa_memo_participation_classifier_v0"
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "event_name": {
+      "enum": [
+        "SessionStart",
+        "UserPromptSubmit",
+        "PostToolUse",
+        "PreCompact",
+        "PostCompact",
+        "Stop",
+        "SessionEnd"
+      ]
+    },
+    "event_detail": {
+      "enum": [
+        "startup",
+        "resume",
+        "clear",
+        "compact",
+        "manual",
+        "auto",
+        "other",
+        "normal",
+        "already_active",
+        "tool_result",
+        "prompt_observed",
+        "unknown"
+      ]
+    },
+    "session_ref": {
+      "$ref": "#/$defs/sha256"
+    },
+    "turn_ref": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/sha256"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "tool_use_ref": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/sha256"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "workspace_class": {
+      "enum": [
+        "aoa-session-memory",
+        "aoa-memo",
+        "aoa-evals",
+        "aoa-sdk",
+        "aoa-skills",
+        "abyss-stack",
+        "abyss-machine",
+        "tree-of-sophia",
+        "other-aoa",
+        "other",
+        "unknown"
+      ]
+    },
+    "model": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 96,
+      "pattern": "^[A-Za-z0-9._:+/-]+$"
+    },
+    "permission_mode": {
+      "enum": [
+        "default",
+        "acceptEdits",
+        "plan",
+        "dontAsk",
+        "bypassPermissions",
+        "unknown"
+      ]
+    },
+    "observation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "route_class",
+        "opportunity_class",
+        "opportunity_state",
+        "prompt_length_bucket",
+        "synthetic_continuation_excluded",
+        "tool_class",
+        "tool_result_state"
+      ],
+      "properties": {
+        "route_class": {
+          "enum": [
+            "aoa-memo-orient",
+            "aoa-memo-deep",
+            "aoa-memo-writeback",
+            "aoa-session-memory",
+            "none"
+          ]
+        },
+        "opportunity_class": {
+          "enum": [
+            "reviewed_context_orientation",
+            "existing_memory_deep",
+            "first_writeback_handoff",
+            "raw_session_handoff",
+            "synthetic_continuation",
+            "none"
+          ]
+        },
+        "opportunity_state": {
+          "enum": [
+            "eligible",
+            "handoff",
+            "not_applicable",
+            "excluded",
+            "unknown"
+          ]
+        },
+        "prompt_length_bucket": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "empty",
+            "short",
+            "medium",
+            "long",
+            "very_long",
+            null
+          ]
+        },
+        "synthetic_continuation_excluded": {
+          "type": "boolean"
+        },
+        "tool_class": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "brief",
+            "search",
+            "owner_orientation",
+            "other_memo_read",
+            null
+          ]
+        },
+        "tool_result_state": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "returned",
+            "reported_error",
+            null
+          ]
+        }
+      }
+    },
+    "evidence_ladder": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "opportunity",
+        "noticed",
+        "invocation",
+        "result_returned",
+        "used_or_rejected",
+        "action_change",
+        "outcome"
+      ],
+      "properties": {
+        "opportunity": {
+          "enum": [
+            "eligible",
+            "handoff",
+            "not_applicable",
+            "excluded",
+            "unknown"
+          ]
+        },
+        "noticed": {
+          "const": "unknown"
+        },
+        "invocation": {
+          "enum": [
+            "observed",
+            "unknown"
+          ]
+        },
+        "result_returned": {
+          "enum": [
+            "observed",
+            "error_observed",
+            "unknown"
+          ]
+        },
+        "used_or_rejected": {
+          "const": "unknown"
+        },
+        "action_change": {
+          "const": "unknown"
+        },
+        "outcome": {
+          "const": "unknown"
+        }
+      }
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "context_injection",
+        "blocking",
+        "turn_continuation",
+        "memory_write",
+        "semantic_transition",
+        "policy_change",
+        "effect"
+      ],
+      "properties": {
+        "context_injection": {
+          "const": false
+        },
+        "blocking": {
+          "const": false
+        },
+        "turn_continuation": {
+          "const": false
+        },
+        "memory_write": {
+          "const": false
+        },
+        "semantic_transition": {
+          "const": false
+        },
+        "policy_change": {
+          "const": false
+        },
+        "effect": {
+          "const": false
+        }
+      }
+    },
+    "previous_receipt_digest": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/sha256"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "receipt_digest": {
+      "$ref": "#/$defs/sha256"
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

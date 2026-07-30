@@ -1,0 +1,165 @@
+{
+  "schema_version": "codex_owner_orientation_shadow_profile_v0",
+  "profile_id": "codex_owner_orientation_shadow_v0",
+  "consumer_id": "codex_owner_orientation_shadow_v0",
+  "owners": {
+    "semantic": "aoa-memo",
+    "control_plane": "aoa-sdk",
+    "runtime_delivery": "abyss-stack",
+    "host_admission": "abyss-machine",
+    "outcome": "aoa-stats",
+    "proof": "aoa-evals"
+  },
+  "influence_policy": {
+    "ref": "examples/codex_owner_orientation_shadow_v0.influence-policy.json",
+    "sha256": "sha256:2b66b38121e2c41bfd1d0b31b29429a5ac57c1d028aab15b9aeb4c9cc1e73847",
+    "policy_id": "policy:aoa-memo:codex-owner-orientation-shadow:v0",
+    "policy_version": "0"
+  },
+  "model_prompt_provider_pin": {
+    "provider": "none",
+    "model_id": "deterministic-lexical",
+    "model_version": "1",
+    "prompt_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "trigger": {
+    "trigger_id": "owner-task-pressure-shadow",
+    "explicit_pull_required": false,
+    "consumer_visible": false,
+    "proactive_delivery": "forbidden",
+    "ingress_contracts": [
+      "C01",
+      "C02",
+      "C03"
+    ]
+  },
+  "admission": {
+    "allowed_shadow_modes": [
+      "off",
+      "selective",
+      "always"
+    ],
+    "data_class": "D0",
+    "risk_class": "R4",
+    "tenant_id": "owner-local",
+    "recall_intent_contract": "C07",
+    "sdk_route_required": true,
+    "hidden_fallback": "forbidden"
+  },
+  "selection": {
+    "allowed_source_kinds": [
+      "reviewed_corpus"
+    ],
+    "allowed_review_states": [
+      "confirmed"
+    ],
+    "allowed_current_recall_states": [
+      "preferred",
+      "allowed"
+    ],
+    "inspect_surface": "generated/memory-objects/memory_object_catalog.min.json",
+    "capsule_surface": "generated/memory-objects/memory_object_capsules.json",
+    "expand_surface": "generated/memory-objects/memory_object_sections.full.json",
+    "source_route_wins": true,
+    "conflicts_visible": true,
+    "omissions_visible": true
+  },
+  "budgets": {
+    "selective": {
+      "max_items": 3,
+      "max_estimated_tokens": 900,
+      "expand": false
+    },
+    "always": {
+      "max_items": 5,
+      "max_estimated_tokens": 1800,
+      "expand": false
+    }
+  },
+  "arbiter": {
+    "selective_min_score": 1000,
+    "always_bypasses_score_only": true,
+    "silence_is_valid": true,
+    "taint_forces_silence": true,
+    "stale_forces_silence": true,
+    "host_defer_forces_silence": true
+  },
+  "delivery": {
+    "runtime_contract": "C20",
+    "recall_packet_contract": "C08",
+    "intervention_contract": "C09",
+    "permitted_outputs": [
+      "silence",
+      "bounded_observation"
+    ],
+    "consumer_visible": false,
+    "delivery_eligible": false,
+    "packet_construction": "shadow_only",
+    "content_persistence": "forbidden",
+    "effect_ceiling": "none",
+    "action_use": "forbidden"
+  },
+  "outcome": {
+    "outcome_contract": "C10",
+    "outcome_refs_required": true,
+    "access_count_used_as_utility": false,
+    "independent_evaluator_required": true,
+    "eval_unavailable_posture": "freeze_policy_and_mark_unknown",
+    "single_tenant_fairness_posture": "not_established"
+  },
+  "metabolism": {
+    "candidate_persistence": "forbidden",
+    "semantic_transition": "forbidden",
+    "currentness_probe_required": true,
+    "outcome_integration_required": true,
+    "retention_output": "proposal_only",
+    "policy_output": "proposal_only",
+    "erase_residue_posture": "block_recall_and_proposal"
+  },
+  "host_evidence": {
+    "capability_contract": "C18",
+    "resource_plan_contract": "C19",
+    "fresh_refs_required": true,
+    "host_may_soften_defer_or_deny": true,
+    "host_authors_semantics": false
+  },
+  "receipts": {
+    "content_minimized": true,
+    "content_persisted": false,
+    "retention_class": "T5_content_minimized_receipt",
+    "maximum_days": 30
+  },
+  "rollback": {
+    "target": "verified-current-no-memory",
+    "operation": "disable-shadow-plan-construction",
+    "memory_dependency_after_rollback": false,
+    "write_reversal_required": false
+  },
+  "stop_lines": [
+    "no-private-ledger",
+    "no-raw-aoa",
+    "no-durable-candidate",
+    "no-memory-create",
+    "no-memory-promote",
+    "no-semantic-transition",
+    "no-consumer-delivery",
+    "no-proactive-delivery",
+    "no-effect-authorization",
+    "no-exact-tool-parameters",
+    "no-role-or-permission-change",
+    "no-aoa-routing-dependency",
+    "no-hidden-sdk-fallback",
+    "no-access-count-utility",
+    "no-host-authored-semantics"
+  ],
+  "authority": {
+    "memory_write": false,
+    "semantic_transition": false,
+    "policy_promotion": false,
+    "consumer_delivery": false,
+    "external_effect": false,
+    "role_or_permission_change": false,
+    "runtime_deployment": false,
+    "landing": false
+  }
+}

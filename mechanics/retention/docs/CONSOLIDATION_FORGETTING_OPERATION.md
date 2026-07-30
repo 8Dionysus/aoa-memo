@@ -39,6 +39,34 @@ The part-local schema is:
 
 - `mechanics/retention/parts/consolidation-and-forgetting/schemas/memory_consolidation_forgetting_operation_v1.json`
 
+The Phase 10 active-organ extension is additive to the immutable C06 base
+contract:
+
+- `mechanics/retention/parts/consolidation-and-forgetting/schemas/active_organ_mechanical_lifecycle_plan_v0.schema.json`
+- `mechanics/retention/parts/consolidation-and-forgetting/schemas/active_organ_semantic_lifecycle_proposal_v0.schema.json`
+- `mechanics/retention/parts/consolidation-and-forgetting/schemas/active_organ_lifecycle_execution_receipt_v0.schema.json`
+- `mechanics/retention/parts/consolidation-and-forgetting/scripts/active_organ_lifecycle.py`
+
+Only nine exact mechanical classes may use that plan: projection invalidation,
+projection rebuild, compaction, explicit ephemeral TTL, queue cancellation,
+an owner-approved archive deadline, cache expiry, generation rollover, and
+obsolete derived-artifact removal. Admission requires the class-specific
+precondition plus accepted policy, exact owner and scope pins, expected
+version, deadline, bounded retry, cancellation, compensation, and distinct
+commit and audit refs.
+
+Conflict, merge or split, narrowed applicability, supersession, retraction,
+archive without a prior exact approval, temperature or salience change, and
+retention change remain semantic proposals. A proposal cannot apply or approve
+itself. When the sole-operator attention budget is full, it is deferred rather
+than silently accepted or discarded.
+
+The forgetting taxonomy remains explicit: decay, demotion, compression, merge,
+supersession, retraction, quarantine, expiry, ordinary deletion, privacy
+erasure, and model unlearning are not interchangeable. Projection maintenance,
+queue cancellation, and generation rollover are not forgetting. Phase 10
+does not perform privacy erasure or model unlearning.
+
 The examples are:
 
 - `mechanics/retention/parts/consolidation-and-forgetting/examples/memory_consolidation_forgetting.supersede.example.json`
@@ -48,3 +76,7 @@ The examples are:
 
 This operation changes memo-side recall posture. It does not delete source
 truth, erase provenance, decide stronger owner policy, or hide a retraction.
+Reference receipts do not prove a durable runtime worker. A projection failure
+after canonical commit remains visible as `partial_pending_repair`, blocks
+affected recall, and requires compensation or forward repair; partial work is
+never success.

@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/mechanics/consumer-handoff/parts/orchestrator-recall-alignment/schemas/agent_local_promotion_admission_receipt_v0.schema.json",
+  "title": "Agent-Local Promotion Admission Receipt v0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "receipt_id",
+    "proposal_ref",
+    "proposal_digest",
+    "operator_decision",
+    "duplicate_status",
+    "duplicate_refs",
+    "conflict_status",
+    "conflict_refs",
+    "result",
+    "memo_candidate_ref",
+    "shared_ledger_state",
+    "semantic_transition",
+    "promotion_burden"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "agent_local_promotion_admission_receipt_v0"
+    },
+    "receipt_id": {
+      "type": "string",
+      "pattern": "^promotion-receipt:[a-z0-9][a-z0-9._-]+$"
+    },
+    "proposal_ref": {
+      "type": "string",
+      "minLength": 3
+    },
+    "proposal_digest": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "operator_decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "decision",
+        "decision_ref",
+        "decision_digest"
+      ],
+      "properties": {
+        "decision": {
+          "enum": [
+            "approve",
+            "reject",
+            "defer",
+            "narrow"
+          ]
+        },
+        "decision_ref": {
+          "type": "string",
+          "minLength": 3
+        },
+        "decision_digest": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        }
+      }
+    },
+    "duplicate_status": {
+      "enum": [
+        "none",
+        "exact_duplicate",
+        "subsumed"
+      ]
+    },
+    "duplicate_refs": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 3
+      }
+    },
+    "conflict_status": {
+      "enum": [
+        "none",
+        "unresolved",
+        "resolved"
+      ]
+    },
+    "conflict_refs": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 3
+      }
+    },
+    "result": {
+      "enum": [
+        "memo_candidate",
+        "duplicate_no_write",
+        "conflict_quarantine",
+        "rejected",
+        "deferred"
+      ]
+    },
+    "memo_candidate_ref": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 3
+    },
+    "shared_ledger_state": {
+      "const": "unchanged"
+    },
+    "semantic_transition": {
+      "const": "not_performed"
+    },
+    "promotion_burden": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "review_minutes",
+        "evidence_items",
+        "duplicate_checks",
+        "conflict_checks"
+      ],
+      "properties": {
+        "review_minutes": {
+          "type": "number",
+          "minimum": 0
+        },
+        "evidence_items": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "duplicate_checks": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "conflict_checks": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    }
+  }
+}

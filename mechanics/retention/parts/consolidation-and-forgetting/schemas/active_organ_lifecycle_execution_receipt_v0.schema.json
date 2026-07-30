@@ -1,0 +1,221 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/mechanics/retention/parts/consolidation-and-forgetting/schemas/active_organ_lifecycle_execution_receipt_v0.schema.json",
+  "title": "aoa-memo active-organ lifecycle execution receipt v0",
+  "description": "Owner-neutral reference-lab execution receipt for a pinned mechanical lifecycle plan. Partial work is never success.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "receipt_id",
+    "plan_ref",
+    "idempotency_key",
+    "runtime_owner",
+    "attempt",
+    "status",
+    "expected_prior_version",
+    "observed_prior_version",
+    "result_version",
+    "belief_commit_id",
+    "canonical_commit_applied",
+    "new_effect_applied",
+    "projection_posture",
+    "compensation_state",
+    "event_chain",
+    "commit_receipt_ref",
+    "audit_receipt_ref",
+    "semantic_digest_before",
+    "semantic_digest_after",
+    "tenant_before",
+    "tenant_after",
+    "namespace_before",
+    "namespace_after",
+    "partial_is_success",
+    "produced_at",
+    "content_digest",
+    "execution_authority"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "aoa_memo_lifecycle_execution_receipt_v0"
+    },
+    "receipt_id": {
+      "$ref": "#/$defs/ref"
+    },
+    "plan_ref": {
+      "$ref": "#/$defs/plan_ref"
+    },
+    "idempotency_key": {
+      "$ref": "#/$defs/ref"
+    },
+    "runtime_owner": {
+      "$ref": "#/$defs/ref"
+    },
+    "attempt": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "status": {
+      "enum": [
+        "applied",
+        "duplicate",
+        "rejected_stale",
+        "rejected_conflict",
+        "rejected_reordered",
+        "rejected_idempotency",
+        "cancelled",
+        "partial_pending_repair",
+        "failed_retryable",
+        "compensated",
+        "forward_repaired"
+      ]
+    },
+    "expected_prior_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "observed_prior_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "result_version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "belief_commit_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "canonical_commit_applied": {
+      "type": "boolean"
+    },
+    "new_effect_applied": {
+      "type": "boolean"
+    },
+    "projection_posture": {
+      "enum": [
+        "not_applicable",
+        "active_previous_generation",
+        "invalidated_pending_repair",
+        "rebuilt_current_generation",
+        "rolled_back"
+      ]
+    },
+    "compensation_state": {
+      "enum": [
+        "not_required",
+        "available",
+        "pending_forward_repair",
+        "compensated",
+        "forward_repaired"
+      ]
+    },
+    "event_chain": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/audit_event"
+      }
+    },
+    "commit_receipt_ref": {
+      "$ref": "#/$defs/ref"
+    },
+    "audit_receipt_ref": {
+      "$ref": "#/$defs/ref"
+    },
+    "semantic_digest_before": {
+      "$ref": "#/$defs/sha256"
+    },
+    "semantic_digest_after": {
+      "$ref": "#/$defs/sha256"
+    },
+    "tenant_before": {
+      "$ref": "#/$defs/ref"
+    },
+    "tenant_after": {
+      "$ref": "#/$defs/ref"
+    },
+    "namespace_before": {
+      "$ref": "#/$defs/ref"
+    },
+    "namespace_after": {
+      "$ref": "#/$defs/ref"
+    },
+    "partial_is_success": {
+      "const": false
+    },
+    "produced_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "content_digest": {
+      "$ref": "#/$defs/sha256"
+    },
+    "execution_authority": {
+      "const": "reference_lab_only"
+    }
+  },
+  "$defs": {
+    "ref": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1024
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "plan_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "plan_id",
+        "plan_digest"
+      ],
+      "properties": {
+        "plan_id": {
+          "$ref": "#/$defs/ref"
+        },
+        "plan_digest": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "audit_event": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sequence",
+        "event_type",
+        "previous_event_digest",
+        "payload_digest",
+        "event_digest"
+      ],
+      "properties": {
+        "sequence": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "event_type": {
+          "$ref": "#/$defs/ref"
+        },
+        "previous_event_digest": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "payload_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "event_digest": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    }
+  }
+}
