@@ -37,6 +37,10 @@
       "temperature": "frozen",
       "review_state": "frozen",
       "current_recall_status": "preferred",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "human_reviewed",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -71,6 +75,10 @@
       "temperature": "hot",
       "review_state": "captured",
       "current_recall_status": "preferred",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "operational_observation",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -106,6 +114,10 @@
       "temperature": "warm",
       "review_state": "proposed",
       "current_recall_status": "allowed",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "operational_observation",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -139,6 +151,10 @@
       "temperature": "warm",
       "review_state": "captured",
       "current_recall_status": "allowed",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "source_inspection",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -172,6 +188,10 @@
       "temperature": "cool",
       "review_state": "confirmed",
       "current_recall_status": "preferred",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "repo_maintained",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -206,6 +226,14 @@
       "temperature": "warm",
       "review_state": "confirmed",
       "current_recall_status": "preferred",
+      "supersedes": [
+        "memo.claim.2026-03-21.memo-entrypoint-old"
+      ],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [
+        "memo.claim.2026-03-21.memo-entrypoint-bad-claim"
+      ],
       "authority_kind": "repo_maintained",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -242,6 +270,10 @@
       "temperature": "cool",
       "review_state": "superseded",
       "current_recall_status": "historical",
+      "supersedes": [],
+      "superseded_by": "memo.claim.2026-03-21.memo-entrypoint-new",
+      "replacement_ref": "memo.claim.2026-03-21.memo-entrypoint-new",
+      "contradiction_refs": [],
       "authority_kind": "repo_maintained",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -276,6 +308,12 @@
       "temperature": "cold",
       "review_state": "retracted",
       "current_recall_status": "withdrawn",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [
+        "memo.claim.2026-03-21.memo-entrypoint-new"
+      ],
       "authority_kind": "candidate_under_review",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -312,6 +350,10 @@
       "temperature": "cool",
       "review_state": "confirmed",
       "current_recall_status": "allowed",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "source_inspection",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -348,6 +390,10 @@
       "temperature": "warm",
       "review_state": "confirmed",
       "current_recall_status": "allowed",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "human_reviewed",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -381,6 +427,10 @@
       "temperature": "warm",
       "review_state": "proposed",
       "current_recall_status": "allowed",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "operational_observation",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -414,6 +464,10 @@
       "temperature": "cool",
       "review_state": "confirmed",
       "current_recall_status": "preferred",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "operational_observation",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -450,6 +504,10 @@
       "temperature": "cool",
       "review_state": "confirmed",
       "current_recall_status": "historical",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "repo_maintained",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -486,6 +544,10 @@
       "temperature": "cool",
       "review_state": "confirmed",
       "current_recall_status": "historical",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "repo_maintained",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -521,6 +583,10 @@
       "temperature": "hot",
       "review_state": "confirmed",
       "current_recall_status": "preferred",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "human_reviewed",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -556,6 +622,10 @@
       "temperature": "warm",
       "review_state": "confirmed",
       "current_recall_status": "allowed",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "human_reviewed",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -589,6 +659,10 @@
       "temperature": "warm",
       "review_state": "confirmed",
       "current_recall_status": "allowed",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "human_reviewed",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -625,6 +699,10 @@
       "temperature": "warm",
       "review_state": "confirmed",
       "current_recall_status": "allowed",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "human_reviewed",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -659,6 +737,10 @@
       "temperature": "cool",
       "review_state": "confirmed",
       "current_recall_status": "allowed",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "human_reviewed",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -694,6 +776,10 @@
       "temperature": "warm",
       "review_state": "confirmed",
       "current_recall_status": "allowed",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "human_reviewed",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -727,6 +813,10 @@
       "temperature": "warm",
       "review_state": "confirmed",
       "current_recall_status": "preferred",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "human_reviewed",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -763,6 +853,10 @@
       "temperature": "cool",
       "review_state": "confirmed",
       "current_recall_status": "allowed",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "human_reviewed",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -798,6 +892,10 @@
       "temperature": "warm",
       "review_state": "confirmed",
       "current_recall_status": "allowed",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "human_reviewed",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -833,6 +931,10 @@
       "temperature": "warm",
       "review_state": "confirmed",
       "current_recall_status": "preferred",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "human_reviewed",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -868,6 +970,10 @@
       "temperature": "cool",
       "review_state": "confirmed",
       "current_recall_status": "allowed",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "human_reviewed",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -902,6 +1008,10 @@
       "temperature": "hot",
       "review_state": "confirmed",
       "current_recall_status": "allowed",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "human_reviewed",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -937,6 +1047,10 @@
       "temperature": "warm",
       "review_state": "confirmed",
       "current_recall_status": "allowed",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "human_reviewed",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -970,6 +1084,10 @@
       "temperature": "warm",
       "review_state": "confirmed",
       "current_recall_status": "preferred",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "human_reviewed",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -1006,6 +1124,10 @@
       "temperature": "hot",
       "review_state": "confirmed",
       "current_recall_status": "preferred",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "human_reviewed",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -1039,6 +1161,10 @@
       "temperature": "warm",
       "review_state": "confirmed",
       "current_recall_status": "allowed",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "human_reviewed",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -1073,6 +1199,10 @@
       "temperature": "warm",
       "review_state": "proposed",
       "current_recall_status": "allowed",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "candidate_under_review",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -1109,6 +1239,10 @@
       "temperature": "hot",
       "review_state": "proposed",
       "current_recall_status": "allowed",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "candidate_under_review",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -1144,6 +1278,15 @@
       "temperature": "warm",
       "review_state": "confirmed",
       "current_recall_status": "preferred",
+      "supersedes": [
+        "memo.claim.2026-04-03.phase-alpha-rerun-pending-handoff"
+      ],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [
+        "memo.claim.2026-04-03.phase-alpha-runtime-history-fully-retired",
+        "memo.claim.2026-04-03.phase-alpha-runtime-history-later-infra-track"
+      ],
       "authority_kind": "repo_maintained",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -1185,6 +1328,10 @@
       "temperature": "cool",
       "review_state": "superseded",
       "current_recall_status": "historical",
+      "supersedes": [],
+      "superseded_by": "memo.claim.2026-04-03.phase-alpha-closure-with-residual-runtime-history",
+      "replacement_ref": "memo.claim.2026-04-03.phase-alpha-closure-with-residual-runtime-history",
+      "contradiction_refs": [],
       "authority_kind": "repo_maintained",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -1222,6 +1369,13 @@
       "temperature": "cold",
       "review_state": "retracted",
       "current_recall_status": "withdrawn",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [
+        "memo.claim.2026-04-03.phase-alpha-closure-with-residual-runtime-history",
+        "memo.claim.2026-04-03.phase-alpha-runtime-history-later-infra-track"
+      ],
       "authority_kind": "candidate_under_review",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -1259,6 +1413,13 @@
       "temperature": "cool",
       "review_state": "confirmed",
       "current_recall_status": "allowed",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [
+        "memo.claim.2026-04-03.phase-alpha-closure-with-residual-runtime-history",
+        "memo.claim.2026-04-03.phase-alpha-runtime-history-fully-retired"
+      ],
       "authority_kind": "repo_maintained",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -1298,6 +1459,10 @@
       "temperature": "cool",
       "review_state": "confirmed",
       "current_recall_status": "historical",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "repo_maintained",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -1334,6 +1499,10 @@
       "temperature": "cool",
       "review_state": "confirmed",
       "current_recall_status": "historical",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "repo_maintained",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -1371,6 +1540,10 @@
       "temperature": "cool",
       "review_state": "confirmed",
       "current_recall_status": "allowed",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "human_reviewed",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -1404,6 +1577,10 @@
       "temperature": "cool",
       "review_state": "confirmed",
       "current_recall_status": "allowed",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "human_reviewed",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -1437,6 +1614,10 @@
       "temperature": "cool",
       "review_state": "confirmed",
       "current_recall_status": "allowed",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "human_reviewed",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -1473,6 +1654,10 @@
       "temperature": "cool",
       "review_state": "confirmed",
       "current_recall_status": "allowed",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "human_reviewed",
       "source_kind": "teaching_fixture",
       "primary_recall_modes": [
@@ -1510,6 +1695,10 @@
       "temperature": "cool",
       "review_state": "confirmed",
       "current_recall_status": "allowed",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "human_reviewed",
       "source_kind": "reviewed_corpus",
       "primary_recall_modes": [
@@ -1545,6 +1734,10 @@
       "temperature": "cool",
       "review_state": "confirmed",
       "current_recall_status": "preferred",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "repo_maintained",
       "source_kind": "reviewed_corpus",
       "primary_recall_modes": [
@@ -1579,6 +1772,10 @@
       "temperature": "cool",
       "review_state": "confirmed",
       "current_recall_status": "allowed",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "repo_maintained",
       "source_kind": "reviewed_corpus",
       "primary_recall_modes": [
@@ -1616,6 +1813,10 @@
       "temperature": "cool",
       "review_state": "confirmed",
       "current_recall_status": "allowed",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "human_reviewed",
       "source_kind": "reviewed_corpus",
       "primary_recall_modes": [
@@ -1651,6 +1852,10 @@
       "temperature": "cool",
       "review_state": "confirmed",
       "current_recall_status": "allowed",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "human_reviewed",
       "source_kind": "reviewed_corpus",
       "primary_recall_modes": [
@@ -1686,6 +1891,10 @@
       "temperature": "cool",
       "review_state": "confirmed",
       "current_recall_status": "preferred",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "human_reviewed",
       "source_kind": "reviewed_corpus",
       "primary_recall_modes": [
@@ -1723,6 +1932,10 @@
       "temperature": "cool",
       "review_state": "confirmed",
       "current_recall_status": "preferred",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "repo_maintained",
       "source_kind": "reviewed_corpus",
       "primary_recall_modes": [
@@ -1758,6 +1971,10 @@
       "temperature": "cool",
       "review_state": "confirmed",
       "current_recall_status": "preferred",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "repo_maintained",
       "source_kind": "reviewed_corpus",
       "primary_recall_modes": [
@@ -1794,6 +2011,10 @@
       "temperature": "cool",
       "review_state": "confirmed",
       "current_recall_status": "preferred",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "repo_maintained",
       "source_kind": "reviewed_corpus",
       "primary_recall_modes": [
@@ -1831,6 +2052,10 @@
       "temperature": "cool",
       "review_state": "confirmed",
       "current_recall_status": "preferred",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "repo_maintained",
       "source_kind": "reviewed_corpus",
       "primary_recall_modes": [
@@ -1866,6 +2091,10 @@
       "temperature": "cool",
       "review_state": "confirmed",
       "current_recall_status": "preferred",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "repo_maintained",
       "source_kind": "reviewed_corpus",
       "primary_recall_modes": [
@@ -1905,6 +2134,10 @@
       "temperature": "cool",
       "review_state": "confirmed",
       "current_recall_status": "preferred",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "operational_observation",
       "source_kind": "reviewed_corpus",
       "primary_recall_modes": [
@@ -1944,6 +2177,10 @@
       "temperature": "cool",
       "review_state": "confirmed",
       "current_recall_status": "preferred",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
       "authority_kind": "operational_observation",
       "source_kind": "reviewed_corpus",
       "primary_recall_modes": [

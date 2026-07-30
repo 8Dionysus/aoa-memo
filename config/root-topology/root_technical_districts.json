@@ -44,6 +44,7 @@
         "examples/phase-alpha/claim.phase-alpha-runtime-history-later-infra-track.example.json",
         "examples/lifecycle/claim.retracted.example.json",
         "examples/lifecycle/claim.superseded.example.json",
+        "examples/support-objects/active_organ_memo_contracts_v1.examples.json",
         "examples/support-objects/core_memory_contract.example.json",
         "examples/phase-alpha/decision.phase-alpha-local-stack.example.json",
         "examples/phase-alpha/decision.phase-alpha-long-horizon.example.json",
@@ -144,6 +145,7 @@
         "schemas/memory-objects/audit_event.schema.json",
         "schemas/memory-objects/bridge.schema.json",
         "schemas/memory-objects/claim.schema.json",
+        "schemas/support-objects/active_organ_memo_contracts_v1.schema.json",
         "schemas/support-objects/core-memory-contract.schema.json",
         "schemas/support-objects/reviewed_intake_landing_receipt.schema.json",
         "schemas/recall-posture/decay_policy.schema.json",
@@ -322,6 +324,7 @@
         "tests/mechanics/test_memo_mechanic_readiness.py",
         "tests/mechanics/test_memo_mechanics.py",
         "tests/memory/memo_validator_test_support.py",
+        "tests/memory/test_active_organ_memo_contracts.py",
         "tests/memory/test_local_memo_port.py",
         "tests/memory/test_memo_corpus.py",
         "tests/memory/test_memo_eval_guardrails.py",
@@ -1003,6 +1006,19 @@
       ]
     },
     {
+      "id": "active_organ_memo_contracts",
+      "role": "memory-object-regression",
+      "owner_surface": "docs/memory/MEMORY_MODEL.md",
+      "tests": [
+        "tests/memory/test_active_organ_memo_contracts.py"
+      ],
+      "protects": [
+        "schemas/support-objects/active_organ_memo_contracts_v1.schema.json",
+        "examples/support-objects/active_organ_memo_contracts_v1.examples.json",
+        "scripts/memory/validators/schema_surfaces.py"
+      ]
+    },
+    {
       "id": "local_memo_port_contracts",
       "role": "local-memo-port-regression",
       "owner_surface": "docs/memory/LOCAL_MEMO_PORT_STANDARD.md",
@@ -1140,6 +1156,22 @@
         "examples/support-objects/core_memory_contract.example.json",
         "examples/support-objects/provenance_thread.example.json",
         "scripts/memory/land_reviewed_memo_intake.py"
+      ],
+      "validators": [
+        "scripts/memory/validate_memo.py"
+      ]
+    },
+    {
+      "id": "active_organ_memo_contracts",
+      "role": "support-object-contract",
+      "owner_surface": "docs/memory/MEMORY_MODEL.md",
+      "schemas": [
+        "schemas/support-objects/active_organ_memo_contracts_v1.schema.json"
+      ],
+      "source_refs": [
+        "docs/memory/MEMORY_MODEL.md",
+        "MEMORY_INDEX.md",
+        "examples/support-objects/active_organ_memo_contracts_v1.examples.json"
       ],
       "validators": [
         "scripts/memory/validate_memo.py"
@@ -1318,6 +1350,21 @@
         "docs/memory/NARRATIVE_CORE_CONTRACT.md",
         "schemas/support-objects/core-memory-contract.schema.json",
         "schemas/support-objects/provenance_thread.schema.json"
+      ],
+      "validators": [
+        "scripts/memory/validate_memo.py"
+      ]
+    },
+    {
+      "id": "active_organ_memo_contract_examples",
+      "role": "support-contract-example",
+      "owner_surface": "docs/memory/MEMORY_MODEL.md",
+      "examples": [
+        "examples/support-objects/active_organ_memo_contracts_v1.examples.json"
+      ],
+      "source_refs": [
+        "docs/memory/MEMORY_MODEL.md",
+        "schemas/support-objects/active_organ_memo_contracts_v1.schema.json"
       ],
       "validators": [
         "scripts/memory/validate_memo.py"

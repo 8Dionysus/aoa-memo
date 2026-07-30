@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aoa.local/aoa-memo/schemas/codex_owner_orientation_memo_bundle_v0.schema.json",
+  "title": "aoa-memo Codex owner-orientation bundle",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "semantic_owner",
+    "control_plane_owner",
+    "runtime_delivery_owner",
+    "plan_ref",
+    "plan_digest",
+    "recall_packet",
+    "intervention_decision",
+    "delivery_eligible",
+    "effect_authority",
+    "action_use",
+    "memory_write_performed",
+    "bundle_digest"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "codex_owner_orientation_memo_bundle_v0"
+    },
+    "semantic_owner": {
+      "const": "aoa-memo"
+    },
+    "control_plane_owner": {
+      "const": "aoa-sdk"
+    },
+    "runtime_delivery_owner": {
+      "const": "abyss-stack"
+    },
+    "plan_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "plan_digest": {
+      "$ref": "#/$defs/sha256"
+    },
+    "recall_packet": {
+      "type": "object",
+      "required": [
+        "contract_id",
+        "instance_id",
+        "owner",
+        "validation_status",
+        "content_digest",
+        "result_mode",
+        "result_refs",
+        "action_use"
+      ],
+      "properties": {
+        "contract_id": {
+          "const": "C08"
+        },
+        "owner": {
+          "const": "aoa-memo"
+        },
+        "validation_status": {
+          "const": "valid"
+        },
+        "content_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "result_mode": {
+          "enum": [
+            "silence",
+            "bounded_memory"
+          ]
+        },
+        "result_refs": {
+          "type": "array"
+        },
+        "action_use": {
+          "const": "forbidden"
+        }
+      }
+    },
+    "intervention_decision": {
+      "type": "object",
+      "required": [
+        "contract_id",
+        "decision_id",
+        "owner",
+        "validation_status",
+        "content_digest",
+        "decision",
+        "effect_authority"
+      ],
+      "properties": {
+        "contract_id": {
+          "const": "C09"
+        },
+        "owner": {
+          "const": "aoa-memo"
+        },
+        "validation_status": {
+          "const": "valid"
+        },
+        "content_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "decision": {
+          "enum": [
+            "silence",
+            "bounded_observation"
+          ]
+        },
+        "effect_authority": {
+          "const": "none"
+        }
+      }
+    },
+    "delivery_eligible": {
+      "const": true
+    },
+    "effect_authority": {
+      "const": "none"
+    },
+    "action_use": {
+      "const": "forbidden"
+    },
+    "memory_write_performed": {
+      "const": false
+    },
+    "bundle_digest": {
+      "$ref": "#/$defs/sha256"
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    }
+  }
+}

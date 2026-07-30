@@ -45,6 +45,10 @@
           "temperature",
           "review_state",
           "current_recall_status",
+          "supersedes",
+          "superseded_by",
+          "replacement_ref",
+          "contradiction_refs",
           "authority_kind",
           "source_kind",
           "primary_recall_modes",
@@ -133,6 +137,34 @@
               "historical",
               "withdrawn"
             ]
+          },
+          "supersedes": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "superseded_by": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "replacement_ref": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "contradiction_refs": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
           },
           "authority_kind": {
             "type": "string",

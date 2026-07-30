@@ -1,0 +1,33 @@
+{
+  "schema_version": "codex_owner_orientation_sdk_compatibility_pin_v0",
+  "pin_id": "aoa-memo.codex-owner-orientation.sdk-plan.v0",
+  "semantic_owner": "aoa-memo",
+  "control_plane_owner": "aoa-sdk",
+  "plan_schema": {
+    "owner_repo": "aoa-sdk",
+    "artifact_ref": "mechanics/boundary-bridge/parts/consumed-surface-posture-gate/schemas/codex-owner-orientation-plan-v0.schema.json",
+    "sha256": "sha256:b371f6c3216418a9ff5794dbd352e8bbc50d64713b842a9a4fe5f20722e70c45"
+  },
+  "consumer_profile": {
+    "owner_repo": "aoa-memo",
+    "artifact_ref": "mechanics/consumer-handoff/parts/orchestrator-recall-alignment/examples/codex_owner_orientation_v0.consumer-profile.json",
+    "sha256": "sha256:62f3a911b5ea7ca87e629a7bd65b6556dd7b8122189b3cd9664169e05562374f",
+    "semantic_digest": "sha256:10ca6d8e7beab801995cfdb12b63192a32f2a8e59781cdaf883b369f9162fd8e"
+  },
+  "influence_policy": {
+    "owner_repo": "aoa-memo",
+    "artifact_ref": "mechanics/consumer-handoff/parts/orchestrator-recall-alignment/examples/codex_owner_orientation_v0.influence-policy.json",
+    "sha256": "sha256:75d25070faa435a7094d29c8313d9e487a48600034cc62d2f9674015e0f5a537"
+  },
+  "supported_plan_versions": [
+    "codex_owner_orientation_plan_v0"
+  ],
+  "supported_contract_ids": [
+    "C07",
+    "C08",
+    "C09",
+    "C11"
+  ],
+  "mirror_authority": "compatibility_only",
+  "unknown_version_posture": "fail_closed"
+}

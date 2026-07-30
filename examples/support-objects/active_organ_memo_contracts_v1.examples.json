@@ -1,0 +1,649 @@
+{
+  "suite_id": "aoa-memo.active-organ.memo-contracts.v1.examples",
+  "schema_ref": "schemas/support-objects/active_organ_memo_contracts_v1.schema.json",
+  "purpose": "Public-safe positive payloads and executable negative mutation cases for every memo-owned active-organ contract.",
+  "header_template": {
+    "schema_version": "1.0.0",
+    "object_version": 1,
+    "idempotency_key": "phase2:active-organ:example:v1",
+    "produced_at": "2026-07-28T18:00:00Z",
+    "owner": "aoa-memo",
+    "validation_status": "valid",
+    "source_refs": [
+      {
+        "source_ref": "decision:aoa-memo-active-organ-phase1-v1",
+        "source_owner": "Center",
+        "source_version": "1",
+        "content_digest": "sha256:9191f2cd2eb5c10465011f5fbfeced1284d5e10d05d1e7bd52dbb563a943b333"
+      }
+    ],
+    "generation_pin": {
+      "generator_id": "aoa-memo.contract-lab",
+      "generator_version": "phase2-v1",
+      "generated_at": "2026-07-28T18:00:00Z"
+    },
+    "policy_pin": {
+      "policy_id": "aoa-memo.active-organ.phase1",
+      "policy_version": "1",
+      "decision_ref": "decision:aoa-memo-active-organ-phase1-v1"
+    },
+    "content_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "valid_cases": [
+    {
+      "case_id": "C01-memory-evidence-envelope",
+      "payload": {
+        "contract_type": "memory_evidence_envelope",
+        "contract_id": "C01",
+        "contract_name": "MemoryEvidenceEnvelope",
+        "instance_id": "evidence:phase2:source:001",
+        "observation_id": "observation:phase2:source:001",
+        "evidence_kind": "owner_source",
+        "subject_ref": "memory-subject:active-organ-contract-spine",
+        "capture_ref": "capture:phase2:owner-source:001",
+        "evidence_refs": [
+          "schemas/support-objects/active_organ_memo_contracts_v1.schema.json"
+        ],
+        "freshness": {
+          "observed_at": "2026-07-28T18:00:00Z",
+          "valid_at": "2026-07-28T18:00:00Z",
+          "expires_at": null,
+          "freshness_class": "current"
+        },
+        "trust": {
+          "authority_kind": "owner_source",
+          "confidence": 1.0
+        },
+        "taint": {
+          "tainted": false,
+          "labels": [],
+          "policy_version": "aoa-memo-taint-v1",
+          "sanitizer_receipt_ref": null,
+          "quarantine_required": false
+        }
+      }
+    },
+    {
+      "case_id": "C02-memory-candidate-packet",
+      "payload": {
+        "contract_type": "memory_candidate_packet",
+        "contract_id": "C02",
+        "contract_name": "MemoryCandidatePacket",
+        "instance_id": "candidate-packet:phase2:001",
+        "candidate_id": "candidate:phase2:001",
+        "evidence_envelope_ref": "evidence:phase2:source:001",
+        "target_kind": "claim",
+        "candidate_payload_ref": "candidate-payload:phase2:001",
+        "derivation_lineage_refs": [
+          "evidence:phase2:source:001"
+        ],
+        "risk_class": "R1",
+        "data_class": "D0",
+        "tenant_id": "owner-local",
+        "expires_at": "2026-08-04T18:00:00Z",
+        "taint": {
+          "tainted": false,
+          "labels": [],
+          "policy_version": "aoa-memo-taint-v1",
+          "sanitizer_receipt_ref": null,
+          "quarantine_required": false
+        },
+        "proposed_belief": {
+          "statement": "The active-organ contract spine requires owner-pinned evidence.",
+          "confidence": 0.9
+        },
+        "proposed_applicability": {
+          "scopes": [
+            "project"
+          ],
+          "conditions": [
+            "owner source remains current"
+          ]
+        },
+        "expected_stronger_owner": "aoa-memo",
+        "allowed_result": "operator_review",
+        "review_state": "proposed"
+      }
+    },
+    {
+      "case_id": "C03-memory-quarantine-packet",
+      "payload": {
+        "contract_type": "memory_quarantine_packet",
+        "contract_id": "C03",
+        "contract_name": "MemoryQuarantinePacket",
+        "instance_id": "quarantine-packet:phase2:001",
+        "quarantine_id": "quarantine:phase2:001",
+        "candidate_ref": "candidate:phase2:001",
+        "reason_codes": [
+          "tainted-source"
+        ],
+        "release_conditions": [
+          "owner-review-recorded"
+        ],
+        "quarantined_at": "2026-07-28T18:05:00Z",
+        "expires_at": "2026-08-04T18:05:00Z",
+        "taint": {
+          "tainted": true,
+          "labels": [
+            "tainted-source"
+          ],
+          "policy_version": "aoa-memo-taint-v1",
+          "sanitizer_receipt_ref": null,
+          "quarantine_required": true
+        },
+        "expected_stronger_owner": "aoa-memo",
+        "allowed_result": "operator_review",
+        "semantic_promotion": "forbidden",
+        "normal_recall": "forbidden",
+        "proactive_delivery": "forbidden",
+        "export_use": "forbidden",
+        "training_use": "forbidden"
+      }
+    },
+    {
+      "case_id": "C04-reviewed-memory-object",
+      "payload": {
+        "contract_type": "reviewed_memory_object",
+        "contract_id": "C04",
+        "contract_name": "ReviewedMemoryObject",
+        "instance_id": "reviewed-memory:phase2:001",
+        "memory_object_ref": "memo.claim.phase2.active-organ-contract-spine",
+        "memory_object_schema_ref": "schemas/memory-objects/memory_object.schema.json",
+        "accepted_transition_ref": "transition:phase2:001",
+        "review_state": "confirmed",
+        "access_class": "public",
+        "private_corpus_decision_refs": []
+      }
+    },
+    {
+      "case_id": "C05-provenance-thread",
+      "payload": {
+        "contract_type": "provenance_thread",
+        "contract_id": "C05",
+        "contract_name": "ProvenanceThread",
+        "instance_id": "provenance-thread:phase2:001",
+        "thread_id": "provenance-thread:phase2:001",
+        "subject_refs": [
+          "memo.claim.phase2.active-organ-contract-spine"
+        ],
+        "evidence_envelope_refs": [
+          "evidence:phase2:source:001"
+        ],
+        "transition_refs": [
+          "transition:phase2:001"
+        ],
+        "ordered_events": [
+          {
+            "sequence": 1,
+            "event_ref": "evidence:phase2:source:001",
+            "event_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          },
+          {
+            "sequence": 2,
+            "event_ref": "transition:phase2:001",
+            "event_digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+          }
+        ],
+        "lineage_digest": "sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+        "content_minimized": true,
+        "deleted_content_retained": false,
+        "embedding_retained": false,
+        "reversible_hash_retained": false
+      }
+    },
+    {
+      "case_id": "C06-memory-lifecycle-transition",
+      "payload": {
+        "contract_type": "memory_lifecycle_transition",
+        "contract_id": "C06",
+        "contract_name": "MemoryLifecycleTransition",
+        "instance_id": "transition:phase2:001",
+        "transition_id": "transition:phase2:001",
+        "subject_ref": "memo.claim.phase2.active-organ-contract-spine",
+        "transition_kind": "semantic",
+        "from_state": "proposed",
+        "to_state": "confirmed",
+        "expected_prior_version": 1,
+        "next_version": 2,
+        "operator_decision_ref": "decision:aoa-memo-active-organ-phase1-v1",
+        "accepted_policy_ref": null,
+        "belief_commit_id": "belief-commit:phase2:001",
+        "accepted_transition_ref": "transition:phase2:001",
+        "commit_mode": "recoverable",
+        "source_generation": 1,
+        "projection_states": [
+          {
+            "projection_ref": "projection:phase2:001",
+            "state": "pending_rebuild",
+            "source_generation": 1,
+            "invalidation_receipt_ref": "projection-invalidation:phase2:001"
+          }
+        ],
+        "projection_invalidation_refs": [
+          "projection-invalidation:phase2:001"
+        ],
+        "commit_receipt_ref": "receipt:phase2:transition:001",
+        "audit_event_ref": "memo.audit.phase2.transition-001"
+      }
+    },
+    {
+      "case_id": "C08-recall-packet",
+      "payload": {
+        "contract_type": "recall_packet",
+        "contract_id": "C08",
+        "contract_name": "RecallPacket",
+        "instance_id": "recall-packet:phase2:001",
+        "request_ref": "recall-request:phase2:001",
+        "recall_intent_ref": "recall-intent:phase2:001",
+        "trigger_ref": "trigger:active-organ-shadow-observation",
+        "anchor_ref": "anchor:phase2:current-task",
+        "query_digest": "sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+        "scope": "project",
+        "object_pins": [],
+        "freshness": {
+          "observed_at": "2026-07-28T18:10:00Z",
+          "valid_at": null,
+          "expires_at": null,
+          "freshness_class": "unknown"
+        },
+        "taint": {
+          "tainted": false,
+          "labels": [],
+          "policy_version": "aoa-memo-taint-v1",
+          "sanitizer_receipt_ref": null,
+          "quarantine_required": false
+        },
+        "projection_pin": {
+          "projection_id": "memo-public-readmodel",
+          "projection_version": "phase2-v1",
+          "built_from_digest": "sha256:ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+        },
+        "model_pin": {
+          "provider": "none",
+          "model_id": "deterministic-silence",
+          "model_version": "1"
+        },
+        "tenant_id": "owner-local",
+        "result_mode": "silence",
+        "result_refs": [],
+        "abstention_reason": "no-admissible-memory",
+        "action_use": "forbidden"
+      }
+    },
+    {
+      "case_id": "C09-intervention-decision",
+      "payload": {
+        "contract_type": "intervention_decision",
+        "contract_id": "C09",
+        "contract_name": "InterventionDecision",
+        "instance_id": "intervention-decision:phase2:001",
+        "decision_id": "intervention-decision:phase2:001",
+        "recall_packet_ref": "recall-packet:phase2:001",
+        "trigger_ref": "trigger:active-organ-shadow-observation",
+        "anchor_ref": "anchor:phase2:current-task",
+        "taint_ref": "taint:recall-packet:phase2:001",
+        "influence_policy_ref": "influence-policy:phase2:001",
+        "decision": "silence",
+        "rationale_codes": [
+          "no-admissible-memory"
+        ],
+        "effect_authority": "none",
+        "observation_refs": []
+      }
+    },
+    {
+      "case_id": "C11-memory-influence-policy-envelope",
+      "payload": {
+        "contract_type": "memory_influence_policy_envelope",
+        "contract_id": "C11",
+        "contract_name": "MemoryInfluencePolicyEnvelope",
+        "instance_id": "influence-policy:phase2:001",
+        "influence_policy_id": "influence-policy:phase2:001",
+        "consumer_id": "aoa-sdk",
+        "tenant_id": "owner-local",
+        "trigger_id": "active-organ-shadow-observation",
+        "anchor_ref": "decision:aoa-memo-active-organ-phase1-v1",
+        "model_pin": {
+          "provider": "none",
+          "model_id": "deterministic-silence",
+          "model_version": "1"
+        },
+        "data_class": "D0",
+        "data_policy_ref": "policy:aoa-memo:public-safe-only:v1",
+        "risk_class": "R1",
+        "risk_tier": "high",
+        "transition_policy_ref": "policy:aoa-memo:lifecycle:v1",
+        "permitted_outputs": [
+          "silence",
+          "bounded_observation"
+        ],
+        "effect_ceiling": "none",
+        "external_effects": "forbidden"
+      }
+    },
+    {
+      "case_id": "C12-memory-projection-manifest",
+      "payload": {
+        "contract_type": "memory_projection_manifest",
+        "contract_id": "C12",
+        "contract_name": "MemoryProjectionManifest",
+        "instance_id": "projection-manifest:phase2:summary:001",
+        "projection_id": "projection:phase2:summary:001",
+        "canonical_owner": "aoa-memo",
+        "projection_owner": "aoa-memo",
+        "projection_kind": "summary",
+        "projection_schema_ref": "schema:aoa-memo:summary-projection:v1",
+        "projection_schema_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "source_generation": 4,
+        "projected_generation": 4,
+        "source_object_refs": [
+          "memo.claim.phase2.active-organ-contract-spine"
+        ],
+        "builder_ref": {
+          "source_ref": "repo:aoa-memo/scripts/build_summary_projection.py",
+          "source_owner": "aoa-memo",
+          "source_version": "1",
+          "content_digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+        },
+        "built_artifact_refs": [
+          "projection-artifact:phase2:summary:001"
+        ],
+        "projection_state": "active",
+        "recall_eligible": true,
+        "rebuild_required": false,
+        "invalidation_receipt_ref": null,
+        "owner_extension": null,
+        "disposable": true,
+        "source_replacement": "forbidden",
+        "memory_acceptance": "forbidden",
+        "semantic_authority": "none",
+        "effect_authority": "none"
+      }
+    },
+    {
+      "case_id": "C14-memory-erase-request",
+      "payload": {
+        "contract_type": "memory_erase_request",
+        "contract_id": "C14",
+        "contract_name": "MemoryEraseRequest",
+        "instance_id": "erase-request:phase2:001",
+        "erase_request_id": "erase-request:phase2:001",
+        "operator_decision_ref": "decision:erase:phase2:001",
+        "scope": {
+          "owner_set": [
+            "aoa-memo",
+            "aoa-sdk"
+          ],
+          "subject_refs": [
+            "memory-subject:phase2:synthetic-001"
+          ],
+          "corpus_refs": [],
+          "erase_surface_ids": [
+            "ER0",
+            "ER3"
+          ],
+          "descendant_refs": [
+            "projection:phase2:synthetic-001"
+          ],
+          "retention_exceptions": []
+        },
+        "reason": "synthetic conformance example",
+        "requested_at": "2026-07-28T18:15:00Z",
+        "recovery_probe_required": true
+      }
+    },
+    {
+      "case_id": "C15-distributed-memory-erase-manifest",
+      "payload": {
+        "contract_type": "distributed_memory_erase_manifest",
+        "contract_id": "C15",
+        "contract_name": "DistributedMemoryEraseManifest",
+        "instance_id": "erase-manifest:phase2:001",
+        "manifest_id": "erase-manifest:phase2:001",
+        "erase_request_ref": "erase-request:phase2:001",
+        "owner_set": [
+          "aoa-memo",
+          "aoa-sdk"
+        ],
+        "work_item_refs": [
+          "erase-work:phase2:memo:001",
+          "erase-work:phase2:sdk:001"
+        ],
+        "erase_receipt_refs": [
+          "erase-receipt:phase2:memo:001",
+          "erase-receipt:phase2:sdk:001"
+        ],
+        "recovery_probe_refs": [
+          "erase-probe:phase2:memo:001",
+          "erase-probe:phase2:sdk:001"
+        ],
+        "residue_refs": [],
+        "erase_surfaces": [
+          {
+            "surface_id": "ER0",
+            "surface_class": "canonical_object",
+            "owner": "aoa-memo",
+            "work_item_ref": "erase-work:phase2:memo:001",
+            "descendant_refs": [
+              "projection:phase2:synthetic-001"
+            ],
+            "retention_exceptions": [],
+            "surface_state": "erased"
+          },
+          {
+            "surface_id": "ER3",
+            "surface_class": "projection",
+            "owner": "aoa-sdk",
+            "work_item_ref": "erase-work:phase2:sdk:001",
+            "descendant_refs": [],
+            "retention_exceptions": [],
+            "surface_state": "erased"
+          }
+        ],
+        "owner_results": [
+          {
+            "owner": "aoa-memo",
+            "work_item_ref": "erase-work:phase2:memo:001",
+            "erase_receipt_ref": "erase-receipt:phase2:memo:001",
+            "recovery_probe_ref": "erase-probe:phase2:memo:001",
+            "result": "erased"
+          },
+          {
+            "owner": "aoa-sdk",
+            "work_item_ref": "erase-work:phase2:sdk:001",
+            "erase_receipt_ref": "erase-receipt:phase2:sdk:001",
+            "recovery_probe_ref": "erase-probe:phase2:sdk:001",
+            "result": "erased"
+          }
+        ],
+        "completion_state": "complete"
+      }
+    },
+    {
+      "case_id": "C16-per-owner-erase-work-item",
+      "payload": {
+        "contract_type": "per_owner_erase_work_item",
+        "contract_id": "C16",
+        "contract_name": "PerOwnerEraseWorkItem",
+        "instance_id": "erase-work:phase2:machine:001",
+        "work_item_id": "erase-work:phase2:machine:001",
+        "manifest_ref": "erase-manifest:phase2:machine:001",
+        "target_owner": "abyss-machine",
+        "target_class": "host",
+        "target_root": "host:abyss-machine-managed-memory-cache",
+        "target_refs": [
+          "host-object:memory-cache:synthetic-001"
+        ],
+        "erase_surface_id": "ER6",
+        "descendant_refs": [],
+        "retention_exceptions": [],
+        "owner_extension": null,
+        "work_state": "pending"
+      }
+    },
+    {
+      "case_id": "C17-erase-completion-or-residue-receipt",
+      "payload": {
+        "contract_type": "erase_completion_or_residue_receipt",
+        "contract_id": "C17",
+        "contract_name": "EraseCompletionOrResidueReceipt",
+        "instance_id": "erase-receipt:phase2:memo:001",
+        "receipt_id": "erase-receipt:phase2:memo:001",
+        "manifest_ref": "erase-manifest:phase2:001",
+        "receipt_owner": "aoa-memo",
+        "work_item_ref": "erase-work:phase2:memo:001",
+        "erase_surface_id": "ER0",
+        "result": "erased",
+        "erased_count": 1,
+        "residue_count": 0,
+        "residue_refs": [],
+        "recovery_probe_refs": [
+          "erase-probe:phase2:memo:001"
+        ],
+        "retention_exceptions": [],
+        "owner_extension": null,
+        "global_completion_authority": false,
+        "content_minimized": true
+      }
+    }
+  ],
+  "invalid_cases": [
+    {
+      "case_id": "C01-reject-missing-source-refs",
+      "base_case": "C01-memory-evidence-envelope",
+      "mutation": {
+        "op": "remove",
+        "path": "/source_refs"
+      },
+      "expected_failure": "source_refs"
+    },
+    {
+      "case_id": "C02-reject-unknown-field",
+      "base_case": "C02-memory-candidate-packet",
+      "mutation": {
+        "op": "add",
+        "path": "/action_authority",
+        "value": "granted"
+      },
+      "expected_failure": "Unevaluated properties"
+    },
+    {
+      "case_id": "C03-reject-empty-reasons",
+      "base_case": "C03-memory-quarantine-packet",
+      "mutation": {
+        "op": "replace",
+        "path": "/reason_codes",
+        "value": []
+      },
+      "expected_failure": "should be non-empty"
+    },
+    {
+      "case_id": "C04-reject-private-without-decision",
+      "base_case": "C04-reviewed-memory-object",
+      "mutation": {
+        "op": "replace",
+        "path": "/access_class",
+        "value": "private"
+      },
+      "expected_failure": "should be non-empty"
+    },
+    {
+      "case_id": "C05-reject-nonconsecutive-lineage",
+      "base_case": "C05-provenance-thread",
+      "mutation": {
+        "op": "replace",
+        "path": "/ordered_events/1/sequence",
+        "value": 3
+      },
+      "expected_failure": "ordered_events sequence must be consecutive"
+    },
+    {
+      "case_id": "C06-reject-version-nonadvance",
+      "base_case": "C06-memory-lifecycle-transition",
+      "mutation": {
+        "op": "replace",
+        "path": "/expected_prior_version",
+        "value": 2
+      },
+      "expected_failure": "next_version must equal expected_prior_version + 1"
+    },
+    {
+      "case_id": "C08-reject-actionable-recall",
+      "base_case": "C08-recall-packet",
+      "mutation": {
+        "op": "replace",
+        "path": "/action_use",
+        "value": "allowed"
+      },
+      "expected_failure": "forbidden"
+    },
+    {
+      "case_id": "C09-reject-effect-authority",
+      "base_case": "C09-intervention-decision",
+      "mutation": {
+        "op": "replace",
+        "path": "/effect_authority",
+        "value": "write"
+      },
+      "expected_failure": "none"
+    },
+    {
+      "case_id": "C11-reject-external-effects",
+      "base_case": "C11-memory-influence-policy-envelope",
+      "mutation": {
+        "op": "replace",
+        "path": "/external_effects",
+        "value": "allowed"
+      },
+      "expected_failure": "forbidden"
+    },
+    {
+      "case_id": "C12-reject-stale-active-generation",
+      "base_case": "C12-memory-projection-manifest",
+      "mutation": {
+        "op": "replace",
+        "path": "/projected_generation",
+        "value": 3
+      },
+      "expected_failure": "active projection requires exact current source generation"
+    },
+    {
+      "case_id": "C14-reject-unapproved-erase",
+      "base_case": "C14-memory-erase-request",
+      "mutation": {
+        "op": "remove",
+        "path": "/operator_decision_ref"
+      },
+      "expected_failure": "operator_decision_ref"
+    },
+    {
+      "case_id": "C15-reject-incomplete-owner-coverage",
+      "base_case": "C15-distributed-memory-erase-manifest",
+      "mutation": {
+        "op": "remove",
+        "path": "/owner_results/1"
+      },
+      "expected_failure": "owner_results must cover owner_set exactly"
+    },
+    {
+      "case_id": "C16-reject-machine-project-target",
+      "base_case": "C16-per-owner-erase-work-item",
+      "mutation": {
+        "op": "replace",
+        "path": "/target_root",
+        "value": "/srv/AbyssOS/abyss-stack"
+      },
+      "expected_failure": "does not match"
+    },
+    {
+      "case_id": "C17-reject-hidden-residue",
+      "base_case": "C17-erase-completion-or-residue-receipt",
+      "mutation": {
+        "op": "replace",
+        "path": "/residue_count",
+        "value": 1
+      },
+      "expected_failure": "residue_count must equal len(residue_refs)"
+    }
+  ]
+}

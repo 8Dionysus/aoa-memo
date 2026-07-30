@@ -18,8 +18,8 @@ mechanic, or boundary owner.
 
 ## Boundaries
 
-- Keep recall, review, and evolve as internal modes until held-out work proves
-  that a split adds independent value.
+- Keep fast orientation plus recall, review, and evolve inside one advertised
+  family until held-out work proves that a split adds independent value.
 - Do not copy shared `aoa-skills` bundles into this home or `.agents/`.
 - Do not keep candidates, task-local DAGs, raw trials, session notes, runtime
   state, owner facts, tests, or generated memory read models here.

@@ -1,0 +1,245 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/mechanics/retention/parts/consolidation-and-forgetting/schemas/active_organ_semantic_lifecycle_proposal_v0.schema.json",
+  "title": "aoa-memo active-organ semantic lifecycle proposal v0",
+  "description": "Proposal-only semantic lifecycle diff with a bounded sole-operator attention posture and no application authority.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "proposal_id",
+    "idempotency_key",
+    "owner",
+    "decision_ref",
+    "operation_class",
+    "forgetting_class",
+    "subject_pin",
+    "evidence_refs",
+    "proposed_diff",
+    "operator_review",
+    "attention_budget",
+    "proposal_state",
+    "generated_at",
+    "content_digest",
+    "apply_allowed",
+    "execution_posture",
+    "semantic_authority"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "aoa_memo_semantic_lifecycle_proposal_v0"
+    },
+    "proposal_id": {
+      "$ref": "#/$defs/ref"
+    },
+    "idempotency_key": {
+      "$ref": "#/$defs/ref"
+    },
+    "owner": {
+      "const": "aoa-memo"
+    },
+    "decision_ref": {
+      "const": "docs/decisions/AOA-MEM-D-0079-mechanical-lifecycle-is-allowlisted-and-recoverable.md"
+    },
+    "operation_class": {
+      "enum": [
+        "conflict",
+        "merge_split",
+        "narrowed_applicability",
+        "supersession",
+        "retraction",
+        "archive",
+        "temperature_salience_change",
+        "retention_change"
+      ]
+    },
+    "forgetting_class": {
+      "enum": [
+        "not_forgetting",
+        "decay",
+        "demotion",
+        "merge",
+        "supersession",
+        "retraction",
+        "archive"
+      ]
+    },
+    "subject_pin": {
+      "$ref": "#/$defs/subject_pin"
+    },
+    "evidence_refs": {
+      "$ref": "#/$defs/string_array"
+    },
+    "proposed_diff": {
+      "$ref": "#/$defs/proposed_diff"
+    },
+    "operator_review": {
+      "$ref": "#/$defs/operator_review"
+    },
+    "attention_budget": {
+      "$ref": "#/$defs/attention_budget"
+    },
+    "proposal_state": {
+      "enum": [
+        "pending_operator",
+        "deferred_attention_budget"
+      ]
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "content_digest": {
+      "$ref": "#/$defs/sha256"
+    },
+    "apply_allowed": {
+      "const": false
+    },
+    "execution_posture": {
+      "const": "proposal_only"
+    },
+    "semantic_authority": {
+      "const": "proposal_only"
+    }
+  },
+  "$defs": {
+    "ref": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1024
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "string_array": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/ref"
+      }
+    },
+    "subject_pin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "owner_repo",
+        "object_ref",
+        "object_version",
+        "lifecycle_state",
+        "semantic_digest",
+        "tenant_id",
+        "namespace_id",
+        "source_generation",
+        "explicit_ephemeral",
+        "disposable"
+      ],
+      "properties": {
+        "owner_repo": {
+          "$ref": "#/$defs/ref"
+        },
+        "object_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "object_version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "lifecycle_state": {
+          "$ref": "#/$defs/ref"
+        },
+        "semantic_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "tenant_id": {
+          "$ref": "#/$defs/ref"
+        },
+        "namespace_id": {
+          "$ref": "#/$defs/ref"
+        },
+        "source_generation": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "explicit_ephemeral": {
+          "type": "boolean"
+        },
+        "disposable": {
+          "type": "boolean"
+        }
+      }
+    },
+    "proposed_diff": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "field_paths",
+        "before_digest",
+        "proposed_digest",
+        "rationale"
+      ],
+      "properties": {
+        "field_paths": {
+          "$ref": "#/$defs/string_array"
+        },
+        "before_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "proposed_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "rationale": {
+          "$ref": "#/$defs/ref"
+        }
+      }
+    },
+    "operator_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "required",
+        "operator_ref",
+        "decision_ref",
+        "state"
+      ],
+      "properties": {
+        "required": {
+          "const": true
+        },
+        "operator_ref": {
+          "const": "operator:sole"
+        },
+        "decision_ref": {
+          "type": "null"
+        },
+        "state": {
+          "const": "pending"
+        }
+      }
+    },
+    "attention_budget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "queue_position",
+        "max_open_items",
+        "admitted"
+      ],
+      "properties": {
+        "queue_position": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_open_items": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 20
+        },
+        "admitted": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

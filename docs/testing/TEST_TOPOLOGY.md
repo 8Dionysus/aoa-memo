@@ -37,8 +37,9 @@ Validator layer meaning lives in
 `scripts/memory/validate_memo.py` is likewise only a compatibility CLI; tests
 must keep the implementation in `scripts/memory/validators/` layer modules.
 Memory validator regressions should stay split by boundary: schema contracts,
-memory-context boundaries, runtime degradation, Questbook projections,
-handoffs, eval guardrails, and generated read-model contracts.
+active-organ contracts, memory-context boundaries, runtime degradation,
+Questbook projections, handoffs, eval guardrails, and generated read-model
+contracts.
 Mechanic artifact topology regressions should keep the CLI thin: district
 allowlist orchestration stays in `validate_mechanic_artifact_topology.py`,
 shared root topology helpers stay in `mechanic_artifact_topology_common.py`,

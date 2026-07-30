@@ -1,0 +1,41 @@
+{
+  "schema_version": "codex_owner_orientation_canary_sdk_compatibility_pin_v0",
+  "pin_id": "aoa-memo.codex-owner-orientation-canary.sdk-plan.v0",
+  "semantic_owner": "aoa-memo",
+  "control_plane_owner": "aoa-sdk",
+  "plan_schema": {
+    "owner_repo": "aoa-sdk",
+    "artifact_ref": "mechanics/boundary-bridge/parts/consumed-surface-posture-gate/schemas/codex-owner-orientation-canary-release-plan-v0.schema.json",
+    "sha256": "sha256:595983a6c1b034467cc217263f56d730a370c03bde629eddd1710facb3821696"
+  },
+  "consumer_profile": {
+    "owner_repo": "aoa-memo",
+    "artifact_ref": "mechanics/consumer-handoff/parts/orchestrator-recall-alignment/examples/codex_owner_orientation_canary_v0.consumer-profile.json",
+    "sha256": "sha256:c26b4d7481bd82aabe9912736bf538cb5f3f01233f79f4ec555efd68d9d3090d",
+    "semantic_digest": "sha256:94c00d7f62982df9a10b3ae5a3593d5dcfcc5bcc72b11b9e9f6b0110679bc4d2"
+  },
+  "influence_policy": {
+    "owner_repo": "aoa-memo",
+    "artifact_ref": "mechanics/consumer-handoff/parts/orchestrator-recall-alignment/examples/codex_owner_orientation_canary_v0.influence-policy.json",
+    "sha256": "sha256:d0ba7078a7dcc2d4bdaa3c90a59ec371bddce967cdf14abb8c23ab012ecaac7e"
+  },
+  "supported_plan_versions": [
+    "codex_owner_orientation_canary_release_plan_v0"
+  ],
+  "supported_contract_ids": [
+    "C07",
+    "C08",
+    "C09",
+    "C10",
+    "C11",
+    "C18",
+    "C19",
+    "C20"
+  ],
+  "consumer_visibility": "one_bounded_observation",
+  "directive_authority": "forbidden",
+  "max_reminders_per_window": 1,
+  "rollback_target": "codex_owner_orientation_v0",
+  "mirror_authority": "compatibility_only",
+  "unknown_version_posture": "fail_closed"
+}

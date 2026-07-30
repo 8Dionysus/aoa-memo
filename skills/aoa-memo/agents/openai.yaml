@@ -1,7 +1,7 @@
 interface:
   display_name: "AoA Memo"
-  short_description: "Recall, review, or evolve existing AoA memory"
-  default_prompt: "Use $aoa-memo to recall, review, or evolve this existing memory object or corpus question against its owner sources, temporal posture, and authority limits."
+  short_description: "Orient from reviewed memory, then recall or evolve deeply"
+  default_prompt: "Use $aoa-memo to check whether reviewed prior AoA/Abyss context materially changes this task; stay silent when it does not, and use the deep owner route only for an exact memory question."
 
 policy:
   allow_implicit_invocation: true

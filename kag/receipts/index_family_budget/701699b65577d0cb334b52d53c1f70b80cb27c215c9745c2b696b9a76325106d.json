@@ -1,0 +1,17 @@
+{
+  "allowed_bytes": 13475771,
+  "allowed_tracked_bytes": 17745076,
+  "approved_by": "repository-owner",
+  "base_ref": "c7c83081b7db0a0e908f14888b7438b5ecdde3bf",
+  "changed_generated_bytes": 13475771,
+  "changed_generated_files": 366,
+  "decision_ref": "aoa-kag:docs/decisions/AOA-KAG-D-0017-portable-content-addressed-repository-family.md",
+  "default_limit_bytes": 1048576,
+  "head_family_digest": "701699b65577d0cb334b52d53c1f70b80cb27c215c9745c2b696b9a76325106d",
+  "reason": "Active-organ participation contracts, lifecycle semantics, pull protocol, and owner skill family add reviewed source for PR #293; this receipt admits only the measured portable-family delta.",
+  "repo": "aoa-memo",
+  "schema_version": "aoa-repo-local-kag-budget-receipt-v1",
+  "scope": "generated_delta",
+  "tracked_bytes": 17745076,
+  "tracked_bytes_max": 18874368
+}

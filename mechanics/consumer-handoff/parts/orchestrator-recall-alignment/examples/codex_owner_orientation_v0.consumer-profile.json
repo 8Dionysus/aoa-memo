@@ -1,0 +1,124 @@
+{
+  "schema_version": "codex_owner_orientation_profile_v0",
+  "profile_id": "codex_owner_orientation_v0",
+  "consumer_id": "codex_owner_orientation_v0",
+  "owners": {
+    "semantic": "aoa-memo",
+    "control_plane": "aoa-sdk",
+    "runtime_delivery": "abyss-stack",
+    "host_admission": "abyss-machine",
+    "proof": "aoa-evals"
+  },
+  "influence_policy": {
+    "ref": "examples/codex_owner_orientation_v0.influence-policy.json",
+    "sha256": "sha256:75d25070faa435a7094d29c8313d9e487a48600034cc62d2f9674015e0f5a537",
+    "policy_id": "policy:aoa-memo:codex-owner-orientation:v0",
+    "policy_version": "0"
+  },
+  "model_prompt_provider_pin": {
+    "provider": "none",
+    "model_id": "deterministic-lexical",
+    "model_version": "1",
+    "prompt_digest": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "trigger": {
+    "trigger_id": "operator-explicit-pull",
+    "explicit_pull_required": true,
+    "proactive_delivery": "forbidden"
+  },
+  "admission": {
+    "allowed_consumer_modes": [
+      "off",
+      "fresh-start",
+      "bounded",
+      "high-fidelity"
+    ],
+    "mode_must_be_explicit": true,
+    "data_class": "D0",
+    "risk_class": "R1",
+    "tenant_id": "owner-local",
+    "recall_intent_contract": "C07",
+    "sdk_route_required": true,
+    "hidden_fallback": "forbidden"
+  },
+  "selection": {
+    "allowed_source_kinds": [
+      "reviewed_corpus"
+    ],
+    "allowed_review_states": [
+      "confirmed"
+    ],
+    "allowed_current_recall_states": [
+      "preferred",
+      "allowed"
+    ],
+    "inspect_surface": "generated/memory-objects/memory_object_catalog.min.json",
+    "capsule_surface": "generated/memory-objects/memory_object_capsules.json",
+    "expand_surface": "generated/memory-objects/memory_object_sections.full.json",
+    "source_route_wins": true,
+    "conflicts_visible": true,
+    "omissions_visible": true
+  },
+  "budgets": {
+    "bounded": {
+      "max_items": 3,
+      "max_estimated_tokens": 900,
+      "expand": false
+    },
+    "high-fidelity": {
+      "max_items": 5,
+      "max_estimated_tokens": 1800,
+      "expand": true
+    }
+  },
+  "delivery": {
+    "runtime_contract": "C20",
+    "recall_packet_contract": "C08",
+    "intervention_contract": "C09",
+    "permitted_outputs": [
+      "silence",
+      "bounded_observation"
+    ],
+    "effect_ceiling": "none",
+    "action_use": "forbidden"
+  },
+  "host_evidence": {
+    "capability_contract": "C18",
+    "resource_plan_contract": "C19",
+    "fresh_refs_required": true,
+    "host_may_deny": true,
+    "host_authors_semantics": false
+  },
+  "receipts": {
+    "content_minimized": true,
+    "content_persisted": false,
+    "retention_class": "T5_content_minimized_receipt",
+    "maximum_days": 365
+  },
+  "rollback": {
+    "target": "verified-current-no-memory",
+    "operation": "suspend-sdk-recall-route",
+    "memory_dependency_after_rollback": false,
+    "write_reversal_required": false
+  },
+  "stop_lines": [
+    "no-private-ledger",
+    "no-raw-aoa",
+    "no-memory-create",
+    "no-memory-promote",
+    "no-proactive-delivery",
+    "no-effect-authorization",
+    "no-exact-tool-parameters",
+    "no-role-or-permission-change",
+    "no-aoa-routing-dependency",
+    "no-hidden-sdk-fallback"
+  ],
+  "authority": {
+    "memory_write": false,
+    "policy_promotion": false,
+    "external_effect": false,
+    "role_or_permission_change": false,
+    "runtime_deployment": false,
+    "landing": false
+  }
+}

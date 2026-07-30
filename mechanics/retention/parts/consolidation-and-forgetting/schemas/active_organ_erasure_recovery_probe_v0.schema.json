@@ -1,0 +1,172 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/mechanics/retention/parts/consolidation-and-forgetting/schemas/active_organ_erasure_recovery_probe_v0.schema.json",
+  "title": "aoa-memo active-organ erasure recovery probe v0",
+  "description": "Content-minimized Phase 11 positive-control and negative-recovery evidence. It may not retain erased subject material.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "probe_id",
+    "surface_id",
+    "worker_owner",
+    "work_item_ref",
+    "positive_control",
+    "negative_recovery",
+    "race_rebuild",
+    "probe_storage",
+    "performed_at",
+    "content_digest",
+    "evidence_scope",
+    "global_completion_authority"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "aoa_memo_erasure_recovery_probe_v0"
+    },
+    "probe_id": {
+      "$ref": "#/$defs/ref"
+    },
+    "surface_id": {
+      "$ref": "#/$defs/surface"
+    },
+    "worker_owner": {
+      "$ref": "#/$defs/ref"
+    },
+    "work_item_ref": {
+      "$ref": "#/$defs/ref"
+    },
+    "positive_control": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "canary_digest",
+        "detected_before_erasure",
+        "matched_count"
+      ],
+      "properties": {
+        "canary_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "detected_before_erasure": {
+          "const": true
+        },
+        "matched_count": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "negative_recovery": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "query_classes",
+        "material_recovered",
+        "matched_count"
+      ],
+      "properties": {
+        "query_classes": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "exact",
+              "lexical",
+              "dense",
+              "graph",
+              "paraphrase",
+              "restore",
+              "owner_native"
+            ]
+          }
+        },
+        "material_recovered": {
+          "const": false
+        },
+        "matched_count": {
+          "const": 0
+        }
+      }
+    },
+    "race_rebuild": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "required",
+        "attempted",
+        "material_recovered"
+      ],
+      "properties": {
+        "required": {
+          "type": "boolean"
+        },
+        "attempted": {
+          "type": "boolean"
+        },
+        "material_recovered": {
+          "const": false
+        }
+      }
+    },
+    "probe_storage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "subject_material_included",
+        "canary_digest_only",
+        "raw_query_logged"
+      ],
+      "properties": {
+        "subject_material_included": {
+          "const": false
+        },
+        "canary_digest_only": {
+          "const": true
+        },
+        "raw_query_logged": {
+          "const": false
+        }
+      }
+    },
+    "performed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "content_digest": {
+      "$ref": "#/$defs/sha256"
+    },
+    "evidence_scope": {
+      "const": "reference_lab_only"
+    },
+    "global_completion_authority": {
+      "const": false
+    }
+  },
+  "$defs": {
+    "ref": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1024
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "surface": {
+      "enum": [
+        "ER0",
+        "ER1",
+        "ER2",
+        "ER3",
+        "ER4",
+        "ER5",
+        "ER6",
+        "ER7",
+        "ER8",
+        "ER9"
+      ]
+    }
+  }
+}

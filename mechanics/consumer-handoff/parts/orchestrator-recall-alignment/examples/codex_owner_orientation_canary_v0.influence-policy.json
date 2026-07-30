@@ -1,0 +1,58 @@
+{
+  "contract_type": "memory_influence_policy_envelope",
+  "schema_version": "1.0.0",
+  "contract_id": "C11",
+  "contract_name": "MemoryInfluencePolicyEnvelope",
+  "instance_id": "policy:aoa-memo:codex-owner-orientation-canary:v0",
+  "object_version": 1,
+  "idempotency_key": "aoa-memo:codex-owner-orientation-canary:v0",
+  "produced_at": "2026-07-29T11:00:00Z",
+  "owner": "aoa-memo",
+  "validation_status": "valid",
+  "source_refs": [
+    {
+      "source_ref": "repo:aoa-memo/docs/decisions/AOA-MEM-D-0077-selective-owner-orientation-canary.md",
+      "source_owner": "aoa-memo",
+      "source_version": "AOA-MEM-D-0077",
+      "content_digest": "sha256:28e435e95c76acea9e50699d5dac90b962d2f04ce06a6c6db0cca119ee4c81ad"
+    },
+    {
+      "source_ref": "research:PHASE7_SHADOW_ORGAN_REPORT_20260729",
+      "source_owner": "aoa-evals",
+      "source_version": "phase7",
+      "content_digest": "sha256:2b12af3bcce21982fb0c812a60743f60f7cbbacb39702f74c100f3d33f245d93"
+    }
+  ],
+  "generation_pin": {
+    "generator_id": "aoa-memo.consumer-handoff-canary-profile",
+    "generator_version": "codex_owner_orientation_canary_v0",
+    "generated_at": "2026-07-29T11:00:00Z"
+  },
+  "policy_pin": {
+    "policy_id": "aoa-memo.codex-owner-orientation-canary",
+    "policy_version": "0",
+    "decision_ref": "decision:AOA-MEM-D-0077"
+  },
+  "content_digest": "sha256:1f2da08eb926a3d572cd1656fa5d110a18673b5316599a3d78c3c2f5466aa83e",
+  "influence_policy_id": "policy:aoa-memo:codex-owner-orientation-canary:v0",
+  "consumer_id": "codex_owner_orientation_canary_v0",
+  "tenant_id": "owner-local",
+  "trigger_id": "owner-task-pressure-canary",
+  "anchor_ref": "consumer:codex-owner-orientation-canary-v0",
+  "model_pin": {
+    "provider": "none",
+    "model_id": "deterministic-lexical",
+    "model_version": "1"
+  },
+  "data_class": "D0",
+  "data_policy_ref": "policy:aoa-memo:public-reviewed-only:v0",
+  "risk_class": "R2",
+  "risk_tier": "medium",
+  "transition_policy_ref": "policy:aoa-memo:no-semantic-transition:v0",
+  "permitted_outputs": [
+    "silence",
+    "bounded_observation"
+  ],
+  "effect_ceiling": "none",
+  "external_effects": "forbidden"
+}

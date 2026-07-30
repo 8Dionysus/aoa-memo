@@ -9,6 +9,17 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Added
 
+- Add decision `AOA-MEM-D-0082`, making reviewed public explicit pull the R1
+  admitted core while keeping proactive, private, and agent-local runtime
+  contours disabled until separate evidence and authority gates pass.
+- Add decisions `AOA-MEM-D-0077` through `AOA-MEM-D-0081` for selective
+  owner-orientation shadow/canary contracts, outcome-qualified proposal-only
+  utility, allowlisted mechanical lifecycle, walkable distributed erasure,
+  and isolated agent-local promotion without shared-truth authority.
+- Add decision `AOA-MEM-D-0083`, a two-speed participation spine for ordinary
+  Codex sessions: bounded brief-first recall, correct silence and sibling
+  handoff, an independent content-minimized H0 hook fragment, and explicit
+  whole-session receipt retention that never runs as an implicit hook effect.
 - Add one manually admitted `aoa-memo` owner bundle with internal `recall`,
   `review`, and `evolve` modes under the canonical `skills/` home.
 

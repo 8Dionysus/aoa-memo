@@ -1,0 +1,584 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aoa.local/aoa-memo/schemas/codex_owner_orientation_shadow_profile_v0.schema.json",
+  "title": "codex_owner_orientation_shadow_v0 consumer-invisible profile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "profile_id",
+    "consumer_id",
+    "owners",
+    "influence_policy",
+    "model_prompt_provider_pin",
+    "trigger",
+    "admission",
+    "selection",
+    "budgets",
+    "arbiter",
+    "delivery",
+    "outcome",
+    "metabolism",
+    "host_evidence",
+    "receipts",
+    "rollback",
+    "stop_lines",
+    "authority"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "codex_owner_orientation_shadow_profile_v0"
+    },
+    "profile_id": {
+      "const": "codex_owner_orientation_shadow_v0"
+    },
+    "consumer_id": {
+      "const": "codex_owner_orientation_shadow_v0"
+    },
+    "owners": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "semantic",
+        "control_plane",
+        "runtime_delivery",
+        "host_admission",
+        "outcome",
+        "proof"
+      ],
+      "properties": {
+        "semantic": {
+          "const": "aoa-memo"
+        },
+        "control_plane": {
+          "const": "aoa-sdk"
+        },
+        "runtime_delivery": {
+          "const": "abyss-stack"
+        },
+        "host_admission": {
+          "const": "abyss-machine"
+        },
+        "outcome": {
+          "const": "aoa-stats"
+        },
+        "proof": {
+          "const": "aoa-evals"
+        }
+      }
+    },
+    "influence_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ref",
+        "sha256",
+        "policy_id",
+        "policy_version"
+      ],
+      "properties": {
+        "ref": {
+          "const": "examples/codex_owner_orientation_shadow_v0.influence-policy.json"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "policy_id": {
+          "const": "policy:aoa-memo:codex-owner-orientation-shadow:v0"
+        },
+        "policy_version": {
+          "const": "0"
+        }
+      }
+    },
+    "model_prompt_provider_pin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "provider",
+        "model_id",
+        "model_version",
+        "prompt_digest"
+      ],
+      "properties": {
+        "provider": {
+          "const": "none"
+        },
+        "model_id": {
+          "const": "deterministic-lexical"
+        },
+        "model_version": {
+          "const": "1"
+        },
+        "prompt_digest": {
+          "const": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    "trigger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "trigger_id",
+        "explicit_pull_required",
+        "consumer_visible",
+        "proactive_delivery",
+        "ingress_contracts"
+      ],
+      "properties": {
+        "trigger_id": {
+          "const": "owner-task-pressure-shadow"
+        },
+        "explicit_pull_required": {
+          "const": false
+        },
+        "consumer_visible": {
+          "const": false
+        },
+        "proactive_delivery": {
+          "const": "forbidden"
+        },
+        "ingress_contracts": {
+          "const": [
+            "C01",
+            "C02",
+            "C03"
+          ]
+        }
+      }
+    },
+    "admission": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "allowed_shadow_modes",
+        "data_class",
+        "risk_class",
+        "tenant_id",
+        "recall_intent_contract",
+        "sdk_route_required",
+        "hidden_fallback"
+      ],
+      "properties": {
+        "allowed_shadow_modes": {
+          "const": [
+            "off",
+            "selective",
+            "always"
+          ]
+        },
+        "data_class": {
+          "const": "D0"
+        },
+        "risk_class": {
+          "const": "R4"
+        },
+        "tenant_id": {
+          "const": "owner-local"
+        },
+        "recall_intent_contract": {
+          "const": "C07"
+        },
+        "sdk_route_required": {
+          "const": true
+        },
+        "hidden_fallback": {
+          "const": "forbidden"
+        }
+      }
+    },
+    "selection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "allowed_source_kinds",
+        "allowed_review_states",
+        "allowed_current_recall_states",
+        "inspect_surface",
+        "capsule_surface",
+        "expand_surface",
+        "source_route_wins",
+        "conflicts_visible",
+        "omissions_visible"
+      ],
+      "properties": {
+        "allowed_source_kinds": {
+          "const": [
+            "reviewed_corpus"
+          ]
+        },
+        "allowed_review_states": {
+          "const": [
+            "confirmed"
+          ]
+        },
+        "allowed_current_recall_states": {
+          "const": [
+            "preferred",
+            "allowed"
+          ]
+        },
+        "inspect_surface": {
+          "const": "generated/memory-objects/memory_object_catalog.min.json"
+        },
+        "capsule_surface": {
+          "const": "generated/memory-objects/memory_object_capsules.json"
+        },
+        "expand_surface": {
+          "const": "generated/memory-objects/memory_object_sections.full.json"
+        },
+        "source_route_wins": {
+          "const": true
+        },
+        "conflicts_visible": {
+          "const": true
+        },
+        "omissions_visible": {
+          "const": true
+        }
+      }
+    },
+    "budgets": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "selective",
+        "always"
+      ],
+      "properties": {
+        "selective": {
+          "$ref": "#/$defs/budget"
+        },
+        "always": {
+          "$ref": "#/$defs/budget"
+        }
+      }
+    },
+    "arbiter": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "selective_min_score",
+        "always_bypasses_score_only",
+        "silence_is_valid",
+        "taint_forces_silence",
+        "stale_forces_silence",
+        "host_defer_forces_silence"
+      ],
+      "properties": {
+        "selective_min_score": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10000
+        },
+        "always_bypasses_score_only": {
+          "const": true
+        },
+        "silence_is_valid": {
+          "const": true
+        },
+        "taint_forces_silence": {
+          "const": true
+        },
+        "stale_forces_silence": {
+          "const": true
+        },
+        "host_defer_forces_silence": {
+          "const": true
+        }
+      }
+    },
+    "delivery": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "runtime_contract",
+        "recall_packet_contract",
+        "intervention_contract",
+        "permitted_outputs",
+        "consumer_visible",
+        "delivery_eligible",
+        "packet_construction",
+        "content_persistence",
+        "effect_ceiling",
+        "action_use"
+      ],
+      "properties": {
+        "runtime_contract": {
+          "const": "C20"
+        },
+        "recall_packet_contract": {
+          "const": "C08"
+        },
+        "intervention_contract": {
+          "const": "C09"
+        },
+        "permitted_outputs": {
+          "const": [
+            "silence",
+            "bounded_observation"
+          ]
+        },
+        "consumer_visible": {
+          "const": false
+        },
+        "delivery_eligible": {
+          "const": false
+        },
+        "packet_construction": {
+          "const": "shadow_only"
+        },
+        "content_persistence": {
+          "const": "forbidden"
+        },
+        "effect_ceiling": {
+          "const": "none"
+        },
+        "action_use": {
+          "const": "forbidden"
+        }
+      }
+    },
+    "outcome": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "outcome_contract",
+        "outcome_refs_required",
+        "access_count_used_as_utility",
+        "independent_evaluator_required",
+        "eval_unavailable_posture",
+        "single_tenant_fairness_posture"
+      ],
+      "properties": {
+        "outcome_contract": {
+          "const": "C10"
+        },
+        "outcome_refs_required": {
+          "const": true
+        },
+        "access_count_used_as_utility": {
+          "const": false
+        },
+        "independent_evaluator_required": {
+          "const": true
+        },
+        "eval_unavailable_posture": {
+          "const": "freeze_policy_and_mark_unknown"
+        },
+        "single_tenant_fairness_posture": {
+          "const": "not_established"
+        }
+      }
+    },
+    "metabolism": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_persistence",
+        "semantic_transition",
+        "currentness_probe_required",
+        "outcome_integration_required",
+        "retention_output",
+        "policy_output",
+        "erase_residue_posture"
+      ],
+      "properties": {
+        "candidate_persistence": {
+          "const": "forbidden"
+        },
+        "semantic_transition": {
+          "const": "forbidden"
+        },
+        "currentness_probe_required": {
+          "const": true
+        },
+        "outcome_integration_required": {
+          "const": true
+        },
+        "retention_output": {
+          "const": "proposal_only"
+        },
+        "policy_output": {
+          "const": "proposal_only"
+        },
+        "erase_residue_posture": {
+          "const": "block_recall_and_proposal"
+        }
+      }
+    },
+    "host_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "capability_contract",
+        "resource_plan_contract",
+        "fresh_refs_required",
+        "host_may_soften_defer_or_deny",
+        "host_authors_semantics"
+      ],
+      "properties": {
+        "capability_contract": {
+          "const": "C18"
+        },
+        "resource_plan_contract": {
+          "const": "C19"
+        },
+        "fresh_refs_required": {
+          "const": true
+        },
+        "host_may_soften_defer_or_deny": {
+          "const": true
+        },
+        "host_authors_semantics": {
+          "const": false
+        }
+      }
+    },
+    "receipts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "content_minimized",
+        "content_persisted",
+        "retention_class",
+        "maximum_days"
+      ],
+      "properties": {
+        "content_minimized": {
+          "const": true
+        },
+        "content_persisted": {
+          "const": false
+        },
+        "retention_class": {
+          "const": "T5_content_minimized_receipt"
+        },
+        "maximum_days": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 90
+        }
+      }
+    },
+    "rollback": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "target",
+        "operation",
+        "memory_dependency_after_rollback",
+        "write_reversal_required"
+      ],
+      "properties": {
+        "target": {
+          "const": "verified-current-no-memory"
+        },
+        "operation": {
+          "const": "disable-shadow-plan-construction"
+        },
+        "memory_dependency_after_rollback": {
+          "const": false
+        },
+        "write_reversal_required": {
+          "const": false
+        }
+      }
+    },
+    "stop_lines": {
+      "type": "array",
+      "minItems": 15,
+      "maxItems": 15,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "no-private-ledger",
+          "no-raw-aoa",
+          "no-durable-candidate",
+          "no-memory-create",
+          "no-memory-promote",
+          "no-semantic-transition",
+          "no-consumer-delivery",
+          "no-proactive-delivery",
+          "no-effect-authorization",
+          "no-exact-tool-parameters",
+          "no-role-or-permission-change",
+          "no-aoa-routing-dependency",
+          "no-hidden-sdk-fallback",
+          "no-access-count-utility",
+          "no-host-authored-semantics"
+        ]
+      }
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "memory_write",
+        "semantic_transition",
+        "policy_promotion",
+        "consumer_delivery",
+        "external_effect",
+        "role_or_permission_change",
+        "runtime_deployment",
+        "landing"
+      ],
+      "properties": {
+        "memory_write": {
+          "const": false
+        },
+        "semantic_transition": {
+          "const": false
+        },
+        "policy_promotion": {
+          "const": false
+        },
+        "consumer_delivery": {
+          "const": false
+        },
+        "external_effect": {
+          "const": false
+        },
+        "role_or_permission_change": {
+          "const": false
+        },
+        "runtime_deployment": {
+          "const": false
+        },
+        "landing": {
+          "const": false
+        }
+      }
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "budget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "max_items",
+        "max_estimated_tokens",
+        "expand"
+      ],
+      "properties": {
+        "max_items": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "max_estimated_tokens": {
+          "type": "integer",
+          "minimum": 64,
+          "maximum": 1800
+        },
+        "expand": {
+          "const": false
+        }
+      }
+    }
+  }
+}

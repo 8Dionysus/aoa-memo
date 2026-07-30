@@ -1,0 +1,354 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/mechanics/consumer-handoff/parts/orchestrator-recall-alignment/schemas/outcome_qualified_episodic_utility_policy_proposal_v0.schema.json",
+  "title": "aoa-memo outcome-qualified episodic utility policy proposal v0",
+  "description": "A proposal-only memo-owned envelope. It can suggest bounded retrieval-policy changes but cannot apply policy or mutate semantic memory, owner, tenant, permissions, promotion, deletion, or retraction.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "proposal_id",
+    "proposal_version",
+    "idempotency_key",
+    "semantic_owner",
+    "item",
+    "stats_aggregate_ref",
+    "eval_verdict",
+    "decision_ref",
+    "allowed_adjustments",
+    "proposal_state",
+    "rationale",
+    "policy_before",
+    "policy_candidate",
+    "semantic_state",
+    "rollback",
+    "forbidden_effects",
+    "approval_state",
+    "apply_allowed",
+    "live_effect",
+    "semantic_authority",
+    "effect_authority",
+    "produced_at",
+    "content_digest"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "aoa_memo_episodic_utility_policy_proposal_v0"
+    },
+    "proposal_id": {
+      "$ref": "#/$defs/ref"
+    },
+    "proposal_version": {
+      "const": 1
+    },
+    "idempotency_key": {
+      "$ref": "#/$defs/ref"
+    },
+    "semantic_owner": {
+      "const": "aoa-memo"
+    },
+    "item": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "item_ref",
+        "memory_class",
+        "criticality",
+        "semantic_digest"
+      ],
+      "properties": {
+        "item_ref": {
+          "$ref": "#/$defs/provenance_ref"
+        },
+        "memory_class": {
+          "const": "episodic"
+        },
+        "criticality": {
+          "enum": [
+            "ordinary",
+            "safety_critical",
+            "constitutional",
+            "privacy",
+            "audit"
+          ]
+        },
+        "semantic_digest": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "stats_aggregate_ref": {
+      "$ref": "#/$defs/provenance_ref"
+    },
+    "eval_verdict": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "owner_repo",
+        "verdict_id",
+        "verdict",
+        "holdout_checked",
+        "delayed_effects_checked",
+        "accidental_success_checked",
+        "reward_hacking_passed",
+        "evidence_ref"
+      ],
+      "properties": {
+        "owner_repo": {
+          "const": "aoa-evals"
+        },
+        "verdict_id": {
+          "$ref": "#/$defs/ref"
+        },
+        "verdict": {
+          "enum": [
+            "supported_bounded_adjustment",
+            "freeze",
+            "preserve_critical"
+          ]
+        },
+        "holdout_checked": {
+          "type": "boolean"
+        },
+        "delayed_effects_checked": {
+          "type": "boolean"
+        },
+        "accidental_success_checked": {
+          "type": "boolean"
+        },
+        "reward_hacking_passed": {
+          "type": "boolean"
+        },
+        "evidence_ref": {
+          "$ref": "#/$defs/provenance_ref"
+        }
+      }
+    },
+    "decision_ref": {
+      "$ref": "#/$defs/ref"
+    },
+    "allowed_adjustments": {
+      "const": [
+        "ranking_weight",
+        "cooldown",
+        "projection_choice",
+        "abstraction_level",
+        "cadence",
+        "budget"
+      ]
+    },
+    "proposal_state": {
+      "enum": [
+        "bounded_adjustment_proposed",
+        "frozen",
+        "preserve_critical"
+      ]
+    },
+    "rationale": {
+      "$ref": "#/$defs/ref"
+    },
+    "policy_before": {
+      "$ref": "#/$defs/policy"
+    },
+    "policy_candidate": {
+      "$ref": "#/$defs/policy"
+    },
+    "semantic_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "before_digest",
+        "after_digest",
+        "changed"
+      ],
+      "properties": {
+        "before_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "after_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "changed": {
+          "const": false
+        }
+      }
+    },
+    "rollback": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "target_policy_id",
+        "target_version",
+        "target_policy_digest",
+        "target_ranking_weight",
+        "target_cooldown_seconds",
+        "target_projection_choice",
+        "rebuild_disposable_projection"
+      ],
+      "properties": {
+        "target_policy_id": {
+          "$ref": "#/$defs/ref"
+        },
+        "target_version": {
+          "$ref": "#/$defs/ref"
+        },
+        "target_policy_digest": {
+          "$ref": "#/$defs/sha256"
+        },
+        "target_ranking_weight": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "target_cooldown_seconds": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "target_projection_choice": {
+          "$ref": "#/$defs/ref"
+        },
+        "rebuild_disposable_projection": {
+          "const": true
+        }
+      }
+    },
+    "forbidden_effects": {
+      "const": [
+        "semantic_promotion",
+        "semantic_deletion",
+        "semantic_retraction",
+        "owner_change",
+        "tenant_expansion",
+        "permission_expansion",
+        "automatic_policy_self_approval"
+      ]
+    },
+    "approval_state": {
+      "const": "operator_required"
+    },
+    "apply_allowed": {
+      "const": false
+    },
+    "live_effect": {
+      "const": false
+    },
+    "semantic_authority": {
+      "const": "none"
+    },
+    "effect_authority": {
+      "const": "none"
+    },
+    "produced_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "content_digest": {
+      "$ref": "#/$defs/sha256"
+    }
+  },
+  "$defs": {
+    "ref": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1024
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "provenance_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "owner_repo",
+        "artifact_ref",
+        "artifact_version",
+        "artifact_digest"
+      ],
+      "properties": {
+        "owner_repo": {
+          "$ref": "#/$defs/ref"
+        },
+        "artifact_ref": {
+          "$ref": "#/$defs/ref"
+        },
+        "artifact_version": {
+          "$ref": "#/$defs/ref"
+        },
+        "artifact_digest": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "policy_id",
+        "version",
+        "ranking_weight",
+        "ranking_weight_min",
+        "ranking_weight_max",
+        "cooldown_seconds",
+        "projection_choice",
+        "abstraction_level",
+        "cadence_seconds",
+        "budget_tokens",
+        "content_digest"
+      ],
+      "properties": {
+        "policy_id": {
+          "$ref": "#/$defs/ref"
+        },
+        "version": {
+          "$ref": "#/$defs/ref"
+        },
+        "ranking_weight": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "ranking_weight_min": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "ranking_weight_max": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "cooldown_seconds": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "projection_choice": {
+          "enum": [
+            "default",
+            "source_first",
+            "exact_episode",
+            "summary"
+          ]
+        },
+        "abstraction_level": {
+          "enum": [
+            "exact",
+            "bounded_summary",
+            "pattern"
+          ]
+        },
+        "cadence_seconds": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "budget_tokens": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "content_digest": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    }
+  }
+}

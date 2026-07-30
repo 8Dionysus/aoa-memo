@@ -69,7 +69,7 @@ python scripts/agents/build_agents_mesh_index.py --check
 python scripts/agents/validate_agents_mesh_index.py
 python scripts/memory/validate_memo.py
 python scripts/memory/validate_memory_surfaces.py
-python -m pytest -q mechanics/consumer-handoff/parts/downstream-feed-regression/tests mechanics/consumer-handoff/parts/playbook-scope-handoff/tests/test_playbook_memory_scopes.py tests/memory/test_memo_handoff_boundaries.py
+python -m pytest -q mechanics/consumer-handoff/parts/downstream-feed-regression/tests mechanics/consumer-handoff/parts/orchestrator-recall-alignment/tests mechanics/consumer-handoff/parts/playbook-scope-handoff/tests tests/memory/test_memo_handoff_boundaries.py
 ```
 
 Before landing, also run:

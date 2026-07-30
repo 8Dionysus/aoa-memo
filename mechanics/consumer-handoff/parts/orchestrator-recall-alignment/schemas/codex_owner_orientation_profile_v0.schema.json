@@ -1,0 +1,438 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aoa.local/aoa-memo/schemas/codex_owner_orientation_profile_v0.schema.json",
+  "title": "codex_owner_orientation_v0 consumer profile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "profile_id",
+    "consumer_id",
+    "owners",
+    "influence_policy",
+    "model_prompt_provider_pin",
+    "trigger",
+    "admission",
+    "selection",
+    "budgets",
+    "delivery",
+    "host_evidence",
+    "receipts",
+    "rollback",
+    "stop_lines",
+    "authority"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "codex_owner_orientation_profile_v0"
+    },
+    "profile_id": {
+      "const": "codex_owner_orientation_v0"
+    },
+    "consumer_id": {
+      "const": "codex_owner_orientation_v0"
+    },
+    "owners": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "semantic",
+        "control_plane",
+        "runtime_delivery",
+        "host_admission",
+        "proof"
+      ],
+      "properties": {
+        "semantic": {
+          "const": "aoa-memo"
+        },
+        "control_plane": {
+          "const": "aoa-sdk"
+        },
+        "runtime_delivery": {
+          "const": "abyss-stack"
+        },
+        "host_admission": {
+          "const": "abyss-machine"
+        },
+        "proof": {
+          "const": "aoa-evals"
+        }
+      }
+    },
+    "influence_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ref",
+        "sha256",
+        "policy_id",
+        "policy_version"
+      ],
+      "properties": {
+        "ref": {
+          "const": "examples/codex_owner_orientation_v0.influence-policy.json"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "policy_id": {
+          "const": "policy:aoa-memo:codex-owner-orientation:v0"
+        },
+        "policy_version": {
+          "const": "0"
+        }
+      }
+    },
+    "model_prompt_provider_pin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "provider",
+        "model_id",
+        "model_version",
+        "prompt_digest"
+      ],
+      "properties": {
+        "provider": {
+          "const": "none"
+        },
+        "model_id": {
+          "const": "deterministic-lexical"
+        },
+        "model_version": {
+          "const": "1"
+        },
+        "prompt_digest": {
+          "const": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      }
+    },
+    "trigger": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "trigger_id",
+        "explicit_pull_required",
+        "proactive_delivery"
+      ],
+      "properties": {
+        "trigger_id": {
+          "const": "operator-explicit-pull"
+        },
+        "explicit_pull_required": {
+          "const": true
+        },
+        "proactive_delivery": {
+          "const": "forbidden"
+        }
+      }
+    },
+    "admission": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "allowed_consumer_modes",
+        "mode_must_be_explicit",
+        "data_class",
+        "risk_class",
+        "tenant_id",
+        "recall_intent_contract",
+        "sdk_route_required",
+        "hidden_fallback"
+      ],
+      "properties": {
+        "allowed_consumer_modes": {
+          "const": [
+            "off",
+            "fresh-start",
+            "bounded",
+            "high-fidelity"
+          ]
+        },
+        "mode_must_be_explicit": {
+          "const": true
+        },
+        "data_class": {
+          "const": "D0"
+        },
+        "risk_class": {
+          "const": "R1"
+        },
+        "tenant_id": {
+          "const": "owner-local"
+        },
+        "recall_intent_contract": {
+          "const": "C07"
+        },
+        "sdk_route_required": {
+          "const": true
+        },
+        "hidden_fallback": {
+          "const": "forbidden"
+        }
+      }
+    },
+    "selection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "allowed_source_kinds",
+        "allowed_review_states",
+        "allowed_current_recall_states",
+        "inspect_surface",
+        "capsule_surface",
+        "expand_surface",
+        "source_route_wins",
+        "conflicts_visible",
+        "omissions_visible"
+      ],
+      "properties": {
+        "allowed_source_kinds": {
+          "const": [
+            "reviewed_corpus"
+          ]
+        },
+        "allowed_review_states": {
+          "const": [
+            "confirmed"
+          ]
+        },
+        "allowed_current_recall_states": {
+          "const": [
+            "preferred",
+            "allowed"
+          ]
+        },
+        "inspect_surface": {
+          "const": "generated/memory-objects/memory_object_catalog.min.json"
+        },
+        "capsule_surface": {
+          "const": "generated/memory-objects/memory_object_capsules.json"
+        },
+        "expand_surface": {
+          "const": "generated/memory-objects/memory_object_sections.full.json"
+        },
+        "source_route_wins": {
+          "const": true
+        },
+        "conflicts_visible": {
+          "const": true
+        },
+        "omissions_visible": {
+          "const": true
+        }
+      }
+    },
+    "budgets": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "bounded",
+        "high-fidelity"
+      ],
+      "properties": {
+        "bounded": {
+          "$ref": "#/$defs/budget"
+        },
+        "high-fidelity": {
+          "$ref": "#/$defs/budget"
+        }
+      }
+    },
+    "delivery": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "runtime_contract",
+        "recall_packet_contract",
+        "intervention_contract",
+        "permitted_outputs",
+        "effect_ceiling",
+        "action_use"
+      ],
+      "properties": {
+        "runtime_contract": {
+          "const": "C20"
+        },
+        "recall_packet_contract": {
+          "const": "C08"
+        },
+        "intervention_contract": {
+          "const": "C09"
+        },
+        "permitted_outputs": {
+          "const": [
+            "silence",
+            "bounded_observation"
+          ]
+        },
+        "effect_ceiling": {
+          "const": "none"
+        },
+        "action_use": {
+          "const": "forbidden"
+        }
+      }
+    },
+    "host_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "capability_contract",
+        "resource_plan_contract",
+        "fresh_refs_required",
+        "host_may_deny",
+        "host_authors_semantics"
+      ],
+      "properties": {
+        "capability_contract": {
+          "const": "C18"
+        },
+        "resource_plan_contract": {
+          "const": "C19"
+        },
+        "fresh_refs_required": {
+          "const": true
+        },
+        "host_may_deny": {
+          "const": true
+        },
+        "host_authors_semantics": {
+          "const": false
+        }
+      }
+    },
+    "receipts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "content_minimized",
+        "content_persisted",
+        "retention_class",
+        "maximum_days"
+      ],
+      "properties": {
+        "content_minimized": {
+          "const": true
+        },
+        "content_persisted": {
+          "const": false
+        },
+        "retention_class": {
+          "const": "T5_content_minimized_receipt"
+        },
+        "maximum_days": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 365
+        }
+      }
+    },
+    "rollback": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "target",
+        "operation",
+        "memory_dependency_after_rollback",
+        "write_reversal_required"
+      ],
+      "properties": {
+        "target": {
+          "const": "verified-current-no-memory"
+        },
+        "operation": {
+          "const": "suspend-sdk-recall-route"
+        },
+        "memory_dependency_after_rollback": {
+          "const": false
+        },
+        "write_reversal_required": {
+          "const": false
+        }
+      }
+    },
+    "stop_lines": {
+      "type": "array",
+      "minItems": 8,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "no-private-ledger",
+          "no-raw-aoa",
+          "no-memory-create",
+          "no-memory-promote",
+          "no-proactive-delivery",
+          "no-effect-authorization",
+          "no-exact-tool-parameters",
+          "no-role-or-permission-change",
+          "no-aoa-routing-dependency",
+          "no-hidden-sdk-fallback"
+        ]
+      }
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "memory_write",
+        "policy_promotion",
+        "external_effect",
+        "role_or_permission_change",
+        "runtime_deployment",
+        "landing"
+      ],
+      "properties": {
+        "memory_write": {
+          "const": false
+        },
+        "policy_promotion": {
+          "const": false
+        },
+        "external_effect": {
+          "const": false
+        },
+        "role_or_permission_change": {
+          "const": false
+        },
+        "runtime_deployment": {
+          "const": false
+        },
+        "landing": {
+          "const": false
+        }
+      }
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "budget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "max_items",
+        "max_estimated_tokens",
+        "expand"
+      ],
+      "properties": {
+        "max_items": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 8
+        },
+        "max_estimated_tokens": {
+          "type": "integer",
+          "minimum": 64,
+          "maximum": 4096
+        },
+        "expand": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

@@ -85,6 +85,55 @@ Each concrete pack should name:
 - `stronger_owner_stop_lines`
 - `writeback_candidate_route`
 
+## `codex_owner_orientation_v0`
+
+The first concrete pack is an operator-invoked, D0/R1 Codex orientation
+consumer. Its owner-authored profile, C11 policy, SDK compatibility pin,
+memo-bundle schema, packet builder, and executable checks live under
+`parts/orchestrator-recall-alignment/`.
+
+The flow is deliberately split:
+
+1. `aoa-sdk` admits exact C07, C11, model/prompt/provider, C18, and C19 pins
+   and selects only confirmed, current `reviewed_corpus` cards.
+2. `aoa-memo` validates the exact SDK plan schema and emits owner-valid C08
+   and C09 inside a content-addressed delivery bundle.
+3. `abyss-stack` may return that already-admitted bundle to the explicit
+   caller and issue C20, but may not rerank, reselect, persist content, or
+   manufacture memo-owned semantics.
+
+`bounded` stops after inspect plus capsule. `high-fidelity` may add expand
+inside its separate item/token budget. `off` and `fresh-start` produce no
+memory. Every mode preserves visible omissions, lifecycle replacements and
+contradictions, the strongest source route, and a verified no-memory
+walkback. Raw `.aoa`, private ledgers, proactive delivery, exact tool
+parameters, permission changes, memory writes, promotion, and effects are
+forbidden.
+
+## Ordinary Codex participation
+
+`AOA-MEM-D-0083` keeps ordinary-session participation inside the existing
+`aoa-memo` skill family:
+
+```text
+prompt-visible aoa-memo
+  -> fast orient: one read-only brief, optional one bounded reviewed search
+  -> current owner-source verification or silence
+  -> deep recall only when exact memory meaning becomes material
+```
+
+The H0 hook is a separate observation contour, not a delivery contour. It
+records coarse opportunities and completed `aoa_memo` tool-result stages while
+leaving whether the session noticed, used, rejected, or benefited from memory
+unknown. It does not inject a cue or packet and cannot substitute for
+fresh-session selection tests or outcome review.
+
+The memo-owned fragment is composed into native Codex hook configuration by
+`abyss-stack`. It does not modify or depend on `aoa-session-memory`; the two
+standalone hook families may coexist only through neutral configuration
+composition. A later route-only cue is H2 and needs a separate policy. Direct
+memory-packet injection is outside this contract.
+
 ## Boundary rule
 
 Memo stores evidence, provenance, recall posture, and recurrence.

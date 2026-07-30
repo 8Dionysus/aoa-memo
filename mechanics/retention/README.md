@@ -21,12 +21,15 @@ retention watch/outcome posture must become explicit and reviewable.
 ### Memo owns
 
 Memo owns retention review posture, source refs, markers, lifecycle-changing
-operation records, public-safe examples, and recall routes for retention
+operation records, the exact meaning of allowlisted mechanical plans and
+semantic proposals, public-safe examples, and recall routes for retention
 evidence.
 
 ### Stronger owner split
 
 - `abyss-stack` owns runtime retention workers, storage, and schedules.
+- `aoa-session-memory` owns raw `.aoa` evidence and its local ports.
+- `abyss-machine` owns host-local storage posture and physical evidence.
 - `aoa-evals` owns proof that retention checks passed.
 - `aoa-agents` owns actor rights and handoff authority.
 - Governance or source repositories own stronger retention policy.
@@ -48,6 +51,8 @@ reviewable markers, source refs, and owner handoff notes.
 - hidden schedulers or workers exist
 - private traces can be retained in this public repo
 - `aoa-memo` owns live storage, runtime policy, proof, or role rights
+- a source-local mechanical plan or green reference lab is a durable worker,
+  scheduler, privacy-erasure result, or runtime admission
 
 ### Validation
 
@@ -55,8 +60,10 @@ Use the validation lane in [AGENTS](AGENTS.md#validation).
 
 ### Next route
 
-Route runtime retention to `abyss-stack`, proof to `aoa-evals`, role authority
-to `aoa-agents`, and stronger policy to the owning repository.
+Route runtime retention to `abyss-stack`, raw session evidence to
+`aoa-session-memory`, host-local storage evidence to `abyss-machine`, proof to
+`aoa-evals`, role authority to `aoa-agents`, and stronger policy to the owning
+repository.
 
 ## Active Route
 

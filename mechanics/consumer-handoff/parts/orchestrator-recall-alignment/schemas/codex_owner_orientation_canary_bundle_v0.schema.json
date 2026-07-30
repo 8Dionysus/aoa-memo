@@ -1,0 +1,342 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/8Dionysus/aoa-memo/main/mechanics/consumer-handoff/parts/orchestrator-recall-alignment/schemas/codex_owner_orientation_canary_bundle_v0.schema.json",
+  "title": "aoa-memo bounded owner-orientation canary bundle",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "semantic_owner",
+    "control_plane_owner",
+    "runtime_owner",
+    "host_owner",
+    "outcome_owner",
+    "proof_owner",
+    "release_plan_ref",
+    "release_plan_digest",
+    "source_shadow_plan_digest",
+    "source_shadow_bundle_digest",
+    "assignment_ref",
+    "assigned_arm",
+    "window_id",
+    "recall_packet",
+    "intervention_decision",
+    "observation",
+    "consumer_visible",
+    "delivery_eligible",
+    "directive_authority",
+    "source_visible",
+    "currentness_visible",
+    "content_persisted",
+    "candidate_persisted",
+    "memory_write_performed",
+    "semantic_transition_performed",
+    "policy_promotion_performed",
+    "effect_authority",
+    "action_use",
+    "rollback_target",
+    "bundle_digest"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "codex_owner_orientation_canary_bundle_v0"
+    },
+    "semantic_owner": {
+      "const": "aoa-memo"
+    },
+    "control_plane_owner": {
+      "const": "aoa-sdk"
+    },
+    "runtime_owner": {
+      "const": "abyss-stack"
+    },
+    "host_owner": {
+      "const": "abyss-machine"
+    },
+    "outcome_owner": {
+      "const": "aoa-stats"
+    },
+    "proof_owner": {
+      "const": "aoa-evals"
+    },
+    "release_plan_ref": {
+      "type": "string",
+      "pattern": "^aoa-sdk:canary-release:"
+    },
+    "release_plan_digest": {
+      "$ref": "#/$defs/sha256"
+    },
+    "source_shadow_plan_digest": {
+      "$ref": "#/$defs/sha256"
+    },
+    "source_shadow_bundle_digest": {
+      "$ref": "#/$defs/sha256"
+    },
+    "assignment_ref": {
+      "type": "string",
+      "minLength": 3
+    },
+    "assigned_arm": {
+      "enum": [
+        "holdout",
+        "canary"
+      ]
+    },
+    "window_id": {
+      "type": "string",
+      "minLength": 3
+    },
+    "recall_packet": {
+      "type": "object",
+      "required": [
+        "contract_id",
+        "owner",
+        "result_mode",
+        "result_refs",
+        "action_use",
+        "content_digest"
+      ],
+      "properties": {
+        "contract_id": {
+          "const": "C08"
+        },
+        "owner": {
+          "const": "aoa-memo"
+        },
+        "result_mode": {
+          "enum": [
+            "silence",
+            "bounded_memory"
+          ]
+        },
+        "result_refs": {
+          "type": "array",
+          "maxItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 3
+          }
+        },
+        "action_use": {
+          "const": "forbidden"
+        },
+        "content_digest": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "intervention_decision": {
+      "type": "object",
+      "required": [
+        "contract_id",
+        "owner",
+        "decision",
+        "effect_authority",
+        "observation_refs",
+        "content_digest"
+      ],
+      "properties": {
+        "contract_id": {
+          "const": "C09"
+        },
+        "owner": {
+          "const": "aoa-memo"
+        },
+        "decision": {
+          "enum": [
+            "silence",
+            "bounded_observation"
+          ]
+        },
+        "effect_authority": {
+          "const": "none"
+        },
+        "observation_refs": {
+          "type": "array",
+          "maxItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 3
+          }
+        },
+        "content_digest": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "observation": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/$defs/observation"
+        }
+      ]
+    },
+    "consumer_visible": {
+      "type": "boolean"
+    },
+    "delivery_eligible": {
+      "type": "boolean"
+    },
+    "directive_authority": {
+      "const": false
+    },
+    "source_visible": {
+      "const": true
+    },
+    "currentness_visible": {
+      "const": true
+    },
+    "content_persisted": {
+      "const": false
+    },
+    "candidate_persisted": {
+      "const": false
+    },
+    "memory_write_performed": {
+      "const": false
+    },
+    "semantic_transition_performed": {
+      "const": false
+    },
+    "policy_promotion_performed": {
+      "const": false
+    },
+    "effect_authority": {
+      "const": "none"
+    },
+    "action_use": {
+      "const": "forbidden"
+    },
+    "rollback_target": {
+      "const": "codex_owner_orientation_v0"
+    },
+    "bundle_digest": {
+      "$ref": "#/$defs/sha256"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "delivery_eligible": {
+            "const": true
+          }
+        },
+        "required": [
+          "delivery_eligible"
+        ]
+      },
+      "then": {
+        "properties": {
+          "assigned_arm": {
+            "const": "canary"
+          },
+          "consumer_visible": {
+            "const": true
+          },
+          "observation": {
+            "$ref": "#/$defs/observation"
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "consumer_visible": {
+            "const": false
+          },
+          "observation": {
+            "type": "null"
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "observation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "observation_kind",
+        "object_id",
+        "title",
+        "summary",
+        "use_when",
+        "do_not_use",
+        "source_route",
+        "currentness",
+        "contradiction_refs",
+        "directive",
+        "suggested_action",
+        "source_visible",
+        "currentness_visible",
+        "content_digest"
+      ],
+      "properties": {
+        "observation_kind": {
+          "const": "source_linked_memory_observation"
+        },
+        "object_id": {
+          "type": "string",
+          "minLength": 3
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "use_when": {
+          "type": "string",
+          "minLength": 1
+        },
+        "do_not_use": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_route": {
+          "type": "string",
+          "minLength": 1,
+          "not": {
+            "pattern": "^\\.aoa/"
+          }
+        },
+        "currentness": {
+          "enum": [
+            "preferred",
+            "allowed"
+          ]
+        },
+        "contradiction_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "directive": {
+          "const": false
+        },
+        "suggested_action": {
+          "type": "null"
+        },
+        "source_visible": {
+          "const": true
+        },
+        "currentness_visible": {
+          "const": true
+        },
+        "content_digest": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aoa.local/aoa-memo/schemas/codex_owner_orientation_sdk_compatibility_pin_v0.schema.json",
+  "title": "aoa-memo acceptance pin for the SDK owner-orientation plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "pin_id",
+    "semantic_owner",
+    "control_plane_owner",
+    "plan_schema",
+    "consumer_profile",
+    "influence_policy",
+    "supported_plan_versions",
+    "supported_contract_ids",
+    "mirror_authority",
+    "unknown_version_posture"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "codex_owner_orientation_sdk_compatibility_pin_v0"
+    },
+    "pin_id": {
+      "const": "aoa-memo.codex-owner-orientation.sdk-plan.v0"
+    },
+    "semantic_owner": {
+      "const": "aoa-memo"
+    },
+    "control_plane_owner": {
+      "const": "aoa-sdk"
+    },
+    "plan_schema": {
+      "$ref": "#/$defs/artifact_pin"
+    },
+    "consumer_profile": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/artifact_pin"
+        },
+        {
+          "type": "object",
+          "required": [
+            "semantic_digest"
+          ],
+          "properties": {
+            "semantic_digest": {
+              "$ref": "#/$defs/sha256"
+            }
+          }
+        }
+      ]
+    },
+    "influence_policy": {
+      "$ref": "#/$defs/artifact_pin"
+    },
+    "supported_plan_versions": {
+      "const": [
+        "codex_owner_orientation_plan_v0"
+      ]
+    },
+    "supported_contract_ids": {
+      "const": [
+        "C07",
+        "C08",
+        "C09",
+        "C11"
+      ]
+    },
+    "mirror_authority": {
+      "const": "compatibility_only"
+    },
+    "unknown_version_posture": {
+      "const": "fail_closed"
+    }
+  },
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "artifact_pin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "owner_repo",
+        "artifact_ref",
+        "sha256"
+      ],
+      "properties": {
+        "owner_repo": {
+          "type": "string",
+          "minLength": 1
+        },
+        "artifact_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "semantic_digest": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    }
+  }
+}

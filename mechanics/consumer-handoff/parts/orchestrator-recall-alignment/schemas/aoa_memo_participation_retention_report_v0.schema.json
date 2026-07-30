@@ -1,0 +1,181 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agents-of-abyss.dev/schemas/aoa-memo/aoa_memo_participation_retention_report_v0.schema.json",
+  "title": "AoA memo participation retention report v0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "generated_at",
+    "mode",
+    "retention_days",
+    "cutoff_at",
+    "state_root_ref",
+    "counts",
+    "issues",
+    "content_persisted",
+    "session_refs_persisted",
+    "authority"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "aoa_memo_participation_retention_report_v0"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "mode": {
+      "enum": [
+        "plan",
+        "execute"
+      ]
+    },
+    "retention_days": {
+      "type": "integer",
+      "minimum": 30
+    },
+    "cutoff_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "state_root_ref": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "session_logs_scanned",
+        "eligible_session_logs",
+        "eligible_receipts",
+        "eligible_bytes",
+        "deleted_session_logs",
+        "deleted_receipts",
+        "deleted_bytes",
+        "skipped_not_closed",
+        "skipped_within_window",
+        "skipped_invalid",
+        "deletion_failures"
+      ],
+      "properties": {
+        "session_logs_scanned": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "eligible_session_logs": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "eligible_receipts": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "eligible_bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "deleted_session_logs": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "deleted_receipts": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "deleted_bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "skipped_not_closed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "skipped_within_window": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "skipped_invalid": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "deletion_failures": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "content_persisted": {
+      "const": false
+    },
+    "session_refs_persisted": {
+      "const": false
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "automatic_execution",
+        "semantic_memory_delete",
+        "shared_memory_write",
+        "observation_receipt_erasure"
+      ],
+      "properties": {
+        "automatic_execution": {
+          "const": false
+        },
+        "semantic_memory_delete": {
+          "const": false
+        },
+        "shared_memory_write": {
+          "const": false
+        },
+        "observation_receipt_erasure": {
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "plan"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "authority": {
+            "properties": {
+              "observation_receipt_erasure": {
+                "const": false
+              }
+            }
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "authority": {
+            "properties": {
+              "observation_receipt_erasure": {
+                "const": true
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -23,6 +23,7 @@ def catalog_item(
 ) -> JsonDict:
     trust = memory_object["trust"]
     lifecycle = memory_object["lifecycle"]
+    current_recall = lifecycle["current_recall"]
     item: JsonDict = {
         "id": memory_object["id"],
         "kind": memory_object["kind"],
@@ -31,7 +32,11 @@ def catalog_item(
         "scope_classes": scope_classes_for(memory_object),
         "temperature": trust["temperature"],
         "review_state": lifecycle["review_state"],
-        "current_recall_status": lifecycle["current_recall"]["status"],
+        "current_recall_status": current_recall["status"],
+        "supersedes": list(lifecycle.get("supersedes", [])),
+        "superseded_by": lifecycle.get("superseded_by"),
+        "replacement_ref": current_recall.get("replacement_ref"),
+        "contradiction_refs": list(current_recall.get("contradiction_refs", [])),
         "authority_kind": trust["authority_kind"],
         "source_kind": source_kind,
         "primary_recall_modes": recall_modes,
