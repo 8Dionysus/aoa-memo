@@ -21,6 +21,6 @@ This bundle landed from `aoa-evals` through the reviewed intake route. The local
 - An exact fresh owner-grounded aoa-kag MCP read and a passing central boundary review do not establish durable memory, owner acceptance, admission, cross-organ benefit, effect authority, or rollback; each stronger claim requires a distinct owner-issued artifact.
 
 ## Next Routes
-- Validate with `python scripts/memory/validate_memo_corpus.py`.
-- Refresh object read models with `python scripts/memory/generate_memory_object_surfaces.py`.
+- Validation owner: `scripts/memory/validate_memo_corpus.py`.
+- Read-model generator owner: `scripts/memory/generate_memory_object_surfaces.py`.
 - Keep durable edits in `memo/objects/`; keep origin packet history in the source repo memo port.
