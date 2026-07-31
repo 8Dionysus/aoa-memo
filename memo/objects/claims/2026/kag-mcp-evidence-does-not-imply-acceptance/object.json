@@ -1,0 +1,85 @@
+{
+  "id": "memo.claim.2026-07-31.kag-mcp-evidence-does-not-imply-acceptance",
+  "kind": "claim",
+  "title": "KAG MCP evidence does not imply acceptance",
+  "summary": "Exact fresh owner-grounded KAG access and bounded central review remain evidence; durable memory, owner acceptance, admission, effects, cross-organ benefit, and rollback each require their own owner-issued artifact.",
+  "scope": [
+    "repo:aoa-evals",
+    "repo:aoa-memo",
+    "workspace:OS-Abyss"
+  ],
+  "owner_refs": [
+    "repo:aoa-evals",
+    "repo:aoa-memo"
+  ],
+  "payload_ref": "memo/intake/reviewed/aoa-evals.20260731T012447Z.an-exact-fresh-owner-grounded-aoa-kag-mcp-read-a.aoa-memo-intake.json",
+  "tags": [
+    "reviewed-intake",
+    "local-memo-port",
+    "proof-boundary-memory",
+    "constraint"
+  ],
+  "time": {
+    "created_at": "2026-07-31T01:29:29Z",
+    "observed_at": "2026-07-31T01:24:47Z",
+    "valid_from": "2026-07-31T01:29:29Z",
+    "valid_to": null
+  },
+  "provenance": {
+    "source_refs": [
+      "memo/intake/reviewed/aoa-evals.20260731T012447Z.an-exact-fresh-owner-grounded-aoa-kag-mcp-read-a.aoa-memo-intake.json",
+      "repo:aoa-evals/memo/candidates/20260731T012401Z.b6f51f4d.an-exact-fresh-owner-grounded-aoa-kag-mcp-read-a.candidate.json",
+      "repo:aoa-evals/memo/receipts/20260731T012447Z.export-aoa-evals-20260731t012447z-an-exact-fresh.forwarding-receipt.json",
+      "repo:aoa-evals/evals/boundary/aoa-organ-access-admission-integrity/EVAL.md",
+      "repo:aoa-kag/docs/decisions/AOA-KAG-D-0023-review-captured-mcp-results-in-the-owner.md",
+      "receipt:aoa-evals-central-review:sha256:0385610cd3fbde1a4a1a8493f80d65bd53f1474d2021d7cc4e4bfd7c206b490e",
+      "receipt:aoa-kag-owner-review:sha256:7de0bd5757db14d4dc8d75993b72cb18cabd75bbcabccfbbef176b0d1b53de93",
+      "repo:abyss-stack/Knowledge/kag/repo-self/receipts/1860861d9ccc56dc74e955d390783a8878e00edf51b0f52d1d6ddd62c4866eeb/retrieval-eval.json",
+      "repo:abyss-stack/Logs/mcp/canaries/records/aoa-kag/f7f3ed79f5446491f9f6b1196853589dc4874d701baa8bb94c6d470718dd480a.json"
+    ],
+    "episode_refs": [],
+    "provenance_thread_id": "prov.aoa-evals.kag-mcp-evidence-does-not-imply-acceptance.2026-07-31"
+  },
+  "trust": {
+    "temperature": "cool",
+    "confidence": 0.85,
+    "confidence_note": "Landed from reviewed local memo export after schema, guardrail, packet, and receipt checks.",
+    "authority_kind": "human_reviewed",
+    "authority": "reviewed intake landing from aoa-evals",
+    "freshness": 1.0,
+    "freshness_note": "Fresh at landing time; future recall depends on lifecycle review.",
+    "salience": 0.8,
+    "salience_note": "Imported because the origin port requested durable reviewed memory."
+  },
+  "lifecycle": {
+    "review_state": "confirmed",
+    "supersedes": [],
+    "superseded_by": null,
+    "retention_class": "reviewed-intake",
+    "promotion_state": "promoted",
+    "current_recall": {
+      "status": "allowed",
+      "status_reason": "Landed through reviewed intake; use as reviewed recall, not proof or stronger owner truth."
+    }
+  },
+  "access": {
+    "access_class": "public",
+    "read_scopes": [
+      "public"
+    ],
+    "write_scopes": [
+      "maintainer"
+    ],
+    "promotion_scopes": [
+      "maintainer",
+      "human-review"
+    ]
+  },
+  "bridges": {
+    "tos_refs": [],
+    "skill_refs": [],
+    "eval_refs": [],
+    "kag_lift_status": "candidate",
+    "route_capsule_ref": "memo/intake/reviewed/aoa-evals.20260731T012447Z.an-exact-fresh-owner-grounded-aoa-kag-mcp-read-a.aoa-memo-intake.json"
+  }
+}
