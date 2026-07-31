@@ -1,0 +1,33 @@
+{
+  "schema": "aoa_memo_reviewed_intake_landing_receipt_v1",
+  "id": "landing-receipt:aoa-evals:20260731T015130Z:aoa-evals-host-visible-mcp-chain-does-not-transfer-authority",
+  "repo": "aoa-evals",
+  "source_export_ref": "repo:aoa-evals/memo/exports/20260731T015031Z.a-fresh-exact-owner-grounded-aoa-kag-mcp-result.aoa-memo-intake.json",
+  "copied_intake_ref": "memo/intake/reviewed/aoa-evals.20260731T015031Z.a-fresh-exact-owner-grounded-aoa-kag-mcp-result.aoa-memo-intake.json",
+  "candidate_refs": [
+    "repo:aoa-evals/memo/candidates/20260731T014607Z.971fc6cd.a-fresh-exact-owner-grounded-aoa-kag-mcp-result.candidate.json"
+  ],
+  "receipt_refs": [
+    "repo:aoa-evals/memo/receipts/20260731T015046Z.export-aoa-evals-20260731t015031z-a-fresh-exact.forwarding-receipt.json"
+  ],
+  "object_ref": "memo.claim.2026-07-31.host-visible-mcp-chain-does-not-transfer-authority",
+  "object_path": "memo/objects/claims/2026/host-visible-mcp-chain-does-not-transfer-authority/object.json",
+  "result": "landed",
+  "checks": [
+    "export_schema",
+    "export_source_refs",
+    "export_evidence_refs",
+    "allowed_result_reviewed_write",
+    "candidate_schema",
+    "candidate_source_refs",
+    "candidate_evidence_refs",
+    "candidate_guardrails",
+    "receipt_schema",
+    "receipt_candidate_ref",
+    "receipt_errors_empty",
+    "memory_object_schema"
+  ],
+  "errors": [],
+  "landed_at": "2026-07-31T01:51:30Z",
+  "landed_by": "aoa-memo:reviewed-intake-landing"
+}
