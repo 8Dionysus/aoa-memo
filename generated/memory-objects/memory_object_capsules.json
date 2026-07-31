@@ -610,6 +610,19 @@
       "source_path": "memo/objects/bridges/2026/tos-lineage-kag-candidate/object.json"
     },
     {
+      "id": "memo.claim.2026-07-31.kag-mcp-evidence-does-not-imply-acceptance",
+      "kind": "claim",
+      "title": "KAG MCP evidence does not imply acceptance",
+      "summary": "Exact fresh owner-grounded KAG access and bounded central review remain evidence; durable memory, owner acceptance, admission, effects, cross-organ benefit, and rollback each require their own owner-issued artifact.",
+      "source_kind": "reviewed_corpus",
+      "recall_posture_short": "allowed current recall; confirmed review state; Landed through reviewed intake; use as reviewed recall, not proof or stronger owner truth",
+      "trust_posture_short": "cool temperature; human_reviewed authority; confidence 0.85; freshness 1.00",
+      "use_when_short": "Use when claim-level recall is needed and this object remains allowed for semantic, source_route.",
+      "do_not_use_short": "Do not treat this claim as proof or stronger than its cited sources.",
+      "strongest_next_source": "memo/intake/reviewed/aoa-evals.20260731T012447Z.an-exact-fresh-owner-grounded-aoa-kag-mcp-read-a.aoa-memo-intake.json",
+      "source_path": "memo/objects/claims/2026/kag-mcp-evidence-does-not-imply-acceptance/object.json"
+    },
+    {
       "id": "memo.decision.2026-05-22.abyss-stack-aoa-memo-mcp-access-plane",
       "kind": "decision",
       "title": "abyss-stack aoa-memo-mcp access plane route",

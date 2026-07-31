@@ -1690,6 +1690,43 @@
       ]
     },
     {
+      "id": "memo.claim.2026-07-31.kag-mcp-evidence-does-not-imply-acceptance",
+      "kind": "claim",
+      "title": "KAG MCP evidence does not imply acceptance",
+      "source_kind": "reviewed_corpus",
+      "source_path": "memo/objects/claims/2026/kag-mcp-evidence-does-not-imply-acceptance/object.json",
+      "sections": [
+        {
+          "section_id": "memo.claim.2026-07-31.kag-mcp-evidence-does-not-imply-acceptance#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the claim surface, its active recall modes, and its allowed current-recall posture.",
+          "body": "KAG MCP evidence does not imply acceptance. Exact fresh owner-grounded KAG access and bounded central review remain evidence; durable memory, owner acceptance, admission, effects, cross-organ benefit, and rollback each require their own owner-issued artifact. Scope: repo:aoa-evals, repo:aoa-memo, workspace:OS-Abyss. Scope classes: repo, workspace. Primary recall modes: semantic, source_route. Current recall status: allowed because Landed through reviewed intake; use as reviewed recall, not proof or stronger owner truth. Payload ref: memo/intake/reviewed/aoa-evals.20260731T012447Z.an-exact-fresh-owner-grounded-aoa-kag-mcp-read-a.aoa-memo-intake.json."
+        },
+        {
+          "section_id": "memo.claim.2026-07-31.kag-mcp-evidence-does-not-imply-acceptance#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.aoa-evals.kag-mcp-evidence-does-not-imply-acceptance.2026-07-31. Source refs: memo/intake/reviewed/aoa-evals.20260731T012447Z.an-exact-fresh-owner-grounded-aoa-kag-mcp-read-a.aoa-memo-intake.json, repo:aoa-evals/memo/candidates/20260731T012401Z.b6f51f4d.an-exact-fresh-owner-grounded-aoa-kag-mcp-read-a.candidate.json, repo:aoa-evals/memo/receipts/20260731T012447Z.export-aoa-evals-20260731t012447z-an-exact-fresh.forwarding-receipt.json, repo:aoa-evals/evals/boundary/aoa-organ-access-admission-integrity/EVAL.md, repo:aoa-kag/docs/decisions/AOA-KAG-D-0023-review-captured-mcp-results-in-the-owner.md, receipt:aoa-evals-central-review:sha256:0385610cd3fbde1a4a1a8493f80d65bd53f1474d2021d7cc4e4bfd7c206b490e, receipt:aoa-kag-owner-review:sha256:7de0bd5757db14d4dc8d75993b72cb18cabd75bbcabccfbbef176b0d1b53de93, repo:abyss-stack/Knowledge/kag/repo-self/receipts/1860861d9ccc56dc74e955d390783a8878e00edf51b0f52d1d6ddd62c4866eeb/retrieval-eval.json, repo:abyss-stack/Logs/mcp/canaries/records/aoa-kag/f7f3ed79f5446491f9f6b1196853589dc4874d701baa8bb94c6d470718dd480a.json. Episode refs: none. Related curated object ids: none. Strongest next sources: memo/intake/reviewed/aoa-evals.20260731T012447Z.an-exact-fresh-owner-grounded-aoa-kag-mcp-read-a.aoa-memo-intake.json, repo:aoa-evals/memo/candidates/20260731T012401Z.b6f51f4d.an-exact-fresh-owner-grounded-aoa-kag-mcp-read-a.candidate.json, repo:aoa-evals/memo/receipts/20260731T012447Z.export-aoa-evals-20260731t012447z-an-exact-fresh.forwarding-receipt.json."
+        },
+        {
+          "section_id": "memo.claim.2026-07-31.kag-mcp-evidence-does-not-imply-acceptance#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: human_reviewed (reviewed intake landing from aoa-evals). Temperature: cool; confidence 0.85; freshness 1.00; salience 0.80. Review state: confirmed. Retention class: reviewed-intake. Promotion state: promoted. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.claim.2026-07-31.kag-mcp-evidence-does-not-imply-acceptance#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Scope classes: repo, workspace. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: memo/intake/reviewed/aoa-evals.20260731T012447Z.an-exact-fresh-owner-grounded-aoa-kag-mcp-read-a.aoa-memo-intake.json. ToS refs: none. Skill refs: none. Eval refs: none. KAG lift status: candidate."
+        }
+      ]
+    },
+    {
       "id": "memo.decision.2026-05-22.abyss-stack-aoa-memo-mcp-access-plane",
       "kind": "decision",
       "title": "abyss-stack aoa-memo-mcp access plane route",

@@ -1802,6 +1802,44 @@
       ]
     },
     {
+      "id": "memo.claim.2026-07-31.kag-mcp-evidence-does-not-imply-acceptance",
+      "kind": "claim",
+      "title": "KAG MCP evidence does not imply acceptance",
+      "summary": "Exact fresh owner-grounded KAG access and bounded central review remain evidence; durable memory, owner acceptance, admission, effects, cross-organ benefit, and rollback each require their own owner-issued artifact.",
+      "scope_classes": [
+        "repo",
+        "workspace"
+      ],
+      "temperature": "cool",
+      "review_state": "confirmed",
+      "current_recall_status": "allowed",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
+      "authority_kind": "human_reviewed",
+      "source_kind": "reviewed_corpus",
+      "primary_recall_modes": [
+        "semantic",
+        "source_route"
+      ],
+      "source_path": "memo/objects/claims/2026/kag-mcp-evidence-does-not-imply-acceptance/object.json",
+      "inspect_key": "memo.claim.2026-07-31.kag-mcp-evidence-does-not-imply-acceptance",
+      "expand_key": "memo.claim.2026-07-31.kag-mcp-evidence-does-not-imply-acceptance",
+      "scope": [
+        "repo:aoa-evals",
+        "repo:aoa-memo",
+        "workspace:OS-Abyss"
+      ],
+      "provenance_thread_id": "prov.aoa-evals.kag-mcp-evidence-does-not-imply-acceptance.2026-07-31",
+      "related_object_ids": [],
+      "strongest_next_sources": [
+        "memo/intake/reviewed/aoa-evals.20260731T012447Z.an-exact-fresh-owner-grounded-aoa-kag-mcp-read-a.aoa-memo-intake.json",
+        "repo:aoa-evals/memo/candidates/20260731T012401Z.b6f51f4d.an-exact-fresh-owner-grounded-aoa-kag-mcp-read-a.candidate.json",
+        "repo:aoa-evals/memo/receipts/20260731T012447Z.export-aoa-evals-20260731t012447z-an-exact-fresh.forwarding-receipt.json"
+      ]
+    },
+    {
       "id": "memo.decision.2026-05-22.abyss-stack-aoa-memo-mcp-access-plane",
       "kind": "decision",
       "title": "abyss-stack aoa-memo-mcp access plane route",
