@@ -1690,6 +1690,43 @@
       ]
     },
     {
+      "id": "memo.claim.2026-08-01.current-host-visible-mcp-chain-preserves-owner-authority",
+      "kind": "claim",
+      "title": "Current host-visible MCP chain preserves owner authority",
+      "source_kind": "reviewed_corpus",
+      "source_path": "memo/objects/claims/2026/current-host-visible-mcp-chain-preserves-owner-authority/object.json",
+      "sections": [
+        {
+          "section_id": "memo.claim.2026-08-01.current-host-visible-mcp-chain-preserves-owner-authority#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the claim surface, its active recall modes, and its allowed current-recall posture.",
+          "body": "Current host-visible MCP chain preserves owner authority. Current KAG evidence can cross memo and eval candidate boundaries without making MCP, aoa-sdk, or abyss-stack the semantic or acceptance owner. Scope: repo:aoa-evals, repo:aoa-memo, workspace:OS-Abyss. Scope classes: repo, workspace. Primary recall modes: semantic, source_route. Current recall status: allowed because Landed through reviewed intake; use as reviewed recall, not proof or stronger owner truth. Payload ref: memo/intake/reviewed/aoa-evals.20260801T074129Z.a-current-exact-owner-grounded-aoa-kag-mcp-resul.aoa-memo-intake.json."
+        },
+        {
+          "section_id": "memo.claim.2026-08-01.current-host-visible-mcp-chain-preserves-owner-authority#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.aoa-evals.current-host-visible-mcp-chain-preserves-owner-authority.2026-08-01. Source refs: memo/intake/reviewed/aoa-evals.20260801T074129Z.a-current-exact-owner-grounded-aoa-kag-mcp-resul.aoa-memo-intake.json, repo:aoa-evals/memo/candidates/20260801T073802Z.67b06845.a-current-exact-owner-grounded-aoa-kag-mcp-resul.candidate.json, repo:aoa-evals/memo/receipts/20260801T074135Z.export-aoa-evals-20260801t074129z-a-current-exac.forwarding-receipt.json, repo:aoa-evals/evals/boundary/aoa-organ-access-admission-integrity/EVAL.md, repo:aoa-kag/docs/decisions/AOA-KAG-D-0023-review-captured-mcp-results-in-the-owner.md, repo:aoa-sdk/docs/decisions/AOA-SDK-D-0080-host-visible-cross-organ-orchestration.md, receipt:abyss-stack-cross-organ-host:sha256:f4c2cecd629b6ff6a2e92238c06e4cdb2b99e2da808e50680961af0033a277a0, receipt:abyss-stack-cross-organ-host:sha256:2b5f9d97f802c8f084b6e558dd78db85d92a543fc9a7a8c6824ee4755887dfa6, receipt:abyss-stack-cross-organ-host:sha256:f3eeb10fd2d71b9921aba34d853296a8a17f82c6f60a8f7441e15575e9dd6534, receipt:abyss-stack-cross-organ-host:sha256:11ddc972ccc3e1af514f8346d0ebadcd83628ad08671e26e4cee3bc8b1082d68, receipt:aoa-evals-central-review:sha256:b87f55e51b3bd7350505ca2d23ec886976bc92bd0dc28cde8c25b890af028c20, receipt:aoa-kag-owner-review:sha256:7255d8c686bc12f82495dcb2dcfa4fb49e1b596c88ab97cacfbb4f3f79aedfd1, repo:abyss-stack/Logs/mcp/canaries/results/aoa-kag/ae891ffefdf8c326f6d8af62395775b284d5665447d86323f0e72e4c3390c46a.json. Episode refs: none. Related curated object ids: none. Strongest next sources: memo/intake/reviewed/aoa-evals.20260801T074129Z.a-current-exact-owner-grounded-aoa-kag-mcp-resul.aoa-memo-intake.json, repo:aoa-evals/memo/candidates/20260801T073802Z.67b06845.a-current-exact-owner-grounded-aoa-kag-mcp-resul.candidate.json, repo:aoa-evals/memo/receipts/20260801T074135Z.export-aoa-evals-20260801t074129z-a-current-exac.forwarding-receipt.json."
+        },
+        {
+          "section_id": "memo.claim.2026-08-01.current-host-visible-mcp-chain-preserves-owner-authority#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: human_reviewed (reviewed intake landing from aoa-evals). Temperature: cool; confidence 0.85; freshness 1.00; salience 0.80. Review state: confirmed. Retention class: reviewed-intake. Promotion state: promoted. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.claim.2026-08-01.current-host-visible-mcp-chain-preserves-owner-authority#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Scope classes: repo, workspace. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: memo/intake/reviewed/aoa-evals.20260801T074129Z.a-current-exact-owner-grounded-aoa-kag-mcp-resul.aoa-memo-intake.json. ToS refs: none. Skill refs: none. Eval refs: none. KAG lift status: candidate."
+        }
+      ]
+    },
+    {
       "id": "memo.claim.2026-07-31.host-visible-mcp-chain-does-not-transfer-authority",
       "kind": "claim",
       "title": "Host-visible MCP chain does not transfer authority",
