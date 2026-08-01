@@ -1,17 +1,17 @@
 {
-  "allowed_bytes": 2860968,
-  "allowed_tracked_bytes": 18064213,
+  "allowed_bytes": 2844280,
+  "allowed_tracked_bytes": 18064204,
   "approved_by": "repository-owner",
   "base_ref": "e1596fb9236fb10b3ea3e803a18dee4717d8675f",
-  "changed_generated_bytes": 2860968,
-  "changed_generated_files": 69,
+  "changed_generated_bytes": 2844280,
+  "changed_generated_files": 68,
   "decision_ref": "aoa-kag:docs/decisions/AOA-KAG-D-0017-portable-content-addressed-repository-family.md",
   "default_limit_bytes": 1048576,
-  "head_family_digest": "9d7f2723e57b3effeca7c4bb02cf341ac3c43f062d4a5fdda2fa1bc63ce126ac",
+  "head_family_digest": "9ded8e4cd43bbd5eb6e42d843de71afd0afee44fb980064fd76d5ea9035d7678",
   "reason": "The reviewed post-merge MCP organ-chain memory landing adds one durable claim, exact intake provenance, generator guard coverage, and derived memory surfaces; the full aoa-memo release gate passed before this bounded generated-family refresh.",
   "repo": "aoa-memo",
   "schema_version": "aoa-repo-local-kag-budget-receipt-v1",
   "scope": "generated_delta",
-  "tracked_bytes": 18064213,
+  "tracked_bytes": 18064204,
   "tracked_bytes_max": 18874368
 }
