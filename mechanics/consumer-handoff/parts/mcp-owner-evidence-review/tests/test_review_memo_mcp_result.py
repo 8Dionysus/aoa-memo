@@ -161,7 +161,6 @@ def test_complete_review_satisfies_pinned_sdk_abi(
         "pinned_ref": "cbf225627f9f28d0470deb8a962ae12d1fe72375",
         "path": "schemas/organ-access/organ-owner-result-review.schema.json",
     }
-    monkeypatch.setenv("AOA_SDK_ROOT", "/srv/AbyssOS/aoa-sdk")
     monkeypatch.setattr(
         reviewer,
         "_load_trust",

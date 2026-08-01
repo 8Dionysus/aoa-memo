@@ -13,6 +13,7 @@ jobs:
     env:
       AOA_AGENTS_ROOT: ${{ github.workspace }}/.deps/aoa-agents
       AOA_EVALS_ROOT: ${{ github.workspace }}/.deps/aoa-evals
+      AOA_SDK_ROOT: ${{ github.workspace }}/.deps/aoa-sdk
       AOA_STATS_ROOT: ${{ github.workspace }}/.deps/aoa-stats
       ABYSS_MACHINE_REPO_ROOT: ${{ github.workspace }}/.deps/abyss-machine
     steps:
@@ -55,6 +56,13 @@ jobs:
           repository: 8Dionysus/aoa-stats
           ref: cd8b9bd07184be26b12861436f24af60b7e32869
           path: .deps/aoa-stats
+
+      - name: Checkout aoa-sdk owner-review ABI
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          repository: 8Dionysus/aoa-sdk
+          ref: cbf225627f9f28d0470deb8a962ae12d1fe72375
+          path: .deps/aoa-sdk
 
       - name: Setup Python
         uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
