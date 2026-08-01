@@ -85,8 +85,8 @@ def build_memo_markdown(plan: LandingPlan, source_refs: list[str], candidate_cla
         f"{claim_lines}\n"
         "\n"
         "## Next Routes\n"
-        "- Validate with `python scripts/memory/validate_memo_corpus.py`.\n"
-        "- Refresh object read models with `python scripts/memory/generate_memory_object_surfaces.py`.\n"
+        "- Route corpus validation to its command owner at `scripts/memory/validate_memo_corpus.py`.\n"
+        "- Route read-model refresh to its command owner at `scripts/memory/generate_memory_object_surfaces.py`.\n"
         "- Keep durable edits in `memo/objects/`; keep origin packet history in the source repo memo port.\n"
     )
 

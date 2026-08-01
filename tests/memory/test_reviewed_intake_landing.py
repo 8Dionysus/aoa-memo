@@ -111,6 +111,9 @@ def test_reviewed_write_export_lands_as_corpus_bundle(tmp_path: Path) -> None:
     assert landing.object_schema_errors(memory_object, "memory_object.schema.json") == []
     assert landing.object_schema_errors(memory_object, "decision.schema.json") == []
     assert landing.support_schema_errors(receipt, "reviewed_intake_landing_receipt.schema.json") == []
+    memo_text = memo_path.read_text(encoding="utf-8")
+    assert "Route corpus validation to its command owner" in memo_text
+    assert "`python scripts/" not in memo_text
 
 
 def test_candidate_only_export_cannot_land() -> None:

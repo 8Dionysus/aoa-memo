@@ -1801,6 +1801,43 @@
       ]
     },
     {
+      "id": "memo.claim.2026-08-01.post-merge-mcp-organ-chain-preserves-owner-authority",
+      "kind": "claim",
+      "title": "Post-merge MCP organ chain preserves owner authority",
+      "source_kind": "reviewed_corpus",
+      "source_path": "memo/objects/claims/2026/post-merge-mcp-organ-chain-preserves-owner-authority/object.json",
+      "sections": [
+        {
+          "section_id": "memo.claim.2026-08-01.post-merge-mcp-organ-chain-preserves-owner-authority#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the claim surface, its active recall modes, and its allowed current-recall posture.",
+          "body": "Post-merge MCP organ chain preserves owner authority. The landed KAG read plane, bounded consumer configuration, central eval, and host-visible KAG-to-memo-to-eval orchestration remain independently owned evidence and do not transfer semantic or effect authority. Scope: repo:aoa-evals, repo:aoa-memo, workspace:OS-Abyss. Scope classes: repo, workspace. Primary recall modes: semantic, source_route. Current recall status: allowed because Landed through reviewed intake; use as reviewed recall, not proof or stronger owner truth. Payload ref: memo/intake/reviewed/aoa-evals.20260801T121155Z.a-post-merge-owner-grounded-aoa-kag-mcp-result-b.aoa-memo-intake.json."
+        },
+        {
+          "section_id": "memo.claim.2026-08-01.post-merge-mcp-organ-chain-preserves-owner-authority#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.aoa-evals.post-merge-mcp-organ-chain-preserves-owner-authority.2026-08-01. Source refs: memo/intake/reviewed/aoa-evals.20260801T121155Z.a-post-merge-owner-grounded-aoa-kag-mcp-result-b.aoa-memo-intake.json, repo:aoa-evals/memo/candidates/20260801T120622Z.00a930e9.a-post-merge-owner-grounded-aoa-kag-mcp-result-b.candidate.json, repo:aoa-evals/memo/receipts/20260801T121201Z.export-aoa-evals-20260801t121155z-a-post-merge-o.forwarding-receipt.json, repo:aoa-evals/evals/boundary/aoa-organ-access-admission-integrity/EVAL.md, repo:aoa-kag/docs/decisions/AOA-KAG-D-0023-review-captured-mcp-results-in-the-owner.md, repo:aoa-sdk/docs/decisions/AOA-SDK-D-0080-host-visible-cross-organ-orchestration.md, receipt:aoa-kag-owner-review:sha256:01e15dd251de5706ac49a010db0f50ff097445de3ebb52e0ebaeeb75ace56d05, receipt:codex-consumer-apply:sha256:b1d244f529e1c7ce772335cc58e3a91bc2bf5ef671728013764f6c5587ca821f, receipt:os-abyss-kag-admission:sha256:a0cd01ef0312bc12ab53502ba8b2bdf1d44534250c3107f693c5df5488244cd5, receipt:abyss-stack-cross-organ-host:sha256:6bd828176bdb2480967a78b373fed376adb6d5094c7842805c687d437dd8bdf4, receipt:abyss-stack-cross-organ-host:sha256:f529db353f38f1c74afe36197fd9e8314ab081e4963c9e3bd06965fdade7ab80, receipt:abyss-stack-cross-organ-host:sha256:1c7bc135310e6ca21f9bcf7ba3d2e606b9f34f2405508e96f14e9d541bf3a9d6, receipt:abyss-stack-cross-organ-host:sha256:f5223835907e60ba80123c30406e82ed16d46592099fdbf4fa5ed8aefa343e36, receipt:aoa-evals-central-review:sha256:e041b6fe29c6c059d36b2ea28391b95592213e9fe7cebe8c7dea29c21c143095. Episode refs: none. Related curated object ids: none. Strongest next sources: memo/intake/reviewed/aoa-evals.20260801T121155Z.a-post-merge-owner-grounded-aoa-kag-mcp-result-b.aoa-memo-intake.json, repo:aoa-evals/memo/candidates/20260801T120622Z.00a930e9.a-post-merge-owner-grounded-aoa-kag-mcp-result-b.candidate.json, repo:aoa-evals/memo/receipts/20260801T121201Z.export-aoa-evals-20260801t121155z-a-post-merge-o.forwarding-receipt.json."
+        },
+        {
+          "section_id": "memo.claim.2026-08-01.post-merge-mcp-organ-chain-preserves-owner-authority#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: human_reviewed (reviewed intake landing from aoa-evals). Temperature: cool; confidence 0.85; freshness 1.00; salience 0.80. Review state: confirmed. Retention class: reviewed-intake. Promotion state: promoted. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.claim.2026-08-01.post-merge-mcp-organ-chain-preserves-owner-authority#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Scope classes: repo, workspace. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: memo/intake/reviewed/aoa-evals.20260801T121155Z.a-post-merge-owner-grounded-aoa-kag-mcp-result-b.aoa-memo-intake.json. ToS refs: none. Skill refs: none. Eval refs: none. KAG lift status: candidate."
+        }
+      ]
+    },
+    {
       "id": "memo.decision.2026-05-22.abyss-stack-aoa-memo-mcp-access-plane",
       "kind": "decision",
       "title": "abyss-stack aoa-memo-mcp access plane route",
