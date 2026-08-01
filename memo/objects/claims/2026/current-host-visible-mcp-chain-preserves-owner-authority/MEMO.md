@@ -21,6 +21,6 @@ This bundle landed from `aoa-evals` through the reviewed intake route. The local
 - A current exact owner-grounded aoa-kag MCP result and host-visible orchestration receipt remain evidence only. They do not imply durable memory, proof verdict, admission, benefit, source effects, or rollback.
 
 ## Next Routes
-- Validate with `python scripts/memory/validate_memo_corpus.py`.
-- Refresh object read models with `python scripts/memory/generate_memory_object_surfaces.py`.
+- Route corpus validation to its command owner at `scripts/memory/validate_memo_corpus.py`.
+- Route object read-model regeneration to its command owner at `scripts/memory/generate_memory_object_surfaces.py`.
 - Keep durable edits in `memo/objects/`; keep origin packet history in the source repo memo port.
