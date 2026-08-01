@@ -1,0 +1,17 @@
+{
+  "allowed_bytes": 11325140,
+  "allowed_tracked_bytes": 18017556,
+  "approved_by": "repository-owner",
+  "base_ref": "c912122b8503e381405f6698a32b5944d59d1221",
+  "changed_generated_bytes": 11325140,
+  "changed_generated_files": 280,
+  "decision_ref": "aoa-kag:docs/decisions/AOA-KAG-D-0017-portable-content-addressed-repository-family.md",
+  "default_limit_bytes": 1048576,
+  "head_family_digest": "c5ab00c7bdbfae9bb36b6a63595fd3264042cc4e847a42dcb5eb2d419b5f6013",
+  "reason": "MCP owner review, accepted O2 memory, validation routing, and pinned SDK ABI CI binding add reviewed memory source; this receipt admits only the measured portable-family growth for PR #295.",
+  "repo": "aoa-memo",
+  "schema_version": "aoa-repo-local-kag-budget-receipt-v1",
+  "scope": "generated_delta",
+  "tracked_bytes": 18017556,
+  "tracked_bytes_max": 18874368
+}

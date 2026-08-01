@@ -34,6 +34,8 @@ The active technical artifacts now live under the nearest functioning part:
 - Codex owner-orientation profile, C11 policy, SDK compatibility pin, C08/C09
   bundle builder, schemas, and checks:
   `parts/orchestrator-recall-alignment/{schemas,examples,scripts,tests}/`
+- MCP capture trust, memo-specific owner review, and its negative tests:
+  `parts/mcp-owner-evidence-review/{config,scripts,tests}/`
 
 Former package-level `schemas/`, `examples/`, `generated/`, `scripts/`, and
 `tests/` homes are placement history only after the 2026-05-19 part-local

@@ -11,6 +11,9 @@
 | Authored ToS meaning, fragments, concepts, nodes, and lineages | `Tree-of-Sophia` |
 | Dispatch behavior and route compression | `aoa-sdk` |
 | Runtime stores, workers, receipts, and operational execution | `abyss-stack` or runtime owner |
+| MCP capture transport, process identity, and stack attestation | `abyss-stack` |
+| Memo payload grounding and current reviewed-corpus read-model parity | `aoa-memo` |
+| Organ-access review ABI and control-plane composition | `aoa-sdk` |
 
 `aoa-memo` may publish a safe consumer handoff surface. It must not claim that
 the consumer accepted, proved, activated, summarized, routed, or executed the

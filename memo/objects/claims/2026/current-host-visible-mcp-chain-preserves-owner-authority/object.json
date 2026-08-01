@@ -1,0 +1,89 @@
+{
+  "id": "memo.claim.2026-08-01.current-host-visible-mcp-chain-preserves-owner-authority",
+  "kind": "claim",
+  "title": "Current host-visible MCP chain preserves owner authority",
+  "summary": "Current KAG evidence can cross memo and eval candidate boundaries without making MCP, aoa-sdk, or abyss-stack the semantic or acceptance owner.",
+  "scope": [
+    "repo:aoa-evals",
+    "repo:aoa-memo",
+    "workspace:OS-Abyss"
+  ],
+  "owner_refs": [
+    "repo:aoa-evals",
+    "repo:aoa-memo"
+  ],
+  "payload_ref": "memo/intake/reviewed/aoa-evals.20260801T074129Z.a-current-exact-owner-grounded-aoa-kag-mcp-resul.aoa-memo-intake.json",
+  "tags": [
+    "reviewed-intake",
+    "local-memo-port",
+    "proof-boundary-memory",
+    "constraint"
+  ],
+  "time": {
+    "created_at": "2026-08-01T07:42:30Z",
+    "observed_at": "2026-08-01T07:41:29Z",
+    "valid_from": "2026-08-01T07:42:30Z",
+    "valid_to": null
+  },
+  "provenance": {
+    "source_refs": [
+      "memo/intake/reviewed/aoa-evals.20260801T074129Z.a-current-exact-owner-grounded-aoa-kag-mcp-resul.aoa-memo-intake.json",
+      "repo:aoa-evals/memo/candidates/20260801T073802Z.67b06845.a-current-exact-owner-grounded-aoa-kag-mcp-resul.candidate.json",
+      "repo:aoa-evals/memo/receipts/20260801T074135Z.export-aoa-evals-20260801t074129z-a-current-exac.forwarding-receipt.json",
+      "repo:aoa-evals/evals/boundary/aoa-organ-access-admission-integrity/EVAL.md",
+      "repo:aoa-kag/docs/decisions/AOA-KAG-D-0023-review-captured-mcp-results-in-the-owner.md",
+      "repo:aoa-sdk/docs/decisions/AOA-SDK-D-0080-host-visible-cross-organ-orchestration.md",
+      "receipt:abyss-stack-cross-organ-host:sha256:f4c2cecd629b6ff6a2e92238c06e4cdb2b99e2da808e50680961af0033a277a0",
+      "receipt:abyss-stack-cross-organ-host:sha256:2b5f9d97f802c8f084b6e558dd78db85d92a543fc9a7a8c6824ee4755887dfa6",
+      "receipt:abyss-stack-cross-organ-host:sha256:f3eeb10fd2d71b9921aba34d853296a8a17f82c6f60a8f7441e15575e9dd6534",
+      "receipt:abyss-stack-cross-organ-host:sha256:11ddc972ccc3e1af514f8346d0ebadcd83628ad08671e26e4cee3bc8b1082d68",
+      "receipt:aoa-evals-central-review:sha256:b87f55e51b3bd7350505ca2d23ec886976bc92bd0dc28cde8c25b890af028c20",
+      "receipt:aoa-kag-owner-review:sha256:7255d8c686bc12f82495dcb2dcfa4fb49e1b596c88ab97cacfbb4f3f79aedfd1",
+      "repo:abyss-stack/Logs/mcp/canaries/results/aoa-kag/ae891ffefdf8c326f6d8af62395775b284d5665447d86323f0e72e4c3390c46a.json"
+    ],
+    "episode_refs": [],
+    "provenance_thread_id": "prov.aoa-evals.current-host-visible-mcp-chain-preserves-owner-authority.2026-08-01"
+  },
+  "trust": {
+    "temperature": "cool",
+    "confidence": 0.85,
+    "confidence_note": "Landed from reviewed local memo export after schema, guardrail, packet, and receipt checks.",
+    "authority_kind": "human_reviewed",
+    "authority": "reviewed intake landing from aoa-evals",
+    "freshness": 1.0,
+    "freshness_note": "Fresh at landing time; future recall depends on lifecycle review.",
+    "salience": 0.8,
+    "salience_note": "Imported because the origin port requested durable reviewed memory."
+  },
+  "lifecycle": {
+    "review_state": "confirmed",
+    "supersedes": [],
+    "superseded_by": null,
+    "retention_class": "reviewed-intake",
+    "promotion_state": "promoted",
+    "current_recall": {
+      "status": "allowed",
+      "status_reason": "Landed through reviewed intake; use as reviewed recall, not proof or stronger owner truth."
+    }
+  },
+  "access": {
+    "access_class": "public",
+    "read_scopes": [
+      "public"
+    ],
+    "write_scopes": [
+      "maintainer"
+    ],
+    "promotion_scopes": [
+      "maintainer",
+      "human-review"
+    ]
+  },
+  "bridges": {
+    "tos_refs": [],
+    "skill_refs": [],
+    "eval_refs": [],
+    "kag_lift_status": "candidate",
+    "route_capsule_ref": "memo/intake/reviewed/aoa-evals.20260801T074129Z.a-current-exact-owner-grounded-aoa-kag-mcp-resul.aoa-memo-intake.json"
+  }
+}

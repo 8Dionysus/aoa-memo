@@ -1802,6 +1802,44 @@
       ]
     },
     {
+      "id": "memo.claim.2026-08-01.current-host-visible-mcp-chain-preserves-owner-authority",
+      "kind": "claim",
+      "title": "Current host-visible MCP chain preserves owner authority",
+      "summary": "Current KAG evidence can cross memo and eval candidate boundaries without making MCP, aoa-sdk, or abyss-stack the semantic or acceptance owner.",
+      "scope_classes": [
+        "repo",
+        "workspace"
+      ],
+      "temperature": "cool",
+      "review_state": "confirmed",
+      "current_recall_status": "allowed",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
+      "authority_kind": "human_reviewed",
+      "source_kind": "reviewed_corpus",
+      "primary_recall_modes": [
+        "semantic",
+        "source_route"
+      ],
+      "source_path": "memo/objects/claims/2026/current-host-visible-mcp-chain-preserves-owner-authority/object.json",
+      "inspect_key": "memo.claim.2026-08-01.current-host-visible-mcp-chain-preserves-owner-authority",
+      "expand_key": "memo.claim.2026-08-01.current-host-visible-mcp-chain-preserves-owner-authority",
+      "scope": [
+        "repo:aoa-evals",
+        "repo:aoa-memo",
+        "workspace:OS-Abyss"
+      ],
+      "provenance_thread_id": "prov.aoa-evals.current-host-visible-mcp-chain-preserves-owner-authority.2026-08-01",
+      "related_object_ids": [],
+      "strongest_next_sources": [
+        "memo/intake/reviewed/aoa-evals.20260801T074129Z.a-current-exact-owner-grounded-aoa-kag-mcp-resul.aoa-memo-intake.json",
+        "repo:aoa-evals/memo/candidates/20260801T073802Z.67b06845.a-current-exact-owner-grounded-aoa-kag-mcp-resul.candidate.json",
+        "repo:aoa-evals/memo/receipts/20260801T074135Z.export-aoa-evals-20260801t074129z-a-current-exac.forwarding-receipt.json"
+      ]
+    },
+    {
       "id": "memo.claim.2026-07-31.host-visible-mcp-chain-does-not-transfer-authority",
       "kind": "claim",
       "title": "Host-visible MCP chain does not transfer authority",

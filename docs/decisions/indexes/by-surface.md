@@ -96,6 +96,7 @@
 - [AOA-MEM-D-0081 Decision: Agent-local promotion is not shared truth](../AOA-MEM-D-0081-agent-local-promotion-is-not-shared-truth.md) (`docs/decisions/AOA-MEM-D-0081-agent-local-promotion-is-not-shared-truth.md`)
 - [AOA-MEM-D-0082 Decision: Reviewed pull is the R1 admitted core](../AOA-MEM-D-0082-reviewed-pull-is-the-r1-admitted-core.md) (`docs/decisions/AOA-MEM-D-0082-reviewed-pull-is-the-r1-admitted-core.md`)
 - [AOA-MEM-D-0083 Decision: Keep memory participation inside one two-speed owner family](../AOA-MEM-D-0083-two-speed-participation-spine.md) (`docs/decisions/AOA-MEM-D-0083-two-speed-participation-spine.md`)
+- [AOA-MEM-D-0084 Decision: Review MCP captures before proof or acceptance](../AOA-MEM-D-0084-review-mcp-captures-before-proof-or-acceptance.md) (`docs/decisions/AOA-MEM-D-0084-review-mcp-captures-before-proof-or-acceptance.md`)
 
 ## mechanic package
 
@@ -156,6 +157,7 @@
 - [AOA-MEM-D-0054 Operational Gate Part-Local Artifacts](../AOA-MEM-D-0054-operational-gate-part-local-artifacts.md) (`docs/decisions/AOA-MEM-D-0054-operational-gate-part-local-artifacts.md`)
 - [AOA-MEM-D-0060 Titan Part-Local Artifacts](../AOA-MEM-D-0060-titan-part-local-artifacts.md) (`docs/decisions/AOA-MEM-D-0060-titan-part-local-artifacts.md`)
 - [AOA-MEM-D-0061 Writeback Part-Local Artifacts](../AOA-MEM-D-0061-writeback-part-local-artifacts.md) (`docs/decisions/AOA-MEM-D-0061-writeback-part-local-artifacts.md`)
+- [AOA-MEM-D-0084 Decision: Review MCP captures before proof or acceptance](../AOA-MEM-D-0084-review-mcp-captures-before-proof-or-acceptance.md) (`docs/decisions/AOA-MEM-D-0084-review-mcp-captures-before-proof-or-acceptance.md`)
 
 ## validation guard
 
@@ -216,6 +218,7 @@
 - [AOA-MEM-D-0079 Decision: Keep mechanical lifecycle allowlisted and recoverable](../AOA-MEM-D-0079-mechanical-lifecycle-is-allowlisted-and-recoverable.md) (`docs/decisions/AOA-MEM-D-0079-mechanical-lifecycle-is-allowlisted-and-recoverable.md`)
 - [AOA-MEM-D-0080 Decision: Distributed erasure requires walkable owner closure](../AOA-MEM-D-0080-distributed-erasure-requires-walkable-owner-closure.md) (`docs/decisions/AOA-MEM-D-0080-distributed-erasure-requires-walkable-owner-closure.md`)
 - [AOA-MEM-D-0083 Decision: Keep memory participation inside one two-speed owner family](../AOA-MEM-D-0083-two-speed-participation-spine.md) (`docs/decisions/AOA-MEM-D-0083-two-speed-participation-spine.md`)
+- [AOA-MEM-D-0084 Decision: Review MCP captures before proof or acceptance](../AOA-MEM-D-0084-review-mcp-captures-before-proof-or-acceptance.md) (`docs/decisions/AOA-MEM-D-0084-review-mcp-captures-before-proof-or-acceptance.md`)
 
 ## release/tooling
 

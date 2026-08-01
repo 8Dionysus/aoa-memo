@@ -610,6 +610,19 @@
       "source_path": "memo/objects/bridges/2026/tos-lineage-kag-candidate/object.json"
     },
     {
+      "id": "memo.claim.2026-08-01.current-host-visible-mcp-chain-preserves-owner-authority",
+      "kind": "claim",
+      "title": "Current host-visible MCP chain preserves owner authority",
+      "summary": "Current KAG evidence can cross memo and eval candidate boundaries without making MCP, aoa-sdk, or abyss-stack the semantic or acceptance owner.",
+      "source_kind": "reviewed_corpus",
+      "recall_posture_short": "allowed current recall; confirmed review state; Landed through reviewed intake; use as reviewed recall, not proof or stronger owner truth",
+      "trust_posture_short": "cool temperature; human_reviewed authority; confidence 0.85; freshness 1.00",
+      "use_when_short": "Use when claim-level recall is needed and this object remains allowed for semantic, source_route.",
+      "do_not_use_short": "Do not treat this claim as proof or stronger than its cited sources.",
+      "strongest_next_source": "memo/intake/reviewed/aoa-evals.20260801T074129Z.a-current-exact-owner-grounded-aoa-kag-mcp-resul.aoa-memo-intake.json",
+      "source_path": "memo/objects/claims/2026/current-host-visible-mcp-chain-preserves-owner-authority/object.json"
+    },
+    {
       "id": "memo.claim.2026-07-31.host-visible-mcp-chain-does-not-transfer-authority",
       "kind": "claim",
       "title": "Host-visible MCP chain does not transfer authority",
