@@ -1,0 +1,18 @@
+{
+  "schema_version": "aoa_memo_mcp_owner_review_trust_v1",
+  "sdk_review_schema": {
+    "env": "AOA_SDK_ROOT",
+    "pinned_ref": "cbf225627f9f28d0470deb8a962ae12d1fe72375",
+    "path": "schemas/organ-access/organ-owner-result-review.schema.json"
+  },
+  "capture_issuers": [
+    {
+      "issuer": "abyss-stack",
+      "purpose": "mcp-canary-capture",
+      "attestation_algorithm": "ed25519",
+      "signer_id": "sha256:b65fdf81a60d9cfb9407cbaf564a68a9584059895e1744e5cba825fb3b5737b3",
+      "public_key_base64url": "YMou9C3n5pxZfltUoat6iKCLMZvvKmLLxXWEsyru3m8",
+      "state": "active"
+    }
+  ]
+}

@@ -52,15 +52,16 @@ scope guidance, guardrail case packs, KAG/ToS bridge docs, source-owned donor
 export notes, orchestrator quest alignment notes, and consumer feedback that a
 memo surface is ambiguous or overclaims. Local memo-port exports, `.aoa`
 session evidence refs, MCP brief/search/status evidence, validation results,
-and landing-plan dry runs may be used as evidence for handoff repair, but they
-do not become durable memory by themselves.
+landing-plan dry runs, and authenticated stack capture artifacts may be used as
+evidence for handoff repair or owner grounding, but they do not become durable
+memory, proof, or acceptance by themselves.
 
 ### Outputs
 
 Bounded handoff surfaces, source refs, consumer field lists, scope and recall
 mode notes, bridge/export contract notes, guardrail handoff cases, owner-route
-stop-lines, reviewed-intake route notes, generated or example ref updates, and
-validator requirements.
+stop-lines, reviewed-intake route notes, bounded MCP owner-review receipts,
+generated or example ref updates, and validator requirements.
 
 ### Must not claim
 

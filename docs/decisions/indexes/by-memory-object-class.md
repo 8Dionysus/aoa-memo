@@ -21,6 +21,7 @@
 - [AOA-MEM-D-0081 Decision: Agent-local promotion is not shared truth](../AOA-MEM-D-0081-agent-local-promotion-is-not-shared-truth.md) (`docs/decisions/AOA-MEM-D-0081-agent-local-promotion-is-not-shared-truth.md`)
 - [AOA-MEM-D-0082 Decision: Reviewed pull is the R1 admitted core](../AOA-MEM-D-0082-reviewed-pull-is-the-r1-admitted-core.md) (`docs/decisions/AOA-MEM-D-0082-reviewed-pull-is-the-r1-admitted-core.md`)
 - [AOA-MEM-D-0083 Decision: Keep memory participation inside one two-speed owner family](../AOA-MEM-D-0083-two-speed-participation-spine.md) (`docs/decisions/AOA-MEM-D-0083-two-speed-participation-spine.md`)
+- [AOA-MEM-D-0084 Decision: Review MCP captures before proof or acceptance](../AOA-MEM-D-0084-review-mcp-captures-before-proof-or-acceptance.md) (`docs/decisions/AOA-MEM-D-0084-review-mcp-captures-before-proof-or-acceptance.md`)
 
 ## episode
 

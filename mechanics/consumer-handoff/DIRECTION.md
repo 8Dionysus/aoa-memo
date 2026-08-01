@@ -17,6 +17,8 @@ faces, and guardrail cases.
 - hand memory-quality risks to `aoa-evals` as cases, not scores or verdicts
 - hand memory-movement counts and trend surfaces to `aoa-stats` as derived
   summaries over reviewed objects, indexes, receipts, and landing records
+- authenticate runtime-owner MCP captures and review their exact memo payload
+  against current owner source before any proof or acceptance handoff
 - update generated refs and validators when active handoff paths move
 
 ## Stop-Line

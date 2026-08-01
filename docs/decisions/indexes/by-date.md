@@ -117,3 +117,7 @@
 ## 2026-07-30
 
 - [AOA-MEM-D-0083 Decision: Keep memory participation inside one two-speed owner family](../AOA-MEM-D-0083-two-speed-participation-spine.md) (`docs/decisions/AOA-MEM-D-0083-two-speed-participation-spine.md`)
+
+## 2026-08-01
+
+- [AOA-MEM-D-0084 Decision: Review MCP captures before proof or acceptance](../AOA-MEM-D-0084-review-mcp-captures-before-proof-or-acceptance.md) (`docs/decisions/AOA-MEM-D-0084-review-mcp-captures-before-proof-or-acceptance.md`)

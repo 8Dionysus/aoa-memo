@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:aoa-memo:mcp-owner-evidence-review:aoa-memo-brief-v1",
+  "title": "AoA memo MCP brief owner-review profile",
+  "type": "object",
+  "required": [
+    "schema",
+    "repo",
+    "operation_mode",
+    "local_port",
+    "memory_route",
+    "central_memory_contracts",
+    "reviewed_memory"
+  ],
+  "properties": {
+    "schema": {"const": "aoa_memo_brief_v1"},
+    "repo": {"const": "aoa-memo"},
+    "operation_mode": {"const": "read_write_under_review"},
+    "local_port": {
+      "type": "object",
+      "required": [
+        "repo",
+        "memory_role",
+        "memory_route_status",
+        "recommended_port_level",
+        "ready"
+      ],
+      "properties": {
+        "repo": {"const": "aoa-memo"},
+        "memory_role": {"const": "reviewed-memory-owner"},
+        "memory_route_status": {"const": "root_memory_route"},
+        "recommended_port_level": {"const": "route_only"},
+        "ready": {"const": false}
+      }
+    },
+    "memory_route": {
+      "type": "object",
+      "required": ["brief", "durable_landing"],
+      "properties": {
+        "brief": {"const": "aoa_memo_brief"},
+        "durable_landing": {"type": "string", "minLength": 1}
+      }
+    },
+    "central_memory_contracts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["path", "abs_path", "exists"],
+        "properties": {
+          "path": {"type": "string", "minLength": 1},
+          "abs_path": {"type": "string", "minLength": 1},
+          "exists": {"const": true}
+        }
+      }
+    },
+    "reviewed_memory": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "kind",
+          "title",
+          "summary",
+          "current_recall_status",
+          "source_kind",
+          "source_path"
+        ],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "kind": {"type": "string", "minLength": 1},
+          "title": {"type": "string", "minLength": 1},
+          "summary": {"type": "string", "minLength": 1},
+          "current_recall_status": {"enum": ["allowed", "preferred"]},
+          "source_kind": {"const": "reviewed_corpus"},
+          "source_path": {
+            "type": "string",
+            "pattern": "^memo/objects/.+/object\\.json$"
+          }
+        }
+      }
+    }
+  }
+}
