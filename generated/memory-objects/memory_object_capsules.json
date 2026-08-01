@@ -649,6 +649,19 @@
       "source_path": "memo/objects/claims/2026/kag-mcp-evidence-does-not-imply-acceptance/object.json"
     },
     {
+      "id": "memo.claim.2026-08-01.post-merge-mcp-organ-chain-preserves-owner-authority",
+      "kind": "claim",
+      "title": "Post-merge MCP organ chain preserves owner authority",
+      "summary": "The landed KAG read plane, bounded consumer configuration, central eval, and host-visible KAG-to-memo-to-eval orchestration remain independently owned evidence and do not transfer semantic or effect authority.",
+      "source_kind": "reviewed_corpus",
+      "recall_posture_short": "allowed current recall; confirmed review state; Landed through reviewed intake; use as reviewed recall, not proof or stronger owner truth",
+      "trust_posture_short": "cool temperature; human_reviewed authority; confidence 0.85; freshness 1.00",
+      "use_when_short": "Use when claim-level recall is needed and this object remains allowed for semantic, source_route.",
+      "do_not_use_short": "Do not treat this claim as proof or stronger than its cited sources.",
+      "strongest_next_source": "memo/intake/reviewed/aoa-evals.20260801T121155Z.a-post-merge-owner-grounded-aoa-kag-mcp-result-b.aoa-memo-intake.json",
+      "source_path": "memo/objects/claims/2026/post-merge-mcp-organ-chain-preserves-owner-authority/object.json"
+    },
+    {
       "id": "memo.decision.2026-05-22.abyss-stack-aoa-memo-mcp-access-plane",
       "kind": "decision",
       "title": "abyss-stack aoa-memo-mcp access plane route",

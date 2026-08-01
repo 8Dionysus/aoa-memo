@@ -1,0 +1,90 @@
+{
+  "id": "memo.claim.2026-08-01.post-merge-mcp-organ-chain-preserves-owner-authority",
+  "kind": "claim",
+  "title": "Post-merge MCP organ chain preserves owner authority",
+  "summary": "The landed KAG read plane, bounded consumer configuration, central eval, and host-visible KAG-to-memo-to-eval orchestration remain independently owned evidence and do not transfer semantic or effect authority.",
+  "scope": [
+    "repo:aoa-evals",
+    "repo:aoa-memo",
+    "workspace:OS-Abyss"
+  ],
+  "owner_refs": [
+    "repo:aoa-evals",
+    "repo:aoa-memo"
+  ],
+  "payload_ref": "memo/intake/reviewed/aoa-evals.20260801T121155Z.a-post-merge-owner-grounded-aoa-kag-mcp-result-b.aoa-memo-intake.json",
+  "tags": [
+    "reviewed-intake",
+    "local-memo-port",
+    "proof-boundary-memory",
+    "constraint"
+  ],
+  "time": {
+    "created_at": "2026-08-01T12:14:34Z",
+    "observed_at": "2026-08-01T12:11:55Z",
+    "valid_from": "2026-08-01T12:14:34Z",
+    "valid_to": null
+  },
+  "provenance": {
+    "source_refs": [
+      "memo/intake/reviewed/aoa-evals.20260801T121155Z.a-post-merge-owner-grounded-aoa-kag-mcp-result-b.aoa-memo-intake.json",
+      "repo:aoa-evals/memo/candidates/20260801T120622Z.00a930e9.a-post-merge-owner-grounded-aoa-kag-mcp-result-b.candidate.json",
+      "repo:aoa-evals/memo/receipts/20260801T121201Z.export-aoa-evals-20260801t121155z-a-post-merge-o.forwarding-receipt.json",
+      "repo:aoa-evals/evals/boundary/aoa-organ-access-admission-integrity/EVAL.md",
+      "repo:aoa-kag/docs/decisions/AOA-KAG-D-0023-review-captured-mcp-results-in-the-owner.md",
+      "repo:aoa-sdk/docs/decisions/AOA-SDK-D-0080-host-visible-cross-organ-orchestration.md",
+      "receipt:aoa-kag-owner-review:sha256:01e15dd251de5706ac49a010db0f50ff097445de3ebb52e0ebaeeb75ace56d05",
+      "receipt:codex-consumer-apply:sha256:b1d244f529e1c7ce772335cc58e3a91bc2bf5ef671728013764f6c5587ca821f",
+      "receipt:os-abyss-kag-admission:sha256:a0cd01ef0312bc12ab53502ba8b2bdf1d44534250c3107f693c5df5488244cd5",
+      "receipt:abyss-stack-cross-organ-host:sha256:6bd828176bdb2480967a78b373fed376adb6d5094c7842805c687d437dd8bdf4",
+      "receipt:abyss-stack-cross-organ-host:sha256:f529db353f38f1c74afe36197fd9e8314ab081e4963c9e3bd06965fdade7ab80",
+      "receipt:abyss-stack-cross-organ-host:sha256:1c7bc135310e6ca21f9bcf7ba3d2e606b9f34f2405508e96f14e9d541bf3a9d6",
+      "receipt:abyss-stack-cross-organ-host:sha256:f5223835907e60ba80123c30406e82ed16d46592099fdbf4fa5ed8aefa343e36",
+      "receipt:aoa-evals-central-review:sha256:e041b6fe29c6c059d36b2ea28391b95592213e9fe7cebe8c7dea29c21c143095"
+    ],
+    "episode_refs": [],
+    "provenance_thread_id": "prov.aoa-evals.post-merge-mcp-organ-chain-preserves-owner-authority.2026-08-01"
+  },
+  "trust": {
+    "temperature": "cool",
+    "confidence": 0.85,
+    "confidence_note": "Landed from reviewed local memo export after schema, guardrail, packet, and receipt checks.",
+    "authority_kind": "human_reviewed",
+    "authority": "reviewed intake landing from aoa-evals",
+    "freshness": 1.0,
+    "freshness_note": "Fresh at landing time; future recall depends on lifecycle review.",
+    "salience": 0.8,
+    "salience_note": "Imported because the origin port requested durable reviewed memory."
+  },
+  "lifecycle": {
+    "review_state": "confirmed",
+    "supersedes": [],
+    "superseded_by": null,
+    "retention_class": "reviewed-intake",
+    "promotion_state": "promoted",
+    "current_recall": {
+      "status": "allowed",
+      "status_reason": "Landed through reviewed intake; use as reviewed recall, not proof or stronger owner truth."
+    }
+  },
+  "access": {
+    "access_class": "public",
+    "read_scopes": [
+      "public"
+    ],
+    "write_scopes": [
+      "maintainer"
+    ],
+    "promotion_scopes": [
+      "maintainer",
+      "human-review"
+    ]
+  },
+  "bridges": {
+    "tos_refs": [],
+    "skill_refs": [],
+    "eval_refs": [],
+    "kag_lift_status": "candidate",
+    "route_capsule_ref": "memo/intake/reviewed/aoa-evals.20260801T121155Z.a-post-merge-owner-grounded-aoa-kag-mcp-result-b.aoa-memo-intake.json"
+  }
+}
