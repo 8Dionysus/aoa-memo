@@ -12,6 +12,8 @@
 | Dispatch behavior and route compression | `aoa-sdk` |
 | Runtime stores, workers, receipts, and operational execution | `abyss-stack` or runtime owner |
 | MCP capture transport, process identity, and stack attestation | `abyss-stack` |
+| Memo capability meaning, primitive ceiling, and durable-read/candidate split | `aoa-memo` |
+| MCP tool binding, process catalog, credential enforcement, and deployment | `abyss-stack` |
 | Memo payload grounding and current reviewed-corpus read-model parity | `aoa-memo` |
 | Organ-access review ABI and control-plane composition | `aoa-sdk` |
 

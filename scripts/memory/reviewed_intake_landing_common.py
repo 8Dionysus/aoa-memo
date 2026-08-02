@@ -46,6 +46,7 @@ LOCAL_KIND_TO_OBJECT_KIND = {
 }
 SYMBOLIC_REF_PREFIXES = (
     "repo:",
+    "aoa-kag://",
     "http://",
     "https://",
     "web:",

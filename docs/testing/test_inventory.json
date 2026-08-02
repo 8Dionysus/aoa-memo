@@ -172,6 +172,7 @@
       "mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_downstream_feed_docs_routes.py",
       "mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_downstream_feed_generated_contracts.py",
       "mechanics/consumer-handoff/parts/downstream-feed-regression/tests/test_downstream_feed_runtime_writeback_contracts.py",
+      "mechanics/consumer-handoff/parts/mcp-organ-access/tests/test_organ_access.py",
       "mechanics/consumer-handoff/parts/mcp-owner-evidence-review/tests/test_review_memo_mcp_result.py",
       "mechanics/consumer-handoff/parts/orchestrator-recall-alignment/tests/test_agent_local_promotion.py",
         "mechanics/consumer-handoff/parts/orchestrator-recall-alignment/tests/test_aoa_memo_participation_contract.py",

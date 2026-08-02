@@ -63,6 +63,10 @@ request `reviewed_write`, then `aoa-memo` copies the packet into
 `memo/intake/reviewed/`, writes a landing receipt, and creates the
 `memo/objects/` bundle as a source-owned change.
 The active next slice is neighbor adoption so adjacent repos can consume the sharpened memo contracts without moving routing, role policy, graph normalization, or verdict logic into this repository.
+The MCP adoption slice now publishes exact read and candidate capability
+identities and has completed one reviewed direct-owner-chain landing; live
+access, central proof, registry admission, and durable acceptance remain
+separate evidence-bearing transactions.
 The first router-first adoption package formalizes additive inspect -> capsule -> expand consumption across the doctrine and object-facing recall families without changing memo ownership.
 The first checkpoint mechanic landing makes checkpoint relaunch anchors,
 carry packets, approval and health records, and checkpoint-to-memory mappings

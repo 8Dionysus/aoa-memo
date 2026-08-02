@@ -2,8 +2,11 @@ from __future__ import annotations
 
 import importlib.util
 import json
+import shutil
 import sys
 from pathlib import Path
+
+import pytest
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -38,6 +41,8 @@ EXAMPLE_CANDIDATE = (
     / "candidates"
     / "20260520T171200Z.codex-plane-memory-route.candidate.json"
 )
+EXAMPLE_PORT = REPO_ROOT / "examples" / "memory-ports" / "example-port"
+EXPORT_REF = "exports/20260520T172000Z.codex-plane-memory-route.aoa-memo-intake.json"
 
 
 def candidate_payload() -> dict:
@@ -57,6 +62,35 @@ def evaluation_payload() -> dict:
             "does not establish owner acceptance."
         ),
     }
+
+
+def test_reviewed_write_rejects_symbolic_receipt_candidate_ref(tmp_path: Path) -> None:
+    port = tmp_path / "example-port"
+    shutil.copytree(EXAMPLE_PORT, port)
+    export_path = port / EXPORT_REF
+    export = json.loads(export_path.read_text(encoding="utf-8"))
+    export["allowed_result"] = "reviewed_write"
+
+    receipt_name = "20260520T171501Z.codex-plane-memory-route.symbolic-receipt.json"
+    original_path = (
+        port
+        / "receipts"
+        / "20260520T171500Z.codex-plane-memory-route.validation-receipt.json"
+    )
+    receipt_path = port / "receipts" / receipt_name
+    receipt = json.loads(original_path.read_text(encoding="utf-8"))
+    receipt["id"] = (
+        "receipt:example-repo:20260520T171501Z:codex-plane-memory-route-symbolic"
+    )
+    receipt["candidate_ref"] = (
+        "candidate:example-repo:20260520T171200Z:codex-plane-memory-route"
+    )
+    receipt_path.write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8")
+    export["receipt_refs"].append(f"receipts/{receipt_name}")
+    export_path.write_text(json.dumps(export, indent=2) + "\n", encoding="utf-8")
+
+    with pytest.raises(landing.LandingError, match="must be a local packet ref"):
+        landing.load_landing_inputs(port, EXPORT_REF)
 
 
 def test_candidate_can_be_explicitly_rejected_without_creating_memory(

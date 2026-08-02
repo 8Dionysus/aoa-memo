@@ -1727,6 +1727,43 @@
       ]
     },
     {
+      "id": "memo.claim.2026-08-02.direct-owner-mcp-chain-preserves-proof-and-memory-authority",
+      "kind": "claim",
+      "title": "Direct owner MCP chain preserves proof and memory authority",
+      "source_kind": "reviewed_corpus",
+      "source_path": "memo/objects/claims/2026/direct-owner-mcp-chain-preserves-proof-and-memory-authority/object.json",
+      "sections": [
+        {
+          "section_id": "memo.claim.2026-08-02.direct-owner-mcp-chain-preserves-proof-and-memory-authority#identity-and-recall",
+          "heading": "Identity and Recall",
+          "ordinal": 1,
+          "summary": "Names the claim surface, its active recall modes, and its allowed current-recall posture.",
+          "body": "Direct owner MCP chain preserves proof and memory authority. A direct owner MCP chain must preserve aoa-memo durable acceptance and aoa-evals proof as explicit owner steps; KAG evidence and candidate preparation alone do not authorize either. Scope: repo:abyss-stack, repo:aoa-memo, workspace:OS-Abyss. Scope classes: repo, workspace. Primary recall modes: semantic, source_route. Current recall status: allowed because Landed through reviewed intake; use as reviewed recall, not proof or stronger owner truth. Payload ref: memo/intake/reviewed/abyss-stack.20260802T060052Z.a-direct-owner-mcp-chain-must-preserve-aoa-memo.aoa-memo-intake.json."
+        },
+        {
+          "section_id": "memo.claim.2026-08-02.direct-owner-mcp-chain-preserves-proof-and-memory-authority#provenance-and-evidence",
+          "heading": "Provenance and Evidence",
+          "ordinal": 2,
+          "summary": "Preserves source refs, provenance thread linkage, and related curated object ids for backward walk.",
+          "body": "Provenance thread: prov.abyss-stack.direct-owner-mcp-chain-preserves-proof-and-memory-authority.2026-08-02. Source refs: memo/intake/reviewed/abyss-stack.20260802T060052Z.a-direct-owner-mcp-chain-must-preserve-aoa-memo.aoa-memo-intake.json, repo:abyss-stack/memo/candidates/20260802T055314Z.be3a648f.a-direct-owner-mcp-chain-must-preserve-aoa-memo.candidate.json, repo:abyss-stack/memo/receipts/20260802T060113Z.export-abyss-stack-20260802t060052z-a-direct-own.forwarding-receipt.json, repo:abyss-stack/memo/candidates/20260526T003500Z.os-access-plane-mcp-services-owner-split.candidate.json, aoa-kag://evidence/e08def9f-f95e-4ea9-941f-2d86592c647a. Episode refs: none. Related curated object ids: none. Strongest next sources: memo/intake/reviewed/abyss-stack.20260802T060052Z.a-direct-owner-mcp-chain-must-preserve-aoa-memo.aoa-memo-intake.json, repo:abyss-stack/memo/candidates/20260802T055314Z.be3a648f.a-direct-owner-mcp-chain-must-preserve-aoa-memo.candidate.json, repo:abyss-stack/memo/receipts/20260802T060113Z.export-abyss-stack-20260802t060052z-a-direct-own.forwarding-receipt.json."
+        },
+        {
+          "section_id": "memo.claim.2026-08-02.direct-owner-mcp-chain-preserves-proof-and-memory-authority#trust-and-lifecycle",
+          "heading": "Trust and Lifecycle",
+          "ordinal": 3,
+          "summary": "Summarizes trust posture, lifecycle posture, and contradiction or replacement visibility.",
+          "body": "Authority kind: human_reviewed (reviewed intake landing from abyss-stack). Temperature: warm; confidence 0.98; freshness 1.00; salience 0.80. Review state: confirmed. Retention class: reviewed-intake. Promotion state: promoted. Supersedes: none. Superseded by: none. Replacement ref: none. Contradiction refs: none."
+        },
+        {
+          "section_id": "memo.claim.2026-08-02.direct-owner-mcp-chain-preserves-proof-and-memory-authority#bridges-and-access",
+          "heading": "Bridges and Access",
+          "ordinal": 4,
+          "summary": "Collects access posture, route capsule, and outward bridge refs without turning memory into routing policy.",
+          "body": "Access class: public. Scope classes: repo, workspace. Read scopes: public. Write scopes: maintainer. Promotion scopes: maintainer, human-review. Route capsule ref: memo/intake/reviewed/abyss-stack.20260802T060052Z.a-direct-owner-mcp-chain-must-preserve-aoa-memo.aoa-memo-intake.json. ToS refs: none. Skill refs: none. Eval refs: none. KAG lift status: candidate."
+        }
+      ]
+    },
+    {
       "id": "memo.claim.2026-07-31.host-visible-mcp-chain-does-not-transfer-authority",
       "kind": "claim",
       "title": "Host-visible MCP chain does not transfer authority",

@@ -1,0 +1,33 @@
+{
+  "schema": "aoa_memo_reviewed_intake_landing_receipt_v1",
+  "id": "landing-receipt:abyss-stack:20260802T060502Z:abyss-stack-direct-owner-mcp-chain-preserves-proof-and-memory-authority",
+  "repo": "abyss-stack",
+  "source_export_ref": "repo:abyss-stack/memo/exports/20260802T060052Z.a-direct-owner-mcp-chain-must-preserve-aoa-memo.aoa-memo-intake.json",
+  "copied_intake_ref": "memo/intake/reviewed/abyss-stack.20260802T060052Z.a-direct-owner-mcp-chain-must-preserve-aoa-memo.aoa-memo-intake.json",
+  "candidate_refs": [
+    "repo:abyss-stack/memo/candidates/20260802T055314Z.be3a648f.a-direct-owner-mcp-chain-must-preserve-aoa-memo.candidate.json"
+  ],
+  "receipt_refs": [
+    "repo:abyss-stack/memo/receipts/20260802T060113Z.export-abyss-stack-20260802t060052z-a-direct-own.forwarding-receipt.json"
+  ],
+  "object_ref": "memo.claim.2026-08-02.direct-owner-mcp-chain-preserves-proof-and-memory-authority",
+  "object_path": "memo/objects/claims/2026/direct-owner-mcp-chain-preserves-proof-and-memory-authority/object.json",
+  "result": "landed",
+  "checks": [
+    "export_schema",
+    "export_source_refs",
+    "export_evidence_refs",
+    "allowed_result_reviewed_write",
+    "candidate_schema",
+    "candidate_source_refs",
+    "candidate_evidence_refs",
+    "candidate_guardrails",
+    "receipt_schema",
+    "receipt_candidate_ref",
+    "receipt_errors_empty",
+    "memory_object_schema"
+  ],
+  "errors": [],
+  "landed_at": "2026-08-02T06:05:02Z",
+  "landed_by": "operator-and-aoa-memo"
+}
