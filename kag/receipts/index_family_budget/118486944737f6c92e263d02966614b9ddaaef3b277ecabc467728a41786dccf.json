@@ -1,0 +1,17 @@
+{
+  "allowed_bytes": 11304626,
+  "allowed_tracked_bytes": 18180093,
+  "approved_by": "repository-owner",
+  "base_ref": "991af4ffc08fe3afd5f2a9b20c9340788b2c20d2",
+  "changed_generated_bytes": 11304626,
+  "changed_generated_files": 279,
+  "decision_ref": "aoa-kag:docs/decisions/AOA-KAG-D-0017-portable-content-addressed-repository-family.md",
+  "default_limit_bytes": 1048576,
+  "head_family_digest": "118486944737f6c92e263d02966614b9ddaaef3b277ecabc467728a41786dccf",
+  "reason": "Refresh the portable family after publishing owner-scoped memory MCP contours and landing the reviewed durable direct-owner chain claim; this receipt admits only the measured generated delta and does not raise standing budgets.",
+  "repo": "aoa-memo",
+  "schema_version": "aoa-repo-local-kag-budget-receipt-v1",
+  "scope": "generated_delta",
+  "tracked_bytes": 18180093,
+  "tracked_bytes_max": 18874368
+}

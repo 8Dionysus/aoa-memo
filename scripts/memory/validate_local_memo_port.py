@@ -47,6 +47,7 @@ VOCAB_FIELDS = {
 }
 SYMBOLIC_REF_PREFIXES = (
     "repo:",
+    "aoa-kag://",
     "http://",
     "https://",
     "web:",

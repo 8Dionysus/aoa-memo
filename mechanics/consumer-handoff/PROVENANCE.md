@@ -36,6 +36,8 @@ The active technical artifacts now live under the nearest functioning part:
   `parts/orchestrator-recall-alignment/{schemas,examples,scripts,tests}/`
 - MCP capture trust, memo-specific owner review, and its negative tests:
   `parts/mcp-owner-evidence-review/{config,scripts,tests}/`
+- MCP organ capability meaning and its exact read/candidate primitive ceilings:
+  `parts/mcp-organ-access/{config,schemas,tests}/`
 
 Former package-level `schemas/`, `examples/`, `generated/`, `scripts/`, and
 `tests/` homes are placement history only after the 2026-05-19 part-local

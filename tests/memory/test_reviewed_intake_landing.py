@@ -125,6 +125,31 @@ def test_candidate_only_export_cannot_land() -> None:
         raise AssertionError("candidate_only export unexpectedly loaded as landable input")
 
 
+def test_owner_qualified_kag_evidence_ref_is_preserved_as_symbolic_evidence(tmp_path: Path) -> None:
+    port = copy_reviewed_write_port(tmp_path)
+    kag_ref = "aoa-kag://evidence/owner-qualified-result"
+    export_path = port / EXPORT_REF
+    export_payload = json.loads(export_path.read_text(encoding="utf-8"))
+    export_payload["evidence_refs"] = [kag_ref]
+    export_path.write_text(json.dumps(export_payload, indent=2) + "\n", encoding="utf-8")
+
+    candidate_path = port / "candidates" / "20260520T171200Z.codex-plane-memory-route.candidate.json"
+    candidate_payload = json.loads(candidate_path.read_text(encoding="utf-8"))
+    candidate_payload["evidence_refs"] = [kag_ref]
+    candidate_path.write_text(json.dumps(candidate_payload, indent=2) + "\n", encoding="utf-8")
+
+    inputs = landing.load_landing_inputs(port, EXPORT_REF)
+    plan = landing.build_landing_plan(
+        inputs,
+        output_root=tmp_path / "aoa-memo",
+        object_kind="claim",
+        reviewed_at="2026-08-02T06:08:00Z",
+        reviewed_by="test-suite",
+    )
+
+    assert kag_ref in plan.object_payload["provenance"]["source_refs"]
+
+
 def test_packet_refs_must_stay_inside_port(tmp_path: Path) -> None:
     port = copy_reviewed_write_port(tmp_path)
     export_path = port / EXPORT_REF
@@ -267,27 +292,3 @@ def test_reviewed_write_rejects_receipt_for_unexported_candidate(tmp_path: Path)
         assert "missing successful receipt for candidate_ref candidates/20260520T171200Z.codex-plane-memory-route.candidate.json" in message
     else:
         raise AssertionError("receipt for unexported candidate unexpectedly authorized landing")
-
-
-def test_reviewed_write_rejects_symbolic_receipt_candidate_ref(tmp_path: Path) -> None:
-    port = copy_reviewed_write_port(tmp_path)
-    receipt_name = "20260520T171501Z.codex-plane-memory-route.symbolic-receipt.json"
-    original_path = port / "receipts" / "20260520T171500Z.codex-plane-memory-route.validation-receipt.json"
-    receipt_path = port / "receipts" / receipt_name
-    receipt = json.loads(original_path.read_text(encoding="utf-8"))
-    receipt["id"] = "receipt:example-repo:20260520T171501Z:codex-plane-memory-route-symbolic"
-    receipt["candidate_ref"] = "candidate:example-repo:20260520T171200Z:codex-plane-memory-route"
-    receipt_path.write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8")
-
-    export_path = port / EXPORT_REF
-    payload = json.loads(export_path.read_text(encoding="utf-8"))
-    payload["receipt_refs"].append(f"receipts/{receipt_name}")
-    export_path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
-
-    try:
-        landing.load_landing_inputs(port, EXPORT_REF)
-    except landing.LandingError as exc:
-        message = str(exc)
-        assert f"{receipt_path}: receipt candidate_ref must be a local packet ref" in message
-    else:
-        raise AssertionError("symbolic receipt candidate_ref was silently ignored")

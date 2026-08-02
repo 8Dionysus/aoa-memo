@@ -9,6 +9,14 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Added
 
+- Add decision `AOA-MEM-D-0085` and owner-authored MCP capability contours for
+  reviewed durable-memory reads and candidate-only handoff preparation. The
+  read/candidate identities remain disjoint and grant no direct durable write,
+  proof, admission, or effect authority.
+- Land the reviewed claim that a direct KAG → Memo → Evals chain preserves
+  proof and memory-owner boundaries, with the exact reviewed intake and
+  landing receipt retained in the corpus.
+
 - Add decision `AOA-MEM-D-0082`, making reviewed public explicit pull the R1
   admitted core while keeping proactive, private, and agent-local runtime
   contours disabled until separate evidence and authority gates pass.
@@ -24,6 +32,10 @@ Tracking starts with the community-docs baseline for this repository.
   `review`, and `evolve` modes under the canonical `skills/` home.
 
 ### Changed
+
+- Treat `aoa-kag://` evidence references as symbolic owner refs in reviewed
+  intake validation while continuing to require packet-local candidate and
+  receipt references for landing authorization.
 
 - Route current dispatch boundaries, mechanic owner maps, operational readouts,
   and memo consumer guidance through the canonical `aoa-sdk` control plane

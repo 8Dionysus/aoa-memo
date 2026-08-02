@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://abyss.local/schemas/aoa-memo/organ-access-v1.json",
+  "title": "aoa-memo MCP organ access",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "schema_version",
+    "organ_id",
+    "source_owner",
+    "access_runtime_owner",
+    "admission_owner",
+    "proof_owner",
+    "contains_secrets",
+    "admission_asserted",
+    "owner_acceptance_asserted",
+    "proof_asserted",
+    "effect_activation_authorized",
+    "capabilities",
+    "guardrails"
+  ],
+  "properties": {
+    "$schema": {"type": "string", "minLength": 1},
+    "schema_version": {"const": "aoa_memo_organ_access_v1"},
+    "organ_id": {"const": "aoa-memo"},
+    "source_owner": {"const": "aoa-memo"},
+    "access_runtime_owner": {"const": "abyss-stack"},
+    "admission_owner": {"const": "aoa-sdk"},
+    "proof_owner": {"const": "aoa-evals"},
+    "contains_secrets": {"const": false},
+    "admission_asserted": {"const": false},
+    "owner_acceptance_asserted": {"const": false},
+    "proof_asserted": {"const": false},
+    "effect_activation_authorized": {"const": false},
+    "capabilities": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {"$ref": "#/$defs/capability"}
+    },
+    "guardrails": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "durable_corpus_write_allowed",
+        "owner_acceptance_inference_allowed",
+        "proof_inference_allowed",
+        "hidden_mcp_chaining_allowed",
+        "annotations_are_security_enforcement",
+        "discovery_can_expand_write_roots"
+      ],
+      "properties": {
+        "durable_corpus_write_allowed": {"const": false},
+        "owner_acceptance_inference_allowed": {"const": false},
+        "proof_inference_allowed": {"const": false},
+        "hidden_mcp_chaining_allowed": {"const": false},
+        "annotations_are_security_enforcement": {"const": false},
+        "discovery_can_expand_write_roots": {"const": false}
+      }
+    }
+  },
+  "$defs": {
+    "capability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "capability_id",
+        "policy_family",
+        "credential_class",
+        "process_contour",
+        "authority_ceiling",
+        "primitives"
+      ],
+      "properties": {
+        "capability_id": {"type": "string", "minLength": 1},
+        "policy_family": {"enum": ["read", "candidate"]},
+        "credential_class": {"type": "string", "minLength": 1},
+        "process_contour": {"enum": ["read", "candidate"]},
+        "authority_ceiling": {"type": "string", "minLength": 1},
+        "primitives": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/primitive"}
+        }
+      }
+    },
+    "primitive": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "primitive_id",
+        "kind",
+        "mcp_name",
+        "effect_class",
+        "idempotency",
+        "approval_required",
+        "maximum_blast_radius",
+        "rollback_route"
+      ],
+      "properties": {
+        "primitive_id": {"type": "string", "minLength": 1},
+        "kind": {"enum": ["tool", "resource_template"]},
+        "mcp_name": {"type": "string", "minLength": 1},
+        "effect_class": {"enum": ["observe", "derive", "prepare_candidate"]},
+        "idempotency": {"enum": ["read_only", "non_idempotent"]},
+        "approval_required": {"type": "boolean"},
+        "maximum_blast_radius": {"type": "string", "minLength": 1},
+        "rollback_route": {"type": ["string", "null"]}
+      }
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "$schema": "../schemas/organ-access.schema.json",
+  "schema_version": "aoa_memo_organ_access_v1",
+  "organ_id": "aoa-memo",
+  "source_owner": "aoa-memo",
+  "access_runtime_owner": "abyss-stack",
+  "admission_owner": "aoa-sdk",
+  "proof_owner": "aoa-evals",
+  "contains_secrets": false,
+  "admission_asserted": false,
+  "owner_acceptance_asserted": false,
+  "proof_asserted": false,
+  "effect_activation_authorized": false,
+  "capabilities": [
+    {
+      "capability_id": "durable-memory-read",
+      "policy_family": "read",
+      "credential_class": "memo-read",
+      "process_contour": "read",
+      "authority_ceiling": "reviewed durable memory access projection only",
+      "primitives": [
+        {
+          "primitive_id": "brief-reviewed-memory",
+          "kind": "tool",
+          "mcp_name": "aoa_memo_recall_brief",
+          "effect_class": "derive",
+          "idempotency": "read_only",
+          "approval_required": false,
+          "maximum_blast_radius": "one bounded reviewed-memory brief",
+          "rollback_route": null
+        },
+        {
+          "primitive_id": "recall-reviewed-memory",
+          "kind": "tool",
+          "mcp_name": "aoa_memo_recall_reviewed",
+          "effect_class": "derive",
+          "idempotency": "read_only",
+          "approval_required": false,
+          "maximum_blast_radius": "one bounded reviewed-corpus query",
+          "rollback_route": null
+        },
+        {
+          "primitive_id": "read-reviewed-object",
+          "kind": "tool",
+          "mcp_name": "aoa_memo_read_object",
+          "effect_class": "observe",
+          "idempotency": "read_only",
+          "approval_required": false,
+          "maximum_blast_radius": "one reviewed corpus object and source refs",
+          "rollback_route": null
+        },
+        {
+          "primitive_id": "open-reviewed-object",
+          "kind": "resource_template",
+          "mcp_name": "aoa-memo://memory/object/{object_id}",
+          "effect_class": "observe",
+          "idempotency": "read_only",
+          "approval_required": false,
+          "maximum_blast_radius": "one reviewed corpus object and source refs",
+          "rollback_route": null
+        }
+      ]
+    },
+    {
+      "capability_id": "memory-candidate-prepare",
+      "policy_family": "candidate",
+      "credential_class": "memo-candidate",
+      "process_contour": "candidate",
+      "authority_ceiling": "allowlisted local candidate and forwarding artifacts only",
+      "primitives": [
+        {
+          "primitive_id": "create-local-candidate",
+          "kind": "tool",
+          "mcp_name": "aoa_memo_create_candidate",
+          "effect_class": "prepare_candidate",
+          "idempotency": "non_idempotent",
+          "approval_required": false,
+          "maximum_blast_radius": "one new packet below one allowlisted local memo port",
+          "rollback_route": "delete the exact unaccepted local packet by owner-reviewed filesystem action"
+        },
+        {
+          "primitive_id": "prepare-intake-packet",
+          "kind": "tool",
+          "mcp_name": "aoa_memo_prepare_intake_packet",
+          "effect_class": "prepare_candidate",
+          "idempotency": "non_idempotent",
+          "approval_required": false,
+          "maximum_blast_radius": "one candidate-only export below one allowlisted local memo port",
+          "rollback_route": "delete the exact unaccepted local packet by owner-reviewed filesystem action"
+        },
+        {
+          "primitive_id": "prepare-forwarding-receipt",
+          "kind": "tool",
+          "mcp_name": "aoa_memo_prepare_forwarding_receipt",
+          "effect_class": "prepare_candidate",
+          "idempotency": "non_idempotent",
+          "approval_required": false,
+          "maximum_blast_radius": "one forwarding-check receipt below one allowlisted local memo port",
+          "rollback_route": "delete the exact unaccepted local packet by owner-reviewed filesystem action"
+        }
+      ]
+    }
+  ],
+  "guardrails": {
+    "durable_corpus_write_allowed": false,
+    "owner_acceptance_inference_allowed": false,
+    "proof_inference_allowed": false,
+    "hidden_mcp_chaining_allowed": false,
+    "annotations_are_security_enforcement": false,
+    "discovery_can_expand_write_roots": false
+  }
+}

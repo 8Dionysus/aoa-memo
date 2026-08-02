@@ -19,6 +19,8 @@ faces, and guardrail cases.
   summaries over reviewed objects, indexes, receipts, and landing records
 - authenticate runtime-owner MCP captures and review their exact memo payload
   against current owner source before any proof or acceptance handoff
+- publish exact owner-authored MCP capability ceilings before runtime binding,
+  keeping durable read and candidate preparation on disjoint credentials
 - update generated refs and validators when active handoff paths move
 
 ## Stop-Line
