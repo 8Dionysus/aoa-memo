@@ -1,0 +1,17 @@
+{
+  "allowed_bytes": 2609451,
+  "allowed_tracked_bytes": 18224539,
+  "approved_by": "repository-owner",
+  "base_ref": "41fd7a647982d907464179e8d20a12d6398bfb4c",
+  "changed_generated_bytes": 2609451,
+  "changed_generated_files": 63,
+  "decision_ref": "aoa-kag:docs/decisions/AOA-KAG-D-0017-portable-content-addressed-repository-family.md",
+  "default_limit_bytes": 1048576,
+  "head_family_digest": "b3c25e5d0113b5461adfff01e6df451765d73f50c4bf162f81cb4832fa87ef20",
+  "reason": "Refresh portable aoa-memo owner-family KAG after privacy-safe projection of the reviewed external-actor claim; generated delta is a source/read-model consequence only and does not imply proof, runtime, stats, or actor acceptance.",
+  "repo": "aoa-memo",
+  "schema_version": "aoa-repo-local-kag-budget-receipt-v1",
+  "scope": "generated_delta",
+  "tracked_bytes": 18224539,
+  "tracked_bytes_max": 18874368
+}
