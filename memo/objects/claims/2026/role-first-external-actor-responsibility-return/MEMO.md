@@ -74,18 +74,21 @@ provenance, including the exact sections for runtime proof, parent
 pause/resume, master wake separation, responsibility return, receipt repair,
 clock-agent filtering, and wake proof:
 
-- `operator:evidence:/srv/abyss-machine/tmp/ai/aoa-external-actors-goal-20260808/live-proof-20260814/runtime-update-luna-handoff.json#/external_actor_proof`
-- `operator:evidence:/srv/abyss-machine/tmp/ai/aoa-external-actors-goal-20260808/live-proof-20260814/runtime-update-luna-handoff.json#/parent_pause_resume`
-- `operator:evidence:/srv/abyss-machine/tmp/ai/aoa-external-actors-goal-20260808/live-proof-20260814/runtime-update-luna-handoff.json#/master_wake_state_separation`
-- `operator:evidence:/srv/abyss-machine/tmp/ai/aoa-external-actors-goal-20260808/live-proof-20260814/runtime-update-luna-handoff.json#/responsibility_return`
-- `operator:evidence:/srv/abyss-machine/tmp/ai/aoa-external-actors-goal-20260808/live-proof-20260814/actor-receipt-landing-repair-luna-handoff.json#/final_owner_source`
-- `operator:evidence:/srv/abyss-machine/tmp/ai/aoa-external-actors-goal-20260808/live-proof-20260814/clock-agent-003-handoff.json#/return_filter`
-- `operator:evidence:/srv/abyss-machine/tmp/ai/aoa-external-actors-goal-20260808/live-proof-20260814/wake-steward-luna-handoff.json#/wake_proof`
-- `operator:aoa:/srv/AbyssOS/.aoa/sessions/2026-08-15__019__you-are-one-external-codex-process-carrying-a/session.manifest.json#review_status`
-- `operator:aoa:/srv/AbyssOS/.aoa/sessions/2026-08-15__019__you-are-one-external-codex-process-carrying-a/segments/001__compaction-to-latest.md#event-000040`
+- `operator:evidence:aoa-external-actors-goal-20260808/live-proof-20260814/runtime-update-luna-handoff.json#/external_actor_proof`
+- `operator:evidence:aoa-external-actors-goal-20260808/live-proof-20260814/runtime-update-luna-handoff.json#/parent_pause_resume`
+- `operator:evidence:aoa-external-actors-goal-20260808/live-proof-20260814/runtime-update-luna-handoff.json#/master_wake_state_separation`
+- `operator:evidence:aoa-external-actors-goal-20260808/live-proof-20260814/runtime-update-luna-handoff.json#/responsibility_return`
+- `operator:evidence:aoa-external-actors-goal-20260808/live-proof-20260814/actor-receipt-landing-repair-luna-handoff.json#/final_owner_source`
+- `operator:evidence:aoa-external-actors-goal-20260808/live-proof-20260814/clock-agent-003-handoff.json#/return_filter`
+- `operator:evidence:aoa-external-actors-goal-20260808/live-proof-20260814/wake-steward-luna-handoff.json#/wake_proof`
+- `operator:aoa:sessions/2026-08-15__019__you-are-one-external-codex-process-carrying-a/session.manifest.json#review_status`
+- `operator:aoa:sessions/2026-08-15__019__you-are-one-external-codex-process-carrying-a/segments/001__compaction-to-latest.md#event-000040`
 
 `.aoa` raw/session material remains provisional supporting evidence. It is
-not silently upgraded to reviewed truth by this memo.
+not silently upgraded to reviewed truth by this memo. The copied reviewed
+intake packet retains the exact machine-resolved operator refs; this public
+object uses owner-relative aliases so generated readmodels do not expose
+machine-local roots.
 
 ## Review Posture
 
