@@ -1,0 +1,36 @@
+{
+  "schema": "aoa_memo_reviewed_intake_landing_receipt_v1",
+  "id": "landing-receipt:aoa-agents:20260815T111816Z:aoa-agents-role-first-external-actor-responsibility-return",
+  "repo": "aoa-agents",
+  "source_export_ref": "repo:aoa-agents/memo/exports/20260815T103403Z.role-first-external-actor-work-is-reusable-only.aoa-memo-intake.json",
+  "copied_intake_ref": "memo/intake/reviewed/aoa-agents.20260815T103403Z.role-first-external-actor-work-is-reusable-only.aoa-memo-intake.json",
+  "candidate_refs": [
+    "repo:aoa-agents/memo/candidates/20260815T102919Z.2f2fbde0.role-first-external-actor-work-is-reusable-only.candidate.json"
+  ],
+  "receipt_refs": [
+    "repo:aoa-agents/memo/receipts/20260815T111200Z.role-first-external-actor-claim-correction.forwarding-receipt.json"
+  ],
+  "object_ref": "memo.claim.2026-08-15.role-first-external-actor-responsibility-return",
+  "object_path": "memo/objects/claims/2026/role-first-external-actor-responsibility-return/object.json",
+  "result": "landed",
+  "checks": [
+    "export_schema",
+    "export_source_refs",
+    "export_evidence_refs",
+    "allowed_result_reviewed_write",
+    "origin_claim_object_override",
+    "candidate_schema",
+    "candidate_source_refs",
+    "candidate_evidence_refs",
+    "candidate_guardrails",
+    "receipt_schema",
+    "receipt_candidate_ref",
+    "receipt_errors_empty",
+    "memory_object_schema",
+    "changelog_entry"
+  ],
+  "errors": [],
+  "landed_at": "2026-08-15T11:18:16Z",
+  "landed_by": "codex-memory-keeper:current-goal",
+  "notes": "Reissued after the origin-owner correction in aoa-agents PR #283. This receipt is the current landing authority for the bounded claim; the earlier 10:40 receipt is retained only as a superseded pre-correction audit record."
+}

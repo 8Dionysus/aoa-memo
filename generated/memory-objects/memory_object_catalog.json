@@ -1992,6 +1992,44 @@
       ]
     },
     {
+      "id": "memo.claim.2026-08-15.role-first-external-actor-responsibility-return",
+      "kind": "claim",
+      "title": "Role-first external actors preserve responsibility across pause and filtered return",
+      "summary": "Reviewed evidence records a reusable external-actor contour that binds one obligation to a role and incarnation, records bounded stop/resume work, returns a review-required result, wakes the parent as transport evidence, and leaves claim filtering, acceptance, rollback, and durable memory promotion to their owners.",
+      "scope_classes": [
+        "repo",
+        "workspace"
+      ],
+      "temperature": "cool",
+      "review_state": "confirmed",
+      "current_recall_status": "allowed",
+      "supersedes": [],
+      "superseded_by": null,
+      "replacement_ref": null,
+      "contradiction_refs": [],
+      "authority_kind": "human_reviewed",
+      "source_kind": "reviewed_corpus",
+      "primary_recall_modes": [
+        "semantic",
+        "source_route"
+      ],
+      "source_path": "memo/objects/claims/2026/role-first-external-actor-responsibility-return/object.json",
+      "inspect_key": "memo.claim.2026-08-15.role-first-external-actor-responsibility-return",
+      "expand_key": "memo.claim.2026-08-15.role-first-external-actor-responsibility-return",
+      "scope": [
+        "repo:aoa-agents",
+        "repo:aoa-memo",
+        "workspace:OS-Abyss"
+      ],
+      "provenance_thread_id": "prov.aoa-agents.role-first-external-actor-responsibility-return.2026-08-15",
+      "related_object_ids": [],
+      "strongest_next_sources": [
+        "memo/intake/reviewed/aoa-agents.20260815T103403Z.role-first-external-actor-work-is-reusable-only.aoa-memo-intake.json",
+        "memo/intake/receipts/20260815T111816Z.aoa-agents.role-first-external-actor-responsibility-return.landing-receipt.json",
+        "repo:aoa-agents/memo/candidates/20260815T102919Z.2f2fbde0.role-first-external-actor-work-is-reusable-only.candidate.json"
+      ]
+    },
+    {
       "id": "memo.decision.2026-05-22.abyss-stack-aoa-memo-mcp-access-plane",
       "kind": "decision",
       "title": "abyss-stack aoa-memo-mcp access plane route",
