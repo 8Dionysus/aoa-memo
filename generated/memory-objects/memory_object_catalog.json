@@ -1995,7 +1995,7 @@
       "id": "memo.claim.2026-08-15.role-first-external-actor-responsibility-return",
       "kind": "claim",
       "title": "Role-first external actors preserve responsibility across pause and filtered return",
-      "summary": "A reusable external-actor contour binds one obligation to a role and incarnation, proves bounded stop/resume work, returns a review-required result, wakes the parent as transport evidence, and leaves claim filtering, acceptance, rollback, and durable memory promotion to their owners.",
+      "summary": "Reviewed evidence records a reusable external-actor contour that binds one obligation to a role and incarnation, records bounded stop/resume work, returns a review-required result, wakes the parent as transport evidence, and leaves claim filtering, acceptance, rollback, and durable memory promotion to their owners.",
       "scope_classes": [
         "repo",
         "workspace"

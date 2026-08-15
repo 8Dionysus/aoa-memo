@@ -8,7 +8,7 @@
   "decision_ref": "aoa-kag:docs/decisions/AOA-KAG-D-0017-portable-content-addressed-repository-family.md",
   "default_limit_bytes": 1048576,
   "head_family_digest": "018e1db36d1038434988805991ecdf0dbe00a43b1d241b03281f58c02c718f06",
-  "reason": "Refresh portable aoa-memo owner-family KAG after reissuing the corrected reviewed-intake landing receipt and updating memo currentness; generated delta is a source/read-model consequence only and does not imply proof, runtime, stats, actor acceptance, or pattern promotion.",
+  "reason": "Refresh portable aoa-memo owner-family KAG after post-correction validity and summary wording fixes; generated delta is a source/read-model consequence only and does not imply proof, runtime, stats, actor acceptance, or pattern promotion.",
   "repo": "aoa-memo",
   "schema_version": "aoa-repo-local-kag-budget-receipt-v1",
   "scope": "generated_delta",

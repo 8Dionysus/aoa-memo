@@ -104,7 +104,7 @@ Identity: `memo.claim.2026-08-15.role-first-external-actor-responsibility-return
 
 Lifecycle/currentness: `confirmed` and `promoted` in the reviewed corpus,
 `current_recall.status=allowed`, temperature `cool`, confidence `0.86`, valid
-from `2026-08-15T10:40:00Z`. Recheck the active runtime release, rollback
+from the corrected landing at `2026-08-15T11:18:16Z`. Recheck the active runtime release, rollback
 admission, wake/timer state, workspace manifests, and live-feed status before
 using this memory to orchestrate a new actor.
 
