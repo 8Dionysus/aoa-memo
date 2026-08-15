@@ -71,7 +71,7 @@
     ]
   },
   "verification": {
-    "reviewed_at": "2026-08-15T11:09:31Z",
+    "reviewed_at": "2026-08-15T11:18:16Z",
     "source_landings": [
       {
         "repo": "abyss-stack",
@@ -128,7 +128,7 @@
       "candidate_id": "candidate:aoa-agents:20260815T102919Z:2f2fbde0-role-first-external-actor-work-i",
       "export_id": "export:aoa-agents:20260815T103403Z:role-first-external-actor-work-is-reusable-only",
       "forwarding_receipt_id": "receipt:aoa-agents:20260815T111200Z:role-first-external-actor-claim-correction",
-      "landing_receipt_id": "landing-receipt:aoa-agents:20260815T104000Z:aoa-agents-role-first-external-actor-responsibility-return",
+      "landing_receipt_id": "landing-receipt:aoa-agents:20260815T111816Z:aoa-agents-role-first-external-actor-responsibility-return",
       "disposition": "reviewed_write_accepted_for_bounded_claim"
     }
   },
@@ -141,6 +141,7 @@
   "provenance": {
     "source_refs": [
       "memo/intake/reviewed/aoa-agents.20260815T103403Z.role-first-external-actor-work-is-reusable-only.aoa-memo-intake.json",
+      "memo/intake/receipts/20260815T111816Z.aoa-agents.role-first-external-actor-responsibility-return.landing-receipt.json",
       "repo:aoa-agents/memo/candidates/20260815T102919Z.2f2fbde0.role-first-external-actor-work-is-reusable-only.candidate.json",
       "repo:aoa-agents/memo/receipts/20260815T111200Z.role-first-external-actor-claim-correction.forwarding-receipt.json",
       "https://github.com/8Dionysus/abyss-stack/pull/379",

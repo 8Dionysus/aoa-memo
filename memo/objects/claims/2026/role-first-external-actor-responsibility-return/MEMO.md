@@ -72,7 +72,10 @@ The exact local intake chain is preserved in the object provenance and in:
 - `repo:aoa-agents/memo/candidates/20260815T102919Z.2f2fbde0.role-first-external-actor-work-is-reusable-only.candidate.json`
 - `repo:aoa-agents/memo/exports/20260815T103403Z.role-first-external-actor-work-is-reusable-only.aoa-memo-intake.json`
 - `repo:aoa-agents/memo/receipts/20260815T111200Z.role-first-external-actor-claim-correction.forwarding-receipt.json`
-- `memo/intake/receipts/20260815T104000Z.aoa-agents.role-first-external-actor-responsibility-return.landing-receipt.json`
+- `memo/intake/receipts/20260815T111816Z.aoa-agents.role-first-external-actor-responsibility-return.landing-receipt.json`
+
+The earlier `20260815T104000Z` landing receipt remains only as a superseded
+pre-correction audit record; it is not current landing authority.
 
 The task-local evidence refs are intentionally retained as refs-only
 provenance, including the exact sections for runtime proof, parent
