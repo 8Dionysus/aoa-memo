@@ -8,11 +8,13 @@
     "repo:aoa-agents/memo/candidates/20260815T102919Z.2f2fbde0.role-first-external-actor-work-is-reusable-only.candidate.json"
   ],
   "receipt_refs": [
-    "repo:aoa-agents/memo/receipts/20260815T103412Z.export-aoa-agents-20260815t103403z-role-first-ex.forwarding-receipt.json"
+    "repo:aoa-agents/memo/receipts/20260815T103412Z.export-aoa-agents-20260815t103403z-role-first-ex.forwarding-receipt.json",
+    "repo:aoa-agents/memo/receipts/20260815T111200Z.role-first-external-actor-claim-correction.forwarding-receipt.json",
+    "memo/intake/receipts/20260815T111816Z.aoa-agents.role-first-external-actor-responsibility-return.landing-receipt.json"
   ],
   "object_ref": "memo.claim.2026-08-15.role-first-external-actor-responsibility-return",
   "object_path": "memo/objects/claims/2026/role-first-external-actor-responsibility-return/object.json",
-  "result": "landed",
+  "result": "rejected",
   "checks": [
     "export_schema",
     "export_source_refs",
@@ -24,11 +26,16 @@
     "candidate_guardrails",
     "receipt_schema",
     "receipt_candidate_ref",
-    "receipt_errors_empty",
-    "memory_object_schema"
+    "memory_object_schema",
+    "origin_claim_object_override_missing",
+    "rejected_pre_authorization",
+    "current_landing_receipt_linked"
   ],
-  "errors": [],
+  "errors": [
+    "origin_claim_object_override_missing",
+    "superseded_by_current_landing_receipt"
+  ],
   "landed_at": "2026-08-15T10:40:00Z",
   "landed_by": "codex-memory-keeper:current-goal",
-  "notes": "Superseded by landing-receipt:aoa-agents:20260815T111816Z:aoa-agents-role-first-external-actor-responsibility-return after the origin-owner claim-object authorization correction. Retained as the pre-correction 10:40 audit record, not current landing authority."
+  "notes": "Historical pre-authorization landing attempt. The origin packet authorized a pattern-shaped local candidate, but the central object was materialized as a claim before the origin-owner claim-object override existed. This receipt is rejected for current landing purposes and superseded by landing-receipt:aoa-agents:20260815T111816Z:aoa-agents-role-first-external-actor-responsibility-return. landed_at is the historical attempt timestamp, not a successful current landing."
 }

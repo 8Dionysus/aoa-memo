@@ -1,0 +1,17 @@
+{
+  "allowed_bytes": 3980593,
+  "allowed_tracked_bytes": 18266423,
+  "approved_by": "repository-owner",
+  "base_ref": "67139fa1ecf008ff05f468e24110e7d555a501ba",
+  "changed_generated_bytes": 3980593,
+  "changed_generated_files": 96,
+  "decision_ref": "aoa-kag:docs/decisions/AOA-KAG-D-0017-portable-content-addressed-repository-family.md",
+  "default_limit_bytes": 1048576,
+  "head_family_digest": "cade29d25f2260ada6f755d0716966b6c35058335eae89d84253b1b6b59670f9",
+  "reason": "Refresh portable aoa-memo owner-family KAG after machine-readable rejection of the pre-authorization receipt, lifecycle audit event, and duplicate-active-landing guard; this is a source/read-model consequence only and does not strengthen the bounded claim, add proof, runtime, stats, or pattern authority.",
+  "repo": "aoa-memo",
+  "schema_version": "aoa-repo-local-kag-budget-receipt-v1",
+  "scope": "generated_delta",
+  "tracked_bytes": 18266423,
+  "tracked_bytes_max": 18874368
+}

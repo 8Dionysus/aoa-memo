@@ -6,8 +6,12 @@ import sys
 import unittest
 from pathlib import Path
 
-
 REPO_ROOT = Path(__file__).resolve().parents[2]
+MEMORY_SCRIPTS = REPO_ROOT / "scripts" / "memory"
+if str(MEMORY_SCRIPTS) not in sys.path:
+    sys.path.insert(0, str(MEMORY_SCRIPTS))
+
+from validate_memo_corpus import validate_active_landing_receipts  # noqa: E402
 
 
 class MemoCorpusTestCase(unittest.TestCase):
@@ -26,6 +30,41 @@ class MemoCorpusTestCase(unittest.TestCase):
 
     def test_memo_corpus_validator_passes(self) -> None:
         self.run_script("scripts/memory/validate_memo_corpus.py")
+
+    def test_active_landing_receipt_guard_rejects_duplicate_successes(self) -> None:
+        duplicate = validate_active_landing_receipts(
+            [
+                (
+                    Path("memo/intake/receipts/old.json"),
+                    {"result": "landed", "object_ref": "memo.claim.example"},
+                ),
+                (
+                    Path("memo/intake/receipts/current.json"),
+                    {"result": "landed", "object_ref": "memo.claim.example"},
+                ),
+            ]
+        )
+
+        self.assertEqual(len(duplicate), 1)
+        self.assertIn("memo.claim.example", duplicate[0])
+
+    def test_external_actor_landing_has_one_successful_authority(self) -> None:
+        receipt_root = REPO_ROOT / "memo" / "intake" / "receipts"
+        object_ref = "memo.claim.2026-08-15.role-first-external-actor-responsibility-return"
+        receipts = {
+            path.name: json.loads(path.read_text(encoding="utf-8"))
+            for path in receipt_root.glob("*.json")
+            if json.loads(path.read_text(encoding="utf-8")).get("object_ref") == object_ref
+        }
+
+        active = [name for name, data in receipts.items() if data.get("result") == "landed"]
+        self.assertEqual(
+            active,
+            ["20260815T111816Z.aoa-agents.role-first-external-actor-responsibility-return.landing-receipt.json"],
+        )
+        old = receipts["20260815T104000Z.aoa-agents.role-first-external-actor-responsibility-return.landing-receipt.json"]
+        self.assertEqual("rejected", old["result"])
+        self.assertIn("superseded_by_current_landing_receipt", old["errors"])
 
     def test_first_corpus_object_records_corpus_decision(self) -> None:
         path = (
