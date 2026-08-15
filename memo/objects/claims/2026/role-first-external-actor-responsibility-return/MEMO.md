@@ -74,8 +74,13 @@ The exact local intake chain is preserved in the object provenance and in:
 - `repo:aoa-agents/memo/receipts/20260815T111200Z.role-first-external-actor-claim-correction.forwarding-receipt.json`
 - `memo/intake/receipts/20260815T111816Z.aoa-agents.role-first-external-actor-responsibility-return.landing-receipt.json`
 
-The earlier `20260815T104000Z` landing receipt remains only as a superseded
-pre-correction audit record; it is not current landing authority.
+The earlier `20260815T104000Z` receipt is retained as a machine-readable
+`result: rejected` pre-authorization attempt, linked to the current landing
+receipt through `receipt_refs`; it is not an active successful landing. The
+corpus audit event
+`memo.audit.2026-08-15.role-first-external-actor-pre-correction-landing-receipt`
+records this provenance/lifecycle correction. The current `20260815T111816Z`
+receipt is the only successful landing authority.
 
 The task-local evidence refs are intentionally retained as refs-only
 provenance, including the exact sections for runtime proof, parent

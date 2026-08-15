@@ -1,0 +1,86 @@
+{
+  "id": "memo.audit.2026-08-15.role-first-external-actor-pre-correction-landing-receipt",
+  "kind": "audit_event",
+  "title": "Pre-correction external-actor landing receipt was rejected and superseded",
+  "summary": "Records the provenance correction that changed the 10:40 pre-authorization landing receipt from a successful result to rejected historical evidence after the origin-owner claim-object override and current 11:18 landing receipt became authoritative.",
+  "scope": [
+    "repo:aoa-memo",
+    "repo:aoa-agents",
+    "workspace:OS-Abyss"
+  ],
+  "owner_refs": [
+    "repo:aoa-memo",
+    "repo:aoa-agents"
+  ],
+  "payload_ref": "memo/intake/receipts/20260815T104000Z.aoa-agents.role-first-external-actor-responsibility-return.landing-receipt.json",
+  "tags": [
+    "audit",
+    "reviewed-intake",
+    "provenance-correction",
+    "supersession",
+    "external-actors"
+  ],
+  "time": {
+    "created_at": "2026-08-15T11:46:50Z",
+    "observed_at": "2026-08-15T10:40:00Z",
+    "valid_from": "2026-08-15T11:46:50Z",
+    "valid_to": null
+  },
+  "provenance": {
+    "source_refs": [
+      "memo/intake/receipts/20260815T104000Z.aoa-agents.role-first-external-actor-responsibility-return.landing-receipt.json",
+      "memo/intake/receipts/20260815T111816Z.aoa-agents.role-first-external-actor-responsibility-return.landing-receipt.json",
+      "memo/objects/claims/2026/role-first-external-actor-responsibility-return/object.json",
+      "memo/intake/reviewed/aoa-agents.20260815T103403Z.role-first-external-actor-work-is-reusable-only.aoa-memo-intake.json",
+      "repo:aoa-agents/memo/receipts/20260815T111200Z.role-first-external-actor-claim-correction.forwarding-receipt.json",
+      "repo:aoa-agents/commit/aa2670f06f439c9bce7715ee6e3988b1be951fb7",
+      "repo:aoa-memo/commit/67139fa1ecf008ff05f468e24110e7d555a501ba",
+      "repo:aoa-memo/ci/31882281870",
+      "https://github.com/8Dionysus/aoa-memo/pull/299#discussion_r3789278376"
+    ],
+    "episode_refs": [],
+    "provenance_thread_id": "prov.aoa-memo.role-first-external-actor-landing-receipt.2026-08-15"
+  },
+  "trust": {
+    "temperature": "cool",
+    "confidence": 0.99,
+    "confidence_note": "Bounded to the two corpus receipts, the origin correction receipt, the landed memo object, and the reviewed post-merge repair thread; this audit event is not proof of the external-agent claim.",
+    "authority_kind": "repo_maintained",
+    "authority": "aoa-memo reviewed-intake lifecycle audit",
+    "freshness": 1.0,
+    "freshness_note": "Created with the post-merge receipt repair.",
+    "salience": 0.86,
+    "salience_note": "Important because receipt consumers must distinguish one current successful landing from the rejected pre-authorization attempt."
+  },
+  "lifecycle": {
+    "review_state": "confirmed",
+    "supersedes": [],
+    "superseded_by": null,
+    "retention_class": "audit-trace",
+    "promotion_state": "promoted",
+    "current_recall": {
+      "status": "historical",
+      "status_reason": "Use this audit event to understand why the pre-correction receipt is rejected and why the 11:18 current landing receipt is the only successful landing authority."
+    }
+  },
+  "access": {
+    "access_class": "public",
+    "read_scopes": [
+      "public"
+    ],
+    "write_scopes": [
+      "maintainer"
+    ],
+    "promotion_scopes": [
+      "maintainer",
+      "human-review"
+    ]
+  },
+  "bridges": {
+    "tos_refs": [],
+    "skill_refs": [],
+    "eval_refs": [],
+    "kag_lift_status": "none",
+    "route_capsule_ref": "docs/posture/LIFECYCLE.md#supersession"
+  }
+}

@@ -597,6 +597,19 @@
       "source_path": "memo/objects/audit-events/2026/reviewed-intake-evidence-guard/object.json"
     },
     {
+      "id": "memo.audit.2026-08-15.role-first-external-actor-pre-correction-landing-receipt",
+      "kind": "audit_event",
+      "title": "Pre-correction external-actor landing receipt was rejected and superseded",
+      "summary": "Records the provenance correction that changed the 10:40 pre-authorization landing receipt from a successful result to rejected historical evidence after the origin-owner claim-object override and current 11:18 landing receipt became authoritative.",
+      "source_kind": "reviewed_corpus",
+      "recall_posture_short": "historical current recall; confirmed review state; Use this audit event to understand why the pre-correction receipt is rejected and why the 11:18 current landing receipt is the only successful landing authority",
+      "trust_posture_short": "cool temperature; repo_maintained authority; confidence 0.99; freshness 1.00",
+      "use_when_short": "Use only for trace-back or replacement history around this audit_event.",
+      "do_not_use_short": "Do not use this audit_event as the default current entrypoint.",
+      "strongest_next_source": "memo/intake/receipts/20260815T104000Z.aoa-agents.role-first-external-actor-responsibility-return.landing-receipt.json",
+      "source_path": "memo/objects/audit-events/2026/role-first-external-actor-pre-correction-landing-receipt/object.json"
+    },
+    {
       "id": "memo.bridge.2026-03-23.tos-lineage-kag-candidate",
       "kind": "bridge",
       "title": "Reviewed corpus bridge for the ToS lineage KAG donor",

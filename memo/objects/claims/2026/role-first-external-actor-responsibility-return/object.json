@@ -142,6 +142,7 @@
     "source_refs": [
       "memo/intake/reviewed/aoa-agents.20260815T103403Z.role-first-external-actor-work-is-reusable-only.aoa-memo-intake.json",
       "memo/intake/receipts/20260815T111816Z.aoa-agents.role-first-external-actor-responsibility-return.landing-receipt.json",
+      "memo/objects/audit-events/2026/role-first-external-actor-pre-correction-landing-receipt/object.json",
       "repo:aoa-agents/memo/candidates/20260815T102919Z.2f2fbde0.role-first-external-actor-work-is-reusable-only.candidate.json",
       "repo:aoa-agents/memo/receipts/20260815T111200Z.role-first-external-actor-claim-correction.forwarding-receipt.json",
       "https://github.com/8Dionysus/abyss-stack/pull/379",

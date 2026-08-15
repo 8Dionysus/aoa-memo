@@ -59,7 +59,9 @@ FORBIDDEN_LOCAL_PORT_SURFACES = (
 
 
 def _rel(path: Path) -> str:
-    return path.relative_to(ROOT).as_posix()
+    if path.is_absolute():
+        return path.relative_to(ROOT).as_posix()
+    return path.as_posix()
 
 
 def _schema_errors(path: Path, data: dict, schema_name: str) -> list[str]:
@@ -194,8 +196,35 @@ def validate_landing_receipt(path: Path) -> list[str]:
 def validate_landing_receipts(errors: list[str]) -> None:
     if not INTAKE_RECEIPTS.exists():
         return
+    receipts: list[tuple[Path, dict]] = []
     for path in sorted(INTAKE_RECEIPTS.glob("*.json")):
+        data = load_json(path)
+        receipts.append((path, data))
         errors.extend(validate_landing_receipt(path))
+    errors.extend(validate_active_landing_receipts(receipts))
+
+
+def validate_active_landing_receipts(receipts: list[tuple[Path, dict]]) -> list[str]:
+    """Reject duplicate successful landing authorities for one object."""
+
+    by_object: dict[str, list[Path]] = {}
+    for path, data in receipts:
+        if data.get("result") != "landed":
+            continue
+        object_ref = data.get("object_ref")
+        if isinstance(object_ref, str) and object_ref:
+            by_object.setdefault(object_ref, []).append(path)
+
+    errors: list[str] = []
+    for object_ref, paths in sorted(by_object.items()):
+        if len(paths) < 2:
+            continue
+        rendered_paths = ", ".join(_rel(path) for path in paths)
+        errors.append(
+            "memo/intake/receipts: multiple active landed receipts for "
+            f"object_ref {object_ref}: {rendered_paths}"
+        )
+    return errors
 
 
 def main() -> int:

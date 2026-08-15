@@ -20,6 +20,9 @@ Tracking starts with the community-docs baseline for this repository.
   obligation → incarnation → pause/wake → filtered-return contour, exact
   reviewed intake refs, and explicit separation from runtime, live stats,
   owner acceptance, and recurring-pattern promotion.
+- Repair the pre-correction external-actor landing receipt as a machine-
+  readable rejected historical attempt, add its lifecycle audit event, and
+  guard the corpus against multiple active `landed` receipts for one object.
 
 - Add decision `AOA-MEM-D-0082`, making reviewed public explicit pull the R1
   admitted core while keeping proactive, private, and agent-local runtime
