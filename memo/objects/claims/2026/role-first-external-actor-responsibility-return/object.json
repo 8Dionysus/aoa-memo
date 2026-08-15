@@ -71,7 +71,7 @@
     ]
   },
   "verification": {
-    "reviewed_at": "2026-08-15T10:40:00Z",
+    "reviewed_at": "2026-08-15T11:09:31Z",
     "source_landings": [
       {
         "repo": "abyss-stack",
@@ -112,6 +112,14 @@
         "merge_commit": "eaecb25c43aadb4eb6f2d3be8c8e4f9334cc2b73",
         "ci_run": "https://github.com/8Dionysus/aoa-agents/actions/runs/31880217273",
         "checks": ["Repo Validation"]
+      },
+      {
+        "repo": "aoa-agents",
+        "pr": 283,
+        "head_commit": "287b5001745bb59417cea0fe39931bc3cdadc077",
+        "merge_commit": "aa2670f06f439c9bce7715ee6e3988b1be951fb7",
+        "ci_run": "https://github.com/8Dionysus/aoa-agents/actions/runs/31881265738",
+        "checks": ["Repo Validation"]
       }
     ],
     "owner_review": {
@@ -119,7 +127,7 @@
       "memory_owner": "aoa-memo",
       "candidate_id": "candidate:aoa-agents:20260815T102919Z:2f2fbde0-role-first-external-actor-work-i",
       "export_id": "export:aoa-agents:20260815T103403Z:role-first-external-actor-work-is-reusable-only",
-      "forwarding_receipt_id": "receipt:aoa-agents:20260815T103412Z:export-aoa-agents-20260815t103403z-role-first-ex",
+      "forwarding_receipt_id": "receipt:aoa-agents:20260815T111200Z:role-first-external-actor-claim-correction",
       "landing_receipt_id": "landing-receipt:aoa-agents:20260815T104000Z:aoa-agents-role-first-external-actor-responsibility-return",
       "disposition": "reviewed_write_accepted_for_bounded_claim"
     }
@@ -134,12 +142,13 @@
     "source_refs": [
       "memo/intake/reviewed/aoa-agents.20260815T103403Z.role-first-external-actor-work-is-reusable-only.aoa-memo-intake.json",
       "repo:aoa-agents/memo/candidates/20260815T102919Z.2f2fbde0.role-first-external-actor-work-is-reusable-only.candidate.json",
-      "repo:aoa-agents/memo/receipts/20260815T103412Z.export-aoa-agents-20260815t103403z-role-first-ex.forwarding-receipt.json",
+      "repo:aoa-agents/memo/receipts/20260815T111200Z.role-first-external-actor-claim-correction.forwarding-receipt.json",
       "https://github.com/8Dionysus/abyss-stack/pull/379",
       "https://github.com/8Dionysus/abyss-stack/pull/386",
       "https://github.com/8Dionysus/aoa-agents/pull/280",
       "https://github.com/8Dionysus/aoa-agents/pull/281",
       "https://github.com/8Dionysus/aoa-agents/pull/282",
+      "https://github.com/8Dionysus/aoa-agents/pull/283",
       "repo:abyss-stack/commit/21652f9204af4db36b04604ae89fe4d97771eb41",
       "repo:abyss-stack/commit/e61449fad7f93f2e68452709e4f100d8161db804",
       "repo:abyss-stack/commit/86cb141fc1a20acae44fe29c545e1cbd5cc596b9",
@@ -150,11 +159,14 @@
       "repo:aoa-agents/commit/b3a4e33e4e9b69c84bdd117bdd6e5de3556f3045",
       "repo:aoa-agents/commit/96946530390abdb60fd6c917607166b070f719c9",
       "repo:aoa-agents/commit/eaecb25c43aadb4eb6f2d3be8c8e4f9334cc2b73",
+      "repo:aoa-agents/commit/287b5001745bb59417cea0fe39931bc3cdadc077",
+      "repo:aoa-agents/commit/aa2670f06f439c9bce7715ee6e3988b1be951fb7",
       "repo:abyss-stack/ci/31854045643",
       "repo:abyss-stack/ci/31876341382",
       "repo:aoa-agents/ci/31877734828",
       "repo:aoa-agents/ci/31878584919",
       "repo:aoa-agents/ci/31880217273",
+      "repo:aoa-agents/ci/31881265738",
       "repo:aoa-agents/docs/decisions/AOA-AG-D-0066-actor-responsibility-receipt-producer.md#L75-L102",
       "repo:aoa-agents/skills/aoa-summon/SKILL.md#L328-L342",
       "repo:aoa-agents/skills/aoa-summon/references/contract.yaml#L94-L112",

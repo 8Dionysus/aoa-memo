@@ -16,6 +16,10 @@ Tracking starts with the community-docs baseline for this repository.
 - Land the reviewed claim that a direct KAG → Memo → Evals chain preserves
   proof and memory-owner boundaries, with the exact reviewed intake and
   landing receipt retained in the corpus.
+- Land the bounded role-first external-actor responsibility claim, with the
+  obligation → incarnation → pause/wake → filtered-return contour, exact
+  reviewed intake refs, and explicit separation from runtime, live stats,
+  owner acceptance, and recurring-pattern promotion.
 
 - Add decision `AOA-MEM-D-0082`, making reviewed public explicit pull the R1
   admitted core while keeping proactive, private, and agent-local runtime

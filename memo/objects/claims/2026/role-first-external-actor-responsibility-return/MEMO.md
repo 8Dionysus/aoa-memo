@@ -55,6 +55,11 @@ The owner source chain is the landed `aoa-agents` and `abyss-stack` material:
   merge `eaecb25c43aadb4eb6f2d3be8c8e4f9334cc2b73`, CI run
   `31880217273` (`Repo Validation`); this is the landed origin-local memo
   candidate/export/receipt change.
+- `aoa-agents` PR #283: head `287b5001745bb59417cea0fe39931bc3cdadc077`,
+  merge `aa2670f06f439c9bce7715ee6e3988b1be951fb7`, CI run
+  `31881265738` (`Repo Validation`); this is the origin-owner correction
+  authorizing central materialization as a bounded claim while keeping the
+  local candidate pattern-shaped.
 - `abyss-stack` PR #379: head `86cb141fc1a20acae44fe29c545e1cbd5cc596b9`,
   merge `e61449fad7f93f2e68452709e4f100d8161db804`, CI run
   `31854045643` (`Repo Validation`, `validate-windows-host-bridge`).
@@ -66,7 +71,7 @@ The exact local intake chain is preserved in the object provenance and in:
 
 - `repo:aoa-agents/memo/candidates/20260815T102919Z.2f2fbde0.role-first-external-actor-work-is-reusable-only.candidate.json`
 - `repo:aoa-agents/memo/exports/20260815T103403Z.role-first-external-actor-work-is-reusable-only.aoa-memo-intake.json`
-- `repo:aoa-agents/memo/receipts/20260815T103412Z.export-aoa-agents-20260815t103403z-role-first-ex.forwarding-receipt.json`
+- `repo:aoa-agents/memo/receipts/20260815T111200Z.role-first-external-actor-claim-correction.forwarding-receipt.json`
 - `memo/intake/receipts/20260815T104000Z.aoa-agents.role-first-external-actor-responsibility-return.landing-receipt.json`
 
 The task-local evidence refs are intentionally retained as refs-only
@@ -100,10 +105,13 @@ from `2026-08-15T10:40:00Z`. Recheck the active runtime release, rollback
 admission, wake/timer state, workspace manifests, and live-feed status before
 using this memory to orchestrate a new actor.
 
-The origin port was reviewed for `reviewed_write` after its candidate,
-forwarding receipt, source refs, evidence refs, and guardrails resolved. The
-forwarding receipt is only a route check. The central landing receipt records
-the separate `aoa-memo` source landing and its schema/guardrail checks.
+The origin port was reviewed for `reviewed_write` after its pattern-shaped
+candidate, correction forwarding receipt, source refs, evidence refs, and
+guardrails resolved. The correction explicitly authorizes `aoa-memo` to
+materialize a bounded `claim`; it does not authorize recurring-pattern
+admission. The forwarding receipt is only a route check. The central landing
+receipt records the separate `aoa-memo` source landing and its
+schema/guardrail checks.
 
 The accepted boundary is typed responsibility surviving a pause, wake, and
 return when each transition is evidenced and filtering remains explicit. This
