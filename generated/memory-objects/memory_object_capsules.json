@@ -675,6 +675,19 @@
       "source_path": "memo/objects/claims/2026/post-merge-mcp-organ-chain-preserves-owner-authority/object.json"
     },
     {
+      "id": "memo.claim.2026-08-15.role-first-external-actor-responsibility-return",
+      "kind": "claim",
+      "title": "Role-first external actors preserve responsibility across pause and filtered return",
+      "summary": "A reusable external-actor contour binds one obligation to a role and incarnation, proves bounded stop/resume work, returns a review-required result, wakes the parent as transport evidence, and leaves claim filtering, acceptance, rollback, and durable memory promotion to their owners.",
+      "source_kind": "reviewed_corpus",
+      "recall_posture_short": "allowed current recall; confirmed review state; Landed through reviewed intake; use as reviewed recall, not proof or stronger owner truth",
+      "trust_posture_short": "cool temperature; human_reviewed authority; confidence 0.86; freshness 1.00",
+      "use_when_short": "Use when claim-level recall is needed and this object remains allowed for semantic, source_route.",
+      "do_not_use_short": "Do not treat this claim as proof or stronger than its cited sources.",
+      "strongest_next_source": "memo/intake/reviewed/aoa-agents.20260815T103403Z.role-first-external-actor-work-is-reusable-only.aoa-memo-intake.json",
+      "source_path": "memo/objects/claims/2026/role-first-external-actor-responsibility-return/object.json"
+    },
+    {
       "id": "memo.decision.2026-05-22.abyss-stack-aoa-memo-mcp-access-plane",
       "kind": "decision",
       "title": "abyss-stack aoa-memo-mcp access plane route",

@@ -1,0 +1,33 @@
+{
+  "schema": "aoa_memo_reviewed_intake_landing_receipt_v1",
+  "id": "landing-receipt:aoa-agents:20260815T104000Z:aoa-agents-role-first-external-actor-responsibility-return",
+  "repo": "aoa-agents",
+  "source_export_ref": "repo:aoa-agents/memo/exports/20260815T103403Z.role-first-external-actor-work-is-reusable-only.aoa-memo-intake.json",
+  "copied_intake_ref": "memo/intake/reviewed/aoa-agents.20260815T103403Z.role-first-external-actor-work-is-reusable-only.aoa-memo-intake.json",
+  "candidate_refs": [
+    "repo:aoa-agents/memo/candidates/20260815T102919Z.2f2fbde0.role-first-external-actor-work-is-reusable-only.candidate.json"
+  ],
+  "receipt_refs": [
+    "repo:aoa-agents/memo/receipts/20260815T103412Z.export-aoa-agents-20260815t103403z-role-first-ex.forwarding-receipt.json"
+  ],
+  "object_ref": "memo.claim.2026-08-15.role-first-external-actor-responsibility-return",
+  "object_path": "memo/objects/claims/2026/role-first-external-actor-responsibility-return/object.json",
+  "result": "landed",
+  "checks": [
+    "export_schema",
+    "export_source_refs",
+    "export_evidence_refs",
+    "allowed_result_reviewed_write",
+    "candidate_schema",
+    "candidate_source_refs",
+    "candidate_evidence_refs",
+    "candidate_guardrails",
+    "receipt_schema",
+    "receipt_candidate_ref",
+    "receipt_errors_empty",
+    "memory_object_schema"
+  ],
+  "errors": [],
+  "landed_at": "2026-08-15T10:40:00Z",
+  "landed_by": "codex-memory-keeper:current-goal"
+}

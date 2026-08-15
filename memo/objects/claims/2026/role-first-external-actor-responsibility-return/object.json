@@ -1,0 +1,217 @@
+{
+  "id": "memo.claim.2026-08-15.role-first-external-actor-responsibility-return",
+  "kind": "claim",
+  "title": "Role-first external actors preserve responsibility across pause and filtered return",
+  "summary": "A reusable external-actor contour binds one obligation to a role and incarnation, proves bounded stop/resume work, returns a review-required result, wakes the parent as transport evidence, and leaves claim filtering, acceptance, rollback, and durable memory promotion to their owners.",
+  "scope": [
+    "repo:aoa-agents",
+    "repo:aoa-memo",
+    "workspace:OS-Abyss"
+  ],
+  "owner_refs": [
+    "repo:aoa-agents",
+    "repo:aoa-memo"
+  ],
+  "payload_ref": "memo/intake/reviewed/aoa-agents.20260815T103403Z.role-first-external-actor-work-is-reusable-only.aoa-memo-intake.json",
+  "tags": [
+    "reviewed-intake",
+    "local-memo-port",
+    "agent-behavior",
+    "external-actors",
+    "responsibility-handoff",
+    "pause-resume",
+    "filtered-return"
+  ],
+  "memory_class": "bounded-pattern-claim",
+  "memory_content": {
+    "contour": [
+      "obligation -> role mandate -> model realization -> specialized external incarnation",
+      "same-session stop/resume with a bounded workspace delta",
+      "review-required result -> parent pause/reentry -> wake delivery",
+      "master return filtering -> owner acceptance or rollback, with durable memory as a separate gate"
+    ],
+    "proven_capabilities": [
+      "The Luna external Codex session stopped and resumed in the same thread/incarnation and produced a bounded reviewed workspace delta.",
+      "The parent controller yielded and reentered with a distinct wake signal; helper transport and Goal/master state were kept separate.",
+      "Source landing and repair were completed for abyss-stack PRs #379 and #386 and aoa-agents PRs #280 and #281, with the cited merge and CI refs preserved in provenance.",
+      "The aoa-agents receipt producer/repair path validates responsibility receipts and source projections, but it does not by itself publish a canonical live aoa-stats actor event."
+    ],
+    "rough_edges": [
+      "A review-required return is not owner acceptance; the observed master return remained pending filtering.",
+      "The fresh owner preparer failed closed when the writer plan did not bind an exact reviewer role.",
+      "Wake-helper success is transport evidence only; timer drift/rearm, environment-limited checks, and local stats-port validation remain operational sharp edges.",
+      "The actor shell needed GIT_OPTIONAL_LOCKS=0 to avoid private Git-lock drift, and a non-empty workspace must be judged by baseline/final manifests rather than source-manifest equality."
+    ],
+    "open_directions": [
+      "Add fresh evaluator/model-fit and role-scoped MCP evidence, then separately admit a canonical live actor receipt through aoa-stats and its watcher/deployment owner.",
+      "Make exact reviewer-role binding a required input for the preparer and record the filtered-return decision as its own owner receipt.",
+      "Create two independent reviewed episode objects for this contour before promoting this bounded claim to a stronger recurring pattern.",
+      "Recheck active release, rollback, timer, workspace, and live-feed currentness before using this memo to orchestrate a new actor."
+    ]
+  },
+  "claim_boundary": {
+    "accepted": [
+      "Typed responsibility can survive an external incarnation's pause, wake, and return when each transition is evidenced and filtering remains explicit.",
+      "The source, runtime, receipt, statistics, acceptance, and memory lifecycles are separable gates."
+    ],
+    "not_claimed": [
+      "Full parent Goal completion, autonomous agency, model fit, recurring production readiness, or benefit.",
+      "Live aoa-stats admission, owner acceptance inferred from wake delivery, host/service lifecycle changes, or a universal external-agent policy."
+    ]
+  },
+  "currentness": {
+    "status": "allowed",
+    "as_of": "2026-08-15",
+    "basis": "Landed source and CI refs plus task-local reviewed handoffs; .aoa raw/session refs remain provisional supporting evidence.",
+    "recheck_before_orchestration": [
+      "runtime-update-luna-handoff.json",
+      "clock-agent-003-handoff.json",
+      "actor-receipt-landing-repair-luna-handoff.json",
+      "active runtime release and rollback admission"
+    ]
+  },
+  "verification": {
+    "reviewed_at": "2026-08-15T10:40:00Z",
+    "source_landings": [
+      {
+        "repo": "abyss-stack",
+        "pr": 379,
+        "head_commit": "86cb141fc1a20acae44fe29c545e1cbd5cc596b9",
+        "merge_commit": "e61449fad7f93f2e68452709e4f100d8161db804",
+        "ci_run": "https://github.com/8Dionysus/abyss-stack/actions/runs/31854045643",
+        "checks": ["Repo Validation", "validate-windows-host-bridge"]
+      },
+      {
+        "repo": "abyss-stack",
+        "pr": 386,
+        "head_commit": "b2264da25df57e7434fc176818cd851cfd3e1580",
+        "merge_commit": "21652f9204af4db36b04604ae89fe4d97771eb41",
+        "ci_run": "https://github.com/8Dionysus/abyss-stack/actions/runs/31876341382",
+        "checks": ["Repo Validation", "validate-windows-host-bridge"]
+      },
+      {
+        "repo": "aoa-agents",
+        "pr": 280,
+        "head_commit": "e12abe32fe894a8ea4af2a496408ce8847fa6c6b",
+        "merge_commit": "17112d91693a9df6e225d61d8cd1e51e091c47bb",
+        "ci_run": "https://github.com/8Dionysus/aoa-agents/actions/runs/31877734828",
+        "checks": ["Repo Validation"]
+      },
+      {
+        "repo": "aoa-agents",
+        "pr": 281,
+        "head_commit": "b3a4e33e4e9b69c84bdd117bdd6e5de3556f3045",
+        "merge_commit": "871ec883e9d685b19c57c7355a1c127d90a2a198",
+        "ci_run": "https://github.com/8Dionysus/aoa-agents/actions/runs/31878584919",
+        "checks": ["Repo Validation"]
+      },
+      {
+        "repo": "aoa-agents",
+        "pr": 282,
+        "head_commit": "96946530390abdb60fd6c917607166b070f719c9",
+        "merge_commit": "eaecb25c43aadb4eb6f2d3be8c8e4f9334cc2b73",
+        "ci_run": "https://github.com/8Dionysus/aoa-agents/actions/runs/31880217273",
+        "checks": ["Repo Validation"]
+      }
+    ],
+    "owner_review": {
+      "origin_owner": "aoa-agents",
+      "memory_owner": "aoa-memo",
+      "candidate_id": "candidate:aoa-agents:20260815T102919Z:2f2fbde0-role-first-external-actor-work-i",
+      "export_id": "export:aoa-agents:20260815T103403Z:role-first-external-actor-work-is-reusable-only",
+      "forwarding_receipt_id": "receipt:aoa-agents:20260815T103412Z:export-aoa-agents-20260815t103403z-role-first-ex",
+      "landing_receipt_id": "landing-receipt:aoa-agents:20260815T104000Z:aoa-agents-role-first-external-actor-responsibility-return",
+      "disposition": "reviewed_write_accepted_for_bounded_claim"
+    }
+  },
+  "time": {
+    "created_at": "2026-08-15T10:40:00Z",
+    "observed_at": "2026-08-15T10:34:03Z",
+    "valid_from": "2026-08-15T10:40:00Z",
+    "valid_to": null
+  },
+  "provenance": {
+    "source_refs": [
+      "memo/intake/reviewed/aoa-agents.20260815T103403Z.role-first-external-actor-work-is-reusable-only.aoa-memo-intake.json",
+      "repo:aoa-agents/memo/candidates/20260815T102919Z.2f2fbde0.role-first-external-actor-work-is-reusable-only.candidate.json",
+      "repo:aoa-agents/memo/receipts/20260815T103412Z.export-aoa-agents-20260815t103403z-role-first-ex.forwarding-receipt.json",
+      "https://github.com/8Dionysus/abyss-stack/pull/379",
+      "https://github.com/8Dionysus/abyss-stack/pull/386",
+      "https://github.com/8Dionysus/aoa-agents/pull/280",
+      "https://github.com/8Dionysus/aoa-agents/pull/281",
+      "https://github.com/8Dionysus/aoa-agents/pull/282",
+      "repo:abyss-stack/commit/21652f9204af4db36b04604ae89fe4d97771eb41",
+      "repo:abyss-stack/commit/e61449fad7f93f2e68452709e4f100d8161db804",
+      "repo:abyss-stack/commit/86cb141fc1a20acae44fe29c545e1cbd5cc596b9",
+      "repo:abyss-stack/commit/b2264da25df57e7434fc176818cd851cfd3e1580",
+      "repo:aoa-agents/commit/871ec883e9d685b19c57c7355a1c127d90a2a198",
+      "repo:aoa-agents/commit/e12abe32fe894a8ea4af2a496408ce8847fa6c6b",
+      "repo:aoa-agents/commit/17112d91693a9df6e225d61d8cd1e51e091c47bb",
+      "repo:aoa-agents/commit/b3a4e33e4e9b69c84bdd117bdd6e5de3556f3045",
+      "repo:aoa-agents/commit/96946530390abdb60fd6c917607166b070f719c9",
+      "repo:aoa-agents/commit/eaecb25c43aadb4eb6f2d3be8c8e4f9334cc2b73",
+      "repo:abyss-stack/ci/31854045643",
+      "repo:abyss-stack/ci/31876341382",
+      "repo:aoa-agents/ci/31877734828",
+      "repo:aoa-agents/ci/31878584919",
+      "repo:aoa-agents/ci/31880217273",
+      "repo:aoa-agents/docs/decisions/AOA-AG-D-0066-actor-responsibility-receipt-producer.md#L75-L102",
+      "repo:aoa-agents/skills/aoa-summon/SKILL.md#L328-L342",
+      "repo:aoa-agents/skills/aoa-summon/references/contract.yaml#L94-L112",
+      "operator:aoa:/srv/AbyssOS/.aoa/sessions/2026-08-15__019__you-are-one-external-codex-process-carrying-a/segments/001__compaction-to-latest.md#event-000040",
+      "operator:aoa:/srv/AbyssOS/.aoa/sessions/2026-08-15__019__you-are-one-external-codex-process-carrying-a/session.manifest.json#review_status",
+      "operator:evidence:/srv/abyss-machine/tmp/ai/aoa-external-actors-goal-20260808/live-proof-20260814/actor-receipt-landing-repair-luna-handoff.json#/final_owner_source",
+      "operator:evidence:/srv/abyss-machine/tmp/ai/aoa-external-actors-goal-20260808/live-proof-20260814/clock-agent-003-handoff.json#/return_filter",
+      "operator:evidence:/srv/abyss-machine/tmp/ai/aoa-external-actors-goal-20260808/live-proof-20260814/pr379-luna-direct-handoff.json#/summary",
+      "operator:evidence:/srv/abyss-machine/tmp/ai/aoa-external-actors-goal-20260808/live-proof-20260814/runtime-update-luna-handoff.json#/external_actor_proof",
+      "operator:evidence:/srv/abyss-machine/tmp/ai/aoa-external-actors-goal-20260808/live-proof-20260814/runtime-update-luna-handoff.json#/master_wake_state_separation",
+      "operator:evidence:/srv/abyss-machine/tmp/ai/aoa-external-actors-goal-20260808/live-proof-20260814/runtime-update-luna-handoff.json#/parent_pause_resume",
+      "operator:evidence:/srv/abyss-machine/tmp/ai/aoa-external-actors-goal-20260808/live-proof-20260814/runtime-update-luna-handoff.json#/responsibility_return",
+      "operator:evidence:/srv/abyss-machine/tmp/ai/aoa-external-actors-goal-20260808/live-proof-20260814/wake-steward-luna-handoff.json#/wake_proof"
+    ],
+    "episode_refs": [],
+    "provenance_thread_id": "prov.aoa-agents.role-first-external-actor-responsibility-return.2026-08-15"
+  },
+  "trust": {
+    "temperature": "cool",
+    "confidence": 0.86,
+    "confidence_note": "Landed from reviewed local memo export after schema, guardrail, packet, and receipt checks.",
+    "authority_kind": "human_reviewed",
+    "authority": "reviewed intake landing from aoa-agents",
+    "freshness": 1.0,
+    "freshness_note": "Fresh at landing time; future recall depends on lifecycle review.",
+    "salience": 0.8,
+    "salience_note": "Imported because the origin port requested durable reviewed memory."
+  },
+  "lifecycle": {
+    "review_state": "confirmed",
+    "supersedes": [],
+    "superseded_by": null,
+    "retention_class": "reviewed-intake",
+    "promotion_state": "promoted",
+    "current_recall": {
+      "status": "allowed",
+      "status_reason": "Landed through reviewed intake; use as reviewed recall, not proof or stronger owner truth."
+    }
+  },
+  "access": {
+    "access_class": "public",
+    "read_scopes": [
+      "public"
+    ],
+    "write_scopes": [
+      "maintainer"
+    ],
+    "promotion_scopes": [
+      "maintainer",
+      "human-review"
+    ]
+  },
+  "bridges": {
+    "tos_refs": [],
+    "skill_refs": [],
+    "eval_refs": [],
+    "kag_lift_status": "candidate",
+    "route_capsule_ref": "memo/intake/reviewed/aoa-agents.20260815T103403Z.role-first-external-actor-work-is-reusable-only.aoa-memo-intake.json"
+  }
+}
