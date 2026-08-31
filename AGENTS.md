@@ -40,7 +40,9 @@ For agent-facing topology, also read `DESIGN.AGENTS.md`.
 For root or docs-root placement, read `docs/root/ROOT_SURFACE_LAW.md`.
 For repeatable antifragility, adoption, governance, shape-guard, checkpoint,
 readiness-boundary, consumer-handoff, operational-gate, recurrence-support,
-lineage-harvest, writeback, or retention movement, read `mechanics/README.md`.
+lineage-harvest, writeback, or retention movement, read `mechanics/AGENTS.md`
+and the nearest package `AGENTS.md`. Read `mechanics/README.md` only for
+public package atlas, placement, or provenance orientation.
 
 ## Route modes
 
