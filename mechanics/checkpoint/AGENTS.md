@@ -1,8 +1,8 @@
 # AGENTS.md
 
-## Applies To
+## Applies to
 
-This card applies to `mechanics/checkpoint/`.
+`mechanics/checkpoint/` and its active mechanic surfaces.
 
 ## Role
 
@@ -14,27 +14,12 @@ It keeps checkpoint artifacts public, source-linked, and reviewable. It does
 not own checkpoint execution, runtime stores, retry policy, actor rights,
 proof verdicts, route dispatch, playbook choreography, or owner acceptance.
 
-## Conditional route scope
+## Local delta
 
-- Above: root `AGENTS.md` owns repo identity and release route;
-  `mechanics/AGENTS.md` owns shared mechanic package law and validators.
-- Here: `README.md` is the mechanic card, `DIRECTION.md` names current
-  pressure, `PARTS.md` lists active function nodes, `OWNER_MAP.md` names
-  stronger owners, and `PROVENANCE.md` plus `legacy/` preserve placement
-  history.
-- Below: `docs/` holds active source docs, `parts/` holds functioning
-  contracts and artifact homes, and `legacy/` is historical evidence only.
-
-## Conditional source route
-When this task touches the path, consult root `AGENTS.md`, `mechanics/AGENTS.md`, this file, `README.md`,
-`DIRECTION.md`, `PARTS.md`, `OWNER_MAP.md`, and `PROVENANCE.md`.
-
-For source docs, continue through `docs/AGENTS.md` and the target `docs/*.md`
-surface.
-
-For schemas, examples, generated outputs, scripts, tests, quests, or manifests
-that reference checkpoint memory, read the nearest local `AGENTS.md` before
-editing that district.
+The `checkpoint` mechanic identity remains local; shared package, docs, parts, and
+legacy hierarchy is inherited from `mechanics/AGENTS.md`. Its package card,
+DIRECTION.md, PARTS.md, OWNER_MAP.md, and PROVENANCE.md remain the semantic
+anchors for this operation.
 
 ## Boundaries
 
@@ -53,33 +38,13 @@ editing that district.
 - Keep old root examples or root schemas out of active references once the
   checkpoint package owns the artifact.
 
-## Post-Change Review
+## Verification
 
-After checkpoint changes, check whether these surfaces moved:
+Use the nearest `VALIDATION.md` route for `checkpoint` work after the touched
+surface is known; reusable lanes remain in `config/validation_lanes.json`.
 
-- `DIRECTION.md`
-- `PARTS.md`
-- `OWNER_MAP.md`
-- `PROVENANCE.md`
-- `LANDING_LOG.md`
-- `ROADMAP.md`
-- `legacy/INDEX.md`
-- checkpoint package docs plus part-local schemas, examples, and tests
-- recurrence-support and writeback consumer refs
-- generated mechanics, AGENTS mesh, memory object surfaces, and writeback
-  companions
-- docs-root maps, root route cards, decision records, changelog, or roadmap
-
-Update only surfaces whose future-facing meaning changed.
-
-## Validation
-Use the nearest mechanic `VALIDATION.md` route before closeout; reusable lanes remain in `config/validation_lanes.json`.
 ## Closeout
 
 Report checkpoint docs changed, whether part-local artifacts and consumer refs
 stayed owner-routed, whether old root or package-level examples/schema refs
 remain, and which stronger owner boundaries stayed outside `aoa-memo`.
-
-## Validation route
-
-Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

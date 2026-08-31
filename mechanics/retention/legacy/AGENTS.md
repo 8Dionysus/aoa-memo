@@ -1,8 +1,8 @@
 # AGENTS.md
 
-## Applies To
+## Applies to
 
-This card applies to `mechanics/retention/legacy/`.
+`mechanics/retention/legacy/` and historical material below it.
 
 ## Role
 
@@ -12,18 +12,12 @@ surface.
 It is not the active route for retention doctrine and must not become runtime
 retention storage.
 
-## Conditional route scope
+## Local delta
 
-- Above: the package `AGENTS.md`, `PROVENANCE.md`, and `OWNER_MAP.md` define
-  the active route and stronger-owner boundary.
-- Here: `INDEX.md` maps former paths to active surfaces, `DISTILLATION_LOG.md`
-  records restoration decisions, and `raw/` contains historical snapshots.
-- Below: `raw/` is evidence only. Do not edit it as current doctrine and do not
-  cite it as an active route.
-
-## Conditional source route
-When this task touches the path, consult root `AGENTS.md`, `mechanics/AGENTS.md`, `../AGENTS.md`,
-`../PROVENANCE.md`, and `legacy/INDEX.md`.
+This district records placement history only. The active `retention` route remains
+in `../docs/`; the package `PROVENANCE.md` and `OWNER_MAP.md` retain current
+ownership and stronger-owner boundaries. The shared legacy hierarchy is
+inherited from `mechanics/AGENTS.md`.
 
 ## Boundaries
 
@@ -33,11 +27,11 @@ When this task touches the path, consult root `AGENTS.md`, `mechanics/AGENTS.md`
   retention surface it explains.
 - Do not store private traces, runtime state, or unreduced personal data here.
 
+## Verification
+
+Use `legacy/INDEX.md` for the narrow historical lookup and the nearest
+`VALIDATION.md` route when a provenance edit is actually required.
 ## Closeout
 
 Report legacy index changes, active retention surfaces consulted, and whether
 any old flat docs-root reference remains outside allowed provenance.
-
-## Validation route
-
-Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

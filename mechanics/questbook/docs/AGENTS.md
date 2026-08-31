@@ -1,8 +1,8 @@
 # AGENTS.md
 
-## Applies To
+## Applies to
 
-This card applies to `mechanics/questbook/docs/`.
+`mechanics/questbook/docs/` and its active mechanic-owned doctrine.
 
 ## Role
 
@@ -14,17 +14,12 @@ active source contract for this docs lane. These docs do not replace root
 `QUESTBOOK.md`, source quest files under `quests/`, generated companions, or
 validators.
 
-## Conditional route scope
+## Local delta
 
-- Above: the package `AGENTS.md`, `README.md`, `PARTS.md`, and `OWNER_MAP.md`
-  set the operation and stronger-owner split.
-- Here: `docs/README.md` maps the source family; individual docs own active
-  mechanic doctrine and support notes.
-- Adjacent: package or part artifact homes own schemas, examples, config,
-  generated outputs, scripts, tests, manifests, and quests. Use
-  `mechanics/ARTIFACT_TOPOLOGY.md` before moving root technical artifacts.
-- Below: no nested active law is expected here; legacy context routes through
-  `../PROVENANCE.md` and `../legacy/`.
+This is the source-doc district for `questbook`. Keep source meaning here and
+route package identity or stronger-owner questions to `../OWNER_MAP.md`. The
+shared package/docs/parts/legacy hierarchy is inherited from `mechanics/AGENTS.md`;
+this card carries only the `questbook` doctrine and local source family.
 
 ## Boundaries
 
@@ -35,11 +30,11 @@ validators.
   playbook scenario state, or role authority.
 - Keep generated outputs weaker than source quest files.
 
+## Verification
+
+Use `ARTIFACT_TOPOLOGY.md` before moving a `questbook` artifact, and use the
+nearest `VALIDATION.md` route after the touched doc is known.
 ## Closeout
 
 Report source-contract docs changed, generated projections affected, and
 whether root `QUESTBOOK.md` or `quests/` needed updates.
-
-## Validation route
-
-Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

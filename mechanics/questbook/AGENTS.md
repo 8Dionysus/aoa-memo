@@ -1,9 +1,8 @@
 # AGENTS.md
 
-## Applies To
+## Applies to
 
-This card applies to `mechanics/questbook/` and every nested path until a
-nearer `AGENTS.md` narrows the lane.
+`mechanics/questbook/` and its active mechanic surfaces.
 
 ## Role
 
@@ -14,25 +13,16 @@ generated quest projections, and owner-routing stop-lines.
 It does not own source quest state, playbook choreography, proof outcomes,
 runtime scheduling, role rights, or hidden memory.
 
-## Conditional route scope
+## Local delta
 
-- Above: root `AGENTS.md` owns repo identity and release route;
-  `mechanics/AGENTS.md` owns shared mechanic package law and validators.
-- Here: `README.md` is the mechanic card, `DIRECTION.md` names current
-  pressure, `PARTS.md` lists active function nodes, `OWNER_MAP.md` names
-  stronger owners, and `PROVENANCE.md` plus `legacy/` preserve placement
-  history.
-- Below: `docs/` holds active source docs, `parts/` holds functioning
-  contracts and artifact homes, and `legacy/` is historical evidence only.
+The `questbook` mechanic identity remains local; shared package, docs, parts, and
+legacy hierarchy is inherited from `mechanics/AGENTS.md`. Its package card,
+DIRECTION.md, PARTS.md, OWNER_MAP.md, and PROVENANCE.md remain the semantic
+anchors for this operation.
 
-## Conditional source route
-When this task touches the path, consult root `AGENTS.md`, `mechanics/AGENTS.md`, this file, `README.md`,
-`DIRECTION.md`, `PARTS.md`, `OWNER_MAP.md`, `PROVENANCE.md`,
-`parts/README.md`, `docs/QUEST_SOURCE_CONTRACT.md`, `QUESTBOOK.md`, and
-`quests/README.md`.
-
-For Agon quest follow-through, also read `mechanics/agon/AGENTS.md` and the
-matching `mechanics/agon/docs/AGON_*.md` surface.
+For quest source or projection semantics, the local route is
+`docs/QUEST_SOURCE_CONTRACT.md`, root `QUESTBOOK.md`, and root `quests/`
+through the package and projection part cards.
 
 ## Boundaries
 
@@ -46,27 +36,13 @@ matching `mechanics/agon/docs/AGON_*.md` surface.
   scenario state, runtime retention, role authority, or source-owner
   acceptance.
 
-## Post-Change Review
+## Verification
 
-Before closeout, review the changed route rather than only the changed file:
+Use the nearest `VALIDATION.md` route for `questbook` work after the touched
+surface is known; reusable lanes remain in `config/validation_lanes.json`.
 
-- Quest source changed: check lane, lifecycle state, owner route, source
-  contract, generated projections, and public-safety posture.
-- Questbook law changed: check `README.md`, `PARTS.md`, `OWNER_MAP.md`,
-  `PROVENANCE.md`, `LANDING_LOG.md`, `ROADMAP.md`, `docs/`, and decisions.
-- Generated projections changed: rebuild with the package builder, run the
-  generated checks, and check `parts/quest-read-model-projections/`.
-- Root quest route changed: update `QUESTBOOK.md`, `quests/AGENTS.md`, and
-  `quests/README.md` only when their future-facing route changed.
-
-## Validation
-Use the nearest mechanic `VALIDATION.md` route before closeout; reusable lanes remain in `config/validation_lanes.json`.
 ## Closeout
 
 Report changed quest lanes, lifecycle states, generated projections rebuilt or
 not rebuilt, owner boundaries affected, checks run, skipped checks, and the
 next owner route when a quest is only carrying another repository's work.
-
-## Validation route
-
-Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

@@ -1,43 +1,19 @@
 # AGENTS.md
 
-## Guidance for `mechanics/agon/docs/`
+## Applies to
 
-`mechanics/agon/docs/` owns active mechanic-owned doctrine and support notes
-for the Agon memo mechanic.
+`mechanics/agon/docs/` and its active mechanic-owned doctrine.
 
-This docs route keeps Agon candidate memory, bridge, retention, evidence, and
-stage landing notes together while preserving the same boundary:
-`aoa-memo` remembers candidate context and source refs; it does not run trials,
-write durable scars, mutate rank, decide verdicts, or promote Tree-of-Sophia
-canon.
+## Role
 
-## Conditional route scope
+This directory owns active mechanic-owned doctrine for the agon mechanic.
 
-- Above: the package `AGENTS.md`, `README.md`, `PARTS.md`, and `OWNER_MAP.md`
-  set the operation and stronger-owner split.
-- Here: `docs/README.md` maps the source family; individual docs own active
-  mechanic doctrine and support notes.
-- Adjacent: package or part artifact homes own schemas, examples, config,
-  generated outputs, scripts, tests, manifests, and quests. Use
-  `mechanics/ARTIFACT_TOPOLOGY.md` before moving root technical artifacts.
-- Below: no nested active law is expected here; legacy context routes through
-  `../PROVENANCE.md` and `../legacy/`.
+## Local delta
 
-## Conditional source route
-Start with:
-
-1. root `AGENTS.md`
-2. `mechanics/AGENTS.md`
-3. `mechanics/ARTIFACT_TOPOLOGY.md`
-4. `mechanics/agon/AGENTS.md`
-5. `mechanics/agon/README.md`
-6. `mechanics/agon/PARTS.md`
-7. `mechanics/agon/OWNER_MAP.md`
-8. `mechanics/agon/PROVENANCE.md`
-9. this file
-10. `mechanics/agon/docs/README.md`
-11. the target Agon doc plus matching config, schema, generated registry,
-   manifest, quest, and test surfaces when they exist
+This is the source-doc district for `agon`. Keep source meaning here and
+route package identity or stronger-owner questions to `../OWNER_MAP.md`. The
+shared package/docs/parts/legacy hierarchy is inherited from `mechanics/AGENTS.md`;
+this card carries only the `agon` doctrine and local source family.
 
 ## Boundaries
 
@@ -57,16 +33,13 @@ Start with:
   registry, manifest, quest, example, script, and test companions aligned
   rather than editing the doc as an isolated note.
 
-## Validation
+## Verification
 
-Use the nearest mechanic `VALIDATION.md` route before closeout; reusable lanes remain in `config/validation_lanes.json`.
+Use `ARTIFACT_TOPOLOGY.md` before moving a `agon` artifact, and use the
+nearest `VALIDATION.md` route after the touched doc is known.
 ## Closeout
 
 Report which Agon source family changed, whether any config, generated,
 manifest, quest, schema, example, or test surfaces changed, and whether any
 old Agon docs-root or docs-district reference remains outside allowed
 provenance.
-
-## Validation route
-
-Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

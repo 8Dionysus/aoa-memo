@@ -1,8 +1,8 @@
 # AGENTS.md
 
-## Applies To
+## Applies to
 
-This card applies to `mechanics/readiness-boundary/docs/`.
+`mechanics/readiness-boundary/docs/` and its active mechanic-owned doctrine.
 
 ## Role
 
@@ -12,27 +12,12 @@ the readiness-boundary mechanic.
 It is active mechanic-owned doctrine, not root memory-object canon and not
 proof, runtime, graph, route, role, or source-owner authority.
 
-## Conditional route scope
+## Local delta
 
-- Above: the package `AGENTS.md`, `README.md`, `PARTS.md`, and `OWNER_MAP.md`
-  set the operation and stronger-owner split.
-- Here: `docs/README.md` maps the source family; individual docs own active
-  mechanic doctrine and support notes.
-- Adjacent: package or part artifact homes own schemas, examples, config,
-  generated outputs, scripts, tests, manifests, and quests. Use
-  `mechanics/ARTIFACT_TOPOLOGY.md` before moving root technical artifacts.
-- Below: no nested active law is expected here; legacy context routes through
-  `../PROVENANCE.md` and `../legacy/`.
-
-## Conditional source route
-When a task touches this path, consult only the relevant entries:
-
-1. root `AGENTS.md`
-2. `mechanics/AGENTS.md`
-3. `mechanics/ARTIFACT_TOPOLOGY.md`
-4. `mechanics/readiness-boundary/AGENTS.md`
-5. `mechanics/readiness-boundary/README.md`
-6. the target doc
+This is the source-doc district for `readiness-boundary`. Keep source meaning here and
+route package identity or stronger-owner questions to `../OWNER_MAP.md`. The
+shared package/docs/parts/legacy hierarchy is inherited from `mechanics/AGENTS.md`;
+this card carries only the `readiness-boundary` doctrine and local source family.
 
 ## Boundaries
 
@@ -44,6 +29,7 @@ When a task touches this path, consult only the relevant entries:
 Use `mechanics/ARTIFACT_TOPOLOGY.md` before moving readiness-boundary schemas,
 examples, generated outputs, scripts, tests, manifests, or config.
 
-## Validation route
+## Verification
 
-Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.
+Use `ARTIFACT_TOPOLOGY.md` before moving a `readiness-boundary` artifact, and use the
+nearest `VALIDATION.md` route after the touched doc is known.

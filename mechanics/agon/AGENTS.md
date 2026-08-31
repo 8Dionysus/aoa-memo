@@ -1,8 +1,8 @@
 # AGENTS.md
 
-## Applies To
+## Applies to
 
-This card applies to `mechanics/agon/`.
+`mechanics/agon/` and its active mechanic surfaces.
 
 ## Role
 
@@ -14,43 +14,25 @@ It does not run Agon trials, decide verdicts, write durable scars, mutate rank,
 execute retention, promote KAG substrate, publish Tree-of-Sophia canon, or own
 the source Agon mechanic.
 
-## Conditional route scope
+## Local delta
 
-- Above: root `AGENTS.md` owns repo identity and release route;
-  `mechanics/AGENTS.md` owns shared mechanic package law and validators.
-- Here: `README.md` is the mechanic card, `DIRECTION.md` names current
-  pressure, `PARTS.md` lists active function nodes, `OWNER_MAP.md` names
-  stronger owners, and `PROVENANCE.md` plus `legacy/` preserve placement
-  history.
-- Below: `docs/` holds active source docs, `parts/` holds functioning
-  contracts and artifact homes, and `legacy/` is historical evidence only.
+The `agon` mechanic identity remains local; shared package, docs, parts, and
+legacy hierarchy is inherited from `mechanics/AGENTS.md`. Its package card,
+DIRECTION.md, PARTS.md, OWNER_MAP.md, and PROVENANCE.md remain the semantic
+anchors for this operation.
 
-## Conditional source route
-When this task touches the path, consult root `AGENTS.md`, `mechanics/AGENTS.md`, this file, `README.md`,
-`DIRECTION.md`, `PARTS.md`, `OWNER_MAP.md`, and `PROVENANCE.md`.
+When Agon source-doc semantics are touched, narrow the route to the target
+`docs/AGON_*.md` surface; quest follow-through remains in `quests/agon/`.
 
-For source docs, continue through `docs/AGENTS.md` and the target
-`docs/AGON_*.md` surface.
+## Boundaries
 
-## Post-Change Review
+Keep the agon package-specific owner boundaries in the mechanic card and OWNER_MAP.md.
 
-After Agon changes, check whether these surfaces moved:
+## Verification
 
-- `DIRECTION.md`
-- `PARTS.md`
-- `OWNER_MAP.md`
-- `PROVENANCE.md`
-- `LANDING_LOG.md`
-- `ROADMAP.md`
-- `legacy/INDEX.md`
-- matching config, schema, generated, manifest, quest, script, example, and
-  test companions
-- generated mechanics or AGENTS mesh companions
+Use the nearest `VALIDATION.md` route for `agon` work after the touched
+surface is known; reusable lanes remain in `config/validation_lanes.json`.
 
-Update only surfaces whose future-facing meaning changed.
-
-## Validation
-Use the nearest mechanic `VALIDATION.md` route before closeout; reusable lanes remain in `config/validation_lanes.json`.
 ## Closeout
 
 Report the Agon source family changed, whether legacy/provenance was
@@ -58,7 +40,3 @@ consulted, whether Agon quest follow-through stayed in `quests/agon/<state>/`,
 which stronger owner route remains outside `aoa-memo`, and whether
 any old Agon docs-root or docs-district reference remains outside allowed
 provenance.
-
-## Validation route
-
-Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.
