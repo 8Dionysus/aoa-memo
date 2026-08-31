@@ -101,7 +101,7 @@ Run the narrow validator that matches the changed mechanics surface:
 - When package cards, owner maps, landing logs, validation routes, or
   package-local/part-local artifacts change:
 For mechanic topology changes, run:
-Before landing, also run:
+Use the nearest mechanic `VALIDATION.md` route before closeout; reusable lanes remain in `config/validation_lanes.json`.
 ## Closeout
 
 Report changed mechanic packages, whether active docs, owner maps, provenance,

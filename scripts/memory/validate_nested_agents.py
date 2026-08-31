@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+import re
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
@@ -93,7 +94,48 @@ def read_text(path: Path) -> str:
         fail(f"missing required nested AGENTS doc: {display_path(path)}")
 
 
+def route_residue_issues(repo_root: Path) -> list[str]:
+    empty = re.compile(r"^#{1,6}\s+(?:Validation|Verify|Verification|Checks?|Testing)\s*$", re.I)
+    validation = re.compile(r"(?:validation|verify|verification|checks?|testing)", re.I)
+    issues: list[str] = []
+    paths = sorted(repo_root.rglob("AGENTS.md")) + sorted(repo_root.rglob("DESIGN.AGENTS.md"))
+    for path in paths:
+        if ".git" in path.parts or ".deps" in path.parts:
+            continue
+        lines = path.read_text(encoding="utf-8").splitlines()
+        fenced = False
+        section = ""
+        for index, line in enumerate(lines):
+            stripped = line.strip()
+            if stripped.startswith("```"):
+                fenced = not fenced
+                continue
+            if fenced:
+                continue
+            heading = re.match(r"^#{1,6}\s+(.+?)\s*$", line)
+            if heading:
+                section = heading.group(1)
+                if empty.fullmatch(line):
+                    cursor = index + 1
+                    while cursor < len(lines) and not lines[cursor].strip():
+                        cursor += 1
+                    if cursor >= len(lines) or re.match(r"^#{1,6}\s+", lines[cursor]):
+                        issues.append(f"{path.relative_to(repo_root)}:{index + 1}: empty validation section")
+                continue
+            if not validation.search(section) or not stripped.endswith(":"):
+                continue
+            cursor = index + 1
+            while cursor < len(lines) and not lines[cursor].strip():
+                cursor += 1
+            if cursor >= len(lines) or re.match(r"^#{1,6}\s+", lines[cursor]):
+                issues.append(f"{path.relative_to(repo_root)}:{index + 1}: dangling validation lead-in")
+    return issues
+
+
 def validate_nested_agents_docs() -> None:
+    issues = route_residue_issues(REPO_ROOT)
+    if issues:
+        fail("route residue detected: " + "; ".join(issues))
     for path, contract in REQUIRED_NESTED_AGENTS.items():
         text = read_text(path)
         stripped = text.strip()

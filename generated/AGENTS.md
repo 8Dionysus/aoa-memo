@@ -165,7 +165,7 @@ For the quest projection family:
 
 When this directory changes, run the matching checks:
 If the object family or mechanic-generated outputs changed, also run the
-matching generator:
+Use the matching source builder and nearest `VALIDATION.md` route; generated payloads remain derived.
 
 ## Validation route
 

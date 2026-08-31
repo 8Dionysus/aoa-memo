@@ -29,7 +29,7 @@ It is not the active route. Active doctrine lives under
 
 ## Validation
 
-Run the mechanics validation lane after any legacy edit:
+Run the mechanics validation lane through the owning `VALIDATION.md` route after any legacy edit.
 
 ## Validation route
 

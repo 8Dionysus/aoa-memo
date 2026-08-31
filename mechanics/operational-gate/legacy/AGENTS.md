@@ -36,7 +36,6 @@ and `../PROVENANCE.md`.
 - Do not use legacy entries to claim release approval, runtime state, proof,
   role rights, route dispatch, stats truth, ToS writes, or owner acceptance.
 
-## Validation
 ## Closeout
 
 Report whether legacy provenance changed and whether the active route still

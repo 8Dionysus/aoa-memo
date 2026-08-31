@@ -38,7 +38,7 @@ names only focused owner checks and lane ids.
 
 Run the focused test for the changed surface first. For broad test health use:
 For test-topology, lane, or validator-authority changes, run:
-For release-facing changes, use the composed gate:
+For release-facing changes, use the composed validation route; focused tests do not establish release admission.
 
 ## Validation route
 

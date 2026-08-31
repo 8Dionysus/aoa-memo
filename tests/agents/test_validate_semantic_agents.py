@@ -8,6 +8,7 @@ import unittest
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SCRIPT_PATH = REPO_ROOT / "scripts" / "agents" / "validate_semantic_agents.py"
+sys.path.insert(0, str(REPO_ROOT / "scripts" / "agents"))
 
 
 def load_validator():
@@ -52,6 +53,36 @@ class ValidateSemanticAgentsTests(unittest.TestCase):
             target.write_text("# AGENTS.md\n" + "\n".join(target_spec.required_snippets[1:]) + "\n", encoding="utf-8")
             issues = module.validate(root)
         self.assertTrue(any(first_snippet in issue for issue in issues))
+
+    def test_route_residue_guard_rejects_empty_section_and_dangling_leadin(self) -> None:
+        module = load_validator()
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            target = root / "AGENTS.md"
+            target.write_text(
+                "# AGENTS.md\n\n## Validation\n\n## Closeout\n",
+                encoding="utf-8",
+            )
+            issues = module.route_residue_issues(root)
+            self.assertEqual(1, len(issues))
+
+            target.write_text(
+                "# AGENTS.md\n\n## Validation\nRun checks:\n\n## Closeout\n",
+                encoding="utf-8",
+            )
+            issues = module.route_residue_issues(root)
+            self.assertEqual(1, len(issues))
+
+    def test_route_residue_guard_ignores_fenced_design_example(self) -> None:
+        module = load_validator()
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            target = root / "DESIGN.AGENTS.md"
+            target.write_text(
+                "# DESIGN.AGENTS.md\n\n```markdown\n## Validation\nRun checks:\n```\n",
+                encoding="utf-8",
+            )
+            self.assertEqual([], module.route_residue_issues(root))
 
 
 if __name__ == "__main__":

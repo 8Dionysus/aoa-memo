@@ -37,7 +37,7 @@ When a task touches this path, consult only the relevant entries:
 - Route active readiness-boundary work to `mechanics/readiness-boundary/`.
 
 ## Validation
-Before landing, also run:
+Use the nearest mechanic `VALIDATION.md` route before closeout; reusable lanes remain in `config/validation_lanes.json`.
 
 ## Validation route
 

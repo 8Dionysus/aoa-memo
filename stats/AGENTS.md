@@ -31,7 +31,7 @@ Consult only the entries relevant to the current task:
 ## Validation
 
 Inspect the owner evidence first:
-Then validate the port and its referenced packets with the central owner:
+Validate the port and referenced packets through the central owner route; stats acceptance remains owner-bound.
 ## Closeout
 
 Report the question or contract changed, the corpus evidence inspected,

@@ -27,7 +27,6 @@ for the placement map.
 - Do not restore root flat quest aliases from legacy placement.
 - Do not treat legacy as source truth.
 
-## Validation
 ## Closeout
 
 Report only the relevant placement provenance and whether active Questbook

@@ -37,7 +37,7 @@ exposure comes from the OS user profile.
 
 ## Verify
 
-For `.agents/` route changes, run:
+For `.agents/` route changes, use the nearest `VALIDATION.md` route; reusable lanes remain in `config/validation_lanes.json`.
 
 ## Validation route
 

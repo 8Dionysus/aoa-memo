@@ -36,7 +36,6 @@ and `../PROVENANCE.md`.
 - Do not use legacy entries to grant actor rights, scenario authority, proof,
   graph truth, routing behavior, or runtime execution.
 
-## Validation
 ## Closeout
 
 Report whether legacy provenance changed and whether the active route still

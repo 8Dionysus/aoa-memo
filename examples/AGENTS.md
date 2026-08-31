@@ -84,7 +84,7 @@ family-aligned:
 ## Validation
 
 After editing examples, run:
-If you changed curated object examples or `memory_object_surface_manifest.json`, regenerate the object-facing family before finishing:
+For curated object surfaces, use the declared builder and nearest `VALIDATION.md` route.
 
 ## Validation route
 

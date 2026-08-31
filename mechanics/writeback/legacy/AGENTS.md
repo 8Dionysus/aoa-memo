@@ -33,7 +33,6 @@ When this task touches the path, consult root `AGENTS.md`, `mechanics/AGENTS.md`
   writeback surface it explains.
 - Do not store runtime evidence, private traces, or unreduced receipts here.
 
-## Validation
 ## Closeout
 
 Report legacy index changes, active writeback surfaces consulted, and whether

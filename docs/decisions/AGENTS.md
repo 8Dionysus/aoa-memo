@@ -57,7 +57,7 @@ not to the active decision lookup surface.
 Keep the record public-safe. Do not include private traces, secrets, local-only
 host details, or unreduced personal data.
 
-Verify decision-lane changes with:
+For decision-lane changes, use the nearest `VALIDATION.md` route and preserve decision-source ownership.
 
 ## Validation route
 

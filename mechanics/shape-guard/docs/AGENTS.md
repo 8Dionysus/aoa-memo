@@ -40,7 +40,6 @@ When this task touches the path, consult root `AGENTS.md`, `mechanics/AGENTS.md`
   before moving schemas, examples, generated outputs, scripts, or tests.
 - Do not preserve old governance-local via-negativa aliases.
 
-## Validation
 ## Closeout
 
 Report active shape-guard docs changed, whether artifact placement changed,

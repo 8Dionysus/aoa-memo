@@ -36,7 +36,6 @@ When this task touches the path, consult root `AGENTS.md`, `mechanics/AGENTS.md`
   or former-path source maps.
 - Route active recurrence-support work to `../docs/`.
 
-## Validation
 ## Closeout
 
 Report whether this legacy surface changed and why active recurrence-support

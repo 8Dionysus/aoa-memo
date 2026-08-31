@@ -44,7 +44,7 @@ source files, not a second quest ledger.
 
 ## Validation
 
-When quests change, run:
+For quest changes, use the nearest `VALIDATION.md` route; preserve quest-source ownership.
 ## Closeout
 
 Report which quest lane and lifecycle state changed, whether `QUESTBOOK.md`

@@ -47,7 +47,6 @@ artifact.
   writeback unless this package only gates memory admission.
 - Do not preserve old flat docs-root aliases as active routes.
 
-## Validation
 ## Closeout
 
 Report active operational-gate docs changed, whether part-local contract refs

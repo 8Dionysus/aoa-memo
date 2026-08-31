@@ -35,7 +35,7 @@ When docs change proof, routing, KAG, role, or playbook seams, name the downstre
   route to `docs/validation/AGENTS.md` and `config/validation_lanes.json`.
 - When test inventory changes, route to `docs/testing/AGENTS.md`.
 
-Verify with:
+For docs changes, use the nearest `VALIDATION.md` route; reusable lanes remain in `config/validation_lanes.json`.
 
 ## Validation route
 

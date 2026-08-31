@@ -47,7 +47,7 @@ this directory.
 
 For root technical district changes, run:
 For route-card or mechanic-map changes, add the matching checks:
-For validation lane changes, run:
+For validation-lane changes, use the nearest `VALIDATION.md` route; reusable lanes remain in `config/validation_lanes.json`.
 
 ## Validation route
 

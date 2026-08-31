@@ -126,7 +126,7 @@ After changing scripts, run the affected entrypoints directly. For broad script
 verification, use lane ids rather than copying the full lane sequence into this
 route card:
 For validation lane orchestration changes, also run:
-If generator logic changed, also run:
+For generator changes, use the declared source builder and nearest `VALIDATION.md` route.
 
 ## Validation route
 

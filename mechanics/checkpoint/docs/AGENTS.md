@@ -48,7 +48,7 @@ examples, generated outputs, scripts, or tests.
 - Route center doctrine to `Agents-of-Abyss`.
 
 ## Validation
-Before landing, also run:
+Use the nearest mechanic `VALIDATION.md` route before closeout; reusable lanes remain in `config/validation_lanes.json`.
 
 ## Validation route
 

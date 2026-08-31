@@ -51,7 +51,7 @@ the relevant `mechanics/agon/parts/<part>/config/`,
 
 When root shared manifests change, add the shared source surface and run the
 broad memo gate. When mechanic-local manifests change, run the owning mechanic
-validator first:
+For mechanic-local manifests, use the owning mechanic validator route before closeout.
 ## Closeout
 
 Report which manifest family changed, which source surface owns the meaning,

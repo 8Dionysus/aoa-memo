@@ -46,7 +46,6 @@ artifact.
   or manifests.
 - Do not preserve old flat docs-root aliases as active routes.
 
-## Validation
 ## Closeout
 
 Report active consumer-handoff docs changed, whether generated/example refs

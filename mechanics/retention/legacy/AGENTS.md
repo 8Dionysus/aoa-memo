@@ -33,7 +33,6 @@ When this task touches the path, consult root `AGENTS.md`, `mechanics/AGENTS.md`
   retention surface it explains.
 - Do not store private traces, runtime state, or unreduced personal data here.
 
-## Validation
 ## Closeout
 
 Report legacy index changes, active retention surfaces consulted, and whether

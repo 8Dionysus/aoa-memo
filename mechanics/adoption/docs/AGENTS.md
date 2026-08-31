@@ -37,7 +37,6 @@ When this task touches the path, consult root `AGENTS.md`, `mechanics/AGENTS.md`
   before moving schemas, examples, generated outputs, scripts, or tests.
 - Do not preserve old flat `docs/*.md` aliases.
 
-## Validation
 ## Closeout
 
 Report active adoption docs changed, whether artifact placement changed, and

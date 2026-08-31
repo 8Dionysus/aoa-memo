@@ -45,7 +45,7 @@ For quest-read-model-projections changes, also read `generated/AGENTS.md`,
 
 ## Validation
 
-Use the parent Questbook validation route:
+Use the parent Questbook `VALIDATION.md` route for this part.
 
 ## Validation route
 

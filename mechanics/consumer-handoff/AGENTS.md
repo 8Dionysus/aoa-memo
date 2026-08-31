@@ -58,7 +58,7 @@ After consumer-handoff changes, check whether these surfaces moved:
 Update only surfaces whose future-facing meaning changed.
 
 ## Validation
-Before landing, also run:
+Use the nearest mechanic `VALIDATION.md` route before closeout; reusable lanes remain in `config/validation_lanes.json`.
 ## Closeout
 
 Report the handoff docs changed, whether examples/generated surfaces moved,

@@ -33,7 +33,6 @@ and `../PROVENANCE.md`.
 - Do not treat former flat paths as current contracts.
 - Do not move active governance docs here.
 
-## Validation
 ## Closeout
 
 Report whether legacy provenance changed and whether the active route still

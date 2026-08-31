@@ -35,7 +35,6 @@ validators.
   playbook scenario state, or role authority.
 - Keep generated outputs weaker than source quest files.
 
-## Validation
 ## Closeout
 
 Report source-contract docs changed, generated projections affected, and

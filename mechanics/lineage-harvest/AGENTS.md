@@ -61,7 +61,7 @@ When a task touches this path, consult only the relevant entries:
 ## Validation
 
 For lineage-harvest changes, run:
-For release-bound work, also run:
+For release-bound work, use the nearest mechanic `VALIDATION.md` route; release admission remains owner-bound.
 ## Closeout
 
 Report whether active docs, owner map, provenance, legacy bridge, schema and

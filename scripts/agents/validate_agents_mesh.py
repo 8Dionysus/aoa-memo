@@ -19,6 +19,45 @@ from agents_mesh_common import (
 )
 
 
+def route_residue_issues(repo_root: Path) -> list[str]:
+    """Check only validation sections, ignoring fenced design examples."""
+    empty = re.compile(r"^#{1,6}\s+(?:Validation|Verify|Verification|Checks?|Testing)\s*$", re.I)
+    validation = re.compile(r"(?:validation|verify|verification|checks?|testing)", re.I)
+    issues: list[str] = []
+    paths = sorted(repo_root.rglob("AGENTS.md")) + sorted(repo_root.rglob("DESIGN.AGENTS.md"))
+    for path in paths:
+        if ".git" in path.parts or ".deps" in path.parts:
+            continue
+        lines = path.read_text(encoding="utf-8").splitlines()
+        fenced = False
+        section = ""
+        for index, line in enumerate(lines):
+            stripped = line.strip()
+            if stripped.startswith("```"):
+                fenced = not fenced
+                continue
+            if fenced:
+                continue
+            heading = re.match(r"^#{1,6}\s+(.+?)\s*$", line)
+            if heading:
+                section = heading.group(1)
+                if empty.fullmatch(line):
+                    cursor = index + 1
+                    while cursor < len(lines) and not lines[cursor].strip():
+                        cursor += 1
+                    if cursor >= len(lines) or re.match(r"^#{1,6}\s+", lines[cursor]):
+                        issues.append(f"{path.relative_to(repo_root)}:{index + 1}: empty validation section")
+                continue
+            if not validation.search(section) or not stripped.endswith(":"):
+                continue
+            cursor = index + 1
+            while cursor < len(lines) and not lines[cursor].strip():
+                cursor += 1
+            if cursor >= len(lines) or re.match(r"^#{1,6}\s+", lines[cursor]):
+                issues.append(f"{path.relative_to(repo_root)}:{index + 1}: dangling validation lead-in")
+    return issues
+
+
 REQUIRED_CONFIG_REFS = (
     "authority_ref",
     "system_design_ref",
@@ -67,7 +106,7 @@ def tracked_top_level_dirs(repo_root: Path) -> set[str]:
 
 
 def validate(repo_root: Path) -> list[str]:
-    issues: list[str] = []
+    issues: list[str] = route_residue_issues(repo_root)
     config = load_mesh_config(repo_root)
 
     for key in REQUIRED_CONFIG_REFS:

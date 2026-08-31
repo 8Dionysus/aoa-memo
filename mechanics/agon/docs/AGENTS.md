@@ -61,7 +61,7 @@ Start with:
 
 For Agon mechanic-doc edits, run the mechanics gate and the affected Agon
 validators:
-Before landing, also run:
+Use the nearest mechanic `VALIDATION.md` route before closeout; reusable lanes remain in `config/validation_lanes.json`.
 ## Closeout
 
 Report which Agon source family changed, whether any config, generated,

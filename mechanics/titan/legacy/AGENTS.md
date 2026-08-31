@@ -34,7 +34,6 @@ When this task touches the path, consult root `AGENTS.md`, `mechanics/AGENTS.md`
   Titan surface it explains.
 - Do not delete provenance just to make the active tree look cleaner.
 
-## Validation
 ## Closeout
 
 Report legacy index changes, active Titan surfaces consulted, and whether any

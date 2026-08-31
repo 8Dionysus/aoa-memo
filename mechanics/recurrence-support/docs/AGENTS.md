@@ -47,7 +47,6 @@ artifact.
 - Do not introduce return-only memory-object families.
 - Do not preserve old flat docs-root aliases as active routes.
 
-## Validation
 ## Closeout
 
 Report active recurrence-support docs changed, whether package-local contract

@@ -42,7 +42,7 @@ nearest part `README.md`, `CONTRACT.md`, and `VALIDATION.md`.
 Use the package validation route in `mechanics/retention/AGENTS.md`.
 
 For part topology changes, also run:
-Before landing, run:
+Use the nearest mechanic `VALIDATION.md` route before closeout; reusable lanes remain in `config/validation_lanes.json`.
 ## Closeout
 
 Report active parts changed, whether source docs or artifacts moved, which
