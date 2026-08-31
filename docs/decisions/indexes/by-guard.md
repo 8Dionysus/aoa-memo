@@ -39,6 +39,7 @@
 - [AOA-MEM-D-0073 Numbered Decision Route Completion](../AOA-MEM-D-0073-numbered-decision-route-completion.md) (`docs/decisions/AOA-MEM-D-0073-numbered-decision-route-completion.md`)
 - [AOA-MEM-D-0074 Full Canonical ID Decision Filenames](../AOA-MEM-D-0074-full-canonical-id-decision-filenames.md) (`docs/decisions/AOA-MEM-D-0074-full-canonical-id-decision-filenames.md`)
 - [AOA-MEM-D-0075 Test And Validation Lane Topology](../AOA-MEM-D-0075-test-and-validation-lane-topology.md) (`docs/decisions/AOA-MEM-D-0075-test-and-validation-lane-topology.md`)
+- [AOA-MEM-D-0086 Prompt-Light Agent Routes and On-Demand Validation](../AOA-MEM-D-0086-prompt-light-agent-routes-and-on-demand-validation.md) (`docs/decisions/AOA-MEM-D-0086-prompt-light-agent-routes-and-on-demand-validation.md`)
 
 ## mechanic topology
 
@@ -118,6 +119,7 @@
 - [AOA-MEM-D-0073 Numbered Decision Route Completion](../AOA-MEM-D-0073-numbered-decision-route-completion.md) (`docs/decisions/AOA-MEM-D-0073-numbered-decision-route-completion.md`)
 - [AOA-MEM-D-0074 Full Canonical ID Decision Filenames](../AOA-MEM-D-0074-full-canonical-id-decision-filenames.md) (`docs/decisions/AOA-MEM-D-0074-full-canonical-id-decision-filenames.md`)
 - [AOA-MEM-D-0075 Test And Validation Lane Topology](../AOA-MEM-D-0075-test-and-validation-lane-topology.md) (`docs/decisions/AOA-MEM-D-0075-test-and-validation-lane-topology.md`)
+- [AOA-MEM-D-0086 Prompt-Light Agent Routes and On-Demand Validation](../AOA-MEM-D-0086-prompt-light-agent-routes-and-on-demand-validation.md) (`docs/decisions/AOA-MEM-D-0086-prompt-light-agent-routes-and-on-demand-validation.md`)
 
 ## reviewed corpus/intake
 
@@ -162,6 +164,7 @@
 
 - [AOA-MEM-D-0076 aoa-memo Owner Skill Bundle](../AOA-MEM-D-0076-aoa-memo-owner-skill-bundle.md) (`docs/decisions/AOA-MEM-D-0076-aoa-memo-owner-skill-bundle.md`)
 - [AOA-MEM-D-0084 Decision: Review MCP captures before proof or acceptance](../AOA-MEM-D-0084-review-mcp-captures-before-proof-or-acceptance.md) (`docs/decisions/AOA-MEM-D-0084-review-mcp-captures-before-proof-or-acceptance.md`)
+- [AOA-MEM-D-0086 Prompt-Light Agent Routes and On-Demand Validation](../AOA-MEM-D-0086-prompt-light-agent-routes-and-on-demand-validation.md) (`docs/decisions/AOA-MEM-D-0086-prompt-light-agent-routes-and-on-demand-validation.md`)
 
 ## lifecycle/retention
 
@@ -182,6 +185,7 @@
 - [AOA-MEM-D-0074 Full Canonical ID Decision Filenames](../AOA-MEM-D-0074-full-canonical-id-decision-filenames.md) (`docs/decisions/AOA-MEM-D-0074-full-canonical-id-decision-filenames.md`)
 - [AOA-MEM-D-0075 Test And Validation Lane Topology](../AOA-MEM-D-0075-test-and-validation-lane-topology.md) (`docs/decisions/AOA-MEM-D-0075-test-and-validation-lane-topology.md`)
 - [AOA-MEM-D-0076 aoa-memo Owner Skill Bundle](../AOA-MEM-D-0076-aoa-memo-owner-skill-bundle.md) (`docs/decisions/AOA-MEM-D-0076-aoa-memo-owner-skill-bundle.md`)
+- [AOA-MEM-D-0086 Prompt-Light Agent Routes and On-Demand Validation](../AOA-MEM-D-0086-prompt-light-agent-routes-and-on-demand-validation.md) (`docs/decisions/AOA-MEM-D-0086-prompt-light-agent-routes-and-on-demand-validation.md`)
 
 ## quest/read-model
 
@@ -197,6 +201,7 @@
 - [AOA-MEM-D-0073 Numbered Decision Route Completion](../AOA-MEM-D-0073-numbered-decision-route-completion.md) (`docs/decisions/AOA-MEM-D-0073-numbered-decision-route-completion.md`)
 - [AOA-MEM-D-0074 Full Canonical ID Decision Filenames](../AOA-MEM-D-0074-full-canonical-id-decision-filenames.md) (`docs/decisions/AOA-MEM-D-0074-full-canonical-id-decision-filenames.md`)
 - [AOA-MEM-D-0075 Test And Validation Lane Topology](../AOA-MEM-D-0075-test-and-validation-lane-topology.md) (`docs/decisions/AOA-MEM-D-0075-test-and-validation-lane-topology.md`)
+- [AOA-MEM-D-0086 Prompt-Light Agent Routes and On-Demand Validation](../AOA-MEM-D-0086-prompt-light-agent-routes-and-on-demand-validation.md) (`docs/decisions/AOA-MEM-D-0086-prompt-light-agent-routes-and-on-demand-validation.md`)
 
 ## sibling and boundary
 

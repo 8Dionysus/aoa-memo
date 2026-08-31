@@ -122,3 +122,7 @@
 
 - [AOA-MEM-D-0084 Decision: Review MCP captures before proof or acceptance](../AOA-MEM-D-0084-review-mcp-captures-before-proof-or-acceptance.md) (`docs/decisions/AOA-MEM-D-0084-review-mcp-captures-before-proof-or-acceptance.md`)
 - [AOA-MEM-D-0085 Decision: Owner-authored MCP organ capability contours](../AOA-MEM-D-0085-owner-authored-mcp-organ-capability-contours.md) (`docs/decisions/AOA-MEM-D-0085-owner-authored-mcp-organ-capability-contours.md`)
+
+## 2026-08-31
+
+- [AOA-MEM-D-0086 Prompt-Light Agent Routes and On-Demand Validation](../AOA-MEM-D-0086-prompt-light-agent-routes-and-on-demand-validation.md) (`docs/decisions/AOA-MEM-D-0086-prompt-light-agent-routes-and-on-demand-validation.md`)
