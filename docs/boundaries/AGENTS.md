@@ -22,11 +22,6 @@ boundary before mechanic-level admission.
   and provenance posture.
 - Downstream: mechanic `OWNER_MAP.md` files when a boundary is package-local.
 
-## Validate
+## Validation route
 
-```bash
-python scripts/memory/validate_memo.py --profile schema
-python scripts/memory/validate_memo.py --profile runtime-boundary
-python scripts/memory/validate_memory_operations.py
-python scripts/root-topology/validate_docs_districts.py
-```
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

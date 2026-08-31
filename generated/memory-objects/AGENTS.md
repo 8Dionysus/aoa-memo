@@ -21,9 +21,6 @@ Teaching fixtures live under `examples/memory-objects/`, `examples/phase-alpha/`
 - Downstream: consumers inspect compact catalog first, then open the source path.
   Use `source_kind` to distinguish reviewed corpus from teaching fixtures.
 
-## Validate
+## Validation route
 
-```bash
-python scripts/memory/generate_memory_object_surfaces.py --check
-python scripts/memory/validate_memory_object_surfaces.py
-```
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

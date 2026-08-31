@@ -12,7 +12,7 @@ Parts are active operation nodes. They are not legacy indexes, source-doc dumps,
 proof verdicts, runtime workers, route dispatchers, role policies, KAG substrate
 truth, or owner-acceptance receipts.
 
-## Route Stack
+## Conditional route scope
 
 - Above: the package `AGENTS.md` and `PARTS.md` decide which function nodes are
   active and what each part may own.
@@ -24,9 +24,8 @@ truth, or owner-acceptance receipts.
 - Sideways: source docs stay in `../docs/`; placement history stays in
   `../PROVENANCE.md` and `../legacy/`.
 
-## Read Before Editing
-
-Read root `AGENTS.md`, `mechanics/AGENTS.md`, `mechanics/recurrence-support/AGENTS.md`,
+## Conditional source route
+When this task touches the path, consult root `AGENTS.md`, `mechanics/AGENTS.md`, `mechanics/recurrence-support/AGENTS.md`,
 `mechanics/recurrence-support/DIRECTION.md`, `mechanics/recurrence-support/PARTS.md`,
 `mechanics/recurrence-support/OWNER_MAP.md`, `mechanics/recurrence-support/PROVENANCE.md`, and the
 nearest part `README.md`, `CONTRACT.md`, and `VALIDATION.md`.
@@ -43,18 +42,12 @@ nearest part `README.md`, `CONTRACT.md`, and `VALIDATION.md`.
 Use the package validation route in `mechanics/recurrence-support/AGENTS.md`.
 
 For part topology changes, also run:
-
-```bash
-python scripts/mechanics/validate_memo_mechanic_parts.py
-```
-
 Before landing, run:
-
-```bash
-python scripts/release/release_check.py
-```
-
 ## Closeout
 
 Report active parts changed, whether source docs or artifacts moved, which
 owner stop-lines stayed outside memo, and which package validation ran.
+
+## Validation route
+
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

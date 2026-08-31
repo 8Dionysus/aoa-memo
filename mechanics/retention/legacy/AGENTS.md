@@ -12,7 +12,7 @@ surface.
 It is not the active route for retention doctrine and must not become runtime
 retention storage.
 
-## Route Stack
+## Conditional route scope
 
 - Above: the package `AGENTS.md`, `PROVENANCE.md`, and `OWNER_MAP.md` define
   the active route and stronger-owner boundary.
@@ -21,9 +21,8 @@ retention storage.
 - Below: `raw/` is evidence only. Do not edit it as current doctrine and do not
   cite it as an active route.
 
-## Read Before Editing
-
-Read root `AGENTS.md`, `mechanics/AGENTS.md`, `../AGENTS.md`,
+## Conditional source route
+When this task touches the path, consult root `AGENTS.md`, `mechanics/AGENTS.md`, `../AGENTS.md`,
 `../PROVENANCE.md`, and `legacy/INDEX.md`.
 
 ## Boundaries
@@ -35,14 +34,11 @@ Read root `AGENTS.md`, `mechanics/AGENTS.md`, `../AGENTS.md`,
 - Do not store private traces, runtime state, or unreduced personal data here.
 
 ## Validation
-
-```bash
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/mechanics/build_memo_mechanics_index.py --check
-python scripts/mechanics/validate_memo_mechanics_index.py
-```
-
 ## Closeout
 
 Report legacy index changes, active retention surfaces consulted, and whether
 any old flat docs-root reference remains outside allowed provenance.
+
+## Validation route
+
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

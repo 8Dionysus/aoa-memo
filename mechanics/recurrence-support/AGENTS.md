@@ -13,7 +13,7 @@ It keeps route-return memory public, source-linked, and reviewable. It does not
 own recurrence doctrine, dispatch behavior, runtime retry policy, actor rights,
 proof verdicts, scenario choreography, or owner acceptance.
 
-## Route Stack
+## Conditional route scope
 
 - Above: root `AGENTS.md` owns repo identity and release route;
   `mechanics/AGENTS.md` owns shared mechanic package law and validators.
@@ -24,9 +24,8 @@ proof verdicts, scenario choreography, or owner acceptance.
 - Below: `docs/` holds active source docs, `parts/` holds functioning
   contracts and artifact homes, and `legacy/` is historical evidence only.
 
-## Read Before Editing
-
-Read root `AGENTS.md`, `mechanics/AGENTS.md`, this file, `README.md`,
+## Conditional source route
+When this task touches the path, consult root `AGENTS.md`, `mechanics/AGENTS.md`, this file, `README.md`,
 `DIRECTION.md`, `PARTS.md`, `OWNER_MAP.md`, and `PROVENANCE.md`.
 
 For source docs, continue through `docs/AGENTS.md` and the target `docs/*.md`
@@ -72,27 +71,14 @@ After recurrence-support changes, check whether these surfaces moved:
 Update only surfaces whose future-facing meaning changed.
 
 ## Validation
-
-```bash
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/mechanics/build_memo_mechanics_index.py --check
-python scripts/mechanics/validate_memo_mechanics_index.py
-python scripts/agents/validate_agents_mesh.py
-python scripts/agents/build_agents_mesh_index.py --check
-python scripts/agents/validate_agents_mesh_index.py
-python scripts/memory/validate_memo.py
-python -m pytest -q mechanics/recurrence-support/parts/witness-trace-contract/tests/test_recurrence_support_mechanic.py tests/mechanics/test_memo_mechanics.py tests/agents/test_agents_mesh.py tests/memory/test_memo_memory_context_boundaries.py mechanics/consumer-handoff/parts/playbook-scope-handoff/tests/test_playbook_memory_scopes.py tests/root-topology/test_roadmap_parity.py
-```
-
 Before landing, also run:
-
-```bash
-python scripts/release/release_check.py
-```
-
 ## Closeout
 
 Report recurrence-support docs changed, whether package-local artifacts and
 shared recall/quest refs stayed owner-routed, whether old flat docs-root
 references remain only as allowed provenance, and which stronger owner
 boundaries stayed outside `aoa-memo`.
+
+## Validation route
+
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

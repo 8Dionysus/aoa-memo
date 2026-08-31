@@ -17,10 +17,6 @@ and `docs/root/ROOT_SURFACE_LAW.md`.
 - Across: `tests/root-topology/` and `generated/root-topology/`.
 - Downstream: root district placement checks.
 
-## Validate
+## Validation route
 
-```bash
-python scripts/root-topology/build_root_technical_districts_index.py --check
-python scripts/root-topology/validate_root_technical_districts_index.py
-python -m pytest -q tests/root-topology
-```
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

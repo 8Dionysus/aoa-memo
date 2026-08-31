@@ -34,7 +34,7 @@ REQUIRED_DOCS: tuple[AgentsDocSpec, ...] = (
             'memory truth',
             'public-safe',
             'provenance drift',
-            'validate_memo.py',
+            'nearest `VALIDATION.md` route',
         ),
     ),
     AgentsDocSpec(
@@ -44,7 +44,7 @@ REQUIRED_DOCS: tuple[AgentsDocSpec, ...] = (
             'memory is not proof',
             'temporal relevance',
             'downstream owner repo',
-            'validate_memo.py',
+            'nearest `VALIDATION.md` route',
         ),
     ),
     AgentsDocSpec(
@@ -54,7 +54,7 @@ REQUIRED_DOCS: tuple[AgentsDocSpec, ...] = (
             'recall contracts',
             'provenance loss',
             'public-safe',
-            'python -m pytest -q tests',
+            'nearest `VALIDATION.md` route',
         ),
     ),
 )

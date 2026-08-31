@@ -9,7 +9,7 @@ truth stays in source docs, schemas, examples, generated-source maps, and
 validators; skill truth stays under top-level `skills/`, while global Codex
 exposure comes from the OS user profile.
 
-## Route Stack
+## Conditional route scope
 
 - Above: root `AGENTS.md` owns repository identity, owner boundaries, and
   release route.
@@ -39,9 +39,6 @@ exposure comes from the OS user profile.
 
 For `.agents/` route changes, run:
 
-```bash
-python .agents/spark/scripts/validate_spark_lane.py
-python -m unittest discover -s .agents/spark/tests -p 'test*.py'
-python -m pytest -q tests/root-topology/test_topology_spine.py
-python scripts/release/release_check.py
-```
+## Validation route
+
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

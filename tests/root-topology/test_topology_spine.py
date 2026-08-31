@@ -46,7 +46,7 @@ class TopologySpineTestCase(unittest.TestCase):
             ".agents/AGENTS.md": (
                 "agent-facing derived district",
                 ".agents/<lane>/",
-                "tests/root-topology/test_topology_spine.py",
+                "nearest `VALIDATION.md` route",
             ),
             ".agents/spark/AGENTS.md": (
                 "only governs work started from `.agents/spark/`",
@@ -63,7 +63,7 @@ class TopologySpineTestCase(unittest.TestCase):
             "docs/decisions/AGENTS.md": (
                 "Decision records",
                 "public-safe",
-                "python scripts/release/release_check.py",
+                "nearest `VALIDATION.md` route",
             ),
             "docs/decisions/README.md": (
                 "Decision Records Index",

@@ -13,7 +13,7 @@ It is not a legacy route, proof bundle, deletion authority, runtime cleanup
 lane, role-rights surface, route implementation, KAG promotion lane, or source
 owner adoption path.
 
-## Route Stack
+## Conditional route scope
 
 - Above: the package `AGENTS.md`, `README.md`, `PARTS.md`, and `OWNER_MAP.md`
   set the operation and stronger-owner split.
@@ -25,9 +25,8 @@ owner adoption path.
 - Below: no nested active law is expected here; legacy context routes through
   `../PROVENANCE.md` and `../legacy/`.
 
-## Read Before Editing
-
-Read root `AGENTS.md`, `mechanics/AGENTS.md`, `mechanics/ARTIFACT_TOPOLOGY.md`,
+## Conditional source route
+When this task touches the path, consult root `AGENTS.md`, `mechanics/AGENTS.md`, `mechanics/ARTIFACT_TOPOLOGY.md`,
 `../AGENTS.md`, `../README.md`, `../PARTS.md`, `../OWNER_MAP.md`, and
 `../PROVENANCE.md`.
 
@@ -42,15 +41,11 @@ Read root `AGENTS.md`, `mechanics/AGENTS.md`, `mechanics/ARTIFACT_TOPOLOGY.md`,
 - Do not preserve old governance-local via-negativa aliases.
 
 ## Validation
-
-```bash
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/mechanics/build_memo_mechanics_index.py --check
-python scripts/mechanics/validate_memo_mechanics_index.py
-python -m pytest -q mechanics/shape-guard/parts/via-negativa-checklist/tests/test_shape_guard_mechanic.py tests/mechanics/test_memo_mechanics.py
-```
-
 ## Closeout
 
 Report active shape-guard docs changed, whether artifact placement changed,
 and whether stronger owners remain outside `aoa-memo`.
+
+## Validation route
+
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

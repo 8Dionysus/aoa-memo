@@ -11,7 +11,7 @@ This card applies to `mechanics/checkpoint/legacy/`.
 It is not the active route for checkpoint work and must not receive new active
 schemas, examples, generated outputs, scripts, or tests.
 
-## Route Stack
+## Conditional route scope
 
 - Above: the package `AGENTS.md`, `PROVENANCE.md`, and `OWNER_MAP.md` define
   the active route and stronger-owner boundary.
@@ -20,9 +20,8 @@ schemas, examples, generated outputs, scripts, or tests.
 - Below: `raw/` is evidence only. Do not edit it as current doctrine and do not
   cite it as an active route.
 
-## Read Before Editing
-
-Read:
+## Conditional source route
+When a task touches this path, consult only the relevant entries:
 
 1. root `AGENTS.md`
 2. `mechanics/AGENTS.md`
@@ -38,15 +37,8 @@ Read:
 - Route active checkpoint work to `mechanics/checkpoint/`.
 
 ## Validation
-
-```bash
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/mechanics/build_memo_mechanics_index.py --check
-python scripts/mechanics/validate_memo_mechanics_index.py
-```
-
 Before landing, also run:
 
-```bash
-python scripts/release/release_check.py
-```
+## Validation route
+
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

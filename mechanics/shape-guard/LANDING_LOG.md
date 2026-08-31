@@ -2,8 +2,8 @@
 
 | Date | Change | Validation |
 |---|---|---|
-| 2026-05-19 | Moved the shape-guard regression into `mechanics/shape-guard/parts/via-negativa-checklist/tests/` so the via-negativa part owns its executable boundary. | `config/validation_lanes.json`; nearest `AGENTS.md` or `VALIDATION.md` |
-| 2026-05-18 | Moved `VIA_NEGATIVA_CHECKLIST.md` from governance into `mechanics/shape-guard/docs/` and added operation-first mechanics validation. | `config/validation_lanes.json`; nearest `AGENTS.md` or `VALIDATION.md` |
+| 2026-05-19 | Moved the shape-guard regression into `mechanics/shape-guard/parts/via-negativa-checklist/tests/` so the via-negativa part owns its executable boundary. | `config/validation_lanes.json`; nearest unambiguous `VALIDATION.md` |
+| 2026-05-18 | Moved `VIA_NEGATIVA_CHECKLIST.md` from governance into `mechanics/shape-guard/docs/` and added operation-first mechanics validation. | `config/validation_lanes.json`; nearest unambiguous `VALIDATION.md` |
 
 ## Stop-Lines Preserved
 

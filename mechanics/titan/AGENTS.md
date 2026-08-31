@@ -13,7 +13,7 @@ bridge digest, console digest, closeout posture, and swarm memory policy.
 It does not grant memory write authority, role rights, proof status, private
 retention, or owner-repo Titan doctrine.
 
-## Route Stack
+## Conditional route scope
 
 - Above: root `AGENTS.md` owns repo identity and release route;
   `mechanics/AGENTS.md` owns shared mechanic package law and validators.
@@ -24,9 +24,8 @@ retention, or owner-repo Titan doctrine.
 - Below: `docs/` holds active source docs, `parts/` holds functioning
   contracts and artifact homes, and `legacy/` is historical evidence only.
 
-## Read Before Editing
-
-Read root `AGENTS.md`, `mechanics/AGENTS.md`, this file, `README.md`,
+## Conditional source route
+When this task touches the path, consult root `AGENTS.md`, `mechanics/AGENTS.md`, this file, `README.md`,
 `DIRECTION.md`, `PARTS.md`, `OWNER_MAP.md`, and `PROVENANCE.md`.
 
 For source docs, continue through `docs/AGENTS.md` and the target
@@ -49,24 +48,14 @@ After Titan changes, check whether these surfaces moved:
 Update only surfaces whose future-facing meaning changed.
 
 ## Validation
-
-```bash
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/mechanics/build_memo_mechanics_index.py --check
-python scripts/mechanics/validate_memo_mechanics_index.py
-python -m pytest -q mechanics/titan/parts/recall-and-remembrance-posture/tests mechanics/titan/parts/audit-personality-and-swarm-policy/tests
-python -m pytest -q mechanics/titan/parts/recall-and-remembrance-posture/tests mechanics/titan/parts/closeout-and-digest-posture/tests mechanics/titan/parts/audit-personality-and-swarm-policy/tests
-```
-
 Before landing, also run:
-
-```bash
-python scripts/release/release_check.py
-```
-
 ## Closeout
 
 Report the Titan memory posture changed, whether legacy/provenance was
 consulted, which stronger owner route remains outside `aoa-memo`, and whether
 any old Titan docs-root or docs-district reference remains outside allowed
 provenance.
+
+## Validation route
+
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

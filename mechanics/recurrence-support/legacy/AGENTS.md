@@ -13,7 +13,7 @@ docs-root mirror, and not a place for new contracts.
 In short, it is not the active route; use `legacy/INDEX.md` only for placement
 history.
 
-## Route Stack
+## Conditional route scope
 
 - Above: the package `AGENTS.md`, `PROVENANCE.md`, and `OWNER_MAP.md` define
   the active route and stronger-owner boundary.
@@ -22,9 +22,8 @@ history.
 - Below: `raw/` is evidence only. Do not edit it as current doctrine and do not
   cite it as an active route.
 
-## Read Before Editing
-
-Read root `AGENTS.md`, `mechanics/AGENTS.md`, `../AGENTS.md`,
+## Conditional source route
+When this task touches the path, consult root `AGENTS.md`, `mechanics/AGENTS.md`, `../AGENTS.md`,
 `../PROVENANCE.md`, and `legacy/INDEX.md`.
 
 ## Boundaries
@@ -38,12 +37,11 @@ Read root `AGENTS.md`, `mechanics/AGENTS.md`, `../AGENTS.md`,
 - Route active recurrence-support work to `../docs/`.
 
 ## Validation
-
-```bash
-python scripts/mechanics/validate_memo_mechanics.py
-```
-
 ## Closeout
 
 Report whether this legacy surface changed and why active recurrence-support
 docs were not changed instead.
+
+## Validation route
+
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

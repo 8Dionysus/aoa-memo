@@ -12,7 +12,7 @@ writeback mechanic.
 It is not runtime storage, a live receipt ledger, a generated companion home,
 or owner-local implementation.
 
-## Route Stack
+## Conditional route scope
 
 - Above: the package `AGENTS.md`, `README.md`, `PARTS.md`, and `OWNER_MAP.md`
   set the operation and stronger-owner split.
@@ -24,9 +24,8 @@ or owner-local implementation.
 - Below: no nested active law is expected here; legacy context routes through
   `../PROVENANCE.md` and `../legacy/`.
 
-## Read Before Editing
-
-Read root `AGENTS.md`, `mechanics/AGENTS.md`, `mechanics/ARTIFACT_TOPOLOGY.md`,
+## Conditional source route
+When this task touches the path, consult root `AGENTS.md`, `mechanics/AGENTS.md`, `mechanics/ARTIFACT_TOPOLOGY.md`,
 `../AGENTS.md`, `../README.md`, `../PARTS.md`, `../OWNER_MAP.md`, and
 `../PROVENANCE.md`.
 
@@ -40,14 +39,11 @@ Read root `AGENTS.md`, `mechanics/AGENTS.md`, `mechanics/ARTIFACT_TOPOLOGY.md`,
 - Do not preserve old flat `docs/*.md` aliases.
 
 ## Validation
-
-```bash
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/mechanics/build_memo_mechanics_index.py --check
-python scripts/mechanics/validate_memo_mechanics_index.py
-```
-
 ## Closeout
 
 Report active writeback docs changed, generated companions affected or not
 affected, and which stronger owner remains responsible for live behavior.
+
+## Validation route
+
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

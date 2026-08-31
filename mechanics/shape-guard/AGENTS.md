@@ -14,7 +14,7 @@ It does not own proof verdicts, current health, runtime execution, deletion
 authority, schema replacement by itself, route sovereignty, role rights, KAG
 promotion, or source-owner adoption.
 
-## Route Stack
+## Conditional route scope
 
 - Above: root `AGENTS.md` owns repo identity and release route;
   `mechanics/AGENTS.md` owns shared mechanic package law and validators.
@@ -25,9 +25,8 @@ promotion, or source-owner adoption.
 - Below: `docs/` holds active source docs, `parts/` holds functioning
   contracts and artifact homes, and `legacy/` is historical evidence only.
 
-## Read Before Editing
-
-Read root `AGENTS.md`, `mechanics/AGENTS.md`, this file, `README.md`,
+## Conditional source route
+When this task touches the path, consult root `AGENTS.md`, `mechanics/AGENTS.md`, this file, `README.md`,
 `DIRECTION.md`, `PARTS.md`, `OWNER_MAP.md`, and `PROVENANCE.md`.
 
 For source docs, continue through `docs/AGENTS.md` and the target
@@ -50,22 +49,13 @@ After shape-guard changes, check whether these surfaces moved:
 Update only surfaces whose future-facing meaning changed.
 
 ## Validation
-
-```bash
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/mechanics/build_memo_mechanics_index.py --check
-python scripts/mechanics/validate_memo_mechanics_index.py
-python -m pytest -q mechanics/shape-guard/parts/via-negativa-checklist/tests/test_shape_guard_mechanic.py tests/mechanics/test_memo_mechanics.py tests/agents/test_agents_mesh.py
-```
-
 Before landing, also run:
-
-```bash
-python scripts/release/release_check.py
-```
-
 ## Closeout
 
 Report the shape guard source docs changed, whether operation-first mechanics
 validation changed, whether legacy/provenance was consulted, and whether any
 old governance-local via-negativa route remains outside allowed provenance.
+
+## Validation route
+
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

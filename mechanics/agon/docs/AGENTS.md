@@ -11,7 +11,7 @@ stage landing notes together while preserving the same boundary:
 write durable scars, mutate rank, decide verdicts, or promote Tree-of-Sophia
 canon.
 
-## Route Stack
+## Conditional route scope
 
 - Above: the package `AGENTS.md`, `README.md`, `PARTS.md`, and `OWNER_MAP.md`
   set the operation and stronger-owner split.
@@ -23,8 +23,7 @@ canon.
 - Below: no nested active law is expected here; legacy context routes through
   `../PROVENANCE.md` and `../legacy/`.
 
-## Read Before Editing
-
+## Conditional source route
 Start with:
 
 1. root `AGENTS.md`
@@ -62,31 +61,14 @@ Start with:
 
 For Agon mechanic-doc edits, run the mechanics gate and the affected Agon
 validators:
-
-```bash
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/mechanics/build_memo_mechanics_index.py --check
-python scripts/mechanics/validate_memo_mechanics_index.py
-python mechanics/agon/parts/prebinding-and-candidate-intake/scripts/validate_agon_memo_prebindings.py
-python mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_epistemic_memo_bridge.py
-python mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_kag_memo_evidence_package_registry.py
-python mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_mechanical_trial_memo_intakes.py
-python mechanics/agon/parts/prebinding-and-candidate-intake/scripts/validate_agon_retention_rank_memo_bridge.py
-python mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_slc_memo_bridge_registry.py
-python mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_sophian_memo_evidence_registry.py
-python mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_vds_memo_bridge.py
-python -m pytest -q mechanics/agon/parts/prebinding-and-candidate-intake/tests mechanics/agon/parts/bridge-and-evidence-seams/tests mechanics/agon/parts/stage-landing-and-stop-lines/tests
-```
-
 Before landing, also run:
-
-```bash
-python scripts/release/release_check.py
-```
-
 ## Closeout
 
 Report which Agon source family changed, whether any config, generated,
 manifest, quest, schema, example, or test surfaces changed, and whether any
 old Agon docs-root or docs-district reference remains outside allowed
 provenance.
+
+## Validation route
+
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

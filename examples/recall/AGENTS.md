@@ -19,10 +19,6 @@ operation-mode posture. Doctrine routes to `docs/memory/MEMORY_MODEL.md` and
 - Across: `schemas/recall-posture/`.
 - Downstream: `generated/memory/` and `generated/memory-objects/`.
 
-## Validate
+## Validation route
 
-```bash
-python scripts/memory/validate_memory_surfaces.py
-python scripts/memory/validate_memory_object_surfaces.py
-python scripts/memory/validate_memory_operations.py
-```
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

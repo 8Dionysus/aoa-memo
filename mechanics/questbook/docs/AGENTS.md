@@ -14,7 +14,7 @@ active source contract for this docs lane. These docs do not replace root
 `QUESTBOOK.md`, source quest files under `quests/`, generated companions, or
 validators.
 
-## Route Stack
+## Conditional route scope
 
 - Above: the package `AGENTS.md`, `README.md`, `PARTS.md`, and `OWNER_MAP.md`
   set the operation and stronger-owner split.
@@ -36,14 +36,11 @@ validators.
 - Keep generated outputs weaker than source quest files.
 
 ## Validation
-
-```bash
-python mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/release/release_check.py
-```
-
 ## Closeout
 
 Report source-contract docs changed, generated projections affected, and
 whether root `QUESTBOOK.md` or `quests/` needed updates.
+
+## Validation route
+
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

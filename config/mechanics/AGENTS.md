@@ -17,10 +17,6 @@ cards, owner routes, landing logs, readiness, and artifact inventory.
 - Across: `mechanics/README.md` and each mechanic `README.md`.
 - Downstream: `scripts/mechanics/` and `generated/mechanics/`.
 
-## Validate
+## Validation route
 
-```bash
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/mechanics/build_memo_mechanics_index.py --check
-python scripts/mechanics/validate_memo_mechanics_index.py
-```
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

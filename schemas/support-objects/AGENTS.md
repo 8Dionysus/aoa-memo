@@ -20,9 +20,6 @@ routes to `docs/memory/NARRATIVE_CORE_CONTRACT.md`,
 - Across: `examples/support-objects/` and `memo/intake/receipts/`.
 - Downstream: `generated/memory/` registry surfaces and reviewed corpus checks.
 
-## Validate
+## Validation route
 
-```bash
-python scripts/memory/validate_memo.py
-python scripts/memory/validate_memo_corpus.py
-```
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

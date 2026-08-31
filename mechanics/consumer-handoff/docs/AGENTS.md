@@ -13,7 +13,7 @@ It is not a role policy lane, playbook choreography lane, eval proof bundle,
 KAG substrate, ToS source-meaning mirror, routing implementation, orchestrator
 class authority, runtime store, or legacy route.
 
-## Route Stack
+## Conditional route scope
 
 - Above: the package `AGENTS.md`, `README.md`, `PARTS.md`, and `OWNER_MAP.md`
   set the operation and stronger-owner split.
@@ -25,9 +25,8 @@ class authority, runtime store, or legacy route.
 - Below: no nested active law is expected here; legacy context routes through
   `../PROVENANCE.md` and `../legacy/`.
 
-## Read Before Editing
-
-Read root `AGENTS.md`, `mechanics/AGENTS.md`, `mechanics/ARTIFACT_TOPOLOGY.md`,
+## Conditional source route
+When this task touches the path, consult root `AGENTS.md`, `mechanics/AGENTS.md`, `mechanics/ARTIFACT_TOPOLOGY.md`,
 `../AGENTS.md`, `../README.md`, `../PARTS.md`, `../OWNER_MAP.md`, and
 `../PROVENANCE.md`.
 
@@ -48,18 +47,12 @@ artifact.
 - Do not preserve old flat docs-root aliases as active routes.
 
 ## Validation
-
-```bash
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/mechanics/build_memo_mechanics_index.py --check
-python scripts/mechanics/validate_memo_mechanics_index.py
-python scripts/memory/validate_memo.py
-python scripts/memory/validate_memory_surfaces.py
-python -m pytest -q mechanics/consumer-handoff/parts/downstream-feed-regression/tests mechanics/consumer-handoff/parts/playbook-scope-handoff/tests/test_playbook_memory_scopes.py tests/memory/test_memo_handoff_boundaries.py
-```
-
 ## Closeout
 
 Report active consumer-handoff docs changed, whether generated/example refs
 changed, whether artifact placement changed, and whether stronger owners
 remain outside `aoa-memo`.
+
+## Validation route
+
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

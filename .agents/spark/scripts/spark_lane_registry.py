@@ -153,7 +153,7 @@ def _validate_spark_docs(root: Path, seen_ids: set[str], problems: list[str]) ->
         for required in (
             "done-or-handoff",
             ".agents/spark/registry.json",
-            "python .agents/spark/scripts/validate_spark_lane.py",
+            "nearest `VALIDATION.md` route",
             "memory-is-not-proof",
         ):
             if required not in agents_text:

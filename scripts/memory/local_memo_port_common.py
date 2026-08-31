@@ -210,7 +210,7 @@ def render_markdown(index: dict[str, Any]) -> str:
             "",
             "## Agent Route",
             "",
-            "Executable validation and rebuild commands live in the nearest `AGENTS.md` for this memo port.",
+            "Executable validation and rebuild commands live in the nearest unambiguous `VALIDATION.md` after the port surface is known.",
             "This generated index is a read model; it does not own the operational route.",
             "",
         ]

@@ -146,7 +146,7 @@ class AgentsMeshTestCase(unittest.TestCase):
         self.assertIn("## Route Modes", rules["README.md"]["forbidden_snippets"])
         self.assertIn("## Editing posture", rules["CHARTER.md"]["forbidden_snippets"])
         self.assertIn(
-            "The current broad validation path remains:",
+            "executable validation commands live in route cards",
             rules["DESIGN.AGENTS.md"]["forbidden_snippets"],
         )
         self.assertIn(

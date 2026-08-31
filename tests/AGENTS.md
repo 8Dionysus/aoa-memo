@@ -19,7 +19,7 @@ in `docs/testing/test_inventory.json`.
 atlas in `generated/root-topology/root_technical_districts.min.json` so root folder routing
 can be inspected without opening the full allowlist first.
 
-## Route Stack
+## Conditional route scope
 
 - Above: source docs, schemas, examples, scripts, generated companions, and
   `config/root-topology/root_technical_districts.json` name what root tests protect.
@@ -37,19 +37,9 @@ Full lane command sequences live in `config/validation_lanes.json`; this card
 names only focused owner checks and lane ids.
 
 Run the focused test for the changed surface first. For broad test health use:
-
-```bash
-python scripts/ci_gate.py --mode tests
-```
-
 For test-topology, lane, or validator-authority changes, run:
-
-```bash
-python -m pytest -q tests/root-topology/test_test_topology.py tests/root-topology/test_validation_lanes.py tests/root-topology/test_validator_topology.py
-```
-
 For release-facing changes, use the composed gate:
 
-```bash
-python scripts/release/release_check.py
-```
+## Validation route
+
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

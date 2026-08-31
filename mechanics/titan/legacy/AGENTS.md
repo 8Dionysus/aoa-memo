@@ -12,7 +12,7 @@ surface and the transitional `mechanics/titan/docs/` district.
 It is not the active route for Titan doctrine and must not become a place to
 hide new work.
 
-## Route Stack
+## Conditional route scope
 
 - Above: the package `AGENTS.md`, `PROVENANCE.md`, and `OWNER_MAP.md` define
   the active route and stronger-owner boundary.
@@ -21,9 +21,8 @@ hide new work.
 - Below: `raw/` is evidence only. Do not edit it as current doctrine and do not
   cite it as an active route.
 
-## Read Before Editing
-
-Read root `AGENTS.md`, `mechanics/AGENTS.md`, `../AGENTS.md`,
+## Conditional source route
+When this task touches the path, consult root `AGENTS.md`, `mechanics/AGENTS.md`, `../AGENTS.md`,
 `../PROVENANCE.md`, and `legacy/INDEX.md`.
 
 ## Boundaries
@@ -36,15 +35,12 @@ Read root `AGENTS.md`, `mechanics/AGENTS.md`, `../AGENTS.md`,
 - Do not delete provenance just to make the active tree look cleaner.
 
 ## Validation
-
-```bash
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/mechanics/build_memo_mechanics_index.py --check
-python scripts/mechanics/validate_memo_mechanics_index.py
-```
-
 ## Closeout
 
 Report legacy index changes, active Titan surfaces consulted, and whether any
 old Titan docs-root or docs-district reference remains outside allowed
 provenance.
+
+## Validation route
+
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

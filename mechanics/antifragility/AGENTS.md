@@ -14,7 +14,7 @@ stronger owners must still be checked.
 It does not own proof, route authority, stats conclusions, source receipts,
 runtime repair, rollback execution, or current health claims.
 
-## Route Stack
+## Conditional route scope
 
 - Above: root `AGENTS.md` owns repo identity and release route;
   `mechanics/AGENTS.md` owns shared mechanic package law and validators.
@@ -25,9 +25,8 @@ runtime repair, rollback execution, or current health claims.
 - Below: `docs/` holds active source docs, `parts/` holds functioning
   contracts and artifact homes, and `legacy/` is historical evidence only.
 
-## Read Before Editing
-
-Read root `AGENTS.md`, `mechanics/AGENTS.md`, this file, `README.md`,
+## Conditional source route
+When this task touches the path, consult root `AGENTS.md`, `mechanics/AGENTS.md`, this file, `README.md`,
 `DIRECTION.md`, `PARTS.md`, `OWNER_MAP.md`, and `PROVENANCE.md`.
 
 For source docs, continue through `docs/AGENTS.md` and the target
@@ -51,22 +50,13 @@ After antifragility changes, check whether these surfaces moved:
 Update only surfaces whose future-facing meaning changed.
 
 ## Validation
-
-```bash
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/mechanics/build_memo_mechanics_index.py --check
-python scripts/mechanics/validate_memo_mechanics_index.py
-python -m pytest -q mechanics/antifragility/parts/failure-lesson-memory/tests mechanics/antifragility/parts/recovery-pattern-memory/tests
-```
-
 Before landing, also run:
-
-```bash
-python scripts/release/release_check.py
-```
-
 ## Closeout
 
 Report the antifragility source family changed, whether legacy/provenance was
 consulted, which stronger owner route remains outside `aoa-memo`, and whether
 any old antifragility docs-root reference remains outside allowed provenance.
+
+## Validation route
+
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

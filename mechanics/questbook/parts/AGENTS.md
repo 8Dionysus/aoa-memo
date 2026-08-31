@@ -14,7 +14,7 @@ They do not own root quest source files, root generated read models, proof,
 route dispatch, runtime state, playbook choreography, role authority, or owner
 acceptance.
 
-## Route Stack
+## Conditional route scope
 
 - Above: the package `AGENTS.md` and `PARTS.md` decide which function nodes are
   active and what each part may own.
@@ -26,9 +26,8 @@ acceptance.
 - Sideways: source docs stay in `../docs/`; placement history stays in
   `../PROVENANCE.md` and `../legacy/`.
 
-## Read Before Editing
-
-Read root `AGENTS.md`, `mechanics/AGENTS.md`, `mechanics/questbook/AGENTS.md`,
+## Conditional source route
+When this task touches the path, consult root `AGENTS.md`, `mechanics/AGENTS.md`, `mechanics/questbook/AGENTS.md`,
 `../README.md`, `../PARTS.md`, and the narrow part README.
 
 For quest-read-model-projections changes, also read `generated/AGENTS.md`,
@@ -48,8 +47,6 @@ For quest-read-model-projections changes, also read `generated/AGENTS.md`,
 
 Use the parent Questbook validation route:
 
-```bash
-python mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py
-python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py --check
-python scripts/memory/validate_memo.py
-```
+## Validation route
+
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

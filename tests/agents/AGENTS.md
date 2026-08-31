@@ -18,8 +18,6 @@ cards, derived `.agents/` route cards, and Spark lane contracts.
 - Across: `scripts/agents/` and `.agents/spark/`.
 - Downstream: `generated/agents/`.
 
-## Validate
+## Validation route
 
-```bash
-python -m pytest -q tests/agents
-```
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

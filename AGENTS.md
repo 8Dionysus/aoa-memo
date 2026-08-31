@@ -21,22 +21,20 @@ It does not own:
 
 - techniques, shared or cross-repository skills, eval proof, routing, role contracts, playbook scenario meaning, KAG substrate semantics, cross-owner statistical composition, or live quest sovereignty
 
-## Start here
+## Conditional source route
 
-1. `README.md`
-2. `CHARTER.md`
-3. `DESIGN.md`
-4. `MEMORY_INDEX.md`
-5. `memo/README.md` when reviewed memory objects or corpus intake are touched
-6. `stats/README.md` when memo-owned statistical questions, contracts, or reference packets are touched
-7. `skills/README.md` when the admitted owner bundle, its projection, or its applicability changes
-8. [`ROADMAP.md`](ROADMAP.md)
-9. `docs/README.md`
-10. `docs/boundaries/BOUNDARIES.md`
-11. `docs/memory/MEMORY_MODEL.md`
-12. `mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md` for readiness, retention, and memory-is-not-proof boundaries
-13. the target memory surface and affected generated outputs
-14. `docs/root/AGENTS_ROOT_REFERENCE.md` for preserved full root branches
+Read only the route needed by the current task: `README.md` for public
+orientation; `DESIGN.md` or `MEMORY_INDEX.md` for system or memory-canon
+meaning; `memo/`, `stats/`, or `skills/` when that owner surface is touched;
+`docs/README.md` and `docs/boundaries/BOUNDARIES.md` for placement or a
+neighbor seam; and the target source plus affected generated outputs for a
+concrete change. `docs/root/AGENTS_ROOT_REFERENCE.md` is conditional reference
+material for preserved root branches, not an inherited inventory.
+Consult [`ROADMAP.md`](ROADMAP.md) only when repository direction or future
+triggers are part of the current task.
+For readiness work, consult
+`mechanics/readiness-boundary/docs/MEMORY_READINESS_BOUNDARY.md` only when that
+boundary is touched.
 
 For agent-facing topology, also read `DESIGN.AGENTS.md`.
 For root or docs-root placement, read `docs/root/ROOT_SURFACE_LAW.md`.
@@ -65,7 +63,7 @@ lineage-harvest, writeback, or retention movement, read `mechanics/README.md`.
 
 ## AGENTS stack law
 
-- Start with this root card, then follow the nearest nested `AGENTS.md` for every touched path.
+- Read the root card only for repository-wide scope; follow a nearest nested card when the task touches that path.
 - Root guidance owns repository identity, owner boundaries, route choice, and the shortest honest verification path.
 - Nested guidance owns local contracts, local risk, exact files, and local checks.
 - Authored source surfaces own meaning. Generated, exported, compact, derived, runtime, and adapter surfaces summarize, transport, or support meaning.
@@ -128,21 +126,13 @@ Update only the ones that moved; otherwise say no update was needed.
 - neighboring owner repositories when the change routes or constrains their
   truth.
 
-## GitHub landing workflow
+## Release route
 
-Root `AGENTS.md` owns the repository-wide branch, PR, CI, and merge route.
-`.github/AGENTS.md` owns the GitHub-native files that support it.
-
-When the user asks to commit, push, and merge in this repository, use this route:
-
-1. Start from a branch based on the current `origin/main`. If the worktree is already dirty, inventory it first and carry forward only the intended diff.
-2. Commit the intended change with a message that names the changed surface.
-3. Push the branch and open a pull request that states changed surfaces, validation run, skipped checks, and remaining risk.
-4. Wait for GitHub `Repo Validation` and any required GitHub checks. If a check fails, fix the branch and wait for the new result.
-5. Merge through GitHub after green validation. Use squash unless repository settings report a different required method; report the method that landed.
-6. Return to `main`, fast-forward from `origin/main`, and confirm the worktree is clean before closeout.
-
-If GitHub status or merge permissions cannot be observed, stop the landing route and report the exact blocker instead of guessing.
+The ordinary branch, pull-request, CI, merge-method, and post-merge procedure
+lives in [`docs/root/RELEASING.md`](docs/root/RELEASING.md). This card only
+provides the landing pointer and the fail-closed boundary: if CI status,
+review, merge authority, or post-merge state cannot be observed, stop and
+report the exact blocker rather than inferring success.
 
 ## Verify
 
@@ -155,15 +145,8 @@ The `source-fast` lane includes central stats-contract validation. Provide a
 compatible `aoa-stats` checkout through `AOA_STATS_ROOT`, `.deps/aoa-stats`, or
 the sibling `../aoa-stats` path; CI supplies its pinned checkout explicitly.
 An unavailable central validator is a failed check, not a skipped one.
-
-```bash
-python scripts/ci_gate.py --mode source-fast
-python scripts/ci_gate.py --mode generated
-python scripts/ci_gate.py --mode memory
-python scripts/ci_gate.py --mode tests
-```
-
-Use `python scripts/release/release_check.py` for the frozen release gate.
+Use the named `release_check` lane and the nearest `VALIDATION.md` route for
+the frozen release gate.
 
 Use branch docs in `docs/root/AGENTS_ROOT_REFERENCE.md` for object canon, trust posture, lifecycle, writeback, bridge, and guardrail work.
 
@@ -174,3 +157,7 @@ State which memory surface and class changed, whether provenance, temporal postu
 ## Full reference
 
 `docs/root/AGENTS_ROOT_REFERENCE.md` preserves the former detailed root guidance, including memory-specific branch reading and hard boundaries.
+
+## Validation route
+
+For executable focused procedure, read the nearest `VALIDATION.md` after the touched surface is known.

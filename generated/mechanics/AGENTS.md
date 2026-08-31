@@ -18,10 +18,6 @@ Source truth routes to `config/mechanics/memo_mechanics.json`,
 - Across: `mechanics/` and `scripts/mechanics/`.
 - Downstream: OS Abyss readiness inspection and package route selection.
 
-## Validate
+## Validation route
 
-```bash
-python scripts/mechanics/build_memo_mechanics_index.py --check
-python scripts/mechanics/validate_memo_mechanics_index.py
-python scripts/mechanics/validate_memo_mechanic_readiness.py
-```
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

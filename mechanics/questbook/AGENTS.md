@@ -14,7 +14,7 @@ generated quest projections, and owner-routing stop-lines.
 It does not own source quest state, playbook choreography, proof outcomes,
 runtime scheduling, role rights, or hidden memory.
 
-## Route Stack
+## Conditional route scope
 
 - Above: root `AGENTS.md` owns repo identity and release route;
   `mechanics/AGENTS.md` owns shared mechanic package law and validators.
@@ -25,9 +25,8 @@ runtime scheduling, role rights, or hidden memory.
 - Below: `docs/` holds active source docs, `parts/` holds functioning
   contracts and artifact homes, and `legacy/` is historical evidence only.
 
-## Read Before Editing
-
-Read root `AGENTS.md`, `mechanics/AGENTS.md`, this file, `README.md`,
+## Conditional source route
+When this task touches the path, consult root `AGENTS.md`, `mechanics/AGENTS.md`, this file, `README.md`,
 `DIRECTION.md`, `PARTS.md`, `OWNER_MAP.md`, `PROVENANCE.md`,
 `parts/README.md`, `docs/QUEST_SOURCE_CONTRACT.md`, `QUESTBOOK.md`, and
 `quests/README.md`.
@@ -61,22 +60,13 @@ Before closeout, review the changed route rather than only the changed file:
   `quests/README.md` only when their future-facing route changed.
 
 ## Validation
-
-```bash
-python mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py
-python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py --check
-python scripts/memory/validate_memo.py
-python -m pytest -q mechanics/questbook/parts/source-contract/tests tests/memory/test_memo_questbook_boundaries.py
-```
-
 Before landing, also run:
-
-```bash
-python scripts/release/release_check.py
-```
-
 ## Closeout
 
 Report changed quest lanes, lifecycle states, generated projections rebuilt or
 not rebuilt, owner boundaries affected, checks run, skipped checks, and the
 next owner route when a quest is only carrying another repository's work.
+
+## Validation route
+
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

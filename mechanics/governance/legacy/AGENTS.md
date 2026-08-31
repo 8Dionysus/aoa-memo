@@ -13,7 +13,7 @@ It is not the active route for governance docs, not a source of current
 authority, and not a place to park active schemas, examples, generated outputs,
 scripts, tests, or runtime receipts.
 
-## Route Stack
+## Conditional route scope
 
 - Above: the package `AGENTS.md`, `PROVENANCE.md`, and `OWNER_MAP.md` define
   the active route and stronger-owner boundary.
@@ -22,9 +22,8 @@ scripts, tests, or runtime receipts.
 - Below: `raw/` is evidence only. Do not edit it as current doctrine and do not
   cite it as an active route.
 
-## Read Before Editing
-
-Read root `AGENTS.md`, `mechanics/AGENTS.md`, `../AGENTS.md`, `../README.md`,
+## Conditional source route
+When this task touches the path, consult root `AGENTS.md`, `mechanics/AGENTS.md`, `../AGENTS.md`, `../README.md`,
 and `../PROVENANCE.md`.
 
 ## Boundaries
@@ -35,14 +34,11 @@ and `../PROVENANCE.md`.
 - Do not move active governance docs here.
 
 ## Validation
-
-```bash
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/mechanics/build_memo_mechanics_index.py --check
-python scripts/mechanics/validate_memo_mechanics_index.py
-```
-
 ## Closeout
 
 Report whether legacy provenance changed and whether the active route still
 points to `mechanics/governance/docs/`.
+
+## Validation route
+
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

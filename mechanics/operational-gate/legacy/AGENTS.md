@@ -14,7 +14,7 @@ authority, and not a place to park active schemas, examples, generated outputs,
 scripts, tests, quests, manifests, runtime receipts, incident logs, or release
 owner doctrine.
 
-## Route Stack
+## Conditional route scope
 
 - Above: the package `AGENTS.md`, `PROVENANCE.md`, and `OWNER_MAP.md` define
   the active route and stronger-owner boundary.
@@ -23,9 +23,8 @@ owner doctrine.
 - Below: `raw/` is evidence only. Do not edit it as current doctrine and do not
   cite it as an active route.
 
-## Read Before Editing
-
-Read root `AGENTS.md`, `mechanics/AGENTS.md`, `../AGENTS.md`, `../README.md`,
+## Conditional source route
+When this task touches the path, consult root `AGENTS.md`, `mechanics/AGENTS.md`, `../AGENTS.md`, `../README.md`,
 and `../PROVENANCE.md`.
 
 ## Boundaries
@@ -38,14 +37,11 @@ and `../PROVENANCE.md`.
   role rights, route dispatch, stats truth, ToS writes, or owner acceptance.
 
 ## Validation
-
-```bash
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/mechanics/build_memo_mechanics_index.py --check
-python scripts/mechanics/validate_memo_mechanics_index.py
-```
-
 ## Closeout
 
 Report whether legacy provenance changed and whether the active route still
 points to `mechanics/operational-gate/docs/`.
+
+## Validation route
+
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

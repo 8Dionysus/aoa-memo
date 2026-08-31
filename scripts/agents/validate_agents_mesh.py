@@ -29,6 +29,18 @@ REQUIRED_CONFIG_REFS = (
 STALE_ROOT_SCRIPT_COMMAND_RE = re.compile(
     r"python scripts/(?!(ci_gate\.py|release_check\.py|validation_lanes\.py|memory/|agents/|mechanics/|root-topology/|release/))"
 )
+ACTIVE_COMMAND_FENCE_RE = re.compile(
+    r"^ {0,3}```(?:bash|console|sh|shell|zsh)(?:\s+.*)?$", re.IGNORECASE | re.MULTILINE
+)
+ACTIVE_COMMAND_LINE_RE = re.compile(
+    r"^[ \t]*(?:[-*][ \t]+)?`?(?:python3?(?:[ \t]+-m)?[ \t]+(?:scripts/|mechanics/|tests/|-[A-Za-z]|[A-Za-z0-9_.-]+\.py)|pytest(?=[ \t])|"
+    r"uv[ \t]+run[ \t]+pytest\b|git[ \t]+(?:status|diff|push|pull|merge|checkout|switch)\b|"
+    r"gh[ \t]+(?:pr|run)\b|aoa[ \t]+release\b)", re.IGNORECASE | re.MULTILINE
+)
+UNCONDITIONAL_READ_HEADING_RE = re.compile(
+    r"^##\s+(?:Start here|Read before editing|Read Before Editing|Reading Order(?: Shape)?)\s*$",
+    re.IGNORECASE | re.MULTILINE,
+)
 
 
 def tracked_top_level_dirs(repo_root: Path) -> set[str]:
@@ -81,6 +93,20 @@ def validate(repo_root: Path) -> list[str]:
             "config/agents/agents_mesh.json: unregistered AGENTS.md cards exist: "
             + ", ".join(migration_cards)
         )
+
+    active_cards = [repo_root / rel_path for rel_path in discovered]
+    design_card = repo_root / "DESIGN.AGENTS.md"
+    if design_card.is_file():
+        active_cards.append(design_card)
+    for path in active_cards:
+        rel_path = posix_rel(path, repo_root)
+        text = path.read_text(encoding="utf-8")
+        if ACTIVE_COMMAND_FENCE_RE.search(text):
+            issues.append(f"{rel_path}: active agent guidance must route runnable commands to VALIDATION.md")
+        if ACTIVE_COMMAND_LINE_RE.search(text):
+            issues.append(f"{rel_path}: active agent guidance contains a runnable command line")
+        if UNCONDITIONAL_READ_HEADING_RE.search(text):
+            issues.append(f"{rel_path}: unconditional reading inventory must be task-conditional")
 
     for contract in card_contracts(config):
         rel_path = contract["path"]

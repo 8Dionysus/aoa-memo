@@ -11,7 +11,7 @@ console digest, closeout posture, and swarm memory policy together. It does
 not grant memory write authority, role rights, proof status, or private
 retention.
 
-## Route Stack
+## Conditional route scope
 
 - Above: the package `AGENTS.md`, `README.md`, `PARTS.md`, and `OWNER_MAP.md`
   set the operation and stronger-owner split.
@@ -23,8 +23,7 @@ retention.
 - Below: no nested active law is expected here; legacy context routes through
   `../PROVENANCE.md` and `../legacy/`.
 
-## Read Before Editing
-
+## Conditional source route
 Start with:
 
 1. root `AGENTS.md`
@@ -61,22 +60,13 @@ Start with:
 ## Validation
 
 For Titan district edits, run:
-
-```bash
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/mechanics/build_memo_mechanics_index.py --check
-python scripts/mechanics/validate_memo_mechanics_index.py
-python -m pytest -q mechanics/titan/parts/recall-and-remembrance-posture/tests mechanics/titan/parts/closeout-and-digest-posture/tests mechanics/titan/parts/audit-personality-and-swarm-policy/tests
-```
-
 Before landing, also run:
-
-```bash
-python scripts/release/release_check.py
-```
-
 ## Closeout
 
 Report which Titan memory posture changed, whether schemas, examples, or tests
 changed, and whether any old Titan docs-root or docs-district reference
 remains outside allowed provenance.
+
+## Validation route
+
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

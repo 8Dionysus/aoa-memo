@@ -28,10 +28,6 @@ Test file inventory lives in `docs/testing/test_inventory.json`.
 - Downstream: `scripts/ci_gate.py`, `scripts/release/release_check.py`,
   focused CI modes, nightly drift checks, and release gates.
 
-## Validate
+## Validation route
 
-```bash
-python scripts/root-topology/validate_validator_topology.py
-python -m pytest -q tests/root-topology/test_validator_topology.py tests/root-topology/test_validation_lanes.py
-python scripts/ci_gate.py --mode source-fast
-```
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

@@ -25,15 +25,6 @@ instead of authoring doctrine.
   `schemas/memory-ports/`, `examples/memory-objects/`,
   `examples/memory-ports/`, `examples/recall/`, and `generated/memory/`.
 
-## Validate
+## Validation route
 
-```bash
-python scripts/memory/validate_memo.py --profile schema
-python scripts/memory/validate_memo.py --profile memory-context
-python scripts/memory/validate_memory_operations.py
-python scripts/memory/validate_memory_surfaces.py
-python scripts/memory/validate_local_memo_port.py --path examples/memory-ports/example-port
-python scripts/memory/build_memory_operational_readouts.py --write --live
-python scripts/memory/build_memory_operational_readouts.py --check --live
-python scripts/memory/validate_abyss_machine_memory_object_bundle.py
-```
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

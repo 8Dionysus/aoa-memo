@@ -20,10 +20,6 @@ Schemas here bind recall posture. Doctrine lives in `docs/posture/` and
 - Across: `examples/recall/` and `docs/posture/`.
 - Downstream: validators in `scripts/memory/`.
 
-## Validate
+## Validation route
 
-```bash
-python scripts/memory/validate_memo.py
-python scripts/memory/validate_memory_operations.py
-python scripts/memory/validate_memory_surfaces.py
-```
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

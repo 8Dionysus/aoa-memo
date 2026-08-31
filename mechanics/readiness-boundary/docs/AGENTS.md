@@ -12,7 +12,7 @@ the readiness-boundary mechanic.
 It is active mechanic-owned doctrine, not root memory-object canon and not
 proof, runtime, graph, route, role, or source-owner authority.
 
-## Route Stack
+## Conditional route scope
 
 - Above: the package `AGENTS.md`, `README.md`, `PARTS.md`, and `OWNER_MAP.md`
   set the operation and stronger-owner split.
@@ -24,9 +24,8 @@ proof, runtime, graph, route, role, or source-owner authority.
 - Below: no nested active law is expected here; legacy context routes through
   `../PROVENANCE.md` and `../legacy/`.
 
-## Read Before Editing
-
-Read:
+## Conditional source route
+When a task touches this path, consult only the relevant entries:
 
 1. root `AGENTS.md`
 2. `mechanics/AGENTS.md`
@@ -45,10 +44,6 @@ Read:
 Use `mechanics/ARTIFACT_TOPOLOGY.md` before moving readiness-boundary schemas,
 examples, generated outputs, scripts, tests, manifests, or config.
 
-## Validation
+## Validation route
 
-```bash
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/memory/validate_memo.py
-python -m pytest -q mechanics/readiness-boundary/parts/memory-readiness-boundary/tests/test_readiness_boundary_mechanic.py
-```
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

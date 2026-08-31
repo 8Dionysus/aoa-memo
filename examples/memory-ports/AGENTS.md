@@ -15,10 +15,6 @@ index surfaces without becoming durable reviewed memory.
 - Doctrine: `docs/memory/LOCAL_MEMO_PORT_STANDARD.md`.
 - Vocabulary: `docs/memory/MEMO_PORT_INDEXING_VOCABULARY.md`.
 
-## Validate
+## Validation route
 
-```bash
-python scripts/memory/validate_local_memo_port.py --path examples/memory-ports/example-port
-python scripts/memory/build_local_memo_port_index.py --path examples/memory-ports/example-port --check
-```
-
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

@@ -10,7 +10,7 @@ It validates the memory layer, regenerates the object-facing surface family, and
 These scripts should remain small, reviewable, and honest about what they validate.
 Do not turn them into hidden runtime infrastructure.
 
-## Route Stack
+## Conditional route scope
 
 - Above: root `AGENTS.md`, source docs, schemas, examples, config maps, and
   generated contracts decide what scripts may validate or build.
@@ -125,30 +125,9 @@ confirm family alignment without turning capsules into routing policy.
 After changing scripts, run the affected entrypoints directly. For broad script
 verification, use lane ids rather than copying the full lane sequence into this
 route card:
-
-```bash
-python scripts/root-topology/validate_validator_topology.py
-python scripts/ci_gate.py --mode source-fast
-python scripts/ci_gate.py --mode generated
-python scripts/ci_gate.py --mode memory
-python scripts/ci_gate.py --mode tests
-```
-
 For validation lane orchestration changes, also run:
-
-```bash
-python -m pytest -q tests/root-topology/test_validation_lanes.py tests/root-topology/test_validator_topology.py tests/root-topology/test_ci_gate.py tests/root-topology/test_release_check.py
-```
-
 If generator logic changed, also run:
 
-```bash
-python scripts/memory/generate_memory_object_surfaces.py
-python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py
-python mechanics/consumer-handoff/parts/kag-source-export/scripts/generate_kag_export.py
-python mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_targets.py
-python mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_intake.py
-python mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_governance.py
-python mechanics/writeback/parts/growth-and-continuity/scripts/generate_growth_refinery_writeback_lanes.py
-python mechanics/writeback/parts/growth-and-continuity/scripts/generate_phase_alpha_writeback_map.py
-```
+## Validation route
+
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

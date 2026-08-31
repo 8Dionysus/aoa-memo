@@ -11,7 +11,7 @@ Legacy preserves Questbook placement provenance for
 files, generated projections, or source-contract law. Use `legacy/INDEX.md`
 for the placement map.
 
-## Route Stack
+## Conditional route scope
 
 - Above: the package `AGENTS.md`, `PROVENANCE.md`, and `OWNER_MAP.md` define
   the active route and stronger-owner boundary.
@@ -28,13 +28,11 @@ for the placement map.
 - Do not treat legacy as source truth.
 
 ## Validation
-
-```bash
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/release/release_check.py
-```
-
 ## Closeout
 
 Report only the relevant placement provenance and whether active Questbook
 routes changed.
+
+## Validation route
+
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

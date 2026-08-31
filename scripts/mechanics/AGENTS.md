@@ -18,10 +18,6 @@ Source truth routes to `config/mechanics/memo_mechanics.json`,
 - Across: `tests/mechanics/` and `generated/mechanics/`.
 - Downstream: mechanic package readiness and artifact inventory.
 
-## Validate
+## Validation route
 
-```bash
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/mechanics/validate_memo_mechanic_parts.py
-python -m pytest -q tests/mechanics
-```
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

@@ -108,7 +108,8 @@ def build_package_readiness(package: dict[str, Any], artifacts: dict[str, Any]) 
         for relative in PACKAGE_SURFACES
     }
     readme_headings = [heading for heading in README_HEADINGS if heading in readme]
-    validation_text = "\n".join((agents, landing_log, readme))
+    package_validation = _read(f"{package_root}/VALIDATION.md")
+    validation_text = "\n".join((agents, package_validation, landing_log, readme))
     validation_refs = [
         ref
         for ref in (*REQUIRED_VALIDATION_REFS, *SUPPORTING_VALIDATION_REFS)
@@ -159,7 +160,10 @@ def build_package_readiness(package: dict[str, Any], artifacts: dict[str, Any]) 
             or "## Active Placement" in provenance
             or "## Active source" in provenance
         ),
-        "landing-log": "python scripts/release/release_check.py" in landing_log or "python scripts/release/release_check.py" in agents,
+        "landing-log": (
+            "Current executable routes live in the nearest unambiguous `VALIDATION.md`" in landing_log
+            or "python scripts/release/release_check.py" in package_validation
+        ),
         "validation-route": all(ref in validation_refs for ref in REQUIRED_VALIDATION_REFS),
         "artifact-test-coverage": non_test_artifact_count == 0 or bool(test_dirs),
         "local-test-route": test_artifact_count == 0 or _has_runnable_local_test_routes(

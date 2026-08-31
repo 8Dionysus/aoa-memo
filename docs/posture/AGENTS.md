@@ -20,11 +20,6 @@ are source doctrine here.
   reviewable lifecycle examples.
 - Downstream: `schemas/recall-posture/` and `schemas/support-objects/`.
 
-## Validate
+## Validation route
 
-```bash
-python scripts/memory/validate_memo.py --profile schema
-python scripts/memory/validate_memo.py --profile memory-context
-python scripts/memory/validate_memory_operations.py
-python scripts/memory/validate_lifecycle_audit_examples.py
-```
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

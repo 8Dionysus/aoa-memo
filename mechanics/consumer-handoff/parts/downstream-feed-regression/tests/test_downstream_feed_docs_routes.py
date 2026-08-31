@@ -29,16 +29,17 @@ class MemoDownstreamFeedDocsRouteTests(unittest.TestCase):
         self.assertIn("docs/validation", readme)
         self.assertIn("docs/root/RELEASING", readme)
 
-        root_validation_commands = (
+        for command in (
             "python scripts/ci_gate.py --mode source-fast",
             "python scripts/ci_gate.py --mode generated",
             "python scripts/ci_gate.py --mode memory",
             "python scripts/ci_gate.py --mode tests",
             "python scripts/release/release_check.py",
-        )
-        for command in root_validation_commands:
+        ):
             self.assertNotIn(command, readme)
-            self.assertIn(command, root_agents)
+            self.assertNotIn(command, root_agents)
+        self.assertIn("config/validation_lanes.json", root_agents)
+        self.assertIn("nearest `VALIDATION.md`", root_agents)
         self.assertIn("docs/validation/COMMAND_AUTHORITY.md", root_agents)
         self.assertIn("docs/validation/validator_inventory.json", root_agents)
 
@@ -49,14 +50,15 @@ class MemoDownstreamFeedDocsRouteTests(unittest.TestCase):
             "python mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_intake.py",
             "python mechanics/writeback/parts/growth-and-continuity/scripts/generate_phase_alpha_writeback_map.py",
         ):
-            self.assertIn(command, scripts_agents)
+            self.assertNotIn(command, scripts_agents)
+        self.assertIn("nearest `VALIDATION.md`", scripts_agents)
 
     def test_contributing_routes_validation_to_command_owners(self) -> None:
         contributing = (REPO_ROOT / "CONTRIBUTING.md").read_text(encoding="utf-8")
         root_agents = (REPO_ROOT / "AGENTS.md").read_text(encoding="utf-8")
 
-        self.assertIn("Executable validation routes live in [AGENTS](AGENTS.md#verify)", contributing)
-        self.assertIn("nearest local `AGENTS.md`", contributing)
+        self.assertIn("Executable validation routes live in `config/validation_lanes.json`", contributing)
+        self.assertIn("nearest `VALIDATION.md`", contributing)
         self.assertIn("Do not duplicate the full command battery here", contributing)
 
         for command in (
@@ -66,7 +68,7 @@ class MemoDownstreamFeedDocsRouteTests(unittest.TestCase):
             "python scripts/ci_gate.py --mode tests",
             "python scripts/release/release_check.py",
         ):
-            self.assertIn(command, root_agents)
+            self.assertNotIn(command, root_agents)
 
         self.assertIn("inspect the worktree state", contributing)
         self.assertNotIn("git status -sb", contributing)

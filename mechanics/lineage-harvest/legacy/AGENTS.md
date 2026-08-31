@@ -11,7 +11,7 @@ This directory preserves lineage-harvest placement provenance.
 It is not the active route. Active doctrine lives under
 `mechanics/lineage-harvest/docs/`.
 
-## Route Stack
+## Conditional route scope
 
 - Above: the package `AGENTS.md`, `PROVENANCE.md`, and `OWNER_MAP.md` define
   the active route and stronger-owner boundary.
@@ -31,8 +31,6 @@ It is not the active route. Active doctrine lives under
 
 Run the mechanics validation lane after any legacy edit:
 
-```bash
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/mechanics/build_memo_mechanics_index.py --check
-python scripts/mechanics/validate_memo_mechanics_index.py
-```
+## Validation route
+
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

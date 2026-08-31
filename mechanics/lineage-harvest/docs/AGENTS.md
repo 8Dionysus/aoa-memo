@@ -13,7 +13,7 @@ It is not a schema home, generated-output home, runtime ledger, proof record,
 KAG promotion dossier, ToS canon route, stats report, or source-owner adoption
 record.
 
-## Route Stack
+## Conditional route scope
 
 - Above: the package `AGENTS.md`, `README.md`, `PARTS.md`, and `OWNER_MAP.md`
   set the operation and stronger-owner split.
@@ -25,9 +25,8 @@ record.
 - Below: no nested active law is expected here; legacy context routes through
   `../PROVENANCE.md` and `../legacy/`.
 
-## Read Before Editing
-
-Read:
+## Conditional source route
+When a task touches this path, consult only the relevant entries:
 
 1. `mechanics/lineage-harvest/AGENTS.md`
 2. `mechanics/lineage-harvest/README.md`
@@ -47,16 +46,8 @@ Read:
 ## Validation
 
 After editing active docs, run:
-
-```bash
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/mechanics/build_memo_mechanics_index.py --check
-python scripts/mechanics/validate_memo_mechanics_index.py
-python scripts/memory/validate_memo.py
-```
-
 For release-bound work, also run:
 
-```bash
-python scripts/release/release_check.py
-```
+## Validation route
+
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

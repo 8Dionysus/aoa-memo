@@ -33,9 +33,9 @@ Root `AGENTS.md` owns:
 
 - repository identity
 - owner lane and route-away boundaries
-- broad reading order
-- GitHub landing route
-- default validation path
+- conditional source routes
+- release/governance landing pointer
+- named validation lanes
 - post-change reporting expectations
 
 It should stay compact enough to be read first.
@@ -135,9 +135,8 @@ off without inventing a route. It stays weaker than memory source docs,
 schemas, examples, mechanics, builders, validators, and sibling-owner
 repositories.
 
-## Reading Order Shape
-
-For agent editing, the intended order is:
+## Conditional source route
+When a task touches agent-surface form, follow this conditional route:
 
 1. root `AGENTS.md`
 2. nearest nested `AGENTS.md` for every touched path
@@ -199,9 +198,12 @@ docs.
 
 ## Validation Direction
 
-Executable commands live in root `AGENTS.md` and nearest local `AGENTS.md`
-cards. This design surface only names what agent-facing validation should
-prove.
+Reusable machine command sequences are authoritative in
+`config/validation_lanes.json`; focused human procedure is on demand in the
+nearest unambiguous `VALIDATION.md`. Active agent cards name the applicable
+lane or route and preserve semantic owner boundaries, but do not carry
+runnable command blocks or unconditional README inventories. This design
+surface only names what agent-facing validation should prove.
 
 The AGENTS mesh generated companion checks:
 
@@ -225,3 +227,7 @@ the mesh validator path.
 
 Agent guidance in `aoa-memo` should help an agent find the memory source,
 respect the boundary, and stop before pretending memory became another layer.
+
+## Validation route
+
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.
