@@ -124,7 +124,7 @@ confirm family alignment without turning capsules into routing policy.
 
 After changing scripts, run the affected entrypoints directly. For broad script
 verification, use lane ids rather than copying the full lane sequence into this
-  route card.
+route card.
 For validation lane orchestration changes, use the declared lane validator route.
 For generator changes, use the declared source builder and nearest `VALIDATION.md` route.
 
