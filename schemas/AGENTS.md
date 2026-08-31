@@ -75,7 +75,6 @@ generated family rather than inventing a new routing payload.
 
 ## Validation
 
-After schema edits, run the validators that cover the affected surface:
 For generator-backed object surfaces, use the declared source builder and nearest `VALIDATION.md` route.
 
 ## Validation route

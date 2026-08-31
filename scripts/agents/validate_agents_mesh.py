@@ -49,11 +49,30 @@ def route_residue_issues(repo_root: Path) -> list[str]:
                         issues.append(f"{path.relative_to(repo_root)}:{index + 1}: empty validation section")
                 continue
             if not validation.search(section) or not stripped.endswith(":"):
+                cursor = index + 1
+                while cursor < len(lines) and not lines[cursor].strip():
+                    cursor += 1
+                if (
+                    stripped.endswith(":")
+                    and
+                    re.match(r"^\s*[-*+]\s+", line)
+                    and cursor < len(lines)
+                    and re.match(r"^\s*[-*+]\s+", lines[cursor])
+                    and len(line) - len(line.lstrip())
+                    == len(lines[cursor]) - len(lines[cursor].lstrip())
+                ):
+                    issues.append(f"{path.relative_to(repo_root)}:{index + 1}: empty same-level bullet lead-in")
                 continue
             cursor = index + 1
             while cursor < len(lines) and not lines[cursor].strip():
                 cursor += 1
-            if cursor >= len(lines) or re.match(r"^#{1,6}\s+", lines[cursor]):
+            next_line = lines[cursor].strip() if cursor < len(lines) else ""
+            if (
+                cursor >= len(lines)
+                or re.match(r"^#{1,6}\s+", lines[cursor])
+                or next_line.endswith(":")
+                or "validation route" in next_line.lower()
+            ):
                 issues.append(f"{path.relative_to(repo_root)}:{index + 1}: dangling validation lead-in")
     return issues
 

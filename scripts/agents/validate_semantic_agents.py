@@ -106,18 +106,38 @@ def route_residue_issues(repo_root: Path) -> list[str]:
                         issues.append(f"{path.relative_to(repo_root)}:{index + 1}: empty validation section")
                 continue
             if not _VALIDATION_SECTION_RE.search(section) or not stripped.endswith(":"):
+                # Structural residue outside validation headings is limited to
+                # an empty same-level bullet body; ordinary prose colons are
+                # intentionally ignored.
+                cursor = index + 1
+                while cursor < len(lines) and not lines[cursor].strip():
+                    cursor += 1
+                if (
+                    stripped.endswith(":")
+                    and re.match(r"^\s*[-*+]\s+", line)
+                    and cursor < len(lines)
+                    and re.match(r"^\s*[-*+]\s+", lines[cursor])
+                    and len(line) - len(line.lstrip())
+                    == len(lines[cursor]) - len(lines[cursor].lstrip())
+                ):
+                    issues.append(f"{path.relative_to(repo_root)}:{index + 1}: empty same-level bullet lead-in")
                 continue
             cursor = index + 1
             while cursor < len(lines) and not lines[cursor].strip():
                 cursor += 1
-            if cursor >= len(lines) or re.match(r"^#{1,6}\s+", lines[cursor]):
+            next_line = lines[cursor].strip() if cursor < len(lines) else ""
+            if (
+                cursor >= len(lines)
+                or re.match(r"^#{1,6}\s+", lines[cursor])
+                or next_line.endswith(":")
+                or "validation route" in next_line.lower()
+            ):
                 issues.append(f"{path.relative_to(repo_root)}:{index + 1}: dangling validation lead-in")
     return issues
 
 
 def validate(repo_root: Path = REPO_ROOT) -> list[str]:
     issues: list[str] = []
-    issues.extend(route_residue_issues(repo_root))
     issues.extend(route_residue_issues(repo_root))
     for spec in REQUIRED_DOCS:
         path = repo_root / spec.path

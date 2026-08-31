@@ -76,8 +76,8 @@ provide:
 
 ## Validation
 
-For Spark lane changes, include:
-For release-facing lane changes, also run:
+For Spark lane changes, use the scenario's declared validation route.
+For release-facing lane changes, use the scenario's declared release validation route.
 For ordinary memory-surface work inside a scenario, use the narrowest relevant
 validator named by the scenario, source surface, or nearest `AGENTS.md`.
 

@@ -83,7 +83,7 @@ family-aligned:
 
 ## Validation
 
-After editing examples, run:
+After editing examples, use the declared example validation route.
 For curated object surfaces, use the declared builder and nearest `VALIDATION.md` route.
 
 ## Validation route

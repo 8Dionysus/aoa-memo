@@ -41,7 +41,7 @@ nearest part `README.md`, `CONTRACT.md`, and `VALIDATION.md`.
 
 Use the package validation route in `mechanics/recurrence-support/AGENTS.md`.
 
-For part topology changes, also run:
+
 Use the nearest mechanic `VALIDATION.md` route before closeout; reusable lanes remain in `config/validation_lanes.json`.
 ## Closeout
 

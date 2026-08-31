@@ -45,8 +45,8 @@ this directory.
 
 ## Validation
 
-For root technical district changes, run:
-For route-card or mechanic-map changes, add the matching checks:
+For root technical district changes, use the root-topology validation route.
+For route-card or mechanic-map changes, use the matching AGENTS mesh or mechanic validation route.
 For validation-lane changes, use the nearest `VALIDATION.md` route; reusable lanes remain in `config/validation_lanes.json`.
 
 ## Validation route

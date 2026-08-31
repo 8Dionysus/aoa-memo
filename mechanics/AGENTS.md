@@ -89,18 +89,16 @@ The package `README.md` is the mechanic card. It must include:
 
 ## Validation
 
-Run the narrow validator that matches the changed mechanics surface:
+Use the narrow validator matching the changed mechanics surface through its owning `VALIDATION.md` route:
 
-- When package-local or part-local artifact homes change:
-- When `mechanics/ARTIFACT_TOPOLOGY.md` changes or a root technical artifact
-  moves into a package or part home:
-- When `PARTS.md` files or `parts/` contracts change:
-- When package mechanic cards change:
-- When `OWNER_MAP.md` files or package cards change:
-- When landing receipts change:
-- When package cards, owner maps, landing logs, validation routes, or
-  package-local/part-local artifacts change:
-For mechanic topology changes, run:
+- For package-local or part-local artifact homes, use the owning mechanic `VALIDATION.md` route.
+- For `mechanics/ARTIFACT_TOPOLOGY.md` or root-artifact moves, use the root-topology validation route.
+- For `PARTS.md` files or `parts/` contracts, use the owning mechanic `VALIDATION.md` route.
+- For package mechanic cards, use the mechanic-card validation route.
+- For `OWNER_MAP.md` files or package cards, use the owning mechanic validation route.
+- For landing receipts, use the mechanic landing-log validation route.
+- For package cards, owner maps, landing logs, validation routes, or local artifacts, use the owning mechanic validation route.
+- For mechanic topology changes, use the nearest mechanic `VALIDATION.md` route.
 Use the nearest mechanic `VALIDATION.md` route before closeout; reusable lanes remain in `config/validation_lanes.json`.
 ## Closeout
 

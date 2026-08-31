@@ -45,7 +45,6 @@ When a task touches this path, consult only the relevant entries:
 
 ## Validation
 
-After editing active docs, run:
 For release-bound work, use the nearest mechanic `VALIDATION.md` route; release admission remains owner-bound.
 
 ## Validation route

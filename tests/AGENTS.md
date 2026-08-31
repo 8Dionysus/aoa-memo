@@ -36,8 +36,8 @@ Keep fixtures public-safe. No private memories, secrets, hidden telemetry, or un
 Full lane command sequences live in `config/validation_lanes.json`; this card
 names only focused owner checks and lane ids.
 
-Run the focused test for the changed surface first. For broad test health use:
-For test-topology, lane, or validator-authority changes, run:
+Run the focused test for the changed surface first; for broad test health, use the nearest `VALIDATION.md` route.
+For test-topology, lane, or validator-authority changes, use the root-topology validation route.
 For release-facing changes, use the composed validation route; focused tests do not establish release admission.
 
 ## Validation route

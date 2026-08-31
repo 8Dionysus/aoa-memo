@@ -73,6 +73,19 @@ class ValidateSemanticAgentsTests(unittest.TestCase):
             issues = module.route_residue_issues(root)
             self.assertEqual(1, len(issues))
 
+    def test_validate_reports_one_finding_per_residue(self) -> None:
+        module = load_validator()
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for spec in module.REQUIRED_DOCS:
+                path = root / spec.path
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text("# AGENTS.md\n" + "\n".join(spec.required_snippets) + "\n", encoding="utf-8")
+            target = root / module.REQUIRED_DOCS[0].path
+            target.write_text(target.read_text(encoding="utf-8") + "\n## Validation\nRun checks:\n\n## Closeout\n", encoding="utf-8")
+            issues = module.validate(root)
+        residue_issues = [issue for issue in issues if "dangling validation lead-in" in issue]
+        self.assertEqual(1, len(residue_issues))
     def test_route_residue_guard_ignores_fenced_design_example(self) -> None:
         module = load_validator()
         with tempfile.TemporaryDirectory() as tmp:
@@ -83,6 +96,25 @@ class ValidateSemanticAgentsTests(unittest.TestCase):
                 encoding="utf-8",
             )
             self.assertEqual([], module.route_residue_issues(root))
+
+    def test_route_residue_guard_rejects_stacked_and_same_level_leadins(self) -> None:
+        module = load_validator()
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            target = root / "AGENTS.md"
+            target.write_text(
+                "# AGENTS.md\n\n## Validation\nFirst checks:\nSecond checks:\n\n## Closeout\n",
+                encoding="utf-8",
+            )
+            issues = module.route_residue_issues(root)
+            self.assertEqual(2, len(issues))
+
+            target.write_text(
+                "# AGENTS.md\n\n## Boundaries\n- First route:\n- Second route.\n",
+                encoding="utf-8",
+            )
+            issues = module.route_residue_issues(root)
+            self.assertEqual(1, len(issues))
 
 
 if __name__ == "__main__":

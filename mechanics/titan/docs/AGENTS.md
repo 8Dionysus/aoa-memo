@@ -59,7 +59,6 @@ Start with:
 
 ## Validation
 
-For Titan district edits, run:
 Use the nearest mechanic `VALIDATION.md` route before closeout; reusable lanes remain in `config/validation_lanes.json`.
 ## Closeout
 
