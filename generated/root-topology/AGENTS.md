@@ -18,9 +18,6 @@ The current output is `root_technical_districts.min.json`.
 - Across: `config/root-topology/` and `scripts/root-topology/`.
 - Downstream: root district placement audits.
 
-## Validate
+## Validation route
 
-```bash
-python scripts/root-topology/build_root_technical_districts_index.py --check
-python scripts/root-topology/validate_root_technical_districts_index.py
-```
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

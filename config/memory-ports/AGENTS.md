@@ -17,10 +17,6 @@ packets.
 - Schemas: `schemas/memory-ports/`.
 - Builders and validators: `scripts/memory/`.
 
-## Validate
+## Validation route
 
-```bash
-python scripts/memory/build_memo_port_vocabulary.py --check
-python scripts/memory/validate_local_memo_port.py --path examples/memory-ports/example-port
-```
-
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

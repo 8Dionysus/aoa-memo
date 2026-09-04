@@ -10,9 +10,8 @@ This home owns only admitted repository-specific callable procedures. The
 current source is `skills/aoa-memo/SKILL.md`. Global Codex exposure is a
 managed OS user-profile copy and never source truth.
 
-## Read before editing
-
-Read root `AGENTS.md`, `skills/README.md`, the target `SKILL.md`, the admission
+## Conditional source route
+When this task touches the path, consult root `AGENTS.md`, `skills/README.md`, the target `SKILL.md`, the admission
 decision named by `port.manifest.json`, and the affected memory, corpus,
 mechanic, or boundary owner.
 
@@ -32,9 +31,9 @@ mechanic, or boundary owner.
 ## Validation
 
 Manual isolated, negative, held-out, coexistence, and bounded-write tasks
-decide usefulness. `skills-ref validate skills/aoa-memo` checks portable shape.
-The pinned `aoa-skills` composite action checks owner, manifest, source, and
-package digest; the OS installer owns installed byte/mode parity. Green output
+decide usefulness. The local validation route checks portable source shape;
+the pinned `aoa-skills` composite action checks owner, manifest, source, and
+package digest. The OS installer owns installed byte/mode parity. Green output
 makes no outcome claim.
 
 ## Closeout
@@ -42,3 +41,7 @@ makes no outcome claim.
 Report the mode cases exercised, strongest owner sources, OS-profile status,
 prompt-visible inspection, checks skipped, and any session-only fixtures
 removed.
+
+## Validation route
+
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

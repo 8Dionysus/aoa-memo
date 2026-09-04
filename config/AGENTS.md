@@ -21,7 +21,7 @@ district purpose, route card, family ids, and local routing. Use
 `config/root-topology/root_technical_districts.json` when you need the exact file list,
 bounded generated-prefix list, or family contract.
 
-## Route Stack
+## Conditional route scope
 
 - Above: root `AGENTS.md`, `DESIGN.AGENTS.md`, and
   `mechanics/ARTIFACT_TOPOLOGY.md` decide why a config surface is repo-wide.
@@ -45,30 +45,10 @@ this directory.
 
 ## Validation
 
-For root technical district changes, run:
+For root technical district changes, use the root-topology validation route.
+For route-card or mechanic-map changes, use the matching AGENTS mesh or mechanic validation route.
+For validation-lane changes, use the nearest `VALIDATION.md` route; reusable lanes remain in `config/validation_lanes.json`.
 
-```bash
-python scripts/mechanics/validate_mechanic_artifact_topology.py
-python scripts/root-topology/build_root_technical_districts_index.py --check
-python scripts/root-topology/validate_root_technical_districts_index.py
-```
+## Validation route
 
-For route-card or mechanic-map changes, add the matching checks:
-
-```bash
-python scripts/memory/validate_memo.py --profile schema
-python scripts/memory/validate_memo.py --profile memory-context
-python scripts/agents/validate_agents_mesh.py
-python scripts/agents/build_agents_mesh_index.py --check
-python scripts/agents/validate_agents_mesh_index.py
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/mechanics/build_memo_mechanics_index.py --check
-python scripts/mechanics/validate_memo_mechanics_index.py
-```
-
-For validation lane changes, run:
-
-```bash
-python scripts/root-topology/validate_validator_topology.py
-python -m pytest -q tests/root-topology/test_validation_lanes.py tests/root-topology/test_validator_topology.py tests/root-topology/test_ci_gate.py tests/root-topology/test_release_check.py
-```
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

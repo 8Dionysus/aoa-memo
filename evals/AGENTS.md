@@ -20,7 +20,7 @@ reports, and source refs.
 | output | local intake packet, local suite/report, or route to `aoa-evals` |
 | owner | `PORT.yaml` for port status; local files for memo evidence shape |
 | next route | `intake/`, `suites/`, `reports/`, or `aoa-evals` local eval-port standard |
-| validation | `python ../aoa-evals/scripts/validate_local_eval_port.py --target-root .` |
+| validation | nearest `VALIDATION.md` route and the `aoa-evals` local eval-port standard |
 
 ## Rules
 
@@ -29,3 +29,7 @@ reports, and source refs.
   `aoa-evals`.
 - Do not treat an intake packet as proof acceptance.
 - Do not place private traces, secrets, or unreduced operator evidence here.
+
+## Validation route
+
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

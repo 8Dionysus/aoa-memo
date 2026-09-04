@@ -13,7 +13,7 @@ This district is the repo's own memory body. Local `repo/memo/` ports in other
 repositories feed candidates and intake packets toward this corpus; they do not
 share this shape.
 
-## Route Stack
+## Conditional route scope
 
 - Above: root `AGENTS.md`, `DESIGN.md`, `MEMORY_INDEX.md`,
   `docs/memory/MEMORY_MODEL.md`, and `docs/root/ROOT_SURFACE_LAW.md`.
@@ -27,13 +27,6 @@ share this shape.
 ## Corpus Shape
 
 Use object bundles:
-
-```text
-memo/objects/<kind-dir>/<year>/<slug>/
-  object.json
-  MEMO.md
-```
-
 `object.json` is the machine-checkable object and must validate against
 `schemas/memory-objects/memory_object.schema.json` plus the kind-specific
 schema. `MEMO.md` is the human-facing companion and should explain the same
@@ -81,12 +74,6 @@ Run it first without `--write` to inspect the planned object path, copied
 intake packet, and landing receipt. Add `--write` only after the object kind,
 slug, title, summary, and recall posture are correct.
 
-## Validate
+## Validation route
 
-```bash
-python scripts/memory/validate_memo_corpus.py
-python scripts/memory/generate_memory_object_surfaces.py --check
-python scripts/agents/validate_agents_mesh.py
-python scripts/root-topology/validate_root_technical_districts_index.py
-python -m pytest -q tests/memory/test_memo_corpus.py tests/memory/test_reviewed_intake_landing.py tests/agents/test_agents_mesh.py tests/root-topology/test_root_technical_districts_index.py
-```
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

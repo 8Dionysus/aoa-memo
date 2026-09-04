@@ -1,8 +1,8 @@
 # AGENTS.md
 
-## Applies To
+## Applies to
 
-This card applies to `mechanics/operational-gate/docs/`.
+`mechanics/operational-gate/docs/` and its active mechanic-owned doctrine.
 
 ## Role
 
@@ -13,27 +13,12 @@ It is not a release authority lane, runtime incident system, proof bundle,
 service health monitor, role policy lane, route dispatcher, stats source, ToS
 write surface, or legacy route.
 
-## Route Stack
+## Local delta
 
-- Above: the package `AGENTS.md`, `README.md`, `PARTS.md`, and `OWNER_MAP.md`
-  set the operation and stronger-owner split.
-- Here: `docs/README.md` maps the source family; individual docs own active
-  mechanic doctrine and support notes.
-- Adjacent: package or part artifact homes own schemas, examples, config,
-  generated outputs, scripts, tests, manifests, and quests. Use
-  `mechanics/ARTIFACT_TOPOLOGY.md` before moving root technical artifacts.
-- Below: no nested active law is expected here; legacy context routes through
-  `../PROVENANCE.md` and `../legacy/`.
-
-## Read Before Editing
-
-Read root `AGENTS.md`, `mechanics/AGENTS.md`, `mechanics/ARTIFACT_TOPOLOGY.md`,
-`../AGENTS.md`, `../README.md`, `../PARTS.md`, `../OWNER_MAP.md`, and
-`../PROVENANCE.md`.
-
-When a doc points into schemas, examples, generated surfaces, quests, scripts,
-or tests, read that district's nearest `AGENTS.md` before changing the linked
-artifact.
+This is the source-doc district for `operational-gate`. Keep source meaning here and
+route package identity or stronger-owner questions to `../OWNER_MAP.md`. The
+shared package/docs/parts/legacy hierarchy is inherited from `mechanics/AGENTS.md`;
+this card carries only the `operational-gate` doctrine and local source family.
 
 ## Boundaries
 
@@ -48,16 +33,10 @@ artifact.
   writeback unless this package only gates memory admission.
 - Do not preserve old flat docs-root aliases as active routes.
 
-## Validation
+## Verification
 
-```bash
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/mechanics/build_memo_mechanics_index.py --check
-python scripts/mechanics/validate_memo_mechanics_index.py
-python scripts/memory/validate_memo.py
-python -m pytest -q mechanics/operational-gate/parts/deployment-incident-gate/tests mechanics/operational-gate/parts/post-release-boundaries/tests
-```
-
+Use `ARTIFACT_TOPOLOGY.md` before moving a `operational-gate` artifact, and use the
+nearest `VALIDATION.md` route after the touched doc is known.
 ## Closeout
 
 Report active operational-gate docs changed, whether part-local contract refs

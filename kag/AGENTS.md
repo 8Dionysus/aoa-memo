@@ -11,9 +11,8 @@ narrows the lane.
 source-linked records over `memory registry and reviewed memory corpus route` for `aoa-kag` registry,
 composition, and MCP consumers.
 
-## Read before editing
-
-Read the root `AGENTS.md`, this card, `kag/README.md`, `kag/manifest.json`,
+## Conditional source route
+When this task touches the path, consult root `AGENTS.md`, this card, `kag/README.md`, `kag/manifest.json`,
 `generated/memory/memo_registry.min.json`, and `memo/README.md` before
 changing provider records.
 
@@ -32,3 +31,7 @@ through the `aoa-kag` local subtree validator.
 
 Report provider records changed, source-return route changed, owner validation,
 `aoa-kag` validation, and the next MCP consumer route.
+
+## Validation route
+
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

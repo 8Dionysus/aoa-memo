@@ -6,6 +6,7 @@ from typing import Iterable, Sequence
 
 from decision_index_constants import (
     DATE_VALUE_RE,
+    DECISION_LANE_CONTROL_FILES,
     DECISION_ID_RE,
     DECISIONS_DIR,
     FULL_ID_FILENAME_RE,
@@ -143,7 +144,7 @@ def collect_decision_records(repo_root: Path) -> tuple[list[DecisionRecord], lis
     for path in sorted(
         item
         for item in decisions_root.glob("*.md")
-        if item.name not in {"AGENTS.md", "README.md", "TEMPLATE.md"}
+        if item.name not in DECISION_LANE_CONTROL_FILES
     ):
         try:
             record = load_decision_record(path, repo_root=repo_root)

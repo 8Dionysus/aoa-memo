@@ -1,8 +1,8 @@
 # AGENTS.md
 
-## Applies To
+## Applies to
 
-This card applies to `mechanics/agon/`.
+`mechanics/agon/` and its active mechanic surfaces.
 
 ## Role
 
@@ -14,64 +14,24 @@ It does not run Agon trials, decide verdicts, write durable scars, mutate rank,
 execute retention, promote KAG substrate, publish Tree-of-Sophia canon, or own
 the source Agon mechanic.
 
-## Route Stack
+## Local delta
 
-- Above: root `AGENTS.md` owns repo identity and release route;
-  `mechanics/AGENTS.md` owns shared mechanic package law and validators.
-- Here: `README.md` is the mechanic card, `DIRECTION.md` names current
-  pressure, `PARTS.md` lists active function nodes, `OWNER_MAP.md` names
-  stronger owners, and `PROVENANCE.md` plus `legacy/` preserve placement
-  history.
-- Below: `docs/` holds active source docs, `parts/` holds functioning
-  contracts and artifact homes, and `legacy/` is historical evidence only.
+The `agon` mechanic identity remains local; shared package, docs, parts, and
+legacy hierarchy is inherited from `mechanics/AGENTS.md`. Its package card,
+DIRECTION.md, PARTS.md, OWNER_MAP.md, and PROVENANCE.md remain the semantic
+anchors for this operation.
 
-## Read Before Editing
+When Agon source-doc semantics are touched, narrow the route to the target
+`docs/AGON_*.md` surface; quest follow-through remains in `quests/agon/`.
 
-Read root `AGENTS.md`, `mechanics/AGENTS.md`, this file, `README.md`,
-`DIRECTION.md`, `PARTS.md`, `OWNER_MAP.md`, and `PROVENANCE.md`.
+## Boundaries
 
-For source docs, continue through `docs/AGENTS.md` and the target
-`docs/AGON_*.md` surface.
+Keep the agon package-specific owner boundaries in the mechanic card and OWNER_MAP.md.
 
-## Post-Change Review
+## Verification
 
-After Agon changes, check whether these surfaces moved:
-
-- `DIRECTION.md`
-- `PARTS.md`
-- `OWNER_MAP.md`
-- `PROVENANCE.md`
-- `LANDING_LOG.md`
-- `ROADMAP.md`
-- `legacy/INDEX.md`
-- matching config, schema, generated, manifest, quest, script, example, and
-  test companions
-- generated mechanics or AGENTS mesh companions
-
-Update only surfaces whose future-facing meaning changed.
-
-## Validation
-
-```bash
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/mechanics/build_memo_mechanics_index.py --check
-python scripts/mechanics/validate_memo_mechanics_index.py
-python mechanics/agon/parts/prebinding-and-candidate-intake/scripts/validate_agon_memo_prebindings.py
-python mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_epistemic_memo_bridge.py
-python mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_kag_memo_evidence_package_registry.py
-python mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_mechanical_trial_memo_intakes.py
-python mechanics/agon/parts/prebinding-and-candidate-intake/scripts/validate_agon_retention_rank_memo_bridge.py
-python mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_slc_memo_bridge_registry.py
-python mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_sophian_memo_evidence_registry.py
-python mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_vds_memo_bridge.py
-python -m pytest -q mechanics/agon/parts/prebinding-and-candidate-intake/tests mechanics/agon/parts/bridge-and-evidence-seams/tests mechanics/agon/parts/stage-landing-and-stop-lines/tests
-```
-
-Before landing, also run:
-
-```bash
-python scripts/release/release_check.py
-```
+Use the nearest `VALIDATION.md` route for `agon` work after the touched
+surface is known; reusable lanes remain in `config/validation_lanes.json`.
 
 ## Closeout
 

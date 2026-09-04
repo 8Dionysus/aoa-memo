@@ -1,8 +1,8 @@
 # AGENTS.md
 
-## Applies To
+## Applies to
 
-This card applies to `mechanics/antifragility/docs/`.
+`mechanics/antifragility/docs/` and its active mechanic-owned doctrine.
 
 ## Role
 
@@ -12,23 +12,12 @@ antifragility memo mechanic.
 It is not a legacy route, schema home, example warehouse, generated index,
 proof bundle, route implementation, stats summary, or runtime repair lane.
 
-## Route Stack
+## Local delta
 
-- Above: the package `AGENTS.md`, `README.md`, `PARTS.md`, and `OWNER_MAP.md`
-  set the operation and stronger-owner split.
-- Here: `docs/README.md` maps the source family; individual docs own active
-  mechanic doctrine and support notes.
-- Adjacent: package or part artifact homes own schemas, examples, config,
-  generated outputs, scripts, tests, manifests, and quests. Use
-  `mechanics/ARTIFACT_TOPOLOGY.md` before moving root technical artifacts.
-- Below: no nested active law is expected here; legacy context routes through
-  `../PROVENANCE.md` and `../legacy/`.
-
-## Read Before Editing
-
-Read root `AGENTS.md`, `mechanics/AGENTS.md`, `mechanics/ARTIFACT_TOPOLOGY.md`,
-`../AGENTS.md`, `../README.md`, `../PARTS.md`, `../OWNER_MAP.md`, and
-`../PROVENANCE.md`.
+This is the source-doc district for `antifragility`. Keep source meaning here and
+route package identity or stronger-owner questions to `../OWNER_MAP.md`. The
+shared package/docs/parts/legacy hierarchy is inherited from `mechanics/AGENTS.md`;
+this card carries only the `antifragility` doctrine and local source family.
 
 ## Boundaries
 
@@ -39,15 +28,10 @@ Read root `AGENTS.md`, `mechanics/AGENTS.md`, `mechanics/ARTIFACT_TOPOLOGY.md`,
   before moving schemas, examples, generated outputs, scripts, or tests.
 - Do not preserve old flat `docs/*.md` aliases.
 
-## Validation
+## Verification
 
-```bash
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/mechanics/build_memo_mechanics_index.py --check
-python scripts/mechanics/validate_memo_mechanics_index.py
-python -m pytest -q mechanics/antifragility/parts/failure-lesson-memory/tests mechanics/antifragility/parts/recovery-pattern-memory/tests
-```
-
+Use `ARTIFACT_TOPOLOGY.md` before moving a `antifragility` artifact, and use the
+nearest `VALIDATION.md` route after the touched doc is known.
 ## Closeout
 
 Report active antifragility docs changed, whether artifact placement changed,

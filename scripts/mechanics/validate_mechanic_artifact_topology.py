@@ -18,6 +18,7 @@ from mechanic_artifact_topology_common import (
     REPO_ROOT,
     ROOT_DISTRICTS_SCHEMA_VERSION,
     ROOT_TECHNICAL_DISTRICTS,
+    VALIDATION_COMPANION_EXCEPTION,
     load_root_districts_config,
     root_files,
 )
@@ -58,8 +59,12 @@ def _validate_district_config(district: str, config: dict[str, object], issues: 
         parts = Path(allowed_path).parts
         if not parts or parts[0] != district:
             issues.append(f"config/root-topology/root_technical_districts.json: {allowed_path} is outside district {district}")
-        if Path(allowed_path).name == "AGENTS.md":
-            issues.append(f"config/root-topology/root_technical_districts.json: {allowed_path} should rely on the route-card exception, not allowed_files")
+        if Path(allowed_path).name in {"AGENTS.md", "VALIDATION.md"}:
+            issues.append(
+                "config/root-topology/root_technical_districts.json: "
+                f"{allowed_path} should rely on its route-companion exception, "
+                "not allowed_files"
+            )
 
     for allowed_prefix in allowed_prefixes:
         prefix_path = Path(allowed_prefix)
@@ -101,6 +106,11 @@ def validate_root_district_allowlist() -> list[str]:
         issues.append(f"config/root-topology/root_technical_districts.json must keep schema_version {ROOT_DISTRICTS_SCHEMA_VERSION}")
     if payload.get("source_of_truth") != "mechanics/ARTIFACT_TOPOLOGY.md":
         issues.append("config/root-topology/root_technical_districts.json must route source_of_truth to mechanics/ARTIFACT_TOPOLOGY.md")
+    if payload.get("validation_companion_exception") != VALIDATION_COMPANION_EXCEPTION:
+        issues.append(
+            "config/root-topology/root_technical_districts.json must define the "
+            "tracked same-directory VALIDATION.md companion exception"
+        )
 
     districts = payload.get("districts")
     if not isinstance(districts, dict):

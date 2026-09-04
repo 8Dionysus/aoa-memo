@@ -18,10 +18,6 @@ Generated parity lands in `generated/agents/`.
 - Across: `config/agents/` and `tests/agents/`.
 - Downstream: `generated/agents/agents_mesh.min.json`.
 
-## Validate
+## Validation route
 
-```bash
-python scripts/agents/validate_agents_mesh.py
-python scripts/agents/build_agents_mesh_index.py --check
-python -m pytest -q tests/agents
-```
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

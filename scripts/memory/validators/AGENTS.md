@@ -24,10 +24,6 @@ owned by their local source surfaces; these modules must not become a hidden sou
 - Downstream: `scripts/memory/validate_memo.py` compatibility CLI and release
   lanes in `config/validation_lanes.json`.
 
-## Validate
+## Validation route
 
-```bash
-python scripts/memory/validate_memo.py --profile all
-python scripts/root-topology/validate_validator_topology.py
-python -m pytest -q tests/memory/test_memo_schema_contracts.py tests/memory/test_memo_runtime_writeback_boundaries.py tests/memory/test_memo_live_receipt_boundaries.py tests/root-topology/test_validator_topology.py
-```
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

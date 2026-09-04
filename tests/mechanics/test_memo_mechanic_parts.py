@@ -40,6 +40,9 @@ def test_active_parts_have_physical_part_nodes() -> None:
             assert (part_root / "README.md").is_file()
             assert (part_root / "CONTRACT.md").is_file()
             assert (part_root / "VALIDATION.md").is_file()
+            assert "../../VALIDATION.md" in (
+                part_root / "VALIDATION.md"
+            ).read_text(encoding="utf-8")
             total_parts += 1
 
     assert total_parts == 56

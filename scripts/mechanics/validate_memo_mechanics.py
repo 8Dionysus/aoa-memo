@@ -117,7 +117,7 @@ def validate() -> list[str]:
         present_docs = {
             path.name
             for path in docs_root.glob("*.md")
-            if path.name not in {"AGENTS.md", "README.md"}
+            if path.name not in {"AGENTS.md", "README.md", "VALIDATION.md"}
         } if docs_root.is_dir() else set()
         if present_docs != expected_docs:
             missing = sorted(expected_docs - present_docs)

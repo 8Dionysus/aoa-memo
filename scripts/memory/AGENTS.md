@@ -36,25 +36,11 @@ projection parity, but they must not become the source of memory meaning.
 - Across: `tests/memory/`.
 - Downstream: generated outputs in `generated/memory/` and
   `generated/memory-objects/`.
-- Landing usage: run `python scripts/memory/land_reviewed_memo_intake.py
-  --port <repo>/memo --export <packet>.aoa-memo-intake.json --object-kind
-  <kind>` first as a dry-run plan; add `--write` only after review accepts the
-  target object id, kind, title, and lifecycle posture.
-- Rejection usage: run `python
-  scripts/memory/reject_reviewed_intake_candidate.py` with explicit candidate,
-  evaluation, receipt references, and reason codes. The outputs are receipts
-  only; rejection never creates corpus state.
+- Landing and rejection usage is preserved in this directory's on-demand
+  `VALIDATION.md` route. Keep dry-run, review acceptance, explicit references,
+  and receipt-only rejection semantics intact; rejection never creates corpus
+  state.
 
-## Validate
+## Validation route
 
-```bash
-python scripts/memory/validate_memo.py --profile schema
-python scripts/memory/validate_memo.py --profile memory-context
-python scripts/memory/validate_memo.py --profile runtime-boundary
-python scripts/memory/validate_memo.py --profile handoff-boundary
-python scripts/memory/validate_memo.py --profile eval-boundary
-python scripts/memory/validate_memo_corpus.py
-python scripts/memory/validate_memory_operations.py
-python scripts/memory/validate_local_memo_port.py --path examples/memory-ports/example-port
-python -m pytest -q tests/memory
-```
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

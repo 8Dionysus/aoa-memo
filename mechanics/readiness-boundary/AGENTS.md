@@ -1,8 +1,8 @@
 # AGENTS.md
 
-## Applies To
+## Applies to
 
-This card applies to `mechanics/readiness-boundary/`.
+`mechanics/readiness-boundary/` and its active mechanic surfaces.
 
 ## Role
 
@@ -15,28 +15,12 @@ It keeps those pressures mapped to existing memory objects and stronger owner
 routes. It does not own proof, runtime retention, live ledgers, graph
 normalization, route dispatch, role rights, or new memory object families.
 
-## Route Stack
+## Local delta
 
-- Above: root `AGENTS.md` owns repo identity and release route;
-  `mechanics/AGENTS.md` owns shared mechanic package law and validators.
-- Here: `README.md` is the mechanic card, `DIRECTION.md` names current
-  pressure, `PARTS.md` lists active function nodes, `OWNER_MAP.md` names
-  stronger owners, and `PROVENANCE.md` plus `legacy/` preserve placement
-  history.
-- Below: `docs/` holds active source docs, `parts/` holds functioning
-  contracts and artifact homes, and `legacy/` is historical evidence only.
-
-## Read Before Editing
-
-Read root `AGENTS.md`, `mechanics/AGENTS.md`, this file, `README.md`,
-`DIRECTION.md`, `PARTS.md`, `OWNER_MAP.md`, and `PROVENANCE.md`.
-
-For source docs, continue through `docs/AGENTS.md` and the target `docs/*.md`
-surface.
-
-For schemas, examples, generated outputs, scripts, tests, quests, or manifests
-that reference readiness boundary posture, read the nearest local `AGENTS.md`
-before editing that district.
+The `readiness-boundary` mechanic identity remains local; shared package, docs, parts, and
+legacy hierarchy is inherited from `mechanics/AGENTS.md`. Its package card,
+DIRECTION.md, PARTS.md, OWNER_MAP.md, and PROVENANCE.md remain the semantic
+anchors for this operation.
 
 ## Boundaries
 
@@ -51,41 +35,10 @@ before editing that district.
 - Keep writeback and checkpoint details with their own mechanics; this package
   may cite them as boundary outputs only.
 
-## Post-Change Review
+## Verification
 
-After readiness-boundary changes, check whether these surfaces moved:
-
-- `DIRECTION.md`
-- `PARTS.md`
-- `OWNER_MAP.md`
-- `PROVENANCE.md`
-- `LANDING_LOG.md`
-- `ROADMAP.md`
-- `legacy/INDEX.md`
-- readiness-boundary docs, schemas, examples, and tests
-- generated object surfaces and memo registry refs
-- root route cards, docs maps, decision records, changelog, or roadmap
-
-Update only surfaces whose future-facing meaning changed.
-
-## Validation
-
-```bash
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/mechanics/build_memo_mechanics_index.py --check
-python scripts/mechanics/validate_memo_mechanics_index.py
-python scripts/agents/validate_agents_mesh.py
-python scripts/agents/build_agents_mesh_index.py --check
-python scripts/agents/validate_agents_mesh_index.py
-python scripts/memory/validate_memo.py
-python -m pytest -q mechanics/readiness-boundary/parts/memory-readiness-boundary/tests/test_readiness_boundary_mechanic.py tests/memory/test_memo_memory_context_boundaries.py tests/root-topology/test_current_direction_routes.py tests/root-topology/test_mechanic_artifact_topology.py tests/mechanics/test_memo_mechanics.py
-```
-
-Before landing, also run:
-
-```bash
-python scripts/release/release_check.py
-```
+Use the nearest `VALIDATION.md` route for `readiness-boundary` work after the touched
+surface is known; reusable lanes remain in `config/validation_lanes.json`.
 
 ## Closeout
 

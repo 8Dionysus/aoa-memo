@@ -13,7 +13,7 @@
 
 Validation route:
 
-Current executable routes live in the nearest `AGENTS.md` or `VALIDATION.md`
+Current executable routes live in the nearest unambiguous `VALIDATION.md`
 and in `config/validation_lanes.json`; historical run evidence remains in
 Git and CI history.
 
@@ -33,7 +33,7 @@ Git and CI history.
 
 Expected release-bound validation:
 
-Current executable routes live in the nearest `AGENTS.md` or `VALIDATION.md`
+Current executable routes live in the nearest unambiguous `VALIDATION.md`
 and in `config/validation_lanes.json`; historical run evidence remains in
 Git and CI history.
 

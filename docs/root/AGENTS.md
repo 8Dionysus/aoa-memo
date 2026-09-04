@@ -21,10 +21,6 @@ nearer owner cards when it becomes active local law.
   mirrors of district placement.
 - Downstream: root district `AGENTS.md` files when placement rules become local.
 
-## Validate
+## Validation route
 
-```bash
-python scripts/root-topology/build_root_technical_districts_index.py --check
-python scripts/root-topology/validate_root_technical_districts_index.py
-python scripts/release/release_check.py
-```
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

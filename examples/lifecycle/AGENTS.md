@@ -18,9 +18,6 @@ Examples here demonstrate lifecycle posture. Doctrine routes to
 - Across: `schemas/recall-posture/` and `schemas/memory-objects/`.
 - Downstream: `generated/memory-objects/`.
 
-## Validate
+## Validation route
 
-```bash
-python scripts/memory/validate_lifecycle_audit_examples.py
-python scripts/memory/validate_memo.py
-```
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

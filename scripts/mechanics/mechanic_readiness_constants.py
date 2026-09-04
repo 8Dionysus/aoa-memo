@@ -43,14 +43,6 @@ KNOWN_STRONGER_OWNER_REFS = (
     "abyss-stack",
     "source owner",
 )
-REQUIRED_VALIDATION_REFS = (
-    "python scripts/release/release_check.py",
-)
-SUPPORTING_VALIDATION_REFS = (
-    "python scripts/mechanics/validate_memo_mechanics.py",
-    "python scripts/mechanics/build_memo_mechanics_index.py --check",
-    "python scripts/mechanics/validate_memo_mechanics_index.py",
-    "python mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py",
-    "python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py --check",
-    "python scripts/memory/validate_memo.py",
+VALIDATION_ROUTE_CONTRACT = (
+    "at least one explicit repository-local VALIDATION.md owner link"
 )

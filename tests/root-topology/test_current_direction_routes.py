@@ -25,6 +25,12 @@ class CurrentDirectionRoutesTestCase(unittest.TestCase):
         readme = (REPO_ROOT / "README.md").read_text(encoding="utf-8")
         roadmap = (REPO_ROOT / "ROADMAP.md").read_text(encoding="utf-8")
         agents = (REPO_ROOT / "AGENTS.md").read_text(encoding="utf-8")
+        readiness_agents = (
+            REPO_ROOT / "mechanics" / "readiness-boundary" / "AGENTS.md"
+        ).read_text(encoding="utf-8")
+        readiness_parts = (
+            REPO_ROOT / "mechanics" / "readiness-boundary" / "PARTS.md"
+        ).read_text(encoding="utf-8")
         doc = (REPO_ROOT / doc_ref).read_text(encoding="utf-8")
         registry = json.loads(
             (REPO_ROOT / "generated" / "memory" / "memo_registry.min.json").read_text(encoding="utf-8")
@@ -32,7 +38,10 @@ class CurrentDirectionRoutesTestCase(unittest.TestCase):
 
         self.assertIn(doc_ref, readme)
         self.assertIn(doc_ref, roadmap)
-        self.assertIn(doc_ref, agents)
+        self.assertIn("nearest `mechanics/**/AGENTS.md`", agents)
+        self.assertIn("readiness-boundary", readiness_agents)
+        self.assertIn("PARTS.md", readiness_agents)
+        self.assertIn("MEMORY_READINESS_BOUNDARY.md", readiness_parts)
         self.assertIn(doc_ref, registry["core_docs"])
 
         for phrase in (

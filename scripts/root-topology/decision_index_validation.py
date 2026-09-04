@@ -5,6 +5,7 @@ from pathlib import Path
 import yaml
 
 from decision_index_constants import (
+    DECISION_LANE_CONTROL_FILES,
     DECISIONS_DIR,
     FULL_ID_FILENAME_RE,
     GENERATED_INDEX_PATHS,
@@ -65,12 +66,12 @@ def validate_decision_lane_surfaces(repo_root: Path) -> list[tuple[str, str]]:
     contract, contract_issues = load_index_contract(repo_root)
     issues = list(contract_issues)
     allowed_paths = {
-        (DECISIONS_DIR / "AGENTS.md").as_posix(),
-        (DECISIONS_DIR / "README.md").as_posix(),
-        (DECISIONS_DIR / "TEMPLATE.md").as_posix(),
+        (DECISIONS_DIR / name).as_posix() for name in DECISION_LANE_CONTROL_FILES
+    }
+    allowed_paths.update({
         INDEX_CONTRACT_PATH.as_posix(),
         *(path.as_posix() for path in GENERATED_INDEX_PATHS),
-    }
+    })
     if contract is not None:
         allowed_paths.update(modeled_decision_lane_surfaces(repo_root, contract, issues))
     for path in sorted(decisions_root.rglob("*")):

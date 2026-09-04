@@ -21,3 +21,6 @@ local port indexes before any reviewed intake route reaches `aoa-memo`.
 These schemas validate local memory packet shape. They do not define durable
 reviewed memory objects and do not authorize direct writes into `aoa-memo`.
 
+## Validation route
+
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

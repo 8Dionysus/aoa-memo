@@ -1,17 +1,14 @@
 # Consolidation and forgetting Validation
 
-Executable validation for this part is routed through the package validation lane and the memory-operations validator.
+This file owns the focused invocation(s) shown here; the package route and the memory-operations validator add wider checks.
 
-Run from the repository root:
-
+Shared executable routes remain owned by [`docs/memory/VALIDATION.md`](../../../../docs/memory/VALIDATION.md), [`mechanics/VALIDATION.md`](../../../VALIDATION.md); follow those on-demand lanes for this surface.
 ```bash
-python scripts/mechanics/validate_memo_mechanic_parts.py
-python scripts/memory/validate_memory_operations.py
 python -m pytest -q mechanics/retention/parts/consolidation-and-forgetting/tests
 python -m ruff check mechanics/retention/parts/consolidation-and-forgetting/scripts/active_organ_lifecycle.py mechanics/retention/parts/consolidation-and-forgetting/scripts/distributed_erasure.py mechanics/retention/parts/consolidation-and-forgetting/tests/test_active_organ_lifecycle.py mechanics/retention/parts/consolidation-and-forgetting/tests/test_distributed_erasure.py
 ```
 
-Then run the package-specific commands named in `../../AGENTS.md#validation` for any changed source docs, schemas, examples, generated companions, scripts, tests, manifests, or owner routes.
+Then follow the package-specific route in [`../../VALIDATION.md`](../../VALIDATION.md) for any changed source docs, schemas, examples, generated companions, scripts, tests, manifests, or owner routes.
 
 The cross-owner Phase 10 failure-injection verdict lives in the
 `aoa-evals` active-organ offline replay bundle. Its deterministic reference

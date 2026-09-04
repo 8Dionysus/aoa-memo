@@ -18,9 +18,6 @@ source surfaces. The JSON here is a generated inspection surface.
 - Across: `config/agents/`.
 - Downstream: agent route-card audits.
 
-## Validate
+## Validation route
 
-```bash
-python scripts/agents/build_agents_mesh_index.py --check
-python scripts/agents/validate_agents_mesh_index.py
-```
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

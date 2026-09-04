@@ -25,7 +25,7 @@ Keep `QUESTBOOK.md`, `quests/`, owning mechanic docs, and generated quest
 companions aligned. Root generated quest companions are projections from these
 source files, not a second quest ledger.
 
-## Route Stack
+## Conditional route scope
 
 - Above: root `AGENTS.md`, `QUESTBOOK.md`, and the Questbook mechanic set the
   public obligation route.
@@ -44,17 +44,13 @@ source files, not a second quest ledger.
 
 ## Validation
 
-When quests change, run:
-
-```bash
-python scripts/memory/validate_memo.py
-python mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py
-python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py --check
-python scripts/release/release_check.py
-```
-
+For quest changes, use the nearest `VALIDATION.md` route; preserve quest-source ownership.
 ## Closeout
 
 Report which quest lane and lifecycle state changed, whether `QUESTBOOK.md`
 changed, whether generated quest projections were rebuilt, and which
 validation ran.
+
+## Validation route
+
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

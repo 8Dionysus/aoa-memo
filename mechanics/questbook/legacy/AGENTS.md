@@ -1,8 +1,8 @@
 # AGENTS.md
 
-## Applies To
+## Applies to
 
-This card applies to `mechanics/questbook/legacy/`.
+`mechanics/questbook/legacy/` and historical material below it.
 
 ## Role
 
@@ -11,14 +11,12 @@ Legacy preserves Questbook placement provenance for
 files, generated projections, or source-contract law. Use `legacy/INDEX.md`
 for the placement map.
 
-## Route Stack
+## Local delta
 
-- Above: the package `AGENTS.md`, `PROVENANCE.md`, and `OWNER_MAP.md` define
-  the active route and stronger-owner boundary.
-- Here: `INDEX.md` maps former paths to active surfaces, `DISTILLATION_LOG.md`
-  records restoration decisions, and `raw/` contains historical snapshots.
-- Below: `raw/` is evidence only. Do not edit it as current doctrine and do not
-  cite it as an active route.
+This district records placement history only. The active `questbook` route remains
+in `../docs/`; the package `PROVENANCE.md` and `OWNER_MAP.md` retain current
+ownership and stronger-owner boundaries. The shared legacy hierarchy is
+inherited from `mechanics/AGENTS.md`.
 
 ## Boundaries
 
@@ -27,13 +25,10 @@ for the placement map.
 - Do not restore root flat quest aliases from legacy placement.
 - Do not treat legacy as source truth.
 
-## Validation
+## Verification
 
-```bash
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/release/release_check.py
-```
-
+Use `legacy/INDEX.md` for the narrow historical lookup and the nearest
+`VALIDATION.md` route when a provenance edit is actually required.
 ## Closeout
 
 Report only the relevant placement provenance and whether active Questbook

@@ -18,9 +18,6 @@ Quest source truth routes to `quests/`, `QUESTBOOK.md`, and
 - Downstream: consumers may inspect generated quest catalog and dispatch only
   as read models.
 
-## Validate
+## Validation route
 
-```bash
-python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py --check
-python mechanics/questbook/parts/source-contract/scripts/validate_quest_store.py
-```
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

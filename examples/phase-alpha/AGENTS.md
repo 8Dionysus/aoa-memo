@@ -17,9 +17,6 @@ examples when referenced by current manifests or generated surfaces.
 - Across: `examples/lifecycle/` for contradiction and review posture.
 - Downstream: `generated/memory-objects/`.
 
-## Validate
+## Validation route
 
-```bash
-python scripts/memory/validate_memo.py
-python scripts/memory/validate_memory_object_surfaces.py
-```
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

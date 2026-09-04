@@ -1,8 +1,8 @@
 # AGENTS.md
 
-## Applies To
+## Applies to
 
-This card applies to `mechanics/titan/`.
+`mechanics/titan/` and its active mechanic surfaces.
 
 ## Role
 
@@ -13,56 +13,24 @@ bridge digest, console digest, closeout posture, and swarm memory policy.
 It does not grant memory write authority, role rights, proof status, private
 retention, or owner-repo Titan doctrine.
 
-## Route Stack
+## Local delta
 
-- Above: root `AGENTS.md` owns repo identity and release route;
-  `mechanics/AGENTS.md` owns shared mechanic package law and validators.
-- Here: `README.md` is the mechanic card, `DIRECTION.md` names current
-  pressure, `PARTS.md` lists active function nodes, `OWNER_MAP.md` names
-  stronger owners, and `PROVENANCE.md` plus `legacy/` preserve placement
-  history.
-- Below: `docs/` holds active source docs, `parts/` holds functioning
-  contracts and artifact homes, and `legacy/` is historical evidence only.
+The `titan` mechanic identity remains local; shared package, docs, parts, and
+legacy hierarchy is inherited from `mechanics/AGENTS.md`. Its package card,
+DIRECTION.md, PARTS.md, OWNER_MAP.md, and PROVENANCE.md remain the semantic
+anchors for this operation.
 
-## Read Before Editing
+When Titan source-doc semantics are touched, narrow the route to the target
+`docs/TITAN_*.md` surface and its nearest part contract.
 
-Read root `AGENTS.md`, `mechanics/AGENTS.md`, this file, `README.md`,
-`DIRECTION.md`, `PARTS.md`, `OWNER_MAP.md`, and `PROVENANCE.md`.
+## Boundaries
 
-For source docs, continue through `docs/AGENTS.md` and the target
-`docs/TITAN_*.md` surface.
+Keep the titan package-specific owner boundaries in the mechanic card and OWNER_MAP.md.
 
-## Post-Change Review
+## Verification
 
-After Titan changes, check whether these surfaces moved:
-
-- `DIRECTION.md`
-- `PARTS.md`
-- `OWNER_MAP.md`
-- `PROVENANCE.md`
-- `LANDING_LOG.md`
-- `ROADMAP.md`
-- `legacy/INDEX.md`
-- matching schemas, examples, tests, and owner refs
-- generated mechanics or AGENTS mesh companions
-
-Update only surfaces whose future-facing meaning changed.
-
-## Validation
-
-```bash
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/mechanics/build_memo_mechanics_index.py --check
-python scripts/mechanics/validate_memo_mechanics_index.py
-python -m pytest -q mechanics/titan/parts/recall-and-remembrance-posture/tests mechanics/titan/parts/audit-personality-and-swarm-policy/tests
-python -m pytest -q mechanics/titan/parts/recall-and-remembrance-posture/tests mechanics/titan/parts/closeout-and-digest-posture/tests mechanics/titan/parts/audit-personality-and-swarm-policy/tests
-```
-
-Before landing, also run:
-
-```bash
-python scripts/release/release_check.py
-```
+Use the nearest `VALIDATION.md` route for `titan` work after the touched
+surface is known; reusable lanes remain in `config/validation_lanes.json`.
 
 ## Closeout
 

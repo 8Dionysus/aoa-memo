@@ -19,7 +19,7 @@ owner surface, source refs, and validators.
 For quick orientation, `generated/root-topology/root_technical_districts.min.json` names this
 district's role, route card, family ids, and local routing path.
 
-## Route Stack
+## Conditional route scope
 
 - Above: root `AGENTS.md`, docs doctrine, examples, and
   `config/root-topology/root_technical_districts.json` decide why a schema is root-wide.
@@ -75,17 +75,8 @@ generated family rather than inventing a new routing payload.
 
 ## Validation
 
-After schema edits, run the validators that cover the affected surface:
+For generator-backed object surfaces, use the declared source builder and nearest `VALIDATION.md` route.
 
-```bash
-python scripts/memory/validate_memo.py
-python scripts/memory/validate_memory_surfaces.py
-python scripts/memory/validate_memory_object_surfaces.py
-python scripts/memory/validate_lifecycle_audit_examples.py
-```
+## Validation route
 
-If a change touches generator-backed object surfaces, also run:
-
-```bash
-python scripts/memory/generate_memory_object_surfaces.py
-```
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

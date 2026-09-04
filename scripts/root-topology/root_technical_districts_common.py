@@ -149,6 +149,9 @@ def build_index() -> dict[str, Any]:
         "config_ref": CONFIG_REF,
         "generated_by": GENERATED_BY,
         "route_card_exception": payload["route_card_exception"],
+        "validation_companion_exception": payload[
+            "validation_companion_exception"
+        ],
         "district_order": list(DISTRICT_ORDER),
         "placement_rule": {
             "root": "shared, repo-wide, public contract, generated companion, or cross-mechanic artifact",

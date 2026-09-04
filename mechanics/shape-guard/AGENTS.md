@@ -1,8 +1,8 @@
 # AGENTS.md
 
-## Applies To
+## Applies to
 
-This card applies to `mechanics/shape-guard/`.
+`mechanics/shape-guard/` and its active mechanic surfaces.
 
 ## Role
 
@@ -14,55 +14,21 @@ It does not own proof verdicts, current health, runtime execution, deletion
 authority, schema replacement by itself, route sovereignty, role rights, KAG
 promotion, or source-owner adoption.
 
-## Route Stack
+## Local delta
 
-- Above: root `AGENTS.md` owns repo identity and release route;
-  `mechanics/AGENTS.md` owns shared mechanic package law and validators.
-- Here: `README.md` is the mechanic card, `DIRECTION.md` names current
-  pressure, `PARTS.md` lists active function nodes, `OWNER_MAP.md` names
-  stronger owners, and `PROVENANCE.md` plus `legacy/` preserve placement
-  history.
-- Below: `docs/` holds active source docs, `parts/` holds functioning
-  contracts and artifact homes, and `legacy/` is historical evidence only.
+The `shape-guard` mechanic identity remains local; shared package, docs, parts, and
+legacy hierarchy is inherited from `mechanics/AGENTS.md`. Its package card,
+DIRECTION.md, PARTS.md, OWNER_MAP.md, and PROVENANCE.md remain the semantic
+anchors for this operation.
 
-## Read Before Editing
+## Boundaries
 
-Read root `AGENTS.md`, `mechanics/AGENTS.md`, this file, `README.md`,
-`DIRECTION.md`, `PARTS.md`, `OWNER_MAP.md`, and `PROVENANCE.md`.
+Keep the shape-guard package-specific owner boundaries in the mechanic card and OWNER_MAP.md.
 
-For source docs, continue through `docs/AGENTS.md` and the target
-`docs/*.md` surface.
+## Verification
 
-## Post-Change Review
-
-After shape-guard changes, check whether these surfaces moved:
-
-- `DIRECTION.md`
-- `PARTS.md`
-- `OWNER_MAP.md`
-- `PROVENANCE.md`
-- `LANDING_LOG.md`
-- `ROADMAP.md`
-- `legacy/INDEX.md`
-- generated mechanics or AGENTS mesh companions
-- validators that enforce operation-first mechanics or stale route refs
-
-Update only surfaces whose future-facing meaning changed.
-
-## Validation
-
-```bash
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/mechanics/build_memo_mechanics_index.py --check
-python scripts/mechanics/validate_memo_mechanics_index.py
-python -m pytest -q mechanics/shape-guard/parts/via-negativa-checklist/tests/test_shape_guard_mechanic.py tests/mechanics/test_memo_mechanics.py tests/agents/test_agents_mesh.py
-```
-
-Before landing, also run:
-
-```bash
-python scripts/release/release_check.py
-```
+Use the nearest `VALIDATION.md` route for `shape-guard` work after the touched
+surface is known; reusable lanes remain in `config/validation_lanes.json`.
 
 ## Closeout
 

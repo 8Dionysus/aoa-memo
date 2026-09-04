@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+import re
 from typing import Any
 
 from mechanic_artifact_inventory_common import ARTIFACT_DIRS, build_inventory
@@ -17,10 +18,9 @@ from mechanic_readiness_constants import (
     OWNER_ROUTE_INDEX_REF,
     PACKAGE_SURFACES,
     READINESS_CHECKS,
-    REQUIRED_VALIDATION_REFS,
     SCHEMA_VERSION,
     SOURCE_OF_TRUTH,
-    SUPPORTING_VALIDATION_REFS,
+    VALIDATION_ROUTE_CONTRACT,
 )
 from memo_mechanics_common import README_HEADINGS, REPO_ROOT, load_config
 
@@ -72,9 +72,34 @@ def _has_runnable_local_test_routes(validation_text: str, test_dirs: list[str]) 
             continue
         args = line.split()[4:]
         for test_dir in test_dirs:
-            if any(arg == test_dir or arg.startswith(f"{test_dir}/") for arg in args):
+            if any(
+                arg == test_dir
+                or arg.startswith(f"{test_dir}/")
+                or test_dir.startswith(f"{arg.rstrip('/')}/")
+                for arg in args
+            ):
                 covered.add(test_dir)
     return all(test_dir in covered for test_dir in test_dirs)
+
+
+VALIDATION_LINK_RE = re.compile(r"\[[^\]]+\]\(([^)#]*VALIDATION\.md)(?:#[^)]+)?\)")
+
+
+def _validation_owner_refs(validation_rel: str, validation_text: str) -> list[str]:
+    base = (REPO_ROOT / validation_rel).parent
+    refs: set[str] = set()
+    for target in VALIDATION_LINK_RE.findall(validation_text):
+        target_path = Path(target)
+        if target_path.is_absolute():
+            continue
+        resolved = (base / target_path).resolve()
+        try:
+            relative = resolved.relative_to(REPO_ROOT)
+        except ValueError:
+            continue
+        if resolved.is_file() and resolved.name == "VALIDATION.md":
+            refs.add(relative.as_posix())
+    return sorted(refs)
 
 
 def _present_docs(slug: str) -> list[str]:
@@ -84,7 +109,7 @@ def _present_docs(slug: str) -> list[str]:
     return sorted(
         path.name
         for path in docs_root.glob("*.md")
-        if path.name not in {"AGENTS.md", "README.md"}
+        if path.name not in {"AGENTS.md", "README.md", "VALIDATION.md"}
     )
 
 
@@ -108,12 +133,13 @@ def build_package_readiness(package: dict[str, Any], artifacts: dict[str, Any]) 
         for relative in PACKAGE_SURFACES
     }
     readme_headings = [heading for heading in README_HEADINGS if heading in readme]
-    validation_text = "\n".join((agents, landing_log, readme))
-    validation_refs = [
-        ref
-        for ref in (*REQUIRED_VALIDATION_REFS, *SUPPORTING_VALIDATION_REFS)
-        if ref in validation_text
-    ]
+    package_validation_rel = f"{package_root}/VALIDATION.md"
+    package_validation = _read(package_validation_rel)
+    validation_text = "\n".join((agents, package_validation, landing_log, readme))
+    validation_refs = _validation_owner_refs(
+        package_validation_rel,
+        package_validation,
+    )
     route_text = "\n".join((readme, owner_map))
     owner_refs = [
         ref
@@ -159,8 +185,11 @@ def build_package_readiness(package: dict[str, Any], artifacts: dict[str, Any]) 
             or "## Active Placement" in provenance
             or "## Active source" in provenance
         ),
-        "landing-log": "python scripts/release/release_check.py" in landing_log or "python scripts/release/release_check.py" in agents,
-        "validation-route": all(ref in validation_refs for ref in REQUIRED_VALIDATION_REFS),
+        "landing-log": (
+            "nearest unambiguous `VALIDATION.md`" in landing_log
+            and "config/validation_lanes.json" in landing_log
+        ),
+        "validation-route": bool(validation_refs),
         "artifact-test-coverage": non_test_artifact_count == 0 or bool(test_dirs),
         "local-test-route": test_artifact_count == 0 or _has_runnable_local_test_routes(
             validation_text,
@@ -227,8 +256,7 @@ def build_readiness() -> dict[str, Any]:
             "readme_headings": list(README_HEADINGS),
             "readiness_checks": list(READINESS_CHECKS),
             "core_owner_refs": list(CORE_OWNER_REFS),
-            "required_validation_refs": list(REQUIRED_VALIDATION_REFS),
-            "supporting_validation_refs": list(SUPPORTING_VALIDATION_REFS),
+            "validation_route_contract": VALIDATION_ROUTE_CONTRACT,
         },
         "counts": {
             "packages": len(packages),

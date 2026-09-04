@@ -20,8 +20,6 @@ owner district rather than weakening the gate.
   `docs/testing/TEST_TOPOLOGY.md`, and `config/validation_lanes.json`.
 - Downstream: all validator districts.
 
-## Validate
+## Validation route
 
-```bash
-python scripts/release/release_check.py
-```
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

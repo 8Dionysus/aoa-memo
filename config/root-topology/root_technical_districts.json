@@ -1,7 +1,11 @@
 {
-  "schema_version": "aoa_memo_root_technical_districts_v12",
+  "schema_version": "aoa_memo_root_technical_districts_v13",
   "source_of_truth": "mechanics/ARTIFACT_TOPOLOGY.md",
   "route_card_exception": "AGENTS.md",
+  "validation_companion_exception": {
+    "filename": "VALIDATION.md",
+    "requires_tracked_sibling": "AGENTS.md"
+  },
   "districts": {
     "config": {
       "root_role": "repo-wide source maps for validators and generated companions",

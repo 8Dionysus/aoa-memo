@@ -25,15 +25,16 @@ Start from:
 1. [CHARTER](CHARTER.md) for the authority boundary.
 2. [DESIGN](DESIGN.md) for system form.
 3. [MEMORY_INDEX](MEMORY_INDEX.md) for memory-canon routing.
-4. [AGENTS](AGENTS.md) and the nearest local `AGENTS.md` for executable checks.
+4. [AGENTS](AGENTS.md) for semantic scope, then the nearest `VALIDATION.md`
+   after the touched surface is known for executable checks.
 
 Please make sure the change keeps memory explicit and reviewable, keeps proof,
 routing, runtime, role, and workflow authority outside this repository, keeps
 provenance visible, names temporal posture where it matters, and keeps examples
 and docs public-safe.
 
-Executable validation routes live in [AGENTS](AGENTS.md#verify) and the nearest
-local `AGENTS.md`. Do not duplicate the full command battery here; it drifts.
+Executable validation routes live in `config/validation_lanes.json` and the
+nearest `VALIDATION.md` after the touched surface is known. Do not duplicate the full command battery here; it drifts.
 If generator-backed surfaces changed, regenerate only the touched families
 first, then rerun the relevant AGENTS route and inspect the worktree state.
 

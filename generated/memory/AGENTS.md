@@ -23,10 +23,6 @@ reviewed-memory route posture.
 - Across: `examples/recall/` for recall contract entrypoints.
 - Downstream: consumers may inspect compact JSON, then hydrate source docs.
 
-## Validate
+## Validation route
 
-```bash
-python scripts/memory/validate_memo.py
-python scripts/memory/validate_memory_surfaces.py
-python scripts/memory/build_memory_operational_readouts.py --check
-```
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

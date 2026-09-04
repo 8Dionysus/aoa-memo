@@ -1,9 +1,8 @@
 # AGENTS.md
 
-## Applies To
+## Applies to
 
-This card applies to `mechanics/lineage-harvest/` until a nearer `AGENTS.md`
-narrows the lane.
+`mechanics/lineage-harvest/` and its active mechanic surfaces.
 
 ## Role
 
@@ -18,31 +17,12 @@ It is not the federation authority, proof layer, KAG promoter, stats judge,
 Tree-of-Sophia canon route, source owner, runtime watchtower, or adoption
 engine.
 
-## Route Stack
+## Local delta
 
-- Above: root `AGENTS.md` owns repo identity and release route;
-  `mechanics/AGENTS.md` owns shared mechanic package law and validators.
-- Here: `README.md` is the mechanic card, `DIRECTION.md` names current
-  pressure, `PARTS.md` lists active function nodes, `OWNER_MAP.md` names
-  stronger owners, and `PROVENANCE.md` plus `legacy/` preserve placement
-  history.
-- Below: `docs/` holds active source docs, `parts/` holds functioning
-  contracts and artifact homes, and `legacy/` is historical evidence only.
-
-## Read Before Editing
-
-Read:
-
-1. root `AGENTS.md`
-2. `DESIGN.md`
-3. `DESIGN.AGENTS.md`
-4. `mechanics/README.md`
-5. `mechanics/ARTIFACT_TOPOLOGY.md` when schemas, examples, generated outputs,
-   tests, or quests may move
-6. this package `README.md`
-7. `DIRECTION.md`, `PARTS.md`, `OWNER_MAP.md`, and `PROVENANCE.md`
-8. `docs/AGENTS.md` before editing active lineage-harvest docs
-9. `legacy/AGENTS.md` before editing placement history
+The `lineage-harvest` mechanic identity remains local; shared package, docs, parts, and
+legacy hierarchy is inherited from `mechanics/AGENTS.md`. Its package card,
+DIRECTION.md, PARTS.md, OWNER_MAP.md, and PROVENANCE.md remain the semantic
+anchors for this operation.
 
 ## Boundaries
 
@@ -59,26 +39,10 @@ Read:
   authored meaning to `Tree-of-Sophia`, runtime incidents to `abyss-stack`, and
   owner consent to the source repository.
 
-## Validation
+## Verification
 
-For lineage-harvest changes, run:
-
-```bash
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/mechanics/build_memo_mechanics_index.py --check
-python scripts/mechanics/validate_memo_mechanics_index.py
-python scripts/agents/validate_agents_mesh.py
-python scripts/agents/build_agents_mesh_index.py --check
-python scripts/agents/validate_agents_mesh_index.py
-python scripts/memory/validate_memo.py
-python -m pytest -q mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/tests
-```
-
-For release-bound work, also run:
-
-```bash
-python scripts/release/release_check.py
-```
+Use the nearest `VALIDATION.md` route for `lineage-harvest` work after the touched
+surface is known; reusable lanes remain in `config/validation_lanes.json`.
 
 ## Closeout
 

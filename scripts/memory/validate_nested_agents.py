@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+import re
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
@@ -14,10 +15,8 @@ REQUIRED_NESTED_AGENTS = {
             "memory_object_surface_manifest.schema.json",
             "memory_chunk_face.schema.json",
             "memory_graph_face.schema.json",
-            "scripts/memory/validate_memo.py",
-            "scripts/memory/validate_memory_surfaces.py",
-            "scripts/memory/validate_memory_object_surfaces.py",
             "Schema edits are contract edits",
+            "nearest `VALIDATION.md` route",
         ),
     },
     REPO_ROOT / "examples" / "AGENTS.md": {
@@ -31,26 +30,21 @@ REQUIRED_NESTED_AGENTS = {
             "mechanics/consumer-handoff/parts/kag-tos-bridge-handoff/examples/",
             "sanitized",
             "public",
-            "scripts/memory/validate_lifecycle_audit_examples.py",
+            "nearest `VALIDATION.md` route",
         ),
     },
     REPO_ROOT / "scripts" / "AGENTS.md": {
         "min_lines": 20,
         "required_tokens": (
-            "validate_memo.py",
-            "validate_memory_surfaces.py",
-            "generate_memory_object_surfaces.py",
-            "validate_memory_object_surfaces.py",
-            "validate_lifecycle_audit_examples.py",
             "validate_nested_agents.py",
             "deterministic",
             "hidden runtime infrastructure",
+            "nearest `VALIDATION.md` route",
         ),
     },
     REPO_ROOT / "scripts" / "memory" / "validators" / "AGENTS.md": {
         "min_lines": 20,
         "required_tokens": (
-            "scripts/memory/validate_memo.py",
             "scripts/memory/validators/",
             "docs/validation/VALIDATOR_TOPOLOGY.md",
             "config/validation_lanes.json",
@@ -60,6 +54,7 @@ REQUIRED_NESTED_AGENTS = {
             "handoff",
             "eval",
             "hidden source of memory meaning",
+            "nearest `VALIDATION.md` route",
         ),
     },
     REPO_ROOT / "generated" / "AGENTS.md": {
@@ -70,10 +65,8 @@ REQUIRED_NESTED_AGENTS = {
             "memory_sections.full.json",
             "memory_object_catalog.json",
             "memory_object_sections.full.json",
-            "scripts/memory/generate_memory_object_surfaces.py",
-            "scripts/memory/validate_memory_surfaces.py",
-            "scripts/memory/validate_memory_object_surfaces.py",
             "Do not hand-edit",
+            "nearest `VALIDATION.md` route",
         ),
     },
 }
@@ -101,7 +94,67 @@ def read_text(path: Path) -> str:
         fail(f"missing required nested AGENTS doc: {display_path(path)}")
 
 
+def route_residue_issues(repo_root: Path) -> list[str]:
+    empty = re.compile(r"^#{1,6}\s+(?:Validation|Verify|Verification|Checks?|Testing)\s*$", re.I)
+    validation = re.compile(r"(?:validation|verify|verification|checks?|testing)", re.I)
+    issues: list[str] = []
+    paths = sorted(repo_root.rglob("AGENTS.md")) + sorted(repo_root.rglob("DESIGN.AGENTS.md"))
+    for path in paths:
+        if ".git" in path.parts or ".deps" in path.parts:
+            continue
+        lines = path.read_text(encoding="utf-8").splitlines()
+        fenced = False
+        section = ""
+        for index, line in enumerate(lines):
+            stripped = line.strip()
+            if stripped.startswith("```"):
+                fenced = not fenced
+                continue
+            if fenced:
+                continue
+            heading = re.match(r"^#{1,6}\s+(.+?)\s*$", line)
+            if heading:
+                section = heading.group(1)
+                if empty.fullmatch(line):
+                    cursor = index + 1
+                    while cursor < len(lines) and not lines[cursor].strip():
+                        cursor += 1
+                    if cursor >= len(lines) or re.match(r"^#{1,6}\s+", lines[cursor]):
+                        issues.append(f"{path.relative_to(repo_root)}:{index + 1}: empty validation section")
+                continue
+            if not validation.search(section) or not stripped.endswith(":"):
+                cursor = index + 1
+                while cursor < len(lines) and not lines[cursor].strip():
+                    cursor += 1
+                if (
+                    stripped.endswith(":")
+                    and
+                    re.match(r"^\s*[-*+]\s+", line)
+                    and cursor < len(lines)
+                    and re.match(r"^\s*[-*+]\s+", lines[cursor])
+                    and len(line) - len(line.lstrip())
+                    == len(lines[cursor]) - len(lines[cursor].lstrip())
+                ):
+                    issues.append(f"{path.relative_to(repo_root)}:{index + 1}: empty same-level bullet lead-in")
+                continue
+            cursor = index + 1
+            while cursor < len(lines) and not lines[cursor].strip():
+                cursor += 1
+            next_line = lines[cursor].strip() if cursor < len(lines) else ""
+            if (
+                cursor >= len(lines)
+                or re.match(r"^#{1,6}\s+", lines[cursor])
+                or next_line.endswith(":")
+                or "validation route" in next_line.lower()
+            ):
+                issues.append(f"{path.relative_to(repo_root)}:{index + 1}: dangling validation lead-in")
+    return issues
+
+
 def validate_nested_agents_docs() -> None:
+    issues = route_residue_issues(REPO_ROOT)
+    if issues:
+        fail("route residue detected: " + "; ".join(issues))
     for path, contract in REQUIRED_NESTED_AGENTS.items():
         text = read_text(path)
         stripped = text.strip()

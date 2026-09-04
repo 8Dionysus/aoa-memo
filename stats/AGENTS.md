@@ -10,7 +10,8 @@ This directory owns memo-local statistical questions, their embedded
 measurement contracts, and evidence-linked reference packets. Shared
 statistical grammar and cross-owner composition remain owned by `aoa-stats`.
 
-## Read before editing
+## Conditional source route
+Consult only the entries relevant to the current task:
 
 1. Root `AGENTS.md`, `DESIGN.md`, and the memory boundary docs they route to.
 2. `stats/README.md` and `stats/port.manifest.json`.
@@ -30,18 +31,12 @@ statistical grammar and cross-owner composition remain owned by `aoa-stats`.
 ## Validation
 
 Inspect the owner evidence first:
-
-```bash
-find memo/objects -name object.json -type f | sort
-```
-
-Then validate the port and its referenced packets with the central owner:
-
-```bash
-python scripts/release/validate_local_stats_port.py
-```
-
+Validate the port and referenced packets through the central owner route; stats acceptance remains owner-bound.
 ## Closeout
 
 Report the question or contract changed, the corpus evidence inspected,
 whether the reference packet was refreshed, and which validation route ran.
+
+## Validation route
+
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

@@ -1,8 +1,8 @@
 # AGENTS.md
 
-## Applies To
+## Applies to
 
-This card applies to `mechanics/recurrence-support/legacy/`.
+`mechanics/recurrence-support/legacy/` and historical material below it.
 
 ## Role
 
@@ -13,19 +13,12 @@ docs-root mirror, and not a place for new contracts.
 In short, it is not the active route; use `legacy/INDEX.md` only for placement
 history.
 
-## Route Stack
+## Local delta
 
-- Above: the package `AGENTS.md`, `PROVENANCE.md`, and `OWNER_MAP.md` define
-  the active route and stronger-owner boundary.
-- Here: `INDEX.md` maps former paths to active surfaces, `DISTILLATION_LOG.md`
-  records restoration decisions, and `raw/` contains historical snapshots.
-- Below: `raw/` is evidence only. Do not edit it as current doctrine and do not
-  cite it as an active route.
-
-## Read Before Editing
-
-Read root `AGENTS.md`, `mechanics/AGENTS.md`, `../AGENTS.md`,
-`../PROVENANCE.md`, and `legacy/INDEX.md`.
+This district records placement history only. The active `recurrence-support` route remains
+in `../docs/`; the package `PROVENANCE.md` and `OWNER_MAP.md` retain current
+ownership and stronger-owner boundaries. The shared legacy hierarchy is
+inherited from `mechanics/AGENTS.md`.
 
 ## Boundaries
 
@@ -37,12 +30,10 @@ Read root `AGENTS.md`, `mechanics/AGENTS.md`, `../AGENTS.md`,
   or former-path source maps.
 - Route active recurrence-support work to `../docs/`.
 
-## Validation
+## Verification
 
-```bash
-python scripts/mechanics/validate_memo_mechanics.py
-```
-
+Use `legacy/INDEX.md` for the narrow historical lookup and the nearest
+`VALIDATION.md` route when a provenance edit is actually required.
 ## Closeout
 
 Report whether this legacy surface changed and why active recurrence-support

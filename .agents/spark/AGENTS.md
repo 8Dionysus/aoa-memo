@@ -22,9 +22,8 @@ logic, not role policy, not KAG substrate, and not runtime state.
 
 The core execution rule is `done-or-handoff`.
 
-## Read before editing
-
-Read root `AGENTS.md`, `.agents/AGENTS.md`, `DESIGN.AGENTS.md`,
+## Conditional source route
+When this task touches the path, consult root `AGENTS.md`, `.agents/AGENTS.md`, `DESIGN.AGENTS.md`,
 `.agents/spark/README.md`, this card, `.agents/spark/registry.json`, and the
 scenario `README.md` plus `PROMPT.md` for the lane being touched.
 
@@ -77,22 +76,8 @@ provide:
 
 ## Validation
 
-For Spark lane changes, include:
-
-```bash
-python .agents/spark/scripts/validate_spark_lane.py
-python -m unittest discover -s .agents/spark/tests -p 'test*.py'
-python scripts/agents/validate_agents_mesh.py
-python scripts/agents/build_agents_mesh_index.py --check
-python scripts/agents/validate_agents_mesh_index.py
-```
-
-For release-facing lane changes, also run:
-
-```bash
-python scripts/release/release_check.py
-```
-
+For Spark lane changes, use the scenario's declared validation route.
+For release-facing lane changes, use the scenario's declared release validation route.
 For ordinary memory-surface work inside a scenario, use the narrowest relevant
 validator named by the scenario, source surface, or nearest `AGENTS.md`.
 
@@ -105,3 +90,7 @@ slower model or human review.
 
 Spark should behave like a curator of bounded traces here, not like a
 myth-maker of memory authority.
+
+## Validation route
+
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

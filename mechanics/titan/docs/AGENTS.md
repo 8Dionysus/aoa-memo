@@ -1,44 +1,19 @@
 # AGENTS.md
 
-## Guidance for `mechanics/titan/docs/`
+## Applies to
 
-`mechanics/titan/docs/` owns active mechanic-owned doctrine and support notes
-for the Titan memo mechanic.
+`mechanics/titan/docs/` and its active mechanic-owned doctrine.
 
-This docs route keeps Titan recall candidates, remembrance source refs, memory
-loom posture, audit memory policy, personality memory policy, bridge digest,
-console digest, closeout posture, and swarm memory policy together. It does
-not grant memory write authority, role rights, proof status, or private
-retention.
+## Role
 
-## Route Stack
+This directory owns active mechanic-owned doctrine for the titan mechanic.
 
-- Above: the package `AGENTS.md`, `README.md`, `PARTS.md`, and `OWNER_MAP.md`
-  set the operation and stronger-owner split.
-- Here: `docs/README.md` maps the source family; individual docs own active
-  mechanic doctrine and support notes.
-- Adjacent: package or part artifact homes own schemas, examples, config,
-  generated outputs, scripts, tests, manifests, and quests. Use
-  `mechanics/ARTIFACT_TOPOLOGY.md` before moving root technical artifacts.
-- Below: no nested active law is expected here; legacy context routes through
-  `../PROVENANCE.md` and `../legacy/`.
+## Local delta
 
-## Read Before Editing
-
-Start with:
-
-1. root `AGENTS.md`
-2. `mechanics/AGENTS.md`
-3. `mechanics/ARTIFACT_TOPOLOGY.md`
-4. `mechanics/titan/AGENTS.md`
-5. `mechanics/titan/README.md`
-6. `mechanics/titan/PARTS.md`
-7. `mechanics/titan/OWNER_MAP.md`
-8. `mechanics/titan/PROVENANCE.md`
-9. this file
-10. `mechanics/titan/docs/README.md`
-11. the target Titan doc plus matching schemas, examples, tests, and owner route
-   refs when they exist
+This is the source-doc district for `titan`. Keep source meaning here and
+route package identity or stronger-owner questions to `../OWNER_MAP.md`. The
+shared package/docs/parts/legacy hierarchy is inherited from `mechanics/AGENTS.md`;
+this card carries only the `titan` doctrine and local source family.
 
 ## Boundaries
 
@@ -58,23 +33,10 @@ Start with:
   schemas, and tests aligned with this district rather than editing the doc as
   an isolated note.
 
-## Validation
+## Verification
 
-For Titan district edits, run:
-
-```bash
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/mechanics/build_memo_mechanics_index.py --check
-python scripts/mechanics/validate_memo_mechanics_index.py
-python -m pytest -q mechanics/titan/parts/recall-and-remembrance-posture/tests mechanics/titan/parts/closeout-and-digest-posture/tests mechanics/titan/parts/audit-personality-and-swarm-policy/tests
-```
-
-Before landing, also run:
-
-```bash
-python scripts/release/release_check.py
-```
-
+Use `ARTIFACT_TOPOLOGY.md` before moving a `titan` artifact, and use the
+nearest `VALIDATION.md` route after the touched doc is known.
 ## Closeout
 
 Report which Titan memory posture changed, whether schemas, examples, or tests

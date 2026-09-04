@@ -18,7 +18,7 @@ owner surface, source refs, and validators.
 For quick orientation, `generated/root-topology/root_technical_districts.min.json` names this
 district's role, route card, family ids, and local routing path.
 
-## Route Stack
+## Conditional route scope
 
 - Above: root `AGENTS.md`, `schemas/AGENTS.md`, and
   `config/root-topology/root_technical_districts.json` decide whether an example belongs at
@@ -83,17 +83,9 @@ family-aligned:
 
 ## Validation
 
-After editing examples, run:
+After editing examples, use the declared example validation route.
+For curated object surfaces, use the declared builder and nearest `VALIDATION.md` route.
 
-```bash
-python scripts/memory/validate_memo.py
-python scripts/memory/validate_memory_surfaces.py
-python scripts/memory/validate_memory_object_surfaces.py
-python scripts/memory/validate_lifecycle_audit_examples.py
-```
+## Validation route
 
-If you changed curated object examples or `memory_object_surface_manifest.json`, regenerate the object-facing family before finishing:
-
-```bash
-python scripts/memory/generate_memory_object_surfaces.py
-```
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

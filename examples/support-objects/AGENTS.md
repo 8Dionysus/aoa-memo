@@ -18,8 +18,6 @@ Examples here demonstrate support-object shape. Doctrine routes to
 - Across: `schemas/support-objects/`.
 - Downstream: `generated/memory/`.
 
-## Validate
+## Validation route
 
-```bash
-python scripts/memory/validate_memo.py
-```
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

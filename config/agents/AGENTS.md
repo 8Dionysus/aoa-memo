@@ -17,10 +17,6 @@ This district owns the source map for agent-facing route-card coverage.
 - Across: every `AGENTS.md` named in `canonical_cards`.
 - Downstream: `scripts/agents/` builders and validators.
 
-## Validate
+## Validation route
 
-```bash
-python scripts/agents/validate_agents_mesh.py
-python scripts/agents/build_agents_mesh_index.py --check
-python scripts/agents/validate_agents_mesh_index.py
-```
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

@@ -35,7 +35,7 @@ under the owning package or the nearest functioning part, for example
 `mechanics/writeback/parts/runtime-and-temperature/generated/`, or
 `mechanics/agon/parts/bridge-and-evidence-seams/generated/`.
 
-## Route Stack
+## Conditional route scope
 
 - Above: source docs, schemas, examples, config maps, quest sources, and
   mechanic package cards own meaning.
@@ -110,7 +110,8 @@ For the operational readout family:
 
 - Do not hand-edit `access_plane_currentness.min.json`,
   `source_intake_wave.min.json`, or `workspace_memo_port_status.min.json`
-- regenerate them with `python scripts/memory/build_memory_operational_readouts.py --write --live` in the workspace
+- regenerate them through the nearest `VALIDATION.md` route and the declared
+  source-owned builder; live workspace refresh remains an external owner step
 - keep `8Dionysus` as workspace-map owner and `abyss-stack` as MCP runtime owner
 - keep known gaps routed instead of inflating MCP output into memory truth
 
@@ -138,7 +139,8 @@ For `agents_mesh.min.json`:
 
 - Do not hand-edit it
 - update `config/agents/agents_mesh.json` and the affected local `AGENTS.md` cards first
-- rebuild it with `python scripts/agents/build_agents_mesh_index.py`
+- rebuild it through the nearest `VALIDATION.md` route using the canonical
+  agents-mesh builder
 - keep it a route-card coverage companion, not source memory doctrine
 
 For `root_technical_districts.min.json`:
@@ -146,44 +148,23 @@ For `root_technical_districts.min.json`:
 - Do not hand-edit it
 - update `config/root-topology/root_technical_districts.json` and the affected root district
   `AGENTS.md` first
-- rebuild it with `python scripts/root-topology/build_root_technical_districts_index.py`
+- rebuild it through the nearest `VALIDATION.md` route using the canonical
+  root-topology builder
 - keep it a compact atlas for root district routing, not the exact allowlist
 
 For the quest projection family:
 
 - Do not hand-edit `generated/quests/quest_catalog.min*.json` or `generated/quests/quest_dispatch.min*.json`
 - update `quests/memo/<state>/AOA-MEM-Q-*.yaml`, `QUESTBOOK.md`, and the owning mechanic docs first
-- rebuild with `python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py`
+- rebuild it through the nearest `VALIDATION.md` route using the owning
+  quest-projection builder
 - keep `owner_surface` and `anchor_ref` routed to real memo docs or mechanics docs
 - keep the read-model projection placement contract in `mechanics/questbook/parts/quest-read-model-projections/`
 
 ## Validation
 
-When this directory changes, run the matching checks:
+When this directory changes, use the matching checks; for object-family or mechanic-generated outputs, use the matching source builder and nearest `VALIDATION.md` route. Generated payloads remain derived.
 
-```bash
-python scripts/memory/validate_memo.py
-python scripts/memory/validate_memory_surfaces.py
-python scripts/memory/validate_memory_object_surfaces.py
-python scripts/memory/validate_abyss_machine_memory_object_bundle.py
-python scripts/memory/build_memory_operational_readouts.py --check
-python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py --check
-python scripts/agents/validate_agents_mesh_index.py
-python scripts/root-topology/build_root_technical_districts_index.py --check
-python scripts/root-topology/validate_root_technical_districts_index.py
-python scripts/mechanics/validate_mechanic_artifact_inventory.py
-python scripts/mechanics/validate_memo_mechanic_cards.py
-python scripts/mechanics/validate_memo_mechanic_owner_routes.py
-python scripts/mechanics/validate_memo_mechanic_landing_logs.py
-python scripts/mechanics/validate_memo_mechanic_readiness.py
-```
+## Validation route
 
-If the object family or mechanic-generated outputs changed, also run the
-matching generator:
-
-```bash
-python scripts/memory/generate_memory_object_surfaces.py
-python mechanics/questbook/parts/quest-read-model-projections/scripts/build_quest_surfaces.py
-python mechanics/consumer-handoff/parts/kag-source-export/scripts/generate_kag_export.py
-python mechanics/writeback/parts/runtime-and-temperature/scripts/generate_runtime_writeback_governance.py
-```
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

@@ -10,7 +10,7 @@ Keep provenance, temporal relevance, salience, temperature, and recall pressure 
 
 When docs change proof, routing, KAG, role, or playbook seams, name the downstream owner repo and what remains outside memo authority.
 
-## Route Stack
+## Conditional route scope
 
 - Above: root `AGENTS.md` chooses the route mode; `docs/README.md` maps the
   docs district.
@@ -35,9 +35,8 @@ When docs change proof, routing, KAG, role, or playbook seams, name the downstre
   route to `docs/validation/AGENTS.md` and `config/validation_lanes.json`.
 - When test inventory changes, route to `docs/testing/AGENTS.md`.
 
-Verify with:
+For docs changes, use the nearest `VALIDATION.md` route; reusable lanes remain in `config/validation_lanes.json`.
 
-```bash
-python scripts/memory/validate_memo.py
-python scripts/agents/validate_semantic_agents.py
-```
+## Validation route
+
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

@@ -14,8 +14,7 @@
         "agent-facing derived district",
         ".agents/<lane>/",
         "OS user profile",
-        "Do not recreate owner or shared skill copies",
-        "python scripts/release/release_check.py"
+        "Do not recreate owner or shared skill copies"
       ]
     },
     {
@@ -55,7 +54,7 @@
       "required_snippets": [
         "explicit memory and recall layer",
         "Route modes",
-        "GitHub landing workflow",
+        "Release route",
         "focused lanes"
       ]
     },
@@ -85,8 +84,7 @@
       "required_snippets": [
         "Decision records",
         "public-safe",
-        "verification route",
-        "python scripts/release/release_check.py"
+        "verification route"
       ]
     },
     {
@@ -95,7 +93,7 @@
       "required_snippets": [
         "aoa-evals",
         "proof doctrine",
-        "validate_local_eval_port.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -105,7 +103,7 @@
         "reviewed memory corpus",
         "`object.json`",
         "`MEMO.md`",
-        "validate_memo_corpus.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -115,7 +113,7 @@
         "memo-local statistical questions",
         "port.manifest.json",
         "reference packets",
-        "release/validate_local_stats_port.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -124,7 +122,7 @@
       "required_snippets": [
         "memo-side mechanics",
         "mechanics/<slug>/docs/",
-        "validate_memo_mechanics.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -134,7 +132,7 @@
         "antifragility mechanic",
         "mechanics/antifragility/",
         "OWNER_MAP.md",
-        "validate_memo_mechanics.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -144,7 +142,7 @@
         "mechanics/antifragility/parts/",
         "PARTS.md",
         "OWNER_MAP.md",
-        "validate_memo_mechanic_parts.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -154,7 +152,7 @@
         "mechanics/antifragility/docs/",
         "active mechanic-owned doctrine",
         "ARTIFACT_TOPOLOGY.md",
-        "validate_memo_mechanics.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -164,7 +162,7 @@
         "Agon mechanic",
         "mechanics/agon/",
         "OWNER_MAP.md",
-        "validate_memo_mechanics.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -174,7 +172,7 @@
         "mechanics/agon/parts/",
         "PARTS.md",
         "OWNER_MAP.md",
-        "validate_memo_mechanic_parts.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -184,7 +182,7 @@
         "mechanics/agon/docs/",
         "active mechanic-owned doctrine",
         "ARTIFACT_TOPOLOGY.md",
-        "validate_memo_mechanics.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -194,7 +192,7 @@
         "adoption mechanic",
         "mechanics/adoption/",
         "OWNER_MAP.md",
-        "validate_memo_mechanics.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -204,7 +202,7 @@
         "mechanics/adoption/parts/",
         "PARTS.md",
         "OWNER_MAP.md",
-        "validate_memo_mechanic_parts.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -214,7 +212,7 @@
         "mechanics/adoption/docs/",
         "active mechanic-owned doctrine",
         "ARTIFACT_TOPOLOGY.md",
-        "validate_memo_mechanics.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -224,7 +222,7 @@
         "governance mechanic",
         "mechanics/governance/",
         "OWNER_MAP.md",
-        "validate_memo_mechanics.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -234,7 +232,7 @@
         "mechanics/governance/parts/",
         "PARTS.md",
         "OWNER_MAP.md",
-        "validate_memo_mechanic_parts.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -244,7 +242,7 @@
         "mechanics/governance/docs/",
         "active mechanic-owned doctrine",
         "ARTIFACT_TOPOLOGY.md",
-        "validate_memo_mechanics.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -254,7 +252,7 @@
         "shape-guard mechanic",
         "mechanics/shape-guard/",
         "OWNER_MAP.md",
-        "validate_memo_mechanics.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -264,7 +262,7 @@
         "mechanics/shape-guard/parts/",
         "PARTS.md",
         "OWNER_MAP.md",
-        "validate_memo_mechanic_parts.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -274,7 +272,7 @@
         "mechanics/shape-guard/docs/",
         "active mechanic-owned doctrine",
         "ARTIFACT_TOPOLOGY.md",
-        "validate_memo_mechanics.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -284,7 +282,7 @@
         "checkpoint mechanic",
         "mechanics/checkpoint/",
         "OWNER_MAP.md",
-        "validate_memo_mechanics.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -294,7 +292,7 @@
         "mechanics/checkpoint/parts/",
         "PARTS.md",
         "OWNER_MAP.md",
-        "validate_memo_mechanic_parts.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -304,7 +302,7 @@
         "mechanics/checkpoint/docs/",
         "active mechanic-owned doctrine",
         "ARTIFACT_TOPOLOGY.md",
-        "validate_memo_mechanics.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -314,7 +312,7 @@
         "readiness-boundary mechanic",
         "mechanics/readiness-boundary/",
         "OWNER_MAP.md",
-        "validate_memo_mechanics.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -324,7 +322,7 @@
         "mechanics/readiness-boundary/parts/",
         "PARTS.md",
         "OWNER_MAP.md",
-        "validate_memo_mechanic_parts.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -334,7 +332,7 @@
         "mechanics/readiness-boundary/docs/",
         "active mechanic-owned doctrine",
         "ARTIFACT_TOPOLOGY.md",
-        "validate_memo_mechanics.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -344,7 +342,7 @@
         "consumer-handoff mechanic",
         "mechanics/consumer-handoff/",
         "OWNER_MAP.md",
-        "validate_memo_mechanics.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -354,7 +352,7 @@
         "mechanics/consumer-handoff/parts/",
         "PARTS.md",
         "OWNER_MAP.md",
-        "validate_memo_mechanic_parts.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -364,7 +362,7 @@
         "mechanics/consumer-handoff/docs/",
         "active mechanic-owned doctrine",
         "ARTIFACT_TOPOLOGY.md",
-        "validate_memo_mechanics.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -374,7 +372,7 @@
         "operational-gate mechanic",
         "mechanics/operational-gate/",
         "OWNER_MAP.md",
-        "validate_memo_mechanics.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -384,7 +382,7 @@
         "mechanics/operational-gate/parts/",
         "PARTS.md",
         "OWNER_MAP.md",
-        "validate_memo_mechanic_parts.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -394,7 +392,7 @@
         "mechanics/operational-gate/docs/",
         "active mechanic-owned doctrine",
         "ARTIFACT_TOPOLOGY.md",
-        "validate_memo_mechanics.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -404,7 +402,7 @@
         "recurrence-support mechanic",
         "mechanics/recurrence-support/",
         "OWNER_MAP.md",
-        "validate_memo_mechanics.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -414,7 +412,7 @@
         "mechanics/recurrence-support/parts/",
         "PARTS.md",
         "OWNER_MAP.md",
-        "validate_memo_mechanic_parts.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -424,7 +422,7 @@
         "mechanics/recurrence-support/docs/",
         "active mechanic-owned doctrine",
         "ARTIFACT_TOPOLOGY.md",
-        "validate_memo_mechanics.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -434,7 +432,7 @@
         "lineage-harvest mechanic",
         "mechanics/lineage-harvest/",
         "OWNER_MAP.md",
-        "validate_memo_mechanics.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -444,7 +442,7 @@
         "mechanics/lineage-harvest/parts/",
         "PARTS.md",
         "OWNER_MAP.md",
-        "validate_memo_mechanic_parts.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -454,7 +452,7 @@
         "mechanics/lineage-harvest/docs/",
         "active mechanic-owned doctrine",
         "ARTIFACT_TOPOLOGY.md",
-        "validate_memo_mechanics.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -464,7 +462,7 @@
         "Questbook owns",
         "mechanics/questbook/",
         "OWNER_MAP.md",
-        "validate_quest_store.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -474,7 +472,7 @@
         "mechanics/questbook/parts/",
         "generated/quests/quest_*.json",
         "quest-read-model-projections",
-        "validate_quest_store.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -484,7 +482,7 @@
         "mechanics/questbook/docs/",
         "active Questbook",
         "QUEST_SOURCE_CONTRACT",
-        "validate_quest_store.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -494,7 +492,7 @@
         "Titan mechanic",
         "mechanics/titan/",
         "OWNER_MAP.md",
-        "validate_memo_mechanics.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -504,7 +502,7 @@
         "mechanics/titan/parts/",
         "PARTS.md",
         "OWNER_MAP.md",
-        "validate_memo_mechanic_parts.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -514,7 +512,7 @@
         "mechanics/titan/docs/",
         "active mechanic-owned doctrine",
         "ARTIFACT_TOPOLOGY.md",
-        "validate_memo_mechanics.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -524,7 +522,7 @@
         "writeback mechanic",
         "mechanics/writeback/",
         "OWNER_MAP.md",
-        "validate_memo_mechanics.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -534,7 +532,7 @@
         "mechanics/writeback/parts/",
         "PARTS.md",
         "OWNER_MAP.md",
-        "validate_memo_mechanic_parts.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -544,7 +542,7 @@
         "mechanics/writeback/docs/",
         "active mechanic-owned doctrine",
         "ARTIFACT_TOPOLOGY.md",
-        "validate_memo_mechanics.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -554,7 +552,7 @@
         "retention mechanic",
         "mechanics/retention/",
         "OWNER_MAP.md",
-        "validate_memo_mechanics.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -564,7 +562,7 @@
         "mechanics/retention/parts/",
         "PARTS.md",
         "OWNER_MAP.md",
-        "validate_memo_mechanic_parts.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -574,7 +572,7 @@
         "mechanics/retention/docs/",
         "active mechanic-owned doctrine",
         "ARTIFACT_TOPOLOGY.md",
-        "validate_memo_mechanics.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -584,7 +582,7 @@
         "sanitized",
         "memory_object_surface_manifest.json",
         "recall_contract.object.lineage.json",
-        "validate_lifecycle_audit_examples.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -614,7 +612,7 @@
         "recurrence manifests",
         "component.agon.",
         "public-safe",
-        "validate_memo.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -624,7 +622,7 @@
         "memory-layer obligations",
         "QUESTBOOK.md",
         "AOA-MEM-Q-",
-        "validate_memo.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -641,8 +639,7 @@
       "path": "scripts/AGENTS.md",
       "min_lines": 35,
       "required_snippets": [
-        "validate_memo.py",
-        "validate_nested_agents.py",
+        "nearest `VALIDATION.md` route",
         "deterministic",
         "hidden runtime infrastructure"
       ]
@@ -681,7 +678,7 @@
       "required_snippets": [
         "config/memory-ports/",
         "indexing terms",
-        "build_memo_port_vocabulary.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -717,7 +714,7 @@
       "required_snippets": [
         "docs/posture/",
         "MEMORY_TRUST_POSTURE.md",
-        "validate_lifecycle_audit_examples.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -725,8 +722,7 @@
       "min_lines": 15,
       "required_snippets": [
         "docs/root/",
-        "ROOT_SURFACE_LAW.md",
-        "release_check.py"
+        "ROOT_SURFACE_LAW.md"
       ]
     },
     {
@@ -737,7 +733,7 @@
         "VALIDATOR_TOPOLOGY.md",
         "validator_inventory.json",
         "config/validation_lanes.json",
-        "validate_validator_topology.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -746,7 +742,6 @@
       "required_snippets": [
         "docs/testing/",
         "config/validation_lanes.json",
-        "test_inventory.json",
         "scripts/ci_gate.py"
       ]
     },
@@ -774,7 +769,7 @@
       "required_snippets": [
         "schemas/memory-ports/",
         "local `memo/` port contracts",
-        "validate_local_memo_port.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -792,7 +787,7 @@
       "required_snippets": [
         "schemas/generated-surfaces/",
         "memory_object_catalog.schema.json",
-        "generate_memory_object_surfaces.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -819,7 +814,7 @@
       "required_snippets": [
         "examples/lifecycle/",
         "LIFECYCLE.md",
-        "validate_lifecycle_audit_examples.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -837,7 +832,7 @@
       "required_snippets": [
         "examples/memory-ports/",
         "example port",
-        "build_local_memo_port_index.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -864,7 +859,7 @@
       "required_snippets": [
         "generated/memory/",
         "generated doctrine",
-        "validate_memory_surfaces.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -873,7 +868,7 @@
       "required_snippets": [
         "generated/memory-objects/",
         "object-facing catalog",
-        "generate_memory_object_surfaces.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -891,7 +886,7 @@
       "required_snippets": [
         "generated/mechanics/",
         "mechanic indexes",
-        "validate_memo_mechanic_readiness.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -900,7 +895,7 @@
       "required_snippets": [
         "generated/quests/",
         "Questbook read-model projections",
-        "validate_quest_store.py"
+        "nearest `VALIDATION.md` route"
       ]
     },
     {
@@ -917,7 +912,7 @@
       "min_lines": 15,
       "required_snippets": [
         "scripts/memory/",
-        "validate_memo.py",
+        "nearest `VALIDATION.md` route",
         "tests/memory"
       ]
     },
@@ -936,7 +931,7 @@
       "min_lines": 15,
       "required_snippets": [
         "scripts/agents/",
-        "validate_agents_mesh.py",
+        "nearest `VALIDATION.md` route",
         "tests/agents"
       ]
     },
@@ -945,7 +940,7 @@
       "min_lines": 15,
       "required_snippets": [
         "scripts/mechanics/",
-        "validate_memo_mechanics.py",
+        "nearest `VALIDATION.md` route",
         "tests/mechanics"
       ]
     },
@@ -954,7 +949,7 @@
       "min_lines": 15,
       "required_snippets": [
         "scripts/root-topology/",
-        "build_root_technical_districts_index.py",
+        "nearest `VALIDATION.md` route",
         "tests/root-topology"
       ]
     },
@@ -963,7 +958,6 @@
       "min_lines": 15,
       "required_snippets": [
         "scripts/release/",
-        "release_check.py",
         "release gate"
       ]
     },
@@ -1045,13 +1039,13 @@
     },
     {
       "path": "DESIGN.AGENTS.md",
-      "purpose": "agent-surface design names form; executable validation commands live in route cards",
+      "purpose": "agent-surface design names form; executable validation is on demand",
       "forbidden_snippets": [
-        "The current broad validation path remains:",
-        "```bash\npython scripts/release/release_check.py\n```"
+        "Executable commands live in root `AGENTS.md` and nearest local `AGENTS.md`",
+        "executable validation commands live in route cards"
       ],
       "required_snippets": [
-        "Executable commands live in root `AGENTS.md` and nearest local `AGENTS.md`"
+        "Reusable machine command sequences are authoritative in"
       ]
     },
     {

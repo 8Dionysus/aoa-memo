@@ -33,6 +33,7 @@ ALLOWED_DOCS_ROOT_FILES = {
     "AGENTS.md",
     "README.md",
     "RELEASING.md",
+    "VALIDATION.md",
 }
 ALLOWED_DOCS_SUBDIRS = {
     "boundaries",
@@ -46,17 +47,20 @@ ALLOWED_DOCS_SUBDIRS = {
 REQUIRED_DOCS_DISTRICT_FILES = {
     "boundaries": {
         "AGENTS.md",
+        "VALIDATION.md",
         "BOUNDARIES.md",
         "OPERATIONAL_BOUNDARY.md",
     },
     "memory": {
         "AGENTS.md",
+        "VALIDATION.md",
         "MEMORY_MODEL.md",
         "MEMORY_OBJECT_PROFILES.md",
         "NARRATIVE_CORE_CONTRACT.md",
     },
     "posture": {
         "AGENTS.md",
+        "VALIDATION.md",
         "AUDIT_EVENTS.md",
         "LIFECYCLE.md",
         "MEMORY_TEMPERATURES.md",
@@ -65,17 +69,20 @@ REQUIRED_DOCS_DISTRICT_FILES = {
     },
     "root": {
         "AGENTS.md",
+        "VALIDATION.md",
         "AGENTS_ROOT_REFERENCE.md",
         "RELEASING.md",
         "ROOT_SURFACE_LAW.md",
     },
     "testing": {
         "AGENTS.md",
+        "VALIDATION.md",
         "TEST_TOPOLOGY.md",
         "test_inventory.json",
     },
     "validation": {
         "AGENTS.md",
+        "VALIDATION.md",
         "COMMAND_AUTHORITY.md",
         "VALIDATOR_TOPOLOGY.md",
         "validator_inventory.json",
@@ -116,6 +123,8 @@ def validate() -> list[str]:
         issues.append("docs/decisions/AGENTS.md must exist")
     if not (docs_root / "decisions" / "README.md").is_file():
         issues.append("docs/decisions/README.md must exist")
+    if not (docs_root / "decisions" / "VALIDATION.md").is_file():
+        issues.append("docs/decisions/VALIDATION.md must exist")
 
     for retired_district in RETIRED_DOCS_DISTRICTS:
         if (docs_root / retired_district).exists():

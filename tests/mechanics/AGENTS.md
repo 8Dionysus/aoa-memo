@@ -18,8 +18,6 @@ and `generated/mechanics/`.
 - Across: `scripts/mechanics/`.
 - Downstream: OS Abyss mechanic readiness inspection.
 
-## Validate
+## Validation route
 
-```bash
-python -m pytest -q tests/mechanics
-```
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

@@ -19,10 +19,6 @@ protects them.
 - Across: `docs/root/ROOT_SURFACE_LAW.md` and `mechanics/ARTIFACT_TOPOLOGY.md`.
 - Downstream: `scripts/root-topology/` and district-local `AGENTS.md` cards.
 
-## Validate
+## Validation route
 
-```bash
-python scripts/mechanics/validate_mechanic_artifact_topology.py
-python scripts/root-topology/build_root_technical_districts_index.py --check
-python scripts/root-topology/validate_root_technical_districts_index.py
-```
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

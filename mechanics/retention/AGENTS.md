@@ -1,8 +1,8 @@
 # AGENTS.md
 
-## Applies To
+## Applies to
 
-This card applies to `mechanics/retention/`.
+`mechanics/retention/` and its active mechanic surfaces.
 
 ## Role
 
@@ -14,52 +14,21 @@ surfaces.
 It does not execute retention, schedule checks, store private traces, keep
 unreduced personal data, or own runtime retention policy.
 
-## Route Stack
+## Local delta
 
-- Above: root `AGENTS.md` owns repo identity and release route;
-  `mechanics/AGENTS.md` owns shared mechanic package law and validators.
-- Here: `README.md` is the mechanic card, `DIRECTION.md` names current
-  pressure, `PARTS.md` lists active function nodes, `OWNER_MAP.md` names
-  stronger owners, and `PROVENANCE.md` plus `legacy/` preserve placement
-  history.
-- Below: `docs/` holds active source docs, `parts/` holds functioning
-  contracts and artifact homes, and `legacy/` is historical evidence only.
+The `retention` mechanic identity remains local; shared package, docs, parts, and
+legacy hierarchy is inherited from `mechanics/AGENTS.md`. Its package card,
+DIRECTION.md, PARTS.md, OWNER_MAP.md, and PROVENANCE.md remain the semantic
+anchors for this operation.
 
-## Read Before Editing
+## Boundaries
 
-Read root `AGENTS.md`, `mechanics/AGENTS.md`, this file, `README.md`,
-`DIRECTION.md`, `PARTS.md`, `OWNER_MAP.md`, and `PROVENANCE.md`.
+Keep the retention package-specific owner boundaries in the mechanic card and OWNER_MAP.md.
 
-## Post-Change Review
+## Verification
 
-After retention changes, check whether these surfaces moved:
-
-- `DIRECTION.md`
-- `PARTS.md`
-- `OWNER_MAP.md`
-- `PROVENANCE.md`
-- `LANDING_LOG.md`
-- `ROADMAP.md`
-- `legacy/INDEX.md`
-- generated mechanics or AGENTS mesh companions
-
-Update only surfaces whose future-facing meaning changed.
-
-## Validation
-
-```bash
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/mechanics/build_memo_mechanics_index.py --check
-python scripts/mechanics/validate_memo_mechanics_index.py
-python scripts/memory/validate_memory_operations.py
-python -m pytest -q mechanics/retention/parts/consolidation-and-forgetting/tests mechanics/retention/parts/cross-repo-and-governance-retention/tests mechanics/retention/parts/office-markers/tests mechanics/retention/parts/post-release-retention/tests
-```
-
-Before landing, also run:
-
-```bash
-python scripts/release/release_check.py
-```
+Use the nearest `VALIDATION.md` route for `retention` work after the touched
+surface is known; reusable lanes remain in `config/validation_lanes.json`.
 
 ## Closeout
 

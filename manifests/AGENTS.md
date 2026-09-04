@@ -31,7 +31,7 @@ the relevant `mechanics/agon/parts/<part>/config/`,
 `mechanics/agon/parts/<part>/scripts/`, and
 `mechanics/agon/parts/<part>/tests/`.
 
-## Route Stack
+## Conditional route scope
 
 - Above: root `AGENTS.md`, `config/root-topology/root_technical_districts.json`, and the
   owning mechanic decide whether a manifest is shared or mechanic-local.
@@ -51,16 +51,12 @@ the relevant `mechanics/agon/parts/<part>/config/`,
 
 When root shared manifests change, add the shared source surface and run the
 broad memo gate. When mechanic-local manifests change, run the owning mechanic
-validator first:
-
-```bash
-python mechanics/agon/parts/prebinding-and-candidate-intake/scripts/validate_agon_memo_prebindings.py
-python -m pytest -q mechanics/agon/parts/stage-landing-and-stop-lines/tests
-python scripts/memory/validate_memo.py
-python scripts/release/release_check.py
-```
-
+For mechanic-local manifests, use the owning mechanic validator route before closeout.
 ## Closeout
 
 Report which manifest family changed, which source surface owns the meaning,
 whether hook bindings changed, and which validation ran.
+
+## Validation route
+
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

@@ -57,10 +57,8 @@ not to the active decision lookup surface.
 Keep the record public-safe. Do not include private traces, secrets, local-only
 host details, or unreduced personal data.
 
-Verify decision-lane changes with:
+For decision-lane changes, use the nearest `VALIDATION.md` route and preserve decision-source ownership.
 
-```bash
-python scripts/root-topology/build_decision_indexes.py --check
-python -m pytest -q tests
-python scripts/release/release_check.py
-```
+## Validation route
+
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

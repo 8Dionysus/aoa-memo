@@ -23,13 +23,6 @@ boundary instead of returning to one broad `test_memo_validators.py` file.
 - Across: `scripts/memory/`.
 - Downstream: generated memory parity.
 
-## Validate
+## Validation route
 
-```bash
-python -m pytest -q tests/memory
-python -m pytest -q tests/memory/test_memo_schema_contracts.py tests/memory/test_memo_memory_context_boundaries.py
-python -m pytest -q tests/memory/test_memo_runtime_writeback_boundaries.py tests/memory/test_memo_live_receipt_boundaries.py tests/memory/test_memo_handoff_boundaries.py tests/memory/test_memo_eval_guardrails.py
-python -m pytest -q tests/memory/test_reviewed_intake_landing.py
-python scripts/memory/validate_memo_corpus.py
-python scripts/memory/validate_memory_operations.py
-```
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

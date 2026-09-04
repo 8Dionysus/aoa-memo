@@ -21,8 +21,6 @@ release orchestration, and `generated/root-topology/`.
 - Across: `scripts/root-topology/`.
 - Downstream: root district placement and release gate readiness.
 
-## Validate
+## Validation route
 
-```bash
-python -m pytest -q tests/root-topology
-```
+Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

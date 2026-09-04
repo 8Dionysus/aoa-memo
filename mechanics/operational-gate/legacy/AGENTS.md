@@ -1,8 +1,8 @@
 # AGENTS.md
 
-## Applies To
+## Applies to
 
-This card applies to `mechanics/operational-gate/legacy/`.
+`mechanics/operational-gate/legacy/` and historical material below it.
 
 ## Role
 
@@ -14,19 +14,12 @@ authority, and not a place to park active schemas, examples, generated outputs,
 scripts, tests, quests, manifests, runtime receipts, incident logs, or release
 owner doctrine.
 
-## Route Stack
+## Local delta
 
-- Above: the package `AGENTS.md`, `PROVENANCE.md`, and `OWNER_MAP.md` define
-  the active route and stronger-owner boundary.
-- Here: `INDEX.md` maps former paths to active surfaces, `DISTILLATION_LOG.md`
-  records restoration decisions, and `raw/` contains historical snapshots.
-- Below: `raw/` is evidence only. Do not edit it as current doctrine and do not
-  cite it as an active route.
-
-## Read Before Editing
-
-Read root `AGENTS.md`, `mechanics/AGENTS.md`, `../AGENTS.md`, `../README.md`,
-and `../PROVENANCE.md`.
+This district records placement history only. The active `operational-gate` route remains
+in `../docs/`; the package `PROVENANCE.md` and `OWNER_MAP.md` retain current
+ownership and stronger-owner boundaries. The shared legacy hierarchy is
+inherited from `mechanics/AGENTS.md`.
 
 ## Boundaries
 
@@ -37,14 +30,10 @@ and `../PROVENANCE.md`.
 - Do not use legacy entries to claim release approval, runtime state, proof,
   role rights, route dispatch, stats truth, ToS writes, or owner acceptance.
 
-## Validation
+## Verification
 
-```bash
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/mechanics/build_memo_mechanics_index.py --check
-python scripts/mechanics/validate_memo_mechanics_index.py
-```
-
+Use `legacy/INDEX.md` for the narrow historical lookup and the nearest
+`VALIDATION.md` route when a provenance edit is actually required.
 ## Closeout
 
 Report whether legacy provenance changed and whether the active route still
