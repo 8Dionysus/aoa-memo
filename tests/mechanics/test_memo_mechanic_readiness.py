@@ -12,6 +12,7 @@ sys.path.insert(0, str(REPO_ROOT / "scripts" / "mechanics"))
 from mechanic_readiness_common import (  # noqa: E402
     _has_runnable_local_test_routes,
     _local_test_dirs,
+    _validation_owner_refs,
     build_readiness,
     validate_payload,
 )
@@ -195,6 +196,27 @@ def test_local_test_route_requires_runnable_pytest_command() -> None:
 
     assert _has_runnable_local_test_routes(prose_only, test_dirs) is False
     assert _has_runnable_local_test_routes(command_route, test_dirs) is True
+
+
+def test_package_pytest_scope_covers_discovered_part_tests() -> None:
+    test_dirs = [
+        "mechanics/agon/parts/prebinding-and-candidate-intake/tests",
+        "mechanics/agon/parts/stage-landing-and-stop-lines/tests",
+    ]
+
+    assert _has_runnable_local_test_routes(
+        "python -m pytest -q mechanics/agon/parts",
+        test_dirs,
+    ) is True
+
+
+def test_validation_owner_refs_are_explicit_local_links() -> None:
+    refs = _validation_owner_refs(
+        "mechanics/antifragility/VALIDATION.md",
+        "Use [`mechanics/VALIDATION.md`](../VALIDATION.md).",
+    )
+
+    assert refs == ["mechanics/VALIDATION.md"]
 
 
 def test_local_test_route_rejects_empty_runnable_test_dirs() -> None:

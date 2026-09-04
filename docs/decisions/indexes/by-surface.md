@@ -26,6 +26,9 @@
 - [AOA-MEM-D-0075 Test And Validation Lane Topology](../AOA-MEM-D-0075-test-and-validation-lane-topology.md) (`docs/decisions/AOA-MEM-D-0075-test-and-validation-lane-topology.md`)
 - [AOA-MEM-D-0076 aoa-memo Owner Skill Bundle](../AOA-MEM-D-0076-aoa-memo-owner-skill-bundle.md) (`docs/decisions/AOA-MEM-D-0076-aoa-memo-owner-skill-bundle.md`)
 - [AOA-MEM-D-0086 Prompt-Light Agent Routes and On-Demand Validation](../AOA-MEM-D-0086-prompt-light-agent-routes-and-on-demand-validation.md) (`docs/decisions/AOA-MEM-D-0086-prompt-light-agent-routes-and-on-demand-validation.md`)
+- [AOA-MEM-D-0087 One Owner per Validation Route](../AOA-MEM-D-0087-one-owner-per-validation-route.md) (`docs/decisions/AOA-MEM-D-0087-one-owner-per-validation-route.md`)
+- [AOA-MEM-D-0088 Explicit Validation Route Targets](../AOA-MEM-D-0088-explicit-validation-route-targets.md) (`docs/decisions/AOA-MEM-D-0088-explicit-validation-route-targets.md`)
+- [AOA-MEM-D-0089 Validation Companions Are Route Metadata](../AOA-MEM-D-0089-validation-companions-are-route-metadata.md) (`docs/decisions/AOA-MEM-D-0089-validation-companions-are-route-metadata.md`)
 
 ## memory doctrine
 
@@ -143,6 +146,7 @@
 - [AOA-MEM-D-0060 Titan Part-Local Artifacts](../AOA-MEM-D-0060-titan-part-local-artifacts.md) (`docs/decisions/AOA-MEM-D-0060-titan-part-local-artifacts.md`)
 - [AOA-MEM-D-0061 Writeback Part-Local Artifacts](../AOA-MEM-D-0061-writeback-part-local-artifacts.md) (`docs/decisions/AOA-MEM-D-0061-writeback-part-local-artifacts.md`)
 - [AOA-MEM-D-0070 Decision: Writeback debt catchup lands reviewed objects](../AOA-MEM-D-0070-writeback-debt-catchup-reviewed-objects.md) (`docs/decisions/AOA-MEM-D-0070-writeback-debt-catchup-reviewed-objects.md`)
+- [AOA-MEM-D-0089 Validation Companions Are Route Metadata](../AOA-MEM-D-0089-validation-companions-are-route-metadata.md) (`docs/decisions/AOA-MEM-D-0089-validation-companions-are-route-metadata.md`)
 
 ## mechanic part
 
@@ -188,6 +192,9 @@
 - [AOA-MEM-D-0074 Full Canonical ID Decision Filenames](../AOA-MEM-D-0074-full-canonical-id-decision-filenames.md) (`docs/decisions/AOA-MEM-D-0074-full-canonical-id-decision-filenames.md`)
 - [AOA-MEM-D-0075 Test And Validation Lane Topology](../AOA-MEM-D-0075-test-and-validation-lane-topology.md) (`docs/decisions/AOA-MEM-D-0075-test-and-validation-lane-topology.md`)
 - [AOA-MEM-D-0086 Prompt-Light Agent Routes and On-Demand Validation](../AOA-MEM-D-0086-prompt-light-agent-routes-and-on-demand-validation.md) (`docs/decisions/AOA-MEM-D-0086-prompt-light-agent-routes-and-on-demand-validation.md`)
+- [AOA-MEM-D-0087 One Owner per Validation Route](../AOA-MEM-D-0087-one-owner-per-validation-route.md) (`docs/decisions/AOA-MEM-D-0087-one-owner-per-validation-route.md`)
+- [AOA-MEM-D-0088 Explicit Validation Route Targets](../AOA-MEM-D-0088-explicit-validation-route-targets.md) (`docs/decisions/AOA-MEM-D-0088-explicit-validation-route-targets.md`)
+- [AOA-MEM-D-0089 Validation Companions Are Route Metadata](../AOA-MEM-D-0089-validation-companions-are-route-metadata.md) (`docs/decisions/AOA-MEM-D-0089-validation-companions-are-route-metadata.md`)
 
 ## agents/mesh
 
@@ -200,6 +207,9 @@
 - [AOA-MEM-D-0075 Test And Validation Lane Topology](../AOA-MEM-D-0075-test-and-validation-lane-topology.md) (`docs/decisions/AOA-MEM-D-0075-test-and-validation-lane-topology.md`)
 - [AOA-MEM-D-0076 aoa-memo Owner Skill Bundle](../AOA-MEM-D-0076-aoa-memo-owner-skill-bundle.md) (`docs/decisions/AOA-MEM-D-0076-aoa-memo-owner-skill-bundle.md`)
 - [AOA-MEM-D-0086 Prompt-Light Agent Routes and On-Demand Validation](../AOA-MEM-D-0086-prompt-light-agent-routes-and-on-demand-validation.md) (`docs/decisions/AOA-MEM-D-0086-prompt-light-agent-routes-and-on-demand-validation.md`)
+- [AOA-MEM-D-0087 One Owner per Validation Route](../AOA-MEM-D-0087-one-owner-per-validation-route.md) (`docs/decisions/AOA-MEM-D-0087-one-owner-per-validation-route.md`)
+- [AOA-MEM-D-0088 Explicit Validation Route Targets](../AOA-MEM-D-0088-explicit-validation-route-targets.md) (`docs/decisions/AOA-MEM-D-0088-explicit-validation-route-targets.md`)
+- [AOA-MEM-D-0089 Validation Companions Are Route Metadata](../AOA-MEM-D-0089-validation-companions-are-route-metadata.md) (`docs/decisions/AOA-MEM-D-0089-validation-companions-are-route-metadata.md`)
 
 ## skills/home
 

@@ -1,12 +1,10 @@
 # Rollback and recovery Validation
 
-Executable validation for this part is routed through the package validation lane.
+This file owns the focused invocation(s) shown here; the package route adds wider checks.
 
-Run from the repository root:
-
+Shared executable routes remain owned by [`mechanics/VALIDATION.md`](../../../VALIDATION.md); follow those on-demand lanes for this surface.
 ```bash
-python scripts/mechanics/validate_memo_mechanic_parts.py
 python -m pytest -q mechanics/writeback/parts/rollback-and-recovery/tests
 ```
 
-Then run the package-specific commands named in `../../AGENTS.md#validation` for any changed source docs, schemas, examples, generated companions, scripts, tests, manifests, or owner routes.
+Then follow the package-specific route in [`../../VALIDATION.md`](../../VALIDATION.md) for any changed source docs, schemas, examples, generated companions, scripts, tests, manifests, or owner routes.

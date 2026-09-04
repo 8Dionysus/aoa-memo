@@ -23,6 +23,7 @@
 - [AOA-MEM-D-0058 Root Technical District Atlas](../AOA-MEM-D-0058-root-technical-district-atlas.md) (`docs/decisions/AOA-MEM-D-0058-root-technical-district-atlas.md`)
 - [AOA-MEM-D-0071 Canonical Decision IDs and Generated Indexes](../AOA-MEM-D-0071-canonical-decision-ids-and-indexes.md) (`docs/decisions/AOA-MEM-D-0071-canonical-decision-ids-and-indexes.md`)
 - [AOA-MEM-D-0075 Test And Validation Lane Topology](../AOA-MEM-D-0075-test-and-validation-lane-topology.md) (`docs/decisions/AOA-MEM-D-0075-test-and-validation-lane-topology.md`)
+- [AOA-MEM-D-0089 Validation Companions Are Route Metadata](../AOA-MEM-D-0089-validation-companions-are-route-metadata.md) (`docs/decisions/AOA-MEM-D-0089-validation-companions-are-route-metadata.md`)
 
 ## docs route
 
@@ -40,6 +41,9 @@
 - [AOA-MEM-D-0074 Full Canonical ID Decision Filenames](../AOA-MEM-D-0074-full-canonical-id-decision-filenames.md) (`docs/decisions/AOA-MEM-D-0074-full-canonical-id-decision-filenames.md`)
 - [AOA-MEM-D-0075 Test And Validation Lane Topology](../AOA-MEM-D-0075-test-and-validation-lane-topology.md) (`docs/decisions/AOA-MEM-D-0075-test-and-validation-lane-topology.md`)
 - [AOA-MEM-D-0086 Prompt-Light Agent Routes and On-Demand Validation](../AOA-MEM-D-0086-prompt-light-agent-routes-and-on-demand-validation.md) (`docs/decisions/AOA-MEM-D-0086-prompt-light-agent-routes-and-on-demand-validation.md`)
+- [AOA-MEM-D-0087 One Owner per Validation Route](../AOA-MEM-D-0087-one-owner-per-validation-route.md) (`docs/decisions/AOA-MEM-D-0087-one-owner-per-validation-route.md`)
+- [AOA-MEM-D-0088 Explicit Validation Route Targets](../AOA-MEM-D-0088-explicit-validation-route-targets.md) (`docs/decisions/AOA-MEM-D-0088-explicit-validation-route-targets.md`)
+- [AOA-MEM-D-0089 Validation Companions Are Route Metadata](../AOA-MEM-D-0089-validation-companions-are-route-metadata.md) (`docs/decisions/AOA-MEM-D-0089-validation-companions-are-route-metadata.md`)
 
 ## mechanic topology
 
@@ -80,6 +84,7 @@
 - [AOA-MEM-D-0054 Operational Gate Part-Local Artifacts](../AOA-MEM-D-0054-operational-gate-part-local-artifacts.md) (`docs/decisions/AOA-MEM-D-0054-operational-gate-part-local-artifacts.md`)
 - [AOA-MEM-D-0060 Titan Part-Local Artifacts](../AOA-MEM-D-0060-titan-part-local-artifacts.md) (`docs/decisions/AOA-MEM-D-0060-titan-part-local-artifacts.md`)
 - [AOA-MEM-D-0061 Writeback Part-Local Artifacts](../AOA-MEM-D-0061-writeback-part-local-artifacts.md) (`docs/decisions/AOA-MEM-D-0061-writeback-part-local-artifacts.md`)
+- [AOA-MEM-D-0089 Validation Companions Are Route Metadata](../AOA-MEM-D-0089-validation-companions-are-route-metadata.md) (`docs/decisions/AOA-MEM-D-0089-validation-companions-are-route-metadata.md`)
 
 ## part and payload
 
@@ -186,6 +191,9 @@
 - [AOA-MEM-D-0075 Test And Validation Lane Topology](../AOA-MEM-D-0075-test-and-validation-lane-topology.md) (`docs/decisions/AOA-MEM-D-0075-test-and-validation-lane-topology.md`)
 - [AOA-MEM-D-0076 aoa-memo Owner Skill Bundle](../AOA-MEM-D-0076-aoa-memo-owner-skill-bundle.md) (`docs/decisions/AOA-MEM-D-0076-aoa-memo-owner-skill-bundle.md`)
 - [AOA-MEM-D-0086 Prompt-Light Agent Routes and On-Demand Validation](../AOA-MEM-D-0086-prompt-light-agent-routes-and-on-demand-validation.md) (`docs/decisions/AOA-MEM-D-0086-prompt-light-agent-routes-and-on-demand-validation.md`)
+- [AOA-MEM-D-0087 One Owner per Validation Route](../AOA-MEM-D-0087-one-owner-per-validation-route.md) (`docs/decisions/AOA-MEM-D-0087-one-owner-per-validation-route.md`)
+- [AOA-MEM-D-0088 Explicit Validation Route Targets](../AOA-MEM-D-0088-explicit-validation-route-targets.md) (`docs/decisions/AOA-MEM-D-0088-explicit-validation-route-targets.md`)
+- [AOA-MEM-D-0089 Validation Companions Are Route Metadata](../AOA-MEM-D-0089-validation-companions-are-route-metadata.md) (`docs/decisions/AOA-MEM-D-0089-validation-companions-are-route-metadata.md`)
 
 ## quest/read-model
 
@@ -202,6 +210,9 @@
 - [AOA-MEM-D-0074 Full Canonical ID Decision Filenames](../AOA-MEM-D-0074-full-canonical-id-decision-filenames.md) (`docs/decisions/AOA-MEM-D-0074-full-canonical-id-decision-filenames.md`)
 - [AOA-MEM-D-0075 Test And Validation Lane Topology](../AOA-MEM-D-0075-test-and-validation-lane-topology.md) (`docs/decisions/AOA-MEM-D-0075-test-and-validation-lane-topology.md`)
 - [AOA-MEM-D-0086 Prompt-Light Agent Routes and On-Demand Validation](../AOA-MEM-D-0086-prompt-light-agent-routes-and-on-demand-validation.md) (`docs/decisions/AOA-MEM-D-0086-prompt-light-agent-routes-and-on-demand-validation.md`)
+- [AOA-MEM-D-0087 One Owner per Validation Route](../AOA-MEM-D-0087-one-owner-per-validation-route.md) (`docs/decisions/AOA-MEM-D-0087-one-owner-per-validation-route.md`)
+- [AOA-MEM-D-0088 Explicit Validation Route Targets](../AOA-MEM-D-0088-explicit-validation-route-targets.md) (`docs/decisions/AOA-MEM-D-0088-explicit-validation-route-targets.md`)
+- [AOA-MEM-D-0089 Validation Companions Are Route Metadata](../AOA-MEM-D-0089-validation-companions-are-route-metadata.md) (`docs/decisions/AOA-MEM-D-0089-validation-companions-are-route-metadata.md`)
 
 ## sibling and boundary
 

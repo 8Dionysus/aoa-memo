@@ -12,6 +12,7 @@ INDEX_SCHEMA_VERSION = "aoa_memo_mechanics_index_v2"
 
 PACKAGE_REQUIRED_FILES = (
     "AGENTS.md",
+    "VALIDATION.md",
     "README.md",
     "DIRECTION.md",
     "PARTS.md",
@@ -20,6 +21,10 @@ PACKAGE_REQUIRED_FILES = (
     "LANDING_LOG.md",
     "ROADMAP.md",
     "docs/AGENTS.md",
+    "docs/VALIDATION.md",
+    "parts/AGENTS.md",
+    "parts/README.md",
+    "parts/VALIDATION.md",
 )
 
 README_HEADINGS = (

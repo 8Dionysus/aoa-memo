@@ -137,8 +137,10 @@ def validate_parts_tree(slug: str, rows: list[str]) -> list[str]:
 
         if validation.is_file():
             validation_text = validation.read_text(encoding="utf-8")
-            if "python scripts/mechanics/validate_memo_mechanic_parts.py" not in validation_text:
-                issues.append(f"{rel_part}/VALIDATION.md must name validate_memo_mechanic_parts.py")
+            if "../../VALIDATION.md" not in validation_text:
+                issues.append(
+                    f"{rel_part}/VALIDATION.md must link the package validation owner"
+                )
 
     return issues
 

@@ -6,10 +6,8 @@ On-demand human procedure for `mechanics/agon/AGENTS.md`.
 
 ### Preserved route from `mechanics/agon/AGENTS.md`
 
+Shared executable routes remain owned by [`mechanics/VALIDATION.md`](../VALIDATION.md); follow those on-demand lanes for this surface.
 ```bash
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/mechanics/build_memo_mechanics_index.py --check
-python scripts/mechanics/validate_memo_mechanics_index.py
 python mechanics/agon/parts/prebinding-and-candidate-intake/scripts/validate_agon_memo_prebindings.py
 python mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_epistemic_memo_bridge.py
 python mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_kag_memo_evidence_package_registry.py
@@ -18,15 +16,6 @@ python mechanics/agon/parts/prebinding-and-candidate-intake/scripts/validate_ago
 python mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_slc_memo_bridge_registry.py
 python mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_sophian_memo_evidence_registry.py
 python mechanics/agon/parts/bridge-and-evidence-seams/scripts/validate_agon_vds_memo_bridge.py
-python -m pytest -q mechanics/agon/parts/prebinding-and-candidate-intake/tests mechanics/agon/parts/bridge-and-evidence-seams/tests mechanics/agon/parts/stage-landing-and-stop-lines/tests
+python -m pytest -q mechanics/agon/parts
 ```
-```bash
-python scripts/release/release_check.py
-```
-
-<!-- Preserved on-demand procedure from `mechanics/agon/docs/VALIDATION.md`. -->
-# VALIDATION.md
-
-On-demand human procedure for this route.
-
-## On-demand procedure
+This surface owns only the focused or composite invocations shown here; linked parent routes own wider/shared lanes.

@@ -16,7 +16,7 @@ workflow expectation.
 | output | canonical decision note, metadata-backed lookup index, and route back to the source surface |
 | owner | `docs/decisions/AGENTS.md` for lane law; decision notes for rationale; generated indexes for lookup only |
 | next route | source surface first, then nearest route card, `MEMORY_INDEX.md`, `docs/memory/MEMORY_MODEL.md`, generated lookup indexes, or the affected reviewed-corpus/mechanic owner |
-| validation | decision-lane checks in `AGENTS.md` and the frozen lane in `config/validation_lanes.json` |
+| validation | decision-lane procedure in [`VALIDATION.md`](VALIDATION.md) and the frozen lane in `config/validation_lanes.json` |
 
 ## Authority
 
@@ -62,7 +62,8 @@ Use them in both directions:
   -> validator guard -> decision rationale -> stronger owner surface.
 
 Regenerate the read models after decision metadata changes through the
-decision-lane route in [AGENTS](AGENTS.md).
+decision-lane procedure in [VALIDATION](VALIDATION.md); use
+[AGENTS](AGENTS.md) only for edit law and stop-lines.
 
 ## Addressing
 

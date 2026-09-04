@@ -18,8 +18,17 @@ Validation commands use a split authority model:
 - Active `AGENTS.md` cards may name focused owner checks, lane ids, and local
   next routes for the changed surface; they do not carry runnable command
   blocks or unconditional reading inventories.
-- The nearest unambiguous `VALIDATION.md` preserves exact human-executable
-  focused procedure after the touched surface is known.
+- The same-directory `VALIDATION.md` preserves exact human-executable focused
+  procedure after the touched surface is known. One file owns one route; it
+  does not embed child route files or concatenate unrelated procedure.
+- A route-only companion names the explicit repository-relative owner, linked
+  from its own directory, or an exact validated lane/runner key. It never sends
+  executable procedure back to an `AGENTS.md#validation` section or relies on
+  an ambiguous bare `VALIDATION.md` target.
+- Package-wide aggregate commands are distinct procedures only when the package
+  owns that aggregate and topology validation checks its changing membership;
+  otherwise composition belongs in `config/validation_lanes.json` or an owner
+  runner.
 - The active release procedure in `docs/root/RELEASING.md` may name its narrow
   operator flow. Spark scenario payloads under `.agents/spark/scenarios/` may
   name the scenario-local checks they execute.
@@ -31,8 +40,8 @@ Use this balance when adding or moving validation:
 
 1. Put full repeated lane sequences in `config/validation_lanes.json`.
 2. Record validation-like entrypoints in `docs/validation/validator_inventory.json`.
-3. Keep local focused commands in the nearest unambiguous `VALIDATION.md` only
-   after the task has selected that owner surface.
+3. Keep local focused commands in the selected card's same-directory
+   `VALIDATION.md` only after the task has selected that owner surface.
 4. Update `docs/testing/test_inventory.json` only for test files; do not make
    tests a second validator inventory.
 5. Update topology tests when a new command store, workflow route, compatibility

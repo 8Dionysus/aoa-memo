@@ -2,11 +2,6 @@
 
 Executable validation for this part is routed through the package validation lane.
 
-Run from the repository root:
+Shared executable routes remain owned by [`mechanics/VALIDATION.md`](../../../VALIDATION.md), [`mechanics/lineage-harvest/VALIDATION.md`](../../VALIDATION.md); follow those on-demand lanes for this surface.
 
-```bash
-python scripts/mechanics/validate_memo_mechanic_parts.py
-python -m pytest -q mechanics/lineage-harvest/parts/pattern-lineage-memory-gate/tests
-```
-
-Then run the package-specific commands named in `../../AGENTS.md#validation` for any changed source docs, schemas, examples, generated companions, scripts, tests, manifests, or owner routes.
+Then follow the package-specific route in [`../../VALIDATION.md`](../../VALIDATION.md) for any changed source docs, schemas, examples, generated companions, scripts, tests, manifests, or owner routes.

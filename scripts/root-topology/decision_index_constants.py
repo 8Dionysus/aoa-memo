@@ -11,6 +11,12 @@ INDEX_CONTRACT_PATH = INDEXES_DIR / "index_contract.yaml"
 DECISION_ID_RE = re.compile(r"^- Decision ID: (AOA-MEM-D-(\d{4}))$", re.MULTILINE)
 DATE_VALUE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 FULL_ID_FILENAME_RE = re.compile(r"^(AOA-MEM-D-(\d{4}))-.+\.md$")
+DECISION_LANE_CONTROL_FILES = (
+    "AGENTS.md",
+    "README.md",
+    "TEMPLATE.md",
+    "VALIDATION.md",
+)
 
 SURFACE_CLASS_ORDER = (
     "root/topology",

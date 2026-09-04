@@ -126,3 +126,9 @@
 ## 2026-08-31
 
 - [AOA-MEM-D-0086 Prompt-Light Agent Routes and On-Demand Validation](../AOA-MEM-D-0086-prompt-light-agent-routes-and-on-demand-validation.md) (`docs/decisions/AOA-MEM-D-0086-prompt-light-agent-routes-and-on-demand-validation.md`)
+- [AOA-MEM-D-0087 One Owner per Validation Route](../AOA-MEM-D-0087-one-owner-per-validation-route.md) (`docs/decisions/AOA-MEM-D-0087-one-owner-per-validation-route.md`)
+
+## 2026-09-04
+
+- [AOA-MEM-D-0088 Explicit Validation Route Targets](../AOA-MEM-D-0088-explicit-validation-route-targets.md) (`docs/decisions/AOA-MEM-D-0088-explicit-validation-route-targets.md`)
+- [AOA-MEM-D-0089 Validation Companions Are Route Metadata](../AOA-MEM-D-0089-validation-companions-are-route-metadata.md) (`docs/decisions/AOA-MEM-D-0089-validation-companions-are-route-metadata.md`)

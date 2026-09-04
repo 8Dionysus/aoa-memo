@@ -2,11 +2,16 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+import subprocess
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 ROOT_DISTRICTS_CONFIG = REPO_ROOT / "config" / "root-topology" / "root_technical_districts.json"
-ROOT_DISTRICTS_SCHEMA_VERSION = "aoa_memo_root_technical_districts_v12"
+ROOT_DISTRICTS_SCHEMA_VERSION = "aoa_memo_root_technical_districts_v13"
+VALIDATION_COMPANION_EXCEPTION = {
+    "filename": "VALIDATION.md",
+    "requires_tracked_sibling": "AGENTS.md",
+}
 ROOT_TECHNICAL_DISTRICTS = (
     "config",
     "evals",
@@ -185,15 +190,33 @@ FORBIDDEN_ROOT_PREFIXES = {
 }
 
 
+def tracked_validation_companions() -> set[str]:
+    result = subprocess.run(
+        ("git", "-C", str(REPO_ROOT), "ls-files", "-z"),
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    if result.returncode != 0:
+        return set()
+    return {
+        (Path(path).parent / "VALIDATION.md").as_posix()
+        for path in result.stdout.split("\0")
+        if path and Path(path).name == "AGENTS.md"
+    }
+
+
 def root_files(directory: str) -> list[Path]:
     root = REPO_ROOT / directory
     if not root.exists():
         return []
+    validation_companions = tracked_validation_companions()
     return sorted(
         path
         for path in root.rglob("*")
         if path.is_file()
         and path.name != "AGENTS.md"
+        and path.relative_to(REPO_ROOT).as_posix() not in validation_companions
         and "__pycache__" not in path.relative_to(REPO_ROOT).parts
     )
 

@@ -22,7 +22,7 @@ LIFECYCLE_STATES = {
     "dropped",
 }
 ALLOWED_LANES = {"memo", "agon"}
-ROOT_ALLOWED_FILES = {"AGENTS.md", "README.md"}
+ROOT_ALLOWED_FILES = {"AGENTS.md", "README.md", "VALIDATION.md"}
 MARKDOWN_CONTRACT = "source_contract: memo_quest_markdown_contract_v1"
 REQUIRED_MARKDOWN_HEADINGS = (
     "## Quest",

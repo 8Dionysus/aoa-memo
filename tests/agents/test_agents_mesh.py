@@ -3,14 +3,20 @@ from __future__ import annotations
 import json
 import subprocess
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO_ROOT / "scripts"))
+sys.path.insert(0, str(REPO_ROOT / "scripts" / "agents"))
 
 import validation_lanes  # noqa: E402
+from validate_agents_mesh import (  # noqa: E402
+    validation_command_ownership_issues,
+    validation_route_issues,
+)
 
 
 def release_command_text() -> str:
@@ -174,6 +180,113 @@ class AgentsMeshTestCase(unittest.TestCase):
         config = json.loads((REPO_ROOT / "config" / "agents" / "agents_mesh.json").read_text())
         self.assertIn(".deps", config["ignored_directory_names"])
         self.assertIn(".deps", config["top_level_exemptions"])
+
+    def test_validation_routes_are_local_and_not_recursive_aggregates(self) -> None:
+        with tempfile.TemporaryDirectory() as raw_root:
+            root = Path(raw_root)
+            (root / "AGENTS.md").write_text("# AGENTS.md\n", encoding="utf-8")
+            nested = root / "docs" / "validation"
+            nested.mkdir(parents=True)
+            (nested / "AGENTS.md").write_text("# AGENTS.md\n", encoding="utf-8")
+            (nested / "VALIDATION.md").write_text(
+                "# VALIDATION.md\n\n"
+                "<!-- Preserved on-demand procedure from `other/VALIDATION.md`. -->\n"
+                "# VALIDATION.md\n",
+                encoding="utf-8",
+            )
+
+            issues = validation_route_issues(
+                root, ("AGENTS.md", "docs/validation/AGENTS.md")
+            )
+
+            self.assertTrue(
+                any("same-directory on-demand route is missing" in issue for issue in issues)
+            )
+            self.assertTrue(
+                any("exactly one level-1 heading" in issue for issue in issues)
+            )
+            self.assertTrue(any("aggregate marker" in issue for issue in issues))
+
+            (root / "VALIDATION.md").write_text("# Root validation\n", encoding="utf-8")
+            (nested / "VALIDATION.md").write_text(
+                "# Validator topology validation\n", encoding="utf-8"
+            )
+            self.assertEqual(
+                [],
+                validation_route_issues(
+                    root, ("AGENTS.md", "docs/validation/AGENTS.md")
+                ),
+            )
+
+    def test_validation_routes_reject_stale_or_ambiguous_command_handoffs(self) -> None:
+        with tempfile.TemporaryDirectory() as raw_root:
+            root = Path(raw_root)
+            nested = root / "docs"
+            nested.mkdir()
+            (root / "AGENTS.md").write_text("# AGENTS.md\n", encoding="utf-8")
+            (root / "VALIDATION.md").write_text("# Root validation\n", encoding="utf-8")
+            (nested / "AGENTS.md").write_text("# AGENTS.md\n", encoding="utf-8")
+            (nested / "VALIDATION.md").write_text(
+                "# Docs validation\n\n"
+                "Run from the repository root:\n\n"
+                "Shared executable routes remain owned by `VALIDATION.md`.\n"
+                "Then run commands from `../AGENTS.md#validation`.\n",
+                encoding="utf-8",
+            )
+
+            issues = validation_route_issues(
+                root, ("AGENTS.md", "docs/AGENTS.md")
+            )
+
+            self.assertTrue(any("AGENTS.md#validation" in issue for issue in issues))
+            self.assertTrue(any("bare VALIDATION.md" in issue for issue in issues))
+            self.assertTrue(any("dangling repository-root" in issue for issue in issues))
+
+            (nested / "VALIDATION.md").write_text(
+                "# Docs validation\n\n"
+                "This surface owns no distinct executable procedure. Use the "
+                "[root validation route](../VALIDATION.md).\n",
+                encoding="utf-8",
+            )
+            self.assertEqual(
+                [],
+                validation_route_issues(
+                    root, ("AGENTS.md", "docs/AGENTS.md")
+                ),
+            )
+
+    def test_validation_commands_have_one_human_owner(self) -> None:
+        with tempfile.TemporaryDirectory() as raw_root:
+            root = Path(raw_root)
+            (root / "AGENTS.md").write_text("# AGENTS.md\n", encoding="utf-8")
+            (root / "VALIDATION.md").write_text(
+                "# Root validation\n\n```bash\npython scripts/check.py --all\n```\n",
+                encoding="utf-8",
+            )
+            nested = root / "docs"
+            nested.mkdir()
+            (nested / "AGENTS.md").write_text("# AGENTS.md\n", encoding="utf-8")
+            (nested / "VALIDATION.md").write_text(
+                "# Docs validation\n\n```bash\npython scripts/check.py --all\n```\n",
+                encoding="utf-8",
+            )
+
+            issues = validation_command_ownership_issues(
+                root, ("AGENTS.md", "docs/AGENTS.md")
+            )
+            self.assertEqual(1, len(issues))
+            self.assertIn("multiple human owners", issues[0])
+
+            (nested / "VALIDATION.md").write_text(
+                "# Docs validation\n\nUse the root validation route.\n",
+                encoding="utf-8",
+            )
+            self.assertEqual(
+                [],
+                validation_command_ownership_issues(
+                    root, ("AGENTS.md", "docs/AGENTS.md")
+                ),
+            )
 
 
 if __name__ == "__main__":

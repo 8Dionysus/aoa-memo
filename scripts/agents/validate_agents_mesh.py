@@ -99,6 +99,22 @@ UNCONDITIONAL_READ_HEADING_RE = re.compile(
     r"^##\s+(?:Start here|Read before editing|Read Before Editing|Reading Order(?: Shape)?)\s*$",
     re.IGNORECASE | re.MULTILINE,
 )
+LEVEL_ONE_HEADING_RE = re.compile(r"^#\s+\S.*$", re.MULTILINE)
+AGGREGATED_VALIDATION_MARKER_RE = re.compile(
+    r"^(?:<!-- Preserved on-demand procedure from `|#{1,6}\s+Preserved inline procedure from `)",
+    re.MULTILINE,
+)
+VALIDATION_COMMAND_FENCE_RE = re.compile(
+    r"^ {0,3}```(?P<language>bash|console|sh|shell|zsh|powershell|pwsh|text|plaintext|terminal)?(?:\s+.*)?$",
+    re.IGNORECASE,
+)
+EXECUTABLE_VALIDATION_LINE_RE = re.compile(
+    r"^(?:(?:[A-Za-z_][A-Za-z0-9_]*=[^\s]+)\s+)*(?:"
+    r"python3?(?:\s+-m)?\s+|pytest(?:\s|$)|uv\s+run\s+|"
+    r"git\s+|gh\s+|aoa\s+|skills-ref\s+|ruff\s+|mypy(?:\s|$)|"
+    r"bash\s+|sh\s+)",
+    re.IGNORECASE,
+)
 
 
 def tracked_top_level_dirs(repo_root: Path) -> set[str]:
@@ -124,8 +140,165 @@ def tracked_top_level_dirs(repo_root: Path) -> set[str]:
     return tracked_dirs
 
 
+def tracked_agents_card_paths(repo_root: Path) -> tuple[str, ...]:
+    """Return every tracked AGENTS.md card, including preserved legacy cards."""
+    result = subprocess.run(
+        ("git", "-C", str(repo_root), "ls-files", "-z"),
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    if result.returncode == 0:
+        return tuple(
+            sorted(
+                rel_path
+                for rel_path in result.stdout.split("\0")
+                if rel_path and Path(rel_path).name == "AGENTS.md"
+            )
+        )
+    return tuple(
+        sorted(
+            posix_rel(path, repo_root)
+            for path in repo_root.rglob("AGENTS.md")
+            if ".git" not in path.parts and ".deps" not in path.parts
+        )
+    )
+
+
+def validation_route_issues(
+    repo_root: Path, agents_paths: tuple[str, ...]
+) -> list[str]:
+    """Keep executable procedures local and prevent recursive route aggregates."""
+    issues: list[str] = []
+    seen_routes: set[str] = set()
+    for agents_rel in agents_paths:
+        validation_rel = (Path(agents_rel).parent / "VALIDATION.md").as_posix()
+        if validation_rel in seen_routes:
+            continue
+        seen_routes.add(validation_rel)
+        validation_path = repo_root / validation_rel
+        if not validation_path.is_file() or validation_path.is_symlink():
+            issues.append(
+                f"{agents_rel}: same-directory on-demand route is missing: {validation_rel}"
+            )
+            continue
+        text = validation_path.read_text(encoding="utf-8")
+        level_one_headings = LEVEL_ONE_HEADING_RE.findall(text)
+        if len(level_one_headings) != 1:
+            issues.append(
+                f"{validation_rel}: must contain exactly one level-1 heading, "
+                f"found {len(level_one_headings)}"
+            )
+        marker = AGGREGATED_VALIDATION_MARKER_RE.search(text)
+        if marker:
+            issues.append(
+                f"{validation_rel}: contains embedded validation-route aggregate marker "
+                f"{marker.group(0)!r}"
+            )
+        if re.search(r"AGENTS\.md#validation\b", text, re.IGNORECASE):
+            issues.append(
+                f"{validation_rel}: executable procedure must not route back to AGENTS.md#validation"
+            )
+        if "Shared executable routes remain owned by `VALIDATION.md`" in text:
+            issues.append(
+                f"{validation_rel}: nested validation owner must be an explicit linked path or lane, not bare VALIDATION.md"
+            )
+        lines = text.splitlines()
+        for index, line in enumerate(lines):
+            if line.strip().lower() != "run from the repository root:":
+                continue
+            cursor = index + 1
+            while cursor < len(lines) and not lines[cursor].strip():
+                cursor += 1
+            if cursor >= len(lines) or not lines[cursor].lstrip().startswith("```"):
+                issues.append(
+                    f"{validation_rel}:{index + 1}: dangling repository-root command lead-in"
+                )
+    return issues
+
+
+def _validation_commands(text: str) -> list[tuple[int, str]]:
+    """Extract normalized executable invocations from command fences."""
+    commands: list[tuple[int, str]] = []
+    in_command_fence = False
+    buffer: list[str] = []
+    start_line = 0
+
+    def flush() -> None:
+        nonlocal buffer, start_line
+        if not buffer:
+            return
+        command = " ".join(part.strip().rstrip("\\`").strip() for part in buffer)
+        command = re.sub(r"\s+", " ", command).strip()
+        if EXECUTABLE_VALIDATION_LINE_RE.match(command):
+            commands.append((start_line, command))
+        buffer = []
+        start_line = 0
+
+    for line_number, raw_line in enumerate(text.splitlines(), start=1):
+        stripped = raw_line.strip()
+        if not in_command_fence:
+            if VALIDATION_COMMAND_FENCE_RE.match(raw_line):
+                in_command_fence = True
+            continue
+        if stripped.startswith("```"):
+            flush()
+            in_command_fence = False
+            continue
+        if not stripped or stripped.startswith("#"):
+            flush()
+            continue
+        line = re.sub(r"^(?:\$|PS>)\s*", "", stripped)
+        if buffer:
+            buffer.append(line)
+            if not line.endswith(("\\", "`")):
+                flush()
+            continue
+        if EXECUTABLE_VALIDATION_LINE_RE.match(line):
+            buffer = [line]
+            start_line = line_number
+            if not line.endswith(("\\", "`")):
+                flush()
+    flush()
+    return commands
+
+
+def validation_command_ownership_issues(
+    repo_root: Path, agents_paths: tuple[str, ...]
+) -> list[str]:
+    """Reject copied executable invocations across on-demand route owners."""
+    occurrences: dict[str, list[tuple[str, int]]] = {}
+    validation_paths = {
+        (Path(agents_rel).parent / "VALIDATION.md").as_posix()
+        for agents_rel in agents_paths
+    }
+    for validation_rel in sorted(validation_paths):
+        path = repo_root / validation_rel
+        if not path.is_file() or path.is_symlink():
+            continue
+        for line_number, command in _validation_commands(
+            path.read_text(encoding="utf-8")
+        ):
+            occurrences.setdefault(command, []).append(
+                (validation_rel, line_number)
+            )
+
+    issues: list[str] = []
+    for command, locations in sorted(occurrences.items()):
+        if len(locations) < 2:
+            continue
+        rendered = ", ".join(f"{path}:{line}" for path, line in locations)
+        issues.append(
+            f"validation command has multiple human owners: {command!r} ({rendered})"
+        )
+    return issues
+
+
 def validate(repo_root: Path) -> list[str]:
     issues: list[str] = route_residue_issues(repo_root)
+    agents_paths = tracked_agents_card_paths(repo_root)
+    issues.extend(validation_route_issues(repo_root, agents_paths))
+    issues.extend(validation_command_ownership_issues(repo_root, agents_paths))
     config = load_mesh_config(repo_root)
 
     for key in REQUIRED_CONFIG_REFS:

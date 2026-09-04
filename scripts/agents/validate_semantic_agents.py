@@ -25,7 +25,6 @@ REQUIRED_DOCS: tuple[AgentsDocSpec, ...] = (
             'Manual isolated',
             'Green output',
             'makes no outcome claim.',
-            'skills-ref validate',
         ),
     ),
     AgentsDocSpec(
@@ -57,6 +56,13 @@ REQUIRED_DOCS: tuple[AgentsDocSpec, ...] = (
             'public-safe',
             'nearest `VALIDATION.md` route',
         ),
+    ),
+)
+
+REQUIRED_VALIDATION_DOCS: tuple[AgentsDocSpec, ...] = (
+    AgentsDocSpec(
+        Path('skills/VALIDATION.md'),
+        ('skills-ref validate',),
     ),
 )
 
@@ -147,6 +153,21 @@ def validate(repo_root: Path = REPO_ROOT) -> list[str]:
         text = path.read_text(encoding="utf-8")
         if not text.strip().startswith("# AGENTS.md"):
             issues.append(f"{spec.path.as_posix()}: must start with '# AGENTS.md'")
+        for snippet in spec.required_snippets:
+            if snippet not in text:
+                issues.append(
+                    f"{spec.path.as_posix()}: missing required snippet {snippet!r}"
+                )
+    for spec in REQUIRED_VALIDATION_DOCS:
+        path = repo_root / spec.path
+        if not path.is_file():
+            issues.append(f"{spec.path.as_posix()}: file is missing")
+            continue
+        text = path.read_text(encoding="utf-8")
+        if not text.strip().startswith("# Owner Skill Validation"):
+            issues.append(
+                f"{spec.path.as_posix()}: must start with '# Owner Skill Validation'"
+            )
         for snippet in spec.required_snippets:
             if snippet not in text:
                 issues.append(

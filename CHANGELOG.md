@@ -9,6 +9,14 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Added
 
+- Add decisions `AOA-MEM-D-0086` and `AOA-MEM-D-0087`: inherited
+  `AGENTS.md` cards retain semantic delta, routing, and stop-lines while exact
+  focused procedure moves to one same-directory `VALIDATION.md` per owner
+  card; recursive route aggregates are rejected.
+- Add decisions `AOA-MEM-D-0088` and `AOA-MEM-D-0089`: delegated validation
+  routes must name their exact owner, while a same-directory `VALIDATION.md`
+  is topology metadata only beside a tracked `AGENTS.md`, never ordinary
+  doctrine, quest, manifest, or technical payload.
 - Add decision `AOA-MEM-D-0085` and owner-authored MCP capability contours for
   reviewed durable-memory reads and candidate-only handoff preparation. The
   read/candidate identities remain disjoint and grant no direct durable write,
@@ -40,6 +48,9 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Changed
 
+- Split the repository-wide and mechanic-package validation aggregates into
+  owner-local on-demand companions, preserving focused commands while avoiding
+  unrelated procedure preload.
 - Treat `aoa-kag://` evidence references as symbolic owner refs in reviewed
   intake validation while continuing to require packet-local candidate and
   receipt references for landing authorization.

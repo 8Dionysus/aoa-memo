@@ -6,19 +6,8 @@ On-demand human procedure for `mechanics/governance/AGENTS.md`.
 
 ### Preserved route from `mechanics/governance/AGENTS.md`
 
+Shared executable routes remain owned by [`mechanics/VALIDATION.md`](../VALIDATION.md); follow those on-demand lanes for this surface.
 ```bash
-python scripts/mechanics/validate_memo_mechanics.py
-python scripts/mechanics/build_memo_mechanics_index.py --check
-python scripts/mechanics/validate_memo_mechanics_index.py
-python -m pytest -q mechanics/governance/parts/governance-boundary/tests tests/mechanics/test_memo_mechanics.py
+python -m pytest -q mechanics/governance/parts tests/mechanics/test_memo_mechanics.py
 ```
-```bash
-python scripts/release/release_check.py
-```
-
-<!-- Preserved on-demand procedure from `mechanics/governance/docs/VALIDATION.md`. -->
-# VALIDATION.md
-
-On-demand human procedure for this route.
-
-## On-demand procedure
+This surface owns only the focused or composite invocations shown here; linked parent routes own wider/shared lanes.

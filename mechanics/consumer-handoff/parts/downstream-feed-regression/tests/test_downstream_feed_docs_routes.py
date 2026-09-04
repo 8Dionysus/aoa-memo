@@ -39,9 +39,12 @@ class MemoDownstreamFeedDocsRouteTests(unittest.TestCase):
             self.assertNotIn(command, readme)
             self.assertNotIn(command, root_agents)
         self.assertIn("config/validation_lanes.json", root_agents)
-        self.assertIn("nearest `VALIDATION.md`", root_agents)
+        self.assertIn("same-directory `VALIDATION.md`", root_agents)
         self.assertIn("docs/validation/COMMAND_AUTHORITY.md", root_agents)
-        self.assertIn("docs/validation/validator_inventory.json", root_agents)
+        validation_agents = (
+            REPO_ROOT / "docs" / "validation" / "AGENTS.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("validator_inventory.json", validation_agents)
 
         for command in (
             "python scripts/memory/generate_memory_object_surfaces.py",

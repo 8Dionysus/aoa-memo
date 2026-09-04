@@ -39,6 +39,13 @@ def validate_payload(payload: dict[str, Any]) -> list[str]:
         issues.append(f"{_rel(GENERATED_PATH)} must name its builder")
     if payload.get("route_card_exception") != config.get("route_card_exception"):
         issues.append(f"{_rel(GENERATED_PATH)} must mirror route_card_exception from {CONFIG_REF}")
+    if payload.get("validation_companion_exception") != config.get(
+        "validation_companion_exception"
+    ):
+        issues.append(
+            f"{_rel(GENERATED_PATH)} must mirror validation_companion_exception "
+            f"from {CONFIG_REF}"
+        )
     if payload.get("district_order") != list(DISTRICT_ORDER):
         issues.append(f"{_rel(GENERATED_PATH)} must preserve root district order")
 

@@ -9,6 +9,9 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO_ROOT / "scripts" / "mechanics"))
 
 from validate_mechanic_artifact_topology import validate  # noqa: E402
+from mechanic_artifact_topology_common import (  # noqa: E402
+    tracked_validation_companions,
+)
 
 
 MAX_MECHANIC_ARTIFACT_TOPOLOGY_ENTRYPOINT_LINES = 180
@@ -21,6 +24,26 @@ REQUIRED_MECHANIC_ARTIFACT_TOPOLOGY_MODULES = {
 
 def test_single_mechanic_artifacts_do_not_return_to_root_technical_dirs() -> None:
     assert validate() == []
+
+
+def test_validation_companion_exception_is_bounded_to_tracked_route_cards() -> None:
+    payload = json.loads(
+        (
+            REPO_ROOT
+            / "config"
+            / "root-topology"
+            / "root_technical_districts.json"
+        ).read_text()
+    )
+    companions = tracked_validation_companions()
+
+    assert payload["validation_companion_exception"] == {
+        "filename": "VALIDATION.md",
+        "requires_tracked_sibling": "AGENTS.md",
+    }
+    assert "config/VALIDATION.md" in companions
+    assert "manifests/VALIDATION.md" in companions
+    assert all((REPO_ROOT / path).with_name("AGENTS.md").is_file() for path in companions)
 
 
 def test_mechanic_artifact_topology_validator_stays_split() -> None:

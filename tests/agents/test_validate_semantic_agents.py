@@ -21,6 +21,20 @@ def load_validator():
     return module
 
 
+def write_required_docs(module, root: Path) -> None:
+    for spec in module.REQUIRED_DOCS:
+        path = root / spec.path
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text("# AGENTS.md\n" + "\n".join(spec.required_snippets) + "\n", encoding="utf-8")
+    for spec in module.REQUIRED_VALIDATION_DOCS:
+        path = root / spec.path
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(
+            "# Owner Skill Validation\n" + "\n".join(spec.required_snippets) + "\n",
+            encoding="utf-8",
+        )
+
+
 class ValidateSemanticAgentsTests(unittest.TestCase):
     def test_repository_semantic_docs_validate(self) -> None:
         module = load_validator()
@@ -30,10 +44,7 @@ class ValidateSemanticAgentsTests(unittest.TestCase):
         module = load_validator()
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
-            for spec in module.REQUIRED_DOCS:
-                path = root / spec.path
-                path.parent.mkdir(parents=True, exist_ok=True)
-                path.write_text("# AGENTS.md\n" + "\n".join(spec.required_snippets) + "\n", encoding="utf-8")
+            write_required_docs(module, root)
             missing = root / module.REQUIRED_DOCS[0].path
             missing.unlink()
             issues = module.validate(root)
@@ -43,10 +54,7 @@ class ValidateSemanticAgentsTests(unittest.TestCase):
         module = load_validator()
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
-            for spec in module.REQUIRED_DOCS:
-                path = root / spec.path
-                path.parent.mkdir(parents=True, exist_ok=True)
-                path.write_text("# AGENTS.md\n" + "\n".join(spec.required_snippets) + "\n", encoding="utf-8")
+            write_required_docs(module, root)
             target_spec = module.REQUIRED_DOCS[0]
             target = root / target_spec.path
             first_snippet = target_spec.required_snippets[0]
@@ -77,15 +85,23 @@ class ValidateSemanticAgentsTests(unittest.TestCase):
         module = load_validator()
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
-            for spec in module.REQUIRED_DOCS:
-                path = root / spec.path
-                path.parent.mkdir(parents=True, exist_ok=True)
-                path.write_text("# AGENTS.md\n" + "\n".join(spec.required_snippets) + "\n", encoding="utf-8")
+            write_required_docs(module, root)
             target = root / module.REQUIRED_DOCS[0].path
             target.write_text(target.read_text(encoding="utf-8") + "\n## Validation\nRun checks:\n\n## Closeout\n", encoding="utf-8")
             issues = module.validate(root)
         residue_issues = [issue for issue in issues if "dangling validation lead-in" in issue]
         self.assertEqual(1, len(residue_issues))
+
+    def test_skill_command_is_owned_by_validation_surface(self) -> None:
+        module = load_validator()
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            write_required_docs(module, root)
+            validation = root / module.REQUIRED_VALIDATION_DOCS[0].path
+            validation.write_text("# Owner Skill Validation\n", encoding="utf-8")
+            issues = module.validate(root)
+        self.assertTrue(any("skills-ref validate" in issue for issue in issues))
+
     def test_route_residue_guard_ignores_fenced_design_example(self) -> None:
         module = load_validator()
         with tempfile.TemporaryDirectory() as tmp:

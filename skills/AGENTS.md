@@ -31,9 +31,9 @@ mechanic, or boundary owner.
 ## Validation
 
 Manual isolated, negative, held-out, coexistence, and bounded-write tasks
-decide usefulness. `skills-ref validate skills/aoa-memo` checks portable shape.
-The pinned `aoa-skills` composite action checks owner, manifest, source, and
-package digest; the OS installer owns installed byte/mode parity. Green output
+decide usefulness. The local validation route checks portable source shape;
+the pinned `aoa-skills` composite action checks owner, manifest, source, and
+package digest. The OS installer owns installed byte/mode parity. Green output
 makes no outcome claim.
 
 ## Closeout

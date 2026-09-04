@@ -46,7 +46,7 @@ Local `AGENTS.md` cards own:
 
 - local source classes
 - local risk and stop-lines
-- exact local checks
+- local validation selection and route
 - local generated/source alignment rules
 
 They should route to source docs and validators rather than duplicating long
@@ -200,10 +200,12 @@ docs.
 
 Reusable machine command sequences are authoritative in
 `config/validation_lanes.json`; focused human procedure is on demand in the
-nearest unambiguous `VALIDATION.md`. Active agent cards name the applicable
-lane or route and preserve semantic owner boundaries, but do not carry
-runnable command blocks or unconditional README inventories. This design
-surface only names what agent-facing validation should prove.
+same-directory `VALIDATION.md` owned by the selected route card. One validation
+file carries one owner route: it does not embed child route files or concatenate
+unrelated procedure. Active agent cards name the applicable lane or route and
+preserve semantic owner boundaries, but do not carry runnable command blocks
+or unconditional README inventories. This design surface only names what
+agent-facing validation should prove.
 
 The AGENTS mesh generated companion checks:
 

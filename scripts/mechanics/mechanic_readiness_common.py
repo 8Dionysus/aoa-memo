@@ -6,6 +6,7 @@ from typing import Any
 from mechanic_readiness_build import (
     _has_runnable_local_test_routes,
     _local_test_dirs,
+    _validation_owner_refs,
     build_package_readiness,
     build_readiness,
 )
@@ -21,10 +22,9 @@ from mechanic_readiness_constants import (
     OWNER_ROUTE_INDEX_REF,
     PACKAGE_SURFACES,
     READINESS_CHECKS,
-    REQUIRED_VALIDATION_REFS,
     SCHEMA_VERSION,
     SOURCE_OF_TRUTH,
-    SUPPORTING_VALIDATION_REFS,
+    VALIDATION_ROUTE_CONTRACT,
 )
 from mechanic_readiness_validate import validate_payload
 
@@ -45,12 +45,12 @@ __all__ = [
     "OWNER_ROUTE_INDEX_REF",
     "PACKAGE_SURFACES",
     "READINESS_CHECKS",
-    "REQUIRED_VALIDATION_REFS",
     "SCHEMA_VERSION",
     "SOURCE_OF_TRUTH",
-    "SUPPORTING_VALIDATION_REFS",
+    "VALIDATION_ROUTE_CONTRACT",
     "_has_runnable_local_test_routes",
     "_local_test_dirs",
+    "_validation_owner_refs",
     "build_package_readiness",
     "build_readiness",
     "render_readiness",
