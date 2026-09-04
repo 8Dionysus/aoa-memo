@@ -272,9 +272,9 @@ Before moving a root technical artifact into a mechanic:
 Legacy preserves placement history and provenance. It is not an artifact
 parking lot.
 
-Do not put active schemas, examples, generated outputs, scripts, or tests under
-`legacy/` unless they are intentionally preserved as old evidence and are
-indexed as legacy.
+Do not create a replacement archive directory for retired schemas, examples,
+generated outputs, scripts, or tests. Historical evidence remains recoverable
+from the immutable owner Git baseline recorded by the retirement decision.
 
 ## Validation
 

@@ -61,7 +61,6 @@ class AgentsMeshTestCase(unittest.TestCase):
         self.assertTrue(
             {
                 ".agents/AGENTS.md",
-                ".agents/spark/AGENTS.md",
                 ".github/AGENTS.md",
                 "AGENTS.md",
                 "docs/decisions/AGENTS.md",
@@ -127,13 +126,9 @@ class AgentsMeshTestCase(unittest.TestCase):
         ):
             self.assertIn(snippet, text)
 
-    def test_release_check_runs_spark_lane_gate(self) -> None:
+    def test_release_check_has_no_retired_spark_lane_gate(self) -> None:
         text = release_command_text()
-        for snippet in (
-            ".agents/spark/scripts/validate_spark_lane.py",
-            ".agents/spark/tests",
-        ):
-            self.assertIn(snippet, text)
+        self.assertNotIn(".agents/spark", text)
 
     def test_neighbor_doc_boundary_rules_pin_agents_owned_guidance(self) -> None:
         config = json.loads((REPO_ROOT / "config" / "agents" / "agents_mesh.json").read_text())

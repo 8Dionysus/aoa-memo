@@ -190,7 +190,7 @@ class MemoMechanicsTestCase(unittest.TestCase):
             "retention",
         ):
             self.assertTrue((REPO_ROOT / "mechanics" / slug / "docs" / "AGENTS.md").is_file())
-            self.assertTrue((REPO_ROOT / "mechanics" / slug / "legacy" / "AGENTS.md").is_file())
+            self.assertFalse((REPO_ROOT / "mechanics" / slug / "legacy").exists())
 
 
 if __name__ == "__main__":

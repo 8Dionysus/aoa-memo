@@ -223,23 +223,6 @@
       "status": "active"
     },
     {
-      "family": "trace/eval",
-      "paths": [
-        ".agents/spark/scripts/validate_spark_lane.py"
-      ],
-      "protects": "repo-local Spark lane scenario registry, stop-lines, and release route participation",
-      "owner_surface": ".agents/spark/AGENTS.md",
-      "layer": "trace_eval",
-      "lane": "eval/release",
-      "mode": "blocking",
-      "callers": [
-        "config/validation_lanes.json",
-        ".agents/AGENTS.md"
-      ],
-      "failure_route": "Fix the Spark lane registry, scenario, or local tests; full trajectory grading routes to aoa-evals.",
-      "status": "active"
-    },
-    {
       "family": "observability/audit",
       "paths": [
         "scripts/memory/validate_lifecycle_audit_examples.py",

@@ -37,9 +37,8 @@
     },
     "trace_eval": {
       "status": "routed",
-      "repo_role": "Spark lane and guardrail fixtures stay local; full multi-turn trajectory grading routes to aoa-evals",
+      "repo_role": "Guardrail fixtures stay local; full multi-turn trajectory grading routes to aoa-evals",
       "primary_entries": [
-        "agent-lane/spark",
         "memory/eval-guardrails"
       ]
     },
@@ -89,19 +88,6 @@
     "failure_route"
   ],
   "entries": [
-    {
-      "family": "agent-lane/spark",
-      "paths": [
-        ".agents/spark/tests/test_spark_lane.py"
-      ],
-      "protects": "Spark lane route contract and scenario registry",
-      "owner_surface": ".agents/spark/AGENTS.md",
-      "lane": "agents",
-      "mode": "blocking",
-      "runtime_cost": "fast",
-      "focused_target": ".agents/spark/tests",
-      "failure_route": "Fix .agents/spark/AGENTS.md before widening the lane."
-    },
     {
       "family": "mechanics/adoption",
       "paths": [

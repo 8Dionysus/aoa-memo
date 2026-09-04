@@ -10,12 +10,12 @@ and agent-facing lane contracts.
 ## Source
 
 Tests here protect `config/agents/agents_mesh.json`, canonical `skills/` route
-cards, derived `.agents/` route cards, and Spark lane contracts.
+cards and derived `.agents/` route cards.
 
 ## Route
 
 - Up: `tests/AGENTS.md`, then `AGENTS.md`.
-- Across: `scripts/agents/` and `.agents/spark/`.
+- Across: `scripts/agents/`.
 - Downstream: `generated/agents/`.
 
 ## Validation route

@@ -80,7 +80,7 @@ to the owning repository.
 - [LANDING_LOG](LANDING_LOG.md)
 - [ROADMAP](ROADMAP.md)
 - [docs](docs/)
-- [legacy index](legacy/INDEX.md)
+- Historical recovery: see [AOA-MEM-D-0090](../../docs/decisions/AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md).
 
 ## Functioning Parts
 
@@ -88,7 +88,7 @@ The active part map is [PARTS](PARTS.md). Source docs live in [docs](docs/).
 
 ## Historical Provenance
 
-Use [PROVENANCE](PROVENANCE.md) first. Use [legacy](legacy/README.md) only when
+Use [PROVENANCE](PROVENANCE.md) first. Historical recovery is pinned in [AOA-MEM-D-0090](../../docs/decisions/AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md).
 auditing old root technical placement.
 
 ## Owner Boundary

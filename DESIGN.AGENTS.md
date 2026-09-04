@@ -82,16 +82,13 @@ The long-term mesh should make these lanes explicit:
 - the OS-level `os-user-default` profile for one managed Codex exposure of the
   owner bundle, never for a second owner or copied shared catalog
 - `.agents/` for agent-facing derived companions and maintained lanes
-- `.agents/spark/` for registry-backed Codex Spark launch, result, handoff,
-  validation, and scenario packets; it is a fast lane, not memory doctrine or
-  mechanic law
 - `MEMORY_INDEX.md` for compact memory-canon routing before deeper doctrine
 - `stats/` for memo-owned statistical questions, contracts, and reference
   packets governed by the shared `aoa-stats` grammar
 - `docs/` for memory doctrine and route maps
 - `mechanics/` for repeatable adoption, consumer handoff, operational gate,
   recurrence support, lineage harvest, questbook, writeback, and retention
-  mechanics with owner maps, active docs subroutes, legacy bridges, and
+  mechanics with owner maps, active docs subroutes, provenance bridges, and
   artifact placement law
 - `schemas/` for contracts
 - `examples/` for public-safe object and support examples
@@ -119,21 +116,8 @@ The owner skill home and runtime exposure are deliberately asymmetric:
 admits it to one OS-managed user copy. Shared or owner bundles must not be
 vendored into `.agents/`.
 
-The Spark lane has its own registry-backed machine shape:
-
-- `.agents/spark/registry.json` is the scenario source for Spark entrypoints.
-- `.agents/spark/scenarios/**` holds launch prompts, result templates, handoff
-  templates, and examples for one-scenario work.
-- `.agents/spark/scripts/validate_spark_lane.py` checks scenario shape,
-  registered-vs-discovered parity, packet markers, storage homes, schemas, and
-  release-check wiring.
-- `.agents/spark/tests/test_spark_lane.py` keeps the validator honest with
-  positive and negative cases.
-
-This lane is useful because future Spark sessions can start, finish, or hand
-off without inventing a route. It stays weaker than memory source docs,
-schemas, examples, mechanics, builders, validators, and sibling-owner
-repositories.
+Retired agent lanes and former mechanic staging trees are recoverable only
+through the pinned Git history recorded in `docs/decisions/`.
 
 ## Conditional source route
 When a task touches agent-surface form, follow this conditional route:
@@ -213,14 +197,6 @@ The AGENTS mesh generated companion checks:
 - root and local cards preserve source-owner boundaries
 - generated mesh output is reproducible
 - `.agents/` lanes do not live as root civic surfaces by accident
-
-The Spark lane contract checks:
-
-- scenario registry shape
-- prompt/result/handoff packet shape
-- scenario directory parity
-- public-safe memory stop-lines
-- release gate wiring
 
 Tests also pin this design file, required route links, the decision lane, and
 the mesh validator path.

@@ -62,7 +62,6 @@ readable gate rather than an omnibus rules file.
 | `agents/*` | AGENTS mesh, owner-skill route cards, and derived agent lanes | `DESIGN.AGENTS.md`, `skills/`, `.agents/`, `config/agents/agents_mesh.json` | `topology` / `agents` | Fix route-card source or mesh config before changing generated readouts. |
 | `root/*` | root placement law, docs districts, roadmap parity, root technical atlas, and topology spine | `docs/root/ROOT_SURFACE_LAW.md`, `config/root-topology/root_technical_districts.json`, `ROADMAP.md` | `topology` | Fix root topology source, builder, or generated atlas before widening release validation. |
 | `validation/test-topology` | validator topology, validation lane manifest, release gate composition, CI lane selection, and test inventory coverage | `docs/validation/VALIDATOR_TOPOLOGY.md`, `docs/testing/TEST_TOPOLOGY.md`, `config/validation_lanes.json` | `topology` | Fix validator topology, lane manifest, loader, or inventory before changing workflow YAML. |
-| `agent-lane/spark` | Spark lane registry, scenarios, templates, stop-lines, and lane validator | `.agents/spark/AGENTS.md` | `agents` | Fix the Spark lane source, registry, scenario files, or validator before release. |
 
 ## Agentic Test Layers
 
@@ -75,7 +74,7 @@ belongs to runtime and eval owners.
 | Contract core | schemas, owner surfaces, AGENTS mesh, root topology, generated parity, and validation lane contracts | implemented |
 | Tool boundary | memo-side export, handoff, local port, and argument-boundary regressions | implemented |
 | Scenario replay | deterministic fixture replay for Questbook projections, live receipts, guardrail packs, and reviewed intake | implemented |
-| Trace eval | Spark lane and guardrail fixtures stay local; full multi-turn trajectory grading routes to `aoa-evals` | routed |
+| Trace eval | Guardrail fixtures stay local; full multi-turn trajectory grading routes to `aoa-evals` | routed |
 | State/memory/session | reviewed corpus, memory context boundaries, generated memory read models, local memo-port state, and provenance fixtures | implemented |
 | Fault/safety | missing external schemas, stale refs, permission drift, contradiction fixtures, path escape, malformed IDs, and unhydrated object refs | implemented |
 | Offline/online loop | offline deterministic gates live here; live canaries and production trace sampling route to runtime/eval owners | routed |

@@ -23,7 +23,7 @@ Release orchestration routes through `scripts/release/release_check.py`.
 - Up: `docs/AGENTS.md`, then `AGENTS.md`.
 - Across: `docs/validation/AGENTS.md`, `config/validation_lanes.json`,
   `scripts/validation_lanes.py`, and `scripts/ci_gate.py`.
-- Downstream: `tests/`, mechanic-local tests, `.agents/spark/tests/`, and the
+- Downstream: `tests/` and mechanic-local tests, plus the
   release gate.
 
 ## Validation route

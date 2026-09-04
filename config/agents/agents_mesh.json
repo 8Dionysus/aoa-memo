@@ -29,16 +29,6 @@
       ]
     },
     {
-      "path": ".agents/spark/AGENTS.md",
-      "min_lines": 35,
-      "required_snippets": [
-        "only governs work started from `.agents/spark/`",
-        "fast-loop lane",
-        "memory remains explicit and bounded",
-        "Reporting contract"
-      ]
-    },
-    {
       "path": ".github/AGENTS.md",
       "min_lines": 20,
       "required_snippets": [
@@ -975,8 +965,7 @@
       "min_lines": 15,
       "required_snippets": [
         "tests/agents/",
-        "AGENTS mesh",
-        "Spark"
+        "AGENTS mesh"
       ]
     },
     {
@@ -1010,8 +999,7 @@
     ".deps",
     ".git",
     ".pytest_cache",
-    "__pycache__",
-    "legacy"
+    "__pycache__"
   ],
   "neighbor_doc_boundaries": [
     {

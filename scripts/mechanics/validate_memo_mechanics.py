@@ -151,11 +151,8 @@ def validate() -> list[str]:
             issues.append(f"{forbidden} should not exist; use mechanics/<slug>/")
 
     allowed_provenance_refs = {
-        f"mechanics/{package['slug']}/legacy/INDEX.md" for package in config["packages"]
-    }
-    allowed_provenance_refs.update(
         f"mechanics/{package['slug']}/PROVENANCE.md" for package in config["packages"]
-    )
+    }
     allowed_provenance_refs.add("config/mechanics/memo_mechanics.json")
     allowed_provenance_refs.add("generated/mechanics/mechanic_artifacts.min.json")
     allowed_provenance_refs.update(
@@ -166,10 +163,6 @@ def validate() -> list[str]:
         former_path: re.compile(rf"(?<![A-Za-z0-9_./-]){re.escape(former_path)}")
         for former_path in all_former_flat_paths
     }
-
-    allowed_legacy_prefixes = tuple(
-        f"mechanics/{package['slug']}/legacy/" for package in config["packages"]
-    )
 
     for path in tracked_files():
         if not is_text_candidate(path):
@@ -182,7 +175,6 @@ def validate() -> list[str]:
             if (
                 pattern.search(text)
                 and rel not in allowed_provenance_refs
-                and not rel.startswith(allowed_legacy_prefixes)
             ):
                 issues.append(f"{rel}: contains stale flat mechanics source ref {former_path}")
 

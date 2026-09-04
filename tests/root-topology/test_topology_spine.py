@@ -41,24 +41,11 @@ class TopologySpineTestCase(unittest.TestCase):
                 "MEMORY_INDEX.md",
                 "Docs-Root Principle",
                 "Migration Procedure Before Moving Flat Docs",
-                ".agents/spark/",
             ),
             ".agents/AGENTS.md": (
                 "agent-facing derived district",
                 ".agents/<lane>/",
                 "nearest `VALIDATION.md` route",
-            ),
-            ".agents/spark/AGENTS.md": (
-                "only governs work started from `.agents/spark/`",
-                "fast-loop lane",
-                "memory remains explicit and bounded",
-                "done-or-handoff",
-            ),
-            ".agents/spark/SWARM.md": (
-                ".agents/spark/SWARM.md",
-                "memory seam",
-                "memory did not become proof",
-                ".agents/spark/registry.json",
             ),
             "docs/decisions/AGENTS.md": (
                 "Decision records",
@@ -76,12 +63,6 @@ class TopologySpineTestCase(unittest.TestCase):
                 "Do not move flat docs in this change",
                 "Do not move root `Spark/` as part of this topology-spine decision",
                 "Memory remains weaker than proof",
-            ),
-            "docs/decisions/AOA-MEM-D-0039-spark-agent-lane-home.md": (
-                "Move Spark Agent Lane Under `.agents`",
-                "Move root `Spark/` to `.agents/spark/`",
-                "This change does not move flat `docs/` surfaces",
-                "Spark remains a fast-loop helper",
             ),
         }
 
@@ -128,15 +109,11 @@ class TopologySpineTestCase(unittest.TestCase):
 
         self.assertIn("source-authored topology spine", changelog)
         self.assertIn("MEMORY_INDEX.md", changelog)
-        self.assertIn(".agents/spark/", changelog)
 
-    def test_spark_lane_moved_out_of_root(self) -> None:
+    def test_retired_spark_lane_is_absent(self) -> None:
         self.assertFalse((REPO_ROOT / "Spark").exists())
         self.assertTrue((REPO_ROOT / ".agents" / "AGENTS.md").is_file())
-        self.assertTrue((REPO_ROOT / ".agents" / "spark" / "AGENTS.md").is_file())
-        self.assertTrue((REPO_ROOT / ".agents" / "spark" / "SWARM.md").is_file())
-        self.assertTrue((REPO_ROOT / ".agents" / "spark" / "registry.json").is_file())
-        self.assertTrue((REPO_ROOT / ".agents" / "spark" / "scripts" / "validate_spark_lane.py").is_file())
+        self.assertFalse((REPO_ROOT / ".agents" / "spark").exists())
 
     def test_decision_indexes_are_generated_from_canonical_ids(self) -> None:
         by_number = (REPO_ROOT / "docs" / "decisions" / "indexes" / "by-number.md").read_text(

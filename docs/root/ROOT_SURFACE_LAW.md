@@ -137,7 +137,7 @@ together.
 | `MEMORY_INDEX.md` | add | root memory-canon index | the memory layer needs a compact public map for object kinds, support objects, recall modes, temperature vocabulary, source families, and generated companions without making `README.md` carry canon detail |
 | `docs/README.md` | add | docs district map | flat docs need a navigable map before migration |
 | `docs/decisions/` | add | decision rationale lane | topology choices need durable rationale without bloating active docs |
-| `Spark/` | moved | `.agents/spark/` | maintained agent lanes should live under `.agents/`, not as root civic surfaces |
+| `Spark/` and retired mechanic staging trees | retired | pinned Git baseline in `AOA-MEM-D-0090` | retired scaffolding must not remain an active route or validator surface |
 | `config/agents/agents_mesh.json` | add | config source for current route-card mesh | route cards need a machine-checkable source before docs districts move |
 | `generated/agents/agents_mesh.min.json` | add | generated companion mirror | the mesh is inspectable without treating generated output as authority |
 | `memo/` | add | reviewed memory corpus district | durable reviewed memory objects need a source-owned bundle home separate from local repo memo ports, examples, and generated read models |

@@ -72,7 +72,7 @@ to the owning source repository.
 - [PROVENANCE](PROVENANCE.md)
 - [LANDING_LOG](LANDING_LOG.md)
 - [ROADMAP](ROADMAP.md)
-- [legacy index](legacy/INDEX.md)
+- Historical recovery: see [AOA-MEM-D-0090](../../docs/decisions/AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md).
 
 ## Functioning Parts
 
@@ -82,7 +82,7 @@ Runnable Titan schemas, examples, and tests live under the nearest
 
 ## Historical Provenance
 
-Use [PROVENANCE](PROVENANCE.md) first. Use [legacy](legacy/README.md) only when
+Use [PROVENANCE](PROVENANCE.md) first. Historical recovery is pinned in [AOA-MEM-D-0090](../../docs/decisions/AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md).
 auditing old flat docs-root or transitional docs-district placement.
 
 ## Owner Boundary
