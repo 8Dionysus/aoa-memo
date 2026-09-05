@@ -52,6 +52,32 @@ class MemoMechanicsTestCase(unittest.TestCase):
 
         self.assertNotIn(str(deleted_path), "\n".join(issues))
 
+    def test_stale_path_scan_preserves_boundaries_and_provenance(self) -> None:
+        config = memo_mechanics_validator.load_config()
+        package = next(p for p in config["packages"] if p["former_flat_paths"])
+        former = package["former_flat_paths"][0]
+        read_text = Path.read_text
+        for rel, text, rejected in (
+            ("tests/mechanics/test_memo_mechanics.py", f"[{former}]", True),
+            ("tests/mechanics/test_memo_mechanics.py", f"é{former}", True),
+            ("tests/mechanics/test_memo_mechanics.py", f"parent/{former}", False),
+            ("tests/mechanics/test_memo_mechanics.py", f"x{former}", False),
+            ("tests/mechanics/test_memo_mechanics.py", "no retired reference", False),
+            (f"mechanics/{package['slug']}/PROVENANCE.md", former, False),
+        ):
+            path = REPO_ROOT / rel
+            with self.subTest(rel=rel, text=text), mock.patch.object(
+                memo_mechanics_validator, "tracked_files", return_value=[path]
+            ), mock.patch.object(
+                Path, "read_text", autospec=True,
+                side_effect=lambda p, *args, **kwargs: (
+                    text if p == path else read_text(p, *args, **kwargs)
+                ),
+            ):
+                issues = memo_mechanics_validator.validate()
+            expected = f"{rel}: contains stale flat mechanics source ref {former}"
+            self.assertEqual([expected] if rejected else [], issues)
+
     def test_repo_self_index_families_are_outside_authored_mechanics_text(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:
             repo_root = Path(tmpdir) / "aoa-memo"

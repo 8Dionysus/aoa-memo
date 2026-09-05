@@ -48,6 +48,10 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Changed
 
+- Skip expensive retired mechanics-path regex searches when the literal path
+  is absent. Keep the exact boundary checks, provenance exceptions, and full
+  tracked-file coverage; focused regression covers those distinctions.
+
 - Split the repository-wide and mechanic-package validation aggregates into
   owner-local on-demand companions, preserving focused commands while avoiding
   unrelated procedure preload.
