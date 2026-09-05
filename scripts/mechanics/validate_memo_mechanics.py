@@ -173,7 +173,8 @@ def validate() -> list[str]:
         text = path.read_text(encoding="utf-8", errors="ignore")
         for former_path, pattern in stale_patterns.items():
             if (
-                pattern.search(text)
+                former_path in text
+                and pattern.search(text)
                 and rel not in allowed_provenance_refs
             ):
                 issues.append(f"{rel}: contains stale flat mechanics source ref {former_path}")
