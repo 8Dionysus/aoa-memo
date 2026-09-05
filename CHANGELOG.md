@@ -48,6 +48,11 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Changed
 
+- Add bounded local changed-path feedback to the existing `ci_gate.py`: mapped
+  owner tests are deduplicated from the root topology, test inventory, and
+  mechanic part tests, while runner/config/fixture/environment and unknown
+  paths fail closed to the existing release lane. Optional `--lf` remains
+  retry feedback only and cannot become release admission.
 - Skip expensive retired mechanics-path regex searches when the literal path
   is absent. Keep the exact boundary checks, provenance exceptions, and full
   tracked-file coverage; focused regression covers those distinctions.
