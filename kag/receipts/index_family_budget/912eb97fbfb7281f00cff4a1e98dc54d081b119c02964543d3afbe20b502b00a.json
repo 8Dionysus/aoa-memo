@@ -1,25 +1,25 @@
 {
-  "allowed_bytes": 17939977,
-  "allowed_tracked_bytes": 17242237,
+  "allowed_bytes": 17941691,
+  "allowed_tracked_bytes": 17242120,
   "approved_by": "repository-owner",
   "base_ref": "dff1f7447cfe90e711ec720ef5d8062dfc400cf4",
   "candidate_identity": {
     "algorithm": "sha256:canonical-json-file-inventory-v2",
     "base_ref": "dff1f7447cfe90e711ec720ef5d8062dfc400cf4",
     "contract_version": "aoa-kag:budget-receipt-candidate-identity-v2",
-    "excluded_path": "kag/receipts/index_family_budget/f45d2ce81685bb2ce344a1164b83627e09fe848046ff86d6a76fe24dd569e500.json",
-    "family_digest": "f45d2ce81685bb2ce344a1164b83627e09fe848046ff86d6a76fe24dd569e500",
-    "file_count": 2185,
-    "seal": "89569ee5582d677a15e2a8d7b3c732466c97fe3c5d9dcc259f154de843b4a4bc",
-    "source_epoch": "sha256:cfd5d5a993530a0dabf461c74c2915992f0a187f2720090a738ac99862a014c3",
-    "source_snapshot": "sha256:e5a09806bf8146e6ab7ba71865ca5ab2e3edd83dce013d8b626bfc01ee81c605"
+    "excluded_path": "kag/receipts/index_family_budget/912eb97fbfb7281f00cff4a1e98dc54d081b119c02964543d3afbe20b502b00a.json",
+    "family_digest": "912eb97fbfb7281f00cff4a1e98dc54d081b119c02964543d3afbe20b502b00a",
+    "file_count": 2183,
+    "seal": "657ff09d6565176c7c21d24219ed0f164a35a619936e2edfe0758ff170441b7d",
+    "source_epoch": "sha256:97dbd73cb5f2756cea76c3ce1675415f59e1d10f0a135ab2d6ce3f9cb1d611f0",
+    "source_snapshot": "sha256:29ae896c36a1fbef8eebc1d81fce62dca9bd4757df0d57c96b00f66c14afd84d"
   },
-  "changed_generated_bytes": 17939977,
-  "changed_generated_files": 509,
+  "changed_generated_bytes": 17941691,
+  "changed_generated_files": 510,
   "decision_ref": "aoa-kag:docs/decisions/AOA-KAG-D-0017-portable-content-addressed-repository-family.md",
   "default_limit_bytes": 1048576,
-  "head_family_digest": "f45d2ce81685bb2ce344a1164b83627e09fe848046ff86d6a76fe24dd569e500",
-  "head_source_snapshot": "sha256:e5a09806bf8146e6ab7ba71865ca5ab2e3edd83dce013d8b626bfc01ee81c605",
+  "head_family_digest": "912eb97fbfb7281f00cff4a1e98dc54d081b119c02964543d3afbe20b502b00a",
+  "head_source_snapshot": "sha256:29ae896c36a1fbef8eebc1d81fce62dca9bd4757df0d57c96b00f66c14afd84d",
   "producer_identity": {
     "action": {
       "bytes": 5200,
@@ -600,9 +600,9 @@
         "state": "present"
       },
       {
-        "bytes": 7765,
-        "content_digest": "320608860cc49fa224a913b37b0024b25fa0a72666a833c4f780a0412219e243",
-        "git_blob": "sha1:745f202addd6df3bb89e212a5b194ae7d7f70fc6",
+        "bytes": 8135,
+        "content_digest": "f37f0980fc0985d0dc5ea175d90c64164d0b94e08f85a139955e89d2c2d7da40",
+        "git_blob": "sha1:2380703d832c0fc9a08172250fe142be34a1bcc3",
         "path": "scripts/validate_nested_agents.py",
         "state": "present"
       },
@@ -1160,7 +1160,7 @@
         "state": "present"
       }
     ],
-    "identity_digest": "1cdd393e6695fce2dd3c9141b3755792ed3d423ab9a58935b18d64060f8fee89",
+    "identity_digest": "9f57dcdfefe599560a01a2454c9e30ba53158ccbe530d1663a14d6cb2db6b883",
     "owner": "aoa-kag",
     "procedure_manifest": {
       "action_inputs": [
@@ -1360,12 +1360,12 @@
       "schema_path": "schemas/repo-local-kag-budget-producer-manifest.schema.json"
     },
     "revision_binding": "content-addressed-procedure-import-closure-portable-runtime-contract-and-descriptor-io-v1",
-    "source_digest": "df3b43c667409671f5b5fc71b847a54b0f5aed3b4d9cafb2ca7046896f5c2c37"
+    "source_digest": "4882f50ab3a09b04b02715510f2e5dbec13fa60a5032f98e9e043dc9e79f812e"
   },
-  "reason": "approved retirement + final route residue canonical parity",
+  "reason": "AOA-MEM-D-0090: operator-approved Spark and mechanics retirement; final current lane guidance and exact CI-pinned producer, standing limits unchanged.",
   "repo": "aoa-memo",
   "schema_version": "aoa-repo-local-kag-budget-receipt-v2",
   "scope": "generated_delta",
-  "tracked_bytes": 17242237,
+  "tracked_bytes": 17242120,
   "tracked_bytes_max": 18874368
 }
