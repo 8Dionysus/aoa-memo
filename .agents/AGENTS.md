@@ -4,7 +4,7 @@
 
 `.agents/` is the agent-facing derived district for `aoa-memo`.
 
-It holds maintained agent lanes. It does not own memory or skill truth. Memory
+It currently declares no active agent lane. It does not own memory or skill truth. Memory
 truth stays in source docs, schemas, examples, generated-source maps, and
 validators; skill truth stays under top-level `skills/`, while global Codex
 exposure comes from the OS user profile.
@@ -39,7 +39,3 @@ exposure comes from the OS user profile.
 ## Verify
 
 For `.agents/` route changes, use the nearest `VALIDATION.md` route; reusable lanes remain in `config/validation_lanes.json`.
-
-## Validation route
-
-Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.
