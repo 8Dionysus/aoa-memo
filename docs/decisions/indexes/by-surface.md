@@ -29,6 +29,7 @@
 - [AOA-MEM-D-0087 One Owner per Validation Route](../AOA-MEM-D-0087-one-owner-per-validation-route.md) (`docs/decisions/AOA-MEM-D-0087-one-owner-per-validation-route.md`)
 - [AOA-MEM-D-0088 Explicit Validation Route Targets](../AOA-MEM-D-0088-explicit-validation-route-targets.md) (`docs/decisions/AOA-MEM-D-0088-explicit-validation-route-targets.md`)
 - [AOA-MEM-D-0089 Validation Companions Are Route Metadata](../AOA-MEM-D-0089-validation-companions-are-route-metadata.md) (`docs/decisions/AOA-MEM-D-0089-validation-companions-are-route-metadata.md`)
+- [AOA-MEM-D-0090 Retire Spark Lane and Legacy Mechanic Subtrees](../AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md) (`docs/decisions/AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md`)
 
 ## memory doctrine
 
@@ -147,6 +148,7 @@
 - [AOA-MEM-D-0061 Writeback Part-Local Artifacts](../AOA-MEM-D-0061-writeback-part-local-artifacts.md) (`docs/decisions/AOA-MEM-D-0061-writeback-part-local-artifacts.md`)
 - [AOA-MEM-D-0070 Decision: Writeback debt catchup lands reviewed objects](../AOA-MEM-D-0070-writeback-debt-catchup-reviewed-objects.md) (`docs/decisions/AOA-MEM-D-0070-writeback-debt-catchup-reviewed-objects.md`)
 - [AOA-MEM-D-0089 Validation Companions Are Route Metadata](../AOA-MEM-D-0089-validation-companions-are-route-metadata.md) (`docs/decisions/AOA-MEM-D-0089-validation-companions-are-route-metadata.md`)
+- [AOA-MEM-D-0090 Retire Spark Lane and Legacy Mechanic Subtrees](../AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md) (`docs/decisions/AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md`)
 
 ## mechanic part
 
@@ -195,6 +197,7 @@
 - [AOA-MEM-D-0087 One Owner per Validation Route](../AOA-MEM-D-0087-one-owner-per-validation-route.md) (`docs/decisions/AOA-MEM-D-0087-one-owner-per-validation-route.md`)
 - [AOA-MEM-D-0088 Explicit Validation Route Targets](../AOA-MEM-D-0088-explicit-validation-route-targets.md) (`docs/decisions/AOA-MEM-D-0088-explicit-validation-route-targets.md`)
 - [AOA-MEM-D-0089 Validation Companions Are Route Metadata](../AOA-MEM-D-0089-validation-companions-are-route-metadata.md) (`docs/decisions/AOA-MEM-D-0089-validation-companions-are-route-metadata.md`)
+- [AOA-MEM-D-0090 Retire Spark Lane and Legacy Mechanic Subtrees](../AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md) (`docs/decisions/AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md`)
 
 ## agents/mesh
 
@@ -246,3 +249,4 @@
 
 - [AOA-MEM-D-0042 Active Stage and Source Naming](../AOA-MEM-D-0042-active-stage-source-naming.md) (`docs/decisions/AOA-MEM-D-0042-active-stage-source-naming.md`)
 - [AOA-MEM-D-0072 Numbered Decision Paths](../AOA-MEM-D-0072-numbered-decision-paths.md) (`docs/decisions/AOA-MEM-D-0072-numbered-decision-paths.md`)
+- [AOA-MEM-D-0090 Retire Spark Lane and Legacy Mechanic Subtrees](../AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md) (`docs/decisions/AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md`)

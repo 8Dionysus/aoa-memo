@@ -132,3 +132,4 @@
 
 - [AOA-MEM-D-0088 Explicit Validation Route Targets](../AOA-MEM-D-0088-explicit-validation-route-targets.md) (`docs/decisions/AOA-MEM-D-0088-explicit-validation-route-targets.md`)
 - [AOA-MEM-D-0089 Validation Companions Are Route Metadata](../AOA-MEM-D-0089-validation-companions-are-route-metadata.md) (`docs/decisions/AOA-MEM-D-0089-validation-companions-are-route-metadata.md`)
+- [AOA-MEM-D-0090 Retire Spark Lane and Legacy Mechanic Subtrees](../AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md) (`docs/decisions/AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md`)

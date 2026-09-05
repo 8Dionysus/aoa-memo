@@ -4,7 +4,7 @@
 
 `.agents/` is the agent-facing derived district for `aoa-memo`.
 
-It holds maintained agent lanes. It does not own memory or skill truth. Memory
+It currently declares no active agent lane. It does not own memory or skill truth. Memory
 truth stays in source docs, schemas, examples, generated-source maps, and
 validators; skill truth stays under top-level `skills/`, while global Codex
 exposure comes from the OS user profile.
@@ -14,14 +14,15 @@ exposure comes from the OS user profile.
 - Above: root `AGENTS.md` owns repository identity, owner boundaries, and
   release route.
 - Here: `.agents/` owns derived agent-facing lanes only.
-- Below: `spark/` narrows the fast-loop lane. The owner skill is deliberately
-  absent from `.agents/`; its source remains under top-level `skills/`.
+- Below: future `.agents/<lane>/` directories may narrow an admitted local
+  lane, but no former Spark lane is currently active. The owner skill remains
+  under top-level `skills/`.
 
 ## Current Lanes
 
 | Lane | Use |
 |---|---|
-| `spark/` | fast-loop Spark lane for one bounded memory-layer surface at a time |
+| *(none currently)* | No repository-local lane is currently admitted. |
 
 ## Boundaries
 
@@ -38,7 +39,3 @@ exposure comes from the OS user profile.
 ## Verify
 
 For `.agents/` route changes, use the nearest `VALIDATION.md` route; reusable lanes remain in `config/validation_lanes.json`.
-
-## Validation route
-
-Use the nearest `VALIDATION.md` route only after the touched surface is known; reusable lanes remain in `config/validation_lanes.json`.

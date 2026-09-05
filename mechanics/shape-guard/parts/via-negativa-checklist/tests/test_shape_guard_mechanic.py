@@ -42,15 +42,11 @@ class ShapeGuardMechanicTestCase(unittest.TestCase):
         ):
             self.assertIn(snippet, readme)
 
-        legacy_index = (
-            REPO_ROOT / "mechanics" / "shape-guard" / "legacy" / "INDEX.md"
-        ).read_text(encoding="utf-8")
-        former_flat_path = "/".join(("docs", "VIA_NEGATIVA_CHECKLIST.md"))
-        self.assertIn(former_flat_path, legacy_index)
-        former_governance_path = "/".join(
-            ("mechanics", "governance", "docs", "VIA_NEGATIVA_CHECKLIST.md")
+        provenance = (REPO_ROOT / "mechanics" / "shape-guard" / "PROVENANCE.md").read_text(
+            encoding="utf-8"
         )
-        self.assertIn(former_governance_path, legacy_index)
+        self.assertIn("mechanics/governance/docs/", provenance)
+        self.assertIn("AOA-MEM-D-0090", provenance)
 
 
 if __name__ == "__main__":

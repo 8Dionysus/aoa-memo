@@ -91,11 +91,9 @@
       "title": "Trace/Eval Validators",
       "ownership": "boundary-only",
       "gate_role": "regression",
-      "owner_surface": ".agents/spark/AGENTS.md",
-      "purpose": "Validate repo-local agent-lane scenarios and regression harnesses while routing full trajectory grading to aoa-evals.",
+      "owner_surface": "docs/testing/TEST_TOPOLOGY.md",
+      "purpose": "Validate repo-local regression harnesses while routing full trajectory grading to aoa-evals.",
       "checks": [
-        "Spark lane registry and scenarios",
-        "agent-lane tests",
         "repo test suite outcome"
       ],
       "must_not": [
@@ -238,8 +236,8 @@
     "eval": {
       "layer": "trace_eval",
       "mode": "blocking",
-      "owner_surface": ".agents/spark/AGENTS.md",
-      "failure_route": "Fix agent-lane registry, scenario, or test harness; full trajectory grading routes to aoa-evals."
+      "owner_surface": "docs/testing/TEST_TOPOLOGY.md",
+      "failure_route": "Fix the repository test owner surface; full trajectory grading routes to aoa-evals."
     },
     "audit": {
       "layer": "observability_audit",
@@ -645,26 +643,6 @@
           "scripts/memory/validate_memo.py",
           "--profile",
           "eval-boundary"
-        ]
-      },
-      {
-        "label": "validate Spark lane",
-        "command": [
-          "python",
-          ".agents/spark/scripts/validate_spark_lane.py"
-        ]
-      },
-      {
-        "label": "run Spark lane tests",
-        "command": [
-          "python",
-          "-m",
-          "unittest",
-          "discover",
-          "-s",
-          ".agents/spark/tests",
-          "-p",
-          "test*.py"
         ]
       }
     ],

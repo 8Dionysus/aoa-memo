@@ -78,7 +78,7 @@ owning repository.
 - [ROADMAP](ROADMAP.md)
 - [parts](parts/README.md)
 - [docs](docs/)
-- [legacy index](legacy/INDEX.md)
+- Historical recovery: see [AOA-MEM-D-0090](../../docs/decisions/AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md).
 - [root quest index](../../QUESTBOOK.md)
 - [quest item store](../../quests/README.md)
 
@@ -91,8 +91,8 @@ generated read models are governed by the
 
 ## Historical Provenance
 
-Use [PROVENANCE](PROVENANCE.md) first. Use [legacy](legacy/README.md) only
-when auditing former flat quest placement.
+Use [PROVENANCE](PROVENANCE.md) first. Historical recovery is pinned in
+[AOA-MEM-D-0090](../../docs/decisions/AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md).
 
 ## Owner Boundary
 

@@ -6,22 +6,26 @@
 
 - [AOA-MEM-D-0001 Adoption, Writeback, and Retention Move to Memo Mechanics](../AOA-MEM-D-0001-adoption-writeback-retention-mechanics.md) (`docs/decisions/AOA-MEM-D-0001-adoption-writeback-retention-mechanics.md`)
 - [AOA-MEM-D-0043 Adoption And Retention Part-Local Artifacts](../AOA-MEM-D-0043-adoption-retention-part-local-artifacts.md) (`docs/decisions/AOA-MEM-D-0043-adoption-retention-part-local-artifacts.md`)
+- [AOA-MEM-D-0090 Retire Spark Lane and Legacy Mechanic Subtrees](../AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md) (`docs/decisions/AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md`)
 
 ## agon
 
 - [AOA-MEM-D-0003 Move Agon Memo Docs Into `docs/agon/`](../AOA-MEM-D-0003-agon-docs-district.md) (`docs/decisions/AOA-MEM-D-0003-agon-docs-district.md`)
 - [AOA-MEM-D-0004 2026-05-18: Land Agon and Titan as Memo Mechanics](../AOA-MEM-D-0004-agon-titan-memo-mechanics.md) (`docs/decisions/AOA-MEM-D-0004-agon-titan-memo-mechanics.md`)
 - [AOA-MEM-D-0045 Agon Part-Local Artifacts](../AOA-MEM-D-0045-agon-part-local-artifacts.md) (`docs/decisions/AOA-MEM-D-0045-agon-part-local-artifacts.md`)
+- [AOA-MEM-D-0090 Retire Spark Lane and Legacy Mechanic Subtrees](../AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md) (`docs/decisions/AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md`)
 
 ## antifragility
 
 - [AOA-MEM-D-0005 2026-05-18: Land Antifragility as a Memo Mechanic](../AOA-MEM-D-0005-antifragility-memo-mechanic.md) (`docs/decisions/AOA-MEM-D-0005-antifragility-memo-mechanic.md`)
 - [AOA-MEM-D-0046 Antifragility Part-Local Artifacts](../AOA-MEM-D-0046-antifragility-part-local-artifacts.md) (`docs/decisions/AOA-MEM-D-0046-antifragility-part-local-artifacts.md`)
+- [AOA-MEM-D-0090 Retire Spark Lane and Legacy Mechanic Subtrees](../AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md) (`docs/decisions/AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md`)
 
 ## checkpoint
 
 - [AOA-MEM-D-0006 2026-05-18 Checkpoint Memo Mechanic](../AOA-MEM-D-0006-checkpoint-memo-mechanic.md) (`docs/decisions/AOA-MEM-D-0006-checkpoint-memo-mechanic.md`)
 - [AOA-MEM-D-0047 Checkpoint Part-Local Artifacts](../AOA-MEM-D-0047-checkpoint-part-local-artifacts.md) (`docs/decisions/AOA-MEM-D-0047-checkpoint-part-local-artifacts.md`)
+- [AOA-MEM-D-0090 Retire Spark Lane and Legacy Mechanic Subtrees](../AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md) (`docs/decisions/AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md`)
 
 ## consumer-handoff
 
@@ -35,33 +39,40 @@
 - [AOA-MEM-D-0083 Decision: Keep memory participation inside one two-speed owner family](../AOA-MEM-D-0083-two-speed-participation-spine.md) (`docs/decisions/AOA-MEM-D-0083-two-speed-participation-spine.md`)
 - [AOA-MEM-D-0084 Decision: Review MCP captures before proof or acceptance](../AOA-MEM-D-0084-review-mcp-captures-before-proof-or-acceptance.md) (`docs/decisions/AOA-MEM-D-0084-review-mcp-captures-before-proof-or-acceptance.md`)
 - [AOA-MEM-D-0085 Decision: Owner-authored MCP organ capability contours](../AOA-MEM-D-0085-owner-authored-mcp-organ-capability-contours.md) (`docs/decisions/AOA-MEM-D-0085-owner-authored-mcp-organ-capability-contours.md`)
+- [AOA-MEM-D-0090 Retire Spark Lane and Legacy Mechanic Subtrees](../AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md) (`docs/decisions/AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md`)
 
 ## governance
 
 - [AOA-MEM-D-0009 2026-05-18: Land Governance as a Memo Mechanic](../AOA-MEM-D-0009-governance-memo-mechanic.md) (`docs/decisions/AOA-MEM-D-0009-governance-memo-mechanic.md`)
 - [AOA-MEM-D-0051 Governance Part-Local Artifacts](../AOA-MEM-D-0051-governance-part-local-artifacts.md) (`docs/decisions/AOA-MEM-D-0051-governance-part-local-artifacts.md`)
+- [AOA-MEM-D-0090 Retire Spark Lane and Legacy Mechanic Subtrees](../AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md) (`docs/decisions/AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md`)
 
 ## lineage-harvest
 
 - [AOA-MEM-D-0010 Lineage Harvest Memo Mechanic](../AOA-MEM-D-0010-lineage-harvest-memo-mechanic.md) (`docs/decisions/AOA-MEM-D-0010-lineage-harvest-memo-mechanic.md`)
+- [AOA-MEM-D-0090 Retire Spark Lane and Legacy Mechanic Subtrees](../AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md) (`docs/decisions/AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md`)
 
 ## operational-gate
 
 - [AOA-MEM-D-0024 2026-05-18: Add Operational Gate as an Operation-First Memo Mechanic](../AOA-MEM-D-0024-operational-gate-memo-mechanic.md) (`docs/decisions/AOA-MEM-D-0024-operational-gate-memo-mechanic.md`)
 - [AOA-MEM-D-0054 Operational Gate Part-Local Artifacts](../AOA-MEM-D-0054-operational-gate-part-local-artifacts.md) (`docs/decisions/AOA-MEM-D-0054-operational-gate-part-local-artifacts.md`)
+- [AOA-MEM-D-0090 Retire Spark Lane and Legacy Mechanic Subtrees](../AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md) (`docs/decisions/AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md`)
 
 ## questbook
 
 - [AOA-MEM-D-0026 Decision: Questbook Uses A Lane-First Root Store](../AOA-MEM-D-0026-questbook-lane-first-store.md) (`docs/decisions/AOA-MEM-D-0026-questbook-lane-first-store.md`)
 - [AOA-MEM-D-0027 Questbook Read-Model Projections Part](../AOA-MEM-D-0027-questbook-quest-read-model-projections-part.md) (`docs/decisions/AOA-MEM-D-0027-questbook-quest-read-model-projections-part.md`)
+- [AOA-MEM-D-0090 Retire Spark Lane and Legacy Mechanic Subtrees](../AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md) (`docs/decisions/AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md`)
 
 ## readiness-boundary
 
 - [AOA-MEM-D-0028 2026-05-18 Readiness Boundary Memo Mechanic](../AOA-MEM-D-0028-readiness-boundary-memo-mechanic.md) (`docs/decisions/AOA-MEM-D-0028-readiness-boundary-memo-mechanic.md`)
+- [AOA-MEM-D-0090 Retire Spark Lane and Legacy Mechanic Subtrees](../AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md) (`docs/decisions/AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md`)
 
 ## recurrence-support
 
 - [AOA-MEM-D-0029 Recurrence Support Memo Mechanic](../AOA-MEM-D-0029-recurrence-support-memo-mechanic.md) (`docs/decisions/AOA-MEM-D-0029-recurrence-support-memo-mechanic.md`)
+- [AOA-MEM-D-0090 Retire Spark Lane and Legacy Mechanic Subtrees](../AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md) (`docs/decisions/AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md`)
 
 ## retention
 
@@ -71,16 +82,19 @@
 - [AOA-MEM-D-0079 Decision: Keep mechanical lifecycle allowlisted and recoverable](../AOA-MEM-D-0079-mechanical-lifecycle-is-allowlisted-and-recoverable.md) (`docs/decisions/AOA-MEM-D-0079-mechanical-lifecycle-is-allowlisted-and-recoverable.md`)
 - [AOA-MEM-D-0080 Decision: Distributed erasure requires walkable owner closure](../AOA-MEM-D-0080-distributed-erasure-requires-walkable-owner-closure.md) (`docs/decisions/AOA-MEM-D-0080-distributed-erasure-requires-walkable-owner-closure.md`)
 - [AOA-MEM-D-0082 Decision: Reviewed pull is the R1 admitted core](../AOA-MEM-D-0082-reviewed-pull-is-the-r1-admitted-core.md) (`docs/decisions/AOA-MEM-D-0082-reviewed-pull-is-the-r1-admitted-core.md`)
+- [AOA-MEM-D-0090 Retire Spark Lane and Legacy Mechanic Subtrees](../AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md) (`docs/decisions/AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md`)
 
 ## shape-guard
 
 - [AOA-MEM-D-0038 2026-05-18: Add Shape Guard as an Operation-First Memo Mechanic](../AOA-MEM-D-0038-shape-guard-memo-mechanic.md) (`docs/decisions/AOA-MEM-D-0038-shape-guard-memo-mechanic.md`)
+- [AOA-MEM-D-0090 Retire Spark Lane and Legacy Mechanic Subtrees](../AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md) (`docs/decisions/AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md`)
 
 ## titan
 
 - [AOA-MEM-D-0004 2026-05-18: Land Agon and Titan as Memo Mechanics](../AOA-MEM-D-0004-agon-titan-memo-mechanics.md) (`docs/decisions/AOA-MEM-D-0004-agon-titan-memo-mechanics.md`)
 - [AOA-MEM-D-0040 Move Titan Memo Docs Into `docs/titan/`](../AOA-MEM-D-0040-titan-docs-district.md) (`docs/decisions/AOA-MEM-D-0040-titan-docs-district.md`)
 - [AOA-MEM-D-0060 Titan Part-Local Artifacts](../AOA-MEM-D-0060-titan-part-local-artifacts.md) (`docs/decisions/AOA-MEM-D-0060-titan-part-local-artifacts.md`)
+- [AOA-MEM-D-0090 Retire Spark Lane and Legacy Mechanic Subtrees](../AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md) (`docs/decisions/AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md`)
 
 ## writeback
 
@@ -88,3 +102,4 @@
 - [AOA-MEM-D-0041 Writeback Curated Object Examples](../AOA-MEM-D-0041-writeback-curated-object-examples.md) (`docs/decisions/AOA-MEM-D-0041-writeback-curated-object-examples.md`)
 - [AOA-MEM-D-0061 Writeback Part-Local Artifacts](../AOA-MEM-D-0061-writeback-part-local-artifacts.md) (`docs/decisions/AOA-MEM-D-0061-writeback-part-local-artifacts.md`)
 - [AOA-MEM-D-0070 Decision: Writeback debt catchup lands reviewed objects](../AOA-MEM-D-0070-writeback-debt-catchup-reviewed-objects.md) (`docs/decisions/AOA-MEM-D-0070-writeback-debt-catchup-reviewed-objects.md`)
+- [AOA-MEM-D-0090 Retire Spark Lane and Legacy Mechanic Subtrees](../AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md) (`docs/decisions/AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md`)

@@ -17,7 +17,7 @@ shared by the mechanic.
 
 The `writeback` part route narrows the package operation; it cannot widen memo
 authority or replace the package `OWNER_MAP.md`. Source meaning remains in the
-package docs, and former placement remains in `PROVENANCE.md` or `legacy/`.
+package docs, and former placement is documented in `PROVENANCE.md` and the immutable retirement decision`.
 
 ## Boundaries
 

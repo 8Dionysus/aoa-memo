@@ -30,8 +30,8 @@ Validation commands use a split authority model:
   otherwise composition belongs in `config/validation_lanes.json` or an owner
   runner.
 - The active release procedure in `docs/root/RELEASING.md` may name its narrow
-  operator flow. Spark scenario payloads under `.agents/spark/scenarios/` may
-  name the scenario-local checks they execute.
+  operator flow. Scenario payloads may name the scenario-local checks they
+  execute when an active owner registers them.
 - Decisions, changelogs, landing logs, reviewed memory objects, audit receipts,
   generated Markdown, and preserved reference docs keep outcomes and owner
   routes, not copied runnable command catalogs.

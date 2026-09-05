@@ -21,7 +21,8 @@ validation, and next route. A package names an operation, not only a topic.
 
 The package card owns the package identity. Its `docs/` card owns active
 mechanic doctrine and source docs; its `parts/` card owns functioning rows and
-part-local contracts; its `legacy/` card preserves former placement only.
+part-local contracts; its `PROVENANCE.md` and retirement decision preserve former
+placement only.
 Generated companions summarize source maps and are rebuilt from source.
 
 ## Shared route law
@@ -29,8 +30,9 @@ Generated companions summarize source maps and are rebuilt from source.
 Use the shortest route that matches the touched semantics. `README.md` is
 conditional human/public/topology orientation only. Read `DIRECTION.md`,
 `PARTS.md`, `OWNER_MAP.md`, or `PROVENANCE.md` only when the changed semantics
-need that surface. A source-doc, functioning-part, or legacy task follows its
-nearest card and target source; no full package inventory is mandatory.
+need that surface. A source-doc or functioning-part task follows its nearest
+card and target source; historical recovery follows PROVENANCE.md and the
+retirement decision.
 
 The four local cards carry only deltas from this law:
 
@@ -39,7 +41,7 @@ The four local cards carry only deltas from this law:
 - `docs/` cards retain active doctrine boundaries and local source families;
 - `parts/` cards retain active row and artifact ownership, with each row
   materialized by `README.md`, `CONTRACT.md`, and `VALIDATION.md`;
-- `legacy/` cards retain placement history and provenance stop-lines, never
+- `PROVENANCE.md` retains placement history and provenance stop-lines, never
   active law or aliases.
 
 An active part is an operation node, not a legacy index, source-doc dump, proof

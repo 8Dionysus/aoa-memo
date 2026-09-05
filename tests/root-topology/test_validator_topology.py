@@ -19,7 +19,6 @@ PRIMARY_COMMAND_DOCS = frozenset({"docs/root/RELEASING.md"})
 EXECUTABLE_MARKDOWN_PREFIXES = (
     "skills/",
     ".agents/skills/",
-    ".agents/spark/scenarios/",
 )
 SHELL_FENCE_PATTERN = re.compile(
     r"^ {0,3}```(?:bash|console|sh|shell|zsh)(?:\s+.*)?$",

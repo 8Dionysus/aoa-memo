@@ -14,8 +14,8 @@ transitional `mechanics/agon/docs/` district. They now live under
 `mechanics/agon/docs/` because Agon has mechanic shape: repeatable inputs,
 outputs, owner split, stop-lines, validation, and legacy routing.
 
-Use [legacy/INDEX](legacy/INDEX.md) only to audit former placement. Legacy
-paths are historical receipts, not active contracts.
+Former staging material is historical only; recover it from the pinned baseline
+in [AOA-MEM-D-0090](../../docs/decisions/AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md).
 
 Agon quest follow-through notes were later moved from flat root `quests/` into
 `quests/agon/ready/` because Questbook keeps public obligations in a

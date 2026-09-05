@@ -35,5 +35,5 @@ from package-level artifact homes into functioning parts:
 
 Use root technical districts only for shared or cross-mechanic contracts.
 
-Use [legacy/INDEX](legacy/INDEX.md) only to audit former placement. Legacy
-paths are historical receipts, not active contracts.
+Former staging material is historical only; recover it from the pinned baseline
+in [AOA-MEM-D-0090](../../docs/decisions/AOA-MEM-D-0090-retire-spark-and-legacy-mechanics.md).

@@ -121,9 +121,8 @@ governance, checkpoint, consumer handoff, operational gate, recurrence
 support, lineage harvest, readiness boundary, retention, and writeback
 surfaces are moved only with owner maps, link updates, legacy bridges, and
 validation.
-The maintained Spark fast-loop lane now lives under `.agents/spark/` rather
-than root `Spark/`, aligning agent-lane placement with the new topology spine
-without treating the lane as root civic law.
+The former Spark fast-loop lane and mechanic staging trees are retired from the
+active tree; `AOA-MEM-D-0090` records their pinned Git recovery routes.
 
 The first generated AGENTS mesh is now the active topology hardening layer:
 `config/agents/agents_mesh.json` records current route-card contracts and
@@ -204,11 +203,10 @@ cross-repo recurring-signal gate. The pattern-lineage schema, example, and test
 now live under `mechanics/lineage-harvest/`.
 
 The current mechanics hardening layer keeps active doctrine in each mechanic's
-`docs/AGENTS.md`, keeps historical `legacy/` material as indexed provenance
-outside the active AGENTS mesh, and uses `mechanics/ARTIFACT_TOPOLOGY.md` for
-artifact placement law. This keeps active docs, legacy provenance, and
-mechanic-local artifacts separate after the schema, example, generated, script,
-test, manifest, questbook, and hook relocation.
+`docs/AGENTS.md`, keeps historical provenance pinned in Git outside the active
+tree, and uses `mechanics/ARTIFACT_TOPOLOGY.md` for artifact placement law.
+This keeps active docs and mechanic-local artifacts separate after the schema,
+example, generated, script, test, manifest, questbook, and hook relocation.
 The readiness matrix closes the next layer by proving every current package is
 not only present but structurally ready for OS Abyss consumption.
 

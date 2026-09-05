@@ -34,7 +34,7 @@ class DocsDistrictsTestCase(unittest.TestCase):
         self.assertEqual(27, len(mechanic))
         self.assertTrue((REPO_ROOT / "mechanics" / "agon" / "AGENTS.md").is_file())
         self.assertTrue((REPO_ROOT / "mechanics" / "agon" / "docs" / "AGENTS.md").is_file())
-        self.assertTrue((REPO_ROOT / "mechanics" / "agon" / "legacy" / "AGENTS.md").is_file())
+        self.assertFalse((REPO_ROOT / "mechanics" / "agon" / "legacy").exists())
 
     def test_titan_docs_live_in_titan_mechanic(self) -> None:
         flat = sorted((REPO_ROOT / "docs").glob("TITAN_*.md"))
@@ -46,7 +46,7 @@ class DocsDistrictsTestCase(unittest.TestCase):
         self.assertEqual(10, len(mechanic))
         self.assertTrue((REPO_ROOT / "mechanics" / "titan" / "AGENTS.md").is_file())
         self.assertTrue((REPO_ROOT / "mechanics" / "titan" / "docs" / "AGENTS.md").is_file())
-        self.assertTrue((REPO_ROOT / "mechanics" / "titan" / "legacy" / "AGENTS.md").is_file())
+        self.assertFalse((REPO_ROOT / "mechanics" / "titan" / "legacy").exists())
 
     def test_mechanic_owned_families_do_not_create_docs_subdistricts(self) -> None:
         for district_name in ("agon", "titan", "adoption", "governance", "writeback", "retention"):

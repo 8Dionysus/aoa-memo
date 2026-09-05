@@ -4,7 +4,7 @@
 
 `aoa-memo` owns this part only as a bounded memory-layer operation inside `mechanics/retention/`.
 
-Stronger claims route through `../../OWNER_MAP.md`. Source placement and legacy context route through `../../PROVENANCE.md` and `../../legacy/`.
+Stronger claims route through `../../OWNER_MAP.md`. Source placement and legacy context route through `../../PROVENANCE.md` and historical placement is recorded in `../../PROVENANCE.md`.
 
 ## Source Surfaces
 

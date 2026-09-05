@@ -72,7 +72,7 @@ Each package README must include these headings in order:
 
 After the card, package README files should stay lightweight and route to
 `DIRECTION.md`, `PARTS.md`, `parts/`, `OWNER_MAP.md`, `PROVENANCE.md`,
-`LANDING_LOG.md`, `ROADMAP.md`, `docs/`, and `legacy/`.
+`LANDING_LOG.md`, `ROADMAP.md`, `docs/`, and `PROVENANCE.md`.
 
 ## Compass
 
@@ -194,11 +194,11 @@ surface that matches the work:
 | `PARTS.md` | active functioning parts and source docs |
 | `parts/AGENTS.md` and `parts/` | physical part contracts for each active row in `PARTS.md` |
 | `OWNER_MAP.md` | memo role and stronger owner split |
-| `PROVENANCE.md` | active-first bridge to legacy placement and source receipts |
+| `PROVENANCE.md` | active-first bridge to historical placement and source receipts |
 | `LANDING_LOG.md` | checked landings, validation anchors, and stop-lines |
 | `ROADMAP.md` | next contour and condition-based future work |
 | `docs/AGENTS.md` and `docs/` | active mechanic-owned doctrine and support notes |
-| `legacy/AGENTS.md` and `legacy/` | preserved placement history that should not burden active routes |
+| retirement decision | immutable Git recovery links for retired placement history |
 
 ## Artifact Placement
 
