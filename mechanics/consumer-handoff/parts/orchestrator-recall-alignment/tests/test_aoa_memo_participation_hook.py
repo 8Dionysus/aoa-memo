@@ -13,19 +13,9 @@ import pytest
 
 PART_ROOT = Path(__file__).resolve().parents[1]
 SCRIPT_PATH = PART_ROOT / "scripts" / "aoa_memo_participation_hook.py"
-RECEIPT_SCHEMA_PATH = (
-    PART_ROOT / "schemas" / "aoa_memo_participation_receipt_v0.schema.json"
-)
-FRAGMENT_SCHEMA_PATH = (
-    PART_ROOT
-    / "schemas"
-    / "aoa_memo_participation_hook_fragment_v0.schema.json"
-)
-FRAGMENT_PATH = (
-    PART_ROOT
-    / "config"
-    / "codex-hooks.aoa-memo-participation-shadow.fragment.json"
-)
+RECEIPT_SCHEMA_PATH = PART_ROOT / "schemas" / "aoa_memo_participation_receipt_v0.schema.json"
+FRAGMENT_SCHEMA_PATH = PART_ROOT / "schemas" / "aoa_memo_participation_hook_fragment_v0.schema.json"
+FRAGMENT_PATH = PART_ROOT / "config" / "codex-hooks.aoa-memo-participation-shadow.fragment.json"
 
 SPEC = importlib.util.spec_from_file_location("aoa_memo_participation_hook", SCRIPT_PATH)
 assert SPEC is not None and SPEC.loader is not None
@@ -165,8 +155,17 @@ def test_internal_goal_continuation_is_excluded() -> None:
     }
 
 
+@pytest.mark.parametrize(
+    ("tool_name", "tool_class"),
+    [
+        ("mcp__aoa_memo__aoa_memo_brief", "brief"),
+        ("mcp__aoa_memo__aoa_memo_search", "search"),
+        ("mcp__aoa_memo__aoa_memo_recall_brief", "brief"),
+        ("mcp__aoa_memo__aoa_memo_recall_reviewed", "search"),
+    ],
+)
 def test_receipts_validate_and_persist_no_prompt_tool_or_transcript_content(
-    tmp_path: Path,
+    tmp_path: Path, tool_name: str, tool_class: str,
 ) -> None:
     state_root = tmp_path / "state"
     prompt = "SECRET-PROMPT continue prior AoA owner decision"
@@ -177,7 +176,7 @@ def test_receipts_validate_and_persist_no_prompt_tool_or_transcript_content(
     tool_event = base_event("PostToolUse")
     tool_event.update(
         {
-            "tool_name": "mcp__aoa_memo__aoa_memo_brief",
+            "tool_name": tool_name,
             "tool_use_id": "tool-private-id",
             "tool_input": {"query": "SECRET-TOOL-INPUT"},
             "tool_response": {
@@ -219,6 +218,7 @@ def test_receipts_validate_and_persist_no_prompt_tool_or_transcript_content(
         assert forbidden not in persisted
 
     assert payloads[0]["evidence_ladder"]["noticed"] == "unknown"
+    assert payloads[1]["observation"]["tool_class"] == tool_class
     assert payloads[1]["evidence_ladder"]["invocation"] == "observed"
     assert payloads[1]["evidence_ladder"]["result_returned"] == "observed"
     assert payloads[1]["evidence_ladder"]["used_or_rejected"] == "unknown"

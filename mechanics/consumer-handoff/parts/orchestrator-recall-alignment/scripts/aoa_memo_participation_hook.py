@@ -250,9 +250,9 @@ def classify_tool(tool_name: Any) -> str:
     if not isinstance(tool_name, str):
         return "unknown"
     lowered = tool_name.casefold()
-    if "aoa_memo_brief" in lowered:
+    if "aoa_memo_brief" in lowered or "aoa_memo_recall_brief" in lowered:
         return "brief"
-    if "aoa_memo_search" in lowered:
+    if "aoa_memo_search" in lowered or "aoa_memo_recall_reviewed" in lowered:
         return "search"
     if "aoa_memo_owner_orientation" in lowered:
         return "owner_orientation"

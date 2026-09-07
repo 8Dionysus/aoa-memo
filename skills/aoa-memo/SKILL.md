@@ -71,13 +71,15 @@ result.
 1. Resolve only the current repository label and a one-sentence intent from
    already available request/cwd context. Do not inspect the workspace to
    manufacture an intent.
-2. Call `aoa_memo_brief(repo, intent)` exactly once through the existing
-   `aoa_memo` MCP read contour. The brief is a locator, never authority.
+2. Call `aoa_memo_recall_brief(repo, intent)` exactly once through the current
+   admitted `aoa_memo` MCP read contour. The brief is a locator, never
+   authority.
 3. If the brief exposes no material reviewed hit, or current owner source
    already settles the question, choose `silence` and continue the task from
    current source. Do not announce memory merely because the tool ran.
-4. Use `aoa_memo_search` at most once, with reviewed scope and a bounded
-   lexical query, only when one specific earlier decision or lesson could
+4. Use `aoa_memo_recall_reviewed(query, mode, limit)` at most once, with a
+   bounded lexical query. This primitive is fixed to the reviewed-corpus
+   contour; use it only when one specific earlier decision or lesson could
    change the owner route and the brief did not identify it exactly. Never
    search by broad curiosity.
 5. Before memory changes an answer or action, verify the exact current source

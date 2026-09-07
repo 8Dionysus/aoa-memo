@@ -7,6 +7,16 @@ Tracking starts with the community-docs baseline for this repository.
 
 ## [Unreleased]
 
+### Fixed
+
+- Align the `aoa-memo` orientation skill with the admitted
+  `aoa_memo_recall_brief` and `aoa_memo_recall_reviewed` MCP operations.
+  Reviewed-corpus scope, bounded expansion, and source-authority limits remain
+  unchanged. Keep the package version pins aligned and retain brief/search
+  classification for both admitted and legacy names in the shadow hook.
+  Skill shape, owner home, MCP organ, and participation hook checks pass; installation
+  and fresh-context verification remain separate delivery checks.
+
 ### Added
 
 - Add decisions `AOA-MEM-D-0086` and `AOA-MEM-D-0087`: inherited
