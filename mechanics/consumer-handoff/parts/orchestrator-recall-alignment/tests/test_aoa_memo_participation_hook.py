@@ -13,19 +13,9 @@ import pytest
 
 PART_ROOT = Path(__file__).resolve().parents[1]
 SCRIPT_PATH = PART_ROOT / "scripts" / "aoa_memo_participation_hook.py"
-RECEIPT_SCHEMA_PATH = (
-    PART_ROOT / "schemas" / "aoa_memo_participation_receipt_v0.schema.json"
-)
-FRAGMENT_SCHEMA_PATH = (
-    PART_ROOT
-    / "schemas"
-    / "aoa_memo_participation_hook_fragment_v0.schema.json"
-)
-FRAGMENT_PATH = (
-    PART_ROOT
-    / "config"
-    / "codex-hooks.aoa-memo-participation-shadow.fragment.json"
-)
+RECEIPT_SCHEMA_PATH = PART_ROOT / "schemas" / "aoa_memo_participation_receipt_v0.schema.json"
+FRAGMENT_SCHEMA_PATH = PART_ROOT / "schemas" / "aoa_memo_participation_hook_fragment_v0.schema.json"
+FRAGMENT_PATH = PART_ROOT / "config" / "codex-hooks.aoa-memo-participation-shadow.fragment.json"
 
 SPEC = importlib.util.spec_from_file_location("aoa_memo_participation_hook", SCRIPT_PATH)
 assert SPEC is not None and SPEC.loader is not None
