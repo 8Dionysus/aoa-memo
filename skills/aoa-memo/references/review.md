@@ -5,20 +5,17 @@ contradiction, object, or lifecycle target needs a read-only disposition.
 
 ## Owner entry
 
-After source return:
+After source return, read `<owner_root>/memo/AGENTS.md`. When durable admission
+is part of the question, also read
+`<owner_root>/docs/decisions/AOA-MEM-D-0064-reviewed-intake-landing.md`.
+These independently known owner reads may share a tool call. Establish their
+constraints before reading the target or expanding to origin evidence.
 
-1. The next tool turn must read only
-   `<owner_root>/memo/AGENTS.md`. Await its result before reading the target,
-   origin port, origin evidence, or another owner document.
-2. When durable admission is part of the question, the following tool turn
-   must read only
-   `<owner_root>/docs/decisions/AOA-MEM-D-0064-reviewed-intake-landing.md`
-   and await its result before reading the target.
-
-These owner sources constrain interpretation. They do not authorize mutation.
-If either serial read is skipped, reordered, or batched with another read,
-return `blocked_owner_entry_not_observed`; do not claim a compliant owner
-receipt from the later results.
+These sources constrain interpretation and do not authorize mutation. If a
+required source or its applicable current content is unavailable, stop the
+owner-dependent operation with `blocked_owner_entry_not_observed`. Reuse or
+refresh reads under the package's source/version rule; serial tool calls are
+not an additional requirement.
 
 ## Procedure
 
@@ -28,7 +25,7 @@ receipt from the later results.
 2. Resolve the origin owner, stronger owner, exact target, and material source
    refs. If ownership is ambiguous, unresolved, or fallback-only, return
    `needs_owner_review` or `owner_handoff`.
-3. After the serial owner entry, read the concrete target once before any of
+3. After establishing the owner constraints, read the concrete target once before any of
    its origin evidence or port sources. Treat only its exact declared source,
    evidence, receipt, and export refs as the initial review set. Read those
    exact refs and the origin `memo/PORT.yaml` when the target names that port.

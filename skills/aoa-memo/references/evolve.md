@@ -7,19 +7,18 @@ the requested operation even when the entry gates below will block execution.
 
 ## Owner entry
 
-After source return:
+After source return, read `<owner_root>/memo/AGENTS.md`. For reviewed intake,
+durable corpus landing, object creation, or a source-backed read-model rebuild,
+also read
+`<owner_root>/docs/decisions/AOA-MEM-D-0064-reviewed-intake-landing.md`.
+These independently known owner reads may share a tool call. Establish their
+constraints before reading the target or expanding to origin evidence.
 
-1. The next tool turn must read only
-   `<owner_root>/memo/AGENTS.md`. Await its result before reading the target,
-   origin port, origin evidence, or another owner document.
-2. For reviewed intake, durable corpus landing, object creation, or a
-   source-backed read-model rebuild, the following tool turn must read only
-   `<owner_root>/docs/decisions/AOA-MEM-D-0064-reviewed-intake-landing.md`.
-   Await its result before reading the target.
-
-If either required serial read is skipped, reordered, or batched with another
-read, return `blocked_owner_entry_not_observed`. Later reads cannot repair the
-gate.
+These sources constrain interpretation and do not authorize mutation. If a
+required source or its applicable current content is unavailable, stop the
+owner-dependent operation with `blocked_owner_entry_not_observed`. Reuse or
+refresh reads under the package's source/version rule; serial tool calls are
+not an additional requirement.
 
 ## Entry gates
 
@@ -36,7 +35,7 @@ planning writes, comparing unrelated objects, running landing commands, or
 creating artifacts.
 
 When the request names one exact candidate or export, read that target once
-immediately after the serial owner entry when its state is needed to evaluate
+after establishing the owner constraints when its state is needed to evaluate
 the entry gates. This must be the first task-workspace read. Use a
 line-number-preserving read on that first pass when citations may be needed;
 never reread the target only to add citations.

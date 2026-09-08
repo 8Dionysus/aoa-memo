@@ -1,6 +1,6 @@
 ---
 name: aoa-memo
-description: "AoA/Abyss durable memory and owner orientation: use when ongoing work may depend on reviewed prior decisions, provenance, lifecycle/currentness, or an existing memo artifact, even when none is named. Also use to recall, review, or evolve a candidate, export, quarantine packet, object, corpus identity, lifecycle target, or read model. First tool turn reads only this SKILL.md. Use aoa-memo-writeback only before any memo artifact exists. Do not use for raw-session retrieval, proof, routing authority, roles, workflows, KAG substrate, runtime storage, or generic notes."
+description: "AoA/Abyss durable memory and owner orientation: use when ongoing work may depend on reviewed prior decisions, provenance, lifecycle/currentness, or an existing memo artifact, even when none is named. Also use to recall, review, or evolve a candidate, export, quarantine packet, object, corpus identity, lifecycle target, or read model. Use aoa-memo-writeback only before any memo artifact exists. Do not use for raw-session retrieval, proof, routing authority, roles, workflows, KAG substrate, runtime storage, or generic notes."
 ---
 
 # aoa-memo
@@ -40,17 +40,13 @@ corpus, enumerate candidates, or create an artifact.
 
 ## Start and choose one speed
 
-1. The first tool turn after selection must read only this `SKILL.md`. Record
-   `<bundle_dir>` as its absolute containing directory. If task-workspace
-   inspection, search, or another skill body was combined with that read,
-   return
-   `blocked_package_gate_not_observed` immediately. Do not read the contract,
-   source-return rule, target, owner, or evidence in that invocation.
-   Restart only through a new invocation; later compliance cannot repair the
-   unobserved package gate.
-   When a concrete memo artifact was already named, loading
-   `aoa-memo-writeback` first is `blocked_selection_gate_not_observed`; stop
-   rather than continuing with both bundles.
+1. Read this `SKILL.md` completely and record `<bundle_dir>` as its
+   absolute containing directory. Choose this family from the request: an
+   existing memo artifact belongs here; first writeback without an artifact
+   belongs to `aoa-memo-writeback`. Do not load both families speculatively.
+   Before using an owner-dependent claim or taking an effect, require the
+   selected package, source identity, relevant current evidence, and authority
+   conditions below to be established. Tool-turn count is not a gate.
 2. Run the applicability preflight. Stop on a handoff or negative result.
 3. Choose exactly one speed:
 
@@ -97,9 +93,8 @@ already supplied, but raw-session discovery remains a sibling handoff.
 
 ## Deep owner route
 
-1. In one tool turn containing no other read or command, read
-   `references/contract.yaml` to EOF and await the result. Then choose exactly
-   one mode from the requested operation:
+1. Read `references/contract.yaml` completely and choose exactly one mode
+   from the requested operation:
 
    | Mode | Select when | Read |
    | --- | --- | --- |
@@ -110,15 +105,20 @@ already supplied, but raw-session discovery remains a sibling handoff.
    Select by the requested operation, not by whether its gates already pass.
    Missing review, evidence, ownership, authority, or confirmation blocks
    `evolve`; it does not turn a requested owner change into `review`.
-2. In the next tool turn, read only `references/source-return.md` to EOF and
-   await the result.
-3. In a later tool turn, read only the selected mode reference to EOF and await
-   the result. Do not preload another mode or combine these three package reads.
-   Any target, origin-port, evidence, owner-checkout, workspace, or other-skill
-   read before all three results is terminal
-   `blocked_package_gate_not_observed`.
-4. Execute the source-return gate before any owner-relative read, then follow
-   the selected procedure and return the common ABI.
+2. Read `references/source-return.md` and the selected mode reference
+   completely. Independent package reads may share a tool call once the paths
+   and selected mode are known. Do not preload other modes.
+3. Establish the source-return conditions before interpreting owner-relative
+   evidence, then follow the selected procedure and return the common ABI.
+   A missing or mismatched source blocks the dependent claim or effect; it
+   does not become valid through extra reads.
+
+Reuse already available complete reads only while their source identity,
+version and relevant content remain applicable. Re-read when the source or
+artifact changes, required context is no longer available, or a new material
+fact is needed. Batch independent reads; preserve dependencies that determine
+which source, mode, target or effect is admissible. A previous read or install
+receipt is not evidence that a changed source is current.
 
 Keep the modes internal until held-out manual work proves that separate
 prompt-visible skills improve triggers, contracts, composition, and outcomes.
@@ -135,6 +135,9 @@ prompt-visible skills improve triggers, contracts, composition, and outcomes.
 - `orient`, `recall`, and `review` are read-only. `evolve` may change owner
   source only with an accepted review, explicit authority, and the
   repository's normal confirmation route.
+  Existing authorization applies to the same effect, target and scope; do
+  not ask for it again. It does not replace origin-owner acceptance, reviewed
+  intake, or a distinct confirmation required for an exact landing plan.
 
 ## Task-local composition
 
