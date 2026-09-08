@@ -135,3 +135,20 @@ Require:
 Source checks, hook receipts, and fresh-session selection are mechanism
 evidence only. Natural benefit, deployment, policy promotion, and landing
 remain separate decisions.
+
+## Package gate clarification, 2026-09-08
+
+The strict deep route protects source identity, applicable package and owner
+contracts, current evidence, accepted review and effect authority. Fixed counts
+of separate tool turns do not establish any of these facts. Package version
+0.1.24 therefore expresses the gates as conditions: independent known reads may
+be batched, and complete applicable context may be reused. A changed source,
+lost required context or new material fact requires a fresh read. Source-return
+branches remain confined to the loaded bundle and its declared owner; a missing
+or invalid binding never permits a nearby substitute.
+
+The one-brief orientation budget, orient/deep boundary, exact target before
+origin expansion, and reviewed-write admission are unchanged. This clarifies
+loading procedure only; it does not activate hooks, promote memory or establish
+benefit. Manual comparison, owner validation and selected delivery remain
+separate acceptance evidence.

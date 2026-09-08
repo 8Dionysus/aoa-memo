@@ -9,6 +9,11 @@ Tracking starts with the community-docs baseline for this repository.
 
 ### Fixed
 
+- Express memo package and source gates as verified source, version, evidence
+  and authority conditions. Independent known reads can be batched and current
+  complete context reused; changed sources require current evidence. Preserve
+  the orient/deep split, same-bundle source return and reviewed-write boundary.
+
 - Align the `aoa-memo` orientation skill with the admitted
   `aoa_memo_recall_brief` and `aoa_memo_recall_reviewed` MCP operations.
   Reviewed-corpus scope, bounded expansion, and source-authority limits remain
